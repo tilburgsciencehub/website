@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="196px" height="32px" viewBox="0 0 196 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>19895FCB-19B9-4D62-90D0-1C5F2B22A0FC</title>
+    <defs>
+        <linearGradient x1="104.983836%" y1="13.875%" x2="1.23276003%" y2="85.1047066%" id="linearGradient-1">
+            <stop stop-color="#FF9C00" offset="0%"></stop>
+            <stop stop-color="#FFB222" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-78.000000, -65.000000)">
+            <g id="Logo" transform="translate(78.000000, 65.000000)">
+                <text id="Tilburg-ScienceHub" font-family="FormaDJRDisplay-Light, Forma DJR Display" font-size="22" font-weight="300" fill="#003365">
+                    <tspan x="28" y="20">Tilburg </tspan>
+                    <tspan x="83.946" y="20" font-family="FormaDJRDisplay-Medium, Forma DJR Display" font-weight="400">ScienceHub</tspan>
+                </text>
+                <path d="M18.7692729,23.5709463 C19.4489847,23.5709463 20,24.1145573 20,24.7851355 C20,25.4557137 19.4489847,25.9993248 18.7692729,25.9993248 L18.7692729,25.9993248 L8.92345598,25.9993248 C8.24374416,25.9993248 7.69272886,25.4557137 7.69272886,24.7851355 C7.69272886,24.1145573 8.24374416,23.5709463 8.92345598,23.5709463 L8.92345598,23.5709463 Z M0.360672095,9.35582556 C0.8415682,8.88139148 1.62125484,8.88139148 2.10215095,9.35582555 L2.10215095,9.35582555 L9.48651363,16.6409611 C9.7172609,16.8688609 9.84675806,17.1778801 9.84650169,17.5 C9.84675806,17.8221199 9.7172609,18.1311391 9.48651363,18.3590389 L9.48651363,18.3590389 L2.10215095,25.6441744 C1.62125484,26.1186085 0.841568192,26.1186085 0.360672082,25.6441744 C-0.120224027,25.1697404 -0.120224027,24.4005307 0.360672082,23.9260966 L0.360672082,23.9260966 L6.8866026,17.5 L0.360672082,11.0739033 C-0.120224015,10.5994693 -0.120224009,9.83025964 0.360672095,9.35582556 Z" id="Combined-Shape" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
