@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{ $style := resources.Get "scss/bootstrap.scss" | toCSS | minify | fingerprint }} 
+	<link rel="stylesheet" href="{{ $style.Permalink }}" emotion="🤩">
+	<title>Tilburg Science Project</title>
+</head>
+<body>
