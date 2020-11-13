@@ -1,0 +1,27 @@
+{{- partial "header.html" . -}}
+
+<div class="container">
+  <div class="row justify-content-md-center my-5 py-4">
+    <div class="col-12">
+      <h1 class="text-center heading">Examples</h1>
+      <p class="text-center text-secondary my-4">Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh
+        ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="row">
+      {{ range where .Site.Pages "Section" "examples" }}
+      <div class="col-8 mb-4 d-flex flex-wrap">
+        <div class="bg-white p-5 text-center w-100">
+          <h3>{{ .Title }}</h3>
+          <p class="my-4">{{ .Params.description }}</p>
+          <button class="btn btn-primary">View Example</button>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{- partial "footer.html" . -}}

@@ -1,0 +1,5 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- range $index, $element := where .Site.Pages "Section" "building-blocks" -}}
+    {{- $.Scratch.Add "index" (dict "title" $element.Title "link" $element.Permalink) -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

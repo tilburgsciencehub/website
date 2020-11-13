@@ -1,3 +1,25 @@
 {{ partial "header.html" . }}
+
+<div class="bg-secondary text-white p-5 d-none">
+	{{- range .Sections -}}
+		{{- range .Pages -}}
+			{{ if eq .Params.isParent "true" }}
+		 	<h1>{{ .Title }}</h1>
+			{{- range .Pages -}}
+				<h2>{{ .Title }}</h2>
+				{{- range .Pages -}}
+					<h3>{{ .Title }}</h3>
+					<ul>
+						{{- range .Pages -}}
+							<li>{{ .Title }}</li>
+						{{- end -}}
+					</ul>
+				{{ end }}
+			{{ end }}
+			{{ end }}
+		{{- end -}}
+	{{- end -}}
+</div>
+
 {{ .Content }}
 {{ partial "footer.html" . }}

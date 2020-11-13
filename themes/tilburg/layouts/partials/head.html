@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="https://use.typekit.net/pzc6ybk.css">
 	{{ $style := resources.Get "scss/bootstrap.scss" | toCSS | minify | fingerprint }} 
 	<link rel="stylesheet" href="{{ $style.Permalink }}" emotion="🤩">
 	<title>Tilburg Science Project</title>

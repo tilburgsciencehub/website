@@ -2,3 +2,8 @@ baseURL = "https://affectionate-archimedes-1f20bf.netlify.app/"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "tilburg"
+
+[outputs]
+  home = ["HTML", "AMP", "RSS"]
+  page = ["HTML", "JSON"]
+  section = ["HTML", "RSS", "JSON"]

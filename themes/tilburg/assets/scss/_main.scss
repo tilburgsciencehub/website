@@ -1,22 +1,151 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+html,
+body {
+  font-family: acumin-pro, sans-serif;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
 
-html, body {
-	background-color: #f0f5f9;
-	font-family: 'Roboto', sans-serif;
+html {
+  background-color: #f0f5f9;
+}
+
+body {
+  background-color: transparent;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 800px;
+    height: 500px;
+    top: 0;
+    // top: -225px;
+    left: 0;
+    z-index: -1;
+    background: rgb(198, 217, 243);
+    background: radial-gradient(
+      ellipse at top left,
+      rgba(198, 217, 243, 1) 0%,
+      rgba(240, 245, 249, 1) 60%
+    );
+  }
+}
+
+.heading {
+  font-family: "utile-display", sans-serif;
+}
+
+.multiMenu {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "forma-djr-display", sans-serif;
+}
+
+.buildingBlocksSuggestions {
+  top: 60px;
+  display: none;
+  max-height: 400px;
+  overflow-y: scroll;
+  z-index: 10;
+
+  &.active {
+    display: block;
+  }
+}
+
+.headerSearchResultsHolder {
+  display: none;
+  position: relative;
+  top: 70px;
+  right: 90px;
+  z-index: 10;
+  width: 300px;
+  max-height: 600px;
+  overflow-y: scroll;
+
+  &.active {
+    display: block;
+  }
+
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   width: 0;
+  //   height: 0;
+  //   left: 30px;
+  //   top: -20px;
+  //   border-style: solid;
+  //   border-width: 0 10px 20px 10px;
+  //   border-color: transparent transparent #ffffff transparent;
+  // }
 }
 
 footer {
-	h5 {
-		color: #fff;
-		margin-bottom: 30px;
-	}
+  h5 {
+    color: #fff;
+    margin-bottom: 30px;
+  }
 
-	a {
-		display: block;
-		color: rgba(255,255,255,0.5);
+  a {
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
 
-		&:hover {
-			color: #fff;
-		}
-	}
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.customNavbar {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+
+  .headerLink {
+    padding: 10px;
+  }
+
+  .subMenu {
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    top: 70px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+
+    &.active {
+      display: grid;
+    }
+
+    &.subMenuAnimate {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  .menu {
+    text-align: center;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+      }
+    }
+
+    a {
+      margin: 0 16px;
+      color: $secondary;
+    }
+  }
 }

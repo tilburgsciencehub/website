@@ -1,39 +1,91 @@
 {{ partial "head.html" . }}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white rounded m-5 p-3 shadow-sm">
-  <a class="navbar-brand" href="#">
-  	<img src="/img/logo.svg">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div class="position-relative m-5">
+	<div class="bg-white rounded shadow-sm navMenu d-relative" style="position: relative;">
+		<div class="customNavbar p-3">
+			<div><a class="navbar-brand" href="/">
+					<img src="/img/logo.svg">
+				</a></div>
+			<div class="menu d-flex align-items-center justify-content-center">
+				<ul class="list-unstyled">
+					<li><a class="headerLink" href="#0">Tour</a></li>
+					<li>
+						<a href="/building-blocks" class="headerLink menuArrow">Building Blocks</a>
+						<div class="bg-white text-left w-100 multiMenu border-top shadow-sm subMenu">
+							<div class="border-right">
+								<div class="my-4 nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-primary my-2 my-sm-0" type="submit">Contribute</button>
-    </form>
-  </div>
-</nav>
+									{{- range where .Site.Pages "Section" "building-blocks" -}}
+									{{ if eq .Params.isParent "true" }}
+									{{- range $index, $value := .Pages -}}
+									<a class="nav-link mx-0 px-5 py-3 {{ if eq $index 0 }} active {{ end }}" id="v-pills-home-tab"
+										data-toggle="pill" href="#{{ .Title | urlize }}" role="tab" aria-controls="v-pills-home"
+										aria-selected="true">{{ .Title }} <span class="icon mini-right float-right"></span> </a>
+									{{- end -}}
+									{{ end }}
+									{{- end -}}
+
+								</div>
+							</div>
+							<div class="p-5 px-3">
+								<div class="tab-content" id="v-pills-tabContent">
+
+									{{- range where .Site.Pages "Section" "building-blocks" -}}
+									{{ if eq .Params.isParent "true" }}
+									{{- range $index, $value := .Pages -}}
+									<div class="tab-pane fade {{ if eq $index 0 }} show active {{ end }}" id="{{ .Title | urlize }}"
+										role="tabpanel" aria-labelledby="v-pills-home-tab">
+										<div class="row">
+											{{ range .Pages }}
+											<div class="col-8 mb-4">
+												<h5>{{.Title}}</h5>
+												{{- range .Pages -}}
+												<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
+												{{ end }}
+
+											</div>
+											{{ end }}
+										</div>
+									</div>
+									{{ end }}
+									{{ end }}
+									{{ end }}
+
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="#0" class="headerLink menuArrow">Tutorials</a>
+						<div class="bg-white text-left w-100 border-top shadow-sm subMenu p-4">
+							<div class="row">
+								{{- range where .Site.Pages "Section" "tutorials" -}}
+								{{ if eq .Params.isParent true }}
+								<div class="col-6 mb-4">
+									<h5>{{.Title}}</h5>
+
+									{{- range .Pages -}}
+									<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
+									{{ end }}
+								</div>
+								{{ end }}
+								{{ end }}
+							</div>
+						</div>
+					</li>
+					<li><a href="/examples" class="headerLink">Examples</a></li>
+					<li><a href="/about" class="headerLink">About</a></li>
+				</ul>
+			</div>
+			<div class="">
+				<form class="form-inline text-right d-relative">
+					<input class="form-control mr-sm-2 headerSearch searchIconRight" type="search" placeholder="Search"
+						aria-label="Search">
+					<a href="#0" class="btn btn-primary my-2 my-sm-0">Contribute</a>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder">
+	</div>
+</div>

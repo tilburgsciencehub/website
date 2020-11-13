@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("/fonts/icomoon.woff");
+}
+
+.icon {
+  font-family: "icomoon";
+  font-size: inherit;
+}
+
+.searchIconRight {
+  position: relative;
+
+  &:before {
+    content: "\e9cc";
+    font-family: "icomoon";
+    position: absolute;
+    right: 20px;
+    color: $secondary;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.menuArrow {
+  position: relative;
+
+  &:before {
+    content: "\e92e";
+    font-family: "icomoon";
+    position: absolute;
+    right: -10px;
+    color: $primary;
+  }
+}
+
+.icon.search:before {
+  content: "\e9cc";
+}
+
+.icon.mini-right:before {
+  content: "\e930";
+}
+
+.icon.link:before {
+  content: "\e98a";
+}
