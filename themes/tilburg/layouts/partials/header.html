@@ -1,8 +1,8 @@
 {{ partial "head.html" . }}
 
 <div class="position-relative m-5">
-	<div class="bg-white rounded shadow-sm navMenu d-relative" style="position: relative;">
-		<div class="customNavbar p-3">
+	<div class="bg-white rounded box-shadow navMenu d-relative" style="position: relative;">
+		<div class="customNavbar px-4 py-3">
 			<div><a class="navbar-brand" href="/">
 					<img src="/img/logo.svg">
 				</a></div>
@@ -11,14 +11,14 @@
 					<li><a class="headerLink" href="#0">Tour</a></li>
 					<li>
 						<a href="/building-blocks" class="headerLink menuArrow">Building Blocks</a>
-						<div class="bg-white text-left w-100 multiMenu border-top shadow-sm subMenu">
+						<div class="bg-white text-left w-100 multiMenu border-top boxShadow subMenu">
 							<div class="border-right">
 								<div class="my-4 nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
 									{{- range where .Site.Pages "Section" "building-blocks" -}}
 									{{ if eq .Params.isParent "true" }}
 									{{- range $index, $value := .Pages -}}
-									<a class="nav-link mx-0 px-5 py-3 {{ if eq $index 0 }} active {{ end }}" id="v-pills-home-tab"
+									<a class="nav-link mx-0 px-5 py-3 heading {{ if eq $index 0 }} active {{ end }}" id="v-pills-home-tab"
 										data-toggle="pill" href="#{{ .Title | urlize }}" role="tab" aria-controls="v-pills-home"
 										aria-selected="true">{{ .Title }} <span class="icon mini-right float-right"></span> </a>
 									{{- end -}}
@@ -28,7 +28,7 @@
 								</div>
 							</div>
 							<div class="p-5 px-3">
-								<div class="tab-content" id="v-pills-tabContent">
+								<div class="tab-content rightMenu" id="v-pills-tabContent">
 
 									{{- range where .Site.Pages "Section" "building-blocks" -}}
 									{{ if eq .Params.isParent "true" }}
@@ -38,7 +38,7 @@
 										<div class="row">
 											{{ range .Pages }}
 											<div class="col-8 mb-4">
-												<h5>{{.Title}}</h5>
+												<span class="heading d-block mb-3">{{.Title}}</span>
 												{{- range .Pages -}}
 												<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
 												{{ end }}
@@ -57,7 +57,7 @@
 					</li>
 					<li>
 						<a href="#0" class="headerLink menuArrow">Tutorials</a>
-						<div class="bg-white text-left w-100 border-top shadow-sm subMenu p-4">
+						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-4">
 							<div class="row">
 								{{- range where .Site.Pages "Section" "tutorials" -}}
 								{{ if eq .Params.isParent true }}
@@ -77,10 +77,10 @@
 					<li><a href="/about" class="headerLink">About</a></li>
 				</ul>
 			</div>
-			<div class="">
-				<form class="form-inline text-right d-relative">
-					<input class="form-control mr-sm-2 headerSearch searchIconRight" type="search" placeholder="Search"
-						aria-label="Search">
+			<div class="text-right">
+				<form class="form-inline text-right float-right">
+					<input class="form-control mr-sm-2 headerSearch searchIconRight bg-light border-0" type="search"
+						placeholder="Search" aria-label="Search">
 					<a href="#0" class="btn btn-primary my-2 my-sm-0">Contribute</a>
 				</form>
 			</div>
