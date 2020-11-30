@@ -10,14 +10,15 @@
 
 .searchIconRight {
   position: relative;
+  color: #000;
 
   &:before {
     content: "\e9cc";
     font-family: "icomoon";
     position: absolute;
-    right: 20px;
+    right: 15px;
     color: $secondary;
-    font-size: 20px;
+    font-size: 18px;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -30,7 +31,9 @@
     content: "\e92e";
     font-family: "icomoon";
     position: absolute;
-    right: -10px;
+    right: -6px;
+    font-size: 14px;
+    top: 12px;
     color: $primary;
   }
 }

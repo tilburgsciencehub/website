@@ -1,6 +1,12 @@
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #003365;
+  opacity: 1; /* Firefox */
+}
+
 html,
 body {
-  font-family: "acumin-pro", sans-serif;
+  font-family: "acumin-pro", sans-serif !important;
   scroll-behavior: smooth;
   overscroll-behavior: none;
   font-size: 15px;
@@ -16,7 +22,9 @@ html {
   &:after {
     content: "";
     position: absolute;
-    width: 100%;
+    // width: 100%;
+    left: 0;
+    right: 0;
     height: 700px;
     top: 0px;
     // top: -225px;
@@ -25,13 +33,24 @@ html {
     z-index: -1;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center right;
     // background: rgb(198, 217, 243);
     // background: radial-gradient(
     //   ellipse at top right,
     //   rgba(198, 217, 243, 1) 0%,
     //   rgba(240, 245, 249, 1) 60%
     // );
+  }
+}
+
+.resetInput {
+  border: 0;
+  background-color: transparent;
+  width: 80%;
+  float: left;
+
+  &:focus {
+    outline: none;
   }
 }
 
@@ -91,6 +110,7 @@ h6,
 .h6 {
   font-family: "utile-display", sans-serif;
   font-weight: 300;
+  letter-spacing: 1px;
 }
 
 h1 {
@@ -152,29 +172,18 @@ ul {
   &.active {
     display: block;
   }
-
-  // &:before {
-  //   content: "";
-  //   position: absolute;
-  //   width: 0;
-  //   height: 0;
-  //   left: 30px;
-  //   top: -20px;
-  //   border-style: solid;
-  //   border-width: 0 10px 20px 10px;
-  //   border-color: transparent transparent #ffffff transparent;
-  // }
 }
 
 footer {
+  color: #60758a;
   h5 {
     color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
 
   a {
     display: block;
-    color: rgba(255, 255, 255, 0.5);
+    color: #60758a;
 
     &:hover {
       color: #fff;
@@ -186,9 +195,10 @@ footer {
   display: grid;
   grid-template-columns: 11fr 18fr 11fr;
   align-items: center;
+  font-size: 12px;
 
   .headerLink {
-    padding: 10px 8px;
+    padding: 10px;
   }
 
   .subMenu {
@@ -226,6 +236,7 @@ footer {
     ul {
       margin: 0;
       padding: 0;
+      font-size: 15px;
       li {
         display: inline-block;
       }
@@ -248,13 +259,3 @@ input {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
   color: $secondary;
 }
-
-// .huge-background-circle {
-//   width: 2000px;
-//   height: 3500px;
-//   left: -100px;
-//   background-color: #fff;
-//   border-radius: 3500px;
-//   position: absolute;
-//   top: 1200px;
-// }
