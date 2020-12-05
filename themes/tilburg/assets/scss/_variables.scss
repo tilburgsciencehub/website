@@ -200,7 +200,7 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1300px,
+  xl: 1340px,
 ) !default;
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
@@ -381,7 +381,7 @@ $table-border-level: -6 !default;
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
 $input-btn-padding-y: 0.55rem !default;
-$input-btn-padding-x: 1.6rem !default;
+$input-btn-padding-x: 1.25rem !default;
 $input-btn-font-family: "forma-djr-display" !default;
 $input-btn-font-size: $font-size-base !default;
 $input-btn-line-height: $line-height-base !default;

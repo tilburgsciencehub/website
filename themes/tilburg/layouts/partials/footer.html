@@ -4,8 +4,11 @@
 			<!-- <div class="col-4">
 				<img src="/img/footer-mark.svg">
 			</div> -->
+			<div class="col-2">
+				<img src="/img/footer-mark.svg" alt="">
+			</div>
 			<div class="col-5">
-				<h5>Building Blocks</h5>
+				<span class="heading text-white d-block mb-3">Building Blocks</span>
 
 				{{- range where .Site.Pages "Section" "building-blocks" -}}
 				{{ if eq .Params.isParent "true" }}
@@ -16,7 +19,7 @@
 				{{- end -}}
 			</div>
 			<div class="col-5">
-				<h5>Tutorials</h5>
+				<span class="heading text-white d-block mb-3">Tutorials</span>
 
 				{{- range where .Site.Pages "Section" "tutorials" -}}
 				{{ if eq .Params.isParent true }}
@@ -27,7 +30,7 @@
 				{{- end -}}
 			</div>
 			<div class="col-5">
-				<h5>Examples</h5>
+				<span class="heading text-white d-block mb-3">Examples</span>
 
 				{{- range where .Site.Pages "Section" "examples" -}}
 				{{- range $index, $value := .Pages -}}
@@ -36,7 +39,7 @@
 				{{- end -}}
 			</div>
 			<div class="col-5">
-				<h5>Tilburg Science Hub</h5>
+				<span class="heading text-white d-block mb-3">Tilburg Science Hub</span>
 
 				<a href="">Tour</a>
 				<a href="">About</a>
@@ -44,6 +47,7 @@
 				<a href="">Blog</a>
 				<a href="">Contact</a>
 			</div>
+			<div class="col-2"></div>
 		</div>
 		<div class="row justify-content-md-center py-5 mt-5 " style="border-top: solid 1px rgba(255, 255, 255, 0.2);">
 
