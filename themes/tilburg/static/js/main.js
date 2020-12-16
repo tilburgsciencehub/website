@@ -1,4 +1,8 @@
 $(".headerLink").hover(function () {
+  if (!$(this).hasClass("activeMenu")) {
+    $(".headerLink").removeClass("activeMenu");
+  }
+
   if (!$(this).siblings().hasClass("active")) {
     $(".subMenu").removeClass("active subMenuAnimate");
   }
@@ -7,7 +11,11 @@ $(".headerLink").hover(function () {
     $(".subMenu").removeClass("active subMenuAnimate");
   } else {
     const vm = this;
-
+    if (!$(this).hasClass("activeMenu")) {
+      setTimeout(function () {
+        $(vm).addClass("activeMenu");
+      }, 300);
+    }
     $(this).siblings().addClass("active");
     setTimeout(function () {
       $(vm).siblings().addClass("subMenuAnimate");
@@ -22,6 +30,7 @@ $(document).mouseup(function (e) {
 
   if (!container.is(e.target) && container.has(e.target).length === 0) {
     container.removeClass("active subMenuAnimate");
+    $(".headerLink").removeClass("activeMenu");
   }
 });
 

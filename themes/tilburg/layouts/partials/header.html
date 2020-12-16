@@ -11,48 +11,56 @@
 					<li><a class="headerLink" href="#0">Tour</a></li>
 					<li>
 						<a href="/building-blocks" class="headerLink menuArrow">Building Blocks</a>
-						<div class="bg-white text-left w-100 multiMenu border-top boxShadow subMenu">
-							<div class="border-right">
-								<div class="my-4 nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						<div class="bg-white text-left w-100 border-top boxShadow subMenu">
+							<div class="row">
+								<div class="col-6 pr-0 h-100 border-right">
 
-									{{- range where .Site.Pages "Section" "building-blocks" -}}
-									{{ if eq .Params.isParent "true" }}
-									{{- range $index, $value := .Pages -}}
-									<a class="nav-link mx-0 px-5 py-3 heading {{ if eq $index 0 }} active {{ end }}" id="v-pills-home-tab"
-										data-toggle="pill" href="#{{ .Title | urlize }}" role="tab" aria-controls="v-pills-home"
-										aria-selected="true">{{ .Title }} <span class="icon mini-right float-right"></span> </a>
-									{{- end -}}
-									{{ end }}
-									{{- end -}}
+									<div class="my-4 nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+										aria-orientation="vertical">
 
-								</div>
-							</div>
-							<div class="p-5 px-3">
-								<div class="tab-content rightMenu" id="v-pills-tabContent">
+										{{- range where .Site.Pages "Section" "building-blocks" -}}
+										{{ if eq .Params.isParent "true" }}
+										{{- range $index, $value := .Pages -}}
+										<a class="nav-link mx-0 px-5 py-3 heading pillx {{ if eq $index 0 }} active  {{ end }}"
+											id="v-pills-home-tab" data-toggle="pill" href="#{{ .Title | urlize }}" role="tab"
+											aria-controls="v-pills-home" aria-selected="true">{{ .Title }} <span
+												class="icon mini-right float-right"></span> </a>
+										{{- end -}}
+										{{ end }}
+										{{- end -}}
 
-									{{- range where .Site.Pages "Section" "building-blocks" -}}
-									{{ if eq .Params.isParent "true" }}
-									{{- range $index, $value := .Pages -}}
-									<div class="tab-pane fade {{ if eq $index 0 }} show active {{ end }}" id="{{ .Title | urlize }}"
-										role="tabpanel" aria-labelledby="v-pills-home-tab">
-										<div class="row">
-											{{ range .Pages }}
-											<div class="col-8 mb-4">
-												<span class="heading d-block mb-3">{{.Title}}</span>
-												{{- range .Pages -}}
-												<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
-												{{ end }}
-
-											</div>
-											{{ end }}
-										</div>
 									</div>
-									{{ end }}
-									{{ end }}
-									{{ end }}
 
 								</div>
+								<div class="p-5 px-3 col">
+									<div class="tab-content rightMenu" id="v-pills-tabContent">
+
+										{{- range where .Site.Pages "Section" "building-blocks" -}}
+										{{ if eq .Params.isParent "true" }}
+										{{- range $index, $value := .Pages -}}
+										<div class="tab-pane fade {{ if eq $index 0 }} show active {{ end }}" id="{{ .Title | urlize }}"
+											role="tabpanel" aria-labelledby="v-pills-home-tab">
+											<div class="row">
+												{{ range .Pages }}
+												<div class="col-8 mb-4">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span>
+													{{- range .Pages -}}
+													<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
+													{{ end }}
+
+												</div>
+												{{ end }}
+											</div>
+										</div>
+										{{ end }}
+										{{ end }}
+										{{ end }}
+
+									</div>
+								</div>
 							</div>
+
+
 						</div>
 					</li>
 					<li>
@@ -62,7 +70,7 @@
 								{{- range where .Site.Pages "Section" "tutorials" -}}
 								{{ if eq .Params.isParent true }}
 								<div class="col-6 mb-4">
-									<h5>{{.Title}}</h5>
+									<h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5>
 
 									{{- range .Pages -}}
 									<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
@@ -80,7 +88,7 @@
 								{{- range where .Site.Pages "Section" "tutorials" -}}
 								{{ if eq .Params.isParent true }}
 								<div class="col-6 mb-4">
-									<h5>{{.Title}}</h5>
+									<h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5>
 
 									{{- range .Pages -}}
 									<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
