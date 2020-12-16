@@ -1,13 +1,12 @@
-<footer class="pt-5" style="background-color: #001C37;">
+<footer class="pt-5 font-weight-normal" style="background-color: #001C37;">
 	<div class="container my-5">
-		<div class="row justify-content-md-center">
-			<!-- <div class="col-4">
-				<img src="/img/footer-mark.svg">
-			</div> -->
-			<div class="col-2">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-1">
 				<img src="/img/footer-mark.svg" alt="">
 			</div>
-			<div class="col-5">
+			<div class="col-1"></div>
+			<div class="col-4">
 				<span class="heading text-white d-block mb-3">Building Blocks</span>
 
 				{{- range where .Site.Pages "Section" "building-blocks" -}}
@@ -18,7 +17,8 @@
 				{{ end }}
 				{{- end -}}
 			</div>
-			<div class="col-5">
+			<div class="col-1"></div>
+			<div class="col-4">
 				<span class="heading text-white d-block mb-3">Tutorials</span>
 
 				{{- range where .Site.Pages "Section" "tutorials" -}}
@@ -29,7 +29,8 @@
 				{{ end }}
 				{{- end -}}
 			</div>
-			<div class="col-5">
+			<div class="col-1"></div>
+			<div class="col-4">
 				<span class="heading text-white d-block mb-3">Examples</span>
 
 				{{- range where .Site.Pages "Section" "examples" -}}
@@ -38,7 +39,8 @@
 				{{ end }}
 				{{- end -}}
 			</div>
-			<div class="col-5">
+			<div class="col-1"></div>
+			<div class="col-4">
 				<span class="heading text-white d-block mb-3">Tilburg Science Hub</span>
 
 				<a href="">Tour</a>
@@ -50,21 +52,26 @@
 			<div class="col-2"></div>
 		</div>
 		<div class="row justify-content-md-center py-5 mt-5 " style="border-top: solid 1px rgba(255, 255, 255, 0.2);">
-
-			<div class="col-16">© 2020 Tilburg Science Hub. All rights reserved | <a class="d-inline-block text-white"
-					href="#0">Terms of Service</a> | <a class="d-inline-block text-white" href="#0">Privacy</a> | <a
-					class="d-inline-block text-white" href="#0">Legal</a></div>
-			<div class="col-4 text-right">
-				<a class="d-inline-block ml-3" style="font-size: 17px;" href="#0">
-					<i class="fa fa-github"></i>
-				</a>
-				<a class="d-inline-block ml-3" style="font-size: 17px;" href="#0">
-					<i class="fa fa-twitter"></i>
-				</a>
-				<a class="d-inline-block ml-3" style="font-size: 17px;" href="#0">
-					<i class="fa fa-linkedin"></i>
-				</a>
+			<div class="col-18">
+				<div class="d-flex justify-content-md-between">
+					<div class="">© 2020 Tilburg Science Hub. All rights reserved | <a class="d-inline-block text-white"
+							href="#0">Terms of Service</a> | <a class="d-inline-block text-white" href="#0">Privacy</a> | <a
+							class="d-inline-block text-white" href="#0">Legal</a></div>
+					<div class=" text-right">
+						<a class="d-inline-block mx-2" style="font-size: 17px;" href="#0">
+							<i class="fa fa-github"></i>
+						</a>
+						<a class="d-inline-block mx-2" style="font-size: 17px;" href="#0">
+							<i class="fa fa-twitter"></i>
+						</a>
+						<a class="d-inline-block mx-2" style="font-size: 17px;" href="#0">
+							<i class="fa fa-linkedin"></i>
+						</a>
+					</div>
+				</div>
 			</div>
+
+
 
 		</div>
 

@@ -214,7 +214,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px,
+  xl: 1340px,
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -380,10 +380,10 @@ $table-border-level: -6 !default;
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
-$input-btn-padding-y: 0.55rem !default;
-$input-btn-padding-x: 1.25rem !default;
+$input-btn-padding-y: 0.45rem !default;
+$input-btn-padding-x: 1.2rem !default;
 $input-btn-font-family: "forma-djr-display" !default;
-$input-btn-font-size: $font-size-base !default;
+$input-btn-font-size: 1rem !default;
 $input-btn-line-height: $line-height-base !default;
 
 $input-btn-focus-width: 0.2rem !default;
@@ -396,7 +396,7 @@ $input-btn-font-size-sm: $font-size-sm !default;
 $input-btn-line-height-sm: $line-height-sm !default;
 
 $input-btn-padding-y-lg: 0.8rem !default;
-$input-btn-padding-x-lg: 3.6rem !default;
+$input-btn-padding-x-lg: 3.3rem !default;
 $input-btn-font-size-lg: $font-size-lg !default;
 $input-btn-line-height-lg: $line-height-lg !default;
 
@@ -406,8 +406,8 @@ $input-btn-border-width: $border-width !default;
 //
 // For each of Bootstrap's buttons, define text, background, and border color.
 
-$btn-padding-y: $input-btn-padding-y !default;
-$btn-padding-x: $input-btn-padding-x !default;
+$btn-padding-y: 0.5rem !default;
+$btn-padding-x: 1.9rem !default;
 $btn-font-family: $input-btn-font-family !default;
 $btn-font-size: $input-btn-font-size !default;
 $btn-line-height: $input-btn-line-height !default;
