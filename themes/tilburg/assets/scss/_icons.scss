@@ -29,6 +29,7 @@
 
   &:before {
     content: "\e92e";
+    transition: all 0.3s ease;
     font-family: "icomoon";
     position: absolute;
     right: -6px;

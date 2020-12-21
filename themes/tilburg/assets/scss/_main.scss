@@ -193,12 +193,18 @@ footer {
     transform: translateY(10px);
     transition: all 0.3s ease;
 
+    a {
+      font-size: 16px !important;
+      line-height: 23px;
+    }
+
     a:not(.pillx) {
       color: #6081a2 !important;
       font-family: "acumin-pro", sans-serif;
 
       &:hover {
         color: $primary !important;
+        font-weight: bold;
       }
     }
 
@@ -209,6 +215,7 @@ footer {
 
         &:hover {
           color: $primary !important;
+          font-weight: bold;
         }
       }
     }
@@ -257,6 +264,14 @@ footer {
       &.activeMenu {
         position: relative;
         color: $primary;
+
+        &.menuArrow {
+          position: relative;
+
+          &:before {
+            transform: rotate(180deg);
+          }
+        }
 
         &:after {
           bottom: -13px;
