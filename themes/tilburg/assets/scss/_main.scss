@@ -49,6 +49,13 @@ html {
   }
 }
 
+.cover {
+  .hero-image {
+    max-width: 90%; 
+    margin-right: -70px;
+  }
+}
+
 .resetInput {
   border: 0;
   background-color: transparent;
@@ -127,6 +134,53 @@ ul {
   color: #6081a2 !important;
 }
 
+.buildingBlockSearch {
+  &::placeholder {
+    color: #6081A2;
+  }
+}
+
+.defaultPageSidebarMenu {
+  h5 {
+    font-size: 16px;
+    font-weight: 200;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 36px;
+
+    a {
+
+    }
+  }
+}
+
+article {
+  h1 {
+    font-size: 38px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-family: "forma-djr-display", sans-serif;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  ul {
+    margin: 30px 0;
+    li {
+      color: #003365;
+      font-size: 18px;
+    }
+  }
+}
+
 .buildingBlocksSuggestions {
   top: 60px;
   display: none;
@@ -136,6 +190,18 @@ ul {
 
   &.active {
     display: block;
+  }
+}
+
+.buildingBlocksRow {
+  a {
+    color: #6081a2 !important;
+    font-family: "acumin-pro", sans-serif;
+
+    &:hover {
+      color: $primary !important;
+      font-weight: bold;
+    }
   }
 }
 
@@ -282,6 +348,11 @@ footer {
   }
 }
 
+footer {
+  .footerCollapse {
+  }
+}
+
 p {
   font-size: 18px;
   line-height: 26px;
@@ -304,6 +375,38 @@ input {
   a.active {
     &:hover {
       color: #fff;
+    }
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .navMenu {
+    border-radius: 0;
+  }
+  footer {
+    .footerCollapse {
+      border-bottom: solid 1px #33495f;
+      position: relative;
+
+      &:before {
+        content: "\e92e";
+        position: absolute;
+        right: 0;
+        top: 16px;
+        color: #fff;
+        font-family: "icomoon";
+        transition: all 0.3s ease;
+      }
+
+      &.active {
+        &:before {
+          transform: rotate(180deg);
+        }
+      }
+
+      .links {
+        padding-bottom: 20px;
+      }
     }
   }
 }

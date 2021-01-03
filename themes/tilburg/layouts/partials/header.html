@@ -1,12 +1,16 @@
 {{ partial "head.html" . }}
 
-<div class="position-relative container mt-5 px-0">
-	<div class="bg-white rounded boxShadow navMenu d-relative px-1" style="position: relative;">
+<div class="position-relative container mt-lg-5 mt-3 px-0 ">
+	<div class="bg-white rounded boxShadow navMenu d-relative px-1 mx-3 mx-lg-0" style="position: relative;">
 		<div class="customNavbar px-4 py-3">
 			<div><a class="navbar-brand" href="/">
 					<img src="/img/logo.svg">
 				</a></div>
-			<div class="menu d-flex align-items-center justify-content-center">
+				<div class="d-block d-lg-none"></div>
+			<div class="text-right d-block d-lg-none ">
+				<a href="#0" class="icon menu text-dark"></a>
+			</div>
+			<div class="menu d-none d-lg-flex align-items-center justify-content-center">
 				<ul class="list-unstyled font-weight-normal">
 					<li><a class="headerLink" href="#0">Tour</a></li>
 					<li>
@@ -85,7 +89,7 @@
 						<a href="/examples" class="headerLink menuArrow">Examples</a>
 						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-4">
 							<div class="row">
-								{{- range where .Site.Pages "Section" "tutorials" -}}
+								{{- range where .Site.Pages "Section" "examples" -}}
 								{{ if eq .Params.isParent true }}
 								<div class="col-6 mb-4">
 									<h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5>
@@ -103,7 +107,7 @@
 				</ul>
 			</div>
 			<div class="text-right">
-				<form class="form-inline text-right float-right">
+				<form class="form-inline text-right float-right d-none d-lg-block" >
 					<div style="width: 230px" class="form-control mr-sm-2 headerSearch searchIconRight bg-light border-0">
 						<input class="resetInput" type="search" placeholder="Search" aria-label="Search">
 					</div>
@@ -112,7 +116,89 @@
 				</form>
 			</div>
 		</div>
+		<!-- mobule child menu -->
+	<div class="position-absolute bg-white border-top p-3 w-100 d-block d-lg-none rounded-bottom shadow-sm" style="z-index: 1; margin-top: -2px;left: 0">
+		<!-- screen 1 -->
+		<div class="screen-1 d-none">
+			<a class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour</a>
+			<a class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Building Blocks<span
+					class="icon mini-right float-right text-primary"></span> </a>
+			<a class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tutorials<span
+					class="icon mini-right float-right text-primary"></span> </a>
+			<a class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples<span
+					class="icon mini-right float-right text-primary"></span> </a>
+			<a class="nav-link mx-0 px-3 py-3 text-dark border-bottom">About</a>
+
+			<div>
+				<a href="#0" class="btn btn-primary my-2 my-sm-0 px-4 btn-block mt-5">Contribute</a>
+			</div>
+		</div>
+		<!-- scren 2 -->
+		<div class="screen-2 d-none">
+			<!-- building blocks -->
+			<div id="mobile-building-blocks" class="d-none">
+				<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
+					class="icon mini-left text-primary"></span> Building Blocks</a>
+
+				{{- range where .Site.Pages "Section" "building-blocks" -}}
+				{{ if eq .Params.isParent "true" }}
+				{{- range $index, $value := .Pages -}}
+				<a class="nav-link mx-0 py-2 text-dark font-weight-bold"
+					>{{ .Title }} <span
+						class="icon mini-right float-right"></span> </a>
+				<div class="tab-pane fade {{ if eq $index 0 }} show active {{ end }}" id="{{ .Title | urlize }}"
+					role="tabpanel" aria-labelledby="v-pills-home-tab">
+					<div class="pl-4">
+						{{ range .Pages }}
+						<div class="mb-4">
+							<span class="heading d-block mb-0 text-secondary" style="font-size: 16px;">{{.Title}}</span>
+							{{- range .Pages -}}
+							<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
+							{{ end }}
+
+						</div>
+						{{ end }}
+					</div>
+				</div>
+				{{- end -}}
+				{{ end }}
+				{{- end -}}
+			</div>
+			<!-- Tutorials -->
+			<div class="mobile-tutorials">
+				<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
+					class="icon mini-left text-primary"></span> Tutorials</a>
+				{{- range where .Site.Pages "Section" "tutorials" -}}
+				{{ if eq .Params.isParent true }}
+				<div class="mb-4">
+					<h5 class="text-secondary m-0" style="font-size: 16px;">{{.Title}}</h5>
+
+					{{- range .Pages -}}
+					<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
+					{{ end }}
+				</div>
+				{{ end }}
+				{{ end }}
+			</div>
+			<!-- Examples -->
+			<div class="mobile-examples d-none">
+				{{- range where .Site.Pages "Section" "examples" -}}
+				{{ if eq .Params.isParent true }}
+				<div class="col-6 mb-4">
+					<h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5>
+
+					{{- range .Pages -}}
+					<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
+					{{ end }}
+				</div>
+				{{ end }}
+				{{ end }}
+			</div>
+		</div>
 	</div>
+	</div>
+	<!-- search results -->
 	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder">
 	</div>
+	
 </div>

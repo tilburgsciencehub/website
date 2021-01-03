@@ -39,8 +39,16 @@
   }
 }
 
+.icon.menu:before {
+  content: "\e998";
+}
+
 .icon.search:before {
   content: "\e9cc";
+}
+
+.icon.mini-left:before {
+  content: "\e92f";
 }
 
 .icon.mini-right:before {

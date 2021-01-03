@@ -1,50 +1,55 @@
 {{- partial "header.html" . -}}
 
 <div class="container">
-  <div class="row justify-content-md-center my-5 py-4">
-    <div class="col-12">
-      <h1 class="text-center heading">Building Blocks</h1>
-      <p class="text-center text-secondary my-4">Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh
-        ultricies
-        vehicula ut id
-        elit. Aenean lacinia
-        bibendum nulla sed consectetur.</p>
-      <div class="position-relative searchIconRight">
-        <input type="text" class="form-control form-control-lg border-0 shadow-sm buildingBlockSearch"
-          placeholder="What are you looking for?">
-        <div class="position-absolute w-100 bg-white rounded shadow buildingBlocksSuggestions">
-
-        </div>
+  <br><br><br><br>
+  <div class="row justify-content-center">
+    <div class="col-lg-11 col-22">
+      <h1 class="text-center">Building Blocks</h1>
+      <p class="text-center text-secondary my-5">
+        Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh
+        ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed
+        consectetur.
+      </p>
+      <div class="position-relative mx-5 searchIconRight w-75 mx-auto">
+        <input
+          type="text"
+          class="form-control form-control-lg border-0 shadow-sm buildingBlockSearch px-4"
+          placeholder="What are you looking for?"
+        />
+        <div
+          class="position-absolute w-100 bg-white rounded shadow buildingBlocksSuggestions"
+        ></div>
       </div>
     </div>
-  </div>
 
+  </div>
+  <br><br><br><br>
   <!-- all the building blocks -->
-  {{- range .Site.Pages -}}
-  {{ if eq .Params.isParent "true" }}
-  {{- range .Pages -}}
-  <div class="p-5 bg-white mb-5 rounded">
-    <div class="row">
-      <div class="col-8">
-        <h2>{{ .Title }}</h2>
-      </div>
-      <div class="col-16">
+  <div class="row justify-content-center buildingBlocksRow">
+    <div class="col-22">
+      {{- range .Site.Pages -}} {{ if eq .Params.isParent "true" }} {{- range .Pages -}}
+      <div class="p-5 bg-white mb-5 rounded">
         <div class="row">
-          {{- range .Pages -}}
-          <div class="col-8 mb-4">
-            <h5>{{ .Title }}</h5>
-            {{ range .Pages }}
-            <a class="d-block" href="{{.Permalink}}">{{.Title}}</a>
-            {{ end }}
+          <div class="col-lg-8 col-24">
+            <h4 class="heading m-0">{{ .Title }}</h4>
           </div>
-          {{ end }}
+          <div class="col-lg-16 col-24">
+            <div class="row">
+              {{- range .Pages -}}
+              <div class="col-24 mb-4">
+                <h5 class="heading font-weight-normal" style="font-size: 16px; height: 22px;">{{ .Title }}</h5>
+                {{ range .Pages }}
+                <a class="d-block" href="{{.Permalink}}">{{.Title}}</a>
+                {{ end }}
+              </div>
+              {{ end }}
+            </div>
+          </div>
         </div>
       </div>
+      {{- end -}} {{ end }} {{- end -}}
     </div>
   </div>
-  {{- end -}}
-  {{ end }}
-  {{- end -}}
 </div>
 
 {{- partial "footer.html" . -}}

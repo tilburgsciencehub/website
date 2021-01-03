@@ -58,6 +58,23 @@ $(".headerSearch").on("keyup", function (e) {
   });
 });
 
+$(".gotoMainMenu").on("click", function() {
+  $(".screen-1").removeClass("d-none");
+  $(".screen-2").addClass("d-none");
+});
+
+// responsive footer collapse
+$("footer .footerCollapse").on("click", function() {
+  $("footer .links").addClass("d-none");
+  $(this).removeClass("active");
+  if ($(this).children(".links").hasClass("d-block")) {
+    $(this).children(".links").removeClass("d-block").addClass("d-none");
+  } else{
+    $(this).addClass("active");
+    $(this).children(".links").addClass("d-block");
+  }
+});
+
 $(".buildingBlockSearch").on("keyup", function (e) {
   const resultsHolder = $(".buildingBlocksSuggestions");
   const val = e.target.value;

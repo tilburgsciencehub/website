@@ -58,6 +58,7 @@ $(".headerSearch").on("keyup", function (e) {
   });
 });
 
+
 $(".buildingBlockSearch").on("keyup", function (e) {
   const resultsHolder = $(".buildingBlocksSuggestions");
   const val = e.target.value;
