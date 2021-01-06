@@ -1,6 +1,6 @@
 ---
-title: "Organize your project"
+title: "Coding"
 date: 2020-11-11T22:01:14+05:30
 draft: false
-weight: 2
+weight: 6
 ---
