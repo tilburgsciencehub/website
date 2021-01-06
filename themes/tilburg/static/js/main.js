@@ -58,6 +58,30 @@ $(".headerSearch").on("keyup", function (e) {
   });
 });
 
+$(".headerSearchMobile").on("keyup", function (e) {
+  const resultsHolder = $(".mobileResults");
+  const val = e.target.value;
+
+  $.ajax({
+    url: "/building-blocks/index.json",
+  }).done(function (result) {
+    resultsHolder.html("");
+    let newResults = result.filter((result) => {
+      if (new RegExp(val, "gmi").test(result.title)) {
+        return result;
+      }
+    });
+
+    newResults.map((result) => {
+      resultsHolder.append(
+        `<a class="d-block border-bottom p-3 text-secondary" href="${result.link}">${result.title}</a>`
+      );
+    });
+
+    resultsHolder.addClass("active");
+  });
+});
+
 // detect screen size change
 // $(window).resize(function() {
 //   if(this.resizeTO) clearTimeout(this.resizeTO);

@@ -29,7 +29,7 @@ draft: false
 
 <!-- Feature divs -->
 <div class="container mb-5 pb-4 px-0">
-	<div class="row justify-content-center">
+	<div class="row justify-content-center mx-0">
 		<div class="col-lg-7 col-22 mb-3">
 			<div class="p-5 rounded bg-white">
 				<h5 class="text-center heading px-3" style="font-weight: 100 !important;">Learn science the new way, with our
@@ -112,7 +112,7 @@ draft: false
 	</div>
 	<!-- 2 -->
 	<div class="row py-5">
-		<div class="col-lg-3 col-0"></div>
+		<div class="col-lg-3 col-0 order-1"></div>
 		<div class="col-lg-8 col-24 d-flex align-items-center px-0 order-2 order-lg-1">
 			<div>
 				<h2><span class="text-primary heading">Automate</span> <br>your pipeline.</h2>
@@ -125,8 +125,8 @@ draft: false
 			</div>
 
 		</div>
-		<div class="col-lg-2 col-0"></div>
-		<div class="col-lg-8 col-24 order-1 order-lg-2">
+		<div class="col-lg-2 col-0 order-lg-2"></div>
+		<div class="col-lg-8 col-24 order-1 order-lg-3">
 			<div class="bg-white rounded p-4 boxShadow pseudobox border"></div>
 		</div>
 	</div>
@@ -149,7 +149,7 @@ draft: false
 	</div>
 	<!-- 4 -->
 	<div class="row py-5">
-		<div class="col-lg-3 col-0"></div>
+		<div class="col-lg-3 col-0 order-1"></div>
 		<div class="col-lg-8 col-24 d-flex align-items-center px-0 order-2 order-lg-1">
 			<div>
 				<h2>Reach a broader <br><span class="text-primary heading">audience.</span></h2>
@@ -158,8 +158,8 @@ draft: false
 			</div>
 
 		</div>
-		<div class="col-lg-2 col-0"></div>
-		<div class="col-lg-8 col-24 px-0 order-1 order-lg-2">
+		<div class="col-lg-2 col-0 order-lg-2"></div>
+		<div class="col-lg-8 col-24 px-0 order-1 order-lg-3">
 			<div class="bg-white rounded p-4 boxShadow pseudobox border"></div>
 		</div>
 	</div>
@@ -225,5 +225,11 @@ draft: false
 		background-size: cover;
 		background-position: center top;
 		background-repeat: no-repeat;
+	}
+
+	@media only screen and (max-width: 990px) {
+		body::before {
+			top: 2000px;
+		}
 	}
 </style>
