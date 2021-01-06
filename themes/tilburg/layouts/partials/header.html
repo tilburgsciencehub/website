@@ -1,6 +1,6 @@
 {{ partial "head.html" . }}
-
-<div class="position-relative container mt-lg-5 mt-3 px-0 ">
+<div class="backdrop d-none"></div>
+<div class="position-relative container mt-lg-5 mt-3 px-0 " style="z-index: 10000;">
 	<div class="bg-white rounded boxShadow navMenu d-relative px-1 mx-3 mx-lg-0" style="position: relative;">
 		<div class="customNavbar px-4 py-3">
 			<div><a class="navbar-brand" href="/">
@@ -8,7 +8,15 @@
 				</a></div>
 				<div class="d-block d-lg-none"></div>
 			<div class="text-right d-block d-lg-none ">
-				<a href="#0" class="icon menu text-dark"></a>
+				<a href="#0" id="mobileSearchIcon">
+					<img src="/img/search.svg">
+				</a>
+				<a href="#0" style="width: 42px" class="d-inline-block" id="mobileBurgerIcon">
+					<img src="/img/burger.svg">
+				</a>
+				<a href="#0" style="width: 42px" class="d-none" id="mobileCloseMenuIcon">
+					<img src="/img/close.svg">
+				</a>
 			</div>
 			<div class="menu d-none d-lg-flex align-items-center justify-content-center">
 				<ul class="list-unstyled font-weight-normal">
@@ -116,18 +124,23 @@
 				</form>
 			</div>
 		</div>
-		<!-- mobule child menu -->
-	<div class="position-absolute bg-white border-top p-3 w-100 d-block d-lg-none rounded-bottom shadow-sm" style="z-index: 1; margin-top: -2px;left: 0">
+		<!-- mobile child menu -->
+		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileSearchMenu" style="z-index: 10; margin-top: -2px;left: 0">
+			<div style="" class="form-control mr-sm-2 headerSearch searchIconRight bg-light border-0">
+						<input class="resetInput" type="search" placeholder="Search" aria-label="Search">
+					</div>
+		</div>
+	<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileMenu" style="z-index: 10; margin-top: -2px;left: 0">
 		<!-- screen 1 -->
 		<div class="screen-1 d-none">
-			<a class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour</a>
-			<a class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Building Blocks<span
+			<a href="#0" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour</a>
+			<a href="#0" data-screen-two="mobile-building-blocks" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Building Blocks<span
 					class="icon mini-right float-right text-primary"></span> </a>
-			<a class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tutorials<span
+			<a href="#0" data-screen-two="mobile-tutorials" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tutorials<span
 					class="icon mini-right float-right text-primary"></span> </a>
-			<a class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples<span
+			<a href="#0" data-screen-two="mobile-examples" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples<span
 					class="icon mini-right float-right text-primary"></span> </a>
-			<a class="nav-link mx-0 px-3 py-3 text-dark border-bottom">About</a>
+			<a href="/about" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">About</a>
 
 			<div>
 				<a href="#0" class="btn btn-primary my-2 my-sm-0 px-4 btn-block mt-5">Contribute</a>
@@ -137,16 +150,16 @@
 		<div class="screen-2 d-none">
 			<!-- building blocks -->
 			<div id="mobile-building-blocks" class="d-none">
-				<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
+				<a href="#0" class="py-3 border-bottom d-block gotoMainMenu"><span
 					class="icon mini-left text-primary"></span> Building Blocks</a>
 
 				{{- range where .Site.Pages "Section" "building-blocks" -}}
 				{{ if eq .Params.isParent "true" }}
 				{{- range $index, $value := .Pages -}}
-				<a class="nav-link mx-0 py-2 text-dark font-weight-bold"
+				<a class="nav-link mx-0 py-2 text-dark font-weight-bold menuExpand"
 					>{{ .Title }} <span
 						class="icon mini-right float-right"></span> </a>
-				<div class="tab-pane fade {{ if eq $index 0 }} show active {{ end }}" id="{{ .Title | urlize }}"
+				<div class="tab-pane {{ if eq $index 0 }} show active {{ end }} d-none" id="{{ .Title | urlize }}"
 					role="tabpanel" aria-labelledby="v-pills-home-tab">
 					<div class="pl-4">
 						{{ range .Pages }}

@@ -34,6 +34,7 @@ $(document).mouseup(function (e) {
   }
 });
 
+
 $(".headerSearch").on("keyup", function (e) {
   const resultsHolder = $(".headerSearchResultsHolder");
   const val = e.target.value;

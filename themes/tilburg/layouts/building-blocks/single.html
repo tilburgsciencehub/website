@@ -1,14 +1,16 @@
 {{ partial "header.html" . }}
 
-<div class="container">
-  <div class="row">
-    <div class="col-7">
-      {{ .Title }}
-    </div>
-    <div class="col-17">
-      <div class="bg-white p-5 mb-5">hello world</div>
-    </div>
-  </div>
+<div class="container px-0 mt-5">
+	<div class="row justify-content-center">
+		<div class="col-lg-8 col-22">
+			<h1 style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
+		</div>
+		<article class="col-lg-16 col-22">
+			<div class="p-5 bg-white rounded mb-5">
+				{{ .Content }}
+			</div>
+		</article>
+	</div>
 </div>
 
 {{ partial "footer.html" . }}
