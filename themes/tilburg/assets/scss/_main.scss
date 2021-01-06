@@ -24,6 +24,8 @@
   }
 }
 .anchor-no-effect {
+  margin: 0 !important;
+
   &:hover {
     font-weight: 200 !important;
   }

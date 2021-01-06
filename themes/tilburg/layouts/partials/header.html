@@ -1,6 +1,6 @@
 {{ partial "head.html" . }}
 <div class="backdrop d-none"></div>
-<div class="position-relative container mt-lg-5 mt-3 px-0 " style="z-index: 10000;">
+<div class=" container mt-lg-5 mt-3 px-0 fixed-top" style="z-index: 10000;">
 	<div class="bg-white rounded boxShadow navMenu d-relative px-1 mx-3 mx-lg-0" style="position: relative;">
 		<div class="customNavbar px-4 py-3">
 			<div><a class="navbar-brand" href="/">
@@ -24,6 +24,25 @@
 			<div class="menu d-none d-xl-flex align-items-center justify-content-center">
 				<ul class="list-unstyled font-weight-normal">
 					<li><a class="headerLink" href="#0">Tour</a></li>
+					
+					<li>
+						<a href="#0" class="headerLink menuArrow">Tutorials</a>
+						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-4">
+							<div class="row">
+								{{- range where .Site.Pages "Section" "tutorials" -}}
+								{{ if eq .Params.isParent true }}
+								<div class="col-6 mb-4">
+									<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span>
+
+									{{- range .Pages -}}
+									<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
+									{{ end }}
+								</div>
+								{{ end }}
+								{{ end }}
+							</div>
+						</div>
+					</li>
 					<li>
 						<a href="/building-blocks" class="headerLink menuArrow">Building Blocks</a>
 						<div class="bg-white text-left w-100 border-top boxShadow subMenu">
@@ -57,7 +76,7 @@
 											role="tabpanel" aria-labelledby="v-pills-home-tab">
 											<div class="row">
 												{{ range .Pages }}
-												<div class="col-8 mb-4">
+												<div class="col-8">
 													<a class="anchor-no-effect" href="{{ .Permalink }}"><span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span></a>
 													{{- range .Pages -}}
 													<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
@@ -79,37 +98,19 @@
 						</div>
 					</li>
 					<li>
-						<a href="#0" class="headerLink menuArrow">Tutorials</a>
-						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-4">
-							<div class="row">
-								{{- range where .Site.Pages "Section" "tutorials" -}}
-								{{ if eq .Params.isParent true }}
-								<div class="col-6 mb-4">
-									<h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5>
-
-									{{- range .Pages -}}
-									<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
-									{{ end }}
-								</div>
-								{{ end }}
-								{{ end }}
-							</div>
-						</div>
-					</li>
-					<li>
 						<a href="/examples" class="headerLink menuArrow">Examples</a>
 						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-4">
 							<div class="row">
 								{{- range where .Site.Pages "Section" "examples" -}}
-								{{ if eq .Params.isParent true }}
+								
 								<div class="col-6 mb-4">
-									<h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5>
+									<!-- <h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5> -->
 
 									{{- range .Pages -}}
 									<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
 									{{ end }}
 								</div>
-								{{ end }}
+								
 								{{ end }}
 							</div>
 						</div>
@@ -139,9 +140,9 @@
 		<!-- screen 1 -->
 		<div class="screen-1 d-none">
 			<a href="#0" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour</a>
-			<a href="#0" data-screen-two="mobile-building-blocks" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Building Blocks<span
-					class="icon mini-right float-right text-primary"></span> </a>
 			<a href="#0" data-screen-two="mobile-tutorials" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tutorials<span
+					class="icon mini-right float-right text-primary"></span> </a>
+			<a href="#0" data-screen-two="mobile-building-blocks" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Building Blocks<span
 					class="icon mini-right float-right text-primary"></span> </a>
 			<a href="#0" data-screen-two="mobile-examples" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples<span
 					class="icon mini-right float-right text-primary"></span> </a>
