@@ -23,7 +23,11 @@
     opacity: 1
   }
 }
-
+.anchor-no-effect {
+  &:hover {
+    font-weight: 200 !important;
+  }
+}
 
 .menuExpand {
   .icon {
