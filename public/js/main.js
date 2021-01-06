@@ -59,12 +59,12 @@ $(".headerSearch").on("keyup", function (e) {
 });
 
 // detect screen size change
-$(window).resize(function() {
-  if(this.resizeTO) clearTimeout(this.resizeTO);
-  this.resizeTO = setTimeout(function() {
-      location.reload();
-  }, 500);
-});
+// $(window).resize(function() {
+//   if(this.resizeTO) clearTimeout(this.resizeTO);
+//   this.resizeTO = setTimeout(function() {
+//       location.reload();
+//   }, 500);
+// });
 
 /*
  *
@@ -72,7 +72,37 @@ $(window).resize(function() {
  *
  */
 
+$(".backdrop").on("click", function() {
+  $(".backdrop").addClass("d-none");
+  $("#mobileBurgerIcon").removeClass("d-none").addClass("d-inline-block");
+  $("#mobileMenu").addClass("d-none");
+  $(".screen-1").addClass("d-none");
+  $(".screen-2").addClass("d-none");
+  hideScreenTwoMenuItems()
+  $("#mobileSearchMenu").addClass("d-none")
+  $("#mobileCloseMenuIcon").addClass("d-none").removeClass("d-inline-block");
+  $("#mobileSearchCloseMenuIcon").addClass("d-none").removeClass("d-inline-block");
+  $("#mobileSearchIcon").removeClass("d-none");
+});
+
+$("#mobileSearchCloseMenuIcon").on("click", function() {
+  $(this).addClass("d-none").removeClass("d-inline-block")
+  $("#mobileSearchMenu").addClass("d-none")
+  $(".backdrop").removeClass("active").addClass("d-none");
+  $("#mobileSearchIcon").removeClass("d-none").addClass("d-inline-block");
+});
+
 $("#mobileSearchIcon").on("click", function() {
+
+  // check if other menu is open
+  if ($("#mobileBurgerIcon").hasClass("d-none")) {
+    $("#mobileBurgerIcon").removeClass("d-none").addClass("d-inline-block");
+    $("#mobileMenu").addClass("d-none");
+    $("#mobileCloseMenuIcon").addClass("d-none").removeClass("d-inline-block")
+  }
+
+  $(this).addClass("d-none").removeClass("d-inline-block")
+  $("#mobileSearchCloseMenuIcon").removeClass("d-none").addClass("d-inline-block");
   $(".backdrop").removeClass("d-none");
   setTimeout(function() {
     $(".backdrop").addClass("active");
@@ -81,6 +111,14 @@ $("#mobileSearchIcon").on("click", function() {
 })
 
 $("#mobileBurgerIcon").on("click", function() {
+
+  // check if other menu is open
+  if ($("#mobileSearchIcon").hasClass("d-none")) {
+    $("#mobileSearchIcon").removeClass("d-none").addClass("d-inline-block");
+    $("#mobileSearchMenu").addClass("d-none");
+    $("#mobileSearchCloseMenuIcon").addClass("d-none").removeClass("d-inline-block")
+  }
+
   $(".backdrop").removeClass("d-none");
   setTimeout(function() {
     $(".backdrop").addClass("active");
@@ -119,6 +157,13 @@ $(".screen-1 > a").on("click", function() {
     $(`#${$(this).attr("data-screen-two")}`).removeClass("d-none");
   }
 })
+
+function resetEverythingInMenu() {
+  $("#mobileSearchIcon").removeClass("d-none").addClass("d-inline-block");
+  $("#mobileBurgerIcon").removeClass("d-none").addClass("d-inline-block");
+  $("#mobileCloseMenuIcon").addClass("d-none").removeClass("d-none");
+  $("#mobileSearchCloseMenuIcon").addClass("d-none").removeClass("d-none");
+}
 
 function hideScreenTwoMenuItems() {
   $("#mobile-building-blocks").addClass("d-none");
