@@ -34,7 +34,6 @@ $(document).mouseup(function (e) {
   }
 });
 
-
 $(".headerSearch").on("keyup", function (e) {
   const resultsHolder = $(".headerSearchResultsHolder");
   const val = e.target.value;
@@ -58,6 +57,74 @@ $(".headerSearch").on("keyup", function (e) {
     resultsHolder.addClass("active");
   });
 });
+
+// detect screen size change
+$(window).resize(function() {
+  if(this.resizeTO) clearTimeout(this.resizeTO);
+  this.resizeTO = setTimeout(function() {
+      location.reload();
+  }, 500);
+});
+
+/*
+ *
+ * making mobile menu working
+ *
+ */
+
+$("#mobileSearchIcon").on("click", function() {
+  $(".backdrop").removeClass("d-none");
+  setTimeout(function() {
+    $(".backdrop").addClass("active");
+  }, 100)
+  $("#mobileSearchMenu").removeClass("d-none")
+})
+
+$("#mobileBurgerIcon").on("click", function() {
+  $(".backdrop").removeClass("d-none");
+  setTimeout(function() {
+    $(".backdrop").addClass("active");
+  }, 100)
+  $(this).addClass("d-none").removeClass("d-inline-block");
+  $("#mobileCloseMenuIcon").removeClass("d-none").addClass("d-inline-block");
+  $("#mobileMenu").removeClass("d-none");
+  $(".screen-1").removeClass("d-none");
+});
+
+$("#mobileCloseMenuIcon").on("click", function() {
+  $(".backdrop").removeClass("active").addClass("d-none");
+  $(this).addClass("d-none").removeClass("d-inline-block");
+  $("#mobileBurgerIcon").removeClass("d-none").addClass("d-inline-block");
+  $("#mobileMenu").addClass("d-none");
+  $(".screen-1").addClass("d-none");
+  $(".screen-2").addClass("d-none");
+});
+
+$(".menuExpand").on("click", function() {
+  if ($(this).next("div").hasClass("d-none")) {
+    $(this).next("div").removeClass("d-none");
+    $(this).addClass("active")
+  } else {
+    $(this).next("div").addClass("d-none");
+    $(this).removeClass("active")
+  }
+  
+});
+
+$(".screen-1 > a").on("click", function() {
+  if ($(this).attr("data-screen-two")) {
+    $(".screen-1").addClass("d-none");
+    $(".screen-2").removeClass("d-none");
+    hideScreenTwoMenuItems();
+    $(`#${$(this).attr("data-screen-two")}`).removeClass("d-none");
+  }
+})
+
+function hideScreenTwoMenuItems() {
+  $("#mobile-building-blocks").addClass("d-none");
+  $("#mobile-tutorials").addClass("d-none");
+  $("#mobile-examples").addClass("d-none");
+}
 
 $(".gotoMainMenu").on("click", function() {
   $(".screen-1").removeClass("d-none");
