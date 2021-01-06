@@ -169,7 +169,7 @@
 					<div class="pl-4">
 						{{ range .Pages }}
 						<div class="mb-4">
-							<span class="heading d-block mb-0 text-secondary" style="font-size: 16px;">{{.Title}}</span>
+							<a class="anchor-no-effect" href="{{ .Permalink }}"><span class="heading d-block mb-0 text-secondary" style="font-size: 16px;">{{.Title}}</span></a>
 							{{- range .Pages -}}
 							<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
 							{{ end }}
