@@ -6,8 +6,8 @@
 			<div><a class="navbar-brand" href="/">
 					<img src="/img/logo.svg">
 				</a></div>
-				<div class="d-block d-lg-none"></div>
-			<div class="text-right d-block d-lg-none ">
+				
+			<div class="text-right d-block d-xl-none ">
 				<a href="#0" id="mobileSearchIcon">
 					<img src="/img/search.svg">
 				</a>
@@ -21,7 +21,7 @@
 					<img src="/img/close.svg">
 				</a>
 			</div>
-			<div class="menu d-none d-lg-flex align-items-center justify-content-center">
+			<div class="menu d-none d-xl-flex align-items-center justify-content-center">
 				<ul class="list-unstyled font-weight-normal">
 					<li><a class="headerLink" href="#0">Tour</a></li>
 					<li>
@@ -148,7 +148,7 @@
 			<a href="/about" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">About</a>
 
 			<div>
-				<a href="#0" class="btn btn-primary my-2 my-sm-0 px-4 btn-block mt-5">Contribute</a>
+				<a href="#0" class="btn btn-primary my-2 px-4 btn-block mt-5">Contribute</a>
 			</div>
 		</div>
 		<!-- scren 2 -->
@@ -183,7 +183,7 @@
 				{{- end -}}
 			</div>
 			<!-- Tutorials -->
-			<div class="mobile-tutorials">
+			<div class="mobile-tutorials d-none">
 				<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
 					class="icon mini-left text-primary"></span> Tutorials</a>
 				{{- range where .Site.Pages "Section" "tutorials" -}}

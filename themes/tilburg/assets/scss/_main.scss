@@ -440,7 +440,7 @@ input {
   }
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 1340px) {
   .navMenu {
     border-radius: 0;
   }
@@ -469,10 +469,14 @@ input {
         padding-bottom: 20px;
       }
     }
+
+    .heading {
+      font-size: 18px;
+    }
   }
 
   .customNavbar {
-    grid-template-columns: 12fr 0px 12fr;
+    grid-template-columns: 12fr 12fr;
   }
 
   .h1, h1,
