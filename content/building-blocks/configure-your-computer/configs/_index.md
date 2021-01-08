@@ -1,6 +1,7 @@
 ---
 draft: false
 title: Task-specific configurations
+weight: 3
 ---
 
 # Software Setup Overview
