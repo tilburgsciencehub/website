@@ -1,16 +1,29 @@
-{{ partial "header.html" . }}
-<br><br>
-<div class="container content px-0 mt-5">
-	<div class="row justify-content-center">
-		<div class="col-lg-8 col-22">
-			<h1 style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
-		</div>
-		<article class="col-lg-16 col-22">
-			<div class="p-5 bg-white rounded mb-5">
-				{{ .Content }}
-			</div>
-		</article>
-	</div>
-</div>
+{{- partial "header.html" . -}}
 
-{{ partial "footer.html" . }}
+<div class="container content">
+  <div class="row justify-content-md-center mt-5 mb-2 py-4">
+    <div class="col-lg-12 col-24">
+      <h1 class="text-center">Tutorials</h1>
+      <p class="text-center text-secondary my-4 px-5">Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh
+        ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="row justify-content-center justify-content-lg-start">
+      {{ range where .Site.Pages "Section" "tutorials" }}
+      {{ if and (ne .Title "Tutorials") (ne .Title "") }}
+        <div class="col-lg-8 col-22 mb-4 d-flex flex-wrap">
+          <div class="bg-white p-5 text-center w-100 rounded">
+            <h4 class="heading">{{ .Title }}</h4>
+            <p class="my-3" style="color: #6081A2;">{{ .Params.description }}</p>
+            <a href="{{ .Permalink }}" class="btn btn-primary mt-5">View Example</a>
+          </div>
+        </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>
+<br><br><br>
+{{- partial "footer.html" . -}}

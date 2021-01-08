@@ -17,7 +17,7 @@
           <div class="bg-white p-5 text-center w-100 rounded">
             <h4 class="heading">{{ .Title }}</h4>
             <p class="my-3" style="color: #6081A2;">{{ .Params.description }}</p>
-            <button class="btn btn-primary mt-5">View Example</button>
+            <a href="{{ .Permalink }}" class="btn btn-primary mt-5">View Example</a>
           </div>
         </div>
       {{ end }}
