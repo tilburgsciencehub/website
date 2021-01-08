@@ -1,4 +1,8 @@
-# Makefile of the data-preparation pipeline
+---
+title: "Makefile of the data-preparation pipeline"
+date: 2021-01-06T22:01:14+05:30
+draft: false
+---
 
 Up to now, we've learnt how to run `make` in our template. But we haven't really
 learnt yet how the files in each of the particular pipeline stages are *actually*

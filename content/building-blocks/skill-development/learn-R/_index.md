@@ -5,8 +5,6 @@ draft: false
 weight: 10
 ---
 
-
-
 Chance is that sooner or later, you're going to use R - one of the (if not *the*) most popular statistical
 programming languages in the world. It's not only that R is free which makes
 it so good, but because thousands of people across the world use it, document it, and

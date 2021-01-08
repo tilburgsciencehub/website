@@ -1,4 +1,8 @@
-# Let's modify the analysis
+---
+title: "Let's modify the analysis"
+date: 2021-01-06T22:01:14+05:30
+draft: false
+---
 
 We're done with the `data-preparation` pipeline for now, and turn our
 attention to the `analysis` part of our project.

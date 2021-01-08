@@ -5,8 +5,6 @@ draft: false
 weight: 2
 ---
 
-# Python packages
-
 Anaconda's Python Distribution comes with many of the packages we need to do scientific computing. If you're interested in all the packages included, click [here](https://docs.continuum.io/anaconda/packages/pkg-docs) and go to the Python 3.x tab.
 
 Howevever, you may come across packages that are not installed by default.

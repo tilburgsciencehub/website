@@ -4,8 +4,6 @@ date: 2020-11-11T22:02:51+05:30
 draft: false
 ---
 
-# Teamviewer
-
 Getting feedback on code or solving technical problems is crucial to your learning experience.
 When working remotely, we prefer to make use of **Teamviewer**,
 which allows us to *remote-control* your computer and help you right away (while you're watching, of course!).

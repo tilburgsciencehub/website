@@ -1,4 +1,8 @@
-# Let's download the template
+---
+title: "Let's download the template"
+date: 2021-01-06T22:01:14+05:30
+draft: false
+---
 
 The workflow template is hosted on [at https://github.com/hannesdatta/textmining-workflow](https://github.com/hannesdatta/textmining-workflow). We first need to *download* (or, as Git users would say, fork and clone) the template. The template then is accessible on our local computer, and we can start modifying it.
 

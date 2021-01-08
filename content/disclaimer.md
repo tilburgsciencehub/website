@@ -4,7 +4,6 @@ date: 2020-11-11T22:01:14+05:30
 draft: false
 ---
 
-# Disclaimer
 **Tilburg Science Hub is part of Tilburg University**.
 **The information on this Tilburg Science Hub internet site has been formulated with the utmost care. This information may nevertheless contain deficiencies**.
 

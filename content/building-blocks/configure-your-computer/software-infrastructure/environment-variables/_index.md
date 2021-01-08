@@ -4,8 +4,6 @@ date: 2020-11-11T22:02:51+05:30
 draft: false
 ---
 
-# Making Path Settings Permanent
-
 For our workflow be be command line driven, we need to be able to call software from the command line.
 Whilst much of the software we have installed as automatically made this possible, it is not universally the case.
 Here we will make the extra few changes we need to complete the installation guide.

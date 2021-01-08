@@ -5,7 +5,7 @@ draft: false
 weight: 1
 ---
 
-# Part 1: Buying Equipment for Educational Videos
+# Part 1
 
 An educational video is meant for transferring knowledge to an audience. These often involve animations or presenting a slide deck. However, in most of the cases, you might want to show yourself - or the presenter - talking to the camera.
 

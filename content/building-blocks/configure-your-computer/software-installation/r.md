@@ -1,10 +1,8 @@
 ---
-title: "R"
+title: "R and RStudio"
 date: 2020-11-11T22:02:51+05:30
 draft: false
 ---
-
-# R and RStudio
 
 R is a language for statistical computing and graphics.
 R's use in the data science, econometrics and marketing communities has taken off over recent years and (at a bare minimum) should be considered as an open source replacement to Stata and SPSS.

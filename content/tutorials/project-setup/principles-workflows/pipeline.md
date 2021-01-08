@@ -5,8 +5,6 @@ draft: false
 weight: 2
 ---
 
-# Pipelines and Project Components
-
 ## Overview
 
 It is useful to break down a project into its most basic parts, which we call **pipeline** and **components**.

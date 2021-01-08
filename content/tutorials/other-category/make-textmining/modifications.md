@@ -1,4 +1,9 @@
-# More modifications, "branching", and replacing input files
+---
+title: "More modifications, branching, and replacing input files"
+date: 2021-01-06T22:01:14+05:30
+draft: false
+---
+
 
 Now let's continue with a couple of advanced modifications to our workflow. We hope these convince you about the potential efficiency gains you can expect when working on data-intensive projects!
 

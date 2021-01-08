@@ -5,8 +5,6 @@ draft: false
 weight: 6
 ---
 
-# Writing an academic paper
-
 The typical structure of an empirical paper in economics and business (or a master thesis, or a chapter of a Ph.D. thesis) involves the following sections, roughly in this order:
 
 ## Structure of your paper

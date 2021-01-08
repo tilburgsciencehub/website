@@ -1,4 +1,8 @@
-# Setting Up and Using a File Exchange
+---
+title: "Setting Up and Using a File Exchange"
+date: 2021-01-06T22:01:14+05:30
+draft: false
+---
 
 [File exchanges](../workflow/directories.md#4-file-exchange) are essential to transfer data *between different stages of your pipeline*, and between *different co-authors* working on a project.
 

@@ -5,8 +5,6 @@ draft: false
 weight: 50
 ---
 
-# Documenting Source Code and Pipeline Workflows
-
 ## Overview
 
 Documenting your project's *workflow*, not only for others, but also for your future self (i.e., if you plan to continue working on the project

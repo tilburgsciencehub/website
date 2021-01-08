@@ -1,10 +1,8 @@
 ---
-title: "Latex"
+title: "LaTeX"
 date: 2020-11-11T22:02:51+05:30
 draft: false
 ---
-
-# Latex
 
 LaTeX is a great typesetting system that includes a lot of features that allow to produce scientific documents. Many researchers use LaTeX to produce their papers and presentations, and many journals require authors to hand in their articles in a LaTeX format.
 

@@ -1,4 +1,8 @@
-# Let's verify whether everything is properly installed!
+---
+title: "Let's verify whether everything is properly installed!"
+date: 2021-01-06T22:01:14+05:30
+draft: false
+---
 
 Before we're getting started, let's verify whether you have properly followed our [setup guide](../setup) for R, Python and `make` in order
 to be able to run our workflow.

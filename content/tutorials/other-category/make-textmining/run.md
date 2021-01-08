@@ -1,4 +1,9 @@
-# Let's run the workflow
+---
+title: "Let's run the workflow"
+date: 2021-01-06T22:01:14+05:30
+draft: false
+---
+
 
 When starting to work with a template, we ideally like to see it "working" on "test data" first. In this way, we know we can extend it easily. As our template is fully automated, building should be easy - you only need to type `make`.
 

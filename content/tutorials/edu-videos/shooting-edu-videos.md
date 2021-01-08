@@ -5,7 +5,7 @@ draft: false
 weight: 2
 ---
 
-# Part 2: Shooting Educational Videos
+# Part 2
 
 In this second part of our guide you will learn about the essential steps required to shoot educational videos.
 

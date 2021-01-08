@@ -4,8 +4,6 @@ date: 2020-11-11T22:02:51+05:30
 draft: false
 ---
 
-# Command Line Tools
-
 A command-line interface or command language interpreter (CLI), also known as a terminal, is a means of interacting with a computer program where the user issues commands to the program in the form of successive lines of text (command lines).
 
 Throughout the course we will emphasize use of the terminal and executing commands within it as our modus operandi.
