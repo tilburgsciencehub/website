@@ -3,7 +3,6 @@ title: "Snakemake"
 date: 2020-11-11T22:02:51+05:30
 draft: false
 ---
-# Snakemake
 
 Snakemake is an easy to use workflow management system. Contrary to *make*, which was designed by
 computer scientists to build software, *snakemake* was designed for academic/professional research in Bioinformatics, so it may feel more intuitive for academic users.

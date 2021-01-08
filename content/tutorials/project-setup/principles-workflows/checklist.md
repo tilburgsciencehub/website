@@ -5,8 +5,6 @@ draft: false
 weight: 80
 ---
 
-# Checklist to Audit Data- and Computation-intensive Projects
-
 There is quite some material to cover to make sure your workflows
 become efficient, reproducible, and well-structured.
 

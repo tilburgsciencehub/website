@@ -1,6 +1,6 @@
 ---
 draft: false
-title: Task-specific configurations
+title: "Task-specific configurations"
 weight: 3
 ---
 

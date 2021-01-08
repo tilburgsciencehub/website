@@ -5,8 +5,6 @@ draft: false
 weight: 30
 ---
 
-# Data Management and Directory Structure
-
 ## Overview
 
 From the [previous section in this guide](pipeline.md#project-components), recall that a project can be logically structured in

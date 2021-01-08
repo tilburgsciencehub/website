@@ -1,10 +1,8 @@
 ---
-title: "Git"
+title: "Git and GitHub for Version Control"
 date: 2020-11-11T22:02:51+05:30
 draft: false
 ---
-
-# Git and GitHub for Version Control
 
 ## Installing Git and Setting Up Accounts
 

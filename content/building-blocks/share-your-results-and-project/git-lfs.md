@@ -6,8 +6,7 @@ draft: false
 
 <!-- This is a template. Please replace the content while keeping this structure.
 Make sure to read our contribution guide to learn how to submit your content to Tilburg Science Hub. -->
-
-# How to Work with Large Files on GitHub <!-- Goal of the Building Block -->
+<!-- Goal of the Building Block -->
 
 GitHub limits the size of files allowed in repositories. It warns you if you're trying to push a 50MB file, and completely stops you if the push exceed 100MB.
 

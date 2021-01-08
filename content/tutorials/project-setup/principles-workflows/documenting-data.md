@@ -5,8 +5,6 @@ draft: false
 weight: 50
 ---
 
-# Documenting Datasets
-
 ## Overview
 
 If your project contains data that has been newly created (i.e., which is not otherwise (publicly) available yet; including *derived* data sets), you are required to include a documentation of that data in your project.

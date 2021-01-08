@@ -5,8 +5,6 @@ draft: false
 weight: 60
 ---
 
-# Versioning using Git and GitHub
-
 ## Overview
 
 ### What is Git?

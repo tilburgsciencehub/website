@@ -6,8 +6,6 @@ isParent: true
 weight: 1
 ---
 
-# Principles of Project Setup and Workflow Management
-
 ## Motivation
 
 When working on a project, most of us spend time thinking about *what* to create (e.g., a cleaned data set, a new algorithm, an analysis, and/or a paper and corresponding slides), but not about how to *manage* its creation. This results in two major issues, as outlined next.

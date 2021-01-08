@@ -5,8 +5,6 @@ draft: false
 weight: 10
 ---
 
-# Guiding Principles for Coding
-
 ## 1) Write programs for people, not computers
 
 Make your code easy to understand for humans. If your code looks very complex or messy, you're probably doing it wrong.

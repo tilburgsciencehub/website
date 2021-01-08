@@ -3,7 +3,8 @@ title: "Stata"
 date: 2020-11-11T22:02:51+05:30
 draft: false
 ---
-# Installing Stata
+
+## Installing Stata
 
 Stata is a proprietary statistical software frequently used by scientific users.
 First check with your local IT support whether your institution has Stata licenses

@@ -4,8 +4,6 @@ date: 2020-11-11T22:02:51+05:30
 draft: false
 ---
 
-# Matlab
-
 MATLAB is a high-level programming language and an environment for numerical computation and visualization.
 
 The University of Zurich has a campus-wide MATLAB license available to all students and employees.

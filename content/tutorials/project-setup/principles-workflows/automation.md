@@ -5,8 +5,6 @@ draft: false
 weight: 40
 ---
 
-# Automating your Pipeline
-
 ## Overview
 
 Remember the [different stages of a project's pipeline](pipeline.md#project-pipelines)? Let's suppose

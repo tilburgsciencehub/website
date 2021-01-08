@@ -1,4 +1,8 @@
-# Tutorial to Implement an Efficient and Reproducible Workflow
+---
+title: "How to Implement an Efficient and Reproducible Workflow"
+date: 2021-01-06T22:01:14+05:30
+draft: false
+---
 
 Longing to put your knowledge from our [workflow guide](../workflow) into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our [GitHub workflow template](https://github.com/hannesdatta/textmining-workflow).
 

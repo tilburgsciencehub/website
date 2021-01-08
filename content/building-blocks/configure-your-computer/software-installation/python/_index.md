@@ -5,7 +5,7 @@ draft: false
 weight: 1
 ---
 
-# Installing Anaconda Python
+## Installing Anaconda Python
 
 Anaconda is a pre-packaged Python distribution for scientific users. To customize Python with packages and properly use it in combination with [automation tools](make.md), we prefer a *locally installed Anaconda distribution* over cloud-based alternatives.
 

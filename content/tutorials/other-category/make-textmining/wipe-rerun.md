@@ -1,4 +1,9 @@
-# Dry run and first modifications to the data preparation scripts
+---
+title: "Dry run and first modifications to the data preparation scripts"
+date: 2021-01-06T22:01:14+05:30
+draft: false
+---
+
 
 Sometimes, running a workflow may take hours, or even days. That's why `make`
 supports so-called "dry-runs", which you can initiate by typing `make -n` (for NOT run).

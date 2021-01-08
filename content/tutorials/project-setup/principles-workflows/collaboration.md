@@ -5,8 +5,6 @@ draft: false
 weight: 70
 ---
 
-# Collaborating using GitHub
-
 ## Overview
 
 While you can use Git exclusively to keep track of your files' version history,

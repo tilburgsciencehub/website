@@ -1,6 +1,7 @@
 ---
+title: "Configuring Python for Web Scraping"
+date: 2021-01-06T22:01:14+05:30
 draft: false
-title: Configuring Python for Web Scraping
 ---
 
 # Web Scraping Using an Automated Browser
