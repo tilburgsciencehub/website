@@ -27,7 +27,7 @@
 					
 					<li>
 						<a href="#0" class="headerLink menuArrow">Tutorials</a>
-						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-4">
+						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-5 px-3">
 							<div class="row">
 								{{- range where .Site.Pages "Section" "tutorials" -}}
 								{{ if eq .Params.isParent true }}
@@ -99,7 +99,7 @@
 					</li>
 					<li>
 						<a href="/examples" class="headerLink menuArrow">Examples</a>
-						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-4">
+						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-5 px-3">
 							<div class="row">
 								{{- range where .Site.Pages "Section" "examples" -}}
 								

@@ -56,11 +56,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding-top: 40px;
+  height: 100%;
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex: 1 0 auto;
+  }
+  .footer {
+    flex-shrink: 0;
+  }
 }
 
 html {
   background-color: #f0f5f9;
-
+  
   &:after {
     content: "";
     position: absolute;
@@ -309,6 +323,8 @@ footer {
     a:not(.pillx) {
       color: #6081a2 !important;
       font-family: "acumin-pro", sans-serif;
+      line-height: 26px;
+      font-size: 15px !important;
 
       &:hover {
         color: $primary !important;

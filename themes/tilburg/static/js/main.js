@@ -200,6 +200,17 @@ $(".gotoMainMenu").on("click", function() {
   $(".screen-2").addClass("d-none");
 });
 
+// select pillx on hover
+$(".pillx").hover(function() {
+  $(".pillx").removeClass("active");
+  $(this).addClass('active')
+
+  var href = $(this).attr("href");
+  $(".tab-pane").removeClass("active show")
+  $(href).addClass("active show")
+  
+})
+
 // responsive footer collapse
 $("footer .footerCollapse").on("click", function() {
   $("footer .links").addClass("d-none");
