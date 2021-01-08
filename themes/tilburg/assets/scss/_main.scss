@@ -14,6 +14,44 @@
   }
 }
 
+#TableOfContents {
+  margin-top: 20px;
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      font-size: 16px;
+      font-family: "forma-djr-display", sans-serif;
+      line-height: 24px;
+      margin-bottom: 10px;
+      a {
+        color: #003365;
+      }
+
+      ul {
+        margin-top: 10px;
+        padding-left: 15px;
+
+        li {
+          font-family: "acumin-pro", sans-serif !important;
+
+          a {
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.screen-2 {
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
 .backdrop {
   position: fixed;
   top: 0;
