@@ -16,8 +16,10 @@ with team members.
 Git "lives" on your local computer, and allows you to configure
 so-called "repositories" that track files and directories.
 
-!!! tip "Storing sensitive data"
-    Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work. Therefore, it is crucial that you __do not store any sensitive information__ in your source code (e.g., API credentials, passwords).
+{{% tip %}}
+**Storing sensitive data**
+Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work. Therefore, it is crucial that you **do not store any sensitive information** in your source code (e.g., API credentials, passwords).
+{{% /tip %}}
 
 ### What is GitHub?
 
@@ -26,14 +28,17 @@ its own "Git" services.
 
 On top of the basic features of Git (like versioning), GitHub offers a range of tools
 that allow you to collaborate with each other more efficiently. A few examples:
-- *Issues* are sort of to-do lists, flavored with a discussion board
-- *Projects* are a sort of [*Scrum board*](https://www.visual-paradigm.com/scrum/how-to-use-scrum-board-for-agile-development/).
+
+- _Issues_ are sort of to-do lists, flavored with a discussion board
+- _Projects_ are a sort of [_Scrum board_](https://www.visual-paradigm.com/scrum/how-to-use-scrum-board-for-agile-development/).
 
 ## Let's Use Git!
 
-!!! tip "Download the GitHub cheatsheet!"
+{{% tip %}}
+**Download the GitHub cheatsheet!**
 
-    There is no better summary than [this official GitHub cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf). Download it, print it out or put it on your desktop. Consider it as your best friend for a while.
+There is no better summary than [this official GitHub cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf). Download it, print it out or put it on your desktop. Consider it as your best friend for a while.
+{{% /tip %}}
 
 ### 1. Configuring Git on a new computer ([cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf) &rarr; setup)
 
@@ -54,7 +59,7 @@ git config --global user.email "[email address]"
 
 If you would like to start a new project, it's easiest to start
 your repository from one of our [example projects](../../examples).
-Just navigate to a project's GitHub page, and select *Use this template* (a green button).
+Just navigate to a project's GitHub page, and select _Use this template_ (a green button).
 Choose a name for your new repository, and proceed with the standard options.
 
 Note down the URL for your repository (e.g., `https://github.com/hannesdatta/test-hannes`), and proceed to step 2c.
@@ -87,21 +92,22 @@ will be cloned. For example, typing `git clone "https://github.com/rgreminger/ex
 
 Proceed to step 3.
 
-!!! tip
-    Ideally, you use a main project folder on your computer, pretty high-up
-    in your folder hierarchy (e.g., 'D:/projects/`). While technically feasible,
-    you should avoid storing your Git repositories on Dropbox as this may lead to synchronization conflicts.
+{{% tip %}}
+Ideally, you use a main project folder on your computer, pretty high-up
+in your folder hierarchy (e.g., 'D:/projects/`). While technically feasible,
+you should avoid storing your Git repositories on Dropbox as this may lead to synchronization conflicts.
+{{% /tip %}}
 
 ### 3. Work on your project
 
 When working on your project, you do the following two things:
+
 - track changes to your project (e.g., such as adding, removing, or changing source files),
 - synchronize your repository with GitHub, so that (a) you make a backup of your changes, and (b) you allow other team members to see your changes, and (c) you see changes that team members (may) have done.
 
 <p align="center">
   <img height="300" src="../git_workflow.png">
 </p>
-
 
 #### 3a. Track your changes ([cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf) &rarr; stage & snapshot)
 
@@ -140,51 +146,53 @@ example, which also adds a few other useful commands.
      # optionally, use git log to see the versioning history
      git log
 
-!!! tip "Exclude files from tracking"
+{{% tip %}}
+**Exclude files from tracking**
 
-    Experience shows that you want to avoid tracking specific files and folders.
-    For example, if you recall the [directory structure](directories.md) for your
-    project, there is no point in tracking *generated files* in `/gen`, as these
-    files are purely created based on source code in `/src` (which, in
-    turn, you *do* would like to track).
+Experience shows that you want to avoid tracking specific files and folders.
+For example, if you recall the [directory structure](directories.md) for your
+project, there is no point in tracking _generated files_ in `/gen`, as these
+files are purely created based on source code in `/src` (which, in
+turn, you _do_ would like to track).
 
-    You can exclude files and directories from tracking by putting a textfile
-    called `.gitignore` in your project's root directory.
+You can exclude files and directories from tracking by putting a textfile
+called `.gitignore` in your project's root directory.
 
-    Check out a few example `.gitignore` files for [inspiration](https://github.com/rgreminger/example-make-workflow/blob/master/.gitignore), or copy-paste
-    the following to your own `.gitignore`:
+Check out a few example `.gitignore` files for [inspiration](https://github.com/rgreminger/example-make-workflow/blob/master/.gitignore), or copy-paste
+the following to your own `.gitignore`:
 
-        **/rbin/
-        **/raw/
-        *RData
-        *pdf
-        **/audit
-        **/input
-        **/output
-        **/temp
-        **/zip
-        *csv
-        *xlsx
-        *~*
-        *log
-        *.Rhistory
-        **/exports
-        **.ipynb_checkpoints
-        **__pycache__
-        *.log
-        slides/*.gz
-        slides/*.snm
-        slides/*.toc
-        slides/*.nav
-        slides/*.out
-        slides/*.aux
-        .RProfile
+    **/rbin/
+    **/raw/
+    *RData
+    *pdf
+    **/audit
+    **/input
+    **/output
+    **/temp
+    **/zip
+    *csv
+    *xlsx
+    *~*
+    *log
+    *.Rhistory
+    **/exports
+    **.ipynb_checkpoints
+    **__pycache__
+    *.log
+    slides/*.gz
+    slides/*.snm
+    slides/*.toc
+    slides/*.nav
+    slides/*.out
+    slides/*.aux
+    .RProfile
 
+{{% /tip %}}
 
 #### 3b. Synchronize your changes with a server (e.g., GitHub; [cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf) &rarr; share & update)
 
-   Everyone can sync their local changes with the remote repository on GitHub.
-   You can also "download" changes to your local repository from the remote repository.
+Everyone can sync their local changes with the remote repository on GitHub.
+You can also "download" changes to your local repository from the remote repository.
 
      # (1) DOWNLOAD AND MERGE CHANGES
 
@@ -233,26 +241,25 @@ Want to know more about how to use Git? Check out the lessons at [software carpe
 and make use of the [cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf) throughout your work. Also, our friends at
 the University of Zurich have a [fantastic tutorial on using Git](https://github.com/pp4rs/2020-uzh-course-material/blob/master/11-version-control/slides/git-local.pdf).
 
-!!! summary "Summary"
-    The Figure below summarizes typical Git/GitHub workflows.
+{{% summary %}}
+The Figure below summarizes typical Git/GitHub workflows.
 
-    <p align="center">
-      <img height="380" src="../git.png">
-    </p>
+<p align="center">
+  <img height="380" src="../git.png">
+</p>
 
-    1. We distinguish between **local** and **remote** repositories.
-        - Each project can consist of multiple local repositories, which are stored on one or many computers (e.g., your desktop PC, your laptop, a computer in a cloud, or computers by team members).
-        - Each project typically has one remote repository (e.g., hosted on GitHub), which is used to backup and synchronize changes between multiple computers.
-    2. Each project has a "working tree" (your project's main directory) - by default, all files in that working directory can be tracked.
-    3. Workflow to version your files
-        - Run `git status` to see which files are staged (green), and which ones are not (red)
-        - Add files to the 'staging area', using the command `git add`
-        - Run `git status` to verify you have tracked everything you want.
-        - See files and/or directories that you never want to track? Add those to a `.gitignore` file (typically data files, or generated output files)
-        - Finalize your "save" by running `git commit -m "give yourself a clear message "`, which will commit any changes to your project's history.
-    4. Workflow to synchronize changes with a remote repository
-        - Run `git pull`; alternatively, first run `git fetch` and then `git merge`
-        - Push (`git push`) your own local changes to the repository (so that others see your changes)
-    5. Other useful commands
-        - Use `git checkout` to switch branches
-        - Use `git clone` to clone repositories from GitHub
+1. We distinguish between **local** and **remote** repositories.
+   - Each project can consist of multiple local repositories, which are stored on one or many computers (e.g., your desktop PC, your laptop, a computer in a cloud, or computers by team members).
+   - Each project typically has one remote repository (e.g., hosted on GitHub), which is used to backup and synchronize changes between multiple computers.
+2. Each project has a "working tree" (your project's main directory) - by default, all files in that working directory can be tracked.
+3. Workflow to version your files
+   - Run `git status` to see which files are staged (green), and which ones are not (red)
+   - Add files to the 'staging area', using the command `git add`
+   - Run `git status` to verify you have tracked everything you want.
+   - See files and/or directories that you never want to track? Add those to a `.gitignore` file (typically data files, or generated output files)
+   - Finalize your "save" by running `git commit -m "give yourself a clear message "`, which will commit any changes to your project's history.
+4. Workflow to synchronize changes with a remote repository
+   - Run `git pull`; alternatively, first run `git fetch` and then `git merge`
+   - Push (`git push`) your own local changes to the repository (so that others see your changes)
+5. Other useful commands - Use `git checkout` to switch branches - Use `git clone` to clone repositories from GitHub
+   {{% /summary %}}
