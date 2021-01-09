@@ -1,12 +1,3 @@
-<div id="breadcrumbs " class="d-none">
-    <a href="/"><img src="/img/home.svg" /></a>
-    {{ range (split .RelPermalink "/") }}
-        {{ if gt (len . ) 0 }}
-            <img src="/img/chevron-right.svg"> <a href="/{{ . }}">{{ humanize (replace . "posts" "blog") }}</a>
-        {{ end }}
-    {{ end }}
-</div>
-
 {{ $siteUrl := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
 {{ $.Scratch.Add "sitePath" .Site.BaseURL }}
 
