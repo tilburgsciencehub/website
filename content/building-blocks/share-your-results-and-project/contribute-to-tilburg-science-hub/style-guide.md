@@ -4,8 +4,6 @@ draft: false
 weight: 1
 ---
 
-# Style and writing guide
-
 ## Develop content for our target audience
 
 When contributing content to our platform, please address at least one of our target groups.
@@ -25,6 +23,7 @@ Our platform focuses on __usability__ (i.e., ability to quickly copy-paste code 
 Our platform is a (classical) two-sided market.
 
 1. We attract __novice and expert users__ that *use* our content in their work, and
+
 2. We build a __community of content creators__ that have an outspoken vision on how to conduct science efficiently.
 
 All of our content is licensed under the Creative Commons License, CC-BY-NC 4.0. In other words, it can be reused by anybody for non-commercial purposes, but needs to be properly cited.
