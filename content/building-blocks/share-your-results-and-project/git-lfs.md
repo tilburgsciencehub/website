@@ -1,5 +1,7 @@
 ---
 title: "How to Work with Large Files on GitHub"
+description: "GitHub limits the size of files allowed in repositories. Use Git-LFS, an open-source Git extension for "large file storage."
+keywords: github, git-lfs, large files, versioning, organizing
 date: 2021-01-06T22:01:14+05:30
 draft: false
 ---
@@ -78,8 +80,5 @@ git push origin master
 
 You can follow [this tutorial by Atlassian](https://www.atlassian.com/git/tutorials/git-lfs) for more advanced use cases, like moving a LFS repository between hosts or deleting local LFS files.
 
-## Keywords
-
-github, git-lfs, large files, versioning, organizing
 <!-- For example: ‘devising and organizing the project’,
 ‘data collection’, ‘data analysis’ and ‘article writing’. -->
