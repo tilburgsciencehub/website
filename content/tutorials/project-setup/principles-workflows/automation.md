@@ -17,7 +17,7 @@ other stages of your project pipeline (e.g., such as the analysis).
 
 This workflow for your specific pipeline can be visualized as follows:
 
-![Workflow](make_flowchart.png)
+![Workflow](../make_flowchart.png)
 
 Using so-called "build tools" such as [`make`](../setup/make.md), we can
 specify

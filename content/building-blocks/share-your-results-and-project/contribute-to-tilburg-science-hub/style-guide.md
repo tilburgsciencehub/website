@@ -1,7 +1,9 @@
 ---
-title: "Style and writing guide"
-draft: false
+title: "Style and Writing Guide"
+description: "When contributing content to our platform, please follow our style and writing guidelines."
+keywords: "style, styling, guideline, writing"
 weight: 1
+draft: false
 ---
 
 ## Develop content for our target audience

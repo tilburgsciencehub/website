@@ -138,7 +138,7 @@ It's time to finally build your project! See our overview chart below,
 which illustrates how different stages of your pipeline use
 different project components.
 
-![Workflow overview](./workflow.png)
+![Workflow overview](../workflow.png)
 
 !!! summary "Written explanation of the workflow"
     1. **Stage 1 - Prepare raw data**: In the first stage of the pipeline, we use a workstation with relatively large memory
