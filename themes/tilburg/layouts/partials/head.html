@@ -7,6 +7,9 @@
 	{{ $style := resources.Get "scss/bootstrap.scss" | toCSS | minify | fingerprint }}
 	<link rel="stylesheet" href="{{ $style.Permalink }}" emotion="🤩">
 	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
+	{{- if .Params.keywords -}}
+	<meta name="Keywords" content="{{ .Params.keywords }}">
+	{{- end -}}
 	<title>Tilburg Science Project</title>
 </head>
 

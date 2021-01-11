@@ -1,8 +1,28 @@
-<div id="breadcrumbs">
-    <a href="/"><img src="/img/home.svg" /></a>
-    {{ range (split .RelPermalink "/") }}
-        {{ if gt (len . ) 0 }}
-            <img src="/img/chevron-right.svg"> <a href="/{{ . }}">{{ humanize (replace . "posts" "blog") }}</a>
-        {{ end }}
-    {{ end }}
-</div>
+{{ $siteUrl := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+{{ $.Scratch.Add "sitePath" .Site.BaseURL }}
+
+{{ $.Scratch.Add "siteBreadcrumbs" (slice (dict "url" .Site.BaseURL "name" "home" "position" 1 )) }}
+{{ range $index, $element := split $siteUrl "/" }}
+{{ $.Scratch.Add "sitePath" $element }}
+{{ $.Scratch.Add "sitePath" "/" }}
+{{ if ne $element "" }}
+{{ $.Scratch.Add "siteBreadcrumbs" (slice (dict "url" ($.Scratch.Get "sitePath") "name" . "position" (add $index 2))) }}
+{{ end }}
+{{ end }}
+
+<nav class="breadcrumbs">
+	{{ $.Scratch.Set "counter" 0 }}
+  {{ range $.Scratch.Get "siteBreadcrumbs" }}
+  	{{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
+	  {{ if eq .name "home" }}
+	  	<a href="/"><img src="/img/home.svg" /></a>
+	  {{ else }}
+	  <a href="{{ .url }}" style="color: #6081A2;">{{ humanize .name }}</a>
+	  {{ end }}
+	  
+	  {{ if gt (len ($.Scratch.Get "siteBreadcrumbs")) ($.Scratch.Get "counter") }}
+	  <img src="/img/chevron-right.svg">
+	  {{ end }}
+  {{ end }}
+    
+</nav>

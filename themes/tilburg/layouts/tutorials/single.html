@@ -7,10 +7,16 @@
 	<div class="row justify-content-center">
 		<div class="col-lg-8 col-22">
 			<h1 style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
+
+			<div>
+				{{ .TableOfContents }}
+			</div>
 		</div>
 		<article class="col-lg-16 col-22">
 			<div class="p-5 bg-white rounded mb-5">
 				{{ .Content }}
+
+				{{with .Site.RegularPages.Next . }} <a href="{{.RelPermalink}}">Next Page</a> {{ end }}
 			</div>
 		</article>
 	</div>
