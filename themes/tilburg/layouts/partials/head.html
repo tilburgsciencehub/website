@@ -8,6 +8,9 @@
 	<link rel="stylesheet" href="{{ $style.Permalink }}" emotion="🤩">
 	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
 	<title>Tilburg Science Hub</title>
+	{{- if .Params.keywords -}}
+	<meta name="Keywords" content="{{ .Params.keywords }}">
+	{{- end -}}
 </head>
 
 <body>

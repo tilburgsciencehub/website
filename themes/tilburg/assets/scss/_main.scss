@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #003365;
@@ -12,6 +14,55 @@
   a {
     color: #6081A2 !important;
   }
+}
+
+pre {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #F0F5F9;
+  color: #003365;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 26px 0;
+}
+
+#TableOfContents {
+  margin-top: 20px;
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      font-size: 16px;
+      font-family: "forma-djr-display", sans-serif;
+      line-height: 24px;
+      margin-bottom: 10px;
+      a {
+        color: #003365;
+      }
+
+      ul {
+        margin-top: 10px;
+        padding-left: 15px;
+
+        li {
+          font-family: "acumin-pro", sans-serif !important;
+
+          a {
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.screen-2 {
+  max-height: 80vh;
+  overflow-y: scroll;
 }
 
 .backdrop {
@@ -526,6 +577,7 @@ input {
   border-radius: 8px;
   font-size: 16px !important;
   line-height: 24px;
+  margin: 26px 0;
 
   p, ol {
     margin-bottom: 0;
