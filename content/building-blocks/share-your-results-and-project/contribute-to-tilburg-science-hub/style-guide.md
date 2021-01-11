@@ -41,9 +41,9 @@ Ideally, TSH is ranked high on search engines to attract new users. It also beco
 
 ## Specific instructions
 
-### Adapt our style of communication
+### Adopt our style of communication
 
-We are glossy and nerdy. We are competent and helpful. We seek to cheerfully inform. We are component.
+We are glossy and nerdy. We are welcoming, competent and helpful. We seek to cheerfully inform our users. We communicate concisely.
 
 Will you blend in?
 
@@ -94,3 +94,19 @@ Summary
 Summary
 
 {{% /example %}}
+
+#### Writing tips
+
+- Use the second person ("you") when speaking to our or talking about our users
+- Content creators may refer to themselves in the first person ("I" in single-author articles, or "we" in multiple-author articles). Do remember to keep the focus on our users.
+- We encourage the use of contractions: e.g., it’s, you’ll, you’re, we’re, let’s.
+- We prefer shorter words over longer alternatives.
+  - e.g., "helps" is better than "facilitates"
+  - e.g., "uses" is better than "utilizes"
+- Use an active voice wherever possible.
+- Write conversationally: Prepositions are okay to end sentences with. And another thing. You can even start sentences with "And" or "But."
+- Be informal, but being clear is more important than being entertaining!
+- Get to the point fast.
+- Frame sentences positively: use positive language (e.g., be more efficient, write better code...), rather than negative language (e.g., avoid mistakes...).
+- Avoid slang
+- Avoid jargon. We know it's difficult for you academics out there.
