@@ -13,7 +13,7 @@ When starting to work with a template, we ideally like to see it "working" on "t
 
 So let's go ahead by first watching our demo on what happens if you run `make` in our template's main directory. Then, you can proceed to our practice questions.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MTjfHnSShfg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube MTjfHnSShfg >}}
 
 !!! questions "Practice questions and answers"
 
@@ -27,4 +27,4 @@ So let's go ahead by first watching our demo on what happens if you run `make` i
 
 ## Watch the solutions here
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8TioIL9VEmE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube 8TioIL9VEmE >}}

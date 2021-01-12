@@ -26,4 +26,4 @@ Please first try to answer our questions below, and then watch our solutions.
 
 ## Watch the solutions here
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PyoJ7RUfwds" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube PyoJ7RUfwds >}}

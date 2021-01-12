@@ -44,4 +44,4 @@ In question #2 above, we've "branched out" to understand the implications of mod
 
 ## Watch the solutions to all questions here
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IjHKc6oOIUU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube IjHKc6oOIUU >}}

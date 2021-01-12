@@ -13,7 +13,7 @@ You can access the workflow template from [here](https://github.com/hannesdatta/
 
 Watch our video to learn about the two ways of downloading a template. After that, work through the set of practice questions.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0rxHQQUNR1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube 0rxHQQUNR1o >}}
 
 {{% warning %}}
 **Clone/download the files where you have writing rights.**
@@ -34,4 +34,4 @@ Watch our video to learn about the two ways of downloading a template. After tha
 
 ## Watch our solutions here
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ybJOCS9pDYA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube ybJOCS9pDYA >}}

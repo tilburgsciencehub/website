@@ -52,4 +52,4 @@ Now, you're ready to work on the practice questions. Enjoy!
 
 ## Watch the solutions here
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EgiLBt1njo4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube EgiLBt1njo4 >}}
