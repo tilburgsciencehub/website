@@ -27,8 +27,32 @@ pre {
   margin: 26px 0;
 }
 
-#TableOfContents {
+.sticky-top {
   top: 160px;
+}
+
+.TableOfContents {
+
+  position: relative;
+
+  #TableOfContents {
+    padding: 10px 0 0 10px;
+  }
+
+  .pseudo-btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      cursor: pointer;
+
+      &.active {
+        display: none !important;
+      }
+    }
+
+  
   margin-top: 20px;
   ul {
     list-style: none;
@@ -540,6 +564,33 @@ input {
 }
 
 @media only screen and (max-width: 1340px) {
+
+  .sticky-top {
+    top: 0px;
+  }
+
+  .TableOfContents {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 18px 0;
+    height: 56px;
+    overflow: hidden;
+
+    &:after {
+      content: "\e92e";
+      font-family: "icomoon";
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      color: $secondary;
+    }
+
+    nav { 
+      margin: 0;
+    }
+  }
+
   .navMenu {
     border-radius: 0;
   }

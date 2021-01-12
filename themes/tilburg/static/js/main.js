@@ -24,12 +24,15 @@ $(".headerLink").hover(function () {
 });
 
 $(document).ready(function() {
-  // console.log("i am here")
-  // // fix table of content
-  // const tableOfContent = $("#TableOfContents")
-  // const topDistance = tableOfContent.getBoundingClientRect().top;
-  // alert(topDistance)
-  // tableOfContent.css("top", topDistance)
+  $(".pseudo-btn").on("click", function() {
+    $(this).addClass("active");
+    $(".TableOfContents").css("height", "auto");
+  });
+
+  $(".TableOfContents a").on("click", function() {
+    $(".pseudo-btn").removeClass("active")
+    $(".TableOfContents").css("height", "56px");
+  })
 });
 
 $(document).mouseup(function (e) {
