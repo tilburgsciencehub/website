@@ -17,7 +17,7 @@
 	  {{ if eq .name "home" }}
 	  	<a href="/"><img src="/img/home.svg" /></a>
 	  {{ else }}
-	  <a href="{{ .url }}" style="color: #6081A2;">{{ humanize .name }}</a>
+	  <a href="{{ .url }}" style="color: #6081A2;">{{ humanize .name | title }}</a>
 	  {{ end }}
 	  
 	  {{ if gt (len ($.Scratch.Get "siteBreadcrumbs")) ($.Scratch.Get "counter") }}
