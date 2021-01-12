@@ -53,8 +53,12 @@
 								    	{{ range .Pages }}
 								    	<div class="col-6 mb-4">
 								    		<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span>
-								    		{{ range .Pages }}
-								    			<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
+												{{ range .Pages }}
+													{{ if eq .Params.indexexclude "true" }}
+													<!--<a class="d-block mx-0" href="{{.Permalink}}">DONOTSHOW{{.Title}}</a>-->
+													{{ else }}
+													<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
+													{{ end }}
 								    		{{ end }}
 								    		</div>
 								    	{{ end }}

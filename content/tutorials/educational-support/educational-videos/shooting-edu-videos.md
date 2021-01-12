@@ -1,8 +1,11 @@
 ---
 title: "Shooting Educational Videos"
+description: ""
+keywords: ""
 date: 2021-01-06T22:01:14+05:30
 draft: false
-weight: 2
+weight: 3
+indexexclude: "true"
 ---
 
 # Part 2
