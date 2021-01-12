@@ -1,7 +1,9 @@
 ---
-title: "How to Implement an Efficient and Reproducible Workflow"
+tutorialtitle: "Implement an Efficient and Reproducible Workflow"
+title: "Implement an Efficient and Reproducible Workflow"
 date: 2021-01-06T22:01:14+05:30
 draft: false
+weight: 1
 ---
 
 Longing to put your knowledge from our [workflow guide](../workflow) into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our [GitHub workflow template](https://github.com/hannesdatta/textmining-workflow).
@@ -42,20 +44,20 @@ Longing to put your knowledge from our [workflow guide](../workflow) into practi
 
         When installing the packages, R may ask you to select a "CRAN-Mirror". This is the location of the package repository from which R seeks to download the packages. Either pick `0-Cloud`, or manually choose any of the location nearest to your current geographical location.
 
-        !!! warning "R 4.0"
+{{% warning %}}
+  **R 4.0**.
+  Newer versions of R (>=R 4.0) may require you to download additional packages.
 
-            Newer versions of R (>=R 4.0) may require you to download additional packages.
+  ```
+  install.packages(c("rlang", "pillar"))
+  ```
 
-            ```
-            install.packages(c("rlang", "pillar"))
-            ```
+  - If you're being asked whether to build these packages from source or not [options: yes/no], select NO.
 
-            - If you're being asked whether to build these packages from source or not [options: yes/no], select NO.
+  - If you're being asked to install RTools, please do follow these installation instructions.
+{{% /warning %}}
 
-            - If you're being asked to install RTools, please do follow these installation instructions.
-
-
-    -	[GNU Make](../setup/make.md)
+  -	[GNU Make](../setup/make.md)
 
 - Familiarity with our [workflows](../workflow), in particular on [pipelines and project components](../workflow/pipeline.md), [directory structure](../workflow/directories.md) and [pipeline automation](../workflow/automation.md).
 

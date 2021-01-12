@@ -1,11 +1,11 @@
 ---
+tutorialtitle: "Educational Videos"
 title: "Educational Videos"
 description: ""
 keywords: ""
 weight: 1
 date: 2020-11-11T22:01:14+05:30
 draft: false
-isParent: true
 ---
 
 ## Overview

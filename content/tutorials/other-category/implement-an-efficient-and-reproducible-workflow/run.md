@@ -1,9 +1,13 @@
 ---
-title: "Let's run the workflow"
+tutorialtitle: "Principles of Project Setup and Workflow Management"
+indexexclude: "true"
+weight: 4
+title: "Running the Workflow"
 date: 2021-01-06T22:01:14+05:30
 draft: false
 ---
 
+## Let's run the workflow
 
 When starting to work with a template, we ideally like to see it "working" on "test data" first. In this way, we know we can extend it easily. As our template is fully automated, building should be easy - you only need to type `make`.
 
@@ -21,6 +25,6 @@ So let's go ahead by first watching our demo on what happens if you run `make` i
 
     4) Can you reconstruct what has just happened when running `make`, by looking at the `makefile` in the main directory? Imagine you're arriving at the crime scene, and all you see is that file. Be a detective and start your investigation!
 
-    **Watch the solutions here.**
+## Watch the solutions here
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/8TioIL9VEmE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8TioIL9VEmE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

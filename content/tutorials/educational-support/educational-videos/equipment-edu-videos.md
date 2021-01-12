@@ -1,4 +1,5 @@
 ---
+tutorialtitle: "Educational Videos"
 title: "Buying Equipment for Educational Videos"
 description: ""
 keywords: ""

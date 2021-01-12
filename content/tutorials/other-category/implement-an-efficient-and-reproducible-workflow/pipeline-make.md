@@ -1,8 +1,13 @@
 ---
-title: "Makefile of the data-preparation pipeline"
+tutorialtitle: "Principles of Project Setup and Workflow Management"
+indexexclude: "true"
+weight: 5
+title: "Inspecting the Data-preparation Pipeline"
 date: 2021-01-06T22:01:14+05:30
 draft: false
 ---
+
+## Makefile of the data-preparation pipeline
 
 Up to now, we've learnt how to run `make` in our template. But we haven't really
 learnt yet how the files in each of the particular pipeline stages are *actually*
@@ -19,6 +24,6 @@ Please first try to answer our questions below, and then watch our solutions.
     2) Now let's inspect the full file names (i.e., file name *and* directory names). Mostly,
     the directories start with `../..`. Can you explain why that is? What is really happening here?
 
-    **Watch the solutions here.**
+## Watch the solutions here
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/PyoJ7RUfwds" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PyoJ7RUfwds" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

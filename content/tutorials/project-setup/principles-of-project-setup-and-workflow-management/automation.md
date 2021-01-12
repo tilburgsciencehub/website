@@ -1,4 +1,6 @@
 ---
+tutorialtitle: "Principles of Project Setup and Workflow Management"
+indexexclude: "true"
 title: "Automating your Pipeline"
 date: 2020-11-11T22:01:14+05:30
 draft: false
