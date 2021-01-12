@@ -23,6 +23,15 @@ $(".headerLink").hover(function () {
   }
 });
 
+$(document).ready(function() {
+  // console.log("i am here")
+  // // fix table of content
+  // const tableOfContent = $("#TableOfContents")
+  // const topDistance = tableOfContent.getBoundingClientRect().top;
+  // alert(topDistance)
+  // tableOfContent.css("top", topDistance)
+});
+
 $(document).mouseup(function (e) {
   const container = $(
     ".subMenu, .headerSearchResultsHolder, .buildingBlocksSuggestions"

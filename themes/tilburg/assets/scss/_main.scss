@@ -28,6 +28,7 @@ pre {
 }
 
 #TableOfContents {
+  top: 160px;
   margin-top: 20px;
   ul {
     list-style: none;
@@ -49,13 +50,23 @@ pre {
         li {
           font-family: "acumin-pro", sans-serif !important;
 
-          a {
-            &:hover {
-              color: $primary;
-            }
-          }
+          
         }
       }
+    }
+  }
+  h5 {
+    a {
+    color: $secondary !important;
+    &:hover {
+      color: $primary !important;
+    }
+  }
+  }
+  a {
+    color: $secondary !important;
+    &:hover {
+      color: $primary !important;
     }
   }
 }
