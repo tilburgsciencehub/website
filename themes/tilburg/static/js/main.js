@@ -23,6 +23,18 @@ $(".headerLink").hover(function () {
   }
 });
 
+$(document).ready(function() {
+  $(".pseudo-btn").on("click", function() {
+    $(this).addClass("active");
+    $(".TableOfContents").css("height", "auto");
+  });
+
+  $(".TableOfContents a").on("click", function() {
+    $(".pseudo-btn").removeClass("active")
+    $(".TableOfContents").css("height", "56px");
+  })
+});
+
 $(document).mouseup(function (e) {
   const container = $(
     ".subMenu, .headerSearchResultsHolder, .buildingBlocksSuggestions"

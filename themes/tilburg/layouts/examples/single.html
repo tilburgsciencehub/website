@@ -6,11 +6,16 @@
 <div class="container content px-0 mt-5">
 	<div class="row justify-content-center">
 		<div class="col-lg-8 col-22">
-			<h1 style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
-
-			<div>
-				{{ .TableOfContents }}
+			<div class="sticky-top">
+				<h1 style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
+				{{ if .TableOfContents }}
+				<div class="TableOfContents">
+					<div class="pseudo-btn"></div>
+					{{ .TableOfContents }}
+				</div>
+				{{ end }}
 			</div>
+			
 		</div>
 		<article class="col-lg-16 col-22">
 			<div class="p-5 bg-white rounded mb-5">
