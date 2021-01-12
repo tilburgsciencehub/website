@@ -32,7 +32,8 @@ pre {
 }
 
 .TableOfContents {
-
+  margin-top: 50px;
+  margin-bottom: 20px;
   position: relative;
 
   #TableOfContents {
@@ -53,10 +54,14 @@ pre {
     }
 
   
-  margin-top: 20px;
+  
   ul {
     list-style: none;
     padding: 0;
+
+    li:last-child {
+      margin-bottom: 0;
+    }
 
     li {
       font-size: 16px;
@@ -573,17 +578,31 @@ input {
     background-color: #fff;
     border-radius: 4px;
     padding: 10px;
-    margin: 18px 0;
     height: 56px;
     overflow: hidden;
 
-    &:after {
-      content: "\e92e";
+    span.arrow-icon{
       font-family: "icomoon";
       position: absolute;
       right: 20px;
-      top: 20px;
+      top: 18px;
+      display: inline-block;
       color: $secondary;
+      transition: all 0.3s ease;
+
+      &:before {
+        content: "\e92e";
+      }
+    }
+
+    &.active {
+      span.arrow-icon {
+        transform: rotate(180deg);
+        &:before {
+          content: "\e92e";
+
+        }
+      }
     }
 
     nav { 
