@@ -27,11 +27,19 @@ $(document).ready(function() {
   $(".pseudo-btn").on("click", function() {
     $(this).addClass("active");
     $(".TableOfContents").css("height", "auto");
+    $(".TableOfContents").addClass("active");
   });
 
   $(".TableOfContents a").on("click", function() {
     $(".pseudo-btn").removeClass("active")
     $(".TableOfContents").css("height", "56px");
+    $(".TableOfContents").removeClass("active");
+  })
+
+  $(".TableOfContents span.arrow-icon").on("click", function() {
+    $(".pseudo-btn").removeClass("active")
+    $(".TableOfContents").css("height", "56px");
+    $(".TableOfContents").removeClass("active");
   })
 });
 
