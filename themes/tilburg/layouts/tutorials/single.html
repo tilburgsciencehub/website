@@ -9,11 +9,25 @@
 			<div class="sticky-top">
 				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
 
-			<div class="TableOfContents">
-				<span class="arrow-icon"></span>
-				<div class="pseudo-btn d-block d-lg-none"></div>
-				{{ .TableOfContents }}
-			</div>
+				<div class="TableOfContents">
+					<span class="arrow-icon"></span>
+					<div class="pseudo-btn d-block d-lg-none"></div>
+					{{ $currentTitle := .Title }}
+					{{ with .CurrentSection }}
+					{{ range .Pages }}
+						{{ if eq .Title $currentTitle }}
+						<h5 class="text-secondary"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+							
+								{{ .TableOfContents }}
+							
+						{{ else }}
+						<h5 class="text-secondary"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+						{{ end }}
+					{{ end }}
+				{{ end }}
+				</div>		
+						
+			
 			</div>
 			
 		</div>
