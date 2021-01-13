@@ -67,7 +67,7 @@ pre {
       font-size: 16px;
       font-family: "forma-djr-display", sans-serif;
       line-height: 24px;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       a {
         color: #003365;
       }
@@ -86,16 +86,16 @@ pre {
   }
   h5 {
     a {
-    color: $secondary !important;
+    color: $secondary;
     &:hover {
-      color: $primary !important;
+      color: $primary;
     }
   }
   }
   a {
-    color: $secondary !important;
+    color: $secondary;
     &:hover {
-      color: $primary !important;
+      color: $primary;
     }
   }
 }
@@ -541,7 +541,9 @@ footer {
   .footerCollapse {
   }
 }
-
+.text-primary {
+  color: $primary !important;
+}
 p {
   font-size: 18px;
   line-height: 26px;
