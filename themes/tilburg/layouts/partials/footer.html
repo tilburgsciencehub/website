@@ -30,7 +30,7 @@
 						{{- range where .Site.Pages "Section" "tutorials" -}}
 						{{ if eq .Params.isParent true }}
 						{{- range $index, $value := .Pages -}}
-						{{ if ne .Params.indexexclude true }}
+						{{ if ne .Params.indexexclude "true" }}
 						<a href="{{ .Permalink }}">{{ .Title }}</a>
 						{{ end }}
 						{{- end -}}
