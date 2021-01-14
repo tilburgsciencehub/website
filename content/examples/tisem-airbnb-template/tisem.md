@@ -7,4 +7,23 @@ keywords: "tisem, airbnb, template, example"
 weight: 1
 ---
 
-Hello
+{{% codeblock %}}
+
+```js
+// some js code
+var name = "Arvind Singh";
+
+if (name == "arvind") {
+	console.log("testing out coding blck");
+}
+```
+
+```bash
+# some bash code
+# make-files.txt
+touch test/john.txt
+touch test/mike.txt
+touch test/jenna.txt
+```
+
+{{% /codeblock %}}
