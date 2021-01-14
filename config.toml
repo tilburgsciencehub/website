@@ -2,8 +2,28 @@ baseURL = "https://tsh-website.netlify.app/"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "tilburg"
+pygmentsUseClasses=true
 
 [outputs]
   home = ["HTML", "AMP", "RSS"]
   page = ["HTML", "JSON"]
   section = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = false
+      xhtml = false
