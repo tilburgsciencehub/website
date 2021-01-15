@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collect your data on My New Hugo Site</title>
+    <link>https://tsh-website.netlify.app/building-blocks/collect-your-data/</link>
+    <description>Recent content in Collect your data on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="https://tsh-website.netlify.app/building-blocks/collect-your-data/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

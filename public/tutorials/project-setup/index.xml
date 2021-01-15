@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project Setup on My New Hugo Site</title>
+    <link>https://tsh-website.netlify.app/tutorials/project-setup/</link>
+    <description>Recent content in Project Setup on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="https://tsh-website.netlify.app/tutorials/project-setup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Principles of Project Setup and Workflow Management</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/principles-overview/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/principles-overview/</guid>
+      <description>Motivation When working on a project, most of us spend time thinking about what to create (e.g., a cleaned data set, a new algorithm, an analysis, and/or a paper and corresponding slides), but not about how to manage its creation. This results in two major issues, as outlined next.
+!!! important &amp;ldquo;Major issues in managing data-intensive projects&amp;rdquo;
+- we may lose sight of the project (&amp;quot;directory and file chaos&amp;quot;) - Gradually, we write code and edit data sets, and put those files somewhere on our computer.</description>
+    </item>
+    
+    <item>
+      <title>Pipelines and Project Components</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/pipeline/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/pipeline/</guid>
+      <description>Overview It is useful to break down a project into its most basic parts, which we call pipeline and components.
+ A pipeline refers to the steps that are necessary to build a project (e.g., prepare dataset, run model, produce tables and figures), and Components refer to a project&amp;rsquo;s most nuclear building blocks (e.g., data, source code, and generated temporary and/or output files).  Later on, you will see that such a structure enables you to work on your project using multiple computers (e.</description>
+    </item>
+    
+    <item>
+      <title>Data Sharing</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/share-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/share-data/</guid>
+      <description>Document and share data for internal and external use Maintain, document, and share your data with your team and the public
+Workflow  Code and doc: Git Raw data, confidential (e.g., JSON files with like personal data it): stored at institution (or, in our case, some S3 bucket only we have access to) Data to be published: running code on confidential raw data  Make decisions on what your “public” or semi public data should consist of   Final data set  Published to Dataverse with links to code/github repository for documentation   Maintenance  Update code, rerun, re-publish    Steps Create  Create GitHub repository from template Store raw data on secure server (institution) Create data prep code to create derived version Create initial documentation from template Prototype workflow by running it with make  Share   Publish internally</description>
+    </item>
+    
+    <item>
+      <title>Data Management and Directory Structure</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/directories/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/directories/</guid>
+      <description>Overview From the previous section in this guide, recall that a project can be logically structured in the following components: raw data (e.g., data sets), source code (e.g., code to prepare your data and to analyze it), generated files (e.g., some diagnostic plots or the result of your analysis), a file exchange, and notes (e.g., literature, meeting summaries).
+Below, we give you some more guidance on how to manage these components, by casting a prototypical directory structure that you need to set up on your computer.</description>
+    </item>
+    
+    <item>
+      <title>Automating your Pipeline</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation/</guid>
+      <description>Overview Remember the different stages of a project&amp;rsquo;s pipeline? Let&amp;rsquo;s suppose we&amp;rsquo;re in the process of preparing our data set for analysis. For example:
+ You wish to convert three raw data sets from Excel to CSV files. You want to merge these three CSV files and apply some cleaning steps. Finally, you want to save the final data set, so that it can be used in other stages of your project pipeline (e.</description>
+    </item>
+    
+    <item>
+      <title>Documenting Datasets</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/documenting-data/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/documenting-data/</guid>
+      <description>Overview If your project contains data that has been newly created (i.e., which is not otherwise (publicly) available yet; including derived data sets), you are required to include a documentation of that data in your project.
+Instances of &amp;ldquo;new data&amp;rdquo; may included, but are not restricted to be:
+ data scraped from websites data gathered via APIs manually labeled data  e.g., to assign GDP per capita to a list of countries e.</description>
+    </item>
+    
+    <item>
+      <title>Documenting Source Code and Pipeline Workflows</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/documenting-code/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/documenting-code/</guid>
+      <description>Overview Documenting your project&amp;rsquo;s workflow, not only for others, but also for your future self (i.e., if you plan to continue working on the project after a while) is absolutely crucial to the long-term success of you as a researcher or analyst.
+Typically, you would like to
+ include a main project documentation, and one documentation each for each stage of your pipeline.  Main Project Documentation You should place a main project documentation in the root directory of your project (/my_project), and call it readme.</description>
+    </item>
+    
+    <item>
+      <title>Versioning using Git and GitHub</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/versioning/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/versioning/</guid>
+      <description>Overview What is Git? Git is an open-source version control system, which allows you to keep track of your source files, and the changes you make to them. Using Git, you can roll back to any previous version of a file, and easily collaborate with team members.
+Git &amp;ldquo;lives&amp;rdquo; on your local computer, and allows you to configure so-called &amp;ldquo;repositories&amp;rdquo; that track files and directories.
+!!! tip &amp;ldquo;Storing sensitive data&amp;rdquo; Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work.</description>
+    </item>
+    
+    <item>
+      <title>Collaborating using GitHub</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/collaboration/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/collaboration/</guid>
+      <description>Overview While you can use Git exclusively to keep track of your files&#39; version history, the real power of Git lies in collaborating on coding projects with others. Below, we outline how you can contribute to existing (open-source) projects that are hosted on GitHub.
+Repositories versus Gists GitHub knows two types of &amp;ldquo;projects&amp;rdquo;. Full-fledged projects (e.g., for software development or research) are hosted in so-called &amp;ldquo;repositories&amp;rdquo;, which offer you the full range of development features available.</description>
+    </item>
+    
+    <item>
+      <title>Checklist to Audit Data- and Computation-intensive Projects</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/checklist/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/checklist/</guid>
+      <description>There is quite some material to cover to make sure your workflows become efficient, reproducible, and well-structured.
+Here&amp;rsquo;s a checklist you can use to audit your progress.
+    data-preparation analysis paper &amp;hellip;     At the project level       Implement a consistent directory structure: data/src/gen       Include readme with project description and technical instruction how to run/build the project       Store any authentication credentials outside of the repository (e.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation_workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation_workflow/</guid>
+      <description>Specimen Body copy Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu libero, mollis sed massa vel, ornare viverra ex. Mauris a ullamcorper lacus. Nullam urna elit, malesuada eget finibus ut, ullamcorper ac tortor. Vestibulum sodales pulvinar nisl, pharetra aliquet est. Quisque volutpat erat ac nisi accumsan tempor.
+Sed suscipit, orci non pretium pretium, quam mi gravida metus, vel venenatis justo est condimentum diam. Maecenas non ornare justo. Nam a ipsum eros.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/data/</guid>
+      <description>Specimen Body copy Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu libero, mollis sed massa vel, ornare viverra ex. Mauris a ullamcorper lacus. Nullam urna elit, malesuada eget finibus ut, ullamcorper ac tortor. Vestibulum sodales pulvinar nisl, pharetra aliquet est. Quisque volutpat erat ac nisi accumsan tempor.
+Sed suscipit, orci non pretium pretium, quam mi gravida metus, vel venenatis justo est condimentum diam. Maecenas non ornare justo. Nam a ipsum eros.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/housekeeping/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/housekeeping/</guid>
+      <description>Specimen Body copy Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu libero, mollis sed massa vel, ornare viverra ex. Mauris a ullamcorper lacus. Nullam urna elit, malesuada eget finibus ut, ullamcorper ac tortor. Vestibulum sodales pulvinar nisl, pharetra aliquet est. Quisque volutpat erat ac nisi accumsan tempor.
+Sed suscipit, orci non pretium pretium, quam mi gravida metus, vel venenatis justo est condimentum diam. Maecenas non ornare justo. Nam a ipsum eros.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/portability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/portability/</guid>
+      <description>Specimen Body copy Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu libero, mollis sed massa vel, ornare viverra ex. Mauris a ullamcorper lacus. Nullam urna elit, malesuada eget finibus ut, ullamcorper ac tortor. Vestibulum sodales pulvinar nisl, pharetra aliquet est. Quisque volutpat erat ac nisi accumsan tempor.
+Sed suscipit, orci non pretium pretium, quam mi gravida metus, vel venenatis justo est condimentum diam. Maecenas non ornare justo. Nam a ipsum eros.</description>
+    </item>
+    
+  </channel>
+</rss>

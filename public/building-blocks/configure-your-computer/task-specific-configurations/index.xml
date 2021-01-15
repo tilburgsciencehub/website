@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Task-specific configurations on My New Hugo Site</title>
+    <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/</link>
+    <description>Recent content in Task-specific configurations on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Jan 2021 22:01:14 +0530</lastBuildDate><atom:link href="https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software Setup Overview</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/software-setup-overview/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/software-setup-overview/</guid>
+      <description>These pages should help you to get started setting up the computing environment on your machine ready.
+Think your machine is already configured well? Then directly proceed to our tutorial on setting up efficient workflows to manage data- and computation-intensive projects. If necessary, you can come back to this section to make changes to your computer&amp;rsquo;s configuration.
+Configure your computer Of course, there are many ways to set up a machine, and we do not mean to consider our way of doing to be perfect.</description>
+    </item>
+    
+    <item>
+      <title>Configuring Python for Web Scraping</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/webscraping_drivers/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/webscraping_drivers/</guid>
+      <description>Web Scraping Using an Automated Browser Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page. This is especially true when the site we want to scrape has content that is loaded dynamically with javascript.
+We will install one package to help us here: Chromedriver.
+Installing this stuff is operating-system specific, hence so are the instructions below.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,2 +1,672 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My New Hugo Site</title><link>https://affectionate-archimedes-1f20bf.netlify.app/</link><description>Recent content on My New Hugo Site</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 11 Nov 2020 16:13:31 +0530</lastBuildDate><atom:link href="https://affectionate-archimedes-1f20bf.netlify.app/index.xml" rel="self" type="application/rss+xml"/><item><title>Automated Installation</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/software-installation/automated-installation/</link><pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/software-installation/automated-installation/</guid><description>Getting Started Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec ullamcorper nulla non metus auctor fringilla.
-Section header Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.</description></item><item><title>Documenting a Project</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/document-your-project/documenting-a-project/</link><pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/document-your-project/documenting-a-project/</guid><description/></item><item><title>Documenting Code and Pipeline</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/document-your-project/documenting-code-and-pipeline/</link><pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/document-your-project/documenting-code-and-pipeline/</guid><description/></item><item><title>Documenting Raw Data</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/document-your-project/documenting-raw-data/</link><pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/document-your-project/documenting-raw-data/</guid><description/></item><item><title>Git</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/software-installation/git/</link><pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/software-installation/git/</guid><description/></item><item><title>R</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/software-installation/r/</link><pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/software-installation/r/</guid><description/></item><item><title>Stata</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/software-installation/stata/</link><pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/software-installation/stata/</guid><description/></item><item><title>Text Editor</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/software-installation/text-editor/</link><pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/software-installation/text-editor/</guid><description/></item><item><title>Checklists to Audit your Project</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/checklists-to-audit-your-project/</link><pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/checklists-to-audit-your-project/</guid><description/></item><item><title>Data Management and Directory Structure</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/data-management-and-directory-structure/</link><pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/data-management-and-directory-structure/</guid><description/></item><item><title>Four</title><link>https://affectionate-archimedes-1f20bf.netlify.app/tutorials/sample-tutorial/four/</link><pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/tutorials/sample-tutorial/four/</guid><description/></item><item><title>Local Cloud</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/infrastructure-choice/local-cloud/</link><pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/infrastructure-choice/local-cloud/</guid><description/></item><item><title>Mirror your Code to GitHub</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/mirror-your-code-to-github/</link><pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/mirror-your-code-to-github/</guid><description/></item><item><title>One</title><link>https://affectionate-archimedes-1f20bf.netlify.app/tutorials/another-one/one/</link><pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/tutorials/another-one/one/</guid><description/></item><item><title>Overview</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/overview/</link><pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/overview/</guid><description/></item><item><title>Pipelines and Project Components</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/pipelines-and-project-components/</link><pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/pipelines-and-project-components/</guid><description/></item><item><title>Putting Data</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/putting-data/</link><pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/putting-data/</guid><description/></item><item><title>Retrieving Data</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/retrieving-data/</link><pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/retrieving-data/</guid><description/></item><item><title>Three</title><link>https://affectionate-archimedes-1f20bf.netlify.app/tutorials/sample-tutorial/three/</link><pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/tutorials/sample-tutorial/three/</guid><description/></item><item><title>TiSEM AirBnB Template</title><link>https://affectionate-archimedes-1f20bf.netlify.app/examples/sample/</link><pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/examples/sample/</guid><description/></item><item><title>two</title><link>https://affectionate-archimedes-1f20bf.netlify.app/tutorials/another-one/two/</link><pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/tutorials/another-one/two/</guid><description/></item><item><title>Local Only</title><link>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/infrastructure-choice/local-only/</link><pubDate>Wed, 11 Nov 2020 22:01:05 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/building-blocks/work-environment-setup/infrastructure-choice/local-only/</guid><description/></item><item><title>About</title><link>https://affectionate-archimedes-1f20bf.netlify.app/about/</link><pubDate>Wed, 11 Nov 2020 16:13:31 +0530</pubDate><guid>https://affectionate-archimedes-1f20bf.netlify.app/about/</guid><description>Overview Why was TSH developed? What does TSH offer? Who is TSH for? Who maintains TSH? Acknowledgements License About Tilburg Science Hub Overview Tilburg Science Hub (TSH) is an online resource that helps individual researchers, data scientists, and teams to efficiently carry out data- and computation-intensive projects. It provides information about workflow and data management and tutorials that teach researchers how to organize and document their data and code, so the research becomes sustainable and reproducible.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>https://tsh-website.netlify.app/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 16:13:31 +0530</lastBuildDate><atom:link href="https://tsh-website.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implement an Efficient and Reproducible Workflow</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/implement-an-efficient-and-reproducible-workflow-overview/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/implement-an-efficient-and-reproducible-workflow-overview/</guid>
+      <description>Longing to put your knowledge from our workflow guide into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our GitHub workflow template.
+Objectives of this tutorial  Familiarize yourself with a robust directory structure for data-intensive projects Experience the benefits of automating workflows with makefiles/GNU make Learn to use Git templates for your own research projects Adjust the workflow template to  &amp;hellip;download different datasets from the web &amp;hellip;unzip data automatically &amp;hellip;parse JSON objects and select relevant attributes &amp;hellip;add new text mining metrics to the final data set using Python&amp;rsquo;s textblob &amp;hellip;modify the analysis in an RMarkdown/html document    Prerequisites  Computer setup following our setup instructions   Python and the textblob package</description>
+    </item>
+    
+    <item>
+      <title>Software Setup Overview</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/software-setup-overview/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/software-setup-overview/</guid>
+      <description>These pages should help you to get started setting up the computing environment on your machine ready.
+Think your machine is already configured well? Then directly proceed to our tutorial on setting up efficient workflows to manage data- and computation-intensive projects. If necessary, you can come back to this section to make changes to your computer&amp;rsquo;s configuration.
+Configure your computer Of course, there are many ways to set up a machine, and we do not mean to consider our way of doing to be perfect.</description>
+    </item>
+    
+    <item>
+      <title>Command Line Tools</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/commandline/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/commandline/</guid>
+      <description>A command-line interface or command language interpreter (CLI), also known as a terminal, is a means of interacting with a computer program where the user issues commands to the program in the form of successive lines of text (command lines).
+Throughout the course we will emphasize use of the terminal and executing commands within it as our modus operandi.
+Windows Users So that we can work as closely as possible to the Mac and Linux users we will install Cygwin.</description>
+    </item>
+    
+    <item>
+      <title>Document a Project</title>
+      <link>https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/documenting-a-project/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/documenting-a-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Checklists to Audit your Project</title>
+      <link>https://tsh-website.netlify.app/building-blocks/organize-your-project/checklists-to-audit-your-project/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/organize-your-project/checklists-to-audit-your-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Educational Videos</title>
+      <link>https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/educational-videos-overview/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/educational-videos-overview/</guid>
+      <description>Overview An educational video is meant for transferring knowledge to an audience. These often involve animations or presenting a slide deck. However, in most of the cases, you might want to show yourself - or the presenter - talking to the camera.
+This guide will focus on the process of making these videos, not the content, and it&amp;rsquo;s aimed at teachers or contributors of Tilburg Science Hub. In other words, we will talk about the technical preparation and equipment needed to record such videos, not on how to create animations or compelling presentations.</description>
+    </item>
+    
+    <item>
+      <title>Learn R</title>
+      <link>https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/learn-to-code/learn-r/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/learn-to-code/learn-r/</guid>
+      <description>Chance is that sooner or later, you&amp;rsquo;re going to use R - one of the (if not the) most popular statistical programming languages in the world. It&amp;rsquo;s not only that R is free which makes it so good, but because thousands of people across the world use it, document it, and develop it further.
+Let us warn you: the R interface may be scary at first sight, especially if you&amp;rsquo;re used to using Excel to do your data magic.</description>
+    </item>
+    
+    <item>
+      <title>Principles for Good Coding</title>
+      <link>https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/principles-good-coding/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/principles-good-coding/</guid>
+      <description>Write programs for people, not computers Make your code easy to understand for humans. If your code looks very complex or messy, you&amp;rsquo;re probably doing it wrong.
+ Organization  Define functions that do one mayor step each, instead of one giant script doing everything Write short scripts that do one task each Document only what your code doesn&amp;rsquo;t say, but nothing else   Style  Use meaningful and short variable names Use consistent code and formatting styles (oneExample, one_example, example-one) Make use of indents in your code    Define things once and only once Let computers repeat and execute tasks.</description>
+    </item>
+    
+    <item>
+      <title>Principles of Project Setup and Workflow Management</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/principles-overview/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/principles-overview/</guid>
+      <description>Motivation When working on a project, most of us spend time thinking about what to create (e.g., a cleaned data set, a new algorithm, an analysis, and/or a paper and corresponding slides), but not about how to manage its creation. This results in two major issues, as outlined next.
+!!! important &amp;ldquo;Major issues in managing data-intensive projects&amp;rdquo;
+- we may lose sight of the project (&amp;quot;directory and file chaos&amp;quot;) - Gradually, we write code and edit data sets, and put those files somewhere on our computer.</description>
+    </item>
+    
+    <item>
+      <title>TiSEM AirBnB Template</title>
+      <link>https://tsh-website.netlify.app/examples/tisem-airbnb-template/tisem/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/examples/tisem-airbnb-template/tisem/</guid>
+      <description>   // some js code var name = &amp;#34;Arvind Singh&amp;#34;; if (name == &amp;#34;arvind&amp;#34;) { console.log(&amp;#34;testing out coding blck&amp;#34;); } # some bash code # make-files.txt touch test/john.txt touch test/mike.txt touch test/jenna.txt      </description>
+    </item>
+    
+    <item>
+      <title>Versioning using Git and GitHub</title>
+      <link>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/versioning-using-git/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/versioning-using-git/</guid>
+      <description>Overview What is Git? Git is an open-source version control system, which allows you to keep track of your source files, and the changes you make to them. Using Git, you can roll back to any previous version of a file, and easily collaborate with team members.
+Git &amp;ldquo;lives&amp;rdquo; on your local computer, and allows you to configure so-called &amp;ldquo;repositories&amp;rdquo; that track files and directories.
+Tip Storing sensitive data Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work.</description>
+    </item>
+    
+    <item>
+      <title>Style and Writing Guide</title>
+      <link>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/style-guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/style-guide/</guid>
+      <description>Develop content for our target audience When contributing content to our platform, please address at least one of our target groups.
+  Students and novice researchers who look for material developed, curated, and rigorously tested by professors and experienced users, ensuring them about quality and usability. Users may not know yet what (and why) they should learn the Tilburg Science Hub way of working. These users need to be onboarded first and guided through our content.</description>
+    </item>
+    
+    <item>
+      <title>Buying Equipment for Educational Videos</title>
+      <link>https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/equipment-edu-videos/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/equipment-edu-videos/</guid>
+      <description>Part 1 We&amp;rsquo;re going to present three different setup options ordered by increasing complexity. Keep in mind that more complex setups require a higher budget, more physical space, and more time to put in place. The higher setup time is one-off. Actually, in all three options it&amp;rsquo;s very quick and easy to start rolling once everything has been correctly configured for the first time.
+Option 1 - Home Setup with a Webcam The need of expensive gear to produce high quality images is a myth.</description>
+    </item>
+    
+    <item>
+      <title>Configuring Python for Web Scraping</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/webscraping_drivers/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/webscraping_drivers/</guid>
+      <description>Web Scraping Using an Automated Browser Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page. This is especially true when the site we want to scrape has content that is loaded dynamically with javascript.
+We will install one package to help us here: Chromedriver.
+Installing this stuff is operating-system specific, hence so are the instructions below.</description>
+    </item>
+    
+    <item>
+      <title>Verify Software Setup</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/verify/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/verify/</guid>
+      <description>Let&amp;rsquo;s verify whether everything is properly installed Before we&amp;rsquo;re getting started, let&amp;rsquo;s verify whether you have properly followed our [setup guide](.. setup) for R, Python and make in order to be able to run our workflow.
+Our tutorial clips are recorded on Windows, but have been tested on a Mac, too.
+Watch our video   </description>
+    </item>
+    
+    <item>
+      <title>Work with Large Files on GitHub</title>
+      <link>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/git-lfs/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/git-lfs/</guid>
+      <description>GitHub limits the size of files allowed in repositories. It warns you if you&amp;rsquo;re trying to push a 50MB file, and completely stops you if the push exceed 100MB.
+However, even if it didn&amp;rsquo;t stop you, versioning large files would be very impractical. That&amp;rsquo;s because a repository contains every version of every file – that&amp;rsquo;s the point of versioning, right? Having multiple versions of large files cloned locally can become expensive in terms of disk space and fetch time.</description>
+    </item>
+    
+    <item>
+      <title>Automated Installation</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/automated-installation/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/automated-installation/</guid>
+      <description>Getting Started Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec ullamcorper nulla non metus auctor fringilla.
+Section header Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.</description>
+    </item>
+    
+    <item>
+      <title>Automation with GNU Make</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/make/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/make/</guid>
+      <description>Overview Make is a &amp;ldquo;build tool&amp;rdquo;, allowing us to control the execution of a set of command line statements to assemble pipelines that define what gets executed when. Using make, our entire workflow becomes transparent and reproducible.
+Tip Why Build Tools?
+Imagine you have built a complex project, consisting of dozens of datafiles and scripts. Also imagine you haven&amp;rsquo;t worked on the project for a few weeks, and now wish to continue your work where you left off.</description>
+    </item>
+    
+    <item>
+      <title>Document Raw Data</title>
+      <link>https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/documenting-raw-data/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/documenting-raw-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Management and Directory Structure</title>
+      <link>https://tsh-website.netlify.app/building-blocks/organize-your-project/data-management-and-directory-structure/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/organize-your-project/data-management-and-directory-structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learn Python and Julia</title>
+      <link>https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/learn-to-code/learn-python-and-julia/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/learn-to-code/learn-python-and-julia/</guid>
+      <description>QuantEcon.org offers fantastic resources for you to get started using Python and Julia.
+In particular, we would like to refer you to their open-source lectures, covering:
+ Quantitative Economics with Python (and a fantastic, open-source book companion!) Quantitative Economics with Julia QuantEcon Data Science  </description>
+    </item>
+    
+    <item>
+      <title>Pipelines and Project Components</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/pipeline/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/pipeline/</guid>
+      <description>Overview It is useful to break down a project into its most basic parts, which we call pipeline and components.
+ A pipeline refers to the steps that are necessary to build a project (e.g., prepare dataset, run model, produce tables and figures), and Components refer to a project&amp;rsquo;s most nuclear building blocks (e.g., data, source code, and generated temporary and/or output files).  Later on, you will see that such a structure enables you to work on your project using multiple computers (e.</description>
+    </item>
+    
+    <item>
+      <title>Writing an Academic Paper</title>
+      <link>https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/write-academic-paper/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/write-academic-paper/</guid>
+      <description>The typical structure of an empirical paper in economics and business (or a master thesis, or a chapter of a Ph.D. thesis) involves the following sections, roughly in this order:
+Structure of your paper Abstract Be as brief as possible and avoid word-by-word duplication with the introduction. State very clearly what the main take-away is for your paper. This can be a qualitative finding, but it can also be a number.</description>
+    </item>
+    
+    <item>
+      <title>Create a New Building Block</title>
+      <link>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-building-block/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-building-block/</guid>
+      <description>Create a new building block Building blocks are the DNA of our platform. They are small code snippets that users can independently &amp;ldquo;mix&amp;rdquo; to create something unique. Think of building blocks like LEGO bricks - each one with its own color, shape and functionality.
+Check out our platform&amp;rsquo;s menu system to see in which categories we classify our building blocks. Want to add a new category? Let us know via a GitHub issue.</description>
+    </item>
+    
+    <item>
+      <title>Data Sharing</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/share-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/share-data/</guid>
+      <description>Document and share data for internal and external use Maintain, document, and share your data with your team and the public
+Workflow  Code and doc: Git Raw data, confidential (e.g., JSON files with like personal data it): stored at institution (or, in our case, some S3 bucket only we have access to) Data to be published: running code on confidential raw data  Make decisions on what your “public” or semi public data should consist of   Final data set  Published to Dataverse with links to code/github repository for documentation   Maintenance  Update code, rerun, re-publish    Steps Create  Create GitHub repository from template Store raw data on secure server (institution) Create data prep code to create derived version Create initial documentation from template Prototype workflow by running it with make  Share   Publish internally</description>
+    </item>
+    
+    <item>
+      <title>Download the Template</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/clone/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/clone/</guid>
+      <description>Let&amp;rsquo;s download the template You can access the workflow template from here. We first need to download (or, as Git users would say, fork and clone) the template. The template then is accessible on our local computer, and we can start modifying it.
+Watch our video to learn about the two ways of downloading a template. After that, work through the set of practice questions.
+  Warning Clone/download the files where you have writing rights.</description>
+    </item>
+    
+    <item>
+      <title>Shooting Educational Videos</title>
+      <link>https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/shooting-edu-videos/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/shooting-edu-videos/</guid>
+      <description>Part 2 In this second part of our guide you will learn about the essential steps required to shoot educational videos.
+Step 1 - Set Up Your Scene The first thing to do is to set up your scene, place your camera on a tripod, and compose the shot.
+Here you face your first decision. You will need to choose what to include in your frame. This will dictate what focal length to use (i.</description>
+    </item>
+    
+    <item>
+      <title>Document your Code and Pipeline</title>
+      <link>https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/documenting-code-and-pipeline/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/documenting-code-and-pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Snakemake</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/snakemake/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/snakemake/</guid>
+      <description>Snakemake is an easy to use workflow management system. Contrary to make, which was designed by computer scientists to build software, snakemake was designed for academic/professional research in Bioinformatics, so it may feel more intuitive for academic users.
+Snakemake is a python package - so we can install using the default python installer, pip.
+Mac &amp;amp; Linux Users: In a terminal window enter the command:
+pip install snakemake followed by pressing the Return key.</description>
+    </item>
+    
+    <item>
+      <title>Links to Other Great Initiatives</title>
+      <link>https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/links-other-initiatives/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/links-other-initiatives/</guid>
+      <description>Here we post some links to material we&amp;rsquo;ve discovered recently and find useful.
+ Organizing data in spreadsheets Initial steps towards reproducible science Minimal example for make  </description>
+    </item>
+    
+    <item>
+      <title>Pipelines and Project Components</title>
+      <link>https://tsh-website.netlify.app/building-blocks/organize-your-project/pipelines-and-project-components/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/organize-your-project/pipelines-and-project-components/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Create a New Tutorial</title>
+      <link>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-tutorial/</guid>
+      <description>Create a new tutorial Tutorials teach our users how to combine individual building blocks into a &amp;ldquo;final product&amp;rdquo;. What that product really is is your choice.
+When creating a new tutorial, you typically realize that you also need to create several new building blocks to make the tutorial work. So if you haven&amp;rsquo;t contributed to our platform yet, try contributing a building block first before starting on a brand-new tutorial.</description>
+    </item>
+    
+    <item>
+      <title>Running the Workflow</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/run/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/run/</guid>
+      <description>Let&amp;rsquo;s run the workflow When starting to work with a template, we ideally like to see it &amp;ldquo;working&amp;rdquo; on &amp;ldquo;test data&amp;rdquo; first. In this way, we know we can extend it easily. As our template is fully automated, building should be easy - you only need to type make.
+So let&amp;rsquo;s go ahead by first watching our demo on what happens if you run make in our template&amp;rsquo;s main directory. Then, you can proceed to our practice questions.</description>
+    </item>
+    
+    <item>
+      <title>Making Path Settings Permanent</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/environment-variables/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/environment-variables/</guid>
+      <description>For our workflow be be command line driven, we need to be able to call software from the command line. Whilst much of the software we have installed as automatically made this possible, it is not universally the case. Here we will make the extra few changes we need to complete the installation guide.
+Windows Users (for Windows 8 and 10) You will need local administration rights for your computer, but you should have these on your personal computers or ones owned by the Department.</description>
+    </item>
+    
+    <item>
+      <title>R and RStudio</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/r/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/r/</guid>
+      <description>R is a language for statistical computing and graphics. R&amp;rsquo;s use in the data science, econometrics and marketing communities has taken off over recent years and (at a bare minimum) should be considered as an open source replacement to Stata and SPSS.
+Installing R Watch our YouTube video, in which we walk you through the setup on Windows.
+Go to the R website and download the most recent installer for your operating system.</description>
+    </item>
+    
+    <item>
+      <title>Inspecting the Data-preparation Pipeline</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/pipeline-make/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/pipeline-make/</guid>
+      <description>Makefile of the data-preparation pipeline Up to now, we&amp;rsquo;ve learnt how to run make in our template. But we haven&amp;rsquo;t really learnt yet how the files in each of the particular pipeline stages are actually run. So, let&amp;rsquo;s now navigate to the data-preparation source code folder, and explore the makefile a bit.
+Please first try to answer our questions below, and then watch our solutions.
+!!! questions &amp;ldquo;Practice questions and answers&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Stata</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/stata/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/stata/</guid>
+      <description>Installing Stata Stata is a proprietary statistical software frequently used by scientific users. First check with your local IT support whether your institution has Stata licenses available.
+If not, you can purchase a copy on Stata&amp;rsquo;s website and follow the installation guide.
+Making Stata Available on the Command Prompt You have just installed Stata. Later, we&amp;rsquo;d like to access Stata from the command prompt to automatically execute our source code. That way, you will be able to run a series of scripts in batch - which will significantly ease the burden of building complex data workflows.</description>
+    </item>
+    
+    <item>
+      <title>TeamViewer</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/teamviewer/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/teamviewer/</guid>
+      <description>Getting feedback on code or solving technical problems is crucial to your learning experience. When working remotely, we prefer to make use of Teamviewer, which allows us to remote-control your computer and help you right away (while you&amp;rsquo;re watching, of course!).
+Installing Teamviewer To install TeamViewer, go to the TeamViewer homepage and download the installer for your operating system. We recommend you to install Teamviewer permanently. If you do not have admin rights, it&amp;rsquo;s fine to only select run once.</description>
+    </item>
+    
+    <item>
+      <title>Mirror your Code to GitHub</title>
+      <link>https://tsh-website.netlify.app/building-blocks/organize-your-project/mirror-your-code-to-github/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/organize-your-project/mirror-your-code-to-github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dry-run of Make and First Modifications</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/wipe-rerun/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/wipe-rerun/</guid>
+      <description>Dry-run of Make and first modifications to the data preparation scripts Sometimes, running a workflow may take hours, or even days. That&amp;rsquo;s why make supports so-called &amp;ldquo;dry-runs&amp;rdquo;, which you can initiate by typing make -n (for NOT run).
+Watch our video to understand the intuition of dry-runs.
+Next, you will start to modify the scripts in this template. After all, you&amp;rsquo;re working on a template that you&amp;rsquo;re ultimately interested in modifying (e.</description>
+    </item>
+    
+    <item>
+      <title>MATLAB</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/matlab/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/matlab/</guid>
+      <description>MATLAB is a high-level programming language and an environment for numerical computation and visualization.
+The University of Zurich has a campus-wide MATLAB license available to all students and employees. We will use this license to activate MATLAB on our machine.
+If you do not have Matlab 2016a installed on your machine, please follow the installation instructions available on the University of Zurich&amp;rsquo;s page.</description>
+    </item>
+    
+    <item>
+      <title>More Modifications</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/modifications/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/modifications/</guid>
+      <description>More modifications, branching, and replacing input files Now let&amp;rsquo;s continue with a couple of advanced modifications to our workflow. We hope these convince you about the potential efficiency gains you can expect when working on data-intensive projects!
+This time, you can directly start working on the practice questions below. Also take note of our additional explanations for each question.
+!!! questions &amp;ldquo;Practice questions and answers&amp;rdquo;
+1) Please open `textmining.py`, and also provide the word count as an additional column.</description>
+    </item>
+    
+    <item>
+      <title>Pandoc</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/pandoc/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/pandoc/</guid>
+      <description>Pandoc is an extremely useful &amp;lsquo;swiss army knife&amp;rsquo; for converting between different types of markup languages from the command line. For example, it readily builds PDFs with latex, and markdown - both of which are heavily used in academic research.
+Linux Open a terminal window and type
+sudo apt install pandoc to install pandoc from the command line
+Mac Open a terminal window and type
+brew install pandoc to install pandoc from the command line</description>
+    </item>
+    
+    <item>
+      <title>Extending the Analysis</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/analysis/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/analysis/</guid>
+      <description>Let&amp;rsquo;s modify the analysis We&amp;rsquo;re done with the data-preparation pipeline for now, and turn our attention to the analysis part of our project.
+Admittedly, there&amp;rsquo;s not much here yet. Try fiddling around with the files a bit when you proceed to our practice questions and answers below.
+Now let&amp;rsquo;s continue with a couple of modifications. You can directly start working on the practice questions below.
+!!! questions &amp;ldquo;Practice questions and answers&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Text Editors</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/text-editor/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/text-editor/</guid>
+      <description>A good text editor lies at the heart of any serious programmer&amp;rsquo;s toolkit: It can do almost anything and makes you much more productive. The editors built into each program often are not the best option (we will find certain cases where you may want to use them).
+Please download, install it along with the necessary packages and stick with it for at least the duration of the project or assignment to get a feel for how it works.</description>
+    </item>
+    
+    <item>
+      <title>Wrap-Up</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/finish/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/finish/</guid>
+      <description>You did it! Congrats!!! You&amp;rsquo;ve finished our tutorial, and are now officially hooked to make.
+Well, all fun aside, we hope you found this tutorial useful.
+Of course, this is just one way in which to increase your research productivity. Here on tilburgsciencehub.com, we have more stuff available, so take your time to browse the page.
+Oh, and to be complete, here&amp;rsquo;s a summary of what you&amp;rsquo;ve learnt.
+Thanks for following through!</description>
+    </item>
+    
+    <item>
+      <title>LaTeX</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/latex/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/latex/</guid>
+      <description>LaTeX is a great typesetting system that includes a lot of features that allow to produce scientific documents. Many researchers use LaTeX to produce their papers and presentations, and many journals require authors to hand in their articles in a LaTeX format.
+Installing a TeX distribution LaTeX is free to use. To use the LaTeX system, a TeX distribution needs to be installed. Detailed instructions for the different platforms are provided below.</description>
+    </item>
+    
+    <item>
+      <title>Git and GitHub for Version Control</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/git/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/git/</guid>
+      <description>Installing Git and Setting Up Accounts Git is an open source version control system (VCS) that has gained a lot of traction in the programming community. We will use version control to keep track of the files we write, and the changes we make to them. Using Git, we can roll back to any previous version of a file, and easily collaborate with others on source code.
+Let&amp;rsquo;s create a GitHub account GitHub is a (commercial) platform which allows you to host your source code online.</description>
+    </item>
+    
+    <item>
+      <title>Data Management and Directory Structure</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/directories/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/directories/</guid>
+      <description>Overview From the previous section in this guide, recall that a project can be logically structured in the following components: raw data (e.g., data sets), source code (e.g., code to prepare your data and to analyze it), generated files (e.g., some diagnostic plots or the result of your analysis), a file exchange, and notes (e.g., literature, meeting summaries).
+Below, we give you some more guidance on how to manage these components, by casting a prototypical directory structure that you need to set up on your computer.</description>
+    </item>
+    
+    <item>
+      <title>Automating your Pipeline</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation/</guid>
+      <description>Overview Remember the different stages of a project&amp;rsquo;s pipeline? Let&amp;rsquo;s suppose we&amp;rsquo;re in the process of preparing our data set for analysis. For example:
+ You wish to convert three raw data sets from Excel to CSV files. You want to merge these three CSV files and apply some cleaning steps. Finally, you want to save the final data set, so that it can be used in other stages of your project pipeline (e.</description>
+    </item>
+    
+    <item>
+      <title>Documenting Datasets</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/documenting-data/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/documenting-data/</guid>
+      <description>Overview If your project contains data that has been newly created (i.e., which is not otherwise (publicly) available yet; including derived data sets), you are required to include a documentation of that data in your project.
+Instances of &amp;ldquo;new data&amp;rdquo; may included, but are not restricted to be:
+ data scraped from websites data gathered via APIs manually labeled data  e.g., to assign GDP per capita to a list of countries e.</description>
+    </item>
+    
+    <item>
+      <title>Documenting Source Code and Pipeline Workflows</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/documenting-code/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/documenting-code/</guid>
+      <description>Overview Documenting your project&amp;rsquo;s workflow, not only for others, but also for your future self (i.e., if you plan to continue working on the project after a while) is absolutely crucial to the long-term success of you as a researcher or analyst.
+Typically, you would like to
+ include a main project documentation, and one documentation each for each stage of your pipeline.  Main Project Documentation You should place a main project documentation in the root directory of your project (/my_project), and call it readme.</description>
+    </item>
+    
+    <item>
+      <title>Versioning using Git and GitHub</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/versioning/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/versioning/</guid>
+      <description>Overview What is Git? Git is an open-source version control system, which allows you to keep track of your source files, and the changes you make to them. Using Git, you can roll back to any previous version of a file, and easily collaborate with team members.
+Git &amp;ldquo;lives&amp;rdquo; on your local computer, and allows you to configure so-called &amp;ldquo;repositories&amp;rdquo; that track files and directories.
+!!! tip &amp;ldquo;Storing sensitive data&amp;rdquo; Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work.</description>
+    </item>
+    
+    <item>
+      <title>Collaborating using GitHub</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/collaboration/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/collaboration/</guid>
+      <description>Overview While you can use Git exclusively to keep track of your files&#39; version history, the real power of Git lies in collaborating on coding projects with others. Below, we outline how you can contribute to existing (open-source) projects that are hosted on GitHub.
+Repositories versus Gists GitHub knows two types of &amp;ldquo;projects&amp;rdquo;. Full-fledged projects (e.g., for software development or research) are hosted in so-called &amp;ldquo;repositories&amp;rdquo;, which offer you the full range of development features available.</description>
+    </item>
+    
+    <item>
+      <title>Checklist to Audit Data- and Computation-intensive Projects</title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/checklist/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/checklist/</guid>
+      <description>There is quite some material to cover to make sure your workflows become efficient, reproducible, and well-structured.
+Here&amp;rsquo;s a checklist you can use to audit your progress.
+    data-preparation analysis paper &amp;hellip;     At the project level       Implement a consistent directory structure: data/src/gen       Include readme with project description and technical instruction how to run/build the project       Store any authentication credentials outside of the repository (e.</description>
+    </item>
+    
+    <item>
+      <title>Python packages</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/python/python-packages/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/python/python-packages/</guid>
+      <description>Anaconda&amp;rsquo;s Python Distribution comes with many of the packages we need to do scientific computing. If you&amp;rsquo;re interested in all the packages included, click here and go to the Python 3.x tab.
+pip Howevever, you may come across packages that are not installed by default. In this case we recommend you use the pip package management tool to install them.
+!!! note If your python 3 was found via python3 --version on the previous page, then type pip3 instead of pip for all of the following python plugins.</description>
+    </item>
+    
+    <item>
+      <title>Disclaimer</title>
+      <link>https://tsh-website.netlify.app/disclaimer/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/disclaimer/</guid>
+      <description>Tilburg Science Hub is part of Tilburg University. The information on this Tilburg Science Hub internet site has been formulated with the utmost care. This information may nevertheless contain deficiencies.
+Should this be the case, we would appreciate your critical remarks at tsh@tilburguniversity.edu. Tilburg Science Hub is not responsible for any information supplied on its website or for the consequences of the use thereof. No rights can be derived on the basis of the data on Tilburg Science Hub website.</description>
+    </item>
+    
+    <item>
+      <title>Putting Data</title>
+      <link>https://tsh-website.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/putting-data/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/putting-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Retrieving Data</title>
+      <link>https://tsh-website.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/retrieving-data/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/retrieving-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://tsh-website.netlify.app/about/</link>
+      <pubDate>Wed, 11 Nov 2020 16:13:31 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/about/</guid>
+      <description>Overview Why was TSH developed? What does TSH offer? Who is TSH for? Who maintains TSH? Acknowledgements License      About Tilburg Science Hub Overview Tilburg Science Hub (TSH) is an online resource that helps individual researchers, data scientists, and teams to efficiently carry out data- and computation-intensive projects. It provides information about workflow and data management and tutorials that teach researchers how to organize and document their data and code, so the research becomes sustainable and reproducible.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation_workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation_workflow/</guid>
+      <description>Specimen Body copy Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu libero, mollis sed massa vel, ornare viverra ex. Mauris a ullamcorper lacus. Nullam urna elit, malesuada eget finibus ut, ullamcorper ac tortor. Vestibulum sodales pulvinar nisl, pharetra aliquet est. Quisque volutpat erat ac nisi accumsan tempor.
+Sed suscipit, orci non pretium pretium, quam mi gravida metus, vel venenatis justo est condimentum diam. Maecenas non ornare justo. Nam a ipsum eros.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/data/</guid>
+      <description>Specimen Body copy Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu libero, mollis sed massa vel, ornare viverra ex. Mauris a ullamcorper lacus. Nullam urna elit, malesuada eget finibus ut, ullamcorper ac tortor. Vestibulum sodales pulvinar nisl, pharetra aliquet est. Quisque volutpat erat ac nisi accumsan tempor.
+Sed suscipit, orci non pretium pretium, quam mi gravida metus, vel venenatis justo est condimentum diam. Maecenas non ornare justo. Nam a ipsum eros.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/housekeeping/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/housekeeping/</guid>
+      <description>Specimen Body copy Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu libero, mollis sed massa vel, ornare viverra ex. Mauris a ullamcorper lacus. Nullam urna elit, malesuada eget finibus ut, ullamcorper ac tortor. Vestibulum sodales pulvinar nisl, pharetra aliquet est. Quisque volutpat erat ac nisi accumsan tempor.
+Sed suscipit, orci non pretium pretium, quam mi gravida metus, vel venenatis justo est condimentum diam. Maecenas non ornare justo. Nam a ipsum eros.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/portability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/portability/</guid>
+      <description>Specimen Body copy Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu libero, mollis sed massa vel, ornare viverra ex. Mauris a ullamcorper lacus. Nullam urna elit, malesuada eget finibus ut, ullamcorper ac tortor. Vestibulum sodales pulvinar nisl, pharetra aliquet est. Quisque volutpat erat ac nisi accumsan tempor.
+Sed suscipit, orci non pretium pretium, quam mi gravida metus, vel venenatis justo est condimentum diam. Maecenas non ornare justo. Nam a ipsum eros.</description>
+    </item>
+    
+  </channel>
+</rss>

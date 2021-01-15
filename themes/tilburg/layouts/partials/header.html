@@ -183,7 +183,7 @@
 			<div id="mobile-building-blocks" class="d-none">
 				<a href="#0" class="py-3 border-bottom d-block gotoMainMenu"><span
 					class="icon mini-left text-primary"></span> Building Blocks</a>
-
+					<br>
 				{{- range where .Site.Pages "Section" "building-blocks" -}}
 				{{ if eq .Params.isParent "true" }}
 				{{- range $index, $value := .Pages -}}
@@ -192,10 +192,10 @@
 						class="icon mini-right float-right"></span> </a>
 				<div class="tab-pane {{ if eq $index 0 }} show active {{ end }} d-none" id="{{ .Title | urlize }}"
 					role="tabpanel" aria-labelledby="v-pills-home-tab">
-					<div class="pl-4">
+					<div class="pl-4 mb-4">
 						{{ range .Pages }}
 						<div class="mb-4">
-							<a class="anchor-no-effect" href="{{ .Permalink }}"><span class="heading d-block mb-0 text-secondary" style="font-size: 16px;">{{.Title}}</span></a>
+							<a class="anchor-no-effect" href="{{ .Permalink }}"><span class="heading d-block mb-0" style="font-size: 16px;">{{.Title}}</span></a>
 							{{- range .Pages -}}
 							<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
 							{{ end }}
@@ -216,11 +216,15 @@
 				{{- range where .Site.Home.Sections "Section" "tutorials" -}}
 				{{ range .Pages }}
 
+				
+
 				<div class="mb-4">
 					<div class="text-secondary m-0 mt-2 heading" style="font-size: 16px; line-height: 2px">{{.Title}}</div>
 
 					{{- range .Pages -}}
+					{{ if ne .Params.indexexclude "true" }}
 					<a class="d-block mx-0 ml-3 mt-3" href="{{.Permalink}}">{{.Title}}</a>
+					{{ end }}
 					{{ end }}
 				</div>
 				{{ end }}

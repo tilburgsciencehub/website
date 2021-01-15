@@ -91,18 +91,18 @@ $(".headerSearch").on("keyup", function (e) {
   const val = e.target.value;
 
   $.ajax({
-    url: "/building-blocks/index.json",
+    url: "/index.json",
   }).done(function (result) {
     resultsHolder.html("");
-    let newResults = result.filter((result) => {
-      if (new RegExp(val, "gmi").test(result.title)) {
+    let newResults = result.pages.filter((result) => {
+      if (new RegExp(val, "gmi").test(result.searchKeywords)) {
         return result;
       }
     });
 
     newResults.map((result) => {
       resultsHolder.append(
-        `<a class="d-block border-bottom p-3 text-secondary" href="${result.link}">${result.title}</a>`
+        `<a class="d-block border-bottom p-3 text-secondary" href="${result.permalink}">${result.title}</a>`
       );
     });
 
@@ -115,24 +115,26 @@ $(".headerSearchMobile").on("keyup", function (e) {
   const val = e.target.value;
 
   $.ajax({
-    url: "/building-blocks/index.json",
+    url: "/index.json",
   }).done(function (result) {
     resultsHolder.html("");
-    let newResults = result.filter((result) => {
-      if (new RegExp(val, "gmi").test(result.title)) {
+    let newResults = result.pages.filter((result) => {
+      if (new RegExp(val, "gmi").test(result.searchKeywords)) {
         return result;
       }
     });
 
     newResults.map((result) => {
       resultsHolder.append(
-        `<a class="d-block border-bottom p-3 text-secondary" href="${result.link}">${result.title}</a>`
+        `<a class="d-block border-bottom p-3 text-secondary" href="${result.permalink}">${result.title}</a>`
       );
     });
 
     resultsHolder.addClass("active");
   });
 });
+
+
 
 // detect screen size change
 // $(window).resize(function() {
@@ -275,6 +277,30 @@ $("footer .footerCollapse").on("click", function() {
   }
 });
 
+$(".tutorialsSearch").on("keyup", function (e) {
+  const resultsHolder = $(".buildingBlocksSuggestions");
+  const val = e.target.value;
+
+  $.ajax({
+    url: "/tutorials/index.json",
+  }).done(function (result) {
+    resultsHolder.html("");
+    let newResults = result.filter((result) => {
+      if (new RegExp(val, "gmi").test(result.searchKeywords)) {
+        return result;
+      }
+    });
+
+    newResults.map((result) => {
+      resultsHolder.append(
+        `<a class="d-block border-bottom p-3 text-secondary" href="${result.link}">${result.title}</a>`
+      );
+    });
+
+    resultsHolder.addClass("active");
+  });
+});
+
 $(".buildingBlockSearch").on("keyup", function (e) {
   const resultsHolder = $(".buildingBlocksSuggestions");
   const val = e.target.value;
@@ -284,7 +310,7 @@ $(".buildingBlockSearch").on("keyup", function (e) {
   }).done(function (result) {
     resultsHolder.html("");
     let newResults = result.filter((result) => {
-      if (new RegExp(val, "gmi").test(result.title)) {
+      if (new RegExp(val, "gmi").test(result.searchKeywords)) {
         return result;
       }
     });

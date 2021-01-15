@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contribute to Tilburg Science Hub on My New Hugo Site</title>
+    <link>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/</link>
+    <description>Recent content in Contribute to Tilburg Science Hub on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Style and Writing Guide</title>
+      <link>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/style-guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/style-guide/</guid>
+      <description>Develop content for our target audience When contributing content to our platform, please address at least one of our target groups.
+  Students and novice researchers who look for material developed, curated, and rigorously tested by professors and experienced users, ensuring them about quality and usability. Users may not know yet what (and why) they should learn the Tilburg Science Hub way of working. These users need to be onboarded first and guided through our content.</description>
+    </item>
+    
+    <item>
+      <title>Create a New Building Block</title>
+      <link>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-building-block/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-building-block/</guid>
+      <description>Create a new building block Building blocks are the DNA of our platform. They are small code snippets that users can independently &amp;ldquo;mix&amp;rdquo; to create something unique. Think of building blocks like LEGO bricks - each one with its own color, shape and functionality.
+Check out our platform&amp;rsquo;s menu system to see in which categories we classify our building blocks. Want to add a new category? Let us know via a GitHub issue.</description>
+    </item>
+    
+    <item>
+      <title>Create a New Tutorial</title>
+      <link>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-tutorial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-tutorial/</guid>
+      <description>Create a new tutorial Tutorials teach our users how to combine individual building blocks into a &amp;ldquo;final product&amp;rdquo;. What that product really is is your choice.
+When creating a new tutorial, you typically realize that you also need to create several new building blocks to make the tutorial work. So if you haven&amp;rsquo;t contributed to our platform yet, try contributing a building block first before starting on a brand-new tutorial.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -139,6 +139,21 @@ pre {
 .screen-2 {
   max-height: 80vh;
   overflow-y: scroll;
+
+  a {
+    &:hover {
+      color: $primary !important;
+    }
+  }
+
+  .nav-link {
+    font-family: "forma-djr-display";
+    font-weight: 200 !important;
+
+    &:hover {
+      color: $primary !important;
+    }
+  }
 }
 
 .backdrop {

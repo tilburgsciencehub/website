@@ -5,7 +5,7 @@ theme = "tilburg"
 pygmentsUseClasses=true
 
 [outputs]
-  home = ["HTML", "AMP", "RSS"]
+  home = ["HTML", "AMP", "RSS", "JSON"]
   page = ["HTML", "JSON"]
   section = ["HTML", "RSS", "JSON"]
 
