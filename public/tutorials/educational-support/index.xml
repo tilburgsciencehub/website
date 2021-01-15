@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Educational Support on My New Hugo Site</title>
+    <link>https://tsh-website.netlify.app/tutorials/educational-support/</link>
+    <description>Recent content in Educational Support on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="https://tsh-website.netlify.app/tutorials/educational-support/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Educational Videos</title>
+      <link>https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/educational-videos-overview/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/educational-videos-overview/</guid>
+      <description>Overview An educational video is meant for transferring knowledge to an audience. These often involve animations or presenting a slide deck. However, in most of the cases, you might want to show yourself - or the presenter - talking to the camera.
+This guide will focus on the process of making these videos, not the content, and it&amp;rsquo;s aimed at teachers or contributors of Tilburg Science Hub. In other words, we will talk about the technical preparation and equipment needed to record such videos, not on how to create animations or compelling presentations.</description>
+    </item>
+    
+    <item>
+      <title>Buying Equipment for Educational Videos</title>
+      <link>https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/equipment-edu-videos/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/equipment-edu-videos/</guid>
+      <description>Part 1 We&amp;rsquo;re going to present three different setup options ordered by increasing complexity. Keep in mind that more complex setups require a higher budget, more physical space, and more time to put in place. The higher setup time is one-off. Actually, in all three options it&amp;rsquo;s very quick and easy to start rolling once everything has been correctly configured for the first time.
+Option 1 - Home Setup with a Webcam The need of expensive gear to produce high quality images is a myth.</description>
+    </item>
+    
+    <item>
+      <title>Shooting Educational Videos</title>
+      <link>https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/shooting-edu-videos/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/shooting-edu-videos/</guid>
+      <description>Part 2 In this second part of our guide you will learn about the essential steps required to shoot educational videos.
+Step 1 - Set Up Your Scene The first thing to do is to set up your scene, place your camera on a tripod, and compose the shot.
+Here you face your first decision. You will need to choose what to include in your frame. This will dictate what focal length to use (i.</description>
+    </item>
+    
+  </channel>
+</rss>

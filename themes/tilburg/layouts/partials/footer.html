@@ -5,24 +5,7 @@
 			<div class="col-1">
 				<img src="/img/footer-mark.svg" alt="" class="d-none d-lg-block">
 			</div>
-			<div class="col-lg-1 col-0"></div>
-			<div class="col-lg-4 col-21">
-				<div class="footerCollapse">
-					<div class="heading text-white d-block py-3">Building Blocks</div>
-
-					<div class="d-none d-lg-block links">
-						{{- range where .Site.Pages "Section" "building-blocks" -}}
-						{{ if eq .Params.isParent "true" }}
-						{{- range $index, $value := .Pages -}}
-						<a href="{{ .Permalink }}">{{ .Title }}</a>
-						{{- end -}}
-						{{ end }}
-						{{- end -}}
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-1 col-0"></div>
-			<div class="col-lg-4 col-21">
+			<div class="col-lg-1 col-0"></div><div class="col-lg-4 col-21">
 				<div class="footerCollapse">
 					<div class="heading text-white d-block py-3">Tutorials</div>
 
@@ -33,6 +16,23 @@
 						{{ if ne .Params.indexexclude "true" }}
 						<a href="{{ .Permalink }}">{{ .Title }}</a>
 						{{ end }}
+						{{- end -}}
+						{{ end }}
+						{{- end -}}
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-1 col-0"></div>
+			<div class="col-lg-4 col-21">
+				<div class="footerCollapse">
+					<div class="heading text-white d-block py-3">Building Blocks</div>
+
+					<div class="d-none d-lg-block links">
+						{{- range where .Site.Pages "Section" "building-blocks" -}}
+						{{ if eq .Params.isParent "true" }}
+						{{- range $index, $value := .Pages -}}
+						<a href="{{ .Permalink }}">{{ .Title }}</a>
 						{{- end -}}
 						{{ end }}
 						{{- end -}}

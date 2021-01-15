@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>More Tutorials on My New Hugo Site</title>
+    <link>https://tsh-website.netlify.app/tutorials/other-category/</link>
+    <description>Recent content in More Tutorials on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="https://tsh-website.netlify.app/tutorials/other-category/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implement an Efficient and Reproducible Workflow</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/implement-an-efficient-and-reproducible-workflow-overview/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/implement-an-efficient-and-reproducible-workflow-overview/</guid>
+      <description>Longing to put your knowledge from our workflow guide into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our GitHub workflow template.
+Objectives of this tutorial  Familiarize yourself with a robust directory structure for data-intensive projects Experience the benefits of automating workflows with makefiles/GNU make Learn to use Git templates for your own research projects Adjust the workflow template to  &amp;hellip;download different datasets from the web &amp;hellip;unzip data automatically &amp;hellip;parse JSON objects and select relevant attributes &amp;hellip;add new text mining metrics to the final data set using Python&amp;rsquo;s textblob &amp;hellip;modify the analysis in an RMarkdown/html document    Prerequisites  Computer setup following our setup instructions   Python and the textblob package</description>
+    </item>
+    
+    <item>
+      <title>Verify Software Setup</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/verify/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/verify/</guid>
+      <description>Let&amp;rsquo;s verify whether everything is properly installed Before we&amp;rsquo;re getting started, let&amp;rsquo;s verify whether you have properly followed our [setup guide](.. setup) for R, Python and make in order to be able to run our workflow.
+Our tutorial clips are recorded on Windows, but have been tested on a Mac, too.
+Watch our video   </description>
+    </item>
+    
+    <item>
+      <title>Download the Template</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/clone/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/clone/</guid>
+      <description>Let&amp;rsquo;s download the template You can access the workflow template from here. We first need to download (or, as Git users would say, fork and clone) the template. The template then is accessible on our local computer, and we can start modifying it.
+Watch our video to learn about the two ways of downloading a template. After that, work through the set of practice questions.
+  Warning Clone/download the files where you have writing rights.</description>
+    </item>
+    
+    <item>
+      <title>Running the Workflow</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/run/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/run/</guid>
+      <description>Let&amp;rsquo;s run the workflow When starting to work with a template, we ideally like to see it &amp;ldquo;working&amp;rdquo; on &amp;ldquo;test data&amp;rdquo; first. In this way, we know we can extend it easily. As our template is fully automated, building should be easy - you only need to type make.
+So let&amp;rsquo;s go ahead by first watching our demo on what happens if you run make in our template&amp;rsquo;s main directory. Then, you can proceed to our practice questions.</description>
+    </item>
+    
+    <item>
+      <title>Inspecting the Data-preparation Pipeline</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/pipeline-make/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/pipeline-make/</guid>
+      <description>Makefile of the data-preparation pipeline Up to now, we&amp;rsquo;ve learnt how to run make in our template. But we haven&amp;rsquo;t really learnt yet how the files in each of the particular pipeline stages are actually run. So, let&amp;rsquo;s now navigate to the data-preparation source code folder, and explore the makefile a bit.
+Please first try to answer our questions below, and then watch our solutions.
+!!! questions &amp;ldquo;Practice questions and answers&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Dry-run of Make and First Modifications</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/wipe-rerun/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/wipe-rerun/</guid>
+      <description>Dry-run of Make and first modifications to the data preparation scripts Sometimes, running a workflow may take hours, or even days. That&amp;rsquo;s why make supports so-called &amp;ldquo;dry-runs&amp;rdquo;, which you can initiate by typing make -n (for NOT run).
+Watch our video to understand the intuition of dry-runs.
+Next, you will start to modify the scripts in this template. After all, you&amp;rsquo;re working on a template that you&amp;rsquo;re ultimately interested in modifying (e.</description>
+    </item>
+    
+    <item>
+      <title>More Modifications</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/modifications/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/modifications/</guid>
+      <description>More modifications, branching, and replacing input files Now let&amp;rsquo;s continue with a couple of advanced modifications to our workflow. We hope these convince you about the potential efficiency gains you can expect when working on data-intensive projects!
+This time, you can directly start working on the practice questions below. Also take note of our additional explanations for each question.
+!!! questions &amp;ldquo;Practice questions and answers&amp;rdquo;
+1) Please open `textmining.py`, and also provide the word count as an additional column.</description>
+    </item>
+    
+    <item>
+      <title>Extending the Analysis</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/analysis/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/analysis/</guid>
+      <description>Let&amp;rsquo;s modify the analysis We&amp;rsquo;re done with the data-preparation pipeline for now, and turn our attention to the analysis part of our project.
+Admittedly, there&amp;rsquo;s not much here yet. Try fiddling around with the files a bit when you proceed to our practice questions and answers below.
+Now let&amp;rsquo;s continue with a couple of modifications. You can directly start working on the practice questions below.
+!!! questions &amp;ldquo;Practice questions and answers&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Wrap-Up</title>
+      <link>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/finish/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/finish/</guid>
+      <description>You did it! Congrats!!! You&amp;rsquo;ve finished our tutorial, and are now officially hooked to make.
+Well, all fun aside, we hope you found this tutorial useful.
+Of course, this is just one way in which to increase your research productivity. Here on tilburgsciencehub.com, we have more stuff available, so take your time to browse the page.
+Oh, and to be complete, here&amp;rsquo;s a summary of what you&amp;rsquo;ve learnt.
+Thanks for following through!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,3 +1,19 @@
 {
-  "pages": ["list"]
+  "pages": [
+  	{{- $len := len .Site.Pages -}}
+  	{{- $i := 0 -}}
+  	{{- range .Site.Pages -}}
+  	{{- if .Title -}}
+  		{{ if $i }},{{ end }}
+	  	{
+	  		"searchKeywords": "{{- .Title -}} {{- if .Params.keywords -}}{{- .Params.keywords -}}{{- end -}} {{- if .Params.description -}}{{- .Params.description -}}{{- end -}}",
+	  		"title": "{{ .Title }}",
+	  		"permalink": "{{ .Permalink }}"
+	  	}
+
+  	{{- end -}}
+
+	  	{{- $i = add $i 1 -}}
+  	{{- end -}}
+  ]
 }

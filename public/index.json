@@ -1,0 +1,438 @@
+{
+  "pages": [
+	  	{
+	  		"searchKeywords": "Implement an Efficient and Reproducible Workflow",
+	  		"title": "Implement an Efficient and Reproducible Workflow",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/implement-an-efficient-and-reproducible-workflow-overview/"
+	  	},
+	  	{
+	  		"searchKeywords": "Software Setup Overview[software, setup, guide, configure, configuration]Here is a guide to help you get started setting up the computing environment on your machine ready.",
+	  		"title": "Software Setup Overview",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/software-setup-overview/"
+	  	},
+	  	{
+	  		"searchKeywords": "Use GitHub to Share your Work",
+	  		"title": "Use GitHub to Share your Work",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/"
+	  	},
+	  	{
+	  		"searchKeywords": "Command Line Tools[CLI, terminal]A command-line interface or command language interpreter (CLI), also known as a terminal, is a means of interacting with a computer program.",
+	  		"title": "Command Line Tools",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/commandline/"
+	  	},
+	  	{
+	  		"searchKeywords": "Document a Project",
+	  		"title": "Document a Project",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/documenting-a-project/"
+	  	},
+	  	{
+	  		"searchKeywords": "Checklists to Audit your Project",
+	  		"title": "Checklists to Audit your Project",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/organize-your-project/checklists-to-audit-your-project/"
+	  	},
+	  	{
+	  		"searchKeywords": "Educational Videos",
+	  		"title": "Educational Videos",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/educational-videos-overview/"
+	  	},
+	  	{
+	  		"searchKeywords": "Learn R",
+	  		"title": "Learn R",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/learn-to-code/learn-r/"
+	  	},
+	  	{
+	  		"searchKeywords": "Principles for Good Coding[style, optimize, definition, human]Make your code easy to understand for humans. If your code looks very complex or messy, you're probably doing it wrong.",
+	  		"title": "Principles for Good Coding",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/principles-good-coding/"
+	  	},
+	  	{
+	  		"searchKeywords": "Principles of Project Setup and Workflow Management",
+	  		"title": "Principles of Project Setup and Workflow Management",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/principles-overview/"
+	  	},
+	  	{
+	  		"searchKeywords": "Project Setup",
+	  		"title": "Project Setup",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/project-setup/"
+	  	},
+	  	{
+	  		"searchKeywords": "Statistics and Computation",
+	  		"title": "Statistics and Computation",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/"
+	  	},
+	  	{
+	  		"searchKeywords": "TiSEM AirBnB Template[tisem, airbnb, template, example]",
+	  		"title": "TiSEM AirBnB Template",
+	  		"permalink": "https://tsh-website.netlify.app/examples/tisem-airbnb-template/"
+	  	},
+	  	{
+	  		"searchKeywords": "TiSEM AirBnB Template[tisem, airbnb, template, example]",
+	  		"title": "TiSEM AirBnB Template",
+	  		"permalink": "https://tsh-website.netlify.app/examples/tisem-airbnb-template/tisem/"
+	  	},
+	  	{
+	  		"searchKeywords": "Versioning using Git and GitHub[git, github, versioning, pull, push, fork, share, commit, add]Git is an open-source version control system that allows you to keep track of your source files and the changes you make to them.",
+	  		"title": "Versioning using Git and GitHub",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/versioning-using-git/"
+	  	},
+	  	{
+	  		"searchKeywords": "Style and Writing Guide[style, styling, guideline, writing]When contributing content to our platform, please follow our style and writing guidelines.",
+	  		"title": "Style and Writing Guide",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/style-guide/"
+	  	},
+	  	{
+	  		"searchKeywords": "Buying Equipment for Educational Videos",
+	  		"title": "Buying Equipment for Educational Videos",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/equipment-edu-videos/"
+	  	},
+	  	{
+	  		"searchKeywords": "Configuring Python for Web Scraping[web scraping, scraping, automation, browser, chromedriver]Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page.",
+	  		"title": "Configuring Python for Web Scraping",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/webscraping_drivers/"
+	  	},
+	  	{
+	  		"searchKeywords": "Verify Software Setup",
+	  		"title": "Verify Software Setup",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/verify/"
+	  	},
+	  	{
+	  		"searchKeywords": "Work with Large Files on GitHub[github, git-lfs, large files, versioning, organizing]GitHub limits the size of files allowed in repositories. Use Git-LFS, an open-source Git extension for large file storage.",
+	  		"title": "Work with Large Files on GitHub",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/git-lfs/"
+	  	},
+	  	{
+	  		"searchKeywords": "Automated Installation",
+	  		"title": "Automated Installation",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/automated-installation/"
+	  	},
+	  	{
+	  		"searchKeywords": "Automation with GNU Make[make, build, build tool]Make is a build tool that allows us to control the execution of a set of command line statements.",
+	  		"title": "Automation with GNU Make",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/make/"
+	  	},
+	  	{
+	  		"searchKeywords": "Document Raw Data",
+	  		"title": "Document Raw Data",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/documenting-raw-data/"
+	  	},
+	  	{
+	  		"searchKeywords": "Learn to Code",
+	  		"title": "Learn to Code",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/learn-to-code/"
+	  	},
+	  	{
+	  		"searchKeywords": "Tips",
+	  		"title": "Tips",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/"
+	  	},
+	  	{
+	  		"searchKeywords": "Automation and Workflows",
+	  		"title": "Automation and Workflows",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/"
+	  	},
+	  	{
+	  		"searchKeywords": "Data Management and Directory Structure",
+	  		"title": "Data Management and Directory Structure",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/organize-your-project/data-management-and-directory-structure/"
+	  	},
+	  	{
+	  		"searchKeywords": "Educational Support",
+	  		"title": "Educational Support",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/educational-support/"
+	  	},
+	  	{
+	  		"searchKeywords": "Learn Python and Julia",
+	  		"title": "Learn Python and Julia",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/learn-to-code/learn-python-and-julia/"
+	  	},
+	  	{
+	  		"searchKeywords": "Pipelines and Project Components",
+	  		"title": "Pipelines and Project Components",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/pipeline/"
+	  	},
+	  	{
+	  		"searchKeywords": "Writing an Academic Paper[writing, paper, thesis, latex, structure, abstract]Learn the typical structure of an empirical paper in economics and business.",
+	  		"title": "Writing an Academic Paper",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/write-academic-paper/"
+	  	},
+	  	{
+	  		"searchKeywords": "Contribute to Tilburg Science Hub",
+	  		"title": "Contribute to Tilburg Science Hub",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/"
+	  	},
+	  	{
+	  		"searchKeywords": "Create a New Building Block[building block, building, block, contribute]Building blocks are the DNA of our platform. Learn how to create a new one.",
+	  		"title": "Create a New Building Block",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-building-block/"
+	  	},
+	  	{
+	  		"searchKeywords": "Data Sharing[data, sharing]Document and share data for internal and external use",
+	  		"title": "Data Sharing",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/project-setup/share-data/"
+	  	},
+	  	{
+	  		"searchKeywords": "Download the Template",
+	  		"title": "Download the Template",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/clone/"
+	  	},
+	  	{
+	  		"searchKeywords": "Shooting Educational Videos",
+	  		"title": "Shooting Educational Videos",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/educational-support/educational-videos/shooting-edu-videos/"
+	  	},
+	  	{
+	  		"searchKeywords": "Task-specific configurations",
+	  		"title": "Task-specific configurations",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/"
+	  	},
+	  	{
+	  		"searchKeywords": "Document your Code and Pipeline",
+	  		"title": "Document your Code and Pipeline",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/documenting-code-and-pipeline/"
+	  	},
+	  	{
+	  		"searchKeywords": "Python",
+	  		"title": "Python",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/python/"
+	  	},
+	  	{
+	  		"searchKeywords": "Snakemake[snakemake, build, build tool, workflow]Snakemake is an easy to use workflow management system.",
+	  		"title": "Snakemake",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/snakemake/"
+	  	},
+	  	{
+	  		"searchKeywords": "Links to Other Great Initiatives[style, optimize, definition, human]Here we post some links to material we've discovered recently and find useful.",
+	  		"title": "Links to Other Great Initiatives",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/links-other-initiatives/"
+	  	},
+	  	{
+	  		"searchKeywords": "More Tutorials",
+	  		"title": "More Tutorials",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/other-category/"
+	  	},
+	  	{
+	  		"searchKeywords": "Pipelines and Project Components",
+	  		"title": "Pipelines and Project Components",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/organize-your-project/pipelines-and-project-components/"
+	  	},
+	  	{
+	  		"searchKeywords": "Create a New Tutorial[tutorial, contribute, guidelines]Tutorials teach our users how to combine individual building blocks into a final product. Learn how to write one.",
+	  		"title": "Create a New Tutorial",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-tutorial/"
+	  	},
+	  	{
+	  		"searchKeywords": "Running the Workflow",
+	  		"title": "Running the Workflow",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/run/"
+	  	},
+	  	{
+	  		"searchKeywords": "Making Path Settings Permanent[PATH, add, terminal, cli]For our workflow be be command line driven, we need to be able to call software from the command line.",
+	  		"title": "Making Path Settings Permanent",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/environment-variables/"
+	  	},
+	  	{
+	  		"searchKeywords": "R and RStudio[R, statistics, installation, software, RStudio]R is a language for statistical computing and graphics,",
+	  		"title": "R and RStudio",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/r/"
+	  	},
+	  	{
+	  		"searchKeywords": "Remote Raw Data Setup",
+	  		"title": "Remote Raw Data Setup",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/"
+	  	},
+	  	{
+	  		"searchKeywords": "Inspecting the Data-preparation Pipeline",
+	  		"title": "Inspecting the Data-preparation Pipeline",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/pipeline-make/"
+	  	},
+	  	{
+	  		"searchKeywords": "Stata[Stata, software, installation]Stata is a proprietary statistical software frequently used by scientific users.",
+	  		"title": "Stata",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/stata/"
+	  	},
+	  	{
+	  		"searchKeywords": "TeamViewer[teamviewer, software, installation, remote]Teamviewer allows to remote-control your computer to solve technical issues.",
+	  		"title": "TeamViewer",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/teamviewer/"
+	  	},
+	  	{
+	  		"searchKeywords": "Mirror your Code to GitHub",
+	  		"title": "Mirror your Code to GitHub",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/organize-your-project/mirror-your-code-to-github/"
+	  	},
+	  	{
+	  		"searchKeywords": "Dry-run of Make and First Modifications",
+	  		"title": "Dry-run of Make and First Modifications",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/wipe-rerun/"
+	  	},
+	  	{
+	  		"searchKeywords": "MATLAB[Matlab, software, installation]MATLAB is a high-level programming language and an environment for numerical computation and visualization",
+	  		"title": "MATLAB",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/matlab/"
+	  	},
+	  	{
+	  		"searchKeywords": "More Modifications",
+	  		"title": "More Modifications",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/modifications/"
+	  	},
+	  	{
+	  		"searchKeywords": "Pandoc[Pandoc, installation, software]Pandoc is an extremely useful 'swiss army knife' for converting between different types of markup languages from the command line.",
+	  		"title": "Pandoc",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/pandoc/"
+	  	},
+	  	{
+	  		"searchKeywords": "Extending the Analysis",
+	  		"title": "Extending the Analysis",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/analysis/"
+	  	},
+	  	{
+	  		"searchKeywords": "Text Editors[text, editor, atom, installation, software]A good text editor lies at the heart of any serious programmer's toolkit.",
+	  		"title": "Text Editors",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/text-editor/"
+	  	},
+	  	{
+	  		"searchKeywords": "Wrap-Up",
+	  		"title": "Wrap-Up",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/other-category/implement-an-efficient-and-reproducible-workflow/finish/"
+	  	},
+	  	{
+	  		"searchKeywords": "LaTeX[latex, tex, installation, software]LaTeX is a great typesetting system that includes a lot of features that allow to produce scientific documents",
+	  		"title": "LaTeX",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/latex/"
+	  	},
+	  	{
+	  		"searchKeywords": "Git and GitHub for Version Control[git, github, installation, software]Git is an open source version control system (VCS) that has gained a lot of traction in the programming community",
+	  		"title": "Git and GitHub for Version Control",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/git/"
+	  	},
+	  	{
+	  		"searchKeywords": "Configure your computer",
+	  		"title": "Configure your computer",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/"
+	  	},
+	  	{
+	  		"searchKeywords": "Develop your coding skills",
+	  		"title": "Develop your coding skills",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/"
+	  	},
+	  	{
+	  		"searchKeywords": "Data Management and Directory Structure",
+	  		"title": "Data Management and Directory Structure",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/directories/"
+	  	},
+	  	{
+	  		"searchKeywords": "Organize your project",
+	  		"title": "Organize your project",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/organize-your-project/"
+	  	},
+	  	{
+	  		"searchKeywords": "Automating your Pipeline",
+	  		"title": "Automating your Pipeline",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation/"
+	  	},
+	  	{
+	  		"searchKeywords": "Collect your data",
+	  		"title": "Collect your data",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/collect-your-data/"
+	  	},
+	  	{
+	  		"searchKeywords": "Documenting Datasets",
+	  		"title": "Documenting Datasets",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/documenting-data/"
+	  	},
+	  	{
+	  		"searchKeywords": "Documenting Source Code and Pipeline Workflows",
+	  		"title": "Documenting Source Code and Pipeline Workflows",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/documenting-code/"
+	  	},
+	  	{
+	  		"searchKeywords": "Store and document your data",
+	  		"title": "Store and document your data",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/"
+	  	},
+	  	{
+	  		"searchKeywords": "Prepare your data for analysis",
+	  		"title": "Prepare your data for analysis",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/prepare-your-data-for-analysis/"
+	  	},
+	  	{
+	  		"searchKeywords": "Versioning using Git and GitHub",
+	  		"title": "Versioning using Git and GitHub",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/versioning/"
+	  	},
+	  	{
+	  		"searchKeywords": "Analyze data",
+	  		"title": "Analyze data",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/analyze-data/"
+	  	},
+	  	{
+	  		"searchKeywords": "Collaborating using GitHub",
+	  		"title": "Collaborating using GitHub",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/collaboration/"
+	  	},
+	  	{
+	  		"searchKeywords": "Automate and execute your work",
+	  		"title": "Automate and execute your work",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/automate-and-execute-your-work/"
+	  	},
+	  	{
+	  		"searchKeywords": "Checklist to Audit Data- and Computation-intensive Projects",
+	  		"title": "Checklist to Audit Data- and Computation-intensive Projects",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/project-setup/principles-of-project-setup-and-workflow-management/checklist/"
+	  	},
+	  	{
+	  		"searchKeywords": "Share code and results",
+	  		"title": "Share code and results",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/"
+	  	},
+	  	{
+	  		"searchKeywords": "Tutorials",
+	  		"title": "Tutorials",
+	  		"permalink": "https://tsh-website.netlify.app/tutorials/"
+	  	},
+	  	{
+	  		"searchKeywords": "Python packages",
+	  		"title": "Python packages",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/python/python-packages/"
+	  	},
+	  	{
+	  		"searchKeywords": "Building Blocks",
+	  		"title": "Building Blocks",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/"
+	  	},
+	  	{
+	  		"searchKeywords": "Disclaimer",
+	  		"title": "Disclaimer",
+	  		"permalink": "https://tsh-website.netlify.app/disclaimer/"
+	  	},
+	  	{
+	  		"searchKeywords": "Examples",
+	  		"title": "Examples",
+	  		"permalink": "https://tsh-website.netlify.app/examples/"
+	  	},
+	  	{
+	  		"searchKeywords": "Putting Data",
+	  		"title": "Putting Data",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/putting-data/"
+	  	},
+	  	{
+	  		"searchKeywords": "Retrieving Data",
+	  		"title": "Retrieving Data",
+	  		"permalink": "https://tsh-website.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/retrieving-data/"
+	  	},
+	  	{
+	  		"searchKeywords": "About",
+	  		"title": "About",
+	  		"permalink": "https://tsh-website.netlify.app/about/"
+	  	},
+	  	{
+	  		"searchKeywords": "Categories",
+	  		"title": "Categories",
+	  		"permalink": "https://tsh-website.netlify.app/categories/"
+	  	},
+	  	{
+	  		"searchKeywords": "Tags",
+	  		"title": "Tags",
+	  		"permalink": "https://tsh-website.netlify.app/tags/"
+	  	}]
+}

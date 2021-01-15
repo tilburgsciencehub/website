@@ -1,5 +1,12 @@
-{{- $.Scratch.Add "index" slice -}}
-{{- range $index, $element := where .Site.Pages "Section" "building-blocks" -}}
-    {{- $.Scratch.Add "index" (dict "title" $element.Title "link" $element.Permalink) -}}
-{{- end -}}
-{{- $.Scratch.Get "index" | jsonify -}}
+[
+	{{- range $index, $element := where .Site.Pages "Section" "building-blocks" -}}
+    {{ if .Title }}
+    {{ if $index }},{{end}}
+    	{
+    		"searchKeywords": "{{ .Title }} {{ if .Params.keywords }}{{ .Params.keywords }}{{ end }} {{ if .Params.description }}{{ .Params.description }}{{ end }}",
+    		"title": "{{ .Title }}",
+    		"link": "{{ .Permalink }}"
+    	}
+    {{ end }}
+	{{- end -}}
+]
