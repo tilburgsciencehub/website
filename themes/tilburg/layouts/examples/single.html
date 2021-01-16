@@ -5,7 +5,7 @@
 </div>
 <div class="container content px-0 mt-5">
 	<div class="row justify-content-center mx-0">
-		<div class="col-lg-8 col-22">
+		<div class="col-lg-8 col-22 pr-lg-5">
 			<div class="sticky-top">
 				<h1 style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
 				{{ if .TableOfContents }}
@@ -23,6 +23,8 @@
 				{{ .Content }}
 			</div>
 		</article>
+
+		{{ partial "relatedPosts.html" . }}
 	</div>
 </div>
 

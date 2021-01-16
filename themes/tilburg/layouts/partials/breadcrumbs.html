@@ -10,7 +10,7 @@
 {{ end }}
 {{ end }}
 
-<nav class="breadcrumbs px-4 px-lg-0">
+<nav class="breadcrumbs px-4 px-lg-0 text-center text-lg-left">
 	{{ $.Scratch.Set "counter" 0 }}
   {{ range $.Scratch.Get "siteBreadcrumbs" }}
   	{{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
