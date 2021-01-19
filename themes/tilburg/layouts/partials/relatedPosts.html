@@ -5,14 +5,16 @@
 	</div>
 	<div class="col-lg-16 col-24">
 		<ul class="my-4 list-unstyled relatedPosts">
-		{{ range first 3 (shuffle (where (where .Site.RegularPages "Section" .Section) "Title" "!=" .Title )) }}
-		
+		{{ $related := .Site.RegularPages.Related . | first 5 }}
+		{{ with $related }}
+		{{ range . }}
       <li class="pb-2">
       	<a href="{{ .Permalink }}">
       		<span class="icon link text-primary d-inline-block mr-2"></span>
         	{{ .Title }}
       	</a>
       </li>
+      {{ end }}
 		{{ end }}
 	</ul>
 	</div>
