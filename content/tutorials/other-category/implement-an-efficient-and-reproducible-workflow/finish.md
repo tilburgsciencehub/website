@@ -23,6 +23,7 @@ Oh, and to be complete, here's a summary of what you've learnt.
 **Thanks for following through! Good job!**
 
 {{% summary %}}
+
 Can you believe you all did this? See below for the (long list)
 
 - You've cloned our GitHub template for a reproducible textmining

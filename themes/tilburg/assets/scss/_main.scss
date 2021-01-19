@@ -9,6 +9,9 @@
 * {
   // outline: solid 1px rgba(255, 0, 0, 0.6);
 }
+
+
+
 .relatedPosts {
   margin: 0 !important;
   a {
@@ -743,6 +746,18 @@ input {
 
   &.warning {
     background-color: #FFF2E8;
+  }
+
+  &.example {
+    background-color: #F0F7FF;
+  }
+}
+
+.linkHeading {
+  color: $secondary !important;
+
+  &:hover {
+    color: $primary !important;
   }
 }
 
