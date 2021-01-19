@@ -2,7 +2,7 @@
 tutorialtitle: "Educational Videos"
 title: "Buying Equipment for Educational Videos"
 description: ""
-keywords: ""
+keywords: "educational, videos, shooting, camera, teaching, tips, lighting, lenses, microphone, audio"
 date: 2021-01-06T22:01:14+05:30
 draft: false
 weight: 2
