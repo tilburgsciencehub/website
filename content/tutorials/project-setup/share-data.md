@@ -1,7 +1,7 @@
 ---
 title: "Data Sharing"
 description: "Document and share data for internal and external use"
-keywords: "data, sharing"
+keywords: "data sharing"
 weight: 2
 draft: false
 ---

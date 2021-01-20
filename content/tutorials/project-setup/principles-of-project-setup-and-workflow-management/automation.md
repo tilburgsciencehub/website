@@ -2,6 +2,8 @@
 tutorialtitle: "Principles of Project Setup and Workflow Management"
 indexexclude: "true"
 title: "Automating your Pipeline"
+description: "We can automate our pipeline using so-called build tools to execute sequential code files."
+keywords: "make, data, automation, build, recipe, pipeline"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 40
@@ -9,7 +11,7 @@ weight: 40
 
 ## Overview
 
-Remember the [different stages of a project's pipeline](pipeline.md#project-pipelines)? Let's suppose
+Remember the [different stages of a project's pipeline](../pipeline/#project-pipelines)? Let's suppose
 we're in the process of preparing our data set for analysis. For example:
 
 1. You wish to convert three raw data sets from Excel to CSV files.
@@ -21,8 +23,7 @@ This workflow for your specific pipeline can be visualized as follows:
 
 ![Workflow](../make_flowchart.png)
 
-Using so-called "build tools" such as [`make`](../setup/make.md), we can
-specify
+Using so-called "build tools" such as [`make`](/configure-your-computer/automation-and-workflows/make/), we can specify:
 
 - what code runs and when, and
 - what inputs (e.g., data, parameters) a given source code file needs to run.
@@ -34,9 +35,9 @@ build certain `targets`, using a set of `source files` and `execution command(s)
 - *source(s)* specify what is **required** to execute the build, and
 - the *execution command* specifies **how** to execute the build.
 
-In `make` code, this becomes
+In `make` code, this becomes:
 
-```bash
+```make
 target: source(s)
     execution command
 ```
@@ -44,7 +45,7 @@ target: source(s)
 
 In "`make` code," the workflow above - saved in a *makefile* (a file called `makefile`, without a file type ending) - becomes:
 
-```bash
+```make
 
 ../../gen/data-preparation/temp/cleaned_data1.csv ../../gen/data-preparation/temp/cleaned_data2.csv ../../gen/data-preparation/temp/cleaned_data3.csv: ../../data/dataset1/raw_data1.xlsx ../../data/dataset2/raw_data2.xlsx ../../data/dataset3/raw_data3.xlsx python to_csv.py
    	python to_csv.py
@@ -65,22 +66,23 @@ In "`make` code," the workflow above - saved in a *makefile* (a file called `mak
 -->
 
 
-!!! hint
-	Pay attention to the subdirectory structure used here: the rules refer to files in different folders (src, gen, data, etc.), which are explained [earlier in this guide](directories.md).
+{{% tip %}}
+Pay attention to the subdirectory structure used here: the rules refer to files in different folders (src, gen, data, etc.), which are explained [earlier in this guide](../directories).
+{{% /tip %}}
 
 ## Running `make`
 
-**Building your pipeline / running `make`**
+### Building your pipeline / running `make`
 
 You run the entire workflow by typing `make` in the directory where the `makefile` is located.
 
-**Preview your pipeline, "dry run"**
+### Preview your pipeline, "dry run"
 
 If you type `make -n`, you are entering a sort-of "preview" mode: `make`
 will provide you a list of commands it would execute - but it does not
 actually execute them. Great to preview how a workflow would be executed!
 
-**Consider Source Code or Targets as Up-to-Date**
+### Consider Source Code or Targets as Up-to-Date
 
 By default, `make` runs each step in a workflow that *needs* to be
 updated. However, sometimes you wish to only rebuild *some* but not all
@@ -93,7 +95,7 @@ whether you want to consider **file(s)**, or **targets** as up-to-date.
 Recall that *targets* are higher-order recipes, whereas files are, well,
 merely files.
 
-*Considering a **target** as up-to-date:*
+**Considering a *target* as up-to-date:**
 
 Pass the parameter `-t targetname` to `make`, and press enter. For example,
 ```
@@ -103,19 +105,20 @@ make -t targetname
 The `targetname` is now "up-to-date". When you then run `make`,
 it will only run those files necessary to build the remainder of the workflow.
 
-*Considering **source code** as up-to-date:*
+**Considering *source code* as up-to-date:**
 
 Pass the parameter `-o filename1 filename2` to `make`.
 In other words, `filename1` and `filename2` will be considered "infinitely old",
 and when rebuilding, that part of the project will not be executed.
 
-!!! warning
-    Of course, using `-t` and `-o` should only be used for *prototyping* your
-    code. When you're done editing (e.g., at the end of the day), make
-    your temporary and output files, and re-run `make`
-    to see whether everything works (and reproduces).
+{{% warning %}}
+Of course, using `-t` and `-o` should only be used for *prototyping* your
+code. When you're done editing (e.g., at the end of the day), make
+your temporary and output files, and re-run `make`
+to see whether everything works (and reproduces).
+{{% /warning %}}
 
-**Advanced use cases**
+### Advanced use cases
 
 This [book by O'Reilly Media](https://www.oreilly.com/openbook/make3/book/index.csp) explains all the bells and whistles about using `make`. Definitely recommended!
 
@@ -134,7 +137,7 @@ Using `make `, you can simply ship your entire code off to the cluster, change t
 
 ### Are there alternatives to `make`?
 
-**Other build tools**
+#### Other build tools
 
 There are dozens of build tools in the market, many of which are open source. For more information, please check [Awesome Pipeline](https://github.com/pditommaso/awesome-pipeline) and [Awesome Workflow](https://github.com/meirwah/awesome-workflow-engines).
 
@@ -144,7 +147,7 @@ There are dozens of build tools in the market, many of which are open source. Fo
 - [Cmake](https://cmake.org/)/[Scons](https://scons.org/): general make tools
 - [Bazel](https://bazel.build): Google's next generation build system
 
-**Readme.txt**
+#### Readme.txt
 
 Don't have time to set up a reproducible workflow using `make`?
 A `readme.txt` - or, in other words, a plain text file with some documentation - is great alternative.
@@ -152,7 +155,7 @@ They are very useful to provide an overview about what the project is
 about, and many researchers also use them to explain in which order to run scripts. But then again,
 you would have to execute that code manually.
 
-**make.bat - a bash script**
+#### make.bat - A bash Script
 
 What you see with other researchers is that they put the running instructions into a bash script,
 for example a `.bat` file on Windows. Such a file is helpful because it makes the order of
@@ -162,17 +165,17 @@ projects, though, you would exactly want to avoid that to make quick progress.
 
 To sum up, we prefer `make` over a `readme.txt` or a `make.bat`. But better have one of those than no documentation at all.
 
-## Summary
+{{% summary %}}
+**What is `make`, and how can we use it to automate pipelines?**
 
-!!! summary "What is `make`, and how can we use it to automate pipelines?"
+With `make`, we:
 
-	With `make`, we
+- explicitly document the workflow, making communication with colleagues (and especially our future selves) more efficient,
 
-	- explicitly document the workflow, making communication with colleagues (and especially our future selves) more efficient,
+- can reproduce the entire workflow with one command,
 
-	- can reproduce the entire workflow with one command,
+- keep track of complicated file dependencies, and
 
-	- keep track of complicated file dependencies, and
-
-	- are kept from *repeating* typos or mistakes - if we stick to using `make` everytime
-	we want to run our project, then we *must* correct each mistake before we can continue.
+- are kept from *repeating* typos or mistakes - if we stick to using `make` everytime
+we want to run our project, then we *must* correct each mistake before we can continue.
+{{% /summary %}}

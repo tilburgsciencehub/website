@@ -3,6 +3,8 @@ tutorialtitle: "Principles of Project Setup and Workflow Management"
 indexexclude: "true"
 title: "Documenting Source Code and Pipeline Workflows"
 date: 2020-11-11T22:01:14+05:30
+description: "Documenting your project's workflow, not only for others, but also for your future self is absolutely crucial. Learn how."
+keywords: "document, code, workflow, reference, comment, documentation"
 draft: false
 weight: 50
 ---
@@ -15,7 +17,7 @@ after a while) is **absolutely crucial** to the long-term success of you as a re
 Typically, you would like to
 
 - include a main project documentation, and
-- one documentation each for each [stage of your pipeline](pipeline.md).
+- one documentation each for each [stage of your pipeline](../pipeline).
 
 ## Main Project Documentation
 
@@ -30,7 +32,7 @@ least the following information:
 	* Date of last update
 * Build instructions
 	* Dependencies ("what software is needed to replicate the project?")
-	* Explaining the [directory structure](directories.md) ("where to find what?")
+	* Explaining the [directory structure](../directories) ("where to find what?")
 	* How to run/build the project
 
 Here is an example documentation you can use as a template:
@@ -62,7 +64,7 @@ BUILD INSTRUCTIONS
 1) Dependencies
 
 Please follow the installation guide on
-http://www.tilburgsciencehub.com/setup for
+http://www.tilburgsciencehub.com/ for
 
 - R and RStudio (3.6.x)
   Install the following R packages:

@@ -2,6 +2,8 @@
 tutorialtitle: "Principles of Project Setup and Workflow Management"
 indexexclude: "true"
 title: "Checklist to Audit Data- and Computation-intensive Projects"
+description: "Here is a checklist to audit your progress in making your workflows efficient, reproducible, and well-structured."
+keywords: "checklist, workflow, efficient, reproducible"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 80
@@ -19,21 +21,21 @@ Here's a checklist you can use to audit your progress.
 |                                                                         | data-preparation | analysis    | paper       | ...     |
 | ------------------------------------------------------------------------|:--------------:|:-----------:|:-----------:|:-------:|
 | **At the project level**
-| Implement a consistent [directory structure](directories.md#working-example): data/src/gen
-| Include [readme with project description](documenting-code.md#main-project-documentation) and technical instruction how to run/build the project
+| Implement a consistent [directory structure](../directories/#working-example): data/src/gen
+| Include [readme with project description](../documenting-code/#main-project-documentation) and technical instruction how to run/build the project
 | Store any authentication credentials outside of the repository (e.g., in a JSON file), NOT clear-text in source code
 | Mirror your `/data` folder to a secure backup location; alternatively, store all raw data on a secure server and download relevant files to `/data`
 |
 | **At the level of each stage of your pipeline**
 | *File/directory structure*
-| Create [subdirectory for source code](directories.md#working-example): `/src/[pipeline-stage-name]/` | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
-| Create [subdirectories for generated files](directories.md#working-example) in `/gen/[pipeline-stage-name]/`: `temp`, `output`, and `audit`. | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
+| Create [subdirectory for source code](../directories/#working-example): `/src/[pipeline-stage-name]/` | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
+| Create [subdirectories for generated files](../directories/#working-example) in `/gen/[pipeline-stage-name]/`: `temp`, `output`, and `audit`. | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
 | Make all file names relative, and not absolute (i.e., never refer to C:/mydata/myproject, but only use relative paths, e.g., ../output) | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
 | Create directory structure from within your source code, or use .gitkeep | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
 | *Automation and Documentation*
-| Have a [`makefile`](automation.md) | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
-| Alternatively, include a [readme with running instructions](automation.md#are-there-alternatives-to-make) | &#9744;        | &#9744;     |
-| Make dependencies between source code and files-to-be-built explicit, so that `make` automatically recognizes when a rule does not need to be run [(properly define targets and source files)](automation.md) | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
+| Have a [`makefile`](../automation) | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
+| Alternatively, include a [readme with running instructions](../automation/#are-there-alternatives-to-make) | &#9744;        | &#9744;     |
+| Make dependencies between source code and files-to-be-built explicit, so that `make` automatically recognizes when a rule does not need to be run [(properly define targets and source files)](../automation) | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
 | Include function to delete temp, output files, and audit files in makefile | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
 | *Versioning*
 | Version all source code stored in `/src` (i.e., add to Git/GitHub) | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
@@ -53,6 +55,9 @@ Here's a checklist you can use to audit your progress.
 | Tested on different computer (Linux) | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
 
 
-!!! warning "Versioned any sensitive data?"
-    Before making a GitHub repository public, we recommend you check that you have not stored any sensitive information in it (such as any passwords).
-    This tool has worked great for us: [GitHub credentials scanner](https://geekflare.com/github-credentials-scanner/).
+{{% warning %}}
+**Versioned any sensitive data?**
+
+Before making a GitHub repository public, we recommend you check that you have not stored any sensitive information in it (such as any passwords).
+This tool has worked great for us: [GitHub credentials scanner](https://geekflare.com/github-credentials-scanner/).
+{{% /warning %}}
