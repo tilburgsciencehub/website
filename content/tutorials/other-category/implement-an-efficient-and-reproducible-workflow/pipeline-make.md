@@ -16,13 +16,13 @@ and explore the `makefile` a bit.
 
 Please first try to answer our questions below, and then watch our solutions.
 
-!!! questions "Practice questions and answers"
+### Practice questions and answers
 
-    1) Inspect the syntax of the `makefile` in `src/data-preparation/`. At this stage,
-    only look at the *file names*, not at the *directory names*. Can you explain the structure of the syntax? Think about what has been "built" in `gen/data-preparation`, what files may have been necessary to build what is there, and last, how was the build actually made (e.g., executed on your system)?
+1) Inspect the syntax of the `makefile` in `src/data-preparation/`. At this stage,
+only look at the *file names*, not at the *directory names*. Can you explain the structure of the syntax? Think about what has been "built" in `gen/data-preparation`, what files may have been necessary to build what is there, and last, how was the build actually made (e.g., executed on your system)?
 
-    2) Now let's inspect the full file names (i.e., file name *and* directory names). Mostly,
-    the directories start with `../..`. Can you explain why that is? What is really happening here?
+2) Now let's inspect the full file names (i.e., file name *and* directory names). Mostly,
+the directories start with `../..`. Can you explain why that is? What is really happening here?
 
 ## Watch the solutions here
 

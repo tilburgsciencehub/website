@@ -9,7 +9,7 @@ draft: false
 
 ## Overview
 
-`Make` is a "build tool", allowing us to control the execution of a set of command line statements to assemble pipelines that define what gets executed when. Using `make`,
+[`Make`](https://www.gnu.org/software/make/) is a "build tool", allowing us to control the execution of a set of command line statements to assemble pipelines that define what gets executed when. Using `make`,
 our entire workflow becomes transparent and reproducible.
 
 {{% tip %}}
@@ -49,12 +49,14 @@ We will install `make` so that it plays nicely with your Anaconda/Python distrib
 
 Watch our YouTube video, in which we walk you through the setup on Windows.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8bqH8AOPT3U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube 8bqH8AOPT3U >}}
 
+#### Download make
 Please [download `make` here](http://gnuwin32.sourceforge.net/downlinks/make.php).
 
 {{% warning %}}
 **Making `make` available via the PATH settings on Windows.**
+
 We need to update our PATH settings; these settings are a set of directories that Windows uses to "look up" software to startup.
 {{% /warning %}}
 

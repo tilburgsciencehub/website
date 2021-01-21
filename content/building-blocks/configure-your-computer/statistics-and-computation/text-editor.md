@@ -14,9 +14,10 @@ Please download, install it along with the necessary packages and stick with it 
 
 There is a slight learning curve, but soon you hopefully will be wondering why no-one forced you to do this before!
 
-!!! note
-    - None of the skills on this website are tied to Atom,
-	so if you do decide to move away to another editor, nothing will be lost. For example, [Visual Studio Code](https://code.visualstudio.com/) or [Vim](https://www.vim.org/) are also widely used text editors.
+{{% tip %}}
+None of the skills on this website are tied to Atom,
+so if you do decide to move away to another editor, nothing will be lost. For example, [Visual Studio Code](https://code.visualstudio.com/) or [Vim](https://www.vim.org/) are also widely used text editors.
+{{% /tip %}}
 
 <!-- ## Installing Sublime Text
 
@@ -101,7 +102,6 @@ When you find the package that you need, you click the blue 'Install' button and
 
     *   tablr
     *   tablr-json
-
     *   autocomplete-R
     *   autocomplete-python (choose Jedi as your engine when asked)
     *   autoflow

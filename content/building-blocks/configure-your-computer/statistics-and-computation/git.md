@@ -1,7 +1,7 @@
 ---
 title: "Git and GitHub for Version Control"
-description: "Git is an open source version control system (VCS) that has gained a lot of traction in the programming community"
-keywords: "git, github, installation, software"
+description: "Git is an open source version control system (VCS) that has gained a lot of traction in the programming community."
+keywords: "git, github, installation, software, configuration, versioning, account"
 date: 2020-11-11T22:02:51+05:30
 draft: false
 weight: 10
@@ -22,13 +22,13 @@ and track progress on project boards.
   claim your [education benefits for students and professors](https://education.github.com) afterwards.
 - You can also watch our YouTube video where we will walk you through the sign-up procedure.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3KOnOgz_dAA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube 3KOnOgz_dAA >}}
 
 ## Installation
 
 Watch our YouTube video, in which we walk you through the setup on Windows.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VUzv5RcnW60" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube VUzv5RcnW60 >}}
 
 Download and install the latest versions of Git [here](https://git-scm.com/download).
 

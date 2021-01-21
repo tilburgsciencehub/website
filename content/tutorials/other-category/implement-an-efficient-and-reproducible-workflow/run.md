@@ -15,15 +15,15 @@ So let's go ahead by first watching our demo on what happens if you run `make` i
 
 {{< youtube MTjfHnSShfg >}}
 
-!!! questions "Practice questions and answers"
+### Practice questions and answers
 
-    1) If you haven't done so yet, open Anaconda prompt (on Windows) or Terminal (on Mac) in the template's main directory, and type `make`. What happens?
+1) If you haven't done so yet, open Anaconda prompt (on Windows) or Terminal (on Mac) in the template's main directory, and type `make`. What happens?
 
-    2) Now, let's type `make` again. What happens now?!
+2) Now, let's type `make` again. What happens now?!
 
-    3) Compare the directory/file structure with how it looked like before running `make`. What are the differences?
+3) Compare the directory/file structure with how it looked like before running `make`. What are the differences?
 
-    4) Can you reconstruct what has just happened when running `make`, by looking at the `makefile` in the main directory? Imagine you're arriving at the crime scene, and all you see is that file. Be a detective and start your investigation!
+4) Can you reconstruct what has just happened when running `make`, by looking at the `makefile` in the main directory? Imagine you're arriving at the crime scene, and all you see is that file. Be a detective and start your investigation!
 
 ## Watch the solutions here
 

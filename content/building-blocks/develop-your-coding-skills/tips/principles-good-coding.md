@@ -28,15 +28,15 @@ Let computers repeat and execute tasks.,
 - If you do things often, automate them
     - e.g., by using scripts, macros, aliases/variables
     - write a dictionary with definitions
-- Use build tools to [automate workflows](../workflow/automation.md)
+- Use build tools to [automate workflows](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation/)
 
 ## Use a version control system
 
 - Add all inputs, but no outputs/generated files
     - DO: everything created by humans, small data inputs
-    - DON'T: things created by the computer from your inputs (generated files; those will be [reproduced via a workflow](../workflow/automation.md)). Also [do not version large data inputs](../workflow/directories.md).
+    - DON'T: things created by the computer from your inputs (generated files; those will be [reproduced via a workflow](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation/)). Also [do not version large data inputs](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/directories/).
 - Work in small changes
-    - Create [snapshots/commits](../workflow/versioning.md) in small and logical steps. This will allow you to go back in time if necessary, and to understand progression.
+    - Create [snapshots/commits](/building-blocks/share-your-results-and-project/use-github/versioning-using-git/) in small and logical steps. This will allow you to go back in time if necessary, and to understand progression.
 -  Use an issue tracking tool to document problems (e.g., such as the *Issue* tab on GitHub; email is not an issue tracker!)
 
 ## Optimize software only after it works correctly
@@ -48,5 +48,5 @@ Even experts find it hard to predict performance bottlenecks.
 - Use a profile to report how much time is spent on each line of code
 
 
-!!! thanks
-    Content based on Ulrich Bergmann, Matteo Courthoud, Lachlan Deer (2020), [*Introduction and Motivation*, Programming Practices for Research in Economics](https://github.com/pp4rs/2020-uzh-course-material/blob/master/00-intro/intro.pdf), University of Zurich.
+
+*Content based on Ulrich Bergmann, Matteo Courthoud, Lachlan Deer (2020), [Introduction and Motivation, Programming Practices for Research in Economics](https://github.com/pp4rs/2020-uzh-course-material/blob/master/00-intro/intro.pdf), University of Zurich.*

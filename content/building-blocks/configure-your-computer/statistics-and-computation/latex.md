@@ -1,7 +1,7 @@
 ---
 title: "LaTeX"
-description: "LaTeX is a great typesetting system that includes a lot of features that allow to produce scientific documents"
-keywords: "latex, tex, installation, software"
+description: "LaTeX is a great typesetting system that includes a lot of features that allow to produce scientific documents."
+keywords: "latex, tex, installation, software, configuration, paper, writing, text, typesetting"
 date: 2020-11-11T22:02:51+05:30
 draft: false
 weight: 9
@@ -32,21 +32,28 @@ named COPYING and the TeX source.
 Primary author of TeX: D.E. Knuth.
 ```
 
-!!! note "For Windows Users"
-    Download the file `install-tl-windows.exe` from [here](https://www.tug.org/texlive/acquire-netinstall.html) and follow the instructions.
+{{% warning %}}
+**For Windows Users**
 
-!!! note "For Mac Users"
-    We can install this using `homebrew`:
+Download the file `install-tl-windows.exe` from [here](https://www.tug.org/texlive/acquire-netinstall.html) and follow the instructions.
+{{% /warning %}}
+{{% warning %}}
+**For Mac Users**
 
-    ```bash
-    brew cask install mactex
-    ```
+You can install this using `Homebrew` or via the [official website](https://www.tug.org/mactex/):
 
-!!! note "For Linux Users (Ubuntu-based)"
-    Install it from the terminal using
+```bash
+brew cask install mactex
+```
+{{% /warning %}}
+{{% warning %}}
+**For Linux Users (Ubuntu-based)**
 
-    ```bash
-    sudo apt-get install texlive-latex-extra
-    ```
+Install it from the terminal using:
 
-    Note that additional packages for Tex Live should be installed through the apt package manager as well (using `tlmgr` leads to problems due to different versions)
+```bash
+sudo apt-get install texlive-latex-extra
+```
+{{% /warning %}}
+
+Note that additional packages for Tex Live should be installed through the apt package manager as well (using `tlmgr` leads to problems due to different versions)

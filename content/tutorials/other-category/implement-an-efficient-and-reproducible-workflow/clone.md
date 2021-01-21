@@ -22,15 +22,15 @@ Watch our video to learn about the two ways of downloading a template. After tha
 - Therefore, we recommend you to clone/download the template to a folder where you *usually store your documents* (e.g., your documents folder).
 {{% /warning %}}
 
-!!! questions "Practice questions and answers"
+### Practice questions and answers
 
-    1) Open Anaconda Prompt (on Windows) or the terminal (on Mac, Linux) at the directory where you stored your local copy of our repository.
+1) Open Anaconda Prompt (on Windows) or the terminal (on Mac, Linux) at the directory where you stored your local copy of our repository.
 
-    2) Show the contents of the main directory (using `dir` on Windows, or `ls` on Mac/Linux)
+2) Show the contents of the main directory (using `dir` on Windows, or `ls` on Mac/Linux)
 
-    3) Navigate the directory structure up and down (using `cd <DIRNAME>` to enter a directory, and `cd ..` to leave a directory).
+3) Navigate the directory structure up and down (using `cd <DIRNAME>` to enter a directory, and `cd ..` to leave a directory).
 
-    4) Which directories featured [here](../workflow/directories.md) are present in your local copy, and which ones are not? Why do you think that is?
+4) Which directories featured [here](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/directories/) are present in your local copy, and which ones are not? Why do you think that is?
 
 ## Watch our solutions here
 

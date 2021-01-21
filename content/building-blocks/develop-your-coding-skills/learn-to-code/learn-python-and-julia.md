@@ -1,5 +1,7 @@
 ---
 title: "Learn Python and Julia"
+description: "Learn how to program in Python."
+keywords: "learn, python, quantecon"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 2

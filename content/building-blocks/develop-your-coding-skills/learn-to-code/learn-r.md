@@ -1,5 +1,7 @@
 ---
 title: "Learn R"
+description: "Learn how to code with R."
+keywords: "learn, R, resources, datacamp"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 1
@@ -32,7 +34,7 @@ Here are a few tips to learn R efficiently.
   Well, if you *really* want to learn R, then you should already have a project in mind that you would like to tackle. R is such a powerful tool that you would get entirely lost if you didn't actually know what you would like to accomplish.
   If you don't have a project, and still would like to learn R, we suggest you to do some googling for some interesting datasets to get you started (e.g., [Kaggle.com](https://www.kaggle.com)).
 
-- Follow our [R/R Studio installation guide](https://hannesdatta.github.io/reproducible-science-guide/setup/r/)
+- Follow our [R/R Studio installation guide](/building-blocks/configure-your-computer/statistics-and-computation/r/)
 - Enroll R courses at Datacamp.com (free-to-use with a Tilburg University account!)
   - Must do's for **novices**
       - [Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r)

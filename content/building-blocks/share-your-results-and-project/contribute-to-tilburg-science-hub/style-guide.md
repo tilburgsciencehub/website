@@ -77,23 +77,23 @@ We support four kind of highlighting boxes.
 
 {{% tip %}}
 
-Tip
+This is a tip
 
 {{% /tip %}}
 
 
 {{% warning %}}
-Warning
+This is a warning
 
 {{% /warning %}}
 
 {{% summary %}}
-Summary
+This is a summary
 
 {{% /summary %}}
 
 {{% example %}}
-Summary
+This is an example
 
 {{% /example %}}
 
@@ -101,14 +101,23 @@ Summary
 
 - Use the second person ("you") when speaking to our or talking about our users
 - Content creators may refer to themselves in the first person ("I" in single-author articles, or "we" in multiple-author articles). Do remember to keep the focus on our users.
+- Avoid personal references: e.g., in my career, on a project I run.
 - We encourage the use of contractions: e.g., it’s, you’ll, you’re, we’re, let’s.
 - We prefer shorter words over longer alternatives.
   - e.g., "helps" is better than "facilitates"
   - e.g., "uses" is better than "utilizes"
 - Use an active voice wherever possible.
-- Write conversationally: Prepositions are okay to end sentences with. And another thing. You can even start sentences with "And" or "But."
+- Write conversationally: prepositions are okay to end sentences with. And another thing. You can even start sentences with "And" or "But."
 - Be informal, but being clear is more important than being entertaining!
 - Get to the point fast.
 - Frame sentences positively: use positive language (e.g., be more efficient, write better code...), rather than negative language (e.g., avoid mistakes...).
-- Avoid slang
+- Avoid slang.
 - Avoid jargon. We know it's difficult for you academics out there.
+- Use `#`, `##`, `###`, `####` for headers, not a standard line on **bold**. Use `**` only for bolded words or short sentences when you want to stress a concept. Learn more about markdown syntax [here](https://www.markdownguide.org/basic-syntax/).
+- Be consistent and double-check your file before sending!
+
+{{% warning %}}
+**The naming of your file matters!**
+
+We use the filename, which is different from the actual article's title, to extract information and display the current path within the navigation menu and on the breadcrumb trails. Please, choose your filename carefully!
+{{% /warning %}}

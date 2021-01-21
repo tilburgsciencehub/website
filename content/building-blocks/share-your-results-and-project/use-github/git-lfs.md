@@ -11,6 +11,8 @@ draft: false
 Make sure to read our contribution guide to learn how to submit your content to Tilburg Science Hub. -->
 <!-- Goal of the Building Block -->
 
+## Overview
+
 GitHub limits the size of files allowed in repositories. It warns you if you're trying to push a 50MB file, and completely stops you if the push exceed 100MB.
 
 However, even if it didn't stop you, versioning large files would be very impractical. That's because **a repository contains every version of every file** – that's the point of versioning, right?
@@ -20,11 +22,13 @@ The solution? Use **[Git LFS](https://git-lfs.github.com)**, an open-source Git 
 
 When you mark a file as LFS file, the extension replaces the actual large file with a small *pointer* on your PC. The actual files are located on the remote server and *only the pulled* actual files are stored in a local cache. In other words, when you `pull` to your local repository, the pointer is replaced with the actual file.
 
-Check [this video](https://www.youtube.com/watch?v=9gaTargV5BY) out for a brief explanation on how Git LFS works.
+Check out this video for a brief explanation on how Git LFS works.
+
+{{< youtube 9gaTargV5BY >}}
 
 ## Install Git LFS <!-- Provide your code in all the relevant languages and/or operating systems. -->
 
-Make sure that [Git is already installed](setup/gitInstall.md).
+Make sure that [Git is already installed](/building-blocks/configure-your-computer/statistics-and-computation/git/).
 
 - Go to [git-lfs.github.com](https://git-lfs.github.com) and download directly. Or, if you use Brew:
 

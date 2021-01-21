@@ -7,7 +7,7 @@ date: 2020-11-11T22:02:51+05:30
 draft: false
 ---
 
-Snakemake is an easy to use workflow management system. Contrary to *make*, which was designed by
+[Snakemake](https://snakemake.readthedocs.io/en/stable/) is an easy to use workflow management system. Contrary to *make*, which was designed by
 computer scientists to build software, *snakemake* was designed for academic/professional research in Bioinformatics, so it may feel more intuitive for academic users.
 
 Snakemake is a python package - so we can install using the default python installer, pip.

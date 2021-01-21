@@ -1,17 +1,19 @@
 ---
 tutorialtitle: "Implement an Efficient and Reproducible Workflow"
 title: "Implement an Efficient and Reproducible Workflow"
+description: "Follow our tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets."
+keywords: "tutorial, tweets, sentiment, analysis, workflow"
 date: 2021-01-06T22:01:14+05:30
 draft: false
 weight: 1
 ---
 
-Longing to put your knowledge from our [workflow guide](../workflow) into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our [GitHub workflow template](https://github.com/hannesdatta/textmining-workflow).
+Longing to put your knowledge from our [workflow guide](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/principles-overview/) into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our [GitHub workflow template](https://github.com/hannesdatta/textmining-workflow).
 
 ## Objectives of this tutorial
 
--	Familiarize yourself with a [robust directory structure](../workflow/directories.md) for data-intensive projects
--	Experience the benefits of [automating workflows with makefiles/GNU make](../workflow/automation.md)
+-	Familiarize yourself with a [robust directory structure](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/directories/) for data-intensive projects
+-	Experience the benefits of [automating workflows with makefiles/GNU make](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation/)
 -	Learn to use Git templates for your own research projects
 -	Adjust the workflow template to
     -	...download different datasets from the web
@@ -22,8 +24,8 @@ Longing to put your knowledge from our [workflow guide](../workflow) into practi
 
 ## Prerequisites
 
--	Computer setup following our [setup instructions](../setup)
-    - [Python](../setup/python.md) and the `textblob` package
+-	Computer setup following our [setup instructions](/building-blocks/configure-your-computer/).
+    - [Python](/building-blocks/configure-your-computer/statistics-and-computation/python/) and the `textblob` package
 
         ```
         pip install -U textblob
@@ -36,7 +38,7 @@ Longing to put your knowledge from our [workflow guide](../workflow) into practi
 
         If you receive an error message, please verify you are typing this command in python (opened on the terminal by typing `python`), and not *directly* in the terminal/Anaconda prompt.
 
-    -	[R, RStudio](../setup/r.md) and the following packages:
+    -	[R, RStudio](/building-blocks/configure-your-computer/statistics-and-computation/r/) and the following packages:
 
         ```
         install.packages(c("data.table", "knitr", "Rcpp", "ggplot2", "rmarkdown"))
@@ -57,9 +59,9 @@ Longing to put your knowledge from our [workflow guide](../workflow) into practi
   - If you're being asked to install RTools, please do follow these installation instructions.
 {{% /warning %}}
 
-  -	[GNU Make](../setup/make.md)
+  -	[GNU Make](/building-blocks/configure-your-computer/automation-and-workflows/make/)
 
-- Familiarity with our [workflows](../workflow), in particular on [pipelines and project components](../workflow/pipeline.md), [directory structure](../workflow/directories.md) and [pipeline automation](../workflow/automation.md).
+- Familiarity with our [workflows](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/principles-overview/), in particular on [pipelines and project components](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/pipeline/), [directory structure](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/directories/) and [pipeline automation](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation/).
 
 -	Nice-to-haves:
     - Basic experience with Python and R

@@ -74,8 +74,3 @@ If you want to be on the safe side, add these lines to your .bash_profile file:
 Thanks for Hans-Martin von Gaudecker, and in turn Matthias Bannert for the tip on locale settings.
 
 **Linux users**: For most distributions, everything here applies to the file .bashrc instead of .bash_profile.
-
-
-## The End
-
-Well done - it's time for a beer, or some other cold beverage to celebrate completing this guide.

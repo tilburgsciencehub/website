@@ -17,19 +17,19 @@ when you proceed to our practice questions and answers below.
 
 Now let's continue with a couple of modifications. You can directly start working on the practice questions below.
 
-!!! questions "Practice questions and answers"
+### Practice questions and answers
 
-    1) Recall the powerful `makefile` we've introduced to you a while ago? Well,
-    open the `makefile` in `src/analysis/` now and try to understand
-    the steps of this stage of the pipeline! What happens, exactly?
+1) Recall the powerful `makefile` we've introduced to you a while ago? Well,
+open the `makefile` in `src/analysis/` now and try to understand
+the steps of this stage of the pipeline! What happens, exactly?
 
-    2) Let's open `preclean.R` (e.g., in RStudio). Try to understand
-    what this script does. Then, filter the data only for tweets with
-    `polarity>0`.
+2) Let's open `preclean.R` (e.g., in RStudio). Try to understand
+what this script does. Then, filter the data only for tweets with
+`polarity>0`.
 
-    3) Last, provide some summary statistics (`summary(dt$nwords)`) of the
-    word count, and produce a histogram `hist(dt$nwords)` of it in the
-    RMarkdown document.
+3) Last, provide some summary statistics (`summary(dt$nwords)`) of the
+word count, and produce a histogram `hist(dt$nwords)` of it in the
+RMarkdown document.
 
 ## Watch the solution here
 

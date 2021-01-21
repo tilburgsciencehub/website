@@ -1,7 +1,7 @@
 ---
 title: "Python"
 description: "Python is widely use programming language. Learn how to set it up on your computer."
-keywords: "python, anaconda, conda, distribution, installation, configure, PATH"
+keywords: "python, anaconda, conda, distribution, installation, configure, PATH, statistics"
 date: 2020-11-11T22:02:51+05:30
 draft: false
 weight: 3

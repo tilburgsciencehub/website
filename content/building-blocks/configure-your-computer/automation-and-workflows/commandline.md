@@ -1,7 +1,7 @@
 ---
 title: "Command Line Tools"
 description: "A command-line interface or command language interpreter (CLI), also known as a terminal, is a means of interacting with a computer program."
-keywords: "CLI, terminal"
+keywords: "CLI, terminal, Homebrew, brew, cygwin, command"
 weight: 1
 date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -63,10 +63,10 @@ xcode-select --install
 
 If you get an answer that the command line tools are already installed, you can just continue to the next step.
 
-* Second,  install Homebrew by opening a terminal and pasting the following command:
+* Second, install [Homebrew](https://brew.sh) by opening a terminal and pasting the following command:
 
 ```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/homebrew/install/master/install)"
 ```
 
 * To verify that Homebrew installed correctly, enter the following into your terminal
@@ -78,7 +78,7 @@ And you should see the following output
 Your system is ready to brew
 ```
 
-* Now we can use homebrew to easily install software. To use the current R version 3.5.1, we want to make sure you have some basic system tools that some packages require. Let's (re)install them real quick. First `libxml2`:
+* Now we can use Homebrew to easily install software. To use the current R version 3.5.1, we want to make sure you have some basic system tools that some packages require. Let's (re)install them real quick. First `libxml2`:
 
 ```
 brew reinstall libxml2
