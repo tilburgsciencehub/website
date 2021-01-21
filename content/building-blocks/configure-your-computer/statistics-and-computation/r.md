@@ -1,7 +1,7 @@
 ---
 title: "R and RStudio"
-description: "R is a language for statistical computing and graphics,"
-keywords: "R, statistics, installation, software, RStudio"
+description: "R is a widely used language for statistical computing and graphics. Learn how to set it up on your computer."
+keywords: "R, statistics, installation, software, RStudio, PATH"
 date: 2020-11-11T22:02:51+05:30
 draft: false
 weight: 4
@@ -14,7 +14,7 @@ R's use in the data science, econometrics and marketing communities has taken of
 
 Watch our YouTube video, in which we walk you through the setup on Windows.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xvw4Xha10qg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube xvw4Xha10qg >}}
 
 Go to the [R website and download the most recent installer for your operating system](https://cran.r-project.org/).
 

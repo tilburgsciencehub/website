@@ -6,7 +6,7 @@ weight: 2
 draft: false
 ---
 
-# Document and share data for internal and external use
+## Document and share data for internal and external use
 
 *Maintain, document, and share your data with your team and the public*
 
