@@ -375,6 +375,15 @@ article {
     font-size: 28px;
   }
 
+  h2::before { 
+    display: block; 
+    content: " "; 
+    margin-top: -160px; 
+    height: 160px; 
+    visibility: hidden; 
+    pointer-events: none;
+  }
+
   h4::before { 
     display: block; 
     content: " "; 

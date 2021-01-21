@@ -42,6 +42,11 @@ $(document).ready(function() {
     $(".TableOfContents").removeClass("active");
   })
 
+  if ($(".sticky-top")) {
+    var height = $(".sticky-top").height();
+    $(".pseudoSpacer").css("height", height/1.5 + "px");
+  }
+
   // working on codeblock
   let codeblocks = []
   let blocks = $(".codeblock .inner .highlight")

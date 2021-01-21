@@ -28,10 +28,10 @@
 						<h5 class="text-secondary heading" style="font-size: 18px; height: 38px; margin-left: 10px; font-weight: 100 !important;"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
 						{{ end }}
 					{{ end }}
-				{{ end }}
+					{{ end }}
 				</div>		
 						
-				<div class="d-none d-lg-block" style="height: 380px"></div>
+				<div class="d-none d-lg-block pseudoSpacer"></div>
 			</div>
 			
 		</div>
@@ -39,7 +39,7 @@
 			<div class="p-5 bg-white rounded mb-5">
 				{{ .Content }}
 
-				{{with .Site.RegularPages.Next . }} <a href="{{.RelPermalink}}">Next Page</a> {{ end }}
+				{{with .NextInSection }} <a href="{{.RelPermalink}}">Next Page</a> {{ end }}
 			</div>
 
 			{{ partial "relatedPosts.html" . }}
