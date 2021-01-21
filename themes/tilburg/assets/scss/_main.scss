@@ -203,11 +203,12 @@ pre {
   }
 }
 
+
+
 html,
 body {
   font-family: "acumin-pro", sans-serif !important;
   scroll-behavior: smooth;
-  overscroll-behavior: none;
   font-size: 15px;
   font-weight: 300;
   position: relative;
@@ -223,6 +224,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
+  // margin-top: 40px;
 
   .content {
     flex: 1 0 auto;
@@ -373,6 +375,24 @@ article {
     font-size: 28px;
   }
 
+  h4::before { 
+    display: block; 
+    content: " "; 
+    margin-top: -160px; 
+    height: 160px; 
+    visibility: hidden; 
+    pointer-events: none;
+  }
+
+  h3::before { 
+    display: block; 
+    content: " "; 
+    margin-top: -160px; 
+    height: 160px; 
+    visibility: hidden; 
+    pointer-events: none;
+  }
+
   h3, h4 {
     font-size: 20px;
     font-family: "forma-djr-display", sans-serif;
@@ -444,6 +464,7 @@ article {
 
 footer {
   color: #60758a;
+
   span.heading {
     color: #fff;
     font-size: 16px;
@@ -633,12 +654,7 @@ input {
   }
 }
 
-@media only screen and (max-width: 1340px) {
-
-  .sticky-top {
-    top: 0px;
-  }
-
+@media only screen and (max-width: 991px) {
   .TableOfContents {
     background-color: #fff;
     border-radius: 4px;
@@ -674,6 +690,15 @@ input {
       margin: 0;
     }
   }
+}
+
+@media only screen and (max-width: 1340px) {
+
+  .sticky-top {
+    top: 0px;
+  }
+
+  
 
   .navMenu {
     border-radius: 0;

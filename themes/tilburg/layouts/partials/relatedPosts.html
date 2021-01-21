@@ -1,3 +1,6 @@
+{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ $len := len $related }}
+{{ if $len }}
 <div class="row bg-white rounded p-5 mb-5" style="margin: 0px;">
 	<div class="col-lg-8 col-24 mb-4">
 		<h1 style="line-height: 42px; font-size: 38px;">Related <br>
@@ -5,7 +8,7 @@
 	</div>
 	<div class="col-lg-16 col-24">
 		<ul class="my-4 list-unstyled relatedPosts">
-		{{ $related := .Site.RegularPages.Related . | first 5 }}
+		
 		{{ with $related }}
 		{{ range . }}
       <li class="pb-2">
@@ -15,8 +18,9 @@
       	</a>
       </li>
       {{ end }}
-		{{ end }}
+		
 	</ul>
 	</div>
 </div>
-
+{{ end }}
+{{ end }}

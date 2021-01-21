@@ -5,7 +5,6 @@ description: "When working on a project, most of us spend time thinking about wh
 keywords: "principles, workflow, setup, project, configure"
 date: 2020-11-11T22:01:14+05:30
 draft: false
-isParent: true
 weight: 1
 ---
 
