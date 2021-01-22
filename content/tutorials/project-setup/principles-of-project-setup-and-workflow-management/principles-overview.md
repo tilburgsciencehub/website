@@ -60,11 +60,27 @@ The objectives of this tutorial are:
 {{% /warning %}}
 ## Configure your Computer
 
+Think your machine is already configured well? Then proceed directly to the next page.
+
 {{% tip %}}
 **Configure your computer**.
 - Note that to implement our workflow suggestions, your computer needs to be configured properly - so we [suggest you to do that first](/building-blocks/configure-your-computer).
 - Of course, you need not to install all software tools - but pick *at least* your statistical software package (e.g., [we use R](/building-blocks/configure-your-computer/statistics-and-computation/r/), but others prefer [Stata](/building-blocks/configure-your-computer/statistics-and-computation/stata/)), [Python](/building-blocks/configure-your-computer/statistics-and-computation/python/), and [`make`](/building-blocks/configure-your-computer/automation-and-workflows/make/).
 {{% /tip %}}
+
+Of course, there are many ways to set up a machine, and we do not mean to consider our way of doing to be perfect. In fact, the setup instructions sometimes resemble a compromise, so that later instructions - given to both Windows, Mac and Linux users - can be followed as closely as possible.
+
+**If you are writing your Master thesis at Tilburg University, please attempt to install necessary software and packages prior to your first meeting.**
+
+{{% summary %}}
+* If everything goes smoothly, you should be able to complete the installation in one sitting within 60-120 minutes.
+* Please follow the steps one-by-one in the order they appear on the side bar and do not deviate from them, unless you really know what you are doing.
+* Where necessary, we have provided instructions for Mac, Windows and Linux machines.
+{{% /summary %}}
+
+{{% warning %}}
+* We will use the terms command prompt (Windows) and terminal (Linux, Mac) interchangeably.
+{{% /warning %}}
 <!---* You should be able to complete this subchapter in  sitting within 90-150 minutes.-->
 
 <!--
