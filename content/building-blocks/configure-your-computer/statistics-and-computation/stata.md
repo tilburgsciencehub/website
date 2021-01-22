@@ -33,6 +33,7 @@ We need to update our environment variables.
 - Go to "Properties" and select the tab "Advanced System settings".
 - Choose "Environment Variables" and create a new variable, which you call `STATA_BIN`.
 - Choose `Edit`.
+	- Environment variable name: `STATA_BIN`
 	- **Windows 7 and 8 machines:**
 		Please check where you have installed Stata on your computer, and
     note the name of the Stata program file (on some machines, it is called
@@ -54,14 +55,19 @@ We need to update our environment variables.
 
 ### Mac users
 
-For you to be able to use Stata from the command line, you have to add Stata to your bash file. A tutorial follows.
+For you to be able to use Stata from the command line, you have to add Stata to your environmental variables. A tutorial follows.
 
 {{% warning %}}
 **Making Stata available via the PATH settings on Mac.**
 
-- Open `Terminal`.
-- Type `echo "export PATH=$PATH: Your Stata Path" >> ~/.bash_profile`. For example,
-`export PATH=$PATH: /Applications/Stata/StataMP.app/Contents/MacOS/  >> ~/.bash_profile`
+- open Terminal
+- type `vi ~/.bash_profile`
+- add Stata to the environmental varibles
+		- type `i` to input mode of vim
+		- add `export STATA_BIN=/Applications/Stata/StataMP.app/Contents/MacOS/stataMP`. You may need to replace stataMP to stataSE or so, which depends on which Stata you install on Mac.
+		- press `esc` and type `:w` to save the change
+		- close the ternimal and reopen one terminal. Then type `source ~/.bash_profile` to bring the new .bash_profile into effect.
+- type `$STATA_BIN -v` to check availability. Remember to type the `$` before `STATA_BIN`.
 {{% /warning %}}
 
 <!--- Linux users not available yet
@@ -81,11 +87,11 @@ Open a **new** terminal interface and enter:
 %STATA_BIN%
 ```
 
-followed by hitting the `Return` key. Stata will now start.
+followed by hitting the `Return` key. You can check the Stata version.
 
 ### Mac users
 
-Open a **new** terminal interface and enter
+Open a **new** terminal interface and enter:
 
 ```bash
 echo $PATH

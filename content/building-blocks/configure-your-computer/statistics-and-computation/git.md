@@ -4,7 +4,7 @@ description: "Git is an open source version control system (VCS) that has gained
 keywords: "git, github, installation, software, configuration, versioning, account"
 date: 2020-11-11T22:02:51+05:30
 draft: false
-weight: 10
+weight: 11
 ---
 
 ## Installing Git and Setting Up Accounts
