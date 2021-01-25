@@ -44,7 +44,7 @@
 													{{ if eq .Params.indexexclude "true" }}
 													<!--<a class="d-block mx-0" href="{{.Permalink}}">DONOTSHOW{{.Title}}</a>-->
 													{{ else }}
-													<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
+													<a class="d-block mx-0" href="{{.Permalink}}">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
 													{{ end }}
 								    		{{ end }}
 								    		</div>
@@ -69,7 +69,7 @@
 										{{- range $index, $value := .Pages -}}
 										<a class="nav-link mx-0 px-5 py-3 heading pillx {{ if eq $index 0 }} active  {{ end }}"
 											id="v-pills-home-tab" data-toggle="pill" href="#{{ .Title | urlize }}" role="tab"
-											aria-controls="v-pills-home" aria-selected="true">{{ .Title }} <span
+											aria-controls="v-pills-home" aria-selected="true">{{ .Title }}<span
 												class="icon mini-right float-right"></span> </a>
 										{{- end -}}
 										{{ end }}
@@ -210,7 +210,7 @@
 
 					{{- range .Pages -}}
 					{{ if ne .Params.indexexclude "true" }}
-					<a class="d-block mx-0 ml-3 mt-3" href="{{.Permalink}}">{{.Title}}</a>
+					<a class="d-block mx-0 ml-3 mt-3" href="{{.Permalink}}">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
 					{{ end }}
 					{{ end }}
 				</div>
