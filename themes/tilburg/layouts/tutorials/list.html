@@ -40,14 +40,19 @@
             <div class="row">
 
               {{- range .Pages -}}
+              {{ if ne .Params.indexexclude "true" }}
+              {{ if .Title }}
               <div class="col-24 col-lg-12 mb-4">
-                <a class="linkHeading" href="{{ .Permalink }}"><h5 class="heading linkHeading font-weight-normal" style="font-size: 16px; height: 22px;">{{ .Title }}</h5></a>
-                
-                {{ range .Pages }}
+                <a class="linkHeading" href="{{ .Permalink }}"><h5 class="heading linkHeading font-weight-normal" style="font-size: 16px;">{{ .Title }}</h5></a>
+                {{ if ne .Type .Section }}
+                {{ range where .Site.Pages "Type" .Type }}
                 <a class="d-block" href="{{.Permalink}}">{{.Title}}</a>
                 
                 {{ end }}
+                {{ end }}
               </div>
+              {{ end }}
+              {{ end }}
               {{ end }}
             </div>
           </div>

@@ -1,5 +1,51 @@
 {{ partial "header.html" . }}
-<br><br><br><br>
-{{ .Content }}
 <br><br>
+<div class="container mt-4">
+	{{ partial "breadcrumbs.html" . }}
+</div>
+<div class="container content px-0 mt-5">
+	<div class="row justify-content-center mx-0">
+		<div class="col-lg-8 col-22 pr-lg-5">
+			<div class="sticky-top mb-lg-5 pb-lg-5">
+				{{ if .Params.tutorialTitle }} 
+				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Params.tutorialTitle }}</h1>
+				{{ else }}
+				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
+				{{ end }}
+				<div class="TableOfContents">
+					<span class="arrow-icon"></span>
+					<div class="pseudo-btn d-block d-lg-none"></div>
+					{{ $currentTitle := .Title }}
+
+					{{ range where .Site.Pages "Type" .Type }}
+
+						{{ if eq .Title $currentTitle }}
+						<h5 class="heading text-primary" style="font-size: 18px; height: 28px; margin-left: 10px; font-weight: 100 !important;"><a class="text-primary" href="{{ .Permalink }}">{{ .Title }}</a></h5>
+							
+							<div class="pl-4">{{ .TableOfContents }}</div>
+								
+							
+						{{ else }}
+						<h5 class="text-secondary heading" style="font-size: 18px; height: 38px; margin-left: 10px; font-weight: 100 !important;"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+						{{ end }}
+					
+					{{ end }}
+				</div>		
+						
+				<div class="d-none d-lg-block pseudoSpacer"></div>
+			</div>
+			
+		</div>
+		<article class="col-lg-16 col-22">
+			<div class="p-5 bg-white rounded mb-5">
+				{{ .Content }}
+
+				{{with .NextInSection }} <a href="{{.RelPermalink}}">Next Page</a> {{ end }}
+			</div>
+
+			{{ partial "relatedPosts.html" . }}
+		</article>
+	</div>
+</div>
+
 {{ partial "footer.html" . }}

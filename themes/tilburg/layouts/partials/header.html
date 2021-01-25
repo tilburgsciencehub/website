@@ -32,19 +32,6 @@
 					<li>
 						<a href="/tutorials" class="headerLink menuArrow">Tutorials</a>
 						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-5 px-3">
-							<div class="row ">
-								{{- range where .Site.Pages "Section" "Tutorials" -}}
-								{{ if eq .Params.isParent true }}
-								<div class="col-6 mb-4">
-									<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span>
-
-									{{- range .Pages -}}
-									<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
-									{{ end }}
-								</div>
-								{{ end }}
-								{{ end }}
-							</div>
 
 							<div class="row">
 
@@ -101,7 +88,7 @@
 											role="tabpanel" aria-labelledby="v-pills-home-tab">
 											<div class="row">
 												{{ range .Pages }}
-												<div class="col-8">
+												<div class="col-8 mb-4">
 													<a class="anchor-no-effect" href="{{ .Permalink }}"><span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span></a>
 													{{- range .Pages -}}
 													<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
