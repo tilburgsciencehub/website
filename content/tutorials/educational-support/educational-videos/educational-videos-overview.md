@@ -6,6 +6,7 @@ keywords: "educational, videos, shooting, camera, teaching, tips, lighting, lens
 weight: 1
 date: 2020-11-11T22:01:14+05:30
 draft: false
+type: "edu-videos"
 ---
 
 ## Overview

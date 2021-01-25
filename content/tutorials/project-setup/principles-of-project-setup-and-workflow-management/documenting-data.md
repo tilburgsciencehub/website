@@ -7,7 +7,7 @@ keywords: "document, data, dataset, derived, readme, describe"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 50
-type: "one"
+type: "principles-of-project-setup"
 ---
 
 ## Overview

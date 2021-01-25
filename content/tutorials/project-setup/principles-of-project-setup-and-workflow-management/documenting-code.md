@@ -7,6 +7,7 @@ description: "Documenting your project's workflow, not only for others, but also
 keywords: "document, code, workflow, reference, comment, documentation"
 draft: false
 weight: 50
+type: "principles-of-project-setup"
 ---
 
 ## Overview

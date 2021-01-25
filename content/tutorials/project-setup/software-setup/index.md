@@ -5,6 +5,7 @@ keywords: "software, setup, guide, configure, configuration"
 weight: 1
 date: 2021-01-06T22:01:14+05:30
 draft: true
+type: "software-setup"
 ---
 
 These pages should help you to get started setting up the computing environment on your machine ready.

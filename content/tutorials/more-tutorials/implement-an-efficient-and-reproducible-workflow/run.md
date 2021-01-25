@@ -1,10 +1,11 @@
 ---
-tutorialtitle: "Principles of Project Setup and Workflow Management"
+tutorialtitle: "Implement an Efficient and Reproducible Workflow"
 indexexclude: "true"
 weight: 4
 title: "Running the Workflow"
 date: 2021-01-06T22:01:14+05:30
 draft: false
+type: "implement-efficient-workflow"
 ---
 
 ## Let's run the workflow

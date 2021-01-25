@@ -7,6 +7,7 @@ keywords: "git, versioning, github, configuration, repository"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 60
+type: "principles-of-project-setup"
 ---
 
 ## Overview

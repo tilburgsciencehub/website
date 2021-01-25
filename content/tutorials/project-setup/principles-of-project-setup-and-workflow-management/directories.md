@@ -8,6 +8,7 @@ keywords: "data, directory, directories, data management, structure, raw, genera
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 30
+type: "principles-of-project-setup"
 ---
 
 ## Overview
