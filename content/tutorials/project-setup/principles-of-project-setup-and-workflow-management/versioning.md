@@ -1,5 +1,6 @@
 ---
 tutorialtitle: "Principles of Project Setup and Workflow Management"
+type: "principles-of-project-setup"
 indexexclude: "true"
 title: "Versioning using Git and GitHub"
 description: "Git is an open-source version control system that allows you to keep track of your source files, and the changes you make to them"
@@ -7,7 +8,6 @@ keywords: "git, versioning, github, configuration, repository"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 60
-type: "principles-of-project-setup"
 ---
 
 ## Overview

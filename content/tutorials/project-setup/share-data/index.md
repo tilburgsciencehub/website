@@ -1,10 +1,10 @@
 ---
 title: "Data Sharing"
+type: "data-sharing"
 description: "Document and share data for internal and external use"
 keywords: "data sharing"
 weight: 2
 draft: false
-type: "data-sharing"
 ---
 
 ## Document and share data for internal and external use

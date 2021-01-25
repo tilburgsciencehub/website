@@ -1,12 +1,12 @@
 ---
 tutorialtitle: "Implement an Efficient and Reproducible Workflow"
+type: "implement-efficient-workflow"
 title: "Implement an Efficient and Reproducible Workflow"
 description: "Follow our tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets."
 keywords: "tutorial, tweets, sentiment, analysis, workflow"
 date: 2021-01-06T22:01:14+05:30
 draft: false
 weight: 1
-type: "implement-efficient-workflow"
 ---
 
 Longing to put your knowledge from our [workflow guide](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/principles-overview/) into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our [GitHub workflow template](https://github.com/hannesdatta/textmining-workflow).

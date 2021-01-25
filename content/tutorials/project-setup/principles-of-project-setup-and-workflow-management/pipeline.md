@@ -1,5 +1,6 @@
 ---
 tutorialtitle: "Principles of Project Setup and Workflow Management"
+type: "principles-of-project-setup"
 indexexclude: "true"
 title: "Pipelines and Project Components"
 description: "Let's break down a project into its most basic parts, which we call pipeline and components."
@@ -7,7 +8,6 @@ keywords: "pipeline, project, components, stages, steps"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 2
-type: "principles-of-project-setup"
 ---
 
 ## Overview

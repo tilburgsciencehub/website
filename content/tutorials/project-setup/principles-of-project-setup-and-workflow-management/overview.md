@@ -1,12 +1,12 @@
 ---
 tutorialtitle: "Principles of Project Setup and Workflow Management"
+type: "principles-of-project-setup"
 title: "Principles of Project Setup and Workflow Management"
 description: "When working on a project, most of us spend time thinking about what to create (a cleaned data set, a new algorithm, an analysis, a paper and corresponding slides), but not about how to manage its creation."
 keywords: "principles, workflow, setup, project, configure"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 1
-type: "principles-of-project-setup"
 ---
 
 ## Motivation
@@ -33,9 +33,9 @@ The primary mission of **managing data- and computation-intensive projects** is 
 The objectives of this tutorial are:
 
 - learn how to organize and track the evolution of your projects (e.g., by means of a proper [directory structure](../directories), and [code versioning](../versioning))
-- learn how to automize your workflows, and make them reproducible (e.g., by using [automation](/automation))
-- learn how to [work on projects with others](/collaboration) (e.g., by means of Git/GitHub)
-- learn how to [document datasets](/documenting-data) and [workflows](/documenting-code)
+- learn how to automize your workflows, and make them reproducible (e.g., by using [automation](../automation))
+- learn how to [work on projects with others](../collaboration) (e.g., by means of Git/GitHub)
+- learn how to [document datasets](../documenting-data) and [workflows](../documenting-code)
 - learn how to write clean code (e.g., see our [Building Blocks](/building-blocks))
 
 ## Gradual Implementation
@@ -49,9 +49,9 @@ The objectives of this tutorial are:
   may already be sufficient to start collaborating. For example,
   do you need feedback from your advisor? Just zip (the relevant parts of) your pipeline
   and use [SURF's filesending service (for researchers affiliated with Dutch institutions)](https://filesender.surf.nl/) to send it!
-  2. Start [automating](automation.md) (parts of) your pipeline
-  3. Document your [project](documenting-code.md) and [raw data](documenting-data.md)
-  4. Start to [track changes to your source code](versioning.md), and [clean up your source/"do your housekeeping"](checklist.md) regularly
+  2. Start [automating](../automation) (parts of) your pipeline
+  3. Document your [project](../documenting-code) and [raw data](../documenting-data)
+  4. Start to [track changes to your source code](../versioning), and [clean up your source/"do your housekeeping"](../checklist) regularly
 {{% /tip %}}
 {{% warning %}}
 **Uhh, you just suggested to send an email, really?!**

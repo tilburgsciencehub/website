@@ -1,13 +1,13 @@
 ---
 title: "Making Path Settings Permanent"
-description: "For our workflow be be command line driven, we need to be able to call software from the command line."
+description: "For our workflow to be command line driven, we need to be able to call software from the command line."
 keywords: "PATH, add, terminal, cli"
 weight: 4
 date: 2020-11-11T22:02:51+05:30
 draft: false
 ---
 
-For our workflow be be command line driven, we need to be able to call software from the command line.
+For our workflow to be command line driven, we need to be able to call software from the command line.
 Whilst much of the software we have installed as automatically made this possible, it is not universally the case.
 Here we will make the extra few changes we need to complete the installation guide.
 
@@ -19,7 +19,7 @@ Right-click on Computer. Then go to "Properties" and select the tab "Advanced Sy
 
 Choose “Edit” and append (i.e., do not overwrite the previous value):
 
-        ;C:\Path\to\program.exe
+        C:\Path\to\program.exe
 
 to the variable value – make sure the rest remains as it is and do not include spaces between the ";" and the text.
 

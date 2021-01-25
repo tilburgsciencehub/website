@@ -1,5 +1,6 @@
 ---
 tutorialtitle: "Principles of Project Setup and Workflow Management"
+type: "principles-of-project-setup"
 indexexclude: "true"
 title: "Collaborating using GitHub"
 description: "While you can use Git exclusively to keep track of your files' version history, the real power of Git lies in collaborating on projects with others."
@@ -7,7 +8,6 @@ keywords: "git, github, collaboration, sharing, share, repository, gist, contrib
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 70
-type: "principles-of-project-setup"
 ---
 
 ## Overview

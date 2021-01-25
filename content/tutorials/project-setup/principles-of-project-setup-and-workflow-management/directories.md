@@ -1,5 +1,6 @@
 ---
 tutorialtitle: "Principles of Project Setup and Workflow Management"
+type: "principles-of-project-setup"
 indexexclude: "true"
 title: "Data Management and Directory Structure"
 description: "A guide on how to manage project components, by casting a
@@ -8,7 +9,6 @@ keywords: "data, directory, directories, data management, structure, raw, genera
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 30
-type: "principles-of-project-setup"
 ---
 
 ## Overview
@@ -81,7 +81,7 @@ See below for an example directory structure for your raw data:
     /data/data_provider_C/2020-03-01/...
 
 - We also recommend you to use self-explanatory file names for your data,
-[document the data yourself with a `readme`](/building-blocks/store-and-document-your-data/documenting-raw-data/), or include an overview about how the data was collected from your data provider.
+[document the data yourself with a `readme`](../documenting-data), or include an overview about how the data was collected from your data provider.
 
 - Last, it may happen that you code up some data yourself, and that you
 still wish to store multiple versions of that file. In that case,
@@ -111,7 +111,7 @@ Source code is made available in the `src` folder of your main project: `my_proj
 
 - Source code are all files that are required to execute your project's pipeline.
 
-- In addition, source code consists of a [`makefile`](/configure-your-computer/automation-and-workflows/make/) which makes explicit how the source code needs to be run, and in which order, and
+- In addition, source code consists of a [`makefile`](/building-blocks/configure-your-computer/automation-and-workflows/make/) which makes explicit how the source code needs to be run, and in which order, and
 
 - Scripts which put the `/gen/[pipeline-stage]/output` files from the current pipeline stage to the file exchange (`put_output`), so that other pipeline stages can pull in that data to its `/gen/[pipeline-stage]/input` folder (`get_input`). More about this [here](#4-file-exchange).
 

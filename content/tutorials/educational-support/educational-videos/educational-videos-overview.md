@@ -1,12 +1,12 @@
 ---
 tutorialtitle: "Educational Videos"
+type: "educational-videos"
 title: "Educational Videos"
-description: ""
+description: "An educational video is meant for transferring knowledge to an audience. Learn how to make them."
 keywords: "educational, videos, shooting, camera, teaching, tips, lighting, lenses, microphone, audio"
 weight: 1
 date: 2020-11-11T22:01:14+05:30
 draft: false
-type: "edu-videos"
 ---
 
 ## Overview

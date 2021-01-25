@@ -1,11 +1,11 @@
 ---
 tutorialtitle: "Implement an Efficient and Reproducible Workflow"
+type: "implement-efficient-workflow"
 indexexclude: "true"
 weight: 6
 title: "Dry-run of Make and First Modifications"
 date: 2021-01-06T22:01:14+05:30
 draft: false
-type: "implement-efficient-workflow"
 ---
 
 ## Dry-run of Make and first modifications to the data preparation scripts

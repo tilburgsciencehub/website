@@ -1,11 +1,11 @@
 ---
 tutorialtitle: "Implement an Efficient and Reproducible Workflow"
+type: "implement-efficient-workflow"
 indexexclude: "true"
 weight: 7
 title: "More Modifications"
 date: 2021-01-06T22:01:14+05:30
 draft: false
-type: "implement-efficient-workflow"
 ---
 
 ## More modifications, branching, and replacing input files
