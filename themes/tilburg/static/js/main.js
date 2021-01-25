@@ -74,7 +74,6 @@ $(document).ready(function() {
     $temp.val($(".codeblock .tab-pane.active code").text()).select();
     
     document.execCommand("copy");
-    alert("copied")
     $temp.remove();
   })
   
