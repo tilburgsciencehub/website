@@ -1,15 +1,13 @@
 ---
 tutorialtitle: "Educational Videos"
 type: "educational-videos"
-title: "Educational Videos"
+title: "Overview"
 description: "An educational video is meant for transferring knowledge to an audience. Learn how to make them."
 keywords: "educational, videos, shooting, camera, teaching, tips, lighting, lenses, microphone, audio"
 weight: 1
 date: 2020-11-11T22:01:14+05:30
 draft: false
 ---
-
-## Overview
 
 An educational video is meant for transferring knowledge to an audience. These often involve animations or presenting a slide deck. However, in most of the cases, you might want to show yourself - or the presenter - talking to the camera.
 

@@ -65,7 +65,7 @@ git config --global user.email "[email address]"
 ### 2a. Create a repository for a new project
 
 If you would like to start a new project, it's easiest to start
-your repository from one of our [example projects](../../examples).
+your repository from one of our [example projects](/examples).
 Just navigate to a project's GitHub page, and select *Use this template* (a green button).
 Choose a name for your new repository, and proceed with the standard options.
 

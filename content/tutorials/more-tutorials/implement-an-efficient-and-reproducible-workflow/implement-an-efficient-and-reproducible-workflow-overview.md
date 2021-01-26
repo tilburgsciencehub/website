@@ -1,7 +1,7 @@
 ---
 tutorialtitle: "Implement an Efficient and Reproducible Workflow"
 type: "implement-efficient-workflow"
-title: "Implement an Efficient and Reproducible Workflow"
+title: "Overview"
 description: "Follow our tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets."
 keywords: "tutorial, tweets, sentiment, analysis, workflow"
 date: 2021-01-06T22:01:14+05:30
