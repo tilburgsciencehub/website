@@ -40,28 +40,7 @@
 			<div class="p-5 bg-white rounded mb-5">
 				{{ .Content }}
 
-				<!-- pagination -->
-				<div class="pagination">
-					<div>
-						<div class="pagination-title">Previous</div>
-						<div class="pagination-button">
-							<div class="arrow-circle">
-								<img src="/img/arrow-right.svg">
-							</div>
-							<span>{{ with .Prev }}{{ .Title }}{{ end }}</span>
-						</div>
-					</div>
-					<div class="pagination-right">
-						<div class="pagination-title">Next</div>
-						<div class="pagination-button">
-							<span>{{ with .Site.RegularPages.Next . }}{{ .Title }}{{ end }}</span>
-							<div class="arrow-circle">
-								<img src="/img/arrow.svg">
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /pagination -->
+				{{ partial "pagination.html" . }}
 			</div>
 
 			{{ partial "relatedPosts.html" . }}

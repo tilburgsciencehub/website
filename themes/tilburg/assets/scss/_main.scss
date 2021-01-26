@@ -35,6 +35,9 @@
 
   .pagination-button {
     cursor: pointer;
+    display: inline-block;
+    color: $secondary;
+
     .arrow-circle {
       width: 38px;
       height: 38px;
