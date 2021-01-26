@@ -9,6 +9,9 @@ weight: 1
 
 {{% codeblock %}}
 
+[js-link](code.js)
+
+
 ```js
 // some js code
 var name = "Arvind Singh";

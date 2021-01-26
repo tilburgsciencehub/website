@@ -12,7 +12,7 @@
 				{{ else }}
 				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
 				{{ end }}
-				<div class="TableOfContents">
+				<div class="TableOfContents" style="max-height: 550px; overflow-y: scroll;">
 					<span class="arrow-icon"></span>
 					<div class="pseudo-btn d-block d-lg-none"></div>
 					{{ $currentTitle := .Title }}
@@ -40,7 +40,28 @@
 			<div class="p-5 bg-white rounded mb-5">
 				{{ .Content }}
 
-				{{with .NextInSection }} <a href="{{.RelPermalink}}">Next Page</a> {{ end }}
+				<!-- pagination -->
+				<div class="pagination">
+					<div>
+						<div class="pagination-title">Previous</div>
+						<div class="pagination-button">
+							<div class="arrow-circle">
+								<img src="/img/arrow-right.svg">
+							</div>
+							<span>{{ with .Prev }}{{ .Title }}{{ end }}</span>
+						</div>
+					</div>
+					<div class="pagination-right">
+						<div class="pagination-title">Next</div>
+						<div class="pagination-button">
+							<span>{{ with .Site.RegularPages.Next . }}{{ .Title }}{{ end }}</span>
+							<div class="arrow-circle">
+								<img src="/img/arrow.svg">
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /pagination -->
 			</div>
 
 			{{ partial "relatedPosts.html" . }}
