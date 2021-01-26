@@ -366,7 +366,7 @@ Dropbox, Google Drive, or - if you're located in The Netherlands - Surfdrive.
 
 {{% tip %}}
 - [Download our example directory structure here](../dir_structure.zip), so you can get started right away.
-- Remember that horrible [directory and file structure](structure_phd_2013.html)? Check out how this tidier project on [how streaming services change music consumption](https://pubsonline.informs.org/doi/pdf/10.1287/mksc.2017.1051) looked [like](../structure_spotify_2018.html#spotify).
+- Remember that horrible [directory and file structure](../structure_phd_2013.html)? Check out how this tidier project on [how streaming services change music consumption](https://pubsonline.informs.org/doi/pdf/10.1287/mksc.2017.1051) looked [like](../structure_spotify_2018.html#spotify).
 - You've seen those readme.txt's?! These are super helpful to include to [describe your project](../documenting-code), and to [describe raw data](../documenting-data).
 {{% /tip %}}
 

@@ -24,7 +24,7 @@ This workflow for your specific pipeline can be visualized as follows:
 
 ![Workflow](../make_flowchart.png)
 
-Using so-called "build tools" such as [`make`](/configure-your-computer/automation-and-workflows/make/), we can specify:
+Using so-called "build tools" such as [`make`](/building-blocks/configure-your-computer/automation-and-workflows/make/), we can specify:
 
 - what code runs and when, and
 - what inputs (e.g., data, parameters) a given source code file needs to run.

@@ -33,7 +33,8 @@ Instances of "new data" may included, but are not restricted to be:
 Ideally, your data description includes the *very elaborate questions* outlined in `Datasheets for datasets` by Gebru, Timnit, et al. (2018).
 **We strongly** refer you to the [original paper](https://arxiv.org/abs/1803.09010), which explains in detail the seven key ingredients of a proper dataset documentation. Below, we have reproduced these questions, and we recommend you to include those as a **`readme.txt`**, together with your datasets. For *derived* data, it may be enough to point to a relevant source code file, and provide a list of variables and their operationalization.
 
-```
+{{% codeblock %}}
+```txt
 ==========================================================
   D A T A S E T / D A T A B A S E  D E S C R I P T I O N
 ==========================================================
@@ -347,12 +348,13 @@ Ideally, your data description includes the *very elaborate questions* outlined 
 
 
 ```
+{{% /codeblock %}}
 
 That's **a lot of documentation**. So - if you don't have time, go with the bigger picture
 and answer the main questions only.
 
-
-```
+{{% codeblock %}}
+```txt
 ==========================================================
           D A T A S E T   D E S C R I P T I O N
 ==========================================================
@@ -389,3 +391,4 @@ Name of the dataset:
 
 [...]
 ```
+{{% /codeblock %}}
