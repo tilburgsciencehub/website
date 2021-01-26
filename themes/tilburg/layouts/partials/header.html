@@ -114,15 +114,16 @@
 						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-5 px-3">
 							<div class="row">
 								{{- range where .Site.Pages "Section" "examples" -}}
-
+								{{ if eq .Title "Examples" }}
 								<div class="col-6 mb-4">
 									<!-- <h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5> -->
-
 									{{- range .Pages -}}
-									<a class=" d-block mb-3 text-secondary heading" style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="{{.Permalink}}">{{.Title}}</a>
+									{{ if .Title }}
+									<a class=" d-block mb-3 text-secondary heading" style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="{{.Permalink}}">{{- .Title -}}</a>
+									{{ end }}
 									{{ end }}
 								</div>
-
+								{{ end }}
 								{{ end }}
 							</div>
 						</div>
@@ -151,7 +152,7 @@
 	<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileMenu" style="z-index: 10; margin-top: -2px;left: 0">
 		<!-- screen 1 -->
 		<div class="screen-1 d-none">
-			<a href="#0" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour</a>
+			<!-- <a href="#0" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour</a> -->
 			<a href="#0" data-screen-two="mobile-tutorials" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tutorials<span
 					class="icon mini-right float-right text-primary"></span> </a>
 			<a href="#0" data-screen-two="mobile-building-blocks" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Building Blocks<span

@@ -48,38 +48,52 @@ $(document).ready(function() {
   }
 
   // working on codeblock
-  let codeblocks = []
-  let blocks = $(".codeblock .inner .highlight")
-  blocks.map(block => {
-    $(".codeblock .nav").append(`
-      <li class="nav-item" role="presentation">
-        <a class="nav-link ${block == 0 ? 'active' : ''}" id="pills-${blocks[block].children[0].children[0].className}-tab" data-toggle="tab" href="#${blocks[block].children[0].children[0].className}" role="tab" aria-controls="pills-${blocks[block].children[0].children[0].className}" aria-selected="true">${blocks[block].children[0].children[0].className.replace("language-", "")}</a>
-      </li>
-    `);
+  let codeblocks = $(".codeblock")
+  $(`.codeblock .downloadCodeBtn`).hide()
+  for (x = 0; x < codeblocks.length; x++) {
+    let blocks = $(`.codeblock:eq(${x}) .inner .highlight`)
 
-    $(".codeblock .tab-content").append(`
-      <div class="tab-pane ${block == 0 ? 'fade show active' : ''}" id="${blocks[block].children[0].children[0].className}" role="tabpanel" aria-labelledby="pills-${blocks[block].children[0].children[0].className}-tab">
-        
-      </div>
-    `);
+    blocks.map(block => {
+      $(`.codeblock:eq(${x}) .nav`).append(`
+        <li class="nav-item" role="presentation">
+          <a class="nav-link ${block == 0 ? 'active' : ''}" id="pills-${blocks[block].children[0].children[0].className}-tab-${x}" data-toggle="tab" href="#${blocks[block].children[0].children[0].className}-${x}" role="tab" aria-controls="pills-${blocks[block].children[0].children[0].className}" aria-selected="true">${blocks[block].children[0].children[0].className.replace("language-", "")}</a>
+        </li>
+      `);
 
-    $(`#${blocks[block].children[0].children[0].className}`).append(blocks[block])
+      $(`.codeblock:eq(${x}) .tab-content`).append(`
+        <div class="tab-pane ${block == 0 ? 'fade show active' : ''}" id="${blocks[block].children[0].children[0].className}-${x}" role="tabpanel" aria-labelledby="pills-${blocks[block].children[0].children[0].className}-tab">
+          
+        </div>
+      `);
 
-  });
+      $(`.codeblock:eq(${x}) #${blocks[block].children[0].children[0].className}-${x}`).append(blocks[block]);
+
+      var el = $(`.codeblock:eq(${x}) a:contains('${blocks[block].children[0].children[0].className.replace("language-", "")}-link')`);
+
+      if (el.length) {
+        if ($(`.codeblock:eq(${x}) .downloadCodeBtn`).is(":hidden")) {
+          $(`.codeblock:eq(${x}) .downloadCodeBtn`).show();
+        }
+      }
+
+      $(`.codeblock:eq(${x}) .copyCodeBtn`).attr("data-index", x)
+      $(`.codeblock:eq(${x}) .downloadCodeBtn`).attr("data-index", x)
+    });
+  }
 
   // make code copy-able
   $(".copyCodeBtn").on("click", function() {
     var $temp = $('<textarea id="toCopy"></textarea>');
     $("body").append($temp);
-    $temp.val($(".codeblock .tab-pane.active code").text()).select();
+    $temp.val($(`.codeblock:eq(${$(this).attr("data-index")}) .tab-pane.active code`).text()).select();
     
     document.execCommand("copy");
     $temp.remove();
   })
 
   $(".downloadCodeBtn").on("click", function() {
-    var $currentlanguage = $(".codeblock .nav-link.active").html();
-    var el = $(`.codeblock a:contains('${$currentlanguage}-link')`);
+    var $currentlanguage = $(`.codeblock:eq(${$(this).attr("data-index")}) .nav-link.active`).html();
+    var el = $(`.codeblock:eq(${$(this).attr("data-index")}) a:contains('${$currentlanguage}-link')`);
     var link = el.attr('href');
 
     window.location.href = "../" + link;
