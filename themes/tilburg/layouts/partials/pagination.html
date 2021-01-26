@@ -1,7 +1,7 @@
 <!-- pagination -->
 <div class="pagination">
 	<div>
-		<div class="pagination-title">Previous</div>
+		<div class="pagination-title d-none d-lg-block">Previous</div>
 		<a href="{{ with .Prev }}{{ .RelPermalink }}{{ end }}" class="pagination-button">
 			<div class="arrow-circle">
 				<img src="/img/arrow-right.svg">
@@ -11,7 +11,7 @@
 		</a>
 	</div>
 	<div class="pagination-right">
-		<div class="pagination-title">Next</div>
+		<div class="pagination-title d-none d-lg-block">Next</div>
 		<a href="{{ with .Prev }}{{ .RelPermalink }}{{ end }}" class="pagination-button">
 			<span class="d-none d-lg-inline-block">{{ with .Site.RegularPages.Next . }}{{ .Title }}{{ end }}</span>
 			<span class="d-inline-block d-lg-none">Next</span>
