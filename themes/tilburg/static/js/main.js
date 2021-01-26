@@ -76,6 +76,25 @@ $(document).ready(function() {
     document.execCommand("copy");
     $temp.remove();
   })
+
+  $(".downloadCodeBtn").on("click", function() {
+    var $currentlanguage = $(".codeblock .nav-link.active").html();
+    var el = $(`.codeblock a:contains('${$currentlanguage}-link')`);
+    var link = el.attr('href');
+
+    window.location.href = "../" + link;
+  });
+
+  $(".codeblock .nav-link").on("click", function() {
+    var $currentlanguage = $(this).html();
+    var el = $(`.codeblock a:contains('${$currentlanguage}-link')`);
+
+    if (!el.length) {
+      $(".downloadCodeBtn").hide();
+    } else {
+      $(".downloadCodeBtn").show();
+    }
+  });
   
 });
 

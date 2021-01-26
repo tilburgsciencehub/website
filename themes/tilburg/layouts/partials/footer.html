@@ -14,7 +14,7 @@
 						{{ if eq .Params.isParent true }}
 						{{- range $index, $value := .Pages -}}
 						{{ if ne .Params.indexexclude "true" }}
-						<a href="{{ .Permalink }}">{{ .Title }}</a>
+						<a href="{{ .Permalink }}">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
 						{{ end }}
 						{{- end -}}
 						{{ end }}

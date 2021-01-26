@@ -46,7 +46,7 @@
                 <a class="linkHeading" href="{{ .Permalink }}"><h5 class="heading linkHeading font-weight-normal" style="font-size: 16px;">{{ .Title }}</h5></a>
                 {{ if ne .Type .Section }}
                 {{ range where .Site.Pages "Type" .Type }}
-                <a class="d-block" href="{{.Permalink}}">{{.Title}}</a>
+                <a class="d-block" href="{{.Permalink}}">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
                 
                 {{ end }}
                 {{ end }}
