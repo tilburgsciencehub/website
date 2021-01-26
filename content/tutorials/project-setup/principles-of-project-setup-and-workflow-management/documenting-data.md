@@ -35,7 +35,7 @@ Ideally, your data description includes the *very elaborate questions* outlined 
 
 {{% codeblock %}}
 
-```txt
+```text
 ==========================================================
   D A T A S E T / D A T A B A S E  D E S C R I P T I O N
 ==========================================================
@@ -355,14 +355,7 @@ That's **a lot of documentation**. So - if you don't have time, go with the bigg
 and answer the main questions only.
 
 {{% codeblock %}}
-
-[js-link](hello.jpg)
-
-```js
-name = 1;
-```
-
-```txt
+```text
 ==========================================================
           D A T A S E T   D E S C R I P T I O N
 ==========================================================
