@@ -31,15 +31,20 @@ $(document).ready(function() {
   });
 
   $(".TableOfContents a").on("click", function() {
-    $(".pseudo-btn").removeClass("active")
-    $(".TableOfContents").css("height", "56px");
-    $(".TableOfContents").removeClass("active");
+    if ($( window ).width() < 992) {
+      $(".pseudo-btn").removeClass("active")
+      $(".TableOfContents").css("height", "56px");
+      $(".TableOfContents").removeClass("active");
+    }
+    
   })
 
   $(".TableOfContents span.arrow-icon").on("click", function() {
-    $(".pseudo-btn").removeClass("active")
-    $(".TableOfContents").css("height", "56px");
-    $(".TableOfContents").removeClass("active");
+    if ($( window ).width() < 992) {
+      $(".pseudo-btn").removeClass("active")
+      $(".TableOfContents").css("height", "56px");
+      $(".TableOfContents").removeClass("active");
+    }
   })
 
   if ($(".sticky-top")) {

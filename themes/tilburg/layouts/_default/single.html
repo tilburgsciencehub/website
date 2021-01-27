@@ -12,7 +12,7 @@
 				{{ else }}
 				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
 				{{ end }}
-				<div class="TableOfContents">
+				<div class="TableOfContents" style="max-height: 550px; overflow-y: scroll;">
 					<span class="arrow-icon"></span>
 					<div class="pseudo-btn d-block d-lg-none"></div>
 					{{ $currentTitle := .Title }}
