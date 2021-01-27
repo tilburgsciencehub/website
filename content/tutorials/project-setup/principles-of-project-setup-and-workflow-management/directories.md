@@ -6,9 +6,9 @@ title: "Data Management and Directory Structure"
 description: "A guide on how to manage project components, by casting a
 prototypical directory structure."
 keywords: "data, directory, directories, data management, structure, raw, generated, source"
-date: 2020-11-11T22:01:14+05:30
+date: 2020-10-10T22:01:14+05:30
 draft: false
-weight: 30
+Weight: 30
 ---
 
 ## Overview
