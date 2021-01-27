@@ -4,12 +4,12 @@
 		{{ with .NextInSection }}
 		{{ if .Title }}
 		<div class="pagination-title d-none d-lg-block">Previous</div>
-		<a href="{{ with .NextInSection }}{{ .RelPermalink }}{{ end }}" class="pagination-button">
+		<a href="{{ .RelPermalink }}" class="pagination-button">
 			<div class="arrow-circle">
 				<img src="/img/arrow-right.svg">
 			</div>
 			<span class="d-inline-block d-lg-none">Previous</span>
-			<span class="d-none d-lg-inline-block">{{ with .NextInSection }}{{ .Title }}{{ end }}</span>
+			<span class="d-none d-lg-inline-block">{{ .Title }}</span>
 		</a>
 		{{ end }}
 		{{ end }}
@@ -18,8 +18,8 @@
 		{{ with .PrevInSection }}
 			{{if .Title}}
 		<div class="pagination-title d-none d-lg-block">Next</div>
-		<a href="{{ with .PrevInSection }}{{ .RelPermalink }}{{ end }}" class="pagination-button">
-			<span class="d-none d-lg-inline-block">{{ with .PrevInSection }}{{ .Title }}{{ end }}</span>
+		<a href="{{ .RelPermalink }}" class="pagination-button">
+			<span class="d-none d-lg-inline-block">{{ .Title }}</span>
 			<span class="d-inline-block d-lg-none">Next</span>
 			<div class="arrow-circle">
 				<img src="/img/arrow.svg">
