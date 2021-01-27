@@ -1,6 +1,8 @@
 <!-- pagination -->
 <div class="pagination">
 	<div>
+		{{ with .NextInSection }}
+		{{ if .Title }}
 		<div class="pagination-title d-none d-lg-block">Previous</div>
 		<a href="{{ with .NextInSection }}{{ .RelPermalink }}{{ end }}" class="pagination-button">
 			<div class="arrow-circle">
@@ -9,8 +11,12 @@
 			<span class="d-inline-block d-lg-none">Previous</span>
 			<span class="d-none d-lg-inline-block">{{ with .NextInSection }}{{ .Title }}{{ end }}</span>
 		</a>
+		{{ end }}
+		{{ end }}
 	</div>
 	<div class="pagination-right">
+		{{ with .PrevInSection }}
+			{{if .Title}}
 		<div class="pagination-title d-none d-lg-block">Next</div>
 		<a href="{{ with .PrevInSection }}{{ .RelPermalink }}{{ end }}" class="pagination-button">
 			<span class="d-none d-lg-inline-block">{{ with .PrevInSection }}{{ .Title }}{{ end }}</span>
@@ -19,6 +25,8 @@
 				<img src="/img/arrow.svg">
 			</div>
 		</a>
+		{{ end }}
+		{{ end }}
 	</div>
 </div>
 <!-- /pagination -->

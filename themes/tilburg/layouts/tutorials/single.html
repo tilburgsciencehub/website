@@ -39,7 +39,7 @@
 			<div class="p-5 bg-white rounded mb-5">
 				{{ .Content }}
 
-				{{with .NextInSection }} <a href="{{.RelPermalink}}">Next Page</a> {{ end }}
+				{{ partial "pagination.html" }}
 			</div>
 
 			{{ partial "relatedPosts.html" . }}
