@@ -2,7 +2,7 @@
 title: "Style and Writing Guide"
 description: "When contributing content to our platform, please follow our style and writing guidelines."
 keywords: "style, styling, guideline, writing"
-weight: 1
+weight: 2
 draft: false
 ---
 

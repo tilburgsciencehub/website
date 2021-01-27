@@ -2,7 +2,7 @@
 title: "Create a New Tutorial"
 description: "Tutorials teach our users how to combine individual building blocks into a final product. Learn how to write one."
 keywords: "tutorial, contribute, guidelines"
-weight: 3
+weight: 4
 draft: false
 ---
 
