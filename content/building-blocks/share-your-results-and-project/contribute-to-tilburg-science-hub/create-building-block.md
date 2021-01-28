@@ -16,15 +16,4 @@ Check out our platform's menu system to see in which categories we classify our 
 
 First, make sure to read our [guide on how to contribute](../contribute) as well as our [writing guidelines](../style-guide).
 
-You can then download and fill in our **[Building Block Markdown template](../building-block-shell.md)**.
-
-{{% codeblock %}}
-
-[building-block-shell](../building-block-shell.md)
-
-
-```md
-Click on the download button above to download the file.
-```
-
-{{% /codeblock %}}
+You can then download and fill in our **[Building Block Markdown template](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/building-block-shell.md)**.

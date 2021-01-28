@@ -83,16 +83,19 @@ This is a tip
 
 
 {{% warning %}}
+
 This is a warning
 
 {{% /warning %}}
 
 {{% summary %}}
+
 This is a summary
 
 {{% /summary %}}
 
 {{% example %}}
+
 This is an example
 
 {{% /example %}}
@@ -113,11 +116,21 @@ This is an example
 - Frame sentences positively: use positive language (e.g., be more efficient, write better code...), rather than negative language (e.g., avoid mistakes...).
 - Avoid slang.
 - Avoid jargon. We know it's difficult for you academics out there.
-- Use `#`, `##`, `###`, `####` for headers, not a standard line on **bold**. Use `**` only for bolded words or short sentences when you want to stress a concept. Learn more about markdown syntax [here](https://www.markdownguide.org/basic-syntax/).
+- Capitalize Your Headings Like This. But don't do that for articles and prepositions.
+- Avoid headings to start with articles and "How to...". Of course we're telling you how to do it.
+- Use `##`, `###`, `####` for headers, not a standard line on **bold**. Use `**` only for bolded words or short sentences when you want to stress a concept. Learn more about markdown syntax [here](https://www.markdownguide.org/basic-syntax/).
+- Do **NOT** use `#` for headers. Instead, use the appropriate `title` flag for your main header.
 - Be consistent and double-check your file before sending!
 
 {{% warning %}}
 **The naming of your file matters!**
 
 We use the filename, which is different from the actual article's title, to extract information and display the current path within the navigation menu and on the breadcrumb trails. Please, choose your filename carefully!
+
+Generally speaking, it's a good idea to name your file exactly like your main title, but using all lowercase letters and separating words with a `-`.
+
+**Example**:
+
+    Title: Automation with GNU Make
+    Filename: automation-with-gnu-make.md
 {{% /warning %}}
