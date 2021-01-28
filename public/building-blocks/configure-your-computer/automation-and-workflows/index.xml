@@ -43,11 +43,11 @@ pip install snakemake followed by pressing the Return key.</description>
     
     <item>
       <title>Making Path Settings Permanent</title>
-      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/environment-variables/</link>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/environment/</link>
       <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
       
-      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/environment-variables/</guid>
-      <description>For our workflow be be command line driven, we need to be able to call software from the command line. Whilst much of the software we have installed as automatically made this possible, it is not universally the case. Here we will make the extra few changes we need to complete the installation guide.
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/environment/</guid>
+      <description>For our workflow to be command line driven, we need to be able to call software from the command line. Whilst much of the software we have installed as automatically made this possible, it is not universally the case. Here we will make the extra few changes we need to complete the installation guide.
 Windows Users (for Windows 8 and 10) You will need local administration rights for your computer, but you should have these on your personal computers or ones owned by the Department.</description>
     </item>
     
@@ -57,7 +57,7 @@ Windows Users (for Windows 8 and 10) You will need local administration rights f
       <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
       
       <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/teamviewer/</guid>
-      <description>Getting feedback on code or solving technical problems is crucial to your learning experience. When working remotely, we prefer to make use of Teamviewer, which allows us to remote-control your computer and help you right away (while you&amp;rsquo;re watching, of course!).
+      <description>Getting feedback on code or solving technical problems is crucial to your learning experience. When working remotely, we prefer to make use of TeamViewer, which allows us to remote-control your computer and help you right away (while you&amp;rsquo;re watching, of course!).
 Installing Teamviewer To install TeamViewer, go to the TeamViewer homepage and download the installer for your operating system. We recommend you to install Teamviewer permanently. If you do not have admin rights, it&amp;rsquo;s fine to only select run once.</description>
     </item>
     
