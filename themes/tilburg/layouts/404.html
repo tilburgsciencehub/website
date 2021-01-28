@@ -1,3 +1,7 @@
 {{ partial "header.html" . }}
-
+<script type="text/javascript">
+	if (window.location.href.split("/")[3]) {
+		window.location = "/" + window.location.href.split("/")[3]
+	}
+</script>
 {{ partial "footer.html" . }}

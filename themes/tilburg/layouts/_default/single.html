@@ -20,7 +20,7 @@
 					{{ range where .Site.Pages "Type" .Type }}
 
 						{{ if eq .Title $currentTitle }}
-						<h5 class="heading text-primary" style="font-size: 18px; height: 28px; margin-left: 10px; font-weight: 100 !important;"><a class="text-primary" href="{{ .Permalink }}">{{ .Title }}</a></h5>
+						<h5 class="heading text-primary" style="font-size: 18px; height: 28px; margin-left: 10px; margin-top: 8px; font-weight: 100 !important;"><a class="text-primary" href="{{ .Permalink }}">{{ .Title }}</a></h5>
 							
 							<div class="pl-4">{{ .TableOfContents }}</div>
 								
@@ -38,7 +38,6 @@
 		</div>
 		<article class="col-lg-16 col-22">
 			<div class="p-5 bg-white rounded mb-5">
-				{{ len .Content }}
 				{{ if eq (len .Content) 0 }}
 				<script>window.location = "/{{.Section}}"</script>
 				{{ else }}

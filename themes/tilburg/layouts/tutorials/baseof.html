@@ -1,1 +1,5 @@
-{{ partial "header.html" . }}
+{{ if eq (len .Content) 0 }}
+				<script>window.location = "/{{.Section}}"</script>
+				{{ else }}
+				{{ .Content }}
+				{{ end }}
