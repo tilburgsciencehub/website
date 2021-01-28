@@ -6,9 +6,7 @@
     <div class="col-lg-11 col-22">
       <h1 class="text-center">Tutorials</h1>
       <p class="text-center text-secondary my-5">
-        Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh
-        ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed
-        consectetur.
+        Tutorials help you understand how to combine individual Building Blocks into a final product. What that final product is, is your choice.
       </p>
       <div class="position-relative mx-5 searchIconRight w-75 mx-auto">
         <input
@@ -47,7 +45,7 @@
                 {{ if ne .Type .Section }}
                 {{ range where .Site.Pages "Type" .Type }}
                 <a class="d-block" href="{{.Permalink}}">{{ .Title }}</a>
-                
+
                 {{ end }}
                 {{ end }}
               </div>
@@ -61,7 +59,7 @@
       {{ end }}
       {{ end }}
       {{- end -}}
-      {{- end -}} 
+      {{- end -}}
     </div>
   </div>
 </div>
