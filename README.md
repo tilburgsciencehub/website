@@ -24,7 +24,7 @@ Department of Economics at the University of Zurich for their fantastic work
 on the original repository.
 
 ## Meta-Information
-*   Maintainers: Hannes Datta (`@hannesdatta`), Tobias Klein (`kleintob`), Andrea Antonacci (`@andreantonacci`)
+*   Maintainers: Hannes Datta (`@hannesdatta`), Tobias Klein (`@kleintob`), Andrea Antonacci (`@andreantonacci`)
 *   Tilburg University, [Tilburg School of Economics and Management](https://www.tilburguniversity.edu/about/schools/economics-and-management)
 *   Current version of website: [https://tilburgsciencehub.com](https://tilburgsciencehub.com)
 
