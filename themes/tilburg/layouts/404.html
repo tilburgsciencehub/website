@@ -1,5 +1,7 @@
 {{ partial "header.html" . }}
 <script type="text/javascript">
-	window.location = "/{{ .Section }}"
+	if (window.location.href.split("/")[4]) {
+		window.location = "/" + window.location.href.split("/")[4]
+	}
 </script>
 {{ partial "footer.html" . }}
