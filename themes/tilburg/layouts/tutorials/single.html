@@ -19,13 +19,13 @@
 					
 					{{ range .Pages }}
 						{{ if eq .Title $currentTitle }}
-						<h5 class="heading text-primary" style="font-size: 18px; height: 28px; margin-left: 10px; font-weight: 100 !important;"><a class="text-primary" href="{{ .Permalink }}">{{ .Title }}</a></h5>
+						<h5 class="heading text-primary" style="font-size: 18px; height: 28px; margin-left: 10px;  font-weight: 100 !important;"><a class="text-primary" href="{{ .Permalink }}">{{ .Title }}</a></h5>
 							
 							<div class="pl-4">{{ .TableOfContents }}</div>
 								
 							
 						{{ else }}
-						<h5 class="text-secondary heading" style="font-size: 18px; height: 38px; margin-left: 10px; font-weight: 100 !important;"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+						<h5 class="text-secondary heading" style="font-size: 18px; height: 38px; margin-left: 10px; margin-top:10px; font-weight: 100 !important;"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
 						{{ end }}
 					
 					{{ end }}

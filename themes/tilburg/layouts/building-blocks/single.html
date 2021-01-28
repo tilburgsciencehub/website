@@ -8,12 +8,14 @@
 		<div class="col-lg-8 col-22 pr-lg-5">
 			<div class="sticky-top pr-lg-3 mb-lg-5 pb-lg-5">
 				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
-
+				
+			{{ if gt (len .TableOfContents) 32 }}
 			<div class="TableOfContents">
 				<span class="arrow-icon"></span>
 				<div class="pseudo-btn"></div>
 				{{ .TableOfContents }}
 			</div>
+			{{ end }}
 			<div class="d-none d-lg-block pseudoSpacer"></div>
 			</div>
 			
