@@ -89,7 +89,7 @@
 											<div class="row">
 												{{ range .Pages }}
 												<div class="col-8 mb-4">
-													<a class="anchor-no-effect" href="{{ .Permalink }}"><span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span></a>
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span>
 													{{- range .Pages -}}
 													<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
 													{{ end }}
@@ -115,14 +115,15 @@
 							<div class="row">
 								{{- range where .Site.Pages "Section" "examples" -}}
 								{{ if eq .Title "Examples" }}
-								<div class="col-6 mb-4">
+								
 									<!-- <h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5> -->
 									{{- range .Pages -}}
+									<div class="col-6 mb-4">
 									{{ if .Title }}
 									<a class=" d-block mb-3 text-secondary heading" style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="{{.Permalink}}">{{- .Title -}}</a>
 									{{ end }}
+									</div>
 									{{ end }}
-								</div>
 								{{ end }}
 								{{ end }}
 							</div>
@@ -183,7 +184,7 @@
 					<div class="pl-4 mb-4">
 						{{ range .Pages }}
 						<div class="mb-4">
-							<a class="anchor-no-effect" href="{{ .Permalink }}"><span class="heading d-block mb-0" style="font-size: 16px;">{{.Title}}</span></a>
+							<span class="heading d-block mb-0" style="font-size: 16px;">{{.Title}}</span>
 							{{- range .Pages -}}
 							<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
 							{{ end }}
