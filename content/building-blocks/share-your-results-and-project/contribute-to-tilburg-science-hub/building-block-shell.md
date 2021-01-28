@@ -25,7 +25,7 @@ Add any special requirements or attach a dummy data set if needed.
 
 {{% codeblock %}} <!-- You can provide more than one language in the same code block -->
 
-[py-link](code.py) <!-- OPTIONAL: You can also provide your code as a downloadable file (useful for very long codes). Make sure you place this file in the same folder. -->
+[python-link](code.py) <!-- OPTIONAL: You can also provide your code as a downloadable file (useful for very long codes). Make sure you place this file in the same folder. Specify in [square brackets] the language followed by "-link" as shown here.-->
 
 
 ```python
