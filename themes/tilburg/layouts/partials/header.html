@@ -224,14 +224,11 @@
 					class="icon mini-left text-primary"></span> Examples</a>
 					<br>
 				{{- range where .Site.Pages "Section" "examples" -}}
-
+				{{ if ne .Title "Examples" }}
 				<div class="mb-4">
-					<div class="text-secondary m-0 mt-2 heading" style="font-size: 16px; line-height: 2px">{{.Title}}</div>
-
-					<!-- {{- range .Pages -}}
-					<a class="d-block mx-0 ml-3 mt-3 " href="{{.Permalink}}">{{.Title}}</a>
-					{{ end }} -->
+					<a class=" d-block mb-3 text-secondary heading" style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="{{.Permalink}}">{{- .Title -}}</a>
 				</div>
+				{{ end }}
 				{{ end }}
 
 			</div>

@@ -35,6 +35,10 @@ $(document).ready(function() {
       $(".pseudo-btn").removeClass("active")
       $(".TableOfContents").css("height", "56px");
       $(".TableOfContents").removeClass("active");
+      setTimeout(function() {
+        $(".TableOfContents").animate({ scrollTop: 0 }, "slow");
+      }, 1500)
+      
     }
     
   })
@@ -43,7 +47,6 @@ $(document).ready(function() {
     if ($( window ).width() < 992) {
       $(".pseudo-btn").removeClass("active")
       $(".TableOfContents").css("height", "56px");
-      $(".TableOfContents").removeClass("active");
     }
   })
 
