@@ -39,7 +39,7 @@ and reviews of proposed changes are all welcome.
 
 * See the contributing guide [here](https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/contribute/).
 * Check out our [styling and writing guidelines](https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/style-guide/).
-* By contributing you agree to abide by the [Code of Conduct](https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/contribute/#contributor-code-of-conduct)
+* By contributing you agree to abide by the [Code of Conduct](https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/contribute/#contributor-code-of-conduct).
 
 ## Any questions?
 Feel free to reach out to us at `tsh [at] tilburguniversity [dot] edu`.
