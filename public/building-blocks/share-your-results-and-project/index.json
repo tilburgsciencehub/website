@@ -1,1 +1,288 @@
-[{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/software-setup-overview/","title":"Software Setup Overview"},{"link":"https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/","title":"Use GitHub to Share your Work"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/commandline/","title":"Command Line Tools"},{"link":"https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/documenting-a-project/","title":"Document a Project"},{"link":"https://tsh-website.netlify.app/building-blocks/organize-your-project/checklists-to-audit-your-project/","title":"Checklists to Audit your Project"},{"link":"https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/learn-to-code/learn-r/","title":"Learn R"},{"link":"https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/principles-good-coding/","title":"Principles for Good Coding"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/","title":"Statistics and Computation"},{"link":"https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/versioning-using-git/","title":"Versioning using Git and GitHub"},{"link":"https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/style-guide/","title":"Style and Writing Guide"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/webscraping_drivers/","title":"Configuring Python for Web Scraping"},{"link":"https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/git-lfs/","title":"Work with Large Files on GitHub"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/automated-installation/","title":"Automated Installation"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/make/","title":"Automation with GNU Make"},{"link":"https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/documenting-raw-data/","title":"Document Raw Data"},{"link":"https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/learn-to-code/","title":"Learn to Code"},{"link":"https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/","title":"Tips"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/","title":"Automation and Workflows"},{"link":"https://tsh-website.netlify.app/building-blocks/organize-your-project/data-management-and-directory-structure/","title":"Data Management and Directory Structure"},{"link":"https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/learn-to-code/learn-python-and-julia/","title":"Learn Python and Julia"},{"link":"https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/write-academic-paper/","title":"Writing an Academic Paper"},{"link":"https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/","title":"Contribute to Tilburg Science Hub"},{"link":"https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-building-block/","title":"Create a New Building Block"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/","title":"Task-specific configurations"},{"link":"https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/documenting-code-and-pipeline/","title":"Document your Code and Pipeline"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/python/","title":"Python"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/snakemake/","title":"Snakemake"},{"link":"https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/links-other-initiatives/","title":"Links to Other Great Initiatives"},{"link":"https://tsh-website.netlify.app/building-blocks/organize-your-project/pipelines-and-project-components/","title":"Pipelines and Project Components"},{"link":"https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-tutorial/","title":"Create a New Tutorial"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/environment-variables/","title":"Making Path Settings Permanent"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/r/","title":"R and RStudio"},{"link":"https://tsh-website.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/","title":"Remote Raw Data Setup"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/stata/","title":"Stata"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/teamviewer/","title":"TeamViewer"},{"link":"https://tsh-website.netlify.app/building-blocks/organize-your-project/mirror-your-code-to-github/","title":"Mirror your Code to GitHub"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/matlab/","title":"MATLAB"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/pandoc/","title":"Pandoc"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/text-editor/","title":"Text Editors"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/latex/","title":"LaTeX"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/git/","title":"Git and GitHub for Version Control"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/","title":"Configure your computer"},{"link":"https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/","title":"Develop your coding skills"},{"link":"https://tsh-website.netlify.app/building-blocks/organize-your-project/","title":"Organize your project"},{"link":"https://tsh-website.netlify.app/building-blocks/collect-your-data/","title":"Collect your data"},{"link":"https://tsh-website.netlify.app/building-blocks/store-and-document-your-data/","title":"Store and document your data"},{"link":"https://tsh-website.netlify.app/building-blocks/prepare-your-data-for-analysis/","title":"Prepare your data for analysis"},{"link":"https://tsh-website.netlify.app/building-blocks/analyze-data/","title":"Analyze data"},{"link":"https://tsh-website.netlify.app/building-blocks/automate-and-execute-your-work/","title":"Automate and execute your work"},{"link":"https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/","title":"Share code and results"},{"link":"https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/python/python-packages/","title":"Python packages"},{"link":"https://tsh-website.netlify.app/building-blocks/","title":"Building Blocks"},{"link":"https://tsh-website.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/putting-data/","title":"Putting Data"},{"link":"https://tsh-website.netlify.app/building-blocks/organize-your-project/remote-raw-data-setup/retrieving-data/","title":"Retrieving Data"}]
+[
+    
+    	{
+    		"searchKeywords": "Use GitHub to Share your Work  ",
+    		"title": "Use GitHub to Share your Work",
+    		"link": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Command Line Tools [CLI, terminal, Homebrew, brew, cygwin, command] A command-line interface or command language interpreter (CLI), also known as a terminal, is a means of interacting with a computer program.",
+    		"title": "Command Line Tools",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/commandline/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Learn R [learn, R, resources, datacamp] Learn how to code with R.",
+    		"title": "Learn R",
+    		"link": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/learn-to-code/learn-r/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Principles for Good Coding [style, optimize, definition, human] Make your code easy to understand for humans. If your code looks very complex or messy, you're probably doing it wrong.",
+    		"title": "Principles for Good Coding",
+    		"link": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/principles-good-coding/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Statistics and Computation  ",
+    		"title": "Statistics and Computation",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Versioning using Git and GitHub [git, github, versioning, pull, push, fork, share, commit, add] Git is an open-source version control system that allows you to keep track of your source files and the changes you make to them.",
+    		"title": "Versioning using Git and GitHub",
+    		"link": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/versioning-using-git/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Contribute to Our Mission [contribute, contribution, tsh] Learn how to contribute to Tilburg Science Hub.",
+    		"title": "Contribute to Our Mission",
+    		"link": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/contribute/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Configuring Python for Web Scraping [web scraping, scraping, automation, browser, chromedriver] Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page.",
+    		"title": "Configuring Python for Web Scraping",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Work with Large Files on GitHub [github, git-lfs, large files, versioning, organizing] GitHub limits the size of files allowed in repositories. Use Git-LFS, an open-source Git extension for large file storage.",
+    		"title": "Work with Large Files on GitHub",
+    		"link": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/git-lfs/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Automation with GNU Make [make, build, build tool] Make is a build tool that allows us to control the execution of a set of command line statements.",
+    		"title": "Automation with GNU Make",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/make/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Learn to Code  ",
+    		"title": "Learn to Code",
+    		"link": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/learn-to-code/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Tips  ",
+    		"title": "Tips",
+    		"link": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Automation and Workflows  ",
+    		"title": "Automation and Workflows",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Learn Python and Julia [learn, python, quantecon] Learn how to program in Python.",
+    		"title": "Learn Python and Julia",
+    		"link": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/learn-to-code/learn-python-and-julia/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Writing an Academic Paper [latex, writing, paper, thesis, structure, academic, abstract] Learn the typical structure of an empirical paper in economics and business.",
+    		"title": "Writing an Academic Paper",
+    		"link": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/write-academic-paper/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Contribute to Tilburg Science Hub  ",
+    		"title": "Contribute to Tilburg Science Hub",
+    		"link": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Style and Writing Guide [style, styling, guideline, writing] When contributing content to our platform, please follow our style and writing guidelines.",
+    		"title": "Style and Writing Guide",
+    		"link": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/style-guide/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Software Environments [environments, conda, software environments, virtual] Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page.",
+    		"title": "Software Environments",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/software-environments/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Task-specific configurations  ",
+    		"title": "Task-specific configurations",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Python [python, anaconda, conda, distribution, installation, configure, PATH, statistics] Python is widely use programming language. Learn how to set it up on your computer.",
+    		"title": "Python",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/python/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Snakemake [snakemake, build, build tool, workflow] Snakemake is an easy to use workflow management system.",
+    		"title": "Snakemake",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/snakemake/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Links to Other Great Initiatives [links, initiatives, style, optimize, definition, human] Here we post some links to material we've discovered recently and find useful.",
+    		"title": "Links to Other Great Initiatives",
+    		"link": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/tips/links-other-initiatives/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Create a New Building Block [style, guideline, contribute, building block, building, block] Building blocks are the DNA of our platform. Learn how to create a new one.",
+    		"title": "Create a New Building Block",
+    		"link": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-building-block/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Making Path Settings Permanent [PATH, add, terminal, cli] For our workflow to be command line driven, we need to be able to call software from the command line.",
+    		"title": "Making Path Settings Permanent",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/environment/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Python Packages [python, pip, packages, selenium] Learn how to install new Python packages with package management tools like pip.",
+    		"title": "Python Packages",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/python-packages/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "R and RStudio [R, statistics, installation, software, RStudio, PATH] R is a widely used language for statistical computing and graphics. Learn how to set it up on your computer.",
+    		"title": "R and RStudio",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/r/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Create a New Tutorial [tutorial, contribute, guidelines] Tutorials teach our users how to combine individual building blocks into a final product. Learn how to write one.",
+    		"title": "Create a New Tutorial",
+    		"link": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-tutorial/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Stata [Stata, software, installation, configuration, statistics] Stata is a proprietary statistical software frequently used by scientific users.",
+    		"title": "Stata",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/stata/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "TeamViewer [teamviewer, software, installation, remote] Teamviewer allows to remote-control your computer to solve technical issues.",
+    		"title": "TeamViewer",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/automation-and-workflows/teamviewer/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "MATLAB [Matlab, software, installation, configuration, statistics] MATLAB is a high-level programming language and an environment for numerical computation and visualization",
+    		"title": "MATLAB",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/matlab/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Perl [perl, installation, programming, language, configuration] Perl is an open programming language used for text processing, such as processing tables generated by other statistical softwares.",
+    		"title": "Perl",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/perl/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Pandoc [Pandoc, installation, software, configuration] Pandoc is an extremely useful 'swiss army knife' for converting between different types of markup languages from the command line.",
+    		"title": "Pandoc",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/pandoc/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Text Editors [text, editor, atom, installation, software] A good text editor lies at the heart of any serious programmer's toolkit.",
+    		"title": "Text Editors",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/text-editor/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "LaTeX [latex, tex, lyx, installation, software, configuration, paper, writing, text, typesetting] LaTeX is a great typesetting system that includes a lot of features that allow to produce scientific documents.",
+    		"title": "LaTeX",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/latex/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Configure your computer  ",
+    		"title": "Configure your computer",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Git and GitHub for Version Control [git, github, installation, software, configuration, versioning, account] Git is an open source version control system (VCS) that has gained a lot of traction in the programming community.",
+    		"title": "Git and GitHub for Version Control",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/git/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Develop your coding skills  ",
+    		"title": "Develop your coding skills",
+    		"link": "https://tsh-website.netlify.app/building-blocks/develop-your-coding-skills/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Share code and results  ",
+    		"title": "Share code and results",
+    		"link": "https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Setting Up and Using a File Exchange [file exchange, file, exchange, share, sharing] File exhanges are essential to transfer data between different stages of your pipeline and between co-authors.",
+    		"title": "Setting Up and Using a File Exchange",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/infrastructure-choice/fileexchanges/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Building Blocks  ",
+    		"title": "Building Blocks",
+    		"link": "https://tsh-website.netlify.app/building-blocks/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Infrastructure  ",
+    		"title": "Infrastructure",
+    		"link": "https://tsh-website.netlify.app/building-blocks/configure-your-computer/infrastructure-choice/"
+    	}
+    ]
