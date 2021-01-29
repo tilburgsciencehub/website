@@ -1,6 +1,6 @@
-baseURL = "https://tsh-website.netlify.app/"
+baseURL = "http://tilburgsciencehub.com/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Tilburg Science Hub"
 theme = "tilburg"
 pygmentsUseClasses=true
 enableInlineShortcodes = true
