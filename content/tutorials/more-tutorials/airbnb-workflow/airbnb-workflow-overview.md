@@ -5,7 +5,7 @@ title: "Overview"
 description: "Set up an end-to-end workflow to ivestigate the impact of COVID-19 on AirBnB bookings"
 keywords: "airbnb, make, R, workflow, inside airbnb, walkthrough"
 date: 2021-01-06T22:01:14+05:30
-draft: false
+draft: true
 weight: 1
 ---
 
