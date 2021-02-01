@@ -2,7 +2,7 @@
 tutorialtitle: "Inside AirBnB - Workflow Walkthrough"
 type: "airbnb-workflow"
 indexexclude: "true"
-weight: 5
+weight: 50
 title: "Automating Workflows"
 date: 2021-01-06T22:01:14+05:30
 draft: false
@@ -10,17 +10,17 @@ draft: false
 
 # Automating Workflows
 
-Up to this point, you should have created the following five R scripts: 
+Up to this point, you should have created the following five R scripts:
 
 {{% summary %}}  
 
-| File | Description | Phase | 
-| ---- | ---------- | ------ | 
-| `download.R` | Downloads the data from Inside Airbnb and stores as csv format | Input | 
-| `clean.R` | Preprocesses the raw data into an aggregated format ready for analysis and visualisation  | Transformation | 
-| `pivot_table.R` | Create a pivot table for the number of reviews by region across time | Transformation | 
-| `plot_all.R` | Create a line chart for the total number of reviews in a city across time | Output | 
-| `plot_Amsterdam.R` | Create a line chart for the number of reviews for the top 3 neighborhoods in Amsterdam | Output | 
+| File | Description | Phase |
+| ---- | ---------- | ------ |
+| `download.R` | Downloads the data from Inside Airbnb and stores as csv format | Input |
+| `clean.R` | Preprocesses the raw data into an aggregated format ready for analysis and visualisation  | Transformation |
+| `pivot_table.R` | Create a pivot table for the number of reviews by region across time | Transformation |
+| `plot_all.R` | Create a line chart for the total number of reviews in a city across time | Output |
+| `plot_Amsterdam.R` | Create a line chart for the number of reviews for the top 3 neighborhoods in Amsterdam | Output |
 
 {{% /summary %}}
 
@@ -40,4 +40,3 @@ Swap the `url_listings` and `url_reviews` for a historical dataset of Amsterdam 
 
 
 Do the same for a recent Airbnb dataset from New York.  If done correctly, it should not take more than a minute (power to automation!). Do your workflows still run as expected? How about the `plot_Amsterdam.R` file? Why is that?
-
