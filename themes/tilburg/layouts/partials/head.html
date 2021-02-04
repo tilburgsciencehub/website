@@ -11,6 +11,7 @@
 	{{- if .Params.keywords -}}
 	<meta name="Keywords" content="{{ .Params.keywords }}">
 	{{- end -}}
+	{{ template "_internal/google_analytics.html" . }}
 </head>
 
 <body>
