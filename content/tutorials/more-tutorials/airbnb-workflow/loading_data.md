@@ -5,7 +5,7 @@ indexexclude: "true"
 weight: 20
 title: "Loading the Data"
 date: 2021-01-06T22:01:14+05:30
-draft: false
+draft: true
 ---
 
 # Loading the Data

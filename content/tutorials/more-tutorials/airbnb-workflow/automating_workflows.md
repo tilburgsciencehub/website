@@ -5,7 +5,7 @@ indexexclude: "true"
 weight: 50
 title: "Automating Workflows"
 date: 2021-01-06T22:01:14+05:30
-draft: false
+draft: true
 ---
 
 # Automating Workflows
