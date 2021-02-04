@@ -1,8 +1,11 @@
 ---
+tutorialtitle: "Contribute to Tilburg Science Hub"
+type: "contribute-to-tsh"
+indexexclude: "true"
 title: "Create a New Building Block"
 description: "Building blocks are the DNA of our platform. Learn how to create a new one."
 keywords: "style, guideline, contribute, building block, building, block"
-weight: 3
+weight: 1003
 draft: false
 ---
 

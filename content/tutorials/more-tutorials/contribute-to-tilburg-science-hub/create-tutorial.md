@@ -1,8 +1,11 @@
 ---
+tutorialtitle: "Contribute to Tilburg Science Hub"
+type: "contribute-to-tsh"
+indexexclude: "true"
 title: "Create a New Tutorial"
 description: "Tutorials teach our users how to combine individual building blocks into a final product. Learn how to write one."
 keywords: "tutorial, contribute, guidelines"
-weight: 4
+weight: 1004
 draft: false
 ---
 

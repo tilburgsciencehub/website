@@ -1,8 +1,10 @@
 ---
-title: "Contribute to Our Mission"
+tutorialtitle: "Contribute to Tilburg Science Hub"
+type: "contribute-to-tsh"
+title: "Three Ways to Contribute"
 description: "Learn how to contribute to Tilburg Science Hub."
 keywords: "contribute, contribution, tsh"
-weight: 1
+weight: 1000
 draft: false
 ---
 

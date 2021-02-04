@@ -1,8 +1,11 @@
 ---
+tutorialtitle: "Contribute to Tilburg Science Hub"
+type: "contribute-to-tsh"
+indexexclude: "true"
 title: "Style and Writing Guide"
 description: "When contributing content to our platform, please follow our style and writing guidelines."
 keywords: "style, styling, guideline, writing"
-weight: 2
+weight: 1002
 draft: false
 ---
 
