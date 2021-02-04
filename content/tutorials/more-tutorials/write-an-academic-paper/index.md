@@ -1,11 +1,15 @@
 ---
+tutorialtitle: "Writing an Academic Paper"
+type: "write-an-academic-paper"
 title: "Writing an Academic Paper"
 description: "Learn the typical structure of an empirical paper in economics and business."
 keywords: "latex, writing, paper, thesis, structure, academic, abstract"
-weight: 2
+weight: 100
 date: 2020-11-11T22:01:14+05:30
 draft: false
 ---
+
+## Overview
 
 The typical structure of an empirical paper in economics and business (or a master thesis, or a chapter of a Ph.D. thesis) involves the following sections, roughly in this order:
 
@@ -65,6 +69,12 @@ As for the writing of the text, keep in mind that each paragraph makes one point
 Don't be afraid to delete things. Leave old text behind. Replace it. Make sure your paper contains only what is necessary.
 
 This will take a long time. One rule of thumb is that doing the analysis takes 50% of your time, writing your paper takes the other 50%. Therefore, start early with writing a very first rough draft. Then take it from there in steps. This will give you peace of mind.
+
+### Typesetting is important
+
+When it comes to producing high-quality technical and scientific documentation, researchers and professionals often rely on **[LaTeX](https://www.latex-project.org)**, an unrivalled document preparation system in many fields.
+
+We prepared [a short guide](/building-blocks/configure-your-computer/statistics-and-computation/latex/) on how to install a LaTeX distribution on your system.
 
 ### Using LyX?
 
