@@ -2,14 +2,14 @@
 tutorialtitle: "Inside AirBnB - Workflow Walkthrough"
 type: "airbnb-workflow"
 indexexclude: "true"
-weight: 4
+weight: 40
 title: "Exporting the Data"
 date: 2021-01-06T22:01:14+05:30
 draft: true
 ---
 
 # Exporting Data
-Finally, it's time to turn our generated files into plots which we can use for our analysis. First, we create the R scripts to create the plots. Second, we automate the entire pipeline using `make`. 
+Finally, it's time to turn our generated files into plots which we can use for our analysis. First, we create the R scripts to create the plots. Second, we automate the entire pipeline using `make`.
 
 
 **plot_all.R**  

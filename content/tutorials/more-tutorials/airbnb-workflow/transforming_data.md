@@ -2,7 +2,7 @@
 tutorialtitle: "Inside AirBnB - Workflow Walkthrough"
 type: "airbnb-workflow"
 indexexclude: "true"
-weight: 3
+weight: 30
 title: "Transforming the Data"
 date: 2021-01-06T22:01:14+05:30
 draft: true
@@ -11,7 +11,7 @@ draft: true
 # Transforming Data
 ## Feature Definition
 
-As the author of Inside Airbnb notes, guests may leave a review after their stay, and these can be used as an indicator for the number of bookings. Although only verified guests can review listings, it is unlikely that every guest will take the time to write one. In reality, the number of bookings will thus exceed the number of reviews. 
+As the author of Inside Airbnb notes, guests may leave a review after their stay, and these can be used as an indicator for the number of bookings. Although only verified guests can review listings, it is unlikely that every guest will take the time to write one. In reality, the number of bookings will thus exceed the number of reviews.
 
 **Exercise**  
 Think of several arguments why this may or may not be a problem in the context of our research question.   
@@ -29,26 +29,26 @@ In other words, the likelihood of getting a review may not be uniform across all
 {{% /tip %}}  
 
 ## Data Preprocessing
- 
-Create a file `clean.R` that loads the data from the `data` directory and reshapes the data into the following format: 
+
+Create a file `clean.R` that loads the data from the `data` directory and reshapes the data into the following format:
 
 ---
 | date | neighbourhood | num_reviews |
 | :---- | :---- | :---- |
-| 2015-01-01 | Bijlmer-Centrum | 43 | 
-| 2015-02-01 | Bijlmer-Centrum | 94 | 
-| ... | ... | .... | 
+| 2015-01-01 | Bijlmer-Centrum | 43 |
+| 2015-02-01 | Bijlmer-Centrum | 94 |
+| ... | ... | .... |
 | 2020-12-01 | Zuid | 23 |      
 
---- 
- 
+---
+
 Please adhere to the step-by-step guidelines below:  
 
 * Convert the date column of `reviews` into date/time format.
 * Filter for `reviews` published since January 1st 2015
 * Filter for `listings` that have received at least 1 review.
 * Merge the `reviews` and `listings` dataframes on a common column.
-* Group the number of reviews by date and neighborhood (aggregated on a monthly level). 
+* Group the number of reviews by date and neighborhood (aggregated on a monthly level).
 * Store the final data frames in `gen/data-preparation` as `aggregated_df.csv`
 
 
@@ -57,7 +57,7 @@ Please adhere to the step-by-step guidelines below:
 If we want to compare neighbourhoods side by side (e.g., Centrum-West vs De Pijp) in, for example, a plot we need to transform the data from a *long* format into a *wide* format. More specifically, we are after a data structure in which the horizontal column headers are the neighbourhoods and the rows the dates:
 
 ---
-| date | Bijlmer-Centrum | Bijlmer-Oost | ... | Zuid | 
+| date | Bijlmer-Centrum | Bijlmer-Oost | ... | Zuid |
 | :--- | :--- |:--- |:--- | :--- |
 | 2015-01-01 | ... | ... | ... | ... |
 | 2015-02-01 | ... | ... | ... | ... |
@@ -66,4 +66,4 @@ If we want to compare neighbourhoods side by side (e.g., Centrum-West vs De Pijp
 ---
 
 
-Import the data from `gen/data-preparatin/aggregated_df.csv`, reshape the data into wide format and store the result as `pivot_table.csv` in `gen/data-preparation`. 
+Import the data from `gen/data-preparatin/aggregated_df.csv`, reshape the data into wide format and store the result as `pivot_table.csv` in `gen/data-preparation`.
