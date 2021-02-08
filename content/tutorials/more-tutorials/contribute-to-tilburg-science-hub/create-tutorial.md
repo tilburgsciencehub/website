@@ -19,7 +19,7 @@ When creating a new tutorial, you typically realize that you also need to create
 
 First, make sure to read our [guide on how to contribute](../contribute) as well as our [writing guidelines](../style-guide).
 
-You can then download and fill in our **[Tutorial Markdown template](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/tutorial-shell.md)**.
+You can then download and fill in our **[Tutorial Markdown template](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell.md)**.
 
 <!--
 The design should always accommodate all users' knowledge levels and avoid confusion. For instance, on a tutorial page, there should be a quick and concise explanation (a sort of TL;DR), as well as a more in-depth exposition for those who need to educate themselves first.
