@@ -1,4 +1,5 @@
 # Tilburg Science Hub
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f811bd2e-cf5d-4f1c-8688-0c2fee482141/deploy-status)](https://app.netlify.com/sites/tsh-website/deploys)
 
 Tilburg Science Hub (TSH) is an open-source online resource that helps individual researchers, data scientists, and teams to efficiently carry out data- and computation-intensive projects. It provides information about workflow and data management and tutorials that teach researchers how to organize and document their data and code, so the research becomes sustainable and reproducible. This in turn leads to time savings and transparency in the process.
 

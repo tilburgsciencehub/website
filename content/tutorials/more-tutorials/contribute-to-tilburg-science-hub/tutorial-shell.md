@@ -1,18 +1,31 @@
-<!-- This is a template. Please update the content while keeping this structure. We provide examples in the comments below. Make sure to read our contribution guide to learn how to submit your content to Tilburg Science Hub. -->
+INSTRUCTIONS:
+- This is a template. Please replace the content while keeping this structure.
+- Make sure to read our contribution guide to learn how to submit your content to Tilburg Science Hub.
+- Always start your file with the parameters shown below. Keep the double quotes as shown.
+- Do NOT use #Titles lines (with a single #) in your article. Instead, use the title parameters shown below.
+- Please provide up to 10 keywords for each tutorial page in the appropriate parameter. Metadata should provide information on the role and usage of this tutorial (e.g., "data collection, data analysis, article writing")
+- IMPORTANT! Replace the # of the weight parameter with an integer (no quotes are needed). This number indicates the relative position of this page within the tutorial hierarchy. The ordering of all pages inside a tutorial folder is based on their weight. Pages with lower weight appear at the top.
+- IMPORTANT! Remove the indexexclude: "true" line from the FIRST page of your tutorial. All subsequent pages should have it instead.
+- If your tutorial is only one page long, remove the indexexclude: "true" line, create a folder named like your "type" below, and save your page as "index.md" inside that folder.
+- Remove these instructions before submitting. Your article should start with the three dashes --- and the following parameters.
+---
+tutorialtitle: "Your Tutorial Title"
+type: "your-tutorial-title"
+title: "The Title of Your First Tutorial Page"
+description: "A brief description of this tutorial page (50–160 characters)."
+keywords: "any, relevant, keywords, separated, by, commas, like, this"
+date: YYYY-MM-DD
+weight: #
+indexexclude: "true"
+---
 
-# Chapter Title
-
-<!-- # How to check if a number is prime -->
+## Overview
 
 Provide a brief overview of the issue to solve, or why this is a best practice. Explain the goal of this step and how it connected to the previous ones. Optionally, if you have assigned a task in the previous chapter, provide the solution at the beginning of this one.
 
-<!-- Now that you've learned what is a prime number, you may be wondering how to tell if a number is prime. Let's write some code that will help you find it out. -->
-
 ## The task
 
-Explain the solution step by step. If you can, record a video following our [video guidelines for Tutorials](). If there's code involved, explain small snippets first and add more to build the final code, which you can display at the end of the chapter.
-
-<!-- In this program, we check whether the variable ```num``` is prime or not. Numbers less than or equal to 1 are not prime numbers. Therefore, we only proceed if the ```num``` is greater than 1. -->
+Explain the solution step by step. If there's code involved, explain small snippets first and add more to build the final code, which you can display at the end of the chapter.
 
 ### Step 1
 
@@ -20,55 +33,49 @@ Explain the solution step by step. If you can, record a video following our [vid
 
 Use subheaders if needed.
 
-<!-- We check if ```num``` is exactly divisible by any number from 2 to num - 1. If we find a factor in that range, the number is not prime. Else the number is prime]. -->
+## Code <!-- Provide your code in all the relevant languages and/or operating systems and specify them after the three back ticks. Do NOT remove {{% codeblock %}} -->
 
+{{% codeblock %}} <!-- You can provide more than one language in the same code block -->
 
-### Python <!-- Provide your code in all the relevant languages and/or operating systems. -->
+[python-link](code.py) <!-- OPTIONAL: You can also provide your code as a downloadable file (useful for very long codes). Make sure you place this file in the same folder. Specify in [square brackets] the language followed by "-link" as shown here.-->
+
 
 ```python
-# program to check if a number is prime or not
-
-num = 333
-
-# prime numbers are greater than 1
-if num > 1:
-   # check for factors
-   for i in range(2,num):
-       if (num % i) == 0:
-           print(num,"is not a prime number.")
-           print(i,"times",num//i,"is",num)
-           break
-   else:
-       print(num,"is a prime number.")
-
-# if num is less than or equal to 1, it is not prime
-else:
-   print(num,"is not a prime number.")
+# some Python code here
+print("Hello, world!")
 ```
 
-### Output
-```python
-333 is not a prime number
-3 times 111 is 333
+```R
+# some R code here
+cat('Hello, world!')
 ```
+
+{{% /codeblock %}}
 
 ## Next steps
 
 Explain briefly how to bring this to the next level, provide useful resources, and announce what will come in the following chapter.
 
-<!-- Alternatively, instead of declaring ```num``` in the code, you can take input from the user. -->
+{{% tip %}}
 
-```python
-# to take input from the user
-num = int(input("Enter a number: "))
-```
+**This is a tip.**
 
-<!-- Moreover, to make it more efficient, we can decrease the range of numbers where we look for factors.
+You can use special formatting options to highlight some paragraphs in your article.
 
-For instance, we could have used the range ```range(2,math.floor(math.sqrt(num)))```. This is based on the fact that a composite number must have a factor less than the square root of that number. Otherwise, the number is prime.
+{{% /tip %}}
 
-You can learn more about prime numbers here and here, or follow our in-depth tutorial on Arithmetic programming for dummies. -->
+{{% warning %}}
+
+And this is a warning.
+
+{{% /warning %}}
 
 ## (Optional) Knowledge check
 
 Challenge your audience with a small test, quiz or task. You can provide the (written or video) answer in the next chapter.
+
+{{% summary %}}
+
+Lastly, consider including a brief summary to wrap up your article.
+
+{{% /summary %}}
