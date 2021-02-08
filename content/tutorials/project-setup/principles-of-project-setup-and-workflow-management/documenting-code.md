@@ -65,7 +65,7 @@ BUILD INSTRUCTIONS
 1) Dependencies
 
 Please follow the installation guide on
-http://www.tilburgsciencehub.com/ for
+https://www.tilburgsciencehub.com/ for
 
 - R and RStudio (3.6.x)
   Install the following R packages:
