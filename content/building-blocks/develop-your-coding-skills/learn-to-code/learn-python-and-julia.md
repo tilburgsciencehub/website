@@ -7,6 +7,8 @@ draft: false
 weight: 2
 ---
 
+Learn Python with these great step-by-step tutorials from [Real Python](https://realpython.com).
+
 [QuantEcon.org](https://quantecon.org/) offers fantastic resources for you to
 get started using Python and Julia.
 

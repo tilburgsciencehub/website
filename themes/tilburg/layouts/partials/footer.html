@@ -14,7 +14,7 @@
 						{{ if eq .Params.isParent true }}
 						{{- range $index, $value := .Pages -}}
 						{{ if ne .Params.indexexclude "true" }}
-						<a href="{{ .Permalink }}">{{ .Title }}</a>
+						<a href="{{ .Permalink }}">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
 						{{ end }}
 						{{- end -}}
 						{{ end }}
@@ -22,7 +22,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="col-lg-1 col-0"></div>
 			<div class="col-lg-4 col-21">
 				<div class="footerCollapse">
@@ -59,10 +59,10 @@
 					<div class="heading text-white d-block py-3">Tilburg Science Hub</div>
 					<div class="d-none d-lg-block links">
 						<!-- <a href="">Tour</a>-->
-						<a href="">About</a>
-						<a href="">FAQs</a>
-						<a href="">Blog</a>
-						<a href="">Contact</a>
+						<a href="/about">About</a>
+<!-- 						<a href="">FAQs</a>
+						<a href="">Blog</a> -->
+						<a href="mailto:tsh@tilburguniversity.edu">Contact</a>
 					</div>
 				</div>
 			</div>
@@ -74,17 +74,20 @@
 		<div class="row justify-content-center py-5 ">
 			<div class="col-lg-18 col-22">
 				<div class="d-flex flex-column flex-lg-row justify-content-md-between">
-					<div class="order-2 order-lg-1">© 2020 Tilburg Science Hub. All rights reserved <a class="d-inline-block text-white"
-							href="#0">Terms of Service</a> | <a class="d-inline-block text-white" href="#0">Privacy</a> | <a
-							class="d-inline-block text-white" href="#0">Legal</a></div>
+					<div class="order-2 order-lg-1">© 2021 Tilburg Science Hub. All rights reserved. |
+						<a class="d-inline-block text-white" href="/disclaimer">Disclaimer</a>
+						<!-- <a class="d-inline-block text-white" href="#0">Terms of Service</a> -->
+						<!-- <a class="d-inline-block text-white" href="#0">Privacy</a> -->
+						<!-- <a class="d-inline-block text-white" href="#0">Legal</a> -->
+					</div>
 					<div class="order-1 order-lg-2 mb-4 mb-lg-0">
-						<a class="d-inline-block mx-2" style="font-size: 17px;" href="#0">
+						<a class="d-inline-block mx-2" style="font-size: 17px;" href="https://github.com/tilburgsciencehub">
 							<i class="fa fa-github"></i>
 						</a>
-						<a class="d-inline-block mx-2" style="font-size: 17px;" href="#0">
+						<!-- <a class="d-inline-block mx-2" style="font-size: 17px;" href="#0">
 							<i class="fa fa-twitter"></i>
-						</a>
-						<a class="d-inline-block mx-2" style="font-size: 17px;" href="#0">
+						</a> -->
+						<a class="d-inline-block mx-2" style="font-size: 17px;" href="https://www.linkedin.com/company/tilburgsciencehub">
 							<i class="fa fa-linkedin"></i>
 						</a>
 					</div>

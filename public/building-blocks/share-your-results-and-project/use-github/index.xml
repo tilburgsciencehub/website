@@ -15,7 +15,8 @@
       <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/versioning-using-git/</guid>
       <description>Overview What is Git? Git is an open-source version control system, which allows you to keep track of your source files, and the changes you make to them. Using Git, you can roll back to any previous version of a file, and easily collaborate with team members.
 Git &amp;ldquo;lives&amp;rdquo; on your local computer, and allows you to configure so-called &amp;ldquo;repositories&amp;rdquo; that track files and directories.
-Tip Storing sensitive data Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work.</description>
+Tip Storing sensitive data
+Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work.</description>
     </item>
     
     <item>
@@ -24,7 +25,7 @@ Tip Storing sensitive data Git will eventually become the long-term memory of yo
       <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
       
       <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/use-github/git-lfs/</guid>
-      <description>GitHub limits the size of files allowed in repositories. It warns you if you&amp;rsquo;re trying to push a 50MB file, and completely stops you if the push exceed 100MB.
+      <description>Overview GitHub limits the size of files allowed in repositories. It warns you if you&amp;rsquo;re trying to push a 50MB file, and completely stops you if the push exceed 100MB.
 However, even if it didn&amp;rsquo;t stop you, versioning large files would be very impractical. That&amp;rsquo;s because a repository contains every version of every file – that&amp;rsquo;s the point of versioning, right? Having multiple versions of large files cloned locally can become expensive in terms of disk space and fetch time.</description>
     </item>
     

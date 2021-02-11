@@ -10,7 +10,57 @@
   // outline: solid 1px rgba(255, 0, 0, 0.6);
 }
 
+// pagination
+.pagination {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: solid 1px #EBEBEB;
+  display: flex;
+  justify-content: space-between;
 
+  .pagination-right {
+    text-align: right;
+
+    span {
+      padding: 0 10px 0 20px !important;
+    }
+  }
+
+  .pagination-title {
+    font-family: "forma-djr-display", sans-serif;
+    line-height: 24px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .pagination-button {
+    cursor: pointer;
+    display: inline-block;
+    color: $secondary;
+
+    .arrow-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50px;
+      background-color: #FFB222;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    background-color: #FFF5E5;
+    border-radius: 50px;
+
+    span {
+      display: inline-block;
+      padding: 0 20px 0 10px;
+      line-height: 26px;
+      font-size: 15px;
+      vertical-align: text-bottom;
+      font-family: "acumin-pro", sans-serif !important;
+    }
+  }
+}
 
 .relatedPosts {
   margin: 0 !important;

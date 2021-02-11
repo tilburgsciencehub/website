@@ -6,11 +6,13 @@
 	<link rel="stylesheet" href="https://use.typekit.net/pzc6ybk.css">
 	{{ $style := resources.Get "scss/bootstrap.scss" | toCSS | minify | fingerprint }}
 	<link rel="stylesheet" href="{{ $style.Permalink }}" emotion="🤩">
+	<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
 	<title>Tilburg Science Hub</title>
 	{{- if .Params.keywords -}}
 	<meta name="Keywords" content="{{ .Params.keywords }}">
 	{{- end -}}
+	{{ template "_internal/google_analytics.html" . }}
 </head>
 
 <body>

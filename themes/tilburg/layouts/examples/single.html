@@ -21,11 +21,19 @@
 		</div>
 		<article class="col-lg-16 col-22">
 			<div class="p-5 bg-white rounded mb-5">
+				{{ if eq (len .Content) 0 }}
+				<script>window.location = "/{{.Section}}"</script>
+				{{ else }}
 				{{ .Content }}
+				{{ end }}
+
+				{{ partial "pagination.html" . }}
 			</div>
+
+			{{ partial "relatedPosts.html" . }}
 		</article>
 
-		{{ partial "relatedPosts.html" . }}
+		
 	</div>
 </div>
 

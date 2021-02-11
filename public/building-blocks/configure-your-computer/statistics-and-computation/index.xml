@@ -8,13 +8,25 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Automated Installation</title>
-      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/automated-installation/</link>
+      <title>Python</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/python/</link>
       <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
       
-      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/automated-installation/</guid>
-      <description>Getting Started Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec ullamcorper nulla non metus auctor fringilla.
-Section header Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.</description>
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/python/</guid>
+      <description>Installing Anaconda Python Anaconda is a pre-packaged Python distribution for scientific users. To customize Python with packages and properly use it in combination with automation tools, we prefer a locally installed Anaconda distribution over cloud-based alternatives.
+Watch our YouTube video, in which we walk you through the setup on Windows.
+  Instructions Direct your browser to Anaconda download page and download the Python 3.x Graphical Installer for your machine. Sometimes, the download defaults to Mac, so if you&amp;rsquo;re on Windows or Linux, make sure to select the right version.</description>
+    </item>
+    
+    <item>
+      <title>Python Packages</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/python-packages/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/python-packages/</guid>
+      <description>Anaconda&amp;rsquo;s Python Distribution comes with many of the packages we need to do scientific computing. If you&amp;rsquo;re interested in all the packages included, click here and go to the Python 3.x tab.
+pip Howevever, you may come across packages that are not installed by default. In this case we recommend you use the pip package management tool to install them.
+Warning If your python 3 was found via python3 --version on the previous page, then type pip3 instead of pip for all of the following python plugins.</description>
     </item>
     
     <item>
@@ -25,7 +37,7 @@ Section header Cras mattis consectetur purus sit amet fermentum. Maecenas sed di
       <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/r/</guid>
       <description>R is a language for statistical computing and graphics. R&amp;rsquo;s use in the data science, econometrics and marketing communities has taken off over recent years and (at a bare minimum) should be considered as an open source replacement to Stata and SPSS.
 Installing R Watch our YouTube video, in which we walk you through the setup on Windows.
-Go to the R website and download the most recent installer for your operating system.</description>
+  Go to the R website and download the most recent installer for your operating system.</description>
     </item>
     
     <item>
@@ -48,6 +60,18 @@ Making Stata Available on the Command Prompt You have just installed Stata. Late
       <description>MATLAB is a high-level programming language and an environment for numerical computation and visualization.
 The University of Zurich has a campus-wide MATLAB license available to all students and employees. We will use this license to activate MATLAB on our machine.
 If you do not have Matlab 2016a installed on your machine, please follow the installation instructions available on the University of Zurich&amp;rsquo;s page.</description>
+    </item>
+    
+    <item>
+      <title>Perl</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/perl/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/statistics-and-computation/perl/</guid>
+      <description>Overview Perl is an open programming language frequently used by engineers. We use Perl for text processing, such as processing tables generated by other statistical softwares.
+Installing Perl Perl is already installed on Mac and Linux OS. Download Perl for Windows OS.
+Making Perl Available on the Command Prompt Windows users For you to be able to use Perl from the command prompt, follow the steps below.
+Warning Making Perl available via the PATH settings on Windows</description>
     </item>
     
     <item>

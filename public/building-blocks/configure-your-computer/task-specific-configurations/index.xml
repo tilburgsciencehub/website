@@ -8,25 +8,26 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 06 Jan 2021 22:01:14 +0530</lastBuildDate><atom:link href="https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Software Setup Overview</title>
-      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/software-setup-overview/</link>
+      <title>Configuring Python for Web Scraping</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/</link>
       <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
       
-      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/software-setup-overview/</guid>
-      <description>These pages should help you to get started setting up the computing environment on your machine ready.
-Think your machine is already configured well? Then directly proceed to our tutorial on setting up efficient workflows to manage data- and computation-intensive projects. If necessary, you can come back to this section to make changes to your computer&amp;rsquo;s configuration.
-Configure your computer Of course, there are many ways to set up a machine, and we do not mean to consider our way of doing to be perfect.</description>
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/</guid>
+      <description>Web Scraping Using an Automated Browser Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page. This is especially true when the site we want to scrape has content that is loaded dynamically with javascript.
+We will install one package to help us here: ChromeDriver.
+Installing this stuff is operating-system specific, hence so are the instructions below.</description>
     </item>
     
     <item>
-      <title>Configuring Python for Web Scraping</title>
-      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/webscraping_drivers/</link>
+      <title>Software Environments</title>
+      <link>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/software-environments/</link>
       <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
       
-      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/webscraping_drivers/</guid>
-      <description>Web Scraping Using an Automated Browser Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page. This is especially true when the site we want to scrape has content that is loaded dynamically with javascript.
-We will install one package to help us here: Chromedriver.
-Installing this stuff is operating-system specific, hence so are the instructions below.</description>
+      <guid>https://tsh-website.netlify.app/building-blocks/configure-your-computer/task-specific-configurations/software-environments/</guid>
+      <description>Overview The main advantages of using virtual software environments are:
+  Ensures replicability:
+ Environment specifies versions for each program and package used Ensures that specified versions are the right ones (environment does not forget to update specified version if the version is updated in a project)    Easy set-up on a different machine or the cloud: run environment setup to install all required software/packages.
+  Keeps projects separate: adding or updating packages for one project does not affect others.</description>
     </item>
     
   </channel>

@@ -6,9 +6,7 @@
     <div class="col-lg-11 col-22">
       <h1 class="text-center">Building Blocks</h1>
       <p class="text-center text-secondary my-5">
-        Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh
-        ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed
-        consectetur.
+        Building blocks are the DNA of our platform. Use and "mix" our code snippets and workflows to create something unique.
       </p>
       <div class="position-relative mx-5 searchIconRight w-75 mx-auto">
         <input
@@ -27,7 +25,7 @@
   <!-- all the building blocks -->
   <div class="row justify-content-center buildingBlocksRow">
     <div class="col-20">
-      {{- range .Site.Pages -}} {{ if eq .Params.isParent "true" }} {{- range .Pages -}}
+      {{- range where .Site.Pages "Section" "building-blocks" -}} {{ if eq .Params.isParent "true" }} {{- range .Pages -}}
       <div class="p-5 bg-white mb-5 rounded">
         <div class="row">
           <div class="col-lg-8 col-24">

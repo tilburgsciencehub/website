@@ -8,21 +8,29 @@
 		<div class="col-lg-8 col-22 pr-lg-5">
 			<div class="sticky-top pr-lg-3 mb-lg-5 pb-lg-5">
 				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
-
+				
+			{{ if gt (len .TableOfContents) 32 }}
 			<div class="TableOfContents">
 				<span class="arrow-icon"></span>
 				<div class="pseudo-btn"></div>
 				{{ .TableOfContents }}
 			</div>
+			{{ else }}
+			<br>
+			{{ end }}
 			<div class="d-none d-lg-block pseudoSpacer"></div>
 			</div>
 			
 		</div>
 		<article class="col-lg-16 col-22">
 			<div class="p-5 bg-white rounded mb-5">
+				{{ if eq (len .Content) 0 }}
+				<script>window.location = "/{{.Section}}"</script>
+				{{ else }}
 				{{ .Content }}
+				{{ end }}
 
-				
+				{{ partial "pagination.html" . }}
 			</div>
 
 			{{ partial "relatedPosts.html" . }}

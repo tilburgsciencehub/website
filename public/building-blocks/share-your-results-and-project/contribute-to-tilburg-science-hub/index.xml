@@ -7,6 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Contribute to Our Mission</title>
+      <link>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/contribute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/contribute/</guid>
+      <description>How to contribute to Tilburg Science Hub We&amp;rsquo;re glad for your interest in contributing to our project. Tilburg Science Hub is open-source, and as such, anyone can contribute! The process is really simple.
+When writing for Tilburg Science Hub, please follow our communication style guideline. By contributing, you agree that we may redistribute your work under our license. In exchange, we will address your issues and/or assess your change proposal as promptly as we can, and help you become a member of our community.</description>
+    </item>
+    
+    <item>
       <title>Style and Writing Guide</title>
       <link>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/style-guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -22,7 +32,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-building-block/</guid>
-      <description>Create a new building block Building blocks are the DNA of our platform. They are small code snippets that users can independently &amp;ldquo;mix&amp;rdquo; to create something unique. Think of building blocks like LEGO bricks - each one with its own color, shape and functionality.
+      <description>What is a Building Block? Building blocks are the DNA of our platform. They are small code snippets that users can independently &amp;ldquo;mix&amp;rdquo; to create something unique. Think of building blocks like LEGO bricks - each one with its own color, shape and functionality.
 Check out our platform&amp;rsquo;s menu system to see in which categories we classify our building blocks. Want to add a new category? Let us know via a GitHub issue.</description>
     </item>
     
@@ -34,6 +44,29 @@ Check out our platform&amp;rsquo;s menu system to see in which categories we cla
       <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/create-tutorial/</guid>
       <description>Create a new tutorial Tutorials teach our users how to combine individual building blocks into a &amp;ldquo;final product&amp;rdquo;. What that product really is is your choice.
 When creating a new tutorial, you typically realize that you also need to create several new building blocks to make the tutorial work. So if you haven&amp;rsquo;t contributed to our platform yet, try contributing a building block first before starting on a brand-new tutorial.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/building-block-shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/building-block-shell/</guid>
+      <description>Title  Provide a brief overview of the issue to solve, or describe why this is a best practice.
+Add any special requirements or attach a dummy data set if needed.
+Code  # program to print Hello world print(&amp;#34;Hello world&amp;#34;) cat(&amp;#34;Hello world\n&amp;#34;) # Use in-line comments to explain your code Examples Provide examples to support the solution.
+Example 1 !!! tip &amp;ldquo;Useful tip&amp;rdquo;
+You can use special formatting options to highlight some paragraphs in your article.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/tutorial-shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/tutorial-shell/</guid>
+      <description>Provide a brief overview of the issue to solve, or why this is a best practice. Explain the goal of this step and how it connected to the previous ones. Optionally, if you have assigned a task in the previous chapter, provide the solution at the beginning of this one.
+The task Explain the solution step by step. If you can, record a video following our video guidelines for Tutorials. If there&amp;rsquo;s code involved, explain small snippets first and add more to build the final code, which you can display at the end of the chapter.</description>
     </item>
     
   </channel>
