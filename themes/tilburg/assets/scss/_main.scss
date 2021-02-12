@@ -76,6 +76,7 @@
   border: solid 1px #E0E0E0;
   border-radius: 4px;
   padding: 10px;
+  margin-bottom: 20px;
 
   pre {
     margin: 20px 0 0 0;
@@ -151,8 +152,8 @@ pre {
       }
     }
 
-  
-  
+
+
   ul {
     list-style: none;
     padding: 0;
@@ -177,7 +178,7 @@ pre {
         li {
           font-family: "acumin-pro", sans-serif !important;
           margin-bottom:10px !important;
-          
+
         }
       }
     }
@@ -286,7 +287,7 @@ body {
 
 html {
   background-color: #f0f5f9;
-  
+
   &:after {
     content: "";
     position: absolute;
@@ -313,7 +314,7 @@ html {
 
 .cover {
   .hero-image {
-    max-width: 90%; 
+    max-width: 90%;
     margin-right: -70px;
   }
 }
@@ -425,30 +426,30 @@ article {
     font-size: 28px;
   }
 
-  h2::before { 
-    display: block; 
-    content: " "; 
-    margin-top: -160px; 
-    height: 160px; 
-    visibility: hidden; 
+  h2::before {
+    display: block;
+    content: " ";
+    margin-top: -160px;
+    height: 160px;
+    visibility: hidden;
     pointer-events: none;
   }
 
-  h4::before { 
-    display: block; 
-    content: " "; 
-    margin-top: -160px; 
-    height: 160px; 
-    visibility: hidden; 
+  h4::before {
+    display: block;
+    content: " ";
+    margin-top: -160px;
+    height: 160px;
+    visibility: hidden;
     pointer-events: none;
   }
 
-  h3::before { 
-    display: block; 
-    content: " "; 
-    margin-top: -160px; 
-    height: 160px; 
-    visibility: hidden; 
+  h3::before {
+    display: block;
+    content: " ";
+    margin-top: -160px;
+    height: 160px;
+    visibility: hidden;
     pointer-events: none;
   }
 
@@ -745,7 +746,7 @@ input {
       }
     }
 
-    nav { 
+    nav {
       margin: 0;
     }
   }
@@ -757,7 +758,7 @@ input {
     top: 0px;
   }
 
-  
+
 
   .navMenu {
     border-radius: 0;
