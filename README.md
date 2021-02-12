@@ -38,16 +38,16 @@ fixes to the existing material,
 bug reports,
 and reviews of proposed changes are all welcome.
 
-* See the contributing guide [here](https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/contribute/).
-* Check out our [styling and writing guidelines](https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/style-guide/).
-* By contributing you agree to abide by the [Code of Conduct](https://tsh-website.netlify.app/building-blocks/share-your-results-and-project/contribute-to-tilburg-science-hub/contribute/#contributor-code-of-conduct).
+* See the contributing guide [here](https://tilburgsciencehub.com/tutorials/more-tutorials/contribute-to-tilburg-science-hub/contribute/).
+* Check out our [styling and writing guidelines](https://tilburgsciencehub.com/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide/).
+* By contributing you agree to abide by the [Code of Conduct](https://tilburgsciencehub.com/tutorials/more-tutorials/contribute-to-tilburg-science-hub/code-of-conduct/).
 
 ## Any questions?
 Feel free to reach out to us at `tsh [at] tilburguniversity [dot] edu`.
 
 ## License
 
-All materials are licensed under a Creative Commons CC-BY-NC-SA license. The license allows you to copy, remix and redistribute any of our publicly available materials, under the condition that you attribute the work (details in the license) and do not make profits from it. More information is available [here](https://tsh-website.netlify.app/about/#license).
+All materials are licensed under a Creative Commons CC-BY-NC-SA license. The license allows you to copy, remix and redistribute any of our publicly available materials, under the condition that you attribute the work (details in the license) and do not make profits from it. More information is available [here](https://tilburgsciencehub.com/about/#license).
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
 
