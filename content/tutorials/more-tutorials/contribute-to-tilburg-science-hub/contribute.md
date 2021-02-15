@@ -18,12 +18,28 @@ You are welcome to contribute to our platform in three different ways. Keep read
 
 Anything from simple changes, grammar checks and reporting a bug to more elaborate changes and writing entirely new content!
 
+We basically welcome **any** kind of feedback and contribution, including but not limited to:
+
+- general fixes (typos, small sentences)
+- elaborate changes (modifying, adding or removing an entire paragraph or chapter)
+- asking for new content to be added
+- submitting an article without worrying about formatting (even a Word file!)
+- reporting a bug
+- requesting a new feature on the website
+- general tips or questions on the project
+
+
 ## How is the content organized?
 
 We provide content in three forms:
 
-- **Building Blocks** are concepts in small doses. These allow us to explain the theory while also providing some practical examples and code snippets for a variety of programming languages or operating systems. Information is explained in a way that it is easy to clone or implement in an existing project. While everybody can follow our Building Blocks, they are generally more appealing to advanced users – or those who already know what to look for.
+- **Building Blocks** are concepts in small doses, the DNA of our platform. They are small code snippets that users can independently "mix" to create something unique, like LEGO bricks. These allow us to explain the theory while also providing some practical examples and code snippets for a variety of programming languages or operating systems. Information is explained in a way that it is easy to clone or implement in an existing project. While everybody can follow our Building Blocks, they are generally more appealing to advanced users – or those who already know what to look for.
 
-- **Tutorials** explain a broader argument compared to Building Blocks, and follow a sequential order. These are particularly useful for novices or anyone new to a certain topic because of their comprehensive nature and step-by-step guidance. We support and encourage the use of videos, exercises, and quizzes in a tutorial.
+- **Tutorials** explain a broader argument compared to Building Blocks, and follow a sequential order. They teach our users how to combine individual building blocks into a "final product". These are particularly useful for novices or anyone new to a certain topic because of their comprehensive nature and step-by-step guidance. We support and encourage the use of videos, exercises, and quizzes in a tutorial.
 
 - **Examples** are real-life cases, publications, templates, or research projects that put into practice the concepts explained on this website.
+
+{{% tip %}}
+**Simply looking for our GitHub repository?**
+You can find it **[here](https://github.com/tilburgsciencehub/tsh-website)**.
+{{% /tip %}}

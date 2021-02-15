@@ -23,7 +23,7 @@ Please develop your content in English.
 
 ### Start Your Content With Our Templates
 
-Please use [our templates](../mode-3/#what-is-a-building-block) when developing new building blocks or tutorials.
+Please use [our templates](../mode-3/#contribution-templates) when developing new building blocks or tutorials.
 
 <!-- ### Contribute via Git Pull Requests
 

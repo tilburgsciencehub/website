@@ -19,19 +19,21 @@ Please, notice that Tilburg Science Hub Building Blocks, Tutorials and Examples 
 
 {{% /tip %}}
 
-## If you want to revise, modify, add, or remove content from existing pages, or report a bug
+### If you want to revise, modify, add, or remove content from existing pages, or report a bug
 
-### Simple changes
+#### Simple changes
 
 The easiest method to make straightforward updates to Markdown files is to use [GitHub's web-based file editor](https://help.github.com/en/articles/editing-files-in-your-repository).
 
-1. Browse the [Tilburg Science Hub repository](https://github.com/tilburgsciencehub/tsh-website/) to find the Markdown that roughly corresponds to the tilburgsciencehub.com URL structure.
+1. Browse the [Tilburg Science Hub repository](https://github.com/tilburgsciencehub/tsh-website/) to find the Markdown that roughly corresponds to the tilburgsciencehub.com URL structure inside the `content` folder.
 
-2. In the upper right corner of the file view, click the pencil icon to open the file editor.
+2. In the upper right corner of the file view, click **the pencil icon**.
+
+![Click on the pencil icon to open the text editor.](../git-text-editor.png)
 
 3. Edit the file and then submit a new pull request. That's it.
 
-### Elaborate changes
+#### Elaborate changes
 
 For more complex updates or editing more than a file, it's better to use a local Git workflow to create a pull request.
 
@@ -53,9 +55,9 @@ on GitHub, which creates a copy of this project in your own GitHub account).
 7. Repeat as needed until all feedback has been addressed.
 
 
-## If you want to write new content
+### If you want to write new content
 
-1. First, you'll need to prepare the content as Markdown file(s). Follow our templates [below](#what-is-a-building-block) to get started. In case you want to feature your project in the Examples section, please [contact us](/about/#who-maintains-tsh).
+1. First, you'll need to prepare the content as Markdown file(s). Follow our templates [below](#contribution-templates) to get started. In case you want to feature your project in the Examples section, please [contact us](/about/#who-maintains-tsh).
 
 2. Fork the originating repository to your GitHub profile (press the "fork" button
 on GitHub, which creates a copy of this project in your own GitHub account).
@@ -77,13 +79,7 @@ Don't know how to do this? You can follow a great tutorial about [contributing o
 
 {{% /tip %}}
 
-## What is a Building Block?
-
-Building blocks are the DNA of our platform. They are small code snippets that users can independently "mix" to create something unique. Think of building blocks like LEGO bricks - each one with its own color, shape and functionality.
-
-Check out our platform's menu system to see in which categories we classify our building blocks. Want to add a new category? Let us know via a GitHub issue.
-
-### Start with our Building Block Template
+## Contribution Templates
 
 {{% warning %}}
 
@@ -91,23 +87,9 @@ First, make sure to read our [code of conduct](../code-of-conduct) as well as ou
 
 {{% /warning %}}
 
-You can then download and fill in our **[Building Block Markdown template](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/building-block-shell.md)**.
+### Start with our [Building Block Markdown template](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/building-block-shell.md)
 
-## What is a Tutorial?
-
-Tutorials teach our users how to combine individual building blocks into a "final product". What that product really is is *your* choice.
-
-When creating a new tutorial, you typically realize that you also need to create several new building blocks to make the tutorial work. So if you haven't contributed to our platform yet, try contributing a building block first before starting on a brand-new tutorial.
-
-### Start with our Tutorial Template
-
-{{% warning %}}
-
-First, make sure to read our [code of conduct](../code-of-conduct) as well as our [writing guidelines](../style-guide).
-
-{{% /warning %}}
-
-You can then download and fill in our **[Tutorial Markdown template](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell.md)**.
+### Start with our [Tutorial Markdown template](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell.md)
 
 <!--
 The design should always accommodate all users' knowledge levels and avoid confusion. For instance, on a tutorial page, there should be a quick and concise explanation (a sort of TL;DR), as well as a more in-depth exposition for those who need to educate themselves first.

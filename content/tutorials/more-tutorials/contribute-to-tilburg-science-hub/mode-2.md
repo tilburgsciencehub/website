@@ -13,14 +13,28 @@ draft: false
 
 Like in [the first method](../mode-1), you can reach out to us with any request opening an issue on [our GitHub repository](https://github.com/tilburgsciencehub/tsh-website). We prefer this method because it allow us to keep track of bugs and requests more easily, to merge duplicates, assign roles, etc...
 
-[Here](https://docs.github.com/en/github/managing-your-work-on-github/creating-an-issue) you can learn how to create an issue on GitHub - it's very easy!
+### How to create an issue on GitHub
 
-Again, feel free to open an issue for **any** kind of feedback and contribution, like:
+It's very easy!
 
-- general fixes (typos, small sentences)
-- elaborate changes (modifying, adding or removing an entire paragraph or chapter)
-- asking for new content to be added
-- submitting an article without worrying about formatting (even a Word file!)
-- reporting a bug
-- requesting a new feature on the website
-- general tips or questions on the project
+1. First, navigate to **[our GitHub repository](https://github.com/tilburgsciencehub/tsh-website)**.
+
+2. Click "**Issues**" under the repository name.
+
+![Click on Issues under the repository name.](../git-issues-1.png)
+
+3. Click "**New issue**".
+
+![Click New issue](../git-issues-2.png)
+
+4. Click "**Get started**" next to the type of issue that you'd like to open.
+
+![Click Get started next to the type of issue that you'd like to open.](../git-issues-3.png)
+
+5. Type a title and fill in the description for your request.
+
+![Type a title and fill in the description.;](../git-issues-4.png)
+
+6. When you're done, click "**Submit new issue**".
+
+You can learn more about GitHub issues [here](https://docs.github.com/en/github/managing-your-work-on-github/creating-an-issue).
