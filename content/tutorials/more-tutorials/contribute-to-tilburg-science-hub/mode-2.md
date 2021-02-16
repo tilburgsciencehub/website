@@ -11,7 +11,7 @@ draft: false
 
 ## There's a Better Way
 
-Like in [the first method](../mode-1), you can reach out to us with any request opening an issue on [our GitHub repository](https://github.com/tilburgsciencehub/tsh-website). We prefer this method because it allow us to keep track of bugs and requests more easily, to merge duplicates, assign roles, etc...
+Like in [the first method](../mode-1), you can reach out to us with any request by opening an issue on [our GitHub repository](https://github.com/tilburgsciencehub/tsh-website). We prefer this method because it allow us to keep track of bugs and requests more easily, to merge duplicates, assign roles, etc...
 
 ### How to create an issue on GitHub
 
