@@ -8,17 +8,14 @@ weight: 1
 
 ## Overview <!-- Goal of the Building Block -->
 
-Provide a brief overview of the issue to solve, or describe why this is a best practice.
+If you are using AWS S3 to store data necessary for your research and want to incorporate downloading and uploading your data files to AWS S3 into a MAKE script, it is useful to use a Python script to interact with your AWS S3 bucket instead of the command line.
 
-Add any special requirements or attach a dummy data set if needed.
+You need to have access to an AWS S3 bucket and have the credentials that is required in the code. Next, the sample code chuck to do very simple downloading and uploading files to a AWS S3 Bucket is shown.
 
 
-## Code <!-- Provide your code in all the relevant languages and/or operating systems and specify them after the three back ticks. Do NOT remove {{% codeblock %}} -->
+## Code
 
 {{% codeblock %}} <!-- You can provide more than one language in the same code block -->
-
-[python-link](code.py) <!-- OPTIONAL: You can also provide your code as a downloadable file (useful for very long codes). Make sure you place this file in the same folder. Specify in [square brackets] the language followed by "-link" as shown here.-->
-
 
 ```python
 # Import the necessary packages
@@ -64,6 +61,6 @@ s3.download_file(your_aws_bucket_name,'hello-remote.txt','hello_downloaded.txt')
 
 {{% summary %}}
 
-Lastly, include a brief summary to wrap up your article.
+In this article, we showed you how to use Python to automate your uploads to and downloads from AWS S3. Hopefully, this is helpful to you. 
 
 {{% /summary %}}
