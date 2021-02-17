@@ -23,17 +23,18 @@ import boto3
 
 # Make sure you have reading and writing privileges on AWS user settings
 # Define credentials
-your_aws_access_key_id = "" #enter your AWS Access Key here
-your_aws_secret_access_key = "" #enter your AWS Secret Access Key here
-your_aws_region_name = "" #enter your AWS bucket region here
+your_aws_access_key_id = "" #enter your AWS Access Key
+your_aws_secret_access_key = "" #enter your AWS Secret Key
+your_aws_region_name = "" #enter your AWS bucket region
 
 
 # Create an S3 client
-s3 = boto3.client('s3', region_name= your_aws_access_key_id,
-                  aws_access_key_id= your_aws_secret_access_key,
-                  aws_secret_access_key= your_aws_region_name)
+s3 = boto3.client('s3',
+    region_name= your_aws_access_key_id,
+    aws_access_key_id= your_aws_secret_access_key,
+    aws_secret_access_key= your_aws_region_name)
 
-your_aws_bucket_name = "" # specify the bucket you want to use
+your_aws_bucket_name = "" # specify the bucket you use
 
 
 # List objects in your AWS bucket and print them
@@ -61,6 +62,6 @@ s3.download_file(your_aws_bucket_name,'hello-remote.txt','hello_downloaded.txt')
 
 {{% summary %}}
 
-In this article, we showed you how to use Python to automate your uploads to and downloads from AWS S3. Hopefully, this is helpful to you. 
+In this article, we showed you how to use Python to automate your uploads to and downloads from AWS S3. Hopefully, this is helpful to you.
 
 {{% /summary %}}
