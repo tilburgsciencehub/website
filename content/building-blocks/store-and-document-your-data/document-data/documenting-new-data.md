@@ -2,7 +2,7 @@
 title: "Document New Data"
 description: "If your project contains data that has been newly created, learn how to include a documentation of that data in your project."
 keywords: "document, data, readme, raw, database, description"
-weight: 2
+weight: 1
 date: 2020-11-11T22:02:51+05:30
 draft: false
 ---
