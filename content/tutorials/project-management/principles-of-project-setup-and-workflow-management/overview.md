@@ -6,7 +6,7 @@ description: "When working on a project, most of us spend time thinking about wh
 keywords: "principles, workflow, setup, project, configure"
 date: 2020-11-11T22:01:14+05:30
 draft: false
-weight: 10
+weight: 1
 aliases:
   - /thiswillworkforever
 ---
@@ -47,7 +47,7 @@ The objectives of this tutorial are:
 
 * We may sometimes sound a bit dogmatic (e.g., you must do this or that). Some of our instructions will only make sense to you after a while. So, please stick with our recommendations during the course of your first few projects. Later on, take the liberty to re-design the workflows to your needs.
 * Consider adopting our suggestions **gradually**.
-  1. Start with a proper [directory structure on your local computer](directories.md#data-management), which
+  1. Start with a proper [directory structure on your local computer](../directories/#data-management-for-each-of-the-projects-components), which
   may already be sufficient to start collaborating. For example,
   do you need feedback from your advisor? Just zip (the relevant parts of) your pipeline
   and use [SURF's filesending service (for researchers affiliated with Dutch institutions)](https://filesender.surf.nl/) to send it!

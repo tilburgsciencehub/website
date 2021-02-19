@@ -6,13 +6,19 @@ description: "Learn how to contribute to Tilburg Science Hub in three easy ways.
 keywords: "contribute, contribution, tsh"
 weight: 1000
 draft: false
+aliases:
+  - /contribute
 ---
 
 ## How to contribute to Tilburg Science Hub
 
 We're glad for your interest in contributing to our project. Tilburg Science Hub is open-source, and as such, **anyone** can contribute! The process is really simple.
 
-You are welcome to contribute to our platform in three different ways. Keep reading to learn which one is the best method for you!
+You are welcome to contribute to our platform in three different ways. Keep reading to learn which one is the best method for you or quickly jump to any of them:
+
+1. [Just Shoot an Email](../mode-1)
+2. [Use GitHub Issues](../mode-2)
+3. [The Nerdy Way (Issue a Pull Request)](../mode-3)
 
 ## What is a contribution?
 

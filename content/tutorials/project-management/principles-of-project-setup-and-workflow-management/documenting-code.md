@@ -7,7 +7,7 @@ date: 2020-11-11T22:01:14+05:30
 description: "Documenting your project's workflow, not only for others, but also for your future self is absolutely crucial. Learn how."
 keywords: "document, code, workflow, reference, comment, documentation"
 draft: false
-weight: 50
+weight: 6
 ---
 
 ## Overview
@@ -38,8 +38,9 @@ least the following information:
 
 Here is an example documentation you can use as a template:
 
+{{% codeblock %}}
 
-```
+```txt
 ===================================================================
 PROJECT NAME
 ===================================================================
@@ -110,6 +111,7 @@ and run
 > make
 
 ```
+{{% /codeblock %}}
 
 ## Documentation for each stage of the pipeline
 
@@ -119,7 +121,9 @@ a `readme.txt` instead.
 
 Here is a `readme.txt` template to start from:
 
-```
+{{% codeblock %}}
+
+```txt
 OVERVIEW
 ====================================================
 - Provide a two or three sentence overview of the directory.
@@ -134,3 +138,4 @@ DESCRIPTION
   Also provide instructions how to run the files, and in which order.
 
 ```
+{{% /codeblock %}}

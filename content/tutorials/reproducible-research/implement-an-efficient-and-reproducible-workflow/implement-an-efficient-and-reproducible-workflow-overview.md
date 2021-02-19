@@ -9,12 +9,12 @@ draft: false
 weight: 1
 ---
 
-Longing to put your knowledge from our [workflow guide](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/principles-overview/) into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our [GitHub workflow template](https://github.com/hannesdatta/textmining-workflow).
+Longing to put your knowledge from our [workflow guide](/tutorials/project-management/principles-of-project-setup-and-workflow-management/overview/) into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our [GitHub workflow template](https://github.com/hannesdatta/textmining-workflow).
 
 ## Objectives of this tutorial
 
--	Familiarize yourself with a [robust directory structure](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/directories/) for data-intensive projects
--	Experience the benefits of [automating workflows with makefiles/GNU make](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation/)
+-	Familiarize yourself with a [robust directory structure](/tutorials/project-management/principles-of-project-setup-and-workflow-management/directories/) for data-intensive projects
+-	Experience the benefits of [automating workflows with makefiles/GNU make](/tutorials/project-management/principles-of-project-setup-and-workflow-management/automation/)
 -	Learn to use Git templates for your own research projects
 -	Adjust the workflow template to
     -	...download different datasets from the web
@@ -62,7 +62,7 @@ Longing to put your knowledge from our [workflow guide](/tutorials/project-setup
 
   -	[GNU Make](/building-blocks/configure-your-computer/automation-and-workflows/make/)
 
-- Familiarity with our [workflows](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/principles-overview/), in particular on [pipelines and project components](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/pipeline/), [directory structure](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/directories/) and [pipeline automation](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/automation/).
+- Familiarity with our [workflows](/tutorials/project-management/principles-of-project-setup-and-workflow-management/overview/), in particular on [pipelines and project components](/tutorials/project-management/principles-of-project-setup-and-workflow-management/pipeline/), [directory structure](/tutorials/project-management/principles-of-project-setup-and-workflow-management/directories/) and [pipeline automation](/tutorials/project-management/principles-of-project-setup-and-workflow-management/automation/).
 
 -	Nice-to-haves:
     - Basic experience with Python and R

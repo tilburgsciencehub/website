@@ -45,8 +45,8 @@ simply by typing `make` (or previewing it with `make -n`)
 
 ## Curious for more?
 
-  - Revise our [workflow procedures](../workflow/)
-  - Check out more [example projects and templates](../examples)
+  - Revise our [workflow procedures](/tutorials/project-management/principles-of-project-setup-and-workflow-management/overview/)
+  - Check out more [example projects and templates](/examples)
   - Getting deeper into `make`? Then use [this fantastic (open-source) book](https://www.oreilly.com/openbook/make3/book/index.csp)[^2].
 
 [^1]:

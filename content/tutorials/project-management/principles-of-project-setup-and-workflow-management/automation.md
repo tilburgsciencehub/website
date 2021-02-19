@@ -7,7 +7,7 @@ description: "We can automate our pipeline using so-called build tools to execut
 keywords: "make, data, automation, build, recipe, pipeline"
 date: 2020-11-11T22:01:14+05:30
 draft: false
-Weight: 40
+Weight: 4
 ---
 
 ## Overview

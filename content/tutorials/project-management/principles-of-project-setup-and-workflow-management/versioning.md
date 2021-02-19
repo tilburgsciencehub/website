@@ -7,7 +7,7 @@ description: "Git is an open-source version control system that allows you to ke
 keywords: "git, versioning, github, configuration, repository"
 date: 2020-11-11T22:01:14+05:30
 draft: false
-weight: 60
+weight: 7
 ---
 
 ## Overview
@@ -54,6 +54,7 @@ so that any work you do (and potentially sync later) can be linked to your name.
 
 Open `Git bash`, and type the following commands:
 
+{{% codeblock %}}
 ```bash
 # set the author name for your commits
 git config --global user.name "[name]"
@@ -61,6 +62,7 @@ git config --global user.name "[name]"
 # set the author email for your commits
 git config --global user.email "[email address]"
 ```
+{{% /codeblock %}}
 
 ### 2a. Create a repository for a new project
 
@@ -80,8 +82,12 @@ Git to start versioning your files from now onwards.
 Just navigate to your main project directory, open `Git bash`, and
 type
 
-    # initialize a new repository
-    git init
+{{% codeblock %}}
+```bash
+# initialize a new repository
+git init
+```
+{{% /codeblock %}}
 
 Then, proceed to step 3.
 
@@ -93,8 +99,12 @@ of one of the thousands of projects hosted on GitHub? Just note down the
 URL of the repository (e.g., `https://github.com/[username]/[project-name]`),
 and clone the repository to your local computer.
 
-    # clone an existing repository from Github to local PC
-    git clone "[url]"
+{{% codeblock %}}
+```bash
+# clone an existing repository from Github to local PC
+git clone "[url]"
+```
+{{% /codeblock %}}
 
 For example, type `git clone "https://github.com/rgreminger/example-make-workflow"` to clone a copy of the example workflow using R and make (see also the [example projects](/examples)). You can also change the default directory name to which the repository
 will be cloned. For example, typing `git clone "https://github.com/rgreminger/example-make-workflow my-project` will clone the repository to the folder `my-project`.
@@ -129,29 +139,33 @@ gathered on a so-called "staging area" using the command `git add`. You can use 
 of these commands after each other. Then, in a second step, the changes are saved - or, in Git terminology - "committed". The command for this is `git commit`. See below for an
 example, which also adds a few other useful commands.
 
-     # show files or directories that were changed (or that still need to be added)
-     # files that are already in the staging area are green; files that are not
-     # in the staging area are red.
-     git status
+{{% codeblock %}}
+```bash
+# show files or directories that were changed (or that still need to be added)
+# files that are already in the staging area are green; files that are not
+# in the staging area are red.
+git status
 
-     # add a directory or file to the staging area
-     git add directory-name-or-file-name
-     # for example, git add sourcecode.R, or dir-name/sourcecode.R.
+# add a directory or file to the staging area
+git add directory-name-or-file-name
+# for example, git add sourcecode.R, or dir-name/sourcecode.R.
 
-     # run git status again, to see that the files have "turned green"
-     git status
+# run git status again, to see that the files have "turned green"
+git status
 
-     # added a wrong file to the staging area, and want it to turn "red" again?
-     git reset directory-name-or-file-name
+# added a wrong file to the staging area, and want it to turn "red" again?
+git reset directory-name-or-file-name
 
-     # are you happy with what is green in your staging area? Then it's
-     # time to finalize your save operation by initiating a so-called "commit".
-     git commit -m "message"
-     # (give it a clear message, so that you can easily roll back to this version
-     # of your repository.
+# are you happy with what is green in your staging area? Then it's
+# time to finalize your save operation by initiating a so-called "commit".
+git commit -m "message"
+# (give it a clear message, so that you can easily roll back to this version
+# of your repository.
 
-     # optionally, use git log to see the versioning history
-     git log
+# optionally, use git log to see the versioning history
+git log
+```
+{{% /codeblock %}}
 
 {{% tip %}}
 **Exclude files from tracking**
@@ -199,22 +213,26 @@ the following to your own `.gitignore`:
 #### 3b. Synchronize your changes with a server
 **(Check [cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf) &rarr; share & update)**
 
-   Everyone can sync their local changes with the remote repository on GitHub.
-   You can also "download" changes to your local repository from the remote repository.
+Everyone can sync their local changes with the remote repository on GitHub.
+You can also "download" changes to your local repository from the remote repository.
 
-     # (1) DOWNLOAD AND MERGE CHANGES
+{{% codeblock %}}
+```bash
+# (1) DOWNLOAD AND MERGE CHANGES
 
-     # download and merge any changes from the remote/GitHub
-     git pull
+# download and merge any changes from the remote/GitHub
+git pull
 
-     # alternatively, you can do the same in two steps:
-     git fetch # fetches changes
-     git merge # merges changes with your local files
+# alternatively, you can do the same in two steps:
+git fetch # fetches changes
+git merge # merges changes with your local files
 
-     # (2) UPLOAD CHANGES
+# (2) UPLOAD CHANGES
 
-     # upload all local branch commits to GitHub
-     git push
+# upload all local branch commits to GitHub
+git push
+```
+{{% /codeblock %}}
 
 ### 4. Branching
 **(Check [cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf) &rarr; branch & merge)**
@@ -227,19 +245,23 @@ One team member is in charge of the "master" branch, while everybody
 else implements new features in feature branches (give them any name you like,
 but names should be easily understood by anybody in your team).
 
-      # create a branch [branch-name]
-      git branch [branch-name]
+{{% codeblock %}}
+```bash
+# create a branch [branch-name]
+git branch [branch-name]
 
-      # switch to s specific branch [branch-name]
-      git checkout [branch-name]
+# switch to s specific branch [branch-name]
+git checkout [branch-name]
 
-      # merge a specific branch [branch] to the working branch;
-      #, e.g., if you're in the master branch, you can integrate
-      # any changes done in the feature [branch].
-      git merge [branch]
+# merge a specific branch [branch] to the working branch;
+#, e.g., if you're in the master branch, you can integrate
+# any changes done in the feature [branch].
+git merge [branch]
 
-      # delete a specific branch [branch-name]
-      git branch -d [branch-name]
+# delete a specific branch [branch-name]
+git branch -d [branch-name]
+```
+{{% /codeblock %}}
 
 After integrating changes from a particular branch, you ideally synchronize
 changes with the remote repository on GitHub.

@@ -145,7 +145,7 @@ Our platform is a (classical) two-sided market.
 {{% warning %}}
 **License**
 
-Text and content are licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/). In other words, it can be reused by anybody for non-commercial purposes, but needs to be properly cited.
+Text and content are licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/). In other words, our content can be reused by anybody for non-commercial purposes, but needs to be properly cited.
 
 [![Creative Commons Licence](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0)
 

@@ -7,7 +7,7 @@ description: "Let's break down a project into its most basic parts, which we cal
 keywords: "pipeline, project, components, stages, steps"
 date: 2020-11-11T22:01:14+05:30
 draft: false
-weight: 20
+weight: 2
 ---
 
 ## Overview

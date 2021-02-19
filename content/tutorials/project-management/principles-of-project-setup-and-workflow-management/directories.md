@@ -8,7 +8,7 @@ prototypical directory structure."
 keywords: "data, directory, directories, data management, structure, raw, generated, source"
 date: 2020-10-10T22:01:14+05:30
 draft: false
-Weight: 30
+Weight: 3
 ---
 
 ## Overview

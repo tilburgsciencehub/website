@@ -7,7 +7,7 @@ description: "If your project contains data that has been newly created, you are
 keywords: "document, data, dataset, derived, readme, describe"
 date: 2020-11-11T22:01:14+05:30
 draft: false
-Weight: 50
+Weight: 5
 ---
 
 ## Documenting Datasets
@@ -24,8 +24,11 @@ Instances of "new data" may included, but are not restricted to be:
 	* ...
 * data *derived* from secondary data (e.g., a cleaned data set; making explicit how you cleaned the data is important for future use of that data)
 
-!!! tip
-	Think of "new data" as *any* data that feeds into one of the pipeline stages in your project; it really needs not to be "big" data, but can simply consist of a `.csv` file with
-	names and associated labels (e.g., as in the case of countries --> GDP per capita).
+{{% tip %}}
+
+Think of "new data" as *any* data that feeds into one of the pipeline stages in your project; it really needs not to be "big" data, but can simply consist of a `.csv` file with
+names and associated labels (e.g., as in the case of countries --> GDP per capita).
+
+{{% /tip %}}
 
 Check out [our building block for documenting data](/building-blocks/store-and-document-your-data/document-data/documenting-new-data/)!

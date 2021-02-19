@@ -4,7 +4,7 @@ type: "write-an-academic-paper"
 title: "Writing an Academic Paper"
 description: "Learn the typical structure of an empirical paper in economics and business."
 keywords: "latex, writing, paper, thesis, structure, academic, abstract"
-weight: 100
+weight: 1
 date: 2020-11-11T22:01:14+05:30
 draft: false
 ---

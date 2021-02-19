@@ -7,7 +7,7 @@ description: "While you can use Git exclusively to keep track of your files' ver
 keywords: "git, github, collaboration, sharing, share, repository, gist, contributing"
 date: 2020-11-11T22:01:14+05:30
 draft: false
-weight: 70
+weight: 8
 ---
 
 ## Overview
@@ -55,7 +55,7 @@ like to "build" the entire project on your computer?** Editing a project in the 
 ### Contribution Guide
 
 Here's our contribution guide (these instructions
-    also apply to [contributing to this site](https://github.com/tilburgsciencehub/tsh-website)).
+    also apply to [contributing to this site](/contribute)).
 
 1. To get started... (you need to only do this once per repository)
     1. Forking required?
