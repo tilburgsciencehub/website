@@ -9,18 +9,6 @@ weight: 1006
 draft: false
 ---
 
-## Disclaimer
-
-{{% warning %}}
-
-When writing for Tilburg Science Hub, please follow our [communication style and writing guideline](../style-guide).
-
-By contributing, you agree that we may redistribute your work under [our license](/about#license). In exchange, we will address your issues and/or assess your change proposal as promptly as we can, and help you become a member of our community.
-
-Everyone involved agrees to abide by our [code of conduct](#code-of-conduct).
-
-{{% /warning %}}
-
 ## Code of Conduct
 
 As contributors and maintainers of this project, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities.
@@ -34,3 +22,15 @@ Project maintainers have the right and responsibility to remove, edit, or reject
 Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening an issue or contacting one or more of the project maintainers.
 
 This Code of Conduct is adapted from [the Contributor Covenant](http://contributor-covenant.org/version/1/0/0/), version 1.0.0.
+
+## Disclaimer
+
+{{% warning %}}
+
+When writing for Tilburg Science Hub, please follow our [communication style and writing guideline](../style-guide).
+
+By contributing, you agree that we may redistribute your work under [our license](/about/#license). In exchange, we will address your issues and/or assess your change proposal as promptly as we can, and help you become a member of our community.
+
+Everyone involved agrees to abide by our [code of conduct](#code-of-conduct).
+
+{{% /warning %}}

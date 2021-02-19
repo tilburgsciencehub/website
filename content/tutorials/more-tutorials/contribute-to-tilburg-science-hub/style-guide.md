@@ -140,8 +140,14 @@ Our platform is a (classical) two-sided market.
 1. We attract __novice and expert users__ that *use* our content in their work, and
 
 2. We build a __community of content creators__ that have an outspoken vision on how to conduct science efficiently.
+{{% /warning %}}
 
-All of our content is licensed under the Creative Commons License, CC-BY-NC 4.0. In other words, it can be reused by anybody for non-commercial purposes, but needs to be properly cited.
+{{% warning %}}
+**License**
+
+Text and content are licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/). In other words, it can be reused by anybody for non-commercial purposes, but needs to be properly cited.
+
+[![Creative Commons Licence](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0)
 
 {{% /warning %}}
 

@@ -33,7 +33,9 @@ We show you how to very simply upload and download files to a S3 bucket with [bo
 
 First off, install boto3 - the AWS SDK for Python - via [pip](/building-blocks/configure-your-computer/statistics-and-computation/python-packages/):
 
-```pip install boto3```
+```bash
+pip install boto3
+```
 
 ### Establish a connection
 {{% codeblock %}}
