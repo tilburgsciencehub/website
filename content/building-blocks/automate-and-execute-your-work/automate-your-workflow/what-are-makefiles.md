@@ -1,8 +1,8 @@
 ---
 title: "What are Makefiles?"
-description: "GitHub limits the size of files allowed in repositories. Use Git-LFS, an open-source Git extension for large file storage."
+description: "Learn how to use makefiles to specify instructions and recipes for your computer."
 weight: 1
-keywords: "make, makefile, automation, workflow"
+keywords: "make, makefile, automation, recipes, workflow"
 date: 2021-01-06T22:01:14+05:30
 ---
 
