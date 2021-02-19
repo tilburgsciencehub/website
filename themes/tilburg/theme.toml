@@ -2,7 +2,6 @@
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
 name = "Tilburg"
-license = "MIT"
 licenselink = "https://github.com/tilburgsciencehub/tsh-website"
 description = ""
 homepage = "https://tilburgsciencehub.com/"
