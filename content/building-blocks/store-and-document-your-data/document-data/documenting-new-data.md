@@ -9,8 +9,16 @@ draft: false
 
 ## Overview
 
-Ideally, your data description includes the *very elaborate questions* outlined in `Datasheets for datasets` by Gebru, Timnit, et al. (2018).
-**We strongly** refer you to the [original paper](https://arxiv.org/abs/1803.09010), which explains in detail the seven key ingredients of a proper dataset documentation. Below, we have reproduced these questions, and we recommend you to include those as a **`readme.txt`**, together with your datasets. For *derived* data, it may be enough to point to a relevant source code file, and provide a list of variables and their operationalization.
+Ideally, your data description includes the *very elaborate questions* outlined in `Datasheets for datasets` by Gebru, Timnit, et al. (2018)[^1].
+We **strongly** refer you to the [original paper](https://arxiv.org/abs/1803.09010), which explains in detail the seven key ingredients of a proper dataset documentation.
+
+Below, we have reproduced these questions, and we recommend you to include those as a **`readme.txt`**, together with your datasets. For *derived* data, it may be enough to point to a relevant source code file, and provide a list of variables and their operationalization.
+
+You can download a formatted version (`.docx`) of this template using the button below. Alternatively, you can find a plain text version of it for copy & paste below.
+
+{{% cta-primary "Download the template" "../Datasheets_for_DataSets.docx" %}}
+
+<!-- {{% cta-secondary "Download the template" "../Datasheets_for_DataSets.docx" %}} -->
 
 ## Documentation Template
 
@@ -377,3 +385,6 @@ Name of the dataset:
 [...]
 ```
 {{% /codeblock %}}
+
+[^1]:
+    Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé III, H., & Crawford, K. (2018). Datasheets for datasets. arXiv preprint [arXiv:1803.09010](https://arxiv.org/abs/1803.09010).
