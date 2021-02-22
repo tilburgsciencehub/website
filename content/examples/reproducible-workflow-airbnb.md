@@ -1,8 +1,8 @@
 ---
-title: "TiSEM AirBnB Template"
+title: "A Reproducible Research Workflow with AirBnB Data"
 date: 2020-11-11T22:01:14+05:30
 draft: false
-description: "Learn how a reproducible workflow may look like in practice using publicly available data from AirBnB."
+description: "A platform-independent, reproducible research workflow with AirBnB data, using Stata, Python and R."
 keywords: "tisem, airbnb, template, workflow, example"
 weight: 1
 ---
