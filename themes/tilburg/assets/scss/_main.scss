@@ -334,6 +334,16 @@ html {
   font-family: "forma-djr-display", sans-serif;
 }
 
+#exampleMenu.heading
+{
+  font-family: "forma-djr-display", sans-serif;
+  font-size: 16px!important;
+  color: #003365!important;
+  &:hover {
+    color: $primary!important;
+  }
+}
+
 .boxShadow {
   box-shadow: 0 30px 35px -21px rgba(186, 195, 204, 0.5) !important;
 }
@@ -707,9 +717,9 @@ input {
 }
 
 .btn-secondary {
-    border: solid 1px #ff8200;
+    border: solid 1px $primary;
     background: #fff !important;
-    color: #ff8200;
+    color: $primary;
     &:hover {
       border: solid 1px #ff8200;
       background: #ff8200 !important;

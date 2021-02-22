@@ -19,10 +19,10 @@
 	  {{ else }}
 	  <a href="{{ .url }}" style="color: #6081A2;">{{ humanize .name | title }}</a>
 	  {{ end }}
-	  
+
 	  {{ if gt (len ($.Scratch.Get "siteBreadcrumbs")) ($.Scratch.Get "counter") }}
 	  <img src="/img/chevron-right.svg">
 	  {{ end }}
   {{ end }}
-    
+
 </nav>
