@@ -1,6 +1,6 @@
 ---
-tutorialtitle: "Implement an Efficient and Reproducible Workflow"
-type: "implement-efficient-workflow"
+tutorialtitle: "Practicing Pipeline Automation using Make"
+type: "practicing-pipeline-automation-make"
 indexexclude: "true"
 weight: 7
 title: "More Modifications"

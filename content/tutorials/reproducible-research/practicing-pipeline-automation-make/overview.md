@@ -1,6 +1,6 @@
 ---
-tutorialtitle: "Implement an Efficient and Reproducible Workflow"
-type: "implement-efficient-workflow"
+tutorialtitle: "Practicing Pipeline Automation using Make"
+type: "practicing-pipeline-automation-make"
 title: "Overview"
 description: "Follow our tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets."
 keywords: "tutorial, tweets, sentiment, analysis, workflow"
