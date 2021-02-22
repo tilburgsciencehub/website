@@ -706,6 +706,16 @@ input {
   }
 }
 
+.btn-secondary {
+    border: solid 1px #ff8200;
+    background: #fff !important;
+    color: #ff8200;
+    &:hover {
+      border: solid 1px #ff8200;
+      background: #ff8200 !important;
+    }
+}
+
 .nav-pills {
   a.active {
     &:hover {
