@@ -5,6 +5,8 @@ keywords: "teamviewer, software, installation, remote"
 weight: 5
 date: 2020-11-11T22:02:51+05:30
 draft: false
+aliases:
+  - /get/teamviewer
 ---
 
 Getting feedback on code or solving technical problems is crucial to your learning experience.
