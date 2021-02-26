@@ -5,6 +5,8 @@ weight: 2
 keywords: github, git-lfs, large files, versioning, organizing
 date: 2021-01-06T22:01:14+05:30
 draft: false
+author: "Andrea Antonacci"
+authorlink: "https://www.tilburguniversity.edu/staff/a-d-antonacci"
 ---
 
 <!-- This is a template. Please replace the content while keeping this structure.
@@ -13,14 +15,14 @@ Make sure to read our contribution guide to learn how to submit your content to 
 
 ## Overview
 
-GitHub limits the size of files allowed in repositories. It warns you if you're trying to push a 50MB file, and completely stops you if the push exceed 100MB.
+GitHub limits the size of files allowed in repositories. It warns you if you're trying to push a 50MB file, and completely stops you if the push exceeds 100MB.
 
 However, even if it didn't stop you, versioning large files would be very impractical. That's because **a repository contains every version of every file** – that's the point of versioning, right?
 Having multiple versions of large files cloned locally can become expensive in terms of disk space and fetch time.
 
 The solution? Use **[Git LFS](https://git-lfs.github.com)**, an open-source Git extension for "large file storage". In short, it allows you to version large files while saving disk space and cloning time, using the same Git workflow that you're used to. It does **not** keep all your project's data locally. It only provides the version you actually **need** in your checked out revision.
 
-When you mark a file as LFS file, the extension replaces the actual large file with a small *pointer* on your PC. The actual files are located on the remote server and *only the pulled* actual files are stored in a local cache. In other words, when you `pull` to your local repository, the pointer is replaced with the actual file.
+When you mark a file as LFS file, the extension replaces the actual large file with a small *pointer* on your PC. The actual files - and all their versions - are located on the LFS remote server and *only the pulled* files are stored in a local cache. In other words, when you `pull` to your local repository, the pointer is replaced with the file and only the actual version you've requested gets stored locally.
 
 Check out this video for a brief explanation on how Git LFS works.
 
@@ -30,7 +32,7 @@ Check out this video for a brief explanation on how Git LFS works.
 
 Make sure that [Git is already installed](/building-blocks/configure-your-computer/statistics-and-computation/git/).
 
-- Go to [git-lfs.github.com](https://git-lfs.github.com) and download directly. Or, if you use Brew:
+- Go to [git-lfs.github.com](https://git-lfs.github.com) and download directly. Or, if you use [`Brew`](/building-blocks/configure-your-computer/automation-and-workflows/commandline/#mac-users):
 
 ``` bash
 brew install git-lfs
@@ -64,8 +66,9 @@ Or, to track a file type (if you don't want to manually specify every single fil
 git lfs track "*.png"
 ```
 
-!!! warning "Be careful"
-    Do not forget the quotes around your file name!
+{{% warning %}}
+**Be careful!** Do not forget the quotes around your file name.
+{{% /warning %}}
 
 Now you can resume your usual Git workflow. You just need to make sure to track the `.gitattributes` file too.
 
@@ -82,6 +85,12 @@ git push origin master
 ```
 
 ## Advanced use cases
+
+You may be tempted to store your large files on a different server than the default LFS one.
+
+- GitHub provides a [Git LFS server](https://github.com/git-lfs/lfs-test-server) that implements the Git LFS API which you can set up so that your binary files can be uploaded to a server that you administer. However, as of today, this is not in a "production ready state" and it is suggestedd to be used for testing only.
+
+- In case you'd like to go serverless and back up these files on external services like Amazon S3, you can use one of the [Git LFS implementations](https://github.com/git-lfs/git-lfs/wiki/Implementations), like [this one](https://github.com/langep/git-lfs-serverless) and [this other one](https://github.com/meltingice/git-lfs-s3) for AWS S3. However, bear in mind that these are some external open-source implementations that have not been verified by GitHub.
 
 You can follow [this tutorial by Atlassian](https://www.atlassian.com/git/tutorials/git-lfs) for more advanced use cases, like moving a LFS repository between hosts or deleting local LFS files.
 
