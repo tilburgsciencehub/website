@@ -8,6 +8,8 @@ keywords: "educational, videos, shooting, camera, teaching, tips, lighting, lens
 date: 2021-01-06T22:01:14+05:30
 draft: false
 weight: 2
+author: "Andrea Antonacci"
+authorlink: "https://www.tilburguniversity.edu/staff/a-d-antonacci"
 ---
 
 # Part 1
@@ -24,28 +26,35 @@ Knowing the difference between hard and soft lighting will dramatically improve 
 - **Hard light** casts sharp, strong, dense (i.e., dark), hard-edged shadows. This is typical of **small light sources**. You want to **avoid** hard lighting, because it's difficult to manage, it creates ugly shadows under the chin and around your nose, and unless you are a top model, imperfections in your skin will stand out.
 - **Soft light** makes soft shadows, with no defined edge, no shape, and no density. This is typical of **large light sources**. Soft lighting is **desirable**, because it's easier to control and will generally make you look better.
 
+{{% warning %}}
 One fundamental concept to understand is that **the larger the light source *relative* to the subject, the softer the light** (and thus the shadows) will be.
-
+{{% /warning %}}
 
 Notice the "*relative*"? It's not the absolute size that matters, but the [apparent size](https://en.wikipedia.org/wiki/Angular_diameter): how the size of the light source is perceived from the subject's perspective. The sun is a very big light source, but being very far from us, it acts like a point light source, casting hard shadows (on a sunny day with a clear and blue sky). A cloudy day is soft light, because the clouds **diffuse** the sun light, creating a larger light source.
 
 What does that imply for you? Put simply, you should avoid (buying) a small light source as your key light (i.e., the one that will light up the subject's face)! Mini LED panels (like the [Aputure MC series](https://www.aputure.com/products/mc/)) won't work, unless you place them very close to the subject's face and frame your scene very tight. However, these mini panels are extremely useful for creative purposes in more complex lighting setups (lighting your background with a splash of color, for instance).
 
+{{% warning %}}
 For the sake of simplicity, we assume that you will be the presenter (the subject) in your video.
+{{% /warning %}}
 
 ### Option 1.A
 
 Luckily, one of the best large light sources is free and available to everybody - the sun! You can achieve a very nice, soft lighting by staying in front of a large window - unless the sun is low and comes straight into your window, obviously.
 
+{{% tip %}}
 Always have the window **in front of you**, not behind, and place **your webcam** between yourself and the window, front-facing. Make sure your webcam is at **eye-level** so that you can make eye contact with the attendees.
 
 If the light is too harsh, a white translucent curtain might help to diffuse it.
 
 If your laptop doesn't come with a built-in camera, the [Logitech C920](https://www.logitech.com/en-us/products/webcams/c920-pro-hd-webcam.960-000764.html) is a good and reliable external webcam.
+{{% /tip %}}
 
-One aspect that is often underrated is **audio**. This is especially true for teachers, who will often show slides while talking and may record at home, in non-treated rooms for acoustics or close to noise sources. If you have a limited budget and need to choose how to invest your money, I'd highly suggest spending it in a good microphone instead of a new camera.
+One aspect that is often underrated is **audio**. This is especially true for teachers, who will often show slides while talking and may record at home, in non-treated rooms for acoustics or close to noise sources. If you have a limited budget and need to choose how to invest your money, we'd highly suggest spending it in a good microphone instead of a new camera.
 
+{{% tip %}}
 If your laptop built-in mic is too noisy or poor quality, you can use a headset with a microphone, or your phone's earbuds (which often have a mic for phone calls too).
+{{% /tip %}}
 
 ### Option 1.B
 A cheap yet effective way to improve your image quality is to use **your smartphone instead of a webcam**. Modern smartphones usually have better cameras than most built-in laptop webcams.
@@ -120,7 +129,7 @@ However, using still cameras as video cameras has some advantages too. Good-qual
 
 But why would you need interchangeable lenses? Most of **the "premium look" that you are looking for comes from the lens, not the camera!** More specifically, you will need **a fast lens** (i.e., a lens with **a wide aperture**) if you like **a shallow depth of field or the [bokeh effect](https://en.wikipedia.org/wiki/Bokeh)**: you will be in sharp focus while **the background can be blurred**, out of focus. This is visually very pleasing and can help focusing the viewer's attention on the subject speaking.
 
-If you had to choose, my advice is to **spend more on a good lens rather than on a better camera**. It's okay to buy relatively old or used cameras, since most of the latest models only marginally improved some aspects that are not so relevant for us, like low-light performance. If you learn how to correctly light your scene, you will never need to shoot in low-light conditions. Not to mention that a good lens lasts forever, while cameras can be changed or upgraded after some years.
+If you had to choose, our advice is to **spend more on a good lens rather than on a better camera**. It's okay to buy relatively old or used cameras, since most of the latest models only marginally improved some aspects that are not so relevant for us, like low-light performance. If you learn how to correctly light your scene, you will never need to shoot in low-light conditions. Not to mention that a good lens lasts forever, while cameras can be changed or upgraded after some years.
 
 Most cameras can be split among two categories: **DSLR and mirrorless cameras**.
 - A Digital Single-Lens Reflex has a mirror in it. Light passes through the lens, and then it reaches a viewfinder through some mirrors and/or prisms. When you shoot, the mirror flips up so that the light can reach the sensor and no longer the viewfinder.
@@ -138,7 +147,7 @@ They can both work, however, **we'd suggest buying prime lenses**. That's becaus
 
 **The focal length is measured in millimeters**. The higher the number, the narrower will be the field of view. For instance, a 85mm lens looks much more "zoomed in", narrower, than a 25mm one.
 
-**The lens aperture is measured with the [f-number](https://en.wikipedia.org/wiki/F-number)**. The smaller the f-number, the wider the lens aperture (very counter-intuitive, I know). For instance, a 50mm f/1.8 lens has a much wider maximum aperture than a 50mm f/5.6 one, which implies a shallower depth of field (nicer blurred backgrounds) but also a better light-gathering capability. Imagine light passing through a hole: if the hole is larger, more light will pass through it. We won't stress this aspect too much, because you will probably shoot your videos with artificial lighting and not in a dark room anyway.
+**The lens aperture is measured with the [f-number](https://en.wikipedia.org/wiki/F-number)**. The smaller the f-number, the wider the lens aperture (very counter-intuitive, we know). For instance, a 50mm f/1.8 lens has a much wider maximum aperture than a 50mm f/5.6 one, which implies a shallower depth of field (nicer blurred backgrounds) but also a better light-gathering capability. Imagine light passing through a hole: if the hole is larger, more light will pass through it. We won't stress this aspect too much, because you will probably shoot your videos with artificial lighting and not in a dark room anyway.
 
 **So, which lens should you buy?** It really depends on what you plan to shoot with it. You should take into consideration how wide you want your scene to be, how many people you will be shooting at the same time, how much of the background you will be including in your shot, and how big is the space available to you (how far you can place the camera from the subject).
 

@@ -8,6 +8,8 @@ keywords: "educational, videos, shooting, camera, teaching, tips, lighting, lens
 date: 2021-01-06T22:01:14+05:30
 draft: false
 weight: 3
+author: "Andrea Antonacci"
+authorlink: "https://www.tilburguniversity.edu/staff/a-d-antonacci"
 ---
 
 # Part 2
@@ -20,11 +22,13 @@ The first thing to do is to set up your scene, place your camera on a tripod, an
 
 Here you face your first decision. You will need to **choose what to include in your frame**. This will dictate what focal length to use (i.e., what lens) as well as how far to place the camera. Ideally, you should **strike a balance between a boring shot and one that is too distracting**.
 
+{{% tip %}}
 A close up shot of your face (also called a "talking head" shot) is ideal when stressing an important message. You remove any distraction from the background and the audience focuses solely on you and your speech. But long shots like this may become boring after a while. This is why we suggest to compose your shot a bit wider, showing more of the background. Indeed, the background should not be messy, too crowded or distracting. However, if you choose to shoot at a wider angle, you could always "zoom in" digitally on your face when needed, in post-production (i.e., cropping your footage).
 
 We suggest you to **sit comfortably at your desk** and have some props on it to show and engage your audience with. It's also a good idea to avoid dark and plain backgrounds. **Show something relevant behind you**. For instance, if you're a data scientist, you could have a PC running behind you and some screens showing with what you usually work on.
 
 When composing your frame, leave some "room" above your head, but not too much.
+{{% /tip %}}
 
 ## Step 2 - Light Up Your Scene
 
@@ -93,14 +97,14 @@ Notice that if you are going to use the same set and lighting options, you won't
 
 ### Audio
 
-You will record your audio directly into your PC. We recommend recording at **a sample rate of 44.1 kHz** and on a **WAV** file type.
+You will record your audio directly into your PC. We recommend recording at **a sample rate of 48 kHz** and on a **WAV** file type.
 
 1. Connect your microphone **to the first input** of your audio interface.
 2. Turn on and connect your audio interface via USB to your PC.
 3. If you're using a condenser microphone without batteries, turn on phantom power.
 4. Launch a recording software on your PC. We suggest [Audacity](https://www.audacityteam.org) or any DAW like [Logic Pro X](https://www.apple.com/it/logic-pro/) or [Cubase](https://new.steinberg.net/cubase/).
 5. Create a **mono audio track** with the first input from your audio interface.
-6. Set the [appropriate gain level](https://www.sweetwater.com/insync/gain-staging/) for your microphone, without clipping.
+6. Turn on phantom power for your microphone, if needed. Then, set the [appropriate gain level](https://www.sweetwater.com/insync/gain-staging/), without clipping.
 7. Enable the track for recording (R).
 8. **Disable the track monitoring**. You do not want to hear yourself talking while you are recording.
 

@@ -87,9 +87,9 @@ First, make sure to read our [code of conduct](../code-of-conduct) as well as ou
 
 {{% /warning %}}
 
-### Start with our [Building Block Markdown template](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/building-block-shell.md)
+{{% cta-primary "Start with our Building Block Markdown template" "https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/building-block-shell.md" %}}
 
-### Start with our [Tutorial Markdown template](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell.md)
+{{% cta-primary "Start with our Tutorial Markdown template" "https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell.md" %}}
 
 <!--
 The design should always accommodate all users' knowledge levels and avoid confusion. For instance, on a tutorial page, there should be a quick and concise explanation (a sort of TL;DR), as well as a more in-depth exposition for those who need to educate themselves first.
