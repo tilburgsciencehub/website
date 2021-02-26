@@ -7,6 +7,8 @@ keywords: "educational, videos, shooting, camera, teaching, tips, lighting, lens
 weight: 1
 date: 2020-11-11T22:01:14+05:30
 draft: false
+author: "Andrea Antonacci"
+authorlink: "https://www.tilburguniversity.edu/staff/a-d-antonacci"
 ---
 
 An educational video is meant for transferring knowledge to an audience. These often involve animations or presenting a slide deck. However, in most of the cases, you might want to show yourself - or the presenter - talking to the camera.

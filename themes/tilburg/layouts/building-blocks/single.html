@@ -8,7 +8,7 @@
 		<div class="col-lg-8 col-22 pr-lg-5">
 			<div class="sticky-top pr-lg-3 mb-lg-5 pb-lg-5">
 				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
-				
+
 			{{ if gt (len .TableOfContents) 32 }}
 			<div class="TableOfContents">
 				<span class="arrow-icon"></span>
@@ -20,7 +20,7 @@
 			{{ end }}
 			<div class="d-none d-lg-block pseudoSpacer"></div>
 			</div>
-			
+
 		</div>
 		<article class="col-lg-16 col-22">
 			<div class="p-5 bg-white rounded mb-5">
@@ -28,6 +28,12 @@
 				<script>window.location = "/{{.Section}}"</script>
 				{{ else }}
 				{{ .Content }}
+				{{ if (and (.Params.author) (.Params.authorlink)) }}
+				<div class="admonition author">
+					<div class="admonition-content">Contributed by <b><a href="{{ .Params.authorlink }}">{{ .Params.author }}</a></b>.</div>
+				</div>
+				{{ else }}
+				{{ end }}
 				{{ end }}
 
 				{{ partial "pagination.html" . }}

@@ -7,7 +7,7 @@
 	<div class="row justify-content-center mx-0">
 		<div class="col-lg-8 col-22 pr-lg-5">
 			<div class="sticky-top mb-lg-5 pb-lg-5">
-				{{ if .Params.tutorialTitle }} 
+				{{ if .Params.tutorialTitle }}
 				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Params.tutorialTitle }}</h1>
 				{{ else }}
 				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
@@ -21,20 +21,20 @@
 
 						{{ if eq .Title $currentTitle }}
 						<h5 class="heading text-primary" style="font-size: 18px; height: 28px; margin-left: 10px; margin-top: 8px; font-weight: 100 !important;"><a class="text-primary" href="{{ .Permalink }}">{{ .Title }}</a></h5>
-							
+
 							<div class="pl-4">{{ .TableOfContents }}</div>
-								
-							
+
+
 						{{ else }}
 						<h5 class="text-secondary heading" style="font-size: 18px; height: 38px; margin-left: 10px; margin-top:8px; font-weight: 100 !important;"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
 						{{ end }}
-					
+
 					{{ end }}
-				</div>		
-						
+				</div>
+
 				<div class="d-none d-lg-block pseudoSpacer"></div>
 			</div>
-			
+
 		</div>
 		<article class="col-lg-16 col-22">
 			<div class="p-5 bg-white rounded mb-5">
@@ -42,6 +42,12 @@
 				<script>window.location = "/{{.Section}}"</script>
 				{{ else }}
 				{{ .Content }}
+				{{ if (and (.Params.author) (.Params.authorlink)) }}
+				<div class="admonition author">
+					<div class="admonition-content">Contributed by <b><a href="{{ .Params.authorlink }}">{{ .Params.author }}</a></b>.</div>
+				</div>
+				{{ else }}
+				{{ end }}
 				{{ end }}
 				{{ partial "pagination.html" . }}
 			</div>

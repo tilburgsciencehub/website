@@ -6,6 +6,8 @@ description: "Document and share data for internal and external use"
 keywords: "scrum, project, sprint, team, management"
 weight: 100
 draft: false
+author: "Pam Dupont"
+authorlink: "https://www.tilburguniversity.edu/staff/p-h-dupont"
 ---
 
 ## How we learned to use Scrum
@@ -68,7 +70,7 @@ During the sprint, **they all know what things need to be done**, so they can fl
 
 When people work very intensely on projects, they sometimes start the day with a brief meeting (a "stand-up" meeting) where the Scrum master manages the board and everyone coordinates who does what. In less intense times, one can instead have a weekly "WOW" meeting like we do.
 
-In any case, after two weeks, the sprint ends with a review and after that, it’s time to look ahead. The backlog has some new items that the product owner has added, and the discussion is then again about which items should end up in the next sprint.
+In any case, after two weeks, the sprint ends with a review and after that, it’s time to look ahead. The **backlog has some new items** that the product owner has added, and the discussion is then again about which items should end up in the next sprint.
 {{% /example %}}
 
 ## Why Scrum is useful and how to make it a success
@@ -81,4 +83,6 @@ In short, it can be seen as a structured way of working with meetings that are s
 
 ## See also
 
-You can learn more about Scrum [here](https://www.scrum.org), [here](https://www.scrumguides.org/scrum-guide.html) and [here](http://crosstalk.cell.com/blog/scrum-for-science-a-framework-for-collective-research).
+- Learn more about Scrum [here](https://www.scrum.org)
+- Read a more comprehensive [Scrum Guide](https://www.scrumguides.org/scrum-guide.html)
+- Learn about how other researchers are using Scrum [here](http://crosstalk.cell.com/blog/scrum-for-science-a-framework-for-collective-research)
