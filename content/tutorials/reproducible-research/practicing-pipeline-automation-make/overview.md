@@ -34,9 +34,11 @@ Longing to put your knowledge from our [workflow guide](/tutorials/project-manag
 
         Then, open Python (`python`) and type
 
-            import nltk
-            nltk.download('punkt')
-
+        ```
+        import nltk
+        nltk.download('punkt')
+        ```
+        
         If you receive an error message, please verify you are typing this command in python (opened on the terminal by typing `python`), and not *directly* in the terminal/Anaconda prompt.
 
     -	[R, RStudio](/building-blocks/configure-your-computer/statistics-and-computation/r/) and the following packages:
