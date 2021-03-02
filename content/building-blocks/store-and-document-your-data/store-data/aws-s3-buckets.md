@@ -6,6 +6,8 @@ date: 2021-02-17
 weight: 2
 author: "Nazli Alagöz"
 authorlink: "https://www.tilburguniversity.edu/staff/n-m-alagoz"
+aliases:
+  - "/use/aws-s3"
 ---
 
 ## Overview <!-- Goal of the Building Block -->

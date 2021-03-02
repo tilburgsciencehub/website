@@ -10,6 +10,56 @@
   // outline: solid 1px rgba(255, 0, 0, 0.6);
 }
 
+// share
+.share {
+  margin-top: 60px;
+  // padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+
+  .share-title {
+    font-family: "forma-djr-display", sans-serif;
+    line-height: 23px;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 500;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  .share-button {
+    cursor: pointer;
+    display: inline-block;
+    fill: $secondary;
+    margin-left: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-start;
+    vertical-align: middle;
+
+    &.facebook {
+      width: 17px;
+      height: 19px;
+    }
+
+    &.twitter {
+      width: 20px;
+      height: 18px;
+    }
+
+    &.linkedin {
+      width: 16px;
+      height: 18px;
+    }
+
+    &.mail {
+      width: 18px;
+      height: 16px;
+    }
+
+  }
+}
+
 // pagination
 .pagination {
   margin-top: 60px;

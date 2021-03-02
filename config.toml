@@ -1,4 +1,4 @@
-baseURL = "https://tilburgsciencehub.com/"
+baseURL = "https://tilburgsciencehub.com"
 languageCode = "en-us"
 title = "Tilburg Science Hub"
 theme = "tilburg"
