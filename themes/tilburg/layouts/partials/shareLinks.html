@@ -6,10 +6,10 @@
     <a href="http://twitter.com/share?url={{ .siteURL }}{{ .context }}" class="twitter" aria-label="share on Twitter">
       <div class="share-button twitter"><img src="/img/Twitter.svg"></div>
     </a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://tilburgsciencehub.com{{ . }}" class="linkedin" aria-label="share on LinkedIn">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .siteURL }}{{ .context }}" class="linkedin" aria-label="share on LinkedIn">
       <div class="share-button linkedin"><img src="/img/LinkedIn.svg"></div>
     </a>
-    <a href="mailto:?subject=Check%20out%20this%20great%20article%20on%20Tilburg%20Science%20Hub&body=https://tilburgsciencehub.com{{ . }}" class="email" aria-label="share on Email">
+    <a href="mailto:?subject=Check%20out%20this%20great%20article%20on%20Tilburg%20Science%20Hub&body={{ .siteURL }}{{ .context }}" class="email" aria-label="share on Email">
       <div class="share-button mail"><img src="/img/Mail.svg"></div>
     </a>
   </div>
