@@ -1,6 +1,6 @@
 ---
 name: Edit content request
-about: Improve existing content for this project
+about: Improve existing content on Tilburg Science Hub
 title: ''
 labels: edit content request
 assignees: ''
