@@ -1,3 +1,4 @@
+{{ $siteURL := .Site.BaseURL }}
 {{ partial "header.html" . }}
 <br><br>
 <div class="container mt-4">
@@ -46,6 +47,12 @@
 					<div class="admonition-content">Contributed by <b><a href="{{ .Params.authorlink }}">{{ .Params.author }}</a></b></div>
 				</div>
 				{{ else }}
+				{{ end }}
+				{{ if eq .Params.share false }}
+				{{ else }}
+				{{ range .Params.aliases }}
+				{{ partial "shareLinks.html" (dict "context" . "siteURL" $siteURL) }}
+				{{ end }}
 				{{ end }}
 				{{ end }}
 
