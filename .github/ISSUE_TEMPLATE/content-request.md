@@ -31,6 +31,7 @@ A clear and concise description of what you want to happen. Choose if you need a
   - Motivation: *Ex. Users should not always start from scratch, but use the best principles when setting up and working on empirical research projects because...*
   - Suggested title: *Ex. "Automatically set up a new research project on your computer"*
   - Suggested keywords: *Ex. automation, configure, setup, local...*
+  - Suggested short link: *Combine an action verb and a noun like this: /VERB/NOUN, /do/this, /learn/that, /get/me. Ex. tilburgsciencehub.com/setup/project*
   - Required tools: *Ex. Python, R, RStudio, Git, Make, LaTeX...*
   - References: *Any additional information and links to external useful resources*
   - Related Building Blocks: *Any already existing Building Blocks that may be useful to link on this Tutorial*
@@ -45,6 +46,7 @@ A clear and concise description of what you want to happen. Choose if you need a
   - Motivation: *Ex. Git is a very famous open source version control system (VCS) that every researcher should be using because...*
   - Suggested title: *Ex. "How to configure Git on your local computer"*
   - Suggested keywords: *Ex. collaborate, version, git, vcs, branch, repository...*
+  - Suggested short link: *Combine an action verb and a noun like this: /VERB/NOUN, /do/this, /learn/that, /get/me. Ex. tilburgsciencehub.com/configure/git*
   - Required tools: *Ex. Git, GitHub credentials, browser...*
   - References: *Any additional information and links to external useful resources*
 
@@ -53,6 +55,7 @@ A clear and concise description of what you want to happen. Choose if you need a
   - Motivation: *Ex. Git is a very famous open source version control system (VCS) that every researcher should be using because...*
   - Suggested title: *Ex. "How to configure Git on your local computer"*
   - Suggested keywords: *Ex. collaborate, version, git, vcs, branch, repository...*
+  - Suggested short link: *Combine an action verb and a noun like this: /VERB/NOUN, /do/this, /learn/that, /get/me. Ex. tilburgsciencehub.com/configure/git*
   - Required tools: *Ex. Git, GitHub credentials, browser...*
   - References: *Any additional information and links to external useful resources*
 
@@ -61,5 +64,6 @@ A clear and concise description of what you want to happen. Choose if you need a
   - Motivation: *Ex. Git is a very famous open source version control system (VCS) that every researcher should be using because...*
   - Suggested title: *Ex. "How to configure Git on your local computer"*
   - Suggested keywords: *Ex. collaborate, version, git, vcs, branch, repository...*
+  - Suggested short link: *Combine an action verb and a noun like this: /VERB/NOUN, /do/this, /learn/that, /get/me. Ex. tilburgsciencehub.com/configure/git*
   - Required tools: *Ex. Git, GitHub credentials, browser...*
   - References: *Any additional information and links to external useful resources*
