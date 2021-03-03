@@ -1,5 +1,5 @@
 ---
-name: Content request
+name: New content request
 about: Suggest new content for Tilburg Science Hub
 title: 'Development Call: '
 labels: content request
