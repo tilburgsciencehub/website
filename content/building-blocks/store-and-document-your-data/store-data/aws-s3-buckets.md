@@ -6,7 +6,6 @@ date: 2021-02-17
 weight: 2
 author: "Nazli Alagöz"
 authorlink: "https://www.tilburguniversity.edu/staff/n-m-alagoz"
-share: false
 aliases:
   - "/use/aws-s3"
 ---

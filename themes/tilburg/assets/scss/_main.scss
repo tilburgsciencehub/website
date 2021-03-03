@@ -30,31 +30,38 @@
   .share-button {
     cursor: pointer;
     display: inline-block;
-    fill: $secondary;
     margin-left: 30px;
     display: inline-flex;
     justify-content: center;
     align-items: flex-start;
     vertical-align: middle;
 
-    &.facebook {
+    &.facebook svg {
       width: 17px;
       height: 19px;
     }
 
-    &.twitter {
+    &.twitter svg {
       width: 20px;
       height: 18px;
     }
 
-    &.linkedin {
+    &.linkedin svg {
       width: 16px;
       height: 18px;
     }
 
-    &.mail {
+    &.mail svg {
       width: 18px;
       height: 16px;
+    }
+
+    svg path {
+      fill: $secondary !important;
+    }
+
+    svg path:hover {
+      fill: $primary !important;
     }
 
   }
