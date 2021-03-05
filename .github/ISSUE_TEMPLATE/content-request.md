@@ -23,6 +23,8 @@ Add any other context or screenshots about your request here.
 
 ## Deliverables
 
+**Note:** We encourage the use of this template. However, feel free to suggest your ideas in your own format, if you prefer. Just erase everything below in that case.
+
 **Describe the solution you'd like**
 A clear and concise description of what you want to happen. Choose if you need a Tutorial, a Building Block, both, or more of them. Add new ones by copying the structure below, or remove the unnecessary ones. Lastly, fill in the required information.
 
