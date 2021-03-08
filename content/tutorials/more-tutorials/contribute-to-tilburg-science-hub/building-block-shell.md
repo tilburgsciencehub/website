@@ -5,6 +5,8 @@ INSTRUCTIONS:
 - Do NOT use #Titles with a single # in your article. Instead, use the title parameter shown below.
 - Please provide up to 10 keywords for this Building Block in the appropriate parameter. Metadata should provide information on the role and usage of this Building Block (e.g., "data collection, data analysis, article writing")
 - IMPORTANT! Replace the # of the weight parameter with an integer (no quotes are needed). This number indicates the position of this article within its section (folder). The ordering of all articles inside a folder is based on their weight. Articles with lower weight appear at the top.
+- If you want to be credited, fill in the author and authorlink fields below. If you want to remain anonymous, delete those.
+- Provide at least one short link for your article. Combine an action verb and a noun like this: /verb/noun (ex. /install/python).
 - Remove these instructions before submitting. Your article should start with the three dashes --- and the following parameters.
 ---
 title: "Your Building Block Title"
@@ -12,6 +14,13 @@ description: "A brief description of this article (50–160 characters)."
 keywords: "any, relevant, keywords, separated, by, commas, like, this"
 date: YYYY-MM-DD
 weight: #
+author: "Your Name"
+authorlink: "A link to your personal webpage"
+aliases:
+  - /verb/noun
+  - /do/this
+  - /get/that
+  - add as many as you want, but at least one
 ---
 
 ## Overview <!-- Goal of the Building Block -->
