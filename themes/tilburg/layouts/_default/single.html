@@ -51,6 +51,7 @@
 				{{ end }}
 				{{ if eq .Params.share false }}
 				{{ else }}
+				{{ range .Params.aliases }}
 				{{ partial "shareLinks.html" (dict "context" . "siteURL" $siteURL) }}
 				{{ end }}
 				{{ end }}
