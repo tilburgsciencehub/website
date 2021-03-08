@@ -8,6 +8,8 @@ keywords: "document, data, dataset, derived, readme, describe"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 Weight: 5
+aliases:
+  - /document-data/project-setup
 ---
 
 ## Documenting Datasets

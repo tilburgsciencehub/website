@@ -5,6 +5,8 @@ draft: false
 description: "A platform-independent, reproducible research workflow with AirBnB data, using Stata, Python and R."
 keywords: "tisem, airbnb, template, workflow, example"
 weight: 1
+aliases:
+  - /try/airbnb-workflow
 ---
 
 ## Overview

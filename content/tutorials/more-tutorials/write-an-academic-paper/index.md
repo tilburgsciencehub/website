@@ -7,6 +7,8 @@ keywords: "latex, writing, paper, thesis, structure, academic, abstract"
 weight: 1
 date: 2020-11-11T22:01:14+05:30
 draft: false
+aliases:
+  - /write/academic-paper
 ---
 
 ## Overview

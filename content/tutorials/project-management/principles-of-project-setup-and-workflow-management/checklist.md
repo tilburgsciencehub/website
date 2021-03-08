@@ -8,6 +8,8 @@ keywords: "checklist, workflow, efficient, reproducible"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 9
+aliases:
+  - /audit/project-setup
 ---
 
 There is quite some material to cover to make sure your workflows

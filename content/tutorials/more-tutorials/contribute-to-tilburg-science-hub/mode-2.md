@@ -7,6 +7,8 @@ description: "Learn how to use GitHub issues to requests new content, features o
 keywords: "contribute, requests, issues, github, guide"
 weight: 1003
 draft: false
+aliases:
+  - /contribute/mode-2
 ---
 
 ## There's a Better Way

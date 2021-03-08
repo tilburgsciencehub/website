@@ -5,6 +5,9 @@ keywords: "perl, installation, programming, language, configuration"
 weight: 7
 date: 2021-01-06T22:01:14+05:30
 draft: false
+aliases:
+  - /get/perl
+  - /install/perl
 ---
 ## Overview
 

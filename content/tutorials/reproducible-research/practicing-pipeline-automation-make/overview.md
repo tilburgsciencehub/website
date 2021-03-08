@@ -7,6 +7,8 @@ keywords: "tutorial, tweets, sentiment, analysis, workflow"
 date: 2021-01-06T22:01:14+05:30
 draft: false
 weight: 1
+aliases:
+  - /practice/pipeline-automation
 ---
 
 Longing to put your knowledge from our [workflow guide](/tutorials/project-management/principles-of-project-setup-and-workflow-management/overview/) into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our [GitHub workflow template](https://github.com/hannesdatta/textmining-workflow).
@@ -38,7 +40,7 @@ Longing to put your knowledge from our [workflow guide](/tutorials/project-manag
         import nltk
         nltk.download('punkt')
         ```
-        
+
         If you receive an error message, please verify you are typing this command in python (opened on the terminal by typing `python`), and not *directly* in the terminal/Anaconda prompt.
 
     -	[R, RStudio](/building-blocks/configure-your-computer/statistics-and-computation/r/) and the following packages:

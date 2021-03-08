@@ -4,9 +4,10 @@ description: "Make is a build tool that allows us to control the execution of a 
 keywords: "make, build, build tool"
 weight: 2
 date: 2020-11-11T22:02:51+05:30
+draft: false
 aliases:
   - /get/make
-draft: false
+  - /install/make
 ---
 
 ## Overview

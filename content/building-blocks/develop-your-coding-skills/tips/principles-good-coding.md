@@ -5,6 +5,8 @@ keywords: "style, optimize, definition, human"
 weight: 1
 date: 2020-11-11T22:01:14+05:30
 draft: false
+aliases:
+  - /write/good-code
 ---
 
 ## Write programs for people, not computers

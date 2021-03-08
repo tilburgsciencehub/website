@@ -5,6 +5,8 @@ keywords: "CLI, terminal, Homebrew, brew, cygwin, command"
 weight: 1
 date: 2020-11-11T22:02:51+05:30
 draft: false
+aliases:
+  - /configure/cli
 ---
 
 A command-line interface or command language interpreter (CLI), also known as a terminal, is a means of interacting with a computer program where the user issues commands to the program in the form of successive lines of text (command lines).

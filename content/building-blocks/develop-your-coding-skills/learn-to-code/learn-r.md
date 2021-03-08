@@ -5,6 +5,8 @@ keywords: "learn, R, resources, datacamp"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 1
+aliases:
+  - /learn/r
 ---
 
 Chance is that sooner or later, you're going to use R - one of the (if not *the*) most popular statistical

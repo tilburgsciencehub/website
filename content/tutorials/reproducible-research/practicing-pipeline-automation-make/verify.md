@@ -6,6 +6,8 @@ weight: 2
 title: "Verify Software Setup"
 date: 2021-01-06T22:01:14+05:30
 draft: false
+aliases:
+  - /verify-setup/pipeline-automation
 ---
 
 ## Let's verify whether everything is properly installed

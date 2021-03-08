@@ -6,6 +6,8 @@ weight: 5
 title: "Inspecting the Data-preparation Pipeline"
 date: 2021-01-06T22:01:14+05:30
 draft: false
+aliases:
+  - /makefile/pipeline-automation
 ---
 
 ## Makefile of the data-preparation pipeline

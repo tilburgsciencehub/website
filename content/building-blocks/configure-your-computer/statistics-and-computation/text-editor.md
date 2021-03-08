@@ -5,6 +5,9 @@ keywords: "text, editor, atom, installation, software"
 date: 2020-11-11T22:02:51+05:30
 draft: false
 weight: 9
+aliases:
+  - /choose/text-editor
+  - /get/atom
 ---
 
 A good text editor lies at the heart of any serious programmer's toolkit: It can do almost anything and makes you much more productive.

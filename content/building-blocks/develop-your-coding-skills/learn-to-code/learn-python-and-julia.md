@@ -5,6 +5,9 @@ keywords: "learn, python, quantecon"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 2
+aliases:
+  - /learn/python
+  - /learn/julia
 ---
 
 Learn Python with these great step-by-step tutorials from [Real Python](https://realpython.com).

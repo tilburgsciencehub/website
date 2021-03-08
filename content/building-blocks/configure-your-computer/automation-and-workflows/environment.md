@@ -5,6 +5,9 @@ keywords: "PATH, add, terminal, cli"
 weight: 4
 date: 2020-11-11T22:02:51+05:30
 draft: false
+aliases:
+  - /setup/environment
+  - /setup/path-settings
 ---
 
 For our workflow to be command line driven, we need to be able to call software from the command line.

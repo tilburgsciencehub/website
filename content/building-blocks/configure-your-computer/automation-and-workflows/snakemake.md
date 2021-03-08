@@ -5,6 +5,9 @@ keywords: "snakemake, build, build tool, workflow"
 weight: 3
 date: 2020-11-11T22:02:51+05:30
 draft: false
+aliases:
+  - /get/snakemake
+  - /install/snakemake
 ---
 
 [Snakemake](https://snakemake.readthedocs.io/en/stable/) is an easy to use workflow management system. Contrary to *make*, which was designed by

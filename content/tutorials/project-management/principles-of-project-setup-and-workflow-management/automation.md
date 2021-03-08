@@ -8,6 +8,8 @@ keywords: "make, data, automation, build, recipe, pipeline"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 Weight: 4
+aliases:
+  - /automate/project-setup
 ---
 
 ## Overview

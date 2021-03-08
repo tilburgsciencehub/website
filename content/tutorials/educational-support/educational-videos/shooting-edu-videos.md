@@ -10,6 +10,8 @@ draft: false
 weight: 3
 author: "Andrea Antonacci"
 authorlink: "https://www.tilburguniversity.edu/staff/a-d-antonacci"
+aliases:
+  - /shoot/educational-videos
 ---
 
 # Part 2

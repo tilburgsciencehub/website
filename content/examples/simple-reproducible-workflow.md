@@ -5,6 +5,8 @@ draft: false
 description: "A simple Make pipeline with R and LaTeX."
 keywords: "simple, R, LaTeX, workflow, example"
 weight: 2
+aliases:
+  - /try/simple-workflow
 ---
 
 ## Overview

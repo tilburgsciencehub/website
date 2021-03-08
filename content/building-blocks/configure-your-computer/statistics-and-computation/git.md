@@ -5,12 +5,14 @@ keywords: "git, github, installation, software, configuration, versioning, accou
 date: 2020-11-11T22:02:51+05:30
 draft: false
 weight: 11
+aliases:
+  - /get/git
+  - /install/git
 ---
 
 ## Installing Git and Setting Up Accounts
 
-Git is an open source version control system (VCS) that has gained a lot of traction in the programming community. We will use version control to keep track of the files we write, and the changes we make to them. Using Git, we can roll back to any previous version of
-a file, and easily collaborate with others on source code.
+Git is an open source version control system (VCS) that has gained a lot of traction in the programming community. We will use version control to keep track of the files we write, and the changes we make to them. Using Git, we can roll back to any previous version of a file, and easily collaborate with others on source code.
 
 ## Let's create a GitHub account
 

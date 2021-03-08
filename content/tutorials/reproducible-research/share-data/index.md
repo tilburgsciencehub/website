@@ -6,6 +6,8 @@ description: "Document and share data for internal and external use"
 keywords: "data sharing"
 weight: 100
 draft: false
+aliases:
+  - /share/data
 ---
 
 ## Document and share data for internal and external use

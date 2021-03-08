@@ -6,6 +6,8 @@ weight: 6
 title: "Dry-run of Make and First Modifications"
 date: 2021-01-06T22:01:14+05:30
 draft: false
+aliases:
+  - /dry-run/pipeline-automation
 ---
 
 ## Dry-run of Make and first modifications to the data preparation scripts

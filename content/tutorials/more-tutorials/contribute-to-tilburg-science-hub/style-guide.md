@@ -7,6 +7,8 @@ description: "When contributing content to our platform, please follow our style
 keywords: "style, styling, guideline, contribute, writing"
 weight: 1005
 draft: false
+aliases:
+  - /contribute/style-guidelines
 ---
 
 ## Style Guidelines

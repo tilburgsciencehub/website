@@ -6,6 +6,8 @@ weight: 3
 title: "Download the Template"
 date: 2021-01-06T22:01:14+05:30
 draft: false
+aliases:
+  - /download/pipeline-automation
 ---
 
 ## Let's download the template

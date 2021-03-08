@@ -8,6 +8,8 @@ weight: 100
 draft: false
 author: "Pam Dupont"
 authorlink: "https://www.tilburguniversity.edu/staff/p-h-dupont"
+aliases:
+  - /learn/scrum
 ---
 
 ## How we learned to use Scrum

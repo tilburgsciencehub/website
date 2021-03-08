@@ -4,6 +4,10 @@ description: "File exhanges are essential to transfer data between different sta
 keywords: "file exchange, file, exchange, share, sharing"
 date: 2021-01-06T22:01:14+05:30
 draft: false
+aliases:
+  - /setup/file-exchanges
+  - /setup/aws-s3
+  - /use/dropbox
 ---
 
 [File exchanges](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/directories/#4-file-exchange) are essential to transfer data *between different stages of your pipeline*, and between *different co-authors* working on a project.
