@@ -1,9 +1,11 @@
 ---
 title: "Workflow Checklist"
 description: "Audit data and computation efficient projects."
-weight: 1
+weight: 3
 keywords: "make, makefile, automation, recipes, workflow"
 date: 2021-01-06T22:01:14+05:30
+aliases:
+  - "/workflow-checklist"
 ---
 
 ## Overview
