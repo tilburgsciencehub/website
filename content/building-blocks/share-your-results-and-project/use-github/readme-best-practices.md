@@ -5,6 +5,9 @@ keywords: "git, commands, important, essential, cheat"
 date: 2021-02-08
 draft: false
 weight: 5
+aliases:
+  - "/readme-best-practices"
+
 ---
 
 ## Overview
