@@ -1,5 +1,5 @@
 ---
-tutorialtitle: "Launch an Academic Website in 15 Minutes"
+tutorialtitle: "Create Your Own Website in 15 Minutes"
 type: "hugo-website"
 indexexclude: "true"
 title: "Add Some Content"
@@ -43,7 +43,7 @@ What's within the `---` is called **front matter**. You can learn more about pre
 Notice the variable `draft: true`. When the site gets built, articles set to drafts won't be deployed. Set draft to false if you want to include them in your public website.
 {{% /tip %}}
 
-## Preview your Edits
+## Preview Your Edits
 
 You know how to edit your content now. Wouldn't it be great if you could preview how your articles will look like once the website gets published?
 

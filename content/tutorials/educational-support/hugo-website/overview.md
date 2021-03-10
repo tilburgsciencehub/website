@@ -1,5 +1,5 @@
 ---
-tutorialtitle: "Launch an Academic Website in 15 Minutes"
+tutorialtitle: "Create Your Own Website in 15 Minutes"
 type: "hugo-website"
 title: "Overview"
 description: "Learn how you can launch your very own static website in a quick and easy way."
@@ -14,7 +14,7 @@ aliases:
   - /launch/hugo-website
 ---
 
-## Use Cases
+## Why to Launch a Website?
 
 Whether you want to spread the word about your research work or to share content with your students in open education classes, getting your very own website to do so would help you immensely.
 
