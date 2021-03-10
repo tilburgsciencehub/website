@@ -5,6 +5,9 @@ keywords: "download, import data, store, collect"
 date: 2021-02-08
 draft: false
 weight: 1
+aliases:
+  - /store/data
+  - /store/data-programmatically
 ---
 
 ## Overview

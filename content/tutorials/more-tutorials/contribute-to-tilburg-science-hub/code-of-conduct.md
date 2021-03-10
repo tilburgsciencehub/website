@@ -7,6 +7,8 @@ description: "When contributing content to our platform, please abide by our cod
 keywords: "code of conduct, conduct, contribute, guideline"
 weight: 1006
 draft: false
+aliases:
+  - /contribute/code-of-conduct
 ---
 
 ## Code of Conduct

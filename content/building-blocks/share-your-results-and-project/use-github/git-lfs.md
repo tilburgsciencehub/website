@@ -7,6 +7,9 @@ date: 2021-01-06T22:01:14+05:30
 draft: false
 author: "Andrea Antonacci"
 authorlink: "https://www.tilburguniversity.edu/staff/a-d-antonacci"
+aliases:
+  - /use/git-lfs
+  - /share/large-files-on-github
 ---
 
 <!-- This is a template. Please replace the content while keeping this structure.

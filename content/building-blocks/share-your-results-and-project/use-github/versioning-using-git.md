@@ -5,6 +5,9 @@ keywords: "git, github, versioning, pull, push, fork, share, commit, add"
 weight: 1
 date: 2020-11-11T22:01:14+05:30
 draft: false
+aliases:
+  - /learn/versioning
+  - /use/git
 ---
 
 ## Overview

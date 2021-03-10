@@ -6,6 +6,8 @@ weight: 8
 title: "Extending the Analysis"
 date: 2021-01-06T22:01:14+05:30
 draft: false
+aliases:
+  - /analyze/pipeline-automation
 ---
 
 ## Let's modify the analysis

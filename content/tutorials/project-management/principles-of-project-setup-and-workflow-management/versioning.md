@@ -8,6 +8,8 @@ keywords: "git, versioning, github, configuration, repository"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 7
+aliases:
+  - /versioning/project-setup
 ---
 
 ## Overview

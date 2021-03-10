@@ -7,6 +7,8 @@ description: "This is the easiest possible way to contribute to Tilburg Science 
 keywords: "contribute, method, email, easy, guide"
 weight: 1002
 draft: false
+aliases:
+  - /contribute/mode-1
 ---
 
 ## The Easiest Possible Way

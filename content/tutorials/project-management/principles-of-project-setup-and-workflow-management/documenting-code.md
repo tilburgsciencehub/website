@@ -8,6 +8,8 @@ description: "Documenting your project's workflow, not only for others, but also
 keywords: "document, code, workflow, reference, comment, documentation"
 draft: false
 weight: 6
+aliases:
+  - /document-code/project-setup
 ---
 
 ## Overview

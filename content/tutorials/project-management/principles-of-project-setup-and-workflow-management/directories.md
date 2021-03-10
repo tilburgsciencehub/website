@@ -9,6 +9,8 @@ keywords: "data, directory, directories, data management, structure, raw, genera
 date: 2020-10-10T22:01:14+05:30
 draft: false
 Weight: 3
+aliases:
+  - /structure/project-setup
 ---
 
 ## Overview

@@ -7,6 +7,8 @@ description: "Tutorials teach our users how to combine individual building block
 keywords: "template, pull, requests, contribute, github"
 weight: 1004
 draft: false
+aliases:
+  - /contribute/mode-3
 ---
 
 ## The Ideal Way: Issue a Pull Request

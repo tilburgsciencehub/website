@@ -6,6 +6,8 @@ weight: 4
 title: "Running the Workflow"
 date: 2021-01-06T22:01:14+05:30
 draft: false
+aliases:
+  - /run/pipeline-automation
 ---
 
 ## Let's run the workflow

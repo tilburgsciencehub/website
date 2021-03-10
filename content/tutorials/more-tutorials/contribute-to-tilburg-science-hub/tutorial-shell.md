@@ -7,6 +7,8 @@ INSTRUCTIONS:
 - IMPORTANT! Replace the # of the weight parameter with an integer (no quotes are needed). This number indicates the relative position of this page within the tutorial hierarchy. The ordering of all pages inside a tutorial folder is based on their weight. Pages with lower weight appear at the top.
 - IMPORTANT! Remove the indexexclude: "true" line from the FIRST page of your tutorial. All subsequent pages should have it instead.
 - If your tutorial is only one page long, remove the indexexclude: "true" line, create a folder named like your "type" below, and save your page as "index.md" inside that folder.
+- If you want to be credited, fill in the author and authorlink fields below. If you want to remain anonymous, delete those.
+- Provide at least one short link for each of your tutorial pages. Combine an action verb and a noun like this: /verb/noun (ex. /install/python).
 - Remove these instructions before submitting. Your article should start with the three dashes --- and the following parameters.
 ---
 tutorialtitle: "Your Tutorial Title"
@@ -17,6 +19,13 @@ keywords: "any, relevant, keywords, separated, by, commas, like, this"
 date: YYYY-MM-DD
 weight: #
 indexexclude: "true"
+author: "Your Name"
+authorlink: "A link to your personal webpage"
+aliases:
+  - /verb/noun
+  - /do/this
+  - /get/that
+  - add as many as you want, but at least one
 ---
 
 ## Overview

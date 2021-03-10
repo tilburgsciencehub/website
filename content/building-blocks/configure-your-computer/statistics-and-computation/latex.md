@@ -5,6 +5,9 @@ keywords: "latex, tex, lyx, installation, software, configuration, paper, writin
 date: 2020-11-11T22:02:51+05:30
 draft: false
 weight: 10
+aliases:
+  - /get/latex
+  - /install/latex
 ---
 
 LaTeX is a great typesetting system that includes a lot of features that allow to produce scientific documents. Many researchers use LaTeX to produce their papers and presentations, and many journals require authors to hand in their articles in a LaTeX format.

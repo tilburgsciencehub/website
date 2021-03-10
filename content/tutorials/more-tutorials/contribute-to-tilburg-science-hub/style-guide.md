@@ -7,6 +7,8 @@ description: "When contributing content to our platform, please follow our style
 keywords: "style, styling, guideline, contribute, writing"
 weight: 1005
 draft: false
+aliases:
+  - /contribute/style-guidelines
 ---
 
 ## Style Guidelines
@@ -102,7 +104,12 @@ This is an example
 - Avoid headings to start with articles and "How to...". Of course we're telling you how to do it.
 - Use `##`, `###`, `####` for headers, not a standard line on **bold**. Use `**` only for bolded words or short sentences when you want to stress a concept. Learn more about markdown syntax [here](https://www.markdownguide.org/basic-syntax/).
 - Do **NOT** use `#` for headers. Instead, use the appropriate `title` flag for your main header.
+- Suggest at least one short link for your article! Combine an action verb and a noun like this: /VERB/NOUN (/do/this, /learn/that, /get/me). Ex. https://tilburgsciencehub.com/get/python. You will find these instructions in the contribution template.
 - Be consistent and double-check your file before sending!
+
+{{% tip %}}
+If you want to be credited for your work, don't forget to fill in the `author` and `authorlink` fields at the top of our templates with your name and a link to your personal webpage, respectively.
+{{% /tip %}}
 
 {{% warning %}}
 **The naming of your file matters!**

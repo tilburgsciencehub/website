@@ -8,6 +8,8 @@ keywords: "git, github, collaboration, sharing, share, repository, gist, contrib
 date: 2020-11-11T22:01:14+05:30
 draft: false
 weight: 8
+aliases:
+  - /collaborate/project-setup
 ---
 
 ## Overview

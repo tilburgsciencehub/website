@@ -5,6 +5,9 @@ keywords: "web scraping, scraping, automation, browser, chromedriver"
 weight: 2
 date: 2021-01-06T22:01:14+05:30
 draft: false
+aliases:
+  - /configure/python-for-scraping
+  - /get/chromedriver
 ---
 
 # Web Scraping Using an Automated Browser

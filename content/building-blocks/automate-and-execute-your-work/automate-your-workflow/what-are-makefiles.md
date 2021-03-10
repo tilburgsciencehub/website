@@ -4,6 +4,9 @@ description: "Learn how to use makefiles to specify instructions and recipes for
 weight: 1
 keywords: "make, makefile, automation, recipes, workflow"
 date: 2021-01-06T22:01:14+05:30
+aliases:
+  - /learn/makefiles
+  - /use/makefiles
 ---
 
 ## Overview

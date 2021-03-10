@@ -5,6 +5,8 @@ keywords: "links, initiatives, style, optimize, definition, human"
 weight: 3
 date: 2020-11-11T22:01:14+05:30
 draft: true
+aliases:
+  - /check-out/other-initiatives
 ---
 
 Here we post some links to material we've discovered recently and find useful.
