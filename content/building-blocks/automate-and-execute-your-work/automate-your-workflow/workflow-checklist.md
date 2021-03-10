@@ -15,8 +15,8 @@ As time goes on, projects tend to become messy which inhibits reproducibility. H
 ## Checklist
 
 ### Project level
-* Implement a consistent [directory structure](../directories/#working-example): data/src/gen
-* Include [readme with project description](../documenting-code/#main-project-documentation) and technical instruction how to run/build the project
+* Implement a consistent [directory structure](https://tilburgsciencehub.com/tutorials/project-management/principles-of-project-setup-and-workflow-management/directories/#working-example): data/src/gen
+* Include [readme with project description](https://tilburgsciencehub.com/tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-code/#main-project-documentation) and technical instruction how to run/build the project
 * Store any authentication credentials outside of the repository (e.g., in a JSON file), NOT clear-text in source code
 * Mirror your `/data` folder to a secure backup location; alternatively, store all raw data on a secure server and download relevant files to `/data`
 
@@ -26,15 +26,15 @@ As time goes on, projects tend to become messy which inhibits reproducibility. H
 * Create subdirectories for generated files in /gen/[pipeline-stage-name]/: temp, output, and audit.	
 * Make all file names relative, and not absolute (i.e., never refer to C:/mydata/myproject, but only use relative paths, e.g., ../output)
 * Create directory structure from within your source code, or use .gitkeep
-* Create [subdirectories for generated files](../directories/#working-example) in `/gen/[pipeline-stage-name]/`: `temp`, `output`, and `audit`.
+* Create subdirectories for generated files in `/gen/[pipeline-stage-name]/`: `temp`, `output`, and `audit`.
 * Make all file names relative, and not absolute (i.e., never refer to C:/mydata/myproject, but only use relative paths, e.g., ../output)
 * Create directory structure from within your source code, or use .gitkeep
 
 
 *Automation & documentation*  
-* Have a [`makefile`](../automation)
-* Alternatively, include a [readme with running instructions](../automation/#are-there-alternatives-to-make)
-* Make dependencies between source code and files-to-be-built explicit, so that `make` automatically recognizes when a rule does not need to be run [(properly define targets and source files)](../automation)
+* Have a [`makefile`](https://tilburgsciencehub.com/tutorials/project-management/principles-of-project-setup-and-workflow-management/automation/)
+* Alternatively, include a [readme with running instructions](https://tilburgsciencehub.com/tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-code/#main-project-documentation)
+* Make dependencies between source code and files-to-be-built explicit, so that `make` automatically recognizes when a rule does not need to be run (properly define targets and source files)
 * Include function to delete temp, output files, and audit files in makefile
 
 *Versioning*
