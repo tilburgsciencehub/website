@@ -67,7 +67,7 @@ Netlify can host your website for free, it's very easy to use since it's linked 
 
 ![Deploy with Netlify](https://d33wubrfki0l68.cloudfront.net/a9f55d92792a554cb775cd0d10eddf445338b83a/0a424/images/hosting-and-deployment/hosting-on-netlify/netlify-deploying-site.gif)
 
-8. Once it's done, you should see a successful message and an URL for your website (which has been automatically generated). You can change the URL in "Settings". You can now **visit your live website!**
+8. Once it's done, you should see a successful message and an URL for your website (which has been automatically generated for you). You can change the URL in "Settings". You can now **visit your live website!**
 
 ![Netlify successful message](https://d33wubrfki0l68.cloudfront.net/e2ea775b0985b93f2e0d7c88ae134e90c3e7446e/8a3d7/images/hosting-and-deployment/hosting-on-netlify/netlify-deploy-published.jpg)
 

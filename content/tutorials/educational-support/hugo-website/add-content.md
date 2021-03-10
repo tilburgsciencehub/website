@@ -18,7 +18,7 @@ aliases:
 ## The `content` Folder
 Now that you've set up a theme for your Hugo website, you can finally start to write some content!
 
-Just **manually create Markdown files** using a text editor and place them in the `content` folder. The format should look something like this: `content/<CATEGORY>/<FILE>.md`. Usually, you can create as many categories as you want.
+Just **manually create Markdown files** using a text editor and place them in the `content` folder. The format should look something like this: `content/<CATEGORY>/<FILE>.md`. Usually, you can create as many categories as you want, but it's better to check the theme documentation.
 
 {{% example %}}
 For instance, the [About page of odcm.hannesdatta.com](https://odcm.hannesdatta.com/docs/about/) is placed inside `content/docs/about/`.
@@ -79,7 +79,7 @@ Press Ctrl+C to stop
 
 Now, simply **navigate to your site in your browser at [http://localhost:1313/](http://localhost:1313/)**.
 
-If you now edit or create new files, you should see them updating live. If they don't, try force refresh your browser (cmd/ctrl + R).
+If you edit or create new files, you should see them updating live. If they don't, try force refresh your browser (cmd/ctrl + R).
 
 ## Build the Website
 
@@ -91,14 +91,14 @@ hugo
 
 Hugo will now create all your HTML, CSS and JS assets needed for your website. The output will be in the `/public/` directory.
 
-Congratulations, you've built your own website!
+Congratulations, **you've built your own website!**
 
 Now, if you're run your own web server, just copy the `/public/` directory to it to deploy your website.
 
 If you don't, in the next section you will learn how to publish your new website for free and in an easy way, using GitHub and Netlify.
 
 {{% tip %}}
-Don't forget to tweak your configuration file before building and realising your website to the public. In particular, you may want to update your base URL and website title accordingly.
+Don't forget to tweak your configuration file before building and releasing your website to the public. In particular, you may want to update your base URL and website title accordingly.
 ```
 baseURL = "https://example.org/"
 languageCode = "en-us"
