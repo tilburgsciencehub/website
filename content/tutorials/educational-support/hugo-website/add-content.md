@@ -18,7 +18,7 @@ aliases:
 ## The `content` Folder
 Now that you've set up a theme for your Hugo website, you can finally start to write some content!
 
-Just **manually create Markdown files** using a text editor and place them in the `content` folder. The format should look something like this: `content/<CATEGORY>/<FILE>.md`. Usually, you can create as many categories as you want, but it's better to check the theme documentation.
+Just **manually create Markdown files** using a text editor and place them in the `content` folder. The path should look something like this: `content/<CATEGORY>/<FILE>.md`. Usually, you can create as many categories as you want, but it's better to check the theme documentation.
 
 {{% example %}}
 For instance, the [About page of odcm.hannesdatta.com](https://odcm.hannesdatta.com/docs/about/) is placed inside `content/docs/about/`.
