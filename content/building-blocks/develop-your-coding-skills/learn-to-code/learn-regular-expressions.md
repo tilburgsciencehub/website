@@ -1,5 +1,5 @@
 ---
-title: "Regular Expressions"
+title: "Learn Regular Expressions"
 description: "Formulate powerful string search queries with regular expressions"
 keywords: "regular expressions, regex, strings, string processing, characters, regexp, search pattern, string searching"
 date: 2020-11-11T22:02:51+05:30

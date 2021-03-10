@@ -2,7 +2,7 @@
 title: "Infrastructure Requirements"
 description: "The main considerations before launching any empirical research project"
 keywords: "collaboration, security, data management, run-time, data storage, computation, code versioning"
-weight: 1
+weight: 2
 date: 2021-03-05T22:01:14+05:30
 draft: false
 ---
