@@ -3,7 +3,7 @@ title: "Configure Environment Variables"
 description: "This block explains how to list contents, download content from and upload content to a AWS S3 bucket."
 keywords: "environment variables"
 date: 2021-02-17
-weight: 3
+weight: 2
 aliases:
   - "/configure-environment-variables"
 ---
