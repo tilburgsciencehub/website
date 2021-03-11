@@ -1,13 +1,13 @@
 ---
 title: "README Best Practices"
-description: "How to write a convincing README."
+description: "Learn how to write a convincing and effective README file."
 keywords: "git, commands, important, essential, cheat"
 date: 2021-02-08
 draft: false
-weight: 5
+weight: 4
 aliases:
-  - "/readme-best-practices"
-
+  - /write/readme
+  - /learn/readme-best-practices
 ---
 
 ## Overview
@@ -16,24 +16,24 @@ A README is like the book cover of your project. It's the first thing a person s
 And while we all loathe sheazy marketing, documentation can't be sleazy because it solves a real purpose: teaching everyone about the project. In this building block, we provide you with a template and some examples you can use for your own projects.
 
 
-### Markdown
+## Markdown
 
 A README is a markdown (`.md`) file that you can format text using a a plain-text editor. Like an academic paper, we recommend working with headers and subheaders to impose a structure. Better still, if you link to other files within the repository so that the reader not only knows what the project is about but also which files are a priority.
 
 {{% tip %}}
-Below we list the most common markdown commands: 
+Below we list the most common markdown commands:
 
 * `**This is bold text**` = **This is bold text**
 * `*This text is italicized*` = *This is bold text*
 * `This is a [link](https://tilburgsciencehub.com)` = This is a [link](https://tilburgsciencehub.com)
 * To create a heading, add 1-6 `#` symbols before your header. The number of hashtags will determine the size of the heading.
 * Images can be inserted by linking to either a image URL (e.g., [example](https://www.tilburguniversity.edu/sites/default/files/styles/epic_compact_large/public/image/TilburgU%20logo.jpg?h=f0edcced&itok=lnj4S1OC)) or a relative filepath ([`../git_workflow.png`](../git_workflow.png)). Use the following syntax: `![image description](link)`
-* Visit [this](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax) cheatsheet for a comprehsensive list of markdown commands. 
+* Visit [this](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax) cheatsheet for a comprehsensive list of markdown commands.
 
 {{% /tip %}}
 
 
-### Structure
+## Structure
 
 We recommend to at least include the following sections in your README:
 
@@ -58,7 +58,7 @@ Second, summarize your results concisely. Make use of subheaders where appropria
 
 ## Repository overview
 
-Provide an overview of the directory structure and files, for example: 
+Provide an overview of the directory structure and files, for example:
 
 ├── README.md
 ├── data
@@ -74,7 +74,7 @@ Provide an overview of the directory structure and files, for example:
 
 ## Running instructions
 
-Explain to potential users how to run/replicate your workflow. If necessary, touch upon the required input data, which secret credentials are required (and how to obtain them), which software tools are needed to run the workflow (including links to the installation instructions), and how to run the workflow. 
+Explain to potential users how to run/replicate your workflow. If necessary, touch upon the required input data, which secret credentials are required (and how to obtain them), which software tools are needed to run the workflow (including links to the installation instructions), and how to run the workflow.
 
 
 ## More resources
@@ -99,7 +99,7 @@ Rather than creating the repository overview all by hand, you can leverage the `
 
 
 
-### Examples
+## Examples
 
 The repositories below serve as examples from which you can draw inspiration for your own README files.
 
@@ -109,10 +109,10 @@ The repositories below serve as examples from which you can draw inspiration for
 * [musicMetadata](https://github.com/hannesdatta/musicMetadata)
 
 
-### Advanced Use Cases
+## Advanced Use Cases
 
 By default Github showcases your pinned repositories on your profile page (click on your profile picture in the top right corner > "Your profile"). A little secret is that you can add a README to your profile page by creating a new repository called `<YOUR_USERNAME>`. Make sure it's public and initialize it with a README to get started. As you can see in [this](https://www.youtube.com/watch?v=Y1z7_GfEPiE) video, you can even spice things up with emojis and gifs!
 
 {{% tip %}}
-Want to go the extra mile? Include your [GitHub Stats Card](https://github.com/anuraghazra/github-readme-stats) in your README! Simply add `https://github-readme-stats.vercel.app/api?username=<YOUR_USERNAME>` to the end of your README to incorporate a realtime widget of your number of stars, commits, PRs, issues, and contributions on Github ([see example](https://github-readme-stats.vercel.app/api?username=hannesdatta)). 
+Want to go the extra mile? Include your [GitHub Stats Card](https://github.com/anuraghazra/github-readme-stats) in your README! Simply add `https://github-readme-stats.vercel.app/api?username=<YOUR_USERNAME>` to the end of your README to incorporate a realtime widget of your number of stars, commits, PRs, issues, and contributions on Github ([see example](https://github-readme-stats.vercel.app/api?username=hannesdatta)).
 {{% /tip %}}

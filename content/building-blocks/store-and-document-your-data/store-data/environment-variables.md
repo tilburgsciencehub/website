@@ -1,11 +1,11 @@
 ---
 title: "Configure Environment Variables"
-description: "This block explains how to list contents, download content from and upload content to a AWS S3 bucket."
-keywords: "environment variables"
+description: "Learn how to configure environment variables to store personal credentials and secret keys."
+keywords: "environment variables, configuration, password, secret, credentials"
 date: 2021-02-17
 weight: 2
 aliases:
-  - "/configure-environment-variables"
+  - /configure/environment-variables
 ---
 
 ## Overview <!-- Goal of the Building Block -->
@@ -21,10 +21,10 @@ Never upload a script that contains privacy-sensitive information to Github. Eve
 ## Configure Environment Variables
 
 ### Mac/Linux
-1. Go to the terminal and type `printenv` to list all environment variables stored on your machine. 
-2. Open the terminal, go to your user directory (shortcut: `cd ~`), and type `nano .bash_profile` to open a text editor in the terminal. 
-3. Within this window you can create new variables as follows: `export [VARIABLE_NAME]="the string value you want to store";`. Note that there is no space between the variable name and its value and that the string is enclosed in double-quotes. 
-4. Exit the editor by pressing Ctrl + X, choose `Y` (to save changes), and finally press `Enter`. 
+1. Go to the terminal and type `printenv` to list all environment variables stored on your machine.
+2. Open the terminal, go to your user directory (shortcut: `cd ~`), and type `nano .bash_profile` to open a text editor in the terminal.
+3. Within this window you can create new variables as follows: `export [VARIABLE_NAME]="the string value you want to store";`. Note that there is no space between the variable name and its value and that the string is enclosed in double-quotes.
+4. Exit the editor by pressing Ctrl + X, choose `Y` (to save changes), and finally press `Enter`.
 5. You can check whether everything worked out correctly by restarting your terminal and typing `printenv` (`VARIABLE_NAME` should be listed there now!). If the new environment variables didn't show up, you may need to use `nano .zshrc` instead of `nano .bash_profile` (see step 2).
 
 ### Windows
@@ -42,13 +42,13 @@ After you have imported the `os` (or `Sys`) library, you can easily assign the v
 
 ```python
 import os
-# VARIABLE_NAME is the name of the environment variable you defined in the terminal 
+# VARIABLE_NAME is the name of the environment variable you defined in the terminal
 api_password = os.environ['VARIABLE_NAME']   
 ```
 
 ```R
 library(Sys)
-# VARIABLE_NAME is the name of the environment variable you defined in the terminal 
+# VARIABLE_NAME is the name of the environment variable you defined in the terminal
 api_password = Sys.getenv(c("VARIABLE_NAME"))
 ```
 
@@ -60,4 +60,3 @@ api_password = Sys.getenv(c("VARIABLE_NAME"))
 
 - [Mac/Linux tutorial](https://www.youtube.com/watch?v=5iWhQWVXosU)
 - [Windows tutorial](https://www.youtube.com/watch?v=IolxqkL7cD8)
-

@@ -5,7 +5,7 @@ weight: 3
 keywords: "make, makefile, automation, recipes, workflow"
 date: 2021-01-06T22:01:14+05:30
 aliases:
-  - "/workflow-checklist"
+  - "/audit/workflow-checklist"
 ---
 
 ## Overview
@@ -15,44 +15,44 @@ As time goes on, projects tend to become messy which inhibits reproducibility. H
 ## Checklist
 
 ### Project level
-* Implement a consistent [directory structure](../directories/#working-example): data/src/gen
-* Include [readme with project description](../documenting-code/#main-project-documentation) and technical instruction how to run/build the project
+* Implement a consistent [directory structure](/tutorials/project-management/principles-of-project-setup-and-workflow-management/directories/#working-example): data/src/gen
+* Include [readme with project description](/tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-code/#main-project-documentation) and technical instruction how to run/build the project
 * Store any authentication credentials outside of the repository (e.g., in a JSON file), NOT clear-text in source code
 * Mirror your `/data` folder to a secure backup location; alternatively, store all raw data on a secure server and download relevant files to `/data`
 
 ### Throughout the Pipeline
-*File/directory structure*  
+#### File/directory structure  
 * Create subdirectory for source code: /src/[pipeline-stage-name]/
-* Create subdirectories for generated files in /gen/[pipeline-stage-name]/: temp, output, and audit.	
+* Create subdirectories for generated files in /gen/[pipeline-stage-name]/: temp, output, and audit.
 * Make all file names relative, and not absolute (i.e., never refer to C:/mydata/myproject, but only use relative paths, e.g., ../output)
 * Create directory structure from within your source code, or use .gitkeep
-* Create [subdirectories for generated files](../directories/#working-example) in `/gen/[pipeline-stage-name]/`: `temp`, `output`, and `audit`.
+* Create subdirectories for generated files in `/gen/[pipeline-stage-name]/`: `temp`, `output`, and `audit`.
 * Make all file names relative, and not absolute (i.e., never refer to C:/mydata/myproject, but only use relative paths, e.g., ../output)
 * Create directory structure from within your source code, or use .gitkeep
 
 
-*Automation & documentation*  
-* Have a [`makefile`](../automation)
-* Alternatively, include a [readme with running instructions](../automation/#are-there-alternatives-to-make)
-* Make dependencies between source code and files-to-be-built explicit, so that `make` automatically recognizes when a rule does not need to be run [(properly define targets and source files)](../automation)
+#### Automation & documentation
+* Have a [`makefile`](/automate/project-setup)
+* Alternatively, include a [readme with running instructions](/tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-code/#main-project-documentation)
+* Make dependencies between source code and files-to-be-built explicit, so that `make` automatically recognizes when a rule does not need to be run (properly define targets and source files)
 * Include function to delete temp, output files, and audit files in makefile
 
-*Versioning*
-* Version all source code stored in `/src` (i.e., add to Git/GitHub) 
+#### Versioning
+* Version all source code stored in `/src` (i.e., add to Git/GitHub)
 * Do not version any files in `/data` and `/gen` (i.e., do NOT add them to Git/GitHub)
 * Want to exclude additional files (e.g., files that (unintentionally) get written to `/src`? Use .gitignore for files/directories that need not to be versioned
 
-*Housekeeping*
+#### Housekeeping
 * Have short and accessible variable names
 * Loop what can be looped
 * Break down "long" source code in subprograms/functions, or split script in multiple smaller scripts
 * Delete what can be deleted (including unnecessary comments, legacy calls to packages/libraries, variables)
 * Use of asserts (i.e., make your program crash if it encounters an error which is not recognized as an error)
 
-*Testing for portability*
-* Tested on own computer (entirely wipe `/gen`, re-build the entire project using `make`) 
+#### Testing for portability
+* Tested on own computer (entirely wipe `/gen`, re-build the entire project using `make`)
 * Tested on own computer (first clone to new directory, then re-build the entire project using `make`)
-* Tested on different computer (Windows) 
+* Tested on different computer (Windows)
 * Tested on different computer (Mac)
 * Tested on different computer (Linux)
 
@@ -66,4 +66,4 @@ This tool has worked great for us: [GitHub credentials scanner](https://geekflar
 
 ## See Also
 
-- [This](https://tilburgsciencehub.com/tutorials/project-management/principles-of-project-setup-and-workflow-management/overview/) tutorial covers the fundemantal principles of project setup and workflows underlying this checklist.
+- [This tutorial](/tutorials/project-management/principles-of-project-setup-and-workflow-management/overview/) covers the fundemantal principles of project setup and workflows underlying this checklist.
