@@ -28,7 +28,7 @@ The syntax consists of 5 symbols - each separated by a space - which denote the 
 └─────────────────────  Minute   (0 - 59)
 ```
 
-If needed, you can use commas to insert more than single digit (e.g., `15,45 * * * *` = every 15th and 45th minute every hour), dashes to define a range (e.g., `0 0-5 * * *` = 0:00, 01:00, ..., 05:00 every day), and slashes to specify the relative frequency (e.g., `*/10 * * * *` = every 10 minutes).
+If needed, you can use commas to insert more than a single digit (e.g., `15,45 * * * *` = every 15th and 45th minute every hour), dashes to define a range (e.g., `0 0-5 * * *` = 0:00, 01:00, ..., 05:00 every day), and slashes to specify the relative frequency (e.g., `*/10 * * * *` = every 10 minutes).
 
 {{% example %}}
 `30 * * * *` = every 30th minute of every hour every day    
@@ -43,7 +43,7 @@ If needed, you can use commas to insert more than single digit (e.g., `15,45 * *
 
 #### Configuring cron jobs
 
-1. Double-check whether your script works as expected and then save the Python script as a **`.py` file** (so not a `.ipynb` notebook!). For example, copy-paste the contents from Jupyter to Spyder. We'd recommend storing the script in your root directory (the parent directory of your Desktop and Documents among others) to avoid permission issues.
+1. Double-check whether your script works as expected and then save the Python script as a **`.py` file** (so not a `.ipynb` notebook!). For example, copy-paste the contents from Jupyter to Spyder. We recommend storing the script in your root directory (the parent directory of your Desktop and Documents among others) to avoid file permission issues.
 
 2. Open the Terminal and type `crontab -e`. This opens the so-called vim editor which you can think of as a notepad within the terminal. 
 3. Press `I` so that you can edit the text.
@@ -54,10 +54,10 @@ If needed, you can use commas to insert more than single digit (e.g., `15,45 * *
 ```
 5. Press Esc and type `:wq` followed by Enter to save your changes (if a window pops up choose OK). 
 
-6. If you now run `crontab -l` your newly scheduled task should be listed. We'd recommend keeping an eye out whether your scheduler works as expected. If not, you can make changes to the cron file at any time (`crontab -e` removes all existing jobs).
+6. If you now run `crontab -l` your newly scheduled task should be listed. We recommend keeping an eye out whether your scheduler works as expected, especially in the beginning. If not, you can make changes to the cron file at any time. To remove all existing tasks and clean up the cron file type `crontab -r`.
 
 {{% tip %}}
-Since a single cron file can contain multiple tasks, we'd recommend putting a comment (`#...`) above each line that describes what the job is about.
+Since a single cron file can contain multiple tasks, we'd recommend putting a comment (`#...`) above each line that describes what the job is about. This serves as documentation for your future self.
 {{% /tip %}}
 
 
@@ -95,7 +95,7 @@ See the tip below on how to obtain the Python installation path. For example, th
 10. Click **"OK"** and fill out your password. If done correctly, your newly scheduled task should be added to the Task Scheduler Library window.
 
 {{% tip %}}
-Run the following Python command to figure out the path of your Python installation. 
+Run the following command in, for example Spider or a Jupyter Notebook, to figure out the path of your Python installation. 
 ```python
 import os, sys
 print(os.path.dirname(sys.executable))
@@ -104,4 +104,4 @@ print(os.path.dirname(sys.executable))
 
 ## See Also
 
-- [This](https://crontab.guru) website converts cron syntax into human-readable language. For some practice, click on *random* and try to write the cron expressions yourself!
+- [This](https://crontab.guru) website converts cron syntax into human-readable language. For some practice, click on *random* and try to write the cron expressions yourself (without looking at the answer of course)!
