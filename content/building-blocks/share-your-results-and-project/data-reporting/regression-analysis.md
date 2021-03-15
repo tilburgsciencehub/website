@@ -10,13 +10,12 @@ aliases:
 ---
 
 ## Overview
-XXX
-
+In the social sciences regresion analysis is a popular tool to estimate relationships between a dependent variable and one or more dependent variables. It is a way to find trends in data, quantify the impact of input variables, and make predictions for unseen data. In this building block, we illustrate how to estimate a model, identify outliers, plot a trend line, make predictions, and export the results in a format suitable for a paper.
 
 ## Code
 
 ### Estimate Model
-Linear regression (`lm`) is suitable for a response variable that is numeric. For logical values (e.g., did a customer churn: yes/no), you can estimate a logistic regression model (`glm`). The code sample below estimates a model, checks the model assumptions, and shows the regression coefficients.
+Linear regression (`lm`) is suitable for a response variable that is numeric. For logical values (e.g., did a customer churn: yes/no), you need to estimate a logistic regression model (`glm`). The code sample below estimates a model, checks the model assumptions, and shows the regression coefficients.
 
 * Model transformations can be incorporated into the formula, for example: `formula = log(y) ~ I(x^2)`.
 * The coefficients (`coefficients(mdl)`), predictions for the original data set (`fitted(mdl)`), and residuals (`residuals(mdl)`) can be directly derived from the model object.
@@ -94,14 +93,24 @@ prediction_data
 {{% /codeblock %}}
 
 
+### Export Model Output
+Convert regression coefficients of `mdl_1` and `mdl_2` into a HTML file that can be copied into a paper.
+
+{{% codeblock %}}
+```R
+library(stargazer)
+
+stargazer(mdl_1, mdl_2,
+          title = "Figure 1",
+          column.labels = c("Model 1", "Model 2"), 
+          type="html",
+          out="output.html"  
+          )
+```
+{{% /codeblock %}}
 
 
 ## Example
+This [tutorial](https://dprep.hannesdatta.com/docs/building-blocks/regression-analysis/) outlines how to run, evaluate, and export regression model results for the `cars` dataset.  In particular, it analyzes the relationship between a car’s speed and the stop distance. 
 
-The [Shiny app](https://royklaassebos.shinyapps.io/dPrep_Demo_Google_Mobility/) below  visualizes Google’s COVID-19 Community Mobility Reports of the Netherlands. A step-by-step tutorial (incl. source code) can be found [here](https://dprep.hannesdatta.com/docs/building-blocks/deployment-reporting/).
-
-![](../images/demo_app.png)
-
-## See Also
-* [Interactive Web Apps with shiny Cheat Sheet](https://shiny.rstudio.com/images/shiny-cheatsheet.pdf)
-* [Shiny User Showcase](https://shiny.rstudio.com/gallery/)
+![](../images/trend_plots.png)
