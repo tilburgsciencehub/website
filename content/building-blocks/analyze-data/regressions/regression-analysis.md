@@ -95,9 +95,9 @@ prediction_data
 {{% /codeblock %}}
 
 
-<!-- Reference to separate building block (export your R tables for print-ready publication)
-
 ### Export Model Output
+
+You can export your model output using `stargazer`. This package will create a nicely-formatted regression table for you in a variety of formats. You can learn more about it [here](/export/tables).
 
 Convert regression coefficients of `mdl_1` and `mdl_2` into a HTML file that can be copied into a paper.
 
@@ -113,8 +113,6 @@ stargazer(mdl_1, mdl_2,
           )
 ```
 {{% /codeblock %}}
-
--->
 
 
 {{% example %}}
