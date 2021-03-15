@@ -103,7 +103,7 @@ Rather than creating the repository overview all by hand, you can leverage the `
 
 The repositories below serve as examples from which you can draw inspiration for your own README files.
 
-* [Tilburg Science Hub](https://github.com/tilburgsciencehub/tsh-website)
+* [Tilburg Science Hub](https://github.com/tilburgsciencehub/website)
 * [Categorization of Spotify Playlists](https://github.com/hannesdatta/spotify-playlist-clustering)
 * [Hiding of Instagram Likes](https://github.com/RoyKlaasseBos/Hiding-Instagram-Likes)
 * [musicMetadata](https://github.com/hannesdatta/musicMetadata)

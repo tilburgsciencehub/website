@@ -13,13 +13,13 @@ aliases:
 
 ## There's a Better Way
 
-Like in [the first method](../mode-1), you can reach out to us with any request by opening an issue on [our GitHub repository](https://github.com/tilburgsciencehub/tsh-website). We prefer this method because it allow us to keep track of bugs and requests more easily, to merge duplicates, assign roles, etc...
+Like in [the first method](../mode-1), you can reach out to us with any request by opening an issue on [our GitHub repository](https://github.com/tilburgsciencehub/website). We prefer this method because it allow us to keep track of bugs and requests more easily, to merge duplicates, assign roles, etc...
 
 ### How to create an issue on GitHub
 
 It's very easy!
 
-1. First, navigate to **[our GitHub repository](https://github.com/tilburgsciencehub/tsh-website)**.
+1. First, navigate to **[our GitHub repository](https://github.com/tilburgsciencehub/website)**.
 
 2. Click "**Issues**" under the repository name.
 

@@ -47,5 +47,5 @@ We provide content in three forms:
 
 {{% tip %}}
 **Simply looking for our GitHub repository?**
-You can find it **[here](https://github.com/tilburgsciencehub/tsh-website)**.
+You can find it **[here](https://github.com/tilburgsciencehub/website)**.
 {{% /tip %}}
