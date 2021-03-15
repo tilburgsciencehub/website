@@ -1,13 +1,13 @@
 ---
 title: "Learn Regular Expressions"
-description: "Formulate powerful string search queries with regular expressions"
+description: "Learn how to formulate powerful string search queries with regular expressions."
 keywords: "regular expressions, regex, strings, string processing, characters, regexp, search pattern, string searching"
 date: 2020-11-11T22:02:51+05:30
 draft: false
-weight: 11
+weight: 3
 aliases:
-  - "/learn-regular-expressions"
-
+  - /learn/regex
+  - /learn/regular-expressions
 ---
 
 ## Overview
@@ -15,7 +15,7 @@ aliases:
 Regular expressions provide a concise language for describing patterns in strings. They make finding information easier and more efficient. That is, you can often accomplish with a single regular expression what would otherwise take dozens of lines of code. And while you can often come a long way with the default `strip()` and `replace()` functions, they have their own set of limitations. For example, how do you extract emails or hashtags from a text? Or how do you strip away HTML tags from the web page source code? Regular expressions fill this void and are a powerful skill for any data scientist's toolkit!
 
 {{% warning %}}
-At first sight, regular expressions can look daunting but don't be put off! In this building block, we break down the syntax into tangible pieces so that you can get up to speed step by step. 
+At first sight, regular expressions can look daunting but don't be put off! In this building block, we break down the syntax into tangible pieces so that you can get up to speed step by step.
 
 {{% /warning %}}
 
@@ -32,8 +32,8 @@ The `re` Python library contains a variety of methods to identify, split, and re
 | `\w`  | single letter, number of underscore | a, 4, _ |   
 | `.`  | any character  | b, 9, !, (a space)  |  
 
-    
-The four examples below illustrate how to combine these symbols to extract various characters from `my_string`. 
+
+The four examples below illustrate how to combine these symbols to extract various characters from `my_string`.
 
 {{% codeblock %}}
 
@@ -44,7 +44,7 @@ my_string = "The 80s music hits were much better than the 90s."
 # a single digit: ['8', '0', '9', '0']
 print(re.findall(r"\d", my_string))
 
-# double digits: ['80', '90'] 
+# double digits: ['80', '90']
 # hereafter we learn how to write this more concisely using quantifiers
 print(re.findall(r"\d\d", my_string))
 
@@ -62,9 +62,9 @@ print(re.findall(r"\s\w\w\w\s", my_string))
 ### Quantifiers
 In the examples above, we explicitly formulated a pattern of 1, 2, or 3 characters but in many cases this is unknown. Then, quantifiers can offer some flexibility in defining a search pattern of 0, 1, or more occurences of a character. Note that the symbols always refer to the character preceding it. For example, `r"\d+"` means one or more digits.
 
-| Symbol | Definition | Example | 
+| Symbol | Definition | Example |
 |:---- | :---- | :---- |
-| `?` | zero or one | `colou?r` (you want to capture both `color` and `colour`) | 
+| `?` | zero or one | `colou?r` (you want to capture both `color` and `colour`) |
 | `*` | zero or more | `\d\.\d*` (a single digit followed by zero or more decimals - e.g., 5.34, 8., 3.1)|
 | `+`  | one or more  | `#\w+` (e.g., Twitter hashtags)|
 | `{n,m}`  | between n and m | `\d{2}-\d{2}-\d{4}` (dates e.g., 05-03-2021)|
@@ -81,7 +81,7 @@ print(re.findall(r"\w+", my_string))
 # one or more digits followed by a s: ['80s', '90s']
 print(re.findall(r"\d+s", my_string))
 
-# words that are preceded or followed by more than one whitespace (i.e., to identify unnecessary spaces) 
+# words that are preceded or followed by more than one whitespace (i.e., to identify unnecessary spaces)
 print(re.findall(r"\s{2,}\w+\s{2,}", my_string))
 ```
 {{% /codeblock %}}
@@ -89,7 +89,7 @@ print(re.findall(r"\s{2,}\w+\s{2,}", my_string))
 
 ### Alternates
 
-| Symbol | Definition | Example | 
+| Symbol | Definition | Example |
 |:---- | :---- | :---- |
 | `a|b|c`  | or  | `color|colour`  |
 | `[abc]` | one of | `[$€]` (a dollar or euro currency sign)|
@@ -111,7 +111,7 @@ print(re.findall(r"[a-zA-Z]+\s\d+s", my_string))
 {{% /codeblock %}}
 
 
-### Groups 
+### Groups
 More often than not, you want to capture text elements and use it for follow-up analyses. However, not every element of a pattern may be necessary. Groups, denoted by parentheses `()`, indicate the pieces that should be kept, and each match is stored as a list of tuples.
 
 
@@ -131,6 +131,7 @@ print(family[0][2])  # gives 'sisters'
 
 
 ### Split & Replace Data
+
 Regular expressions can also be used to split (`re.split()`) or replace (`re.sub()`) characters. While the built-in `split()` function can split on a single character (e.g., `;`), it cannot deal with a multitude of values. The same holds for Python's `replace()` function.
 
 {{% codeblock %}}
@@ -142,12 +143,11 @@ my_string = 'Last year was our most profitable year thus far. Our year-on-year g
 # ['Last year was our most profitable year thus far',' Our year-on-year growth grew by 14% to $10B','']
 re.split(r"[!.]", my_string)
 
-# hide confidential data: 
+# hide confidential data:
 # 'Last year was our most profitable year thus far. Our year-on-year growth grew by X% to $XB!'
 re.sub(r"\d+", "X", my_string)
 ```
 {{% /codeblock %}}
-
 
 
 ### Web Scraping
@@ -200,7 +200,7 @@ By default, regular expressions follow a greedy approach which means that they m
 
 Therefore, we replace the two paragraph tags (`<p>` and `</p>`) with an empty string. Surprisingly, it returns an empty string (`''`), why is that? After all, we would expect to see: `This is a paragraph enclosed by HTML tags.`. 
 
-It turns out that the `>` in `<.+>` refers to the `</p>` tag (instead of `<p>`). As a result, the entire sentence is replaced by an empty string! Fortunately, you can force the expression to match as few characters as needed (a.k.a. non-greedy or lazy approach) by adding a `?` after the `+` symbol. 
+It turns out that the `>` in `<.+>` refers to the `</p>` tag (instead of `<p>`). As a result, the entire sentence is replaced by an empty string! Fortunately, you can force the expression to match as few characters as needed (a.k.a. non-greedy or lazy approach) by adding a `?` after the `+` symbol.
 
 {{% codeblock %}}
 ```python
@@ -218,10 +218,7 @@ re.sub(r"<.+?>", "", my_string)
 
 ## See Also
 * As you may have figured out by now, formulating regular expressions is often a matter of trial and error. An [online regex editor](https://regexr.com) that interactively highlights the phrases your regular expression captures can therefore be extremely helpful.
-  
+
 * Frequent applications of regular expressions are extracting dates and emails (and checking for validity), parsing webpage source data, and natural language processing. [This](https://www.analyticsvidhya.com/blog/2020/01/4-applications-of-regular-expressions-that-every-data-scientist-should-know-with-python-code/) blog post demonstrates how you can implement these ideas.
 
 * This building block deliberately only revolved around the most common regex operations, but there are many more symbols and variations. [This](https://www.programiz.com/python-programming/regex) tutorial provides a more comprehensive list of commands (incl. examples!).
-
-
-

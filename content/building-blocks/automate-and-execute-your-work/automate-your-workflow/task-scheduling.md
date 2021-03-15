@@ -1,21 +1,22 @@
 ---
 title: "Task Scheduling"
-description: "Execute scripts at specified intervals with cronjob and Task Scheduler"
-weight: 4
+description: "Learn how to execute scripts at specified intervals with cronjob and Task Scheduler."
+weight: 3
 keywords: "cron, cronjob, automation, task scheduler, task scheduling"
 date: 2021-01-06T22:01:14+05:30
 aliases:
-  - "/task-scheduling"
+  - /schedule/task
+  - /setup/cronjob
 ---
 
 ## Overview
 
 Task scheduling involves the automatic execution of scripts on your local computer. For example, you may want to run a web scraper on a daily basis without having to manually execute the script. Mac and Windows users can leverage cronjobs and the Task Scheduler respectively to automate repetitive tasks. Depending on your operating system, follow one of the guides below to learn how to configure task scheduling on your machine.
 
-### cronjob (Mac / Linux)
+## cronjob (Mac / Linux)
 Most Mac and Linux distributions come with pre-installed cron by default. This is a program that you can only access through the terminal. Before we can schedule tasks, we first need to understand the cron syntax. After all, it uses a very specific way to define the task frequency.
 
-#### cron syntax
+### cron syntax
 The syntax consists of 5 symbols - each separated by a space - which denote the minute, hour, day, month, and weekday respectively. An asterisk symbol matches any value so `* * * * *` means every minute of every hour of every day. Note that weekdays can take on a value between 0 and 6 and start on Sunday (0 = Sunday, 1 = Monday, ... etc.)
 
 ```
@@ -41,18 +42,18 @@ If needed, you can use commas to insert more than a single digit (e.g., `15,45 *
 `*/30 9-17 * * 1-5` = every 30 minutes during business hours
 {{% /example %}}
 
-#### Configuring cron jobs
+### Configuring cron jobs
 
 1. Double-check whether your script works as expected and then save the Python script as a **`.py` file** (so not a `.ipynb` notebook!). For example, copy-paste the contents from Jupyter to Spyder. We recommend storing the script in your root directory (the parent directory of your Desktop and Documents among others) to avoid file permission issues.
 
-2. Open the Terminal and type `crontab -e`. This opens the so-called vim editor which you can think of as a notepad within the terminal. 
+2. Open the Terminal and type `crontab -e`. This opens the so-called vim editor which you can think of as a notepad within the terminal.
 3. Press `I` so that you can edit the text.
-4. Insert the following syntax (always specify the full path! - see the tip below on how to obtain the Python installation path): 
+4. Insert the following syntax (always specify the full path! - see the tip below on how to obtain the Python installation path):
 ```
 # e.g., * * * * * /usr/bin/python3 /script.py
 <CRON CODE> <PATH OF YOUR PYTHON INSTALLATION> <PATH TO PYTHON FILE>
 ```
-5. Press Esc and type `:wq` followed by Enter to save your changes (if a window pops up choose OK). 
+5. Press Esc and type `:wq` followed by Enter to save your changes (if a window pops up choose OK).
 
 6. If you now run `crontab -l` your newly scheduled task should be listed. We recommend keeping an eye out whether your scheduler works as expected, especially in the beginning. If not, you can make changes to the cron file at any time. To remove all existing tasks and clean up the cron file type `crontab -r`.
 
@@ -62,11 +63,11 @@ Since a single cron file can contain multiple tasks, we'd recommend putting a co
 
 
 
-### Task Scheduler (Windows)
+## Task Scheduler (Windows)
 Windows 10 has a built-in graphical interface for scheduling tasks which provides plenty of functionalities and options you can adjust (e.g., frequency, start and end date, battery and network settings). Although you don't have to mess around with the terminal, you do need to create a so-called BAT script that executes your Python script. Follow the steps below to get started!
 
 1. Double-check whether your script works as expected and then save the Python script as a **`.py` file** (so not a `.ipynb` notebook!). For example, copy-paste the contents from Jupyter to Spyder.
- 
+
 2. Open Notepad and create a new file with the following contents:
 
 {{% codeblock %}}
