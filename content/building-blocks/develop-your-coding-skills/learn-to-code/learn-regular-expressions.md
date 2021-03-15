@@ -48,7 +48,7 @@ print(re.findall(r"\d", my_string))
 # hereafter we learn how to write this more concisely using quantifiers
 print(re.findall(r"\d\d", my_string))
 
-# combinations of 3 characters (even if it's not a finished word)
+# combinations of 3 characters (even if it's not a complete word)
 # ['The', '80s', 'mus', 'hit', 'wer', 'muc', 'bet', 'ter', 'tha', 'the', '90s']
 print(re.findall(r"\w\w\w", my_string))
 
@@ -130,10 +130,8 @@ print(family[0][2])  # gives 'sisters'
 {{% /codeblock %}}
 
 
+### Split & Replace Data
 
-## Advanced Use Cases
-
-### Split and replace data
 Regular expressions can also be used to split (`re.split()`) or replace (`re.sub()`) characters. While the built-in `split()` function can split on a single character (e.g., `;`), it cannot deal with a multitude of values. The same holds for Python's `replace()` function.
 
 {{% codeblock %}}
@@ -152,10 +150,55 @@ re.sub(r"\d+", "X", my_string)
 {{% /codeblock %}}
 
 
-### Greedy vs non-greedy
-By default, regular expressions follow a greedy approach which means that they match as many characters as possible (i.e., returns the longest match found). Let's have a look at an example to see what this means in practice. Say that we want to extract the contents of `my_string` and thus remove the HTML tags.
+### Web Scraping
 
-Therefore, we replace the two paragraph tags (`<p>` and `</p>`) with an empty string (`""`), but somewhat surprisingly it returns an empty string, why is that? After all, we would expect to see: `This is a paragraph enclosed by HTML tags.`.
+In addition to Beautifulsoup, you can apply regular expressions to parse HTML source code. Say the source code of a webpage consists of a book title, description, and a table: 
+
+```python
+html_code = '''
+<h2>A Light in the Attic</h2>
+<p>It's hard to imagine a world without A Light in the Attic. This now-classic collection of poetry and drawings from Shel Silverstein celebrates its 20th anniversary with this special edition. Silverstein's humorous and creative verse can amuse the dowdiest of readers.</p>
+<table class="table table-striped">
+    <tr>
+        <th>UPC</th><td>a897fe39b1053632</td>
+    </tr>
+    <tr>
+        <th>Price (incl. tax)</th><td>Â£51.77</td>
+    </tr>
+    <tr>
+        <th>Availability</th>
+        <td>In stock (22 available)</td>
+    </tr>
+    <tr>
+        <th>Number of reviews</th>
+        <td>0</td>
+    </tr>
+</table>
+'''
+```
+
+Then, we can easily capture the text between two tags, a part of a row, or a specific section of the source code. Since the HTML code is split across multiple lines, the regex code `.+` does not work as expected: it only matches characters on the first line. If you print the `html_code` to the console, you also find that each line is separated by a newline separator (\n). As a workaround, you can use the following set `[\s\S]+` to capture both spaces (\s) and non-spaces (\S = letters, digits, etc.). Note that in the examples below, we rely on groups `()` to only select the elements we are after.
+
+```python
+# title: ['A Light in the Attic']
+re.findall(r"<h2>(.+)</h2>", html_code)
+
+# availability: ['22']
+re.findall(r"(\d+) available", html_code)
+
+# <h2> and <p> sections
+re.findall(r"[\s\S]+</p>", html_code)
+
+# table section
+re.findall(r"<table[\s\S]*", html_code)
+```
+
+## Advanced Use Cases
+
+**Greedy vs non-greedy**  
+By default, regular expressions follow a greedy approach which means that they match as many characters as possible (i.e., returns the longest match found). Let's have a look at an example to see what this means in practice. Say that we want to extract the contents of `my_string` and thus remove the HTML tags. 
+
+Therefore, we replace the two paragraph tags (`<p>` and `</p>`) with an empty string. Surprisingly, it returns an empty string (`''`), why is that? After all, we would expect to see: `This is a paragraph enclosed by HTML tags.`. 
 
 It turns out that the `>` in `<.+>` refers to the `</p>` tag (instead of `<p>`). As a result, the entire sentence is replaced by an empty string! Fortunately, you can force the expression to match as few characters as needed (a.k.a. non-greedy or lazy approach) by adding a `?` after the `+` symbol.
 
