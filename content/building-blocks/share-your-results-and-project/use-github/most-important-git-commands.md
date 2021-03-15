@@ -18,13 +18,17 @@ This is a summary of the most important Git commands.
 
 ## Code
 
-Clone ("download") the repository to your computer (by the way: do not clone a repository into another repository!).
+Clone ("download") the repository to your computer.
 
 {{% codeblock %}}
 ```bash
 git clone <URL>
 ```
 {{% /codeblock %}}
+
+{{% warning %}}
+Do not clone a repository into another repository!
+{{% /warning %}}
 
 ---
 
