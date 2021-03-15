@@ -2,8 +2,8 @@
 title: "An Interactive Shiny App of Google's COVID-19 Data"
 date: 2020-11-11T22:01:14+05:30
 draft: false
-description: "Build your own interactive Shiny app!"
-keywords: "google, Shiny, R, Data Visualisation, example"
+description: "Build your own interactive dashboard with an R Shiny app!"
+keywords: "google, Shiny, R, covid, data visualization"
 weight: 3
 aliases:
   - /try/shiny-app
@@ -86,7 +86,7 @@ server <- function(input, output) {
 
     output$plot <- renderPlotly({
         ggplotly({
-                p <- ggplot(filtered_data(), 
+                p <- ggplot(filtered_data(),
                 aes_string(x = "Date", y = input$dv, color = "Province")) + geom_point(alpha = 0.5) + theme(legend.position = "none") + ylab("% change from baseline")
             p
         })
@@ -185,5 +185,3 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 {{% /codeblock %}}
-
-

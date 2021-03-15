@@ -2,7 +2,7 @@
 title: "Exploring Trends in the Cars Dataset with Regression Analysis"
 date: 2020-11-11T22:01:14+05:30
 draft: false
-description: "Build linear models to draw inferences from your datasets"
+description: "Build linear models to draw inferences from your datasets."
 keywords: "regression analysis, example, cars, lm, glm, statistical model"
 weight: 4
 aliases:
@@ -73,7 +73,7 @@ leverage_influence <- mdl_cars %>%
 {{% /codeblock %}}
 
 
- 
+
 *Output:*
 
 | `speed_kmh` | `dist_m` | `leverage` | `cooks_dist` |
