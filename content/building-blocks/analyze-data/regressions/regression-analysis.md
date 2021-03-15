@@ -1,8 +1,8 @@
 ---
-title: "Regression Analysis"
+title: "Run a Regression Analysis"
 description: "Build linear models to draw inferences from your datasets."
-keywords: "linear regression, model, regression, prediction, model evaluation, linear inferences"
-weight: 100
+keywords: "linear regression, model, lm, prediction, model evaluation, linear inferences"
+weight: 2
 date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
@@ -11,7 +11,9 @@ aliases:
 ---
 
 ## Overview
-In the social sciences, regresion analysis is a popular tool to estimate relationships between a dependent variable and one or more independent variables. It is a way to find trends in data, quantify the impact of input variables, and make predictions for unseen data. In this building block, we illustrate how to estimate a model, identify outliers, plot a trend line, and make predictions.
+In the social sciences, regresion analysis is a popular tool to estimate relationships between a dependent variable and one or more independent variables. It is a way to find trends in data, quantify the impact of input variables, and make predictions for unseen data.
+
+In this building block, we illustrate how to estimate a model, identify outliers, plot a trend line, and make predictions.
 
 ## Code
 
@@ -67,12 +69,11 @@ library(ggplot2)
 ggplot(data = data, aes(x, y)) +
 geom_points() +
 geom_smooth(method = "lm", se = FALSE)
-
 ```
 {{% /codeblock %}}
 
 
-### Make predictions
+### Make Predictions
 Given a linear regression model (`mdl`), make predictions for unseen input data (`explanatory_data`). Note that for multiple linear regression models, you need to pass an `explanatory_data` object with multiple columns.
 
 {{% codeblock %}}
@@ -116,7 +117,8 @@ stargazer(mdl_1, mdl_2,
 -->
 
 
-## Example
-This [tutorial](https://dprep.hannesdatta.com/docs/building-blocks/regression-analysis/) outlines how to run, evaluate, and export regression model results for the `cars` dataset.  In particular, it analyzes the relationship between a car’s speed and the stop distance.
+{{% example %}}
+[This tutorial](https://dprep.hannesdatta.com/docs/building-blocks/regression-analysis/) outlines how to run, evaluate, and export regression model results for the `cars` dataset.  In particular, it analyzes the relationship between a car’s speed and the stop distance.
 
-![](../images/trend_plots.png)
+![A trend plot in R.](../images/trend_plots.png)
+{{% /example %}}

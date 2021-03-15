@@ -1,18 +1,22 @@
 ---
-title: "Shiny Apps"
-description: "Learn how to build your own interactive Shiny app."
-keywords: "shiny, data visualisation, web app, dataviz, plots, charts"
+title: "Build Interactive Dashboards With R Shiny"
+description: "Learn how to build your own interactive R Shiny app."
+keywords: "shiny, app, data visualisation, dashboard, r, dataviz, plots, charts"
 weight: 101
 date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /build/web-app
   - /build/shiny-app
+  - /build/dashboard
 ---
 
-## Overview
-The Shiny library helps you turn your analyses into interactive web applications without requiring HTML, CSS, or Javascript knowledge, and provides a powerful web framework for building web applications using R. Being able to create Shiny apps is a great skill to have because it enables you to communicate your insights to non-technical stakeholders and give them the tools to conduct their own analysis!
+## What is a Shiny App?
+The **[Shiny library](https://shiny.rstudio.com)** helps you turn your analyses into interactive web applications without requiring HTML, CSS, or Javascript knowledge, and provides a powerful web framework for building web applications using R.
 
+Being able to create Shiny apps is a great skill to have because it enables you to communicate your insights to non-technical stakeholders and give them the tools to conduct their own analysis!
+
+![R Shiny](https://shiny.rstudio.com/images/shinySiteBandOne.png)
 
 ## Code
 
@@ -65,10 +69,11 @@ tabsetPanel(
 ```
 {{% /codeblock %}}
 
-*Example:*  
+{{% example %}}
 
 ![Tabs](../images/tabs.png)
 
+{{% /example %}}
 
 ### Placeholders
 Define a placeholder for plots, tables, and text in the user interface (`ui`) and server side (`server`).
@@ -115,9 +120,9 @@ textInput(inputId = "title", label="Text box title", value = "Text box content")
 ```
 {{% /codeblock %}}
 
-*Example:*  
-
+{{% example %}}
 ![Text Box](../images/text_box.png)
+{{% /example %}}
 
 ---
 
@@ -130,10 +135,9 @@ numericInput(inputId = "num", label = "Number of cars to show", value = 10, min 
 ```
 {{% /codeblock %}}
 
-*Example:*
-
+{{% example %}}
 ![Numeric input](../images/numeric_input.png)
-
+{{% /example %}}
 
 ---
 
@@ -146,9 +150,9 @@ sliderInput(inputId = "temperature", label = "Body temperature", min = 35, max =
 ```
 {{% /codeblock %}}
 
-*Example:*
-
+{{% example %}}
 ![Slider](../images/slider_regular.png)
+{{% /example %}}
 
 ---
 
@@ -162,9 +166,9 @@ sliderInput(inputId = "price", label = "Price (€)", value = c(39, 69), min = 0
 ```
 {{% /codeblock %}}
 
-*Example:*
-
+{{% example %}}
 ![Range selector](../images/range_slider.png)
+{{% /example %}}
 
 ---
 
@@ -177,9 +181,9 @@ radioButtons(inputId = "radio", label = "Choose your preferred time slot", choic
 ```
 {{% /codeblock %}}
 
-*Example:*
-
+{{% example %}}
 ![Radio buttons](../images/radio_button.png)
+{{% /example %}}
 
 ---
 
@@ -193,9 +197,9 @@ selectInput(inputId = "major", label = "Major", choices = c("Business Administra
 ```
 {{% /codeblock %}}
 
-*Example:*
-
+{{% example %}}
 ![Dropdown menu](../images/dropdown_menu.png)
+{{% /example %}}
 
 ---
 
@@ -210,9 +214,9 @@ selectInput(inputId = "programming_language", label = "Programming Languages",
 ```
 {{% /codeblock %}}
 
-*Example:*
-
+{{% example %}}
 ![Dropdown menu multiple selections](../images/dropdown_menu_multiple.png)
+{{% /example %}}
 
 ---
 
@@ -225,9 +229,9 @@ checkboxInput(inputId = "agree", label = "I agree to the terms and conditions", 
 ```
 {{% /codeblock %}}
 
-*Example:*
-
+{{% example %}}
 ![Checkbox](../images/checkbox.png)
+{{% /example %}}
 
 ---
 
@@ -241,9 +245,9 @@ colourInput(input = "colour", label = "Select a colour", value = "blue")
 ```
 {{% /codeblock %}}
 
-*Example:*
-
+{{% example %}}
 ![Checkbox](../images/colour_picker.png)
+{{% /example %}}
 
 ### Download Button
 Add a download button to your Shiny app so that users can directly download their current data selection in csv-format and open the data in a spreadsheet program (e.g., Excel).
@@ -266,7 +270,7 @@ server <- function(input, output) {
 ```
 {{% /codeblock %}}
 
-## Example
+## An Example
 
 The [Shiny app](https://royklaassebos.shinyapps.io/dPrep_Demo_Google_Mobility/) below  visualizes Google’s COVID-19 Community Mobility Reports of the Netherlands. A step-by-step tutorial (incl. source code) can be found [here](https://dprep.hannesdatta.com/docs/building-blocks/deployment-reporting/).
 
