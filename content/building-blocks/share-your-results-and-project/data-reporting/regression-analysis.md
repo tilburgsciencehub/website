@@ -10,7 +10,7 @@ aliases:
 ---
 
 ## Overview
-In the social sciences regresion analysis is a popular tool to estimate relationships between a dependent variable and one or more dependent variables. It is a way to find trends in data, quantify the impact of input variables, and make predictions for unseen data. In this building block, we illustrate how to estimate a model, identify outliers, plot a trend line, make predictions, and export the results in a format suitable for a paper.
+In the social sciences, regresion analysis is a popular tool to estimate relationships between a dependent variable and one or more independent variables. It is a way to find trends in data, quantify the impact of input variables, and make predictions for unseen data. In this building block, we illustrate how to estimate a model, identify outliers, plot a trend line, and make predictions.
 
 ## Code
 
@@ -93,7 +93,10 @@ prediction_data
 {{% /codeblock %}}
 
 
+<!-- Reference to separate building block (export your R tables for print-ready publication)
+
 ### Export Model Output
+
 Convert regression coefficients of `mdl_1` and `mdl_2` into a HTML file that can be copied into a paper.
 
 {{% codeblock %}}
@@ -108,6 +111,8 @@ stargazer(mdl_1, mdl_2,
           )
 ```
 {{% /codeblock %}}
+
+-->
 
 
 ## Example
