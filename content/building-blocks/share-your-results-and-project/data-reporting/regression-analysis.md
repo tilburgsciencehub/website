@@ -1,12 +1,13 @@
 ---
 title: "Regression Analysis"
-description: "Build linear models to draw inferences from your datasets"
+description: "Build linear models to draw inferences from your datasets."
 keywords: "linear regression, model, regression, prediction, model evaluation, linear inferences"
-weight: 1
+weight: 100
 date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
-  - /regression-analysis
+  - /analyze/regression
+  - /run/regression-analysis
 ---
 
 ## Overview
@@ -19,13 +20,13 @@ Linear regression (`lm`) is suitable for a response variable that is numeric. Fo
 
 * Model transformations can be incorporated into the formula, for example: `formula = log(y) ~ I(x^2)`.
 * The coefficients (`coefficients(mdl)`), predictions for the original data set (`fitted(mdl)`), and residuals (`residuals(mdl)`) can be directly derived from the model object.
-* A concrete example on how to evaluate model assumptions (mean residuals is 0, residuals are normally distributed, homskedascticiy) can be found [here](). 
+* A concrete example on how to evaluate model assumptions (mean residuals is 0, residuals are normally distributed, homskedascticiy) can be found [here]().
 
 {{% codeblock %}}
 ```R
 library(broom)
 
-# estimate linear regression model 
+# estimate linear regression model
 # to estimate a logistic regression model use:
 # glm(formula = y ~ x, data = data, family = binomial)
 mdl <- lm(formula = y ~ x, data = data)
@@ -63,8 +64,8 @@ Plot a scatter plot of two numeric variables and add a linear trend line on top 
 ```R
 library(ggplot2)
 
-ggplot(data = data, aes(x, y)) + 
-geom_points() + 
+ggplot(data = data, aes(x, y)) +
+geom_points() +
 geom_smooth(method = "lm", se = FALSE)
 
 ```
@@ -78,11 +79,11 @@ Given a linear regression model (`mdl`), make predictions for unseen input data 
 ```R
 explanatory_data <- c(..., ..., ...)
 
-prediction_data <- explanatory_data %>% 
+prediction_data <- explanatory_data %>%
   mutate(   
     y = predict(
-      mdl, 
-      explanatory_data, 
+      mdl,
+      explanatory_data,
       type = "response"
     )
   )
@@ -102,7 +103,7 @@ library(stargazer)
 
 stargazer(mdl_1, mdl_2,
           title = "Figure 1",
-          column.labels = c("Model 1", "Model 2"), 
+          column.labels = c("Model 1", "Model 2"),
           type="html",
           out="output.html"  
           )
@@ -111,6 +112,6 @@ stargazer(mdl_1, mdl_2,
 
 
 ## Example
-This [tutorial](https://dprep.hannesdatta.com/docs/building-blocks/regression-analysis/) outlines how to run, evaluate, and export regression model results for the `cars` dataset.  In particular, it analyzes the relationship between a car’s speed and the stop distance. 
+This [tutorial](https://dprep.hannesdatta.com/docs/building-blocks/regression-analysis/) outlines how to run, evaluate, and export regression model results for the `cars` dataset.  In particular, it analyzes the relationship between a car’s speed and the stop distance.
 
 ![](../images/trend_plots.png)

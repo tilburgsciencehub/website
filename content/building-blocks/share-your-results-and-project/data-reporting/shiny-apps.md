@@ -1,12 +1,13 @@
 ---
 title: "Shiny Apps"
-description: "Build your own interactive Shiny app"
-keywords: "shiny, data visualisation, dataviz, plots, charts"
-weight: 1
+description: "Learn how to build your own interactive Shiny app."
+keywords: "shiny, data visualisation, web app, dataviz, plots, charts"
+weight: 101
 date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
-  - /shiny-apps
+  - /build/web-app
+  - /build/shiny-app
 ---
 
 ## Overview
@@ -16,13 +17,13 @@ The Shiny library helps you turn your analyses into interactive web applications
 ## Code
 
 ### Skeleton
-The skeleton of any Shiny app consists of a user interface (`ui`) and a `server`. The UI is where the visual elements are placed such as a scatter plot or dropdown menu. The server is where the logic of the app is implemented, for example, what happens once you click on the download button. And this exactly where Shiny shines: combining inputs with outputs. 
+The skeleton of any Shiny app consists of a user interface (`ui`) and a `server`. The UI is where the visual elements are placed such as a scatter plot or dropdown menu. The server is where the logic of the app is implemented, for example, what happens once you click on the download button. And this exactly where Shiny shines: combining inputs with outputs.
 
 {{% codeblock %}}
 ```R
-library(shiny) 
-ui <- fluidPage() 
-server <- function(input, output){} 
+library(shiny)
+ui <- fluidPage()
+server <- function(input, output){}
 shinyApp(ui = ui, server = server)
 ```
 {{% /codeblock %}}
@@ -39,7 +40,7 @@ ui <- fluidPage(
 	sidebarLayout(
 		sidebarPanel(
 			"This is the sidebar"
-		), 
+		),
 		mainPanel(
 			"Main panel goes here"
 		)
@@ -55,7 +56,7 @@ Distribute your data across multiple tabs (alternative to a sidebar layout).
 {{% codeblock %}}
 ```R
 tabsetPanel(
-	tabPanel(title = "tab 1", 
+	tabPanel(title = "tab 1",
     h1("Overview"),
     "Content goes here"),
 	tabPanel(title = "tab 2", "The content of the second tab"),
@@ -70,9 +71,9 @@ tabsetPanel(
 
 
 ### Placeholders
-Define a placeholder for plots, tables, and text in the user interface (`ui`) and server side (`server`). 
+Define a placeholder for plots, tables, and text in the user interface (`ui`) and server side (`server`).
 * Text can be formatted as headers (e.g., `h1()`, `h2()`) or printed in bold (`strong()`) or italics (`em()`) format.
-* The [`ggplotly()` function](https://www.rdocumentation.org/packages/plotly/versions/4.9.3/topics/ggplotly) can convert a `ggplot2` plot into an interactive one (e.g., move, zoom, export image features that are not available in the standard `renderPlot()` function). 
+* The [`ggplotly()` function](https://www.rdocumentation.org/packages/plotly/versions/4.9.3/topics/ggplotly) can convert a `ggplot2` plot into an interactive one (e.g., move, zoom, export image features that are not available in the standard `renderPlot()` function).
 *   Similarly, the `DT::dataTableOutput("table")` (in the `ui`) and the `DT::renderDataTable()` (in the `server`) from the `DT` package enrich the `renderTable` function. See a live example [here](https://royklaassebos.shinyapps.io/dPrep_Demo_Google_Mobility/).
 
 
@@ -105,7 +106,7 @@ output$text <- renderText({
 
 ### Control Widgets
 
-**Text box** 
+**Text box**
 
 {{% codeblock %}}
 ```R
@@ -124,7 +125,7 @@ textInput(inputId = "title", label="Text box title", value = "Text box content")
 
 {{% codeblock %}}
 ```R
-# text box that only accepts numeric data between 1 and 30 
+# text box that only accepts numeric data between 1 and 30
 numericInput(inputId = "num", label = "Number of cars to show", value = 10, min = 1, max = 30)
 ```
 {{% /codeblock %}}
@@ -132,24 +133,24 @@ numericInput(inputId = "num", label = "Number of cars to show", value = 10, min 
 *Example:*
 
 ![Numeric input](../images/numeric_input.png)
-  
 
---- 
 
-**Slider** 
+---
+
+**Slider**
 
 {{% codeblock %}}
 ```R
-# slider that goes from 35 to 42 degrees with increments of 0.1 
+# slider that goes from 35 to 42 degrees with increments of 0.1
 sliderInput(inputId = "temperature", label = "Body temperature", min = 35, max = 42, value = 37.5, step = 0.1)
 ```
 {{% /codeblock %}}
 
 *Example:*
-  
+
 ![Slider](../images/slider_regular.png)
 
---- 
+---
 
 **Range selector**
 
@@ -162,7 +163,7 @@ sliderInput(inputId = "price", label = "Price (€)", value = c(39, 69), min = 0
 {{% /codeblock %}}
 
 *Example:*
-  
+
 ![Range selector](../images/range_slider.png)
 
 ---
@@ -171,13 +172,13 @@ sliderInput(inputId = "price", label = "Price (€)", value = c(39, 69), min = 0
 
 {{% codeblock %}}
 ```R
-# input field that allows for a single selection 
+# input field that allows for a single selection
 radioButtons(inputId = "radio", label = "Choose your preferred time slot", choices = c("09:00 - 09:30", "09:30 - 10:00", "10:00 - 10:30", "10:30 - 11:00", "11:00 - 11:30"), selected = "10:00 - 10:30")
 ```
 {{% /codeblock %}}
 
 *Example:*
-  
+
 ![Radio buttons](../images/radio_button.png)
 
 ---
@@ -201,19 +202,19 @@ selectInput(inputId = "major", label = "Major", choices = c("Business Administra
 **Dropdown menu (multiple selections)**
 
 {{% codeblock %}}
-```R 
+```R
 # dropdown menu that allows for multiple selections (e.g., both R and JavaScript)
-selectInput(inputId = "programming_language", label = "Programming Languages", 
+selectInput(inputId = "programming_language", label = "Programming Languages",
 	choices = c("HTML", "CSS", "JavaScript", "Python", "R", "Stata"),
 	selected = "R", multiple = TRUE)
 ```
 {{% /codeblock %}}
 
 *Example:*
-  
+
 ![Dropdown menu multiple selections](../images/dropdown_menu_multiple.png)
 
---- 
+---
 
 **Checkbox**
 
@@ -225,10 +226,10 @@ checkboxInput(inputId = "agree", label = "I agree to the terms and conditions", 
 {{% /codeblock %}}
 
 *Example:*
-  
+
 ![Checkbox](../images/checkbox.png)
 
---- 
+---
 
 **Colorpicker**
 
@@ -241,7 +242,7 @@ colourInput(input = "colour", label = "Select a colour", value = "blue")
 {{% /codeblock %}}
 
 *Example:*
-  
+
 ![Checkbox](../images/colour_picker.png)
 
 ### Download Button
