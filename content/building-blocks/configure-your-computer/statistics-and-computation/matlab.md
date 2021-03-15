@@ -15,4 +15,4 @@ MATLAB is a high-level programming language and an environment for numerical com
 The University of Zurich has a campus-wide MATLAB license available to all students and employees.
 We will use this license to activate MATLAB on our machine.
 
-If you do not have Matlab 2016a installed on your machine, please follow the [installation instructions](https://www.s3it.uzh.ch/software/matlab/) available on the University of Zurich's page.
+If you study or work at Tilburg University and you do not have MATLAB installed on your machine, please register via [Mathworks](https://nl.mathworks.com/academia/tah-portal/tilburg-university-30348529.html) and follow the [installation instructions](https://servicedesk.uvt.nl/tas/public/ssp/content/detail/knowledgeitem?unid=9c895a61-020c-4692-92a7-96ef357211f7) available on the IT Self-Service Portal.
