@@ -1,3 +1,4 @@
+{{ $siteURL := .Site.BaseURL }}
 {{ partial "header.html" . }}
 <br><br>
 <div class="container mt-4">
@@ -17,7 +18,7 @@
 				{{ end }}
 				<div class="d-none d-lg-block pseudoSpacer"></div>
 			</div>
-			
+
 		</div>
 		<article class="col-lg-16 col-22">
 			<div class="p-5 bg-white rounded mb-5">
@@ -25,6 +26,20 @@
 				<script>window.location = "/{{.Section}}"</script>
 				{{ else }}
 				{{ .Content }}
+				{{ if (and (.Params.author) (.Params.authorlink)) }}
+				<div class="admonition author">
+					<div class="admonition-content">Contributed by <b><a href="{{ .Params.authorlink }}">{{ .Params.author }}</a></b></div>
+				</div>
+				{{ else }}
+				{{ end }}
+				{{ if eq .Params.share false }}
+				{{ else }}
+				{{ with .Params.aliases }}
+				{{ range first 1 . }}
+				{{ partial "shareLinks.html" (dict "context" . "siteURL" $siteURL) }}
+				{{ end }}
+				{{ end }}
+				{{ end }}
 				{{ end }}
 
 				{{ partial "pagination.html" . }}
@@ -33,7 +48,7 @@
 			{{ partial "relatedPosts.html" . }}
 		</article>
 
-		
+
 	</div>
 </div>
 
