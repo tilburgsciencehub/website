@@ -20,6 +20,8 @@ You are welcome to contribute to our platform in three different ways. Keep read
 2. [Use GitHub Issues](../mode-2)
 3. [The Nerdy Way (Issue a Pull Request)](../mode-3)
 
+{{% cta-primary "Check out our GitHub repository" "https://github.com/tilburgsciencehub/website" %}}
+
 ## What is a contribution?
 
 Anything from simple changes, grammar checks and reporting a bug to more elaborate changes and writing entirely new content!
@@ -44,8 +46,3 @@ We provide content in three forms:
 - **Tutorials** explain a broader argument compared to Building Blocks, and follow a sequential order. They teach our users how to combine individual building blocks into a "final product". These are particularly useful for novices or anyone new to a certain topic because of their comprehensive nature and step-by-step guidance. We support and encourage the use of videos, exercises, and quizzes in a tutorial.
 
 - **Examples** are real-life cases, publications, templates, or research projects that put into practice the concepts explained on this website.
-
-{{% tip %}}
-**Simply looking for our GitHub repository?**
-You can find it **[here](https://github.com/tilburgsciencehub/website)**.
-{{% /tip %}}
