@@ -20,7 +20,7 @@ This is mainly what sets LaTeX apart from WYSIWYG (an acronym for "What You See 
 
 ## Meet LyX
 
-**[LyX](https://www.lyx.org)** is a document preparation software that bridges the two worlds of "What You See Is What You Mean" and "What You See Is What You Get" by combining the power and flexibility of LaTeX with a Graphical User Interface and the gentle learning curve of editors like Microsoft Word.
+**[LyX](https://www.lyx.org)** is a document preparation software that bridges the two worlds of "What You See Is What You Mean" and "What You See Is What You Get". It combines the power and flexibility of LaTeX with a Graphical User Interface and the gentle learning curve of editors like Microsoft Word.
 
 LyX is cross-platform and free of charge. You can download it from the **[LyX Download page](https://www.lyx.org/Download)**.
 
