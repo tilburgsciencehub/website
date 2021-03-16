@@ -65,6 +65,19 @@
     }
 
   }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  code {
+    user-select: all;
+    -webkit-user-select: all;
+    background-color:#F0F5F9;
+    padding:6px;
+    border: 2px dashed #e6ebf0;
+    border-radius:4px;
+  }
 }
 
 // pagination
