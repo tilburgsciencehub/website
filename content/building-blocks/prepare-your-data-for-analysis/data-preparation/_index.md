@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: "Data Preparation"
 weight: 1
 ---
