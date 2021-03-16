@@ -78,6 +78,15 @@
     border: 2px dashed #e6ebf0;
     border-radius:4px;
   }
+
+  @media only screen and (max-width: 1340px) {
+      p {
+        display: none;
+      }
+      code {
+        display: none;
+      }
+  }
 }
 
 // pagination
