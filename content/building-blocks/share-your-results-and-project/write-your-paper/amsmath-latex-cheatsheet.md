@@ -134,7 +134,7 @@ To define a custom operator:
 
 
 ### Fractions
-`\frac { ... }{ ... }`
+`\frac{ ... }{ ... }`
 
 For instance, 3/4 can be displayed as $\frac{3}{4}$.
 
@@ -209,7 +209,7 @@ It's possible to negate these symbols by prefixing them with `\not` (for example
 | $\LaTeX$ | Code | $\LaTeX$ | Code | $\LaTeX$ | Code |
 |-------------|-------------|-------------|-------------|-----------|-----------|
 | $\pm$     | `\pm`     | $\mp$     | `\mp`     | $\cdot$          | `\cdot`          |
-| $\div$    | `\div`    | $	imes$   | `\times`  | $\setminus$      | `\setminus`      |
+| $\div$    | `\div`    | $\times$   | `\times`  | $\setminus$      | `\setminus`      |
 | $\star$   | `\star`   | $\cup$    | `\cup`    | $\cap$           | `\cap`           |
 | $\ast$    | `\ast`    | $\circ$   | `\circ`   | $\bullet$        | `\bullet`        |
 | $\oplus$  | `\oplus`  | $\ominus$ | `\ominus` | $\odot$          | `\odot`          |
@@ -312,12 +312,12 @@ Use the `cases` environment. Use `\\` to separate different cases, and `&` for c
 
 ### Matrices
 Use one of the following environments.
-- `matrix` No delimiter
-- `pmatrix` $($ delimiter
-- `bmatrix` $[$ delimiter
-- `Bmatrix` $\\{$ delimiter
-- `vmatrix` $\lvert$ delimiter
-- `Vmatrix` $\lVert$ delimiter
+- `matrix`: No delimiter
+- `pmatrix`: $($ delimiter
+- `bmatrix`: $[$ delimiter
+- `Bmatrix`: $\\{$ delimiter
+- `vmatrix`: $\lvert$ delimiter
+- `Vmatrix`: $\lVert$ delimiter
 
 Use `\\` to separate different rows, and `&` to separate elements of each row.
 
