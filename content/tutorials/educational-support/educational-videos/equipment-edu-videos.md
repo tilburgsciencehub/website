@@ -1,5 +1,5 @@
 ---
-tutorialtitle: "Educational Videos"
+tutorialtitle: "Shoot Educational Videos"
 type: "educational-videos"
 indexexclude: "true"
 title: "Buying Equipment for Educational Videos"

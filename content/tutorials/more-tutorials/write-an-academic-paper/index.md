@@ -1,5 +1,5 @@
 ---
-tutorialtitle: "Writing an Academic Paper"
+tutorialtitle: "Write an Academic Paper"
 type: "write-an-academic-paper"
 title: "Writing an Academic Paper"
 description: "Learn the typical structure of an empirical paper in economics and business."

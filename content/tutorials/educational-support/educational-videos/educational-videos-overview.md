@@ -1,5 +1,5 @@
 ---
-tutorialtitle: "Educational Videos"
+tutorialtitle: "Shoot Educational Videos"
 type: "educational-videos"
 title: "Overview"
 description: "An educational video is meant for transferring knowledge to an audience. Learn how to make them."
