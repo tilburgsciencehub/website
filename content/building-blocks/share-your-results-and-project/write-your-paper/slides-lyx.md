@@ -31,8 +31,4 @@ We provide a LyX template to get you started working on your slides very quickly
 
 {{% cta-primary "Download the LyX Template" "../lyx-slides-template.zip" %}}
 
-{{< katex display >}}
-f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
-{{< /katex >}}
-
 ![Slides presentation in LaTeX](../img/slides-lyx-template.png)
