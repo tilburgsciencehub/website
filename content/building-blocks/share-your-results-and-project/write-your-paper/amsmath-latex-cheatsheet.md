@@ -350,3 +350,5 @@ $\mathbb{A}$ `\mathbb{A}`
 $\mathbb{R}$ `\mathbb{R}`
 
 Include the package `bbm` for these symbols. All letters are supported.
+
+{{% cta-secondary "Visit this project's repository" "https://github.com/manuelemacchia/math-latex" %}}
