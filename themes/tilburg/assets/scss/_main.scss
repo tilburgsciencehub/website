@@ -575,6 +575,11 @@ article {
     border-collapse: separate !important;
     border-spacing: 0;
     margin-bottom: 25px;
+
+    code {
+      user-select: all;
+      -webkit-user-select: all;
+    }
   }
 
   td {
