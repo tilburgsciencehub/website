@@ -6,7 +6,7 @@ weight: 102
 date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
-  - /create/slides-lyx
+  - /create/slides-with-lyx
 ---
 
 ## Overview
@@ -30,5 +30,9 @@ In case you need further guidance, you can access [here](https://wiki.lyx.org/Ly
 We provide a LyX template to get you started working on your slides very quickly.
 
 {{% cta-primary "Download the LyX Template" "../lyx-slides-template.zip" %}}
+
+{{< katex display >}}
+f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
+{{< /katex >}}
 
 ![Slides presentation in LaTeX](../img/slides-lyx-template.png)
