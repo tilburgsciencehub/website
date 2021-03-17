@@ -132,11 +132,7 @@ git reset --hard <commit id>
 ## See also
 
 * [Official GitHub Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
-
 * [Oh Shit, Git!?! A collection of advanced and useful Git commands!](https://ohshitgit.com)
-
 * [Version control on The Turing Way](https://the-turing-way.netlify.app/reproducible-research/vcs.html)
-
 * [Version control at Software Carpentry](http://swcarpentry.github.io/git-novice/)
-
 * [Installation guide for Git and GitHub](/building-blocks/configure-your-computer/statistics-and-computation/git/)
