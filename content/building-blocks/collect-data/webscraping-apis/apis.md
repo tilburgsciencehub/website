@@ -3,7 +3,7 @@ title: "Learn How to Use APIs"
 description: "Learn how to collect data from APIs."
 
 keywords: "learn, api, application programming interface"
-weight: 3
+weight: 2
 date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:

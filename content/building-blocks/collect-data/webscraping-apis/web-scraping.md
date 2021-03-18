@@ -3,7 +3,7 @@ title: "Learn Web Scraping"
 description: "Learn how to scrape information from websites."
 
 keywords: "learn, website, webscraping, scraping, internet, beautifulsoup"
-weight: 3
+weight: 1
 date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
