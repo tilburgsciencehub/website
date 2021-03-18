@@ -76,6 +76,6 @@ json_response = response.json()
 
 
 ## See Also
-* Spotify Web API [tutorial](https://github.com/hannesdatta/course-odcm/blob/master/content/docs/tutorials/apisadvanced/api-advanced.ipynb) used in the Online Data Management Collection course. Contrary to the previous examples, this API does require an access token and has multiple endpoints.
+* The Spotify Web API [tutorial](https://github.com/hannesdatta/course-odcm/blob/master/content/docs/tutorials/apisadvanced/api-advanced.ipynb) used in the Online Data Management Collection course illustrates how to generate access tokens and use a variety of API endpoints. 
 
 
