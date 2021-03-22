@@ -113,7 +113,7 @@ Source code is made available in the `src` folder of your main project: `my_proj
 
 - Source code are all files that are required to execute your project's pipeline.
 
-- In addition, source code consists of a [`makefile`](/building-blocks/configure-your-computer/automation-and-workflows/make/) which makes explicit how the source code needs to be run, and in which order, and
+- In addition, source code consists of a [`makefile`](/get/make/) which makes explicit how the source code needs to be run, and in which order, and
 
 - Scripts which put the `/gen/[pipeline-stage]/output` files from the current pipeline stage to the file exchange (`put_output`), so that other pipeline stages can pull in that data to its `/gen/[pipeline-stage]/input` folder (`get_input`). More about this [here](#4-file-exchange).
 
@@ -240,7 +240,7 @@ the dataset him/herself from scratch.
     - have a script in `src/analysis` which downloads the data from the file exchange to
     `gen/analysis/input` (`get_input`)
 
-- For details on setting up and using a file exchange, follow our [Building Block here](/building-blocks/configure-your-computer/infrastructure-choice/fileexchanges/).
+- For details on setting up and using a file exchange, follow our [Building Block here](/setup/file-exchanges).
 
 ### 5. Managing notes and other documents
 

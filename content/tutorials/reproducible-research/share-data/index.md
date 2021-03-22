@@ -76,7 +76,7 @@ You're set up to document and maintain your data set!
 
 - Write code to clean your data, and make sensible decisions about what will remain "secure and private," what part of the data you can disclose to coauthors, and what part of the data can be used publicly.
 - You can also automate your workflow using `makefiles`.
-- Document your data using our handy templates. You find them here: https://tilburgsciencehub.com/document/new-data.
+- Document your data using our handy templates. You find them [here](https://tilburgsciencehub.com/document/new-data).
 
 Write your final output data - the one you or others will be using for your project - to the `release` folder.
 
@@ -90,7 +90,7 @@ It's good practice to supply coauthors with a little code snippet to download th
 
 ### Advanced use cases
 
-- Launch a website that tells potential users of your data about it. Check out this excellent page by Julian McAuley (https://nijianmo.github.io/amazon/index.html).
+- Launch a website that tells potential users of your data about it. Check out [this excellent page](https://nijianmo.github.io/amazon/index.html) by Julian McAuley.
 
 - Push your code, documentation, and final data set to Dataverse or Zenodo for long-term storage. Both offer DOI's, so your work becomes citable!
 
