@@ -1,25 +1,25 @@
 ---
 title: "Learn Bash Commands"
 description: "Learn how to navigate the terminal and command prompt"
-keywords: "cmd, command prompt, terminal, cd, ls, change directories"
+keywords: "cmd, command prompt, terminal, cd, ls, dir, mv"
 date: 2020-11-11T22:02:51+05:30
 draft: false
 weight: 4
 aliases:
-  - /learn/bash-commands
+  - /learn/bash
 ---
 
 ## Overview
 
-The command line let's you communciate with your computer without using your mouse. It's a text-based interface where you communicate using text alone. The commands differ between Unix-based systems (e.g., Mac / Linux) and Windows computers. On Apple and Windows computers the command line tool is called the Terminal an Command Prompt, respectively.
+The command line lets you communicate with your computer without using your mouse. It's a text-based interface where you communicate using text alone. The commands differ between Unix-based systems (e.g., Mac / Linux) and Windows computers. On Apple and Windows computers the command line tool is called the Terminal and Command Prompt, respectively.
 
 
-## Directories 
+## Directories
 In programming-speak, all folders are called directories. A directory within another directory is called a subdirectory. When you open up a new Terminal window, you are automatically situated in your home directory. Your current directory is also referred to as your working directory.
 
 
 ## File Paths
-Your computer understands two kinds of paths, absolute and relative. An absolute path starts from the root (or home directory). A relative path, on the other hand, starts from the current directory (e.g., Desktop).
+Your computer understands two kinds of paths, absolute and relative ones. An absolute path starts from the root (or home directory). A relative path, on the other hand, starts from the current directory (for instance, your desktop).
 
 {{% codeblock %}}
 ```bash
@@ -33,13 +33,13 @@ relative_path = "images/photo1.jpg"  # provided that your working directory is "
 
 Open the Terminal by going into your Applications folder, and then into your Utilities folder, and then double clicking on the Terminal icon. Alternatively, you can use Spotlight to search for the program (e.g., Cmd + Space).
 
-### Print Working Directory 
-To see the full path for your working directory, you can use the `pwd` command, which stands for print working directory. 
+### Print Working Directory
+To see the full path for your working directory, you can use the `pwd` command, which stands for print working directory.
 
 ![terminal_pwd](../images/terminal_pwd.gif)
 
 ### List Files
-Unlike the grapical user interface, you cannot see what other directories or files are present just by being in a particular directory. You have to explicitly tell your computer to list them for you using the `ls` command. 
+Unlike the graphical user interface, you cannot see what other directories or files are present just by being in a particular directory. You have to explicitly tell your computer to list them for you using the `ls` command.
 
 ![terminal_ls](../images/terminal_ls.gif)
 
@@ -65,19 +65,19 @@ A handy shortcut to start in a specific directory immediately is to look up the 
 To make a new directory, you can use the `mkdir` command which takes the name of the new directory and the destination path of the directory. So, the command `mkdir to-do-lists Documents` would create a new to-do lists directory inside the documents folder.
 
 {{% tip %}}
-Generally speaking, it's better to avoid special characters in directory names, you can use quotes to create a folder name that include spaces (e.g., `mkdir "to do lists" Documents`). 
+Generally speaking, it's better to avoid special characters in directory names, you can use quotes to create a folder name that include spaces (e.g., `mkdir "to do lists" Documents`).
 {{% /tip %}}
 
 
 ### Remove Files & Directories
-We can delete a directory along with any files or subdirectories by running the `rm -r` command. For example, `rm -r to-do-lists` removes the to-do lists folder and its contents. Note that you can list multiple files and directories after `rm -r` to remove them all.
+You can delete a directory along with any files or subdirectories by running the `rm -r` command. For example, `rm -r to-do-lists` removes the to-do lists folder and its contents. Note that you can list multiple files and directories after `rm -r` to remove them all.
 
 {{% warning %}}
-You can't undo the `rm` command, so be careful when you delete files. Removing files in command line is not the same as moving a file to the Trash (it's removed permanently).
+You can't undo the `rm` command, so be careful when you delete files. Removing files in command line is not the same as moving a file to the trash - it's permanent!
 {{% /warning %}}
 
 ### Move & Rename Files
-The `mv` command has two applications: movinga and renaming files. It uses the following syntax: 
+The `mv` command has two applications: moving a and renaming files. It uses the following syntax:
 
 {{% codeblock %}}
 ```bash
@@ -96,8 +96,3 @@ mv [FILE_NAME] [NEW_FILE_NAME]
 
 ## See Also
 * This building block draws on material of [this](https://generalassembly.github.io/prework/cl/#/) interactive tutorial by General Assembly which is absolutely worth checking out!
-
-
-
-
-

@@ -1,23 +1,23 @@
 ---
 title: "Learn How to Use APIs"
 description: "Learn how to collect data from APIs."
-
-keywords: "learn, api, application programming interface"
+keywords: "api, application programming interface"
 weight: 2
 date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
-  - /collect-data/web-scraping
+  - /use/api
+  - /collect-data/api
 ---
 
 ## Overview
 An Application Programming Interface (API) is a version of a website intended for computers, rather than humans, to talk to one another. APIs are everywhere, and most are used to *provide data* (e.g., retrieve a user name and demographics), *functions* (e.g., start playing music from Spotify, turn on your lamps in your "smart home"), or
-*algorithms* (e.g., submit an image, retrieve a written text for what's on the image). 
+*algorithms* (e.g., submit an image, retrieve a written text for what's on the image).
 
 APIs work very similar to websites. At the core, you obtain code that computers can easily understand to process the content of a website, instead of obtaining the source code of a rendered website. APIs provide you with simpler and more scalable ways to obtain data, so you really have to understand how they work.
 
 {{% warning %}}
-In practice, most APIs require user authentication to get started. Each and every API has its own workflow to generate a kind of "password" that you need to include in your requests. Therefore, you should always consult the documentation of the API you plan on using for configuration instructions. In this building block, we cover some of the common themes you encounter when working with APIs and provide examples. 
+In practice, most APIs require user authentication to get started. Each and every API has its own workflow to generate a kind of "password" that you need to include in your requests. Therefore, you should always consult the documentation of the API you plan on using for configuration instructions. In this building block, we cover some of the common themes you encounter when working with APIs and provide examples.
 {{% /warning %}}
 
 {{% tip %}}
@@ -32,15 +32,15 @@ In practice, though, APIs really can't give you all the data you possibly want, 
 ## Examples
 
 ### icanhazdadjoke
-Every time you visit the [site](https://icanhazdadjoke.com), the site shows a random joke. From a technical perspective, each time a user opens the site, a little software program on the server makes an API call to the daddy joke API to draw a new joke to be displayed. Note that this is one of the few APIs that does not require any authentication. 
+Every time you visit the [site](https://icanhazdadjoke.com), the site shows a random joke. From a technical perspective, each time a user opens the site, a little software program on the server makes an API call to the daddy joke API to draw a new joke to be displayed. Note that this is one of the few APIs that does not require any authentication.
 
 {{% codeblock %}}
 ```Python
 import requests
 search_url = "https://icanhazdadjoke.com/search"
 
-response = requests.get(search_url, 
-                        headers={"Accept": "application/json"}, 
+response = requests.get(search_url,
+                        headers={"Accept": "application/json"},
                         params={"term": "cat"})
 joke_request = response.json()
 print(joke_request)
@@ -55,8 +55,8 @@ By default, each page contains 20 jokes, where page 1 shows jokes 1 to 20, page 
 You can adjust the number of results on each page (max. 30) with the limit parameter (e.g., `params={"limit": 10}`). In practice, almost every API on the web limits the results of an API call (100 is also a common cap). As an alternative, you can specify the current page number with the `page` parameter (e.g., `params={"term": "", "page": 2}`).
 
 
-### Reddit 
-Reddit is a widespread American social news aggregation and discussion site. The service uses an API to generate the website's content and grants public access to the API. 
+### Reddit
+Reddit is a widespread American social news aggregation and discussion site. The service uses an API to generate the website's content and grants public access to the API.
 
 To request data from the Reddit API, we need to include headers in our request. HTTP headers are a vital part of any API request, containing meta-data associated with the request (e.g., type of browser, language, expected data format, etc.).
 
@@ -76,6 +76,5 @@ json_response = response.json()
 
 
 ## See Also
-* The Spotify Web API [tutorial](https://github.com/hannesdatta/course-odcm/blob/master/content/docs/tutorials/apisadvanced/api-advanced.ipynb) used in the Online Data Management Collection course illustrates how to generate access tokens and use a variety of API endpoints. 
 
-
+* The Spotify Web API [tutorial](https://github.com/hannesdatta/course-odcm/blob/master/content/docs/tutorials/apisadvanced/api-advanced.ipynb) used in the Online Data Management Collection course illustrates how to generate access tokens and use a variety of API endpoints.

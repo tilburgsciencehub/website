@@ -1,44 +1,44 @@
 ---
 title: "Data Availability Assessment"
-description: "Assess which particular data is available on the site or API."
-keywords: "data availability, assessment, API, webscrapoing"
+description: "Learn how to assess which particular data is available on the site or API."
+keywords: "data availability, assessment, API, webscraping, scraping"
 weight: 1
 date: 2021-03-05T22:01:14+05:30
 draft: false
 aliases:
-  - /learn/data-availability-assessment
+  - /assess/data-availability
 ---
 
 ## Overview
 
-Assessing data availability is vital to guarantee a minimum level of rigor. Investigating data availability may help you to enhance the relevance of your study. 
+Assessing data availability is vital to guarantee a minimum level of rigor. Investigating data availability may help you to enhance the relevance of your study.
 
 ## Entity Coverage and Linkages
 
 ### Which entities are available?
 
-Familiarize yourself with the structure of the website or API to understand which entities (e.g., consumers, products, reviews) are available. 
+Familiarize yourself with the structure of the website or API to understand which entities (e.g., consumers, products, reviews) are available.
 
 {{% example %}}
 An ecommerce website like Amazon lists information on the products, sellers, reviews, and reviewers.
 {{% /example %}}
 
 ### How many entities are available?
-Try to understand how many entities are available on the site, and how many of those you can actually retrieve. 
+Try to understand how many entities are available on the site, and how many of those you can actually retrieve.
 
 {{% example %}}
 The category pages on Amazon.com only list a few hundred products - out of potentially ten thousand of products per category. So, while it seems data is abundantly available, it’s not so straightforward that all data can actually be retrieved easily.
 {{% /example %}}
 
 ### How are entities identified?
-The location of most entities typically consists of a URL of a website or API appended with an identification number. 
+The location of most entities typically consists of a URL of a website or API appended with an identification number.
 
 {{% example %}}
 Amazon uses ASINs (UPCs) to point to a product page (e.g., https://www.amazon.com/dp/B087BC4DJH/), and the same ID is used to also point to the review pages (e.g., https://www.amazon.com/product-reviews/B087BC4DJH/).
 {{% /example %}}
 
 ### How are entities linked to one another?
-A crucial assessment to make is how entities are linked to one another, if at all. 
+A crucial assessment to make is how entities are linked to one another, if at all.
 
 {{% example %}}
 The product overview pages at Amazon list the ASINs of each product in the website’s source code. Using this list, you can then visit the product pages of each product, and thereby start constructing your data set.
@@ -94,7 +94,7 @@ When you plan to scrape data in real-time from a website, try to get a feeling f
 
 ### Which mechanisms affect the display of data?
 
-Design choices and algorithms that make a site easily navigable can cause problems in collecting and using data for scientific purposes. Typical mechanisms that affect the display and retrieval of data are: sorting algoritihms, recommendation algorithms, experimental conditions, and sampling.
+Design choices and algorithms that make a site easily navigable can cause problems in collecting and using data for scientific purposes. Typical mechanisms that affect the display and retrieval of data are: sorting algorithms, recommendation algorithms, experimental conditions, and sampling.
 
 {{% example %}}
 Suppose you want to calculate average prices in a product category, and you start scraping data from Amazon.com. Chance is you’ll end up scraping prices for only the most popular products - which certainly are not representative of the whole product assortment on the platform.

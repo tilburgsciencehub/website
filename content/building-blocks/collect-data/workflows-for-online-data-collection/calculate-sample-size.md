@@ -1,11 +1,12 @@
 ---
-title: "Calculate Technically Feasible Sample Size "
-description: "Determine the number of units that can be obtained from a website or API"
-keywords: "sample size, sample, n, data collection"
+title: "Calculate a Technically Feasible Sample Size"
+description: "Learn how to determine the number of units that can be obtained from a website or API."
+keywords: "sample size, sample, n, data collection, compute"
 weight: 2
 date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
+  - /calculate/sample-size
   - /collect-data/sample-size-calculation
 ---
 
@@ -30,7 +31,7 @@ Convert all input parameters to the same time unit (e.g., the retrieval limit ma
 {{% /tip %}}
 
 
-## Example 
+## Example
 Suppose you wish to know the technically feasible sample size for collecting data from an online social network. In other words, you want to solve for $N$.
 
 The input parameters are:
@@ -44,4 +45,3 @@ The input parameters are:
 N = \frac{req \times S}{r \times freq} = \frac{18,000 \times 1}{2 \times 4} = 2,250
 
 {{< / katex >}}
-
