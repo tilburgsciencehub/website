@@ -14,19 +14,18 @@ aliases:
 
 ## How we learned to use Scrum
 
-We, the very founders of Tilburg Science Hub, have used Scrum to manage the development of our project.
+We use [Scrum](https://www.scrum.org) - a simple framework for effective team collaboration - to manage the development of Tilburg Science Hub. By sharing our experiences with (an admittedly customized version of) Scrum, we hope to inspire and possibly help other teams to make their collaborations run smoothly.
 
-As time evolved, more people got involved in the process of developing Tilburg Science Hub and it became important to define roles, organize and coordinate working in a team efficiently, productively and pleasantly. By sharing our experiences with (a downsized version of) Scrum we hope to inspire and possibly help other teams to make their collaborations run smoothly.
-
-However, we also advocate its adoption for any research project and whenever a team is involved. Keep reading to find out how to use it as a framework for collective research.
+Importantly, Scrum works for any type of project, including __academic research projects__.
+Keep on reading to find out how to use Scrum as a framework for collective research!
 
 ## Scrum in a nutshell
 
-**[Scrum](https://www.scrum.org)** is a simple framework for effective team collaboration on complex products, co-created by Ken Schwaber and Jeff Sutherland.
+### Team members have different roles
 
-Scrum defines three main roles: the product owner, Scrum master and development team members.
+Scrum defines three main roles for members of the team: the product owner, the Scrum master and development team members.
 
-- The **product owner** is accountable for maximizing the value of the product and is also accountable for effective product backlog management, which includes:
+- The **product owner** is accountable for maximizing the value of the product and for defining a clear "task list" (called product backlog), including:
     - Developing and explicitly communicating the Product Goal;
     - Creating and clearly communicating product backlog items;
     - Ordering product backlog items; and,
@@ -36,39 +35,52 @@ Scrum defines three main roles: the product owner, Scrum master and development 
 
 - The **development team members** are responsible for completing the tasks in the Sprint.
 
-During separately scheduled strategic discussions, the product owners (in collaboration with the team members) decide upon the needs for further development or improvement of the product. These needs form the **product backlog** and are broken down in smaller items/tasks that can be completed in a reasonable amount of time (for example a few hours). Items can be allocated to a specific team member.
+### Meeting types and planning
 
-For instance, during our team’s bi-weekly sprint planning meeting the product owners inspect the work from the backlog that’s most valuable to be done next and move these items to the sprint backlog.
+- During separately scheduled __strategic discussions__, the product owners (in collaboration with the team members) decide upon the needs for further development or improvement of the product. These needs form the *product backlog* and are broken down in smaller items/tasks that can be completed in a reasonable amount of time (for example a few hours). Items can be allocated to a specific team member.
 
-The **sprint** is a period of (in our case) 2 weeks in which the team members complete the tasks selected by the product owners from the product backlog.
+- During our team’s __sprint planning meeting__, which kicks off each new sprint, the product owners inspect the work from the backlog that’s most valuable to be done next and move these items to the sprint backlog. We also review tasks that have been completed in the previous sprint.
+
+- __During the sprint__ (in our case a two-week period), team members complete the tasks selected by the product owners from the product backlog.
+
+- In addition to regular sprint meetings, every week we meet for a brief __"WOW meeting"__ (max. 15 minutes) to discuss the past week’s successes: basically, anything we have achieved and are very proud of sharing with the team. This helps us stay connected and positive!
 
 {{% tip %}}
-To keep track of the product and sprint backlog and the items/tasks that’s being worked on, we suggest using **[Trello](https://trello.com)**, a tool by Atlassian to visualize and manage projects.
+
+To get started with using Scrum...
+- determine the roles of team members,
+- pick a sprint duration (e.g., two weeks),
+- plan a strategic discussion so that you converge on the backlog items,
+- schedule your first sprint planning meeting,
+- schedule the "weekly wows", and
+- reserve time in your agenda to work on tasks assigned to you.
+
+To keep track of the product and sprint backlog and the items/tasks that’s being worked on, you can use **[Trello](https://trello.com)** or the project tab on your project's [GitHub repository](https://github.com).
+
 {{% /tip %}}
 
-In addition to regular sprint meetings, every week we meet for a brief meeting (max 15 minutes) to discuss the past week’s "WOWs": basically, anything we have achieved and are very proud of sharing with the team. This helps us stay connected and positive!
 
 {{% example %}}
-**Scrum for a research project**
+**Using Scrum for a research project**
 
 Think about the following situation. There are multiple co-authors who want to use publicly available data. They will analyze them with R. They have just come together to discuss how to proceed.
 
-The goal is to program the whole workflow using [`make`](/building-blocks/configure-your-computer/automation-and-workflows/make/). The workflow consists of downloading the data, putting them in the right place, preparing them for analysis, producing summary statistics, and finally producing a pdf with those summary statistics.
+The goal is to develop a workflow using [`make`](/building-blocks/configure-your-computer/automation-and-workflows/make/). The workflow consists of downloading the data, putting them in the right place, preparing them for analysis, producing summary statistics, and finally producing a PDF with those summary statistics.
 
-The **starting point of the first meeting is creating a backlog** that consists of bite-size items that take a few hours (max) to complete.
+The **starting point of the first meeting is creating a backlog** that consists of bite-size items that take (max.) a few hours to complete.
 
-So far, they have come up with the following items:
-- Create directory structure;
-- Create new Git repository;
-- Write first raw version of code that downloads the data and saves them in the right place;
+So far, the team members have come up with the following items:
+- Create directory structure,
+- Create new Git repository,
+- Write first raw version of code that downloads the data and saves them in the right place,
 - Write first raw version of code that prepares the data for analysis;
 - Write first simple analysis file that produces summary statistics and writes them into a LaTeX file;
 - Set up a new tex file that produces a document with summary statistics table;
 - Set up makefile so that make can be used to run the project.
 
-Next, they have **the first sprint planning meeting** and discuss which items they want to **move to the sprint**. They are optimistic and move all of them to the next sprint. Importantly, particularly in times in which we have a lot of long online meetings, this is all they have to do, so the meeting can end.
+Next, the team members have **the first sprint planning meeting** and discuss which items they want to **move to the sprint**. They are optimistic and move all of them to the next sprint. Importantly, particularly in times in which we have a lot of long online meetings, this is all they have to do, so the meeting can end.
 
-During the sprint, **they all know what things need to be done**, so they can flexibly discuss with one another who does what. One can use Trello to **keep track** of this. Each entry above is a little card (think of it as a post-it note). Whenever someone starts working on something, the card is moved to the “in progress” section or column. And once something is finished, it ends up in the “done” column.
+During the sprint, **they all know what things need to be done**, so they can flexibly discuss with one another who does what. One can use Trello or the project board on GitHub to **keep track** of this. Each entry above is a little card (think of it as a post-it note). Whenever someone starts working on something, the card is moved to the “in progress” section or column. And once something is finished, it ends up in the “done” column.
 
 When people work very intensely on projects, they sometimes start the day with a brief meeting (a "stand-up" meeting) where the Scrum master manages the board and everyone coordinates who does what. In less intense times, one can instead have a weekly "WOW" meeting like we do.
 
@@ -81,7 +93,7 @@ We find Scrum helpful because it provides us with structure. That in turn leads 
 
 But Scrum is not the full answer. For instance, one needs to find a way to determine new items for the product backlog. This should not be done in the sprint planning meeting, because then one ends up having another long meeting every two weeks. Communication and discipline in the meetings are important.
 
-In short, it can be seen as a structured way of working with meetings that are shorter and more productive, and cooperating in a flexible way in-between meetings.
+In short, Scrum can be seen as a structured way of working with meetings that are shorter and more productive, and cooperating in a flexible way in-between meetings.
 
 ## See also
 
