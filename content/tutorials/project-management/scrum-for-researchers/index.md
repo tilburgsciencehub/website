@@ -2,7 +2,7 @@
 tutorialtitle: "Scrum for Researchers"
 title: "Scrum for Researchers"
 type: "scrum-for-researchers"
-description: "Document and share data for internal and external use"
+description: "Discover Scrum to improve your project management when working on empirical research projects"
 keywords: "scrum, project, sprint, team, management"
 weight: 100
 draft: false
