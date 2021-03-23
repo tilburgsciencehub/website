@@ -55,7 +55,12 @@ To get started with using Scrum...
 - schedule the "weekly wows", and
 - reserve time in your agenda to work on tasks assigned to you.
 
-To keep track of the product and sprint backlog and the items/tasks that’s being worked on, you can use **[Trello](https://trello.com)** or the project tab on your project's [GitHub repository](https://github.com).
+To keep track of the product and sprint backlog and the items/tasks that’s being worked on, you can use **[Trello](https://trello.com)** or the project tab on your project's [GitHub repository](https://github.com). Start by creating these "tabs"/columns now:
+- backlog,
+- sprint (to do),
+- sprint (in progress),
+- sprint (done), and
+- notes to keep (in which to pin important links so you don't lose them).
 
 {{% /tip %}}
 
