@@ -105,3 +105,4 @@ In short, Scrum can be seen as a structured way of working with meetings that ar
 - Learn more about Scrum [here](https://www.scrum.org)
 - Read a more comprehensive [Scrum Guide](https://www.scrumguides.org/scrum-guide.html)
 - Learn about how other researchers are using Scrum [here](http://crosstalk.cell.com/blog/scrum-for-science-a-framework-for-collective-research)
+- [Good book on project management (in Dutch)](https://gripboek.nl)
