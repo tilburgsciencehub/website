@@ -12,7 +12,7 @@ aliases:
 
 ## Overview
 
-**[Stargazer](https://www.rdocumentation.org/packages/stargazer/versions/5.2.2/topics/stargazer)** is an easy-to-use R package that creates nicely-formatted, high-quality tables from your R data in ASCII, LaTeX, and HTML code.
+**[Stargazer](https://www.rdocumentation.org/packages/stargazer/versions/5.2.2/topics/stargazer)** is an easy-to-use R package that creates nicely-formatted, high-quality tables from your R data in ASCII, {{< katex >}}\LaTeX{{< /katex >}}, and HTML code.
 
 It automatically recognizes the kind of data you provide. If you provide a set of regression model objects, it will produce a regression table. Instead, if you feed it with a data frame, it will produce a summary statistics table.
 

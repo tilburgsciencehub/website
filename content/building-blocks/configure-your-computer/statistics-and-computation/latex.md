@@ -10,10 +10,34 @@ aliases:
   - /install/latex
 ---
 
-LaTeX is a great typesetting system that includes a lot of features that allow to produce scientific documents. Many researchers use LaTeX to produce their papers and presentations, and many journals require authors to hand in their articles in a LaTeX format.
+## Overview
 
-## Installing a TeX distribution
-LaTeX is free to use. To use the LaTeX system, a TeX distribution needs to be installed. Detailed instructions for the different platforms are provided below.
+{{< katex >}}\LaTeX{{< /katex >}} is [a great typesetting system](https://www.latex-project.org) that includes a lot of features that allow to produce scientific documents. Many researchers use $\LaTeX$ to produce their papers and presentations, and many journals require authors to hand in their articles in a $\TeX$ format.
+
+## Installing a $\TeX$ distribution
+$\LaTeX$ is free to use. To use the $\LaTeX$ system, a $\TeX$ distribution needs to be installed. Detailed instructions for the different platforms are provided below.
+
+### Windows
+
+Download the file `install-tl-windows.exe` from **[here](https://www.tug.org/texlive/acquire-netinstall.html)** and follow the instructions.
+
+### MacOS
+
+You can install MacTeX from the **[official website](https://www.tug.org/mactex/)** or using [`Homebrew`](/configure/cli):
+
+```bash
+brew cask install mactex
+```
+
+### Linux (Ubuntu-based)
+
+Install it from the terminal using:
+
+```bash
+sudo apt-get install texlive-latex-extra
+```
+
+## Check your Installation
 
 After following the instructions, check whether everything worked by checking the output of the following command:
 
@@ -35,47 +59,23 @@ named COPYING and the TeX source.
 Primary author of TeX: D.E. Knuth.
 ```
 
-{{% warning %}}
-**For Windows Users**
-
-Download the file `install-tl-windows.exe` from [here](https://www.tug.org/texlive/acquire-netinstall.html) and follow the instructions.
-{{% /warning %}}
-{{% warning %}}
-**For Mac Users**
-
-You can install this using `Homebrew` or via the [official website](https://www.tug.org/mactex/):
-
-```bash
-brew cask install mactex
-```
-{{% /warning %}}
-{{% warning %}}
-**For Linux Users (Ubuntu-based)**
-
-Install it from the terminal using:
-
-```bash
-sudo apt-get install texlive-latex-extra
-```
-{{% /warning %}}
-
 Note that additional packages for Tex Live should be installed through the apt package manager as well (using `tlmgr` leads to problems due to different versions)
 
-## Using LyX, a LaTeX Alternative
+## Installing LyX, a $\LaTeX$ Alternative
 
-### Installing Lyx
+### Get LyX
 
- Lyx is an open source document processor based on the LaTeX. [Download Lyx](https://www.lyx.org/Download).
+ LyX is an open source document processor based on $\LaTeX$. [Download LyX](https://www.lyx.org/Download).
 
- ### Making Lyx Available on the Command Prompt
+ ### Making LyX Available on the Command Prompt
 
- You have just installed Lyx and may need to access Lyx from the command line.
+ You have just installed LyX and may need to access LyX from the command line.
 
  #### Windows users
- For you to be able to use Lyx from the command prompt, follow the steps below.
+ For you to be able to use LyX from the command prompt, follow the steps below.
 
 {{% warning %}}
-**Making Lyx available via the PATH settings on Windows**
+**Making LyX available via the PATH settings on Windows**
 
  We need to update our PATH settings; these settings are a set of directories that Windows uses to "look up" software to startup.
 
@@ -99,14 +99,14 @@ Note that additional packages for Tex Live should be installed through the apt p
 
  #### Mac users
 
- For you to be able to use Lyx from the command line, you have to add Lyx to your environmental variables. A tutorial follows.
+ For you to be able to use LyX from the command line, you have to add LyX to your environmental variables:
 
 {{% warning %}}
-**Making Lyx available via the PATH settings on Mac**
+**Making LyX available via the PATH settings on Mac**
 
 - open Terminal
 - type `vi ~/.bash_profile`
-- add Lyx to the environmental varibles
+- add LyX to the environmental varibles
 	- type `i` to input mode of vim
 	- add `export LYX_BIN=/Applications/LyX.app/Contents/MacOS/lyx`.
 	- press `esc` and type `:w` to save the change
@@ -118,9 +118,9 @@ Note that additional packages for Tex Live should be installed through the apt p
  -->
 
 
- ### Verifying that the installation was successful
+ ### Check your Installation
 
- To verify that Lyx has been correctly installed and configured via your PATH settings,
+ To verify that LyX has been correctly installed and configured via your PATH settings,
  open a **new** terminal interface and enter:
 
  ```bash

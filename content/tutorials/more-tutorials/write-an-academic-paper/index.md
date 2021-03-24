@@ -74,9 +74,9 @@ This will take a long time. One rule of thumb is that doing the analysis takes 5
 
 ### Typesetting is important
 
-When it comes to producing high-quality technical and scientific documentation, researchers and professionals often rely on **[LaTeX](https://www.latex-project.org)**, an unrivalled document preparation system in many fields.
+When it comes to producing high-quality technical and scientific documentation, researchers and professionals often rely on **[{{< katex >}}\LaTeX{{< /katex >}}](https://www.latex-project.org)**, an unrivalled document preparation system in many fields.
 
-We prepared [a short guide](/building-blocks/configure-your-computer/statistics-and-computation/latex/) on how to install a LaTeX distribution on your system.
+We prepared [a short guide](/building-blocks/configure-your-computer/statistics-and-computation/latex/) on how to install a $\LaTeX$ distribution on your system.
 
 ### Using LyX?
 
