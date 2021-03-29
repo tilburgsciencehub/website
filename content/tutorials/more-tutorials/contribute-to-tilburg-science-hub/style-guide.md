@@ -55,6 +55,15 @@ cat('Hello, world!')
 ```
 {{% /codeblock %}}
 
+#### LaTeX Integration & Math Formulas
+
+You can include mathematical notation via our KaTeX integration. You can learn more on how to use it [here](https://themes.gohugo.io/theme/hugo-book/docs/shortcodes/katex/).
+
+If you use KaTeX more than once within the same Markdown file, there's no need to write the shortcode again. Simply place your math formulas:
+- within single dollar signs for inline math: `$f(x)=x^2$` yields:
+{{< katex >}}f(x)=x^2{{< /katex >}}
+- within double dollar signs for display: `$$f(x)=x^2$$` yields: $$f(x)=x^2$$
+
 #### Highlighting Boxes
 
 We support four kind of highlighting boxes.
