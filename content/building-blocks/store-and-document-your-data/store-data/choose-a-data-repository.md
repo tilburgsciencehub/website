@@ -62,7 +62,7 @@ A well known certification for a trusted repository is for example [CoreTrustSea
 
 ## Publishing Your Research Data
 
-If you want to your data reusable for purposes beyond the one for which you collected them, you should publish your data.
+If you want to make your data reusable for purposes beyond the one for which you collected them, you should publish your data.
 
 Publishing your data is the act of publicly disclosing the research data you have collected, making them findable, accessible, interoperable and reusable (FAIR data).
 
