@@ -2,7 +2,7 @@
 title: "A Reproducible Workflow for Economics Research Using Snakemake and R"
 date: 2020-11-11T22:01:14+05:30
 draft: false
-description: "This is a template for a reproducible research project that uses Snakemake and the R programming language."
+description: "A template for a reproducible research project that uses Snakemake and the R programming language."
 keywords: "snakemake, r, template, workflow, example"
 weight: 5
 author: "Lachlan Deer"
