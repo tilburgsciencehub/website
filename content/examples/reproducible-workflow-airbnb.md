@@ -13,7 +13,7 @@ aliases:
 
 Using publicly available data from AirBnB (available via [Kaggle.com](https://www.kaggle.com/airbnb/boston)), we illustrate how a reproducible workflow may look like in practice.
 
-Check out [our GitHub repository for all the details on how to clone the project and run it](https://github.com/tilburgsciencehub/tisem-airbnb). Alternatively, continue reading below.
+{{% cta-primary-center "Check out the GitHub Repository" "https://github.com/tilburgsciencehub/tisem-airbnb" %}}
 
 We've crafted this project to run:
 
@@ -28,14 +28,14 @@ We've crafted this project to run:
 ## How to run it
 ### Dependencies
 
-- Install [Python](/building-blocks/configure-your-computer/statistics-and-computation/python/).
+- Install [Python](/get/python/).
 
   - Anaconda is recommended. [Download Anaconda](https://www.anaconda.com/distribution/).
   - check availability: type `anaconda --version` in the command line.
 - Install Kaggle package.
 
   - [Kaggle API](https://github.com/Kaggle/kaggle-api) instruction for installation and setup.
-- Install [Automation tools](/building-blocks/configure-your-computer/automation-and-workflows/make/).
+- Install [Automation tools](/get/make/).
   - GNU make: already installed in Mac and Linux OS. [Download Make](http://gnuwin32.sourceforge.net/packages/make.htm) for Windows OS and install.
   - Windows OS users only: make `Make` available via the command line.
     - Right Click on `Computer`
@@ -43,17 +43,17 @@ We've crafted this project to run:
     - Choose `Environment Variables`, and choose `Path` under the system variables, click `edit`
     - Add the bin of `Make`
   - check availability: type `make --version` in the command line.
-- Install [Stata](/building-blocks/configure-your-computer/statistics-and-computation/stata/).
+- Install [Stata](/get/stata/).
 
-  - making Stata available via the command line. [Instruction](/building-blocks/configure-your-computer/statistics-and-computation/stata/) for adding Stata to path.
+  - making Stata available via the command line. [Instruction](/get/stata/) for adding Stata to path.
   - check availability: type `$STATA_BIN --version` in the command line.
-- Install [Perl](/building-blocks/configure-your-computer/statistics-and-computation/perl/).
+- Install [Perl](/get/perl/).
 
   - Perl is already installed in Mac and Linux OS. [Download Perl](https://www.perl.org/get.html) for Windows OS.
   - Make sure Perl available via the command line.
   - check availability: type `perl -v` in the command line.
 
-- Install [LyX](/building-blocks/configure-your-computer/statistics-and-computation/latex/).
+- Install [LyX](/get/latex/).
   - LyX is an open source document processor based on the LaTeX. [Download LyX](https://www.lyx.org/Download).
   - make sure LyX available via the command line.
   - check availability: type `$LYX_BIN` in the command line.
