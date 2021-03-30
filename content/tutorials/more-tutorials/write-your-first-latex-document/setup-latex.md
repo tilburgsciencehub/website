@@ -15,9 +15,11 @@ aliases:
 
 The first step is to setup a {{< katex >}}\TeX{{< /katex >}} distribution on your machine.
 
-1. If you haven't done it yet, you can read **[our Building Block](/get/latex)** on how to install $\LaTeX$.
+1. If you haven't done it yet, you can read **[our guide](/get/latex)** on how to install $\LaTeX$:
 
-2. Once you've installed it, you'll need a text editor to work with. We recommend **[Atom](https://atom.io)**, a free and cross-platform editors with great functions and extra packages. You can download Atom from its official website or read the instructions from [our Building Block](/get/atom).
+{{% cta-primary-center "How to Install $\LaTeX$" "/get/latex" %}}
+
+2. Once you've installed it, you'll need a text editor to work with. We recommend **[Atom](https://atom.io)**, a free and cross-platform editors with great functions and extra packages. You can download Atom from its official website or read the instructions from [our Building Block](/get/atom). Another great solution is [Visual Studio Code](https://code.visualstudio.com).
 
 3. The last piece of the puzzle: let's setup Atom so that it can run $\LaTeX$. By default, Atom can only work as a general text editor with your `.tex` files. Luckily, there are a number of (free) Atom packages that we can install to boost its functionalities and transform it into a proper $\LaTeX$ editor:
     - `latex`, a package that allows Atom to compile $\LaTeX$ code: [download here](https://atom.io/packages/latex)
