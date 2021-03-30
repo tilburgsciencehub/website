@@ -3,7 +3,7 @@ title: "Use AWS S3 Buckets"
 description: "This block explains how to list contents, download content from and upload content to a AWS S3 bucket."
 keywords: "aws, s3, boto3, python, bucket"
 date: 2021-02-17
-weight: 3
+weight: 4
 author: "Nazli Alagöz"
 authorlink: "https://www.tilburguniversity.edu/staff/n-m-alagoz"
 aliases:
