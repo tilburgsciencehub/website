@@ -1,12 +1,10 @@
 ---
-title: "A Reproducible Workflow for Economics Research Using Snakemake and R"
+title: "A Reproducible Workflow Using Snakemake and R"
 date: 2020-11-11T22:01:14+05:30
 draft: false
 description: "A template for a reproducible research project that uses Snakemake and the R programming language."
 keywords: "snakemake, r, template, workflow, example"
 weight: 5
-author: "Lachlan Deer"
-authorlink: "http://lachlandeer.github.io"
 aliases:
   - /try/snakemake-workflow
 ---
@@ -17,7 +15,7 @@ This is a template for a reproducible research project that uses `Snakemake` and
 
 We use `Snakemake` to construct a set of *rules* to build our workflow from start to finish, starting with some data cleaning, running some regressions, constructung figures and tables, and then finishing with compiling a pdf article and slides.
 
-We believe this mimics an approximate workflow of most empirical research in economics.
+We believe this mimics an approximate workflow of most empirical research in social sciences.
 
 ## Motivating Example
 
@@ -26,6 +24,6 @@ We hope by using an example that is simple in its methods readers focus on how w
 
 ## Get The Workflow
 
-Check out the GitHub repository by Lachlan Deer to get started.
+Check out the GitHub repository by [Lachlan Deer](http://lachlandeer.github.io) to get started.
 
 {{% cta-primary-center "Go to the GitHub Repository" "https://github.com/lachlandeer/snakemake-econ-r" %}}

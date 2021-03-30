@@ -6,7 +6,7 @@ keywords: "clean, wrangling, scraping, follow, likes, network"
 date: 2021-01-06T22:01:14+05:30
 draft: false
 aliases:
-  - /clean/social-media-data
+  - /clean/social-media-counts
 ---
 
 ## Overview
@@ -27,11 +27,14 @@ social_media_cleanup <- function(x) {
   numerics <- gsub('[A-Za-z]','',x)
   units <- gsub('[0-9]|[.]|[,]','',x)
   multipliers <- rep(1, length(x))
-  multipliers[grepl('K', units)]<-1000
-  multipliers[grepl('M', units)]<-1E6
-  multipliers[grepl('B', units)]<-1E9
+  multipliers[grepl('K', units, ignore.case = T)]<-1000
+  multipliers[grepl('M', units, ignore.case = T)]<-1E6
+  multipliers[grepl('B', units, ignore.case = T)]<-1E9
 
   return(as.numeric(numerics)*multipliers)
 }
+
+# Example
+social_media_cleanup(c('21.5k', '214m', '1204', 'NA', '642b'))
 ```
 {{% /codeblock %}}
