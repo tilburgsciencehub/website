@@ -29,11 +29,9 @@ Below we list the most common markdown commands:
 * To create a heading, add 1-6 `#` symbols before your header. The number of hashtags will determine the size of the heading.
 * Images can be inserted by linking to either a image URL (e.g., [example](https://www.tilburguniversity.edu/sites/default/files/styles/epic_compact_large/public/image/TilburgU%20logo.jpg?h=f0edcced&itok=lnj4S1OC)) or a relative filepath ([`../git_workflow.png`](../git_workflow.png)). Use the following syntax: `![image description](link)`
 * Visit [this](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax) cheatsheet for a comprehsensive list of markdown commands.
-
 {{% /tip %}}
 
-
-## Structure
+## The Basic Structure
 
 We recommend to at least include the following sections in your README:
 
@@ -96,8 +94,14 @@ Rather than creating the repository overview all by hand, you can leverage the `
 
 {{% /tip %}}
 
+## The README Template
 
+We provide a more comprehensive README template that follows best practices defined by a number of data editors at social science journals. You can read here the [full list of endorsers](https://social-science-data-editors.github.io/template_README/Endorsers.html).
 
+You can always access **[the most recent version of this template here](https://social-science-data-editors.github.io/template_README/)** or download them quickly:
+
+{{% cta-primary-center "Download the Markdown version" "https://raw.githubusercontent.com/social-science-data-editors/template_README/releases/README.md" %}}
+{{% cta-secondary-center "Download the PDF version" "https://social-science-data-editors.github.io/template_README/templates/README.pdf" %}}
 
 ## Examples
 
