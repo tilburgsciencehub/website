@@ -29,27 +29,43 @@ relative_path = "images/photo1.jpg"  # provided that your working directory is "
 ```
 {{% /codeblock %}}
 
-## Mac / Linux Commands
 
+## Open Command Line
+*Mac*  
 Open the Terminal by going into your Applications folder, and then into your Utilities folder, and then double clicking on the Terminal icon. Alternatively, you can use Spotlight to search for the program (e.g., Cmd + Space).
 
+*Windows*  
+Type `cmd` into the search bar and hit enter, it should launch the Windows Command Prompt.
+
+
+## Commands
+
 ### Print Working Directory
+*Mac*  
 To see the full path for your working directory, you can use the `pwd` command, which stands for print working directory.
 
 ![terminal_pwd](../images/terminal_pwd.gif)
 
+*Windows*  
+If you type `pwd` in the Windows Command prompt, it doesn't recognize the command. Instead, type `cd` (or `chdir`) to view the current working directory.
+
 ### List Files
+*Mac*  
 Unlike the graphical user interface, you cannot see what other directories or files are present just by being in a particular directory. You have to explicitly tell your computer to list them for you using the `ls` command.
 
 ![terminal_ls](../images/terminal_ls.gif)
 
 If you’d like to explore another directory, you need to use ls with a path. For example, `ls ~/Documents` will show you what's inside Documents.
 
+*Windows*  
+The `dir` command lists all files and folders in the current directory. In addition, it returns the file size, file type, and the date and time the file was last updated.
+
 {{% tip %}}
 Press the up and down arrows on your keyboard to cycle through previously used commands in the terminal. Also, you can press `TAB` for auto-complete suggestions.
 {{% /tip %}}
 
 ### Change Directories
+*Mac & Windows*  
 The command `cd` allows you to change directories; it's the equivalent of double clicking on a folder. For example, if you want to move from the `samspade` directory into its subdirectory `Documents`, you would write `cd Documents`. To move back up to your home directory, you can use the `cd ..` command.
 
 Note that the path in front of `$` indicates your working directory. This helps you keep track of where you're at.
@@ -62,6 +78,7 @@ A handy shortcut to start in a specific directory immediately is to look up the 
 {{% /tip %}}
 
 ### Create Folder
+*Mac & Windows*   
 To make a new directory, you can use the `mkdir` command which takes the name of the new directory and the destination path of the directory. So, the command `mkdir to-do-lists Documents` would create a new to-do lists directory inside the documents folder.
 
 {{% tip %}}
@@ -70,13 +87,19 @@ Generally speaking, it's better to avoid special characters in directory names, 
 
 
 ### Remove Files & Directories
+*Mac*  
 You can delete a directory along with any files or subdirectories by running the `rm -r` command. For example, `rm -r to-do-lists` removes the to-do lists folder and its contents. Note that you can list multiple files and directories after `rm -r` to remove them all.
 
+*Windows*   
+Separate files can be removed with the `del` command (e.g., `del to-do-list.txt`). To remove a directory, use the command `rmdir`.
+
 {{% warning %}}
-You can't undo the `rm` command, so be careful when you delete files. Removing files in command line is not the same as moving a file to the trash - it's permanent!
+You can't undo the `rm` and `del` commands, so be careful when you delete files. Removing files in command line is not the same as moving a file to the trash - it's permanent!
 {{% /warning %}}
 
+
 ### Move & Rename Files
+*Mac*  
 The `mv` command has two applications: moving a and renaming files. It uses the following syntax:
 
 {{% codeblock %}}
@@ -89,10 +112,13 @@ mv [FILE_NAME] [NEW_FILE_NAME]
 ```
 {{% /codeblock %}}
 
-*Examples:*
+Examples:
 * `mv monday_tasks.txt To_Do_Lists` moves the text file from its current directory to the to-do list folder.
 * `mv 'Monday Tasks.txt' monday_tasks.txt` renames the file by stripping the spaces.
 
+*Windows*  
+The syntax to move and rename files are exactly the same as on Mac, but you need to use the `move` and `rename` commands instead, respectively. Note that you cannot use `move` to rename files on Windows!
 
 ## See Also
 * This building block draws on material of [this](https://generalassembly.github.io/prework/cl/#/) interactive tutorial by General Assembly which is absolutely worth checking out!
+* [Cheatsheet](http://www.cs.columbia.edu/~sedwards/classes/2015/1102-fall/Command%20Prompt%20Cheatsheet.pdf) with the most common Windows Command Prompt commands.
