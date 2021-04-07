@@ -6,7 +6,7 @@ keywords: "AWS, CLI, command line, terminal, command"
 date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
-  - /install/awscli
+  - /get/awscli
 ---
 
 Amazon Web Services (AWS) provides cloud-computing and storage facilities that can be used for research projects. To make optimal use of AWS, you can control AWS resources (e.g., starting computers, downloading data) using a so-called command-line interface.
