@@ -28,13 +28,13 @@ targets: prerequisites
    commands to build
 ```
 
-* The __targets__ are things that you want to build - for example, data sets, outputs of analyses, a PDF file, etc. You can define multiple targets for one rule (separate targets by spaces!). Typically, though, there is only one per rule. This is thus the dish (or part of the dish) you want to create with the recipe.
+* The __targets__ are things that you want to build - for example, data sets, outputs of analyses, a PDF file, etc. You can define multiple targets for one rule (separate targets by spaces!). Typically, though, there is only one per rule. Think of this as the dish (or part of the dish) that you want to create with your recipe.
   * Example: `dataset.csv` (my final, cleaned dataset)
 
-* The __prerequisites__ are the things that you *need* before you can build the target. It's also a list of file names, separated by spaces. These files need to exist before the commands for the target are run. They are also called dependencies. The cool thing is that `make` automatically checks whether any of the dependencies has changed (e.g., a change in the source code) - so it can figure out which rules to be run, and which ones not (saving you a lot of computation time!).You can view these are the ingredients of the recipe.
+* The __prerequisites__ are the things that you *need* before you can build the target. It's also a list of file names, separated by spaces. These files need to exist before the commands for the target are run. They are also called dependencies. The cool thing is that `make` automatically checks whether any of the dependencies has changed (e.g., a change in the source code) - so it can figure out which rules to be run, and which ones not (saving you a lot of computation time!).You can view these as the ingredients of the recipe.
   * Example: `rawdata1.csv clean.R` (before building `dataset.csv`, the raw data and a specific script to clean the raw data need to exist)
 
-* The __commands__ are a series of steps to go through to *build* the target(s). These need to be indented with a tab ("start with a tab"), *not* spaces. The commands can be seen as the recipe instructions. 
+* The __commands__ are a series of steps to go through to *build* the target(s). These need to be indented with a tab ("start with a tab"), *not* spaces. The commands can be seen as the recipe instructions.
   * Example: the command `R --vanilla < clean.R` opens R, and runs the script `clean.R`.
 
 *Final example:*
