@@ -6,19 +6,19 @@ weight: 3
 date: 2021-03-05T22:01:14+05:30
 draft: false
 aliases:
-  - /assess/monitor-data-quality
+  - /monitor/data-quality
 ---
 
 ## Overview
-After carefully planning and prototyping, researchers can begin the actual data collection. It is important to note that the data collection process is best considered “work-in-progress.” Thus, researchers need to remain agile and adapt the code where required. Here we outline the 10 most common data quality issues and how you can resolve them. 
+After carefully planning and prototyping, researchers can begin the actual data collection. It is important to note that the data collection process is best considered “work-in-progress.” Thus, researchers need to remain agile and adapt the code where required. Here we outline the 10 most common data quality issues and how you can resolve them.
 
 ## 10 Common Issues
 
 #### 1. It cannot be verified whether all the data that should have been collected was indeed collected.
-* Log each web request (i.e., URL call), along with response status codes, timestamps of when the collection was started, and when the request was made. 
+* Log each web request (i.e., URL call), along with response status codes, timestamps of when the collection was started, and when the request was made.
 * Save raw HTML websites, along with the parsed data, and compare them.
 
-#### 2. The data collection has been interrupted or stopped unexpectedly. 
+#### 2. The data collection has been interrupted or stopped unexpectedly.
 * Verify timestamps in log files or content of parsed data to gauge severity.
 * Try to identify and fix the cause of the interruption.
 * Record issue in a logbook (e.g., in the documentation) and notify potential users of
@@ -64,13 +64,3 @@ static vs. dynamic websites).
 * Verify that computing resources are appropriate (e.g., downscale servers on which collection scripts run, verify that database runs optimally). Consider the costs of data transfer.
 * Verify whether any backup data can be moved to a different location or placed in a glacier for which lower storage costs will be charged.
 * Consider writing data to files after collection, rather than keeping them in an actively running database in the cloud.
-
-
-
-
-
-
-
-
-
-

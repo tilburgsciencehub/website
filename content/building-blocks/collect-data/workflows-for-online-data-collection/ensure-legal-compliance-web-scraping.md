@@ -6,7 +6,7 @@ weight: 2
 date: 2021-03-05T22:01:14+05:30
 draft: false
 aliases:
-  - /assess/ensure-legal-compliance-webscraping
+  - /assess/legal-compliance-webscraping
 ---
 
 ## Overview
@@ -79,8 +79,3 @@ parameter estimates from a model, cross tabs, package with a trained machine lea
 the data)?
 * Has a license been chosen for the final data set? Is the license compatible with potentially inherited
 licenses (e.g., creative commons)?
-
-
-
-
-
