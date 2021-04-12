@@ -3,20 +3,24 @@
 		<div class="row pt-0 justify-content-center">
 			<div class="col-1"></div>
 			<div class="col-1">
-				<img src="/img/footer-mark.svg" alt="" class="d-none d-lg-block">
+				<svg width="20" height="17" xmlns="http://www.w3.org/2000/svg" class="d-none d-lg-block blinkFooterLogo">
+					<defs>
+						<linearGradient x1="104.983836%" y1="13.875%" x2="1.23276003%" y2="85.1047066%" id="a">
+							<stop stop-color="#FF9C00" offset="0%"/>
+							<stop stop-color="#FFB222" offset="100%"/>
+						</linearGradient>
+					</defs>
+				<path d="M124.769273 139.570946c.679712 0 1.230727.543611 1.230727 1.21419 0 .670578-.551015 1.214189-1.230727 1.214189h-9.845817c-.679712 0-1.230727-.543611-1.230727-1.214189 0-.670579.551015-1.21419 1.230727-1.21419zm-18.408601-14.21512c.480896-.474435 1.260583-.474435 1.741479 0l7.384363 7.285135c.230747.2279.360244.536919.359988.859039.000256.32212-.129241.631139-.359988.859039l-7.384363 7.285135c-.480896.474435-1.260583.474435-1.741479 0-.480896-.474434-.480896-1.243643 0-1.718077L112.886603 133.5l-6.525931-6.426097c-.480896-.474434-.480896-1.243643 0-1.718077z" transform="translate(-106 -125)" fill="url(#a)" fill-rule="nonzero"/>
+			</svg>
 			</div>
 			<div class="col-lg-1 col-0"></div><div class="col-lg-4 col-21">
 				<div class="footerCollapse">
-					<div class="heading text-white d-block pb-3">Tutorials</div>
+					<div class="heading text-white d-block py-2">Tutorials</div>
 
 					<div class="d-none d-lg-block links">
 						{{- range where .Site.Pages "Section" "tutorials" -}}
 						{{ if eq .Params.isParent true }}
-						{{- range $index, $value := .Pages -}}
-						{{ if ne .Params.indexexclude "true" }}
-						<a href="{{ .Permalink }}">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
-						{{ end }}
-						{{- end -}}
+						<a href="{{ .Permalink }}">{{ .Title }}</a>
 						{{ end }}
 						{{- end -}}
 					</div>
@@ -26,7 +30,7 @@
 			<div class="col-lg-1 col-0"></div>
 			<div class="col-lg-4 col-21">
 				<div class="footerCollapse">
-					<div class="heading text-white d-block pb-3">Building Blocks</div>
+					<div class="heading text-white d-block py-2">Building Blocks</div>
 
 					<div class="d-none d-lg-block links">
 						{{- range where .Site.Pages "Section" "building-blocks" -}}
@@ -42,7 +46,7 @@
 			<div class="col-lg-1 col-0"></div>
 			<div class="col-lg-4 col-21">
 				<div class="footerCollapse">
-					<div class="heading text-white d-block pb-3">Examples</div>
+					<div class="heading text-white d-block py-2">Examples</div>
 
 					<div class="d-none d-lg-block links">
 						{{- range where .Site.Pages "Section" "examples" -}}
@@ -56,7 +60,7 @@
 			<div class="col-lg-1 col-0"></div>
 			<div class="col-lg-4 col-21">
 				<div class="footerCollapse">
-					<div class="heading text-white d-block pb-3">Tilburg Science Hub</div>
+					<div class="heading text-white d-block py-2">Tilburg Science Hub</div>
 					<div class="d-none d-lg-block links">
 						<!-- <a href="">Tour</a>-->
 						<a href="/about">About</a>
