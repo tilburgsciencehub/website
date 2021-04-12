@@ -1,13 +1,13 @@
 ---
-title: "Learn How to Use APIs"
+title: "Extract Data From APIs"
 description: "Learn how to collect data from APIs."
 keywords: "api, application programming interface"
-weight: 2
+weight: 4
 date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /use/api
-  - /collect-data/api
+  - /collect-data/extract-data-api
 ---
 
 ## Overview
@@ -47,12 +47,31 @@ print(joke_request)
 ```
 {{% /codeblock %}}
 
+*Multiple seeds*  
+Rather than having a fixed endpoint like the one above (e.g., always search for cat jokes), you can restructure your code to allow for variable input. For example, you may want to create a function `search_api()` that takes an input parameter `search_term` that you can assign any value you want.
+
+{{% codeblock %}}
+```Python
+def search_api(search_term): 
+  search_url = "https://icanhazdadjoke.com/search"
+  response = requests.get(search_url,
+                        headers={"Accept": "application/json"},
+                        params={"term": search_term})
+  return response.json()
+
+search_api("dog")
+search_api("cow")
+```
+{{% /codeblock %}}
+
 *Pagination*  
 Transferring data is costly - not strictly in a monetary sense, but in time. So - APIs are typically very greedy in returning data. Ideally, they only produce a very targeted data point that is needed for the user to see. It saves the web site owner paying for bandwidth and guarantees that the site responds fast to user input.
 
 By default, each page contains 20 jokes, where page 1 shows jokes 1 to 20, page 2 jokes 21 to 40, ..., and page 33 jokes 641 to 649.
 
 You can adjust the number of results on each page (max. 30) with the limit parameter (e.g., `params={"limit": 10}`). In practice, almost every API on the web limits the results of an API call (100 is also a common cap). As an alternative, you can specify the current page number with the `page` parameter (e.g., `params={"term": "", "page": 2}`).
+
+
 
 
 ### Reddit
