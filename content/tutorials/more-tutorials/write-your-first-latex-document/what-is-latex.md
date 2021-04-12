@@ -33,11 +33,10 @@ Jokes aside, there are a few advantages in using $\LaTeX$:
 - It can yield the highest-quality and professional-looking documents
 - It deals with the page layout, so you don't have to
 - It can generate complex structures with thousands of cross-references, notes, citations that stay always up-to-date when you edit your document
-- It can produce gorgeous mathematical equations
 - It's free
-- Are you into chemistry? Did we mention that you can do this?
+- It can produce gorgeous mathematical equations:
 
-![Chemfig in LaTeX](../img/chemfig-latex.png)
+$$\int_1^\infty\frac{1}{x^2}dx=\left[-\frac{1}{x}\right]_1^\infty=1$$
 
 ## Is $\LaTeX$ Difficult to Learn?
 
