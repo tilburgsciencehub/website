@@ -25,7 +25,7 @@ so-called "repositories" that track files and directories.
 {{% tip %}}
 **Storing sensitive data**
 
-Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work. Therefore, it is crucial that you __do not store any sensitive information__ in your source code (e.g., API credentials, passwords).
+Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work. Therefore, it is crucial that you __do not store any sensitive information__ in your source code (e.g., API credentials, passwords). If you have committed sensitive data to your Git repository, you can remove the file and all its previously issued commits using [these instructions](https://docs.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository)!
 {{% /tip %}}
 
 ### What is GitHub?
