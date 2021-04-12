@@ -2,7 +2,7 @@
 title: "Calculate a Technically Feasible Sample Size"
 description: "Learn how to determine the number of units that can be obtained from a website or API."
 keywords: "sample size, sample, n, data collection, compute"
-weight: 2
+weight: 4
 date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
