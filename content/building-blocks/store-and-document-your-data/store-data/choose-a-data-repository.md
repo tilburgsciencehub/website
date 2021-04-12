@@ -5,6 +5,8 @@ keywords: "archiving, data archiving, dataverse, zenodo, figshare, osf, dans"
 date: 2021-02-08
 draft: false
 weight: 1
+author: "Pam Dupont"
+authorlink: "https://www.tilburguniversity.edu/staff/p-h-dupont"
 aliases:
   - /choose/data-repository
 ---
