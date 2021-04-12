@@ -14,10 +14,14 @@
       {{ range where .Site.Pages "Section" "examples" }}
       {{ if ne .Title "Examples" }}
         <div class="col-lg-8 col-22 mb-4 d-flex flex-wrap">
-          <div class="bg-white p-5 text-center w-100 rounded">
-            <h4 class="heading">{{ .Title }}</h4>
-            <p class="my-3" style="color: #6081A2;">{{ .Params.description }}</p>
-            <a href="{{ .Permalink }}" class="btn btn-primary mt-5">View Example</a>
+          <div class="bg-white p-5 text-center w-100 rounded d-flex flex-column">
+            <span class="flex-fill">
+              <h4 class="heading">{{ .Title }}</h4>
+              <p class="my-3" style="color: #6081A2;">{{ .Params.description }}</p>
+            </span>
+            <span>
+              <a href="{{ .Permalink }}" class="btn btn-primary mt-5">View Example</a>
+            </span>
           </div>
         </div>
       {{ end }}

@@ -1,69 +1,82 @@
-{{ $siteURL := .Site.BaseURL }}
-{{ partial "header.html" . }}
-<br><br>
-<div class="container mt-4">
-	{{ partial "breadcrumbs.html" . }}
-</div>
+{{ $siteURL := .Site.BaseURL }} {{ partial "header.html" . }} <br /><br />
+<div class="container mt-4">{{ partial "breadcrumbs.html" . }}</div>
 <div class="container content px-0 mt-5">
-	<div class="row justify-content-center mx-0">
-		<div class="col-lg-8 col-22 pr-lg-5">
-			<div class="sticky-top mb-lg-5 pb-lg-5">
-				{{ if .Params.tutorialTitle }}
-				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Params.tutorialTitle }}</h1>
-				{{ else }}
-				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
-				{{ end }}
-				<div class="TableOfContents" style="max-height: 550px; overflow-y: scroll;">
-					<span class="arrow-icon"></span>
-					<div class="pseudo-btn d-block d-lg-none"></div>
-					{{ $currentTitle := .Title }}
+  <div class="row justify-content-center mx-0">
+    <div class="col-lg-8 col-22 pr-lg-5">
+      <div class="sticky-top mb-lg-5 pb-lg-5">
+        {{ if .Params.tutorialTitle }}
+        <h1
+          class="text-center text-lg-left"
+          style="font-size: 38px; line-height: 48px"
+        >
+          {{ .Params.tutorialTitle }}
+        </h1>
+        {{ else }}
+        <h1
+          class="text-center text-lg-left"
+          style="font-size: 38px; line-height: 48px"
+        >
+          {{ .Title }}
+        </h1>
+        {{ end }}
+        <div class="TableOfContents">
+          <span class="arrow-icon"></span>
+          <div class="pseudo-btn d-block d-lg-none"></div>
+          {{ $currentTitle := .Title }} {{ range where .Site.Pages "Type" .Type }} {{ if eq .Title $currentTitle }}
+          <h5
+            class="heading text-primary"
+            style="
+              font-size: 18px;
+              height: 28px;
+              margin-left: 10px;
+              margin-top: 8px;
+              font-weight: 100 !important;
+            "
+          >
+            <a class="text-primary" href="{{ .Permalink }}">{{ .Title }}</a>
+          </h5>
 
-					{{ range where .Site.Pages "Type" .Type }}
+          <div class="pl-4">{{ .TableOfContents }}</div>
 
-						{{ if eq .Title $currentTitle }}
-						<h5 class="heading text-primary" style="font-size: 18px; height: 28px; margin-left: 10px; margin-top: 8px; font-weight: 100 !important;"><a class="text-primary" href="{{ .Permalink }}">{{ .Title }}</a></h5>
+          {{ else }}
+          <h5
+            class="text-secondary heading"
+            style="
+              font-size: 18px;
+              height: 38px;
+              margin-left: 10px;
+              margin-top: 8px;
+              font-weight: 100 !important;
+            "
+          >
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </h5>
+          {{ end }} {{ end }}
+        </div>
 
-							<div class="pl-4">{{ .TableOfContents }}</div>
+        <div class="d-none d-lg-block pseudoSpacer"></div>
+      </div>
+    </div>
+    <article class="col-lg-16 col-22">
+      <div class="p-5 bg-white rounded mb-5">
+        {{ if eq (len .Content) 0 }}
+        <script>
+          window.location = "/{{.Section}}";
+        </script>
+        {{ else }} {{ .Content }} {{ if (and (.Params.author) (.Params.authorlink)) }}
+        <div class="admonition author">
+          <div class="admonition-content">
+            Contributed by
+            <b><a href="{{ .Params.authorlink }}">{{ .Params.author }}</a></b>
+          </div>
+        </div>
+        {{ else }} {{ end }} {{ if eq .Params.share false }} {{ else }} {{ with .Params.aliases }} {{ range first 1 . }} {{ partial "shareLinks.html" (dict "context" . "siteURL" $siteURL) }} {{ end }} {{ end }} {{ end }}
+        {{ end }} {{ partial "pagination.html" . }}
+      </div>
 
-
-						{{ else }}
-						<h5 class="text-secondary heading" style="font-size: 18px; height: 38px; margin-left: 10px; margin-top:8px; font-weight: 100 !important;"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
-						{{ end }}
-
-					{{ end }}
-				</div>
-
-				<div class="d-none d-lg-block pseudoSpacer"></div>
-			</div>
-
-		</div>
-		<article class="col-lg-16 col-22">
-			<div class="p-5 bg-white rounded mb-5">
-				{{ if eq (len .Content) 0 }}
-				<script>window.location = "/{{.Section}}"</script>
-				{{ else }}
-				{{ .Content }}
-				{{ if (and (.Params.author) (.Params.authorlink)) }}
-				<div class="admonition author">
-					<div class="admonition-content">Contributed by <b><a href="{{ .Params.authorlink }}">{{ .Params.author }}</a></b></div>
-				</div>
-				{{ else }}
-				{{ end }}
-				{{ if eq .Params.share false }}
-				{{ else }}
-				{{ with .Params.aliases }}
-				{{ range first 1 . }}
-				{{ partial "shareLinks.html" (dict "context" . "siteURL" $siteURL) }}
-				{{ end }}
-				{{ end }}
-				{{ end }}
-				{{ end }}
-				{{ partial "pagination.html" . }}
-			</div>
-
-			{{ partial "relatedPosts.html" . }}
-		</article>
-	</div>
+      {{ partial "relatedPosts.html" . }}
+    </article>
+  </div>
 </div>
 
 {{ partial "footer.html" . }}
