@@ -2,7 +2,7 @@
 title: "Cheatsheet for LaTeX Math Commands"
 description: "Explore all the most important AMS-Math LaTeX commands and download your cheatsheet."
 keywords: "ams, math, latex, tex, cheatsheet"
-weight: 104
+weight: 105
 date: 2020-11-11T22:02:51+05:30
 draft: false
 author: "Manuele Macchia"
