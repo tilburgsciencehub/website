@@ -13,7 +13,7 @@ aliases:
 
 Using publicly available data from AirBnB (available via [Kaggle.com](https://www.kaggle.com/airbnb/boston)), we illustrate how a reproducible workflow may look like in practice.
 
-{{% cta-primary-center "Check out the GitHub Repository" "https://github.com/tilburgsciencehub/tisem-airbnb" %}}
+{{% cta-primary-center "Check out the GitHub Repository" "https://github.com/tilburgsciencehub/airbnb-workflow" %}}
 
 We've crafted this project to run:
 
@@ -29,11 +29,9 @@ We've crafted this project to run:
 ### Dependencies
 
 - Install [Python](/get/python/).
-
   - Anaconda is recommended. [Download Anaconda](https://www.anaconda.com/distribution/).
   - check availability: type `anaconda --version` in the command line.
 - Install Kaggle package.
-
   - [Kaggle API](https://github.com/Kaggle/kaggle-api) instruction for installation and setup.
 - Install [Automation tools](/get/make/).
   - GNU make: already installed in Mac and Linux OS. [Download Make](http://gnuwin32.sourceforge.net/packages/make.htm) for Windows OS and install.
@@ -44,15 +42,12 @@ We've crafted this project to run:
     - Add the bin of `Make`
   - check availability: type `make --version` in the command line.
 - Install [Stata](/get/stata/).
-
   - making Stata available via the command line. [Instruction](/get/stata/) for adding Stata to path.
   - check availability: type `$STATA_BIN --version` in the command line.
 - Install [Perl](/get/perl/).
-
   - Perl is already installed in Mac and Linux OS. [Download Perl](https://www.perl.org/get.html) for Windows OS.
   - Make sure Perl available via the command line.
   - check availability: type `perl -v` in the command line.
-
 - Install [LyX](/get/latex/).
   - LyX is an open source document processor based on the LaTeX. [Download LyX](https://www.lyx.org/Download).
   - make sure LyX available via the command line.
@@ -62,10 +57,8 @@ We've crafted this project to run:
 
 Open your command line tool:
 
-- Check whether your present working directory is  `tisem-airbnb` by typing `pwd` in terminal
-
-  - if not, type `cd yourpath/tisem-airbnb` to change your directory to `tisem-airbnb`
-
+- Check whether your present working directory is `airbnb-workflow` by typing `pwd` in terminal
+  - if not, type `cd yourpath/airbnb-workflow` to change your directory to `airbnb-workflow`
 - Type `make` in the command line.
 
 

@@ -63,14 +63,13 @@ For you to be able to use Stata from the command line, you have to add Stata to 
 {{% warning %}}
 **Making Stata available via the PATH settings on Mac.**
 
-- open Terminal
-- type `vi ~/.bash_profile`
-- add Stata to the environmental varibles
-		- type `i` to input mode of vim
-		- add `export STATA_BIN=/Applications/Stata/StataMP.app/Contents/MacOS/stataMP`. You may need to replace stataMP to stataSE or so, which depends on which Stata you install on Mac.
-		- press `esc` and type `:w` to save the change
-		- close the ternimal and reopen one terminal. Then type `source ~/.bash_profile` to bring the new .bash_profile into effect.
-- type `$STATA_BIN -v` to check availability. Remember to type the `$` before `STATA_BIN`.
+- Open the Terminal.
+- Type `nano ~/.bash_profile`.
+- Add Stata to the environmental variables:
+		- Add `export STATA_BIN=/Applications/Stata/StataMP.app/Contents/MacOS/stataMP` to a new line. You may need to replace stataMP to stataSE or so, which depends on which Stata you install on Mac.
+		- Save by pressing `Ctrl + O` and exit by pressing `Ctrl + X`.
+		- Relaunch the Terminal. Then type `source ~/.bash_profile` to bring the new .bash_profile into effect.
+- Type `$STATA_BIN -v` to check availability. Remember to type the `$` before `STATA_BIN`.
 {{% /warning %}}
 
 <!--- Linux users not available yet

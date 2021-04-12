@@ -104,21 +104,20 @@ Note that additional packages for Tex Live should be installed through the apt p
 {{% warning %}}
 **Making LyX available via the PATH settings on Mac**
 
-- open Terminal
-- type `vi ~/.bash_profile`
-- add LyX to the environmental varibles
-	- type `i` to input mode of vim
-	- add `export LYX_BIN=/Applications/LyX.app/Contents/MacOS/lyx`.
-	- press `esc` and type `:w` to save the change
-	- close the ternimal and reopen one terminal. Then type `source ~/.bash_profile` to bring the new .bash_profile into effect.
-- type `$LYX_BIN` to check availability. Remember to type the `$` before `LYX_BIN`.
+- Open the Terminal.
+- Type `nano ~/.bash_profile`.
+- Add LyX to the environmental variables:
+	- Add `export LYX_BIN=/Applications/LyX.app/Contents/MacOS/lyx` to a new line.
+	- Save by pressing `Ctrl + O` and exit by pressing `Ctrl + X`.
+	- Relaunch the Terminal. Then type `source ~/.bash_profile` to bring the new .bash_profile into effect.
+- Type `$LYX_BIN` to check availability. Remember to type the `$` before `LYX_BIN`.
 {{% /warning %}}
 
  <!--- Linux users not available yet
  -->
 
 
- ### Check your Installation
+ #### Check your Installation
 
  To verify that LyX has been correctly installed and configured via your PATH settings,
  open a **new** terminal interface and enter:
