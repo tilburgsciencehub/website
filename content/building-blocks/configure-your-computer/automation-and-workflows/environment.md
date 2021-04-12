@@ -1,7 +1,7 @@
 ---
 title: "Making Path Settings Permanent"
 description: "For our workflow to be command line driven, we need to be able to call software from the command line."
-keywords: "PATH, add, terminal, cli"
+keywords: "PATH, add, terminal, cli, bash"
 weight: 4
 date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -45,28 +45,44 @@ We now provide a guide of how to create / adjust this file using a tiny editor c
 
 Open a Terminal and type:
 
-        nano ~/.bash_profile
+```bash
+nano ~/.bash_profile
+```
 
-If .bash_profile already existed, you will see some text at this point. If so, use the arrow keys to scroll all the way to the bottom of the file.
+You should now see something similar to this. It's a text editor within the Terminal. Here you can add your environment variables.
 
-Add the following line at the end of the file:
+![PATH variables in the Bash profile](../img/bash-profile.png)
 
-        export PATH="${PATH}:/path/to/program/inside/package"
+{{% warning %}}
+If .bash_profile did not exist already, you need to create it.
+{{% /warning %}}
 
-for each program we need to make accessible.
+You can add your environment variable by adding a new line:
+```bash
+export PATH=$PATH:/path/to/folder
+```
 
-For example to make matlab accessible from the command line:
+You can save by pressing `Ctrl + O` and exit by pressing `Ctrl + X`.
 
-        export PATH="${PATH}:/Applications/MATLAB_R2016a.app/bin/matlab
+Once you're done, you'll need to reload `bash`. Close and launch again a new Terminal session, the type:
 
-Please do this for the following software:
+```bash
+. ~/.bash_profile
+```
+
+Do this for each program you need to make accessible from the command line. Do this for:
 
 * Sublime Text
 * Git
 * Matlab
 * R
 
-Once you have finished,  press Return and then ctrl+o (= WriteOut = save) and Return once more.
+For example, to make MATLAB accessible from the command line:
+```bash
+export PATH=$PATH:/Applications/MATLAB_R2016a.app/bin/matlab
+```
+
+
 
 Your default locale settings may conflict with some of the programs we'll need.
 If you want to be on the safe side, add these lines to your .bash_profile file:
