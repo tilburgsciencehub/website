@@ -1,32 +1,36 @@
 <!-- pagination -->
 <div class="pagination">
-	<div>
-		{{ with .NextInSection }}
-		{{ if .Title }}
-		<div class="pagination-title d-none d-lg-block">Previous</div>
-		<a href="{{ .RelPermalink }}" class="pagination-button">
-			<div class="arrow-circle">
-				<img src="/img/arrow-right.svg">
-			</div>
-			<span class="d-inline-block d-lg-none">Previous</span>
-			<span class="d-none d-lg-inline-block">{{ .Title }}</span>
-		</a>
-		{{ end }}
-		{{ end }}
-	</div>
-	<div class="pagination-right">
-		{{ with .PrevInSection }}
-			{{if .Title}}
-		<div class="pagination-title d-none d-lg-block">Next</div>
-		<a href="{{ .RelPermalink }}" class="pagination-button">
-			<span class="d-none d-lg-inline-block">{{ .Title }}</span>
-			<span class="d-inline-block d-lg-none">Next</span>
-			<div class="arrow-circle">
-				<img src="/img/arrow.svg">
-			</div>
-		</a>
-		{{ end }}
-		{{ end }}
-	</div>
+  <div>
+    {{ with .NextInSection }} {{ if .Title }}
+    <a
+      href="{{ .RelPermalink }}"
+      class="pagination-title d-none d-lg-block text-secondary"
+      >Previous</a
+    >
+    <a href="{{ .RelPermalink }}" class="pagination-button">
+      <div class="arrow-circle">
+        <img src="/img/arrow-right.svg" />
+      </div>
+      <span class="d-inline-block d-lg-none">Previous</span>
+      <span class="d-none d-lg-inline-block btnTitle">{{ .Title }}</span>
+    </a>
+    {{ end }} {{ end }}
+  </div>
+  <div class="pagination-right">
+    {{ with .PrevInSection }} {{if .Title}}
+    <a
+      href="{{ .RelPermalink }}"
+      class="pagination-title d-none d-lg-block text-secondary"
+      >Next</a
+    >
+    <a href="{{ .RelPermalink }}" class="pagination-button">
+      <span class="d-none d-lg-inline-block btnTitle">{{ .Title }}</span>
+      <span class="d-inline-block d-lg-none">Next</span>
+      <div class="arrow-circle">
+        <img src="/img/arrow.svg" />
+      </div>
+    </a>
+    {{ end }} {{ end }}
+  </div>
 </div>
 <!-- /pagination -->

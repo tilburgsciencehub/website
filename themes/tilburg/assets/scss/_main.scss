@@ -136,6 +136,10 @@
       padding: 0 20px 0 10px;
       line-height: 26px;
       font-size: 15px;
+      max-width: 300px;
+      white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
       vertical-align: text-bottom;
       font-family: "acumin-pro", sans-serif !important;
     }
@@ -372,21 +376,7 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 40px;
   height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  // margin-top: 40px;
-
-  .content {
-    flex: 1 0 auto;
-  }
-  .footer {
-    flex-shrink: 0;
-  }
 }
 
 html {
@@ -598,6 +588,10 @@ article {
     border-collapse: separate !important;
     border-spacing: 0;
     margin-bottom: 25px;
+
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
 
     code {
       user-select: all;
@@ -882,7 +876,22 @@ input {
   }
 }
 
+a.text-secondary:hover {
+  color: $secondary !important;
+}
+
+@media only screen and (min-width: 991px) {
+  .pagination {
+    .pagination-button {
+      span {
+        max-width: 200px !important;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 991px) {
+  
   .TableOfContents {
     background-color: #fff;
     border-radius: 4px;
@@ -928,7 +937,19 @@ input {
   }
 }
 
+@media only screen and (min-width: 1340px) {
+  .pagination {
+    .pagination-button {
+      span {
+        max-width: 300px !important;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 1340px) {
+  
+
   .sticky-top {
     top: 0px;
   }
