@@ -58,15 +58,15 @@ $(document).ready(function () {
   $(`.codeblock .downloadCodeBtn`).hide();
   for (x = 0; x < codeblocks.length; x++) {
     let blocks = $(`.codeblock:eq(${x}) .inner .highlight`);
-
+    let d = 0;
     blocks.map((block) => {
       $(`.codeblock:eq(${x}) .nav`).append(`
         <li class="nav-item" role="presentation">
           <a class="nav-link ${block == 0 ? "active" : ""}" id="pills-${
         blocks[block].children[0].children[0].className
-      }-tab-${x}" data-toggle="tab" href="#${
+      }-tab-${x}-${d}" data-toggle="tab" href="#${
         blocks[block].children[0].children[0].className
-      }-${x}" role="tab" aria-controls="pills-${
+      }-${x}-${d}" role="tab" aria-controls="pills-${
         blocks[block].children[0].children[0].className
       }" aria-selected="true">${blocks[
         block
@@ -77,16 +77,17 @@ $(document).ready(function () {
       $(`.codeblock:eq(${x}) .tab-content`).append(`
         <div class="tab-pane ${block == 0 ? "fade show active" : ""}" id="${
         blocks[block].children[0].children[0].className
-      }-${x}" role="tabpanel" aria-labelledby="pills-${
+      }-${x}-${d}" role="tabpanel" aria-labelledby="pills-${
         blocks[block].children[0].children[0].className
       }-tab">
-          
         </div>
       `);
 
       $(
-        `.codeblock:eq(${x}) #${blocks[block].children[0].children[0].className}-${x}`
+        `.codeblock:eq(${x}) #${blocks[block].children[0].children[0].className}-${x}-${d}`
       ).append(blocks[block]);
+      
+      d++;
 
       var el = $(
         `.codeblock:eq(${x}) a:contains('${blocks[
@@ -217,14 +218,6 @@ $(".headerSearchMobile").on("keyup", function (e) {
     resultsHolder.addClass("active");
   });
 });
-
-// detect screen size change
-// $(window).resize(function() {
-//   if(this.resizeTO) clearTimeout(this.resizeTO);
-//   this.resizeTO = setTimeout(function() {
-//       location.reload();
-//   }, 500);
-// });
 
 /*
  *
