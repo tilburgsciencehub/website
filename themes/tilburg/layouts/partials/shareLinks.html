@@ -1,8 +1,9 @@
+{{ .siteURL }}
+
 <div class="share">
-  <div class="share-title d-lg-block">
-    Share
+  <span class="share-title d-lg-block">Share</span>
     <a
-      href="http://www.facebook.com/sharer.php?u={{ .siteURL }}{{ .context }}"
+      href="http://www.facebook.com/sharer.php?u={{ .siteURL }}"
       class="facebook"
       aria-label="share on Facebook"
     >
@@ -155,13 +156,9 @@
         </svg>
       </div>
     </a>
-    <a href="#0" class="d-none">
-      <div class="share-button d-none">
-        <a class="copyLinkBtn" data-url="{{ .Page.RelPermalink }}" href="#0"
-          ><img src="/img/copy-code.svg"
-        /></a>
-      </div>
+    <a href="#0" class="share-button copyURL" data-url="{{ .siteURL }}{{ .context }}">
+      <svg width="17" height="17" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.16314 0h8.89076c.6336 0 1.149.515495 1.1491 1.1491v8.8908c0 .6336-.5155 1.1491-1.1491 1.1491H12.441V6.04423c0-1.21204-.9861-2.1981-2.1981-2.1981H5.01404V1.1491C5.01404.515495 5.5295 0 6.16314 0zm-4.811 4.8951h8.89066c.6337 0 1.1492.5155 1.1492 1.14914V14.935c0 .6336-.5155 1.1491-1.1491 1.1491H1.35214c-.633642 0-1.149102-.5155-1.149137-1.1491V6.04424c0-.63364.51553-1.14914 1.149137-1.14914z" fill="#000"/></svg></a>
     </a>
-  </div>
-  <p>Or copy this: <code>{{ .siteURL }}{{ .context }}</code></p>
+  
+  <!-- <p>Or copy this: <code>{{ .siteURL }}{{ .context }}</code></p> -->
 </div>

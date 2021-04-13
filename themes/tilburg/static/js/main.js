@@ -105,6 +105,18 @@ $(document).ready(function () {
     });
   }
 
+  $(".share-button.copyURL").on("click", function() {
+    let url = $(this).attr("data-url");
+    var $temp = $('<textarea id="toCopy"></textarea>');
+    $("body").append($temp);
+    $temp
+      .val(url)
+      .select();
+
+    document.execCommand("copy");
+    $temp.remove();
+  })
+
   // make code copy-able
   $(".copyCodeBtn").on("click", function () {
     var $temp = $('<textarea id="toCopy"></textarea>');

@@ -13,8 +13,9 @@
 // share
 .share {
   margin-top: 60px;
-  // padding-top: 40px;
-  display: flex;
+  width: 100%;
+  display: inline-flex;
+  align-items: flex-end;
   justify-content: space-between;
 
   .share-title {
@@ -30,7 +31,7 @@
   .share-button {
     cursor: pointer;
     display: inline-block;
-    margin-left: 30px;
+    // margin-left: 30px;
     display: inline-flex;
     justify-content: center;
     align-items: flex-start;
@@ -881,6 +882,20 @@ input {
 
 a.text-secondary:hover {
   color: $secondary !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .share {
+    margin-top: 60px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+
+    a {
+      margin-left: 33px;
+    }
+  }
 }
 
 @media only screen and (min-width: 991px) {
