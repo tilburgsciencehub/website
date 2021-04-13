@@ -2,9 +2,9 @@
 title: "Learn Regular Expressions"
 description: "Learn how to formulate powerful string search queries with regular expressions."
 keywords: "regular expressions, regex, strings, string processing, characters, regexp, search pattern, string searching"
-date: 2020-11-11T22:02:51+05:30
+#date: 2020-11-11T22:02:51+05:30
 draft: false
-weight: 3
+#weight: 3
 aliases:
   - /learn/regex
   - /learn/regular-expressions
@@ -152,7 +152,7 @@ re.sub(r"\d+", "X", my_string)
 
 ### Web Scraping
 
-In addition to Beautifulsoup, you can apply regular expressions to parse HTML source code. Say the source code of a webpage consists of a book title, description, and a table: 
+In addition to Beautifulsoup, you can apply regular expressions to parse HTML source code. Say the source code of a webpage consists of a book title, description, and a table:
 
 ```python
 html_code = '''
@@ -196,9 +196,9 @@ re.findall(r"<table[\s\S]*", html_code)
 ## Advanced Use Cases
 
 **Greedy vs non-greedy**  
-By default, regular expressions follow a greedy approach which means that they match as many characters as possible (i.e., returns the longest match found). Let's have a look at an example to see what this means in practice. Say that we want to extract the contents of `my_string` and thus remove the HTML tags. 
+By default, regular expressions follow a greedy approach which means that they match as many characters as possible (i.e., returns the longest match found). Let's have a look at an example to see what this means in practice. Say that we want to extract the contents of `my_string` and thus remove the HTML tags.
 
-Therefore, we replace the two paragraph tags (`<p>` and `</p>`) with an empty string. Surprisingly, it returns an empty string (`''`), why is that? After all, we would expect to see: `This is a paragraph enclosed by HTML tags.`. 
+Therefore, we replace the two paragraph tags (`<p>` and `</p>`) with an empty string. Surprisingly, it returns an empty string (`''`), why is that? After all, we would expect to see: `This is a paragraph enclosed by HTML tags.`.
 
 It turns out that the `>` in `<.+>` refers to the `</p>` tag (instead of `<p>`). As a result, the entire sentence is replaced by an empty string! Fortunately, you can force the expression to match as few characters as needed (a.k.a. non-greedy or lazy approach) by adding a `?` after the `+` symbol.
 

@@ -2,18 +2,19 @@
 title: "R and RStudio"
 description: "R is a widely used language for statistical computing and graphics. Learn how to set it up on your computer."
 keywords: "R, statistics, installation, software, RStudio, PATH"
-date: 2020-11-11T22:02:51+05:30
+#date: 2020-11-11T22:02:51+05:30
 draft: false
-weight: 4
+#weight: 4
 aliases:
   - /get/r
   - /install/r
 ---
 
-R is a language for statistical computing and graphics.
-R's use in the data science, econometrics and marketing communities has taken off over recent years and (at a bare minimum) should be considered as an open source replacement to Stata and SPSS.
+## Installing R and RStudio
 
-## Installing R
+R is a language for statistical computing and graphics. R's use in the data science, econometrics and marketing communities has taken off over recent years and (at a bare minimum) should be considered as an open source replacement to Stata and SPSS.
+
+### Installing R
 
 Watch our YouTube video, in which we walk you through the setup on Windows.
 
@@ -24,22 +25,21 @@ Go to the [R website and download the most recent installer for your operating s
 - Windows users: choose the "base" subdirectory, then proceed to the download.
 - Mac users: pick the release listed under "latest release" (pick the first, if it does not work, try the second).
 
-We strongly suggest you to install R in the directory `C:\R\R-3.x.x\` rather than the default directory, `C:\Program Files\R\R-3.x.x\`.
+We strongly suggest you to install R in the directory `C:\R\R-4.x.x\` rather than the default directory, `C:\Program Files\R\R-4.x.x\`.
 
-## Installing RStudio
+### Installing RStudio
 
 RStudio provides an easy to work with interface to R, and its format should feel familiar to other software environments like Stata or SPSS.
 
 Download and install the **free version of RStudio** for your operating system from [here](https://www.rstudio.com/products/rstudio/download/).
 
-## Verifying your Installation of R
+## Verifying your Installation
 
 Open RStudio from the start menu. After starting up, you should see the version corresponding to the one chosen on the website.
 
 ![Screenshot of R Studio](../r.png)
 
-
-## Installing Additional R Packages
+## Installing additional R Packages
 
 We will need some additional libraries to conduct our statistical analysis. Proceed as follows:
 
@@ -59,7 +59,7 @@ install.packages(packages)
 *   Wait until all the packages have been installed and the you are done.
     *   It *may* take a while, so be patient
 
-## Making R Available on the Command Prompt
+## Making R available on the command prompt
 
 You have just installed R and RStudio, and learnt how to open RStudio from the start menu.
 However, for many of the applications that follow, you are required to access R directly from the command prompt.
@@ -109,7 +109,7 @@ R --version
 followed by pressing `Return`. The expected return begins with:
 
 ```bash
-R version 3.x.x (20xx-xx-xx) -- "Some Funky Name"
+R version 4.x.x (20xx-xx-xx) -- "Some Funky Name"
 ```
 
 Great job - you've managed to install R and configure it for use for data-intensive projects!

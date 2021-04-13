@@ -2,9 +2,9 @@
 title: "Learn R"
 description: "Learn how to code with R."
 keywords: "learn, R, resources, datacamp"
-date: 2020-11-11T22:01:14+05:30
+#date: 2020-11-11T22:01:14+05:30
 draft: false
-weight: 1
+#weight: 1
 aliases:
   - /learn/r
 ---

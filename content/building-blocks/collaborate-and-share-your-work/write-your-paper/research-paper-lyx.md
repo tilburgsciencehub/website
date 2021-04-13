@@ -2,8 +2,8 @@
 title: "Write a Professional Research Paper with LyX"
 description: "Learn how to write your research paper using LyX."
 keywords: "paper, template, lyx, tex"
-weight: 101
-date: 2020-11-11T22:02:51+05:30
+#weight: 101
+#date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /write/paper-with-lyx

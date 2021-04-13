@@ -2,8 +2,8 @@
 title: "Scrape Dynamic Websites"
 description: "Learn how to scrape data and information from dynamic websites."
 keywords: "scrape, webscraping, internet, beautifulsoup, website"
-weight: 2
-date: 2020-11-11T22:02:51+05:30
+#weight: 2
+#date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /scrape/dynamic-website
@@ -27,7 +27,7 @@ import selenium.webdriver
 driver = selenium.webdriver.Chrome()
 driver.get("https://www.abcdefhijklmnopqrstuvwxyz.nl")
 
-# retrieve first H1 header 
+# retrieve first H1 header
 driver.find_element_by_tag_name("h1").text
 ```
 {{% /codeblock %}}
@@ -53,7 +53,7 @@ driver.find_element_by_class_name("<CLASS_NAME>").text
 # HTML identifiers ()
 driver.find_element_by_id("<ID_NAME>").text
 
-# XPath 
+# XPath
 driver.find_element_by_xpath("<XPATH>").text
 
 ```

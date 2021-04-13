@@ -1,5 +1,5 @@
 ---
-title: "Workflow Checklist"
+title: "Use this checklist to improve your project's structure"
 description: "Audit data and computation efficient projects."
 weight: 3
 keywords: "make, makefile, automation, recipes, workflow"

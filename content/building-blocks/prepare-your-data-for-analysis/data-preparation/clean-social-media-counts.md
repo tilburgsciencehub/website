@@ -1,5 +1,5 @@
 ---
-title: "Clean Data Scraped From Social Media: Likes and Followers Count"
+title: "Clean Data Scraped From Social Media"
 description: "This is a handy function that can be used to clean social media data scraped from the web."
 weight: 3
 keywords: "clean, wrangling, scraping, follow, likes, network"

@@ -2,8 +2,8 @@
 title: "Scrape Static Websites"
 description: "Learn how to scrape data and information from static websites."
 keywords: "scrape, webscraping, internet, beautifulsoup, static website"
-weight: 1
-date: 2020-11-11T22:02:51+05:30
+#weight: 1
+#date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /scrape/static-website
@@ -13,7 +13,7 @@ aliases:
 ## Overview
 Say that you want to capture and analyze data from a website. Of course, you could simply copy-paste the data from each page but you would quickly run into issues. What if the data on the page gets updated (i.e., would you have time available to copy-paste the new data, too)? Or what if there are simply so many pages that you can't possibly do it all by hand (i.e., thousands of product pages)?
 
-Web scraping can help you overcome these issues by *programmatically* grabbing data from the web. The tools best suited for the job depend on the type of website: static or dynamic. In this building block, we focus on the former which always return the same information. 
+Web scraping can help you overcome these issues by *programmatically* grabbing data from the web. The tools best suited for the job depend on the type of website: static or dynamic. In this building block, we focus on the former which always return the same information.
 
 ## Code
 
@@ -40,7 +40,7 @@ In practice, you typically scrape data from a multitude of links (also known as 
 
 {{% codeblock %}}
 ```Python
-base_url = # the fixed part of the URL 
+base_url = # the fixed part of the URL
 num_pages = # the number of pages you want to scrape
 page_urls = []
 
@@ -57,7 +57,7 @@ Rather than inserting a fixed number of pages (`num_pages`), you may want to lev
 
 ### Beautifulsoup
 
-Next, once we have imported he `source_code`, it is a matter of extracting specific elements. The `BeautifulSoup` package has several built-in methods that simplify this process significantly. 
+Next, once we have imported he `source_code`, it is a matter of extracting specific elements. The `BeautifulSoup` package has several built-in methods that simplify this process significantly.
 
 #### Finding content in a website's source code
 The `.find()` and `.find_all()` methods search for matching HTML elements (e.g., `h1` is a header). While `.find()` always prints out the first matching element, `find_all()` captures all of them and returns them as a list. More often than not, you are specifically interested in the text you have extracted and less so in the HTML tags. To get rid of them, you can use the `.get_text()` method.
@@ -117,5 +117,3 @@ See the building block on [task automation](http://tilburgsciencehub.com/buildin
 
 ## See Also
 * If you're aiming to strive a dynamic website, such as a social media site, please consult [this](https://tilburgsciencehub.com/building-blocks/scrape/dynamic-website) building block.
-
-

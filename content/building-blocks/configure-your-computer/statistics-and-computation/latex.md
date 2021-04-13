@@ -2,20 +2,19 @@
 title: "LaTeX"
 description: "LaTeX is a great typesetting system that includes a lot of features that allow to produce scientific documents."
 keywords: "latex, tex, lyx, installation, software, configuration, paper, writing, text, typesetting"
-date: 2020-11-11T22:02:51+05:30
+#date: 2020-11-11T22:02:51+05:30
 draft: false
-weight: 10
+#weight: 10
 aliases:
   - /get/latex
   - /install/latex
 ---
 
-## Overview
+## Installing Latex
 
-{{< katex >}}\LaTeX{{< /katex >}} is [a great typesetting system](https://www.latex-project.org) that includes a lot of features that allow to produce scientific documents. Many researchers use $\LaTeX$ to produce their papers and presentations, and many journals require authors to hand in their articles in a $\TeX$ format.
+{{< katex >}}\LaTeX{{< /katex >}} is [a great typesetting system](https://www.latex-project.org) that includes a lot of features that allow to produce scientific documents. Many researchers use Latex to produce their papers and presentations, and many journals require authors to hand in their articles in a TeX format.
 
-## Installing a $\TeX$ distribution
-$\LaTeX$ is free to use. To use the $\LaTeX$ system, a $\TeX$ distribution needs to be installed. Detailed instructions for the different platforms are provided below.
+Latex is free to use. To use the Latex system, a TeX distribution needs to be installed. Detailed instructions for the different platforms are provided below.
 
 ### Windows
 
@@ -65,41 +64,41 @@ Note that additional packages for Tex Live should be installed through the apt p
 
 ### Get LyX
 
- LyX is an open source document processor based on $\LaTeX$. [Download LyX](https://www.lyx.org/Download).
+LyX is an open source document processor based on Latex. [Download LyX](https://www.lyx.org/Download).
 
- ### Making LyX Available on the Command Prompt
+### Making LyX Available on the Command Prompt
 
- You have just installed LyX and may need to access LyX from the command line.
+You have just installed LyX and may need to access LyX from the command line.
 
- #### Windows users
- For you to be able to use LyX from the command prompt, follow the steps below.
+#### Windows users
+For you to be able to use LyX from the command prompt, follow the steps below.
 
 {{% warning %}}
 **Making LyX available via the PATH settings on Windows**
 
- We need to update our PATH settings; these settings are a set of directories that Windows uses to "look up" software to startup.
+We need to update our PATH settings; these settings are a set of directories that Windows uses to "look up" software to startup.
 
- - Right-click on Computer.
- - Go to "Properties" and select the tab "Advanced System settings".
- - Choose "Environment Variables" and select `Path` from the list of system variables.
- - Choose `Edit`.
- 	- Environment variable name: LYX_BIN
- 	- **Windows 7 and 8 machines:**
- 		If you chose the default installation directory, copy and paste the following string without spaces at the start or end:
+- Right-click on Computer.
+- Go to "Properties" and select the tab "Advanced System settings".
+- Choose "Environment Variables" and select `Path` from the list of system variables.
+- Choose `Edit`.
+	- Environment variable name: LYX_BIN
+	- **Windows 7 and 8 machines:**
+		If you chose the default installation directory, copy and paste the following string without spaces at the start or end:
 
-         `c:\Program Files (x86)\Lyx`
+       `c:\Program Files (x86)\Lyx`
 
- 	- **Windows 10 machines:**
- 		- Click `New` and paste the following string:
+	- **Windows 10 machines:**
+		- Click `New` and paste the following string:
 
-         `c:\Program Files (x86)\Lyx`
+       `c:\Program Files (x86)\Lyx`
 
- 		- Click on `OK` as often as needed.
+		- Click on `OK` as often as needed.
 {{% /warning %}}
 
- #### Mac users
+#### Mac users
 
- For you to be able to use LyX from the command line, you have to add LyX to your environmental variables:
+For you to be able to use LyX from the command line, you have to add LyX to your environmental variables:
 
 {{% warning %}}
 **Making LyX available via the PATH settings on Mac**
@@ -107,23 +106,23 @@ Note that additional packages for Tex Live should be installed through the apt p
 - Open the Terminal.
 - Type `nano ~/.bash_profile`.
 - Add LyX to the environmental variables:
-	- Add `export LYX_BIN=/Applications/LyX.app/Contents/MacOS/lyx` to a new line.
-	- Save by pressing `Ctrl + O` and exit by pressing `Ctrl + X`.
-	- Relaunch the Terminal. Then type `source ~/.bash_profile` to bring the new .bash_profile into effect.
+- Add `export LYX_BIN=/Applications/LyX.app/Contents/MacOS/lyx` to a new line.
+- Save by pressing `Ctrl + O` and exit by pressing `Ctrl + X`.
+- Relaunch the Terminal. Then type `source ~/.bash_profile` to bring the new .bash_profile into effect.
 - Type `$LYX_BIN` to check availability. Remember to type the `$` before `LYX_BIN`.
 {{% /warning %}}
 
- <!--- Linux users not available yet
- -->
+<!--- Linux users not available yet
+-->
 
 
- #### Check your Installation
+### Check your Installation
 
- To verify that LyX has been correctly installed and configured via your PATH settings,
- open a **new** terminal interface and enter:
+To verify that LyX has been correctly installed and configured via your PATH settings,
+open a **new** terminal interface and enter:
 
- ```bash
- $LYX_BIN
- ```
+```bash
+$LYX_BIN
+```
 
- followed by hitting the `Return` key.
+followed by hitting the `Return` key.

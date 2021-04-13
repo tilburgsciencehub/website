@@ -1,5 +1,5 @@
 ---
-title: "Infrastructure Requirements"
+title: "Learn about the various ways to setup a research infrastructure"
 description: "The main considerations before launching any empirical research project."
 keywords: "collaboration, security, data management, run-time, data storage, computation, code versioning"
 weight: 2

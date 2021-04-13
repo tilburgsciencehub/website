@@ -2,9 +2,9 @@
 title: "README Best Practices"
 description: "Learn how to write a convincing and effective README file."
 keywords: "git, commands, important, essential, cheat"
-date: 2021-02-08
+#date: 2021-02-08
 draft: false
-weight: 4
+#weight: 4
 aliases:
   - /write/readme
   - /learn/readme-best-practices

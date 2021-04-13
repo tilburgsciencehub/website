@@ -1,9 +1,9 @@
 ---
-title: "Stata Error Handling when Using Make"
+title: "Make Stata Crash when encountering Errors"
 description: "Learn how to use R to check for errors and the completion of Stata code in batch mode or in a Makefile."
 keywords: "exception, handling, stata, R, make, error"
-date: 2021-03-19
-weight: 2
+#date: 2021-03-19
+#weight: 2
 author: "Nazli Alagöz"
 authorlink: "https://www.tilburguniversity.edu/staff/n-m-alagoz"
 aliases:

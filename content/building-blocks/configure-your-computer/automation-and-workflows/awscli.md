@@ -3,7 +3,7 @@ title: "AWS Client"
 description: "A command-line interface for using Amazing Web Services"
 keywords: "AWS, CLI, command line, terminal, command"
 #weight: 1
-date: 2020-11-11T22:02:51+05:30
+#date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /get/awscli

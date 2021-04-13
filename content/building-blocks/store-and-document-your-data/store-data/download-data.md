@@ -2,9 +2,9 @@
 title: "Download Data Programmatically"
 description: "Learn how to download data right from its (online) source and store it locally with code."
 keywords: "download, import data, store, collect"
-date: 2021-02-08
+#date: 2021-02-08
 draft: false
-weight: 2
+#weight: 2
 aliases:
   - /store/data
   - /store/data-programmatically

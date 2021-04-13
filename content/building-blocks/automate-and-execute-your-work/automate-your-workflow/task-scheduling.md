@@ -1,9 +1,9 @@
 ---
-title: "Task Scheduling"
+title: "Schedule recurring tasks (e.g., by day, hour)"
 description: "Learn how to execute scripts at specified intervals with cronjob and Task Scheduler."
-weight: 3
+#weight: 3
 keywords: "cron, cronjob, automation, task scheduler, task scheduling"
-date: 2021-01-06T22:01:14+05:30
+#date: 2021-01-06T22:01:14+05:30
 aliases:
   - /schedule/task
   - /setup/cronjob
@@ -96,7 +96,7 @@ See the tip below on how to obtain the Python installation path. For example, th
 10. Click **"OK"** and fill out your password. If done correctly, your newly scheduled task should be added to the Task Scheduler Library window.
 
 {{% tip %}}
-Run the following command in, for example Spider or a Jupyter Notebook, to figure out the path of your Python installation. 
+Run the following command in, for example Spider or a Jupyter Notebook, to figure out the path of your Python installation.
 ```python
 import os, sys
 print(os.path.dirname(sys.executable))

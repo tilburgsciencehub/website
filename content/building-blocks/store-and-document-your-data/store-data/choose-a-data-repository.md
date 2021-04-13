@@ -2,9 +2,9 @@
 title: "Choose a Data Repository for Long-Term Storage"
 description: "Part of responsible research is making sure your research data is properly stored. But how do you decide which data to keep, document and where to archive it?"
 keywords: "archiving, data archiving, dataverse, zenodo, figshare, osf, dans"
-date: 2021-02-08
+#date: 2021-02-08
 draft: false
-weight: 1
+#weight: 1
 author: "Pam Dupont"
 authorlink: "https://www.tilburguniversity.edu/staff/p-h-dupont"
 aliases:

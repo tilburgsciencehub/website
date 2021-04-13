@@ -1,40 +1,38 @@
 ---
-title: "Git and GitHub for Version Control"
+title: "Git and GitHub"
 description: "Git is an open source version control system (VCS) that has gained a lot of traction in the programming community."
 keywords: "git, github, installation, software, configuration, versioning, account"
-date: 2020-11-11T22:02:51+05:30
+#date: 2020-11-11T22:02:51+05:30
 draft: false
-weight: 12
+#weight: 12
 aliases:
   - /get/git
   - /install/git
 ---
 
-## Installing Git and Setting Up Accounts
+## Installing and Setting Up Git & GitHub
 
 Git is an open source version control system (VCS) that has gained a lot of traction in the programming community. We will use version control to keep track of the files we write, and the changes we make to them. Using Git, we can roll back to any previous version of a file, and easily collaborate with others on source code.
 
-## Let's create a GitHub account
-
 GitHub is a (commercial) platform which allows you to host your source code online.
-It also offers a set of collaborative tools to manage "Issues",
-and track progress on project boards.
+It also offers a set of collaborative tools to manage "Issues", and track progress on project boards.
 
+### Let's create a GitHub account
 - Please [register for a GitHub account](https://github.com/join), and
   claim your [education benefits for students and professors](https://education.github.com) afterwards.
 - You can also watch our YouTube video where we will walk you through the sign-up procedure.
 
 {{< youtube 3KOnOgz_dAA >}}
 
-## Installation
+### Install Git on your computer
 
 Watch our YouTube video, in which we walk you through the setup on Windows.
 
-{{< youtube VUzv5RcnW60 >}}
-
 Download and install the latest versions of Git [here](https://git-scm.com/download).
 
-### Additional instructions for Windows Users
+{{< youtube VUzv5RcnW60 >}}
+
+#### Additional instructions for Windows Users
 
 After installing the programs use Windows Explorer to go to a folder that contains some documents (any folder) and right click on it.
 
@@ -62,7 +60,7 @@ You should see some additional items - "Git Bash here", or "Git GUI here" appear
     		- Click on `OK` as often as needed.
 -->
 
-### Additional instructions for Mac Users
+#### Additional instructions for Mac Users
 
 Download the setup files from the link above. If your system says the file can't be opened (because it is from an unidentified developer), then open it via right-lick and `open`.
 

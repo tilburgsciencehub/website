@@ -2,20 +2,21 @@
 title: "Snakemake"
 description: "Snakemake is an easy to use workflow management system."
 keywords: "snakemake, build, build tool, workflow"
-weight: 3
-date: 2020-11-11T22:02:51+05:30
+#weight: 3
+#date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /get/snakemake
   - /install/snakemake
 ---
 
-[Snakemake](https://snakemake.readthedocs.io/en/stable/) is an easy to use workflow management system. Contrary to *make*, which was designed by
-computer scientists to build software, *snakemake* was designed for academic/professional research in Bioinformatics, so it may feel more intuitive for academic users.
+## Installing Snakemake
+
+[Snakemake](https://snakemake.readthedocs.io/en/stable/) is an easy to use workflow management system. Contrary to *make*, which was designed by computer scientists to build software, *snakemake* was designed for academic/professional research in Bioinformatics, so it may feel more intuitive for academic users.
 
 Snakemake is a python package - so we can install using the default python installer, pip.
 
-## Mac & Linux Users:
+### Mac & Linux Users
 
 In a terminal window enter the command:
 
@@ -37,7 +38,7 @@ The expected output is the current version on the software, which should be grea
 5.2.2
 ```
 
-## Windows users
+### Windows users
 
 We need one extra step here. In a cygwin window enter the command:
 

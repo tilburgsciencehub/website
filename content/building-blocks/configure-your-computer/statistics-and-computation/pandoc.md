@@ -2,20 +2,21 @@
 title: "Pandoc"
 description: "Pandoc is an extremely useful 'swiss army knife' for converting between different types of markup languages from the command line."
 keywords: "Pandoc, installation, software, configuration"
-date: 2020-11-11T22:02:51+05:30
+#date: 2020-11-11T22:02:51+05:30
 draft: false
-weight: 8
+#weight: 8
 aliases:
   - /get/pandoc
   - /install/pandoc
 ---
 
-Pandoc is an extremely useful 'swiss army knife' for converting between different types of markup languages from the command line.
-For example, it readily builds PDFs with latex, and markdown - both of which are heavily used in academic research.
+## Installing Pandoc
+
+Pandoc is an extremely useful 'swiss army knife' for converting between different types of markup languages from the command line. For example, it readily builds PDFs with latex, and markdown - both of which are heavily used in academic research.
 
 <!--We do not actively address how to use Pandoc - but we will utilize it in some lessons where we produce PDF, Word or HTML output from plain text files.-->
 
-## Linux
+### Linux
 
 Open a terminal window and type
 
@@ -25,7 +26,7 @@ sudo apt install pandoc
 
  to install pandoc from the command line
 
-## Mac
+### Mac
 
 Open a terminal window and type
 ```bash
@@ -34,12 +35,12 @@ brew install pandoc
 
 to install pandoc from the command line
 
-## Windows
+### Windows
 
 Go to the [Pandoc Homepage](https://pandoc.org/) and follow the installation instructions for your operating system.
 
 
-## Verify Your Install
+## Verify Your Installation
 
 Verify your install by typing the following into a command line:
 
