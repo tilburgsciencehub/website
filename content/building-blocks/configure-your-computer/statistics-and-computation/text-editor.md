@@ -1,19 +1,20 @@
 ---
-title: "Text Editors"
+title: "Text editors"
 description: "A good text editor lies at the heart of any serious programmer's toolkit."
 keywords: "text, editor, atom, installation, software"
-date: 2020-11-11T22:02:51+05:30
+#date: 2020-11-11T22:02:51+05:30
 draft: false
-weight: 9
+#weight: 9
 aliases:
   - /choose/text-editor
   - /get/atom
 ---
 
-A good text editor lies at the heart of any serious programmer's toolkit: It can do almost anything and makes you much more productive.
-The editors built into each program often are not the best option (we will find certain cases where you may want to use them).
+## Installing a text editor
 
-Please download, install it along with the necessary packages and stick with it for at least the duration of the project or assignment to get a feel for how it works.
+A good text editor lies at the heart of any serious programmer's toolkit: It can do almost anything and makes you much more productive. The editors built into each program often are not the best option (we will find certain cases where you may want to use them).
+
+Please download, install it along with the necessary packages and stick with it for at least for some time to get a feel for how it works.
 
 There is a slight learning curve, but soon you hopefully will be wondering why no-one forced you to do this before!
 
@@ -26,16 +27,16 @@ so if you do decide to move away to another editor, nothing will be lost. For ex
 
 Go to the [downloads page](https://www.sublimetext.com/3) and download the live installer for your operating system.-->
 
-## Installing Atom
+### Installing Atom
 
-### Mac and Windows Users
+#### Mac and Windows Users
 
 Go to the [downloads page](https://github.com/atom/atom/releases/latest) and download the installer for your operating system:
 
 * Windows users download AtomSetup-x64.exe and execute the installer
 * Mac users download Atom-Mac.zip and copy the contained Atom.app into the applications folder
 
-### Linux/Ubuntu users
+#### Linux/Ubuntu users
 
 Enter the following information to add a repository that has the Atom installation, then press `Return`:
 
@@ -49,14 +50,16 @@ Install Atom by entering the following commands into a terminal and then pressin
 sudo apt update; sudo apt install atom
 ```
 
-## Verifying Atom Installation
+### Verifying Atom Installation
 
 We want Atom to be available from the command line. For Mac and Linux Users this is the default after you have started the program once. So please open Atom. Then open your terminal and type the following into the command line:
 
 ```bash
 atom --version
 ```
+
 followed by pressing `Return` you should see output like the following
+
 ```bash
 Atom    : 1.28.2
 Electron: 2.0.5
@@ -124,9 +127,5 @@ When you find the package that you need, you click the blue 'Install' button and
     *   language-stata
     *   atom-latex
     *   whitespace
-
-
-
-Feel free to ask us for whatever other packages we use to make our programming lives easier during some downtime.
 
 {{% /tip %}}

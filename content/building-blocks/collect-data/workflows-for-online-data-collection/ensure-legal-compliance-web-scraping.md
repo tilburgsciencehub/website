@@ -1,9 +1,9 @@
 ---
-title: "Ensure Legal Compliance Webscraping"
+title: "Safeguard Legal Compliance When Scraping"
 description: "Obtain legal advice to limit your exposure to legal risks when web scraping"
 keywords: "legal, debug, assessment, data quality, webscraping, scraping"
-weight: 2
-date: 2021-03-05T22:01:14+05:30
+#weight: 2
+#date: 2021-03-05T22:01:14+05:30
 draft: false
 aliases:
   - /assess/legal-compliance-webscraping

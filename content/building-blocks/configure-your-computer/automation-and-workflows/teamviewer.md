@@ -2,8 +2,8 @@
 title: "TeamViewer"
 description: "Teamviewer allows to remote-control your computer to solve technical issues."
 keywords: "teamviewer, software, installation, remote"
-weight: 5
-date: 2020-11-11T22:02:51+05:30
+#weight: 5
+#date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /get/teamviewer
@@ -28,18 +28,18 @@ After installing TeamViewer, Mac users need to change a few security settings to
 
 ## Starting a TeamViewer session
 
-Open TeamViewer via the start menu, select **remote control** on the left side of your screen (it's the default), and share **your ID** and **your password** with your team member. 
+Open TeamViewer via the start menu, select **remote control** on the left side of your screen (it's the default), and share **your ID** and **your password** with your team member.
 
 ![Screenshot of Teamviewer](../teamviewer.png)
 
-Also want to talk to your team member? Make sure you have a headset connected to your computer. 
+Also want to talk to your team member? Make sure you have a headset connected to your computer.
 
 {{% warning %}}
 **Remember to change your temporary password!**
 
 Please change your temporary password as soon as the session has ended.
 
-To do so, 
+To do so,
 
 - just hover over the password area with your mouse,
 - click on the little blue icon appearing on the right of it, and

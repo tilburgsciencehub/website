@@ -1,10 +1,10 @@
 ---
 title: "Work with Large Files on GitHub"
 description: "GitHub limits the size of files allowed in repositories. Use Git-LFS, an open-source Git extension for large file storage."
-weight: 2
+#weight: 2
 keywords: github, git-lfs, large files, versioning, organizing
-date: 2021-01-06T22:01:14+05:30
-draft: false
+#date: 2021-01-06T22:01:14+05:30
+#draft: false
 author: "Andrea Antonacci"
 authorlink: "https://www.tilburguniversity.edu/staff/a-d-antonacci"
 aliases:

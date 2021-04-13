@@ -2,19 +2,20 @@
 title: "Making Path Settings Permanent"
 description: "For our workflow to be command line driven, we need to be able to call software from the command line."
 keywords: "PATH, add, terminal, cli, bash"
-weight: 4
-date: 2020-11-11T22:02:51+05:30
+#weight: 4
+#date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /setup/environment
   - /setup/path-settings
 ---
 
-For our workflow to be command line driven, we need to be able to call software from the command line.
-Whilst much of the software we have installed as automatically made this possible, it is not universally the case.
+## Overview
+
+For our workflow to be command line driven, we need to be able to call software from the command line. Whilst much of the software we have installed as automatically made this possible, it is not universally the case.
 Here we will make the extra few changes we need to complete the installation guide.
 
-## Windows Users (for Windows 8 and 10)
+### Windows Users
 
 You will need local administration rights for your computer, but you should have these on your personal computers or ones owned by the Department.
 
@@ -36,7 +37,7 @@ If you accepted all defaults during your installation, and didn't have any other
         ;
 
 
-## Mac Users (Slight Modifications for Linux Users)
+### Mac and Linux Users 
 
 You will need to add a line to the file ".bash_profile" or potentially create the file if it didn't already exist.
 This file lives in your home directory and it is hidden from your view by default.

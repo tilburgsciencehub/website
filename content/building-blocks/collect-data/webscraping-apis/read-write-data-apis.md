@@ -2,8 +2,8 @@
 title: "Read & Write Data From APIs"
 description: "Learn how to store your API data locally and read in the data for future use."
 keywords: "api, application programming interface, read, write, export"
-weight: 5
-date: 2020-11-11T22:02:51+05:30
+#weight: 5
+#date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /collect-data/read-write-data-api
@@ -13,14 +13,14 @@ aliases:
 After you have requested data from an API and extracted the required fields, you often want to convert the data into a format that is compatible with other software programs (e.g., Excel and R). A popular file format for tabular data is a Comma Separated Value (CSV) because it is simple, widespread, and compatible with most platforms. CSV files are file formats that contain plain text values separated by commas and can be opened by almost any spreadsheet program. In other cases, you may solely want to store the raw JavaScript Object Notation (JSON) data as a backup (simply because you don't know exactly what fields you'll need).
 
 
-## Code 
+## Code
 ### Write Data to CSV
 To faciliate writing to a CSV file, we'll make use of the `csv` library. If you want to add to an existing CSV file - rather than overwriting it - use the `a` flag (append) instead of the `w` flag (write).
 
 {{% codeblock %}}
 ```Python
-import csv 
-with open("<FILENAME>.csv", "w") as csv_file: 
+import csv
+with open("<FILENAME>.csv", "w") as csv_file:
     writer = csv.writer(csv_file, delimiter = ";")
     writer.writerow(["<COLUMN_1>", "<COLUMN_2>"])
     for content in all_data:
@@ -48,7 +48,7 @@ If you encounter CSV files with a custom delimiter (i.e., symbol used to separat
 
 
 ### Write Data to JSON
-The `json` packages makes exporting raw JSON data (`JSON_FILE`) straightforward: 
+The `json` packages makes exporting raw JSON data (`JSON_FILE`) straightforward:
 
 {{% codeblock %}}
 ```Python
@@ -69,7 +69,3 @@ with open("<NAME_OF_JSON_EXPORT>.json") as f:
     data = json.load(f)
 ```
 {{% /codeblock %}}
-
-
-
-

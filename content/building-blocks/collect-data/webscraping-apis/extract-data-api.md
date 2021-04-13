@@ -2,8 +2,8 @@
 title: "Extract Data From APIs"
 description: "Learn how to collect data from APIs."
 keywords: "api, application programming interface"
-weight: 4
-date: 2020-11-11T22:02:51+05:30
+#weight: 4
+#date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /use/api
@@ -52,7 +52,7 @@ Rather than having a fixed endpoint like the one above (e.g., always search for 
 
 {{% codeblock %}}
 ```Python
-def search_api(search_term): 
+def search_api(search_term):
   search_url = "https://icanhazdadjoke.com/search"
   response = requests.get(search_url,
                         headers={"Accept": "application/json"},

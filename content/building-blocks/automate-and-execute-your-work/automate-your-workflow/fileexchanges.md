@@ -1,8 +1,8 @@
 ---
-title: "Setting Up and Using a File Exchange"
+title: "Share Large Temporary Files"
 description: "File exhanges are essential to transfer data between different stages of your pipeline and between co-authors."
 keywords: "file exchange, file, exchange, share, sharing"
-date: 2021-01-06T22:01:14+05:30
+#date: 2021-01-06T22:01:14+05:30
 draft: false
 aliases:
   - /setup/file-exchanges

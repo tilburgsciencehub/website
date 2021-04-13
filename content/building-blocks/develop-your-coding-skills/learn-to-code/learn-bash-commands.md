@@ -3,8 +3,8 @@ title: "Learn Bash Commands"
 description: "Learn how to navigate the terminal and command prompt"
 keywords: "cmd, command prompt, terminal, cd, ls, dir, mv"
 date: 2020-11-11T22:02:51+05:30
-draft: false
-weight: 4
+#draft: false
+#weight: 4
 aliases:
   - /learn/bash
 ---

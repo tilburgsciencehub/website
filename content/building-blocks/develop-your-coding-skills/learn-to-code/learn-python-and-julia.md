@@ -2,9 +2,9 @@
 title: "Learn Python and Julia"
 description: "Learn how to program in Python."
 keywords: "learn, python, quantecon"
-date: 2020-11-11T22:01:14+05:30
+#date: 2020-11-11T22:01:14+05:30
 draft: false
-weight: 2
+#weight: 2
 aliases:
   - /learn/python
   - /learn/julia

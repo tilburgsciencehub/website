@@ -2,9 +2,9 @@
 title: "Stata"
 description: "Stata is a proprietary statistical software frequently used by scientific users."
 keywords: "Stata, software, installation, configuration, statistics"
-date: 2020-11-11T22:02:51+05:30
+#date: 2020-11-11T22:02:51+05:30
 draft: false
-weight: 5
+#weight: 5
 aliases:
   - /get/stata
   - /install/stata
@@ -76,7 +76,7 @@ For you to be able to use Stata from the command line, you have to add Stata to 
 -->
 
 
-## Verifying that the installation was successful
+## Verifying the installation
 
 To verify that Stata has been correctly installed and configured via your PATH settings,
 follow the instructions below.

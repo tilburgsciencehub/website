@@ -1,9 +1,9 @@
 ---
-title: "Software Environments"
+title: "Use Software Environments to Ensure Replicability"
 description: "Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page."
 keywords: "environments, conda, software environments, virtual"
-weight: 3
-date: 2021-01-06T22:01:14+05:30
+#weight: 3
+#date: 2021-01-06T22:01:14+05:30
 draft: false
 aliases:
   - /setup/software-environment

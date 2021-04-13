@@ -2,9 +2,9 @@
 title: "Python"
 description: "Python is widely use programming language. Learn how to set it up on your computer."
 keywords: "python, anaconda, conda, distribution, installation, configure, PATH, statistics"
-date: 2020-11-11T22:02:51+05:30
+#date: 2020-11-11T22:02:51+05:30
 draft: false
-weight: 3
+#weight: 3
 aliases:
   - /get/python
   - /install/python
@@ -57,13 +57,13 @@ followed by hitting the `Return` key.
 
 You should see the following information returned:
 
-###   Windows users:
+### Windows users
 
 ```bash
 Python 3.x.x :: Anaconda, Inc.
 ```
 
-###  Mac & Linux/Ubuntu users:
+### Mac & Linux/Ubuntu users
 
 ```bash
 Python 3.x.x :: Anaconda custom (64-bit)

@@ -2,9 +2,9 @@
 title: "The Most Important Git Commands You Should Know"
 description: "A quick recap of the essential Git commands you will be using everyday."
 keywords: "git, commands, important, essential, cheat"
-date: 2021-02-08
+#date: 2021-02-08
 draft: false
-weight: 3
+#weight: 3
 aliases:
   - /use/git-bash
   - /use/git-commands

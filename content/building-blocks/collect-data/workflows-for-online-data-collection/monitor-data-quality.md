@@ -2,8 +2,8 @@
 title: "Monitor and Safeguard Your Data Quality"
 description: "10 common issues and potential solutions to troubleshoot your data collection"
 keywords: "monitor, debug, assessment, data quality, webscraping, scraping"
-weight: 3
-date: 2021-03-05T22:01:14+05:30
+#weight: 3
+#date: 2021-03-05T22:01:14+05:30
 draft: false
 aliases:
   - /monitor/data-quality

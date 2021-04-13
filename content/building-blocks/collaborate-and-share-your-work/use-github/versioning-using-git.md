@@ -2,8 +2,8 @@
 title: "Versioning using Git and GitHub"
 description: "Git is an open-source version control system that allows you to keep track of your source files and the changes you make to them."
 keywords: "git, github, versioning, pull, push, fork, share, commit, add"
-weight: 1
-date: 2020-11-11T22:01:14+05:30
+#weight: 1
+#date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
   - /learn/versioning
