@@ -40,7 +40,7 @@
 								    	{{ range .Pages }}
 								    	<div class="col-6 mb-4">
 								    		<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span>
-												{{ range .Pages }}
+												{{ range .Pages.ByTitle }}
 													{{ if eq .Params.indexexclude "true" }}
 													<!--<a class="d-block mx-0" href="{{.Permalink}}">DONOTSHOW{{.Title}}</a>-->
 													{{ else }}
@@ -90,7 +90,7 @@
 												{{ range .Pages }}
 												<div class="col-8 mb-4">
 													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span>
-													{{- range .Pages -}}
+													{{- range .Pages.ByTitle -}}
 													<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
 													{{ end }}
 
@@ -117,7 +117,7 @@
 								{{ if eq .Title "Examples" }}
 
 									<!-- <h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5> -->
-									{{- range .Pages -}}
+									{{- range .Pages.ByTitle -}}
 									<div class="col-6 mb-4">
 									{{ if .Title }}
 									<a id="exampleMenu" class="heading d-block mb-3 text-secondary" href="{{.Permalink}}">{{- .Title -}}</a>
@@ -185,7 +185,7 @@
 						{{ range .Pages }}
 						<div class="mb-4">
 							<span class="heading d-block mb-0" style="font-size: 16px;">{{.Title}}</span>
-							{{- range .Pages -}}
+							{{- range .Pages.ByTitle -}}
 							<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
 							{{ end }}
 						</div>
@@ -209,7 +209,7 @@
 				<div class="mb-4">
 					<div class="text-secondary m-0 mt-2 heading" style="font-size: 16px; line-height: 2px">{{.Title}}</div>
 
-					{{- range .Pages -}}
+					{{- range .Pages.ByTitle -}}
 					{{ if ne .Params.indexexclude "true" }}
 					<a class="d-block mx-0 ml-3 mt-3" href="{{.Permalink}}">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
 					{{ end }}
@@ -223,7 +223,7 @@
 				<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
 					class="icon mini-left text-primary"></span> Examples</a>
 					<br>
-				{{- range where .Site.Pages "Section" "examples" -}}
+				{{- range where .Site.Pages.ByTitle "Section" "examples" -}}
 				{{ if ne .Title "Examples" }}
 				<div class="mb-4">
 					<a class=" d-block mb-3 text-secondary heading" style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="{{.Permalink}}">{{- .Title -}}</a>
