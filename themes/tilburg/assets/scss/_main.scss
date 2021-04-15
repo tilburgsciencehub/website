@@ -13,8 +13,9 @@
 // share
 .share {
   margin-top: 60px;
-  // padding-top: 40px;
-  display: flex;
+  width: 100%;
+  display: inline-flex;
+  align-items: flex-end;
   justify-content: space-between;
 
   .share-title {
@@ -30,7 +31,7 @@
   .share-button {
     cursor: pointer;
     display: inline-block;
-    margin-left: 30px;
+    // margin-left: 30px;
     display: inline-flex;
     justify-content: center;
     align-items: flex-start;
@@ -137,9 +138,9 @@
       line-height: 26px;
       font-size: 15px;
       max-width: 300px;
-      white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       vertical-align: text-bottom;
       font-family: "acumin-pro", sans-serif !important;
     }
@@ -220,7 +221,7 @@ pre {
   direction: rtl;
   padding-left: 20px;
   overflow-y: auto;
-  max-height: 550px;
+  max-height: calc(100vh - 360px);
 
   * {
     direction: ltr;
@@ -252,6 +253,9 @@ pre {
   #TableOfContents {
     padding: 10px 0 0 10px;
   }
+
+  scrollbar-color: #003365 #d7e2eb;
+  scrollbar-width: thin;
 
   .pseudo-btn {
     position: absolute;
@@ -880,6 +884,20 @@ a.text-secondary:hover {
   color: $secondary !important;
 }
 
+@media only screen and (min-width: 768px) {
+  .share {
+    margin-top: 60px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+
+    a {
+      margin-left: 33px;
+    }
+  }
+}
+
 @media only screen and (min-width: 991px) {
   .pagination {
     .pagination-button {
@@ -891,7 +909,6 @@ a.text-secondary:hover {
 }
 
 @media only screen and (max-width: 991px) {
-  
   .TableOfContents {
     background-color: #fff;
     border-radius: 4px;
@@ -948,8 +965,6 @@ a.text-secondary:hover {
 }
 
 @media only screen and (max-width: 1340px) {
-  
-
   .sticky-top {
     top: 0px;
   }
