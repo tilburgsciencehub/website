@@ -38,7 +38,7 @@
               {{- range .Pages -}}
               <div class="col-24 col-lg-12 mb-4" id="{{ .Title | urlize }}-ezo">
                 <h5 class="heading font-weight-normal" style="font-size: 16px; height: 22px;">{{ .Title }}</h5>
-                {{ range .Pages.ByTitle }}
+                {{ range .Pages }}
                 <a class="d-block" href="{{.Permalink}}">{{.Title}}</a>
                 {{ end }}
               </div>
