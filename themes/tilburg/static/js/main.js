@@ -406,7 +406,7 @@ document
     .querySelectorAll('a[href^="#"]')
     .forEach(trigger => {
         trigger.onclick = function(e) {
-          console.log("i got triggered")
+          
             e.preventDefault();
             let hash = this.getAttribute('href');
             let target = document.querySelector(hash);
@@ -422,5 +422,9 @@ document
         };
     });
     
-    document.querySelector("#scrollTo a").click()
+
+if (document.querySelector("#scrollTo a")) {
+  document.querySelector("#scrollTo a").click()
+}
+
     
