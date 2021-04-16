@@ -221,7 +221,7 @@ pre {
   direction: rtl;
   padding-left: 20px;
   overflow-y: auto;
-  max-height: calc(100vh - 360px);
+  max-height: calc(100vh - 400px);
 
   * {
     direction: ltr;
@@ -521,6 +521,15 @@ ul {
     a {
     }
   }
+}
+
+.d::before {
+  display: block;
+  content: " ";
+  margin-top: -200px;
+  height: 200px;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 article {
