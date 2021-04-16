@@ -1,0 +1,70 @@
+{{- partial "header.html" . -}}
+
+<span id="scrollTo" class="d-none"><a href="#{{ .CurrentSection.Name | urlize }}"></a></span>
+
+<div class="container content">
+  <br><br><br><br>
+  <div class="row justify-content-center">
+    <div class="col-lg-11 col-22">
+      <h1 class="text-center">Tutorials</h1>
+      <p class="text-center text-secondary my-5">
+        Tutorials help you understand how to combine individual Building Blocks into a final product. What that final product is, is your choice.
+      </p>
+      <div class="position-relative mx-5 searchIconRight w-75 mx-auto">
+        <input
+          type="text"
+          class="form-control form-control-lg border-0 shadow-sm tutorialsSearch px-4"
+          placeholder="What are you looking for?"
+        />
+        <div
+          class="position-absolute w-100 bg-white rounded shadow buildingBlocksSuggestions"
+        ></div>
+      </div>
+    </div>
+
+  </div>
+  <br><br><br><br>
+  <!-- all the building blocks -->
+  <div class="row justify-content-center buildingBlocksRow">
+    <div class="col-20">
+      {{ range where .Site.Pages "Section" .Section}}
+      {{ if ne .Title "Tutorials" }}
+      {{ if eq .Params.isParent true }}
+      {{ if .Title }}
+      <div class="p-5 bg-white mb-5 rounded" id="{{ .Title | urlize }}">
+        <div class="row">
+          <div class="col-lg-8 col-24">
+            <h4 class="heading m-0">{{ .Title }}</h4>
+          </div>
+          <div class="col-lg-16 col-24">
+            <div class="row">
+
+              {{- range .Pages -}}
+              {{ if ne .Params.indexexclude "true" }}
+              {{ if .Title }}
+              <div class="col-24 col-lg-12 mb-4" id="{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle | urlize }}{{ else }}{{ .Title | urlize }}{{ end }}">
+                <a class="linkHeading" href="{{ .Permalink }}"><h5 class="heading linkHeading font-weight-normal" style="font-size: 16px;">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</h5></a>
+                {{ if ne .Type .Section }}
+                {{ range where .Site.Pages.ByTitle "Type" .Type }}
+                <a class="d-block" href="{{.Permalink}}">{{ .Title }}</a>
+
+                {{ end }}
+                {{ end }}
+              </div>
+              {{ end }}
+              {{ end }}
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+      {{- end -}}
+      {{- end -}}
+    </div>
+  </div>
+</div>
+
+
+{{- partial "footer.html" . -}}

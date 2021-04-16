@@ -401,3 +401,26 @@ $(".buildingBlockSearch").on("keyup", function (e) {
     resultsHolder.addClass("active");
   });
 });
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(trigger => {
+        trigger.onclick = function(e) {
+          console.log("i got triggered")
+            e.preventDefault();
+            let hash = this.getAttribute('href');
+            let target = document.querySelector(hash);
+            let headerOffset = 140;
+            console.log(target.getBoundingClientRect().top)
+            let elementPosition = target.getBoundingClientRect().top;
+            let offsetPosition = elementPosition - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        };
+    });
+    
+    document.querySelector("#scrollTo a").click()
+    
