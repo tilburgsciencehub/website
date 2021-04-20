@@ -425,24 +425,3 @@ document
 if (document.querySelector("#scrollTo a")) {
   document.querySelector("#scrollTo a").click()
 }
-
-const tables = $("table")
-
-tables.each(i => {
-  $(tables[i]).wrap(`<div class="tableFadeRight"></div>`);
-})
-
-// const tables = document.querySelectorAll("table")
-
-// tables.forEach(table => {
-//   table.addEventListener("scroll", function(d) {
-//     d.wrap(function() {
-//       return "<div class='" + $( this ).text() + "'></div>"
-//     })
-//     // d.target.classList.add("tableFadeRight")
-//     // if (table.scrollWidth - table.clientWidth < d.target.scrollLeft) {
-//     //   d.target.classList.add("tableFadeRight")
-//     // }
-//   })
-//   // console.log(table.clientWidth, < table.scrollWidth)
-// })
