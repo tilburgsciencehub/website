@@ -7,7 +7,7 @@
 <div class="container content px-0 mt-5">
 	<div class="row justify-content-center mx-0">
 		<div class="col-lg-8 col-22 pr-lg-5">
-			<div class="sticky-top mb-lg-5 pb-lg-5">
+			<div class="sticky-top mb-lg-5 pb-lg-5 d-flex flex-column tableOfContentParent">
 				{{ if .Params.tutorialTitle }}
 				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Params.tutorialTitle }}</h1>
 				{{ else }}
@@ -21,7 +21,7 @@
 					{{ range .Pages }}
 						{{ if eq .Title $currentTitle }}
 						<h5 class="heading text-primary" style="font-size: 18px; height: 28px; margin-left: 10px;  font-weight: 100 !important;"><a class="text-primary" href="{{ .Permalink }}">{{ .Title }}</a></h5>
-
+dddd
 							<div class="pl-4">{{ .TableOfContents }}</div>
 
 

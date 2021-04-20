@@ -214,6 +214,10 @@ pre {
   top: 160px;
 }
 
+.tableOfContentParent {
+  max-height: calc(100vh - 260px);
+}
+
 .TableOfContents {
   margin-top: 50px;
   margin-bottom: 20px;
@@ -221,7 +225,7 @@ pre {
   direction: rtl;
   padding-left: 20px;
   overflow-y: auto;
-  max-height: calc(100vh - 430px);
+  
 
   * {
     direction: ltr;
@@ -601,7 +605,7 @@ article {
     border-collapse: separate !important;
     border-spacing: 0;
     margin-bottom: 25px;
-
+    position: relative;
     display: block;
     overflow-x: auto;
     white-space: nowrap;
@@ -647,6 +651,18 @@ article {
     border-left-style: solid;
   }
 }
+
+.tableFadeRight { position: relative; }
+// .tableFadeRight:after {
+       
+  
+// position: absolute;  
+// top: 0; right:0; width: 100%; bottom: 0;
+// float: right;
+// content: " ";
+// z-index: 30;
+// background-color: rgba(0,0,0,0.4);
+// }
 
 .buildingBlocksSuggestions {
   top: 60px;
@@ -918,6 +934,9 @@ a.text-secondary:hover {
 }
 
 @media only screen and (max-width: 991px) {
+  .tableOfContentParent {
+    height: auto;
+  }
   .TableOfContents {
     background-color: #fff;
     border-radius: 4px;

@@ -3,7 +3,7 @@
 <div class="container content px-0 mt-5">
   <div class="row justify-content-center mx-0">
     <div class="col-lg-8 col-22 pr-lg-5">
-      <div class="sticky-top mb-lg-5 pb-lg-5">
+      <div class="sticky-top mb-lg-5 pb-lg-5 d-flex flex-column tableOfContentParent">
         {{ if .Params.tutorialTitle }}
         <h1
           class="text-center text-lg-left"
@@ -23,7 +23,8 @@
           <span class="arrow-icon"></span>
           <div class="pseudo-btn d-block d-lg-none"></div>
           {{ $currentTitle := .Title }} {{ range where .Site.Pages "Type" .Type }} {{ if eq .Title $currentTitle }}
-          <h5
+       
+                      <h5
             class="heading text-primary"
             style="
               font-size: 18px;
@@ -35,8 +36,9 @@
           >
             <a class="text-primary" href="{{ .Permalink }}">{{ .Title }}</a>
           </h5>
+          <div class="pl-4 flex-fill">{{ .TableOfContents }}</div>
+        
 
-          <div class="pl-4">{{ .TableOfContents }}</div>
 
           {{ else }}
           <h5
