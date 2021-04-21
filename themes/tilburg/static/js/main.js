@@ -425,5 +425,3 @@ document
 if (document.querySelector("#scrollTo a")) {
   document.querySelector("#scrollTo a").click()
 }
-
-    
