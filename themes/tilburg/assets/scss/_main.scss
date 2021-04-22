@@ -1109,11 +1109,17 @@ a.text-secondary:hover {
 }
 
 .blinkFooterLogo {
-  animation: blinker 1s linear infinite;
+  animation: blinker 1s none infinite;
 }
 
 @keyframes blinker {
+  10%{
+    opacity: 100%;
+  }
   50% {
     opacity: 0;
+  }
+  80%{
+    opacity: 100%;
   }
 }
