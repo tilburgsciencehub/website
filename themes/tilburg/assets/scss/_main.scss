@@ -12,8 +12,6 @@
 
 // share
 .share {
-  margin-top: 60px;
-  width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -749,12 +747,14 @@ footer {
     a {
       font-size: 16px !important;
       line-height: 23px;
+      
     }
 
     a:not(.pillx) {
       color: #6081a2 !important;
       font-family: "acumin-pro", sans-serif;
-      line-height: 26px;
+      line-height: 20px;
+      padding-bottom: 7px;
       font-size: 15px !important;
 
       &:hover {
@@ -913,8 +913,6 @@ a.text-secondary:hover {
 
 @media only screen and (min-width: 768px) {
   .share {
-    margin-top: 60px;
-    width: 100%;
     display: inline-flex;
     align-items: center;
     justify-content: start;

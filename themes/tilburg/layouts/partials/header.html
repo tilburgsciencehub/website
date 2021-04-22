@@ -38,7 +38,7 @@
 								{{- range where .Site.Home.Sections "Section" "tutorials"}}
 
 								    	{{ range .Pages }}
-								    	<div class="col-6 mb-4">
+								    	<div class="col-6 mb-4 px-3">
 								    		<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span>
 												{{ range .Pages }}
 													{{ if eq .Params.indexexclude "true" }}
@@ -88,7 +88,7 @@
 											role="tabpanel" aria-labelledby="v-pills-home-tab">
 											<div class="row">
 												{{ range .Pages }}
-												<div class="col-8 mb-4">
+												<div class="col-8 mb-4 px-2">
 													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span>
 													{{- range .Pages -}}
 													<a class="d-block mx-0" href="{{.Permalink}}">{{.Title}}</a>
@@ -118,7 +118,7 @@
 
 									<!-- <h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5> -->
 									{{- range .Pages -}}
-									<div class="col-6 mb-4">
+									<div class="col-6 mb-4 px-2">
 									{{ if .Title }}
 									<a id="exampleMenu" class="heading d-block mb-3 text-secondary" href="{{.Permalink}}">{{- .Title -}}</a>
 									{{ end }}

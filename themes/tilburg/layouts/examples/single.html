@@ -31,14 +31,21 @@
 				</div>
 				{{ else }}
 				{{ end }}
-				{{ if eq .Params.share false }}
-				{{ else }}
-				{{ with .Params.aliases }}
-				{{ range first 1 . }}
-				{{ partial "shareLinks.html" (dict "context" . "siteURL" $siteURL) }}
-				{{ end }}
-				{{ end }}
-				{{ end }}
+				<div class="d-flex justify-content-between mt-5">
+          <div class="flex-fill">
+            {{ if eq .Params.share false }} 
+            {{ else }} 
+              {{ with .Params.aliases }} 
+                {{ range first 1 . }} 
+                  {{ partial "shareLinks.html" (dict "context" . "siteURL" $siteURL) }} 
+                {{ end }} 
+              {{ end }} 
+            {{ end }}
+          </div>
+          <div class="d-none d-lg-block">
+            <a href="{{ .Site.Params.repo_url }}/edit/master/content/{{ .File }}" class="btn btn-secondary">Edit this page</a>
+          </div>
+        </div>
 				{{ end }}
 
 				{{ partial "pagination.html" . }}
