@@ -13,6 +13,15 @@
 	<meta name="Keywords" content="{{ .Params.keywords }}">
 	{{- end -}}
 	{{ template "_internal/google_analytics.html" . }}
+	<meta property="og:title" content="{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }} {{ if .IsHome }}{{else}} - Tilburg Science Hub{{end}}" />
+	{{ if .Params.description }}
+	<meta property="og:description" content="{{ .Params.description }}" />
+	{{ end }}
+	{{- if .Params.ogimage -}}
+	<meta property="og:image" content="{{ .Params.ogimage }}" />
+	{{ else }}
+	<meta property="og:image" content="{{- .Site.BaseURL -}}img/default-og-image.png" />
+	{{ end }}
 </head>
 
 <body>
