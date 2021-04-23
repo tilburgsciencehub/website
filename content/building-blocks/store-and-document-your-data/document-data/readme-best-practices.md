@@ -96,12 +96,14 @@ Rather than creating the repository overview all by hand, you can leverage the `
 
 ## The README Template
 
-We provide a more comprehensive README template that follows best practices defined by a number of data editors at social science journals. You can read here the [full list of endorsers](https://social-science-data-editors.github.io/template_README/Endorsers.html).
+We provide a more comprehensive README template - which you can preview in the image below - that follows best practices defined by a number of data editors at social science journals. You can read here the [full list of endorsers](https://social-science-data-editors.github.io/template_README/Endorsers.html).
 
 You can always access **[the most recent version of this template here](https://social-science-data-editors.github.io/template_README/)** or download them quickly:
 
 {{% cta-primary-center "Download the Markdown version" "https://raw.githubusercontent.com/social-science-data-editors/template_README/releases/README.md" %}}
-{{% cta-secondary-center "Download the PDF version" "https://social-science-data-editors.github.io/template_README/templates/README.pdf" %}}
+{{% cta-secondary-center "Download the Word version" "https://social-science-data-editors.github.io/template_README/templates/README.docx" %}}
+
+![A preview of the README template](../preview-readme-template.png)
 
 ## Examples
 
