@@ -10,6 +10,7 @@ draft: false
 weight: 12
 author: "Andrea Antonacci"
 authorlink: "https://www.tilburguniversity.edu/staff/a-d-antonacci"
+ogimage: "../img/open-edu-website-og-image.png"
 aliases:
   - /get/hugo-tiu
   - /pick/hugo-theme
