@@ -47,4 +47,4 @@ In question #2 above, we've "branched out" to understand the implications of mod
 
 ## Watch the solutions to all questions here
 
-{{< youtube IjHKc6oOIUU >}}
+{{< youtube IjHKc6oOIUU iframe-video-margins >}}

@@ -16,7 +16,7 @@ Anaconda is a pre-packaged Python distribution for scientific users. To customiz
 
 Watch our YouTube video, in which we walk you through the setup on Windows.
 
-{{< youtube hGZSAuDcmQc >}}
+{{< youtube hGZSAuDcmQc iframe-video-margins >}}
 
 ### Instructions
 Direct your browser to [Anaconda download page](https://www.anaconda.com/download/) and download the Python 3.x Graphical Installer for your machine.

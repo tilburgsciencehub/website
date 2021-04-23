@@ -18,4 +18,4 @@ Our tutorial clips are recorded on Windows, but have been tested on a Mac, too.
 
 ## Watch our video
 
-{{< youtube DK7TYR68kqc >}}
+{{< youtube DK7TYR68kqc iframe-video-margins >}}

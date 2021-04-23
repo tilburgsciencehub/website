@@ -22,7 +22,7 @@ It also offers a set of collaborative tools to manage "Issues", and track progre
   claim your [education benefits for students and professors](https://education.github.com) afterwards.
 - You can also watch our YouTube video where we will walk you through the sign-up procedure.
 
-{{< youtube 3KOnOgz_dAA >}}
+{{< youtube 3KOnOgz_dAA iframe-video-margins >}}
 
 ### Install Git on your computer
 
@@ -30,7 +30,7 @@ Watch our YouTube video, in which we walk you through the setup on Windows.
 
 Download and install the latest versions of Git [here](https://git-scm.com/download).
 
-{{< youtube VUzv5RcnW60 >}}
+{{< youtube VUzv5RcnW60 iframe-video-margins >}}
 
 #### Additional instructions for Windows Users
 

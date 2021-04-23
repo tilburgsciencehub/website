@@ -29,7 +29,7 @@ When you mark a file as LFS file, the extension replaces the actual large file w
 
 Check out this video for a brief explanation on how Git LFS works.
 
-{{< youtube 9gaTargV5BY >}}
+{{< youtube 9gaTargV5BY iframe-video-margins >}}
 
 ## Install Git LFS <!-- Provide your code in all the relevant languages and/or operating systems. -->
 

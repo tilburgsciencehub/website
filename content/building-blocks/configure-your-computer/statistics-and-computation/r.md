@@ -18,7 +18,7 @@ R is a language for statistical computing and graphics. R's use in the data scie
 
 Watch our YouTube video, in which we walk you through the setup on Windows.
 
-{{< youtube xvw4Xha10qg >}}
+{{< youtube xvw4Xha10qg iframe-video-margins >}}
 
 Go to the [R website and download the most recent installer for your operating system](https://cran.r-project.org/).
 

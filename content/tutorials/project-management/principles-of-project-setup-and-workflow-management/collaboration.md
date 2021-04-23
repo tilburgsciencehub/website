@@ -97,7 +97,7 @@ Here's our contribution guide (these instructions
         - For *Gists*:
             - Navigate to the original Gist, and scroll down to the comment section. Write about the changes you have made in your Fork, and include a URL to your fork! The project owner will then get in touch with you to discuss how the changes can be implemented. (Unfortunately, GitHub does not know the concepts of pull requests for Gists.)
 
-{{< youtube pOhl932vbTI >}}
+{{< youtube pOhl932vbTI iframe-video-margins >}}
 
 {{% warning %}}
 - Before starting to make any changes in your forked repository, make sure the fork is up-to-date with its originating repository.

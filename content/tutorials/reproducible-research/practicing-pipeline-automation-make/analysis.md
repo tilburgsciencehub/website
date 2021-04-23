@@ -36,4 +36,4 @@ RMarkdown document.
 
 ## Watch the solution here
 
-{{< youtube GI3CmKFSUQk >}}
+{{< youtube GI3CmKFSUQk iframe-video-margins >}}

@@ -29,4 +29,4 @@ the directories start with `../..`. Can you explain why that is? What is really 
 
 ## Watch the solutions here
 
-{{< youtube PyoJ7RUfwds >}}
+{{< youtube PyoJ7RUfwds iframe-video-margins >}}

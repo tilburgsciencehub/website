@@ -16,7 +16,7 @@ You can access the workflow template from [here](https://github.com/hannesdatta/
 
 Watch our video to learn about the two ways of downloading a template. After that, work through the set of practice questions.
 
-{{< youtube 0rxHQQUNR1o >}}
+{{< youtube 0rxHQQUNR1o iframe-video-margins >}}
 
 {{% warning %}}
 **Clone/download the files where you have writing rights.**
@@ -37,4 +37,4 @@ Watch our video to learn about the two ways of downloading a template. After tha
 
 ## Watch our solutions here
 
-{{< youtube ybJOCS9pDYA >}}
+{{< youtube ybJOCS9pDYA iframe-video-margins >}}

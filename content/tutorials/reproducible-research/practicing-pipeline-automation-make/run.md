@@ -16,7 +16,7 @@ When starting to work with a template, we ideally like to see it "working" on "t
 
 So let's go ahead by first watching our demo on what happens if you run `make` in our template's main directory. Then, you can proceed to our practice questions.
 
-{{< youtube MTjfHnSShfg >}}
+{{< youtube MTjfHnSShfg iframe-video-margins >}}
 
 ### Practice questions and answers
 
@@ -30,4 +30,4 @@ So let's go ahead by first watching our demo on what happens if you run `make` i
 
 ## Watch the solutions here
 
-{{< youtube 8TioIL9VEmE >}}
+{{< youtube 8TioIL9VEmE iframe-video-margins >}}

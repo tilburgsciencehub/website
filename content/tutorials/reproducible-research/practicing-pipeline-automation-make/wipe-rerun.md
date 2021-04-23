@@ -17,7 +17,7 @@ supports so-called "dry-runs", which you can initiate by typing `make -n` (for N
 
 **Watch our video to understand the intuition of dry-runs.**
 
-{{< youtube h7f9bHnOLm0 >}}
+{{< youtube h7f9bHnOLm0 iframe-video-margins >}}
 
 
 Next, you will start to modify the scripts in this template. After all, you're working on a *template* that you're ultimately interested in *modifying* (e.g., putting in your own data). For each (major) modification, you need to test whether your changes to the source code were done correctly (i.e., that they didn't break the template). Read how in the box below.
@@ -57,4 +57,4 @@ attribute `.get('user').get('screen_name')`.
 
 ## Watch the solutions here
 
-{{< youtube EgiLBt1njo4 >}}
+{{< youtube EgiLBt1njo4 iframe-video-margins >}}

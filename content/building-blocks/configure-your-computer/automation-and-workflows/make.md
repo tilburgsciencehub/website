@@ -52,7 +52,7 @@ We will install `make` so that it plays nicely with your Anaconda/Python distrib
 
 Watch our YouTube video, in which we walk you through the setup on Windows.
 
-{{< youtube 8bqH8AOPT3U >}}
+{{< youtube 8bqH8AOPT3U iframe-video-margins >}}
 
 #### Download make
 Please [download `make` here](http://gnuwin32.sourceforge.net/downlinks/make.php).

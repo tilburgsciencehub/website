@@ -22,7 +22,7 @@ Installing this stuff is operating-system specific, hence so are the instruction
 
 Watch our YouTube video, in which we walk you through the setup on Windows.
 
-{{< youtube l2aRxtYN3eY >}}
+{{< youtube l2aRxtYN3eY iframe-video-margins >}}
 
 *   Install Google Chrome from [here](https://www.google.com/chrome/browser/desktop/index.html).
 *   Download the windows version of Chromedriver from [here](https://chromedriver.storage.googleapis.com/index.html?path=2.41/).
