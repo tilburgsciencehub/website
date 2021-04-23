@@ -6,6 +6,9 @@ pygmentsUseClasses=true
 enableInlineShortcodes = true
 googleAnalytics = "UA-23035208-2"
 
+[params]
+  repo_url="https://github.com/tilburgsciencehub/website"
+
 [outputs]
   home = ["HTML", "AMP", "RSS", "JSON"]
   page = ["HTML", "JSON"]

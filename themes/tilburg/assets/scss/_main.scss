@@ -12,8 +12,6 @@
 
 // share
 .share {
-  margin-top: 60px;
-  width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -767,12 +765,14 @@ footer {
     a {
       font-size: 16px !important;
       line-height: 23px;
+      
     }
 
     a:not(.pillx) {
       color: #6081a2 !important;
       font-family: "acumin-pro", sans-serif;
-      line-height: 26px;
+      line-height: 20px;
+      padding-bottom: 7px;
       font-size: 15px !important;
 
       &:hover {
@@ -785,6 +785,8 @@ footer {
       a {
         color: #6081a2 !important;
         font-family: "acumin-pro", sans-serif;
+        line-height: 20px;
+        padding-bottom: 7px;
 
         &:hover {
           color: $primary !important;
@@ -929,8 +931,6 @@ a.text-secondary:hover {
 
 @media only screen and (min-width: 768px) {
   .share {
-    margin-top: 60px;
-    width: 100%;
     display: inline-flex;
     align-items: center;
     justify-content: start;
@@ -1127,11 +1127,17 @@ a.text-secondary:hover {
 }
 
 .blinkFooterLogo {
-  animation: blinker 1s linear infinite;
+  animation: blinker 1s none infinite;
 }
 
 @keyframes blinker {
+  10%{
+    opacity: 100%;
+  }
   50% {
     opacity: 0;
+  }
+  80%{
+    opacity: 100%;
   }
 }
