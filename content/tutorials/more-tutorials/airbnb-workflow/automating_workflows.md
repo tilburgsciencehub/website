@@ -32,7 +32,7 @@ As you've worked through the set of exercises, you've repeatedly built on prelim
 
 ![](../images/dependencies.png)
 
-Revisit the [study notes](http://tilburgsciencehub.com/workflow/automation/) on *"Automating your Pipeline"* and write a `makefile` that captures the end-to-end process (from `download.R` to `plot_all.pdf` & `plot_Amsterdam.pdf`). Also, add an `all` and `clean` phony target.
+Revisit the [study notes](/automate/project-setup) on *"Automating your Pipeline"* and write a `makefile` that captures the end-to-end process (from `download.R` to `plot_all.pdf` & `plot_Amsterdam.pdf`). Also, add an `all` and `clean` phony target.
 
 
 **Exercise**     
