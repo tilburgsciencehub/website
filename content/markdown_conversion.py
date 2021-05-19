@@ -1,4 +1,4 @@
-import re, os, json
+import re, os, json, pandas as pd
 
 def list_files(filepath, filetype):
     paths = []
@@ -50,15 +50,11 @@ def export_data(file_paths):
             json_data.append(structure_markdown(df, path))
         except:
             print(path) # skipped files
-    
-    with open('markdown_conversion.json', 'w') as fp:
-        json.dump(json_data, fp)
+    return json_data
 
     
 # generate list of all markdown files
 file_paths = list_files(".", ".md")
-export_data(file_paths)
-
-        
-        
-
+json_data = export_data(file_paths)
+df = pd.DataFrame(json_data)
+df.to_csv("markdown_conversion.csv", index=False)
