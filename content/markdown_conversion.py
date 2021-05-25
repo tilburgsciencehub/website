@@ -1,4 +1,5 @@
 import re, os, json, pandas as pd
+from algoliasearch.search_client import SearchClient
 
 def list_files(filepath, filetype):
     paths = []
@@ -31,7 +32,7 @@ def structure_markdown(df, path):
     body_no_headers = " ".join([word for word in body_list if not re.search(headers, word)])
     
     return {
-        "file": path,
+        "objectID": path,
         "title": search_item("title", header),
         "description": search_item("description", header),
         "keywords": search_item("keywords", header),
@@ -56,5 +57,10 @@ def export_data(file_paths):
 # generate list of all markdown files
 file_paths = list_files(".", ".md")
 json_data = export_data(file_paths)
-df = pd.DataFrame(json_data)
-df.to_csv("markdown_conversion.csv", index=False)
+
+# push json data to Algolia
+algolia_key = os.environ['ALGOLIA_KEY'] 
+client = SearchClient.create('02IYLG4AP9', algolia_key)
+index = client.init_index('actors_index_db')
+
+index.save_objects(json_data)
