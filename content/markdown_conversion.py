@@ -61,6 +61,6 @@ json_data = export_data(file_paths)
 # push json data to Algolia
 algolia_key = os.environ['ALGOLIA_KEY'] 
 client = SearchClient.create('02IYLG4AP9', algolia_key)
-index = client.init_index('actors_index_db')
+index = client.init_index('Tilburg_Science_Hub')
 
 index.save_objects(json_data)
