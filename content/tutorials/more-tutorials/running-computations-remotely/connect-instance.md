@@ -10,9 +10,9 @@ aliases:
   - /learn/cloud/connect
 ---
 
-# Connect to Instance
+# Connect Instance
 
-Depending on whether you chose to launch a Linux or Windows instance follow one of the tutorials below.
+Depending on your operating system and whether you chose to launch a Linux or Windows instance, follow one of the tutorials below.
 
 ## Linux instance
 
