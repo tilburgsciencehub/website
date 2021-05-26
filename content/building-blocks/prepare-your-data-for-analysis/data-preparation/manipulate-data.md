@@ -1,7 +1,7 @@
 ---
 title: "Manipulate Data"
 description: "GitHub limits the size of files allowed in repositories. Use Git-LFS, an open-source Git extension for large file storage."
-weight: 2
+weight: 3
 keywords: "manipulate, cleaning, wrangling, prep, data"
 date: 2021-01-06T22:01:14+05:30
 draft: false

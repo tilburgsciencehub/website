@@ -1,7 +1,7 @@
 ---
 title: "Clean Data Scraped From Social Media"
 description: "This is a handy function that can be used to clean social media data scraped from the web."
-weight: 3
+weight: 4
 keywords: "clean, wrangling, scraping, follow, likes, network"
 date: 2021-01-06T22:01:14+05:30
 draft: false
