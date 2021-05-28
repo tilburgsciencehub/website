@@ -120,5 +120,6 @@ Examples:
 The syntax to move and rename files are exactly the same as on Mac, but you need to use the `move` and `rename` commands instead, respectively. Note that you cannot use `move` to rename files on Windows!
 
 ## See Also
+* This [guide on the "art of command line"](https://github.com/jlevy/the-art-of-command-line).
 * This building block draws on material of [this](https://generalassembly.github.io/prework/cl/#/) interactive tutorial by General Assembly which is absolutely worth checking out!
 * [Cheatsheet](http://www.cs.columbia.edu/~sedwards/classes/2015/1102-fall/Command%20Prompt%20Cheatsheet.pdf) with the most common Windows Command Prompt commands.
