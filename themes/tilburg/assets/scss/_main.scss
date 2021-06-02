@@ -715,6 +715,15 @@ article {
   width: 300px;
   max-height: 600px;
   overflow-y: scroll;
+  padding: 20px;
+  border-radius: 6px;
+
+  a {
+    color: $secondary;
+    padding: 10px 0;
+    border-bottom: solid 1px #ededed;
+    display: block;
+  }
 
   &.active {
     display: block;
