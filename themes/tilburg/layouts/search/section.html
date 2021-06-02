@@ -1,0 +1,84 @@
+{{- partial "header.html" . -}}
+
+<div class="container">
+  <br><br><br><br>
+  <div class="row justify-content-center">
+    <div class="col-lg-11 col-22">
+      <h5 class="text-center" style="height: 24px;">Showing search results for</h5>
+      <h3 class="text-center">'<span id="queryHolder"></span>'</h3>
+      
+      <!-- <div class="position-relative mx-5 searchIconRight w-75 mx-auto">
+        <input
+          type="text"
+          class="form-control form-control-lg border-0 shadow-sm buildingBlockSearch px-4"
+          placeholder="What are you looking for?"
+        />
+        <div
+          class="position-absolute w-100 bg-white rounded shadow buildingBlocksSuggestions"
+        ></div>
+      </div> -->
+    </div>
+
+  </div>
+  <br><br><br><br>
+  <!-- all the building blocks -->
+  <div class="row justify-content-center buildingBlocksRow">
+    <div class="col-20">
+      
+      <div class="p-5 bg-white mb-5 rounded">
+        <div class="row">
+          <!-- <div class="col-lg-8 col-24">
+            <h4 class="heading m-0">{{ .Title }}</h4>
+          </div> -->
+          <div class=" col-24 searchResults">
+            <!-- <div class="row">
+              {{- range .Pages -}}
+              <div class="col-24 col-lg-12 mb-4">
+                <h5 class="heading font-weight-normal" style="font-size: 16px; height: 22px;">{{ .Title }}</h5>
+                {{ range .Pages }}
+                <a class="d-block" href="{{.Permalink}}">{{.Title}}</a>
+                {{ end }}
+              </div>
+              {{ end }}
+            </div> -->
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+{{- partial "footer.html" . -}}
+
+<script>
+  const params = new URLSearchParams(window.location.search)
+  const queryHolder = document.querySelector("#queryHolder");
+  const searchResults = $(".searchResults");
+
+  // const searchClient = algoliasearch('02IYLG4AP9', '7009df5926509e3c685c2364242ee3f1');
+  // const index = searchClient.initIndex("tilburgsciencehub");
+
+  if (params.get("q")) {
+    queryHolder.innerHTML = params.get("q");
+
+    index.search(params.get("q"))
+      .then(({hits}) => {
+        hits.map(hit => {
+          searchResults.append(`
+            <div class="py-3 border-bottom block">
+              <a href="">
+                <h5 class="text-secondary" style="height: 24px; font-size: 18px;">${hit.title}</h5>
+              </a>
+              <p style="color: #6081a2; font-size: 16px;">${hit.description}</p>
+            </div>
+          `)
+        })
+      })
+  }
+
+  
+</script>

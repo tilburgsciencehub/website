@@ -171,28 +171,29 @@ $(document).mouseup(function (e) {
   }
 });
 
+const searchClient = algoliasearch('02IYLG4AP9', '7009df5926509e3c685c2364242ee3f1');
+const index = searchClient.initIndex("tilburgsciencehub");
+
 $(".headerSearch").on("keyup", function (e) {
   const resultsHolder = $(".headerSearchResultsHolder");
   const val = e.target.value;
 
-  $.ajax({
-    url: "/index.json",
-  }).done(function (result) {
-    resultsHolder.html("");
-    let newResults = result.pages.filter((result) => {
-      if (new RegExp(val, "gmi").test(result.searchKeywords)) {
-        return result;
-      }
-    });
-
-    newResults.map((result) => {
-      resultsHolder.append(
-        `<a class="d-block border-bottom p-3 text-secondary" href="${result.permalink}">${result.title}</a>`
-      );
-    });
-
+  index.search(val, {
+    hitsPerPage: 10
+  }).then(({ hits }) => {
+    resultsHolder.html(" ");
     resultsHolder.addClass("active");
-  });
+    hits.map(hit => {
+      resultsHolder.append(
+        `<a href="${hit.file}">${hit.title}</a>`
+      )
+    })
+    
+    // also add see more link
+    if (hits.length == 10) {
+      resultsHolder.append(`<a class="text-primary" href="/search?q=${val}">View all results +</a>`)
+    }
+  })
 });
 
 $(".headerSearchMobile").on("keyup", function (e) {
