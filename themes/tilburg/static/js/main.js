@@ -184,8 +184,12 @@ $(".headerSearch").on("keyup", function (e) {
     resultsHolder.html(" ");
     resultsHolder.addClass("active");
     hits.map(hit => {
+
+      let url = hit.file.replace("./", "");
+      url = url.replace(".md", "");
+
       resultsHolder.append(
-        `<a href="${hit.file}">${hit.title}</a>`
+        `<a href="/${url}">${hit.title}</a>`
       )
     })
     
