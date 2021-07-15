@@ -68,9 +68,13 @@
     index.search(params.get("q"))
       .then(({hits}) => {
         hits.map(hit => {
+
+          let url = hit.file.replace("./", "");
+          url = url.replace(".md", "");
+
           searchResults.append(`
             <div class="py-3 border-bottom block">
-              <a href="">
+              <a href="/${url}">
                 <h5 class="text-secondary" style="height: 24px; font-size: 18px;">${hit.title}</h5>
               </a>
               <p style="color: #6081a2; font-size: 16px;">${hit.description}</p>
