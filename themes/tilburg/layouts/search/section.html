@@ -4,7 +4,7 @@
   <br><br><br><br>
   <div class="row justify-content-center">
     <div class="col-lg-11 col-22">
-      <h5 class="text-center" style="height: 24px;">Showing search results for</h5>
+      <h5 class="text-center heading" style="height: 24px; font-weight: 300 !important;">Showing search results for</h5>
       <h3 class="text-center">'<span id="queryHolder"></span>'</h3>
       
       <!-- <div class="position-relative mx-5 searchIconRight w-75 mx-auto">
@@ -59,6 +59,8 @@
   const queryHolder = document.querySelector("#queryHolder");
   const searchResults = $(".searchResults");
 
+  document.title = params.get("q") + " - Tilburg Science Hub"
+
   // const searchClient = algoliasearch('02IYLG4AP9', '7009df5926509e3c685c2364242ee3f1');
   // const index = searchClient.initIndex("tilburgsciencehub");
 
@@ -67,15 +69,17 @@
 
     index.search(params.get("q"))
       .then(({hits}) => {
-        hits.map(hit => {
+        hits.map((hit, index) => {
 
           let url = hit.file.replace("./", "");
           url = url.replace(".md", "");
 
+          let last = hits.length - 1 == index;
+
           searchResults.append(`
-            <div class="py-3 border-bottom block">
+            <div class="py-3 ${last ? '' : 'border-bottom'} block">
               <a href="/${url}">
-                <h5 class="text-secondary" style="height: 24px; font-size: 18px;">${hit.title}</h5>
+                <h5 class="text-secondary heading" style="height: 24px; font-size: 18px; font-weight: 300 !important;">${hit.title}</h5>
               </a>
               <p style="color: #6081a2; font-size: 16px;">${hit.description}</p>
             </div>
