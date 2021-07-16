@@ -192,10 +192,14 @@ $(".headerSearch").on("keyup", function (e) {
         `<a href="/${url}">${hit.title}</a>`
       )
     })
+
+    if (hits.length == 0) {
+      resultsHolder.append(`<span>No result found!</span>`)
+    }
     
     // also add see more link
     if (hits.length == 10) {
-      resultsHolder.append(`<a class="text-primary" href="/search?q=${val}">View all results +</a>`)
+      resultsHolder.append(`<a class="text-primary" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`)
     }
   })
 });
