@@ -205,30 +205,6 @@ $(".headerSearch").on("keyup", function (e) {
 });
 
 $(".headerSearchMobile").on("keyup", function (e) {
-  // const resultsHolder = $(".mobileResults");
-  // const val = e.target.value;
-
-  // $.ajax({
-  //   url: "/index.json",
-  // }).done(function (result) {
-  //   resultsHolder.html("");
-  //   let newResults = result.pages.filter((result) => {
-  //     if (new RegExp(val, "gmi").test(result.searchKeywords)) {
-  //       return result;
-  //     }
-  //   });
-
-  //   newResults.map((result) => {
-  //     resultsHolder.append(
-  //       `<a class="d-block border-bottom p-3 text-secondary" href="${result.permalink}">${result.title}</a>`
-  //     );
-  //   });
-
-  //   resultsHolder.addClass("active");
-  // });
-
-  // ---------------------------------------------
-
   const resultsHolder = $(".mobileResults");
   const val = e.target.value;
 
