@@ -730,6 +730,23 @@ article {
   }
 }
 
+.mobileResults {
+  display: none;
+  position: relative;
+  padding-top: 20px;
+
+  a {
+    color: $secondary;
+    padding: 10px 0;
+    border-bottom: solid 1px #ededed;
+    display: block;
+  }
+
+  &.active {
+    display: block;
+  }
+}
+
 footer {
   color: #60758a;
 
