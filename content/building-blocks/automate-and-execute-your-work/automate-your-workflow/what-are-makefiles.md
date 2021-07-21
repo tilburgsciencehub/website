@@ -107,6 +107,17 @@ $(GEN_DATA)/aggregated_df.csv: data/listings.csv data/reviews.csv
 ```
 {{% /example %}}
 
+### Run make using `.bat` files
+
+Running a pipeline with make usually requires you to work frmo the command line/terminal (i.e., type `make` to start the workflow). In some circumstances, it may be more convenient to start the workflow from a batch file (e.g., on Windows, you would just have to double-click on such a file).
+
+Here's a small code snippet to achieve just that. Just create a `.bat` file in your project's directory (i.e., the one where you would usually run `make` in). This snippet writes any output from make in a `make.log` file, which you can use to verify `make` has run properly.
+
+```
+make -k > make.log 2>&1
+pause
+```
+
 ## See Also
 
 - [The Turing Way's Guide to Reproducible Research using `make`](https://the-turing-way.netlify.app/reproducible-research/make.html)
