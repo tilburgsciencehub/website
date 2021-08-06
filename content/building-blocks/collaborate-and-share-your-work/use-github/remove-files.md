@@ -31,6 +31,8 @@ If you have committed sensitive data to your Git repository, use thef following 
 
 2. Check out the GitHub manuals for a [step-by-step guide](https://docs.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository)!.
 
+Alternatively, use [BFG Repo Cleaner](https://rtyley.github.io/bfg-repo-cleaner/), a convenient tool to remove unwanted files from your project.
+
 {{% tip %}}
 __Prevent committing specific files in the first place__
 
