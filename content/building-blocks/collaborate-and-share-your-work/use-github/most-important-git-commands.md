@@ -4,7 +4,7 @@ description: "A quick recap of the essential Git commands you will be using ever
 keywords: "git, commands, important, essential, cheat"
 #date: 2021-02-08
 draft: false
-#weight: 3
+weight: 2
 aliases:
   - /use/git-bash
   - /use/git-commands
@@ -14,7 +14,7 @@ aliases:
 
 ## Overview
 
-This is a summary of the most important Git commands.
+This is a summary of the most important Git commands that you can use in Git Bash. If you're not so familiar with working in the command prompt/terminal, you could also try to check out Git Desktop or Git GUI, which provides a graphical user interface for performing the Git workflow.
 
 ## Code
 

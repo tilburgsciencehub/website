@@ -1,6 +1,6 @@
 ---
-title: "Work with Large Files on GitHub"
-description: "GitHub limits the size of files allowed in repositories. Use Git-LFS, an open-source Git extension for large file storage."
+title: "Working with Large Files on GitHub"
+description: "GitHub limits the size of files allowed in repositories. Use Git-LFS, an open-source Git extension for storing large files."
 #weight: 2
 keywords: github, git-lfs, large files, versioning, organizing
 #date: 2021-01-06T22:01:14+05:30
@@ -23,7 +23,11 @@ GitHub limits the size of files allowed in repositories. It warns you if you're 
 However, even if it didn't stop you, versioning large files would be very impractical. That's because **a repository contains every version of every file** – that's the point of versioning, right?
 Having multiple versions of large files cloned locally can become expensive in terms of disk space and fetch time.
 
-The solution? Use **[Git LFS](https://git-lfs.github.com)**, an open-source Git extension for "large file storage". In short, it allows you to version large files while saving disk space and cloning time, using the same Git workflow that you're used to. It does **not** keep all your project's data locally. It only provides the version you actually **need** in your checked out revision.
+The solution?
+
+Well, first, you should ask yourself whether to store large files in the first place. Sometimes, large files are generated on the basis of existing data and code, and hence can always be "reconstructed" using existing files.
+
+However, sometimes you wish to store raw data with moderate file sizes (let's say, between 5 and 50MB). For this, use **[Git LFS](https://git-lfs.github.com)**, an open-source Git extension for "large file storage". In short, Git LFS allows you to version large files while saving disk space and cloning time, using the same Git workflow that you're used to. It does **not** keep all your project's data locally. It only provides the version you actually **need** in your checked out revision.
 
 When you mark a file as LFS file, the extension replaces the actual large file with a small *pointer* on your PC. The actual files - and all their versions - are located on the LFS remote server and *only the pulled* files are stored in a local cache. In other words, when you `pull` to your local repository, the pointer is replaced with the file and only the actual version you've requested gets stored locally.
 
@@ -99,3 +103,7 @@ You can follow [this tutorial by Atlassian](https://www.atlassian.com/git/tutori
 
 <!-- For example: ‘devising and organizing the project’,
 ‘data collection’, ‘data analysis’ and ‘article writing’. -->
+
+## Store really large files
+
+If you're hitting the limits of Git LFS, or only want to store *one* version of a file, object storage (e.g., such as the one on AWS S3) may be a better way to handling large files.
