@@ -230,6 +230,8 @@ But how would you connect this mic to your PC? You'll need an external **audio i
 
 This is by far **the best-sounding, most versatile and future-proof solution** (you can later buy a portable digital audio recorder for outdoor scenarios and still use the same microphone, for instance).
 
+If you want to learn more about which microphone works best for you, [Beginner Guitar HQ](https://beginnerguitarhq.com/best-recording-microphone/) has a comprehensive guide on how to choose the right one.
+
 ### Optional Gear
 
 A [teleprompter](https://en.wikipedia.org/wiki/Teleprompter) is a useful addition to this setup. By using a clear sheet of glass in front of your lens, it allows you to read the script while talking without the need to ever look away from the camera. Actually, it has some more use cases too: you could use it as a monitor and see yourself while recording, or your attendees in a live call while always looking them in the eyes. Take a look at [how this YouTuber configured](https://dslrvideoshooter.com/the-ultimate-video-desk/#teleprompter) his [GlideGear TMP-100](https://www.amazon.com/Glide-Gear-TMP100-Adjustable-Teleprompter/dp/B019AJOLEM). Notice that you will need a small external monitor. However, you could also use your iPad or tablet for this purpose. There are some great apps that will allow you to do so, like [PromptSmart](https://promptsmart.com). Bear also in mind that small teleprompters would work better with shorter focal lengths (wide angle lenses) because the camera can be placed closer to the subject speaking. Longer focal lengths require the camera to be placed further away, thus making it harder for the teacher to read from a teleprompter.
