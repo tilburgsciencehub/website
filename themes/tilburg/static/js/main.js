@@ -440,3 +440,15 @@ document
 if (document.querySelector("#scrollTo a")) {
   document.querySelector("#scrollTo a").click()
 }
+
+// handling wide tables
+const widetables = document.querySelectorAll(".widetable");
+widetables.forEach((element) => {
+  element.children[0].addEventListener("scroll", function(e) {
+    if (element.children[0].scrollLeft + element.offsetWidth >= element.children[0].scrollWidth) {
+      element.classList.add("scrolled-right");
+    } else {
+      element.classList.remove("scrolled-right");
+    }
+  }, false)
+})

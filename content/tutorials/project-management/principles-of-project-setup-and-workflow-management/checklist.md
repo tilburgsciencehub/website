@@ -17,6 +17,7 @@ become efficient, reproducible, and well-structured.
 
 Here's a checklist you can use to audit your progress.
 
+{{% wide-table %}}
 <!--
 | Makefile available at the root of the project (tying together individual makefiles) | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
 -->
@@ -56,7 +57,7 @@ Here's a checklist you can use to audit your progress.
 | Tested on different computer (Windows) | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
 | Tested on different computer (Mac) | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
 | Tested on different computer (Linux) | &#9744;        | &#9744;     | &#9744;     | &#9744; |    |
-
+{{% /wide-table %}}
 
 {{% warning %}}
 **Versioned any sensitive data?**
