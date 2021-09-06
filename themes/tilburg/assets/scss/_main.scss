@@ -614,6 +614,27 @@ article {
     }
   }
 
+  .widetable {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      background: rgb(255,255,255);
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+      width: 30px;
+    }
+
+    &.scrolled-right {
+      &:after {
+        background: none !important;
+      }
+    }
+  }
+
   td {
     border: solid 1px #e0e0e0;
     border-style: none solid solid none;
@@ -668,18 +689,6 @@ article {
   border:0;
 }
 
-.tableFadeRight { position: relative; }
-// .tableFadeRight:after {
-
-
-// position: absolute;
-// top: 0; right:0; width: 100%; bottom: 0;
-// float: right;
-// content: " ";
-// z-index: 30;
-// background-color: rgba(0,0,0,0.4);
-// }
-
 .buildingBlocksSuggestions {
   top: 60px;
   display: none;
@@ -715,6 +724,44 @@ article {
   width: 300px;
   max-height: 600px;
   overflow-y: scroll;
+  padding: 20px;
+  border-radius: 6px;
+
+  a {
+    color: $secondary;
+    padding: 10px 0;
+    border-bottom: solid 1px #ededed;
+    display: block;
+  }
+
+  &.active {
+    display: block;
+  }
+}
+
+.searchResults {
+
+  h5 {
+    margin-top: 15px;
+    height: auto;
+
+    &:hover {
+      color: $primary !important;
+    }
+  }
+}
+
+.mobileResults {
+  display: none;
+  position: relative;
+  padding-top: 20px;
+
+  a {
+    color: $secondary;
+    padding: 10px 0;
+    border-bottom: solid 1px #ededed;
+    display: block;
+  }
 
   &.active {
     display: block;

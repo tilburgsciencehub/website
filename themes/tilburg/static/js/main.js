@@ -171,52 +171,67 @@ $(document).mouseup(function (e) {
   }
 });
 
+const searchClient = algoliasearch('02IYLG4AP9', '7009df5926509e3c685c2364242ee3f1');
+const index = searchClient.initIndex("tilburgsciencehub");
+
 $(".headerSearch").on("keyup", function (e) {
   const resultsHolder = $(".headerSearchResultsHolder");
   const val = e.target.value;
 
-  $.ajax({
-    url: "/index.json",
-  }).done(function (result) {
-    resultsHolder.html("");
-    let newResults = result.pages.filter((result) => {
-      if (new RegExp(val, "gmi").test(result.searchKeywords)) {
-        return result;
-      }
-    });
-
-    newResults.map((result) => {
-      resultsHolder.append(
-        `<a class="d-block border-bottom p-3 text-secondary" href="${result.permalink}">${result.title}</a>`
-      );
-    });
-
+  index.search(val, {
+    hitsPerPage: 10
+  }).then(({ hits }) => {
+    resultsHolder.html(" ");
     resultsHolder.addClass("active");
-  });
+    hits.map(hit => {
+
+      let url = hit.file.replace("./", "");
+      url = url.replace(".md", "");
+
+      resultsHolder.append(
+        `<a href="/${url}">${hit.title}</a>`
+      )
+    })
+
+    if (hits.length == 0) {
+      resultsHolder.append(`<span>No result found!</span>`)
+    }
+    
+    // also add see more link
+    if (hits.length == 10) {
+      resultsHolder.append(`<a class="text-primary" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`)
+    }
+  })
 });
 
 $(".headerSearchMobile").on("keyup", function (e) {
   const resultsHolder = $(".mobileResults");
   const val = e.target.value;
 
-  $.ajax({
-    url: "/index.json",
-  }).done(function (result) {
-    resultsHolder.html("");
-    let newResults = result.pages.filter((result) => {
-      if (new RegExp(val, "gmi").test(result.searchKeywords)) {
-        return result;
-      }
-    });
-
-    newResults.map((result) => {
-      resultsHolder.append(
-        `<a class="d-block border-bottom p-3 text-secondary" href="${result.permalink}">${result.title}</a>`
-      );
-    });
-
+  index.search(val, {
+    hitsPerPage: 10
+  }).then(({ hits }) => {
+    resultsHolder.html(" ");
     resultsHolder.addClass("active");
-  });
+    hits.map(hit => {
+
+      let url = hit.file.replace("./", "");
+      url = url.replace(".md", "");
+
+      resultsHolder.append(
+        `<a href="/${url}">${hit.title}</a>`
+      )
+    })
+
+    if (hits.length == 0) {
+      resultsHolder.append(`<span>No result found!</span>`)
+    }
+    
+    // also add see more link
+    if (hits.length == 10) {
+      resultsHolder.append(`<a class="text-primary" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`)
+    }
+  })
 });
 
 /*
@@ -425,3 +440,15 @@ document
 if (document.querySelector("#scrollTo a")) {
   document.querySelector("#scrollTo a").click()
 }
+
+// handling wide tables
+const widetables = document.querySelectorAll(".widetable");
+widetables.forEach((element) => {
+  element.children[0].addEventListener("scroll", function(e) {
+    if (element.children[0].scrollLeft + element.offsetWidth >= element.children[0].scrollWidth) {
+      element.classList.add("scrolled-right");
+    } else {
+      element.classList.remove("scrolled-right");
+    }
+  }, false)
+})

@@ -25,6 +25,9 @@
 	{{ else }}
 	<meta property="og:image" content="{{- .Site.BaseURL -}}/img/default-og-image.png" />
 	{{ end }}
+	{{- if .Params.noindex -}}
+	<meta name="robots" content="noindex">
+	{{- end -}}
 </head>
 
 <body>
