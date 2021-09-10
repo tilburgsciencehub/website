@@ -35,7 +35,6 @@ You can load packages in the preamble: `\usepackage{amsmath}`
 ### Greek letters
 #### Lowercase
 {{ wide-table }}
-
 |  |  |  |  |  |  |  
 |-------------|-------------|------------|------------|---------------|---------------|
 | $\alpha$    | `\alpha`    | $\beta$    | `\beta`    | $\gamma$      | `\gamma`      |
@@ -48,7 +47,6 @@ You can load packages in the preamble: `\usepackage{amsmath}`
 | $\tau$      | `\tau`      | $\upsilon$ | `\upsilon` | $\phi$        | `\phi`        |
 | $\varphi$   | `\varphi`   | $\chi$     | `\chi`     | $\psi$        | `\psi`        |
 | $\omega$    | `\omega`    |
-
 {{ /wide-table }}
 
 #### Uppercase
