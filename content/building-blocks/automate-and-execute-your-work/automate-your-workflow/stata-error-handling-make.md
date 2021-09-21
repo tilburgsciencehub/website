@@ -1,5 +1,5 @@
 ---
-title: "Make Stata Crash when encountering Errors"
+title: "Integrating Stata in Automated Workflows"
 description: "Learn how to use R to check for errors and the completion of Stata code in batch mode or in a Makefile."
 keywords: "exception, handling, stata, R, make, error"
 #date: 2021-03-19
@@ -8,13 +8,14 @@ author: "Nazli Alagöz"
 authorlink: "https://www.tilburguniversity.edu/staff/n-m-alagoz"
 aliases:
  - /error-handling/stata-make
+ - /automate/stata
 ---
 
 ## Overview <!-- Goal of the Building Block -->
 
-When you run Stata within a Makefile, Stata does not stop the progression of the Makefile even if there is an error in the Stata code. Thus, you have no idea whether Stata code was executed without any errors until the end without checking the Stata log files.
+When you run Stata within an automated research pipeline (e.g., using a `makefile`), Stata does *not stop the progression* of the Makefile, even if there is an error in your cod! Thus, you have no idea whether Stata code was executed without any errors until the end without checking the Stata log files.
 
-To remedy this issue, you can use R to check for the errors in the log file and stop the Makefile.
+To remedy this issue, you can use R to check for any error that may have occurred in the log file. If there was an error, we can make the workflow to interrupt.
 
 ## Code
 
