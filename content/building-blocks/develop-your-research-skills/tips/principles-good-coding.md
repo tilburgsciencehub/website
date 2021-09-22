@@ -49,6 +49,12 @@ Even experts find it hard to predict performance bottlenecks.
 - Small changes can have dramatic impact on performance
 - Use a profile to report how much time is spent on each line of code
 
+## Be a good code citizen
+Team members should take the time to improve code they are modifying or extending even if they did not write it themselves. A core of good code plus a long series of edits and accretions equals bad code. The problem is that the logical structure that made sense for the program when it was small no longer makes sense as it grows. It is critical to regularly look at the program as a whole and improve the logical structure through reorganization and abstraction. Programmers call this “refactoring.” Even if your immediate task only requires modifying a small part of a program, we encourage you to take the time to improve the program more broadly. At a minimum, you should guarantee that the code quality of the program overall is at least as good as it was when you started. A resource on how to implement refactoring can be found [here](https://refactoring.guru/refactoring/).
 
+## Keep it short
+No line of code should be more than 100 characters long. All languages we work in allow you to break a logical line across multiple lines on the page (e.g, using `///` in Stata or `...` in Matlab). You may want to set your editor to show a “margin” at 100 characters.
+
+Functions should not typically be longer than 200 lines.
 
 *Content based on Ulrich Bergmann, Matteo Courthoud, Lachlan Deer (2020), [Introduction and Motivation, Programming Practices for Research in Economics](https://github.com/pp4rs/2020-uzh-course-material/blob/master/00-intro/intro.pdf), University of Zurich.*
