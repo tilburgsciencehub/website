@@ -395,3 +395,5 @@ cl : Command line warning D9025 : overriding ’/MD’ with ’/MT’�
   *  [Common C Errors](http://www.drpaulcarter.com/cs/common-c-errors.php).
 
 *Content based on Ulrich Bergmann, Matteo Courthoud, Lachlan Deer (2020), [Introduction and Motivation, Programming Practices for Research in Economics](https://github.com/pp4rs/2020-uzh-course-material/blob/master/00-intro/intro.pdf), University of Zurich.*
+
+*The main principles we follow in writing code are summarized in [this Building Block](https://tilburgsciencehub.com/write/good-code) and the document [Code and Data for the Social Sciences](http://web.stanford.edu/~gentzkow/research/CodeAndData.pdf). See especially the Code Style appendix and chapters 1, 2, 6, and 7.*
