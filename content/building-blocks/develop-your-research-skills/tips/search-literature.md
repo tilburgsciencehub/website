@@ -41,9 +41,13 @@ Although there is no exact recipe for an effective search, the following tips wi
 
   - **Narrow and refine your search results**. For instance, filter by year of publication or date range and by source type (e.g. article, book or review).
 
-## Where to search: Google Scholar.
+## Where to search
+### Google Scholar.
   Make things easier: use **Google scholar**. It provides a simple way to find scholarly literature from multiple disciplines and sources (articles, books, journals...).
 
+  If for some reason, you cannot access a specific article, paper or book, paste the DOI at [libkey.io](https://libkey.io/) to retrieve the article (you need to login through your institution).
+
+{{% tip %}}
   - **Useful tips from the search results:**
     - **Relevant articles and cited by.** In just one click these two options will help you find a broad range of additional relevant literature for your research question.
 
@@ -51,12 +55,22 @@ Although there is no exact recipe for an effective search, the following tips wi
 
     - **Linking the access from your institution to Google Scholar**. This allows you to access the resources available from your institution's online library directly. This can be done in 3 simple steps:
 
-      1- Go to Google Scholar [settings](https://scholar.google.co.uk/scholar_settings)
+        1- Go to Google Scholar [settings](https://scholar.google.co.uk/scholar_settings)
 
-      2- Click on the "library links" section and type in the name of your institution in the search box.
+        2- Click on the "library links" section and type in the name of your institution in the search box.
 
-      3- When the result appears, uncheck any other boxes to which you do not have access to and click on the save button.
+        3- When the result appears, uncheck any other boxes to which you do not have access to and click on the save button.
 
-      Once set, you will see at each result of the search a "Fulltext via [institution search tool]".
+        Once set, you will see at each result of the search a "Fulltext via [institution search tool]".
+{{% /tip %}}
 
-  However, if for some reason you cannot access a specific article, paper or book, through Google Scholar, [libkey.io](https://libkey.io/) will send you directly to the document just by entering the DOI (you need to login through your institution).
+### Crossref
+  Another good alternative to find scholarly literature. Given that it relies on the metadata of publications,  its search is highly reliable providing with consistent links to the publications, with the correct author names.
+
+{{% tip %}}
+  Click on **actions** under the search result to download citations in different styles and formats.
+{{% /tip %}}
+
+{{% warning %}}
+  Only publications that have a DOI can be found!
+{{% /warning %}}
