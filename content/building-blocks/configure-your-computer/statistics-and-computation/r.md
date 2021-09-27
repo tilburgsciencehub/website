@@ -113,3 +113,42 @@ R version 4.x.x (20xx-xx-xx) -- "Some Funky Name"
 ```
 
 Great job - you've managed to install R and configure it for use for data-intensive projects!
+
+
+## Making R find packages on the command prompt
+You can now access R directly from the command prompt. Nevertheless, code that runs perfectly on R Studio might return `Error in library(x)` on the command prompt.
+
+Why is that? Sometimes, when running R from the command line, it doesn't find the packages that were installed in your *user library* paths.
+
+**Solution:** Tell R where to find your user library.
+
+{{% warning %}}
+**Making R find your user library via the PATH settings on Windows.**
+
+  - In RStudio, type `.libPaths()` and note the path to your user directory (typically the one that contains your user name).
+
+  - Open the settings for environment variables
+
+      - Right-click on Computer.
+
+      - Go to "Properties" and select the tab "Advanced System settings".
+
+      - Choose "Environment Variables"
+
+  - Select `New` and name it **`R_LIBS_USER`**. `Variable value` is the path (that you previously noted) to your user directory.
+
+Rather want to set `R_LIBS_USER` on a Mac or Linux machine? [Read more here](https://tilburgsciencehub.com/setup/environment).
+
+{{% /warning %}}
+
+**Verify that you can access your packages**
+
+Close all command prompts/terminals. Open one again, type `R` to open R and then enter:
+
+```bash
+library(x)
+```
+Expect a return beginning with:
+```bash
+Attaching package: 'x'
+```
