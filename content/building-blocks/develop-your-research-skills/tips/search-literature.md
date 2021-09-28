@@ -42,6 +42,7 @@ Although there is no exact recipe for an effective search, the following tips wi
   - **Narrow and refine your search results**. For instance, filter by year of publication or date range and by source type (e.g. article, book or review).
 
 ## Where to search
+
 ### Google Scholar.
   Make things easier: use **Google scholar**. It provides a simple way to find scholarly literature from multiple disciplines and sources (articles, books, journals...).
 
