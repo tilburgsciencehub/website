@@ -2,7 +2,7 @@
 title: "Collaborating on the Github project board"
 description: "Projects boards on GitHub help you organize and prioritize your work using the Scrum framework for project management."
 keywords: "git, github, project board, sprint"
-weight: 1
+weight: 8
 #date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
