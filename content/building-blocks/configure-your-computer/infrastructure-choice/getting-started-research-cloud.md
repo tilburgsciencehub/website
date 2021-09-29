@@ -1,7 +1,7 @@
 ---
 title: "Getting started with Research Cloud"
 description: "Free cloud solution for conducting research"
-keywords: "cloud, virtual computers, SURF, "
+keywords: "cloud, virtual computers, SURF, infrastructure, parallel, research cloud"
 weight: 2
 #date: 2021-01-06T22:01:14+05:30
 draft: false
@@ -30,19 +30,22 @@ At present, SURF offers year-long “start-up” grants, which can then be renew
 ## How to get started
 
 {{% warning %}}
- 1 - Check that you’re affiliated with a Dutch research institution to set up the workspace for yourself.
 
-2 - Fill in the project [application form](https://www.surf.nl/en/research-ict/apply-for-access-to-compute-services). Select “small application”.
+Check that you’re affiliated with a Dutch research institution to set up the workspace for yourself.
 
-3 - Once your wallet is approved, you will receive an email from SURF to set up your initial workspace. This will look like this:
+{{% /warning %}}
+
+1. Fill in the project [application form](https://www.surf.nl/en/research-ict/apply-for-access-to-compute-services). Select “small application”.
+
+2. Once your wallet is approved, you will receive an email from SURF to set up your initial workspace. This will look like this:
 
   ![surf mail](../surf_mail.png)
 
-4 - After setting up the initial workspace, access it [here](https://portal.live.surfresearchcloud.nl/).
+3. After setting up the initial workspace, access it [here](https://portal.live.surfresearchcloud.nl/).
 
-5 - Detailed instructions to operate Research Cloud (including adding data sources) are [here](https://servicedesk.surfsara.nl/wiki/display/WIKI/How+to+get+on+board).
+4. Detailed instructions to operate Research Cloud (including adding data sources) are [here](https://servicedesk.surfsara.nl/wiki/display/WIKI/How+to+get+on+board).
 
-{{% /warning %}}
+
 
 ## Advanced use cases
 
@@ -64,5 +67,5 @@ The Dutch foundation SURF offers login via SurfConext, which is an easy way to k
 {{% /tip %}}
 
 {{% warning %}}
-SURF is only available for researchers affiliated with dutch institutions.
+SURF services are only available for researchers affiliated with Dutch institutions.
 {{% /warning %}}
