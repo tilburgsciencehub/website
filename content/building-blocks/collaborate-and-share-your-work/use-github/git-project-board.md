@@ -10,7 +10,7 @@ aliases:
 ---
 ## Use Sprints and GitHub "Projects" to board to organize your projects.
 
-Projects boards on GitHub help you organize and prioritize your work using the Scrum framework for project management. The benefit from project boards is that you can link your repositories. This way all issues that are related to different projects can be organized in a unique project board.
+Projects boards on GitHub help you organize and prioritize your work using the [Scrum framework for project management](https://tilburgsciencehub.com/learn/scrum). The benefit from project boards is that you can link your repositories. This way all issues that are related to different projects can be organized in a unique project board.
 
 ### Get Started with Github Projects
 - On your profile page on GitHub, you can find a tab “Projects” that enables you to view all your current projects board and make a “New Project”, for instance:
