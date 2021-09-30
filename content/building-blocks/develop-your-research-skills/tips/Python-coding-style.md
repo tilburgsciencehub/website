@@ -1,5 +1,5 @@
 ---
-title: "Language-specific style guides"
+title: "Python coding style guide"
 description: "Follow nice language-specific coding styles to make your code easier to understand and easier to the eye"
 keywords: "style, code, python, R"
 weight: 3
