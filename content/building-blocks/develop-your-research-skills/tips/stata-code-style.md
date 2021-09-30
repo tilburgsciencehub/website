@@ -6,7 +6,7 @@ weight: 5
 date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
-  - /coding/style-guides
+  - /Stata/style-guides
 ---
 ## Coding styles in STATA
 We use two coding styles in Stata: a linear format for very short or simple scripts, and a functional style for longer or more complex scripts.
