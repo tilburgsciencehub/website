@@ -48,9 +48,9 @@ dddd
               {{ end }}
             {{ end }}
           </div>
-          <div class="d-none d-lg-block">
+          <!-- <div class="d-none d-lg-block">
             <a href="{{ .Site.Params.repo_url }}/edit/master/content/{{ .File }}" class="btn btn-secondary">Edit this page</a>
-          </div>
+          </div> -->
         </div>
 				{{ if eq (len .Content) 0 }}
 				<script>window.location = "/{{.Section}}"</script>
@@ -62,8 +62,8 @@ dddd
 				</div>
 				{{ else }}
 				{{ end }}
-				<!-- <div class="d-flex justify-content-between mt-5 align-items-center">
-          <div class="flex-fill">
+				<div class="d-flex justify-content-between mt-5 align-items-center">
+          <!-- <div class="flex-fill">
             {{ if eq .Params.share false }}
             {{ else }}
               {{ with .Params.aliases }}
@@ -72,11 +72,11 @@ dddd
                 {{ end }}
               {{ end }}
             {{ end }}
-          </div>
+          </div> -->
           <div class="d-none d-lg-block">
             <a href="{{ .Site.Params.repo_url }}/edit/master/content/{{ .File }}" class="btn btn-secondary">Edit this page</a>
           </div>
-        </div> -->
+        </div>
 				{{ end }}
 
 				{{ partial "pagination.html" }}
