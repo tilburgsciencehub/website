@@ -1274,9 +1274,16 @@ a.text-secondary:hover {
 .search-keyword {
   // -webkit-user-select: all;
   background-color: #f0f5f9;
-  padding: 6px;
+  padding-left: 4px;
+  padding-right: 4px;
   border: 2px dashed #e6ebf0;
   border-radius: 4px;
   font-family: "Roboto Mono", SFMono-Regular, monospace;
-  font-size: 11pt;
+  font-size: 0.9rem;
+  color: #7b99b8;
+  margin-right: 8px;
+}
+
+.search-keyword:hover {
+  text-decoration: none;
 }
