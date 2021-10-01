@@ -199,7 +199,7 @@ $(".headerSearch").on("keyup", function (e) {
 
     // also add see more link
     if (hits.length == 10) {
-      resultsHolder.append(`<a class="text-primary" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`)
+      resultsHolder.append(`<a class="view-more-search" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`)
     }
   })
 });
@@ -229,7 +229,7 @@ $(".headerSearchMobile").on("keyup", function (e) {
 
     // also add see more link
     if (hits.length == 10) {
-      resultsHolder.append(`<a class="text-primary" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`)
+      resultsHolder.append(`<a class="view-more-search" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`)
     }
   })
 });

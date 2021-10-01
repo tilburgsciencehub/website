@@ -734,6 +734,10 @@ article {
     display: block;
   }
 
+  a:hover {
+    color: #ff8200;
+  }
+
   &.active {
     display: block;
   }
@@ -937,6 +941,11 @@ footer {
 .text-primary {
   color: $primary !important;
 }
+
+.text-primary:hover {
+  color: #ff8200!important;
+}
+
 p {
   font-size: 18px;
   line-height: 26px;
@@ -1270,6 +1279,14 @@ a.text-secondary:hover {
 .terminal-data { display: none; }
 .terminal-window .gray { color: gray; }
 .terminal-window .green { color: green;}
+
+.view-more-search {
+  color: $primary !important;
+}
+
+.view-more-search:hover {
+  color: #ff8200!important;
+}
 
 .search-keywords {
   margin-bottom: 10px;
