@@ -1271,6 +1271,11 @@ a.text-secondary:hover {
 .terminal-window .gray { color: gray; }
 .terminal-window .green { color: green;}
 
+.search-keywords {
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
 .search-keyword {
   // -webkit-user-select: all;
   background-color: #f0f5f9;
@@ -1286,4 +1291,10 @@ a.text-secondary:hover {
 
 .search-keyword:hover {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 1340px) {
+  .search-keywords {
+    display: none;
+  }
 }
