@@ -185,7 +185,7 @@ $(".headerSearch").on("keyup", function (e) {
     resultsHolder.addClass("active");
     hits.map(hit => {
 
-      let url = hit.file.replace("./", "");
+      let url = hit.objectID.replace("./", "");
       url = url.replace(".md", "");
 
       resultsHolder.append(
@@ -215,7 +215,7 @@ $(".headerSearchMobile").on("keyup", function (e) {
     resultsHolder.addClass("active");
     hits.map(hit => {
 
-      let url = hit.file.replace("./", "");
+      let url = hit.objectID.replace("./", "");
       url = url.replace(".md", "");
 
       resultsHolder.append(
