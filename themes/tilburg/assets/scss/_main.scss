@@ -1270,3 +1270,13 @@ a.text-secondary:hover {
 .terminal-data { display: none; }
 .terminal-window .gray { color: gray; }
 .terminal-window .green { color: green;}
+
+.search-keyword {
+  // -webkit-user-select: all;
+  background-color: #f0f5f9;
+  padding: 6px;
+  border: 2px dashed #e6ebf0;
+  border-radius: 4px;
+  font-family: "Roboto Mono", SFMono-Regular, monospace;
+  font-size: 11pt;
+}
