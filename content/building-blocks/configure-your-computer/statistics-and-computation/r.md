@@ -1,7 +1,7 @@
 ---
 title: "R and RStudio"
 description: "R is a widely used language for statistical computing and graphics. Learn how to set it up on your computer."
-keywords: "R, statistics, installation, software, RStudio, PATH"
+keywords: "R, statistics, installation, software, RStudio, PATH, learn R, get R, install R, setup"
 #date: 2020-11-11T22:02:51+05:30
 draft: false
 #weight: 4
@@ -41,23 +41,22 @@ Open RStudio from the start menu. After starting up, you should see the version 
 
 ## Installing additional R Packages
 
-We will need some additional libraries to conduct our statistical analysis. Proceed as follows:
+You may need some additional libraries to work with R (e.g., some extra code that helps you to run your statistical analyses). 
 
-*   Please open RStudio (if not already opened in the previous step)
-*   In the **console**, copy and paste the following:
+To install packages, open RStudio (if not already opened in the previous step). In the **console**, copy and paste the following:
+
 ```r
-packages <- c("reshape", "rmarkdown",
+packages <- c("reshape2", "rmarkdown",
               "data.table", "Hmisc", "dplr",
-                    "stargazer", "knitr",
-                    "xtable","tidyverse",
-                    "RSQLite", "dbplyr")
+              "stargazer", "knitr",
+              "xtable","tidyverse",
+              "RSQLite", "dbplyr")
 
 install.packages(packages)
 ```
 
-* If you are asked if you want to install packages that need compilation, type `y` followed by `Return` to confirm this.
-*   Wait until all the packages have been installed and the you are done.
-    *   It *may* take a while, so be patient
+* If you are asked if you want to install packages that need compilation, type `n` followed by `Return`. Package compilation is likely to cause some errors, and you're all good going with packages that have already been compiled (typically, these are earlier versions of the package).
+* Wait until all the packages have been installed and the you are done. It *may* take a while, so be patient
 
 ## Making R available on the command prompt
 
@@ -65,6 +64,8 @@ You have just installed R and RStudio, and learnt how to open RStudio from the s
 However, for many of the applications that follow, you are required to access R directly from the command prompt.
 For example, this will enable you to run a series of R scripts in batch - which will significantly ease the burden of
 building complex data workflows.
+
+### Windows
 
 For you to be able to use R from the command prompt, **Windows users** need to follow the steps below.
 On Mac and Linux, R is available from the command line by default.
@@ -82,20 +83,36 @@ We need to update our PATH settings; these settings are a set of directories tha
 
 -  Select `Path` from the list of user variables. Choose `Edit`.
 - **Windows 7 and 8 machines:**
-	If you chose your installation directory to be C:\R\R-3.x.x\ during your installation (i.e., you did not use the default directory), copy and paste the following string without spaces at the start or end:
+	If you chose your installation directory to be C:\R\R-4.x.x\ during your installation (i.e., you did not use the default directory), copy and paste the following string without spaces at the start or end:
 
-        `;C:\R\R-3.x.x\bin`
+        `;C:\R\R-4.x.x\bin` (replace `4.x.x` by your actual version number!)
 
 - **Windows 10 machines:**
 	- Click `New` and paste the following string:
 
-        `C:\R\R-3.x.x\bin`
+        `C:\R\R-4.x.x\bin` (replace `4.x.x` by your actual version number!)
 
 	- Click on `OK` as often as needed.
 {{% /warning %}}
 
+{{% warning %}}
+
+**Making R available via the PATH settings on Mac/Linux**
+
+- Paste this command in your terminal: `nano ~/.bash_profile`
+- Add the following two lines to it:
+
+```
+export R_HOME="/Library/Frameworks/R.framework/Resources"
+export R_USER="/Library/Frameworks/R.framework/Resources"
+```
+
+{{% /warning %}}
+
+
 {{% tip %}}
-You will need to add a new PATH for most of the following installation steps. Always keep in mind that after you add a new PATH, you need to start a *new* cygwin/terminal session to verify whether it worked. Sometimes it may take a couple of minutes until your PATH is recognized by the terminal.
+Keep in mind that after you add a new directory to the `PATH` variable, you need to start a *new* command prompt/terminal session to verify whether it worked. Sometimes it may take a couple of minutes until your PATH is recognized by the terminal.
+
 {{% /tip %}}
 
 **Now let's verify whether we can open R from the command prompt**
@@ -113,3 +130,46 @@ R version 4.x.x (20xx-xx-xx) -- "Some Funky Name"
 ```
 
 Great job - you've managed to install R and configure it for use for data-intensive projects!
+
+## Making R find packages on the command prompt
+You can now access R directly from the command prompt. Nevertheless, code that runs perfectly on R Studio might return `Error in library(x)` on the command prompt.
+
+Why is that? Sometimes, when running R from the command line, it doesn't find the packages that were installed in your *user library* paths.
+
+**Solution:** Tell R where to find your user library.
+
+{{% warning %}}
+**Making R find your user library via the PATH settings on Windows.**
+
+  - In RStudio, type `.libPaths()` and note the path to your user directory (typically the one that contains your user name).
+
+  - Open the settings for environment variables
+
+      - Right-click on Computer.
+
+      - Go to "Properties" and select the tab "Advanced System settings".
+
+      - Choose "Environment Variables"
+
+  - Select `New` and name it **`R_LIBS_USER`**. `Variable value` is the path (that you previously noted) to your user directory.
+
+Rather want to set `R_LIBS_USER` on a Mac or Linux machine? [Read more here](https://tilburgsciencehub.com/setup/environment).
+
+{{% /warning %}}
+
+**Verify that you can access your packages**
+
+Close all command prompts/terminals. Open one again, type `R` to open R and then enter:
+
+```bash
+library(x)
+```
+
+Note that the command `library` requires you to specify the package name without quotation marks (e.g., `library(tidyverse)`, *not* `library("tidyverse")`).
+
+Expect a return beginning with:
+```bash
+Attaching package: 'x'
+```
+
+Get an error message? Try reinstalling the package using `install.packages("name_of_the_page")`.

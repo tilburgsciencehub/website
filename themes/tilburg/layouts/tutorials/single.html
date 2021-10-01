@@ -37,6 +37,21 @@ dddd
 		</div>
 		<article class="col-lg-16 col-22">
 			<div class="p-5 bg-white rounded mb-5">
+				<div class="d-flex justify-content-between mb-4 align-items-center">
+          <div class="flex-fill">
+            {{ if eq .Params.share false }}
+            {{ else }}
+              {{ with .Params.aliases }}
+                {{ range first 1 . }}
+                  {{ partial "shareLinks.html" (dict "context" . "siteURL" $siteURL) }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          </div>
+          <!-- <div class="d-none d-lg-block">
+            <a href="{{ .Site.Params.repo_url }}/edit/master/content/{{ .File }}" class="btn btn-secondary">Edit this page</a>
+          </div> -->
+        </div>
 				{{ if eq (len .Content) 0 }}
 				<script>window.location = "/{{.Section}}"</script>
 				{{ else }}
@@ -48,16 +63,16 @@ dddd
 				{{ else }}
 				{{ end }}
 				<div class="d-flex justify-content-between mt-5 align-items-center">
-          <div class="flex-fill">
-            {{ if eq .Params.share false }} 
-            {{ else }} 
-              {{ with .Params.aliases }} 
-                {{ range first 1 . }} 
-                  {{ partial "shareLinks.html" (dict "context" . "siteURL" $siteURL) }} 
-                {{ end }} 
-              {{ end }} 
+          <!-- <div class="flex-fill">
+            {{ if eq .Params.share false }}
+            {{ else }}
+              {{ with .Params.aliases }}
+                {{ range first 1 . }}
+                  {{ partial "shareLinks.html" (dict "context" . "siteURL" $siteURL) }}
+                {{ end }}
+              {{ end }}
             {{ end }}
-          </div>
+          </div> -->
           <div class="d-none d-lg-block">
             <a href="{{ .Site.Params.repo_url }}/edit/master/content/{{ .File }}" class="btn btn-secondary">Edit this page</a>
           </div>

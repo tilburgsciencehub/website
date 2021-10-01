@@ -86,6 +86,8 @@ brew doctor
 Your system is ready to brew
 ```
 
+Sometimes, `brew doctor` returns some warnings. While it's advisable to fix them (eventually), you typically don't have to do it to get started with Chromedriver - so just try to continue from here.
+
 ### Let's proceed to installing Chromedriver
 
 * We assume you have Google Chrome installed. If not, do this first, please.

@@ -1,12 +1,14 @@
 ---
 title: "Get Started with Using Git and GitHub"
 description: "Git is an open-source version control system that allows you to keep track of your source files and the changes you make to them."
-keywords: "git, github, versioning, pull, push, fork, share, commit, add"
+keywords: "git, github, interactive tutorial, versioning, pull, push, fork, share, commit, add"
 weight: 1
 #date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
+  - /learn/github
   - /learn/versioning
+  - /learn/git
   - /use/git
 ---
 
@@ -32,9 +34,15 @@ that allow you to collaborate with each other more efficiently. A few examples:
 ## Let's Use Git!
 
 {{% tip %}}
-**Download the GitHub cheatsheet!**
 
-There is no better summary than [this official GitHub cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf). Download it, print it out or put it on your desktop. Consider it as your best friend for a while.
+**For starters...**
+
+If you've never worked with Git or GitHub before, we recommend you following [this nteractive onboarding tutorial](https://lab.github.com/githubtraining/introduction-to-github).
+
+**For more advanced learners..**
+
+There is no better summary of using Git and GitHub than [this official cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf). Download it, print it out or put it on your desktop. Consider it as your best friend for a while.
+
 {{% /tip %}}
 
 ### Configuring Git on a new computer

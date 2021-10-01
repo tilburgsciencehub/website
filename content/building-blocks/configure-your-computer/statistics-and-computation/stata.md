@@ -91,6 +91,15 @@ Open a **new** terminal interface and enter:
 
 followed by hitting the `Return` key. You can check the Stata version.
 
+{{% warning %}}
+If you obtain the following error:
+```bash
+'C:\Program' is not recognized as and internal or external command
+```
+Add " " to your variable path, for instance
+`"c:\Program Files (x86)\Stata15\StataSE-64.exe"`.
+{{% /warning %}}
+
 ### Mac users
 
 Open a **new** terminal interface and enter:
