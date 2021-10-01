@@ -86,7 +86,7 @@ $(document).ready(function () {
       $(
         `.codeblock:eq(${x}) #${blocks[block].children[0].children[0].className}-${x}-${d}`
       ).append(blocks[block]);
-      
+
       d++;
 
       var el = $(
@@ -172,7 +172,7 @@ $(document).mouseup(function (e) {
 });
 
 const searchClient = algoliasearch('02IYLG4AP9', '7009df5926509e3c685c2364242ee3f1');
-const index = searchClient.initIndex("tilburgsciencehub");
+const index = searchClient.initIndex("Tilburg_Science_Hub");
 
 $(".headerSearch").on("keyup", function (e) {
   const resultsHolder = $(".headerSearchResultsHolder");
@@ -196,7 +196,7 @@ $(".headerSearch").on("keyup", function (e) {
     if (hits.length == 0) {
       resultsHolder.append(`<span>No result found!</span>`)
     }
-    
+
     // also add see more link
     if (hits.length == 10) {
       resultsHolder.append(`<a class="text-primary" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`)
@@ -226,7 +226,7 @@ $(".headerSearchMobile").on("keyup", function (e) {
     if (hits.length == 0) {
       resultsHolder.append(`<span>No result found!</span>`)
     }
-    
+
     // also add see more link
     if (hits.length == 10) {
       resultsHolder.append(`<a class="text-primary" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`)
@@ -435,7 +435,7 @@ document
             });
         };
     });
-    
+
 
 if (document.querySelector("#scrollTo a")) {
   document.querySelector("#scrollTo a").click()
