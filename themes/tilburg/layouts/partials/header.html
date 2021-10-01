@@ -133,9 +133,10 @@
 				</ul>
 			</div>
 			<div class="text-right">
-				<form class="form-inline text-right float-right d-none d-xl-block" >
-					<div style="width: 230px" class="form-control mr-sm-2 headerSearch searchIconRight bg-light border-0">
-						<input class="resetInput" type="search" placeholder="Search" aria-label="Search">
+				<form class="form-inline text-right float-right d-none d-xl-block" method="GET" action="/search">
+					<div style="width: 230px" class="form-control mr-sm-2 headerSearch bg-light border-0">
+						<input class="resetInput" type="search" name="q" placeholder="Search" aria-label="Search" required autocomplete="off">
+						<button style="background-color: transparent; padding: 0;" type="submit"><img src="/img/search.svg" /></button>
 					</div>
 
 					<a href="/contribute/" class="btn btn-primary my-2 my-sm-0 px-4">Contribute</a>
@@ -144,8 +145,11 @@
 		</div>
 		<!-- mobile child menu -->
 		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileSearchMenu" style="z-index: 10; margin-top: -2px;left: 0">
-			<div style="" class="form-control mr-sm-2 headerSearchMobile searchIconRight bg-light border-0">
-				<input class="resetInput" type="search" placeholder="Search" aria-label="Search">
+			<div class="form-control mr-sm-2 headerSearchMobile bg-light border-0">
+				<form method="GET" action="/search">
+					<input class="resetInput" type="search" placeholder="Search" name="q" aria-label="Search" required autocomplete="off">
+					<button style="background-color: transparent; padding: 0; float: right;" type="submit"><img src="/img/search.svg" /></button>
+				</form>
 			</div>
 
 			<div class="mobileResults"></div>
