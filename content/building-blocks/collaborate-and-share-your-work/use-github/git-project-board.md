@@ -14,7 +14,7 @@ aliases:
   - /github/projects
 ---
 
-# Organize your Project on the GitHub "Project" board
+## Overview
 
 Projects boards on GitHub help you organize and prioritize your work using the [Scrum framework for project management](https://tilburgsciencehub.com/learn/scrum). The benefit from project boards is that you can link your repositories. This way all issues that are related to different projects can be organized in a unique project board.
 
