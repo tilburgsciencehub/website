@@ -1,12 +1,13 @@
 ---
-title: "Python coding style guide"
-description: "Follow nice language-specific coding styles to make your code easier to understand and easier to the eye"
-keywords: "style, code, python, R"
+title: "Python coding style guidelines"
+description: "Follow nice language-specific coding styles to make your code easier to understand and easier to the eye."
+keywords: "style, code, python, best practices, guidelines"
 weight: 3
 date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
-  - /Python/style-guides
+  - /write/good-code/python
+  - /python/style-guides
 ---
 #### PEP 8
 We follow Python's style guide [PEP 8](https://www.python.org/dev/peps/pep-0008/#programming-recommendations). Also we:
