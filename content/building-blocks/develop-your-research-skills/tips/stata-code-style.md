@@ -1,12 +1,13 @@
 ---
-title: "Stata coding style guide"
-description: "Follow nice Stata coding style to make your code easier to understand and easier to the eye"
-keywords: "style, code, Stata"
+title: "Stata coding style guidelines"
+description: "Follow nice Stata coding style to make your code easier to understand and easier to the eye."
+keywords: "style, code, Stata, guidelines, best practices"
 weight: 5
 date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
-  - /Stata/style-guides
+  - /write/good-code/stata
+  - /stata/style-guides
 ---
 ## Coding styles in STATA
 We use two coding styles in Stata: a linear format for very short or simple scripts, and a functional style for longer or more complex scripts.
