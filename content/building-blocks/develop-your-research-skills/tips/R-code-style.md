@@ -1,12 +1,13 @@
 ---
-title: "R coding style guide"
-description: "Follow nice R coding style to make your code easier to understand and easier to the eye"
-keywords: "style, code, R"
+title: "R coding style guidelines"
+description: "Follow nice R coding style to make your code easier to understand and easier to the eye."
+keywords: "style, code, R, guidelines, best practices"
 weight: 4
 date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
-  - /R/style-guides
+  - /write/good-code/r
+  - /r/style-guides
 ---
 ### R
 We follow the general guidelines in [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml).
