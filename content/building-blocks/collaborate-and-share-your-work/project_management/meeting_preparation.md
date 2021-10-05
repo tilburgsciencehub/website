@@ -2,7 +2,7 @@
 title: "How to Prepare for (and Follow-up On) Scrum Meetings"
 description: "When collaborating with others, meeting preparation & planning follow-ups are crucial. Read here about the most important steps to take care of."
 keywords: "meeting, preparation, follow-up, github, issues, project management"
-#weight: 8
+weight: 2
 draft: false
 aliases:
   - /prepare/meeting

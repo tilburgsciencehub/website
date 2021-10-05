@@ -2,7 +2,7 @@
 title: "Manage your Projects using the GitHub Project Board"
 description: "Projects boards on GitHub help you organize and prioritize your work using the Scrum framework for project management."
 keywords: "git, github, project board, sprint, planning"
-weight: 8
+weight: 1
 #date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
@@ -41,4 +41,3 @@ Projects boards on GitHub help you organize and prioritize your work using the [
 Share your project board with your team members. Click on settings to add collaborators. Give these collaborators admin rights so that they can create issues, rename issues and prioritize issues as you go along.
 
 {{% /tip %}}
-

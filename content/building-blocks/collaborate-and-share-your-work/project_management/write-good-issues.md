@@ -2,7 +2,7 @@
 title: "Write GitHub Issues That Get the Job Done"
 description: "Use GitHub Issues to formulate what you or your team members should work on. Here, you'll learn how to write issues that really get the job done."
 keywords: "issues, project, git, github, issue"
-#weight: 1
+weight: 3
 #date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
