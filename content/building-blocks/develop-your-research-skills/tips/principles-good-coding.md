@@ -69,3 +69,10 @@ Even experts find it hard to predict performance bottlenecks.
    Set your editor to show a “margin” at 100 characters.
 {{% /tip %}}
 - Functions should not typically be longer than 200 lines.
+
+## Language-specific style guides
+Want to learn language-specific coding guidelines? See the following building blocks for:
+
+  - [Python](https://tilburgsciencehub.com/building-blocks/develop-your-research-skills/tips/python-coding-style/)
+  - [R/R Studio](https://tilburgsciencehub.com/building-blocks/develop-your-research-skills/tips/r-code-style/)
+  - [Stata](https://tilburgsciencehub.com/building-blocks/develop-your-research-skills/tips/stata-code-style/)
