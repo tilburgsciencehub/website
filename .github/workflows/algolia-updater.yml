@@ -42,4 +42,4 @@ jobs:
           admin_key: ${{ secrets.ALGOLIA_ADMIN_KEY }}
           # The index name
           index_name: Tilburg_Science_Hub
-          index_file_path: ./content/search-index.json
+          index_file_path: search-index.json
