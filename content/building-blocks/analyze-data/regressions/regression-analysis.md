@@ -115,22 +115,23 @@ stargazer(mdl_1, mdl_2,
 {{% /codeblock %}}
 
 ### Exporting your findings in Stata
-Alternatively, you can do your regression analysis on Stata. First, you should clear your working directory. With the command "sysuse auto", we download an example data file provided by Stata itself. 
+Alternatively, you can do your regression analysis on Stata. First, you should clear your working directory. With the command "sysuse auto", we download an example data file provided by Stata itself.
 
 {{% codeblock %}}
+```txt
 clear all
 
 * First,let's install the necesary package
 
 ssc install estout, replace
 
-* By typing the command below, you can open an example dataset provided by Stata : 
+* By typing the command below, you can open an example dataset provided by Stata :
 
 sysuse auto
 
-// Using esttab 
+// Using esttab
 eststo clear
-* First regression : 
+* First regression :
 
 eststo: regress price weight mpg  
 
@@ -156,15 +157,16 @@ ssc install outreg2, replace
 
 sysuse auto
 
-* First regression : 
+* First regression :
 
-regress price weight mpg 
-outreg2 using RegressionResults.doc, replace ctitle(Model 1) 
+regress price weight mpg
+outreg2 using RegressionResults.doc, replace ctitle(Model 1)
 
 * Second regression
 
 eststo: regress price weight mpg foreign
-outreg2 using RegressionResults.doc, append ctitle(Model 2) 
+outreg2 using RegressionResults.doc, append ctitle(Model 2)
+```
 {{% /codeblock %}}
 
 
