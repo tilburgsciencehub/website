@@ -27,13 +27,15 @@ Please, notice that Tilburg Science Hub Building Blocks, Tutorials and Examples 
 
 The easiest method to make straightforward updates to Markdown files is to use [GitHub's web-based file editor](https://help.github.com/en/articles/editing-files-in-your-repository).
 
-1. Browse the [Tilburg Science Hub repository](https://github.com/tilburgsciencehub/website/) to find the Markdown that roughly corresponds to the tilburgsciencehub.com URL structure inside the `content` folder.
+1. Click on the "**Edit this page**" button at the bottom of the page you want to edit on our website.
 
-2. In the upper right corner of the file view, click **the pencil icon**.
+![Edit this page button](../tsh-edit-this-page-button.png)
 
-![Click on the pencil icon to open the text editor.](../git-text-editor.png)
+2. You will be redirected to our GitHub repository where that file is hosted. You will need to **fork** our repository in order to propose changes.
 
-3. Edit the file and then submit a new pull request. That's it.
+![Click on the pencil icon to open the text editor.](../github-fork.png)
+
+3. Edit the file and then **submit a new pull request**. That's it.
 
 #### Elaborate changes
 
@@ -81,6 +83,32 @@ Don't know how to do this? You can follow a great tutorial about [contributing o
 
 {{% /tip %}}
 
+### Place new sections in a logical order.
+
+If you have written a new section which you wish to add to the website, make sure they are where they suppose to be.
+{{% example %}}
+  You wish to add a Building Block on "Advanced Git Commands". Now, imagine that once your page is completed, you notice that your new section appears in the first position:
+
+  ![](../advanced-git-misplaced.PNG)
+
+  Does it make sense to have the "Advanced Git Commands" section before the "Get Started with Git and Github"? It does not.
+
+  - Ideally you would place it for instance, just after "The Most Important Git Commands You Should Know". This way, when going through the tutorials, the new content would come in a more natural order.
+{{% /example%}}
+
+
+
+
+**How to choose the order of sections?**
+
+Well, using our Markdown Templates (which can be found below) it is quite a simple task. You only need to change the value of the parameter **"weight"** in the markdown file:
+
+  ![](../weights.PNG)
+
+{{% tip %}}
+A weight set equal to 1 will place your section in the first place, likewise the prior example. If you wish to make it appear after other sections, make sure to give it a higher weight.
+{{% /tip %}}
+
 ## Contribution Templates
 
 {{% warning %}}
@@ -92,6 +120,7 @@ First, make sure to read our [code of conduct](../code-of-conduct) as well as ou
 {{% cta-primary "Start with our Building Block Markdown template" "https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/building-block-shell.md" %}}
 
 {{% cta-primary "Start with our Tutorial Markdown template" "https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell.md" %}}
+
 
 <!--
 The design should always accommodate all users' knowledge levels and avoid confusion. For instance, on a tutorial page, there should be a quick and concise explanation (a sort of TL;DR), as well as a more in-depth exposition for those who need to educate themselves first.

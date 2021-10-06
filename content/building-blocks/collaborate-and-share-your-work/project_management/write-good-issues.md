@@ -2,7 +2,7 @@
 title: "Write GitHub Issues That Get the Job Done"
 description: "Use GitHub Issues to formulate what you or your team members should work on. Here, you'll learn how to write issues that really get the job done."
 keywords: "issues, project, git, github, issue"
-#weight: 1
+weight: 3
 #date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
@@ -168,7 +168,7 @@ The deliverable must contain enough information that another user could replicat
 ### Closing Issues
 
 * When an issue is complete, you should post a final summary comment and then close it.
-* All closed issues must have one and only one summary comment. I
+* All closed issues must have one and only one summary comment. 
 * If changes made after the issue is closed (e.g., during peer review) require changes, you should edit the summary comment in place rather than creating a new one.
 * At this point, you will also normally open a [pull request](https://github.com/tilburgsciencehub/onboard/wiki/Workflow#pull-request) to peer review the issue and merge the issue branch back to master.
 
