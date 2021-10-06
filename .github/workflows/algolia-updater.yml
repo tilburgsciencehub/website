@@ -41,5 +41,5 @@ jobs:
           # Secret token in the organization's 'Setting > Secrets'
           admin_key: ${{ secrets.ALGOLIA_ADMIN_KEY }}
           # The index name
-          index_name: tilburgsciencehub
+          index_name: Tilburg_Science_Hub
           index_file_path: search-index.json
