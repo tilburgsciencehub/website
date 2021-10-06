@@ -1,0 +1,40 @@
+name: Algolia-Updater
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  update_search_index:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 #install the python needed
+      - name: execute py script # run the python script to build the index
+        run: |
+          python ./content/algolia-index.py
+
+      - uses: wangchucheng/algolia-uploader@master
+        with:
+          app_id: 02IYLG4AP9
+          # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ALGOLIA_ADMIN_KEY }}
+          admin_key: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+          # The index name. 
+          index_name: tilburgsciencehub
+          # The index file path relative to repo root.
+          index_file_path: ./content/search-index.json
