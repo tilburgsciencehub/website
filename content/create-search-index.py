@@ -58,5 +58,5 @@ def export_data(file_paths):
 file_paths = list_files(".", ".md")
 json_data = export_data(file_paths)
 
-with open('search-index.json', 'w') as outfile:
+with open('./content/search-index.json', 'w') as outfile:
     json.dump(json_data, outfile)
