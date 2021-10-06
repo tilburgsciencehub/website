@@ -27,13 +27,15 @@ Please, notice that Tilburg Science Hub Building Blocks, Tutorials and Examples 
 
 The easiest method to make straightforward updates to Markdown files is to use [GitHub's web-based file editor](https://help.github.com/en/articles/editing-files-in-your-repository).
 
-1. Browse the [Tilburg Science Hub repository](https://github.com/tilburgsciencehub/website/) to find the Markdown that roughly corresponds to the tilburgsciencehub.com URL structure inside the `content` folder.
+1. Click on the "**Edit this page**" button at the bottom of the page you want to edit on our website.
 
-2. In the upper right corner of the file view, click **the pencil icon**.
+![Edit this page button](../tsh-edit-this-page-button.png)
 
-![Click on the pencil icon to open the text editor.](../git-text-editor.png)
+2. You will be redirected to our GitHub repository where that file is hosted. You will need to **fork** our repository in order to propose changes.
 
-3. Edit the file and then submit a new pull request. That's it.
+![Click on the pencil icon to open the text editor.](../github-fork.png)
+
+3. Edit the file and then **submit a new pull request**. That's it.
 
 #### Elaborate changes
 
