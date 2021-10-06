@@ -2,7 +2,7 @@ name: Algolia-Updater
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
+  # Triggers the workflow on push events but only for the master branch
   push:
     branches: [ master ]
 
@@ -11,7 +11,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains a single job called "update_search_index"
   update_search_index:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -24,13 +24,13 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8 #install the python needed
+          python-version: 3.8 # install the version needed
       # Install pandas
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pandas
-      # Generate the json index
+      # Change directory and generate the json index
       - name: execute py script # run the python script to build the index
         run: |
           cd content
@@ -41,6 +41,7 @@ jobs:
           app_id: 02IYLG4AP9
           # Secret token in the organization's 'Setting > Secrets'
           admin_key: ${{ secrets.ALGOLIA_ADMIN_KEY }}
-          # The index name
+          # The index name, use 'tilburgsciencehub' to debug
           index_name: Tilburg_Science_Hub
+          # relative path to the json index
           index_file_path: ./content/search-index.json
