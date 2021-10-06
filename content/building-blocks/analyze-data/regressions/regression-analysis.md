@@ -114,6 +114,60 @@ stargazer(mdl_1, mdl_2,
 ```
 {{% /codeblock %}}
 
+### Exporting your findings in Stata
+Alternatively, you can do your regression analysis on Stata. First, you should clear your working directory. With the command "sysuse auto", we download an example data file provided by Stata itself. 
+
+{{% codeblock %}}
+clear all
+
+* First,let's install the necesary package
+
+ssc install estout, replace
+
+* By typing the command below, you can open an example dataset provided by Stata : 
+
+sysuse auto
+
+// Using esttab 
+eststo clear
+* First regression : 
+
+eststo: regress price weight mpg  
+
+* Second regression
+
+eststo: regress price weight mpg foreign
+
+* Generating a table for the two regression results that we generated :
+
+esttab
+
+eststo clear
+
+
+// Using outreg2 : Alternatively, you can export your results to an excel, pdf or doc file using outreg2 commandFir
+
+
+clear all
+
+* First,let's install the necesary package
+
+ssc install outreg2, replace
+
+sysuse auto
+
+* First regression : 
+
+regress price weight mpg 
+outreg2 using RegressionResults.doc, replace ctitle(Model 1) 
+
+* Second regression
+
+eststo: regress price weight mpg foreign
+outreg2 using RegressionResults.doc, append ctitle(Model 2) 
+{{% /codeblock %}}
+
+
 
 {{% example %}}
 [This tutorial](https://dprep.hannesdatta.com/docs/building-blocks/regression-analysis/) outlines how to run, evaluate, and export regression model results for the `cars` dataset.  In particular, it analyzes the relationship between a car’s speed and the stop distance.
