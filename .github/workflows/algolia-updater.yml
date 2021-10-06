@@ -38,7 +38,7 @@ jobs:
           app_id: 02IYLG4AP9
           # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ALGOLIA_ADMIN_KEY }}
           admin_key: ${{ secrets.ALGOLIA_ADMIN_KEY }}
-          # The index name. 
+          # The index name.
           index_name: tilburgsciencehub
           # The index file path relative to repo root.
-          index_file_path: ./content/search-index.json
+          index_file_path: search-index.json
