@@ -33,7 +33,8 @@ jobs:
       # Generate the json index
       - name: execute py script # run the python script to build the index
         run: |
-          python ./content/create-search-index.py
+          cd content
+          python create-search-index.py
       # Push to Algolia
       - uses: tilburgsciencehub/algolia-uploader@master
         with:

@@ -55,7 +55,7 @@ def export_data(file_paths):
 
 
 # Generate list of all markdown files
-file_paths = list_files("./content", ".md")
+file_paths = list_files(".", ".md")
 json_data = export_data(file_paths)
 
 with open('search-index.json', 'w') as outfile:
