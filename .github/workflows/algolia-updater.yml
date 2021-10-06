@@ -20,25 +20,26 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      # Set up python
       - name: setup python
         uses: actions/setup-python@v2
         with:
           python-version: 3.8 #install the python needed
+      # Install pandas
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pandas
+      # Generate the json index
       - name: execute py script # run the python script to build the index
         run: |
-          python ./content/algolia-index.py
-
+          python ./content/create-search-index.py
+      # Push to Algolia
       - uses: wangchucheng/algolia-uploader@master
         with:
           app_id: 02IYLG4AP9
-          # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ALGOLIA_ADMIN_KEY }}
+          # Secret token in the organization's 'Setting > Secrets'
           admin_key: ${{ secrets.ALGOLIA_ADMIN_KEY }}
-          # The index name.
+          # The index name
           index_name: tilburgsciencehub
-          # The index file path relative to repo root.
           index_file_path: search-index.json

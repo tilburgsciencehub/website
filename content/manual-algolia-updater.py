@@ -1,5 +1,6 @@
+# Manually run this script to update the Algolia search index
 import re, os, json, pandas as pd
-# from algoliasearch.search_client import SearchClient
+from algoliasearch.search_client import SearchClient
 
 def list_files(filepath, filetype):
     paths = []
@@ -50,7 +51,7 @@ def export_data(file_paths):
         try:
             json_data.append(structure_markdown(df, path))
         except:
-            print("Skipped file:", path) # skipped files
+            print(path) # skipped files
     return json_data
 
 
@@ -58,12 +59,9 @@ def export_data(file_paths):
 file_paths = list_files(".", ".md")
 json_data = export_data(file_paths)
 
-with open('search-index.json', 'w') as outfile:
-    json.dump(json_data, outfile)
-
 # push json data to Algolia
-# algolia_key = os.environ['ALGOLIA_KEY']
-# client = SearchClient.create('02IYLG4AP9', algolia_key)
-# index = client.init_index('Tilburg_Science_Hub')
-#
-# index.save_objects(json_data)
+algolia_key = os.environ['ALGOLIA_KEY']
+client = SearchClient.create('02IYLG4AP9', algolia_key)
+index = client.init_index('Tilburg_Science_Hub')
+
+index.save_objects(json_data)

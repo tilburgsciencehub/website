@@ -1,5 +1,5 @@
+# This script generates a search-index.json file used in our GitHub worflow
 import re, os, json, pandas as pd
-from algoliasearch.search_client import SearchClient
 
 def list_files(filepath, filetype):
     paths = []
@@ -30,7 +30,7 @@ def structure_markdown(df, path):
     # separate code, headers, and content
     body_no_code = re.sub(code_block, "", body)
     body_no_headers = " ".join([word for word in body_list if not re.search(headers, word)])
-    
+
     return {
         "objectID": path,
         "title": search_item("title", header),
@@ -47,20 +47,16 @@ def export_data(file_paths):
     for path in file_paths:
         f = open(path, 'r')
         df = f.read().split('\n')
-        try: 
+        try:
             json_data.append(structure_markdown(df, path))
         except:
-            print(path) # skipped files
+            print("Skipped file:", path) # skipped files
     return json_data
 
-    
+
 # generate list of all markdown files
 file_paths = list_files(".", ".md")
 json_data = export_data(file_paths)
 
-# push json data to Algolia
-algolia_key = os.environ['ALGOLIA_KEY'] 
-client = SearchClient.create('02IYLG4AP9', algolia_key)
-index = client.init_index('Tilburg_Science_Hub')
-
-index.save_objects(json_data)
+with open('search-index.json', 'w') as outfile:
+    json.dump(json_data, outfile)
