@@ -17,17 +17,17 @@ def search_item(word, header):
     return content.strip('"').strip("'")
 
 def structure_markdown(df, path):
-    # split markdown in header and body
+    # Split markdown in header and body
     max_index = df[1:].index('---') + 1
     header = df[1:max_index]
     body_list = df[max_index + 1:]
     body = " ".join(body_list)
 
-    # define regular expression patterns
+    # Define regular expression patterns
     code_block = re.compile("{{% codeblock %}}(.+?){{% /codeblock %}}")
     headers = re.compile("#{2,6}\s(.+)")
 
-    # separate code, headers, and content
+    # Separate code, headers, and content
     body_no_code = re.sub(code_block, "", body)
     body_no_headers = " ".join([word for word in body_list if not re.search(headers, word)])
 
@@ -54,7 +54,7 @@ def export_data(file_paths):
     return json_data
 
 
-# generate list of all markdown files
+# Generate list of all markdown files
 file_paths = list_files(".", ".md")
 json_data = export_data(file_paths)
 

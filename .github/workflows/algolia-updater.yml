@@ -35,7 +35,7 @@ jobs:
         run: |
           python ./content/create-search-index.py
       # Push to Algolia
-      - uses: wangchucheng/algolia-uploader@master
+      - uses: tilburgsciencehub/algolia-uploader@master
         with:
           app_id: 02IYLG4AP9
           # Secret token in the organization's 'Setting > Secrets'
