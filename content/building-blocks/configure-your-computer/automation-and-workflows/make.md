@@ -1,5 +1,5 @@
 ---
-title: "Make"
+title: "Set up Make"
 description: "Make is a build tool that allows us to control the execution of a set of command line statements."
 keywords: "make, build, build tool"
 #weight: 2

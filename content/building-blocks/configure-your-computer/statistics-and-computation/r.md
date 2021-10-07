@@ -1,5 +1,5 @@
 ---
-title: "R and RStudio"
+title: "Set up R and RStudio"
 description: "R is a widely used language for statistical computing and graphics. Learn how to set it up on your computer."
 keywords: "R, statistics, installation, software, RStudio, PATH, learn R, get R, install R, setup"
 #date: 2020-11-11T22:02:51+05:30
@@ -41,7 +41,7 @@ Open RStudio from the start menu. After starting up, you should see the version 
 
 ## Installing additional R Packages
 
-You may need some additional libraries to work with R (e.g., some extra code that helps you to run your statistical analyses). 
+You may need some additional libraries to work with R (e.g., some extra code that helps you to run your statistical analyses).
 
 To install packages, open RStudio (if not already opened in the previous step). In the **console**, copy and paste the following:
 

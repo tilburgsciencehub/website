@@ -1,5 +1,5 @@
 ---
-title: "Command Line Tools"
+title: "Set up Command Line Tools"
 description: "A command-line interface or command language interpreter (CLI), also known as a terminal, is a means of interacting with a computer program."
 keywords: "CLI, terminal, Homebrew, brew, cygwin, command"
 #weight: 1

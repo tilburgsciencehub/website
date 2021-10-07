@@ -1,5 +1,5 @@
 ---
-title: "Python Packages"
+title: "Install Python Packages"
 description: "Learn how to install new Python packages with package management tools like pip."
 keywords: "python, pip, packages, selenium"
 #date: 2020-11-11T22:02:51+05:30

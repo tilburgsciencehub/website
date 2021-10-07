@@ -1,5 +1,5 @@
 ---
-title: "Pandoc"
+title: "Set up Pandoc"
 description: "Pandoc is an extremely useful 'swiss army knife' for converting between different types of markup languages from the command line."
 keywords: "Pandoc, installation, software, configuration"
 #date: 2020-11-11T22:02:51+05:30

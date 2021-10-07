@@ -1,5 +1,5 @@
 ---
-title: "Snakemake"
+title: "Set up Snakemake"
 description: "Snakemake is an easy to use workflow management system."
 keywords: "snakemake, build, build tool, workflow"
 #weight: 3

@@ -1,5 +1,5 @@
 ---
-title: "TeamViewer"
+title: "Set up TeamViewer"
 description: "Teamviewer allows to remote-control your computer to solve technical issues."
 keywords: "teamviewer, software, installation, remote"
 #weight: 5

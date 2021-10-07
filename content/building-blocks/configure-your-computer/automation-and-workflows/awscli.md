@@ -1,5 +1,5 @@
 ---
-title: "AWS Client"
+title: "Set up the AWS Client"
 description: "A command-line interface for using Amazing Web Services"
 keywords: "AWS, CLI, command line, terminal, command"
 #weight: 1
