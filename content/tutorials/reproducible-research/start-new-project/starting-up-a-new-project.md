@@ -1,10 +1,10 @@
 ---
 tutorialtitle: "Starting Up a New Empirical Research Project"
-title: "Start a new project"
+title: "Start up a new project"
 type: "starting-a-new-project"
 description: "Start working on a new project, using the principles of workflow management and reproducible science."
-keywords: "new project"
-weight: 10
+keywords: "new project, requirements"
+weight: 1
 draft: false
 aliases:
   - /start/new-project

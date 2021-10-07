@@ -4,7 +4,7 @@ title: "Data Sharing"
 type: "data-sharing"
 description: "Learn how to document and share data for internal and external use."
 keywords: "data sharing"
-weight: 100
+weight: 1
 draft: false
 aliases:
   - /share/data
