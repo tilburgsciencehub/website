@@ -93,6 +93,33 @@ This is an example
 
 {{% /example %}}
 
+#### How to handle wide tables
+
+If you're using wide tables, they may appear broken on smaller screens like mobile phones. Therefore, you should always wrap your tables within the `wide-table` shortcode.
+
+This will make sure that the right edge of the table fades out on small screens and they become scrollable on the horizontal axis. The following is an example of a wide table:
+
+{{% wide-table %}}
+|  |  |  |  |  |  |  
+|-------------|-------------|------------|------------|---------------|---------------|
+| $\alpha$    | `\alpha`    | $\beta$    | `\beta`    | $\gamma$      | `\gamma`      |
+| $\delta$    | `\delta`    | $\epsilon$ | `\epsilon` | $\varepsilon$ | `\varepsilon` |
+| $\zeta$     | `\zeta`     | $\eta$     | `\eta`     | $\theta$       | `\theta`      |
+| $\vartheta$ | `\vartheta` | $\iota$    | `\iota`    | $\kappa$      | `\kappa`      |
+| $\lambda$   | `\lambda`   | $\mu$      | `\mu`      | $\nu$         | `\nu`         |
+| $\xi$       | `\xi`       | $\pi$      | `\pi`      | $\varpi$      | `\varpi`      |
+| $\rho$      | `\rho`      | $\varrho$  | `\varrho`  | $\sigma$      | `\sigma`      |
+| $\tau$      | `\tau`      | $\upsilon$ | `\upsilon` | $\phi$        | `\phi`        |
+| $\varphi$   | `\varphi`   | $\chi$     | `\chi`     | $\psi$        | `\psi`        |
+| $\omega$    | `\omega`    |
+{{% /wide-table %}}
+
+{{% tip %}}
+
+Click **[here](https://github.com/tilburgsciencehub/website/blob/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide.md)** to check out the Markdown file of this page to learn how these shortcodes are used in the text.
+
+{{% /tip %}}
+
 ### Writing Instructions
 
 - Use the second person ("you") when speaking to our or talking about our users
