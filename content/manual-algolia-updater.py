@@ -1,3 +1,4 @@
+# Manually run this script to update the Algolia search index
 import re, os, json, pandas as pd
 from algoliasearch.search_client import SearchClient
 
@@ -17,20 +18,20 @@ def search_item(word, header):
     return content.strip('"').strip("'")
 
 def structure_markdown(df, path):
-    # split markdown in header and body
+    # Split markdown in header and body
     max_index = df[1:].index('---') + 1
     header = df[1:max_index]
     body_list = df[max_index + 1:]
     body = " ".join(body_list)
 
-    # define regular expression patterns
+    # Define regular expression patterns
     code_block = re.compile("{{% codeblock %}}(.+?){{% /codeblock %}}")
     headers = re.compile("#{2,6}\s(.+)")
 
-    # separate code, headers, and content
+    # Separate code, headers, and content
     body_no_code = re.sub(code_block, "", body)
     body_no_headers = " ".join([word for word in body_list if not re.search(headers, word)])
-    
+
     return {
         "objectID": path,
         "title": search_item("title", header),
@@ -47,20 +48,21 @@ def export_data(file_paths):
     for path in file_paths:
         f = open(path, 'r')
         df = f.read().split('\n')
-        try: 
+        try:
             json_data.append(structure_markdown(df, path))
         except:
-            print(path) # skipped files
+            print("Skipped file:", path) # skipped files
     return json_data
 
-    
-# generate list of all markdown files
+
+# Generate list of all markdown files
 file_paths = list_files(".", ".md")
 json_data = export_data(file_paths)
 
-# push json data to Algolia
-algolia_key = os.environ['ALGOLIA_KEY'] 
+# Push json data to Algolia
+algolia_key = os.environ['ALGOLIA_KEY']
 client = SearchClient.create('02IYLG4AP9', algolia_key)
 index = client.init_index('Tilburg_Science_Hub')
 
-index.save_objects(json_data)
+# index.save_objects(json_data) # Add new records
+index.replace_all_objects(json_data) # Clear the index before pushing new records

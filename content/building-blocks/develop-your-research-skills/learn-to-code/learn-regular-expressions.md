@@ -129,6 +129,24 @@ print(family[0][2])  # gives 'sisters'
 ```
 {{% /codeblock %}}
 
+### Text in Between Characters
+Regular expressions can also be used to extract text in between characters. For instance, using the same string as before, if we want to extract the number of cousins that Sven has we can employ the following code.
+
+{{% codeblock %}}
+```python
+import re
+
+my_string = "Lara has 2 sisters who also study in Tilburg. Mehmet has 1 sister who was born last year. Sven has 19 cousins who are all older than him."
+
+m = re.search("Sven has(.+?)cousins", text)
+found = 'NA'
+if m:
+    found = m.group(1)
+found = found.strip()
+print(found)
+```
+
+{{% /codeblock %}}
 
 ### Split & Replace Data
 
