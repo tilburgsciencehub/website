@@ -6,7 +6,9 @@ keywords: "git, github, versioning, remove, sensitive, password"
 #date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
+  - /remove/commited-files
   - /remove/sensitive-information
+  - /remove/large-files
 ---
 
 Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work.
@@ -23,15 +25,15 @@ If you have *just* committed the file that you shouldn't have committed, simply 
 
 `git reset --soft HEAD~1`
 
-## Entirely remove files
+## Entirely remove files 
 
 If you have committed sensitive data to your Git repository, use thef following resources to remove the file and all its previously issued commits.
 
-1. Open Git bash, and type `git filter-branch --index-filter 'git rm --cached --ignore-unmatch file_to_remove' --prune-empty -- --all`. Replace `file_to_remove` by the path and file name of the file that you want to wipe out. Thanks to [StackOverflow](https://stackoverflow.com/questions/10676128/remove-deleted-files-from-git-history) for this solution!
+1. Navigate to your repository (i.e., the main directory of your repository), and open Git Bash.
+2. In Git Bash, type `git filter-branch --index-filter 'git rm --cached --ignore-unmatch file_to_remove' --prune-empty -- --all`. Replace `file_to_remove` by the path and file name of the file that you want to wipe out. 
+3. If the command doesn't work, verify you have used the correct file name and path name. Typically, the file name and path are indicated in a Git error message when trying to push or pull. Thanks to [StackOverflow](https://stackoverflow.com/questions/10676128/remove-deleted-files-from-git-history) for this solution!
 
-2. Check out the GitHub manuals for a [step-by-step guide](https://docs.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository)!.
-
-Alternatively, use [BFG Repo Cleaner](https://rtyley.github.io/bfg-repo-cleaner/), a convenient tool to remove unwanted files from your project.
+Check out the GitHub manuals for a [step-by-step guide](https://docs.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository)! Alternatively, use [BFG Repo Cleaner](https://rtyley.github.io/bfg-repo-cleaner/), a convenient tool to remove unwanted files from your project.
 
 {{% tip %}}
 __Prevent committing specific files in the first place__
