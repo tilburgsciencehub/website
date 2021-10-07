@@ -41,7 +41,7 @@ You can also make use of code highlighting and admonitions.
 
 In addition to the standard way of formatting code in Markdown, code snippets can be displayed in special boxes that highlight the code based on the programming language.
 
-Provide your code in all the relevant languages and/or operating systems and specify them after the three back ticks. Wrap all of your snippets (in different languages) inside a codeblock shortcode (see our templates for more info on this).
+Provide your code in all the relevant languages and/or operating systems and specify them after the three back ticks. Wrap all of your snippets (in different languages) inside a codeblock shortcode (see our templates for more info on this, or simply look at the Markdown file of this page to see how we render the codeblock below).
 
 {{% codeblock %}}
 ```python
@@ -54,6 +54,22 @@ print("Hello, world!")
 cat('Hello, world!')
 ```
 {{% /codeblock %}}
+
+{{% warning %}}
+
+Our platform natively supports only a limited set of programming languages for which it can provide automatic syntax highlighting in code boxes, like Python and R. You can find a list of all the currently supported languages **[here](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages)**.
+
+Usually, you specify the intended language right after the first three back ticks.
+
+![Some R code](../r-codeblock.png)
+
+But what if you want to **provide some code in a language that is not on that list?** That's the case of Stata code, for instance.
+
+In that case, you need to omit the language right after the three back ticks. This will disable syntax highlighting. Anyway, you can then specify the programming language to let the reader know which one it is, as shown here:
+
+![Some Stata code](../stata-codeblock.png)
+
+{{% /warning %}}
 
 #### LaTeX Integration & Math Formulas
 
