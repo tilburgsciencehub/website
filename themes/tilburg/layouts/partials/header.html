@@ -44,7 +44,7 @@
 													{{ if eq .Params.indexexclude "true" }}
 													<!--<a class="d-block mx-0" href="{{.Permalink}}">DONOTSHOW{{.Title}}</a>-->
 													{{ else }}
-													<a class="d-block mx-0" href="{{.Permalink}}">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
+													<a class="d-block mx-0" href="{{.Permalink}}{{ if .Params.indexPage }}{{ .Params.indexPage }}{{end}}">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
 													{{ end }}
 								    		{{ end }}
 								    		</div>
