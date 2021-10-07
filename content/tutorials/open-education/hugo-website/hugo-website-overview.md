@@ -1,7 +1,7 @@
 ---
 tutorialtitle: "Create Your Own Website in 15 Minutes"
 type: "hugo-website"
-title: "Overview"
+title: "HUgo Website Overview"
 description: "Learn how you can launch your very own static website in a quick and easy way."
 keywords: "hugo, static, website, generator, class, academic"
 weight: 10
