@@ -60,6 +60,31 @@ $(document).ready(function () {
     let blocks = $(`.codeblock:eq(${x}) .inner .highlight`);
     let d = 0;
     blocks.map((block) => {
+      let title = "";
+      let desc = blocks[block];
+      if (
+        blocks[block].children[0].children[0].className.replace(
+          "language-",
+          ""
+        ) == "fallback"
+      ) {
+        title =
+          blocks[block].children[0].children[0].innerHTML.match(/\-(.*?)\-/)[1];
+
+        if (title) {
+          desc = blocks[block].children[0].children[0].innerHTML.replace(
+            /\-(.*?)\-/g,
+            ""
+          );
+          blocks[block].children[0].children[0].innerHTML = desc;
+        }
+      } else {
+        title = blocks[block].children[0].children[0].className.replace(
+          "language-",
+          ""
+        );
+      }
+
       $(`.codeblock:eq(${x}) .nav`).append(`
         <li class="nav-item" role="presentation">
           <a class="nav-link ${block == 0 ? "active" : ""}" id="pills-${
@@ -68,9 +93,7 @@ $(document).ready(function () {
         blocks[block].children[0].children[0].className
       }-${x}-${d}" role="tab" aria-controls="pills-${
         blocks[block].children[0].children[0].className
-      }" aria-selected="true">${blocks[
-        block
-      ].children[0].children[0].className.replace("language-", "")}</a>
+      }" aria-selected="true">${title}</a>
         </li>
       `);
 
@@ -106,17 +129,15 @@ $(document).ready(function () {
     });
   }
 
-  $(".share-button.copyURL").on("click", function() {
+  $(".share-button.copyURL").on("click", function () {
     let url = $(this).attr("data-url");
     var $temp = $('<textarea id="toCopy"></textarea>');
     $("body").append($temp);
-    $temp
-      .val(url)
-      .select();
+    $temp.val(url).select();
 
     document.execCommand("copy");
     $temp.remove();
-  })
+  });
 
   // make code copy-able
   $(".copyCodeBtn").on("click", function () {
@@ -171,67 +192,72 @@ $(document).mouseup(function (e) {
   }
 });
 
-const searchClient = algoliasearch('02IYLG4AP9', '7009df5926509e3c685c2364242ee3f1');
+const searchClient = algoliasearch(
+  "02IYLG4AP9",
+  "7009df5926509e3c685c2364242ee3f1"
+);
 const index = searchClient.initIndex("Tilburg_Science_Hub");
 
 $(".headerSearch").on("keyup", function (e) {
   const resultsHolder = $(".headerSearchResultsHolder");
   const val = e.target.value;
 
-  index.search(val, {
-    hitsPerPage: 10
-  }).then(({ hits }) => {
-    resultsHolder.html(" ");
-    resultsHolder.addClass("active");
-    hits.map(hit => {
-
-      let url = hit.objectID.replace("./", "");
-      url = url.replace(".md", "");
-
-      resultsHolder.append(
-        `<a href="/${url}">${hit.title}</a>`
-      )
+  index
+    .search(val, {
+      hitsPerPage: 10,
     })
+    .then(({ hits }) => {
+      resultsHolder.html(" ");
+      resultsHolder.addClass("active");
+      hits.map((hit) => {
+        let url = hit.objectID.replace("./", "");
+        url = url.replace(".md", "");
 
-    if (hits.length == 0) {
-      resultsHolder.append(`<span>No result found!</span>`)
-    }
+        resultsHolder.append(`<a href="/${url}">${hit.title}</a>`);
+      });
 
-    // also add see more link
-    if (hits.length == 10) {
-      resultsHolder.append(`<a class="view-more-search" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`)
-    }
-  })
+      if (hits.length == 0) {
+        resultsHolder.append(`<span>No result found!</span>`);
+      }
+
+      // also add see more link
+      if (hits.length == 10) {
+        resultsHolder.append(
+          `<a class="view-more-search" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`
+        );
+      }
+    });
 });
 
 $(".headerSearchMobile").on("keyup", function (e) {
   const resultsHolder = $(".mobileResults");
   const val = e.target.value;
 
-  index.search(val, {
-    hitsPerPage: 10
-  }).then(({ hits }) => {
-    resultsHolder.html(" ");
-    resultsHolder.addClass("active");
-    hits.map(hit => {
-
-      let url = hit.objectID.replace("./", "");
-      url = url.replace(".md", "");
-
-      resultsHolder.append(
-        `<a href="/${url}">${hit.title}</a>`
-      )
+  index
+    .search(val, {
+      hitsPerPage: 10,
     })
+    .then(({ hits }) => {
+      resultsHolder.html(" ");
+      resultsHolder.addClass("active");
+      hits.map((hit) => {
+        let url = hit.objectID.replace("./", "");
+        url = url.replace(".md", "");
 
-    if (hits.length == 0) {
-      resultsHolder.append(`<span>No result found!</span>`)
-    }
+        resultsHolder.append(`<a href="/${url}">${hit.title}</a>`);
+      });
 
-    // also add see more link
-    if (hits.length == 10) {
-      resultsHolder.append(`<a class="view-more-search" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`)
-    }
-  })
+      if (hits.length == 0) {
+        resultsHolder.append(`<span>No result found!</span>`);
+      }
+
+      // also add see more link
+      if (hits.length == 10) {
+        resultsHolder.append(
+          `<a class="view-more-search" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`
+        );
+      }
+    });
 });
 
 /*
@@ -417,38 +443,42 @@ $(".buildingBlockSearch").on("keyup", function (e) {
   });
 });
 
-document
-    .querySelectorAll('a[href^="#"]')
-    .forEach(trigger => {
-        trigger.onclick = function(e) {
-            e.preventDefault();
-            let hash = this.getAttribute('href');
-            let target = document.querySelector(hash);
-            let headerOffset = 140;
-            console.log(target.getBoundingClientRect().top)
-            let elementPosition = target.getBoundingClientRect().top;
-            let offsetPosition = elementPosition - headerOffset;
+document.querySelectorAll('a[href^="#"]').forEach((trigger) => {
+  trigger.onclick = function (e) {
+    e.preventDefault();
+    let hash = this.getAttribute("href");
+    let target = document.querySelector(hash);
+    let headerOffset = 140;
+    console.log(target.getBoundingClientRect().top);
+    let elementPosition = target.getBoundingClientRect().top;
+    let offsetPosition = elementPosition - headerOffset;
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
-        };
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
     });
-
+  };
+});
 
 if (document.querySelector("#scrollTo a")) {
-  document.querySelector("#scrollTo a").click()
+  document.querySelector("#scrollTo a").click();
 }
 
 // handling wide tables
 const widetables = document.querySelectorAll(".widetable");
 widetables.forEach((element) => {
-  element.children[0].addEventListener("scroll", function(e) {
-    if (element.children[0].scrollLeft + element.offsetWidth >= element.children[0].scrollWidth) {
-      element.classList.add("scrolled-right");
-    } else {
-      element.classList.remove("scrolled-right");
-    }
-  }, false)
-})
+  element.children[0].addEventListener(
+    "scroll",
+    function (e) {
+      if (
+        element.children[0].scrollLeft + element.offsetWidth >=
+        element.children[0].scrollWidth
+      ) {
+        element.classList.add("scrolled-right");
+      } else {
+        element.classList.remove("scrolled-right");
+      }
+    },
+    false
+  );
+});

@@ -11,6 +11,7 @@ aliases:
 ---
 
 ## Overview
+
 In the social sciences, regresion analysis is a popular tool to estimate relationships between a dependent variable and one or more independent variables. It is a way to find trends in data, quantify the impact of input variables, and make predictions for unseen data.
 
 In this building block, we illustrate how to estimate a model, identify outliers, plot a trend line, and make predictions.
@@ -18,13 +19,15 @@ In this building block, we illustrate how to estimate a model, identify outliers
 ## Code
 
 ### Estimate Model
+
 Linear regression (`lm`) is suitable for a response variable that is numeric. For logical values (e.g., did a customer churn: yes/no), you need to estimate a logistic regression model (`glm`). The code sample below estimates a model, checks the model assumptions, and shows the regression coefficients.
 
-* Model transformations can be incorporated into the formula, for example: `formula = log(y) ~ I(x^2)`.
-* The coefficients (`coefficients(mdl)`), predictions for the original data set (`fitted(mdl)`), and residuals (`residuals(mdl)`) can be directly derived from the model object.
-* A concrete example on how to evaluate model assumptions (mean residuals is 0, residuals are normally distributed, homskedascticiy) can be found [here]().
+- Model transformations can be incorporated into the formula, for example: `formula = log(y) ~ I(x^2)`.
+- The coefficients (`coefficients(mdl)`), predictions for the original data set (`fitted(mdl)`), and residuals (`residuals(mdl)`) can be directly derived from the model object.
+- A concrete example on how to evaluate model assumptions (mean residuals is 0, residuals are normally distributed, homskedascticiy) can be found [here]().
 
 {{% codeblock %}}
+
 ```R
 library(broom)
 
@@ -44,12 +47,15 @@ autoplot(
 # show regression coefficients
 summary(mdl)
 ```
+
 {{% /codeblock %}}
 
 ### Identify Outliers
+
 Compute the leverage of your data records and influence on `mdl` to identify potential outliers.
 
 {{% codeblock %}}
+
 ```R
 library(dplyr)
 leverage_influence <- mdl %>%
@@ -57,12 +63,15 @@ leverage_influence <- mdl %>%
     select(y, x, leverage = .hat, cooks_dist = .cooksd) %>%
     arrange(desc(cooks_dist)) %>%
 ```
+
 {{% /codeblock %}}
 
 ### Plot Trend Line
+
 Plot a scatter plot of two numeric variables and add a linear trend line on top of it.
 
 {{% codeblock %}}
+
 ```R
 library(ggplot2)
 
@@ -70,18 +79,20 @@ ggplot(data = data, aes(x, y)) +
 geom_points() +
 geom_smooth(method = "lm", se = FALSE)
 ```
+
 {{% /codeblock %}}
 
-
 ### Make Predictions
+
 Given a linear regression model (`mdl`), make predictions for unseen input data (`explanatory_data`). Note that for multiple linear regression models, you need to pass an `explanatory_data` object with multiple columns.
 
 {{% codeblock %}}
+
 ```R
 explanatory_data <- c(..., ..., ...)
 
 prediction_data <- explanatory_data %>%
-  mutate(   
+  mutate(
     y = predict(
       mdl,
       explanatory_data,
@@ -92,8 +103,8 @@ prediction_data <- explanatory_data %>%
 # See the result
 prediction_data
 ```
-{{% /codeblock %}}
 
+{{% /codeblock %}}
 
 ### Export Model Output
 
@@ -102,6 +113,7 @@ You can export your model output using `stargazer`. This package will create a n
 Convert regression coefficients of `mdl_1` and `mdl_2` into a HTML file that can be copied into a paper.
 
 {{% codeblock %}}
+
 ```R
 library(stargazer)
 
@@ -109,16 +121,21 @@ stargazer(mdl_1, mdl_2,
           title = "Figure 1",
           column.labels = c("Model 1", "Model 2"),
           type="html",
-          out="output.html"  
+          out="output.html"
           )
 ```
+
 {{% /codeblock %}}
 
 ### Exporting your findings in Stata
+
 Alternatively, you can do your regression analysis on Stata. First, you should clear your working directory. With the command "sysuse auto", we download an example data file provided by Stata itself.
 
 {{% codeblock %}}
-```txt
+
+```
+-Stata-
+
 clear all
 
 * First,let's install the necesary package
@@ -133,7 +150,7 @@ sysuse auto
 eststo clear
 * First regression :
 
-eststo: regress price weight mpg  
+eststo: regress price weight mpg
 
 * Second regression
 
@@ -167,12 +184,11 @@ outreg2 using RegressionResults.doc, replace ctitle(Model 1)
 eststo: regress price weight mpg foreign
 outreg2 using RegressionResults.doc, append ctitle(Model 2)
 ```
+
 {{% /codeblock %}}
 
-
-
 {{% example %}}
-[This tutorial](https://dprep.hannesdatta.com/docs/building-blocks/regression-analysis/) outlines how to run, evaluate, and export regression model results for the `cars` dataset.  In particular, it analyzes the relationship between a car’s speed and the stop distance.
+[This tutorial](https://dprep.hannesdatta.com/docs/building-blocks/regression-analysis/) outlines how to run, evaluate, and export regression model results for the `cars` dataset. In particular, it analyzes the relationship between a car’s speed and the stop distance.
 
 ![A trend plot in R.](../images/trend_plots.png)
 {{% /example %}}
