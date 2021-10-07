@@ -34,7 +34,7 @@ You can load packages in the preamble: `\usepackage{amsmath}`
 
 ### Greek letters
 #### Lowercase
-
+{{% wide-table %}}
 |  |  |  |  |  |  |  
 |-------------|-------------|------------|------------|---------------|---------------|
 | $\alpha$    | `\alpha`    | $\beta$    | `\beta`    | $\gamma$      | `\gamma`      |
@@ -47,15 +47,17 @@ You can load packages in the preamble: `\usepackage{amsmath}`
 | $\tau$      | `\tau`      | $\upsilon$ | `\upsilon` | $\phi$        | `\phi`        |
 | $\varphi$   | `\varphi`   | $\chi$     | `\chi`     | $\psi$        | `\psi`        |
 | $\omega$    | `\omega`    |
-
+{{% /wide-table %}}
 
 #### Uppercase
+{{% wide-table %}}
 |  |  |  |  |  |  |
 |-------------|-------------|------------|------------|---------------|---------------|
 | $\Gamma$    | `\Gamma`    | $\Delta$   | `\Delta`   | $\Theta$      | `\Theta`      |
 | $\Lambda$   | `\Lambda`   | $\Xi$      | `\Xi`      | $\Pi$         | `\Pi`         |
 | $\Sigma$    | `\Sigma`    | $\Upsilon$ | `\Upsilon` | $\Phi$        | `\Phi`        |
 | $\Psi$      | `\Psi`      | $\Omega$   | `\Omega`   |
+{{% /wide-table %}}
 
 {{% tip %}}
 To ensure a consistent style throughout the document, use:
@@ -73,18 +75,23 @@ $$\mathcal{A} \\, \mathcal{B} \\, \mathcal{C} \\, \mathcal{D} \\, \mathcal{E} \\
 Use `\mathcal{\text{letter}}`.
 
 ### Superscript and subscript
+{{% wide-table %}}
 | $\LaTeX$ | Code | $\LaTeX$ | Code |
 |---------|-------|-----------|-------------|
 | $x^y$ | `x^y` | $x^{a+b}$ | `x^{a+b}` |
 | $x_y$ | `x_y` | $x_{a+b}$ | `x_{a+b}` |
+{{% /wide-table %}}
 
 ### Root
+{{% wide-table %}}
 | Type | $\LaTeX$    | Code    |
 |-------------|-----------------|---------------|
 | Square root | $\sqrt{x}$    | `\sqrt{x}`    |
 | N-th root   | $\sqrt[N]{x}$ | `\sqrt[N]{x}` |
+{{% /wide-table %}}
 
 ### Dots
+{{% wide-table %}}
 | Type | $\LaTeX$    | Code    |
 |---------------------|------------|----------|
 | Multiplication dot  | $\cdot$  | `\cdot`  |
@@ -92,8 +99,10 @@ Use `\mathcal{\text{letter}}`.
 | Three baseline dots | $\ldots$ | `\ldots` |
 | Three diagonal dots | $\ddots$ | `\ddots` |
 | Three vertical dots | $\vdots$ | `\vdots` |
+{{% /wide-table %}}
 
 ### Spaces
+{{% wide-table %}}
 | Type | Code |
 |----------------|----------|
 | Negative space | `\!`     |
@@ -102,19 +111,24 @@ Use `\mathcal{\text{letter}}`.
 | Medium space   | `\;`     |
 | 1em space      | `\quad`  |
 | 2em space      | `\qquad` |
+{{% /wide-table %}}
 
 ### Braces
+{{% wide-table %}}
 | $\LaTeX$ | Code |
 |----------------|----------|
 | $\overbrace{ ... }^{ \text{text over brace} }$ | `\overbrace{ ... }^{ \text{text over brace} }` |
 | $\underbrace{ ... }_{ \text{text under brace} }$ | `\underbrace{ ... }_{ \text{text under brace} }` |
+{{% /wide-table %}}
 
 ### Accents
+{{% wide-table %}}
 | $\LaTeX$ | Code | $\LaTeX$ | Code | $\LaTeX$ | Code |
 |---------------|-------------|--------------|------------|-------------------|-----------------|
 | $\hat{a}$   | `\hat{a}`   | $\bar{a}$  | `\bar{a}`  | $\mathring{a}$  | `\mathring{a}`  |
 | $\check{a}$ | `\check{a}` | $\dot{a}$  | `\dot{a}`  | $\vec{a}$       | `\vec{a}`       |
 | $\tilde{a}$  | `\tilde{a}` | $\ddot{a}$ | `\ddot{a}` | $\widehat{AAA}$ | `\widehat{AAA}` |
+{{% /wide-table %}}
 
 ### Operators
 
@@ -129,11 +143,12 @@ To define a custom operator:
 {{% /tip %}}
 
 ### Modulo
+{{% wide-table %}}
 | $\LaTeX$ | Code |
 |-----------------------|-----------------------|
 | $a \bmod b$           | `a \bmod b`           |
 | $a \equiv b \pmod{m}$ | `a \equiv b \pmod{m}` |
-
+{{% /wide-table %}}
 
 ### Fractions
 `\frac{ ... }{ ... }`
@@ -141,19 +156,22 @@ To define a custom operator:
 For instance, 3/4 can be displayed as $\frac{3}{4}$.
 
 ### Symbol stacking
-
+{{% wide-table %}}
 | $\LaTeX$ | Code |
 |-----------------------|-----------------------|
 | $\overset{ A }{ B }$ | `\overset{ ... }{ ... }` |
 | $\underset{ A }{ B }$ | `\underset{ ... }{ ... }` |
+{{% /wide-table %}}
 
 First argument is the main symbol, second argument is the symbol to put over or under the main symbol.
 
 ### Big operators
+{{% wide-table %}}
 | $\LaTeX$ | Code | $\LaTeX$ | Code |
 |---------------------------------|-------------------|--------------------------------|------------------|
 | $\displaystyle \int_{a}^{b}$    | `\int_{a}^{b}`    | $\displaystyle \sum_{k=0}^{n}$ | `\sum_{k=0}^{n}` |
 | $\displaystyle \prod_{k=0}^{n}$ | `\prod_{k=0}^{n}` | $\displaystyle \lim_{x \to 0}$  | `\lim_{x \to 0}` |
+{{% /wide-table %}}
 
 {{% tip %}}
 For multiple integrals, use: $\iint$ `\iint` $\\,\\, \iiint$ `\iiint` etc.
@@ -167,10 +185,12 @@ Change the delimiter size by adding one of these modifiers immediately before th
 Let $\LaTeX$ determine the correct size using `\left` and `\right` immediately before the opening and closing delimiters, respectively.
 
 ### Absolute value and norm
+{{% wide-table %}}
 | $\LaTeX$ | Code |
 |-------------------|-------------------|
 | $\lvert x \rvert$ | `\lvert x \rvert` |
 | $\lVert x \rVert$ | `\lVert x \rVert` |
+{{% /wide-table %}}
 
 The same can be achieved by defining:
 ```latex
@@ -182,6 +202,7 @@ The same can be achieved by defining:
 Use starred variants `\abs*` and `\norm*` to produce the correct delimiter height for any kind of equation.
 
 ### Arrows
+{{% wide-table %}}
 | $\LaTeX$ | Code | $\LaTeX$ | Code | $\LaTeX$ | Code |
 |----------|------|----------|------|----------|------|
 | $\uparrow$ | `\uparrow` | $\downarrow$ | `\downarrow` | $\updownarrow$ | `\updownarrow` |
@@ -191,8 +212,10 @@ Use starred variants `\abs*` and `\norm*` to produce the correct delimiter heigh
 | $\mapsto$         | `\mapsto`               | $\longleftarrow$      | `\longleftarrow`      | $\longrightarrow$     | `\longrightarrow`     |
 | $\longleftrightarrow$ | `\longleftrightarrow` | $\Longleftarrow$      | `\Longleftarrow`      | $\Longrightarrow$     | `\Longrightarrow`     |
 | $\Longleftrightarrow$ | `\Longleftrightarrow` | $\longmapsto$         | `\longmapsto`         |
+{{% /wide-table %}}
 
 ### Binary relations
+{{% wide-table %}}
 | $\LaTeX$ | Code | $\LaTeX$ | Code | $\LaTeX$ | Code |
 |-------------|-------------|-------------|-------------|-----------|-----------|
 | $\ne$       | `\ne`       | $\le$       | `\le`       | $\ge$     | `\ge`     |
@@ -202,12 +225,14 @@ Use starred variants `\abs*` and `\norm*` to produce the correct delimiter heigh
 | $\subseteq$ | `\subseteq` | $\supseteq$ | `\supseteq` | $\cong$   | `\cong`   |
 | $\in$       | `\in`       | $\ni$       | `\ni`       | $\propto$ | `\propto` |
 | $\mid$      | `\mid`      | $\parallel$ | `\parallel` | $\perp$   | `\perp`   |
+{{% /wide-table %}}
 
 {{% tip %}}
 It's possible to negate these symbols by prefixing them with `\not` (for example: $\not\equiv$ with `\not\equiv`).
 {{% /tip %}}
 
 ### Binary operators
+{{% wide-table %}}
 | $\LaTeX$ | Code | $\LaTeX$ | Code | $\LaTeX$ | Code |
 |-------------|-------------|-------------|-------------|-----------|-----------|
 | $\pm$     | `\pm`     | $\mp$     | `\mp`     | $\cdot$          | `\cdot`          |
@@ -216,15 +241,19 @@ It's possible to negate these symbols by prefixing them with `\not` (for example
 | $\ast$    | `\ast`    | $\circ$   | `\circ`   | $\bullet$        | `\bullet`        |
 | $\oplus$  | `\oplus`  | $\ominus$ | `\ominus` | $\odot$          | `\odot`          |
 | $\oslash$ | `\oslash` | $\otimes$ | `\otimes` | $\smallsetminus$ | `\smallsetminus` |
+{{% /wide-table %}}
 
 ### Logic symbols
+{{% wide-table %}}
 | $\LaTeX$ | Code | $\LaTeX$ | Code | $\LaTeX$ | Code |
 |-------------|-------------|-------------|-------------|-----------|-----------|
 | $\lor$     | `\lor`     | $\land$    | `\land`    | $\neg$    | `\neg`    |
 | $\exists$  | `\exists`  | $\nexists$ | `\nexists` | $\forall$ | `\forall` |
 | $\implies$ | `\implies` | $\iff$     | `\iff`     | $\models$ | `\models` |
+{{% /wide-table %}}
 
 ### Other symbols
+{{% wide-table %}}
 | Symbol | $\LaTeX$ | Code |
 |--------------------|---------------------|---------------------|
 | Infinity           | $\infty$            | `\infty`            |
@@ -232,6 +261,7 @@ It's possible to negate these symbols by prefixing them with `\not` (for example
 | Empty set          | $\emptyset$         | `\emptyset`         |
 | Nabla              | $\nabla$            | `\nabla`            |
 | Angle brackets     | $\langle x \rangle$ | `\langle x \rangle` |
+{{% /wide-table %}}
 
 ### Multi line equation
 Use the `multline` environment.
@@ -250,10 +280,12 @@ To align equations, use the `align` environment. Specify the alignment position 
 ```
 
 ### Vectors
+{{% wide-table %}}
 | $\LaTeX$ | Code |
 |----------|------|
 | $\vec{x}$ | `\vec{x}` |
 | $\bm{x}$ | `\bm{x}` |
+{{% /wide-table %}}
 
 {{% warning %}}
 The `\bm` command requires the `bm` package.
