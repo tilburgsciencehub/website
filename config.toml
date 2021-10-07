@@ -6,6 +6,10 @@ pygmentsUseClasses=true
 enableInlineShortcodes = true
 googleAnalytics = "UA-23035208-2"
 
+pygmentsCodefences = true
+pygmentsCodefencesGuessSyntax = true
+pygmentsStyle = "pygments"
+
 [params]
   repo_url="https://github.com/tilburgsciencehub/website"
 
@@ -30,5 +34,5 @@ googleAnalytics = "UA-23035208-2"
       autoHeadingIDType = "github"
     [markup.goldmark.renderer]
       hardWraps = false
-      unsafe = false
+      unsafe = true
       xhtml = false

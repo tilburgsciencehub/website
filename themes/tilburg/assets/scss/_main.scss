@@ -161,8 +161,11 @@
   padding: 10px;
   margin-bottom: 20px;
 
-  pre {
+  pre,
+  .highlight {
     margin: 20px 0 0 0;
+    display: flex;
+    width: 100%;
   }
 
   ul {
@@ -223,7 +226,6 @@ pre {
   direction: rtl;
   padding-left: 20px;
   overflow-y: auto;
-
 
   * {
     direction: ltr;
@@ -623,8 +625,12 @@ article {
       right: 0;
       top: 0;
       height: 100%;
-      background: rgb(255,255,255);
-      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+      );
       width: 30px;
     }
 
@@ -686,7 +692,7 @@ article {
   left: 0;
   width: 100%;
   height: 100%;
-  border:0;
+  border: 0;
 }
 
 .buildingBlocksSuggestions {
@@ -744,7 +750,6 @@ article {
 }
 
 .searchResults {
-
   h5 {
     margin-top: 15px;
     height: auto;
@@ -784,7 +789,7 @@ footer {
     display: block;
     color: #60758a;
     line-height: 20px;
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 
     &:hover {
       color: $primary !important;
@@ -817,7 +822,6 @@ footer {
     a {
       font-size: 16px !important;
       line-height: 23px;
-
     }
 
     a:not(.pillx) {
@@ -943,7 +947,7 @@ footer {
 }
 
 .text-primary:hover {
-  color: #ff8200!important;
+  color: #ff8200 !important;
 }
 
 p {
@@ -1098,8 +1102,6 @@ a.text-secondary:hover {
 
       .links {
         padding-bottom: 20px;
-
-
       }
     }
 
@@ -1190,13 +1192,13 @@ a.text-secondary:hover {
 }
 
 @keyframes blinker {
-  10%{
+  10% {
     opacity: 100%;
   }
   50% {
     opacity: 0;
   }
-  80%{
+  80% {
     opacity: 100%;
   }
 }
@@ -1213,7 +1215,7 @@ a.text-secondary:hover {
 }
 
 .terminal-window header {
-  background: #E0E8F0;
+  background: #e0e8f0;
   height: 30px;
   border-radius: 8px 8px 0 0;
   padding-left: 10px;
@@ -1228,22 +1230,23 @@ a.text-secondary:hover {
 }
 
 .terminal-window header .button.green {
-  background: #3BB662;
+  background: #3bb662;
 }
 
 .terminal-window header .button.yellow {
-  background: #E5C30F;
+  background: #e5c30f;
 }
 
 .terminal-window header .button.red {
-  background: #E75448;
+  background: #e75448;
 }
 
 .terminal-window section.terminal {
   color: white;
-  font-family: SFMono-Regular, Menlo, Monaco, "Consolas", "Courier New", "Courier";
+  font-family: SFMono-Regular, Menlo, Monaco, "Consolas", "Courier New",
+    "Courier";
   font-size: 11pt;
-  background: #30353A;
+  background: #30353a;
   padding: 10px;
   box-sizing: border-box;
   position: absolute;
@@ -1255,37 +1258,61 @@ a.text-secondary:hover {
 }
 
 .terminal-window section.terminal .typed-cursor {
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  0% {
     opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.terminal-data { display: none; }
-.terminal-window .gray { color: gray; }
-.terminal-window .green { color: green;}
+.terminal-data {
+  display: none;
+}
+.terminal-window .gray {
+  color: gray;
+}
+.terminal-window .green {
+  color: green;
+}
 
 .view-more-search {
   color: $primary !important;
 }
 
 .view-more-search:hover {
-  color: #ff8200!important;
+  color: #ff8200 !important;
 }
 
 .search-keywords {
