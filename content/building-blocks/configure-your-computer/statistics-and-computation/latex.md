@@ -1,7 +1,7 @@
 ---
 title: "Set up LaTeX"
 description: "LaTeX is a great typesetting system that includes a lot of features that allow to produce scientific documents."
-keywords: "latex, tex, lyx, installation, software, configuration, paper, writing, text, typesetting"
+keywords: "latex, tex, lyx, install, software, configuration, paper, writing, text, typesetting"
 #date: 2020-11-11T22:02:51+05:30
 draft: false
 #weight: 10

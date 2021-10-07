@@ -1,6 +1,6 @@
 ---
 title: "Set up Snakemake"
-description: "Snakemake is an easy to use workflow management system."
+description: "Snakemake is an easy to use workflow management system. Learn how to install it."
 keywords: "snakemake, build, build tool, workflow"
 #weight: 3
 #date: 2020-11-11T22:02:51+05:30

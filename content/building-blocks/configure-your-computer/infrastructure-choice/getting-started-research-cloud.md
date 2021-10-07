@@ -1,6 +1,6 @@
 ---
 title: "Getting started with Research Cloud"
-description: "Free cloud solution for conducting research"
+description: "A free cloud solution for conducting research."
 keywords: "cloud, virtual computers, SURF, infrastructure, parallel, research cloud, service desk"
 weight: 2
 #date: 2021-01-06T22:01:14+05:30
@@ -40,7 +40,7 @@ Check that you’re affiliated with a Dutch research institution to set up the w
 2. Once your wallet is approved, you will receive an email from SURF to set up your initial workspace. This will look like this:
 
   ![surf mail](../surf_mail.png)
-  
+
   Still waiting for your wallet to be approved? You can check the [status of your application at SurfSara's service desk](https://servicedesk.surfsara.nl).
 
 3. After setting up the initial workspace, access it [here](https://portal.live.surfresearchcloud.nl/).

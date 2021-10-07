@@ -1,7 +1,7 @@
 ---
 title: "Set up Stata"
 description: "Stata is a proprietary statistical software frequently used by scientific users."
-keywords: "Stata, software, installation, configuration, statistics"
+keywords: "Stata, software, install, do, configuration, statistics"
 #date: 2020-11-11T22:02:51+05:30
 draft: false
 #weight: 5

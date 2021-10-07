@@ -1,7 +1,7 @@
 ---
 title: "Set up Git and GitHub"
 description: "Git is an open source version control system (VCS) that has gained a lot of traction in the programming community."
-keywords: "git, github, installation, software, configuration, versioning, account"
+keywords: "git, github, install, software, configuration, versioning, account"
 #date: 2020-11-11T22:02:51+05:30
 draft: false
 #weight: 12

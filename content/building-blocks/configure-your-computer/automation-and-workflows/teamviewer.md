@@ -1,6 +1,6 @@
 ---
 title: "Set up TeamViewer"
-description: "Teamviewer allows to remote-control your computer to solve technical issues."
+description: "Teamviewer allows to remote-control your computer to solve technical issues. Learn how to install it."
 keywords: "teamviewer, software, installation, remote"
 #weight: 5
 #date: 2020-11-11T22:02:51+05:30
