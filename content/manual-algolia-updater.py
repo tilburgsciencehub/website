@@ -35,6 +35,7 @@ def structure_markdown(df, path):
     return {
         "objectID": path,
         "title": search_item("title", header),
+        "draft": search_item("draft", header),
         "description": search_item("description", header),
         "keywords": search_item("keywords", header),
         "code": re.findall(code_block, body),
@@ -59,10 +60,19 @@ def export_data(file_paths):
 file_paths = list_files(".", ".md")
 json_data = export_data(file_paths)
 
+# Filter out draft objects
+json_data_without_draft = []
+
+for item in json_data:
+    if item['draft']=='true':
+        print('Excluding draft file:', item['title'])
+        continue
+    json_data_without_draft.append(item)
+
 # Push json data to Algolia
 algolia_key = os.environ['ALGOLIA_KEY']
 client = SearchClient.create('02IYLG4AP9', algolia_key)
 index = client.init_index('Tilburg_Science_Hub')
 
 # index.save_objects(json_data) # Add new records
-index.replace_all_objects(json_data) # Clear the index before pushing new records
+index.replace_all_objects(json_data_without_draft) # Clear the index before pushing new records

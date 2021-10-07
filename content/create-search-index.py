@@ -59,16 +59,15 @@ def export_data(file_paths):
 file_paths = list_files(".", ".md")
 json_data = export_data(file_paths)
 
-# filter out draft objects
+# Filter out draft objects
 json_data_without_draft = []
 
 for item in json_data:
-    if item['draft']=='true': 
-        print('excluding: ')
-        print(item['title'])
-        next
+    if item['draft']=='true':
+        print('Excluding draft file:', item['title'])
+        continue
     json_data_without_draft.append(item)
 
-    
+
 with open('search-index.json', 'w') as outfile:
     json.dump(json_data_without_draft, outfile)
