@@ -1,6 +1,6 @@
 ---
-tutorialtitle: "Scrum for Researchers"
-title: "Scrum for Researchers"
+tutorialtitle: "Professionalize your Team Work Using Scrum"
+title: "Professionalize your Team Work Using Scrum"
 type: "scrum-for-researchers"
 description: "Discover Scrum to improve your project management when working on empirical research projects"
 keywords: "scrum, project, sprint, team, management"
@@ -10,9 +10,11 @@ author: "Pam Dupont"
 authorlink: "https://www.tilburguniversity.edu/staff/p-h-dupont"
 aliases:
   - /learn/scrum
+  - /professionalize/teamwork
+  - /learn/teamwork
 ---
 
-## How we learned to use Scrum
+## How we professionalized our team work
 
 We use [Scrum](https://www.scrum.org) - a simple framework for effective team collaboration - to manage the development of Tilburg Science Hub. By sharing our experiences with (an admittedly customized version of) Scrum, we hope to inspire and possibly help other teams to make their collaborations run smoothly.
 
