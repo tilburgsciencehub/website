@@ -13,7 +13,7 @@
 					<div class="d-none d-lg-block links">
 						{{- range where .Site.Pages "Section" "tutorials" -}}
 						{{ if eq .Params.isParent true }}
-						<a href="{{ .Permalink }}">{{ .Title }}</a>
+						<a href="{{ .Permalink }}{{ if .Params.indexPage }}{{ .Params.indexPage }}{{end}}">{{ .Title }}</a>
 						{{ end }}
 						{{- end -}}
 					</div>
