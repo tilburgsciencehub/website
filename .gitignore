@@ -2,3 +2,5 @@
 .DS_Store
 public/
 .vscode
+search-index.json
+

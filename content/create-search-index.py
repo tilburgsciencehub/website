@@ -34,6 +34,7 @@ def structure_markdown(df, path):
     return {
         "objectID": path,
         "title": search_item("title", header),
+        "draft": search_item("draft", header),
         "description": search_item("description", header),
         "keywords": search_item("keywords", header),
         "code": re.findall(code_block, body),
@@ -58,5 +59,16 @@ def export_data(file_paths):
 file_paths = list_files(".", ".md")
 json_data = export_data(file_paths)
 
+# filter out draft objects
+json_data_without_draft = []
+
+for item in json_data:
+    if item['draft']=='true': 
+        print('excluding: ')
+        print(item['title'])
+        next
+    json_data_without_draft.append(item)
+
+    
 with open('search-index.json', 'w') as outfile:
-    json.dump(json_data, outfile)
+    json.dump(json_data_without_draft, outfile)
