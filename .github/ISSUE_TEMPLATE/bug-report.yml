@@ -1,9 +1,8 @@
-name: Bug Report
-description: File a bug report
+name: Bug report
+description: Create a report to help us improve
 title: "[Bug]: "
-labels: ["bug", "triage"]
-assignees:
-  - octocat
+labels: ["bug"]
+assignees: ''
 body:
   - type: markdown
     attributes:
@@ -26,16 +25,18 @@ body:
       value: "A bug happened!"
     validations:
       required: true
-  - type: dropdown
-    id: version
+  - type: textarea
+    id: to-reproduce
     attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+      label: To reproduce
+      description: Steps to reproduce the behavior
+      placeholder: Tell us what you see!
+      value: "1. Go to '...'
+      2. Click on '....'
+      3. Scroll down to '....'
+      4. See error"
     validations:
-      required: true
+      required: false
   - type: dropdown
     id: browsers
     attributes:
@@ -46,17 +47,18 @@ body:
         - Chrome
         - Safari
         - Microsoft Edge
+        - Other
   - type: textarea
     id: logs
     attributes:
-      label: Relevant log output
+      label: Optional log output
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
   - type: checkboxes
     id: terms
     attributes:
       label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://tilburgsciencehub.com/contribute/code-of-conduct)
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
