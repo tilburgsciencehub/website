@@ -1,14 +1,10 @@
 name: Edit content request
 description: Improve existing content on Tilburg Science Hub
-title: ""
+title: "[Edit]: "
 labels: ["edit content request"]
 assignees:
   - octocat
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Unlike many of the technical tutorials on the web which teach how to use code for a very specific purpose, Tutorials at Tilburg Science Hub separate case-specific instructions from very general, high-level Building Blocks. Read more about Tutorials and Building Blocks [here](https://tilburgsciencehub.com/contribute).
   - type: input
     id: contact
     attributes:
@@ -18,13 +14,20 @@ body:
     validations:
       required: false
   - type: textarea
-    id: objectives
+    id: description
     attributes:
-      label: Is your content request related to a problem you've encountered during your research process? Please describe.
+      label: Describe the problem. Is this a small fix (typos, few sentences...) or does it require more elaborate changes (modifying, adding or removing an entire paragraph or chapter, modifying the content structure...)?
       description: A clear and concise description of what the problem is.
-      placeholder: Ex. I'm always frustrated when [...]
+      placeholder: Ex. It's just a small typo on this article [...]
     validations:
       required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the solution you'd like
+      description: A clear and concise description of what you want to happen.
+    validations:
+      required: false
   - type: textarea
     id: additional-context
     attributes:
@@ -33,50 +36,6 @@ body:
       placeholder: Drag and drop a screenshot here.
     validations:
       required: false
-  - type: dropdown
-    id: contribution-type
-    attributes:
-      label: Would you like this to be a Building Block or a Tutorial?
-      multiple: false
-      options:
-        - Building Block
-        - Tutorial
-        - Both
-        - I don't know
-  - type: markdown
-    attributes:
-      value: |
-        Describe the solution you'd like filling in the fields below – if you're unsure, you can leave them empty.
-  - type: textarea
-    id: purpose
-    attributes:
-      label: Purpose
-      placeholder: Ex. Teach our users how to set up a new empirical research project on a local computer...
-  - type: textarea
-    id: motivation
-    attributes:
-      label: Motivation
-      placeholder: Ex. Users should not always start from scratch, but use the best principles when setting up and working on empirical research projects because...
-  - type: input
-    id: title
-    attributes:
-      label: Suggested title
-      placeholder: Ex. "Automatically set up a new research project on your computer"
-  - type: input
-    id: keywords
-    attributes:
-      label: Suggested keywords
-      placeholder: Ex. automation, configure, setup, local...
-  - type: input
-    id: tools
-    attributes:
-      label: Required tools
-      placeholder: Ex. Python, R, RStudio, Git, Make, LaTeX...
-  - type: input
-    id: refs
-    attributes:
-      label: References
-      placeholder: Any additional information and links to external useful resources.
   - type: checkboxes
     id: terms
     attributes:
