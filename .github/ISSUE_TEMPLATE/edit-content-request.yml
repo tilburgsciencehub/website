@@ -1,7 +1,7 @@
-name: New content request
-description: Suggest new content for Tilburg Science Hub
-title: "[Development Call]: "
-labels: ["content request"]
+name: Edit content request
+description: Improve existing content on Tilburg Science Hub
+title: ""
+labels: ["edit content request"]
 assignees:
   - octocat
 body:
