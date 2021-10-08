@@ -30,12 +30,12 @@ body:
     id: to-reproduce
     attributes:
       label: To reproduce
-      description: Steps to reproduce the behavior
-      placeholder: Tell us what you see!
-      value: "1. Go to '...'
-      2. Click on '....'
-      3. Scroll down to '....'
-      4. See error"
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
     validations:
       required: false
   - type: dropdown
