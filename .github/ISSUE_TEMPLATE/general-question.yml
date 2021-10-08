@@ -1,10 +1,14 @@
-name: Feature request
-description: Suggest an idea for Tilburg Science Hub
-title: "[Feature]: "
-labels: ["feature request"]
+name: General question
+description: Ask us anything else
+title: "[Q]: "
+labels: ["question"]
 assignees:
   - octocat
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Instead of opening a new issue, have you considered writing in our [Discussions](https://github.com/tilburgsciencehub/website/discussions) tab? 🙌
   - type: input
     id: contact
     attributes:
@@ -16,33 +20,10 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: Is your feature request related to a problem? Please describe.
-      description: A clear and concise description of what the problem is.
-      placeholder: Ex. I'm always frustrated when [...]
+      label: Shoot!
+      description: Just ask.
     validations:
       required: true
-  - type: textarea
-    id: solution
-    attributes:
-      label: Describe the solution you'd like
-      description: A clear and concise description of what you want to happen.
-    validations:
-      required: true
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Describe alternatives you've considered
-      description: A clear and concise description of any alternative solutions or features you've considered.
-    validations:
-      required: false
-  - type: textarea
-    id: additional-context
-    attributes:
-      label: Additional context
-      description: Add any other context or screenshots about your request here.
-      placeholder: Drag and drop a screenshot here.
-    validations:
-      required: false
   - type: checkboxes
     id: terms
     attributes:
