@@ -46,9 +46,8 @@ body:
         - I don't know
   - type: markdown
     attributes:
-      label: Describe the solution you'd like
       value: |
-        This helps us understand your needs. Fill in the fields below – if you're unsure, you can leave them empty.
+        Describe the solution you'd like filling in the fields below – if you're unsure, you can leave them empty.
   - type: textarea
     id: purpose
     attributes:
