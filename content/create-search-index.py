@@ -50,9 +50,9 @@ def structure_markdown(df, path):
 
     return {
         "objectID": path,
-        "title": title,
+        "title": search_item("title", header),
         "draft": draft,
-        "description": description,
+        "description": search_item("description", header),
         "keywords": keywords,
         "code": re.findall(code_block, body),
         "headers": [re.search(headers, word).group(1) for word in body_list if re.search(headers, word)],
