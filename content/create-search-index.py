@@ -31,12 +31,29 @@ def structure_markdown(df, path):
     body_no_code = re.sub(code_block, "", body)
     body_no_headers = " ".join([word for word in body_list if not re.search(headers, word)])
 
+    try:
+        title = search_item("title", header)
+    except:
+        title = ""
+    try:
+        draft = search_item("draft", header)
+    except:
+        draft = "false"
+    try:
+        description = search_item("description", header)
+    except:
+        description = ""
+    try:
+        keywords = search_item("keywords", header)
+    except:
+        keywords = ""
+
     return {
         "objectID": path,
-        "title": search_item("title", header),
-        "draft": search_item("draft", header),
-        "description": search_item("description", header),
-        "keywords": search_item("keywords", header),
+        "title": title,
+        "draft": draft,
+        "description": description,
+        "keywords": keywords,
         "code": re.findall(code_block, body),
         "headers": [re.search(headers, word).group(1) for word in body_list if re.search(headers, word)],
         "content": re.sub(code_block, "", body_no_headers)
