@@ -43,10 +43,11 @@ Check that you’re affiliated with a Dutch research institution to set up the w
 
   Still waiting for your wallet to be approved? You can check the [status of your application at SurfSara's service desk](https://servicedesk.surfsara.nl).
 
-3. After setting up the initial workspace, access it [here](https://portal.live.surfresearchcloud.nl/).
+3. Upon project approval, Surf will create a workspace and invite you to "join" that workspace via email.
 
-4. Detailed instructions to operate Research Cloud (including adding data sources) are [here](https://servicedesk.surfsara.nl/wiki/display/WIKI/How+to+get+on+board).
+5. You can access the [workspace via this portal](https://portal.live.surfresearchcloud.nl/). In the case that you cannot login via SSO, you can [create a so-called EduID yourself](https://www.surf.nl/en/eduid-1-digital-identity-for-students/what-is-eduid) and use this as your identity provider for logging in to the Research Cloud Portal.
 
+7. All set up and want to learn more? Then check these detailed instructions on [how to use Research Cloud (including adding data sources)](https://servicedesk.surfsara.nl/wiki/display/WIKI/How+to+get+on+board).
 
 
 ## Advanced use cases
