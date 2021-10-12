@@ -4,7 +4,6 @@ description: "Learn how to configure environment variables to store personal cre
 keywords: "environment variables, configuration, password, secret, credentials"
 #date: 2021-02-17
 #weight: 3
-draft: false
 aliases:
   - /configure/environment-variables
 ---
