@@ -32,17 +32,9 @@ def structure_markdown(df, path):
     body_no_headers = " ".join([word for word in body_list if not re.search(headers, word)])
 
     try:
-        title = search_item("title", header)
-    except:
-        title = ""
-    try:
         draft = search_item("draft", header)
     except:
         draft = "false"
-    try:
-        description = search_item("description", header)
-    except:
-        description = ""
     try:
         keywords = search_item("keywords", header)
     except:
