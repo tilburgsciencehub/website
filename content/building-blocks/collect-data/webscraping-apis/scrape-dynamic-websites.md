@@ -35,11 +35,9 @@ driver.find_element_by_tag_name("h1").text
 
 {{% tip %}}
 The first time you will need to (1) install the Python package for Selenium, (2) download a web driver to interface with a web browser, and (3) configure Selenium to recognize your web driver.
-1. Open Anaconda Prompt (Windows) or the Terminal (Mac), type the command `conda install selenium`, and agree to whatever the package manager wants to install or update (usually by pressing `y` to confirm your choice).
-2. Once we run the scraper, a Chrome browser launches which requires a web driver executable file. Download this file from [here](https://sites.google.com/a/chromium.org/chromedriver/downloads) (open [this](https://www.whatismybrowser.com/detect/what-version-of-chrome-do-i-have) site in Chrome to identify your current Chrome version).
-3. Unzip the file and move it to the same directory where you're running this notebook. Either you can set a `chrome_path` manually (e.g., `/Users/Pieter/Documents/webscraping/chromedriver`) or ideally you make Chromedriver available through a so-called PATH variable so that you can access it regardless of your current directory. To do so, ...
-    * Windows users can follow the steps described [here](https://tilburgsciencehub.com/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/). If that doesn't work for you, [this](https://zwbetz.com/download-chromedriver-binary-and-add-to-your-path-for-automated-functional-testing/) guide may help.
-    * Mac users need to move the `chromedriver` file to the `/usr/local/bin` folder. `cd` to the directory of the `chromedriver` file and type `mv chromedriver /usr/local/bin`.
+
+Check our [page](https://tilburgsciencehub.com/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/) on Configuring Python for Web Scraping to learn how to do it.
+
 {{% /tip %}}
 
 #### Selectors

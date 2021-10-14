@@ -14,11 +14,41 @@ aliases:
 
 Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page. This is especially true when the site we want to scrape has content that is loaded dynamically with javascript.
 
-We will install one package to help us here: [ChromeDriver](https://chromedriver.chromium.org).
+We will install one package to help us here: [ChromeDriver](https://chromedriver.chromium.org). Below we show two different ways of installing it.
 
-Installing this stuff is operating-system specific, hence so are the instructions below.
+## Install ChromeDriver
 
-## Windows Users
+In order to install ChromeDriver, make sure you have already installed:
+
+* [Google Chrome](https://www.google.com/chrome/browser/desktop/index.html).
+
+* **Selenium**: by typing in the command `pip install selenium`.
+  - Alternatively, open Anaconda Prompt (Windows) or the Terminal (Mac), type the command `conda install selenium`, and agree to whatever the package manager wants to install or update (usually by pressing `y` to confirm your choice).
+
+* **Webdriver Manager for Python**: by typing in the command `pip install webdriver_manager`
+
+Once you have obtained these packages, you can now install ChromeDriver as follows:
+{{% codeblock %}}
+```Python
+# Make selenium and chromedriver work for Untappd.com
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+
+#driver = webdriver.Chrome()
+driver = webdriver.Chrome(ChromeDriverManager().install())
+
+url = "https://untappd.com/"
+driver.get(url)
+
+```
+{{% /codeblock %}}
+
+## Manually Installing ChromeDriver
+If for any reason the prior did not work or if you simply prefer installing ChromeDriver manually, follow the operating-system-specific steps below.
+
+### Windows Users
 
 Watch our YouTube video, in which we walk you through the setup on Windows.
 
@@ -56,9 +86,9 @@ We need to update our PATH settings; these settings are a set of directories tha
 	- Click on `OK` as often as needed.
 {{% /warning %}}
 
-## Mac Users
+### Mac Users
 
-### Let's install Homebrew first!
+#### Let's install Homebrew first!
 
 Make sure your `Homebrew` package is up-to-date. To do so, open a terminal and enter
 
@@ -88,7 +118,7 @@ Your system is ready to brew
 
 Sometimes, `brew doctor` returns some warnings. While it's advisable to fix them (eventually), you typically don't have to do it to get started with Chromedriver - so just try to continue from here.
 
-### Let's proceed to installing Chromedriver
+#### Let's proceed to installing Chromedriver
 
 * We assume you have Google Chrome installed. If not, do this first, please.
 
@@ -103,8 +133,7 @@ brew cask install chromedriver
 ```
 chromedriver --version
 ```
-
-## Linux Users
+### Linux Users
 
 *   Open a terminal session
 *   Install Google Chrome for Debian/Ubuntu by pasting the following and then pressing `Return`
