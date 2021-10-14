@@ -2,7 +2,7 @@
 title: "R coding style guidelines"
 description: "Follow nice R coding style to make your code easier to understand and easier to the eye."
 keywords: "style, code, R, guidelines, best practices"
-weight: 4
+weight: 5
 date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:

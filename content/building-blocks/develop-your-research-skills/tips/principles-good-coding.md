@@ -2,7 +2,7 @@
 title: "Principles for Good Coding"
 description: "Make your code easy to understand for humans. If your code looks very complex or messy, you're probably doing it wrong."
 keywords: "style, optimize, definition, human"
-weight: 2
+weight: 3
 date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
