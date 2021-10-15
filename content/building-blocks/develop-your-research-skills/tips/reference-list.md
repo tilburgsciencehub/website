@@ -126,7 +126,7 @@ If you require further information on Mendeley, go to the following [page](https
 
 
 ## Endnote
-The main reason to use EndNote over Mendeley or Zotero is that it offers more features and comes with unlimited reference storage locally and in Endnote Online.
+The main reason to use EndNote over Mendeley or Zotero is that it offers more features and comes with unlimited reference storage locally and in Endnote Online. To download EndNote go [here](https://endnote.com/downloads)
 
 However, unlike those two, EndNote is **not free**. Therefore, it is not probably worth it unless your institution gives you free access to it.
 
