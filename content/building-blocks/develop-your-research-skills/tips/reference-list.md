@@ -10,7 +10,7 @@ aliases:
   - /build/maintain
 ---
 # Overview
-One of the most tedious tasks (if not the most) when writing a publication (e.g, article, thesis) is dealing with references. Whether it's finding them in your computer, making sure they have been adequately downloaded or adding them to your publication, it is usually too time-consuming considering that the real focus should be put on the publication itself. A good usage of reference management applications will save you a lot of time, which you can put to better use.
+One of the most tedious tasks (if not the most) when writing a publication (e.g, article, thesis) is dealing with references. A good usage of reference management applications will save you a lot of time, which you can put to better use in your research.
 
 In this building block, we go trough the most widely used reference management applications: Mendeley, Zotero and EndNote.
 
@@ -54,7 +54,7 @@ Adding references manually is the most reliable way to add a reference because i
 {{% /tip %}}
 
 -  **Search for articles online.** Although the preferred search methods for literature on the web are the ones mentioned in our [building block](https://tilburgsciencehub.com/building-blocks/develop-your-research-skills/tips/search-literature/), Mendeley Reference Manager also has its own search engine. To use it,  go to "Tools" and select "Search for articles online". It will redirect you to the following [page](https://www.mendeley.com/search/?dgcid=refmandesktop).
-    - Having said this, the Mendeley searcher has an "Add to library" button for every search result, which allows to instantly add the reference to your Mendeley Reference Manager's library. However, this is no significant advantage compared to other search engines once the Mendeley Web Importer extension is added (see next section)
+    - Having said this, the Mendeley searcher has an "Add to library" button for every search result, which allows to instantly add the reference to your Mendeley Reference Manager's library. However, this is no significant advantage compared to other search engines once the Mendeley Web Importer extension is added (see below)
 
 
 ### Mendeley Web Importer
@@ -116,5 +116,20 @@ If you require further information on Mendeley, go to the following [page](https
 
 
 ## Zotero
+- Zotero is an open-source tool that can be downloaded [here](https://www.zotero.org/download/).
+
+- Its usage is very similar to Mendeley's Reference Manager, though it does not have an integrated PDF viewer (it will open PDFs in your computer’s default PDF viewer).
+
+- A cool feature from Zotero is that you can collect a reference with a click, similar to Mendeley Web Importer, but without having to add any other extension. Moreover, Zotero's single-click capture works with more databases, catalogs, and websites than Mendeley's Web Importer.
+
+- Want to learn more about Zotero's usage? Check this [page](https://www.zotero.org/support/)
+
 
 ## Endnote
+The main reason to use EndNote over Mendeley or Zotero is that it offers more features and comes with unlimited reference storage locally and in Endnote Online.
+
+However, unlike those two, EndNote is **not free**. Therefore, it is not probably worth it unless your institution gives you free access to it.
+
+{{% tip %}}
+Don't know whether to go for Mendeley, Zotero or EndNote? Bottom line, they are very similar and the three options will do the job. However, if you want to delve into the differences between them, you can check this [page](https://libguides.navitas.com/reference-management/comparison) or this [one](https://aut.ac.nz.libguides.com/managingreferences)
+{{% /tip %}}
