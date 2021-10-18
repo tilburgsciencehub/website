@@ -34,11 +34,34 @@ driver.find_element_by_tag_name("h1").text
 
 
 {{% tip %}}
-The first time you will need to (1) install the Python package for Selenium, (2) download a web driver to interface with a web browser, and (3) configure Selenium to recognize your web driver.
+The first time you will need to:
+  1. Install the Python package for **Selenium** by typing in the command `pip install selenium`. Alternatively, open Anaconda Prompt (Windows) or the Terminal (Mac), type the command `conda install selenium`, and agree to whatever the package manager wants to install or update (usually by pressing `y` to confirm your choice).
 
-Check our [page](https://tilburgsciencehub.com/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/) on Configuring Python for Web Scraping to learn how to do it.
+ 2. Download a web driver to interface with a web browser, we recommend the **Webdriver Manager for Python**. Install it by typing in the command `pip install webdriver_manager`
 
-{{% /tip %}}
+ 3. Configure Selenium to recognize your web driver:
+ {{% /tip %}}
+   {{% codeblock %}}
+   ```Python
+   # Make selenium and chromedriver work for Untappd.com
+
+   from selenium import webdriver
+   from selenium.webdriver.chrome.options import Options
+   from webdriver_manager.chrome import ChromeDriverManager
+
+   #driver = webdriver.Chrome()
+   driver = webdriver.Chrome(ChromeDriverManager().install())
+
+   url = "https://untappd.com/"
+   driver.get(url)
+
+   ```
+   {{% /codeblock %}}
+
+Want to run Chromedriver manually? Check our [page](https://tilburgsciencehub.com/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/) on Configuring Python for Web Scraping  
+
+
+
 
 #### Selectors
 Alternatively, you can specify which elements to extract through attributes, classes and identifiers:
