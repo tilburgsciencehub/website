@@ -2,7 +2,7 @@
 title: "Stata coding style guidelines"
 description: "Follow nice Stata coding style to make your code easier to understand and easier to the eye."
 keywords: "style, code, Stata, guidelines, best practices"
-weight: 5
+weight: 6
 date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
