@@ -133,3 +133,8 @@ However, unlike those two, EndNote is **not free**. Therefore, it is not probabl
 {{% tip %}}
 Don't know whether to go for Mendeley, Zotero or EndNote? Bottom line, they are very similar and the three options will do the job. However, if you want to delve into the differences between them, you can check this [page](https://libguides.navitas.com/reference-management/comparison) or this [one](https://aut.ac.nz.libguides.com/managingreferences)
 {{% /tip %}}
+
+## BibDesk
+Are you a Mac user? You then have another top-notch bibliography manager in [BibDesk](https://sourceforge.net/projects/bibdesk/), which is particularly well suited for LaTeX and is also a free-open source project.
+
+- Want to learn how to use it? Check out BibDesk's [wiki](https://sourceforge.net/p/bibdesk/wiki/Main_Page/)
