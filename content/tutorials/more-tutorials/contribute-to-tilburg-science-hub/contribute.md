@@ -1,7 +1,7 @@
 ---
 tutorialtitle: "Contribute to Tilburg Science Hub"
 type: "contribute-to-tsh"
-title: "Three Ways to Contribute"
+title: "Learn How to Contribute"
 description: "Learn how to contribute to Tilburg Science Hub in three easy ways."
 keywords: "contribute, contribution, tsh"
 weight: 1000
@@ -14,13 +14,20 @@ aliases:
 
 We're glad for your interest in contributing to our project. Tilburg Science Hub is open-source, and as such, **anyone** can contribute! The process is really simple.
 
-You are welcome to contribute to our platform in three different ways. Keep reading to learn which one is the best method for you or quickly jump to any of them:
+You are welcome to contribute to our platform in two ways.
 
-1. [Just Shoot an Email](../mode-1)
-2. [Use GitHub Issues](../mode-2)
-3. [The Nerdy Way (Issue a Pull Request)](../mode-3)
+### Create a new GitHub Issue
 
-{{% cta-primary "Check out our GitHub repository" "https://github.com/tilburgsciencehub/website" %}}
+Head over to [our issue page on GitHub](https://github.com/tilburgsciencehub/website/issues/new/choose) to let us know about bugs, feature requests for the website, or anything that you would love to see developed for your research project (e.g., a code snippet). You can also attach files.
+
+### Contribute directly via Pull Requests
+
+Already familiar with GitHub and Pull Requests? Than [fork our repository](https://github.com/tilburgsciencehub/website/fork), work on your changes in a fresh branch, and submit a pull request.
+
+Need a step-by-step tutorial on how to do that? [Read more about pull requests here](../pullrequests).
+
+<!--
+{{% cta-primary "Check out our GitHub repository" "https://github.com/tilburgsciencehub/website" %}}-->
 
 ## What is a contribution?
 

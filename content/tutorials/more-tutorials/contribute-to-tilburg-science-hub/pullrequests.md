@@ -2,16 +2,18 @@
 tutorialtitle: "Contribute to Tilburg Science Hub"
 type: "contribute-to-tsh"
 indexexclude: "true"
-title: "Mode 3: The Nerdy Way"
+title: "Contributing using Pull Requests"
 description: "Tutorials teach our users how to combine individual building blocks into a final product. Learn how to write one."
 keywords: "template, pull, requests, contribute, github"
 weight: 1004
 draft: false
 aliases:
-  - /contribute/mode-3
+- /contribute/pullrequests
+- /contribute/mode-3
+
 ---
 
-## The Ideal Way: Issue a Pull Request
+## Contributing using Pull Requests
 
 On this page, we provide all the necessary resources and information for you to be able to write content autonomously.
 
