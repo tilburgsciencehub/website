@@ -152,6 +152,10 @@ Why is that? Sometimes, when running R from the command line, it doesn't find th
       - Choose "Environment Variables"
 
   - Select `New` and name it **`R_LIBS_USER`**. `Variable value` is the path (that you previously noted) to your user directory.
+  
+  - Check whether `.libPaths()` only specifies your allocated user directory by typing `.libPaths()` into a new RStudio session. 
+  
+  	- If not, it is likely that you do not have Admin rights on your computer and R is installed elsewhere. Add another environment variable and name it **`R_LIBS_SITE`**. `Variable value` is the path that is listed second in the `.libPaths()` output.
 
 Rather want to set `R_LIBS_USER` on a Mac or Linux machine? [Read more here](https://tilburgsciencehub.com/setup/environment).
 
