@@ -3,8 +3,26 @@
 
 Tilburg Science Hub (TSH) is an open-source online resource that helps individual researchers, data scientists, and teams to efficiently carry out data- and computation-intensive projects. It provides information about workflow and data management and tutorials that teach researchers how to organize and document their data and code, so the research becomes sustainable and reproducible. This in turn leads to time savings and transparency in the process.
 
+We provide the tools and guidance to be in control and save time in your empirical research projects.
+
+**Visit us now at [tilburgsciencehub.com](https://tilburgsciencehub.com)!**
+
 ## Why was TSH developed?
 We see two major reasons why it pays off to use professional tools to carry out empirical projects. First, the initial investment pays off very quickly. There are many tools that are tremendously helpful and many things can be automated, which also helps to avoid errors. Second, it increases transparency and contributes to reaching the goal of making science reproducible.
+
+## Our pillars
+
+### Conventions make the difference
+Learn to write clean code, use conventions and version control to catch mistakes easily, make your work future-proof, and allow others to quickly review it.
+
+### Onboarding made easy
+Learn how to make teamwork exciting, not only efficient! Use SCRUM and collaboration tools to assign roles, manage tasks, and define milestones so that nobody is left behind.
+
+### Automate your project
+Learn to automate your research workflow. Don't waste time manually running each step. Let your computer take care of it for you, while you can work on something else and don't just wait behind a screen.
+
+### Scale it up if you need more power
+When the going gets tough, the tough get cloud computing. Learn to quickly resume your work running instances on remote servers.
 
 ## What does TSH offer?
 Many of us face the same dilemma. We know that a small investment will have big returns, but we put off making it because we lack the time to make it now. TSH makes it easier to make this investment now by providing:
@@ -14,18 +32,8 @@ Many of us face the same dilemma. We know that a small investment will have big 
 - example workflows
 - starter code
 
-This makes it much more attractive and fun to start now, because the initial investment becomes even smaller.
-
-
-## Module: Guide for Bootcamp in Scientific Computing and Reproducible Science
-
-This module is based on a fork of https://pp4rs.github.io/installation-guide,
-and we would like to acknowledge Lachlan Deer (`@lachlandeer`) as well as the
-Department of Economics at the University of Zurich for their fantastic work
-on the original repository.
-
 ## Meta-Information
-*   Maintainers: Hannes Datta (`@hannesdatta`), Tobias Klein (`@kleintob`), Andrea Antonacci (`@andreantonacci`)
+*   Maintainers: Hannes Datta (`@hannesdatta`), Tobias Klein (`@kleintob`)
 *   Tilburg University, [Tilburg School of Economics and Management](https://www.tilburguniversity.edu/about/schools/economics-and-management)
 *   Current version of website: [https://tilburgsciencehub.com](https://tilburgsciencehub.com)
 
@@ -38,7 +46,7 @@ fixes to the existing material,
 bug reports,
 and reviews of proposed changes are all welcome.
 
-* See the contributing guide [here](https://tilburgsciencehub.com/tutorials/more-tutorials/contribute-to-tilburg-science-hub/contribute/).
+* See the contributing guide [here](https://tilburgsciencehub.com/contribute/).
 * Check out our [styling and writing guidelines](https://tilburgsciencehub.com/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide/).
 * By contributing you agree to abide by the [Code of Conduct](https://tilburgsciencehub.com/tutorials/more-tutorials/contribute-to-tilburg-science-hub/code-of-conduct/).
 
