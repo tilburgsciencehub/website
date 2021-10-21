@@ -130,4 +130,26 @@ Because Lyx is based on LaTex, adding citations straight from a `.bib` file is a
 
 {{% /tip %}}
 ## Citing in Word
-Prefer Word to LaTeX? Well, though not as easy as in LaTeX,
+Not comfortable with LaTeX and using Word? Well, though not as easy as in LaTeX, citing and printing the bibliography in Word can be quite efficient if combined with the Mendeley plug-in.
+
+{{% tip %}}
+- In Mendeley Reference Manager, go to:
+  - "Tools" > "Install Mendeley Cite for Word"
+
+- Go to Word and click on "References". If correctly installed, the following should appear in the top right-hand corner of Word:
+<p align = "center">
+<img src = "../mendeley_cite.PNG" width="100">
+</p>
+
+- To cite your references, click on the plug-in, select your citation and click on insert citation. Go to "Citation Style" if you wish to choose from the available citation style options.
+
+<p align = "center">
+<img src = "../bib_word.png " width="300">
+</p>
+
+- To print your bibliography go to "insert bibliography"
+
+- Need more help or information? Go to the following [page](https://www.mendeley.com/guides/using-citation-editor)
+
+
+{{% /tip %}}
