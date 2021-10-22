@@ -1,14 +1,13 @@
 ---
-title: "How to cite in text"
-description: "Cite efficiently and according to a style guide/formats"
+title: "Cite efficiently in your academic paper"
+description: "Learn to cite efficiently and according to a style guide and different formats."
 keywords: "citation, reference, bibtex, formats, literature"
 weight: 3
 date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
-  - /citations/formats
+  - /cite/formats
 ---
-# Efficiently citing sources in academic writing
 
 ## Citation Styles
 Many academic journals, publishers or university departments require a specific citation style. If that is the case, check their guidelines. However, if nothing is specified you still have to choose one and be consistent with it.
@@ -34,7 +33,7 @@ To cite in LaTeX make sure you have a `.bib` file in the same folder as your`.te
  The basic command to add citation in text is `\cite{label}`. However, you may not like how the citation is printed out and might want to change it. For this, you need to add additional packagess to your ".tex" document which will give more options on how citations in text appear. Here we show 2 commonly used options, which allow for further flexibility when citing:
 
 #### A)   Natbib
-Natbib is a widely used, and very reliable package as it relies on the `bibtex` environment. To employ it, type in `\usepackage{natbib}` in the preambule of your document. The table below describes some examples of additional citation commands that come with the Natbib package:
+Natbib is a widely used, and very reliable package as it relies on the `bibtex` environment. To employ it, type in `\usepackage{natbib}` in the preamble of your document. The table below describes some examples of additional citation commands that come with the Natbib package:
 
 <center>
 
@@ -50,7 +49,7 @@ Natbib is a widely used, and very reliable package as it relies on the `bibtex` 
 You can find more information on how to employ Natbib [here](https://gking.harvard.edu/files/natnotes2.pdf).
 
 ####  B) Biblatex
-Biblatex has the advantage that it is also designed to use the `biber` environment, which allows for further flexibility when formatting. To employ Biblatex, in the preambule of your document make sure to include:
+Biblatex has the advantage that it is also designed to use the `biber` environment, which allows for further flexibility when formatting. To employ Biblatex, in the preamble of your document make sure to include:
 
  - `\usepackage{biblatex}`
 
@@ -63,7 +62,7 @@ To cite in text, using Biblatex you only need the command `\cite{label}`. How th
 Each of the above mentioned packages contains standard citation styles and some journal-specific styles. Some will be better for the standard styles (according to your taste). However, for for the non-standard-styles, Biblatex, contains a wider range of options.
 
 #### Natbib
-If using **Natbib**, in the preambule of your document type in:
+If using **Natbib**, in the preamble of your document type in:
 
  ```LaTex
  \bibliographystyle{stylename}
@@ -75,7 +74,7 @@ Want a specific style, for instance, APA? You can also use the bibliography styl
 {{% /tip %}}
 
 #### Biblatex
-If using **Biblatex**, in the preambule of your document type in:
+If using **Biblatex**, in the preamble of your document type in:
 
  ```LaTex
  \usepackage[backend=biber, style=stylename,]{biblatex}
