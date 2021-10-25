@@ -15,32 +15,17 @@ While it's easy to get started with Beautifulsoup, it has limitations when it co
 
 ## Code
 
-### Selenium
-
-#### Finding content in a website's source code
-Running the code snippet below starts a new Google Chrome browser (`driver`) and then navigates to the specified URL. In other words, you can follow along with what the computer does behind the screens. Next, you can obtain specific website elements by tag name (e.g., `h1` is a header) similar to BeautifulSoup.
-
-{{% codeblock %}}
-```Python
-import selenium.webdriver
-
-driver = selenium.webdriver.Chrome()
-driver.get("https://www.abcdefhijklmnopqrstuvwxyz.nl")
-
-# retrieve first H1 header
-driver.find_element_by_tag_name("h1").text
-```
-{{% /codeblock %}}
-
-
-{{% tip %}}
+### Install Selenium and make it work for Chromedriver
+{{% warning %}}
 The first time you will need to:
   1. Install the Python package for **Selenium** by typing in the command `pip install selenium`. Alternatively, open Anaconda Prompt (Windows) or the Terminal (Mac), type the command `conda install selenium`, and agree to whatever the package manager wants to install or update (usually by pressing `y` to confirm your choice).
 
  2. Download a web driver to interface with a web browser, we recommend the **Webdriver Manager for Python**. Install it by typing in the command `pip install webdriver_manager`
 
- 3. Configure Selenium to recognize your web driver:
- {{% /tip %}}
+ {{% /warning %}}
+
+Once selenium and webdriver manager are installed, you can now install ChromeDriver as follows:
+
    {{% codeblock %}}
    ```Python
    # Make selenium and chromedriver work for Untappd.com
@@ -58,9 +43,25 @@ The first time you will need to:
    ```
    {{% /codeblock %}}
 
+{{% tip %}}
 Want to run Chromedriver manually? Check our [page](https://tilburgsciencehub.com/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/) on Configuring Python for Web Scraping  
+{{% /tip %}}
 
 
+### Finding content in a website's source code
+Running the code snippet below starts a new Google Chrome browser (`driver`) and then navigates to the specified URL. In other words, you can follow along with what the computer does behind the screens. Next, you can obtain specific website elements by tag name (e.g., `h1` is a header) similar to BeautifulSoup.
+
+{{% codeblock %}}
+```Python
+import selenium.webdriver
+
+driver = selenium.webdriver.Chrome()
+driver.get("https://www.abcdefhijklmnopqrstuvwxyz.nl")
+
+# retrieve first H1 header
+driver.find_element_by_tag_name("h1").text
+```
+{{% /codeblock %}}
 
 
 #### Selectors
