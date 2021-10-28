@@ -56,7 +56,7 @@ Running the code snippet below starts a new Google Chrome browser (`driver`) and
 import selenium.webdriver
 
 driver = selenium.webdriver.Chrome()
-driver.get("https://www.abcdefhijklmnopqrstuvwxyz.nl")
+driver.get("https://www.google.com")
 
 # retrieve first H1 header
 driver.find_element_by_tag_name("h1").text
