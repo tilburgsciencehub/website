@@ -5,6 +5,8 @@ keywords: "cloud, virtual computers, SURF, infrastructure, parallel, research cl
 weight: 2
 #date: 2021-01-06T22:01:14+05:30
 draft: false
+author: "Shrabastee Banerjee"
+authorlink: "https://sites.google.com/view/shrabastee"
 aliases:
   - /configure/research-cloud
   - /get/chromedriver
