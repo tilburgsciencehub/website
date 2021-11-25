@@ -8,6 +8,7 @@ draft: false
 aliases:
   - /mothball
 ---
+## What are mothball repositories?
 
 A *[mothballed](http://npic.orst.edu/images/mothballNN.gif)* repository refers to a repository where no further active work is expected but the repository is kept in a condition such that work can readily begin again. To mothball a repository, confirm all of the following requirements have been satisfied. During this process, you are welcome to reach out to previous comment makers if you need their input to satisfy the mothballing requirements.
 
