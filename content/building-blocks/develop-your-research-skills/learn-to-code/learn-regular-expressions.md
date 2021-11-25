@@ -25,13 +25,20 @@ At first sight, regular expressions can look daunting but don't be put off! In t
 ### Match Characters
 The `re` Python library contains a variety of methods to identify, split, and replace strings. The `findall()` function returns all matching cases that satisfy a character pattern. Each pattern starts with `r"` followed by one or more symbols. Please note that "regular" characters can be chained together with these symbols. For example, `r"\d\ds"` refers to 2 digits (`\d`) followed by a lower case letter `s`.
 
-| Symbol | Definition | Example |
-|:---- | :---- | :---- |
-| `\d` |  digit | 0, 1... 9 |   
-| `\s` |  whitespace | (a space) |
-| `\w`  | single letter, number of underscore | a, 4, _ |   
-| `.`  | any character  | b, 9, !, (a space)  |  
+The equivalent in "R" is found in the library `stringr` by means of the `str_match_all` function.
 
+| Symbol     |       |                                     |                    |
+| ---------- | ----- | ----------------------------------- | ------------------ |
+| **Python** | **R** | **Definition**                      | **Example**        |
+| `\d`       | `\\d` | digit                               | 0, 1... 9          |
+| `\s`       | `\\s` | whitespace                          | (a space)          |
+| `\w`       | `\\w` | single letter, number of underscore | a, 4, _            |
+| `.`        | `\.`  | any character                       | b, 9, !, (a space) |
+
+
+{{% tip %}}
+ Want to find all but a certain character? Use capital letters for the symbols instead. For instance, `\\D` in R, matches all but a single digit.
+{{% /tip %}}
 
 The four examples below illustrate how to combine these symbols to extract various characters from `my_string`.
 
@@ -56,6 +63,24 @@ print(re.findall(r"\w\w\w", my_string))
 print(re.findall(r"\s\w\w\w\s", my_string))
 ```
 
+```R
+library(stringr)
+my_string = "The 80s music hits were much better than the 90s."
+
+# a single digit: ['8', '0', '9', '0']
+str_match_all(my_string, "\\d")
+
+# double digits: ['80', '90']
+# hereafter we learn how to write this more concisely using quantifiers
+str_match_all(my_string, "\\d\\d")
+
+# combinations of 3 characters (even if it's not a complete word)
+# ['The', '80s', 'mus', 'hit', 'wer', 'muc', 'bet', 'ter', 'tha', 'the', '90s']
+str_match_all(my_string, "\\w\\w\\w")
+
+# combinations of 3 characters that start and end with a space (note: the first "The" is skipped!): [' 80s ', ' the ']
+str_match_all(my_string, "\\s\\w\\w\\w\\s")
+```
 {{% /codeblock %}}
 
 
@@ -84,6 +109,20 @@ print(re.findall(r"\d+s", my_string))
 # words that are preceded or followed by more than one whitespace (i.e., to identify unnecessary spaces)
 print(re.findall(r"\s{2,}\w+\s{2,}", my_string))
 ```
+
+```R
+library(stringr)
+my_string = "The 80s music hits were much better than the 90s."
+
+# all words: ['The', '80s', 'music', 'hits', 'were', 'much', 'better', 'than', 'the', '90s']
+str_match_all(my_string, "\\w+")
+
+# one or more digits followed by a s: ['80s', '90s']
+str_match_all(my_string, "\\d+s")
+
+# words that are preceded or followed by more than one whitespace (i.e., to identify unnecessary spaces)
+str_match_all(my_string, "\\s{2,}\\w+\\s{2,}")
+```
 {{% /codeblock %}}
 
 
@@ -108,6 +147,17 @@ print(re.findall(r"\s[a-z]+", my_string))
 # one or more letters followed by a space, one or more digits, and a letter s: ['The 80s', 'the 90s']
 print(re.findall(r"[a-zA-Z]+\s\d+s", my_string))
 ```
+
+```R
+my_string = "The 80s music hits were much better than the 90s."
+
+# words that consist solely of lower case letters
+# [' music', ' hits', ' were', ' much', ' better', ' than', ' the']
+str_match_all(my_string, "\\s[a-z]+")
+
+# one or more letters followed by a space, one or more digits, and a letter s: ['The 80s', 'the 90s']
+str_match_all(my_string, "[a-zA-Z]+\\s\\d+s")
+```
 {{% /codeblock %}}
 
 
@@ -127,6 +177,17 @@ family = re.findall(r"([a-zA-Z]+)\s\w+\s(\d+)\s(\w+)", my_string)
 # next, you can reference elements like you're used to, for example:
 print(family[0][2])  # gives 'sisters'
 ```
+```R
+library(stringr)
+my_string = "Lara has 2 sisters who also study in Tilburg. Mehmet has 1 sister who was born last year. Sven has 19 cousins who are all older than him."
+
+# store the person's name, the digit, and the number of relatives.
+# [('Lara', '2', 'sisters'), ('Mehmet', '1', 'sister'), ('Sven', '19', 'cousins')]
+family = str_match_all(my_string, "([a-zA-Z]+)\\s\\w+\\s(\\d+)\\s(\\w+)")
+
+# next, you can reference elements like you're used to, for example:
+ print(family[[1]][[1,4]])  # gives 'sisters'
+```
 {{% /codeblock %}}
 
 ### Text in Between Characters
@@ -135,22 +196,24 @@ Regular expressions can also be used to extract text in between characters. For 
 {{% codeblock %}}
 ```python
 import re
-
 my_string = "Lara has 2 sisters who also study in Tilburg. Mehmet has 1 sister who was born last year. Sven has 19 cousins who are all older than him."
 
-m = re.search("Sven has(.+?)cousins", text)
-found = 'NA'
-if m:
-    found = m.group(1)
-found = found.strip()
+found = re.findall("Sven has(.+?)cousins", my_string)
 print(found)
+```
+```R
+library(stringr)
+my_string = "Lara has 2 sisters who also study in Tilburg. Mehmet has 1 sister who was born last year. Sven has 19 cousins who are all older than him."
+
+found = str_match_all(my_string, "Sven has(.+?)cousins")
+print(found[[1]][[1,2]])
 ```
 
 {{% /codeblock %}}
 
 ### Split & Replace Data
 
-Regular expressions can also be used to split (`re.split()`) or replace (`re.sub()`) characters. While the built-in `split()` function can split on a single character (e.g., `;`), it cannot deal with a multitude of values. The same holds for Python's `replace()` function.
+Regular expressions can also be used to split (`re.split()` in python and `strsplit` in R ) or replace (`re.sub()` in python and `gsub` in R) characters. While the built-in `split()` function can split on a single character (e.g., `;`), it cannot deal with a multitude of values. The same holds for Python's `replace()` function. The same goes for the analogous R functions.
 
 {{% codeblock %}}
 ```python
@@ -165,8 +228,19 @@ re.split(r"[!.]", my_string)
 # 'Last year was our most profitable year thus far. Our year-on-year growth grew by X% to $XB!'
 re.sub(r"\d+", "X", my_string)
 ```
-{{% /codeblock %}}
+```R
+library(stringr)
+my_string = 'Last year was our most profitable year thus far. Our year-on-year growth grew by 14% to $10B!'
 
+# split on both "! and ".":
+# ['Last year was our most profitable year thus far',' Our year-on-year growth grew by 14% to $10B','']
+strsplit(my_string, "[!.]")
+
+# hide confidential data:
+# 'Last year was our most profitable year thus far. Our year-on-year growth grew by X% to $XB!'
+gsub("\\d+", "X", my_string)
+```
+{{% /codeblock %}}
 
 ### Web Scraping
 
@@ -197,6 +271,7 @@ html_code = '''
 
 Then, we can easily capture the text between two tags, a part of a row, or a specific section of the source code. Since the HTML code is split across multiple lines, the regex code `.+` does not work as expected: it only matches characters on the first line. If you print the `html_code` to the console, you also find that each line is separated by a newline separator (\n). As a workaround, you can use the following set `[\s\S]+` to capture both spaces (\s) and non-spaces (\S = letters, digits, etc.). Note that in the examples below, we rely on groups `()` to only select the elements we are after.
 
+{{% codeblock %}}
 ```python
 # title: ['A Light in the Attic']
 re.findall(r"<h2>(.+)</h2>", html_code)
@@ -210,11 +285,25 @@ re.findall(r"[\s\S]+</p>", html_code)
 # table section
 re.findall(r"<table[\s\S]*", html_code)
 ```
+```R
+# title: ['A Light in the Attic']
+str_match_all(html_code, "<h2>(.+)</h2>" )
+
+# availability: ['22']
+str_match_all(html_code, "(\\d+) available" )
+
+# <h2> and <p> sections
+str_match_all(html_code, "<[\\s\\S]+</p>" )
+
+# table section
+str_match_all(html_code, "<table[\\s\\S]*" )
+
+{{% /codeblock %}}
 
 ## Advanced Use Cases
 
 **Greedy vs non-greedy**  
-By default, regular expressions follow a greedy approach which means that they match as many characters as possible (i.e., returns the longest match found). Let's have a look at an example to see what this means in practice. Say that we want to extract the contents of `my_string` and thus remove the HTML tags.
+By default, regular expressions follow a greedy approach which means that they match as many characters as possible (i.e., returns the longest match found). Let´s have a look at an example to see what this means in practice. Say that we want to extract the contents of `my_string` and thus remove the HTML tags.
 
 Therefore, we replace the two paragraph tags (`<p>` and `</p>`) with an empty string. Surprisingly, it returns an empty string (`''`), why is that? After all, we would expect to see: `This is a paragraph enclosed by HTML tags.`.
 
@@ -230,6 +319,16 @@ re.sub(r"<.+>", "", my_string)
 
 # non-greedy approach: 'This is a paragraph enclosed by HTML tags.'
 re.sub(r"<.+?>", "", my_string)
+```
+```R
+library(stringr)
+my_string = '<p>This is a paragraph enclosed by HTML tags.</p>'
+
+# greedy approach: ''
+gsub("<.+>", "", my_string)
+
+# non-greedy approach: 'This is a paragraph enclosed by HTML tags.'
+gsub("<.+?>", "", my_string)
 ```
 {{% /codeblock %}}
 
