@@ -10,7 +10,7 @@ aliases:
   - /learn/regular-expressions
 ---
 
-## Overview
+## What are regular expressions?
 
 Regular expressions provide a concise language for describing patterns in strings. They make finding information easier and more efficient. That is, you can often accomplish with a single regular expression what would otherwise take dozens of lines of code. And while you can often come a long way with the default `strip()` and `replace()` functions, they have their own set of limitations. For example, how do you extract emails or hashtags from a text? Or how do you strip away HTML tags from the web page source code? Regular expressions fill this void and are a powerful skill for any data scientist's toolkit!
 
@@ -23,22 +23,24 @@ At first sight, regular expressions can look daunting but don't be put off! In t
 ## Code
 
 ### Match Characters
-The `re` Python library contains a variety of methods to identify, split, and replace strings. The `findall()` function returns all matching cases that satisfy a character pattern. Each pattern starts with `r"` followed by one or more symbols. Please note that "regular" characters can be chained together with these symbols. For example, `r"\d\ds"` refers to 2 digits (`\d`) followed by a lower case letter `s`.
+The `re` Python library contains a variety of methods to identify, split, and replace strings. The `findall()` function returns all matching cases that satisfy a character pattern. Each pattern starts with `r"` followed by one or more symbols. Please note that "regular" characters can be chained together with these symbols. For example, `r"\d\ds"` refers to 2 digits (`\d`) followed by a lower case letter `s`. The equivalent in "R" is found in the library `stringr` by means of the `str_match_all` function. In Stata the function `regexm` can be employed. However, it only reports a value equal to 1 if the expression is true and 0 otherwise.
 
-The equivalent in "R" is found in the library `stringr` by means of the `str_match_all` function.
-
-| Symbol     |       |                                     |                    |
-| ---------- | ----- | ----------------------------------- | ------------------ |
-| **Python** | **R** | **Definition**                      | **Example**        |
-| `\d`       | `\\d` | digit                               | 0, 1... 9          |
-| `\s`       | `\\s` | whitespace                          | (a space)          |
-| `\w`       | `\\w` | single letter, number of underscore | a, 4, _            |
-| `.`        | `\.`  | any character                       | b, 9, !, (a space) |
+| Symbol     |       |            |                                     |                    |
+| ---------- | ----- | ---------- | ----------------------------------- | ------------------ |
+| **Python** | **R** | **Stata**  | **Definition**                      | **Example**        |
+| `\d`       | `\\d` | `[0-9]`    | digit                               | 0, 1... 9          |
+| `\s`       | `\\s` | (a space)  | whitespace                          | (a space)          |
+| `\w`       | `\\w` | `[a-zA-Z]` | single letter, number of underscore | a, 4, _            |
+| `.`        | `\.`  | `.`        | any character                       | b, 9, !, (a space) |
 
 
 {{% tip %}}
  Want to find all but a certain character? Use capital letters for the symbols instead. For instance, `\\D` in R, matches all but a single digit.
 {{% /tip %}}
+
+{{% warning %}}
+In "Stata" regular expressions are much less flexible. However, they are still widely used for more specific purposes. In this sense, we provide different examples of regex usage for Stata.
+{{% /warning %}}
 
 The four examples below illustrate how to combine these symbols to extract various characters from `my_string`.
 
@@ -81,11 +83,17 @@ str_match_all(my_string, "\\w\\w\\w")
 # combinations of 3 characters that start and end with a space (note: the first "The" is skipped!): [' 80s ', ' the ']
 str_match_all(my_string, "\\s\\w\\w\\w\\s")
 ```
+```
+- Stata-
+gen str my_string = "The 80s music hits were much better than the 90s."
+# a single digit: '1' (as there are 4 digits, it will refer to the first one found)
+
+```
 {{% /codeblock %}}
 
 
 ### Quantifiers
-In the examples above, we explicitly formulated a pattern of 1, 2, or 3 characters but in many cases this is unknown. Then, quantifiers can offer some flexibility in defining a search pattern of 0, 1, or more occurences of a character. Note that the symbols always refer to the character preceding it. For example, `r"\d+"` means one or more digits.
+In the examples above, we explicitly formulated a pattern of 1, 2, or 3 characters but in many cases this is unknown. Then, quantifiers can offer some flexibility in defining a search pattern of 0, 1, or more occurences of a character. Note that the symbols always refer to the character preceding it. For example, `r"\d+"` means one or more digits. The following quantifiers work for all python, R and Stata.
 
 | Symbol | Definition | Example |
 |:---- | :---- | :---- |
