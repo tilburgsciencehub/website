@@ -1,5 +1,5 @@
 ---
-title: "Use Makefiles to Re-Run your Code"
+title: "Use Makefiles to Re-Run Your Code"
 description: "Learn how to use makefiles to specify instructions and recipes for your computer."
 weight: 2
 keywords: "make, makefile, automation, recipes, workflow"

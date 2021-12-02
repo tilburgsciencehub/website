@@ -1,5 +1,5 @@
 ---
-title: "Build and maintain a reference list"
+title: "Build and Maintain a Reference List"
 description: "how to build and maintain a reference list without having to learn anything by heart or use MS. Use tools to keep organized."
 keywords: "reference, list, bibtex, mendeley, zotero, endnote, literature"
 weight: 2

@@ -1,5 +1,5 @@
 ---
-title: "Getting started with Research Cloud"
+title: "Getting Started with Research Cloud"
 description: "A free cloud solution for conducting research."
 keywords: "cloud, virtual computers, SURF, infrastructure, parallel, research cloud, service desk"
 weight: 2
