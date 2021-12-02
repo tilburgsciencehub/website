@@ -1,5 +1,5 @@
 ---
-title: "Stata coding style guidelines"
+title: "Stata Coding Style Guidelines"
 description: "Follow nice Stata coding style to make your code easier to understand and easier to the eye."
 keywords: "style, code, Stata, guidelines, best practices"
 weight: 6

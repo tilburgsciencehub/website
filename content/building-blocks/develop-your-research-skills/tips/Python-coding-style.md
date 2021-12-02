@@ -1,5 +1,5 @@
 ---
-title: "Python coding style guidelines"
+title: "Python Coding Style Guidelines"
 description: "Follow nice language-specific coding styles to make your code easier to understand and easier to the eye."
 keywords: "style, code, python, best practices, guidelines"
 weight: 4

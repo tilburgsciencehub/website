@@ -1,5 +1,5 @@
 ---
-title: "Learn about the various ways to setup a research infrastructure"
+title: "Learn About the Various Ways to Setup a Research Infrastructure"
 description: "The main considerations before launching any empirical research project."
 keywords: "collaboration, security, data management, run-time, data storage, computation, code versioning"
 weight: 2
