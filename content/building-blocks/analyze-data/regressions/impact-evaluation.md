@@ -1,5 +1,5 @@
 ---
-title: "Impact evaluation with DiD and RD"
+title: "Impact evaluation with Difference-in-Differences and Regression Discontinuity"
 description: "Use Difference-in-Differences and Regression Discontinuity Design to evaluate impacts of quasi-experiments"
 keywords: "regression, model, DiD, RD, impact evaluation, inference, quasi-experiment"
 weight: 3
@@ -14,39 +14,106 @@ aliases:
 
 ## Why?
 
-Many programs are designed to improve outcomes such as learning, health or productivity. Have resources been spent wisely on the program? Did the program/policy work? These are the questions that impact evaluation, based on evidence, answers.    
+Many programs are designed to improve outcomes such as learning, health or productivity. Have resources been spent wisely on the program? Did the program/policy work? These are the questions that impact evaluation answers, based on evidence.
 
-In this building block we discuss two of the most commonly used impact evaluation methods, Difference-in-Differences and Regression Discontinuity.
+In this building block we discuss two of the most commonly used impact evaluation methods, Difference-in-Differences (DiD) and Regression Discontinuity (RD).
+
+## Difference-in-Differences
+
+{{% summary %}}
+DiD **compares the changes in outcomes** (e.g. productivity) **over time** between a population that is enrolled in a program (the **treatment group**, e.g. employees who take an IT training) and a population that is not (the **comparison group**, e.g. employees who do not take the IT training).
+{{% /summary %}}
+
+### When should I apply DiD?
+
+The DiD framework is used in a wide range of settings, from evaluating the impact of a rise in the [minimum wage](https://econpapers.repec.org/article/aeaaecrev/v_3a84_3ay_3a1994_3ai_3a4_3ap_3a772-93.htm) to assessing how the [adoption of online streaming affects music consumption and discovery](https://tiu.nu/spotify).
+
+{{% tip %}}
+DiD works well whenever:
+
+ - There is a sudden specific intervention, treatment or even a date that clearly defines a before and an after. For instance, a passing of a law (e.g. lockdown).
+
+ - There are well defined treatment and control groups.
+
+ - The outcome of interest was measured before and after the treatment or intervention. That is, there is a baseline outcome to which to compare with the outcomes posterior to the intervention.
+
+ - The intervention is unrelated to the outcome at baseline.
+
+{{% /tip %}}
+
+### Run a DiD regression
+The following example comes from [Gertler, Martinez, Premand, Rawlings, and Vermeersch (2016)](https://www.worldbank.org/en/programs/sief-trust-fund/publication/impact-evaluation-in-practice). From this example, we compare the change in health expenditures over time between enrolled and nonenrolled households in the treatment localities to find out whether the program actually lead to higher health expenditures among the treated.
+
+
+
+
+{{% codeblock %}}
+
+```R
+# Data available at https://www.worldbank.org/en/programs/sief-trust-fund/publication/impact-evaluation-in-practice
+
+# Open the data
+  library(haven)
+  impact <- read_dta(".../evaluation.dta")
+
+# Perform the DiD regression
+  impact_did <- lm(health_expenditures ~ round + eligible + eligible*round, data= impact %>%
+                   filter(treatment_locality == 1))
+
+```
+
+```
+-Stata-
+* Data available at https://www.worldbank.org/en/programs/sief-trust-fund/publication/impact-evaluation-in-practice
+
+* Open the data
+  use "evaluation.dta"
+  keep if treatment_locality == 1
+
+* Perform the DiD regression to compare the change in health expenditures over time
+* between enrolled and non-enrolled households in the treatment localities.
+* (The double # tells Stata to include both binary variables and the interaction term)
+
+  reg health_expenditures enrolled##round
+
+
+```
+{{% /codeblock %}}
+
 
 ## Regression Discontinuity
 
-RD is used to estimate the effect of a program, intervention or treatment in which candidates are selected for treatment based on whether their value for a numeric index is above or below a certain cutoff point. This method is widely used in social programs. For instance, antipoverty programs where individuals under a certain poverty index receive help from the government or for scholarships targeted at students that obtain at least a certain grade.
+{{% summary %}}
+RD is used to estimate the effect of a program or treatment in which candidates are selected for treatment based on whether their value for a numeric index is above or below a certain cutoff point.
 
+  - This method is broadly used in social programs. For instance, antipoverty programs where individuals under a certain poverty index receive help from the government or for scholarships targeted at students that obtain at least a certain grade.
+{{% /summary %}}
 
 
 ### When should I apply RD?
 
 RD answers questions such as "should the program be cut or expanded at the margin?" For the scholarships example, we could aim to answer: Should we lower the required grade to expand it to more students or is it not working well enough?
 
-{{% warning %}}
-For RD to work the following assumptions should be true:
+{{% tip %}}
+RD works well whenever:
 
  - There is a clear value or cutoff (e.g. poverty index, academic record) that divides those eligible from those who are not.
 
  - Such cutoff is based on a continuous variable, rather than categorical.
 
- - The cutoff score is unique to the program of interest
-    - e.g. driving given that only over 18 year olds can.
+ - The cutoff score is unique to the program of interest (e.g. driving given that only over 18 year olds can).
 
  - Control variables/covariates are also continuous at the cutoff point.
 
+ - We are interested in evaluating the impact on individuals around the cutoff rather than the general population.  
 
-{{% /warning %}}
+{{% /tip %}}
 
 
 ### Run a RD regression
 
-The following example comes from Gertler, Martinez, Premand, Rawlings, and Vermeersch (2016),
+We use the same example as before but we now assess whether the program has managed to significantly decrease health expenditures by comparing individuals just below the cutoff (eligible) to those just above the cutoff (non-eligible).
+
 {{% codeblock %}}
 
 ```R
@@ -127,48 +194,10 @@ The following example comes from Gertler, Martinez, Premand, Rawlings, and Verme
 {{% /codeblock %}}
 
 
-## Difference-in-Differences
-Imagine that a company provided IT training to those employees who wished to learn new skills. Some weeks later, the manager wonders whether such training enhanced performance and if so, by how much. In order to assess the effectiveness of the training, one could measure how much productivity has risen for those who have done the training in comparison to those who haven't. However, those who took the training might be in fact workers who were already more motivated or have higher skill-set and thus, were already more productive (this is what is called selection bias).
 
-Therefore, what we really need to measure is the change in productivity between those who took the training and those who didn't while taking into account the prior levels of productivity. This is where DiD comes in handy, by comparing the changes in outcomes over time between a population that is enrolled in a program (the treatment group, e.g. employees who took the training) and a population that is not (the comparison group, e.g. employees who did not take the training).
+## Additional resources
 
-### When should I apply DiD?
-
-### Run a DiD regression
-{{% codeblock %}}
-
-```R
-# Open the Stata dataset
-  library(haven)
-# Open the dataset
-  evaluation <- read_dta(".../evaluation.dta")
-# Perform the DiD regression
-  impact_did <- lm(health_expenditures ~ round + eligible + eligible*round, data= evaluation %>%
-                   filter(treatment_locality == 1))
-
-```
-
-```
--Stata-
-* Compare the change in health expenditures over time
-* between enrolled and non-enrolled households in the treatment localities.
-
-  use "evaluation.dta"
-  keep if treatment_locality == 1
-
-* Perform the DiD regression
-* (The double # tells Stata to include both binary variables and the interaction term)
-
-  reg health_expenditures enrolled##round
-
-
-```
-{{% /codeblock %}}
-
-## Further materials
-- Want to try it out for yourself? The dataset of this building block has been obtained from this [site](https://www.worldbank.org/en/programs/sief-trust-fund/publication/impact-evaluation-in-practice). You will find the dataset alongside a comprehensive Stata do-file to replicate the figures of the book (see reference below or check it out [here](https://openknowledge.worldbank.org/bitstream/handle/10986/25030/9781464807794.pdf?sequence=2&isAllowed=y)).
-
-- Want to learn other widely used impact evaluation methods? The book also delves into many more methods.
+- Want to learn other widely used impact evaluation methods? The [book](https://www.worldbank.org/en/programs/sief-trust-fund/publication/impact-evaluation-in-practice) from which examples are taken, also delves into many more methods.
 
 - Want to learn more on how to implement these methods and others in R? Check out this [website](https://bookdown.org/aschmi11/causal_inf/regression-discontinuity.html) or [this one](https://bookdown.org/ccolonescu/RPoE4/).
 
