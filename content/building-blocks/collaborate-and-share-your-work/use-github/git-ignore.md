@@ -1,5 +1,5 @@
 ---
-title: "Exclude Files From Versioning"
+title: "Exclude Files from Versioning"
 description: "Not all files should be tracked (e.g., datasets, or sensitive information). Learn how to exclude them from versioning!"
 keywords: "git, github, versioning, gitignore, remove, sensitive"
 weight: 4

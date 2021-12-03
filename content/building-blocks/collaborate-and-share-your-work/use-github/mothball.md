@@ -1,5 +1,5 @@
 ---
-title: "Mothball repositories"
+title: "Archiving Repositories when They're Done"
 description: "Your repository is completed and no further work is expected? Keep it in good condition by making it ready to use again in the future if needed."
 keywords: "git, github, mothball, remove, sensitive, password"
 weight: 8

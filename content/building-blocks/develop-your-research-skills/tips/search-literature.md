@@ -1,5 +1,5 @@
 ---
-title: "Searching for literature on the web"
+title: "Searching for Literature on the Web"
 description: "Find relevant literature more efficiently"
 keywords: "search, literature, libkey, google scholar"
 weight: 1

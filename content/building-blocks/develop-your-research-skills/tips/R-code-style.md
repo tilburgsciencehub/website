@@ -1,5 +1,5 @@
 ---
-title: "R coding style guidelines"
+title: "R Coding Style Guidelines"
 description: "Follow nice R coding style to make your code easier to understand and easier to the eye."
 keywords: "style, code, R, guidelines, best practices"
 weight: 5

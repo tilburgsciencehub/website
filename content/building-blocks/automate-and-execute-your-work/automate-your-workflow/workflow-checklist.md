@@ -1,5 +1,5 @@
 ---
-title: "Use this checklist to improve your project's structure"
+title: "Use this Checklist to Improve Your Project's Structure"
 description: "Audit data and computation efficient projects."
 weight: 3
 keywords: "make, makefile, automation, recipes, workflow"

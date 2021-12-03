@@ -1,5 +1,5 @@
 ---
-title: "Github releases"
+title: "Export Repositories with Github Releases"
 description: ""
 keywords: "git, github, releases, drafts, slide deck, intermediate files"
 weight: 9
@@ -8,7 +8,7 @@ draft: false
 aliases:
   - /releases
 ---
-## Releases
+## Github Releases
 A release is an export of all or part of a repository that we want to be able to access for some downstream use. Examples include:
 * Draft of a paper for posting or submission
 * Slide deck for a presentation

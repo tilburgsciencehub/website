@@ -1,5 +1,5 @@
 ---
-title: "Cite efficiently in your academic paper"
+title: "Cite Efficiently in Your Academic Paper"
 description: "Learn to cite efficiently and according to a style guide and different formats."
 keywords: "citation, reference, bibtex, formats, literature"
 weight: 3

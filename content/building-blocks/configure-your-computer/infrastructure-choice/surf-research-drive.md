@@ -1,5 +1,5 @@
 ---
-title: "Set up SURF Research Drive and rclone to store data"
+title: "Set up SURF Research Drive and Rclone to Store Data"
 description: "Learn how to set up a Research Drive account, upload and download files, share files and folders, and use rclone to selectively retrieve files from command line and code."
 keywords: "surf, rd, rclone, large files, webdav, store, storage"
 weight: 3
