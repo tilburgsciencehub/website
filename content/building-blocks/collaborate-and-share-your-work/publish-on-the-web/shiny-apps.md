@@ -277,6 +277,6 @@ The [Shiny app](https://royklaassebos.shinyapps.io/dPrep_Demo_Google_Mobility/) 
 ![](../images/demo_app.png)
 
 ## See Also
-* [A course on learning Shiny](https://debruine.github.io/shinyintro/)
+* [A course on learning Shiny](https://debruine.github.io/shinyintro/) and its necessary [package](https://github.com/debruine/shinyintro)
 * [Interactive Web Apps with shiny Cheat Sheet](https://shiny.rstudio.com/images/shiny-cheatsheet.pdf)
 * [Shiny User Showcase](https://shiny.rstudio.com/gallery/)
