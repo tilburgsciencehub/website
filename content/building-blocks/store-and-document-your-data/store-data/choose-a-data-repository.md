@@ -66,13 +66,22 @@ A well known certification for a trusted repository is for example [CoreTrustSea
 
 If you want to make your data reusable for purposes beyond the one for which you collected them, you should publish your data.
 
-Publishing your data is the act of publicly disclosing the research data you have collected, making them findable, accessible, interoperable and reusable (FAIR data).
+Publishing your data is the act of publicly disclosing the research data you have collected, making them **findable, accessible, interoperable and reusable** (FAIR data).
+{{% tip %}}
+  Want to make your data FAIR? Check out this [page](https://www.tilburguniversity.edu/intranet/research-support-portal/rdm/fair-data-principles) to learn how to do so.
+{{% /tip %}}
 
 There are multiple reasons to publish your data:
 -	Data publication may lead to increased visibility, reuse and citation and therefore recognition of scholarly work.
+
 -	Data archiving and publication has direct benefits for the research itself (more robust), for the discipline and for science in general by enabling new collaborations, new data uses and establishing links to the next generation of researchers.
+
 -	The openness of research data is at the heart of scientific ethics.
--	External drivers like research data management policies from research funders and publishers might require data archiving and publication.
+
+-	External drivers like research data management policies from **research funders** and publishers might require data archiving and publication. For instance:
+    - [European Commission guidelines on Data Management](https://ec.europa.eu/research/participants/data/ref/h2020/other/gm/reporting/h2020-tpl-oa-data-mgt-plan-annotated_en.pdf)
+    - [NWO data managament plan form](https://www.nwo.nl/en/research-data-management)
+    - [FAIR data and data management ZonMw](https://www.zonmw.nl/en/research-and-results/fair-data-and-data-management/)
 
 {{% tip %}}
 Be sure to archive/publish only data you are allowed to archive/publish. Often archives do not allow sensitive data or non-anonymized data to be archived. And if you want to share your data, make sure (if relevant) the participants agreed to this when you collected the data (consent).
@@ -80,7 +89,10 @@ Be sure to archive/publish only data you are allowed to archive/publish. Often a
 
 ## See Also
 
+- **Set up a [Data Management Plan](https://www.tilburguniversity.edu/intranet/research-support-portal/rdm/datamangementplan)** to make your work efficient, and create more value for your data, yourself and others, during and after your research.
 - **[OpenAIRE Guide](https://zenodo.org/record/4077212#.YGHVqK8zY2z)** on how to find a trustworthy repository for your data
+- **[Promote your research data](https://www.tilburguniversity.edu/intranet/research-support-portal/publish-and-preserve/promote/promote)**
+- **[Publish Open Access](https://www.tilburguniversity.edu/intranet/research-support-portal/publish-and-preserve/open-access/publishing)**
 - **[R3Data.org searchable database](https://www.re3data.org/search?query=)** of data repositories
 
 ---
