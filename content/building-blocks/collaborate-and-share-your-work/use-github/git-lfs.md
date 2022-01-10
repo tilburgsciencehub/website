@@ -82,13 +82,18 @@ Now you can resume your usual Git workflow. You just need to make sure to track 
 ``` bash
 git add .gitattributes
 ```
-
 Simply add your file(s), commit and push as you'd normally do!
 
 ``` bash
 git add largefile.png
 git commit -m "Add large file"
 git push origin master
+```
+
+Note: To clone a repository and to pull the most recent changes before working on it, use:
+``` bash
+git lfs clone {url}
+git lfs pull
 ```
 
 ## Advanced use cases
