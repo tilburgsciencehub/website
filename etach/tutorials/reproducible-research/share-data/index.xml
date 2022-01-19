@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Document and Share your Data using GitHub on Tilburg Science Hub</title>
+    <link>http://localhost:1313/tutorials/reproducible-research/share-data/</link>
+    <description>Recent content in Document and Share your Data using GitHub on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/tutorials/reproducible-research/share-data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Sharing</title>
+      <link>http://localhost:1313/tutorials/reproducible-research/share-data/share-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/reproducible-research/share-data/share-data/</guid>
+      <description>Overview When conducting your empirical research, you typically spend a lot of time cleaning and documenting your data so that team members can use it.
+Several open science tools can help you manage the process of cleaning, documenting, and - importantly - maintaining your dataset more efficiently. For this, we require a &amp;ldquo;data workflow.&amp;rdquo;
+What&amp;rsquo;s a data workflow? A data workflow consists of a code repository (e.g., on GitHub), your raw data (e.</description>
+    </item>
+    
+  </channel>
+</rss>

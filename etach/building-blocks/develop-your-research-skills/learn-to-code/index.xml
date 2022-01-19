@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learn to Code on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/</link>
+    <description>Recent content in Learn to Code on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:02:51 +0530</lastBuildDate><atom:link href="http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learn Bash Commands</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-bash-commands/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-bash-commands/</guid>
+      <description>Overview The command line lets you communicate with your computer without using your mouse. It&amp;rsquo;s a text-based interface where you communicate using text alone. The commands differ between Unix-based systems (e.g., Mac / Linux) and Windows computers. On Apple and Windows computers the command line tool is called the Terminal and Command Prompt, respectively.
+Directories In programming-speak, all folders are called directories. A directory within another directory is called a subdirectory.</description>
+    </item>
+    
+    <item>
+      <title>Learn Python and Julia</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-python-and-julia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-python-and-julia/</guid>
+      <description>Learn Python with these great step-by-step tutorials from Real Python.
+QuantEcon.org offers fantastic resources for you to get started using Python and Julia.
+In particular, we would like to refer you to their open-source lectures, covering:
+ Quantitative Economics with Python (and a fantastic, open-source book companion!) Quantitative Economics with Julia QuantEcon Data Science  </description>
+    </item>
+    
+    <item>
+      <title>Learn R</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-r/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-r/</guid>
+      <description>Why R?   Chance is that sooner or later, you&amp;rsquo;re going to use R, one of the (if not the) most popular statistical programming languages in the world. It&amp;rsquo;s not only that R is free which makes it so good, but because thousands of people across the world use it, document it, and develop it further. WarningThe R interface may be scary at first sight, especially if you&amp;rsquo;re used to using Excel to do your data magic.</description>
+    </item>
+    
+    <item>
+      <title>Learn Regular Expressions</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-regular-expressions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-regular-expressions/</guid>
+      <description>What are regular expressions? Regular expressions provide a concise language for describing patterns in strings. They make finding information easier and more efficient. That is, you can often accomplish with a single regular expression what would otherwise take dozens of lines of code. And while you can often come a long way with the default strip() and replace() functions, they have their own set of limitations. For example, how do you extract emails or hashtags from a text?</description>
+    </item>
+    
+  </channel>
+</rss>

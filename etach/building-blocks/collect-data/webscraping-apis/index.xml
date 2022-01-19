@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Scraping &amp; APIs on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/collect-data/webscraping-apis/</link>
+    <description>Recent content in Web Scraping &amp; APIs on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/building-blocks/collect-data/webscraping-apis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Avoid Getting Blocked While Scraping</title>
+      <link>http://localhost:1313/building-blocks/collect-data/webscraping-apis/avoid-getting-blocked/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/webscraping-apis/avoid-getting-blocked/</guid>
+      <description>Overview For better or worse, web servers can implement anti-scraping measures. For example, they want to protect users&#39; privacy and avoid overloading their server by blocking unsuspicious traffic. To ensure the consistency of your data collection, it&amp;rsquo;s therefore recommended to take steps to make sure your scraper keeps on running!
+Code Timers Briefly pausing between requests, rather than constantly visiting the same website, avoids that your IP address (i.e., numerical label assigned to each device connected to the internet) gets blocked, and you can no longer visit (and scrape) the website.</description>
+    </item>
+    
+    <item>
+      <title>Extract Data From APIs</title>
+      <link>http://localhost:1313/building-blocks/collect-data/webscraping-apis/extract-data-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/webscraping-apis/extract-data-api/</guid>
+      <description>Overview An Application Programming Interface (API) is a version of a website intended for computers, rather than humans, to talk to one another. APIs are everywhere, and most are used to provide data (e.g., retrieve a user name and demographics), functions (e.g., start playing music from Spotify, turn on your lamps in your &amp;ldquo;smart home&amp;rdquo;), or algorithms (e.g., submit an image, retrieve a written text for what&amp;rsquo;s on the image).</description>
+    </item>
+    
+    <item>
+      <title>Read &amp; Write Data From APIs</title>
+      <link>http://localhost:1313/building-blocks/collect-data/webscraping-apis/read-write-data-apis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/webscraping-apis/read-write-data-apis/</guid>
+      <description>Overview After you have requested data from an API and extracted the required fields, you often want to convert the data into a format that is compatible with other software programs (e.g., Excel and R). A popular file format for tabular data is a Comma Separated Value (CSV) because it is simple, widespread, and compatible with most platforms. CSV files are file formats that contain plain text values separated by commas and can be opened by almost any spreadsheet program.</description>
+    </item>
+    
+    <item>
+      <title>Scrape Dynamic Websites</title>
+      <link>http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-dynamic-websites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-dynamic-websites/</guid>
+      <description>Overview While it&amp;rsquo;s easy to get started with Beautifulsoup, it has limitations when it comes to dynamic websites. That is, websites of which the content changes after each page refresh. Selenium can handle both static and dynamic websites and mimic user behavior (e.g., scrolling, clicking, logging in). It launches another web browser window in which all actions are visible which makes it feel more intuitive. Here we outline the basic commands and installation instructions to get you started.</description>
+    </item>
+    
+    <item>
+      <title>Scrape Static Websites</title>
+      <link>http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-static-websites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-static-websites/</guid>
+      <description>Overview Say that you want to capture and analyze data from a website. Of course, you could simply copy-paste the data from each page but you would quickly run into issues. What if the data on the page gets updated (i.e., would you have time available to copy-paste the new data, too)? Or what if there are simply so many pages that you can&amp;rsquo;t possibly do it all by hand (i.</description>
+    </item>
+    
+  </channel>
+</rss>

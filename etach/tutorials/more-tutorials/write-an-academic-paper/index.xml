@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Write an Academic Paper on Tilburg Science Hub</title>
+    <link>http://localhost:1313/tutorials/more-tutorials/write-an-academic-paper/</link>
+    <description>Recent content in Write an Academic Paper on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/tutorials/more-tutorials/write-an-academic-paper/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Writing an Academic Paper</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/write-an-academic-paper/write-an-academic-paper/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/write-an-academic-paper/write-an-academic-paper/</guid>
+      <description>Overview The typical structure of an empirical paper in economics and business (or a master thesis, or a chapter of a Ph.D. thesis) involves the following sections, roughly in this order:
+Structure of your paper Abstract Be as brief as possible and avoid word-by-word duplication with the introduction. State very clearly what the main take-away is for your paper. This can be a qualitative finding, but it can also be a number.</description>
+    </item>
+    
+  </channel>
+</rss>

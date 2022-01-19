@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Write your Paper on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/</link>
+    <description>Recent content in Write your Paper on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:02:51 +0530</lastBuildDate><atom:link href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Write a Professional Research Paper with LyX</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/research-paper-lyx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/research-paper-lyx/</guid>
+      <description>Overview \(\LaTeX\) is a professional typesetting system widely used in academia. It produces great-looking journal articles, technical reports, books, and even slide presentations.
+One of its main features is that it separates the writing and the formatting stages. The writer can focus solely on writing the content in plain text, and then use some markup tags and commands to stylize the text and define the document structure.</description>
+    </item>
+    
+    <item>
+      <title>Create Slides in No Time with LyX</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/slides-lyx/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/slides-lyx/</guid>
+      <description>Overview \(\LaTeX\) is a professional typesetting system widely used in academia. It produces great-looking journal articles, technical reports, books, and even slide presentations.
+One of its main features is that it separates the writing and the formatting stages. The writer can focus solely on writing the content in plain text, and then use some markup tags and commands to stylize the text and define, for instance, how the slides will look like.</description>
+    </item>
+    
+    <item>
+      <title>Get Started With Our Bookdown Thesis Template</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/bookdown-theses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/bookdown-theses/</guid>
+      <description>Overview Rmarkdown and bookdown are a professional typesetting system widely used in academia because it can produce complex documents - like journal articles, books, technical reports, and similar - with unparalleled output quality.
+Getting Started If you are new to Rmarkdown and bookdown, before attempting to get writing, you should first learn the basics behind how these packages work.
+ Check out the documentation for Rmarkdown, and carefully review the documentation of bookdown to get up and running.</description>
+    </item>
+    
+    <item>
+      <title>Get Started With Our LaTeX Templates</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/latex-templates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/latex-templates/</guid>
+      <description>Overview \(\LaTeX\) is a professional typesetting system widely used in academia because it can produce complex documents - like journal articles, books, technical reports, and similar - with unparalleled output quality.
+However, setting up new documents can be time consuming and a bit daunting, especially at the beginning. If you want to get started writing your $\LaTeX$ documents quicker, you can use one of our custom-made templates below.</description>
+    </item>
+    
+    <item>
+      <title>Export Your Tables for Print-ready Publications</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/export-tables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/export-tables/</guid>
+      <description>Overview Stargazer is an easy-to-use R package that creates nicely-formatted, high-quality tables from your R data in ASCII, \(\LaTeX\), and HTML code.
+It automatically recognizes the kind of data you provide. If you provide a set of regression model objects, it will produce a regression table. Instead, if you feed it with a data frame, it will produce a summary statistics table.
+An Example Convert regression coefficients of mdl_1 and mdl_2 into a HTML file that can be copied into a paper.</description>
+    </item>
+    
+    <item>
+      <title>Cheatsheet for LaTeX Math Commands</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/</guid>
+      <description>Overview This is a quick overview of the main \(\LaTeX\)commands to render mathematical expressions.
+We also provide a compiled PDF version of this cheatsheet.
+Download the PDF CheatsheetCommands Packages The main package to load is amsmath. More symbols are included in amssymb.
+TipYou can load packages in the preamble: \usepackage{amsmath}
+ Typeset  For text style (inline) math, use: $.</description>
+    </item>
+    
+  </channel>
+</rss>

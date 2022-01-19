@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/analyze-data/machine-learning/</link>
+    <description>Recent content in Machine Learning on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:02:51 +0530</lastBuildDate><atom:link href="http://localhost:1313/building-blocks/analyze-data/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>In-depth Introduction to Machine Learning and R</title>
+      <link>http://localhost:1313/building-blocks/analyze-data/machine-learning/introduction-to-machine-learning/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/analyze-data/machine-learning/introduction-to-machine-learning/</guid>
+      <description>Get started with machine learning and R with more than 15 hours of videos at dataschool.io.
+You will find 10 chapters ranging from linear regressions to unsupervised learning.
+Go to dataschool.io</description>
+    </item>
+    
+  </channel>
+</rss>

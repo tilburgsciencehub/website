@@ -1,0 +1,2472 @@
+
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://use.typekit.net/pzc6ybk.css">
+	
+	<link rel="stylesheet" href="http://localhost:1313/scss/bootstrap.min.654beb3e33484589a0c05c030a192eaee1e38acc007f150e52cbc220b3ed1ea9.css" emotion="🤩">
+	<link rel="icon" href="/img/favicon.png" type="image/x-icon">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
+	<script src="/js/terminal.js"></script>
+	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
+	<title>Cheatsheet for LaTeX Math Commands  - Tilburg Science Hub</title><meta name="Keywords" content="[ams, math, latex, tex, cheatsheet]">
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-23035208-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+	<meta property="og:title" content="Cheatsheet for LaTeX Math Commands  - Tilburg Science Hub" />
+	
+	<meta property="og:description" content="Explore all the most important AMS-Math LaTeX commands and download your cheatsheet." />
+	
+	<meta property="og:image" content="http://localhost:1313//img/default-og-image.png" />
+	</head>
+
+<body>
+
+<div class="backdrop d-none"></div>
+<div class="d-none">[ams, math, latex, tex, cheatsheet]</div> 
+<div class="d-none"></div>
+<div class=" container mt-lg-5 mt-3 px-0 fixed-top" style="z-index: 10000;">
+	<div class="bg-white rounded boxShadow navMenu d-relative px-1 mx-3 mx-lg-0" style="position: relative;">
+		<div class="customNavbar px-4 py-3">
+			<div><a class="navbar-brand" href="/">
+					<img src="/img/logo.svg">
+				</a></div>
+
+			<div class="text-right d-block d-xl-none ">
+				<a href="#0" id="mobileSearchIcon">
+					<img src="/img/search.svg">
+				</a>
+				<a href="#0" class="d-none" id="mobileSearchCloseMenuIcon">
+					<img src="/img/close.svg">
+				</a>
+				<a href="#0" style="width: 42px" class="d-inline-block" id="mobileBurgerIcon">
+					<img src="/img/burger.svg">
+				</a>
+				<a href="#0" style="width: 42px" class="d-none" id="mobileCloseMenuIcon">
+					<img src="/img/close.svg">
+				</a>
+			</div>
+			<div class="menu d-none d-xl-flex align-items-center justify-content-center">
+				<ul class="list-unstyled font-weight-normal">
+
+					<li><a class="headerLink" href="/tour">Tour</a></li>
+
+
+					<li>
+						<a href="/tutorials" class="headerLink menuArrow">Tutorials</a>
+						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-5 px-3">
+
+							<div class="row">
+
+								    	
+								    	<div class="col-6 mb-4 px-3">
+								    		<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Reproducible Research</span>
+												
+													
+													<a class="d-block mx-0" href="http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/pipeline-automation-overview">Practicing Pipeline Automation using Make</a>
+													
+								    		
+													
+													<a class="d-block mx-0" href="http://localhost:1313/tutorials/reproducible-research/start-new-project/starting-up-a-new-project">Starting Up a New Empirical Research Project</a>
+													
+								    		
+													
+													<a class="d-block mx-0" href="http://localhost:1313/tutorials/reproducible-research/share-data/share-data">Document and Share your Data using GitHub</a>
+													
+								    		
+								    		</div>
+								    	
+								    	<div class="col-6 mb-4 px-3">
+								    		<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Project Management</span>
+												
+													
+													<a class="d-block mx-0" href="http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/project-setup-overview">Principles of Project Setup and Workflow Management</a>
+													
+								    		
+													
+													<a class="d-block mx-0" href="http://localhost:1313/tutorials/project-management/scrum-for-researchers/use-scrum-in-your-team">Professionalize your Team Work Using Scrum</a>
+													
+								    		
+								    		</div>
+								    	
+								    	<div class="col-6 mb-4 px-3">
+								    		<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Open Education</span>
+												
+													
+													<a class="d-block mx-0" href="http://localhost:1313/tutorials/open-education/educational-videos/educational-videos-overview">Shoot Educational Videos</a>
+													
+								    		
+													
+													<a class="d-block mx-0" href="http://localhost:1313/tutorials/open-education/hugo-website/hugo-website-overview">Create Your Own Website in 15 Minutes</a>
+													
+								    		
+													
+													<a class="d-block mx-0" href="http://localhost:1313/tutorials/open-education/online-data-collection-and-management/odcm-course">Online Data Collection and Management</a>
+													
+								    		
+													
+													<a class="d-block mx-0" href="http://localhost:1313/tutorials/open-education/data-preparation-and-workflow-management/dprep-course">Data Preparation and Workflow Management</a>
+													
+								    		
+								    		</div>
+								    	
+								    	<div class="col-6 mb-4 px-3">
+								    		<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">More Tutorials</span>
+												
+													
+													<a class="d-block mx-0" href="http://localhost:1313/tutorials/more-tutorials/write-an-academic-paper/write-an-academic-paper">Write an Academic Paper</a>
+													
+								    		
+													
+													<a class="d-block mx-0" href="http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/cloud-computing">Running Computations Remotely</a>
+													
+								    		
+													
+													<a class="d-block mx-0" href="http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/what-is-latex">Write Your First LaTeX Document in 15 Minutes</a>
+													
+								    		
+													
+													<a class="d-block mx-0" href="http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/contribute">Contribute to Tilburg Science Hub</a>
+													
+								    		
+								    		</div>
+								    	
+								    	<div class="col-6 mb-4 px-3">
+								    		<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;"></span>
+												
+								    		</div>
+								    	
+
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="/building-blocks" class="headerLink menuArrow">Building Blocks</a>
+						<div class="bg-white text-left w-100 border-top boxShadow subMenu">
+							<div class="row">
+								<div class="col-6 pr-0 h-100 border-right">
+
+									<div class="my-4 nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+										aria-orientation="vertical"><a class="nav-link mx-0 px-5 py-3 heading pillx  active  "
+											id="v-pills-home-tab" data-toggle="pill" href="#configure-your-computer" role="tab"
+											aria-controls="v-pills-home" aria-selected="true">Configure your computer<span
+												class="icon mini-right float-right"></span> </a><a class="nav-link mx-0 px-5 py-3 heading pillx "
+											id="v-pills-home-tab" data-toggle="pill" href="#develop-your-research-skills" role="tab"
+											aria-controls="v-pills-home" aria-selected="true">Develop your research skills<span
+												class="icon mini-right float-right"></span> </a><a class="nav-link mx-0 px-5 py-3 heading pillx "
+											id="v-pills-home-tab" data-toggle="pill" href="#collect-your-data" role="tab"
+											aria-controls="v-pills-home" aria-selected="true">Collect your data<span
+												class="icon mini-right float-right"></span> </a><a class="nav-link mx-0 px-5 py-3 heading pillx "
+											id="v-pills-home-tab" data-toggle="pill" href="#store-and-document-your-data" role="tab"
+											aria-controls="v-pills-home" aria-selected="true">Store and document your data<span
+												class="icon mini-right float-right"></span> </a><a class="nav-link mx-0 px-5 py-3 heading pillx "
+											id="v-pills-home-tab" data-toggle="pill" href="#prepare-your-data-for-analysis" role="tab"
+											aria-controls="v-pills-home" aria-selected="true">Prepare your data for analysis<span
+												class="icon mini-right float-right"></span> </a><a class="nav-link mx-0 px-5 py-3 heading pillx "
+											id="v-pills-home-tab" data-toggle="pill" href="#analyze-data" role="tab"
+											aria-controls="v-pills-home" aria-selected="true">Analyze data<span
+												class="icon mini-right float-right"></span> </a><a class="nav-link mx-0 px-5 py-3 heading pillx "
+											id="v-pills-home-tab" data-toggle="pill" href="#automate-and-execute-your-work" role="tab"
+											aria-controls="v-pills-home" aria-selected="true">Automate and execute your work<span
+												class="icon mini-right float-right"></span> </a><a class="nav-link mx-0 px-5 py-3 heading pillx "
+											id="v-pills-home-tab" data-toggle="pill" href="#collaborate-and-share-your-work" role="tab"
+											aria-controls="v-pills-home" aria-selected="true">Collaborate and share your work<span
+												class="icon mini-right float-right"></span> </a></div>
+
+								</div>
+								<div class="p-5 px-3 col">
+									<div class="tab-content rightMenu" id="v-pills-tabContent">
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										<div class="tab-pane fade  show active " id="configure-your-computer"
+											role="tabpanel" aria-labelledby="v-pills-home-tab">
+											<div class="row">
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Statistics and Computation</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/text-editor/">Get Text Editors</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python-packages/">Install Python Packages</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/git/">Set up Git and GitHub</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/latex/">Set up LaTeX</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/matlab/">Set up MATLAB</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/pandoc/">Set up Pandoc</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/perl/">Set up Perl</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python/">Set up Python</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/r/">Set up R and RStudio</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/stata/">Set up Stata</a>
+													
+
+												</div>
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Automation and Workflows</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/environment/">Making Path Settings Permanent</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/commandline/">Set up Command Line Tools</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/make/">Set up Make</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/snakemake/">Set up Snakemake</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/teamviewer/">Set up TeamViewer</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/awscli/">Set up the AWS Client</a>
+													
+
+												</div>
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Research Infrastructure</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/infrastructure-requirements/">Learn About the Various Ways to Setup a Research Infrastructure</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/getting-started-research-cloud/">Getting Started with Research Cloud</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/surf-research-drive/">Set up SURF Research Drive and Rclone to Store Data</a>
+													
+
+												</div>
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Task-specific Configurations</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/">Configuring Python for Web Scraping</a>
+													
+
+												</div>
+												
+											</div>
+										</div>
+										<div class="tab-pane fade " id="develop-your-research-skills"
+											role="tabpanel" aria-labelledby="v-pills-home-tab">
+											<div class="row">
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Learn to Code</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-bash-commands/">Learn Bash Commands</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-python-and-julia/">Learn Python and Julia</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-r/">Learn R</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-regular-expressions/">Learn Regular Expressions</a>
+													
+
+												</div>
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Tips</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/search-literature/">Searching for Literature on the Web</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/reference-list/">Build and Maintain a Reference List</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/citations/">Cite Efficiently in Your Academic Paper</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/principles-good-coding/">Principles for Good Coding</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/python-coding-style/">Python Coding Style Guidelines</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/r-code-style/">R Coding Style Guidelines</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/stata-code-style/">Stata Coding Style Guidelines</a>
+													
+
+												</div>
+												
+											</div>
+										</div>
+										<div class="tab-pane fade " id="collect-your-data"
+											role="tabpanel" aria-labelledby="v-pills-home-tab">
+											<div class="row">
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Web Scraping &amp; APIs</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/webscraping-apis/avoid-getting-blocked/">Avoid Getting Blocked While Scraping</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/webscraping-apis/extract-data-api/">Extract Data From APIs</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/webscraping-apis/read-write-data-apis/">Read &amp; Write Data From APIs</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-dynamic-websites/">Scrape Dynamic Websites</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-static-websites/">Scrape Static Websites</a>
+													
+
+												</div>
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Workflows for Online Data Collection</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/data-availability-assessment/">Assess what Data is Available</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/calculate-sample-size/">Calculate Sample Sizes for Web Scrapers</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/monitor-data-quality/">Monitor and Safeguard Your Data Quality</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/online-data-collection-management/">Online Data Collection and Management</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/ensure-legal-compliance-web-scraping/">Safeguard Legal Compliance When Scraping</a>
+													
+
+												</div>
+												
+											</div>
+										</div>
+										<div class="tab-pane fade " id="store-and-document-your-data"
+											role="tabpanel" aria-labelledby="v-pills-home-tab">
+											<div class="row">
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Store Data</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/store-and-document-your-data/store-data/choose-a-data-repository/">Choose a Data Repository for Long-Term Storage</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/store-and-document-your-data/store-data/environment-variables/">Configure Environment Variables</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/store-and-document-your-data/store-data/download-data/">Download Data Programmatically</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/store-and-document-your-data/store-data/aws-s3-buckets/">Use AWS S3 Buckets</a>
+													
+
+												</div>
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Document Data</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/store-and-document-your-data/document-data/documenting-new-data/">Document New Data</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/store-and-document-your-data/document-data/readme-best-practices/">README Best Practices</a>
+													
+
+												</div>
+												
+											</div>
+										</div>
+										<div class="tab-pane fade " id="prepare-your-data-for-analysis"
+											role="tabpanel" aria-labelledby="v-pills-home-tab">
+											<div class="row">
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Data Preparation</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/large-datasets-r/">Import Large Datasets Into R</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/manipulate-data/">Manipulate Data</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/clean-social-media-counts/">Clean Data Scraped From Social Media</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/data-preparation-workflow-management/">Data Preparation and Workflow Management</a>
+													
+
+												</div>
+												
+											</div>
+										</div>
+										<div class="tab-pane fade " id="analyze-data"
+											role="tabpanel" aria-labelledby="v-pills-home-tab">
+											<div class="row">
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Regressions</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/analyze-data/regressions/regression-analysis/">Run a Regression Analysis</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/analyze-data/regressions/impact-evaluation/">Impact evaluation with Difference-in-Differences and Regression Discontinuity</a>
+													
+
+												</div>
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Machine Learning</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/analyze-data/machine-learning/introduction-to-machine-learning/">In-depth Introduction to Machine Learning and R</a>
+													
+
+												</div>
+												
+											</div>
+										</div>
+										<div class="tab-pane fade " id="automate-and-execute-your-work"
+											role="tabpanel" aria-labelledby="v-pills-home-tab">
+											<div class="row">
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Automate your Workflow</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/what-are-makefiles/">Use Makefiles to Re-Run Your Code</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/workflow-checklist/">Use this Checklist to Improve Your Project&#39;s Structure</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/autofilling-values/">Make Tables and Figures Reproducible with Autofilling Values</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/auto-install-r-packages/">Automatically Install R Packages Used in a Project</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/stata-error-handling-make/">Integrating Stata in Automated Workflows</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/task-scheduling/">Schedule Recurring Tasks (e.g., by day, hour)</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/fileexchanges/">Share Large Temporary Files</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/software-environments/">Use Software Environments to Ensure Replicability</a>
+													
+
+												</div>
+												
+											</div>
+										</div>
+										<div class="tab-pane fade " id="collaborate-and-share-your-work"
+											role="tabpanel" aria-labelledby="v-pills-home-tab">
+											<div class="row">
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Version and Share Code with Github</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/versioning-using-git/">Get Started with Using Git and GitHub</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/most-important-git-commands/">The Most Important Git Commands You Should Know</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/pull-requests/">Contribute to Open Source Projects</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/github-workflow/">The GitHub Workflow</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-ignore/">Exclude Files from Versioning</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/make-code-citable-with-doi/">Make Your Code Citable with DOI</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/remove-files/">Remove Sensitive or Large Files From Your Repository</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-lfs/">Working With Large Files on GitHub</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/mothball/">Archiving Repositories when They&#39;re Done</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/releases/">Export Repositories with Github Releases</a>
+													
+
+												</div>
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Write your Paper</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/research-paper-lyx/">Write a Professional Research Paper with LyX</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/slides-lyx/">Create Slides in No Time with LyX</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/bookdown-theses/">Get Started With Our Bookdown Thesis Template</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/latex-templates/">Get Started With Our LaTeX Templates</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/export-tables/">Export Your Tables for Print-ready Publications</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/">Cheatsheet for LaTeX Math Commands</a>
+													
+
+												</div>
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Professionalize Project Management</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/git-project-board/">Manage your Projects using the GitHub Project Board</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/meeting_preparation/">How to Prepare for (and Follow-up On) Scrum Meetings</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/write-good-issues/">Write GitHub Issues That Get the Job Done</a>
+													<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/team-transition/">Bring Open Science Practices to your Research Group</a>
+													
+
+												</div>
+												
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Publish on the Web</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/publish-on-the-web/shiny-apps/">Build Interactive Dashboards With R Shiny</a>
+													
+
+												</div>
+												
+											</div>
+										</div>
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</li>
+					<li>
+						<a href="/examples" class="headerLink menuArrow">Examples</a>
+						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-5 px-3">
+							<div class="row">
+								
+								
+								
+								
+								
+
+									<div class="col-6 mb-4 px-2">
+									
+									<a id="exampleMenu" class="heading d-block mb-3 text-secondary" href="http://localhost:1313/examples/reproducible-workflow-airbnb/">A Reproducible Research Workflow with AirBnB Data</a>
+									
+									</div>
+									<div class="col-6 mb-4 px-2">
+									
+									<a id="exampleMenu" class="heading d-block mb-3 text-secondary" href="http://localhost:1313/examples/simple-reproducible-workflow/">A Simple Reproducible Research Workflow</a>
+									
+									</div>
+									<div class="col-6 mb-4 px-2">
+									
+									<a id="exampleMenu" class="heading d-block mb-3 text-secondary" href="http://localhost:1313/examples/google-covid-shiny-app/">An Interactive Shiny App of Google&#39;s COVID-19 Data</a>
+									
+									</div>
+									<div class="col-6 mb-4 px-2">
+									
+									<a id="exampleMenu" class="heading d-block mb-3 text-secondary" href="http://localhost:1313/examples/exploring-regression-results/">Exploring Trends in the Cars Dataset with Regression Analysis</a>
+									
+									</div>
+									<div class="col-6 mb-4 px-2">
+									
+									<a id="exampleMenu" class="heading d-block mb-3 text-secondary" href="http://localhost:1313/examples/reproducible-workflow-snakemake-r/">A Reproducible Workflow Using Snakemake and R</a>
+									
+									</div>
+									
+								
+								
+							</div>
+						</div>
+					</li>
+					<li><a href="/about" class="headerLink">About</a></li>
+				</ul>
+			</div>
+			<div class="text-right">
+				<form class="form-inline text-right float-right d-none d-xl-block" method="GET" action="/search">
+					<div style="width: 230px" class="form-control mr-sm-2 headerSearch bg-light border-0">
+						<input class="resetInput" type="search" name="q" placeholder="Search" aria-label="Search" required autocomplete="off">
+						<button style="background-color: transparent; padding: 0;" type="submit"><img src="/img/search.svg" /></button>
+					</div>
+
+					<a href="/contribute/" class="btn btn-primary my-2 my-sm-0 px-4">Contribute</a>
+				</form>
+			</div>
+		</div>
+		
+		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileSearchMenu" style="z-index: 10; margin-top: -2px;left: 0">
+			<div class="form-control mr-sm-2 headerSearchMobile bg-light border-0">
+				<form method="GET" action="/search">
+					<input class="resetInput" type="search" placeholder="Search" name="q" aria-label="Search" required autocomplete="off">
+					<button style="background-color: transparent; padding: 0; float: right;" type="submit"><img src="/img/search.svg" /></button>
+				</form>
+			</div>
+
+			<div class="mobileResults"></div>
+		</div>
+	<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileMenu" style="z-index: 10; margin-top: -2px;left: 0">
+		
+		<div class="screen-1 d-none">
+			<a href="/tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour</a>
+			<a href="#0" data-screen-two="mobile-tutorials" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tutorials<span
+					class="icon mini-right float-right text-primary"></span> </a>
+			<a href="#0" data-screen-two="mobile-building-blocks" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Building Blocks<span
+					class="icon mini-right float-right text-primary"></span> </a>
+			<a href="#0" data-screen-two="mobile-examples" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples<span
+					class="icon mini-right float-right text-primary"></span> </a>
+			<a href="/about" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">About</a>
+
+			<div>
+				<a href="/contribute/" class="btn btn-primary my-2 px-4 btn-block mt-5">Contribute</a>
+			</div>
+		</div>
+		
+		<div class="screen-2 d-none">
+			
+			<div id="mobile-building-blocks" class="d-none">
+				<a href="#0" class="py-3 border-bottom d-block gotoMainMenu"><span
+					class="icon mini-left text-primary"></span> Building Blocks</a>
+					<br><a class="nav-link mx-0 py-2 text-dark font-weight-bold menuExpand"
+					>Configure your computer <span
+						class="icon mini-right float-right"></span> </a>
+				<div class="tab-pane  show active  d-none" id="configure-your-computer"
+					role="tabpanel" aria-labelledby="v-pills-home-tab">
+					<div class="pl-4 mb-4">
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Statistics and Computation</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/text-editor/">Get Text Editors</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python-packages/">Install Python Packages</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/git/">Set up Git and GitHub</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/latex/">Set up LaTeX</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/matlab/">Set up MATLAB</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/pandoc/">Set up Pandoc</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/perl/">Set up Perl</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python/">Set up Python</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/r/">Set up R and RStudio</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/stata/">Set up Stata</a>
+							
+						</div>
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Automation and Workflows</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/environment/">Making Path Settings Permanent</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/commandline/">Set up Command Line Tools</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/make/">Set up Make</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/snakemake/">Set up Snakemake</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/teamviewer/">Set up TeamViewer</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/awscli/">Set up the AWS Client</a>
+							
+						</div>
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Research Infrastructure</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/infrastructure-requirements/">Learn About the Various Ways to Setup a Research Infrastructure</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/getting-started-research-cloud/">Getting Started with Research Cloud</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/surf-research-drive/">Set up SURF Research Drive and Rclone to Store Data</a>
+							
+						</div>
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Task-specific Configurations</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/">Configuring Python for Web Scraping</a>
+							
+						</div>
+						
+					</div>
+				</div><a class="nav-link mx-0 py-2 text-dark font-weight-bold menuExpand"
+					>Develop your research skills <span
+						class="icon mini-right float-right"></span> </a>
+				<div class="tab-pane  d-none" id="develop-your-research-skills"
+					role="tabpanel" aria-labelledby="v-pills-home-tab">
+					<div class="pl-4 mb-4">
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Learn to Code</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-bash-commands/">Learn Bash Commands</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-python-and-julia/">Learn Python and Julia</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-r/">Learn R</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-regular-expressions/">Learn Regular Expressions</a>
+							
+						</div>
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Tips</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/search-literature/">Searching for Literature on the Web</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/reference-list/">Build and Maintain a Reference List</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/citations/">Cite Efficiently in Your Academic Paper</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/principles-good-coding/">Principles for Good Coding</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/python-coding-style/">Python Coding Style Guidelines</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/r-code-style/">R Coding Style Guidelines</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/stata-code-style/">Stata Coding Style Guidelines</a>
+							
+						</div>
+						
+					</div>
+				</div><a class="nav-link mx-0 py-2 text-dark font-weight-bold menuExpand"
+					>Collect your data <span
+						class="icon mini-right float-right"></span> </a>
+				<div class="tab-pane  d-none" id="collect-your-data"
+					role="tabpanel" aria-labelledby="v-pills-home-tab">
+					<div class="pl-4 mb-4">
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Web Scraping &amp; APIs</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/webscraping-apis/avoid-getting-blocked/">Avoid Getting Blocked While Scraping</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/webscraping-apis/extract-data-api/">Extract Data From APIs</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/webscraping-apis/read-write-data-apis/">Read &amp; Write Data From APIs</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-dynamic-websites/">Scrape Dynamic Websites</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-static-websites/">Scrape Static Websites</a>
+							
+						</div>
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Workflows for Online Data Collection</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/data-availability-assessment/">Assess what Data is Available</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/calculate-sample-size/">Calculate Sample Sizes for Web Scrapers</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/monitor-data-quality/">Monitor and Safeguard Your Data Quality</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/online-data-collection-management/">Online Data Collection and Management</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/ensure-legal-compliance-web-scraping/">Safeguard Legal Compliance When Scraping</a>
+							
+						</div>
+						
+					</div>
+				</div><a class="nav-link mx-0 py-2 text-dark font-weight-bold menuExpand"
+					>Store and document your data <span
+						class="icon mini-right float-right"></span> </a>
+				<div class="tab-pane  d-none" id="store-and-document-your-data"
+					role="tabpanel" aria-labelledby="v-pills-home-tab">
+					<div class="pl-4 mb-4">
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Store Data</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/store-and-document-your-data/store-data/choose-a-data-repository/">Choose a Data Repository for Long-Term Storage</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/store-and-document-your-data/store-data/environment-variables/">Configure Environment Variables</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/store-and-document-your-data/store-data/download-data/">Download Data Programmatically</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/store-and-document-your-data/store-data/aws-s3-buckets/">Use AWS S3 Buckets</a>
+							
+						</div>
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Document Data</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/store-and-document-your-data/document-data/documenting-new-data/">Document New Data</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/store-and-document-your-data/document-data/readme-best-practices/">README Best Practices</a>
+							
+						</div>
+						
+					</div>
+				</div><a class="nav-link mx-0 py-2 text-dark font-weight-bold menuExpand"
+					>Prepare your data for analysis <span
+						class="icon mini-right float-right"></span> </a>
+				<div class="tab-pane  d-none" id="prepare-your-data-for-analysis"
+					role="tabpanel" aria-labelledby="v-pills-home-tab">
+					<div class="pl-4 mb-4">
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Data Preparation</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/large-datasets-r/">Import Large Datasets Into R</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/manipulate-data/">Manipulate Data</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/clean-social-media-counts/">Clean Data Scraped From Social Media</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/data-preparation-workflow-management/">Data Preparation and Workflow Management</a>
+							
+						</div>
+						
+					</div>
+				</div><a class="nav-link mx-0 py-2 text-dark font-weight-bold menuExpand"
+					>Analyze data <span
+						class="icon mini-right float-right"></span> </a>
+				<div class="tab-pane  d-none" id="analyze-data"
+					role="tabpanel" aria-labelledby="v-pills-home-tab">
+					<div class="pl-4 mb-4">
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Regressions</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/analyze-data/regressions/regression-analysis/">Run a Regression Analysis</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/analyze-data/regressions/impact-evaluation/">Impact evaluation with Difference-in-Differences and Regression Discontinuity</a>
+							
+						</div>
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Machine Learning</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/analyze-data/machine-learning/introduction-to-machine-learning/">In-depth Introduction to Machine Learning and R</a>
+							
+						</div>
+						
+					</div>
+				</div><a class="nav-link mx-0 py-2 text-dark font-weight-bold menuExpand"
+					>Automate and execute your work <span
+						class="icon mini-right float-right"></span> </a>
+				<div class="tab-pane  d-none" id="automate-and-execute-your-work"
+					role="tabpanel" aria-labelledby="v-pills-home-tab">
+					<div class="pl-4 mb-4">
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Automate your Workflow</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/what-are-makefiles/">Use Makefiles to Re-Run Your Code</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/workflow-checklist/">Use this Checklist to Improve Your Project&#39;s Structure</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/autofilling-values/">Make Tables and Figures Reproducible with Autofilling Values</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/auto-install-r-packages/">Automatically Install R Packages Used in a Project</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/stata-error-handling-make/">Integrating Stata in Automated Workflows</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/task-scheduling/">Schedule Recurring Tasks (e.g., by day, hour)</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/fileexchanges/">Share Large Temporary Files</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/software-environments/">Use Software Environments to Ensure Replicability</a>
+							
+						</div>
+						
+					</div>
+				</div><a class="nav-link mx-0 py-2 text-dark font-weight-bold menuExpand"
+					>Collaborate and share your work <span
+						class="icon mini-right float-right"></span> </a>
+				<div class="tab-pane  d-none" id="collaborate-and-share-your-work"
+					role="tabpanel" aria-labelledby="v-pills-home-tab">
+					<div class="pl-4 mb-4">
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Version and Share Code with Github</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/versioning-using-git/">Get Started with Using Git and GitHub</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/most-important-git-commands/">The Most Important Git Commands You Should Know</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/pull-requests/">Contribute to Open Source Projects</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/github-workflow/">The GitHub Workflow</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-ignore/">Exclude Files from Versioning</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/make-code-citable-with-doi/">Make Your Code Citable with DOI</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/remove-files/">Remove Sensitive or Large Files From Your Repository</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-lfs/">Working With Large Files on GitHub</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/mothball/">Archiving Repositories when They&#39;re Done</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/releases/">Export Repositories with Github Releases</a>
+							
+						</div>
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Write your Paper</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/research-paper-lyx/">Write a Professional Research Paper with LyX</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/slides-lyx/">Create Slides in No Time with LyX</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/bookdown-theses/">Get Started With Our Bookdown Thesis Template</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/latex-templates/">Get Started With Our LaTeX Templates</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/export-tables/">Export Your Tables for Print-ready Publications</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/">Cheatsheet for LaTeX Math Commands</a>
+							
+						</div>
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Professionalize Project Management</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/git-project-board/">Manage your Projects using the GitHub Project Board</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/meeting_preparation/">How to Prepare for (and Follow-up On) Scrum Meetings</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/write-good-issues/">Write GitHub Issues That Get the Job Done</a>
+							<a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/team-transition/">Bring Open Science Practices to your Research Group</a>
+							
+						</div>
+						
+						<div class="mb-4">
+							<span class="heading d-block mb-0" style="font-size: 16px;">Publish on the Web</span><a class="d-block mx-0" href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/publish-on-the-web/shiny-apps/">Build Interactive Dashboards With R Shiny</a>
+							
+						</div>
+						
+					</div>
+				</div></div>
+			
+			<div class="mobile-tutorials d-none" id="mobile-tutorials">
+				<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
+					class="icon mini-left text-primary"></span> Tutorials</a>
+					<br>
+
+
+
+				<div class="mb-4">
+					<div class="text-secondary m-0 mt-2 heading" style="font-size: 16px; line-height: 2px">Reproducible Research</div>
+					<a class="d-block mx-0 ml-3 mt-3" href="http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/">Practicing Pipeline Automation using Make</a>
+					
+					
+					<a class="d-block mx-0 ml-3 mt-3" href="http://localhost:1313/tutorials/reproducible-research/start-new-project/">Starting Up a New Empirical Research Project</a>
+					
+					
+					<a class="d-block mx-0 ml-3 mt-3" href="http://localhost:1313/tutorials/reproducible-research/share-data/">Document and Share your Data using GitHub</a>
+					
+					
+				</div>
+				
+
+
+
+				<div class="mb-4">
+					<div class="text-secondary m-0 mt-2 heading" style="font-size: 16px; line-height: 2px">Project Management</div>
+					<a class="d-block mx-0 ml-3 mt-3" href="http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/">Principles of Project Setup and Workflow Management</a>
+					
+					
+					<a class="d-block mx-0 ml-3 mt-3" href="http://localhost:1313/tutorials/project-management/scrum-for-researchers/">Professionalize your Team Work Using Scrum</a>
+					
+					
+				</div>
+				
+
+
+
+				<div class="mb-4">
+					<div class="text-secondary m-0 mt-2 heading" style="font-size: 16px; line-height: 2px">Open Education</div>
+					<a class="d-block mx-0 ml-3 mt-3" href="http://localhost:1313/tutorials/open-education/educational-videos/">Shoot Educational Videos</a>
+					
+					
+					<a class="d-block mx-0 ml-3 mt-3" href="http://localhost:1313/tutorials/open-education/hugo-website/">Create Your Own Website in 15 Minutes</a>
+					
+					
+					<a class="d-block mx-0 ml-3 mt-3" href="http://localhost:1313/tutorials/open-education/online-data-collection-and-management/">Online Data Collection and Management</a>
+					
+					
+					<a class="d-block mx-0 ml-3 mt-3" href="http://localhost:1313/tutorials/open-education/data-preparation-and-workflow-management/">Data Preparation and Workflow Management</a>
+					
+					
+				</div>
+				
+
+
+
+				<div class="mb-4">
+					<div class="text-secondary m-0 mt-2 heading" style="font-size: 16px; line-height: 2px">More Tutorials</div>
+					<a class="d-block mx-0 ml-3 mt-3" href="http://localhost:1313/tutorials/more-tutorials/write-an-academic-paper/">Write an Academic Paper</a>
+					
+					
+					<a class="d-block mx-0 ml-3 mt-3" href="http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/">Running Computations Remotely</a>
+					
+					
+					<a class="d-block mx-0 ml-3 mt-3" href="http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/">Write Your First LaTeX Document in 15 Minutes</a>
+					
+					
+					<a class="d-block mx-0 ml-3 mt-3" href="http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/">Contribute to Tilburg Science Hub</a>
+					
+					
+				</div>
+				
+
+
+
+				<div class="mb-4">
+					<div class="text-secondary m-0 mt-2 heading" style="font-size: 16px; line-height: 2px"></div>
+				</div>
+				
+				
+			</div>
+			
+			<div class="mobile-examples d-none" id="mobile-examples">
+				<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
+					class="icon mini-left text-primary"></span> Examples</a>
+					<br>
+				<div class="mb-4">
+					<a class=" d-block mb-3 text-secondary heading" style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="http://localhost:1313/examples/reproducible-workflow-airbnb/">A Reproducible Research Workflow with AirBnB Data</a>
+				</div>
+				
+				
+				<div class="mb-4">
+					<a class=" d-block mb-3 text-secondary heading" style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="http://localhost:1313/examples/simple-reproducible-workflow/">A Simple Reproducible Research Workflow</a>
+				</div>
+				
+				
+				<div class="mb-4">
+					<a class=" d-block mb-3 text-secondary heading" style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="http://localhost:1313/examples/google-covid-shiny-app/">An Interactive Shiny App of Google&#39;s COVID-19 Data</a>
+				</div>
+				
+				
+				<div class="mb-4">
+					<a class=" d-block mb-3 text-secondary heading" style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="http://localhost:1313/examples/exploring-regression-results/">Exploring Trends in the Cars Dataset with Regression Analysis</a>
+				</div>
+				
+				
+				<div class="mb-4">
+					<a class=" d-block mb-3 text-secondary heading" style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="http://localhost:1313/examples/reproducible-workflow-snakemake-r/">A Reproducible Workflow Using Snakemake and R</a>
+				</div>
+				
+				
+				
+
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder">
+	</div>
+
+</div>
+<div style="height: 90px"></div>
+
+<br><br>
+<div class="container mt-4">
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="breadcrumbs px-4 px-lg-0 text-center text-lg-left">
+	
+  
+  	
+	  
+	  	<a href="/"><img src="/img/home.svg" /></a>
+	  
+
+	  
+	  <img src="/img/chevron-right.svg">
+	  
+  
+  	
+	  
+	  <a href="http://localhost:1313/building-blocks/" style="color: #6081A2;">Building Blocks</a>
+	  
+
+	  
+	  <img src="/img/chevron-right.svg">
+	  
+  
+  	
+	  
+	  <a href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/" style="color: #6081A2;">Collaborate and Share Your Work</a>
+	  
+
+	  
+	  <img src="/img/chevron-right.svg">
+	  
+  
+  	
+	  
+	  <a href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/" style="color: #6081A2;">Write Your Paper</a>
+	  
+
+	  
+	  <img src="/img/chevron-right.svg">
+	  
+  
+  	
+	  
+	  <a href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/" style="color: #6081A2;">Amsmath Latex Cheatsheet</a>
+	  
+
+	  
+  
+
+</nav>
+
+</div>
+<div class="container content px-0 mt-5">
+	<div class="row justify-content-center mx-0">
+		<div class="col-lg-8 col-22 pr-lg-5">
+			<div class="sticky-top pr-lg-3 mb-lg-5 pb-lg-5 d-flex flex-column tableOfContentParent">
+				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">Cheatsheet for LaTeX Math Commands</h1>
+
+			
+			<div class="TableOfContents">
+				<span class="arrow-icon"></span>
+				<div class="pseudo-btn"></div>
+				<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#commands">Commands</a>
+      <ul>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#typeset">Typeset</a></li>
+        <li><a href="#greek-letters">Greek letters</a></li>
+        <li><a href="#mathematical-font">Mathematical font</a></li>
+        <li><a href="#superscript-and-subscript">Superscript and subscript</a></li>
+        <li><a href="#root">Root</a></li>
+        <li><a href="#dots">Dots</a></li>
+        <li><a href="#spaces">Spaces</a></li>
+        <li><a href="#braces">Braces</a></li>
+        <li><a href="#accents">Accents</a></li>
+        <li><a href="#operators">Operators</a></li>
+        <li><a href="#modulo">Modulo</a></li>
+        <li><a href="#fractions">Fractions</a></li>
+        <li><a href="#symbol-stacking">Symbol stacking</a></li>
+        <li><a href="#big-operators">Big operators</a></li>
+        <li><a href="#delimiter-size">Delimiter size</a></li>
+        <li><a href="#absolute-value-and-norm">Absolute value and norm</a></li>
+        <li><a href="#arrows">Arrows</a></li>
+        <li><a href="#binary-relations">Binary relations</a></li>
+        <li><a href="#binary-operators">Binary operators</a></li>
+        <li><a href="#logic-symbols">Logic symbols</a></li>
+        <li><a href="#other-symbols">Other symbols</a></li>
+        <li><a href="#multi-line-equation">Multi line equation</a></li>
+        <li><a href="#vectors">Vectors</a></li>
+        <li><a href="#arrays">Arrays</a></li>
+        <li><a href="#cases">Cases</a></li>
+        <li><a href="#matrices">Matrices</a></li>
+        <li><a href="#blackboard-bold">Blackboard bold</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+			</div>
+			
+			</div>
+
+		</div>
+		<article class="col-lg-16 col-22">
+			<div class="p-5 bg-white rounded mb-5">
+				<div class="d-flex justify-content-between mb-4 align-items-center">
+					<div class="flex-fill">
+						
+							
+								
+									<div class="share w-100">
+  <span class="share-title d-lg-block pt-1">Share</span>
+    <a
+      href="http://www.facebook.com/sharer.php?u=http://localhost:1313/"
+      class="facebook"
+      aria-label="share on Facebook"
+    >
+      <div class="share-button facebook">
+        <svg
+          width="19px"
+          height="19px"
+          viewBox="0 0 19 19"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <title>Share this article on Facebook</title>
+          <g
+            id="Desktop"
+            stroke="none"
+            stroke-width="1"
+            fill="none"
+            fill-rule="evenodd"
+          >
+            <g
+              id="Article"
+              transform="translate(-632.000000, -3951.000000)"
+              fill="#003365"
+              fill-rule="nonzero"
+            >
+              <g id="Share" transform="translate(559.000000, 3949.000000)">
+                <path
+                  d="M82.5000567,2 C77.2533744,2 73,6.27115639 73,11.5397732 C73,16.265107 76.4249569,20.178475 80.9156373,20.9362718 L80.9156373,13.5300283 L78.6239465,13.5300283 L78.6239465,10.8648231 L80.9156373,10.8648231 L80.9156373,8.89960409 C80.9156373,6.6193856 82.3025284,5.37679909 84.3284682,5.37679909 C85.2987707,5.37679909 86.1326279,5.44940375 86.3746936,5.48138166 L86.3746936,7.86481711 L84.9695569,7.86549991 C83.8680222,7.86549991 83.6556481,8.39103013 83.6556481,9.162483 L83.6556481,10.8634575 L86.2840323,10.8634575 L85.9412193,13.5286627 L83.6556481,13.5286627 L83.6556481,21 C88.3559828,20.4255356 92,16.4124785 92,11.537042 C92,6.27115639 87.7466256,2 82.5000567,2 Z"
+                  id="Facebook"
+                ></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </a>
+    <a
+      href="http://twitter.com/share?url=http://localhost:1313/%2flearn%2flatex-math"
+      class="twitter"
+      aria-label="share on Twitter"
+    >
+      <div class="share-button twitter">
+        <svg
+          width="19px"
+          height="16px"
+          viewBox="0 0 19 16"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <title>Share this article on Twitter</title>
+          <g
+            id="Desktop"
+            stroke="none"
+            stroke-width="1"
+            fill="none"
+            fill-rule="evenodd"
+          >
+            <g
+              id="Article"
+              transform="translate(-679.000000, -3953.000000)"
+              fill="#003365"
+            >
+              <g id="Share" transform="translate(559.000000, 3949.000000)">
+                <path
+                  d="M139,5.89398041 C138.30099,6.21528769 137.549635,6.43244574 136.76123,6.52999951 C137.56588,6.03012256 138.184045,5.23856869 138.475125,4.29531919 C137.72187,4.75828124 136.887675,5.09435448 135.99971,5.27548359 C135.28873,4.49042674 134.27565,4 133.15446,4 C131.00176,4 129.256325,5.80843628 129.256325,8.03908057 C129.256325,8.35566275 129.29081,8.66397598 129.35731,8.95959049 C126.11762,8.79116011 123.245295,7.18304868 121.32278,4.73928237 C120.98724,5.33582714 120.79496,6.0297288 120.79496,6.76999557 C120.79496,8.17138357 121.48314,9.40768814 122.52909,10.1320077 C121.89012,10.11104 121.289055,9.92932027 120.763515,9.62681498 C120.763135,9.64364818 120.763135,9.66048137 120.763135,9.67760988 C120.763135,11.6345917 122.106815,13.2671162 123.89006,13.638234 C123.562975,13.7305705 123.2186,13.7799872 122.86311,13.7799872 C122.61193,13.7799872 122.367685,13.7545898 122.12971,13.7074371 C122.625705,15.3121032 124.06524,16.4799921 125.77106,16.5124772 C124.436975,17.5959049 122.756235,18.2416695 120.92986,18.2416695 C120.61522,18.2416695 120.30495,18.2224738 120,18.1851651 C121.725105,19.3312005 123.774065,20 125.975405,20 C133.14534,20 137.066275,13.8451543 137.066275,8.50745681 C137.066275,8.33233253 137.06238,8.15819265 137.054875,7.98493872 C137.816585,7.41536644 138.477405,6.70404095 139,5.89398041"
+                  class="twitter"
+                ></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </a>
+    <a
+      href="https://www.linkedin.com/sharing/share-offsite/?url=http://localhost:1313/%2flearn%2flatex-math"
+      class="linkedin"
+      aria-label="share on LinkedIn"
+    >
+      <div class="share-button linkedin">
+        <svg
+          width="17px"
+          height="16px"
+          viewBox="0 0 17 16"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <title>Share this article on LinkedIn</title>
+          <g
+            id="Desktop"
+            stroke="none"
+            stroke-width="1"
+            fill="none"
+            fill-rule="evenodd"
+          >
+            <g
+              id="Article"
+              transform="translate(-727.000000, -3953.000000)"
+              fill="#003365"
+            >
+              <g id="Share" transform="translate(559.000000, 3949.000000)">
+                <path
+                  d="M171.859463,9.20427274 L171.859463,20 L168.215424,20 L168.215424,9.20427274 L171.859463,9.20427274 Z M180.804424,8.9509434 C183.1562,8.9509434 184.930636,10.4351457 184.998014,13.6205431 L185,13.8098832 L185,20 L181.355961,20 L181.355961,14.2245383 C181.355961,12.7735649 180.828756,11.782929 179.509933,11.782929 C178.503216,11.782929 177.903662,12.4509134 177.640222,13.0955775 C177.557631,13.2930019 177.528432,13.5582555 177.521775,13.8331989 L177.520182,13.9712089 L177.520182,20 L173.876143,20 L173.897215,12.0429876 C173.896546,10.9687601 173.89309,10.0624935 173.885062,9.5555201 L173.876143,9.20427274 L177.520182,9.20427274 L177.52,10.733037 L177.543769,10.6975806 C178.015906,9.98870732 178.844228,9.01818695 180.617578,8.95427323 L180.804424,8.9509434 Z M170.061776,4 C171.307926,4 172.075536,4.80630927 172.099219,5.86530897 C172.099219,6.86527524 171.361557,7.67315711 170.167151,7.72768408 L170.01376,7.73061795 C168.790969,7.73061795 168,6.90098832 168,5.86530897 C168,4.80630927 168.814977,4 170.061776,4 Z"
+                  id="LinkedIn"
+                ></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </a>
+    <a
+      href="mailto:?subject=Check%20out%20this%20great%20article%20on%20Tilburg%20Science%20Hub&body=http://localhost:1313/%2flearn%2flatex-math"
+      class="email"
+      aria-label="share on Email"
+    >
+      <div class="share-button mail">
+        <svg
+          width="18px"
+          height="14px"
+          viewBox="0 0 18 14"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <title>Share this article via email</title>
+          <g
+            id="Desktop"
+            stroke="none"
+            stroke-width="1"
+            fill="none"
+            fill-rule="evenodd"
+          >
+            <g
+              id="Article"
+              transform="translate(-772.000000, -3954.000000)"
+              fill="#003365"
+              fill-rule="nonzero"
+            >
+              <g id="Share" transform="translate(559.000000, 3949.000000)">
+                <path
+                  d="M222.296,13.365 L231,6.982 L231,6.803 C231,5.807 230.193,5 229.197,5 L214.982,5 C213.888,5 213,5.887 213,6.982 L221.705,13.365 C221.861444,13.4796667 222.067667,13.4924074 222.235173,13.4032222 L222.296,13.365 Z M222.573,15.062 C222.401,15.183 222.2,15.243 222,15.243 C221.8,15.243 221.599,15.183 221.427,15.062 L213,8.863 L213,17 C213,18.105 213.896,19 215,19 L229,19 C230.105,19 231,18.105 231,17 L231,8.863 L222.573,15.062 Z"
+                  id="Mail"
+                ></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </a>
+    <a href="#0" class="share-button copyURL" data-url="http://localhost:1313//learn/latex-math">
+      <svg width="17" height="17" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.16314 0h8.89076c.6336 0 1.149.515495 1.1491 1.1491v8.8908c0 .6336-.5155 1.1491-1.1491 1.1491H12.441V6.04423c0-1.21204-.9861-2.1981-2.1981-2.1981H5.01404V1.1491C5.01404.515495 5.5295 0 6.16314 0zm-4.811 4.8951h8.89066c.6337 0 1.1492.5155 1.1492 1.14914V14.935c0 .6336-.5155 1.1491-1.1491 1.1491H1.35214c-.633642 0-1.149102-.5155-1.149137-1.1491V6.04424c0-.63364.51553-1.14914 1.149137-1.14914z" fill="#000"/></svg></a>
+    </a>
+  
+  
+</div>
+								
+							
+						
+					</div>
+					
+				</div>
+				
+				<h2 id="overview">Overview</h2>
+<p>This is a quick overview of the main 
+<link rel="stylesheet" href="/katex/katex.min.css" />
+<script defer src="/katex/katex.min.js"></script>
+<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(
+          document.body,
+          {
+              delimiters: [
+                  {left: '$$', right: '$$', display: true},
+                  {left: '\\[', right: '\\]', display: true},
+                  {left: '$', right: '$', display: false},
+                  {left: '\\(', right: '\\)', display: false}
+              ]
+          }
+      );"></script><span>
+  \(\LaTeX\)
+</span>
+ commands to render mathematical expressions.</p>
+<p>We also provide a compiled PDF version of this cheatsheet.</p>
+
+<div class="cta-primary">
+    <a href="https://github.com/manuelemacchia/math-latex/raw/master/amsmath.pdf">
+    <button class="btn btn-primary btn-md mt-2">
+         Download the PDF Cheatsheet
+    </button>
+    </a>
+</div>
+</br>
+
+<h2 id="commands">Commands</h2>
+<h3 id="packages">Packages</h3>
+<p>The main package to load is <code>amsmath</code>. More symbols are included in <code>amssymb</code>.</p>
+
+<div class="admonition tip">
+	<div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/tip.svg"> Tip</div>
+	<div class="admonition-content"><p>You can load packages in the preamble: <code>\usepackage{amsmath}</code></p>
+</div>
+</div>
+<h3 id="typeset">Typeset</h3>
+<ul>
+<li>For text style (inline) math, use: <code>$...$</code>. This is inline: $E=mc^2$</li>
+<li>For display style math, which breaks the paragraph: <code>\begin{equation} ... \end{equation}</code> (numbered equation) or <code>\[ ... \]</code> (non-numbered). This is a display equation: $$E=mc^2$$</li>
+</ul>
+<h3 id="greek-letters">Greek letters</h3>
+<h4 id="lowercase">Lowercase</h4>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\alpha$</td>
+<td><code>\alpha</code></td>
+<td>$\beta$</td>
+<td><code>\beta</code></td>
+<td>$\gamma$</td>
+<td><code>\gamma</code></td>
+</tr>
+<tr>
+<td>$\delta$</td>
+<td><code>\delta</code></td>
+<td>$\epsilon$</td>
+<td><code>\epsilon</code></td>
+<td>$\varepsilon$</td>
+<td><code>\varepsilon</code></td>
+</tr>
+<tr>
+<td>$\zeta$</td>
+<td><code>\zeta</code></td>
+<td>$\eta$</td>
+<td><code>\eta</code></td>
+<td>$\theta$</td>
+<td><code>\theta</code></td>
+</tr>
+<tr>
+<td>$\vartheta$</td>
+<td><code>\vartheta</code></td>
+<td>$\iota$</td>
+<td><code>\iota</code></td>
+<td>$\kappa$</td>
+<td><code>\kappa</code></td>
+</tr>
+<tr>
+<td>$\lambda$</td>
+<td><code>\lambda</code></td>
+<td>$\mu$</td>
+<td><code>\mu</code></td>
+<td>$\nu$</td>
+<td><code>\nu</code></td>
+</tr>
+<tr>
+<td>$\xi$</td>
+<td><code>\xi</code></td>
+<td>$\pi$</td>
+<td><code>\pi</code></td>
+<td>$\varpi$</td>
+<td><code>\varpi</code></td>
+</tr>
+<tr>
+<td>$\rho$</td>
+<td><code>\rho</code></td>
+<td>$\varrho$</td>
+<td><code>\varrho</code></td>
+<td>$\sigma$</td>
+<td><code>\sigma</code></td>
+</tr>
+<tr>
+<td>$\tau$</td>
+<td><code>\tau</code></td>
+<td>$\upsilon$</td>
+<td><code>\upsilon</code></td>
+<td>$\phi$</td>
+<td><code>\phi</code></td>
+</tr>
+<tr>
+<td>$\varphi$</td>
+<td><code>\varphi</code></td>
+<td>$\chi$</td>
+<td><code>\chi</code></td>
+<td>$\psi$</td>
+<td><code>\psi</code></td>
+</tr>
+<tr>
+<td>$\omega$</td>
+<td><code>\omega</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h4 id="uppercase">Uppercase</h4>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\Gamma$</td>
+<td><code>\Gamma</code></td>
+<td>$\Delta$</td>
+<td><code>\Delta</code></td>
+<td>$\Theta$</td>
+<td><code>\Theta</code></td>
+</tr>
+<tr>
+<td>$\Lambda$</td>
+<td><code>\Lambda</code></td>
+<td>$\Xi$</td>
+<td><code>\Xi</code></td>
+<td>$\Pi$</td>
+<td><code>\Pi</code></td>
+</tr>
+<tr>
+<td>$\Sigma$</td>
+<td><code>\Sigma</code></td>
+<td>$\Upsilon$</td>
+<td><code>\Upsilon</code></td>
+<td>$\Phi$</td>
+<td><code>\Phi</code></td>
+</tr>
+<tr>
+<td>$\Psi$</td>
+<td><code>\Psi</code></td>
+<td>$\Omega$</td>
+<td><code>\Omega</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+<div class="admonition tip">
+	<div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/tip.svg"> Tip</div>
+	<div class="admonition-content"><p>To ensure a consistent style throughout the document, use:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\epsilon</span><span class="nb">}{</span><span class="k">\varepsilon</span><span class="nb">}</span>  
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\theta</span><span class="nb">}{</span><span class="k">\vartheta</span><span class="nb">}</span>  
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\rho</span><span class="nb">}{</span><span class="k">\varrho</span><span class="nb">}</span>  
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\phi</span><span class="nb">}{</span><span class="k">\varphi</span><span class="nb">}</span>
+</code></pre></div></div>
+</div>
+<h3 id="mathematical-font">Mathematical font</h3>
+<p>$$\mathcal{A} \, \mathcal{B} \, \mathcal{C} \, \mathcal{D} \, \mathcal{E} \, \mathcal{F} \, \mathcal{G} \, \mathcal{H} \, \mathcal{I} \, \mathcal{J} \, \mathcal{K} \, \mathcal{L} \, \mathcal{M} \, \mathcal{N} \, \mathcal{O} \, \mathcal{P} \, \mathcal{Q} \, \mathcal{R} \, \mathcal{S} \, \mathcal{T} \, \mathcal{U} \, \mathcal{V} \, \mathcal{W} \, \mathcal{X} \, \mathcal{Y} \, \mathcal{Z}$$</p>
+<p>Use <code>\mathcal{\text{letter}}</code>.</p>
+<h3 id="superscript-and-subscript">Superscript and subscript</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>$\LaTeX$</th>
+<th>Code</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$x^y$</td>
+<td><code>x^y</code></td>
+<td>$x^{a+b}$</td>
+<td><code>x^{a+b}</code></td>
+</tr>
+<tr>
+<td>$x_y$</td>
+<td><code>x_y</code></td>
+<td>$x_{a+b}$</td>
+<td><code>x_{a+b}</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3 id="root">Root</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Square root</td>
+<td>$\sqrt{x}$</td>
+<td><code>\sqrt{x}</code></td>
+</tr>
+<tr>
+<td>N-th root</td>
+<td>$\sqrt[N]{x}$</td>
+<td><code>\sqrt[N]{x}</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3 id="dots">Dots</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multiplication dot</td>
+<td>$\cdot$</td>
+<td><code>\cdot</code></td>
+</tr>
+<tr>
+<td>Three centered dots</td>
+<td>$\cdots$</td>
+<td><code>\cdots</code></td>
+</tr>
+<tr>
+<td>Three baseline dots</td>
+<td>$\ldots$</td>
+<td><code>\ldots</code></td>
+</tr>
+<tr>
+<td>Three diagonal dots</td>
+<td>$\ddots$</td>
+<td><code>\ddots</code></td>
+</tr>
+<tr>
+<td>Three vertical dots</td>
+<td>$\vdots$</td>
+<td><code>\vdots</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3 id="spaces">Spaces</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Negative space</td>
+<td><code>\!</code></td>
+</tr>
+<tr>
+<td>Thinnest space</td>
+<td><code>\,</code></td>
+</tr>
+<tr>
+<td>Thin space</td>
+<td><code>\:</code></td>
+</tr>
+<tr>
+<td>Medium space</td>
+<td><code>\;</code></td>
+</tr>
+<tr>
+<td>1em space</td>
+<td><code>\quad</code></td>
+</tr>
+<tr>
+<td>2em space</td>
+<td><code>\qquad</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3 id="braces">Braces</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\overbrace{ &hellip; }^{ \text{text over brace} }$</td>
+<td><code>\overbrace{ ... }^{ \text{text over brace} }</code></td>
+</tr>
+<tr>
+<td>$\underbrace{ &hellip; }_{ \text{text under brace} }$</td>
+<td><code>\underbrace{ ... }_{ \text{text under brace} }</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3 id="accents">Accents</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>$\LaTeX$</th>
+<th>Code</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\hat{a}$</td>
+<td><code>\hat{a}</code></td>
+<td>$\bar{a}$</td>
+<td><code>\bar{a}</code></td>
+<td>$\mathring{a}$</td>
+<td><code>\mathring{a}</code></td>
+</tr>
+<tr>
+<td>$\check{a}$</td>
+<td><code>\check{a}</code></td>
+<td>$\dot{a}$</td>
+<td><code>\dot{a}</code></td>
+<td>$\vec{a}$</td>
+<td><code>\vec{a}</code></td>
+</tr>
+<tr>
+<td>$\tilde{a}$</td>
+<td><code>\tilde{a}</code></td>
+<td>$\ddot{a}$</td>
+<td><code>\ddot{a}</code></td>
+<td>$\widehat{AAA}$</td>
+<td><code>\widehat{AAA}</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3 id="operators">Operators</h3>
+<p><code>\sin    \cos    \arcsin    \arccos    \sinh</code> <br>
+<code>\cosh    \tan    \arctan    \log    \ln</code>     <br>
+<code>\max    \min    \sup    \inf    \tanh</code> <br>
+<code>\cot    \sec    \csc    \det</code></p>
+
+<div class="admonition tip">
+	<div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/tip.svg"> Tip</div>
+	<div class="admonition-content"><p>To define a custom operator:
+<code>\DeclareMathOperator{\argmax}{argmax}</code>.</p>
+</div>
+</div>
+<h3 id="modulo">Modulo</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$a \bmod b$</td>
+<td><code>a \bmod b</code></td>
+</tr>
+<tr>
+<td>$a \equiv b \pmod{m}$</td>
+<td><code>a \equiv b \pmod{m}</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3 id="fractions">Fractions</h3>
+<p><code>\frac{ ... }{ ... }</code></p>
+<p>For instance, 3/4 can be displayed as $\frac{3}{4}$.</p>
+<h3 id="symbol-stacking">Symbol stacking</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\overset{ A }{ B }$</td>
+<td><code>\overset{ ... }{ ... }</code></td>
+</tr>
+<tr>
+<td>$\underset{ A }{ B }$</td>
+<td><code>\underset{ ... }{ ... }</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<p>First argument is the main symbol, second argument is the symbol to put over or under the main symbol.</p>
+<h3 id="big-operators">Big operators</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>$\LaTeX$</th>
+<th>Code</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\displaystyle \int_{a}^{b}$</td>
+<td><code>\int_{a}^{b}</code></td>
+<td>$\displaystyle \sum_{k=0}^{n}$</td>
+<td><code>\sum_{k=0}^{n}</code></td>
+</tr>
+<tr>
+<td>$\displaystyle \prod_{k=0}^{n}$</td>
+<td><code>\prod_{k=0}^{n}</code></td>
+<td>$\displaystyle \lim_{x \to 0}$</td>
+<td><code>\lim_{x \to 0}</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+<div class="admonition tip">
+	<div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/tip.svg"> Tip</div>
+	<div class="admonition-content"><p>For multiple integrals, use: $\iint$ <code>\iint</code> $\,\, \iiint$ <code>\iiint</code> etc.</p>
+<p>For a closed path integral, use: $\oint$ <code>\oint</code></p>
+</div>
+</div>
+<h3 id="delimiter-size">Delimiter size</h3>
+<p>Change the delimiter size by adding one of these modifiers immediately before the delimiter itself: <code>\big  \Big  \bigg  \Bigg</code>.</p>
+<p>Let $\LaTeX$ determine the correct size using <code>\left</code> and <code>\right</code> immediately before the opening and closing delimiters, respectively.</p>
+<h3 id="absolute-value-and-norm">Absolute value and norm</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\lvert x \rvert$</td>
+<td><code>\lvert x \rvert</code></td>
+</tr>
+<tr>
+<td>$\lVert x \rVert$</td>
+<td><code>\lVert x \rVert</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<p>The same can be achieved by defining:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="nb">{</span>mathtools<span class="nb">}</span>
+<span class="k">\DeclarePairedDelimiter</span><span class="nb">{</span><span class="k">\abs</span><span class="nb">}{</span><span class="k">\lvert</span><span class="nb">}{</span><span class="k">\rvert</span><span class="nb">}</span>
+<span class="k">\DeclarePairedDelimiter</span><span class="nb">{</span><span class="k">\norm</span><span class="nb">}{</span><span class="k">\lVert</span><span class="nb">}{</span><span class="k">\rVert</span><span class="nb">}</span>
+</code></pre></div><p>Use starred variants <code>\abs*</code> and <code>\norm*</code> to produce the correct delimiter height for any kind of equation.</p>
+<h3 id="arrows">Arrows</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>$\LaTeX$</th>
+<th>Code</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\uparrow$</td>
+<td><code>\uparrow</code></td>
+<td>$\downarrow$</td>
+<td><code>\downarrow</code></td>
+<td>$\updownarrow$</td>
+<td><code>\updownarrow</code></td>
+</tr>
+<tr>
+<td>$\Uparrow$</td>
+<td><code>\Uparrow</code></td>
+<td>$\Downarrow$</td>
+<td><code>\Downarrow</code></td>
+<td>$\Updownarrow$</td>
+<td><code>\Updownarrow</code></td>
+</tr>
+<tr>
+<td>$\leftarrow$</td>
+<td><code>\leftarrow</code> or <code>\gets</code></td>
+<td>$\rightarrow$</td>
+<td><code>\rightarrow</code> or <code>\to</code></td>
+<td>$\leftrightarrow$</td>
+<td><code>\leftrightarrow</code></td>
+</tr>
+<tr>
+<td>$\Leftarrow$</td>
+<td><code>\Leftarrow</code></td>
+<td>$\Rightarrow$</td>
+<td><code>\Rightarrow</code></td>
+<td>$\Leftrightarrow$</td>
+<td><code>\Leftrightarrow</code></td>
+</tr>
+<tr>
+<td>$\mapsto$</td>
+<td><code>\mapsto</code></td>
+<td>$\longleftarrow$</td>
+<td><code>\longleftarrow</code></td>
+<td>$\longrightarrow$</td>
+<td><code>\longrightarrow</code></td>
+</tr>
+<tr>
+<td>$\longleftrightarrow$</td>
+<td><code>\longleftrightarrow</code></td>
+<td>$\Longleftarrow$</td>
+<td><code>\Longleftarrow</code></td>
+<td>$\Longrightarrow$</td>
+<td><code>\Longrightarrow</code></td>
+</tr>
+<tr>
+<td>$\Longleftrightarrow$</td>
+<td><code>\Longleftrightarrow</code></td>
+<td>$\longmapsto$</td>
+<td><code>\longmapsto</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3 id="binary-relations">Binary relations</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>$\LaTeX$</th>
+<th>Code</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\ne$</td>
+<td><code>\ne</code></td>
+<td>$\le$</td>
+<td><code>\le</code></td>
+<td>$\ge$</td>
+<td><code>\ge</code></td>
+</tr>
+<tr>
+<td>$\equiv$</td>
+<td><code>\equiv</code></td>
+<td>$\ll$</td>
+<td><code>\ll</code></td>
+<td>$\gg$</td>
+<td><code>\gg</code></td>
+</tr>
+<tr>
+<td>$\doteq$</td>
+<td><code>\doteq</code></td>
+<td>$\sim$</td>
+<td><code>\sim</code></td>
+<td>$\simeq$</td>
+<td><code>\simeq</code></td>
+</tr>
+<tr>
+<td>$\subset$</td>
+<td><code>\subset</code></td>
+<td>$\supset$</td>
+<td><code>\supset</code></td>
+<td>$\approx$</td>
+<td><code>\approx</code></td>
+</tr>
+<tr>
+<td>$\subseteq$</td>
+<td><code>\subseteq</code></td>
+<td>$\supseteq$</td>
+<td><code>\supseteq</code></td>
+<td>$\cong$</td>
+<td><code>\cong</code></td>
+</tr>
+<tr>
+<td>$\in$</td>
+<td><code>\in</code></td>
+<td>$\ni$</td>
+<td><code>\ni</code></td>
+<td>$\propto$</td>
+<td><code>\propto</code></td>
+</tr>
+<tr>
+<td>$\mid$</td>
+<td><code>\mid</code></td>
+<td>$\parallel$</td>
+<td><code>\parallel</code></td>
+<td>$\perp$</td>
+<td><code>\perp</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+<div class="admonition tip">
+	<div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/tip.svg"> Tip</div>
+	<div class="admonition-content"><p>It&rsquo;s possible to negate these symbols by prefixing them with <code>\not</code> (for example: $\not\equiv$ with <code>\not\equiv</code>).</p>
+</div>
+</div>
+<h3 id="binary-operators">Binary operators</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>$\LaTeX$</th>
+<th>Code</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\pm$</td>
+<td><code>\pm</code></td>
+<td>$\mp$</td>
+<td><code>\mp</code></td>
+<td>$\cdot$</td>
+<td><code>\cdot</code></td>
+</tr>
+<tr>
+<td>$\div$</td>
+<td><code>\div</code></td>
+<td>$\times$</td>
+<td><code>\times</code></td>
+<td>$\setminus$</td>
+<td><code>\setminus</code></td>
+</tr>
+<tr>
+<td>$\star$</td>
+<td><code>\star</code></td>
+<td>$\cup$</td>
+<td><code>\cup</code></td>
+<td>$\cap$</td>
+<td><code>\cap</code></td>
+</tr>
+<tr>
+<td>$\ast$</td>
+<td><code>\ast</code></td>
+<td>$\circ$</td>
+<td><code>\circ</code></td>
+<td>$\bullet$</td>
+<td><code>\bullet</code></td>
+</tr>
+<tr>
+<td>$\oplus$</td>
+<td><code>\oplus</code></td>
+<td>$\ominus$</td>
+<td><code>\ominus</code></td>
+<td>$\odot$</td>
+<td><code>\odot</code></td>
+</tr>
+<tr>
+<td>$\oslash$</td>
+<td><code>\oslash</code></td>
+<td>$\otimes$</td>
+<td><code>\otimes</code></td>
+<td>$\smallsetminus$</td>
+<td><code>\smallsetminus</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3 id="logic-symbols">Logic symbols</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>$\LaTeX$</th>
+<th>Code</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\lor$</td>
+<td><code>\lor</code></td>
+<td>$\land$</td>
+<td><code>\land</code></td>
+<td>$\neg$</td>
+<td><code>\neg</code></td>
+</tr>
+<tr>
+<td>$\exists$</td>
+<td><code>\exists</code></td>
+<td>$\nexists$</td>
+<td><code>\nexists</code></td>
+<td>$\forall$</td>
+<td><code>\forall</code></td>
+</tr>
+<tr>
+<td>$\implies$</td>
+<td><code>\implies</code></td>
+<td>$\iff$</td>
+<td><code>\iff</code></td>
+<td>$\models$</td>
+<td><code>\models</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3 id="other-symbols">Other symbols</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Infinity</td>
+<td>$\infty$</td>
+<td><code>\infty</code></td>
+</tr>
+<tr>
+<td>Partial derivative</td>
+<td>$\partial$</td>
+<td><code>\partial</code></td>
+</tr>
+<tr>
+<td>Empty set</td>
+<td>$\emptyset$</td>
+<td><code>\emptyset</code></td>
+</tr>
+<tr>
+<td>Nabla</td>
+<td>$\nabla$</td>
+<td><code>\nabla</code></td>
+</tr>
+<tr>
+<td>Angle brackets</td>
+<td>$\langle x \rangle$</td>
+<td><code>\langle x \rangle</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3 id="multi-line-equation">Multi line equation</h3>
+<p>Use the <code>multline</code> environment.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>multline<span class="nb">}</span>
+    ...
+<span class="k">\end</span><span class="nb">{</span>multline<span class="nb">}</span>
+</code></pre></div><p>To align equations, use the <code>align</code> environment. Specify the alignment position with <code>&amp;</code> and separate equations with <code>\\</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span>
+    ... <span class="nb">&amp;</span>= ...<span class="k">\\</span>
+    ... <span class="nb">&amp;</span>= ...
+<span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
+</code></pre></div><h3 id="vectors">Vectors</h3>
+
+<div class="widetable">
+	<table>
+<thead>
+<tr>
+<th>$\LaTeX$</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\vec{x}$</td>
+<td><code>\vec{x}</code></td>
+</tr>
+<tr>
+<td>$\bm{x}$</td>
+<td><code>\bm{x}</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+<div class="admonition warning">
+	<div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/warning.svg"> Warning</div>
+	<div class="admonition-content"><p>The <code>\bm</code> command requires the <code>bm</code> package.</p>
+</div>
+</div>
+
+<div class="admonition tip">
+	<div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/tip.svg"> Tip</div>
+	<div class="admonition-content"><p>Best practice to easily switch between types:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="nb">{</span>bm<span class="nb">}</span>
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\vec</span><span class="nb">}{</span><span class="k">\bm</span><span class="nb">}</span>
+</code></pre></div></div>
+</div>
+<h3 id="arrays">Arrays</h3>
+<p>Use the <code>array</code> environment. Use <code>\\</code> to separate rows, and <code>&amp;</code> to separate elements of each row. To produce large delimiters around the array, use <code>\left</code> and <code>\right</code> followed by the desired delimiter.</p>
+<span>
+  \[
+\left(
+\begin{array}{lcr}
+  a &amp; b &amp; c \\
+  d &amp; e &amp; f \\
+  g &amp; h &amp; i
+\end{array}
+\right)\]
+</span>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\left</span>(
+<span class="k">\begin</span><span class="nb">{</span>array<span class="nb">}{</span>lcr<span class="nb">}</span>
+      a <span class="nb">&amp;</span> b <span class="nb">&amp;</span> c <span class="k">\\</span>
+      d <span class="nb">&amp;</span> e <span class="nb">&amp;</span> f <span class="k">\\</span>
+      g <span class="nb">&amp;</span> h <span class="nb">&amp;</span> i
+<span class="k">\end</span><span class="nb">{</span>array<span class="nb">}</span>
+<span class="k">\right</span>)
+</code></pre></div><p>Each letter in the argument of the array represents a column.</p>
+<ul>
+<li><code>l</code>: left aligned text</li>
+<li><code>c</code>: centered text</li>
+<li><code>r</code>: right aligned text</li>
+</ul>
+<h3 id="cases">Cases</h3>
+<p>Use the <code>cases</code> environment. Use <code>\\</code> to separate different cases, and <code>&amp;</code> for correct alignment.</p>
+<span>
+  \[
+\begin{cases}
+  x &amp; \text{if } x &gt; 0 \\
+  0 &amp; \text{if } x \le 0
+\end{cases}\]
+</span>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>cases<span class="nb">}</span>
+  x <span class="nb">&amp;</span> <span class="k">\text</span><span class="nb">{</span>if <span class="nb">}</span> x &gt; 0 <span class="k">\\</span>
+  0 <span class="nb">&amp;</span> <span class="k">\text</span><span class="nb">{</span>if <span class="nb">}</span> x <span class="k">\le</span> 0
+<span class="k">\end</span><span class="nb">{</span>cases<span class="nb">}</span>
+</code></pre></div><h3 id="matrices">Matrices</h3>
+<p>Use one of the following environments.</p>
+<ul>
+<li><code>matrix</code>: No delimiter</li>
+<li><code>pmatrix</code>: $($ delimiter</li>
+<li><code>bmatrix</code>: $[$ delimiter</li>
+<li><code>Bmatrix</code>: $\{$ delimiter</li>
+<li><code>vmatrix</code>: $\lvert$ delimiter</li>
+<li><code>Vmatrix</code>: $\lVert$ delimiter</li>
+</ul>
+<p>Use <code>\\</code> to separate different rows, and <code>&amp;</code> to separate elements of each row.</p>
+<span>
+  \[
+\begin{bmatrix}
+      1 &amp; 2 &amp; 3 \\
+      4 &amp; 5 &amp; 6 \\
+\end{bmatrix}\]
+</span>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+      1 <span class="nb">&amp;</span> 2 <span class="nb">&amp;</span> 3 <span class="k">\\</span>
+      4 <span class="nb">&amp;</span> 5 <span class="nb">&amp;</span> 6 <span class="k">\\</span>
+<span class="k">\end</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+</code></pre></div>
+<div class="admonition tip">
+	<div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/tip.svg"> Tip</div>
+	<div class="admonition-content"><p>To produce a small matrix, useful for inline math, use the <code>smallmatrix</code> environment: $\left[\begin{smallmatrix} a &amp; b \\ c &amp; d \end{smallmatrix}\right]$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\left</span>[<span class="k">\begin</span><span class="nb">{</span>smallmatrix<span class="nb">}</span>
+a <span class="nb">&amp;</span> b <span class="k">\\\\</span> c <span class="nb">&amp;</span> d
+<span class="k">\end</span><span class="nb">{</span>smallmatrix<span class="nb">}</span><span class="k">\right</span>]
+</code></pre></div></div>
+</div>
+<h3 id="blackboard-bold">Blackboard bold</h3>
+<p>$\mathbb{A}$ <code>\mathbb{A}</code>
+&hellip;
+$\mathbb{R}$ <code>\mathbb{R}</code></p>
+<p>Include the package <code>bbm</code> for these symbols. All letters are supported.</p>
+
+<div class="cta-secondary">
+    <a href="https://github.com/manuelemacchia/math-latex">
+    <button class="btn btn-secondary btn-md mt-2">
+         Visit this project&#39;s repository
+    </button>
+    </a>
+</div>
+</br>
+
+
+				
+				<div class="admonition author">
+					<div class="admonition-content">Contributed by <b><a href="https://manuelemacchia.com">Manuele Macchia</a></b></div>
+				</div>
+				
+
+				<div class="d-flex justify-content-between mt-5 align-items-center">
+          
+          <div class="d-none d-lg-block">
+            <a href="https://github.com/tilburgsciencehub/website/edit/master/content/building-blocks%5ccollaborate-and-share-your-work%5cwrite-your-paper%5camsmath-latex-cheatsheet.md" class="btn btn-secondary">Edit this page</a>
+          </div>
+        </div>
+
+				
+
+				
+<div class="pagination">
+  <div>
+     
+    <a
+      href="/building-blocks/collaborate-and-share-your-work/write-your-paper/export-tables/"
+      class="pagination-title d-none d-lg-block text-secondary"
+      >Previous</a
+    >
+    <a href="/building-blocks/collaborate-and-share-your-work/write-your-paper/export-tables/" class="pagination-button">
+      <div class="arrow-circle">
+        <img src="/img/arrow-right.svg" />
+      </div>
+      <span class="d-inline-block d-lg-none">Previous</span>
+      <span class="d-none d-lg-inline-block btnTitle">Export Your Tables for Print-ready Publications</span>
+    </a>
+     
+  </div>
+  <div class="pagination-right">
+    
+  </div>
+</div>
+
+
+			</div>
+
+			
+
+
+<div class="row bg-white rounded p-5 mb-5" style="margin: 0px;">
+	<div class="col-lg-8 col-24 mb-4">
+		<h1 style="line-height: 42px; font-size: 38px;">Related <br>
+			<span class="heading text-primary">Posts</span></h1>
+	</div>
+	<div class="col-lg-16 col-24">
+		<ul class="my-4 list-unstyled relatedPosts">
+		
+		
+		
+      <li class="pb-2">
+      	<a href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/latex/">
+      		<span class="icon link text-primary d-inline-block mr-2"></span>
+        	Set up LaTeX
+      	</a>
+      </li>
+      
+      <li class="pb-2">
+      	<a href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/slides-lyx/">
+      		<span class="icon link text-primary d-inline-block mr-2"></span>
+        	Create Slides in No Time with LyX
+      	</a>
+      </li>
+      
+      <li class="pb-2">
+      	<a href="http://localhost:1313/tutorials/more-tutorials/write-an-academic-paper/write-an-academic-paper/">
+      		<span class="icon link text-primary d-inline-block mr-2"></span>
+        	Writing an Academic Paper
+      	</a>
+      </li>
+      
+      <li class="pb-2">
+      	<a href="http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/bibliography/">
+      		<span class="icon link text-primary d-inline-block mr-2"></span>
+        	Add a Bibliography
+      	</a>
+      </li>
+      
+      <li class="pb-2">
+      	<a href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/export-tables/">
+      		<span class="icon link text-primary d-inline-block mr-2"></span>
+        	Export Your Tables for Print-ready Publications
+      	</a>
+      </li>
+      
+		
+	</ul>
+	</div>
+</div>
+
+
+
+		</article>
+	</div>
+</div>
+
+<footer class="pt-5 font-weight-normal footer" style="background-color: #001C37;">
+	<div class="container pt-5">
+		<div class="row pt-0 justify-content-center">
+			<div class="col-1"></div>
+			<div class="col-1">
+				<svg width="20" height="17" xmlns="http://www.w3.org/2000/svg" class="d-none d-lg-inline" style="vertical-align:bottom!important;"><path d="M.360672.355826c.480896-.474435 1.260578-.474435 1.741478 0L9.48651 7.64096c.23075.2279.36025.53692.35999.85904.00026.32212-.12924.63114-.35999.85904L2.10215 16.6442c-.4809.4744-1.260582.4744-1.741478 0-.480896-.4745-.480896-1.2437 0-1.7181L6.8866 8.5.360672 2.0739c-.480896-.47443-.480896-1.24364 0-1.718074z" fill="url(#paint0_linear)"/><path class="blinkFooterLogo" d="M20 15.7851c0-.6705-.551-1.2141-1.2307-1.2141H8.92348c-.67971 0-1.23073.5436-1.23073 1.2141 0 .6706.55102 1.2142 1.23073 1.2142h9.84582c.6797 0 1.2307-.5436 1.2307-1.2142z" fill="url(#paint1_linear)"/><defs><linearGradient id="paint0_linear" x1="20.9968" y1="2.35875" x2="2.51995" y2="17.2825" gradientUnits="userSpaceOnUse"><stop stop-color="#FF9C00"/><stop offset="1" stop-color="#FFB222"/></linearGradient><linearGradient id="paint1_linear" x1="20.9968" y1="2.35875" x2="2.51995" y2="17.2825" gradientUnits="userSpaceOnUse"><stop stop-color="#FF9C00"/><stop offset="1" stop-color="#FFB222"/></linearGradient></defs></svg>
+
+			</div>
+			<div class="col-lg-1 col-0"></div><div class="col-lg-4 col-21">
+				<div class="footerCollapse">
+					<div class="heading text-white d-block py-2">Tutorials</div>
+
+					<div class="d-none d-lg-block links">
+						<a href="http://localhost:1313/tutorials/reproducible-research/">Reproducible Research</a>
+						
+						<a href="http://localhost:1313/tutorials/project-management/">Project Management</a>
+						
+						<a href="http://localhost:1313/tutorials/open-education/">Open Education</a>
+						
+						<a href="http://localhost:1313/tutorials/more-tutorials/">More Tutorials</a>
+						</div>
+				</div>
+			</div>
+
+			<div class="col-lg-1 col-0"></div>
+			<div class="col-lg-4 col-21">
+				<div class="footerCollapse">
+					<div class="heading text-white d-block py-2">Building Blocks</div>
+
+					<div class="d-none d-lg-block links"><a href="http://localhost:1313/building-blocks/configure-your-computer/">Configure your computer</a><a href="http://localhost:1313/building-blocks/develop-your-research-skills/">Develop your research skills</a><a href="http://localhost:1313/building-blocks/collect-data/">Collect your data</a><a href="http://localhost:1313/building-blocks/store-and-document-your-data/">Store and document your data</a><a href="http://localhost:1313/building-blocks/prepare-your-data-for-analysis/">Prepare your data for analysis</a><a href="http://localhost:1313/building-blocks/analyze-data/">Analyze data</a><a href="http://localhost:1313/building-blocks/automate-and-execute-your-work/">Automate and execute your work</a><a href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/">Collaborate and share your work</a></div>
+				</div>
+			</div>
+			<div class="col-lg-1 col-0"></div>
+			<div class="col-lg-4 col-21">
+				<div class="footerCollapse">
+					<div class="heading text-white d-block py-2">Examples</div>
+
+					<div class="d-none d-lg-block links"><a href="http://localhost:1313/examples/reproducible-workflow-airbnb/">A Reproducible Research Workflow with AirBnB Data</a>
+						<a href="http://localhost:1313/examples/simple-reproducible-workflow/">A Simple Reproducible Research Workflow</a>
+						<a href="http://localhost:1313/examples/google-covid-shiny-app/">An Interactive Shiny App of Google&#39;s COVID-19 Data</a>
+						<a href="http://localhost:1313/examples/exploring-regression-results/">Exploring Trends in the Cars Dataset with Regression Analysis</a>
+						<a href="http://localhost:1313/examples/reproducible-workflow-snakemake-r/">A Reproducible Workflow Using Snakemake and R</a>
+						</div>
+				</div>
+			</div>
+			<div class="col-lg-1 col-0"></div>
+			<div class="col-lg-4 col-21">
+				<div class="footerCollapse">
+					<div class="heading text-white d-block py-2">Tilburg Science Hub</div>
+					<div class="d-none d-lg-block links">
+						<a href="/tour">Tour</a>
+						<a href="/about">About</a>
+						<a href="/contribute">Contribute</a>
+						<a href="https://github.com/tilburgsciencehub/website" target="_blank">GitHub Repository</a>
+						<a href="mailto:tsh@tilburguniversity.edu">Contact</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-2 col-0"></div>
+		</div>
+	</div>
+	<div class="mt-5 d-none d-lg-block" style="border-top: solid 1px rgba(255, 255, 255, 0.2);"></div>
+	<div class="container">
+		<div class="row justify-content-center py-5 ">
+			<div class="col-lg-18 col-22">
+				<div class="d-flex flex-column flex-lg-row justify-content-md-between">
+					<div class="order-2 order-lg-1">© 2021 Tilburg Science Hub. All rights reserved. |
+						<a class="d-inline-block text-white" href="/disclaimer">Disclaimer</a>
+						
+						
+						
+					</div>
+					<div class="order-1 order-lg-2 mb-4 mb-lg-0">
+						<a class="d-inline-block mx-2" style="font-size: 17px;" href="https://github.com/tilburgsciencehub">
+							<i class="fa fa-github"></i>
+						</a>
+						
+						<a class="d-inline-block mx-2" style="font-size: 17px;" href="https://www.linkedin.com/company/tilburgsciencehub">
+							<i class="fa fa-linkedin"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</footer>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/reset-min.css" integrity="sha256-t2ATOGCtAIZNnzER679jwcFcKYfLlw01gli6F6oszk8=" crossorigin="anonymous">
+
+<script src="/js/main.js"></script>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Preparation and Workflow Management on Tilburg Science Hub</title>
+    <link>http://localhost:1313/tutorials/open-education/data-preparation-and-workflow-management/</link>
+    <description>Recent content in Data Preparation and Workflow Management on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/tutorials/open-education/data-preparation-and-workflow-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open Education Course on Data Preparation</title>
+      <link>http://localhost:1313/tutorials/open-education/data-preparation-and-workflow-management/dprep-course/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/data-preparation-and-workflow-management/dprep-course/</guid>
+      <description>Overview The Data Preparation and Workflow Management course is an open-source Master level course taught at Tilburg University. All of its content is freely available and consists of lectures, live streams, self-study material, tutorials and examples.
+This course teaches you how to engineer data sets for statistical analysis. Many students and researchers perceive the process of “creating” a data set for analysis as rather simplistic: a bit of cleaning here, a bit of merging there, and you’re done.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Task-specific Configurations on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/configure-your-computer/task-specific-configurations/</link>
+    <description>Recent content in Task-specific Configurations on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Jan 2021 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/building-blocks/configure-your-computer/task-specific-configurations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuring Python for Web Scraping</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/</guid>
+      <description>Web Scraping Using an Automated Browser Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page. This is especially true when the site we want to scrape has content that is loaded dynamically with javascript.
+We will install one package to help us here: ChromeDriver. Below we show two different ways of installing it.
+Install ChromeDriver In order to install ChromeDriver, make sure you have already installed:</description>
+    </item>
+    
+  </channel>
+</rss>

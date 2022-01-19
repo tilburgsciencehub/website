@@ -1,0 +1,771 @@
+[
+    
+    	{
+    		"searchKeywords": "Automate your Workflow  ",
+    		"title": "Automate your Workflow",
+    		"link": "http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Data Preparation  ",
+    		"title": "Data Preparation",
+    		"link": "http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Document New Data [document, data, readme, raw, database, description] If your project contains data that has been newly created, learn how to include a documentation of that data in your project.",
+    		"title": "Document New Data",
+    		"link": "http://localhost:1313/building-blocks/store-and-document-your-data/document-data/documenting-new-data/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Regressions  ",
+    		"title": "Regressions",
+    		"link": "http://localhost:1313/building-blocks/analyze-data/regressions/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Searching for Literature on the Web [search, literature, libkey, google scholar] Find relevant literature more efficiently",
+    		"title": "Searching for Literature on the Web",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/tips/search-literature/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Statistics and Computation  ",
+    		"title": "Statistics and Computation",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Get Started with Using Git and GitHub [git, github, interactive tutorial, versioning, pull, push, fork, share, commit, add] Git is an open-source version control system that allows you to keep track of your source files and the changes you make to them.",
+    		"title": "Get Started with Using Git and GitHub",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/versioning-using-git/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Manage your Projects using the GitHub Project Board [git, github, project board, sprint, planning] Projects boards on GitHub help you organize and prioritize your work using the Scrum framework for project management.",
+    		"title": "Manage your Projects using the GitHub Project Board",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/git-project-board/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Store Data  ",
+    		"title": "Store Data",
+    		"link": "http://localhost:1313/building-blocks/store-and-document-your-data/store-data/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Version and Share Code with Github  ",
+    		"title": "Version and Share Code with Github",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Web Scraping & APIs  ",
+    		"title": "Web Scraping & APIs",
+    		"link": "http://localhost:1313/building-blocks/collect-data/webscraping-apis/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Learn About the Various Ways to Setup a Research Infrastructure [collaboration, security, data management, run-time, data storage, computation, code versioning] The main considerations before launching any empirical research project.",
+    		"title": "Learn About the Various Ways to Setup a Research Infrastructure",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/infrastructure-requirements/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Configuring Python for Web Scraping [web scraping, scraping, automation, browser, chromedriver] Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page.",
+    		"title": "Configuring Python for Web Scraping",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Import Large Datasets Into R [import, data, data preparation, big data, large datsets, memory, RAM] This is a handy function that can be used to clean social media data scraped from the web.",
+    		"title": "Import Large Datasets Into R",
+    		"link": "http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/large-datasets-r/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Document Data  ",
+    		"title": "Document Data",
+    		"link": "http://localhost:1313/building-blocks/store-and-document-your-data/document-data/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Learn to Code  ",
+    		"title": "Learn to Code",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Machine Learning  ",
+    		"title": "Machine Learning",
+    		"link": "http://localhost:1313/building-blocks/analyze-data/machine-learning/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Run a Regression Analysis [linear regression, model, lm, prediction, model evaluation, linear inferences] Build linear models to draw inferences from your datasets.",
+    		"title": "Run a Regression Analysis",
+    		"link": "http://localhost:1313/building-blocks/analyze-data/regressions/regression-analysis/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Tips  ",
+    		"title": "Tips",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/tips/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Write your Paper  ",
+    		"title": "Write your Paper",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Automation and Workflows  ",
+    		"title": "Automation and Workflows",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Build and Maintain a Reference List [reference, list, bibtex, mendeley, zotero, endnote, literature] how to build and maintain a reference list without having to learn anything by heart or use MS. Use tools to keep organized.",
+    		"title": "Build and Maintain a Reference List",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/tips/reference-list/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Getting Started with Research Cloud [cloud, virtual computers, SURF, infrastructure, parallel, research cloud, service desk] A free cloud solution for conducting research.",
+    		"title": "Getting Started with Research Cloud",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/getting-started-research-cloud/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "How to Prepare for (and Follow-up On) Scrum Meetings [meeting, preparation, follow-up, github, issues, project management] When collaborating with others, meeting preparation & planning follow-ups are crucial. Read here about the most important steps to take care of.",
+    		"title": "How to Prepare for (and Follow-up On) Scrum Meetings",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/meeting_preparation/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "The Most Important Git Commands You Should Know [git, commands, important, essential, cheat] A quick recap of the essential Git commands you will be using everyday.",
+    		"title": "The Most Important Git Commands You Should Know",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/most-important-git-commands/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Use Makefiles to Re-Run Your Code [make, makefile, automation, recipes, workflow] Learn how to use makefiles to specify instructions and recipes for your computer.",
+    		"title": "Use Makefiles to Re-Run Your Code",
+    		"link": "http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/what-are-makefiles/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Workflows for Online Data Collection  ",
+    		"title": "Workflows for Online Data Collection",
+    		"link": "http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Research Infrastructure  ",
+    		"title": "Research Infrastructure",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Manipulate Data [manipulate, cleaning, wrangling, prep, data] GitHub limits the size of files allowed in repositories. Use Git-LFS, an open-source Git extension for large file storage.",
+    		"title": "Manipulate Data",
+    		"link": "http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/manipulate-data/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Use this Checklist to Improve Your Project's Structure [make, makefile, automation, recipes, workflow] Audit data and computation efficient projects.",
+    		"title": "Use this Checklist to Improve Your Project's Structure",
+    		"link": "http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/workflow-checklist/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "In-depth Introduction to Machine Learning and R [machine learning, classification, unsupervised, resampling, model, linear, tree, vector, r] Get started with machine learning and R with 15+ hours of expert videos.",
+    		"title": "In-depth Introduction to Machine Learning and R",
+    		"link": "http://localhost:1313/building-blocks/analyze-data/machine-learning/introduction-to-machine-learning/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Cite Efficiently in Your Academic Paper [citation, reference, bibtex, formats, literature] Learn to cite efficiently and according to a style guide and different formats.",
+    		"title": "Cite Efficiently in Your Academic Paper",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/tips/citations/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Principles for Good Coding [style, optimize, definition, human] Make your code easy to understand for humans. If your code looks very complex or messy, you're probably doing it wrong.",
+    		"title": "Principles for Good Coding",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/tips/principles-good-coding/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Contribute to Open Source Projects [github, open source, pull request, collaborate] Learn how to contribute to open source projects published on GitHub.",
+    		"title": "Contribute to Open Source Projects",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/pull-requests/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Impact evaluation with Difference-in-Differences and Regression Discontinuity [regression, model, DiD, RD, impact evaluation, inference, quasi-experiment] Use Difference-in-Differences and Regression Discontinuity Design to evaluate impacts of quasi-experiments",
+    		"title": "Impact evaluation with Difference-in-Differences and Regression Discontinuity",
+    		"link": "http://localhost:1313/building-blocks/analyze-data/regressions/impact-evaluation/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Make Tables and Figures Reproducible with Autofilling Values [autofilling, tablefill, latex, lyx] Learn how to use R to check for errors and the completion of Stata code in batch mode or in a Makefile.",
+    		"title": "Make Tables and Figures Reproducible with Autofilling Values",
+    		"link": "http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/autofilling-values/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Professionalize Project Management  ",
+    		"title": "Professionalize Project Management",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up SURF Research Drive and Rclone to Store Data [surf, rd, rclone, large files, webdav, store, storage] Learn how to set up a Research Drive account, upload and download files, share files and folders, and use rclone to selectively retrieve files from command line and code.",
+    		"title": "Set up SURF Research Drive and Rclone to Store Data",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/surf-research-drive/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "The GitHub Workflow [github, workflow tutorial, branch, pull, push, fork, share, commit, merge, peer review] GitHub flow is a lightweight, branch-based workflow. The GitHub flow is useful for everyone, not just developers.",
+    		"title": "The GitHub Workflow",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/github-workflow/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Write GitHub Issues That Get the Job Done [issues, project, git, github, issue] Use GitHub Issues to formulate what you or your team members should work on. Here, you'll learn how to write issues that really get the job done.",
+    		"title": "Write GitHub Issues That Get the Job Done",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/write-good-issues/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Clean Data Scraped From Social Media [clean, wrangling, scraping, follow, likes, network] This is a handy function that can be used to clean social media data scraped from the web.",
+    		"title": "Clean Data Scraped From Social Media",
+    		"link": "http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/clean-social-media-counts/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Task-specific Configurations  ",
+    		"title": "Task-specific Configurations",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/task-specific-configurations/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Python Coding Style Guidelines [style, code, python, best practices, guidelines] Follow nice language-specific coding styles to make your code easier to understand and easier to the eye.",
+    		"title": "Python Coding Style Guidelines",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/tips/python-coding-style/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Exclude Files from Versioning [git, github, versioning, gitignore, remove, sensitive] Not all files should be tracked (e.g., datasets, or sensitive information). Learn how to exclude them from versioning!",
+    		"title": "Exclude Files from Versioning",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-ignore/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Publish on the Web  ",
+    		"title": "Publish on the Web",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/publish-on-the-web/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "R Coding Style Guidelines [style, code, R, guidelines, best practices] Follow nice R coding style to make your code easier to understand and easier to the eye.",
+    		"title": "R Coding Style Guidelines",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/tips/r-code-style/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Make Your Code Citable with DOI [zenodo, doi, cite, github, literature] Learn how to obtain a DOI with Zenodo to make your GitHub repository citable in academic literature.",
+    		"title": "Make Your Code Citable with DOI",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/make-code-citable-with-doi/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Stata Coding Style Guidelines [style, code, Stata, guidelines, best practices] Follow nice Stata coding style to make your code easier to understand and easier to the eye.",
+    		"title": "Stata Coding Style Guidelines",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/tips/stata-code-style/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Remove Sensitive or Large Files From Your Repository [git, github, versioning, remove, sensitive, password] Accidentally committed large data sets or sensitive information to your repository? Here is how to entirely remove files from your repository's history!",
+    		"title": "Remove Sensitive or Large Files From Your Repository",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/remove-files/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Working With Large Files on GitHub [github, git-lfs, large files, versioning, organizing] GitHub limits the size of files allowed in repositories. Use Git-LFS, an open-source Git extension for storing large files.",
+    		"title": "Working With Large Files on GitHub",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-lfs/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Archiving Repositories when They're Done [git, github, mothball, remove, sensitive, password] Your repository is completed and no further work is expected? Keep it in good condition by making it ready to use again in the future if needed.",
+    		"title": "Archiving Repositories when They're Done",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/mothball/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Export Repositories with Github Releases [git, github, releases, drafts, slide deck, intermediate files] ",
+    		"title": "Export Repositories with Github Releases",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/releases/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Configure your computer  ",
+    		"title": "Configure your computer",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Develop your research skills  ",
+    		"title": "Develop your research skills",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Collect your data  ",
+    		"title": "Collect your data",
+    		"link": "http://localhost:1313/building-blocks/collect-data/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Store and document your data  ",
+    		"title": "Store and document your data",
+    		"link": "http://localhost:1313/building-blocks/store-and-document-your-data/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Prepare your data for analysis  ",
+    		"title": "Prepare your data for analysis",
+    		"link": "http://localhost:1313/building-blocks/prepare-your-data-for-analysis/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Analyze data  ",
+    		"title": "Analyze data",
+    		"link": "http://localhost:1313/building-blocks/analyze-data/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Automate and execute your work  ",
+    		"title": "Automate and execute your work",
+    		"link": "http://localhost:1313/building-blocks/automate-and-execute-your-work/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Collaborate and share your work  ",
+    		"title": "Collaborate and share your work",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Bring Open Science Practices to your Research Group [team, onboarding, department] Learn from how world-leading research groups have embraced open science practices to re-think the way they work on research projects.",
+    		"title": "Bring Open Science Practices to your Research Group",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/team-transition/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Write a Professional Research Paper with LyX [paper, template, lyx, tex] Learn how to write your research paper using LyX.",
+    		"title": "Write a Professional Research Paper with LyX",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/research-paper-lyx/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Create Slides in No Time with LyX [slides, presentation, lyx, tex, template] Learn how to quickly and efficiently create slides for your presentation using LyX.",
+    		"title": "Create Slides in No Time with LyX",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/slides-lyx/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Get Started With Our Bookdown Thesis Template [template, rmarkdown, bookdown, download, start, document, thesis] Get started with your thesis using Rmarkdown, bookdown and the `tisemdown` template.",
+    		"title": "Get Started With Our Bookdown Thesis Template",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/bookdown-theses/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Get Started With Our LaTeX Templates [template, latex, download, start, document] Get started with your new LaTeX documents using our templates for thesis projects, academic papers, and more.",
+    		"title": "Get Started With Our LaTeX Templates",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/latex-templates/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Export Your Tables for Print-ready Publications [stargazer, latex, paper, lyx, r] Learn how to quickly and efficiently export your tables for your paper.",
+    		"title": "Export Your Tables for Print-ready Publications",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/export-tables/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Cheatsheet for LaTeX Math Commands [ams, math, latex, tex, cheatsheet] Explore all the most important AMS-Math LaTeX commands and download your cheatsheet.",
+    		"title": "Cheatsheet for LaTeX Math Commands",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Learn Bash Commands [cmd, command prompt, terminal, cd, ls, dir, mv] Learn how to navigate the terminal and command prompt",
+    		"title": "Learn Bash Commands",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-bash-commands/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Building Blocks  ",
+    		"title": "Building Blocks",
+    		"link": "http://localhost:1313/building-blocks/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Assess what Data is Available [data availability, assessment, API, webscraping, scraping] Learn how to assess which particular data is available on the site or API.",
+    		"title": "Assess what Data is Available",
+    		"link": "http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/data-availability-assessment/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Automatically Install R Packages Used in a Project [R packages, installation, find, gist] Easily find all the R packages used in a project and automatically install them.",
+    		"title": "Automatically Install R Packages Used in a Project",
+    		"link": "http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/auto-install-r-packages/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Avoid Getting Blocked While Scraping [scrape, webscraping, headers, timers, proxies] Take steps to make sure your scraper keeps on running!",
+    		"title": "Avoid Getting Blocked While Scraping",
+    		"link": "http://localhost:1313/building-blocks/collect-data/webscraping-apis/avoid-getting-blocked/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Build Interactive Dashboards With R Shiny [shiny, app, data visualisation, dashboard, r, dataviz, plots, charts] Learn how to build your own interactive R Shiny app.",
+    		"title": "Build Interactive Dashboards With R Shiny",
+    		"link": "http://localhost:1313/building-blocks/collaborate-and-share-your-work/publish-on-the-web/shiny-apps/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Calculate Sample Sizes for Web Scrapers [sample size, sample, n, data collection, compute] Learn how to determine the number of units that can be obtained from a website or API.",
+    		"title": "Calculate Sample Sizes for Web Scrapers",
+    		"link": "http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/calculate-sample-size/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Choose a Data Repository for Long-Term Storage [archiving, data archiving, dataverse, zenodo, figshare, osf, dans] Part of responsible research is making sure your research data is properly stored. But how do you decide which data to keep, document and where to archive it?",
+    		"title": "Choose a Data Repository for Long-Term Storage",
+    		"link": "http://localhost:1313/building-blocks/store-and-document-your-data/store-data/choose-a-data-repository/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Configure Environment Variables [environment variables, configuration, password, secret, credentials, hiding credentials, security, anonymous, anonymity] Learn how to configure environment variables to store personal credentials and secret keys.",
+    		"title": "Configure Environment Variables",
+    		"link": "http://localhost:1313/building-blocks/store-and-document-your-data/store-data/environment-variables/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Data Preparation and Workflow Management [dprep, preparation, raw data, cleaning, wrangling] Engineer data sets from complex raw data and manage research projects efficiently.",
+    		"title": "Data Preparation and Workflow Management",
+    		"link": "http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/data-preparation-workflow-management/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Download Data Programmatically [download, import data, store, collect] Learn how to download data right from its (online) source and store it locally with code.",
+    		"title": "Download Data Programmatically",
+    		"link": "http://localhost:1313/building-blocks/store-and-document-your-data/store-data/download-data/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Extract Data From APIs [api, application programming interface] Learn how to collect data from APIs.",
+    		"title": "Extract Data From APIs",
+    		"link": "http://localhost:1313/building-blocks/collect-data/webscraping-apis/extract-data-api/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Get Text Editors [text, editor, atom, install, software] A good text editor lies at the heart of any serious programmer's toolkit.",
+    		"title": "Get Text Editors",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/text-editor/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Install Python Packages [python, pip, packages, selenium] Learn how to install new Python packages with package management tools like pip.",
+    		"title": "Install Python Packages",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python-packages/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Integrating Stata in Automated Workflows [exception, handling, stata, R, make, error] Learn how to use R to check for errors and the completion of Stata code in batch mode or in a Makefile.",
+    		"title": "Integrating Stata in Automated Workflows",
+    		"link": "http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/stata-error-handling-make/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Learn Python and Julia [learn, python, quantecon] Learn how to program in Python.",
+    		"title": "Learn Python and Julia",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-python-and-julia/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Learn R [learn, R, resources, datacamp] Learn how to code with R.",
+    		"title": "Learn R",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-r/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Learn Regular Expressions [regular expressions, regex, strings, string processing, characters, regexp, search pattern, string searching] Learn how to formulate powerful string search queries with regular expressions.",
+    		"title": "Learn Regular Expressions",
+    		"link": "http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-regular-expressions/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Making Path Settings Permanent [PATH, add, terminal, cli, bash] For our workflow to be command line driven, we need to be able to call software from the command line.",
+    		"title": "Making Path Settings Permanent",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/environment/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Monitor and Safeguard Your Data Quality [monitor, debug, assessment, data quality, webscraping, scraping] 10 common issues and potential solutions to troubleshoot your data collection",
+    		"title": "Monitor and Safeguard Your Data Quality",
+    		"link": "http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/monitor-data-quality/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Online Data Collection and Management [odcm, scraping, api, collection] Learn to use web scraping and APIs to collect data for your empirical research project.",
+    		"title": "Online Data Collection and Management",
+    		"link": "http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/online-data-collection-management/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Read & Write Data From APIs [api, application programming interface, read, write, export] Learn how to store your API data locally and read in the data for future use.",
+    		"title": "Read & Write Data From APIs",
+    		"link": "http://localhost:1313/building-blocks/collect-data/webscraping-apis/read-write-data-apis/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "README Best Practices [git, commands, important, essential, cheat] Learn how to write a convincing and effective README file.",
+    		"title": "README Best Practices",
+    		"link": "http://localhost:1313/building-blocks/store-and-document-your-data/document-data/readme-best-practices/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Safeguard Legal Compliance When Scraping [legal, debug, assessment, data quality, webscraping, scraping] Obtain legal advice to limit your exposure to legal risks when web scraping",
+    		"title": "Safeguard Legal Compliance When Scraping",
+    		"link": "http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/ensure-legal-compliance-web-scraping/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Schedule Recurring Tasks (e.g., by day, hour) [cron, cronjob, automation, task scheduler, task scheduling] Learn how to execute scripts at specified intervals with cronjob and Task Scheduler.",
+    		"title": "Schedule Recurring Tasks (e.g., by day, hour)",
+    		"link": "http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/task-scheduling/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Scrape Dynamic Websites [scrape, webscraping, internet, beautifulsoup, website] Learn how to scrape data and information from dynamic websites.",
+    		"title": "Scrape Dynamic Websites",
+    		"link": "http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-dynamic-websites/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Scrape Static Websites [scrape, webscraping, internet, beautifulsoup, static website] Learn how to scrape data and information from static websites.",
+    		"title": "Scrape Static Websites",
+    		"link": "http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-static-websites/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up Command Line Tools [CLI, terminal, Homebrew, brew, cygwin, command] A command-line interface or command language interpreter (CLI), also known as a terminal, is a means of interacting with a computer program.",
+    		"title": "Set up Command Line Tools",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/commandline/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up Git and GitHub [git, github, install, software, configuration, versioning, account] Git is an open source version control system (VCS) that has gained a lot of traction in the programming community.",
+    		"title": "Set up Git and GitHub",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/git/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up LaTeX [latex, tex, lyx, install, software, configuration, paper, writing, text, typesetting] LaTeX is a great typesetting system that includes a lot of features that allow to produce scientific documents.",
+    		"title": "Set up LaTeX",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/latex/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up Make [make, build, build tool] Make is a build tool that allows us to control the execution of a set of command line statements.",
+    		"title": "Set up Make",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/make/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up MATLAB [Matlab, software, install, configuration, statistics] MATLAB is a high-level programming language and an environment for numerical computation and visualization",
+    		"title": "Set up MATLAB",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/matlab/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up Pandoc [Pandoc, install, software, configuration] Pandoc is an extremely useful 'swiss army knife' for converting between different types of markup languages from the command line.",
+    		"title": "Set up Pandoc",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/pandoc/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up Perl [perl, install, programming, language, configuration] Perl is an open programming language used for text processing, such as processing tables generated by other statistical softwares.",
+    		"title": "Set up Perl",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/perl/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up Python [install, python, anaconda, conda, distribution, configure, PATH, statistics] Python is widely use programming language. Learn how to set it up on your computer.",
+    		"title": "Set up Python",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up R and RStudio [R, statistics, install, software, RStudio, PATH, learn R, get R, install R, setup] R is a widely used language for statistical computing and graphics. Learn how to set it up on your computer.",
+    		"title": "Set up R and RStudio",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/r/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up Snakemake [snakemake, build, build tool, workflow] Snakemake is an easy to use workflow management system. Learn how to install it.",
+    		"title": "Set up Snakemake",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/snakemake/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up Stata [Stata, software, install, do, configuration, statistics] Stata is a proprietary statistical software frequently used by scientific users.",
+    		"title": "Set up Stata",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/stata/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up TeamViewer [teamviewer, software, installation, remote] Teamviewer allows to remote-control your computer to solve technical issues. Learn how to install it.",
+    		"title": "Set up TeamViewer",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/teamviewer/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Set up the AWS Client [AWS, CLI, command line, terminal, command] Learn how to install the command-line interface for using Amazing Web Services.",
+    		"title": "Set up the AWS Client",
+    		"link": "http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/awscli/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Share Large Temporary Files [file exchange, file, exchange, share, sharing] File exhanges are essential to transfer data between different stages of your pipeline and between co-authors.",
+    		"title": "Share Large Temporary Files",
+    		"link": "http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/fileexchanges/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Use AWS S3 Buckets [aws, s3, boto3, python, bucket] This block explains how to list contents, download content from and upload content to a AWS S3 bucket.",
+    		"title": "Use AWS S3 Buckets",
+    		"link": "http://localhost:1313/building-blocks/store-and-document-your-data/store-data/aws-s3-buckets/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Use Software Environments to Ensure Replicability [environments, conda, software environments, virtual] Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page.",
+    		"title": "Use Software Environments to Ensure Replicability",
+    		"link": "http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/software-environments/"
+    	}
+    ]

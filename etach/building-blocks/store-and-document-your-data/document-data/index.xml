@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Document Data on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/store-and-document-your-data/document-data/</link>
+    <description>Recent content in Document Data on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:02:51 +0530</lastBuildDate><atom:link href="http://localhost:1313/building-blocks/store-and-document-your-data/document-data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Document New Data</title>
+      <link>http://localhost:1313/building-blocks/store-and-document-your-data/document-data/documenting-new-data/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/store-and-document-your-data/document-data/documenting-new-data/</guid>
+      <description>Overview Ideally, your data description includes the very elaborate questions outlined in Datasheets for datasets by Gebru, Timnit, et al. (2018)1. We strongly refer you to the original paper, which explains in detail the seven key ingredients of a proper dataset documentation.
+Below, we have reproduced these questions, and we recommend you to include those as a readme.txt, together with your datasets. For derived data, it may be enough to point to a relevant source code file, and provide a list of variables and their operationalization.</description>
+    </item>
+    
+    <item>
+      <title>README Best Practices</title>
+      <link>http://localhost:1313/building-blocks/store-and-document-your-data/document-data/readme-best-practices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/store-and-document-your-data/document-data/readme-best-practices/</guid>
+      <description>Overview A README is like the book cover of your project. It&amp;rsquo;s the first thing a person sees when opening your repository. A great README not only gets people to jump into your project much quicker, but also helps your project to stand out from the sea of open source software on Github. Your README thus not only serves for documentation, but also for marketing purposes.
+And while we all loathe sheazy marketing, documentation can&amp;rsquo;t be sleazy because it solves a real purpose: teaching everyone about the project.</description>
+    </item>
+    
+  </channel>
+</rss>

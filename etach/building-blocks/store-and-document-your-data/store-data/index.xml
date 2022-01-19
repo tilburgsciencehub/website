@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Store Data on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/</link>
+    <description>Recent content in Store Data on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/building-blocks/store-and-document-your-data/store-data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Choose a Data Repository for Long-Term Storage</title>
+      <link>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/choose-a-data-repository/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/choose-a-data-repository/</guid>
+      <description>Data Archiving Part of responsible research is making sure your research data are properly managed, both during your research as well as when your research is finished (and hopefully published). For replication purposes, the data needs to remain available for a minimum of 10 years. But how do you decide which data to keep, document and where to archive it?
+This tutorial on data management and this article on documenting your data provide some insights.</description>
+    </item>
+    
+    <item>
+      <title>Configure Environment Variables</title>
+      <link>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/environment-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/environment-variables/</guid>
+      <description>Overview  When working with APIs or cloud services, you usually need to access some personal credentials or secret keys. With environment variables, we can access such variables without literally writing them down in a notebook or script (e.g., password = &amp;quot;...&amp;quot;). The basic idea is that these global variables are stored permanently and are attached to your operating system. Therefore, you can access these variables regardless of whether you are working in RStudio or a Jupyter Notebook.</description>
+    </item>
+    
+    <item>
+      <title>Download Data Programmatically</title>
+      <link>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/download-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/download-data/</guid>
+      <description>Overview Download a file from a URL and store it on your local machine. That way, it&amp;rsquo;s super easy for others to run your workflow (e.g., team members), or to refresh the data once it&amp;rsquo;s been udpated. All you need to do is rerun your code - that&amp;rsquo;s it!
+Code Here&amp;rsquo;s an example of how to download data from within R.
+download_data &amp;lt;- function(url, filename, filepath) { # create directory dir.</description>
+    </item>
+    
+    <item>
+      <title>Use AWS S3 Buckets</title>
+      <link>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/aws-s3-buckets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/aws-s3-buckets/</guid>
+      <description>Overview  Amazon Simple Storage Service (AWS S3) is an industry-leader object storage service that allows you to store and retrieve any kind of files fast, securely and anywhere in the world - basically Dropbox on steroids. It can be used for a range of use cases, from websites to backup and archives. It can also be particularly useful for research projects - storing a huge amount of raw data, for instance.</description>
+    </item>
+    
+  </channel>
+</rss>

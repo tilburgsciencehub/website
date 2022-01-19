@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regressions on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/analyze-data/regressions/</link>
+    <description>Recent content in Regressions on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:02:51 +0530</lastBuildDate><atom:link href="http://localhost:1313/building-blocks/analyze-data/regressions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Run a Regression Analysis</title>
+      <link>http://localhost:1313/building-blocks/analyze-data/regressions/regression-analysis/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/analyze-data/regressions/regression-analysis/</guid>
+      <description>Overview In the social sciences, regression analysis is a popular tool to estimate relationships between a dependent variable and one or more independent variables. It is a way to find trends in data, quantify the impact of input variables, and make predictions for unseen data.
+In this building block, we illustrate how to estimate a model, identify outliers, plot a trend line, and make predictions.
+Code Estimate the Model Linear regression (lm) is suitable for a response variable that is numeric.</description>
+    </item>
+    
+    <item>
+      <title>Impact evaluation with Difference-in-Differences and Regression Discontinuity</title>
+      <link>http://localhost:1313/building-blocks/analyze-data/regressions/impact-evaluation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/analyze-data/regressions/impact-evaluation/</guid>
+      <description>Impact Evaluation Why? Many programs are designed to improve outcomes such as learning, health or productivity. Have resources been spent wisely on the program? Did the program/policy work? These are the questions that impact evaluation answers, based on evidence.
+In this building block we discuss two of the most commonly used impact evaluation methods, Difference-in-Differences (DiD) and Regression Discontinuity (RD).
+Difference-in-Differences SummaryDiD compares the changes in outcomes (e.g. productivity) over time between a population that is enrolled in a program (the treatment group, e.</description>
+    </item>
+    
+  </channel>
+</rss>

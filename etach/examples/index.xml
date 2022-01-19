@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Examples on Tilburg Science Hub</title>
+    <link>http://localhost:1313/examples/</link>
+    <description>Recent content in Examples on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/examples/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Reproducible Research Workflow with AirBnB Data</title>
+      <link>http://localhost:1313/examples/reproducible-workflow-airbnb/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/examples/reproducible-workflow-airbnb/</guid>
+      <description>Overview Using publicly available data from AirBnB (available via Kaggle.com), we illustrate how a reproducible workflow may look like in practice.
+Check out the GitHub RepositoryWe&amp;rsquo;ve crafted this project to run:
+ platform-independent (Mac, Linux, Windows) across a diverse set of software programs (Stata, Python, R) producing an entire (mock) paper, including modules that  download data from Kaggle, prepare data for analysis, run a simple analysis, produce a paper with output tables and figures.</description>
+    </item>
+    
+    <item>
+      <title>A Simple Reproducible Research Workflow</title>
+      <link>http://localhost:1313/examples/simple-reproducible-workflow/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/examples/simple-reproducible-workflow/</guid>
+      <description>Overview In this example, you find a simple make pipeline, which prepares (data-preparation) and analyzes (analysis) data using R, and creates some tables for a paper (paper) using LaTeX.
+This is probably the most simplistic but still complete workflow, and thus highly recommended as a template to kickstart your projects.
+You can check out this repository for all the details. Fork it/use it as a template - contributions appreciated!</description>
+    </item>
+    
+    <item>
+      <title>An Interactive Shiny App of Google&#39;s COVID-19 Data</title>
+      <link>http://localhost:1313/examples/google-covid-shiny-app/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/examples/google-covid-shiny-app/</guid>
+      <description>Overview This example illustrates how to create a Shiny app which allows you to interactively explore Google’s COVID-19 Community Mobility Reports of the Netherlands through an intuitive visual interface (see the live version here).
+How to create it 1. Skeleton The Shiny library helps you turn your analyses into interactive web applications without requiring HTML, CSS, or Javascript knowledge, and provides a powerful web framework for building web applications using R.</description>
+    </item>
+    
+    <item>
+      <title>Exploring Trends in the Cars Dataset with Regression Analysis</title>
+      <link>http://localhost:1313/examples/exploring-regression-results/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/examples/exploring-regression-results/</guid>
+      <description>Overview In this example, we analyze the relationship between a car&amp;rsquo;s speed and the stop distance. First, we check the model assumptions and screen for potential outliers. Second, we export our regression results into a format that you can easily copy into word processing software. Third, we build a scatter plot with the trend line on top of it. Fourth and last, we make predictions for unseen data points.
+How to create it 1.</description>
+    </item>
+    
+    <item>
+      <title>A Reproducible Workflow Using Snakemake and R</title>
+      <link>http://localhost:1313/examples/reproducible-workflow-snakemake-r/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/examples/reproducible-workflow-snakemake-r/</guid>
+      <description>Overview This is a template for a reproducible research project that uses Snakemake and the R programming language.
+We use Snakemake to construct a set of rules to build our workflow from start to finish, starting with some data cleaning, running some regressions, constructung figures and tables, and then finishing with compiling a pdf article and slides.
+We believe this mimics an approximate workflow of most empirical research in social sciences.</description>
+    </item>
+    
+  </channel>
+</rss>

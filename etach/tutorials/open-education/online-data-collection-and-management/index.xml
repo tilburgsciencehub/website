@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Online Data Collection and Management on Tilburg Science Hub</title>
+    <link>http://localhost:1313/tutorials/open-education/online-data-collection-and-management/</link>
+    <description>Recent content in Online Data Collection and Management on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/tutorials/open-education/online-data-collection-and-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open Education Course on Data Collection</title>
+      <link>http://localhost:1313/tutorials/open-education/online-data-collection-and-management/odcm-course/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/online-data-collection-and-management/odcm-course/</guid>
+      <description>Overview The Online Data Collection and Management course is an open-source Master level course taught at Tilburg University. All of its content is freely available and consists of lectures, live streams, self-study material, tutorials and examples.
+The course teaches you the nuts and bolts about collecting data from the web. Unlike most other courses on this topic, this one not only teaches you the technicalities of using web scraping and APIs, but also introduces a comprehensive framework that helps you to think about scraping - specifically with regard to its application in academic marketing research.</description>
+    </item>
+    
+  </channel>
+</rss>

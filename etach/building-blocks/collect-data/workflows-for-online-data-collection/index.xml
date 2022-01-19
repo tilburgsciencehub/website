@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workflows for Online Data Collection on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/</link>
+    <description>Recent content in Workflows for Online Data Collection on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Assess what Data is Available</title>
+      <link>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/data-availability-assessment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/data-availability-assessment/</guid>
+      <description>Overview Assessing data availability is vital to guarantee a minimum level of rigor. Investigating data availability may help you to enhance the relevance of your study.
+Entity Coverage and Linkages Which entities are available? Familiarize yourself with the structure of the website or API to understand which entities (e.g., consumers, products, reviews) are available.
+ExampleAn ecommerce website like Amazon lists information on the products, sellers, reviews, and reviewers.
+How many entities are available?</description>
+    </item>
+    
+    <item>
+      <title>Calculate Sample Sizes for Web Scrapers</title>
+      <link>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/calculate-sample-size/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/calculate-sample-size/</guid>
+      <description>Overview Sampling from websites and APIs can be tricky: limits to server load (e.g., retrieval limits) or snowballing effects (e.g., seed of 100 users, sample 100 of their peers and obtain all of their peers’ consumption patterns for 50 weeks). In addition to the minimum sample size necessary to satisfy statistical power requirements, an important consideration is therefore the technically feasible sample size. That is, the sample size that can be obtained from a website or API while considering resource constraints.</description>
+    </item>
+    
+    <item>
+      <title>Monitor and Safeguard Your Data Quality</title>
+      <link>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/monitor-data-quality/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/monitor-data-quality/</guid>
+      <description>Overview After carefully planning and prototyping, researchers can begin the actual data collection. It is important to note that the data collection process is best considered “work-in-progress.” Thus, researchers need to remain agile and adapt the code where required. Here we outline the 10 most common data quality issues and how you can resolve them.
+10 Common Issues 1. It cannot be verified whether all the data that should have been collected was indeed collected.</description>
+    </item>
+    
+    <item>
+      <title>Online Data Collection and Management</title>
+      <link>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/online-data-collection-management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/online-data-collection-management/</guid>
+      <description>The Online Data Collection and Management course is an open-source Master level course taught at Tilburg University. All of its content is freely available and consists of lectures, live streams, self-study material, tutorials and examples.
+The course teaches you the nuts and bolts about collecting data from the web. Unlike most other courses on this topic, this one not only teaches you the technicalities of using web scraping and APIs, but also introduces a comprehensive framework that helps you to think about scraping - specifically with regard to its application in academic marketing research.</description>
+    </item>
+    
+    <item>
+      <title>Safeguard Legal Compliance When Scraping</title>
+      <link>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/ensure-legal-compliance-web-scraping/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/ensure-legal-compliance-web-scraping/</guid>
+      <description>Overview The legality of web scraping is an ongoing and complex issue, which might be perplexing for scholars interested in collecting and using web data. There is no clear consensus about whether collecting web data for scientific purposes is permissible under American and international intellectual and cybersecurity laws. Therefore, researchers should obtain legal advice to limit their exposure to legal risks when going forward. As legal experts may not be fully aware of all the steps involved in collecting and using web data, it is imperative to address aspects such as the purpose and framing of the research objective, the scale and scope of data capture, the characteristics of the data source, the relationship of the researcher with the data provider, and any details on the researcher’s data management and usage.</description>
+    </item>
+    
+  </channel>
+</rss>

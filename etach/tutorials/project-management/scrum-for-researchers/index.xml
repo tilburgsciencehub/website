@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Professionalize your Team Work Using Scrum on Tilburg Science Hub</title>
+    <link>http://localhost:1313/tutorials/project-management/scrum-for-researchers/</link>
+    <description>Recent content in Professionalize your Team Work Using Scrum on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/tutorials/project-management/scrum-for-researchers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Use Scrum In Your Team</title>
+      <link>http://localhost:1313/tutorials/project-management/scrum-for-researchers/use-scrum-in-your-team/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/project-management/scrum-for-researchers/use-scrum-in-your-team/</guid>
+      <description>How we professionalized our team work We use Scrum - a simple framework for effective team collaboration - to manage the development of Tilburg Science Hub. By sharing our experiences with (an admittedly customized version of) Scrum, we hope to inspire and possibly help other teams to make their collaborations run smoothly.
+Importantly, Scrum works for any type of project, including academic research projects. Keep on reading to find out how to use Scrum as a framework for collective research!</description>
+    </item>
+    
+  </channel>
+</rss>

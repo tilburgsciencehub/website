@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics and Computation on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/</link>
+    <description>Recent content in Statistics and Computation on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Get Text Editors</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/text-editor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/text-editor/</guid>
+      <description>Installing a text editor A good text editor lies at the heart of any serious programmer&amp;rsquo;s toolkit: It can do almost anything and makes you much more productive. The editors built into each program often are not the best option (we will find certain cases where you may want to use them).
+Please download, install it along with the necessary packages and stick with it for at least for some time to get a feel for how it works.</description>
+    </item>
+    
+    <item>
+      <title>Install Python Packages</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python-packages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python-packages/</guid>
+      <description>Installing Python packages Anaconda&amp;rsquo;s Python Distribution comes with many of the packages we need to do scientific computing. If you&amp;rsquo;re interested in all the packages included, click here and go to the Python 3.x tab.
+However, you may come across packages that are not installed by default. In this case we recommend you use the pip package management tool to install them.
+Installation steps WarningIf your python 3 was found via python3 --version on the previous page, then type pip3 instead of pip for all of the following python plugins.</description>
+    </item>
+    
+    <item>
+      <title>Set up Git and GitHub</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/git/</guid>
+      <description>Installing and Setting Up Git &amp;amp; GitHub Git is an open source version control system (VCS) that has gained a lot of traction in the programming community. We will use version control to keep track of the files we write, and the changes we make to them. Using Git, we can roll back to any previous version of a file, and easily collaborate with others on source code.
+GitHub is a (commercial) platform which allows you to host your source code online.</description>
+    </item>
+    
+    <item>
+      <title>Set up LaTeX</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/latex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/latex/</guid>
+      <description>Installing Latex \(\LaTeX\)is a great typesetting system that includes a lot of features that allow to produce scientific documents. Many researchers use Latex to produce their papers and presentations, and many journals require authors to hand in their articles in a TeX format.
+Latex is free to use. To use the Latex system, a TeX distribution needs to be installed. Detailed instructions for the different platforms are provided below.</description>
+    </item>
+    
+    <item>
+      <title>Set up MATLAB</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/matlab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/matlab/</guid>
+      <description>Installing MATLAB MATLAB is a high-level programming language and an environment for numerical computation and visualization.
+The University of Zurich has a campus-wide MATLAB license available to all students and employees. We will use this license to activate MATLAB on our machine.
+If you study or work at Tilburg University and you do not have MATLAB installed on your machine, please register via Mathworks and follow the installation instructions available on the IT Self-Service Portal.</description>
+    </item>
+    
+    <item>
+      <title>Set up Pandoc</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/pandoc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/pandoc/</guid>
+      <description>Installing Pandoc Pandoc is an extremely useful &amp;lsquo;swiss army knife&amp;rsquo; for converting between different types of markup languages from the command line. For example, it readily builds PDFs with latex, and markdown - both of which are heavily used in academic research.
+Linux Open a terminal window and type
+sudo apt install pandoc to install pandoc from the command line
+Mac Open a terminal window and type
+brew install pandoc to install pandoc from the command line</description>
+    </item>
+    
+    <item>
+      <title>Set up Perl</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/perl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/perl/</guid>
+      <description>Installing Perl Perl is an open programming language frequently used by engineers. We use Perl for text processing, such as processing tables generated by other statistical softwares.
+Mac and Linux Perl is already installed on Mac and Linux OS.
+Windows Download Perl for Windows OS.
+For Windows users to be able to use Perl from the command prompt, follow the steps below.
+WarningMaking Perl available via the PATH settings on Windows</description>
+    </item>
+    
+    <item>
+      <title>Set up Python</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python/</guid>
+      <description>Installing Anaconda Python Anaconda is a pre-packaged Python distribution for scientific users. To customize Python with packages and properly use it in combination with automation tools, we prefer a locally installed Anaconda distribution over cloud-based alternatives.
+Watch our YouTube video, in which we walk you through the setup on Windows.
+  Instructions Direct your browser to Anaconda download page and download the Python 3.x Graphical Installer for your machine. Sometimes, the download defaults to Mac, so if you&amp;rsquo;re on Windows or Linux, make sure to select the right version.</description>
+    </item>
+    
+    <item>
+      <title>Set up R and RStudio</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/r/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/r/</guid>
+      <description>Installing R and RStudio R is a language for statistical computing and graphics. R&amp;rsquo;s use in the data science, econometrics and marketing communities has taken off over recent years and (at a bare minimum) should be considered as an open source replacement to Stata and SPSS.
+Installing R Watch our YouTube video, in which we walk you through the setup on Windows.
+  Go to the R website and download the most recent installer for your operating system.</description>
+    </item>
+    
+    <item>
+      <title>Set up Stata</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/stata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/stata/</guid>
+      <description>Installing Stata Stata is a proprietary statistical software frequently used by scientific users. First check with your local IT support whether your institution has Stata licenses available.
+If not, you can purchase a copy on Stata&amp;rsquo;s website and follow the installation guide.
+Making Stata Available on the Command Prompt You have just installed Stata. Later, we&amp;rsquo;d like to access Stata from the command prompt to automatically execute our source code. That way, you will be able to run a series of scripts in batch - which will significantly ease the burden of building complex data workflows.</description>
+    </item>
+    
+  </channel>
+</rss>

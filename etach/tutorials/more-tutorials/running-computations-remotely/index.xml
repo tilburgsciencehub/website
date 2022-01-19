@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Running Computations Remotely on Tilburg Science Hub</title>
+    <link>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/</link>
+    <description>Recent content in Running Computations Remotely on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud Computing</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/cloud-computing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/cloud-computing/</guid>
+      <description>Why Cloud Computing? With increasing demands in computations (i.e., high number of CPUs) or data (i.e., high memory), it can be worthwhile to move your computations and data preparation pipelines to the cloud. Cloud providers offer virtual machines (VM) for rent that you configure to your own needs. For example, if you ran out of RAM on your local machine due to complex computational tasks, you can launch a VM instance with a high amount of memory to execute the computations in the cloud.</description>
+    </item>
+    
+    <item>
+      <title>Launch Instance</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/launch-instance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/launch-instance/</guid>
+      <description>Launch Instance Although you can also launch instances via the command line, here we show you how to get started with the AWS console in your browser.
+  After you have signed in, type “EC2” in the search bar.
+  Click on the orange button that says &amp;ldquo;Launch instance&amp;rdquo;.
+  It asks you to choose an Amazon Machine Image (AMI) which is the operating system that will be launched on the system.</description>
+    </item>
+    
+    <item>
+      <title>Connect Instance</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/connect-instance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/connect-instance/</guid>
+      <description>Connect Instance Depending on your operating system and whether you chose to launch a Linux or Windows instance, follow one of the tutorials below.
+Linux instance Mac
+  Click on your running EC2-instance in the console and copy the Public IPv4 DNS address (e.g., ec2-XX-XXX-XXX-XXX.compute-1.amazonaws.com).
+  Open the terminal and type export HOST=&amp;lt;YOUR-PUBLIC-IPV4-DNS&amp;gt; (see step 1) and export KEY=&amp;lt;PATH_TO_KEY_PAIR_FILE&amp;gt; (e.g., /Users/Roy/Downloads/ec2-key-pair.pem). This creates two variables, HOST and KEY, that we can reference in our terminal (e.</description>
+    </item>
+    
+    <item>
+      <title>Move Files</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/move-files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/move-files/</guid>
+      <description>Move Files Terminal (Mac)   cd into the directory that contains the files that you want to transfer.
+  Type scp -i $KEY -r $(pwd) ec2-user@$HOST:/home/ec2-user to copy your entire working directory to the home directory of your VM. (tip: this method assumes you&amp;rsquo;re not connected yet. If you are though, press Ctrl + D to disconnect).
+  FileZilla (Mac &amp;amp; Windows)  Alternatively, install File Transfer Protocol (FTP) client FileZilla.</description>
+    </item>
+    
+    <item>
+      <title>Run Scripts</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/run-scripts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/run-scripts/</guid>
+      <description>Run Scripts If you opted for the default Amazon Linux 2 AMI, you probably need to install some additional software to be able to execute your code files. To install Python 3 and any other packages on your EC2 instance, run the following commands:
+# install Python sudo yum install python3 # install a single package sudo python3 -m pip install &amp;lt;PACKAGE_NAME&amp;gt; # install multiple packages from txt file sudo python3 -m pip install -r requirements.</description>
+    </item>
+    
+    <item>
+      <title>Terminate Instance</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/terminate-instances/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/terminate-instances/</guid>
+      <description>Terminate Instance Even though the very basic VMs can run for free forever, it is good practice to shut down inactive VMs. After all, you don&amp;rsquo;t want to find out at the end of the month - once you receive your bill from AWS - that you accidentally left an instance running in the background. To terminate a VM follow the steps below:
+ Visit your &amp;ldquo;Instances&amp;rdquo; dashboard in the console Tick the checkboxes of those instances you want to stop.</description>
+    </item>
+    
+  </channel>
+</rss>

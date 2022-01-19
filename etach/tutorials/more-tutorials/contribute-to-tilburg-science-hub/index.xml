@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contribute to Tilburg Science Hub on Tilburg Science Hub</title>
+    <link>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/</link>
+    <description>Recent content in Contribute to Tilburg Science Hub on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learn How to Contribute</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/contribute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/contribute/</guid>
+      <description>How to contribute to Tilburg Science Hub We&amp;rsquo;re glad for your interest in contributing to our project. Tilburg Science Hub is open-source, and as such, anyone can contribute! The process is really simple.
+You are welcome to contribute to our platform in two ways.
+Create a new GitHub Issue Head over to our issue page on GitHub to let us know about bugs, feature requests for the website, or anything that you would love to see developed for your research project (e.</description>
+    </item>
+    
+    <item>
+      <title>Contributing using Pull Requests</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/pullrequests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/pullrequests/</guid>
+      <description>Contributing using Pull Requests On this page, we provide all the necessary resources and information for you to be able to write content autonomously.
+TipPlease, notice that Tilburg Science Hub Building Blocks, Tutorials and Examples are written as Markdown files. We encourage you to familiarize with the Markdown formatting before starting to write - it&amp;rsquo;s very easy!
+ If you want to revise, modify, add, or remove content from existing pages, or report a bug Simple changes The easiest method to make straightforward updates to Markdown files is to use GitHub&amp;rsquo;s web-based file editor.</description>
+    </item>
+    
+    <item>
+      <title>Style and Writing Guide</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide/</guid>
+      <description>Style Guidelines Adopt Our Style of Communication We are glossy and nerdy. We are welcoming, competent and helpful. We seek to cheerfully inform our users. We communicate concisely.
+Will you blend in?
+Language Please develop your content in English.
+Start Your Content With Our Templates Please use our templates when developing new building blocks or tutorials.
+Style Your Content Your content is written in Markdown, and is automatically rendered in our house style.</description>
+    </item>
+    
+    <item>
+      <title>Contributor&#39;s Code of Conduct</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/code-of-conduct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/code-of-conduct/</guid>
+      <description>Code of Conduct As contributors and maintainers of this project, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities.
+We are committed to making participation in this project a harassment-free experience for everyone, regardless of level of experience, gender, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, or religion.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/building-block-shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/building-block-shell/</guid>
+      <description>INSTRUCTIONS:
+ This is a template. Please replace the content while keeping this structure. Make sure to read our contribution guide to learn how to submit your content to Tilburg Science Hub. Always start your file with the parameters shown below. Keep the double quotes as shown. Do NOT use #Titles with a single # in your article. Instead, use the title parameter shown below. Please provide up to 10 keywords for this Building Block in the appropriate parameter.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell/</guid>
+      <description>INSTRUCTIONS:
+ This is a template. Please replace the content while keeping this structure. Make sure to read our contribution guide to learn how to submit your content to Tilburg Science Hub. Always start your file with the parameters shown below. Keep the double quotes as shown. Do NOT use #Titles lines (with a single #) in your article. Instead, use the title parameters shown below. Please provide up to 10 keywords for each tutorial page in the appropriate parameter.</description>
+    </item>
+    
+  </channel>
+</rss>

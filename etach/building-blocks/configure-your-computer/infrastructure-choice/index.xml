@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research Infrastructure on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/</link>
+    <description>Recent content in Research Infrastructure on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Mar 2021 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learn About the Various Ways to Setup a Research Infrastructure</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/infrastructure-requirements/</link>
+      <pubDate>Fri, 05 Mar 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/infrastructure-requirements/</guid>
+      <description>Overview Before diving right into the nitty gritty details, there are a couple of questions that you should always ask yourself at the start of any empirical research project. Here we present to you a 5-step plan that outlines these main considerations in a structured manner.
+TipAs with many of the workflow procedures, we realize that it may come across as a series of redundant steps. And truth be told, it probably does take more time before you experience the benefits.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Research Cloud</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/getting-started-research-cloud/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/getting-started-research-cloud/</guid>
+      <description>Overview Research Cloud is a highly customizable cloud solution for conducting your research. Think of it as a “free” version of Amazon EC2 or Microsoft Azure machine, but then brought to you under the Dutch National e-Infrastructure.
+  What can you do with it? Start virtual computers that run R or Python, attach some storage space, and share these computers with co-authors.
+  The benefits? As a project leader:</description>
+    </item>
+    
+    <item>
+      <title>Set up SURF Research Drive and Rclone to Store Data</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/surf-research-drive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/surf-research-drive/</guid>
+      <description>What is Research Drive? Research Drive is a data storage service by SURF. It&amp;rsquo;s useful to store files that are too big for GitHub (even with LFS), files that need to be shared across multiple projects, archives from pre-GitHub projects, and other kinds of files that don&amp;rsquo;t have a natural home in repositories (e.g., raw data). Think of it as a sort of Dropbox.
+WarningSURF services are only available for researchers affiliated with Dutch institutions.</description>
+    </item>
+    
+  </channel>
+</rss>

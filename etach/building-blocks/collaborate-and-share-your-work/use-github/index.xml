@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Version and Share Code with Github on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/</link>
+    <description>Recent content in Version and Share Code with Github on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Get Started with Using Git and GitHub</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/versioning-using-git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/versioning-using-git/</guid>
+      <description>Overview What is Git? Git is an open-source version control system, which allows you to keep track of your source files, and the changes you make to them. Using Git, you can roll back to any previous version of a file, and easily collaborate with team members.
+Git runs on your computer, and allows you to configure so-called repositories that track files and directories.
+What is GitHub? You can optionally use Git in combination with an online hosting service such as GitHub, which allows you to backup your code, synchronize your work across multiple computers, or collaborate with others on joint projects.</description>
+    </item>
+    
+    <item>
+      <title>The Most Important Git Commands You Should Know</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/most-important-git-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/most-important-git-commands/</guid>
+      <description>Overview This is a summary of the most important Git commands that you can use in Git Bash. If you&amp;rsquo;re not so familiar with working in the command prompt/terminal, you could also try to check out Git Desktop or Git GUI, which provides a graphical user interface for performing the Git workflow.
+Code Clone (&amp;ldquo;download&amp;rdquo;) the repository to your computer.
+git clone &amp;lt;URL&amp;gt; WarningDo not clone a repository into another repository!</description>
+    </item>
+    
+    <item>
+      <title>Contribute to Open Source Projects</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/pull-requests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/pull-requests/</guid>
+      <description>Overview Ever wondered how to contribute to open source projects on GitHub? Here&amp;rsquo;s how!
+Step 1: Get to know the repository Familiarize yourself with the repository to which you want to contribute.
+ Typically, each repository has a readme with general instructions on what the repository is about (&amp;amp; how to run the code). Also, new features and bugs are discussed at the repository’s issue page. Finally, many repositories contain a discussion forum and project board in which you can learn about the roadmap of the project.</description>
+    </item>
+    
+    <item>
+      <title>The GitHub Workflow</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/github-workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/github-workflow/</guid>
+      <description>Overview By default, we follow the Github Flow workflow model, which is summarized below.
+Summary  All work on an issue happens in a separate repository branch.
+  When work is done, whoever is assigned to the issue creates a pull request which may include a request for peer review.
+  Once review (if any) is complete, the changes are merged back to the master branch and the final comment / deliverable are posted.</description>
+    </item>
+    
+    <item>
+      <title>Exclude Files from Versioning</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-ignore/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-ignore/</guid>
+      <description>Let Git/GitHub know which files to exclude from versioning By default, Git/GitHub track any files that you have created, for example:
+ large data files (that you wont be able to upload to GitHub), files that are generated by code (and hence need not to be versioned), and even sensitive passwords that you may have stored in your code accidentally.  Luckily, Git offers a convenient way to exclude files and directories from versioning.</description>
+    </item>
+    
+    <item>
+      <title>Make Your Code Citable with DOI</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/make-code-citable-with-doi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/make-code-citable-with-doi/</guid>
+      <description>DOI (Digital Object Identifiers) are a very important and widely used tool to uniquely identify objects in academic literature and beyond - for instance, journal articles, research reports, but also code and data sets.
+If you are a researcher who writes code and deals with primary data, you may want to archive your code and make it citable by assigning a DOI to your GitHub repository.
+Follow this guide and learn how to do it using GitHub and Zenodo.</description>
+    </item>
+    
+    <item>
+      <title>Remove Sensitive or Large Files From Your Repository</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/remove-files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/remove-files/</guid>
+      <description>Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work.
+Normally, versioning really is a good thing, unless&amp;hellip;
+ you accidentally stored sensitive information in your source code that you really do not want to be out in the public (e.g., API credentials, passwords), you accidentally stored files (e.g., large data sets, images) in your repository, that you cannot upload to GitHub (and hence can&amp;rsquo;t synchronize your repository anymore)  Luckily, there are ways out!</description>
+    </item>
+    
+    <item>
+      <title>Working With Large Files on GitHub</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-lfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-lfs/</guid>
+      <description>Overview GitHub limits the size of files allowed in repositories. It warns you if you&amp;rsquo;re trying to push a 50MB file, and completely stops you if the push exceeds 100MB.
+However, even if it didn&amp;rsquo;t stop you, versioning large files would be very impractical. That&amp;rsquo;s because a repository contains every version of every file – that&amp;rsquo;s the point of versioning, right? Having multiple versions of large files cloned locally can become expensive in terms of disk space and fetch time.</description>
+    </item>
+    
+    <item>
+      <title>Archiving Repositories when They&#39;re Done</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/mothball/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/mothball/</guid>
+      <description>What are mothball repositories? A mothballed repository refers to a repository where no further active work is expected but the repository is kept in a condition such that work can readily begin again. To mothball a repository, confirm all of the following requirements have been satisfied. During this process, you are welcome to reach out to previous comment makers if you need their input to satisfy the mothballing requirements.
+Requirements  All current issues have been closed with clear deliverables (if the issue was complete) or clear summaries of what was done / not done (if the issue was incomplete).</description>
+    </item>
+    
+    <item>
+      <title>Export Repositories with Github Releases</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/releases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/releases/</guid>
+      <description>Github Releases A release is an export of all or part of a repository that we want to be able to access for some downstream use. Examples include:
+ Draft of a paper for posting or submission Slide deck for a presentation Cleaned data files to be used in other repositories or projects Intermediate data files to be used in the current repository that we want to maintain in a stable and replicable state  Releases should include the files we intend to use downstream as well as sufficient information to reproduce those files.</description>
+    </item>
+    
+  </channel>
+</rss>

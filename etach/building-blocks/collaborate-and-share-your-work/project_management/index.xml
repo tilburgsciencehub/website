@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Professionalize Project Management on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/</link>
+    <description>Recent content in Professionalize Project Management on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manage your Projects using the GitHub Project Board</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/git-project-board/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/git-project-board/</guid>
+      <description>Overview Projects boards on GitHub help you organize and prioritize your work using the Scrum framework for project management. The benefit from project boards is that you can link your repositories. This way all issues that are related to different projects can be organized in a unique project board.
+Get Started with GitHub Projects   On your profile page on GitHub, you can find a tab “Projects” that enables you to view all your current projects board and make a “New Project”, for instance:</description>
+    </item>
+    
+    <item>
+      <title>How to Prepare for (and Follow-up On) Scrum Meetings</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/meeting_preparation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/meeting_preparation/</guid>
+      <description>How to Prepare for (and Follow-up on) Scrum Meetings When using Scrum and GitHub Project Boards to manage work on projects, it&amp;rsquo;s tempting to forget actually preparing and following-up on meetings. Sol here are our tips to make meetings as effective as possible.
+Prepare the meeting  Ensure that all the issues that are completed are moved to the “Done” section. If you have a follow-up question/tasks on an issue you have moved to “Done”, make sure to add a comment to that issue.</description>
+    </item>
+    
+    <item>
+      <title>Write GitHub Issues That Get the Job Done</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/write-good-issues/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/write-good-issues/</guid>
+      <description>Overview Why Issues? Github Issues can be used to clearly define tasks that either you or your team members will eventually work on. In combination with Kanban-style GitHub Project boards, they become a compelling way of coordinating teamwork. They also help you keep track of what&amp;rsquo;s happening on projects and provide a durable, replicable record of the work for future reference.
+Getting Started with Issues  Every issue has a creator (i.</description>
+    </item>
+    
+    <item>
+      <title>Bring Open Science Practices to your Research Group</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/team-transition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/team-transition/</guid>
+      <description>Overview Open Science practices can boost your enjoyment and productivity when working on empirical research projects. Yet, imagine not only you, but also other members of your department and school to use similar tools and methods to collaborate?
+Luckily, you don&amp;rsquo;t have to reinvent the wheel and can follow best-practices of leading research groups.
+Experiences in transitioning to open science   Lowndes et al. 2019, &amp;ldquo;Supercharge your research - a ten-week plan for open data science&amp;rdquo;</description>
+    </item>
+    
+  </channel>
+</rss>

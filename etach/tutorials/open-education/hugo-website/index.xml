@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Create Your Own Website in 15 Minutes on Tilburg Science Hub</title>
+    <link>http://localhost:1313/tutorials/open-education/hugo-website/</link>
+    <description>Recent content in Create Your Own Website in 15 Minutes on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/tutorials/open-education/hugo-website/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Website Overview</title>
+      <link>http://localhost:1313/tutorials/open-education/hugo-website/hugo-website-overview/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/hugo-website/hugo-website-overview/</guid>
+      <description>Why to Launch a Website? Whether you want to spread the word about your research work or to share content with your students in open education classes, getting your very own website to do so would help you immensely.
+A few ideas of what you could do with a personal website:
+ Showcase your own academic profile and research work in a professional way Disclose data and share your results with the world Run your open education classes, publishing the syllabus, lectures, exercises&amp;hellip; Maintain a collection of articles or blog posts Virtually anything else!</description>
+    </item>
+    
+    <item>
+      <title>Get Hugo</title>
+      <link>http://localhost:1313/tutorials/open-education/hugo-website/get-hugo/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/hugo-website/get-hugo/</guid>
+      <description>Install Hugo First off, make sure to have Git properly installed and set up.
+MacOS &amp;amp; Linux Make sure you have Brew installed. Then, to install Hugo:
+brew install hugo Windows If you use Chocolatey:
+choco install hugo -confirm Alternatively, see other installing options here.
+Create a New Local Website You&amp;rsquo;re now ready to start.
+To create a new Hugo website, move to a directory of your choice and run:</description>
+    </item>
+    
+    <item>
+      <title>Pick a Theme</title>
+      <link>http://localhost:1313/tutorials/open-education/hugo-website/pick-theme/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/hugo-website/pick-theme/</guid>
+      <description>It&amp;rsquo;s time you pick a theme for your website. This will determine how the content will look to the users. Head over to themes.gohugo.io and choose one!
+ We suggest Academia Hugo as a simple theme for personal websites, where you can showcase your portfolio, resume, and research work.   The Wowchemy Academic Theme for personal websites too.   The Hugo Dot Theme for knowledge bases and documentation websites, for instance a thesis companion:   Our brand-new Hugo-TiU theme for open education classes.</description>
+    </item>
+    
+    <item>
+      <title>Add Some Content</title>
+      <link>http://localhost:1313/tutorials/open-education/hugo-website/add-content/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/hugo-website/add-content/</guid>
+      <description>The content Folder Now that you&amp;rsquo;ve set up a theme for your Hugo website, you can finally start to write some content!
+Just manually create Markdown files using a text editor and place them in the content folder. The path should look something like this: content/&amp;lt;CATEGORY&amp;gt;/&amp;lt;FILE&amp;gt;.md. Usually, you can create as many categories as you want, but it&amp;rsquo;s better to check the theme documentation.
+ExampleFor instance, the About page of odcm.</description>
+    </item>
+    
+    <item>
+      <title>Go Live!</title>
+      <link>http://localhost:1313/tutorials/open-education/hugo-website/go-live/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/hugo-website/go-live/</guid>
+      <description>How to Host Your Website Because your website is static, it can be hosted virtually anywhere using any web server.
+However, we highly suggest you to deploy your website using Netlify.
+Netlify can host your website for free, it&amp;rsquo;s very easy to use since it&amp;rsquo;s linked to your GitHub profile, and it provides some great perks, like a global CDN, free SSL certificates and continuous deployment.
+The Last Piece of the Puzzle   First, if you haven&amp;rsquo;t done it already, create a new GitHub repository for your website.</description>
+    </item>
+    
+  </channel>
+</rss>

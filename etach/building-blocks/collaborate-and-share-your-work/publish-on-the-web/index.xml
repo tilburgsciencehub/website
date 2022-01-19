@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publish on the Web on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/publish-on-the-web/</link>
+    <description>Recent content in Publish on the Web on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/building-blocks/collaborate-and-share-your-work/publish-on-the-web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build Interactive Dashboards With R Shiny</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/publish-on-the-web/shiny-apps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/publish-on-the-web/shiny-apps/</guid>
+      <description>What is a Shiny App? The Shiny library helps you turn your analyses into interactive web applications without requiring HTML, CSS, or Javascript knowledge, and provides a powerful web framework for building web applications using R.
+Being able to create Shiny apps is a great skill to have because it enables you to communicate your insights to non-technical stakeholders and give them the tools to conduct their own analysis!
+Code Skeleton The skeleton of any Shiny app consists of a user interface (ui) and a server.</description>
+    </item>
+    
+  </channel>
+</rss>

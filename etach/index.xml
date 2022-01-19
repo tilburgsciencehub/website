@@ -1,0 +1,1483 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tilburg Science Hub</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 16:13:31 +0530</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pipeline Automation Overview</title>
+      <link>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/pipeline-automation-overview/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/pipeline-automation-overview/</guid>
+      <description>Longing to put your knowledge from our workflow guide into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our GitHub workflow template.
+Objectives of this tutorial  Familiarize yourself with a robust directory structure for data-intensive projects Experience the benefits of automating workflows with makefiles/GNU make Learn to use Git templates for your own research projects Adjust the workflow template to  &amp;hellip;download different datasets from the web &amp;hellip;unzip data automatically &amp;hellip;parse JSON objects and select relevant attributes &amp;hellip;add new text mining metrics to the final data set using Python&amp;rsquo;s textblob &amp;hellip;modify the analysis in an RMarkdown/html document    Prerequisites  Computer setup following our setup instructions.</description>
+    </item>
+    
+    <item>
+      <title>Document New Data</title>
+      <link>http://localhost:1313/building-blocks/store-and-document-your-data/document-data/documenting-new-data/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/store-and-document-your-data/document-data/documenting-new-data/</guid>
+      <description>Overview Ideally, your data description includes the very elaborate questions outlined in Datasheets for datasets by Gebru, Timnit, et al. (2018)1. We strongly refer you to the original paper, which explains in detail the seven key ingredients of a proper dataset documentation.
+Below, we have reproduced these questions, and we recommend you to include those as a readme.txt, together with your datasets. For derived data, it may be enough to point to a relevant source code file, and provide a list of variables and their operationalization.</description>
+    </item>
+    
+    <item>
+      <title>A Reproducible Research Workflow with AirBnB Data</title>
+      <link>http://localhost:1313/examples/reproducible-workflow-airbnb/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/examples/reproducible-workflow-airbnb/</guid>
+      <description>Overview Using publicly available data from AirBnB (available via Kaggle.com), we illustrate how a reproducible workflow may look like in practice.
+Check out the GitHub RepositoryWe&amp;rsquo;ve crafted this project to run:
+ platform-independent (Mac, Linux, Windows) across a diverse set of software programs (Stata, Python, R) producing an entire (mock) paper, including modules that  download data from Kaggle, prepare data for analysis, run a simple analysis, produce a paper with output tables and figures.</description>
+    </item>
+    
+    <item>
+      <title>Project Setup Overview</title>
+      <link>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/project-setup-overview/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/project-setup-overview/</guid>
+      <description>Motivation When working on a project, most of us spend time thinking about what to create (e.g., a cleaned data set, a new algorithm, an analysis, and/or a paper and corresponding slides), but not about how to manage its creation. This results in two major issues, as outlined next.
+Major issues in managing data-intensive projects
+  we may lose sight of the project (&amp;ldquo;directory and file chaos&amp;rdquo;)
+ Gradually, we write code and edit data sets, and put those files somewhere on our computer.</description>
+    </item>
+    
+    <item>
+      <title>Searching for Literature on the Web</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/search-literature/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/search-literature/</guid>
+      <description>What to search for? Search effectively. Although there is no exact recipe for an effective search, the following tips will surely help you find relevant literature for your research more effectively:
+  Identify your keywords. Start by defining the research question that you aim to answer, what are the main ideas? Use such question toward identifying the keywords. Employing the jargon of your subject area will also help you to find the most effective words for your search.</description>
+    </item>
+    
+    <item>
+      <title>What is an educational video?</title>
+      <link>http://localhost:1313/tutorials/open-education/educational-videos/educational-videos-overview/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/educational-videos/educational-videos-overview/</guid>
+      <description>What is an educational video? An educational video is meant for transferring knowledge to an audience. These often involve animations or presenting a slide deck. However, in most of the cases, you might want to show yourself - or the presenter - talking to the camera.
+This guide will focus on the process of making these videos, not the content, and it&amp;rsquo;s aimed at teachers or contributors of Tilburg Science Hub.</description>
+    </item>
+    
+    <item>
+      <title>Writing an Academic Paper</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/write-an-academic-paper/write-an-academic-paper/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/write-an-academic-paper/write-an-academic-paper/</guid>
+      <description>Overview The typical structure of an empirical paper in economics and business (or a master thesis, or a chapter of a Ph.D. thesis) involves the following sections, roughly in this order:
+Structure of your paper Abstract Be as brief as possible and avoid word-by-word duplication with the introduction. State very clearly what the main take-away is for your paper. This can be a qualitative finding, but it can also be a number.</description>
+    </item>
+    
+    <item>
+      <title>Data Sharing</title>
+      <link>http://localhost:1313/tutorials/reproducible-research/share-data/share-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/reproducible-research/share-data/share-data/</guid>
+      <description>Overview When conducting your empirical research, you typically spend a lot of time cleaning and documenting your data so that team members can use it.
+Several open science tools can help you manage the process of cleaning, documenting, and - importantly - maintaining your dataset more efficiently. For this, we require a &amp;ldquo;data workflow.&amp;rdquo;
+What&amp;rsquo;s a data workflow? A data workflow consists of a code repository (e.g., on GitHub), your raw data (e.</description>
+    </item>
+    
+    <item>
+      <title>Get Started with Using Git and GitHub</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/versioning-using-git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/versioning-using-git/</guid>
+      <description>Overview What is Git? Git is an open-source version control system, which allows you to keep track of your source files, and the changes you make to them. Using Git, you can roll back to any previous version of a file, and easily collaborate with team members.
+Git runs on your computer, and allows you to configure so-called repositories that track files and directories.
+What is GitHub? You can optionally use Git in combination with an online hosting service such as GitHub, which allows you to backup your code, synchronize your work across multiple computers, or collaborate with others on joint projects.</description>
+    </item>
+    
+    <item>
+      <title>Manage your Projects using the GitHub Project Board</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/git-project-board/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/git-project-board/</guid>
+      <description>Overview Projects boards on GitHub help you organize and prioritize your work using the Scrum framework for project management. The benefit from project boards is that you can link your repositories. This way all issues that are related to different projects can be organized in a unique project board.
+Get Started with GitHub Projects   On your profile page on GitHub, you can find a tab “Projects” that enables you to view all your current projects board and make a “New Project”, for instance:</description>
+    </item>
+    
+    <item>
+      <title>Start up a new project</title>
+      <link>http://localhost:1313/tutorials/reproducible-research/start-new-project/starting-up-a-new-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/reproducible-research/start-new-project/starting-up-a-new-project/</guid>
+      <description>When working on a new project, it&amp;rsquo;s efficient to kick-start your work with a well-documented &amp;ldquo;repository template&amp;rdquo; that sets up your workflow, and provides you with some minimal documentation so that team members can quickly contribute to your work.
+In this tutorial, we walk you through the steps of setting up a project on your computer. Throughout, you&amp;rsquo;ll use one of our project templates on GitHub.
+1. Assess project requirements Before we dive right into the nitty gritty details, here are a couple of things to consider when you set up new projects.</description>
+    </item>
+    
+    <item>
+      <title>Learn About the Various Ways to Setup a Research Infrastructure</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/infrastructure-requirements/</link>
+      <pubDate>Fri, 05 Mar 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/infrastructure-requirements/</guid>
+      <description>Overview Before diving right into the nitty gritty details, there are a couple of questions that you should always ask yourself at the start of any empirical research project. Here we present to you a 5-step plan that outlines these main considerations in a structured manner.
+TipAs with many of the workflow procedures, we realize that it may come across as a series of redundant steps. And truth be told, it probably does take more time before you experience the benefits.</description>
+    </item>
+    
+    <item>
+      <title>Buying Equipment for Educational Videos</title>
+      <link>http://localhost:1313/tutorials/open-education/educational-videos/equipment-edu-videos/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/educational-videos/equipment-edu-videos/</guid>
+      <description>Part 1 We&amp;rsquo;re going to present three different setup options ordered by increasing complexity. Keep in mind that more complex setups require a higher budget, more physical space, and more time to put in place. The higher setup time is one-off. Actually, in all three options it&amp;rsquo;s very quick and easy to start rolling once everything has been correctly configured for the first time.
+Option 1 - Home Setup with a Webcam The need of expensive gear to produce high quality images is a myth.</description>
+    </item>
+    
+    <item>
+      <title>Configuring Python for Web Scraping</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/</guid>
+      <description>Web Scraping Using an Automated Browser Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page. This is especially true when the site we want to scrape has content that is loaded dynamically with javascript.
+We will install one package to help us here: ChromeDriver. Below we show two different ways of installing it.
+Install ChromeDriver In order to install ChromeDriver, make sure you have already installed:</description>
+    </item>
+    
+    <item>
+      <title>Import Large Datasets Into R</title>
+      <link>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/large-datasets-r/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/large-datasets-r/</guid>
+      <description>Overview Many R-users rely on the dplyr or read.table packages to import their datasets as a dataframe. Although this works well for relatively small datasets, we recommend using the data.table R package instead because it is significantly faster. This building block provides you with some practical tips for dealing with large datsets in R.
+Code As a starting point, make sure to clean your working environment in RStudio. Oftentimes, there are datasets stored memory that you have worked with earlier but you&amp;rsquo;re no longer using.</description>
+    </item>
+    
+    <item>
+      <title>Verify Software Setup</title>
+      <link>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/verify/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/verify/</guid>
+      <description>Let&amp;rsquo;s verify whether everything is properly installed Before we&amp;rsquo;re getting started, let&amp;rsquo;s verify whether you have properly followed our setup guide for R, Python and make in order to be able to run our workflow.
+Our tutorial clips are recorded on Windows, but have been tested on a Mac, too.
+Watch our video   </description>
+    </item>
+    
+    <item>
+      <title>Run a Regression Analysis</title>
+      <link>http://localhost:1313/building-blocks/analyze-data/regressions/regression-analysis/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/analyze-data/regressions/regression-analysis/</guid>
+      <description>Overview In the social sciences, regression analysis is a popular tool to estimate relationships between a dependent variable and one or more independent variables. It is a way to find trends in data, quantify the impact of input variables, and make predictions for unseen data.
+In this building block, we illustrate how to estimate a model, identify outliers, plot a trend line, and make predictions.
+Code Estimate the Model Linear regression (lm) is suitable for a response variable that is numeric.</description>
+    </item>
+    
+    <item>
+      <title>A Simple Reproducible Research Workflow</title>
+      <link>http://localhost:1313/examples/simple-reproducible-workflow/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/examples/simple-reproducible-workflow/</guid>
+      <description>Overview In this example, you find a simple make pipeline, which prepares (data-preparation) and analyzes (analysis) data using R, and creates some tables for a paper (paper) using LaTeX.
+This is probably the most simplistic but still complete workflow, and thus highly recommended as a template to kickstart your projects.
+You can check out this repository for all the details. Fork it/use it as a template - contributions appreciated!</description>
+    </item>
+    
+    <item>
+      <title>Build and Maintain a Reference List</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/reference-list/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/reference-list/</guid>
+      <description>Overview One of the most tedious tasks (if not the most) when writing a publication (e.g, article, thesis) is dealing with references. A good usage of reference management applications will save you a lot of time, which you can put to better use in your research.
+In this building block, we go trough the most widely used reference management applications: Mendeley, Zotero and EndNote.
+Mendeley Mendeley Reference Manager is a free web and desktop reference management application which can be downloaded for Windows, MacOS and Linux.</description>
+    </item>
+    
+    <item>
+      <title>Pipelines and Project Components</title>
+      <link>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/pipeline/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/pipeline/</guid>
+      <description>Overview It is useful to break down a project into its most basic parts, which we call pipeline and components.
+  A pipeline refers to the steps that are necessary to build a project (e.g., prepare dataset, run model, produce tables and figures), and
+  Components refer to a project&amp;rsquo;s most nuclear building blocks (e.g., data, source code, and generated temporary and/or output files).
+  Later on, you will see that such a structure enables you to work on your project using multiple computers (e.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Research Cloud</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/getting-started-research-cloud/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/getting-started-research-cloud/</guid>
+      <description>Overview Research Cloud is a highly customizable cloud solution for conducting your research. Think of it as a “free” version of Amazon EC2 or Microsoft Azure machine, but then brought to you under the Dutch National e-Infrastructure.
+  What can you do with it? Start virtual computers that run R or Python, attach some storage space, and share these computers with co-authors.
+  The benefits? As a project leader:</description>
+    </item>
+    
+    <item>
+      <title>How to Prepare for (and Follow-up On) Scrum Meetings</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/meeting_preparation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/meeting_preparation/</guid>
+      <description>How to Prepare for (and Follow-up on) Scrum Meetings When using Scrum and GitHub Project Boards to manage work on projects, it&amp;rsquo;s tempting to forget actually preparing and following-up on meetings. Sol here are our tips to make meetings as effective as possible.
+Prepare the meeting  Ensure that all the issues that are completed are moved to the “Done” section. If you have a follow-up question/tasks on an issue you have moved to “Done”, make sure to add a comment to that issue.</description>
+    </item>
+    
+    <item>
+      <title>The Most Important Git Commands You Should Know</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/most-important-git-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/most-important-git-commands/</guid>
+      <description>Overview This is a summary of the most important Git commands that you can use in Git Bash. If you&amp;rsquo;re not so familiar with working in the command prompt/terminal, you could also try to check out Git Desktop or Git GUI, which provides a graphical user interface for performing the Git workflow.
+Code Clone (&amp;ldquo;download&amp;rdquo;) the repository to your computer.
+git clone &amp;lt;URL&amp;gt; WarningDo not clone a repository into another repository!</description>
+    </item>
+    
+    <item>
+      <title>Use Makefiles to Re-Run Your Code</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/what-are-makefiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/what-are-makefiles/</guid>
+      <description>Overview Makefiles are instructions (&amp;ldquo;rules&amp;rdquo;) for a computer on how to build &amp;ldquo;stuff&amp;rdquo;. Think of makefiles as a recipe you may know from cooking (&amp;ldquo;Baking a cake: First, take some flour, then add milk [&amp;hellip;]&amp;quot;) - but then for computers.
+Makefiles originate in software development, where they have been used to convert source code into software programs that can then be distributed to users.
+Researchers can use makefiles to define rules how individual components (e.</description>
+    </item>
+    
+    <item>
+      <title>Download the Template</title>
+      <link>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/clone/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/clone/</guid>
+      <description>Let&amp;rsquo;s download the template You can access the workflow template from here. We first need to download (or, as Git users would say, fork and clone) the template. The template then is accessible on our local computer, and we can start modifying it.
+Watch our video to learn about the two ways of downloading a template. After that, work through the set of practice questions.
+  WarningClone/download the files where you have writing rights.</description>
+    </item>
+    
+    <item>
+      <title>Manipulate Data</title>
+      <link>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/manipulate-data/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/manipulate-data/</guid>
+      <description>Chris Albon, Director of Machine Learning at the Wikimedia Foundation, hosts a great selection of notes and code snippets on data science, machine learning, data manipulation, data visualization, and much more.
+Go to chrisalbon.com</description>
+    </item>
+    
+    <item>
+      <title>Shooting Educational Videos</title>
+      <link>http://localhost:1313/tutorials/open-education/educational-videos/shooting-edu-videos/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/educational-videos/shooting-edu-videos/</guid>
+      <description>Part 2 In this second part of our guide you will learn about the essential steps required to shoot educational videos.
+Step 1 - Set Up Your Scene The first thing to do is to set up your scene, place your camera on a tripod, and compose the shot.
+Here you face your first decision. You will need to choose what to include in your frame. This will dictate what focal length to use (i.</description>
+    </item>
+    
+    <item>
+      <title>Use this Checklist to Improve Your Project&#39;s Structure</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/workflow-checklist/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/workflow-checklist/</guid>
+      <description>Overview As time goes on, projects tend to become messy which inhibits reproducibility. Hence, we recommend keeping an eye on this housekeeping checklist from time to time.
+Checklist Project level  Implement a consistent directory structure: data/src/gen Include readme with project description and technical instruction how to run/build the project Store any authentication credentials outside of the repository (e.g., in a JSON file), NOT clear-text in source code Mirror your /data folder to a secure backup location; alternatively, store all raw data on a secure server and download relevant files to /data  Throughout the Pipeline File/directory structure  Create subdirectory for source code: /src/[pipeline-stage-name]/ Create subdirectories for generated files in /gen/[pipeline-stage-name]/: temp, output, and audit.</description>
+    </item>
+    
+    <item>
+      <title>In-depth Introduction to Machine Learning and R</title>
+      <link>http://localhost:1313/building-blocks/analyze-data/machine-learning/introduction-to-machine-learning/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/analyze-data/machine-learning/introduction-to-machine-learning/</guid>
+      <description>Get started with machine learning and R with more than 15 hours of videos at dataschool.io.
+You will find 10 chapters ranging from linear regressions to unsupervised learning.
+Go to dataschool.io</description>
+    </item>
+    
+    <item>
+      <title>An Interactive Shiny App of Google&#39;s COVID-19 Data</title>
+      <link>http://localhost:1313/examples/google-covid-shiny-app/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/examples/google-covid-shiny-app/</guid>
+      <description>Overview This example illustrates how to create a Shiny app which allows you to interactively explore Google’s COVID-19 Community Mobility Reports of the Netherlands through an intuitive visual interface (see the live version here).
+How to create it 1. Skeleton The Shiny library helps you turn your analyses into interactive web applications without requiring HTML, CSS, or Javascript knowledge, and provides a powerful web framework for building web applications using R.</description>
+    </item>
+    
+    <item>
+      <title>Cite Efficiently in Your Academic Paper</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/citations/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/citations/</guid>
+      <description>Citation Styles Many academic journals, publishers or university departments require a specific citation style. If that is the case, check their guidelines. However, if nothing is specified you still have to choose one and be consistent with it.
+Which style should be chosen? Usually your choice will depend on your field/discipline or even country of publication. For instance, APA is one of the most common styles for social sciences, MLA in humanities, AMA in medicine, OSCOLA for law in the UK mainly etc.</description>
+    </item>
+    
+    <item>
+      <title>Principles for Good Coding</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/principles-good-coding/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/principles-good-coding/</guid>
+      <description>Write programs for people, not computers Make your code easy to understand for humans. If your code looks very complex or messy, you&amp;rsquo;re probably doing it wrong.
+ Organization  Define functions that do one mayor step each, instead of one giant script doing everything Write short scripts that do one task each Document only what your code doesn&amp;rsquo;t say, but nothing else   Style  Use meaningful and short variable names Use consistent code and formatting styles (oneExample, one_example, example-one) Make use of indents in your code    Define things once and only once Let computers repeat and execute tasks.</description>
+    </item>
+    
+    <item>
+      <title>Data Management and Directory Structure</title>
+      <link>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/directories/</link>
+      <pubDate>Sat, 10 Oct 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/directories/</guid>
+      <description>Overview From the previous section in this guide, recall that a project can be logically structured in the following components: raw data (e.g., data sets), source code (e.g., code to prepare your data and to analyze it), generated files (e.g., some diagnostic plots or the result of your analysis), a file exchange, and notes (e.g., literature, meeting summaries).
+Below, we give you some more guidance on how to manage these components, by casting a prototypical directory structure that you need to set up on your computer.</description>
+    </item>
+    
+    <item>
+      <title>Contribute to Open Source Projects</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/pull-requests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/pull-requests/</guid>
+      <description>Overview Ever wondered how to contribute to open source projects on GitHub? Here&amp;rsquo;s how!
+Step 1: Get to know the repository Familiarize yourself with the repository to which you want to contribute.
+ Typically, each repository has a readme with general instructions on what the repository is about (&amp;amp; how to run the code). Also, new features and bugs are discussed at the repository’s issue page. Finally, many repositories contain a discussion forum and project board in which you can learn about the roadmap of the project.</description>
+    </item>
+    
+    <item>
+      <title>Impact evaluation with Difference-in-Differences and Regression Discontinuity</title>
+      <link>http://localhost:1313/building-blocks/analyze-data/regressions/impact-evaluation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/analyze-data/regressions/impact-evaluation/</guid>
+      <description>Impact Evaluation Why? Many programs are designed to improve outcomes such as learning, health or productivity. Have resources been spent wisely on the program? Did the program/policy work? These are the questions that impact evaluation answers, based on evidence.
+In this building block we discuss two of the most commonly used impact evaluation methods, Difference-in-Differences (DiD) and Regression Discontinuity (RD).
+Difference-in-Differences SummaryDiD compares the changes in outcomes (e.g. productivity) over time between a population that is enrolled in a program (the treatment group, e.</description>
+    </item>
+    
+    <item>
+      <title>Make Tables and Figures Reproducible with Autofilling Values</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/autofilling-values/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/autofilling-values/</guid>
+      <description>Hard-coded values To facilitate reproducibility, figures and tables should always be generated programmatically and never include hard-coded values. The tablefill package of gslab_make is a useful tool to help create complex tables.
+In-text values Frequently, it is necessary to include values derived from calculations in the text of a document. For example, we may wish to reference a coefficient from a regression specification. To facilitate reproducibility and avoid text from becoming outdated, it is recommended to include values programatically.</description>
+    </item>
+    
+    <item>
+      <title>Set up SURF Research Drive and Rclone to Store Data</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/surf-research-drive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/infrastructure-choice/surf-research-drive/</guid>
+      <description>What is Research Drive? Research Drive is a data storage service by SURF. It&amp;rsquo;s useful to store files that are too big for GitHub (even with LFS), files that need to be shared across multiple projects, archives from pre-GitHub projects, and other kinds of files that don&amp;rsquo;t have a natural home in repositories (e.g., raw data). Think of it as a sort of Dropbox.
+WarningSURF services are only available for researchers affiliated with Dutch institutions.</description>
+    </item>
+    
+    <item>
+      <title>The GitHub Workflow</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/github-workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/github-workflow/</guid>
+      <description>Overview By default, we follow the Github Flow workflow model, which is summarized below.
+Summary  All work on an issue happens in a separate repository branch.
+  When work is done, whoever is assigned to the issue creates a pull request which may include a request for peer review.
+  Once review (if any) is complete, the changes are merged back to the master branch and the final comment / deliverable are posted.</description>
+    </item>
+    
+    <item>
+      <title>Write GitHub Issues That Get the Job Done</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/write-good-issues/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/write-good-issues/</guid>
+      <description>Overview Why Issues? Github Issues can be used to clearly define tasks that either you or your team members will eventually work on. In combination with Kanban-style GitHub Project boards, they become a compelling way of coordinating teamwork. They also help you keep track of what&amp;rsquo;s happening on projects and provide a durable, replicable record of the work for future reference.
+Getting Started with Issues  Every issue has a creator (i.</description>
+    </item>
+    
+    <item>
+      <title>Clean Data Scraped From Social Media</title>
+      <link>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/clean-social-media-counts/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/clean-social-media-counts/</guid>
+      <description>Overview This is a handy function that can be used to clean social media data scraped from the web.
+Usually, when scraping social media, the output data can contain letters like K&amp;rsquo;s (Thousands), M&amp;rsquo;s (Millions) and B&amp;rsquo;s (Billions). You are won&amp;rsquo;t be able to analyze them unless you first replace these letters with the appropriate zero digits.
+Code # Function to convert textual social media counts to proper digits social_media_cleanup &amp;lt;- function(x) { if (class(x)%in%c(&amp;#39;integer&amp;#39;,&amp;#39;numeric&amp;#39;)) { warning(&amp;#39;Input is already numeric.</description>
+    </item>
+    
+    <item>
+      <title>Running the Workflow</title>
+      <link>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/run/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/run/</guid>
+      <description>Let&amp;rsquo;s run the workflow When starting to work with a template, we ideally like to see it &amp;ldquo;working&amp;rdquo; on &amp;ldquo;test data&amp;rdquo; first. In this way, we know we can extend it easily. As our template is fully automated, building should be easy - you only need to type make.
+So let&amp;rsquo;s go ahead by first watching our demo on what happens if you run make in our template&amp;rsquo;s main directory. Then, you can proceed to our practice questions.</description>
+    </item>
+    
+    <item>
+      <title>Automating your Pipeline</title>
+      <link>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/automation/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/automation/</guid>
+      <description>Overview Remember the different stages of a project&amp;rsquo;s pipeline? Let&amp;rsquo;s suppose we&amp;rsquo;re in the process of preparing our data set for analysis. For example:
+ You wish to convert three raw data sets from Excel to CSV files. You want to merge these three CSV files and apply some cleaning steps. Finally, you want to save the final data set, so that it can be used in other stages of your project pipeline (e.</description>
+    </item>
+    
+    <item>
+      <title>Exploring Trends in the Cars Dataset with Regression Analysis</title>
+      <link>http://localhost:1313/examples/exploring-regression-results/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/examples/exploring-regression-results/</guid>
+      <description>Overview In this example, we analyze the relationship between a car&amp;rsquo;s speed and the stop distance. First, we check the model assumptions and screen for potential outliers. Second, we export our regression results into a format that you can easily copy into word processing software. Third, we build a scatter plot with the trend line on top of it. Fourth and last, we make predictions for unseen data points.
+How to create it 1.</description>
+    </item>
+    
+    <item>
+      <title>Python Coding Style Guidelines</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/python-coding-style/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/python-coding-style/</guid>
+      <description>PEP 8 We follow Python&amp;rsquo;s style guide PEP 8. Also we:
+ Use docstrings for functions whose purpose may be unclear or that will be used outside of their own modules  Supplemental resources:   The Hitchhiker’s Guide to Python, especially the sections on coding style and packaging conventions.
+  Google&amp;rsquo;s Python Style Guide, especially recommendations concerning string formatting and the rule to always explicitly close files and sockets.</description>
+    </item>
+    
+    <item>
+      <title>Exclude Files from Versioning</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-ignore/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-ignore/</guid>
+      <description>Let Git/GitHub know which files to exclude from versioning By default, Git/GitHub track any files that you have created, for example:
+ large data files (that you wont be able to upload to GitHub), files that are generated by code (and hence need not to be versioned), and even sensitive passwords that you may have stored in your code accidentally.  Luckily, Git offers a convenient way to exclude files and directories from versioning.</description>
+    </item>
+    
+    <item>
+      <title>Inspecting the Data-preparation Pipeline</title>
+      <link>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/pipeline-make/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/pipeline-make/</guid>
+      <description>Makefile of the data-preparation pipeline Up to now, we&amp;rsquo;ve learnt how to run make in our template. But we haven&amp;rsquo;t really learnt yet how the files in each of the particular pipeline stages are actually run. So, let&amp;rsquo;s now navigate to the data-preparation source code folder, and explore the makefile a bit.
+Please first try to answer our questions below, and then watch our solutions.
+Practice questions and answers   Inspect the syntax of the makefile in src/data-preparation/.</description>
+    </item>
+    
+    <item>
+      <title>A Reproducible Workflow Using Snakemake and R</title>
+      <link>http://localhost:1313/examples/reproducible-workflow-snakemake-r/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/examples/reproducible-workflow-snakemake-r/</guid>
+      <description>Overview This is a template for a reproducible research project that uses Snakemake and the R programming language.
+We use Snakemake to construct a set of rules to build our workflow from start to finish, starting with some data cleaning, running some regressions, constructung figures and tables, and then finishing with compiling a pdf article and slides.
+We believe this mimics an approximate workflow of most empirical research in social sciences.</description>
+    </item>
+    
+    <item>
+      <title>Documenting Datasets</title>
+      <link>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-data/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-data/</guid>
+      <description>Documenting Datasets If your project contains data that has been newly created (i.e., which is not otherwise (publicly) available yet; including derived data sets), you are required to include a documentation of that data in your project.
+Instances of &amp;ldquo;new data&amp;rdquo; may included, but are not restricted to be:
+ data scraped from websites data gathered via APIs manually labeled data  e.g., to assign GDP per capita to a list of countries e.</description>
+    </item>
+    
+    <item>
+      <title>R Coding Style Guidelines</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/r-code-style/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/r-code-style/</guid>
+      <description>Syntax Object names  Variable and function names should use only letters, numbers, and underscores (_) and not include dots (mainly to avoid confusion with base R function names). CamelCases are also fine.  #Good school_type SchoolType #Bad school.type  Variable names should be as concise and meaningful as possible:  #Good day_one #Bad first_day_of_the_month d1mth Spacing Make code easier to read, place a space:
+ After a comma.  x[, 1]  After function arguments.</description>
+    </item>
+    
+    <item>
+      <title>Make Your Code Citable with DOI</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/make-code-citable-with-doi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/make-code-citable-with-doi/</guid>
+      <description>DOI (Digital Object Identifiers) are a very important and widely used tool to uniquely identify objects in academic literature and beyond - for instance, journal articles, research reports, but also code and data sets.
+If you are a researcher who writes code and deals with primary data, you may want to archive your code and make it citable by assigning a DOI to your GitHub repository.
+Follow this guide and learn how to do it using GitHub and Zenodo.</description>
+    </item>
+    
+    <item>
+      <title>Dry-run of Make and First Modifications</title>
+      <link>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/wipe-rerun/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/wipe-rerun/</guid>
+      <description>Dry-run of Make and first modifications to the data preparation scripts Sometimes, running a workflow may take hours, or even days. That&amp;rsquo;s why make supports so-called &amp;ldquo;dry-runs&amp;rdquo;, which you can initiate by typing make -n (for NOT run).
+Watch our video to understand the intuition of dry-runs.
+  Next, you will start to modify the scripts in this template. After all, you&amp;rsquo;re working on a template that you&amp;rsquo;re ultimately interested in modifying (e.</description>
+    </item>
+    
+    <item>
+      <title>Documenting Source Code and Pipeline Workflows</title>
+      <link>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-code/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-code/</guid>
+      <description>Overview Documenting your project&amp;rsquo;s workflow, not only for others, but also for your future self (i.e., if you plan to continue working on the project after a while) is absolutely crucial to the long-term success of you as a researcher or analyst.
+Typically, you would like to
+ include a main project documentation, and one documentation each for each stage of your pipeline.  Main Project Documentation You should place a main project documentation in the root directory of your project (/my_project), and call it readme.</description>
+    </item>
+    
+    <item>
+      <title>Stata Coding Style Guidelines</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/stata-code-style/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/stata-code-style/</guid>
+      <description>Coding styles in STATA We use two coding styles in Stata: a linear format for very short or simple scripts, and a functional style for longer or more complex scripts.
+1. Linear Format. ***************************** * Prepare data ***************************** * Format X variables ... * Format Y variables ... ***************************** * Run regressions ***************************** ... ***************************** * Output tables ***************************** ... TipIf you include a comment as a header like this for one major block of code, you should include a similar header for every block of code at the same logical place in the hierarchy.</description>
+    </item>
+    
+    <item>
+      <title>Remove Sensitive or Large Files From Your Repository</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/remove-files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/remove-files/</guid>
+      <description>Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work.
+Normally, versioning really is a good thing, unless&amp;hellip;
+ you accidentally stored sensitive information in your source code that you really do not want to be out in the public (e.g., API credentials, passwords), you accidentally stored files (e.g., large data sets, images) in your repository, that you cannot upload to GitHub (and hence can&amp;rsquo;t synchronize your repository anymore)  Luckily, there are ways out!</description>
+    </item>
+    
+    <item>
+      <title>More Modifications</title>
+      <link>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/modifications/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/modifications/</guid>
+      <description>More modifications, branching, and replacing input files Now let&amp;rsquo;s continue with a couple of advanced modifications to our workflow. We hope these convince you about the potential efficiency gains you can expect when working on data-intensive projects!
+This time, you can directly start working on the practice questions below. Also take note of our additional explanations for each question.
+Practice questions and answers   Please open textmining.py, and also provide the word count as an additional column.</description>
+    </item>
+    
+    <item>
+      <title>Versioning using Git and GitHub</title>
+      <link>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/versioning/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/versioning/</guid>
+      <description>Overview What is Git? Git is an open-source version control system, which allows you to keep track of your source files, and the changes you make to them. Using Git, you can roll back to any previous version of a file, and easily collaborate with team members.
+Git &amp;ldquo;lives&amp;rdquo; on your local computer, and allows you to configure so-called &amp;ldquo;repositories&amp;rdquo; that track files and directories.
+TipStoring sensitive data
+Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work.</description>
+    </item>
+    
+    <item>
+      <title>Working With Large Files on GitHub</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-lfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/git-lfs/</guid>
+      <description>Overview GitHub limits the size of files allowed in repositories. It warns you if you&amp;rsquo;re trying to push a 50MB file, and completely stops you if the push exceeds 100MB.
+However, even if it didn&amp;rsquo;t stop you, versioning large files would be very impractical. That&amp;rsquo;s because a repository contains every version of every file – that&amp;rsquo;s the point of versioning, right? Having multiple versions of large files cloned locally can become expensive in terms of disk space and fetch time.</description>
+    </item>
+    
+    <item>
+      <title>Extending the Analysis</title>
+      <link>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/analysis/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/analysis/</guid>
+      <description>Let&amp;rsquo;s modify the analysis We&amp;rsquo;re done with the data-preparation pipeline for now, and turn our attention to the analysis part of our project.
+Admittedly, there&amp;rsquo;s not much here yet. Try fiddling around with the files a bit when you proceed to our practice questions and answers below.
+Now let&amp;rsquo;s continue with a couple of modifications. You can directly start working on the practice questions below.
+Practice questions and answers   Recall the powerful makefile we&amp;rsquo;ve introduced to you a while ago?</description>
+    </item>
+    
+    <item>
+      <title>Collaborating using GitHub</title>
+      <link>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/collaboration/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/collaboration/</guid>
+      <description>Overview While you can use Git exclusively to keep track of your files&#39; version history, the real power of Git lies in collaborating on coding projects with others. Below, we outline how you can contribute to existing (open-source) projects that are hosted on GitHub.
+Repositories versus Gists GitHub knows two types of &amp;ldquo;projects&amp;rdquo;. Full-fledged projects (e.g., for software development or research) are hosted in so-called &amp;ldquo;repositories&amp;rdquo;, which offer you the full range of development features available.</description>
+    </item>
+    
+    <item>
+      <title>Archiving Repositories when They&#39;re Done</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/mothball/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/mothball/</guid>
+      <description>What are mothball repositories? A mothballed repository refers to a repository where no further active work is expected but the repository is kept in a condition such that work can readily begin again. To mothball a repository, confirm all of the following requirements have been satisfied. During this process, you are welcome to reach out to previous comment makers if you need their input to satisfy the mothballing requirements.
+Requirements  All current issues have been closed with clear deliverables (if the issue was complete) or clear summaries of what was done / not done (if the issue was incomplete).</description>
+    </item>
+    
+    <item>
+      <title>Wrap-Up</title>
+      <link>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/finish/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/finish/</guid>
+      <description>You did it! Congrats!!! You&amp;rsquo;ve finished our tutorial, and are now officially hooked to make.
+Well, all fun aside, we hope you found this tutorial useful.
+Of course, this is just one way in which to increase your research productivity. Here on tilburgsciencehub.com, we have more stuff available, so take your time to browse the page.
+Oh, and to be complete, here&amp;rsquo;s a summary of what you&amp;rsquo;ve learnt.
+Thanks for following through!</description>
+    </item>
+    
+    <item>
+      <title>Checklist to Audit Data- and Computation-intensive Projects</title>
+      <link>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/checklist/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/checklist/</guid>
+      <description>There is quite some material to cover to make sure your workflows become efficient, reproducible, and well-structured.
+Here&amp;rsquo;s a checklist you can use to audit your progress.
+    data-preparation analysis paper &amp;hellip;     At the project level       Implement a consistent directory structure: data/src/gen       Include readme with project description and technical instruction how to run/build the project       Store any authentication credentials outside of the repository (e.</description>
+    </item>
+    
+    <item>
+      <title>Export Repositories with Github Releases</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/releases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/use-github/releases/</guid>
+      <description>Github Releases A release is an export of all or part of a repository that we want to be able to access for some downstream use. Examples include:
+ Draft of a paper for posting or submission Slide deck for a presentation Cleaned data files to be used in other repositories or projects Intermediate data files to be used in the current repository that we want to maintain in a stable and replicable state  Releases should include the files we intend to use downstream as well as sufficient information to reproduce those files.</description>
+    </item>
+    
+    <item>
+      <title>Hugo Website Overview</title>
+      <link>http://localhost:1313/tutorials/open-education/hugo-website/hugo-website-overview/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/hugo-website/hugo-website-overview/</guid>
+      <description>Why to Launch a Website? Whether you want to spread the word about your research work or to share content with your students in open education classes, getting your very own website to do so would help you immensely.
+A few ideas of what you could do with a personal website:
+ Showcase your own academic profile and research work in a professional way Disclose data and share your results with the world Run your open education classes, publishing the syllabus, lectures, exercises&amp;hellip; Maintain a collection of articles or blog posts Virtually anything else!</description>
+    </item>
+    
+    <item>
+      <title>Get Hugo</title>
+      <link>http://localhost:1313/tutorials/open-education/hugo-website/get-hugo/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/hugo-website/get-hugo/</guid>
+      <description>Install Hugo First off, make sure to have Git properly installed and set up.
+MacOS &amp;amp; Linux Make sure you have Brew installed. Then, to install Hugo:
+brew install hugo Windows If you use Chocolatey:
+choco install hugo -confirm Alternatively, see other installing options here.
+Create a New Local Website You&amp;rsquo;re now ready to start.
+To create a new Hugo website, move to a directory of your choice and run:</description>
+    </item>
+    
+    <item>
+      <title>Pick a Theme</title>
+      <link>http://localhost:1313/tutorials/open-education/hugo-website/pick-theme/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/hugo-website/pick-theme/</guid>
+      <description>It&amp;rsquo;s time you pick a theme for your website. This will determine how the content will look to the users. Head over to themes.gohugo.io and choose one!
+ We suggest Academia Hugo as a simple theme for personal websites, where you can showcase your portfolio, resume, and research work.   The Wowchemy Academic Theme for personal websites too.   The Hugo Dot Theme for knowledge bases and documentation websites, for instance a thesis companion:   Our brand-new Hugo-TiU theme for open education classes.</description>
+    </item>
+    
+    <item>
+      <title>Add Some Content</title>
+      <link>http://localhost:1313/tutorials/open-education/hugo-website/add-content/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/hugo-website/add-content/</guid>
+      <description>The content Folder Now that you&amp;rsquo;ve set up a theme for your Hugo website, you can finally start to write some content!
+Just manually create Markdown files using a text editor and place them in the content folder. The path should look something like this: content/&amp;lt;CATEGORY&amp;gt;/&amp;lt;FILE&amp;gt;.md. Usually, you can create as many categories as you want, but it&amp;rsquo;s better to check the theme documentation.
+ExampleFor instance, the About page of odcm.</description>
+    </item>
+    
+    <item>
+      <title>Go Live!</title>
+      <link>http://localhost:1313/tutorials/open-education/hugo-website/go-live/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/hugo-website/go-live/</guid>
+      <description>How to Host Your Website Because your website is static, it can be hosted virtually anywhere using any web server.
+However, we highly suggest you to deploy your website using Netlify.
+Netlify can host your website for free, it&amp;rsquo;s very easy to use since it&amp;rsquo;s linked to your GitHub profile, and it provides some great perks, like a global CDN, free SSL certificates and continuous deployment.
+The Last Piece of the Puzzle   First, if you haven&amp;rsquo;t done it already, create a new GitHub repository for your website.</description>
+    </item>
+    
+    <item>
+      <title>Bring Open Science Practices to your Research Group</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/team-transition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/project_management/team-transition/</guid>
+      <description>Overview Open Science practices can boost your enjoyment and productivity when working on empirical research projects. Yet, imagine not only you, but also other members of your department and school to use similar tools and methods to collaborate?
+Luckily, you don&amp;rsquo;t have to reinvent the wheel and can follow best-practices of leading research groups.
+Experiences in transitioning to open science   Lowndes et al. 2019, &amp;ldquo;Supercharge your research - a ten-week plan for open data science&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Cloud Computing</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/cloud-computing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/cloud-computing/</guid>
+      <description>Why Cloud Computing? With increasing demands in computations (i.e., high number of CPUs) or data (i.e., high memory), it can be worthwhile to move your computations and data preparation pipelines to the cloud. Cloud providers offer virtual machines (VM) for rent that you configure to your own needs. For example, if you ran out of RAM on your local machine due to complex computational tasks, you can launch a VM instance with a high amount of memory to execute the computations in the cloud.</description>
+    </item>
+    
+    <item>
+      <title>The Fine Art of Typesetting</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/what-is-latex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/what-is-latex/</guid>
+      <description>The Design Philosophy In this tutorial, you&amp;rsquo;ll learn to write your very first document using \(\LaTeX\)within 15 minutes.
+$\LaTeX$ is a professional typesetting system widely used in academia because of its high-quality output and the relatively ease of use in setting up complex documents, like journal articles, books, technical reports, and similar.
+One of its main features is that it separates the writing and the formatting stages - or the content and its presentation.</description>
+    </item>
+    
+    <item>
+      <title>Use Scrum In Your Team</title>
+      <link>http://localhost:1313/tutorials/project-management/scrum-for-researchers/use-scrum-in-your-team/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/project-management/scrum-for-researchers/use-scrum-in-your-team/</guid>
+      <description>How we professionalized our team work We use Scrum - a simple framework for effective team collaboration - to manage the development of Tilburg Science Hub. By sharing our experiences with (an admittedly customized version of) Scrum, we hope to inspire and possibly help other teams to make their collaborations run smoothly.
+Importantly, Scrum works for any type of project, including academic research projects. Keep on reading to find out how to use Scrum as a framework for collective research!</description>
+    </item>
+    
+    <item>
+      <title>Launch Instance</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/launch-instance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/launch-instance/</guid>
+      <description>Launch Instance Although you can also launch instances via the command line, here we show you how to get started with the AWS console in your browser.
+  After you have signed in, type “EC2” in the search bar.
+  Click on the orange button that says &amp;ldquo;Launch instance&amp;rdquo;.
+  It asks you to choose an Amazon Machine Image (AMI) which is the operating system that will be launched on the system.</description>
+    </item>
+    
+    <item>
+      <title>Setup LaTeX</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/setup-latex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/setup-latex/</guid>
+      <description>Installation The first step is to setup a \(\TeX\)distribution on your machine.
+ If you haven&amp;rsquo;t done it yet, you can read our guide on how to install $\LaTeX$:  How to Install $\LaTeX$ Once you&amp;rsquo;ve installed it, you&amp;rsquo;ll need a text editor to work with. We recommend Atom, a free and cross-platform editors with great functions and extra packages. You can download Atom from its official website or read the instructions from our Building Block.</description>
+    </item>
+    
+    <item>
+      <title>Write a Professional Research Paper with LyX</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/research-paper-lyx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/research-paper-lyx/</guid>
+      <description>Overview \(\LaTeX\) is a professional typesetting system widely used in academia. It produces great-looking journal articles, technical reports, books, and even slide presentations.
+One of its main features is that it separates the writing and the formatting stages. The writer can focus solely on writing the content in plain text, and then use some markup tags and commands to stylize the text and define the document structure.</description>
+    </item>
+    
+    <item>
+      <title>Create Slides in No Time with LyX</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/slides-lyx/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/slides-lyx/</guid>
+      <description>Overview \(\LaTeX\) is a professional typesetting system widely used in academia. It produces great-looking journal articles, technical reports, books, and even slide presentations.
+One of its main features is that it separates the writing and the formatting stages. The writer can focus solely on writing the content in plain text, and then use some markup tags and commands to stylize the text and define, for instance, how the slides will look like.</description>
+    </item>
+    
+    <item>
+      <title>Connect Instance</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/connect-instance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/connect-instance/</guid>
+      <description>Connect Instance Depending on your operating system and whether you chose to launch a Linux or Windows instance, follow one of the tutorials below.
+Linux instance Mac
+  Click on your running EC2-instance in the console and copy the Public IPv4 DNS address (e.g., ec2-XX-XXX-XXX-XXX.compute-1.amazonaws.com).
+  Open the terminal and type export HOST=&amp;lt;YOUR-PUBLIC-IPV4-DNS&amp;gt; (see step 1) and export KEY=&amp;lt;PATH_TO_KEY_PAIR_FILE&amp;gt; (e.g., /Users/Roy/Downloads/ec2-key-pair.pem). This creates two variables, HOST and KEY, that we can reference in our terminal (e.</description>
+    </item>
+    
+    <item>
+      <title>Your First Article</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/your-first-article/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/your-first-article/</guid>
+      <description>The Preamble The preamble is the first section of your .tex file. It comes before the the text of the document itself.
+The preamble always starts with the definition of a &amp;ldquo;document class&amp;rdquo;. This is where you tell \(\LaTeX\)what kind of document you&amp;rsquo;re writing: an article, a book, a letter&amp;hellip; More on that later.
+You can then continue specifying additional information and packages in the preamble.</description>
+    </item>
+    
+    <item>
+      <title>Add a Bibliography</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/bibliography/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/bibliography/</guid>
+      <description>Please notice that there are different ways to include a bibliography in \(\LaTeX\), namely bibtex, natbib, and biblatex. In this tutorial, we will deal with bibtex only. For more advanced uses, consider researching which system works best for you.
+Create a .bib File A .bib file contains all the bibliographic information for your document. Think of it as a sort of database of all the references you may want to include in your article (but you don&amp;rsquo;t have to necessarily).</description>
+    </item>
+    
+    <item>
+      <title>Get Started With Our Bookdown Thesis Template</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/bookdown-theses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/bookdown-theses/</guid>
+      <description>Overview Rmarkdown and bookdown are a professional typesetting system widely used in academia because it can produce complex documents - like journal articles, books, technical reports, and similar - with unparalleled output quality.
+Getting Started If you are new to Rmarkdown and bookdown, before attempting to get writing, you should first learn the basics behind how these packages work.
+ Check out the documentation for Rmarkdown, and carefully review the documentation of bookdown to get up and running.</description>
+    </item>
+    
+    <item>
+      <title>Get Started With Our LaTeX Templates</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/latex-templates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/latex-templates/</guid>
+      <description>Overview \(\LaTeX\) is a professional typesetting system widely used in academia because it can produce complex documents - like journal articles, books, technical reports, and similar - with unparalleled output quality.
+However, setting up new documents can be time consuming and a bit daunting, especially at the beginning. If you want to get started writing your $\LaTeX$ documents quicker, you can use one of our custom-made templates below.</description>
+    </item>
+    
+    <item>
+      <title>Move Files</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/move-files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/move-files/</guid>
+      <description>Move Files Terminal (Mac)   cd into the directory that contains the files that you want to transfer.
+  Type scp -i $KEY -r $(pwd) ec2-user@$HOST:/home/ec2-user to copy your entire working directory to the home directory of your VM. (tip: this method assumes you&amp;rsquo;re not connected yet. If you are though, press Ctrl + D to disconnect).
+  FileZilla (Mac &amp;amp; Windows)  Alternatively, install File Transfer Protocol (FTP) client FileZilla.</description>
+    </item>
+    
+    <item>
+      <title>Export Your Tables for Print-ready Publications</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/export-tables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/export-tables/</guid>
+      <description>Overview Stargazer is an easy-to-use R package that creates nicely-formatted, high-quality tables from your R data in ASCII, \(\LaTeX\), and HTML code.
+It automatically recognizes the kind of data you provide. If you provide a set of regression model objects, it will produce a regression table. Instead, if you feed it with a data frame, it will produce a summary statistics table.
+An Example Convert regression coefficients of mdl_1 and mdl_2 into a HTML file that can be copied into a paper.</description>
+    </item>
+    
+    <item>
+      <title>Run Scripts</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/run-scripts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/run-scripts/</guid>
+      <description>Run Scripts If you opted for the default Amazon Linux 2 AMI, you probably need to install some additional software to be able to execute your code files. To install Python 3 and any other packages on your EC2 instance, run the following commands:
+# install Python sudo yum install python3 # install a single package sudo python3 -m pip install &amp;lt;PACKAGE_NAME&amp;gt; # install multiple packages from txt file sudo python3 -m pip install -r requirements.</description>
+    </item>
+    
+    <item>
+      <title>Useful Tips</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/latex-tips/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/latex-tips/</guid>
+      <description>Congratulations! You&amp;rsquo;ve completed this tutorial. Here are some useful tips when writing with \(\LaTeX\).
+Specify The Encoding It&amp;rsquo;s always a good idea to specify the encoding of your document to allow characters beyond ASCII to be visible. It&amp;rsquo;s recommended to use UTF-8. Unless you know what you&amp;rsquo;re doing, simply add this in your preamble:
+\usepackage[utf8]{inputenc} Use Labels This will change your life. One of the greatest features and reasons why you should use $\LaTeX$ for complex documents.</description>
+    </item>
+    
+    <item>
+      <title>Cheatsheet for LaTeX Math Commands</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/</guid>
+      <description>Overview This is a quick overview of the main \(\LaTeX\)commands to render mathematical expressions.
+We also provide a compiled PDF version of this cheatsheet.
+Download the PDF CheatsheetCommands Packages The main package to load is amsmath. More symbols are included in amssymb.
+TipYou can load packages in the preamble: \usepackage{amsmath}
+ Typeset  For text style (inline) math, use: $.</description>
+    </item>
+    
+    <item>
+      <title>Terminate Instance</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/terminate-instances/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/terminate-instances/</guid>
+      <description>Terminate Instance Even though the very basic VMs can run for free forever, it is good practice to shut down inactive VMs. After all, you don&amp;rsquo;t want to find out at the end of the month - once you receive your bill from AWS - that you accidentally left an instance running in the background. To terminate a VM follow the steps below:
+ Visit your &amp;ldquo;Instances&amp;rdquo; dashboard in the console Tick the checkboxes of those instances you want to stop.</description>
+    </item>
+    
+    <item>
+      <title>Learn How to Contribute</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/contribute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/contribute/</guid>
+      <description>How to contribute to Tilburg Science Hub We&amp;rsquo;re glad for your interest in contributing to our project. Tilburg Science Hub is open-source, and as such, anyone can contribute! The process is really simple.
+You are welcome to contribute to our platform in two ways.
+Create a new GitHub Issue Head over to our issue page on GitHub to let us know about bugs, feature requests for the website, or anything that you would love to see developed for your research project (e.</description>
+    </item>
+    
+    <item>
+      <title>Contributing using Pull Requests</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/pullrequests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/pullrequests/</guid>
+      <description>Contributing using Pull Requests On this page, we provide all the necessary resources and information for you to be able to write content autonomously.
+TipPlease, notice that Tilburg Science Hub Building Blocks, Tutorials and Examples are written as Markdown files. We encourage you to familiarize with the Markdown formatting before starting to write - it&amp;rsquo;s very easy!
+ If you want to revise, modify, add, or remove content from existing pages, or report a bug Simple changes The easiest method to make straightforward updates to Markdown files is to use GitHub&amp;rsquo;s web-based file editor.</description>
+    </item>
+    
+    <item>
+      <title>Style and Writing Guide</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide/</guid>
+      <description>Style Guidelines Adopt Our Style of Communication We are glossy and nerdy. We are welcoming, competent and helpful. We seek to cheerfully inform our users. We communicate concisely.
+Will you blend in?
+Language Please develop your content in English.
+Start Your Content With Our Templates Please use our templates when developing new building blocks or tutorials.
+Style Your Content Your content is written in Markdown, and is automatically rendered in our house style.</description>
+    </item>
+    
+    <item>
+      <title>Contributor&#39;s Code of Conduct</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/code-of-conduct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/code-of-conduct/</guid>
+      <description>Code of Conduct As contributors and maintainers of this project, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities.
+We are committed to making participation in this project a harassment-free experience for everyone, regardless of level of experience, gender, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, or religion.</description>
+    </item>
+    
+    <item>
+      <title>Learn Bash Commands</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-bash-commands/</link>
+      <pubDate>Wed, 11 Nov 2020 22:02:51 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-bash-commands/</guid>
+      <description>Overview The command line lets you communicate with your computer without using your mouse. It&amp;rsquo;s a text-based interface where you communicate using text alone. The commands differ between Unix-based systems (e.g., Mac / Linux) and Windows computers. On Apple and Windows computers the command line tool is called the Terminal and Command Prompt, respectively.
+Directories In programming-speak, all folders are called directories. A directory within another directory is called a subdirectory.</description>
+    </item>
+    
+    <item>
+      <title>Disclaimer</title>
+      <link>http://localhost:1313/disclaimer/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/disclaimer/</guid>
+      <description>Tilburg Science Hub is part of Tilburg University. The information on this Tilburg Science Hub internet site has been formulated with the utmost care. This information may nevertheless contain deficiencies.
+Should this be the case, we would appreciate your critical remarks at tsh@tilburguniversity.edu. Tilburg Science Hub is not responsible for any information supplied on its website or for the consequences of the use thereof. No rights can be derived on the basis of the data on Tilburg Science Hub website.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/tutorials/_indexs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/_indexs/</guid>
+      <description>attribute: somewhat say that menu is not shown in nav bar</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/building-block-shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/building-block-shell/</guid>
+      <description>INSTRUCTIONS:
+ This is a template. Please replace the content while keeping this structure. Make sure to read our contribution guide to learn how to submit your content to Tilburg Science Hub. Always start your file with the parameters shown below. Keep the double quotes as shown. Do NOT use #Titles with a single # in your article. Instead, use the title parameter shown below. Please provide up to 10 keywords for this Building Block in the appropriate parameter.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell/</guid>
+      <description>INSTRUCTIONS:
+ This is a template. Please replace the content while keeping this structure. Make sure to read our contribution guide to learn how to submit your content to Tilburg Science Hub. Always start your file with the parameters shown below. Keep the double quotes as shown. Do NOT use #Titles lines (with a single #) in your article. Instead, use the title parameters shown below. Please provide up to 10 keywords for each tutorial page in the appropriate parameter.</description>
+    </item>
+    
+    <item>
+      <title>Assess what Data is Available</title>
+      <link>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/data-availability-assessment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/data-availability-assessment/</guid>
+      <description>Overview Assessing data availability is vital to guarantee a minimum level of rigor. Investigating data availability may help you to enhance the relevance of your study.
+Entity Coverage and Linkages Which entities are available? Familiarize yourself with the structure of the website or API to understand which entities (e.g., consumers, products, reviews) are available.
+ExampleAn ecommerce website like Amazon lists information on the products, sellers, reviews, and reviewers.
+How many entities are available?</description>
+    </item>
+    
+    <item>
+      <title>Automatically Install R Packages Used in a Project</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/auto-install-r-packages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/auto-install-r-packages/</guid>
+      <description>Overview You can use the following code to easily find all the the R packages used in a project, and automatically install the uninstalled ones on your machine.
+Put this script in the root directory of your R project, and either source it or run it from the command line: &amp;gt; Rscript install_packages.R
+Code # find all source code files in (sub)folders files &amp;lt;- list.files(pattern=&amp;#39;[.](R|rmd)$&amp;#39;, all.files=T, recursive=T, full.</description>
+    </item>
+    
+    <item>
+      <title>Avoid Getting Blocked While Scraping</title>
+      <link>http://localhost:1313/building-blocks/collect-data/webscraping-apis/avoid-getting-blocked/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/webscraping-apis/avoid-getting-blocked/</guid>
+      <description>Overview For better or worse, web servers can implement anti-scraping measures. For example, they want to protect users&#39; privacy and avoid overloading their server by blocking unsuspicious traffic. To ensure the consistency of your data collection, it&amp;rsquo;s therefore recommended to take steps to make sure your scraper keeps on running!
+Code Timers Briefly pausing between requests, rather than constantly visiting the same website, avoids that your IP address (i.e., numerical label assigned to each device connected to the internet) gets blocked, and you can no longer visit (and scrape) the website.</description>
+    </item>
+    
+    <item>
+      <title>Build Interactive Dashboards With R Shiny</title>
+      <link>http://localhost:1313/building-blocks/collaborate-and-share-your-work/publish-on-the-web/shiny-apps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collaborate-and-share-your-work/publish-on-the-web/shiny-apps/</guid>
+      <description>What is a Shiny App? The Shiny library helps you turn your analyses into interactive web applications without requiring HTML, CSS, or Javascript knowledge, and provides a powerful web framework for building web applications using R.
+Being able to create Shiny apps is a great skill to have because it enables you to communicate your insights to non-technical stakeholders and give them the tools to conduct their own analysis!
+Code Skeleton The skeleton of any Shiny app consists of a user interface (ui) and a server.</description>
+    </item>
+    
+    <item>
+      <title>Calculate Sample Sizes for Web Scrapers</title>
+      <link>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/calculate-sample-size/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/calculate-sample-size/</guid>
+      <description>Overview Sampling from websites and APIs can be tricky: limits to server load (e.g., retrieval limits) or snowballing effects (e.g., seed of 100 users, sample 100 of their peers and obtain all of their peers’ consumption patterns for 50 weeks). In addition to the minimum sample size necessary to satisfy statistical power requirements, an important consideration is therefore the technically feasible sample size. That is, the sample size that can be obtained from a website or API while considering resource constraints.</description>
+    </item>
+    
+    <item>
+      <title>Choose a Data Repository for Long-Term Storage</title>
+      <link>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/choose-a-data-repository/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/choose-a-data-repository/</guid>
+      <description>Data Archiving Part of responsible research is making sure your research data are properly managed, both during your research as well as when your research is finished (and hopefully published). For replication purposes, the data needs to remain available for a minimum of 10 years. But how do you decide which data to keep, document and where to archive it?
+This tutorial on data management and this article on documenting your data provide some insights.</description>
+    </item>
+    
+    <item>
+      <title>Configure Environment Variables</title>
+      <link>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/environment-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/environment-variables/</guid>
+      <description>Overview  When working with APIs or cloud services, you usually need to access some personal credentials or secret keys. With environment variables, we can access such variables without literally writing them down in a notebook or script (e.g., password = &amp;quot;...&amp;quot;). The basic idea is that these global variables are stored permanently and are attached to your operating system. Therefore, you can access these variables regardless of whether you are working in RStudio or a Jupyter Notebook.</description>
+    </item>
+    
+    <item>
+      <title>Data Preparation and Workflow Management</title>
+      <link>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/data-preparation-workflow-management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/data-preparation-workflow-management/</guid>
+      <description>The Data Preparation and Workflow Management course is an open-source Master level course taught at Tilburg University. All of its content is freely available and consists of lectures, live streams, self-study material, tutorials and examples.
+This course teaches you how to engineer data sets for statistical analysis. Many students and researchers perceive the process of “creating” a data set for analysis as rather simplistic: a bit of cleaning here, a bit of merging there, and you’re done.</description>
+    </item>
+    
+    <item>
+      <title>Download Data Programmatically</title>
+      <link>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/download-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/download-data/</guid>
+      <description>Overview Download a file from a URL and store it on your local machine. That way, it&amp;rsquo;s super easy for others to run your workflow (e.g., team members), or to refresh the data once it&amp;rsquo;s been udpated. All you need to do is rerun your code - that&amp;rsquo;s it!
+Code Here&amp;rsquo;s an example of how to download data from within R.
+download_data &amp;lt;- function(url, filename, filepath) { # create directory dir.</description>
+    </item>
+    
+    <item>
+      <title>Extract Data From APIs</title>
+      <link>http://localhost:1313/building-blocks/collect-data/webscraping-apis/extract-data-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/webscraping-apis/extract-data-api/</guid>
+      <description>Overview An Application Programming Interface (API) is a version of a website intended for computers, rather than humans, to talk to one another. APIs are everywhere, and most are used to provide data (e.g., retrieve a user name and demographics), functions (e.g., start playing music from Spotify, turn on your lamps in your &amp;ldquo;smart home&amp;rdquo;), or algorithms (e.g., submit an image, retrieve a written text for what&amp;rsquo;s on the image).</description>
+    </item>
+    
+    <item>
+      <title>Get Text Editors</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/text-editor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/text-editor/</guid>
+      <description>Installing a text editor A good text editor lies at the heart of any serious programmer&amp;rsquo;s toolkit: It can do almost anything and makes you much more productive. The editors built into each program often are not the best option (we will find certain cases where you may want to use them).
+Please download, install it along with the necessary packages and stick with it for at least for some time to get a feel for how it works.</description>
+    </item>
+    
+    <item>
+      <title>Install Python Packages</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python-packages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python-packages/</guid>
+      <description>Installing Python packages Anaconda&amp;rsquo;s Python Distribution comes with many of the packages we need to do scientific computing. If you&amp;rsquo;re interested in all the packages included, click here and go to the Python 3.x tab.
+However, you may come across packages that are not installed by default. In this case we recommend you use the pip package management tool to install them.
+Installation steps WarningIf your python 3 was found via python3 --version on the previous page, then type pip3 instead of pip for all of the following python plugins.</description>
+    </item>
+    
+    <item>
+      <title>Integrating Stata in Automated Workflows</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/stata-error-handling-make/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/stata-error-handling-make/</guid>
+      <description>Overview  When you run Stata within an automated research pipeline (e.g., using a makefile), Stata does not stop the progression of the Makefile, even if there is an error in your cod! Thus, you have no idea whether Stata code was executed without any errors until the end without checking the Stata log files.
+To remedy this issue, you can use R to check for any error that may have occurred in the log file.</description>
+    </item>
+    
+    <item>
+      <title>Learn Python and Julia</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-python-and-julia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-python-and-julia/</guid>
+      <description>Learn Python with these great step-by-step tutorials from Real Python.
+QuantEcon.org offers fantastic resources for you to get started using Python and Julia.
+In particular, we would like to refer you to their open-source lectures, covering:
+ Quantitative Economics with Python (and a fantastic, open-source book companion!) Quantitative Economics with Julia QuantEcon Data Science  </description>
+    </item>
+    
+    <item>
+      <title>Learn R</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-r/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-r/</guid>
+      <description>Why R?   Chance is that sooner or later, you&amp;rsquo;re going to use R, one of the (if not the) most popular statistical programming languages in the world. It&amp;rsquo;s not only that R is free which makes it so good, but because thousands of people across the world use it, document it, and develop it further. WarningThe R interface may be scary at first sight, especially if you&amp;rsquo;re used to using Excel to do your data magic.</description>
+    </item>
+    
+    <item>
+      <title>Learn Regular Expressions</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-regular-expressions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/learn-to-code/learn-regular-expressions/</guid>
+      <description>What are regular expressions? Regular expressions provide a concise language for describing patterns in strings. They make finding information easier and more efficient. That is, you can often accomplish with a single regular expression what would otherwise take dozens of lines of code. And while you can often come a long way with the default strip() and replace() functions, they have their own set of limitations. For example, how do you extract emails or hashtags from a text?</description>
+    </item>
+    
+    <item>
+      <title>Making Path Settings Permanent</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/environment/</guid>
+      <description>Overview For our workflow to be command line driven, we need to be able to call software from the command line. Whilst much of the software we have installed as automatically made this possible, it is not universally the case. Here we will make the extra few changes we need to complete the installation guide.
+Windows Users You will need local administration rights for your computer, but you should have these on your personal computers or ones owned by the Department.</description>
+    </item>
+    
+    <item>
+      <title>Monitor and Safeguard Your Data Quality</title>
+      <link>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/monitor-data-quality/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/monitor-data-quality/</guid>
+      <description>Overview After carefully planning and prototyping, researchers can begin the actual data collection. It is important to note that the data collection process is best considered “work-in-progress.” Thus, researchers need to remain agile and adapt the code where required. Here we outline the 10 most common data quality issues and how you can resolve them.
+10 Common Issues 1. It cannot be verified whether all the data that should have been collected was indeed collected.</description>
+    </item>
+    
+    <item>
+      <title>Online Data Collection and Management</title>
+      <link>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/online-data-collection-management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/online-data-collection-management/</guid>
+      <description>The Online Data Collection and Management course is an open-source Master level course taught at Tilburg University. All of its content is freely available and consists of lectures, live streams, self-study material, tutorials and examples.
+The course teaches you the nuts and bolts about collecting data from the web. Unlike most other courses on this topic, this one not only teaches you the technicalities of using web scraping and APIs, but also introduces a comprehensive framework that helps you to think about scraping - specifically with regard to its application in academic marketing research.</description>
+    </item>
+    
+    <item>
+      <title>Open Education Course on Data Collection</title>
+      <link>http://localhost:1313/tutorials/open-education/online-data-collection-and-management/odcm-course/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/online-data-collection-and-management/odcm-course/</guid>
+      <description>Overview The Online Data Collection and Management course is an open-source Master level course taught at Tilburg University. All of its content is freely available and consists of lectures, live streams, self-study material, tutorials and examples.
+The course teaches you the nuts and bolts about collecting data from the web. Unlike most other courses on this topic, this one not only teaches you the technicalities of using web scraping and APIs, but also introduces a comprehensive framework that helps you to think about scraping - specifically with regard to its application in academic marketing research.</description>
+    </item>
+    
+    <item>
+      <title>Open Education Course on Data Preparation</title>
+      <link>http://localhost:1313/tutorials/open-education/data-preparation-and-workflow-management/dprep-course/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/open-education/data-preparation-and-workflow-management/dprep-course/</guid>
+      <description>Overview The Data Preparation and Workflow Management course is an open-source Master level course taught at Tilburg University. All of its content is freely available and consists of lectures, live streams, self-study material, tutorials and examples.
+This course teaches you how to engineer data sets for statistical analysis. Many students and researchers perceive the process of “creating” a data set for analysis as rather simplistic: a bit of cleaning here, a bit of merging there, and you’re done.</description>
+    </item>
+    
+    <item>
+      <title>Read &amp; Write Data From APIs</title>
+      <link>http://localhost:1313/building-blocks/collect-data/webscraping-apis/read-write-data-apis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/webscraping-apis/read-write-data-apis/</guid>
+      <description>Overview After you have requested data from an API and extracted the required fields, you often want to convert the data into a format that is compatible with other software programs (e.g., Excel and R). A popular file format for tabular data is a Comma Separated Value (CSV) because it is simple, widespread, and compatible with most platforms. CSV files are file formats that contain plain text values separated by commas and can be opened by almost any spreadsheet program.</description>
+    </item>
+    
+    <item>
+      <title>README Best Practices</title>
+      <link>http://localhost:1313/building-blocks/store-and-document-your-data/document-data/readme-best-practices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/store-and-document-your-data/document-data/readme-best-practices/</guid>
+      <description>Overview A README is like the book cover of your project. It&amp;rsquo;s the first thing a person sees when opening your repository. A great README not only gets people to jump into your project much quicker, but also helps your project to stand out from the sea of open source software on Github. Your README thus not only serves for documentation, but also for marketing purposes.
+And while we all loathe sheazy marketing, documentation can&amp;rsquo;t be sleazy because it solves a real purpose: teaching everyone about the project.</description>
+    </item>
+    
+    <item>
+      <title>Safeguard Legal Compliance When Scraping</title>
+      <link>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/ensure-legal-compliance-web-scraping/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/workflows-for-online-data-collection/ensure-legal-compliance-web-scraping/</guid>
+      <description>Overview The legality of web scraping is an ongoing and complex issue, which might be perplexing for scholars interested in collecting and using web data. There is no clear consensus about whether collecting web data for scientific purposes is permissible under American and international intellectual and cybersecurity laws. Therefore, researchers should obtain legal advice to limit their exposure to legal risks when going forward. As legal experts may not be fully aware of all the steps involved in collecting and using web data, it is imperative to address aspects such as the purpose and framing of the research objective, the scale and scope of data capture, the characteristics of the data source, the relationship of the researcher with the data provider, and any details on the researcher’s data management and usage.</description>
+    </item>
+    
+    <item>
+      <title>Schedule Recurring Tasks (e.g., by day, hour)</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/task-scheduling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/task-scheduling/</guid>
+      <description>Overview Task scheduling involves the automatic execution of scripts on your local computer. For example, you may want to run a web scraper on a daily basis without having to manually execute the script. Mac and Windows users can leverage cronjobs and the Task Scheduler respectively to automate repetitive tasks. Depending on your operating system, follow one of the guides below to learn how to configure task scheduling on your machine.</description>
+    </item>
+    
+    <item>
+      <title>Scrape Dynamic Websites</title>
+      <link>http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-dynamic-websites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-dynamic-websites/</guid>
+      <description>Overview While it&amp;rsquo;s easy to get started with Beautifulsoup, it has limitations when it comes to dynamic websites. That is, websites of which the content changes after each page refresh. Selenium can handle both static and dynamic websites and mimic user behavior (e.g., scrolling, clicking, logging in). It launches another web browser window in which all actions are visible which makes it feel more intuitive. Here we outline the basic commands and installation instructions to get you started.</description>
+    </item>
+    
+    <item>
+      <title>Scrape Static Websites</title>
+      <link>http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-static-websites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/collect-data/webscraping-apis/scrape-static-websites/</guid>
+      <description>Overview Say that you want to capture and analyze data from a website. Of course, you could simply copy-paste the data from each page but you would quickly run into issues. What if the data on the page gets updated (i.e., would you have time available to copy-paste the new data, too)? Or what if there are simply so many pages that you can&amp;rsquo;t possibly do it all by hand (i.</description>
+    </item>
+    
+    <item>
+      <title>Set up Command Line Tools</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/commandline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/commandline/</guid>
+      <description>Installing Command Line Tools A command-line interface or command language interpreter (CLI), also known as a terminal, is a means of interacting with a computer program where the user issues commands to the program in the form of successive lines of text (command lines).
+Throughout the course we will emphasize use of the terminal and executing commands within it as our modus operandi.
+Windows Users So that we can work as closely as possible to the Mac and Linux users we will install Cygwin.</description>
+    </item>
+    
+    <item>
+      <title>Set up Git and GitHub</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/git/</guid>
+      <description>Installing and Setting Up Git &amp;amp; GitHub Git is an open source version control system (VCS) that has gained a lot of traction in the programming community. We will use version control to keep track of the files we write, and the changes we make to them. Using Git, we can roll back to any previous version of a file, and easily collaborate with others on source code.
+GitHub is a (commercial) platform which allows you to host your source code online.</description>
+    </item>
+    
+    <item>
+      <title>Set up LaTeX</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/latex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/latex/</guid>
+      <description>Installing Latex \(\LaTeX\)is a great typesetting system that includes a lot of features that allow to produce scientific documents. Many researchers use Latex to produce their papers and presentations, and many journals require authors to hand in their articles in a TeX format.
+Latex is free to use. To use the Latex system, a TeX distribution needs to be installed. Detailed instructions for the different platforms are provided below.</description>
+    </item>
+    
+    <item>
+      <title>Set up Make</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/make/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/make/</guid>
+      <description>Overview Make is a &amp;ldquo;build tool&amp;rdquo;, allowing us to control the execution of a set of command line statements to assemble pipelines that define what gets executed when. Using make, our entire workflow becomes transparent and reproducible.
+TipWhy Build Tools?
+Imagine you have built a complex project, consisting of dozens of datafiles and scripts. Also imagine you haven&amp;rsquo;t worked on the project for a few weeks, and now wish to continue your work where you left off.</description>
+    </item>
+    
+    <item>
+      <title>Set up MATLAB</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/matlab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/matlab/</guid>
+      <description>Installing MATLAB MATLAB is a high-level programming language and an environment for numerical computation and visualization.
+The University of Zurich has a campus-wide MATLAB license available to all students and employees. We will use this license to activate MATLAB on our machine.
+If you study or work at Tilburg University and you do not have MATLAB installed on your machine, please register via Mathworks and follow the installation instructions available on the IT Self-Service Portal.</description>
+    </item>
+    
+    <item>
+      <title>Set up Pandoc</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/pandoc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/pandoc/</guid>
+      <description>Installing Pandoc Pandoc is an extremely useful &amp;lsquo;swiss army knife&amp;rsquo; for converting between different types of markup languages from the command line. For example, it readily builds PDFs with latex, and markdown - both of which are heavily used in academic research.
+Linux Open a terminal window and type
+sudo apt install pandoc to install pandoc from the command line
+Mac Open a terminal window and type
+brew install pandoc to install pandoc from the command line</description>
+    </item>
+    
+    <item>
+      <title>Set up Perl</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/perl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/perl/</guid>
+      <description>Installing Perl Perl is an open programming language frequently used by engineers. We use Perl for text processing, such as processing tables generated by other statistical softwares.
+Mac and Linux Perl is already installed on Mac and Linux OS.
+Windows Download Perl for Windows OS.
+For Windows users to be able to use Perl from the command prompt, follow the steps below.
+WarningMaking Perl available via the PATH settings on Windows</description>
+    </item>
+    
+    <item>
+      <title>Set up Python</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/python/</guid>
+      <description>Installing Anaconda Python Anaconda is a pre-packaged Python distribution for scientific users. To customize Python with packages and properly use it in combination with automation tools, we prefer a locally installed Anaconda distribution over cloud-based alternatives.
+Watch our YouTube video, in which we walk you through the setup on Windows.
+  Instructions Direct your browser to Anaconda download page and download the Python 3.x Graphical Installer for your machine. Sometimes, the download defaults to Mac, so if you&amp;rsquo;re on Windows or Linux, make sure to select the right version.</description>
+    </item>
+    
+    <item>
+      <title>Set up R and RStudio</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/r/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/r/</guid>
+      <description>Installing R and RStudio R is a language for statistical computing and graphics. R&amp;rsquo;s use in the data science, econometrics and marketing communities has taken off over recent years and (at a bare minimum) should be considered as an open source replacement to Stata and SPSS.
+Installing R Watch our YouTube video, in which we walk you through the setup on Windows.
+  Go to the R website and download the most recent installer for your operating system.</description>
+    </item>
+    
+    <item>
+      <title>Set up Snakemake</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/snakemake/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/snakemake/</guid>
+      <description>Installing Snakemake Snakemake is an easy to use workflow management system. Contrary to make, which was designed by computer scientists to build software, snakemake was designed for academic/professional research in Bioinformatics, so it may feel more intuitive for academic users.
+Snakemake is a python package - so we can install using the default python installer, pip.
+Mac &amp;amp; Linux Users In a terminal window enter the command:
+pip install snakemake followed by pressing the Return key.</description>
+    </item>
+    
+    <item>
+      <title>Set up Stata</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/stata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/stata/</guid>
+      <description>Installing Stata Stata is a proprietary statistical software frequently used by scientific users. First check with your local IT support whether your institution has Stata licenses available.
+If not, you can purchase a copy on Stata&amp;rsquo;s website and follow the installation guide.
+Making Stata Available on the Command Prompt You have just installed Stata. Later, we&amp;rsquo;d like to access Stata from the command prompt to automatically execute our source code. That way, you will be able to run a series of scripts in batch - which will significantly ease the burden of building complex data workflows.</description>
+    </item>
+    
+    <item>
+      <title>Set up TeamViewer</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/teamviewer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/teamviewer/</guid>
+      <description>Getting feedback on code or solving technical problems is crucial to your learning experience. When working remotely, you can make use of TeamViewer, which allows team members to remote-control your computer and help you right away.
+Installing Teamviewer To install TeamViewer, go to the TeamViewer homepage and download the installer for your operating system. We recommend you to install Teamviewer permanently. If you do not have administrator rights, it&amp;rsquo;s fine to only select run once.</description>
+    </item>
+    
+    <item>
+      <title>Set up the AWS Client</title>
+      <link>http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/awscli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/configure-your-computer/automation-and-workflows/awscli/</guid>
+      <description>Amazon Web Services (AWS) provides cloud-computing and storage facilities that can be used for research projects. To make optimal use of AWS, you can control AWS resources (e.g., starting computers, downloading data) using a so-called command-line interface.
+The AWS command-line interface is a light-weight tool that provides you with a &amp;ldquo;remote control&amp;rdquo; to the AWS cloud.
+Here, we show you how to install and configure AWS CLI.
+Step 1: Install AWS CLI  Install AWS client by following the installation instructions provided by Amazon  Note: here, we install AWS CLI version 1, not version 2 (required for backwards-compatibility for some of the projects run by Tilburg Science Hub).</description>
+    </item>
+    
+    <item>
+      <title>Share Large Temporary Files</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/fileexchanges/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/fileexchanges/</guid>
+      <description>File exchanges are essential to transfer data between different stages of your pipeline, and between different co-authors working on a project.
+The key requirements of a file exchange are:
+ the programmatic access (i.e., via command line tools), to data storage organized in directories and files, allowing members of the project to upload or download data, employing fine-grained access controls (i.e., to give users reading rights, or reading/writing rights).  Below, we show a few options that we&amp;rsquo;ve used in our research projects.</description>
+    </item>
+    
+    <item>
+      <title>Use AWS S3 Buckets</title>
+      <link>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/aws-s3-buckets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/store-and-document-your-data/store-data/aws-s3-buckets/</guid>
+      <description>Overview  Amazon Simple Storage Service (AWS S3) is an industry-leader object storage service that allows you to store and retrieve any kind of files fast, securely and anywhere in the world - basically Dropbox on steroids. It can be used for a range of use cases, from websites to backup and archives. It can also be particularly useful for research projects - storing a huge amount of raw data, for instance.</description>
+    </item>
+    
+    <item>
+      <title>Use Software Environments to Ensure Replicability</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/software-environments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/software-environments/</guid>
+      <description>Overview The main advantages of using virtual software environments are:
+  Ensures replicability:
+ Environment specifies versions for each program and package used Ensures that specified versions are the right ones (environment does not forget to update specified version if the version is updated in a project)    Easy set-up on a different machine or the cloud: run environment setup to install all required software/packages.
+  Keeps projects separate: adding or updating packages for one project does not affect others.</description>
+    </item>
+    
+  </channel>
+</rss>

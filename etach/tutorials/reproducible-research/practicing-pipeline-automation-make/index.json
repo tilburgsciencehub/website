@@ -1,0 +1,456 @@
+[
+    
+    	{
+    		"searchKeywords": "Pipeline Automation Overview [tutorial, tweets, sentiment, analysis, workflow] Follow our tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets.",
+    		"title": "Pipeline Automation Overview",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/pipeline-automation-overview/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Practicing Pipeline Automation using Make  ",
+    		"title": "Practicing Pipeline Automation using Make",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Principles of Project Setup and Workflow Management  ",
+    		"title": "Principles of Project Setup and Workflow Management",
+    		"link": "http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Project Setup Overview [principles, workflow, setup, project, configure] When working on a project, most of us spend time thinking about what to create (a cleaned data set, a new algorithm, an analysis, a paper and corresponding slides), but not about how to manage its creation.",
+    		"title": "Project Setup Overview",
+    		"link": "http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/project-setup-overview/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Reproducible Research  ",
+    		"title": "Reproducible Research",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Shoot Educational Videos  ",
+    		"title": "Shoot Educational Videos",
+    		"link": "http://localhost:1313/tutorials/open-education/educational-videos/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "What is an educational video? [educational, videos, shooting, camera, teaching, tips, lighting, lenses, microphone, audio] An educational video is meant for transferring knowledge to an audience. Learn how to make them.",
+    		"title": "What is an educational video?",
+    		"link": "http://localhost:1313/tutorials/open-education/educational-videos/educational-videos-overview/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Write an Academic Paper  ",
+    		"title": "Write an Academic Paper",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/write-an-academic-paper/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Writing an Academic Paper [latex, writing, paper, thesis, structure, academic, abstract] Learn the typical structure of an empirical paper in economics and business.",
+    		"title": "Writing an Academic Paper",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/write-an-academic-paper/write-an-academic-paper/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Data Sharing [data sharing] Learn how to document and share data for internal and external use.",
+    		"title": "Data Sharing",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/share-data/share-data/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Start up a new project [new project, requirements] Start working on a new project, using the principles of workflow management and reproducible science.",
+    		"title": "Start up a new project",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/start-new-project/starting-up-a-new-project/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Buying Equipment for Educational Videos [educational, videos, shooting, camera, teaching, tips, lighting, lenses, microphone, audio] Learn what equipment is need to get you started producing educational videos.",
+    		"title": "Buying Equipment for Educational Videos",
+    		"link": "http://localhost:1313/tutorials/open-education/educational-videos/equipment-edu-videos/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Verify Software Setup  ",
+    		"title": "Verify Software Setup",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/verify/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Create Your Own Website in 15 Minutes  ",
+    		"title": "Create Your Own Website in 15 Minutes",
+    		"link": "http://localhost:1313/tutorials/open-education/hugo-website/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Pipelines and Project Components [pipeline, project, components, stages, steps] Let's break down a project into its most basic parts, which we call pipeline and components.",
+    		"title": "Pipelines and Project Components",
+    		"link": "http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/pipeline/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Professionalize your Team Work Using Scrum  ",
+    		"title": "Professionalize your Team Work Using Scrum",
+    		"link": "http://localhost:1313/tutorials/project-management/scrum-for-researchers/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Project Management  ",
+    		"title": "Project Management",
+    		"link": "http://localhost:1313/tutorials/project-management/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Running Computations Remotely  ",
+    		"title": "Running Computations Remotely",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Starting Up a New Empirical Research Project  ",
+    		"title": "Starting Up a New Empirical Research Project",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/start-new-project/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Download the Template  ",
+    		"title": "Download the Template",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/clone/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Shooting Educational Videos [educational, videos, shooting, camera, teaching, tips, lighting, lenses, microphone, audio] Learn about the essential steps required to shoot and produce educational videos.",
+    		"title": "Shooting Educational Videos",
+    		"link": "http://localhost:1313/tutorials/open-education/educational-videos/shooting-edu-videos/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Document and Share your Data using GitHub  ",
+    		"title": "Document and Share your Data using GitHub",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/share-data/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Online Data Collection and Management  ",
+    		"title": "Online Data Collection and Management",
+    		"link": "http://localhost:1313/tutorials/open-education/online-data-collection-and-management/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Open Education  ",
+    		"title": "Open Education",
+    		"link": "http://localhost:1313/tutorials/open-education/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Data Management and Directory Structure [data, directory, directories, data management, structure, raw, generated, source] A guide on how to manage project components, by casting a prototypical directory structure.",
+    		"title": "Data Management and Directory Structure",
+    		"link": "http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/directories/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Running the Workflow  ",
+    		"title": "Running the Workflow",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/run/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Automating your Pipeline [make, data, automation, build, recipe, pipeline] We can automate our pipeline using so-called build tools to execute sequential code files.",
+    		"title": "Automating your Pipeline",
+    		"link": "http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/automation/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Data Preparation and Workflow Management  ",
+    		"title": "Data Preparation and Workflow Management",
+    		"link": "http://localhost:1313/tutorials/open-education/data-preparation-and-workflow-management/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "More Tutorials  ",
+    		"title": "More Tutorials",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Write Your First LaTeX Document in 15 Minutes  ",
+    		"title": "Write Your First LaTeX Document in 15 Minutes",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Inspecting the Data-preparation Pipeline  ",
+    		"title": "Inspecting the Data-preparation Pipeline",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/pipeline-make/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Documenting Datasets [document, data, dataset, derived, readme, describe] If your project contains data that has been newly created, you are required to include a documentation of that data in your project.",
+    		"title": "Documenting Datasets",
+    		"link": "http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-data/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Dry-run of Make and First Modifications  ",
+    		"title": "Dry-run of Make and First Modifications",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/wipe-rerun/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Documenting Source Code and Pipeline Workflows [document, code, workflow, reference, comment, documentation] Documenting your project's workflow, not only for others, but also for your future self is absolutely crucial. Learn how.",
+    		"title": "Documenting Source Code and Pipeline Workflows",
+    		"link": "http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-code/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "More Modifications  ",
+    		"title": "More Modifications",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/modifications/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Versioning using Git and GitHub [git, versioning, github, configuration, repository] Git is an open-source version control system that allows you to keep track of your source files, and the changes you make to them",
+    		"title": "Versioning using Git and GitHub",
+    		"link": "http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/versioning/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Extending the Analysis  ",
+    		"title": "Extending the Analysis",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/analysis/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Collaborating using GitHub [git, github, collaboration, sharing, share, repository, gist, contributing] While you can use Git exclusively to keep track of your files' version history, the real power of Git lies in collaborating on projects with others.",
+    		"title": "Collaborating using GitHub",
+    		"link": "http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/collaboration/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Wrap-Up  ",
+    		"title": "Wrap-Up",
+    		"link": "http://localhost:1313/tutorials/reproducible-research/practicing-pipeline-automation-make/finish/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Checklist to Audit Data- and Computation-intensive Projects [checklist, workflow, efficient, reproducible] Here is a checklist to audit your progress in making your workflows efficient, reproducible, and well-structured.",
+    		"title": "Checklist to Audit Data- and Computation-intensive Projects",
+    		"link": "http://localhost:1313/tutorials/project-management/principles-of-project-setup-and-workflow-management/checklist/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Hugo Website Overview [hugo, static, website, generator, class, academic] Learn how you can launch your very own static website in a quick and easy way.",
+    		"title": "Hugo Website Overview",
+    		"link": "http://localhost:1313/tutorials/open-education/hugo-website/hugo-website-overview/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Get Hugo [hugo, static, website, generator, class, academic] Learn how to install Hugo, a famous static site generator.",
+    		"title": "Get Hugo",
+    		"link": "http://localhost:1313/tutorials/open-education/hugo-website/get-hugo/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Pick a Theme [hugo, hugo-tiu, tilburg, static, website] Learn how to install a Hugo theme to make your website glossy.",
+    		"title": "Pick a Theme",
+    		"link": "http://localhost:1313/tutorials/open-education/hugo-website/pick-theme/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Add Some Content [hugo, content, markdown, writing, articles] Learn how to customize your Hugo website and add content to it.",
+    		"title": "Add Some Content",
+    		"link": "http://localhost:1313/tutorials/open-education/hugo-website/add-content/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Go Live! [hugo, netlify, domain, dns, github] Learn how to publish your static website with GitHub and Netlify.",
+    		"title": "Go Live!",
+    		"link": "http://localhost:1313/tutorials/open-education/hugo-website/go-live/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Cloud Computing [cloud computing, azure, amazon, google, virtual machine] Learn how to run computations remotely",
+    		"title": "Cloud Computing",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/cloud-computing/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "The Fine Art of Typesetting [first, latex, beginner, typesetting] Learn to write your very first professional-looking document with LaTeX.",
+    		"title": "The Fine Art of Typesetting",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/what-is-latex/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Use Scrum In Your Team [scrum, project, sprint, team, management] Discover Scrum to improve your project management when working on empirical research projects",
+    		"title": "Use Scrum In Your Team",
+    		"link": "http://localhost:1313/tutorials/project-management/scrum-for-researchers/use-scrum-in-your-team/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Launch Instance [cloud computing, azure, amazon, google, virtual machine] Learn how to run computations remotely",
+    		"title": "Launch Instance",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/launch-instance/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Setup LaTeX [setup, latex, atom, editor] Learn to setup your computer to produce LaTeX documents.",
+    		"title": "Setup LaTeX",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/setup-latex/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Connect Instance [cloud computing, azure, amazon, google, virtual machine] Learn how to run computations remotely",
+    		"title": "Connect Instance",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/connect-instance/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Your First Article [first, latex, beginner] Learn to write your very first professional-looking document with LaTeX.",
+    		"title": "Your First Article",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/your-first-article/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Add a Bibliography [first, latex, beginner] Learn to write your very first professional-looking document with LaTeX.",
+    		"title": "Add a Bibliography",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/bibliography/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Move Files [cloud computing, azure, amazon, google, virtual machine] Learn how to run computations remotely",
+    		"title": "Move Files",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/move-files/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Run Scripts [cloud computing, azure, amazon, google, virtual machine] Learn how to run computations remotely",
+    		"title": "Run Scripts",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/run-scripts/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Useful Tips [first, latex, beginner] Learn to write your very first professional-looking document with LaTeX.",
+    		"title": "Useful Tips",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/latex-tips/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Terminate Instance [cloud computing, azure, amazon, google, virtual machine] Learn how to run computations remotely",
+    		"title": "Terminate Instance",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/running-computations-remotely/terminate-instances/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Learn How to Contribute [contribute, contribution, tsh] Learn how to contribute to Tilburg Science Hub in three easy ways.",
+    		"title": "Learn How to Contribute",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/contribute/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Contributing using Pull Requests [template, pull, requests, contribute, github] Tutorials teach our users how to combine individual building blocks into a final product. Learn how to write one.",
+    		"title": "Contributing using Pull Requests",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/pullrequests/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Style and Writing Guide [style, styling, guideline, contribute, writing] When contributing content to our platform, please follow our style and writing guidelines.",
+    		"title": "Style and Writing Guide",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Contributor's Code of Conduct [code of conduct, conduct, contribute, guideline] When contributing content to our platform, please abide by our code of conduct.",
+    		"title": "Contributor's Code of Conduct",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/code-of-conduct/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Contribute to Tilburg Science Hub  ",
+    		"title": "Contribute to Tilburg Science Hub",
+    		"link": "http://localhost:1313/tutorials/more-tutorials/contribute-to-tilburg-science-hub/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Tutorials  ",
+    		"title": "Tutorials",
+    		"link": "http://localhost:1313/tutorials/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Open Education Course on Data Collection [odcm, scraping, api, collection] Learn to use web scraping and APIs to collect data for your empirical research project.",
+    		"title": "Open Education Course on Data Collection",
+    		"link": "http://localhost:1313/tutorials/open-education/online-data-collection-and-management/odcm-course/"
+    	}
+    
+    ,
+    	{
+    		"searchKeywords": "Open Education Course on Data Preparation [dprep, preparation, raw data, cleaning, wrangling] Engineer data sets from complex raw data and manage research projects efficiently.",
+    		"title": "Open Education Course on Data Preparation",
+    		"link": "http://localhost:1313/tutorials/open-education/data-preparation-and-workflow-management/dprep-course/"
+    	}
+    ]

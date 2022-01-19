@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automate your Workflow on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/</link>
+    <description>Recent content in Automate your Workflow on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Jan 2021 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Use Makefiles to Re-Run Your Code</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/what-are-makefiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/what-are-makefiles/</guid>
+      <description>Overview Makefiles are instructions (&amp;ldquo;rules&amp;rdquo;) for a computer on how to build &amp;ldquo;stuff&amp;rdquo;. Think of makefiles as a recipe you may know from cooking (&amp;ldquo;Baking a cake: First, take some flour, then add milk [&amp;hellip;]&amp;quot;) - but then for computers.
+Makefiles originate in software development, where they have been used to convert source code into software programs that can then be distributed to users.
+Researchers can use makefiles to define rules how individual components (e.</description>
+    </item>
+    
+    <item>
+      <title>Use this Checklist to Improve Your Project&#39;s Structure</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/workflow-checklist/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/workflow-checklist/</guid>
+      <description>Overview As time goes on, projects tend to become messy which inhibits reproducibility. Hence, we recommend keeping an eye on this housekeeping checklist from time to time.
+Checklist Project level  Implement a consistent directory structure: data/src/gen Include readme with project description and technical instruction how to run/build the project Store any authentication credentials outside of the repository (e.g., in a JSON file), NOT clear-text in source code Mirror your /data folder to a secure backup location; alternatively, store all raw data on a secure server and download relevant files to /data  Throughout the Pipeline File/directory structure  Create subdirectory for source code: /src/[pipeline-stage-name]/ Create subdirectories for generated files in /gen/[pipeline-stage-name]/: temp, output, and audit.</description>
+    </item>
+    
+    <item>
+      <title>Make Tables and Figures Reproducible with Autofilling Values</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/autofilling-values/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/autofilling-values/</guid>
+      <description>Hard-coded values To facilitate reproducibility, figures and tables should always be generated programmatically and never include hard-coded values. The tablefill package of gslab_make is a useful tool to help create complex tables.
+In-text values Frequently, it is necessary to include values derived from calculations in the text of a document. For example, we may wish to reference a coefficient from a regression specification. To facilitate reproducibility and avoid text from becoming outdated, it is recommended to include values programatically.</description>
+    </item>
+    
+    <item>
+      <title>Automatically Install R Packages Used in a Project</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/auto-install-r-packages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/auto-install-r-packages/</guid>
+      <description>Overview You can use the following code to easily find all the the R packages used in a project, and automatically install the uninstalled ones on your machine.
+Put this script in the root directory of your R project, and either source it or run it from the command line: &amp;gt; Rscript install_packages.R
+Code # find all source code files in (sub)folders files &amp;lt;- list.files(pattern=&amp;#39;[.](R|rmd)$&amp;#39;, all.files=T, recursive=T, full.</description>
+    </item>
+    
+    <item>
+      <title>Integrating Stata in Automated Workflows</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/stata-error-handling-make/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/stata-error-handling-make/</guid>
+      <description>Overview  When you run Stata within an automated research pipeline (e.g., using a makefile), Stata does not stop the progression of the Makefile, even if there is an error in your cod! Thus, you have no idea whether Stata code was executed without any errors until the end without checking the Stata log files.
+To remedy this issue, you can use R to check for any error that may have occurred in the log file.</description>
+    </item>
+    
+    <item>
+      <title>Schedule Recurring Tasks (e.g., by day, hour)</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/task-scheduling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/task-scheduling/</guid>
+      <description>Overview Task scheduling involves the automatic execution of scripts on your local computer. For example, you may want to run a web scraper on a daily basis without having to manually execute the script. Mac and Windows users can leverage cronjobs and the Task Scheduler respectively to automate repetitive tasks. Depending on your operating system, follow one of the guides below to learn how to configure task scheduling on your machine.</description>
+    </item>
+    
+    <item>
+      <title>Share Large Temporary Files</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/fileexchanges/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/fileexchanges/</guid>
+      <description>File exchanges are essential to transfer data between different stages of your pipeline, and between different co-authors working on a project.
+The key requirements of a file exchange are:
+ the programmatic access (i.e., via command line tools), to data storage organized in directories and files, allowing members of the project to upload or download data, employing fine-grained access controls (i.e., to give users reading rights, or reading/writing rights).  Below, we show a few options that we&amp;rsquo;ve used in our research projects.</description>
+    </item>
+    
+    <item>
+      <title>Use Software Environments to Ensure Replicability</title>
+      <link>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/software-environments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/automate-and-execute-your-work/automate-your-workflow/software-environments/</guid>
+      <description>Overview The main advantages of using virtual software environments are:
+  Ensures replicability:
+ Environment specifies versions for each program and package used Ensures that specified versions are the right ones (environment does not forget to update specified version if the version is updated in a project)    Easy set-up on a different machine or the cloud: run environment setup to install all required software/packages.
+  Keeps projects separate: adding or updating packages for one project does not affect others.</description>
+    </item>
+    
+  </channel>
+</rss>

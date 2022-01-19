@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Write Your First LaTeX Document in 15 Minutes on Tilburg Science Hub</title>
+    <link>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/</link>
+    <description>Recent content in Write Your First LaTeX Document in 15 Minutes on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Fine Art of Typesetting</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/what-is-latex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/what-is-latex/</guid>
+      <description>The Design Philosophy In this tutorial, you&amp;rsquo;ll learn to write your very first document using \(\LaTeX\)within 15 minutes.
+$\LaTeX$ is a professional typesetting system widely used in academia because of its high-quality output and the relatively ease of use in setting up complex documents, like journal articles, books, technical reports, and similar.
+One of its main features is that it separates the writing and the formatting stages - or the content and its presentation.</description>
+    </item>
+    
+    <item>
+      <title>Setup LaTeX</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/setup-latex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/setup-latex/</guid>
+      <description>Installation The first step is to setup a \(\TeX\)distribution on your machine.
+ If you haven&amp;rsquo;t done it yet, you can read our guide on how to install $\LaTeX$:  How to Install $\LaTeX$ Once you&amp;rsquo;ve installed it, you&amp;rsquo;ll need a text editor to work with. We recommend Atom, a free and cross-platform editors with great functions and extra packages. You can download Atom from its official website or read the instructions from our Building Block.</description>
+    </item>
+    
+    <item>
+      <title>Your First Article</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/your-first-article/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/your-first-article/</guid>
+      <description>The Preamble The preamble is the first section of your .tex file. It comes before the the text of the document itself.
+The preamble always starts with the definition of a &amp;ldquo;document class&amp;rdquo;. This is where you tell \(\LaTeX\)what kind of document you&amp;rsquo;re writing: an article, a book, a letter&amp;hellip; More on that later.
+You can then continue specifying additional information and packages in the preamble.</description>
+    </item>
+    
+    <item>
+      <title>Add a Bibliography</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/bibliography/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/bibliography/</guid>
+      <description>Please notice that there are different ways to include a bibliography in \(\LaTeX\), namely bibtex, natbib, and biblatex. In this tutorial, we will deal with bibtex only. For more advanced uses, consider researching which system works best for you.
+Create a .bib File A .bib file contains all the bibliographic information for your document. Think of it as a sort of database of all the references you may want to include in your article (but you don&amp;rsquo;t have to necessarily).</description>
+    </item>
+    
+    <item>
+      <title>Useful Tips</title>
+      <link>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/latex-tips/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tutorials/more-tutorials/write-your-first-latex-document/latex-tips/</guid>
+      <description>Congratulations! You&amp;rsquo;ve completed this tutorial. Here are some useful tips when writing with \(\LaTeX\).
+Specify The Encoding It&amp;rsquo;s always a good idea to specify the encoding of your document to allow characters beyond ASCII to be visible. It&amp;rsquo;s recommended to use UTF-8. Unless you know what you&amp;rsquo;re doing, simply add this in your preamble:
+\usepackage[utf8]{inputenc} Use Labels This will change your life. One of the greatest features and reasons why you should use $\LaTeX$ for complex documents.</description>
+    </item>
+    
+  </channel>
+</rss>

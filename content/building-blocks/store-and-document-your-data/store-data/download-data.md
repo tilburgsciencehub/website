@@ -151,9 +151,15 @@ with open("<FILE_NAME.extension>", 'wb') as f:
     f.write(fh.read())
     f.close()
 ```
+```R
+library(googledrive)
+data_id <-"12rVWmiA6r8A1ggyP_T3jM7hONUkXoL3h"
+drive_download(as_id(data_id), path = “out_file.csv”, overwrite = TRUE)
+df <- read.csv(“out_file.csv”)
+```
 {{% /codeblock %}}
 
-* You can find the `<FILE_ID>` by navigating towards the file in your browser and clicking on "Open in new window". The URL then contains the file ID you need. For example, the file ID of `https://drive.google.com/file/d/XXXXXX/view` is `XXXXXX`.  
+* You can find the `<FILE_ID>`/`data_id` by navigating towards the file in your browser and clicking on "Open in new window". The URL then contains the file ID you need. For example, the file ID of `https://drive.google.com/file/d/XXXXXX/view` is `XXXXXX`.  
 ![open_new_window](../images/open_new_window.png)
 
 * Larger files may be split up in separate chuncks. The progress will be printed to the console.

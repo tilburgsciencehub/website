@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Preparation on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/</link>
+    <description>Recent content in Data Preparation on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Jan 2021 22:01:14 +0530</lastBuildDate><atom:link href="http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Import Large Datasets Into R</title>
+      <link>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/large-datasets-r/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/large-datasets-r/</guid>
+      <description>Overview Many R-users rely on the dplyr or read.table packages to import their datasets as a dataframe. Although this works well for relatively small datasets, we recommend using the data.table R package instead because it is significantly faster. This building block provides you with some practical tips for dealing with large datsets in R.
+Code As a starting point, make sure to clean your working environment in RStudio. Oftentimes, there are datasets stored memory that you have worked with earlier but you&amp;rsquo;re no longer using.</description>
+    </item>
+    
+    <item>
+      <title>Manipulate Data</title>
+      <link>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/manipulate-data/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/manipulate-data/</guid>
+      <description>Chris Albon, Director of Machine Learning at the Wikimedia Foundation, hosts a great selection of notes and code snippets on data science, machine learning, data manipulation, data visualization, and much more.
+Go to chrisalbon.com</description>
+    </item>
+    
+    <item>
+      <title>Clean Data Scraped From Social Media</title>
+      <link>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/clean-social-media-counts/</link>
+      <pubDate>Wed, 06 Jan 2021 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/clean-social-media-counts/</guid>
+      <description>Overview This is a handy function that can be used to clean social media data scraped from the web.
+Usually, when scraping social media, the output data can contain letters like K&amp;rsquo;s (Thousands), M&amp;rsquo;s (Millions) and B&amp;rsquo;s (Billions). You are won&amp;rsquo;t be able to analyze them unless you first replace these letters with the appropriate zero digits.
+Code # Function to convert textual social media counts to proper digits social_media_cleanup &amp;lt;- function(x) { if (class(x)%in%c(&amp;#39;integer&amp;#39;,&amp;#39;numeric&amp;#39;)) { warning(&amp;#39;Input is already numeric.</description>
+    </item>
+    
+    <item>
+      <title>Data Preparation and Workflow Management</title>
+      <link>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/data-preparation-workflow-management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/prepare-your-data-for-analysis/data-preparation/data-preparation-workflow-management/</guid>
+      <description>The Data Preparation and Workflow Management course is an open-source Master level course taught at Tilburg University. All of its content is freely available and consists of lectures, live streams, self-study material, tutorials and examples.
+This course teaches you how to engineer data sets for statistical analysis. Many students and researchers perceive the process of “creating” a data set for analysis as rather simplistic: a bit of cleaning here, a bit of merging there, and you’re done.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tips on Tilburg Science Hub</title>
+    <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/</link>
+    <description>Recent content in Tips on Tilburg Science Hub</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Nov 2020 22:02:51 +0530</lastBuildDate><atom:link href="http://localhost:1313/building-blocks/develop-your-research-skills/tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Searching for Literature on the Web</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/search-literature/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/search-literature/</guid>
+      <description>What to search for? Search effectively. Although there is no exact recipe for an effective search, the following tips will surely help you find relevant literature for your research more effectively:
+  Identify your keywords. Start by defining the research question that you aim to answer, what are the main ideas? Use such question toward identifying the keywords. Employing the jargon of your subject area will also help you to find the most effective words for your search.</description>
+    </item>
+    
+    <item>
+      <title>Build and Maintain a Reference List</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/reference-list/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/reference-list/</guid>
+      <description>Overview One of the most tedious tasks (if not the most) when writing a publication (e.g, article, thesis) is dealing with references. A good usage of reference management applications will save you a lot of time, which you can put to better use in your research.
+In this building block, we go trough the most widely used reference management applications: Mendeley, Zotero and EndNote.
+Mendeley Mendeley Reference Manager is a free web and desktop reference management application which can be downloaded for Windows, MacOS and Linux.</description>
+    </item>
+    
+    <item>
+      <title>Cite Efficiently in Your Academic Paper</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/citations/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/citations/</guid>
+      <description>Citation Styles Many academic journals, publishers or university departments require a specific citation style. If that is the case, check their guidelines. However, if nothing is specified you still have to choose one and be consistent with it.
+Which style should be chosen? Usually your choice will depend on your field/discipline or even country of publication. For instance, APA is one of the most common styles for social sciences, MLA in humanities, AMA in medicine, OSCOLA for law in the UK mainly etc.</description>
+    </item>
+    
+    <item>
+      <title>Principles for Good Coding</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/principles-good-coding/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/principles-good-coding/</guid>
+      <description>Write programs for people, not computers Make your code easy to understand for humans. If your code looks very complex or messy, you&amp;rsquo;re probably doing it wrong.
+ Organization  Define functions that do one mayor step each, instead of one giant script doing everything Write short scripts that do one task each Document only what your code doesn&amp;rsquo;t say, but nothing else   Style  Use meaningful and short variable names Use consistent code and formatting styles (oneExample, one_example, example-one) Make use of indents in your code    Define things once and only once Let computers repeat and execute tasks.</description>
+    </item>
+    
+    <item>
+      <title>Python Coding Style Guidelines</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/python-coding-style/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/python-coding-style/</guid>
+      <description>PEP 8 We follow Python&amp;rsquo;s style guide PEP 8. Also we:
+ Use docstrings for functions whose purpose may be unclear or that will be used outside of their own modules  Supplemental resources:   The Hitchhiker’s Guide to Python, especially the sections on coding style and packaging conventions.
+  Google&amp;rsquo;s Python Style Guide, especially recommendations concerning string formatting and the rule to always explicitly close files and sockets.</description>
+    </item>
+    
+    <item>
+      <title>R Coding Style Guidelines</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/r-code-style/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/r-code-style/</guid>
+      <description>Syntax Object names  Variable and function names should use only letters, numbers, and underscores (_) and not include dots (mainly to avoid confusion with base R function names). CamelCases are also fine.  #Good school_type SchoolType #Bad school.type  Variable names should be as concise and meaningful as possible:  #Good day_one #Bad first_day_of_the_month d1mth Spacing Make code easier to read, place a space:
+ After a comma.  x[, 1]  After function arguments.</description>
+    </item>
+    
+    <item>
+      <title>Stata Coding Style Guidelines</title>
+      <link>http://localhost:1313/building-blocks/develop-your-research-skills/tips/stata-code-style/</link>
+      <pubDate>Wed, 11 Nov 2020 22:01:14 +0530</pubDate>
+      
+      <guid>http://localhost:1313/building-blocks/develop-your-research-skills/tips/stata-code-style/</guid>
+      <description>Coding styles in STATA We use two coding styles in Stata: a linear format for very short or simple scripts, and a functional style for longer or more complex scripts.
+1. Linear Format. ***************************** * Prepare data ***************************** * Format X variables ... * Format Y variables ... ***************************** * Run regressions ***************************** ... ***************************** * Output tables ***************************** ... TipIf you include a comment as a header like this for one major block of code, you should include a similar header for every block of code at the same logical place in the hierarchy.</description>
+    </item>
+    
+  </channel>
+</rss>
