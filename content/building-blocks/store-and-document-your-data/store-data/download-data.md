@@ -151,10 +151,24 @@ with open("<FILE_NAME.extension>", 'wb') as f:
     f.write(fh.read())
     f.close()
 ```
+```R
+library(googledrive)
+data_id <-"12rVWmiA6r8A1ggyP_T3jM7hONUkXoL3h"
+drive_download(as_id(data_id), path = “out_file.csv”, overwrite = TRUE)
+df <- read.csv(“out_file.csv”)
+```
 {{% /codeblock %}}
 
-* You can find the `<FILE_ID>` by navigating towards the file in your browser and clicking on "Open in new window". The URL then contains the file ID you need. For example, the file ID of `https://drive.google.com/file/d/XXXXXX/view` is `XXXXXX`.  
+* You can find the `<FILE_ID>`/`data_id` by navigating towards the file in your browser and clicking on "Open in new window". The URL then contains the file ID you need. For example, the file ID of `https://drive.google.com/file/d/XXXXXX/view` is `XXXXXX`.  
 ![open_new_window](../images/open_new_window.png)
+
+* R may ask *"Is it OK to cache OAuth access credentials in the folder `path/gargle/gargle/Cache between R sessions?`"*.
+
+  <img src="../images/R_OAuth_access.PNG" width="600"/>
+
+  * Type in 1 in the R console to accept. A new window may pop up that asks you to authenticate yourself with your Google account. Click on “Allow”.
+
+  <img src="../images/tidyverseAPI_login.PNG" width="300"/>
 
 * Larger files may be split up in separate chuncks. The progress will be printed to the console.
 
