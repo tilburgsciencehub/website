@@ -9,7 +9,7 @@ aliases:
   - /scrape/static-website
   - /collect-data/scrape-static-websites
 ---
-
+sadfghjhj
 ## Overview
 Say that you want to capture and analyze data from a website. Of course, you could simply copy-paste the data from each page but you would quickly run into issues. What if the data on the page gets updated (i.e., would you have time available to copy-paste the new data, too)? Or what if there are simply so many pages that you can't possibly do it all by hand (i.e., thousands of product pages)?
 
