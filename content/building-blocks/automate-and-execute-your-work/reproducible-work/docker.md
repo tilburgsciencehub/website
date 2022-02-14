@@ -6,12 +6,11 @@ weight: 2
 #date: 2021-01-06T22:01:14+05:30
 draft: false
 aliases:
-  - /setup/software-environment
-  - /setup/virtual-environment
+- /setup/docker
 ---
 
 ## What is Docker?
-
+"Docker is an open-source project that automates the deployment of software applications inside containers by providing an additional layer of abstraction and automation of OS-level virtualisation on Linux."
 
 ### Why should you use Docker?
 
@@ -23,6 +22,8 @@ aliases:
 
 #### Main commands
 - `docker build`
+
+- `docker run`
 
 
 ### Setup Docker
@@ -37,7 +38,7 @@ Once docker is up and running, verify your installation by running `docker run h
 
 
 {{% warning %}}
- Every time you modify or move a file the image will have to be rebuilt before running it again in order to copy such changes in your local machine into the container.
+ Every time you modify or move a file the container will have to be rebuilt before running it again. Otherwise, the modifications made in the local machine will not be updated in the container.
 {{% /warning %}}
 ## Running an R script in docker
 
@@ -46,7 +47,8 @@ Once docker is up and running, verify your installation by running `docker run h
 ## Multiple languages in a single container
 Up until now, we created containers that started from either a Python or an R image. This limits our container to running only R or python scripts, respectively. Some images have already been built to run both python and R, for example this [docker image](https://hub.docker.com/r/jupyter/datascience-notebook). However, in a regular work environement you might be using both python and R along with other languages. In this sense, we can start from a more general image e.g. Ubuntu and add layers to the docker image so that it can run R, Python and whichever language we require in a single container.
 
-How can we do this? Let's create an example repository and name it for instance, "docker_rpy". The directory structure is the following
+### Example repository
+How can we do this? Let's create an example repository and name it for instance, "**docker_rpy**". The directory structure is the following:
 
 ```text
 docker_rpy
@@ -64,7 +66,7 @@ docker_rpy
 └── Dockerfile
 ```
 
-### A look at the scripts
+### The Scripts
 
 {{% codeblock %}}
 ```shell script
@@ -77,8 +79,8 @@ Rscript code/r-script.R
 # Create a normal random sample
 import numpy as np
 mu, sigma = 0, 0.1
+np.random.seed(1)
 data = np.random.normal(mu, sigma, 1000)
-
 # save it
 np.savetxt('data/data.csv', data, delimiter=',', header='X')
 ```
@@ -93,14 +95,89 @@ png("output/histogram.png")
 histogram <- hist(Z)
 dev.off()
 ```
+
 {{% /codeblock %}}
 
 As per `packages.R` and `requirements.txt`, the first one installs the `readr` package and the latter installs the `NumPy` library, which are the only packages required to run the above python and R scripts.
 
+### The Dockerfile
+{{% codeblock %}}
+```dockerfile
+FROM ubuntu:latest
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential \
+ python3.9 python3-dev python3-pip r-base
+RUN ln -s /usr/bin/python3 /usr/bin/python
+
+# Set container directory
+WORKDIR /docker_rpy
+# Copy files and directory structure
+COPY . .
+# Get necessary packages
+RUN pip3 install -r code/requirements.txt
+RUN Rscript code/packages.R
+# Run
+CMD code/instruction.sh
+```
+{{% /codeblock %}}
+
+Line-by-line, the Dockerfile intructs the following:
+
+- Starts from the **lastest Ubuntu image** available
+
+- Suppresses the prompts for choosing your location during the R install
+
+- Updates the `apt-get`: to install available updates of all packages currently installed
+
+- Include **essential installation packages for Ubuntu**, installing only the recommended (and not suggested) dependencies
+
+- Downloads **python version 3.9** and allows **pip** to be used to install the requirements
+
+- Sets the path for python usage inside the container
+
+- **Sets the working directory** for the container and **copies all files** into it, using the same structure as in the local machine
+
+- **Installs necessary python libraries** from the `requirements.txt` file and the necessary **R packages** from the file `packages.R`
+
+- Sets `instruction.sh` as the command to run
+
+### Running the container
+Let's first build the container from the current working directory where the Dockerfile is (`.`):
+```bash
+docker build -t myname/myimage .
+```
+This can take a few minutes. Once built, we run the container by typing in
+```bash
+docker run -it --rm  -v "PATH on local computer":"container path" myname/myimage
+```
+In this example, the container path was set to "**/docker_rpy**" in the dockerfile.
+
+
+```text
+docker_rpy
+│
+├── code
+│   ├── packages.R
+│   ├── r-script.R
+│   ├── pyscript.py
+│   ├── requirements.txt
+│   └── instruction.sh
+├── data
+│    └── data.csv ......................... data generated from pyscript.py
+├── output
+│    └── histogram.png .................... histogram obtained from r-script.R
+│
+└── Dockerfile
+```
 ## Additional Resources  
 
-1. More information on Conda environments: [https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html](https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html)
+1. Complete handbook on Docker: [The Docker Handbook](https://docker-handbook.farhan.dev/)
 
-2. Python virtual environments: [https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+2. Docker tutorial for beginners: [Docker curriculum](https://docker-curriculum.com/)
 
-3. Information on package environments in Julia: [https://julialang.github.io/Pkg.jl/v1/environments/](https://julialang.github.io/Pkg.jl/v1/environments/)
+3. [R script in Docker tutorial](https://www.r-bloggers.com/2019/02/running-your-r-script-in-docker/)
+
+4. Easy interactive tutorial on combining [Docker and Makefiles](https://www.katacoda.com/ben_hall/scenarios/1)
+
+5. Tutorial on [Docker for Data Science](https://www.robertmylesmcdonnell.com/content/posts/docker/)
