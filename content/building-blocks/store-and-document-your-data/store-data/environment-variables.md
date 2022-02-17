@@ -47,9 +47,8 @@ api_password = os.environ['VARIABLE_NAME']
 ```
 
 ```R
-library(Sys)
 # VARIABLE_NAME is the name of the environment variable you defined in the terminal
-api_password = Sys.getenv(c("VARIABLE_NAME"))
+api_password = Sys.getenv("VARIABLE_NAME")
 ```
 
 {{% /codeblock %}}
