@@ -36,7 +36,7 @@ Never upload a script that contains privacy-sensitive information to Github. Eve
 
 
 ## Access Environment Variables
-After you have imported the `os` (or `Sys`) library, you can easily assign the value of the environment variable (`VARIABLE_NAME`) to a variable. Subsequently, you can re-use the variable throughout the script, for example for API authentication purposes.
+Use the code snippets below to easily assign the value of the environment variable (`VARIABLE_NAME`) to a variable to be used in Python or R. Subsequently, you can re-use that variable throughout the script, for example for API authentication purposes.
 
 {{% codeblock %}}
 
