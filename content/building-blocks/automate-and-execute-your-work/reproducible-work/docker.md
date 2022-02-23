@@ -8,45 +8,14 @@ draft: false
 aliases:
 - /setup/docker
 ---
+## Why should you use Docker?
+When publishing an academic paper, for **reproducibility verification** reasons, you are usually required to provide the code and data from which you have obtained your results. In many situations, the results may work on your computer but once they are sent to someone else, they are no longer reproducible. The reasons behind this can be many (e.g. different software versions, different operating systems...). In other cases, there might indeed be an issue. Reporting back the exact issue so that it can be fixed can be somewhat complicated, especially if the reviser and author do not work with a common environment.
 
-## What is Docker?
-[Docker](https://www.docker.com/) is the most common (and is also open-source) version of containerisation, i.e. a form of virtualisation where applications run in isolated **containers**, while using a shared operating system (Linux in Docker's case).
-
-### What are containers?
- <cite>"A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another"[1]</cite>.  
-
- Hence, everything that is needed to run your project (e.g. python, R, packages...) is encapsulated and isolated into a container. This container is abstracted from the host operating system (OS) with only access to the binaries, libraries, configuration and dependencies that are built into such a container.
-
-In a nutshell, it's like having a **lightweight virtual machine** that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
-
-### Why should you use Docker?
-Say goodbye to "*but it works on my computer*", embrace the power of containerisation:
+Because [Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/) encapsulates everything that is needed for a project (e.g. Python, R...) and isolates it into containers, abstracting it from the host OS, all of the above mentioned issues a solved. In a nutshell, with Docker, you don't even need to have the program or the same version in which the project works installed to actually run the workflow. Thus, the “but-it-works-on-my-machine” argument is now either "it works in any machine or it doesn't".
 
 {{% tip %}}
-- **Holy grail of replicability**:
-
-  - Can specify software versions (e.g. python 3.9 or even the OS)
-  - **Will always run the same** (and will be able to run) regardless of the infrastructure for instance, regardless of the OS. Therefore, it's more replicable than using [software environments](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/automate-your-workflow/software-environments/) such as via Conda
-
-- **Increased portability and efficiency over VMs**:
-  - Less overhead during startup and no need to set up a separate guest OS for each application.
-  - Containers take up less space than VMs, they have just the necessary.
-
-- **Share your projects easily with your team**:
-  - With [Docker Hub](https://hub.docker.com/) it is very easy. In a way, it's the equivalent of Github for Git but instead, for Docker.
+Still haven't dowloaded Docker? Check our [building block](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/) on how to get Docker up and running.
 {{% /tip %}}
-
-## Setup Docker
-The Docker Engine can be easily installed following these steps for [Linux (Ubuntu)](https://docs.docker.com/engine/install/ubuntu/), [MacOS](https://docs.docker.com/desktop/mac/install/) and [Windows](https://docs.docker.com/desktop/windows/install/).
-
-
-### Verify your Installation
-Once installed, verify your installation works correctly by running `docker run hello-world` on your terminal. You should get the following:
-
-<img src="../verify-installation.png" width="600" alt="centered image"/>
-
-Now that Docker is up and running, let's start with the basics
-
 ## Docker basics
 
 ### Dockerfiles
@@ -93,8 +62,15 @@ These are the two basic steps to creating and running an image inside a containe
   - Need further help with the basics or want to slow down the pace? Take a look at this [Docker curriculum](https://docker-curriculum.com/)
 {{% /tip %}}
 
-## Dockerise an Ubuntu application that runs both Python and R
-In many projects, we can base our image on for instance, a Python or R image. This can be efficient but at the expense of limiting the container to running only R or python scripts, respectively. In this sense, some images have already been built to run both python and R, for example this [docker image](https://hub.docker.com/r/jupyter/datascience-notebook).
+## Dockerize an Ubuntu application that runs both Python and R
+In many projects, we can base our image on for instance, a Python or R image. This can be efficient but limits the container to running only R or python scripts, respectively.
+
+{{% tip %}}
+Want to run a container based solely on an R image? Check out the following:
+-  Tutorial on running an [R script in Docker](https://www.r-bloggers.com/2019/02/running-your-r-script-in-docker/)
+
+- Our [dockerized R application](https://github.com/tilburgsciencehub/keywords-finder) that finds keywords and/or sentences from PDF files  
+{{% /tip %}}
 
 However, in a regular work environement you might be using both python and R along with other languages. In this sense, we can start from a more general image e.g. Ubuntu and add layers to the docker image so that it can run R, Python and whichever language we require in a single container.
 
@@ -238,5 +214,3 @@ docker run -it --rm  -v "PATH on local computer":"container path" myname/myimage
 5. Information on [containerisation](https://www.citrix.com/en-in/solutions/app-delivery-and-security/what-is-containerization.html?gclid=Cj0KCQiAu62QBhC7ARIsALXijXQK8FhkYuNqzmXxWwMzjp_04rp7iK-d6i0xXdSdS04_rzEffJiQUkEaApNGEALw_wcB&gclsrc=aw.ds)
 
 6. [Containerizing a Multi-Container JavaScript Application](https://docker-handbook.farhan.dev/containerizing-a-multi-container-javascript-application)
-
-[1]:Docker.com ["What is a container"](https://www.docker.com/resources/what-container)
