@@ -9,43 +9,6 @@ aliases:
 - /setup/docker
 ---
 
-## What is Docker?
-[Docker](https://www.docker.com/) is the most common (and is also open-source) version of containerisation, i.e. a form of virtualisation where applications run in isolated **containers**, while using a shared operating system (Linux in Docker's case).
-
-### What are containers?
- <cite>"A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another" [^1]</cite>.  
-
- Hence, everything that is needed to run your project (e.g. python, R, packages...) is encapsulated and isolated into a container. This container is abstracted from the host operating system (OS) with only access to the binaries, libraries, configuration and dependencies that are built into such a container.
-
-In a nutshell, it's like having a **lightweight virtual machine** that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
-
-### Why should you use Docker?
-Say goodbye to "*but it works on my computer*", embrace the power of containerisation:
-
-{{% tip %}}
-- **Holy grail of replicability**:
-
-  - Can specify software versions (e.g. python 3.9 or even the OS)
-  - **Will always run the same** (and will be able to run) regardless of the infrastructure for instance, regardless of the OS. Therefore, it's more replicable than using [software environments](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/automate-your-workflow/software-environments/) such as via Conda
-
-- **Increased portability and efficiency over VMs**:
-  - Less overhead during startup and no need to set up a separate guest OS for each application.
-  - Containers take up less space than VMs, they have just the necessary.
-
-- **Share your projects easily with your team**:
-  - With [Docker Hub](https://hub.docker.com/) it is very easy. In a way, it's the equivalent of Github for Git but instead, for Docker.
-{{% /tip %}}
-
-## Setup Docker
-The Docker Engine can be easily installed following these steps for [Linux (Ubuntu)](https://docs.docker.com/engine/install/ubuntu/), [MacOS](https://docs.docker.com/desktop/mac/install/) and [Windows](https://docs.docker.com/desktop/windows/install/).
-
-
-### Verify your Installation
-Once installed, verify your installation works correctly by running `docker run hello-world` on your terminal. You should get the following:
-
-<img src="../verify-installation.png" width="600" alt="centered image"/>
-
-Now that Docker is up and running, let's start with the basics
 
 ## Docker basics
 
@@ -238,5 +201,3 @@ docker run -it --rm  -v "PATH on local computer":"container path" myname/myimage
 5. Information on [containerisation](https://www.citrix.com/en-in/solutions/app-delivery-and-security/what-is-containerization.html?gclid=Cj0KCQiAu62QBhC7ARIsALXijXQK8FhkYuNqzmXxWwMzjp_04rp7iK-d6i0xXdSdS04_rzEffJiQUkEaApNGEALw_wcB&gclsrc=aw.ds)
 
 6. [Containerizing a Multi-Container JavaScript Application](https://docker-handbook.farhan.dev/containerizing-a-multi-container-javascript-application)
-
-[^1]:Docker.com ["What is a container"](https://www.docker.com/resources/what-container)
