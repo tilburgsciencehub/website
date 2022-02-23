@@ -13,7 +13,7 @@ aliases:
 [Docker](https://www.docker.com/) is the most common (and is also open-source) version of containerisation, i.e. a form of virtualisation where applications run in isolated **containers**, while using a shared operating system (Linux in Docker's case).
 
 ### What are containers?
- <cite>"A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another"[1]</cite>.  
+ <cite>"A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another" [^1]</cite>.  
 
  Hence, everything that is needed to run your project (e.g. python, R, packages...) is encapsulated and isolated into a container. This container is abstracted from the host operating system (OS) with only access to the binaries, libraries, configuration and dependencies that are built into such a container.
 
@@ -239,4 +239,4 @@ docker run -it --rm  -v "PATH on local computer":"container path" myname/myimage
 
 6. [Containerizing a Multi-Container JavaScript Application](https://docker-handbook.farhan.dev/containerizing-a-multi-container-javascript-application)
 
-[1]:Docker.com ["What is a container"](https://www.docker.com/resources/what-container)
+[^1]:Docker.com ["What is a container"](https://www.docker.com/resources/what-container)
