@@ -8,8 +8,14 @@ draft: false
 aliases:
 - /setup/docker
 ---
+## Why should you use Docker?
+When publishing an academic paper, for **reproducibility verification** reasons, you are usually required to provide the code and data from which you have obtained your results. In many situations, the results may work on your computer but once they are sent to someone else, they are no longer reproducible. The reasons behind this can be many (e.g. different software versions, different operating systems...). In other cases, there might indeed be an issue. Reporting back the exact issue so that it can be fixed can be somewhat complicated, especially if the reviser and author do not work with a common environment.
 
+Because [Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/) encapsulates everything that is needed for a project (e.g. Python, R...) and isolates it into containers, abstracting it from the host OS, all of the above mentioned issues a solved. In a nutshell, with Docker, you don't even need to have the program or the same version in which the project works installed to actually run the workflow. Thus, the “but-it-works-on-my-machine” argument is now either "it works in any machine or it doesn't".
 
+{{% tip %}}
+Still haven't dowloaded Docker? Check our [building block](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/) on how to get Docker up and running.
+{{% /tip %}}
 ## Docker basics
 
 ### Dockerfiles
@@ -56,8 +62,15 @@ These are the two basic steps to creating and running an image inside a containe
   - Need further help with the basics or want to slow down the pace? Take a look at this [Docker curriculum](https://docker-curriculum.com/)
 {{% /tip %}}
 
-## Dockerise an Ubuntu application that runs both Python and R
-In many projects, we can base our image on for instance, a Python or R image. This can be efficient but at the expense of limiting the container to running only R or python scripts, respectively. In this sense, some images have already been built to run both python and R, for example this [docker image](https://hub.docker.com/r/jupyter/datascience-notebook).
+## Dockerize an Ubuntu application that runs both Python and R
+In many projects, we can base our image on for instance, a Python or R image. This can be efficient but limits the container to running only R or python scripts, respectively.
+
+{{% tip %}}
+Want to run a container based solely on an R image? Check out the following:
+-  Tutorial on running an [R script in Docker](https://www.r-bloggers.com/2019/02/running-your-r-script-in-docker/)
+
+- Our [dockerized R application](https://github.com/tilburgsciencehub/keywords-finder) that finds keywords and/or sentences from PDF files  
+{{% /tip %}}
 
 However, in a regular work environement you might be using both python and R along with other languages. In this sense, we can start from a more general image e.g. Ubuntu and add layers to the docker image so that it can run R, Python and whichever language we require in a single container.
 
