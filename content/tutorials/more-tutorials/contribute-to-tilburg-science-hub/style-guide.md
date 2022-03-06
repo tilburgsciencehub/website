@@ -136,6 +136,13 @@ Click **[here](https://github.com/tilburgsciencehub/website/blob/master/content/
 
 {{% /tip %}}
 
+#### Adding Footnotes
+Footnotes [^1] let you reference relevant information without disrupting the flow of what you're trying to say. Need to make use of footnotes? Here is how to add them in Markdown:
+```
+Footnotes[^1] let you (...)
+[^1]: My reference
+```
+[^1]: [Footnotes in Markdown](https://github.blog/changelog/2021-09-30-footnotes-now-supported-in-markdown-fields/)
 ### Writing Instructions
 
 - Use the second person ("you") when speaking to our or talking about our users
