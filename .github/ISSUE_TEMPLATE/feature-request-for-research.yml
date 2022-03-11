@@ -18,7 +18,7 @@ body:
     attributes:
       label: Would you like this to be a Building Block or a Tutorial?
       description: A clear and concise description of what the format of solution will be.
-      placeholder: Ex. I'm always frustrated when [...]
+      placeholder: Ex. Building Block or Tutorial
     validations:
       required: true
   - type: textarea
@@ -48,7 +48,7 @@ body:
     attributes:
       label: Suggested title
       description: The title of this request is.
-      placeholder: Drag and drop a screenshot here.
+      placeholder:
     validations:
       required: true
   - type: textarea
@@ -56,7 +56,7 @@ body:
     attributes:
       label: Suggested keywords
       description: The keywords related to this request
-      placeholder: Drag and drop a screenshot here.
+      placeholder:
     validations:
       required: false
   - type: textarea
