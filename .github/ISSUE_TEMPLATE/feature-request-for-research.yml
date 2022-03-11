@@ -43,7 +43,7 @@ body:
         placeholder: Drag and drop a screenshot here.
         validations:
         required: false
-  - type: textarea
+  - type: input
     id: title
     attributes:
           label: Suggested title
