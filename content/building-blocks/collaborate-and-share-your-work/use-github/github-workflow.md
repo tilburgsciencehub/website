@@ -11,7 +11,7 @@ aliases:
   - /github/workflow
 ---
 # Overview
-By default, we follow the [Github Flow](https://guides.github.com/introduction/flow/) workflow model, which is explained below. This information is also summarized in a [Github Cheatsheet](../Github-cheatsheet-TSH.pdf), so you can easily follow along or refresh your memory in case you ever forget a step in the workflow!
+By default, we follow the [Github Flow](https://guides.github.com/introduction/flow/) workflow model, which is explained below. This information is also summarized in a [Github Cheatsheet](../github_cheatsheet_tsh.pdf), so you can easily follow along or refresh your memory in case you ever forget a step in the workflow!
 
 {{% summary %}}
  - All work on an issue happens in a separate repository *branch*.
