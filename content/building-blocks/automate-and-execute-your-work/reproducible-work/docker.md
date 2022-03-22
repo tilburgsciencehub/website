@@ -210,7 +210,7 @@ docker run -it --rm  -v "PATH on local computer":"container path" myname/myimage
     ```text
     docker_rpy
     │
-    ├── code
+    ├── src
     │
     ├── data
     │    └── data.csv ......................... data generated from pyscript.py
