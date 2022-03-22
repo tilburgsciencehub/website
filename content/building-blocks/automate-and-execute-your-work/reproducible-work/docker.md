@@ -1,6 +1,6 @@
 ---
 title: "Docker for Reproducible Research"
-description: "Holy Grail of replicability: Say goodbye to *but it works on my computer*, embrace the power of containerisation"
+description: "Holy Grail of replicability: Say goodbye to *but it works on my computer*, embrace the power of containerization."
 keywords: "docker, images, container, environments, virtual"
 weight: 2
 #date: 2021-01-06T22:01:14+05:30
@@ -11,18 +11,18 @@ aliases:
 
 ## Why should you use Docker?
 
-When publishing an academic paper, for **reproducibility verification** reasons, you are usually required to provide the code and data from which you have obtained your results. In many situations, the results may work on your computer but once they are sent to someone else, they are no longer reproducible. The reasons behind this can be many (e.g. different software versions, different operating systems...). In other cases, there might indeed be an issue. Reporting back the exact issue so that it can be fixed can be somewhat complicated, especially if the reviser and author do not work with a common environment.
+When publishing an academic paper, for **reproducibility verification** reasons, you are usually required to provide the code and data you have obtained your results. The results may work on your computer, but once the code is sent to someone else, it no longer reproduces the analysis results. The reasons behind this can be many (e.g., different software versions, different operating systems). In other cases, there might indeed be an issue. Reporting back the exact problem so that it can be fixed can be somewhat complicated, especially if the reviser and author do not work with a common environment.
 
-Because [Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/) encapsulates everything that is needed for a project (e.g. Python, R, ...) and isolates it into containers (i.e., abstracting it from the host operating system), all of the above mentioned issues are solved. In a nutshell, with Docker, you don't even need to have the program or the same version in which the project works installed to run the workflow. Thus, the “but-it-works-on-my-machine” argument is now either "it works in any machine or it doesn't". Great, right?
+Because [Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/) encapsulates everything that is needed for a project (e.g., Python, R, ...) and isolates it into containers (i.e., abstracting it from the host operating system), all of the issues mentioned above are solved. With Docker, you don't even need to have the program or the same version in which the project works installed to run the workflow. Thus, the “but-it-works-on-my-machine” argument is now either "it works in any machine, or it doesn't." Great, right?
 
 {{% tip %}}
-Still haven't dowloaded Docker? Check our [building block](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/) on how to get Docker up and running.
+Still haven't downloaded Docker? Check our [building block](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/) on how to get Docker up and running.
 {{% /tip %}}
 
 ## Docker basics
 
 ### Dockerfiles
-The `dockerfile` is a text file (no file extension!), containing the code that will be executed to produce a new Docker image, where the container will be run. The basic structure of a `dockerfile` is the following:
+The `dockerfile` is a text file (no file extension!) containing the code that will be executed to produce a new Docker image, where the container will be run. The basic structure of a `dockerfile` is the following:
 
 ```dockerfile
 FROM "base image:version"
@@ -30,23 +30,23 @@ RUN "additional packages required to run the image"
 COPY "add files to be used into the container"
 CMD "default command to be executed"
 ```
-- The `FROM` instruction sets the base image upon which the container will be based. A **base image** is such that has no parent image, these are usually images at the OS level such as ubuntu or debian. Base images can either be:
+- The `FROM` instruction sets the base image upon which the container will be based. A **base image** is one that has no parent image (e.g., typically an operating system such as ubuntu or debian). Base images can either be:
 
-  - **Official images**: are maintained and supported by Docker. These are for instance, `ubuntu`, `python`, `hello-world`. For example, check out some R images [here](https://hub.docker.com/search?q=RStudio&type=image).
+  - **Official images**: are maintained and supported by Docker. These are, for instance, `ubuntu`, `python`, `hello-world`. For example, check out some R images [here](https://hub.docker.com/search?q=RStudio&type=image).
 
-  - **User images**: are created and shared by any user. Usually, they add additional functionality to a base image and their file names are formatted as `user/image-name`.
+  - **User images**: are created and shared by any user. Usually, they add additional functionality to a base image, and their file names are formatted as `user/image-name`.
 
 - `RUN` adds layers to the base image. It allows to install additional packages needed for your Docker image to run smoothly.
 
-- `COPY` allows to copy your local machine's directory structure into the image and/or add the necessary files into it, e.g. scripts.
+- `COPY` allows you to copy your local machine's directory structure into the image and/or add the necessary files, e.g., scripts.
 
-- `CMD` is used to set the default command to be executed when running the container. There can only be one `CMD` command per Dockerfile, otherwise, only the last `CMD` command will run. 
+- `CMD` is used to set the default command to be executed when running the container. There can only be one `CMD` command per Dockerfile. Otherwise, only the last `CMD` command will run. 
 
-  - If you want to define a container with a specific executable it might be better to use `ENTRYPOINT` instead of `CMD`. You can find more information on `ENTRYPOINT` [here](https://docs.docker.com/engine/reference/builder/#entrypoint).
+  - If you want to define a container with a specific executable, it might be better to use `ENTRYPOINT` instead of `CMD`. You can find more information on `ENTRYPOINT` [here](https://docs.docker.com/engine/reference/builder/#entrypoint).
 
 
 {{% tip %}}
-Dockerfiles can be written in any text editor such as for instance, [Visual Study Core](https://code.visualstudio.com/), which is especially popular when working with Docker because of its official docker extension. This extension has some nice features such as debugging and auto-completion, making things a lot easier.
+Dockerfiles can be written in any text editor, such as [Visual Study Core](https://code.visualstudio.com/), which is especially popular when working with Docker because of its official docker extension. This extension has some excellent features such as debugging and auto-completion, making things a lot easier.
 {{% /tip %}}
 
 ### Let's first learn some theory - Docker 101
@@ -60,9 +60,9 @@ Once the image is built, you can run it in a container by typing in:
 These are the two basic steps to creating and running an image inside a container. Now we're ready to get hands-on experience.
 
 {{% tip %}}
-  - For further information on image and container manipulation check out this [handbook](https://docker-handbook.farhan.dev/container-manipulation-basics)
+  - For further information on image and container manipulation, check out this [handbook](https://docker-handbook.farhan.dev/container-manipulation-basics)
 
-  - Need further help with the basics or want to slow down the pace? Take a look at this [Docker curriculum](https://docker-curriculum.com/)
+  - Do you need further help with the basics or want to slow down the pace? Take a look at this [Docker curriculum](https://docker-curriculum.com/)
 
   - Running `CMD` in Docker but getting an error message? It could be your execution script cannot be read. Set its file permissions using `chmod +x src/run.sh`. See also [here](https://serverfault.com/questions/967580/chmod-changing-permissions-of-myscript-sh-operation-not-permitted).
   
@@ -70,11 +70,11 @@ These are the two basic steps to creating and running an image inside a containe
 
 ## Let's dockerize a research workflow that runs both Python and R
 
-In many empirical research projects, we can use R, Python, or a combination of both. The best thing is that these packages are free (i.e., you can run them anywhere, without purchasing a license). In this application, we start from a very basic image (Ubuntu), and then add the required layers of R and Python to the image. 
+In many empirical research projects, we can use R, Python, or both. The best thing is that these packages are free (i.e., you can run them anywhere without purchasing a license). In this application, we start from a very basic image (Ubuntu) and then add the required layers of R and Python to the image. 
 
 {{% tip %}}
 
-Want to run a container based solely on an R image? Check out the following:
+Want to run a container-based solely on an R image? Check out the following:
 -  Tutorial on running an [R script in Docker](https://www.r-bloggers.com/2019/02/running-your-r-script-in-docker/)
 - Our [dockerized R application](https://github.com/tilburgsciencehub/keywords-finder) that finds keywords and/or sentences from PDF files  
 {{% /tip %}}
@@ -83,9 +83,9 @@ Want to run a container based solely on an R image? Check out the following:
 
 How can we do this? Let's create a simple repository that...
 - generates a dataset drawn from a normal random sample using the `NumPy` library in Python, 
-- saves the data in a `data` directory, and obtains a histogram from such data in R (saving it in the `gen` folder).
+- saves the data in a `data` directory and obtains a histogram from such data in R (saving it in the `gen` folder).
 
-All these steps are run with one shell script. Let's name our workflow "**docker_rpy**" for now, and structure it in the following manner.
+All these steps are run with one shell script. Let's name our workflow "**docker_rpy**" for now and structure it in the following manner.
 
 [__Check out the complete code base on GitHub__](https://github.com/tilburgsciencehub/docker-demo).
 
@@ -168,7 +168,7 @@ ENTRYPOINT ["sh", "src/run.sh"]
 ```
 {{% /codeblock %}}
 
-Line-by-line, this Dockerfile intructs the following:
+Line-by-line, this Dockerfile instructs the following:
 
 - Starts from the **lastest Ubuntu image** available as the base image
 
@@ -194,7 +194,7 @@ Let's first build the image from the current working directory where the Dockerf
 ```bash
 docker build -t myname/myimage .
 ```
-  - Here, the `-t` argument makes sure that you get some good formatting and a native terminal like experience
+  - Here, the `-t` argument makes sure that you get some good formatting and a native terminal-like experience
   - Remember to also copy-paste/type the `.` at the end of the command!
 
 Building the image can take a few minutes. Once built, we run the container based on the image we just created by typing in:
@@ -204,7 +204,7 @@ docker run -it --rm  -v "PATH on local computer":"container path" myname/myimage
 
 - The `-it` argument creates an interactive bash shell in the container. For example, use it like: `docker run -it --rm -v "$(pwd)/.:/docker_rpy" myname/myimage`
 - The `--rm` argument makes sure the container is automatically removed once we stop it.
-- The `-v` or `-volume` argument tells Docker which local folders to map to the created folders inside the container (**/docker_rpy** in this case). In this example, it is making sure that the dataset generated in the `pyscript.py` script and the histogram created in `r-script.R` are saved into the `data` and `gen` folders in the local machine, respectively. Hence, the resulting directory structure should be the following:
+- The `-v` or `-volume` argument tells Docker which local folders to map to the created folders inside the container (**/docker_rpy** in this case). This example makes sure that the dataset generated in the `pyscript.py` script and the histogram created in `r-script.R` are saved into the `data` and `gen` folders in the local machine, respectively. Hence, the resulting directory structure should be the following:
 
     ```text
     docker_rpy
@@ -220,7 +220,7 @@ docker run -it --rm  -v "PATH on local computer":"container path" myname/myimage
     ```
     
 {{% warning %}}
- Every time you modify or move a file, the container image will have to be rebuilt before running it again. Otherwise, the modifications made in the local machine will not be updated into the container.
+ Every time you modify or move a file, the container image will have to be rebuilt before rerunning it. Otherwise, the modifications made in the local machine will not be updated into the container.
 {{% /warning %}}
 
 
