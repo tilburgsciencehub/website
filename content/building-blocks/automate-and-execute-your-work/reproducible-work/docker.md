@@ -87,7 +87,8 @@ How can we do this? Let's create a simple repository that...
 
 All these steps are run with one shell script. Let's name our workflow "**docker_rpy**" for now and structure it in the following manner.
 
-[__Check out the complete code base on GitHub__](https://github.com/tilburgsciencehub/docker-demo).
+{{% cta-primary-center "Go to the GitHub Repository now" "https://github.com/tilburgsciencehub/docker-demo" %}}
+
 
 ```text
 docker_rpy
