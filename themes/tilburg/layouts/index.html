@@ -206,16 +206,29 @@
         </h5>
         <ul class="my-4 list-unstyled">
 
+										{{ $s := slice }}
+
 										<!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
-										{{ range where .Site.Pages.ByPublishDate.Reverse "Section" "examples" | first 10 | shuffle | first 3 }}
-										<!--{{ if ne .Title "Examples" }}-->
+										{{ range where .Site.Pages.ByPublishDate.Reverse "Section" "examples" }}
+										{{ if ne .Title "Examples" }}
+
+
+											{{ $s = $s | append . }}
+
+										{{ end }}
+										{{ end }}
+
+										<!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
+
+
+										{{ range $s.ByPublishDate.Reverse | first 10 | shuffle | first 3 }}
 
 										<li class="pb-2">
 											<span class="icon link text-primary d-inline-block mr-2"></span>
 											<a href="{{ .Permalink }}">{{ .Title }}</a>
 										</li>
 										{{ end }}
-									<!--	{{ end }}-->
+
 					<!--
           <li class="pb-2">
             <span class="icon link text-primary d-inline-block mr-2"></span>
