@@ -208,14 +208,14 @@
 
 										<!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
 										{{ range where .Site.Pages.ByPublishDate.Reverse "Section" "examples" | first 10 | shuffle | first 3 }}
-										{{ if ne .Title "Examples" }}
+										<!--{{ if ne .Title "Examples" }}-->
 
 										<li class="pb-2">
 											<span class="icon link text-primary d-inline-block mr-2"></span>
 											<a href="{{ .Permalink }}">{{ .Title }}</a>
 										</li>
 										{{ end }}
-										{{ end }}
+									<!--	{{ end }}-->
 					<!--
           <li class="pb-2">
             <span class="icon link text-primary d-inline-block mr-2"></span>
