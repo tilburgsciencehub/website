@@ -43,7 +43,7 @@
 
 
       <p class="text-secondary mx-4 mx-lg-0 mt-4 mb-4 mr-lg-5 pr-lg-5">
-        We bring the <a class = "header" href = "/tour">value of open science</a> to Tilburg,<br>
+        We bring the <a class = "header" href = "/tour">value of open science</a> to Tilburg,
 				and valuable resources of Tilburg to the world.
 <!--
 				Tilburg Science Hub gives you the tools and guidance to be in control
@@ -55,16 +55,45 @@
 			<!--<div class="form-inline text-center float-center d-none d-block d-xl-none">
 				<br>space<br></div>
 -->
-			<form class="form-inline text-center float-center" method="GET" action="/search">
-				<div style="width: 500px" class="form-control headerSearch2 border-0">
-					<input class="resetInput" type="search" name="q" placeholder="Have a question? Just ask it here!" aria-label="Search" required autocomplete="off">
-					<button style="background-color: transparent; padding: 0;" type="submit"><img src="/img/search.svg" /></button>
-				</div>
 
-			</form>
-			<!-- search results -->
-			<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder2">
-			</div>
+
+
+<!-- for bigger screens: search -->
+
+<div class="d-none d-lg-block">
+	<form class="form-inline text-center float-center" method="GET" action="/search">
+		<div style="width: 500px" class="form-control headerSearch2 border-0">
+			<input class="resetInput" type="search" name="q" placeholder="Have a question? Just ask it here!" aria-label="Search" required autocomplete="off">
+			<button style="background-color: transparent; padding: 0;" type="submit"><img src="/img/search.svg" /></button>
+		</div>
+
+	</form>
+	<!-- search results -->
+	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder2">
+	</div>
+
+</div>
+
+
+<!-- for smaller screens: search -->
+
+<div class="d-lg-none">
+
+	<form class="text-center float-center" method="GET" action="/search">
+		<div class="form-control headerSearch2 border-0">
+			<input class="resetInput" type="search" name="q" placeholder="Have a question? Just ask it here!" aria-label="Search" required autocomplete="off">
+			<button style="background-color: transparent; padding: 0;" type="submit"><img src="/img/search.svg" /></button>
+		</div>
+
+	</form>
+	<!-- search results -->
+	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder2">
+	</div>
+
+</div>
+
+
+
 
 
 			<!--<span>Take a tour</span>-->
