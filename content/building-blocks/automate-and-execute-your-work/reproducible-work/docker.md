@@ -87,13 +87,13 @@ How can we do this? Let's create a simple repository that...
 - generates a dataset drawn from a normal random sample using the `NumPy` library in Python, 
 - saves the data in a `data` directory and obtains a histogram from such data in R (saving it in the `gen` folder).
 
-All these steps are run with one shell script. Let's name our workflow "**docker_rpy**" for now and structure it in the following manner.
+All these steps are run with one shell script. Let's structure our workflow in the following manner.
 
 {{% cta-primary-center "Go to the GitHub Repository now" "https://github.com/tilburgsciencehub/docker-demo" %}}
 
 
 ```text
-docker_rpy
+docker-demo
 │
 ├── code
 │   ├── packages.R  ....................... necessary packages to run the R script
@@ -114,9 +114,9 @@ Let's take a look at the scripts that will carry this out:
 {{% codeblock %}}
 ```shell script
 #!/bin/sh
-python code/pyscript.py
+python src/pyscript.py
 #!/bin/sh
-Rscript code/r-script.R
+Rscript src/r-script.R
 ```
 ```Python
 # Create a normal random sample
@@ -156,7 +156,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends build-essential
  python3.9 python3-dev python3-pip r-base
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
-# Set container's working directory
+# Set container's working directory - this is arbitrary but needs to be "the same" as the one you later use to transfer files out of the docker image
 WORKDIR /docker_rpy
 
 # Copy files and directory structure to working directory
@@ -166,7 +166,7 @@ COPY . .
 RUN pip3 install -r src/requirements.txt
 RUN Rscript src/packages.R
 
-# Run commands specified in "instruction.sh" to get started
+# Run commands specified in "run.sh" to get started
 ENTRYPOINT ["sh", "src/run.sh"]
 ```
 {{% /codeblock %}}
@@ -205,12 +205,12 @@ Building the image can take a few minutes. Once built, we run the container base
 docker run -it --rm  -v "PATH on local computer":"container path" myname/myimage
 ```
 
-- The `-it` argument creates an interactive bash shell in the container. For example, use it like: `docker run -it --rm -v "$(pwd)/.:/docker_rpy" myname/myimage`
+- The `-it` argument creates an interactive bash shell in the container. For example, use it like: `docker run -it --rm -v "$(pwd)/.:/docker_rpy" myname/myimage` (recall we are using the working directory as specified in the `dockerfile` to ensure we can "take out" any of our generated files.
 - The `--rm` argument makes sure the container is automatically removed once we stop it.
 - The `-v` or `-volume` argument tells Docker which local folders to map to the created folders inside the container (**/docker_rpy** in this case). This example makes sure that the dataset generated in the `pyscript.py` script and the histogram created in `r-script.R` are saved into the `data` and `gen` folders in the local machine, respectively. Hence, the resulting directory structure should be the following:
 
     ```text
-    docker_rpy
+    docker-demo
     │
     ├── src
     │
