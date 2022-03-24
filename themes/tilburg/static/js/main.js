@@ -183,7 +183,7 @@ $(document).ready(function () {
 
 $(document).mouseup(function (e) {
   const container = $(
-    ".subMenu, .headerSearchResultsHolder, .buildingBlocksSuggestions"
+    ".subMenu, .headerSearchResultsHolder, .buildingBlocksSuggestions, .headerSearchResultsHolder2"
   );
 
   if (!container.is(e.target) && container.has(e.target).length === 0) {
@@ -228,6 +228,38 @@ $(".headerSearch").on("keyup", function (e) {
       }
     });
 });
+
+$(".headerSearch2").on("keyup", function (e) {
+  const resultsHolder = $(".headerSearchResultsHolder2");
+  const val = e.target.value;
+
+  index
+    .search(val, {
+      hitsPerPage: 10,
+    })
+    .then(({ hits }) => {
+      resultsHolder.html(" ");
+      resultsHolder.addClass("active");
+      hits.map((hit) => {
+        let url = hit.objectID.replace("./", "");
+        url = url.replace(".md", "");
+
+        resultsHolder.append(`<a href="/${url}">${hit.title}</a>`);
+      });
+
+      if (hits.length == 0) {
+        resultsHolder.append(`<span>No result found!</span>`);
+      }
+
+      // also add see more link
+      if (hits.length == 10) {
+        resultsHolder.append(
+          `<a class="view-more-search" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`
+        );
+      }
+    });
+});
+
 
 $(".headerSearchMobile").on("keyup", function (e) {
   const resultsHolder = $(".mobileResults");

@@ -749,6 +749,35 @@ article {
   }
 }
 
+.headerSearchResultsHolder2 {
+  display: none;
+  position: relative;
+  top: 200px;
+  right: 0px;
+  z-index: 10;
+  width: 500px;
+  max-height: 600px;
+  overflow-y: scroll;
+  padding: 20px;
+  border-radius: 6px;
+
+  a {
+    color: $secondary;
+    padding: 10px 0;
+    border-bottom: solid 1px #ededed;
+    display: block;
+  }
+
+  a:hover {
+    color: #ff8200;
+  }
+
+  &.active {
+    display: block;
+  }
+}
+
+
 .searchResults {
   h5 {
     margin-top: 15px;

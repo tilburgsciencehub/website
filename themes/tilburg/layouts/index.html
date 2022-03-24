@@ -34,25 +34,72 @@
   <div class="row mt-4 justify-content-center">
     <div class="col-lg-9 col-24 mt-3 px-0 order-2 order-lg-1 text-center text-lg-left">
       <h1 class="mx-5 mx-lg-0">
-        <span class="text-primary heading">Be smart.</span>
-        <br />
-        <span>Conduct your research differently.</span>
+        <!--<span class="text-primary heading">Tilburg Science Hub</span>-->
+				<span class="">Tilburg</span><span class="heading"> Science Hub</span>
+        <!--<br />
+        <span>Conduct your research differently.</span>-->
       </h1>
+
+
+
       <p class="text-secondary mx-4 mx-lg-0 mt-4 mb-4 mr-lg-5 pr-lg-5">
-        Tilburg Science Hub gives you the tools and guidance to be in control
+        We bring the <a class = "header" href = "/tour">value of open science</a> to Tilburg,<br>
+				and valuable resources of Tilburg to the world.
+<!--
+				Tilburg Science Hub gives you the tools and guidance to be in control
         and save time in your empirical research projects.
+				-->
       </p>
-      <a href="/tour">
-        <button class="btn btn-primary btn-lg mt-2">I'm a Student</button>
+
+
+			<!--<div class="form-inline text-center float-center d-none d-block d-xl-none">
+				<br>space<br></div>
+-->
+			<form class="form-inline text-center float-center" method="GET" action="/search">
+				<div style="width: 500px" class="form-control headerSearch2 border-0">
+					<input class="resetInput" type="search" name="q" placeholder="Have a question? Just ask it here!" aria-label="Search" required autocomplete="off">
+					<button style="background-color: transparent; padding: 0;" type="submit"><img src="/img/search.svg" /></button>
+				</div>
+
+			</form>
+			<!-- search results -->
+			<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder2">
+			</div>
+
+
+			<!--<span>Take a tour</span>-->
+
+			<!--<p class="text-secondary text-right mx-4 mx-lg-0 mt-4 mb-4 mr-lg-5 pr-lg-5">
+        Take a tour.
+
+      </p>
+-->
+
+			<a href="/tour">
+        <button class="btn btn btn-sm mt-2">Take a tour - I'm a Student</button>
       </a>
       <a href="/researcher-tour">
-        <button class="btn btn-primary btn-lg mt-2">I'm a Researcher</button>
+        <button class="btn btn btn-sm mt-2">I'm a Researcher</button>
       </a>
+			<a href="https://github.com/tilburgsciencehub/website">
+        <button class="btn btn btn-sm mt-2">Visit us on GitHub</button>
+      </a>
+
     </div>
-    <div class="col-lg-11 col-24 order-1 order-lg-2  text-center">
+
+
+		<div class="col-lg-6 mt-3 col-16 order-1 order-lg-2 text-center">
       <img src="/img/hero.svg" class="hero-image mx-auto mx-lg-none" alt="" />
     </div>
+
+
   </div>
+
+
+
+
+
+</div>
 
 <!--
   <div class="terminal-window">
@@ -108,7 +155,8 @@
     <br>
   </div> -->
 
-</div>
+
+
 
 
 <!-- Feature divs -->
