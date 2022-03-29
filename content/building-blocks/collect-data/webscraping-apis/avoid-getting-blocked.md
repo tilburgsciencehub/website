@@ -32,7 +32,13 @@ Every time you visit a website meta-data associated with your HTTP request is se
 
 {{% codeblock %}}
 ```Python
-headers = # a dictionary with header meta-data (user-agent, browser, etc.)
+
+headers = {'User-agent': 'Mozilla/5.0'} 
+# you can also replace the user agent with the exact 
+# user agent you are using on your computer.
+# just visit https://www.whatismybrowser.com/detect/what-is-my-user-agent/
+# to find out what your user agent is.
+
 requests.get(url, headers=headers)
 ```
 {{% /codeblock %}}
