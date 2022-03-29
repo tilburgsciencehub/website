@@ -47,7 +47,7 @@ requests.get(url, headers=headers)
 The most common headers types are:
 * User-agent =  a string to tell the server what kind of device and browser you are accessing the page with. The Scrapy user agent [package](https://pypi.org/project/scrapy-user-agents/), for example, randomly rotates between a list of [user agents](https://developers.whatismybrowser.com/useragents/explore/software_name/googlebot/).
 * Accept-Language = preferred language (e.g., Russian may be more suspicious for a Dutch client's IP location).
-* Referer = the previous web page’s address before the request is sent to the web server (e.g., a random origin website seem more plausible)
+* Referrer = the previous web page’s address before the request is sent to the web server (e.g., a random origin website seem more plausible)
 
 
 ### Proxies
