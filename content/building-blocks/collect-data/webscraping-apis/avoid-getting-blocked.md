@@ -33,8 +33,9 @@ Every time you visit a website meta-data associated with your HTTP request is se
 {{% codeblock %}}
 ```Python
 
-headers = {'User-agent': 'Mozilla/5.0'} 
-# you can also replace the user agent with the exact 
+headers = {'User-agent': 'Mozilla/5.0'}
+
+# you can also replace the user agent with the exact
 # user agent you are using on your computer.
 # just visit https://www.whatismybrowser.com/detect/what-is-my-user-agent/
 # to find out what your user agent is.
@@ -51,3 +52,5 @@ The most common headers types are:
 
 ### Proxies
 The idea is that you use an IP address that is not your own. Hence, if get blocked, you switch to another IP address. Either you can use a package like [`scrapy-proxy-pool`](https://github.com/rejoiceinhope/scrapy-proxy-pool) or you use a Virtual Private Network (VPN) to alternate between IP addresses.
+
+There are also many for-pay services, such as https://scraperapi.com, https://zyte.com, and https://scrapingbee.com.
