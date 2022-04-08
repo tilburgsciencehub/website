@@ -8,7 +8,8 @@ draft: false
 aliases:
 - /reproduce/packrat
 ---
-# What is Packrat? Why use it?
+
+# Never miss an R package: Using Packrat
 
 Suppose you’re trying to run someone else’s codes and are bombarded with package installation errors, it can be frustrating to guess what R packages are needed to be installed, right? Or, have you ever updated a package to get code in one of your projects to run, only to find that the updated package makes code in another project stop working?
 
@@ -37,11 +38,18 @@ You’ll also need to make sure your machine is able to build packages from sour
 
 ## Initialize Packrat
 
-Before starting to write the codes for your R project, initialize packrat by running `packrat::init("...")` and enter your project directory path inside the parantheses.
+Before starting to write the codes for your R project, initialize packrat by running `packrat::init("...")` and enter your project directory path inside the parantheses. If you already set the working directory to your desired project directory then simple run `packrat::init()`.
+<p align = "center">
+<img src = "../initialize.png" width="500">
+</p>
+
 
 Now, you’re in a Packrat project which has its own private package library. Any packages installed from inside a packrat project are only available to that project and the ones installed outside of the project are not avilable to the project. This is basically the “isolation” feature of Packrat.
 
 Once you run this initialization code, you’ll see a “packrat” folder created in your project directory which contains the following files:
+<p align = "center">
+<img src = "../packrat_folder.png" width="500">
+</p>
 
 - **`packrat/packrat.lock`:** This contains a list of the package versions that satisfy the dependencies. Note that this file should never by edited manually by the user!
 - **`packrat/packrat.opts`:** This file contains project-specific packrat options and can be queried and set with `get_opts` and `set_opts`; see `?"packrat-options"` for more information.
@@ -57,6 +65,17 @@ Simply install the packages as you normally would with `install.packages()` and 
 packrat::snapshot()
 ```
 {{% /codeblock %}}
+<p align = "center">
+<img src = "../packrat_snapshot.png" width="500">
+</p>
+
+
+Suppose you made some changes to your code and remove one of the libraries. When you re-run the snapshot command, packrat will remove the dependent packages that are no longer required to run the script. Thus, keeping the private packrat library up-to-date and tidy.
+
+<p align = "center">
+<img src = "../updated_snapshot.png" width="500">
+</p>
+
 ## Restoring snapshot
 
 So let’s say you are collaborating with a co-author/teammate on github and you made changes to your R project and took snapshot of the packages BEFORE comitting the changes. Now your collaborator fetches these changes by pulling the commits made to their local machine. They can check “status” which shows the differences between the project’s packrat dependencies, its private package library, and R scripts. Then they can “restore” the changes made.
@@ -86,23 +105,21 @@ packrat::clean()
 
 {{% tip%}}
 
-# Use “Pacman” to load multiple packages in one go!
+**Use “Pacman” to load multiple packages in one go!**
 
-# What is Pacman? Why use it?
+One usually loads packages requires using the `library()` function but if you want to load multiple libraries, it gets a bit tedious. Pacman is a handy tool to load multiple packages with a single code snippet.
 
-One usually loads packages requires using the `library()` function but if you want to load multiple libraries, it gets a bit tedious.
+**Get started with Pacman:**
 
-# Get started with Pacman
-
-## Step 1: Install packman
+- **Step 1: Install pacman**
 ```R
 install.packages("pacman")
 ```
 
-## Step 2: Load multiple packages with p_load()
+- **Step 2: Load multiple packages with `p_load()`**
 
 ```R
-pacman::p_load(dplyr,ggplot2,psych) # example
+pacman::p_load(dplyr,ggplot2,psych) # for example
 ```
 {{%/tip%}}
 
