@@ -1,9 +1,8 @@
 ---
-title: "Getting Started with Research Cloud"
-description: "A free cloud solution for conducting research."
-keywords: "cloud, virtual computers, SURF, infrastructure, parallel, research cloud, service desk"
-#weight: 2
-date: 2022-04-08T22:01:14+05:30
+title: "Use Google Colab to Run Python in the Cloud"
+description: "Got a slow computer? Or want to collaborate on Python code? Use Colab!"
+keywords: "cloud, python, jupyter, slow computer, fast, collaborate"
+date: 2022-04-08T10:01:14+05:30
 draft: false
 author: "Cas Ruger"
 # authorlink: "https:/"
