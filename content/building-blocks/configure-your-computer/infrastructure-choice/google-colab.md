@@ -11,11 +11,11 @@ aliases:
   
 ---
 
-## What is Google Colab
+## What is Google Colab?
 Colab is a product from Google Research that allows anybody with an internet connection to write and execute python code through a browser. Colab is free to use, and there is no setup on your computer needed. It is especially useful if you have a slow computer since Google hosts your Jupyter notebook and thus uses their GPU free of charge. Or if you want to work together on the same code, since you can collaborate on the same cloud file with multiple editors. 
 
 ## How to get started
-It is time to create your own Colab notebook.
+It is time to create your own Colab notebook!
 
 
 1. Go to https://colab.research.google.com/ 
@@ -24,30 +24,34 @@ It is time to create your own Colab notebook.
 
 
 ## How to use Colab
-Once you are in your Colab notebook you can use it just like any offline Jupiter notebook. 
+Once you are in your Colab notebook you can use it just like any offline Jupyter notebook. 
 
 Type your code in the darker gray box en pres the run arrow to run the code. Your output will be placed below the box. To create a new code box, press **+ Code** in the navigation bar. 
+![Google Colab screenshot](Google_Colab_Screenshot.jpg)
 
 
 ### Import packages
-Colab environment already has a number of pre-installed packages such as pandas, pytorch, scipy, tenserflow and numpy. To check all installed packages use **pip freeze** 
+Colab environment already has a number of pre-installed packages such as ``pandas``, ``pytorch``, ``scipy``, ``tenserflow`` and ``numpy``. To check all installed packages use **pip freeze** 
 ```bash 
-!pip freeze. 
+!pip freeze 
 ```
 If a package is already installed, import these by importing them with **import 
 {packages name}**
 ```bash 
-import pandas. 
+import pandas 
 ```
 
 If a package is not yet installed, install the package inside the Colab notebook by adding the code **!pip install {package name}**
 ```bash 
-!pip install cartopy. 
+!pip install cartopy 
 import cartopy
 ```
 
+## Adding collaborators
+To add other collaborators, go to the right corner and press **Share**. Now choose to either invite people via e-mail or by sending them a link. It is also possible to change the permissions to 'Commenter' or 'Viewer' by pressing ![the gear icon](settings_image.jpg)
+
 ### Connect to google drive
-The easiest way to upload files is to connect your Colab file to your Google drive. 
+If you want to import a dataset or any other file stored on your pc, the easiest way to do so is by connecting Google Colab to your Google drive. To do so, follow the steps below!
 1. Upload your files to Google drive 
 2. Run the following lines in a Colab shell
 ```bash 
@@ -63,5 +67,4 @@ You can now import, and export files like you are used to with offline notebooks
 
 
 
-## Adding collaborators
-To add other collaborators, go to the right corner and press **Share**. Now choose to either invite people via e-mail or by sending them a link. It is also possible to change the permissions to 'Commenter' or 'Viewer' by pressing ![the gear icon](settings_image.jpg)
+
