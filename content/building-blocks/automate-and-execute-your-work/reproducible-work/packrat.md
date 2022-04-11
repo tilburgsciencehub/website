@@ -1,5 +1,5 @@
 ---
-title: "Packrat for R"
+title: "A Better Way to Manage your R Packages: Packrat"
 description: "Isolated, portable and reproducible dependency management system for R."
 keywords: "packrat, R, package management system"
 weight: 2
@@ -9,9 +9,9 @@ aliases:
 - /reproduce/packrat
 ---
 
-# Never miss an R package: Using Packrat
+# Using Packrat to manage your R package library
 
-Suppose you’re trying to run someone else’s codes and are bombarded with package installation errors, it can be frustrating to guess what R packages are needed to be installed, right? Or, have you ever updated a package to get code in one of your projects to run, only to find that the updated package makes code in another project stop working?
+Suppose you’re trying to run someone else’s codes and are bombarded with package installation errors. It can be frustrating to guess what R packages are needed to be installed, right? Or, have you ever updated a package to get code in one of your projects to run, only to find that the updated package makes code in another project stop working?
 
 Packrat is the solution to such dependency issues. It is a dependency management system for R packages which is isolated, portable, and reproducible.
 
