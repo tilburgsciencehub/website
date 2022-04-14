@@ -14,6 +14,12 @@ Sometimes writing a paper is simply not enough: provide readers with an interact
 
 **Distill, Bookdown** and **Quarto** are some of the state-of-the-art tools to check out and get started.
 
+|  | Distill  | Bookdown  | Quarto  |
+| --- | --- | --- | --- |
+| **Possible input languages** | R | R | Python, R, Julia and Observable |
+| **Purpose** | Mainly used to publish shorter content like articles or sets of articles as a Distill website or as a Distill blog. | Mainly used to publish books or pretty much anything that consists of multiple R Markdown documents meant to be read in a linear sequence(e.g. course handouts, thesis etc) | Used to publish articles,reports,presentation, websites, blogs, and books. |
+| **Output format(s)**  | HTML | Multiple types of output formats are possible: PDF/HTML/Word  | HTML, PDF, MS Word, ePub and more |
+
 # Get Started
 
 Check out these tutorials/guides to help you get started with your preferred publishing tool:
