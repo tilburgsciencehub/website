@@ -87,3 +87,4 @@ It means that Netlify is now actively "watching" your GitHub repository.
 - Learn how to [set up HTTPS on custom domains](https://docs.netlify.com/domains-https/https-ssl/)
 - Check out [other hosting and deployment options](https://gohugo.io/hosting-and-deployment/)
 - Read a more [detailed guide](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/) on how to host your Hugo website on Netlify
+- Learn how to publish a set of [Distill](https://rstudio.github.io/distill/website.html) articles as a website
