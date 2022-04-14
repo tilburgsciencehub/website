@@ -12,6 +12,7 @@ authorlink: "https://www.tilburguniversity.edu/staff/a-d-antonacci"
 aliases:
   - /launch/academic-website
   - /launch/hugo-website
+  - /create/personal-website
 ---
 
 ## Why to Launch a Website?
