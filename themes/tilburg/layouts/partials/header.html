@@ -1,7 +1,15 @@
 {{ partial "head.html" . }}
+
 <div class="backdrop d-none"></div>
+
 {{ if .Params.keywords }}<div class="d-none">{{ .Params.keywords }}</div> {{ end }}
 {{ if .Params.description }}<div class="d-none">{{ .Params.descriptions }}</div>{{ end }}
+
+
+<div class="announcement d-none d-lg-block d-xl-block px-0 fixed-top">
+	<p>Join the Community! <a href="https://www.linkedin.com/company/tilburgsciencehub">Visit us now on LinkedIn!</a></p>
+</div>
+
 <div class=" container mt-lg-5 mt-3 px-0 fixed-top" style="z-index: 10000;">
 	<div class="bg-white rounded boxShadow navMenu d-relative px-1 mx-3 mx-lg-0" style="position: relative;">
 		<div class="customNavbar px-4 py-3">
