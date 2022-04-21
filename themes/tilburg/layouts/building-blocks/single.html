@@ -40,12 +40,8 @@
 					</div> -->
 				</div>
 
-				<div class="alert alert-light" role="alert">
-					<p style="color:#003365;  text-align: center;" >
-					<strong>Join the community!</strong><br>
-					Visit our <a href="https://github.com/tilburgsciencehub/website" target="_blank" rel="noopener noreferrer">GitHub</a> or <a href="https://www.linkedin.com/company/tilburgsciencehub" target="_blank" rel="noopener noreferrer">LinkedIn</a> page and join the Tilburg Science Hub community. <br>
-					Want to change something or add new content? Click the <a href="https://tilburgsciencehub.com/contribute" target="_blank" rel="noopener noreferrer">Contribute</a> button</p>
-				</div>
+				{{ partial "announcement.html" . }}
+
 
 				{{ if eq (len .Content) 0 }}
 				<script>window.location = "/{{.Section}}"</script>
