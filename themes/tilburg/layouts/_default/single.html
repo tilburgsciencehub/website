@@ -76,6 +76,10 @@
             <a href="{{ .Site.Params.repo_url }}/edit/master/content/{{ .File }}" class="btn btn-secondary">Edit this page</a>
           </div> -->
         </div>
+
+        {{ partial "announcement.html" . }}
+
+
         {{ if eq (len .Content) 0 }}
         <script>
           window.location = "/{{.Section}}";
