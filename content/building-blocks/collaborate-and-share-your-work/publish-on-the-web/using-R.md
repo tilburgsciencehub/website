@@ -13,12 +13,15 @@ aliases:
 Sometimes writing a paper is simply not enough: provide readers with an interactive article on the web, or start drafting your own ebook!
 
 **Distill, Bookdown** and **Quarto** are some of the state-of-the-art tools to check out and get started.
+{{% wide-table %}}
+| 	| Distill 	| Bookdown 	| Quarto 	|  	
+|---	|---	|---	|---	|
+| **Possible input languages** 	| R 	| R 	| Python, R, Julia <br>  and Observable 	|  	
+| **Purpose** 	| Publish shorter content<br> like articles or <br> sets of articles <br> as a Distill website <br> or as a Distill blog 	| Publish books or <br> pretty much anything <br> that consists of <br> multiple R Markdown <br> documents meant to <br> be read in a linear sequence <br> (e.g. course materials,<br> thesis etc) 	| Used to publish articles,<br> reports, presentation, <br> websites,  blogs, and books 	|
+| **Output formats** 	| HTML 	| Multiple types of <br> output formats are possible:<br> PDF/HTML/Word 	| HTML, PDF, WORD, <br> ePub etc 	|  	
+{{% /wide-table %}}
 
-|  | Distill  | Bookdown  | Quarto  |
-| --- | --- | --- | --- |
-| **Possible input languages** | R | R | Python, R, Julia and Observable |
-| **Purpose** | Mainly used to publish shorter content like articles or sets of articles as a Distill website or as a Distill blog. | Mainly used to publish books or pretty much anything that consists of multiple R Markdown documents meant to be read in a linear sequence(e.g. course handouts, thesis etc) | Used to publish articles,reports,presentation, websites, blogs, and books. |
-| **Output format(s)**  | HTML | Multiple types of output formats are possible: PDF/HTML/Word  | HTML, PDF, MS Word, ePub and more |
+
 
 # Get Started
 
