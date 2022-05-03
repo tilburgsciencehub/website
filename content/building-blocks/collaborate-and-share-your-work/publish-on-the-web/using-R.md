@@ -30,3 +30,48 @@ Check out these tutorials/guides to help you get started with your preferred pub
 - [Guide to Distill](https://rstudio.github.io/distill/)
 - [Guide to Bookdown](https://bookdown.org/yihui/bookdown/)
 - [Guide to Quarto](https://quarto.org/docs/guide/)
+
+# Examples
+<div id = "image-table">
+<table>
+<tr>
+<td style = "padding:10px">
+<img src = "../images/bookdown-1.png"/>
+<figcaption>Publish books with bookdown</figcaption>
+
+</td>
+<td style = "padding:10px">
+<img src = "../images/distill-1.png"/>
+<figcaption>Publish articles/blogs with Distill</figcaption>
+
+</tr>
+<table>
+</div>
+<div id = "image-table">
+<table>
+<tr>
+<td style = "padding:10px">
+<img src = "../images/quarto-1.png">
+<figcaption>Publish interactive documents with Quarto</figcaption>
+
+</td>
+<td style = "padding:10px">
+<img src = "../images/quarto-2.png">
+<figcaption>Publish books with Quarto</figcaption>
+
+</tr>
+<table>
+</div>
+<div id = "image-table">
+<table>
+<tr>
+<td style = "padding:10px">
+<img src = "../images/quarto-3.png">
+<figcaption>Create presentation slides with Quarto</figcaption>
+
+<td style = "padding:10px">
+<img src = "../images/distill-3.png">
+<figcaption>Publish course materials with Distill</figcaption>
+</tr>
+<table>
+</div>
