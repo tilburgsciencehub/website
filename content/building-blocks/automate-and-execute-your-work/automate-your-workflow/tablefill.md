@@ -12,7 +12,7 @@ aliases:
 
 Tablefill allows to automatically update Latex, LyX and Markdown tables. Its primary aim is to create reproducible reports, which can be automatically updated.
 
-## How to install tablefill?
+## How to install Tablefill?
 Run the following code in the command line (Windows) or terminal (Mac).
 
 {{% codeblock %}}
@@ -20,6 +20,33 @@ Run the following code in the command line (Windows) or terminal (Mac).
 pip install git+https://github.com/mcaceresb/tablefill
 tablefill --help
 ```
+
+### Example repository
+
+
+{{% cta-primary-center "Go to the GitHub Repository now" "https://github.com/tilburgsciencehub/tableFill.git" %}}
+
+
+
+```text
+docker-demo
+│
+├── code
+│   ├── packages.R  ....................... necessary packages to run the R script
+│   ├── r-script.R  ....................... creates a histogram, saves it in \gen folder
+│   ├── pyscript.py ....................... draws random normal sample, saves it in \data folder
+│   ├── requirements.txt .................. library needed for pyscript
+│   └── run.sh ............................ shell instruction to run both scripts
+├── data
+│   
+└── gen
+│
+└── Dockerfile
+```
+
+
+
+
 
 ### LyX
 
