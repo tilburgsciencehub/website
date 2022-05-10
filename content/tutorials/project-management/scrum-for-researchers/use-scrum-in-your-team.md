@@ -2,8 +2,8 @@
 tutorialtitle: "Professionalize your Team Work Using Scrum"
 title: "Use Scrum In Your Team"
 type: "scrum-for-researchers"
-description: "Discover Scrum to improve your project management when working on empirical research projects"
 keywords: "scrum, project, sprint, team, management"
+description: "Discover Scrum to improve your project management when working on empirical research projects"
 weight: 100
 draft: false
 author: "Pam Dupont"
