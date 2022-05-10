@@ -2,7 +2,6 @@
 tutorialtitle: "Document and Share your Data using GitHub"
 title: "Data Sharing"
 type: "data-sharing"
-description: "Learn how to document and share data for internal and external use."
 keywords: "data sharing"
 weight: 1
 draft: false
