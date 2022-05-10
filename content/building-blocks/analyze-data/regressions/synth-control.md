@@ -61,6 +61,32 @@ Some situations in which Synthetic Control has been applied:
 
 ### Preparing the data
 
+{{% codeblock %}}
+
+```R
+# Load necessary packages
+	#install.packages("Synth")
+	library(Synth)
+
+# Open the dataset
+  synth_smoking <- load(url("https://github.com/tilburgsciencehub/website/blob/9a0409c87948eb2cc523f9233b8e622574f55cac/content/building-blocks/analyze-data/regressions/synth_smoking.Rdata?raw=true"))
+
+
+```
+
+```
+-Stata-
+* install necessary packages
+	ssc install synth
+
+* Open the dataset
+	use synth_smoking, clear
+
+
+```
+{{% /codeblock %}}
+
+
 ### Estimation
 
 ### Some interesting graphical output
