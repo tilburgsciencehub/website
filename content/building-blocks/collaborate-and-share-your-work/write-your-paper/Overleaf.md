@@ -9,10 +9,20 @@ aliases:
 ---
 
 ## Why should you use Overleaf?
+Overleaf is an online Latex editor. It enables to collaborate on the cloud-based document and is mainly used for writing scientific papers.
+
+## Why should you use Overleaf?
+Overleaf is a very easy to use. It has a very user-friendly structure. You can use Overleaf when you want to collaborate with many people.
+
+## How to set up an Overleaf account?
+You can use your email address to set up an account as shown below :
+
+<p align = "center">
+<img src = "../Overleaf_LoginPage.png" width="500">
+</p>
 
 
 
-## How to set up Overleaf?
 
 
 {{% codeblock %}}
