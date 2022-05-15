@@ -1,5 +1,5 @@
 ---
-title: "Overleaf"
+title: "Use Overleaf to Collaborate in Research Papers "
 description: "Learn how to use Overleaf"
 keywords: "overleaf, lyx, latex"
 
@@ -18,8 +18,22 @@ Overleaf is a very easy to use. It has a very user-friendly structure. You can u
 You can use your email address to set up an account as shown below :
 
 <p align = "center">
-<img src = "../Overleaf_LoginPage.png" width="500">
+<img src = "../overleaf_setup.png" width="300">
 </p>
+
+## Create an Overleaf document
+By clicking on "New Project", you can choose to create a template of a document.
+
+<p align = "center">
+<img src = "../img/SetupDocument_Overleaf.png" width="200">
+</p>
+
+Let's create a Blank Project and name it "Overleaf Example". Overleaf provides a structure. You can change the author name, date, title and section name.  
+
+
+{{% /tip %}}
+You can easily make use of Scientific characters (i.e., Greek letters, Mathematical equations) in Overleaf.
+{{% tip %}}
 
 
 
