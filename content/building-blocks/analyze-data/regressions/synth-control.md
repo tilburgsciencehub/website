@@ -3,7 +3,7 @@ title: "Synthetic control for impact evaluation"
 description: "Use Synthetic control to evaluate impacts of quasi-experiments"
 keywords: "model, Synthetic Control, RD, impact evaluation, inference, quasi-experiment, abadie"
 weight: 3
-#date: 2022-05-09T22:02:51+05:30
+#date: 2022-05-16T22:02:51+05:30
 draft: true
 aliases:
   - /impact/syntCont
@@ -35,14 +35,17 @@ Some useful vocabulary:
 
 The control unit in Synthetic Control is built as a weighted average of the units of the donor pool. To define what weights to assign to each unit in the donor pool Synthetic Control method proposes an algorithm based on the similarity of covariates of the donor unit to those of the treatment unit in the pre-treatment period.
 
+Because the analysis may include many covariates, it is necessary to also assign a weight to the importance in each covariates when measuring the difference between the treated unit and the donors.
+
+The standard approach involves a two-step procedure, in which the donor weights are calculated for any given weight in the covariates, and then the optimal weight of the covariates is determined by minimizing the distance in the outcome variable for the pre-treatment period. Other approaches include using the inverse of variance to calculate the covariates weight or out-of-sample validation.
 
 {{% tip %}}
 
- - Limiting weights to be non-negative allow for better extrapolation and give a more intuitive interpretation of the synthetic control, as it can be thought of an addition of pieces of different donor units.
+ - Limiting weights to be non-negative allows for better extrapolation and gives a more intuitive interpretation of the synthetic control, as it can be thought of an addition of pieces of different donor units.
+ 
+  - With non-negative weights it is common to have lots of donor units with weight 0 and only a few units with positive weights.
 
  - No limits to weights on the other hand give more flexibility to the procedure and may results in more efficient estimations.
- 
- - With non-negative weights it is common to have lots of donor units with weight 0 and only a few units with positive weights.
  
 {{% /tip %}}
 
@@ -52,12 +55,19 @@ Treatment effect is then estimated as the difference in the outcome of the treat
 
 Some situations in which Synthetic Control has been applied:
 
- - 
+ - Abadie and Gardeazabal (2003) is the founding paper of this literature. They measure the impact of terrorism in the Basque country, using other regions of Spain as the donor units.
+ 
+ - Abadie, Diamond and Hainmueller (2010) measures the effect of a Tobacco Control Program in California, using other states of US as controls.
+ 
+ - Abadie, Diamond and Hainmueller (2015) analyses the impact of 1990's reunification to West Germany's economy, taking other OECD countries as the donor pool.
 
+ - Acemoglu, Johnson, Kermani, Kwak and Mitton (2016) study the value of political connections for firms during financial turmoil in 2008 financial crisis. In this setting there are many treated units, consisting of well-connected firms and the donor pools consists of non-connected firms.
 
 {{% /example %}}
 
-## Running a Synthetic Control
+## Running a Synthetic Control analysis
+
+The code uses data from [Abadie, Diamond and Hainmueller](https://economics.mit.edu/files/11859).
 
 ### Preparing the data
 
