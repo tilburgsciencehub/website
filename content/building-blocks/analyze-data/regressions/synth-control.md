@@ -3,8 +3,8 @@ title: "Synthetic control for impact evaluation"
 description: "Use Synthetic control to evaluate impacts of quasi-experiments"
 keywords: "model, Synthetic Control, RD, impact evaluation, inference, quasi-experiment, abadie"
 weight: 3
-#date: 2022-05-09T22:02:51+05:30
-draft: true
+#date: 2022-05-16T22:02:51+05:30
+draft: false
 aliases:
   - /impact/syntCont
   - /run/syntCont/
@@ -35,14 +35,17 @@ Some useful vocabulary:
 
 The control unit in Synthetic Control is built as a weighted average of the units of the donor pool. To define what weights to assign to each unit in the donor pool Synthetic Control method proposes an algorithm based on the similarity of covariates of the donor unit to those of the treatment unit in the pre-treatment period.
 
+Because the analysis may include many covariates, it is necessary to also assign a weight to the importance in each covariates when measuring the difference between the treated unit and the donors.
+
+The standard approach involves a two-step procedure, in which the donor weights are calculated for any given weight in the covariates, and then the optimal weight of the covariates is determined by minimizing the distance in the outcome variable for the pre-treatment period. Other approaches include using the inverse of variance to calculate the covariates weight or out-of-sample validation.
 
 {{% tip %}}
 
- - Limiting weights to be non-negative allow for better extrapolation and give a more intuitive interpretation of the synthetic control, as it can be thought of an addition of pieces of different donor units.
+ - Limiting weights to be non-negative allows for better extrapolation and gives a more intuitive interpretation of the synthetic control, as it can be thought of an addition of pieces of different donor units.
+ 
+  - With non-negative weights it is common to have lots of donor units with weight 0 and only a few units with positive weights.
 
  - No limits to weights on the other hand give more flexibility to the procedure and may results in more efficient estimations.
- 
- - With non-negative weights it is common to have lots of donor units with weight 0 and only a few units with positive weights.
  
 {{% /tip %}}
 
@@ -52,12 +55,19 @@ Treatment effect is then estimated as the difference in the outcome of the treat
 
 Some situations in which Synthetic Control has been applied:
 
- - 
+ - Abadie and Gardeazabal (2003) is the founding paper of this literature. They measure the impact of terrorism in the Basque country, using other regions of Spain as the donor units.
+ 
+ - Abadie, Diamond and Hainmueller (2010) measures the effect of a Tobacco Control Program in California, using other states of US as controls.
+ 
+ - Abadie, Diamond and Hainmueller (2015) analyses the impact of 1990's reunification to West Germany's economy, taking other OECD countries as the donor pool.
 
+ - Acemoglu, Johnson, Kermani, Kwak and Mitton (2016) study the value of political connections for firms during financial turmoil in 2008 financial crisis. In this setting there are many treated units, consisting of well-connected firms and the donor pools consists of non-connected firms.
 
 {{% /example %}}
 
-## Running a Synthetic Control
+## Running a Synthetic Control analysis
+
+The code uses data from [Abadie, Diamond and Hainmueller](https://economics.mit.edu/files/11859). The paper studies the effect of the introduction of a Tobacco Control Program in the state of California using other US states as controls for the donor pool. 
 
 ### Preparing the data
 
@@ -65,11 +75,38 @@ Some situations in which Synthetic Control has been applied:
 
 ```R
 # Load necessary packages
-	#install.packages("Synth")
-	library(Synth)
-
+#install.packages("Synth")
+library(Synth)
+	
 # Open the dataset
-  synth_smoking <- load(url("https://github.com/tilburgsciencehub/website/blob/9a0409c87948eb2cc523f9233b8e622574f55cac/content/building-blocks/analyze-data/regressions/synth_smoking.Rdata?raw=true"))
+url_synth=url("https://github.com/tilburgsciencehub/website/blob/9a0409c87948eb2cc523f9233b8e622574f55cac/content/building-blocks/analyze-data/regressions/synth_smoking.Rdata?raw=true")
+load(url_synth)
+
+# Data Preparation to pass the dataset to the correct format
+# Predictors are averaged in the pre-treatment period
+# Special predictors only use the years that are selected
+# Treatment identifier gives the numeric identifier for California
+# Control identifier lists the other 38 states used as controls
+
+
+dataprep_smoking<- dataprep(foo = synth_smoking,
+predictors = c("beer", "retprice"),
+predictors.op = "mean",
+dependent = "cigsale",
+unit.variable = "state_num",
+time.variable = "year",
+special.predictors = list(
+list("lnincome",c(1980,1985),"mean"),
+list("cigsale", 1988, "mean"),
+list("cigsale", 1980, "mean"),
+list("cigsale", 1975, "mean")
+),
+controls.identifier = c(1:2,4:39),
+time.predictors.prior = c(1970:1988),
+time.optimize.ssr = c(1970:1988),
+treatment.identifier = 3,
+unit.names.variable = "state",
+time.plot=c(1970:2000))
 
 
 ```
@@ -82,14 +119,51 @@ Some situations in which Synthetic Control has been applied:
 * Open the dataset
 	use synth_smoking, clear
 
+* Pass panel data format to the dataset
+
+tsset state year
+
 
 ```
 {{% /codeblock %}}
 
 
-### Estimation
+### Estimation and Graphical Output
 
-### Some interesting graphical output
 
+{{% codeblock %}}
+
+```R
+
+# The comand takes the data structure from dataprep function above, with the defined dependent variable and regressors
+
+synth_res=synth(dataprep_smoking,optimxmethod="All")
+
+# To obtain the results, which give the donor units and covariates weights
+
+print(synth.tab(synth_res,dataprep_smoking))
+
+# Produce graphical output with treated unit and synthetic control
+
+path.plot(synth_res,dataprep_smoking)
+abline(v=1988.5,col=2,lty=2)
+
+gaps.plot(synth_res,dataprep_smoking)
+abline(v=1988.5,col=2,lty=2)
+
+
+```
+
+```
+-Stata-
+
+* Run command and obtain graphical output
+* Results show the weights of donor units
+
+synth cigsale beer retprice lnincome(1980&1985) cigsale(1988)  cigsale(1980) cigsale(1975), trunit(3) trperiod(1989) fig
+
+
+```
+{{% /codeblock %}}
 
 
