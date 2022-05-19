@@ -6,6 +6,7 @@ keywords: "publish,website,distill,bookdown,R,markdown,publish"
 #date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
+  - /make/ebooks
   - /build/using-R
 ---
 # Overview
