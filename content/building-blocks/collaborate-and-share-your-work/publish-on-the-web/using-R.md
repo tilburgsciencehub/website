@@ -73,5 +73,5 @@ Check out these tutorials/guides to help you get started with your preferred pub
 <img src = "../images/distill-3.png">
 <figcaption>Publish course materials with Distill</figcaption>
 </tr>
-<table>
+</table>
 </div>
