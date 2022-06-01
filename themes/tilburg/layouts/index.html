@@ -189,14 +189,15 @@
 <!-- Feature divs -->
 
 <!-- 1 -->
-<div class="container mb-5 pb-4 px-0">
+<div class="container mb-0 pb-0 px-0">
   <div class="row justify-content-center mx-0 buildingBlocksRow">
 		<!-- 1 -->
-    <div class="col-lg-10 col-xl-7 col-22 mb-3">
+    <div class="col-lg-10 col-xl-7 col-22 mb-3" >
       <div class="p-5 rounded bg-white">
         <h5 class="text-center heading px-3" style="font-weight: 100 !important">
-          Learn science the new way, with our online tutorials
+          10+ tutorials on research and open science
         </h5>
+        <!--
         <ul class="my-4 list-unstyled">
           <li class="pb-2">
             <span class="icon link text-primary d-inline-block mr-2"></span>
@@ -211,9 +212,10 @@
             <a href="/share/data">Document and share your data and workflow using GitHub</a>
           </li>
         </ul>
-        <div class="text-center">
+        -->
+        <div class="text-center mt-4 mb-0">
           <a href="/tutorials/">
-            <button class="btn btn-primary">View more</button>
+            <button class="btn btn-primary">Start with one of our tutorials</button>
           </a>
         </div>
       </div>
@@ -225,9 +227,13 @@
         <h5 class="text-center heading px-3" style="font-weight: 100 !important">
           Use our code snippets in your projects right away
         </h5>
-        <ul class="my-4 list-unstyled">
 
+<!--
+        <ul class="my-4 list-unstyled"> 
+-->
+          
 					<!-- collect all relevant pages in new array -->
+<!--
 					{{ $s := slice }}
 
 					{{- range where .Site.Pages "Section" "building-blocks" -}} {{ if eq .Params.isParent "true" }} {{- range .Pages -}}
@@ -239,9 +245,9 @@
 										{{ end }}
 									{{ end }}
 					{{- end -}} {{ end }} {{- end -}}
-
+-->
 					<!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
-
+<!--
 					{{ range $s.ByPublishDate.Reverse | first 10 | shuffle | first 3 }}
 
 					<li class="pb-2">
@@ -249,8 +255,8 @@
 						<a href="{{ .Permalink }}">{{ .Title }}</a>
 					</li>
 					{{ end }}
-
-<!--
+-->
+          <!--
 					<li class="pb-2">
             <span class="icon link text-primary d-inline-block mr-2"></span>
             <a href="/build/web-app">Build interactive web dashboards with R Shiny</a>
@@ -263,11 +269,13 @@
             <span class="icon link text-primary d-inline-block mr-2"></span>
             <a href="/get/doi">Make your code citable by assigning a DOI to your GitHub repository</a>
           </li>
-					-->
+          -->
+<!--
         </ul>
-        <div class="text-center">
+-->
+        <div class="text-center mt-4 mb-0">
           <a href="/building-blocks/">
-            <button class="btn btn-primary">View more</button>
+            <button class="btn btn-primary">Use a code snippet</button>
           </a>
         </div>
       </div>
@@ -279,11 +287,13 @@
         <h5 class="text-center heading px-3" style="font-weight: 100 !important">
           Kickstart your project with our curated examples
         </h5>
+<!--
         <ul class="my-4 list-unstyled">
 
 										{{ $s := slice }}
-
+-->
 										<!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
+<!--
 										{{ range where .Site.Pages.ByPublishDate.Reverse "Section" "examples" }}
 										{{ if ne .Title "Examples" }}
 
@@ -292,9 +302,9 @@
 
 										{{ end }}
 										{{ end }}
-
+-->
 										<!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
-
+<!--
 
 										{{ range $s.ByPublishDate.Reverse | first 10 | shuffle | first 3 }}
 
@@ -303,7 +313,7 @@
 											<a href="{{ .Permalink }}">{{ .Title }}</a>
 										</li>
 										{{ end }}
-
+-->
 					<!--
           <li class="pb-2">
             <span class="icon link text-primary d-inline-block mr-2"></span>
@@ -318,10 +328,12 @@
             <a href="/try/shiny-app">An interactive dashboard with R Shiny of Google's COVID-19 data</a>
           </li>
 					-->
+<!--
         </ul>
-        <div class="text-center">
+-->
+        <div class="text-center mt-4 mb-0">
           <a href="/examples/">
-            <button class="btn btn-primary">View more</button>
+            <button class="btn btn-primary">View our examples</button>
           </a>
         </div>
       </div>
@@ -333,7 +345,7 @@
 
 
 <!-- spacer -->
-<div style="height: 180px"></div>
+<div style="height: 30px"></div>
 <!-- /spacer -->
 <div class="container my-5 pt-5 px-4 px-lg-0">
   <!-- - 1 - -->

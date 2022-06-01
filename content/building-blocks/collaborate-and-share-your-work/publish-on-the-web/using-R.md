@@ -6,6 +6,7 @@ keywords: "publish,website,distill,bookdown,R,markdown,publish"
 #date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
+  - /make/ebooks
   - /build/using-R
 ---
 # Overview
@@ -73,5 +74,5 @@ Check out these tutorials/guides to help you get started with your preferred pub
 <img src = "../images/distill-3.png">
 <figcaption>Publish course materials with Distill</figcaption>
 </tr>
-<table>
+</table>
 </div>
