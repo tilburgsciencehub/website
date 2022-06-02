@@ -7,7 +7,7 @@ We provide the tools and guidance to be in control and save time in your empiric
 
 **Visit us now at [tilburgsciencehub.com](https://tilburgsciencehub.com)!**
 
-## Why was TSH developed?
+## Why was Tilburg Science Hub (TSH) developed?
 We see two major reasons why it pays off to use professional tools to carry out empirical projects. First, the initial investment pays off very quickly. There are many tools that are tremendously helpful and many things can be automated, which also helps to avoid errors. Second, it increases transparency and contributes to reaching the goal of making science reproducible.
 
 ## Our pillars
