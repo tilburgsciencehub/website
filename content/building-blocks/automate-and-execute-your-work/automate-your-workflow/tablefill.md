@@ -5,7 +5,9 @@ keywords: "autofilling, tablefill, latex, lyx, markdown"
 
 weight: 3
 aliases:
+ - /learn/tablefill/
  - /tablefill/
+ 
 ---
 
 ## Why should you use tableFill?
