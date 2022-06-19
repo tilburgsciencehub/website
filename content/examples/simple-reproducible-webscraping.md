@@ -1,7 +1,7 @@
 ---
-title: "A Simple Reproducible Web Scraping"
+title: "A Simple Reproducible Web Scraping Example"
 draft: false
-description: "A simple Code to Web Scrape."
+description: "A simple Code to Web Scrape Example."
 keywords: "Webscraping, Python, Jupyter, example"
 weight: 2
 aliases:
@@ -10,7 +10,7 @@ aliases:
 
 ## Overview
 
-In this example, you find a simple code to web scrape the website, RankingTheBrands.com in webscraping_ranking_the_brands.ipynb
+In this example, you find a simple code to web scrape the website, RankingTheBrands.com in `webscraping_ranking_the_brands.ipynb`
 
 This is probably the most simple web scraping template to use in your future projects.
 
