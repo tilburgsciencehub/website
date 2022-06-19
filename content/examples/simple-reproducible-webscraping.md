@@ -14,4 +14,6 @@ In this example, you find a simple code to web scrape the website, RankingTheBra
 
 This is probably the most simple web scraping template to use in your future projects.
 
-You can check out [this repository](https://github.com/tilburgsciencehub/data-ranking-the-brands.git) for all the details. Fork it/use it as a template - contributions appreciated!
+You can check out the repository below for all the details. Fork it/use it as a template - contributions appreciated!
+
+{{% cta-primary-center "Check out the GitHub Repository" "https://github.com/tilburgsciencehub/data-ranking-the-brands.git" %}}
