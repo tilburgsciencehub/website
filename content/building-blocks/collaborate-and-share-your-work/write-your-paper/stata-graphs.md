@@ -18,14 +18,13 @@ The most easy way to use Stata graphs is the command `twoway`. Following this co
 
 {{% tip %}}
 
-- auto.dta is an example dataset created and provided by Stata itself.
+- `auto.dta` is an example dataset created and provided by Stata itself.
 
 {{% /tip %}}
 
 
 ## An Example
 
-Convert regression coefficients of `mdl_1` and `mdl_2` into a HTML file that can be copied into a paper.
 
 {{% codeblock %}}
 ```
@@ -110,3 +109,12 @@ Such an example code would create a graph below based on the `auto` dataset.
 {{% summary %}}
 Stata can create graphs that can be modified easily such that Stata itself even provides style schemes to be used. You can graph variables based on different groupings very easily!
 {{% /summary %}}
+
+
+## Additional Resources  
+
+1. [Complete manual on Twoway Graphs](https://www.stata.com/manuals/g-2graphtwoway.pdf#g-2graphtwoway)
+
+2. [Style Patterns](https://www.stata.com/manuals13/g-4linepatternstyle.pdf#g-4linepatternstyle)
+
+3. [Easy interactive tutorial on styling](https://www.stata.com/meeting/germany18/slides/germany18_Jann.pdf)
