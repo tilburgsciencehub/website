@@ -16,11 +16,11 @@ Stata has a user-friendly interface especially for people using big data. It is 
 
 The most easy way to use Stata graphs is the command `twoway`. Following this command you first state the type of the graph you want to create (e.g., line, scatter), and then the variables you want to create graph for. Let’s go through an example.
 
-{{% hint %}}
+{{% tip %}}
 
-auto.dta is an example dataset created and provided by Stata itself.
+- auto.dta is an example dataset created and provided by Stata itself.
 
-{{% /hint %}}
+{{% /tip %}}
 
 
 ## An Example
