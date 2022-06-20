@@ -32,7 +32,7 @@ Convert regression coefficients of `mdl_1` and `mdl_2` into a HTML file that can
 -Stata-
 
 * Load the dataset
-use auto.dta, clear
+sysuse "auto.dta", clear
 
 * Create a two-way graph for weight length
 twoway line price mpg  // line plot
@@ -40,7 +40,14 @@ twoway scatter price mpg  // scatter plot
 twoway area price mpg   // area plot
 twoway bar price mpg   // bar plot
 twoway spike price mpg  // spike plot
+```
+{{% /codeblock %}}
 
+You can also add titles to x-axis, y-axis and so on as well as change the color scheme of your graphs.
+
+{{% codeblock %}}
+```
+-Stata-
 * Add y-axis title, x-axis title and graph title
 twoway line price mpg, ytitle("Price") xtitle("Mileage")
 
@@ -53,7 +60,20 @@ twoway line price mpg
 *
 set scheme Economist // this command sets the scheme s1color
 twoway line price mpg
+```
+{{% /codeblock %}}
 
+{{% tip %}}
+
+- There are many style schemes provided by Stata. Check this [link](https://people.umass.edu/biostat690c/pdf/stata%20schemes%20and%20palettes.pdf) to explore the style schemes further!  
+
+{{% /tip %}}
+
+You can also graph your variables based on different groupings or conditions!
+
+{{% codeblock %}}
+```
+-Stata-
 * Creating different lines for different groups
 tab foreign // foreign variable equals to 1 if the observation is foreing, zero otherwise
 
@@ -80,3 +100,13 @@ twoway (line price mpg if Origin == 1, lcolor(blue) lpatter(dash)) (line price m
 
 ```
 {{% /codeblock %}}
+
+{{% example %}}
+Such an example code would create a graph below based on the `auto` dataset.
+
+![Stata Grouping Graph.](../images/stata_group.png)
+{{% /example %}}
+
+{{% summary %}}
+Stata can create graphs that can be modified easily such that Stata itself even provides style schemes to be used. You can graph variables based on different groupings very easily!
+{{% /summary %}}
