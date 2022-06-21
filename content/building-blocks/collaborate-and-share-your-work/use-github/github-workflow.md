@@ -11,15 +11,33 @@ aliases:
   - /github/workflow
 ---
 # Overview
-By default, we follow the [Github Flow](https://guides.github.com/introduction/flow/) workflow model, which is explained below. This information is also summarized in a [Github Cheatsheet](../github_cheatsheet_tsh.pdf), so you can easily follow along or refresh your memory in case you ever forget a step in the workflow!
+As a project grows, the myriad changes made to the codebase may become intractable and this is why **version control** is an important principle to adhere to in one’s workflow.
+## Version Control with Git
+**Git** is a command-line tool that functions as an **open-source version control system** - a system that keeps track of all the changes made to a file/codebase of an empirical project or app development, which facilitates efficient collaboration as all team members can work simultaneously on the latest version of the project or access previous versions of the file to make changes.
+
+## Git vs. GitHub
+|  | Git  | GitHub |
+| --- | --- | --- |
+| Environment | Installed locally on a system <br> and source code history can <br> be managed on local machines  | Entirely cloud-based |
+| Functional scope | Git focuses exclusively on <br> Source Code Management (SCM) <br> tasks like push, pull, <br> commit, fetch and merge. | It serves as a centralised location <br> for uploading copies of a Git repository. <br> The GitHub GUI also offers <br> one access control, collaboration <br> features and other project-management tools. |
+| Ownership  | Linux  | Microsoft  |
+
+## How does it work?
+
+In a nutshell, a standard Git workflow involves Branch-Commit-Push-Pull request-Merge (BCPPM).
+
 
 {{% summary %}}
  - All work on an issue happens in a separate repository *branch*.
 
- - When work is done, whoever is assigned to the issue creates a *pull request* which may include a request for peer review.
+ - When work is done, whoever is assigned to the issue *commits* the changes and creates a *pull request* which may include a request for peer review.
 
  - Once review (if any) is complete, the changes are *merged* back to the master branch and the final comment / deliverable are posted.
 {{% /summary %}}
+
+By default, we follow the [Github Flow](https://guides.github.com/introduction/flow/) workflow model, which is explained below. This information is also summarized in a [Github Cheatsheet](../github_cheatsheet_tsh.pdf), so you can easily follow along or refresh your memory in case you ever forget a step in the workflow!
+
+
 
 ## Branch
 
