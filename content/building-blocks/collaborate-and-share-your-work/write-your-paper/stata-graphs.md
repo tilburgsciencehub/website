@@ -18,7 +18,7 @@ The most easy way to use Stata graphs is the command `twoway`. Following this co
 
 {{% tip %}}
 
-- `auto.dta` is an example dataset created and provided by Stata itself.
+- `auto.dta` is an example dataset created and provided by Stata itself. You can download it on your Stata by using the command `'sysuse "auto.dta"'`. Go this [link](https://www.stata.com/manuals13/gsw1.pdf) for more information about sample datasets in Stata!
 
 {{% /tip %}}
 
