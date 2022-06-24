@@ -25,6 +25,10 @@ By default, we follow the [Github Flow](https://guides.github.com/introduction/f
 
 * The assignee should create a new branch using `git branch` or `git checkout -b` on the command line, by clicking the "add branch" icon in the Github desktop client, or by creating the branch on the repository's Github page.
 
+* If you are resolving an issue you can create a new branch most easily by going to the issue page and clicking "Create a branch" under Development. This will automatically link the branch to the issue and their pull requests. 
+
+  ![Create a branch for an issue.](../create-issue-branch.png)
+
 * The issue branch should be named `issueXXX-description`, where `XX` is the Github issue number and `description` is a version of the issue title (e.g., `issue123-update-appx-figures`). The description can be more compact than the issue title itself, but should be descriptive enough that other team members can understand what is being worked on in the branch.
 
 {{% tip %}}
