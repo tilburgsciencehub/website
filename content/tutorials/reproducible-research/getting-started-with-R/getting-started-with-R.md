@@ -9,13 +9,14 @@ draft: false
 aliases:
   - /r-tutorial
 ---
-## Overview : Why R?
+## Overview: Why R?
 
 Whether you’re looking to start coding for a new career or just as a hobby, picking which programming language to start with can be a daunting task, especially if this is your very first experience with programming. There is no right answer for, it depends on the kind of project you’d work on, what is demanded on the job etc but here are some perks of R:
 
 <p align = "center">
-<img src = "../r-perks.png" width="500" >
+<img src = "../img/r-perks.png">
 </p>
+
 
 ## Objectives of this tutorial
 
