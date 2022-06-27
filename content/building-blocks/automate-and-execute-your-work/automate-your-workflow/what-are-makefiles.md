@@ -15,7 +15,7 @@ Makefiles are instructions ("rules") for a computer on how to build "stuff". Thi
 
 Makefiles originate in software development, where they have been used to convert source code into software programs that can then be distributed to users.
 
-Researchers can use makefiles to define *rules* how individual components (e.g., cleaning the data, running an analysis, producing tables) are run. When dependencies (e.g., to run the analysis, the data set first has to be cleaned) are well-defined, researchers can completely automate the project. When making changes to code, researchers can then easily "re-run" the entire project, and see how final results (potentially) change.
+Researchers can use makefiles to define *rules* how individual components (e.g., cleaning the data, running an analysis, producing tables) are run. When dependencies (e.g., to run the analysis, the data set first has to be cleaned) are well-defined, researchers can completely automate the project. When making changes to code, researchers can then easily "re-run" the entire project, and see how final results (potentially) change. In addition to the information below, we made a [make cheatsheet](../tsh_make_cheatsheet.pdf) that describes how to use Make step-by-step!
 
 ## Code
 
