@@ -1,6 +1,6 @@
 ---
 tutorialtitle: "Getting started with R"
-type: "R-Programming"
+type: "r-programming"
 title: "Getting started with R"
 description: "Learn to code in R"
 keywords: "learn, R, resources, R packages, installation,style, code, R, guidelines, best practices, packrat, package management system"
@@ -11,11 +11,11 @@ aliases:
 ---
 ## Overview: Why R?
 
+<a href= '../r-perks.png' target="blank"> <img src="../r-perks.png" alt="overview of perks R offers" width="300" style="float:right;"></a>
+
 Whether you’re looking to start coding for a new career or just as a hobby, picking which programming language to start with can be a daunting task, especially if this is your very first experience with programming. There is no right answer for, it depends on the kind of project you’d work on, what is demanded on the job etc but here are some perks of R:
 
-<p align = "center">
-<img src = "../img/r-perks.png">
-</p>
+
 
 
 ## Objectives of this tutorial
