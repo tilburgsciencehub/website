@@ -1,5 +1,5 @@
 ---
- tutorialtitle: "Stata and Its Applications"
+ title: "Stata and Its Applications"
  type: "Stata-Programming"
  title: "Stata and Its Applications"
  description: "Learn to code in Stata"
@@ -9,5 +9,3 @@
  aliases:
    - /Stata-Tutorial
  ---
-
- 
