@@ -7,7 +7,9 @@ keywords: "learn, R, resources, R packages, installation,style, code, R, guideli
 weight: 1
 draft: false
 aliases:
+  - /learn/r
   - /r-tutorial
+  - /tutorials/reproducible-research/getting-started-with-r/getting-started-with-r-overview/
 ---
 ## Overview: Why R?
 
