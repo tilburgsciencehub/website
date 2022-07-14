@@ -3,7 +3,7 @@ title: "Stata Graphs Made Easy"
 description: "Learn how to quickly and efficiently prepare graphs in Stata."
 keywords: "stata, graphs, data visualization"
 weight: 104
-#date: 2020-11-11T22:02:51+05:30
+date: 2022-06-20T22:02:51+05:30
 draft: false
 aliases:
   - /export/graphs

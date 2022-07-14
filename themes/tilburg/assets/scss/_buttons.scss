@@ -147,6 +147,20 @@ fieldset:disabled a.btn {
   }
 }
 
+.btn.tertiary{
+  color: white;
+  background-color: #003365;
+    @include hover() {
+    color: white;
+    background-color: #002041;
+    text-decoration: none;
+  }
+
+
+}
+
+
+
 // Specificity overrides
 input[type="submit"],
 input[type="reset"],

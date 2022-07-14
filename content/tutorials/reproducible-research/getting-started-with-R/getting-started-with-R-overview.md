@@ -5,6 +5,7 @@ title: "Getting started with R"
 description: "Learn to code in R"
 keywords: "learn, R, resources, R packages, installation,style, code, R, guidelines, best practices, packrat, package management system"
 weight: 1
+date: 2022-06-30T22:02:51+05:30
 draft: false
 aliases:
   - /learn/r
