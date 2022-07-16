@@ -7,5 +7,5 @@
  weight: 1
  draft: false
  aliases:
-   - /Stata-Tutorial
+   - /Stata/Stata-tutorial
  ---
