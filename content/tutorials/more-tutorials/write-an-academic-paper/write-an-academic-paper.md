@@ -9,6 +9,7 @@ date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
   - /write/academic-paper
+  - /tutorials/more-tutorials/write-an-academic-paper/write-an-academic-paper
 ---
 
 ## Overview
