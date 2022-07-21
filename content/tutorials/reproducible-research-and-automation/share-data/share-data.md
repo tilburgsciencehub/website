@@ -8,6 +8,7 @@ draft: false
 aliases:
   - /share/data
   - /tutorials/reproducible-research/share-data/share-data
+  - /tutorials/reproducible-research-and-automation/share-data/_index
 ---
 
 ## Overview

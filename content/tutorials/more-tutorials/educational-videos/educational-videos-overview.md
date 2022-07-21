@@ -12,6 +12,7 @@ authorlink: "https://www.tilburguniversity.edu/staff/a-d-antonacci"
 aliases:
   - /learn/educational-videos
   - /tutorials/open-education/educational-videos/educational-videos-overview
+  - /tutorials/more-tutorials/educational-videos/_index
 ---
 
 ## What is an educational video?

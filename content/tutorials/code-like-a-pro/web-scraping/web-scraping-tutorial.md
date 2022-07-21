@@ -1,7 +1,7 @@
 ---
 tutorialtitle: "Web Scraping and API Mining"
 type: "web-scraping"
-title: "Collect data from the web and API"
+title: "Web Scraping and API Mining"
 description: "Learn to extract data from the web and APIs"
 keywords: "scrape, webscraping, internet, beautifulsoup, static website, dynamic website, website, api, application programming interface"
 weight: 1

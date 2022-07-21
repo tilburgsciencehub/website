@@ -10,6 +10,7 @@ draft: false
 aliases:
   - /tutorial/odcm
   - /tutorials/open-education/online-data-collection-and-management/odcm-course
+  - /tutorials/code-like-a-pro/online-data-collection-and-management/_index
 ---
 
 ## Overview
