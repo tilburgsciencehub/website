@@ -1,0 +1,76 @@
+{{ $siteURL := .Site.BaseURL }}
+{{ partial "header.html" . }}
+<br><br>
+<div class="container mt-4">
+	{{ partial "breadcrumbs.html" . }}
+</div>
+<div class="container content px-0 mt-5">
+	<div class="row justify-content-center mx-0">
+		<div class="col-lg-8 col-22 pr-lg-5">
+			<div class="sticky-top mb-lg-5 pb-lg-5 d-flex flex-column tableOfContentParent">
+				<h1 style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
+				{{ if .TableOfContents }}
+				<div class="TableOfContents">
+					<span class="arrow-icon"></span>
+					<div class="pseudo-btn"></div>
+					{{ .TableOfContents }}
+				</div>
+				{{ end }}
+			</div>
+
+		</div>
+		<article class="col-lg-16 col-22">
+			<div class="p-5 bg-white rounded mb-5">
+				<div class="d-flex justify-content-between mb-4 align-items-center">
+          <div class="flex-fill">
+            {{ if eq .Params.share false }}
+            {{ else }}
+              {{ with .Params.aliases }}
+                {{ range first 1 . }}
+                  {{ partial "shareLinks.html" (dict "context" . "siteURL" $siteURL) }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          </div>
+          <!-- <div class="d-none d-lg-block">
+            <a href="{{ .Site.Params.repo_url }}/edit/master/content/{{ .File }}" class="btn btn-secondary">Edit this page</a>
+          </div> -->
+        </div>
+				{{ if eq (len .Content) 0 }}
+				<script>window.location = "/{{.Section}}"</script>
+				{{ else }}
+				{{ .Content }}
+				{{ if (and (.Params.author) (.Params.authorlink)) }}
+				<div class="admonition author">
+					<div class="admonition-content">Contributed by <b><a href="{{ .Params.authorlink }}">{{ .Params.author }}</a></b></div>
+				</div>
+				{{ else }}
+				{{ end }}
+				<div class="d-flex justify-content-between mt-5 align-items-center">
+          <!-- <div class="flex-fill">
+            {{ if eq .Params.share false }}
+            {{ else }}
+              {{ with .Params.aliases }}
+                {{ range first 1 . }}
+                  {{ partial "shareLinks.html" (dict "context" . "siteURL" $siteURL) }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          </div> -->
+          <div class="d-none d-lg-block">
+            <a href="{{ .Site.Params.repo_url }}/edit/master/content/{{ .File }}" class="btn btn-secondary">Edit this page</a>
+          </div>
+        </div>
+				{{ end }}
+
+			<!--	{{ partial "pagination.html" . }}-->
+			</div>
+
+			{{ partial "relatedPosts.html" . }}
+		</article>
+
+
+	</div>
+</div>
+
+{{ partial "footer.html" . }}
