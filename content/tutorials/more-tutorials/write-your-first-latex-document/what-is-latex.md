@@ -8,6 +8,7 @@ weight: 100
 draft: false
 aliases:
   - /learn/latex
+
 ---
 
 ## The Design Philosophy
