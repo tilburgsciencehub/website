@@ -13,6 +13,7 @@ aliases:
   - /professionalize/teamwork
   - /learn/teamwork
   - /tutorials/project-management/scrum-for-researchers/use-scrum-in-your-team
+  - /tutorials/scale-up/scrum-for-researchers/_index
 ---
 
 ## How we professionalized our team work

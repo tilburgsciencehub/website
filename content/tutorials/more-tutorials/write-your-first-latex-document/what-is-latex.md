@@ -8,6 +8,7 @@ weight: 100
 draft: false
 aliases:
   - /learn/latex
+  - /tutorials/more-tutorials/write-your-first-latex-document/_index
 
 ---
 

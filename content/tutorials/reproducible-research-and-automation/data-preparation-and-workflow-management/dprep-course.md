@@ -10,6 +10,7 @@ draft: false
 aliases:
   - /tutorial/dprep
   - /tutorials/open-education/data-preparation-and-workflow-management/dprep-course/
+  - /tutorials/reproducible-research-and-automation/data-preparation-and-workflow-management/_index
 
 ---
 

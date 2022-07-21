@@ -10,6 +10,7 @@ draft: false
 aliases:
   - /write/academic-paper
   - /tutorials/more-tutorials/write-an-academic-paper/write-an-academic-paper
+  - /tutorials/more-tutorials/write-an-academic-paper/_index
 ---
 
 ## Overview

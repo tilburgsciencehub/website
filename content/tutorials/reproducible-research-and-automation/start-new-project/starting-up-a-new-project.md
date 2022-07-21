@@ -9,6 +9,7 @@ draft: false
 aliases:
   - /start/new-project
   - /tutorials/reproducible-research/start-new-project/starting-up-a-new-project
+  - /tutorials/reproducible-research-and-automation/start-new-project/_index
 ---
 
 When working on a new project, it's efficient to kick-start your work with a well-documented "repository template" that sets up your workflow, and provides you with some minimal documentation so that team members can quickly contribute to your work.

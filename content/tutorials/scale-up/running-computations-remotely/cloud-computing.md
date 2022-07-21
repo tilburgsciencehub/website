@@ -9,6 +9,7 @@ draft: false
 aliases:
   - /learn/cloud
   - /tutorials/more-tutorials/running-computations-remotely/cloud-computing
+  - /tutorials/scale-up/running-computations-remotely/_index
   
 ---
 
