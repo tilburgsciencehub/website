@@ -3,7 +3,7 @@ title: "A Better Way to Manage your R Packages: Packrat"
 description: "Isolated, portable and reproducible dependency management system for R."
 keywords: "packrat, R, package management system"
 weight: 2
-
+author: Roshini Sudhaharan
 draft: false
 aliases:
 - /reproduce/packrat
