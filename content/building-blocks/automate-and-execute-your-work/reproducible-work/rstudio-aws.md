@@ -6,20 +6,40 @@ weight: 2
 
 draft: false
 aliases:
+- /run/r-in-the-cloud
+- /run/r-on-aws
 - /reproduce/rstudio-on-aws
+
 ---
-# Docker - The Bridge Between R and AWS
 
-While cloud services like [AWS](https://tilburgsciencehub.com/tutorials/more-tutorials/running-computations-remotely/cloud-computing/) are great for big data processing and storage, it doesn’t automatically give you computing softwares like RStudio. [Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) is a clean way to launch R on AWS without potential dependency issues and fosters reproducible research, as one can specify software versions which can always be run regardless of the OS in use. [DockerHub](https://hub.docker.com/) is a hosted repository service like GitHub that enables one to find and share container images that are already built. These docker images contain application code, libraries, tools, dependencies and other files required to run the application. This building block elaborates on how to launch R on AWS using a pre-built docker image hosted on dockerhub.
+# Run RStudio on AWS using Docker
 
-## Steps to launch R on AWS
+Seeking to run R in the cloud? Use this easy step-by-step guide to get started!
 
-### Steps 1-3:  Configure AWS instance for Docker
+## Overview
+
+While cloud services like [Amazon Web Services (AWS)](https://tilburgsciencehub.com/tutorials/more-tutorials/running-computations-remotely/cloud-computing/) are great for big data processing and storage, it doesn’t give you immediate access to tools like R and RStudio. With [Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/), though, you can launch R and RStudio on AWS without trouble.
+
+What are the benefits? 
+- Avoid dependency issues and foster reproducible research
+- Specify software versions which always work, regardless of which operating system you use
+- Setup virtual computers for your colleagues - so that they can work as productively as you do!
+
+{{% tip %}}
+
+In this building block, we use DockerHub -- a hosted repository service like GitHub enabling you to find and share pre-built container images. These images contain application code, libraries, tools, dependencies and other files required to run applications. [Check out DockerHub](https://hub.docker.com/) to see what other amazing things you can build, or follow this building block to launch R on AWS.
+
+{{% /tip %}}
+
+## Steps to launch R on Amazon Web Services (AWS)
+
+### Steps 1-3: Configure AWS instance for using Docker
 
 1. [Launch and connect to an AWS instance](https://tilburgsciencehub.com/tutorials/more-tutorials/running-computations-remotely/launch-instance/)
 
 2. Install `docker` on the instance:
-```c
+{{% codeblock %}}
+```bash
 # Update the packages on your instance
 $ sudo yum update -y
 # Install Docker
@@ -29,9 +49,12 @@ $ sudo service docker start
 # Add the ec2-user to the docker group so you can execute Docker commands without using sudo.
 $ sudo usermod -a -G docker ec2-user
 ```
-3. Install `docker-decompose` command on the instance:
+{{% /codeblock %}}
 
-```c
+3. Install `docker-decompose` on the instance:
+
+{{% codeblock %}}
+```bash
 # Copy the appropriate docker-compose binary from GitHub:
 sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 
@@ -40,12 +63,15 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 #Verify if download was successful:
 docker-compose version
-```
-### Steps 4-7: Run and configure Docker image
+{{% /codeblock %}}
+
+### Steps 4-7: Run and configure your Docker image
 
 4. [Move the R scripts or folder you'd like to run from your local machine to the AWS instance](https://tilburgsciencehub.com/tutorials/more-tutorials/running-computations-remotely/move-files/)
 
-**Note:** Disconnect from the instance before proceeding to step 5 and execute the step on your local machine.
+{{% tip %}}
+Remember to disconnect from the instance before proceeding to step 5 and execute the step on your local machine.
+{{% /tip %}}
 
 
 5.  Obtain docker template for running R on AWS
@@ -54,40 +80,46 @@ docker-compose version
 
 - Edit the `source` directory and `password` docker-compose.yml file. The source directory will contain the filepath of the folder containing all the R scripts you’d like to run on the AWS instance. Finally, set a password which serves as the log in password of RStudio once launched.
 
-**Note:** the source directory should be based on the EC2 machine and not your local machine, i.e. assume the filepath after transferring the file/folder to the instance.  E.g. `/home/ec2-user/< FOLDER OR FILE NAME>`
+{{% tip %}}
+The source directory should be based on the EC2 machine and not your local machine, i.e. assume the filepath after transferring the file/folder to the instance.  E.g. `/home/ec2-user/< FOLDER OR FILE NAME>`
+{{% /tip %}}
 
 - Re-connect to the instance and move this folder containing the docker-compose.yml file or just the docker-compose.yml file to the instance.
 
 6. Pull the image from docker hub:
-```c
+{{% codeblock %}}
+```bash
 docker pull shrabastee/r-causalverse:latest
-```
+{{% /codeblock %}}
 {{% tip %}}
-**Potential Error message:**
+Got a permission denied error while trying to connect to the Docker daemon socket?
 
-Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post `http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/create?fromImage=shrabastee%2Fr-causalverse&tag=latest: dial unix /var/run/docker.sock: connect: permission denied`
-
-**Solution:** Run `sudo chmod 666 /var/run/docker.sock` on the command line and retry.
+Run `sudo chmod 666 /var/run/docker.sock` on the command line and retry!
 {{% /tip %}}
 
 7. Run and configure docker image:
-```c
+{{% codeblock %}}
+```bash
 docker-compose -f docker-compose.yml run --name rstudio --service-ports rstudio
 ```
-**Note:** Make sure to change directory to the location of the docker-compose.yml file before executing the command above.
+{{% /codeblock %}}
+
+{{% tip %}}
+Make sure to change directory to the location of the docker-compose.yml file before executing the command above.
+{{% /tip %}}
+
 ### Steps 8-9: Configure security group and launch R
-8. Open the 8787 web server port on EC2
+8. Open the `8787` web server port on EC2
 - Go to AWS management console and security groups
 ![](../img/open-portal1.gif)
 
-- Edit inbound rules: IP version = IPv4; Type = Custom TCP; Port range = 8787
+- Edit inbound rules: IP version = IPv4; Type = Custom TCP; Port range = `8787`
 ![](../img/open-portal3.gif)
 
 
 9. Launch R
-- Open a new web window and enter URL: `http://<instance IP> : 8787`
+- Copy the Public IPv4 DNS address for instance IP
+- Open a new tab in your browser and paste the URL, including the port number, for example: `http://<instance IP>:8787`
 ![](../img/open-r.gif)
 
-**Note:** Copy the Public IPv4 DNS address for instance IP
-
-- Enter `rstudio` as username and password as specified in the docker-compose file.
+- To login, enter `rstudio` as username and the password specified earlier in the docker-compose file.
