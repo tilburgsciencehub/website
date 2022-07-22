@@ -33,3 +33,7 @@ Next, you can run your scripts from the command line like you're used to with `p
 {{% tip %}}
 One of the key advantages of using a VM is that you can leave it running indefinitely (even if you shut down your laptop!). Take a look at the [task scheduling](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/automate-your-workflow/task-scheduling/) building block to learn how to use crontab to schedule recurring tasks (e.g., run a Python script that scrapes a website every day at 3 AM). Keep in mind that the time at your VM may differ from your local time because the data center that hosts the VM is located in another time zone (tip: run `date` to find out the UTC time).
 {{% /tip %}}
+
+{{% tip %}}
+Check out [this building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/rstudio-aws/) to learn how to use [Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) to launch R on the instance to run your R scripts.
+{{% /tip %}}
