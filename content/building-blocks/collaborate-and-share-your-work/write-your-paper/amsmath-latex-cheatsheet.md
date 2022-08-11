@@ -1,7 +1,7 @@
 ---
 title: "Cheatsheet for LaTeX Math Commands"
-description: "Explore all the most important AMS-Math LaTeX commands and download your cheatsheet."
-keywords: "ams, math, latex, tex, cheatsheet"
+description: "Download our latex math cheat sheet and learn the most important AMS-Math LaTeX commands. View our overview for mathematical expressions, greek letters and more"
+keywords: "ams, math, latex, tex, cheatsheet, cheat sheet, commands, latex math cheat sheet"
 weight: 105
 #date: 2020-11-11T22:02:51+05:30
 draft: false

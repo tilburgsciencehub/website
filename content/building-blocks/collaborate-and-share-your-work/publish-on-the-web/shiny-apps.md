@@ -1,7 +1,7 @@
 ---
 title: "Build Interactive Dashboards With R Shiny"
-description: "Learn how to build your own interactive R Shiny app."
-keywords: "shiny, app, data visualisation, dashboard, r, dataviz, plots, charts"
+description: "Learn how to build your own interactive R Shiny app with a good skeleton, layout, and placeholders. View our easy-to-follow tutorial with example code"
+keywords: "shiny, app, data visualisation, dashboard, r, dataviz, plots, charts, interactive"
 #weight: 101
 #date: 2020-11-11T22:02:51+05:30
 draft: false
