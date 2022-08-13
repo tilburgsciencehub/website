@@ -1,7 +1,7 @@
 ---
 title: "Configure Environment Variables"
-description: "Learn how to configure environment variables to store personal credentials and secret keys."
-keywords: "environment variables, configuration, password, secret, credentials, hiding credentials, security, anonymous, anonymity"
+description: "Learn how to configure environment variables to store personal credentials and secret keys in python and R"
+keywords: "environment variables, configuration, password, secret, credentials, hiding credentials, security, anonymous, anonymity, python, r"
 #date: 2021-02-17
 #weight: 3
 aliases:

@@ -1,7 +1,7 @@
 ---
 title: "Set up R and RStudio"
-description: "R is a widely used language for statistical computing and graphics. Learn how to set it up on your computer."
-keywords: "R, statistics, install, software, RStudio, PATH, learn R, get R, install R, setup"
+description: "Learn how to install R and rstudio on your windows, linux or mac. Follow this tutorial on setting up r studio and how to add r to windows path."
+keywords: "R, statistics, install, software, RStudio, PATH, learn R, get R, install R, setup, windows"
 #date: 2020-11-11T22:02:51+05:30
 draft: false
 #weight: 4

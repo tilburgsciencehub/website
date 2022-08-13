@@ -1,7 +1,7 @@
 ---
 title: "Scrape Dynamic Websites"
-description: "Learn how to scrape data and information from dynamic websites."
-keywords: "scrape, webscraping, internet, beautifulsoup, website"
+description: "Learn how to web scrape from dynamic websites with python. Install Selenium and make it work for Chromedriver without websites blocking you"
+keywords: "scrape, webscraping, internet, beautifulsoup, website, Selenium, Chromedriver, chromedrive, dynamic website"
 #weight: 2
 #date: 2020-11-11T22:02:51+05:30
 draft: false
