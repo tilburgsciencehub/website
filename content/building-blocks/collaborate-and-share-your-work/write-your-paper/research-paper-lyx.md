@@ -1,7 +1,7 @@
 ---
 title: "Write a Professional Research Paper with LyX"
-description: "Learn how to write your research paper using LyX."
-keywords: "paper, template, lyx, tex"
+description: "How to write a professional research paper using LyX. Download our lyx template for research papers, academic papers, and thesis."
+keywords: "paper, template, lyx, tex, research paper, lyx template, thesis"
 weight: 101
 #date: 2020-11-11T22:02:51+05:30
 draft: false

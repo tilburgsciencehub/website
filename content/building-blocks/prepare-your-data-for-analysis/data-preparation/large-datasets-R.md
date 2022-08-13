@@ -1,8 +1,8 @@
 ---
 title: "Import Large Datasets Into R"
-description: "This is a handy function that can be used to clean social media data scraped from the web."
+description: "Importing large datasets in R is made easy by data.table R package. The package makes importing and manipulating huge datasets (like big data) in R faster"
 weight: 2
-keywords: "import, data, data preparation, big data, large datsets, memory, RAM"
+keywords: "import, data, data preparation, big data, large datsets, memory, RAM, data.table, big data, R"
 date: 2021-01-06T22:01:14+05:30
 draft: false
 aliases:
