@@ -8,6 +8,7 @@ draft: false
 aliases:
   - /learn/regex
   - /learn/regular-expressions
+  - /building-blocks/develop-your-coding-skills/learn-to-code/learn-regular-expressions/
 ---
 
 ## What are regular expressions?

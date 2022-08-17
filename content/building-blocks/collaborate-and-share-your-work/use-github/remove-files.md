@@ -9,6 +9,7 @@ aliases:
   - /remove/commited-files
   - /remove/sensitive-information
   - /remove/large-files
+  - /building-blocks/collaborate-and-share-your-work/use-github/remove-files.md
 ---
 
 Git will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work.

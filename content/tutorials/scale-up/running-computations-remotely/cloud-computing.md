@@ -10,6 +10,7 @@ aliases:
   - /learn/cloud
   - /tutorials/more-tutorials/running-computations-remotely/cloud-computing
   - /tutorials/scale-up/running-computations-remotely/_index
+  - /building-blocks/automate-and-execute-your-work/cloud-computing/
   
 ---
 

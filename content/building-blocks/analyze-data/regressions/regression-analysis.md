@@ -8,6 +8,7 @@ draft: false
 aliases:
   - /analyze/regression
   - /run/regression-analysis
+  - /building-blocks/share-your-results-and-project/data-reporting/regression-analysis/
 ---
 
 ## Overview

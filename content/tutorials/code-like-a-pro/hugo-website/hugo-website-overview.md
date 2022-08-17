@@ -15,6 +15,7 @@ aliases:
   - /create/personal-website
   - /tutorials/open-education/hugo-website/hugo-website-overview/
   - /tutorials/code-like-a-pro/hugo-website/_index
+  - /tutorials/educational-support/hugo-website/overview/
 ---
 
 ## Why to Launch a Website?

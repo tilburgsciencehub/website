@@ -7,6 +7,7 @@ date: 2021-01-06T22:01:14+05:30
 draft: false
 aliases:
   - /clean/social-media-counts
+  - /building-blocks/prepare-your-data-for-analysis/data-preparation/clean-social-media-data/
 ---
 
 ## Overview

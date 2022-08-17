@@ -5,5 +5,6 @@ draft: false
 weight: 1
 indexPage: "pipeline-automation-overview"
 description: "Follow our tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets."
-
+aliases:
+    - /tutorials/reproducible-research/practicing-pipeline-automation-make/
 ---

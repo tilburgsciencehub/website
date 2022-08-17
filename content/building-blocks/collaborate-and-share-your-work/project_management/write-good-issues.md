@@ -8,6 +8,7 @@ draft: false
 aliases:
   - /write/issues
   - /use/issues
+  - /building-blocks/collaborate-and-share-your-work/use-github/write-good-issues/
 ---
 
 ## Overview

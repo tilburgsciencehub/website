@@ -8,6 +8,7 @@ draft: false
 aliases:
   - /setup/software-environment
   - /setup/virtual-environment
+  - /building-blocks/automate-and-execute-your-work/automate-your-workflow/software-environments/
 ---
 
 ## Overview
