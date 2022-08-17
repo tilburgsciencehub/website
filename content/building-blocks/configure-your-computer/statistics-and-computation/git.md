@@ -8,6 +8,7 @@ draft: false
 aliases:
   - /get/git
   - /install/git
+  - /setup/gitinstall/
 ---
 
 ## Installing and Setting Up Git & GitHub

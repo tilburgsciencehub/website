@@ -8,6 +8,7 @@ weight: 1000
 draft: false
 aliases:
   - /contribute
+  - /contribute/how-to-contribute/
 ---
 
 ## How to contribute to Tilburg Science Hub

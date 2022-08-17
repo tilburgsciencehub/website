@@ -12,6 +12,7 @@ aliases:
   - /use/scrumboard
   - /Github/projects
   - /github/projects
+  - /building-blocks/collaborate-and-share-your-work/use-github/git-project-board/
 ---
 
 ## Overview

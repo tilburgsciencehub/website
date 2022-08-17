@@ -9,6 +9,7 @@ author: "Manuele Macchia"
 authorLink: "https://manuelemacchia.com"
 aliases:
   - /learn/latex-math
+  - /building-blocks/share-your-results-and-project/write-your-paper/amsmath-latex-cheatsheet/
 ---
 
 ## Overview

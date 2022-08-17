@@ -9,6 +9,7 @@ authorlink: "https://www.tilburguniversity.edu/staff/n-m-alagoz"
 aliases:
  - /error-handling/stata-make
  - /automate/stata
+ - /building-blocks/automate-and-execute-your-work/error-handling/stata-error-handling-make/
 ---
 
 ## Overview <!-- Goal of the Building Block -->

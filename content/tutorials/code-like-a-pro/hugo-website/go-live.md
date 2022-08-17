@@ -14,6 +14,7 @@ aliases:
   - /publish/website
   - /setup/netlify
   - /tutorials/open-education/hugo-website/go-live
+  - /tutorials/educational-support/hugo-website/go-live/
 ---
 
 ## How to Host Your Website

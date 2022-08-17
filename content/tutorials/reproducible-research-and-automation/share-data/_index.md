@@ -5,5 +5,6 @@ draft: false
 weight: 3
 indexPage: "share-data"
 description: "Learn how to document and share data for internal and external use."
-
+aliases:
+  - /tutorials/reproducible-research/share-data/
 ---

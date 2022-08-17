@@ -7,4 +7,5 @@ indexPage: "project-setup-overview"
 description: "Learn how you can improve your workflow, speeding up your research and making the process more transparent. "
 aliases:
   - /tutorials/project-management/principles-of-project-setup-and-workflow-management/
+  - /tutorials/project-setup/principles-of-project-setup-and-workflow-management/
 ---

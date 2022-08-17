@@ -8,6 +8,7 @@ draft: false
 aliases:
   - /get/latex-templates
   - /use/latex-templates
+  - /building-blocks/share-your-results-and-project/write-your-paper/bookdown-theses
 ---
 
 ## Overview

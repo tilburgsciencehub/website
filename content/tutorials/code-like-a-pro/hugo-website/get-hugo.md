@@ -13,6 +13,7 @@ authorlink: "https://www.tilburguniversity.edu/staff/a-d-antonacci"
 aliases:
   - /get/hugo
   - /tutorials/open-education/hugo-website/get-hugo
+  - /tutorials/educational-support/hugo-website/get-hugo/
 ---
 
 ## Install Hugo
