@@ -42,9 +42,3 @@
 }
 
 
-//added a class which removes div's when the screen is smaller than 600px class="mobremove"
-@media screen and (max-width: 600px) {
-  div.mobremove {
-    display: none;
-  }
-}
