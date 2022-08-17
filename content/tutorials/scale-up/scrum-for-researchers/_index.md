@@ -5,5 +5,7 @@ draft: false
 weight: 2
 indexPage: "use-scrum-in-your-team"
 description: "Discover Scrum to improve your project management when working on empirical research projects"
+aliases:
+  - /tutorials/project-management/scrum-for-researchers/
 
 ---
