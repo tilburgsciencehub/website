@@ -20,32 +20,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	{{ $style := resources.Get "scss/bootstrap.scss" | toCSS | minify | fingerprint }}
-	<link
-  rel="preload"
-  as="style"
-  onload="this.rel = 'stylesheet'"
-  href="{{ $style.Permalink }}">
-<noscript>
-  <link
-    rel="stylesheet"
-    href="{{ $style.Permalink }}">
-</noscript>
-<style>
-	html {
-	  font-family: Roboto;
-	}
-  </style>
-  
+	<link rel="stylesheet" href="{{ $style.Permalink }}" emotion="🤩">
 
-<!--
-
-	<link rel="preload" as="style" onload="this.rel='stylesheet'" href="{{ $style.Permalink }}">
-	<noscript>
-		<link
-		  rel="stylesheet"
-		  href='{{ $style.Permalink }}'>
-	  </noscript>
--->
 	<link rel="stylesheet" href="https://use.typekit.net/pzc6ybk.css">
 	<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 	<script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
