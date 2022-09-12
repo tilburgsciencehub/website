@@ -183,6 +183,23 @@ Generally speaking, it's a good idea to name your file exactly like your main ti
     Filename: automation-with-gnu-make.md
 {{% /warning %}}
 
+### Add the correct tags
+Every page has at the top of the code tags which, among others, help index the page. 
+```
+---
+tutorialtitle: "Web Scraping and API Mining [a good title] " 
+type: "web-scraping [very short title ~2/3 words with no capitols nor spaces]" 
+title: "Web Scraping and API Mining [the same good title]" 
+description: "[a short, relevant summary of what a particular page is about]"
+keywords: "scrape, webscraping, beautifulsoup .. [relevant keywords to the page]" 
+weight: 1 [to determine the position in the navigation 1 at the top 99 at the bottom] 
+draft: false [false when finished, true when it is still a draft]
+aliases: [other urls which lead to this page]
+  - /learn/web-scraping-and-api-mining [first alias is the short link]
+  - /tutorials/more-tutorials/web-scraping/web-scraping-tutorial/
+---
+```
+
 ## Develop content for our target audience
 
 When contributing content to our platform, please address at least one of our target groups.
