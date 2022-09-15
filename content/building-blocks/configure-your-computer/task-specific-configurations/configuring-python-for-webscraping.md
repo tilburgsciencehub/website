@@ -125,7 +125,7 @@ Sometimes, `brew doctor` returns some warnings. While it's advisable to fix them
 *   Install `chromedriver` via Homebrew:
 
 ```
-brew cask install chromedriver
+brew install chromedriver --cask
 ```
 
 *   Verify your install, by entering the following in your terminal. The expected output is `ChromeDriver XX`
