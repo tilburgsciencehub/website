@@ -7,6 +7,8 @@ keywords: "learn, R, resources, R packages, installation,style, code, R, guideli
 weight: 1
 date: 2022-06-30T22:02:51+05:30
 draft: false
+author: "Roshini Sudhaharan"
+authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:
   - /learn/r
   - /start/r
