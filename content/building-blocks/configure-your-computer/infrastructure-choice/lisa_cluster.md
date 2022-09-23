@@ -10,7 +10,7 @@ aliases:
   - /configure/research-cloud
 ---
 
-## SURFsara's LISA cluster: Overview
+## SURFsara's LISA Cluster: Overview
 The LISA cluster is a good alternative to [HPC TiU computing](http://tilburgsciencehub.com/building-blocks/configure-your-computer/infrastructure-choice/blade/) where hundreds of servers can be accessed via a so-called queue system. The execution of a calculation task can be assigned to multiple servers. As soon as the number of required servers is available, the assignment is executed.
 
 Some of the servers are linked to each other via a so-called high-speed link (infiniband). This part of the LISA Cluster is a good choice for executing an assignment that requires a great deal of communication between servers.
@@ -27,7 +27,7 @@ The support desk of SurfSARA can support in use. The support desk has templates 
 - There may be a queue and thus waiting time.
 - Less interactive because of the queue principle.
 
-### How to access LISA cluster?
+### How to Access LISA Cluster?
 You can [request access to LISA](https://servicedesk.uvt.nl/tas/public/ssp/content/serviceflow?unid=8607361336ec4bcf8989e82f168602e7&openedFromService=true) via the IT Service Desk and filling in a form.
 
 Once your request is approved, you can connect to LISA:
