@@ -11,6 +11,8 @@ aliases:
   - /learn/r
   - /start/r
   - /tutorials/reproducible-research/getting-started-with-r/getting-started-with-r-overview/
+  - /tutorials/reproducible-research/getting-started-with-r/
+  - /tutorials/code-like-a-pro/getting-started-with-r/
 ---
 ## Overview: Why R?
 

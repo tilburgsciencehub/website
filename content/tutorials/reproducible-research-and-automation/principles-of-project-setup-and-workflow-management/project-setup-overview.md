@@ -11,6 +11,7 @@ aliases:
   - /learn/project-setup
   - /tutorials/project-management/principles-of-project-setup-and-workflow-management/project-setup-overview
   - /tutorials/reproducible-research-and-automation/principles-of-project-setup-and-workflow-management/_index
+  - /tutorials/reproducible-research/practicing-pipeline-automation-make/overview/
 ---
 
 ## Motivation

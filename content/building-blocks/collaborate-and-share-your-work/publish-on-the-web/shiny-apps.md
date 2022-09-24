@@ -10,6 +10,7 @@ aliases:
   - /build/shiny-app
   - /build/dashboard
   - /building-blocks/share-your-results-and-project/data-reporting/shiny-apps/
+  - /building-blocks/share-your-results-and-project/publish-on-the-web/shiny-apps/
 ---
 
 ## What is a Shiny App?

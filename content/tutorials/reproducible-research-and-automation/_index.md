@@ -6,5 +6,7 @@ isParent: true
 weight: 1
 aliases:
   - /tutorials/reproducible-research
+  - /tutorials/project-management/
+ 
 ---
 

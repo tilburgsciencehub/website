@@ -8,6 +8,7 @@ aliases:
   - /setup/file-exchanges
   - /setup/aws-s3
   - /use/dropbox
+  - /examples/dropbox/
 ---
 
 [File exchanges](/tutorials/project-setup/principles-of-project-setup-and-workflow-management/directories/#4-file-exchange) are essential to transfer data *between different stages of your pipeline*, and between *different co-authors* working on a project.

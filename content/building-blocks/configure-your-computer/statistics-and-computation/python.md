@@ -8,6 +8,8 @@ draft: false
 aliases:
   - /get/python
   - /install/python
+  - /setup/python/
+  - /tutorials/other-category/implement-an-efficient-and-reproducible-workflow/setup/python.md
 ---
 
 ## Installing Anaconda Python

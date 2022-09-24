@@ -8,6 +8,7 @@ draft: false
 aliases:
   - /get/r
   - /install/r
+  - /tutorials/other-category/implement-an-efficient-and-reproducible-workflow/setup/r.md
 ---
 
 ## Installing R and RStudio

@@ -10,7 +10,7 @@ draft: false
 Weight: 5
 aliases:
   - /document-data/project-setup
-  - /tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-code
+  - /tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-data
 ---
 
 ## Documenting Datasets
