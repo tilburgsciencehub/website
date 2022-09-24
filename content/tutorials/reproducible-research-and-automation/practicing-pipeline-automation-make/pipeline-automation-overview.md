@@ -11,6 +11,7 @@ aliases:
   - /practice/pipeline-automation
   - /tutorials/reproducible-research/practicing-pipeline-automation-make/pipeline-automation-overview
   - /tutorials/reproducible-research-and-automation/practicing-pipeline-automation-make/_index
+  - /tutorials/other-category/implement-an-efficient-and-reproducible-workflow/workflow/pipeline.md
 ---
 
 Longing to put your knowledge from our [workflow guide](/tutorials/project-management/principles-of-project-setup-and-workflow-management/overview/) into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our [GitHub workflow template](https://github.com/hannesdatta/textmining-workflow).

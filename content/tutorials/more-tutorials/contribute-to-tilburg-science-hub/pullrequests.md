@@ -10,6 +10,9 @@ draft: false
 aliases:
 - /contribute/pullrequests
 - /contribute/mode-3
+- /tutorials/more-tutorials/contribute-to-tilburg-science-hub/mode-2/
+- /tutorials/more-tutorials/contribute-to-tilburg-science-hub/mode-3/
+
 
 ---
 

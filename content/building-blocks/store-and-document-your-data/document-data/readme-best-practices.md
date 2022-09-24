@@ -8,6 +8,7 @@ draft: false
 aliases:
   - /write/readme
   - /learn/readme-best-practices
+  - /building-blocks/share-your-results-and-project/use-github/readme-best-practices/
 ---
 
 ## Overview

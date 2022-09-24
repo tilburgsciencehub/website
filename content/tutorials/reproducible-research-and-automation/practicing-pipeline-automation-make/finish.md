@@ -8,6 +8,7 @@ date: 2021-01-06T22:01:14+05:30
 draft: false
 aliases:
   - /wrap-up/pipeline-automation
+  - /tutorials/reproducible-research/practicing-pipeline-automation-make/finish/
 ---
 
 ## You did it!
