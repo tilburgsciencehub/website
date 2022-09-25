@@ -116,4 +116,4 @@ See the building block on [task automation](http://tilburgsciencehub.com/buildin
 
 
 ## See Also
-* If you're aiming to strive a dynamic website, such as a social media site, please consult [this](https://tilburgsciencehub.com/building-blocks/scrape/dynamic-website) building block.
+* If you're aiming to strive a dynamic website, such as a social media site, please consult our building block [web-scraping dynamic websites](/building-blocks/collect-data/webscraping-apis/scrape-dynamic-websites/) building block.

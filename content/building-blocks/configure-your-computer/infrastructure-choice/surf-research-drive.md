@@ -59,7 +59,7 @@ rclone config
 ```
 {{% /codeblock %}}
 
-You will be now guided through the configuration. Read this **[comprehensive guide](https://wiki.surfnet.nl/display/RDRIVE/4.+Access+Research+Drive+via+Rclone)** on how to configure it properly.
+You will be now guided through the configuration. Read this **[comprehensive guide](https://wiki.surfnet.nl/display/RDRIVE/Access+Research+Drive+via+Rclone)** on how to configure it properly.
 
 3. Have fun!
 
@@ -78,7 +78,7 @@ rclone copy /my/folder RD:my/destination/folder
 ```
 
 {{% tip %}}
-You can find these and many more command examples on this **[comprehensive guide on using rclone with Research Drive](https://wiki.surfnet.nl/display/RDRIVE/4.+Access+Research+Drive+via+Rclone)**.
+You can find these and many more command examples on this **[comprehensive guide on using rclone with Research Drive](https://wiki.surfnet.nl/display/RDRIVE/Access+Research+Drive+via+Rclone)**.
 {{% /tip %}}
 
 ### Use rclone in your code

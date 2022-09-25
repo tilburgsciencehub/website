@@ -67,7 +67,7 @@ Some situations in which Synthetic Control has been applied:
 
 ## Running a Synthetic Control analysis
 
-The code uses data from [Abadie, Diamond and Hainmueller](https://economics.mit.edu/files/11859). The paper studies the effect of the introduction of a Tobacco Control Program in the state of California using other US states as controls for the donor pool. 
+The code uses data from [Abadie, Diamond and Hainmueller](https://www.nber.org/papers/w12831). The paper studies the effect of the introduction of a Tobacco Control Program in the state of California using other US states as controls for the donor pool. 
 
 ### Preparing the data
 

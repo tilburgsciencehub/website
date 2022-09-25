@@ -33,7 +33,7 @@ devtools::install_github("rstudio/packrat)
 {{% /codeblock %}}
 
 {{% warning %}}
-You’ll also need to make sure your machine is able to build packages from source. See [Package Development Prerequisites](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites?_ga=2.2309360.1597475521.1648472256-414577321.1648472256) for the tools needed for your operating system.
+You’ll also need to make sure your machine is able to build packages from source. See [Package Development Prerequisites](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites#:~:text=Overview,building%20R%20manuals%20and%20vignettes.) for the tools needed for your operating system.
 {{% /warning %}}
 
 ## Initialize Packrat

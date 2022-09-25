@@ -19,15 +19,15 @@ aliases:
 
 It's time you pick a theme for your website. This will determine how the content will look to the users. Head over to **[themes.gohugo.io](https://themes.gohugo.io)** and choose one!
 
-- We suggest [Academia Hugo](https://themes.gohugo.io/academia-hugo/) as a simple theme **for personal websites**, where you can showcase your portfolio, resume, and research work.
+- We suggest [Academia Hugo](https://gethugothemes.com/products/academia) as a simple theme **for personal websites**, where you can showcase your portfolio, resume, and research work.
 
 ![Academia Theme](https://d33wubrfki0l68.cloudfront.net/f1ccb690b1e8ffff4a3680cfa84f08424da25a69/f122a/academia-hugo/screenshot-academia-hugo_hub5e9edd9f1f6717e4545a90cfadcc4ac_738415_750x500_fill_catmullrom_top_2.png)
 
-- The [Wowchemy Academic Theme](https://sourcethemes.com/academic) **for personal websites too**.
+- The [Wowchemy Academic Theme](https://wowchemy.com/hugo-themes/) **for personal websites too**.
 
 ![Wowchemy Academic](../img/wowchemy.png)
 
-- The [Hugo Dot Theme](https://themes.gohugo.io/dot-hugo-documentation-theme/) **for knowledge bases and documentation websites**, for instance a thesis companion:
+- The [Hugo Dot Theme](https://gethugothemes.com/products/dot) **for knowledge bases and documentation websites**, for instance a thesis companion:
 
 ![Hugo Dot](../img/thesis-theme.png)
 

@@ -78,7 +78,7 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
 
-Now, simply **navigate to your site in your browser at [http://localhost:1313/](http://localhost:1313/)**.
+Now, simply **navigate to your site in your browser at `http://localhost:1313/`**.
 
 If you edit or create new files, you should see them updating live. If they don't, try force refresh your browser (cmd/ctrl + R).
 

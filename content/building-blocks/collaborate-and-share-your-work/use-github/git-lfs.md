@@ -102,7 +102,7 @@ You may be tempted to store your large files on a different server than the defa
 
 - GitHub provides a [Git LFS server](https://github.com/git-lfs/lfs-test-server) that implements the Git LFS API which you can set up so that your binary files can be uploaded to a server that you administer. However, as of today, this is not in a "production ready state" and it is suggestedd to be used for testing only.
 
-- In case you'd like to go serverless and back up these files on external services like Amazon S3, you can use one of the [Git LFS implementations](https://github.com/git-lfs/git-lfs/wiki/Implementations), like [this one](https://github.com/langep/git-lfs-serverless) and [this other one](https://github.com/meltingice/git-lfs-s3) for AWS S3. However, bear in mind that these are some external open-source implementations that have not been verified by GitHub.
+- In case you'd like to go serverless and back up these files on external services like Amazon S3, you can use one of the [Git LFS implementations](https://github.com/git-lfs/git-lfs/wiki/Implementations), like [this one](https://github.com/meltingice/git-lfs-s3) for AWS S3. However, bear in mind that these are some external open-source implementations that have not been verified by GitHub.
 
 You can follow [this tutorial by Atlassian](https://www.atlassian.com/git/tutorials/git-lfs) for more advanced use cases, like moving a LFS repository between hosts or deleting local LFS files.
 

@@ -14,7 +14,7 @@ aliases:
   - /tutorials/other-category/implement-an-efficient-and-reproducible-workflow/workflow/pipeline.md
 ---
 
-Longing to put your knowledge from our [workflow guide](/tutorials/project-management/principles-of-project-setup-and-workflow-management/overview/) into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our [GitHub workflow template](https://github.com/hannesdatta/textmining-workflow).
+Longing to put your knowledge from our [workflow guide](/tutorials/reproducible-research-and-automation/principles-of-project-setup-and-workflow-management/project-setup-overview/) into practice? Then follow this tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets, using our [GitHub workflow template](https://github.com/hannesdatta/textmining-workflow).
 
 ## Objectives of this tutorial
 
@@ -69,7 +69,7 @@ Longing to put your knowledge from our [workflow guide](/tutorials/project-manag
 
   -	[GNU Make](/building-blocks/configure-your-computer/automation-and-workflows/make/)
 
-- Familiarity with our [workflows](/tutorials/project-management/principles-of-project-setup-and-workflow-management/overview/), in particular on [pipelines and project components](/tutorials/project-management/principles-of-project-setup-and-workflow-management/pipeline/), [directory structure](/tutorials/project-management/principles-of-project-setup-and-workflow-management/directories/) and [pipeline automation](/tutorials/project-management/principles-of-project-setup-and-workflow-management/automation/).
+- Familiarity with our [workflows](/tutorials/reproducible-research-and-automation/principles-of-project-setup-and-workflow-management/project-setup-overview/), in particular on [pipelines and project components](/tutorials/project-management/principles-of-project-setup-and-workflow-management/pipeline/), [directory structure](/tutorials/project-management/principles-of-project-setup-and-workflow-management/directories/) and [pipeline automation](/tutorials/project-management/principles-of-project-setup-and-workflow-management/automation/).
 
 -	Nice-to-haves:
     - Basic experience with Python and R

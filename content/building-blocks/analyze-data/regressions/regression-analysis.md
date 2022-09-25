@@ -25,7 +25,7 @@ Linear regression (`lm`) is suitable for a response variable that is numeric. Fo
 
 - Model transformations can be incorporated into the formula, for example: `formula = log(y) ~ I(x^2)`.
 - The coefficients (`coefficients(mdl)`), predictions for the original data set (`fitted(mdl)`), and residuals (`residuals(mdl)`) can be directly derived from the model object.
-- A concrete example on how to evaluate model assumptions (mean residuals is 0, residuals are normally distributed, homscedascticiy) can be found [here]().
+- A concrete example on how to evaluate model assumptions (mean residuals is 0, residuals are normally distributed, homscedascticiy) can be found at the building block [Evaluate Model Assumptions ](/building-blocks/analyze-data/regressions/model-assumptions/).
 
 {{% codeblock %}}
 
@@ -189,7 +189,7 @@ outreg2 using RegressionResults.doc, append ctitle(Model 2)
 {{% /codeblock %}}
 
 {{% example %}}
-[This tutorial](https://dprep.hannesdatta.com/docs/building-blocks/regression-analysis/) outlines how to run, evaluate, and export regression model results for the `cars` dataset. In particular, it analyzes the relationship between a car’s speed and the stop distance.
+[This cars example](https://tilburgsciencehub.com/examples/exploring-regression-results/) outlines how to run, evaluate, and export regression model results for the `cars` dataset. In particular, it analyzes the relationship between a car’s speed and the stop distance.
 
 ![A trend plot in R.](../images/trend_plots.png)
 {{% /example %}}

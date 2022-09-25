@@ -72,7 +72,7 @@ The server function requires the input and output parameters where input refers 
 
 First, we create a reactive variable for the filtered data. Any time the user manipulates the province selection or date picker, this variable is re-evaluated. To access the data, you can call the variable name followed by parentheses: `filtered_data()`.
 
-Second, we build up the plot with the [`ggplot`](https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) library by defining the dataset, horizontal and vertical axes, and color categories. Next, we add a scatter plot with reduced transparency, remove the default legend, and change the vertical axis label. Note that `output$plot` refers the `outputId` of the `plotlyOutput()` function.
+Second, we build up the plot with the [`ggplot`](https://www.rstudio.com/resources/cheatsheets/) library by defining the dataset, horizontal and vertical axes, and color categories. Next, we add a scatter plot with reduced transparency, remove the default legend, and change the vertical axis label. Note that `output$plot` refers the `outputId` of the `plotlyOutput()` function.
 
 Third, we make sure that the current selection of data is shown in a table and that the download button  becomes functionable by writing `filtered_data()` to a csv-file.
 

@@ -53,4 +53,4 @@ The most common headers types are:
 ### Proxies
 The idea is that you use an IP address that is not your own. Hence, if get blocked, you switch to another IP address. Either you can use a package like [`scrapy-proxy-pool`](https://github.com/rejoiceinhope/scrapy-proxy-pool) or you use a Virtual Private Network (VPN) to alternate between IP addresses.
 
-There are also many for-pay services, such as https://scraperapi.com, https://zyte.com, and https://scrapingbee.com.
+There are also many for-pay services, such as https://scraperapi.com, and https://zyte.com.

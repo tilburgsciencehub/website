@@ -25,7 +25,7 @@ Please develop your content in English.
 
 ### Start Your Content With Our Templates
 
-Please use [our templates](../mode-3/#contribution-templates) when developing new building blocks or tutorials.
+Please use our [building block templates](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/building-block-shell.md) or [tutorial template](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/tutorials/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell.md) when developing new building blocks or tutorials.
 
 <!-- ### Contribute via Git Pull Requests
 
