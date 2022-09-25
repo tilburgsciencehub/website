@@ -112,7 +112,7 @@ tablefill -i test.txt -o filled.tex template.md
 
 If you want to check out more about tableFill and see a basic example on how to use it, you can check out the GitHub repository below :
 
-{{% cta-primary-center "Go to the GitHub Repository now" "https://github.com/tilburgsciencehub/tableFill.git" %}}
+{{% cta-primary-center "Go to the GitHub Repository now" "https://github.com/tilburgsciencehub/tablefill-examples" %}}
 
 The structure of the repository is as follows :
 ```text

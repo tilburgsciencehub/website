@@ -23,8 +23,7 @@ In practice, most APIs require user authentication to get started. Each and ever
 {{% tip %}}
 One of the major advantages of APIs is that you can directly access the data you need without all the hassle of selecting the right HTML tags. Another advantage is that you can often customize your API request (e.g., the first 100 comments or only posts about science), which may not always be possible in the web interface.
 Last, using APIs is legitimized by a web site (mostly, you will have to pay a license fee to use APIs!). So it's a more stable and legit way to retrieve web data compared to web scraping. That's also why we recommend using an API whenever possible.
-In practice, though, APIs really can't give you all the data you possibly want, and [web scraping](https://tilburgsciencehub.com/building-blocks/collect-data/web-scraping/web-scraping/
-) allows you to access complementary data (e.g., viewable on a website or somewhere hidden in the source code).
+In practice, though, APIs really can't give you all the data you possibly want, and web scraping allows you to access complementary data (e.g., viewable on a website or somewhere hidden in the source code). See our tutorial [web-scraping and api mining](https://tilburgsciencehub.com/tutorials/code-like-a-pro/web-scraping/web-scraping-tutorial/) for all the detials. 
 
 {{% /tip %}}
 

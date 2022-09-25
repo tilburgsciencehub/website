@@ -11,7 +11,7 @@ aliases:
 
 ## Overview
 
-This is a template for a reproducible [Dockerized](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) application, based on [R](http://localhost:1313/building-blocks/configure-your-computer/statistics-and-computation/r/), that **finds keywords and/or sentences in multiple `PDF` files**.
+This is a template for a reproducible [Dockerized](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) application, based on [R](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/r/), that **finds keywords and/or sentences in multiple `PDF` files**.
 
 {{% summary %}}
 * We use `R` to first, convert the `PDF` files into plain text files (`.txt`).

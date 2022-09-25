@@ -174,7 +174,7 @@ As we said, there are two ways you can get soft light. We will now focus on the 
 
 **Smaller light sources are more versatile but require some extra gear**: a sturdier light stand and a diffuser mostly.
 
-A relatively cheap option is the [Godox SL-60W](http://www.godox.com/EN/Products_Continuous_SL60_Video_Light.html) or the [Neewer SL-60W LED](https://neewer.com/collections/background-support-equipment). More advanced, high-quality lights are the [Aputure LS C120D II](https://www.aputure.com/products/ls-c120d-ii/), the [Lupo Superpanel series](https://www.lupo.it/en/video/superpanel-full-color-60), or the glorious, industry-standard [Arri Skypanel series](https://www.arri.com/en/lighting/led/skypanel).
+A relatively cheap option is the Godox SL-60W or the [Neewer SL-60W LED](https://neewer.com/collections/background-support-equipment). More advanced, high-quality lights are the [Aputure LS C120D II](https://www.aputure.com/products/ls-c120d-ii/), the [Lupo Superpanel series](https://www.lupo.it/en/video/superpanel-full-color-60), or the glorious, industry-standard [Arri Skypanel series](https://www.arri.com/en/lighting/led/skypanel).
 
 When choosing your light, just make sure of the following:
 - That **it's not a flash or strobo light**. These may be confused with continuous light sources because they look similar, but they are actually meant for studio photography, not video.
@@ -195,7 +195,7 @@ There are [a lot](https://digital-photography-school.com/a-beginners-guide-to-li
 
 As we said, you want the make the light bigger, so you will need any kind of diffuser to make it appear bigger. The most common ones for this purpose are umbrellas, softboxes, and scrims.
 
-The easiest one to use and control is any kind of **softbox** (a regular square softbox, a stipbox, an octabox, a parabolic softbox...), like those from [Godox](http://www.godox.com/EN/Products_Studio_Accessories_Softbox.html).
+The easiest one to use and control is any kind of **softbox** (a regular square softbox, a stipbox, an octabox, a parabolic softbox...).
 
 Most modifiers directly attach to your light source, so when choosing one, make sure it **has the same mount of your light source** (hopefully a Bowens mount).
 

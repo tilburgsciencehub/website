@@ -39,7 +39,7 @@ After installing required software, you need to run the code to see whether you 
 
 - Open the repository on GitHub, and fork it (click on the fork button in the upper right corner on Git). This creates a copy of the code in your GitHub account.
 
-- Clone your own fork to the disk, e.g., git clone https://github.com/your-user-name/tsh-website.
+- Clone your own fork to the disk, e.g., git clone `https://github.com/your-user-name/tsh-website`.
 
 - Enter the directory of the cloned repository, and run the code.
 
