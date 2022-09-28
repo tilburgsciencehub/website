@@ -4,7 +4,7 @@ description: "Learn how to import and run a python environment on google cloud w
 keywords: "docker, images, container, environments, virtual, Python, Jupyter, Jupyter notebook, environment, google cloud, cloud"
 weight: 2
 author: Diego Sanchez Perez
-draft: true
+draft: false
 aliases:
 
 
@@ -32,6 +32,8 @@ Take advantage of the versatility of containerized apps on Docker to make your w
 
 {{% summary %}}
 
+#NEEDS_TO_BE_REFORMULATED 
+
 In this building block you will learn step by step how to import a Python environment from an existing project located in a Github repository using Docker.
 
 {{% /summary %}}
@@ -48,7 +50,7 @@ Once you have Docker installed and working, the first thing you'll need to impor
 
 {{% tip %}}
 
-In this case you can think of the Docker image as a model of our environment, and the Dockerfile as the manual on how to build this model. Each time you tell Docker to generate a new container (i.e. instance) of the image, this action would be equivalent to generate a new replica of the enviroment for us to use from the model you previously provided.
+You can think of the Docker image as a template of our environment, and the Dockerfile as the manual with instructions on how to build this template. This template can be used to generate containers, and containers can be thought of as instantiations (or, instances) of the template. So, each time you tell Docker to generate a new container from the image, it generates a new replica of the environment from the template you previously provided
 
 {{% /tip %}}
 
@@ -67,24 +69,28 @@ Do not forget to include the dot at the end of the code block above as it indica
 
 {{% /warning %}}
 
+With this command Docker will build the images and its context, being the latter comprised of all the files located in the same path as your dockerfile. As a result of this it is generally advised to place your dockerfiles in a directory with just the files it requires in order to ensure the building process is as efficient as posible. I you want to learn more about the build command and its options you can visit [this site](https://docs.docker.com/engine/reference/commandline/build/).
+
 {{% tip %}}
  
-You can  assign a name to your new Docker image by addign to the code above the flag "-t" followed by the name you want to assign in between of the build command and the dot at the end as shown in the code block below. 
+You can  assign a name (i.e. tag) to your new Docker image by addign to the code above the flag "-t" followed by the name you want to assign in between of the build command and the dot at the end as shown in the code block below. 
 
-Don't worry if if you don't include this information as in that case docker will automatically assign a name to the image. However specifying a name is advisable as it will allow you to identify your images more easily. If you want to learn more about other options of the "build" command you can check [this link.](https://docs.docker.com/engine/reference/commandline/build/)
+Don't worry if you don't include this information as in that case docker will automatically assign a name to the image. However specifying a name is advisable as it will allow you to identify your images more easily.
+
+You can view a list of all your docker images in your Docker Desktop dashboard or by typing `docker images` in the command line.
 
 {{% /tip %}}
 
 {{% codeblock %}}
 ```bash
 # Build a Docker image and assign a name to it
-$ docker build -t your_image_name .
+$ docker build -t <your-image-name> .
 ```
 {{% /codeblock %}}
 
 ### Step 3: Docker compose
 
-Docker compose is a tool within Docker whose main functionality is to coordinate your containers and provide them with the services required to run coherently. Although this can sound a bit confusing if you are new to Docker (You can learn more about Docker compose [here](https://docs.docker.com/compose/)), the key takeaway is that it will assist and simplify the task of replicating your environment by providing some extra information to Docker about how to do so.
+Docker compose is a tool within the Docker ecosytem whose main functionality is to coordinate your containers and provide them with the services required to run smoothly. These services include actions such as communication between containers or starting up containers which require aditional instructions to do so. Although this can sound a bit confusing if you are new to Docker (You can learn more about Docker compose [here](https://docs.docker.com/compose/)), the key takeaway is that it will assist and simplify the task of replicating your environment by providing some extra information to Docker about how to do so. Additionally it is worth noting that we could perform these actions manually employing the `docker run` command, however in this way the process not as straightforward.
 
 In the same way that you needed a dockerfile to provide Docker with the necessary instructions to build an image, a docker-compose file is required to tell docker how to provide these services to a (series of) container(s).
 
@@ -99,9 +105,15 @@ All Docker needs to carry out the instructions contained in our docker-compose f
 {{% codeblock %}}
 ```bash
 # Build the docker image
-$ docker compose up
+$ docker compose up 
 ```
 {{% /codeblock %}}
+
+{{% tip %}}
+
+You can also specify which services do you want to run within a docker-compose file by executing the command shown above followed by the name of the service desired: `docker compose up <service-to-be-run>` .
+
+{{% /tip %}}
 
 ## Checking if the environment has been replicated successfully and accessing it.
 
@@ -125,7 +137,9 @@ Finally, to access to your environment click on the container and then click aga
 
 {{% tip %}}
 
-Instead of clicking on the link you can also directly copy it in your browser to enter the local port where the environment is located. If you do this do not forget to also copy the access token generated by Jupyter in order to access directly without needing to introduce it manually.
+Instead of clicking on the link you can also directly copy it in your browser to enter the local port where the environment is located. If you do this do not forget to also copy the access token generated by Jupyter in the url if you don't want to need to introduce it manually. 
+
+#INFO_ON_PASSWORD_TO_BE_ADDED
 
 {{% /tip %}}
 
