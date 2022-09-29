@@ -10,39 +10,74 @@ aliases:
 
 ---
 
-{{% warning %}}
+# Import and Run a python environment on Google cloud with Docker
 
-## Some comments on the draft
-
-- I have reproduced the steps I carried out for the docker assignment sent to me as basis for this draft. Though I learned a lot more about Docker during the assignment completion than what is reflected in this draft, I kept it close to the practical steps of being able to run a Python env. from a github repo that alredy provided the Dockerfile and Docker-compose without going too much into details.
-
-- For this building block it has been asumed that the project environment to replicate already contained a dockerfile and docke-compose file in the first place. From this assumption, a reasonable adition to the building block could be a brief explanation on how to interpret a dockerfile and/or a dockercompose file.
-
-- The focus of the building block could be easily reversed from import other's work to export our work if it is extended to include how to elaborate our own dockerfile though I am aware this may be too much information for a single building block. 
-
-- A brief contextualization on docker may be of value for the building block though at the same this is also covered to some extent on other extisting building blocks so instead links to these could be added.
-
-- Potential alternative: Docker DevEnvironments
-
-{{% /warning %}}
-
-# Import a Python environment from Github using Docker
-
-Take advantage of the versatility of containerized apps on Docker to make your work easier to share and reporduce! 
+Take advantage of the versatility of containerized apps on Docker and the power of Google cloud to easily reproduce and collaborate on projects! 
 
 {{% summary %}}
 
-#NEEDS_TO_BE_REFORMULATED 
-
-In this building block you will learn step by step how to import a Python environment from an existing project located in a Github repository using Docker.
+In this building block you will learn step by step how to replicate a Jupyter notebook Python environment from an existing project using Docker on an existing Google cloud instance. 
 
 {{% /summary %}}
 
-## Steps to import the environment in a docker container
+{{% warning %}}
 
-### Step 1: Install and Set up docker
+In order to be able to follow this building block you will need that the project you want to import already provides a both dockerfile and a docker-compose.yml file, with the adequate information to run the latter.
 
-For this first step you can check our building block on [how to set up Docker.](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/)
+{{% /warning %}}
+
+### Step 0: 
+
+### Step 1: Install and Set up docker in a Google cloud instance
+
+Unless you have specified it otherwise, at the time of creating your instance Google cloud will use an image of the Debian Linux distribution as base OS for the instance. Accordingly you will have to follow the instructions' on how to install the docker engine for this specific Linux distribution. If you want to check a more detailed step-by-step version of these you can visit [the offical Docker documentation](https://docs.docker.com/engine/install/debian/), where you will also find instructions for installing docker on other Linux distributions and operative systems through the command line. If on the contrary you prefer to cut it straight to the chase, you can simply execute one by one the code lines below on your instance's command line to have Docker installed on your instance.
+
+{{% codeblock %}}
+```bash
+# Build a Docker image
+
+#1
+$ sudo apt-get remove docker docker-engine docker.io containerd runc
+
+#2
+$ sudo apt-get update
+
+#3
+$ sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+#4
+$ sudo mkdir -p /etc/apt/keyrings
+
+#5
+$ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+#6
+$ echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+#7
+$ sudo apt-get update
+
+#8
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+#9
+$ sudo docker run hello-world
+
+```
+{{% /codeblock %}}
+
+The last line of the code above (`$ sudo docker run hello-world`) is meant to act as a check to see if the installation was completed successfully. The command line output after running it will tell you if this was the case.
+
+<p align = "center">
+<img src = "../img/output_dock_install.png" width="750">
+<figcaption> If the installation was successful the final command line output should look similar to this!</figcaption>
+</p>
 
 ### Step 2: Build the environment's image from a Dockerfile
 
@@ -54,7 +89,21 @@ You can think of the Docker image as a template of our environment, and the Dock
 
 {{% /tip %}}
 
-In order to tell Docker to build an image from the provided Dockerfile, open your command terminal in the directory were you have stored your dockerfile and run the following code:
+First you will need to upload your dockerfile to the instance. In Google cloud's browser SSH the easiest way to do this is to click on the "Upload file" button located close to the top right corner of the interface. There you will be able to select the files you want to upload from your local machine and these will be transfered to the instance. 
+
+{{% tip %}}
+
+Recently uploaded files will be placen in your current directory at the moment of the upload
+
+{{% /tip %}}
+
+
+<p align = "center">
+<img src = "../img/upload_base.png" width="700">
+<figcaption> Locate the upload button in Google cloud's browser SSH</figcaption>
+</p>
+
+Upon having uploaded the dockerfile you can run the following code to tell Docker to build the image from it:
 
 {{% codeblock %}}
 ```bash
@@ -69,7 +118,7 @@ Do not forget to include the dot at the end of the code block above as it indica
 
 {{% /warning %}}
 
-With this command Docker will build the images and its context, being the latter comprised of all the files located in the same path as your dockerfile. As a result of this it is generally advised to place your dockerfiles in a directory with just the files it requires in order to ensure the building process is as efficient as posible. I you want to learn more about the build command and its options you can visit [this site](https://docs.docker.com/engine/reference/commandline/build/).
+With this command Docker will build the images and its context, being the latter comprised of all the files located in the same path as your dockerfile. As a result of this it is generally advised to place your dockerfiles in a directory with just the files it requires in order to ensure the building process is as efficient as posible. If you want to learn more about the build command and its options you can visit [this site](https://docs.docker.com/engine/reference/commandline/build/).
 
 {{% tip %}}
  
@@ -100,7 +149,7 @@ Docker compose files must be YAML files, so make sure that your docker compose f
 
 {{% /tip %}}
 
-All Docker needs to carry out the instructions contained in our docker-compose file is to open the terminal at the location of our docker-compose file and excute the following code:
+Now it is time to upload your Docker-compose in the same way you did it with your dockerfile, and then and excute the following code in the directory where your docker-compose file is located:
 
 {{% codeblock %}}
 ```bash
@@ -109,48 +158,94 @@ $ docker compose up
 ```
 {{% /codeblock %}}
 
+ If the execution of docker-compose (and all its services) was succesful that means that your envorinment is up and running in jupyter and you should see something in your command line that resembles what is shown in the image below.
+
+<p align = "center">
+<img src = "../img/jupyter_on.png" width="750">
+<figcaption> Typical log of a Jupyter instance, signaling you that the replication of the environment was completed. </figcaption>
+</p>
+
 {{% tip %}}
 
 You can also specify which services do you want to run within a docker-compose file by executing the command shown above followed by the name of the service desired: `docker compose up <service-to-be-run>` .
 
 {{% /tip %}}
 
-## Checking if the environment has been replicated successfully and accessing it.
+### Step 4: Expose the port where Jupyter is running to access the environment from your computer
 
-To check if docker has successfully replicated your environment you can go into your Docker desktop app and click on "containers" in the top left corner. If everything went correctly you should see the icons corresponding to the Docker compose instansce and the container containing your environment colored in green and their status set as "Running".
-
-<p align = "center">
-<img src = "../img/Check_status.png" width="750">
-<figcaption> This is what you should see on Docker desktop if the operation was successful. </figcaption>
-</p>
-
-If this is the case, congratulations! You have succefully replicated your environment with Docker! 
-
-### Option A: Jupyter Notebook
-
-Finally, to access to your environment click on the container and then click again on "logs" at the top right corner of your screen. On the last line of the output you are seeing now you will find a link that will take you directly to your environment in Jupyter.
+At this point we need to make our instance accesible from the outside. The first element we need for this task is know in which port of our instance is Jupyter running. To know this we just have to take a closer look to the last line of the output shown in the command line after we executed `docker compose up`. At the beggining of the line you should see an address like the one shown below, from there you interested in the four numbers underlined in bluecoming after the internal IP and before the slash. These correspond with the port where Jupyter is running in your instance.
 
 <p align = "center">
-<img src = "../img/Jupyter.png" width="750">
-<figcaption> Click on the link signaled to access Jupyter!</figcaption>
+<img src = "../img/find_port.png" width="750">
+<figcaption> Underlined in blue: The port that you need to expose. </figcaption>
 </p>
+
+{{% warning %}}
+
+Note that the port in which your Jupyter environment is running (i.e the four numbers that correspond to those underlined in blue in the previous image) will probably be different to the ones shown in the image above.
+
+{{% /warning %}}
 
 {{% tip %}}
 
-Instead of clicking on the link you can also directly copy it in your browser to enter the local port where the environment is located. If you do this do not forget to also copy the access token generated by Jupyter in the url if you don't want to need to introduce it manually. 
-
-#INFO_ON_PASSWORD_TO_BE_ADDED
+You can actually choose in which port do you want Jupyter to be executed. In the context of this building block this should be done by modifying the docker-compose, where the instructions on how Docker should set up Jupyter for your environment are contained. [Learn more about docker compose.](https://docs.docker.com/compose/)
 
 {{% /tip %}}
 
-### Option B: Visual Studio Code
+Now you should go to back to the Google cloud console and click the button "Set up firewall rules" which is below your instances list. Then click again on the "Create firewall rule" option located towards the upper side of the screen. There you must:
 
-An alternative option you have to access your environment is to do so with the code editor Visual Studio Code. For this you will have to click on the icon representing the Docker compose instance coordinating our environment and the asociated container(s) (just one  in this case) and Docker will offer you the option to Open your environment in Visual Studio Code.
+1. Add a name of your choice for the rule (e.g. Jupyter_access_rule)
+2. Make sure that traffic direction is set on "Ingress"
+3. Introduce "0.0.0.0/0" in the field "Source IPv4 ranges"
+4. In the section "Protocols and ports" check "TCP" and then in the box below introduce the four number which correspond to the port where Jupyter is being executed in your instance.
+
+{{% warning %}}
+
+In the point three of the steps listed above you are told to introduce "0.0.0.0/0" in the field "Source IPv4 ranges". Beware the what this means is that your instance will allow connection from any external IP (i.e. any other computer). If you are concerned about the safety risk this involves and/or you know beforehand the list of IP adresses that you want to allow to connect to your instance, you could list them here instead of typing the one-size-fits-all "0.0.0.0/0".
+
+{{% /warning %}}
+
+After completing the fields as described you can go to the bottom and click on "create" to make the firewall rule effective. 
+
+### Step 5: Access to your Jupyter environment
+
+To access the Jupyter environment you have to go back to the Google cloud console list of VM instances and copy your instance's external IP direction. With this information you can open a web browser in your local computer and type in the url bar the following: 
+ - `http://< external_ip_address >:< jupyter_port>`
+
+{{% example %}}
+
+Imagine the external IP of your instance is "12.345.678.9" and the port where Jupyter is being executed is the port "1234". In that case you should paste the following url in your browser: http://12.345.678.9:1234
+
+{{% /example %}}
+
+After introducing the url as indicated, you will be directed to your intance's Jupyter landing page. Here Jupyter will request you a token in order to grant you acess. This token can be found in the same output line of your google cloud instance's command line where you look at port were Jupyter is being ran.
 
 <p align = "center">
-<img src = "../img/VSCode.png" width="750">
-<figcaption> Click on the button on the top-right corner to open the environment in VS Code</figcaption>
+<img src = "../img/find_token.png" width="750">
+<figcaption> Underlined in green: The token to access Jupyter. </figcaption>
 </p>
+
+As you can see in the image above, the token consist of a string of randomly generated alphanumeric characters comprising all what comes after the equal sign ("="). 
+
+{{% warning %}}
+
+Note that in the image above the token is not fully depicted. You must copy al the characters that come after the equal sign, which compose a character string which is noticeably larger that the one underlined in green.
+
+{{% /warning %}}
+
+<p align = "center">
+<img src = "../img/login_jupyter.png" width="750">
+<figcaption> Jupyter landing page. </figcaption>
+</p>
+
+Now simply introduce this token in the box at the top of the landing page and click on "Log in" to access to your environment.
+
+{{% tip %}}
+
+You can also paste your token  in the "Token" box at the bottom at the page and generate a password with it by creating a new password in the "New Password" box. This way the next time you revisit your environment you will not need the full token, instead you could log in using your password, which is specially useful in case you lose access to your token or this is not available to you at the moment.
+
+{{% /tip %}}
+
 
 
 
