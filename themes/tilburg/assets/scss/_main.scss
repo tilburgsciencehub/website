@@ -777,7 +777,6 @@ article {
   }
 }
 
-
 .searchResults {
   h5 {
     margin-top: 15px;
@@ -834,6 +833,7 @@ footer {
 
   .headerLink {
     padding: 10px;
+    position: relative;
   }
 
   .subMenu {
@@ -1292,6 +1292,94 @@ a.text-secondary:hover {
   -moz-animation: blink 0.7s infinite;
   animation: blink 0.7s infinite;
 }
+
+// .menu ul li {
+//   position: relative !important;
+// }
+
+// .menu form {
+//   position: relative;
+// }
+
+li,
+form {
+  div.onBoardTooltipContent {
+    width: 250px !important;
+    left: 50%;
+    transform: translateX(-500px);
+    text-align: left !important;
+    position: absolute;
+    margin-top: 30px;
+    padding: 16px;
+    background-color: #003365;
+    border-radius: 8px;
+    z-index: 10px;
+    color: #fff;
+    display: none;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    font-weight: normal;
+    font-family: "apple-system", BlinkMacSystemFont, segoe ui, Roboto !important;
+    font-size: 14px;
+
+    a {
+      color: rgba($color: #fff, $alpha: 0.6) !important;
+    }
+
+    &.active {
+      display: block;
+      transform: translateX(-450px);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      width: 0;
+      height: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #003365;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+  }
+}
+
+.pulse {
+  position: absolute;
+  top: 30px;
+  left: -10px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    border-radius: 50px;
+    left: 0px;
+    top: -14px;
+    width: 10px;
+    height: 10px;
+    background-color: #ff9c00;
+    animation: pulse 1.9s linear infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #ff9c00, 0 0 0 0 #ff9c00;
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 0, 0), 0 0 0 0 #ff9c00;
+  }
+}
+
 @keyframes blink {
   0% {
     opacity: 1;
@@ -1369,5 +1457,12 @@ a.text-secondary:hover {
 @media only screen and (max-width: 1340px) {
   .search-keywords {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .onBoardTooltipContent,
+  .pulse {
+    display: none !important;
   }
 }
