@@ -26,8 +26,6 @@ In order to be able to follow this building block you will need that the project
 
 {{% /warning %}}
 
-### Step 0: 
-
 ### Step 1: Install and Set up docker in a Google cloud instance
 
 Unless you have specified it otherwise, at the time of creating your instance Google cloud will use an image of the Debian Linux distribution as base OS for the instance. Accordingly you will have to follow the instructions' on how to install the docker engine for this specific Linux distribution. If you want to check a more detailed step-by-step version of these you can visit [the offical Docker documentation](https://docs.docker.com/engine/install/debian/), where you will also find instructions for installing docker on other Linux distributions and operative systems through the command line. If on the contrary you prefer to cut it straight to the chase, you can simply execute one by one the code lines below on your instance's command line to have Docker installed on your instance.
