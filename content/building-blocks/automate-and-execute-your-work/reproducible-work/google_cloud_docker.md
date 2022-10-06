@@ -156,6 +156,12 @@ $ docker compose up
 ```
 {{% /codeblock %}}
 
+{{% warning %}}
+
+If you receive an error message after executing the codeblock above, run `sudo chmod 666 /var/run/docker.sock` and try it again.
+
+{{% /warning %}}
+
  If the execution of docker-compose (and all its services) was succesful that means that your envorinment is up and running in jupyter and you should see something in your command line that resembles what is shown in the image below.
 
 <p align = "center">
@@ -168,6 +174,50 @@ $ docker compose up
 You can also specify which services do you want to run within a docker-compose file by executing the command shown above followed by the name of the service desired: `docker compose up <service-to-be-run>` .
 
 {{% /tip %}}
+
+### Extra! - Connect the Docker container within your instance to a Google Cloud Storage bucket 
+
+It is likely that your docker compose file provides Docker with the necessary instructions to employ [Docker volumes](https://docs.docker.com/storage/volumes/) to save any output file or data that you produce while working in your environment's container. If this is the case you may be also interested in connecting such volume to Google cloud storage so you don't have to manually download the output to your machine and make it easier to share and make available to your team.
+
+In order to do this, first of all you will need to install [GCSFuse](https://github.com/GoogleCloudPlatform/gcsfuse) in your instance by running the following code:
+
+{{% warning %}}
+ 
+Carry out the following steps while your environment is not running. For that press "ctrl + c" to shut down Jupyter and then run `docker compose stop` in your instance to stop the execution of the container. 
+
+{{% /warning %}}
+
+{{% codeblock %}}
+```bash
+#1
+$ export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
+echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+#2
+$ sudo apt-get update
+
+#3
+$ sudo apt-get install gcsfuse
+```
+{{% /codeblock %}}
+
+Now navigate to the directory of your instance which is connected to the container by the volume and create a new directory inside of it to be the one connected with your bucket. After you can run the following:
+
+{{% codeblock %}}
+```bash
+$ sudo gcsfuse -o allow_other your-bucket volume_path/new_dir/
+```
+{{% /codeblock %}}
+
+This code will tell GCSFuse to syncronize your new directory within the path with your bucket and allow your container to access it. After this you just have to store any output produced in your environment in this new directory that you just created in your instance a few moments ago (Referred in the previous codeblock as "new_dir") and it will be inmediatly available to you in your GCS bucket.
+
+{{% tip %}}
+
+Bear in mind that the absolute path to your bucket-sincronized directory is not the same for your instance and for your container given that containers have independent file systems. However its relative path will be the same with respect to that where the Docker volume is mounted.
+
+{{% /tip %}}
+
 
 ### Step 4: Expose the port where Jupyter is running to access the environment from your computer
 
