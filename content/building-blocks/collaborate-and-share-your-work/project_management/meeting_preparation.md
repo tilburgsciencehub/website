@@ -1,6 +1,6 @@
 ---
-title: "How to Prepare for (and Follow-up On) Scrum Meetings"
-description: "When collaborating with others, meeting preparation & planning follow-ups are crucial. Read here about the most important steps to take care of."
+title: "This title is whay to long to be a good title and should therefore be rejected as being a good title. This has to be a fail every check with the new added check to check the length per title. If al goos well ofcourse."
+description: "This description is whay to long to be a good description and should therefore be rejected as being a good description. This has to be a fail every check with the new added check to check the length per description. If al goos well ofcourse."
 keywords: "meeting, preparation, follow-up, github, issues, project management"
 weight: 2
 draft: false

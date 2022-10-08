@@ -1,6 +1,6 @@
 ---
-title: "Bring Open Science Practices to your Research Group"
-description: "Learn from how world-leading research groups have embraced open science practices to re-think the way they work on research projects."
+title: "The length of this title is good, and this would give no problem"
+description: "Again a good description length. THis should therefore not give any problems. This is a good description length and would be allowed"
 keywords: "team, onboarding, department"
 weight: 100
 #date: 2020-11-11T22:01:14+05:30

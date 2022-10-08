@@ -1,6 +1,6 @@
 ---
-title: "Manage your Projects using the GitHub Project Board"
-description: "GitHub project boards help you organize and prioritize your work using the Scrum framework for project management."
+title: "This title to short "
+description: "This description to short"
 keywords: "git, github, project board, sprint, planning, scrum framework"
 weight: 1
 #date: 2020-11-11T22:01:14+05:30
