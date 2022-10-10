@@ -524,13 +524,9 @@ for (let i = 0; i < allTooltips.length; i++) {
   div.classList.add("onBoardTooltipContent");
   div.setAttribute("current", i);
 
-  if (i == 0 && !localStorage.getItem("demoCompleted")) {
-    div.classList.add("active");
-  }
-
   div.innerText = allTooltips[i]?.getAttribute("onBoardTooltip");
   div.style = `left: ${
-    allTooltips[i].getBoundingClientRect().left + allTooltips[i].offsetWidth
+    allTooltips[i].getBoundingClientRect().left - 80
   }px`;
 
   // navigation

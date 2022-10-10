@@ -1305,10 +1305,8 @@ li,
 form {
   div.onBoardTooltipContent {
     width: 250px !important;
-    left: 50%;
-    transform: translateX(-500px);
     text-align: left !important;
-    position: absolute;
+    position: fixed;
     margin-top: 30px;
     padding: 16px;
     background-color: #003365;
@@ -1328,7 +1326,6 @@ form {
 
     &.active {
       display: block;
-      transform: translateX(-450px);
     }
 
     &::after {
