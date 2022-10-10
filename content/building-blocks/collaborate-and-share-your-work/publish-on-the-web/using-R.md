@@ -5,6 +5,8 @@ keywords: "publish,website,distill,bookdown,R,markdown,publish"
 #weight: 101
 #date: 2020-11-11T22:02:51+05:30
 draft: false
+author: "Roshini Sudhaharan"
+authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:
   - /make/ebooks
   - /build/using-R

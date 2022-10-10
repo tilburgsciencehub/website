@@ -6,6 +6,8 @@ description: "Learn to extract data from the web and APIs"
 keywords: "scrape, webscraping, internet, beautifulsoup, static website, dynamic website, website, api, application programming interface"
 weight: 1
 draft: false
+author: "Roshini Sudhaharan"
+authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:
   - /learn/web-scraping-and-api-mining
   - /tutorials/more-tutorials/web-scraping/web-scraping-tutorial/
