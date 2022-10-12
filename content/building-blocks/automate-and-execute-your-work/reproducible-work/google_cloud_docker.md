@@ -1,39 +1,31 @@
 ---
-title: "Import and Run a python environment on Google cloud with Docker" 
-description: "Learn how to import and run a python environment on google cloud with docker"
-keywords: "docker, images, container, environments, virtual, Python, Jupyter, Jupyter notebook, environment, google cloud, cloud"
+title: "Import and run a Python environment on Google cloud with Docker" 
+description: "Learn how to import a containerized python environment with docker, run it on a google cloud instance and connect it with Google cloud storage buckets"
+keywords: "Docker, environment, Python, Jupyter notebook, Google cloud, cloud computing, cloud storage "
 weight: 2
 author: Diego Sanchez Perez
 draft: false
-aliases:
+aliases: /run/jupyter-on-cloud
 
 
 ---
 
-# Import and Run a python environment on Google cloud with Docker
+# Import and run a Python environment on Google cloud with Docker
 
-Take advantage of the versatility of containerized apps on Docker and the power of Google cloud to easily reproduce and collaborate on projects! 
-
-{{% summary %}}
-
-In this building block you will learn step by step how to replicate a Jupyter notebook Python environment from an existing project using Docker on an existing Google cloud instance. 
-
-{{% /summary %}}
+Take advantage of the versatility of containerized apps on Docker and the power of Google cloud to easily reproduce and collaborate on projects! In this building block you will learn how to replicate a Jupyter notebook Python environment from a project on an existing Google cloud instance using Docker. Additionally you will also learn how to connect your replicated environment directly to Google cloud storage buckets to comfortably save and share your output. 
 
 {{% warning %}}
 
-In order to be able to follow this building block you will need that the project you want to import already provides a both dockerfile and a docker-compose.yml file, with the adequate information to run the latter.
+In order to be able to follow this building block you will need that the project you want to import already provides both  a dockerfile and a docker-compose.yml file, with the adequate information to run the latter.
 
 {{% /warning %}}
 
 ### Step 1: Install and Set up docker in a Google cloud instance
 
-Unless you have specified it otherwise, at the time of creating your instance Google cloud will use an image of the Debian Linux distribution as base OS for the instance. Accordingly you will have to follow the instructions' on how to install the docker engine for this specific Linux distribution. If you want to check a more detailed step-by-step version of these you can visit [the offical Docker documentation](https://docs.docker.com/engine/install/debian/), where you will also find instructions for installing docker on other Linux distributions and operative systems through the command line. If on the contrary you prefer to cut it straight to the chase, you can simply execute one by one the code lines below on your instance's command line to have Docker installed on your instance.
+Unless you have specified it otherwise, at the time of creating your instance Google cloud will use an image of the Debian Linux distribution as base OS for the instance. Accordingly you will have to follow the instructions' on how to install the docker engine for this specific Linux distribution. If you want to check a more detailed step-by-step version of these you can visit [the offical Docker documentation](https://docs.docker.com/engine/install/debian/), where you will also find instructions for installing Docker on other Linux distributions and operative systems through the command line. If on the contrary you prefer to cut it straight to the chase, you can simply execute one by one the code lines below on your instance's command line to get Docker installed.
 
 {{% codeblock %}}
 ```bash
-# Build a Docker image
-
 #1
 $ sudo apt-get remove docker docker-engine docker.io containerd runc
 
@@ -65,12 +57,21 @@ $ sudo apt-get update
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 #9
-$ sudo docker run hello-world
+$ sudo groupadd docker 
+
+#10
+$ sudo usermod -aG docker <your-user-name>
+
+#11
+$ newgrp docker
+
+#12
+$ docker run hello-world
 
 ```
 {{% /codeblock %}}
 
-The last line of the code above (`$ sudo docker run hello-world`) is meant to act as a check to see if the installation was completed successfully. The command line output after running it will tell you if this was the case.
+Code lines #1 to #8 from above deal with the installation of Docker itself, while code lines #9 to #11 are in charge of allowing your user within the instance to handle Docker without security privileges being required every time you use the `docker` command (This is done by adding you username to the Docker group, for more detailed information on these instructions you can visit [the Docker website](https://docs.docker.com/engine/install/linux-postinstall/)). Finally, the last line of the code (#12 - `$ docker run hello-world`) is meant to act as a check to see if the installation was completed successfully. The command line output after running it will tell you if this was the case.
 
 <p align = "center">
 <img src = "../img/output_dock_install.png" width="750">
@@ -91,7 +92,7 @@ First you will need to upload your dockerfile to the instance. In Google cloud's
 
 {{% tip %}}
 
-Recently uploaded files will be placen in your current directory at the moment of the upload
+Recently uploaded files will be placed in your current directory at the moment of the upload
 
 {{% /tip %}}
 
@@ -122,7 +123,7 @@ With this command Docker will build the images and its context, being the latter
  
 You can  assign a name (i.e. tag) to your new Docker image by addign to the code above the flag "-t" followed by the name you want to assign in between of the build command and the dot at the end as shown in the code block below. 
 
-Don't worry if you don't include this information as in that case docker will automatically assign a name to the image. However specifying a name is advisable as it will allow you to identify your images more easily.
+Don't worry if you don't include this information as in that case Docker will automatically assign a name to the image. However specifying a name is advisable as it will allow you to identify your images more easily.
 
 You can view a list of all your docker images in your Docker Desktop dashboard or by typing `docker images` in the command line.
 
@@ -156,12 +157,6 @@ $ docker compose up
 ```
 {{% /codeblock %}}
 
-{{% warning %}}
-
-If you receive an error message after executing the codeblock above, run `sudo chmod 666 /var/run/docker.sock` and try it again.
-
-{{% /warning %}}
-
  If the execution of docker-compose (and all its services) was succesful that means that your envorinment is up and running in jupyter and you should see something in your command line that resembles what is shown in the image below.
 
 <p align = "center">
@@ -175,7 +170,7 @@ You can also specify which services do you want to run within a docker-compose f
 
 {{% /tip %}}
 
-### Extra! - Connect the Docker container within your instance to a Google Cloud Storage bucket 
+#### Extra! - Connect the Docker container within your instance to a Google Cloud Storage bucket 
 
 It is likely that your docker compose file provides Docker with the necessary instructions to employ [Docker volumes](https://docs.docker.com/storage/volumes/) to save any output file or data that you produce while working in your environment's container. If this is the case you may be also interested in connecting such volume to Google cloud storage so you don't have to manually download the output to your machine and make it easier to share and make available to your team.
 
@@ -210,7 +205,7 @@ $ sudo gcsfuse -o allow_other your-bucket volume_path/new_dir/
 ```
 {{% /codeblock %}}
 
-This code will tell GCSFuse to syncronize your new directory within the path with your bucket and allow your container to access it. After this you just have to store any output produced in your environment in this new directory that you just created in your instance a few moments ago (Referred in the previous codeblock as "new_dir") and it will be inmediatly available to you in your GCS bucket.
+This code will tell GCSFuse to syncronize your new directory within the path with your bucket and allow your container to access it. After this you just have to store any output produced in your environment in this new directory that you just created in your instance a few moments ago (Referred in the previous codeblock as "new_dir") and it will be immediatly available to you in your GCS bucket.
 
 {{% tip %}}
 
@@ -221,7 +216,7 @@ Bear in mind that the absolute path to your bucket-sincronized directory is not 
 
 ### Step 4: Expose the port where Jupyter is running to access the environment from your computer
 
-At this point we need to make our instance accesible from the outside. The first element we need for this task is know in which port of our instance is Jupyter running. To know this we just have to take a closer look to the last line of the output shown in the command line after we executed `docker compose up`. At the beggining of the line you should see an address like the one shown below, from there you interested in the four numbers underlined in bluecoming after the internal IP and before the slash. These correspond with the port where Jupyter is running in your instance.
+At this point we need to make our instance accesible from the outside. The first element we need for this task is to know in which port of our instance is Jupyter running. To know this we just have to take a closer look to the last line of the output shown in the command line after we executed `docker compose up`. At the beggining of the line you should see an address like the one shown below, from there you are interested in the four digits underlined in blue coming after the internal IP and before the slash. These correspond with the port where Jupyter is running in your instance.
 
 <p align = "center">
 <img src = "../img/find_port.png" width="750">
@@ -230,7 +225,7 @@ At this point we need to make our instance accesible from the outside. The first
 
 {{% warning %}}
 
-Note that the port in which your Jupyter environment is running (i.e the four numbers that correspond to those underlined in blue in the previous image) will probably be different to the ones shown in the image above.
+Note that the port in which your Jupyter environment is running (i.e the four-digit number that corresponds to that underlined in blue in the previous image) will probably be different to the one shown in the image above.
 
 {{% /warning %}}
 
@@ -240,16 +235,16 @@ You can actually choose in which port do you want Jupyter to be executed. In the
 
 {{% /tip %}}
 
-Now you should go to back to the Google cloud console and click the button "Set up firewall rules" which is below your instances list. Then click again on the "Create firewall rule" option located towards the upper side of the screen. There you must:
+Now you should go to back to the Google cloud console and click the button "Set up firewall rules" which is below your instances list. Then click again on the "Create firewall rule" option located towards the upper side of the screen. There you have to:
 
 1. Add a name of your choice for the rule (e.g. Jupyter_access_rule)
 2. Make sure that traffic direction is set on "Ingress"
 3. Introduce "0.0.0.0/0" in the field "Source IPv4 ranges"
-4. In the section "Protocols and ports" check "TCP" and then in the box below introduce the four number which correspond to the port where Jupyter is being executed in your instance.
+4. In the section "Protocols and ports" check "TCP" and then in the box below introduce the four-digit number that identifies the port where Jupyter is being executed in your instance.
 
 {{% warning %}}
 
-In the point three of the steps listed above you are told to introduce "0.0.0.0/0" in the field "Source IPv4 ranges". Beware the what this means is that your instance will allow connection from any external IP (i.e. any other computer). If you are concerned about the safety risk this involves and/or you know beforehand the list of IP adresses that you want to allow to connect to your instance, you could list them here instead of typing the one-size-fits-all "0.0.0.0/0".
+In the point three of the steps listed above you are told to introduce "0.0.0.0/0" in the field "Source IPv4 ranges". Beware the what this means is that your instance will allow connections from any external IP (i.e. any other computer). If you are concerned about the safety risk this involves and/or you know beforehand the list of IP adresses that you want to allow to connect to your instance, you could list them here instead of typing the one-size-fits-all "0.0.0.0/0".
 
 {{% /warning %}}
 
@@ -257,7 +252,7 @@ After completing the fields as described you can go to the bottom and click on "
 
 ### Step 5: Access to your Jupyter environment
 
-To access the Jupyter environment you have to go back to the Google cloud console list of VM instances and copy your instance's external IP direction. With this information you can open a web browser in your local computer and type in the url bar the following: 
+To access the Jupyter environment you have to go back to the Google cloud console list of VM instances and copy your instance's external IP direction. With this information you can open a web browser in your local computer and type the following in the url bar: 
  - `http://< external_ip_address >:< jupyter_port>`
 
 {{% example %}}
@@ -277,7 +272,7 @@ As you can see in the image above, the token consist of a string of randomly gen
 
 {{% warning %}}
 
-Note that in the image above the token is not fully depicted. You must copy al the characters that come after the equal sign, which compose a character string which is noticeably larger that the one underlined in green.
+Note that in the image above the token is not fully depicted. You must copy all the characters that come after the equal sign, which compose a character string which is noticeably larger that the one underlined in green.
 
 {{% /warning %}}
 
@@ -290,7 +285,7 @@ Now simply introduce this token in the box at the top of the landing page and cl
 
 {{% tip %}}
 
-You can also paste your token  in the "Token" box at the bottom at the page and generate a password with it by creating a new password in the "New Password" box. This way the next time you revisit your environment you will not need the full token, instead you could log in using your password, which is specially useful in case you lose access to your token or this is not available to you at the moment.
+You can also paste your token  in the "Token" box at the bottom at the page and generate a password with it by creating a new password in the "New Password" box. This way the next time you revisit your environment you will not need the full token, instead you will be able log in using your password, which is specially useful in case you lose access to your token or this is not available to you at the moment.
 
 {{% /tip %}}
 
