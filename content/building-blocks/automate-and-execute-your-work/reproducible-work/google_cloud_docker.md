@@ -22,7 +22,7 @@ In order to be able to follow this building block you will need that the project
 
 ### Step 1: Install and Set up docker in a Google cloud instance
 
-Unless you have specified it otherwise, at the time of creating your instance Google cloud will use an image of the Debian Linux distribution as base OS for the instance. Accordingly you will have to follow the instructions' on how to install the docker engine for this specific Linux distribution. If you want to check a more detailed step-by-step version of these you can visit [the offical Docker documentation](https://docs.docker.com/engine/install/debian/), where you will also find instructions for installing Docker on other Linux distributions and operative systems through the command line. If on the contrary you prefer to cut it straight to the chase, you can simply execute one by one the code lines below on your instance's command line to get Docker installed.
+Unless you have specified it otherwise, at the time of creating your instance Google cloud will use an image of the Debian Linux distribution as base OS for the instance. Accordingly you will have to follow the instructions on how to install the docker engine for this specific Linux distribution. If you want to check a more detailed step-by-step version of these you can visit [the offical Docker documentation](https://docs.docker.com/engine/install/debian/), where you will also find instructions for installing Docker on other Linux distributions and operative systems through the command line. If on the contrary you prefer to cut it straight to the chase, you can simply execute one by one the code lines below on your instance's command line to get Docker installed.
 
 {{% codeblock %}}
 ```bash
@@ -113,7 +113,7 @@ $ docker build .
 
 {{% warning %}}
  
-Do not forget to include the dot at the end of the code block above as it indicates Docker that it has look for your dockerfile in current directory.
+Do not forget to include the dot at the end of the code block above as it indicates Docker that it has to look for your dockerfile in current directory.
 
 {{% /warning %}}
 
@@ -138,7 +138,7 @@ $ docker build -t <your-image-name> .
 
 ### Step 3: Docker compose
 
-Docker compose is a tool within the Docker ecosytem whose main functionality is to coordinate your containers and provide them with the services required to run smoothly. These services include actions such as communication between containers or starting up containers which require aditional instructions to do so. Although this can sound a bit confusing if you are new to Docker (You can learn more about Docker compose [here](https://docs.docker.com/compose/)), the key takeaway is that it will assist and simplify the task of replicating your environment by providing some extra information to Docker about how to do so. Additionally it is worth noting that we could perform these actions manually employing the `docker run` command, however in this way the process not as straightforward.
+Docker compose is a tool within the Docker ecosytem whose main functionality is to coordinate your containers and provide them with the services required to run smoothly. These services include actions such as communication between containers or starting up containers which require aditional instructions to do so. Although this can sound a bit confusing if you are new to Docker (You can learn more about Docker compose [here](https://docs.docker.com/compose/)), the key takeaway is that it will assist and simplify the task of replicating your environment by providing some extra information to Docker about how to do so. Additionally it is worth noting that we could perform these actions manually employing the `docker run` command, however in this way the process is not as straightforward.
 
 In the same way that you needed a dockerfile to provide Docker with the necessary instructions to build an image, a docker-compose file is required to tell docker how to provide these services to a (series of) container(s).
 
@@ -148,7 +148,7 @@ Docker compose files must be YAML files, so make sure that your docker compose f
 
 {{% /tip %}}
 
-Now it is time to upload your Docker-compose in the same way you did it with your dockerfile, and then and excute the following code in the directory where your docker-compose file is located:
+Now it is time to upload your Docker-compose in the same way you did it with your dockerfile, and then excute the following code in the directory where your docker-compose file is located:
 
 {{% codeblock %}}
 ```bash
@@ -157,7 +157,7 @@ $ docker compose up
 ```
 {{% /codeblock %}}
 
- If the execution of docker-compose (and all its services) was succesful that means that your envorinment is up and running in jupyter and you should see something in your command line that resembles what is shown in the image below.
+ If the execution of docker-compose (and all its services) was succesful that means that your environment is up and running in jupyter and you should see something in your command line that resembles what is shown in the image below.
 
 <p align = "center">
 <img src = "../img/jupyter_on.png" width="750">
@@ -244,7 +244,7 @@ Now you should go to back to the Google cloud console and click the button "Set 
 
 {{% warning %}}
 
-In the point three of the steps listed above you are told to introduce "0.0.0.0/0" in the field "Source IPv4 ranges". Beware the what this means is that your instance will allow connections from any external IP (i.e. any other computer). If you are concerned about the safety risk this involves and/or you know beforehand the list of IP adresses that you want to allow to connect to your instance, you could list them here instead of typing the one-size-fits-all "0.0.0.0/0".
+In the point three of the steps listed above you are told to introduce "0.0.0.0/0" in the field "Source IPv4 ranges". Beware that what this means is that your instance will allow connections from any external IP (i.e. any other computer). If you are concerned about the safety risk this involves and/or you know beforehand the list of IP adresses that you want to allow to connect to your instance, you could list them here instead of typing the one-size-fits-all "0.0.0.0/0".
 
 {{% /warning %}}
 
@@ -261,7 +261,7 @@ Imagine the external IP of your instance is "12.345.678.9" and the port where Ju
 
 {{% /example %}}
 
-After introducing the url as indicated, you will be directed to your intance's Jupyter landing page. Here Jupyter will request you a token in order to grant you acess. This token can be found in the same output line of your google cloud instance's command line where you look at port were Jupyter is being ran.
+After introducing the url as indicated, you will be directed to your intance's Jupyter landing page. Here Jupyter will request you a token in order to grant you acess. This token can be found in the same output line of your google cloud instance's command line where you look at the port were Jupyter is being ran.
 
 <p align = "center">
 <img src = "../img/find_token.png" width="750">
@@ -285,7 +285,7 @@ Now simply introduce this token in the box at the top of the landing page and cl
 
 {{% tip %}}
 
-You can also paste your token  in the "Token" box at the bottom at the page and generate a password with it by creating a new password in the "New Password" box. This way the next time you revisit your environment you will not need the full token, instead you will be able log in using your password, which is specially useful in case you lose access to your token or this is not available to you at the moment.
+You can also paste your token  in the "Token" box at the bottom at the page and generate a password with it by creating a new password in the "New Password" box. This way the next time you revisit your environment you will not need the full token, instead you will be able log in using your password. This is particularly useful in case you lose access to your token or this is not available to you at the moment.
 
 {{% /tip %}}
 
