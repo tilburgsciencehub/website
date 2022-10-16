@@ -18,6 +18,13 @@
 	</script>
 	<!-- End Google Analytics -->
 
+	<!-- Netlify check which a/b version visitor gets-->
+	<script>
+		ga('send', 'pageview', {
+		  'Branch':  '{{ getenv "BRANCH" }}'
+		});
+	  </script>
+
 
 	<!-- Global site tag (gtag.js) - Google Ads: 10904740148 -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10904740148"></script>
