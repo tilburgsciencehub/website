@@ -28,18 +28,14 @@
 	<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
-	<script src="/js/terminal.js"></script>
-	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
-
 	
-	<title>{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }} {{ if .IsHome
-		}}{{else}} - Tilburg Science Hub{{end}}</title>
+	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
+	<title>{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }} {{ if .IsHome }}{{else}} - Tilburg Science Hub{{end}}</title>
 	{{- if .Params.keywords -}}
 	<meta name="keywords" content="{{ .Params.keywords }}">
 	{{- end -}}
 	{{ template "_internal/google_analytics.html" . }}
-	<meta property="og:title"
-		content="{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }} {{ if .IsHome }}{{else}} - Tilburg Science Hub{{end}}" />
+	<meta property="og:title" content="{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }} {{ if .IsHome }}{{else}} - Tilburg Science Hub{{end}}" />
 	{{ if .Params.description }}
 	<meta property="og:description" content="{{ .Params.description }}" />
 	<meta name="description" content="{{ .Params.description }}" />
