@@ -30,8 +30,7 @@
 	<script src="https://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
 	
 	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
-	<title>{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }} {{ if .IsHome
-	}}{{else}} - Tilburg Science Hub{{end}}</title>
+	<title>{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }} {{ if .IsHome }}{{else}} - Tilburg Science Hub{{end}}</title>
 	{{- if .Params.keywords -}}
 	<meta name="keywords" content="{{ .Params.keywords }}">
 	{{- end -}}
