@@ -11,7 +11,7 @@ aliases:
   - /import/large-datsets-Python
 ---
 
-## Problem: Memory Error
+## Memory Errors when working with large datasets
 When trying to import a large dataset to dataframe format with `pandas` (for example, using the `read_csv` function), you are likely to run into `MemoryError`. This error indicates that you have run out of memory in your RAM. `Pandas` uses in-memory analytics, so larger-than-memory datasets won't load. Additionally, any operations performed on the dataframe require memory as well.
 
 Wes McKinney - the creator of the Python `pandas` project, noted in his [2017 blog post](https://wesmckinney.com/blog/apache-arrow-pandas-internals/):
@@ -29,7 +29,7 @@ Moreover, `pandas` only uses a single CPU core to perform computations, so it is
 
 
 
-## Solution: Dask library
+## Dask library
 One of the solutions to memory error is to use another library. Here `Dask` comes in handy. `Dask` is a Python library for parallel computing, which is able to perform computations on large datasets while scaling well-known Python libraries such as `pandas`, `NumPy`, and `scikit-learn`.
 
 `Dask` splits the dataset into a number of partitions. Unlike `pandas`, each `Dask` partition is sent to a separate CPU core. This feature allows us to work on a larger-than-memory dataset but also speeds up the computations on that dataset.
