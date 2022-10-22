@@ -7,13 +7,17 @@ INSTRUCTIONS:
 - IMPORTANT! Replace the # of the weight parameter with an integer (no quotes are needed). This number indicates the position of this article within its section (folder). The ordering of all articles inside a folder is based on their weight. Articles with lower weight appear at the top.
 - If you want to be credited, fill in the author and authorlink fields below. If you want to remain anonymous, delete those.
 - Provide at least one short link for your article. Combine an action verb and a noun like this: /verb/noun (ex. /install/python).
+- Make the most important keyword in your page once bold
 - Remove these instructions before submitting. Your article should start with the three dashes --- and the following parameters.
 ---
-title: "Your Building Block Title"
-description: "A brief description of this article (50–160 characters)."
+tutorialtitle: "Your Building Block Title (50-70 characters)"
+type: "your-building-block-title (spaces replaced with - and no capitals)"
+title: "Your building block title (50-70 characters)"
+description: "A brief description of this tutorial page (130–160 characters)."
 keywords: "any, relevant, keywords, separated, by, commas, like, this"
 date: YYYY-MM-DD
 weight: #
+indexexclude: "true"
 author: "Your Name"
 authorlink: "A link to your personal webpage"
 aliases:
@@ -22,6 +26,7 @@ aliases:
   - /get/that
   - add as many as you want, but at least one
 ---
+
 
 ## Overview <!-- Goal of the Building Block -->
 

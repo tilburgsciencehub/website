@@ -9,12 +9,13 @@ INSTRUCTIONS:
 - If your tutorial is only one page long, remove the indexexclude: "true" line, create a folder named like your "type" below, and save your page as "index.md" inside that folder.
 - If you want to be credited, fill in the author and authorlink fields below. If you want to remain anonymous, delete those.
 - Provide at least one short link for each of your tutorial pages. Combine an action verb and a noun like this: /verb/noun (ex. /install/python).
+- Make the most important keyword in your page once bold
 - Remove these instructions before submitting. Your article should start with the three dashes --- and the following parameters.
 ---
-tutorialtitle: "Your Tutorial Title"
-type: "your-tutorial-title"
-title: "The Title of Your First Tutorial Page"
-description: "A brief description of this tutorial page (50–160 characters)."
+tutorialtitle: "Your Tutorial Title (50-70 characters)"
+type: "your-tutorial-title (spaces replaced with - and no capitals)"
+title: "Your tutorial title (50-70 characters)"
+description: "A brief description of this tutorial page (130–160 characters)."
 keywords: "any, relevant, keywords, separated, by, commas, like, this"
 date: YYYY-MM-DD
 weight: #
