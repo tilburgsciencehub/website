@@ -2,26 +2,24 @@
 <html>
 <head>
 	<!--- Add structured data, search engine--->
-    <title>{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }} {{ if .IsHome }}{{else}} - Tilburg Science Hub{{end}}</title>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://tilburgsciencehub.com",
-      "@type": "WebSite",
-      "url": "https://www.tilburgsciencehub.com/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://tilburgsciencehub.com?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
+	<script type="application/ld+json">
+				{
+				  "@context": "https://schema.org",
+				  "@type": "WebSite",
+				  "url": "https://www.tilburgsciencehub.com/",
+				  "potentialAction": {
+					"@type": "SearchAction",
+					"target": {
+					  "@type": "EntryPoint",
+					  "urlTemplate": "https://tilburgsciencehub.com?q={search_term_string}"
+					},
+					"query-input": "required name=search_term_string"
+				  }
+				}
+	</script>
 
-</html>
- 	<!--snippet for google optimize (A/B tests) put back on when needed 
+		<!--snippet for google optimize (A/B tests) put back on when needed 
 	<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-N42NQJS"></script>-->
 
 	<!-- Global site tag (gtag.js) - Google Ads: 10904740148 -->
