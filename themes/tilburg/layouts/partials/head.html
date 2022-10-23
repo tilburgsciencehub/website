@@ -4,22 +4,48 @@
 	<!--- Add structured data, search engine--->
 
 	<script type="application/ld+json">
-				{
-				  "@context": "https://schema.org",
-				  "@type": "WebSite",
-				  "potentialAction": {
-					"@type": "SearchAction",
-					"target": {
-					  "@type": "EntryPoint",
-					  "urlTemplate": "https://tilburgsciencehub.com?q={search_term_string}"
-					},
-					"query-input": "required name=search_term_string"
-				  }
-				"@type": "Organization",
-				  "url": "https://www.tilburgsciencehub.com/",
-				  "logo": "https://tilburgsciencehub.com/img/logo.svg",}
+		{
+			"@context": "https://schema.org/",
+			"@type": "WebSite",
+			"name": "Tilburg Science Hub",
+			"url": "https://www.tilburgsciencehub.com",
+			"potentialAction": {
+			  "@type": "SearchAction",
+			  "target": "https://tilburgsciencehub.com/search?q={search_term_string}",
+			  "query-input": "required name=search_term_string"
+			}
+		  }
+		  {
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Tilburg Science Hub",
+			"alternateName": "tilburgsciencehub",
+			"url": "https://tilburgsciencehub.com",
+			"logo": "https://tilburgsciencehub.com/img/logo.svg",
+			"sameAs": [
+			  "https://www.linkedin.com/company/tilburgsciencehub",
+			  "https://github.com/tilburgsciencehub",
+			  "https://twitter.com/tilburgscience"
+			]
+		  }
 	</script>
-
+<!---
+	<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "Organization",
+		  "name": "Tilburg Science Hub",
+		  "alternateName": "tilburgsciencehub",
+		  "url": "https://tilburgsciencehub.com",
+		  "logo": "https://tilburgsciencehub.com/img/logo.svg",
+		  "sameAs": [
+			"https://www.linkedin.com/company/tilburgsciencehub",
+			"https://github.com/tilburgsciencehub",
+			"https://twitter.com/tilburgscience"
+		  ]
+		}
+		</script>
+-->
 		<!--snippet for google optimize (A/B tests) put back on when needed 
 	<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-N42NQJS"></script>-->
 
