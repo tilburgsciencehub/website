@@ -39,7 +39,7 @@ Say goodbye to "*but it works on my computer*", embrace the power of containeris
 ## Installing Docker
 
 ### Windows Users
-**Download docker for windows** from [Docker's official website](https://docs.docker.com/desktop/windows/install/). Detailed instructions are also presented in the prior link.
+Download docker from [Docker's official website](https://docs.docker.com/desktop/windows/install/), and follow the following steps to **install docker on windows**.
 {{% summary %}}
 Follow these steps:
 
@@ -132,7 +132,7 @@ docker run hello-world
 ```
 If everything is working correctly, you should get the following output:
 
-<img src="../img/verify-installation.png" width="600" alt="centered image"/>
+<img src="../img/verify-installation.png" width="600" alt="docker hello-world message"/>
 
 
 
