@@ -9,8 +9,8 @@ INSTRUCTIONS:
 - Provide at least one short link for your article. Combine an action verb and a noun like this: /verb/noun (ex. /install/python).
 - Remove these instructions before submitting. Your article should start with the three dashes --- and the following parameters.
 ---
-title: "Your Building Block Title"
-description: "A brief description of this article (50–160 characters)."
+title: "Your building block title (50-70 characters + most important keyword must be in the title atleast once)"
+description: "A brief description of this tutorial page (130–160 characters + most important keyword must be in the descripion atleast once)."
 keywords: "any, relevant, keywords, separated, by, commas, like, this"
 date: YYYY-MM-DD
 weight: #
