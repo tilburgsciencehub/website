@@ -9,7 +9,7 @@ INSTRUCTIONS:
 - If your tutorial is only one page long, remove the indexexclude: "true" line, create a folder named like your "type" below, and save your page as "index.md" inside that folder.
 - If you want to be credited, fill in the author and authorlink fields below. If you want to remain anonymous, delete those.
 - Provide at least one short link for each of your tutorial pages. Combine an action verb and a noun like this: /verb/noun (ex. /install/python).
-- Write the most important keyword of your page once bold in the text
+- Write the most important keyword of your page once bold in the text and if possible, the second most important keyword once in italic.
 - Remove these instructions before submitting. Your article should start with the three dashes --- and the following parameters.
 ---
 tutorialtitle: "Your Building Block Title (50-70 characters + most important keyword must be in the title atleast once)"
