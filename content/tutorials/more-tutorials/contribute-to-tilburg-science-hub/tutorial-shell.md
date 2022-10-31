@@ -12,16 +12,16 @@ INSTRUCTIONS:
 - Write the most important keyword of your page once bold in the text
 - Remove these instructions before submitting. Your article should start with the three dashes --- and the following parameters.
 ---
-tutorialtitle: "Your Tutorial Title (50-70 characters)" \
-type: "your-tutorial-title (spaces replaced with - and no capitals)" \
-title: "Your tutorial title (50-70 characters)" \
-description: "A brief description of this tutorial page (130–160 characters)." \
-keywords: "any, relevant, keywords, separated, by, commas, like, this" \
-date: YYYY-MM-DD \
-weight: # \
-indexexclude: "true" \
-author: "Your Name" \
-authorlink: "A link to your personal webpage" \
+tutorialtitle: "Your Building Block Title (50-70 characters + most important keyword must be in the title atleast once)"
+type: "your-building-block-title (spaces replaced with - and no capitals)"
+title: "Your building block title (50-70 characters)"
+description: "A brief description of this tutorial page (130–160 characters + most important keyword must be in the descripion atleast once)."
+keywords: "any, relevant, keywords, separated, by, commas, like, this" 
+date: YYYY-MM-DD 
+weight: # 
+indexexclude: "true" 
+author: "Your Name" 
+authorlink: "A link to your personal webpage" 
 aliases:
   - /verb/noun
   - /do/this
