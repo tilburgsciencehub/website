@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
- 	<!--snippet for google optimize (A/B tests) put back on when needed 
+	<!--- Add structured data, search engine--->
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org/",
+			"@type": "WebSite",
+			"name": "Tilburg Science Hub",
+			"url": "https://www.tilburgsciencehub.com",
+			"potentialAction": {
+			  "@type": "SearchAction",
+			  "target": "https://tilburgsciencehub.com/search?q={search_term_string}",
+			  "query-input": "required name=search_term_string"
+			}
+		  }
+	</script>
+	<script type="application/ld+json">
+		  {
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Tilburg Science Hub",
+			"alternateName": "tilburgsciencehub",
+			"url": "https://tilburgsciencehub.com",
+			"logo": "https://tilburgsciencehub.com/img/logo.svg",
+			"sameAs": [
+			  "https://www.linkedin.com/company/tilburgsciencehub",
+			  "https://github.com/tilburgsciencehub",
+			  "https://twitter.com/tilburgscience"
+			]
+		  }
+	</script>
+
+		<!--snippet for google optimize (A/B tests) put back on when needed 
 	<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-N42NQJS"></script>-->
 
-	
 	<!-- Global site tag (gtag.js) - Google Ads: 10904740148 -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10904740148"></script>
 	<script>
@@ -15,7 +45,7 @@
 	gtag('config', 'AW-10904740148');
 	</script> 
 
-
+	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
