@@ -5,7 +5,9 @@ keywords: "Docker, environment, Python, Jupyter notebook, Google cloud, cloud co
 weight: 2
 author: Diego Sanchez Perez
 draft: false
-aliases: /run/jupyter-on-cloud
+date: 2022-10-11T22:01:14+05:30
+aliases: 
+  - /run/jupyter-on-cloud
 
 
 ---
