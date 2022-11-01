@@ -20,9 +20,16 @@ In order to be able to follow this building block you will need that the project
 
 {{% /warning %}}
 
-### Step 1: Install and Set up docker in a Google cloud instance
+### Step 1: Install and Set up Docker in a Google cloud instance
 
-Unless you have specified it otherwise, at the time of creating your instance Google cloud will use an image of the Debian Linux distribution as base OS for the instance. Accordingly you will have to follow the instructions on how to install the docker engine for this specific Linux distribution. If you want to check a more detailed step-by-step version of these you can visit [the offical Docker documentation](https://docs.docker.com/engine/install/debian/), where you will also find instructions for installing Docker on other Linux distributions and operative systems through the command line. If on the contrary you prefer to cut it straight to the chase, you can simply execute one by one the code lines below on your instance's command line to get Docker installed.
+The first thing you need to consider in order to install Docker in your instance is which boot disk image is it using. You can check the detailed step-by-step installation instructions in [the offical Docker documentation](https://docs.docker.com/engine/install/debian/), where you will also find instructions for installing Docker on all supported Linux distributions and operative systems through the command line. If on the contrary you prefer to cut it straight to the chase, you can simply execute one by one the code lines below on your instance's command line to get Docker installed which cover the installation f Docker for Ubuntu and Debian. Note that the instructions for these two Linux distributions are essentially the same except for steps #5 and #6 which have been duplicated to cover both, you should pick the one that adjusts to your case.
+
+
+{{% tip %}}
+
+While Debian is the default boot disk image in Google cloud instances, we strongly recommend you to consider using a Ubuntu image if you are include a GPU to your instance. 
+
+{{% /tip %}}
 
 {{% codeblock %}}
 ```bash
@@ -42,12 +49,20 @@ $ sudo apt-get install \
 #4
 $ sudo mkdir -p /etc/apt/keyrings
 
-#5
+#5 - Debian
 $ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
-#6
+#5 - Ubuntu
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+#6 - Debian
 $ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+#6 - Ubuntu
+$ echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 #7
@@ -77,6 +92,41 @@ Code lines #1 to #8 from above deal with the installation of Docker itself, whil
 <img src = "../img/output_dock_install.png" width="750">
 <figcaption> If the installation was successful the final command line output should look similar to this!</figcaption>
 </p>
+
+#### Extra! - Install the NVIDIA container toolkit (for a instances including a GPU)
+
+If your instance includes a GPU, besides the regular [drivers](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#ubuntu-lts) you need to install the NVIDIA container toolkit for Docker. This toolkit is the key to allow Docker containers within your instance to function taking full advantage of all the benefits that Google cloud machines of the GPU family offer. To carry out the installation you just need to execute the step-by-step code in the cell below, though you can also check the detiled instructions in the [NVIDIA toolkit site](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).
+
+{{% codeblock %}}
+```bash
+
+#1
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+      && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+      && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
+            sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+            sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
+#2
+sudo apt-get update
+
+#3
+sudo apt-get install -y nvidia-docker2
+
+#4
+sudo systemctl restart docker
+
+#5
+sudo docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
+
+```
+{{% /codeblock %}}
+
+<p align = "center">
+<img src = "../img/nvidia-toolkit.png" width="750">
+<figcaption> If the installation was successful you should observe something looking like in your command line this after running the code in step #5. </figcaption>
+</p>
+
 
 ### Step 2: Build the environment's image from a Dockerfile
 
@@ -239,8 +289,9 @@ Now you should go to back to the Google cloud console and click the button "Set 
 
 1. Add a name of your choice for the rule (e.g. Jupyter_access_rule)
 2. Make sure that traffic direction is set on "Ingress"
-3. Introduce "0.0.0.0/0" in the field "Source IPv4 ranges"
-4. In the section "Protocols and ports" check "TCP" and then in the box below introduce the four-digit number that identifies the port where Jupyter is being executed in your instance.
+3. Indicate to which of your instances you want this rule to apply by selecting "Specified target tags" in the "Targets" drop down list, and then specify the names of these in the "Target tags" box below. Alternatively you can select the option "All instances in the network" in the drop down menu so the rule automatically applies to all your instances. 
+4. Introduce "0.0.0.0/0" in the field "Source IPv4 ranges"
+5. In the section "Protocols and ports" check "TCP" and then in the box below introduce the four-digit number that identifies the port where Jupyter is being executed in your instance.
 
 {{% warning %}}
 
