@@ -2,13 +2,14 @@
 
 <span id="scrollTo" class="d-none"><a href="#{{ .CurrentSection.Name | urlize }}"></a></span>
 
+
 <div class="container content">
   <br><br><br><br>
   <div class="row justify-content-center">
     <div class="col-lg-11 col-22">
       <h1 class="text-center">Tutorials</h1>
       <p class="text-center text-secondary my-5">
-        Tutorials help you understand how to combine individual Building Blocks into a final product. What that final product is, is your choice.
+        Tutorials simplify and structure valuable (yet sometimes complex) toolkits, ensuring a smooth learning experience when embracing open science skills.
       </p>
       <!-- <div class="position-relative mx-5 searchIconRight w-75 mx-auto">
         <input
@@ -24,7 +25,7 @@
 
   </div>
   <br><br><br><br>
-  <!-- all the building blocks -->
+  <!-- all the tutorials -->
   <div class="row justify-content-center buildingBlocksRow">
     <div class="col-20">
       {{ range where .Site.Pages "Section" .Section}}
@@ -35,6 +36,7 @@
         <div class="row">
           <div class="col-lg-8 col-24">
             <h4 class="heading m-0 mb-3 mr-3">{{ .Title }}</h4>
+
           </div>
           <div class="col-lg-16 col-24">
             <div class="row">
@@ -42,12 +44,23 @@
               {{- range .Pages -}}
               {{ if ne .Params.indexexclude "true" }}
               {{ if .Title }}
-              <div class="col-24 col-lg-12 mb-4" id="{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle | urlize }}{{ else }}{{ .Title | urlize }}{{ end }}">
-                <h5 class="heading font-weight-normal" style="font-size: 16px; height: -webkit-fit-content;">{{ .Title }}</h5>
 
-                {{ range .Pages }}
+              <div class="col-24 col-lg-12 mb-4" id="{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle | urlize }}{{ else }}{{ .Title | urlize }}{{ end }}">
+                <a href="{{ .Permalink }}{{.Params.indexPage}}">
+
+                <h5 class="heading font-weight-normal" style="font-size: 16px; height: -webkit-fit-content;color:#003365;">{{ .Title }}</h5>
+                </a>
+
+                <span class="d-block" style="color: #6081A2;">{{ .Params.description }}</span>
+
+                <a href="{{ .Permalink }}{{.Params.indexPage}}">
+                <button class="btn btn-primary mt-4 btn-sm">Start Tutorial</button>
+                </a>
+
+            <!--    {{ range .Pages }}
                 <a class="d-block" href="{{.Permalink}}">{{ .Title }}</a>
                 {{ end }}
+                -->
               </div>
               {{ end }}
               {{ end }}

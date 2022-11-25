@@ -1,7 +1,7 @@
 ---
 title: "Build Interactive Dashboards With R Shiny"
-description: "Learn how to build your own interactive R Shiny app."
-keywords: "shiny, app, data visualisation, dashboard, r, dataviz, plots, charts"
+description: "Learn how to build your own interactive R Shiny app with a good skeleton, layout, and placeholders. View our easy-to-follow tutorial with example code"
+keywords: "shiny, app, data visualisation, dashboard, r, dataviz, plots, charts, interactive"
 #weight: 101
 #date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -9,6 +9,8 @@ aliases:
   - /build/web-app
   - /build/shiny-app
   - /build/dashboard
+  - /building-blocks/share-your-results-and-project/data-reporting/shiny-apps/
+  - /building-blocks/share-your-results-and-project/publish-on-the-web/shiny-apps/
 ---
 
 ## What is a Shiny App?
@@ -272,7 +274,7 @@ server <- function(input, output) {
 
 ## An Example
 
-The [Shiny app](https://royklaassebos.shinyapps.io/dPrep_Demo_Google_Mobility/) below  visualizes Google’s COVID-19 Community Mobility Reports of the Netherlands. A step-by-step tutorial (incl. source code) can be found [here](https://dprep.hannesdatta.com/docs/building-blocks/deployment-reporting/).
+The [Shiny app](https://royklaassebos.shinyapps.io/dPrep_Demo_Google_Mobility/) below  visualizes Google’s COVID-19 Community Mobility Reports of the Netherlands. A step-by-step tutorial (incl. source code) can be found [here](https://tilburgsciencehub.com/examples/google-covid-shiny-app/).
 
 ![](../images/demo_app.png)
 

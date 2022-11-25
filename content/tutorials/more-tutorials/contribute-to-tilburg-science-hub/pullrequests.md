@@ -10,6 +10,9 @@ draft: false
 aliases:
 - /contribute/pullrequests
 - /contribute/mode-3
+- /tutorials/more-tutorials/contribute-to-tilburg-science-hub/mode-2/
+- /tutorials/more-tutorials/contribute-to-tilburg-science-hub/mode-3/
+
 
 ---
 
@@ -59,6 +62,28 @@ on GitHub, which creates a copy of this project in your own GitHub account).
 6. Maintainers and other contributors will review your pull request. When your pull request is approved, it will be merged into the upstream Tilburg Science Hub repo. If you receive feedback, make changes using your issue-specific branches of the forked repository and the pull requests will update automatically.
 
 7. Repeat as needed until all feedback has been addressed.
+
+#### Host our site local to see your changes
+
+If you want to make changes to, for example, our templates, or you want to see how your changes will look on the site you have to run our site locally using Hugo. 
+
+1. Have Hugo installed. If you do not yet have Brew and Hugo installed follow [the tutorial Get Hugo](/tutorials/open-education/hugo-website/get-hugo/)
+
+2. Fork the originating repository to your GitHub profile (press the "fork" button
+on GitHub, which creates a copy of this project in your own GitHub account).
+
+3. Within your version of the forked repository, move to the `tilburg-update` branch and create a **new branch for each significant change being made**.
+
+4. Navigate to the file(s) on your computer. This most easily done via GitHub desktop. 
+
+5. Once you are in the folder type ``cmd`` in the address bar and press enter 
+
+6. In the Command Prompt type ``hugo server`` to make the website run local. A local host link will be given (http://localhost:xxxx). 
+
+![open Command Prompt and type hugo server](../open-cmd-and-hugo-server.jpg)
+
+7. Past the localhost link in your browser and the website will be shown with the changes you made.
+
 
 
 ### If you want to write new content

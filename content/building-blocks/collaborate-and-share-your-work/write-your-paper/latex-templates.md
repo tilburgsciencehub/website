@@ -1,7 +1,7 @@
 ---
 title: "Get Started With Our LaTeX Templates"
-description: "Get started with your new LaTeX documents using our templates for thesis projects, academic papers, and more."
-keywords: "template, latex, download, start, document"
+description: "Download our Latex template for research papers, scientific papers, and more. Get started with the LaTeX template and start writing your thesis"
+keywords: "template, latex, download, start, document, research papers, scientific papers, thesis, example, lay-out"
 weight: 103
 #date: 2020-11-11T22:02:51+05:30
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: "Scrape Dynamic Websites"
-description: "Learn how to scrape data and information from dynamic websites."
-keywords: "scrape, webscraping, internet, beautifulsoup, website"
+description: "Learn how to web scrape from dynamic websites with python. Install Selenium and make it work for Chromedriver without websites blocking you"
+keywords: "scrape, webscraping, internet, beautifulsoup, website, Selenium, Chromedriver, chromedrive, dynamic website"
 #weight: 2
 #date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -109,4 +109,4 @@ See the building block on [task automation](http://tilburgsciencehub.com/buildin
 
 
 ## See Also
-* Looking for a simple solution that does the job without any bells and whistles? Try out the BeautifulSoup package and review [this](https://tilburgsciencehub.com/building-blocks/scrape/static-website) complementary building block.
+* Looking for a simple solution that does the job without any bells and whistles? Try out the BeautifulSoup package and follow our [web-scraping for statistic websites building block](/building-blocks/collect-data/webscraping-apis/scrape-static-websites/).

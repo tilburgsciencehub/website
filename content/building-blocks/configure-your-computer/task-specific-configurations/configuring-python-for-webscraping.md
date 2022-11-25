@@ -1,7 +1,7 @@
 ---
 title: "Configuring Python for Web Scraping"
-description: "Sometimes when we scrape the web, we need to automate our computer to open a web browser to gather information from each page."
-keywords: "web scraping, scraping, automation, browser, chromedriver"
+description: "Learn to web scrape using ChromeDriver, Selenium, and Webdriver manager for python. Web scraping using an automated browser by installing ChromeDrive"
+keywords: "web scraping, scraping, automation, browser, chromedriver, install chromedriver, selenium"
 weight: 2
 date: 2021-01-06T22:01:14+05:30
 draft: false
@@ -125,7 +125,7 @@ Sometimes, `brew doctor` returns some warnings. While it's advisable to fix them
 *   Install `chromedriver` via Homebrew:
 
 ```
-brew cask install chromedriver
+brew install chromedriver --cask
 ```
 
 *   Verify your install, by entering the following in your terminal. The expected output is `ChromeDriver XX`

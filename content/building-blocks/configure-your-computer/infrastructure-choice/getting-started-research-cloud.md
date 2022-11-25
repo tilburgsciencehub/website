@@ -27,7 +27,7 @@ Research Cloud is a highly customizable cloud solution for conducting your resea
 
     - Research Cloud is also beneficial if you just want to work on a project on your own, by the way…
 
-At present, SURF offers year-long “start-up” grants, which can then be renewed based on usage and feedback. For longer-term projects, they also offer the option to apply to [NWO grants](https://www.nwo.nl/en/calls/computing-time-national-computer-facilities-2021) that focus on computing resources.
+At present, SURF offers year-long “start-up” grants, which can then be renewed based on usage and feedback. For longer-term projects, they also offer the option to apply to [NWO grants](https://www.nwo.nl/en/news/call-computing-time-national-computer-facilities-2021-open-submission) that focus on computing resources.
 
 ## How to get started
 
@@ -55,7 +55,7 @@ Check that you’re affiliated with a Dutch research institution to set up the w
 ## Advanced use cases
 
 ### Adding collaborators
-To give students/collaborators access to a VM you have already created, you can [invite into your CO](https://wiki.surfnet.nl/display/SRAM/Invite+CO+admins+and+members) (collaborative organization) in [SRAM](https://sbs.sram.surf.nl/):
+To give students/collaborators access to a VM you have already created, you can [invite into your CO](https://wiki.surfnet.nl/display/SRAM/Invite+admins+and+members+to+a+collaboration) (collaborative organization) in [SRAM](https://sbs.sram.surf.nl/):
 
 Once they become a member of your CO they can:
 

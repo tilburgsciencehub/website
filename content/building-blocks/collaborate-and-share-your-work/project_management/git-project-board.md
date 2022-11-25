@@ -1,7 +1,7 @@
 ---
 title: "Manage your Projects using the GitHub Project Board"
-description: "Projects boards on GitHub help you organize and prioritize your work using the Scrum framework for project management."
-keywords: "git, github, project board, sprint, planning"
+description: "GitHub project boards help you organize and prioritize your work using the Scrum framework for project management."
+keywords: "git, github, project board, sprint, planning, scrum framework"
 weight: 1
 #date: 2020-11-11T22:01:14+05:30
 draft: false
@@ -12,6 +12,7 @@ aliases:
   - /use/scrumboard
   - /Github/projects
   - /github/projects
+  - /building-blocks/collaborate-and-share-your-work/use-github/git-project-board/
 ---
 
 ## Overview

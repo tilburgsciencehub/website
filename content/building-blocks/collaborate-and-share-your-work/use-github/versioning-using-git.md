@@ -10,6 +10,7 @@ aliases:
   - /learn/versioning
   - /learn/git
   - /use/git
+  - /tutorials/building-blocks/collaborate-and-share-your-work/use-github/versioning-using-git
 ---
 
 ## Overview

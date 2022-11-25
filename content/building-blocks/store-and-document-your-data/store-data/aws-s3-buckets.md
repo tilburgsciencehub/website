@@ -1,7 +1,7 @@
 ---
 title: "Use AWS S3 Buckets"
-description: "This block explains how to list contents, download content from and upload content to a AWS S3 bucket."
-keywords: "aws, s3, boto3, python, bucket"
+description: "This block explains how to list contents, download content from and upload content to an AWS S3 bucket with boto3."
+keywords: "aws, s3, boto3, python, bucket, list contents, upload"
 #date: 2021-02-17
 #weight: 4
 author: "Nazli Alagöz"
@@ -33,7 +33,7 @@ Learn more about AWS credentials [here](https://docs.aws.amazon.com/general/late
 
 ## Code
 
-We show you how to very simply upload and download files to a S3 bucket with [boto3]().
+We show you how to very simply upload and download files to a S3 bucket with boto3.
 
 First off, install boto3 - the AWS SDK for Python - via [pip](/building-blocks/configure-your-computer/statistics-and-computation/python-packages/):
 

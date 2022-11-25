@@ -1,7 +1,7 @@
 ---
 title: "Set up Pandoc"
-description: "Pandoc is an extremely useful 'swiss army knife' for converting between different types of markup languages from the command line."
-keywords: "Pandoc, install, software, configuration"
+description: "Learn to set up and install Pandoc on windows, Linux, and Mac. Follow the tutorial to add Pandoc to path and to check the Pandoc version"
+keywords: "Pandoc, install, software, configuration, path, windows, pandoc version"
 #date: 2020-11-11T22:02:51+05:30
 draft: false
 #weight: 8

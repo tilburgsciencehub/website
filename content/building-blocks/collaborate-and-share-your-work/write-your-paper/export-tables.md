@@ -8,6 +8,7 @@ draft: false
 aliases:
   - /export/tables
   - /use/stargazer
+  - /building-blocks/share-your-results-and-project/write-your-paper/export-tables/
 ---
 
 ## Overview

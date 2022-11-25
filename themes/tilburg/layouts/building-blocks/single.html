@@ -39,6 +39,10 @@
 						<a href="{{ .Site.Params.repo_url }}/edit/master/content/{{ .File }}" class="btn btn-secondary">Edit this page</a>
 					</div> -->
 				</div>
+
+				{{ partial "announcement.html" . }}
+
+
 				{{ if eq (len .Content) 0 }}
 				<script>window.location = "/{{.Section}}"</script>
 				{{ else }}
@@ -62,13 +66,14 @@
             {{ end }}
           </div> -->
           <div class="d-none d-lg-block">
-            <a href="{{ .Site.Params.repo_url }}/edit/master/content/{{ .File }}" class="btn btn-secondary">Edit this page</a>
+			<!--<a href="{{ .Site.Params.repo_url }}/edit/master/content/{{ .File }}" class="btn btn-secondary">Edit this page</a>-->
+            <a href="https://github.com/tilburgsciencehub/website/issues/new/?template=edit-content-request.yml&title=Suggest+change+to:+{{ .File }}&labels=edit+content+request" target="_blank" class="btn btn-secondary">Suggest changes to this page</a>
           </div>
         </div>
 
 				{{ end }}
 
-				{{ partial "pagination.html" . }}
+				<!--{{ partial "pagination.html" . }}-->
 			</div>
 
 			{{ partial "relatedPosts.html" . }}

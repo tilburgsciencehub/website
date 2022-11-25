@@ -26,9 +26,8 @@
 
 
 <!-- content -->
-
-
 <div class="huge-background-circle"></div>
+
 <!-- Cover -->
 <div class="container my-5 py-5 cover">
   <div class="row mt-4 justify-content-center">
@@ -40,17 +39,23 @@
         <span>Conduct your research differently.</span>-->
       </h1>
 
-
-
       <p class="text-secondary mx-4 mx-lg-0 mt-4 mb-4 mr-lg-5 pr-lg-5">
         We bring the <a class = "header" href = "/tour">value of open science</a> to Tilburg,
-				and valuable resources of Tilburg to the world.
-<!--
-				Tilburg Science Hub gives you the tools and guidance to be in control
-        and save time in your empirical research projects.
-				-->
+				and valuable resources of Tilburg to the world.<br><br>
+        <b>New to Tilburg Sience Hub?</b>
       </p>
 
+      <!-- buttons take the tour and start tutorial-->
+      <div class=" d-lg-block">
+        <a href="/tour">
+        <button class="btn btn-primary" style="margin: 5px;">Take the tour</button>
+        </a>
+        <br>
+        <a href="/tutorials">
+        <button class="btn btn-primary" style="margin: 5px;">Start with one of our tutorials</button>
+        </a>   
+      </div>
+    </div>
 
 			<!--<div class="form-inline text-center float-center d-none d-block d-xl-none">
 				<br>space<br></div>
@@ -59,38 +64,46 @@
 
 
 <!-- for bigger screens: search -->
-
+<!--
 <div class="d-none d-lg-block">
 	<form class="form-inline text-center float-center" method="GET" action="/search">
 		<div style="width: 500px" class="form-control headerSearch2 border-0">
-			<input class="resetInput" type="search" name="q" placeholder="Have a question? Just ask it here!" aria-label="Search" required autocomplete="off">
+			<input class="resetInput" type="search" name="q" placeholder="Search for topics, tutorials, tips & tools!" aria-label="Search" required autocomplete="off">
 			<button style="background-color: transparent; padding: 0;" type="submit"><img src="/img/search.svg" /></button>
 		</div>
 
 	</form>
+  -->
+
 	<!-- search results -->
+  <!--
 	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder2">
 	</div>
 
 </div>
-
+  -->
 
 <!-- for smaller screens: search -->
-
+ <!--
 <div class="d-lg-none">
 
 	<form class="text-center float-center" method="GET" action="/search">
 		<div class="form-control headerSearch2 border-0">
-			<input class="resetInput" type="search" name="q" placeholder="Have a question? Just ask it here!" aria-label="Search" required autocomplete="off">
+			<input class="resetInput" type="search" name="q" placeholder="Search for topics, tutorials, tips & tools!" aria-label="Search" required autocomplete="off">
 			<button style="background-color: transparent; padding: 0;" type="submit"><img src="/img/search.svg" /></button>
 		</div>
 
 	</form>
+    -->
+
 	<!-- search results -->
+   <!--
 	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder2">
 	</div>
+   -->
 
-</div>
+
+
 
 
 
@@ -103,31 +116,23 @@
 
       </p>
 -->
-
+<!--
 			<a href="/tour">
-        <button class="btn btn btn-sm mt-2">Take a tour - I'm a Student</button>
-      </a>
-      <a href="/researcher-tour">
-        <button class="btn btn btn-sm mt-2">I'm a Researcher</button>
+        <button class="btn  btn-sm mt-2">Take a tour</button>
       </a>
 			<a href="https://github.com/tilburgsciencehub/website">
-        <button class="btn btn btn-sm mt-2">Visit us on GitHub</button>
+        <button class="btn btn-sm mt-2">Visit us on GitHub</button>
       </a>
 
-    </div>
+    </div> --->
 
+<!-- end of search on homepage feature -->
 
-		<div class="col-lg-6 mt-3 col-16 order-1 order-lg-2 text-center">
-      <img src="/img/hero.svg" class="hero-image mx-auto mx-lg-none" alt="" />
-    </div>
-
+<div class="col-lg-6 mt-3 col-16 order-1 order-lg-2 text-center">
+  <img src="/img/hero.svg" class="hero-image mx-auto mx-lg-none" >
+</div>
 
   </div>
-
-
-
-
-
 </div>
 
 <!--
@@ -195,10 +200,11 @@
   <div class="row justify-content-center mx-0 buildingBlocksRow">
 		<!-- 1 -->
     <div class="col-lg-10 col-xl-7 col-22 mb-3">
-      <div class="p-5 rounded bg-white">
+      <div class="h-100 p-5 rounded bg-white">
         <h5 class="text-center heading px-3" style="font-weight: 100 !important">
-          Learn science the new way, with our online tutorials
+          10+ tutorials on research and open science
         </h5>
+        <!--
         <ul class="my-4 list-unstyled">
           <li class="pb-2">
             <span class="icon link text-primary d-inline-block mr-2"></span>
@@ -213,23 +219,28 @@
             <a href="/share/data">Document and share your data and workflow using GitHub</a>
           </li>
         </ul>
-        <div class="text-center">
+        -->
+        <div class="text-center mt-4 mb-0">
           <a href="/tutorials/">
-            <button class="btn btn-primary">View more</button>
+            <button class="btn tertiary " >Start with one of our tutorials</button>
           </a>
         </div>
       </div>
     </div>
 
 		<!-- 2 -->
-    <div class="col-lg-10 col-xl-7 col-22 mb-3">
-      <div class="p-5 rounded bg-white">
+    <div class="col-lg-12 col-xl-7 col-22 mb-3">
+      <div class="h-100 p-5 rounded bg-white">
         <h5 class="text-center heading px-3" style="font-weight: 100 !important">
           Use our code snippets in your projects right away
         </h5>
-        <ul class="my-4 list-unstyled">
 
+<!--
+        <ul class="my-4 list-unstyled"> 
+-->
+          
 					<!-- collect all relevant pages in new array -->
+<!--
 					{{ $s := slice }}
 
 					{{- range where .Site.Pages "Section" "building-blocks" -}} {{ if eq .Params.isParent "true" }} {{- range .Pages -}}
@@ -241,9 +252,9 @@
 										{{ end }}
 									{{ end }}
 					{{- end -}} {{ end }} {{- end -}}
-
+-->
 					<!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
-
+<!--
 					{{ range $s.ByPublishDate.Reverse | first 10 | shuffle | first 3 }}
 
 					<li class="pb-2">
@@ -251,8 +262,8 @@
 						<a href="{{ .Permalink }}">{{ .Title }}</a>
 					</li>
 					{{ end }}
-
-<!--
+-->
+          <!--
 					<li class="pb-2">
             <span class="icon link text-primary d-inline-block mr-2"></span>
             <a href="/build/web-app">Build interactive web dashboards with R Shiny</a>
@@ -265,11 +276,13 @@
             <span class="icon link text-primary d-inline-block mr-2"></span>
             <a href="/get/doi">Make your code citable by assigning a DOI to your GitHub repository</a>
           </li>
-					-->
+          -->
+<!--
         </ul>
-        <div class="text-center">
+-->
+        <div class="text-center mt-4 mb-0">
           <a href="/building-blocks/">
-            <button class="btn btn-primary">View more</button>
+            <button class="btn tertiary">Use a code snippet</button>
           </a>
         </div>
       </div>
@@ -277,35 +290,39 @@
 
 		<!-- 3 -->
     <div class="col-lg-10 col-xl-7 col-22 mb-3">
-      <div class="p-5 rounded bg-white">
-        <h5 class="text-center heading px-3" style="font-weight: 100 !important">
-          Kickstart your project with our curated examples
-        </h5>
-        <ul class="my-4 list-unstyled">
+      <div class="h-100 p-4 rounded bg-white">
+      <h5 class="text-center heading mt-3" style="font-weight: 100 !important;">
+        See our latest content
+      </h5>
+        <ul class="my-2 list-unstyled" >
 
 										{{ $s := slice }}
 
 										<!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
-										{{ range where .Site.Pages.ByPublishDate.Reverse "Section" "examples" }}
-										{{ if ne .Title "Examples" }}
+
+										{{ range where .Site.Pages.ByPublishDate.Reverse "Section" "in" "[building-blocks, tutorials]"  }}
 
 
 											{{ $s = $s | append . }}
 
-										{{ end }}
-										{{ end }}
+                    {{ end }}
 
 										<!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
 
 
-										{{ range $s.ByPublishDate.Reverse | first 10 | shuffle | first 3 }}
+										{{ range $s.ByPublishDate.Reverse | first 2 }}
 
-										<li class="pb-2">
+										<li class="pb-3">
 											<span class="icon link text-primary d-inline-block mr-2"></span>
-											<a href="{{ .Permalink }}">{{ .Title }}</a>
+											<a href="{{ .Permalink }}">{{ .Title }}<sup style="color: #ffb222;"> new </sup></a>
 										</li>
 										{{ end }}
-
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 					<!--
           <li class="pb-2">
             <span class="icon link text-primary d-inline-block mr-2"></span>
@@ -320,29 +337,24 @@
             <a href="/try/shiny-app">An interactive dashboard with R Shiny of Google's COVID-19 data</a>
           </li>
 					-->
+<!--
         </ul>
-        <div class="text-center">
-          <a href="/examples/">
-            <button class="btn btn-primary">View more</button>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+-->
+
+
 
 <!-- 1 on 1 features -->
 
 
 <!-- spacer -->
-<div style="height: 180px"></div>
+<div style="height: 30px"></div>
 <!-- /spacer -->
 <div class="container my-5 pt-5 px-4 px-lg-0">
   <!-- - 1 - -->
   <div class="row py-5">
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 text-center">
-      <img src="/img/catch-mistakes-1.svg" style="max-width: 200px">
+      <img src="/img/catch-mistakes-1.svg" style="max-width: 200px" loading="lazy">
       <!-- <div class="bg-white rounded p-4 boxShadow pseudobox border"></div> -->
     </div>
     <div class="col-lg-2 col-0"></div>
@@ -375,14 +387,14 @@
     <div class="col-lg-2 col-0 order-lg-2"></div>
     <div class="col-lg-8 col-24 order-1 order-lg-3 text-center">
       <!-- <div class="bg-white rounded p-4 boxShadow pseudobox border"></div> -->
-      <img src="/img/collaboration-3.svg" style="max-width: 200px;">
+      <img src="/img/collaboration-3.svg" style="max-width: 200px;" loading="lazy">
     </div>
   </div>
   <!-- 3 -->
   <div class="row py-5">
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 text-center">
-      <img src="/img/automation-2.svg" style="max-width: 300px;">
+      <img src="/img/automation-2.svg" style="max-width: 300px;" loading="lazy">
       <!-- <div class="bg-white rounded p-4 boxShadow pseudobox border"></div> -->
     </div>
     <div class="col-lg-2 col-0"></div>
@@ -416,28 +428,30 @@
     <div class="col-lg-2 col-0 order-lg-2"></div>
     <div class="col-lg-8 col-24 px-0 order-1 order-lg-3 text-center">
       <!-- <div class="bg-white rounded p-4 boxShadow pseudobox border"></div> -->
-      <img src="/img/audience-4.svg" style="max-width: 200px;">
+      <img src="/img/audience-4.svg" style="max-width: 200px;" loading="lazy">
     </div>
   </div>
   <!-- 5 -->
-  <!-- <div class="row py-5">
+  <div class="row py-5">
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 text-center">
-      <img src="/img/inspiration-5.svg" style="max-width: 200px;">
+      <img src="/img/community-members.svg" style="max-width: 350px" loading="lazy"> 
     </div>
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 d-flex align-items-center">
-      <div class="mt-5 mt-lg-0 mx-2 mx-lg-0">
+      <div class="mt-5 mt-lg-0">
         <h2>
-          A source of <br /><span class="text-primary heading">inspiration.</span>
+          Over 4,000 monthly visitors <br /><span class="text-primary heading">Join the community.</span>
         </h2>
 
         <p class="text-secondary mt-4">
-          Check out our examples from real-life research projects to help you get started with your own one.
+          Visit our <a href="https://github.com/tilburgsciencehub">GitHub</a> or <a href="https://www.linkedin.com/company/71039687/">LinkedIn</a> page to join the Tilburg Science Hub community,
+          or visit our <a href="/contributors">contributors' Hall of Fame!</a>
+          Want to change something or add new content? Learn <a href="/contribute">how to contribute</a> now!
         </p>
       </div>
     </div>
-  </div> -->
+  </div>
 </div>
 
 
@@ -449,10 +463,14 @@
       <h4 class="text-primary heading">Who we are</h4>
       <br />
       <p class="mt-2 mb-4 h3">
-        Tilburg Science Hub is an open-source project run by researchers from
-        Tilburg University, in The Netherlands. We seek to enable students,
-        researchers, and data science teams to set up, manage, and collaborate
-        more efficiently on empirical research projects.
+				Learn to work more efficiently on <a href="/tour">empirical research projects</a>,
+				using tools like R, Python, and Stata –
+				flavored with open science made in Tilburg.
+				Initially launched by researchers from
+				<a href="https://tilburguniversity.edu">Tilburg University</a>,
+				Tilburg Science Hub is developed on <a href="https://github.com/tilburgsciencehub/website">GitHub</a> and
+				welcomes <a href="/contribute">open source contributions</a>.
+
       </p>
       <br />
       <a href="/about">
@@ -471,7 +489,7 @@
   body::before {
     content: "";
     position: absolute;
-    top: 1200px;
+    top: 960px;
     width: 100%;
     height: 2400px;
     z-index: -1;

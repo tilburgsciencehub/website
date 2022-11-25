@@ -32,7 +32,14 @@ Every time you visit a website meta-data associated with your HTTP request is se
 
 {{% codeblock %}}
 ```Python
-headers = # a dictionary with header meta-data (user-agent, browser, etc.)
+
+headers = {'User-agent': 'Mozilla/5.0'}
+
+# you can also replace the user agent with the exact
+# user agent you are using on your computer.
+# just visit https://www.whatismybrowser.com/detect/what-is-my-user-agent/
+# to find out what your user agent is.
+
 requests.get(url, headers=headers)
 ```
 {{% /codeblock %}}
@@ -40,8 +47,10 @@ requests.get(url, headers=headers)
 The most common headers types are:
 * User-agent =  a string to tell the server what kind of device and browser you are accessing the page with. The Scrapy user agent [package](https://pypi.org/project/scrapy-user-agents/), for example, randomly rotates between a list of [user agents](https://developers.whatismybrowser.com/useragents/explore/software_name/googlebot/).
 * Accept-Language = preferred language (e.g., Russian may be more suspicious for a Dutch client's IP location).
-* Referer = the previous web page’s address before the request is sent to the web server (e.g., a random origin website seem more plausible)
+* Referrer = the previous web page’s address before the request is sent to the web server (e.g., a random origin website seem more plausible)
 
 
 ### Proxies
 The idea is that you use an IP address that is not your own. Hence, if get blocked, you switch to another IP address. Either you can use a package like [`scrapy-proxy-pool`](https://github.com/rejoiceinhope/scrapy-proxy-pool) or you use a Virtual Private Network (VPN) to alternate between IP addresses.
+
+There are also many for-pay services, such as https://scraperapi.com, and https://zyte.com.

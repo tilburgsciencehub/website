@@ -233,10 +233,8 @@ docker run -it --rm  -v "PATH on local computer":"container path" myname/myimage
 
 2. [R script in Docker tutorial](https://www.r-bloggers.com/2019/02/running-your-r-script-in-docker/)
 
-3. Easy interactive tutorial on combining [Docker and Makefiles](https://www.katacoda.com/ben_hall/scenarios/1)
+3. Tutorial on [Docker for Data Science](https://www.robertmylesmcdonnell.com/content/posts/docker/)
 
-4. Tutorial on [Docker for Data Science](https://www.robertmylesmcdonnell.com/content/posts/docker/)
+4. Information on [containerisation](https://www.citrix.com/en-in/solutions/app-delivery-and-security/what-is-containerization.html?gclid=Cj0KCQiAu62QBhC7ARIsALXijXQK8FhkYuNqzmXxWwMzjp_04rp7iK-d6i0xXdSdS04_rzEffJiQUkEaApNGEALw_wcB&gclsrc=aw.ds)
 
-5. Information on [containerisation](https://www.citrix.com/en-in/solutions/app-delivery-and-security/what-is-containerization.html?gclid=Cj0KCQiAu62QBhC7ARIsALXijXQK8FhkYuNqzmXxWwMzjp_04rp7iK-d6i0xXdSdS04_rzEffJiQUkEaApNGEALw_wcB&gclsrc=aw.ds)
-
-6. [Containerizing a Multi-Container JavaScript Application](https://docker-handbook.farhan.dev/containerizing-a-multi-container-javascript-application)
+5. [Containerizing a Multi-Container JavaScript Application](https://docker-handbook.farhan.dev/containerizing-a-multi-container-javascript-application)

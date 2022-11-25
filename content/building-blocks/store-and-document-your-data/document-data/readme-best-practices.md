@@ -1,13 +1,14 @@
 ---
 title: "README Best Practices"
-description: "Learn how to write a convincing and effective README file."
-keywords: "git, commands, important, essential, cheat"
+description: "Learn how to write a convincing and effective README file. Get to know the best practices with our examples and templates for GitHub README.MD"
+keywords: "git, commands, important, essential, cheat, template, readme, examples"
 #date: 2021-02-08
 draft: false
 #weight: 4
 aliases:
   - /write/readme
   - /learn/readme-best-practices
+  - /building-blocks/share-your-results-and-project/use-github/readme-best-practices/
 ---
 
 ## Overview
