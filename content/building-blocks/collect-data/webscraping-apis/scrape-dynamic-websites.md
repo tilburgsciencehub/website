@@ -54,12 +54,13 @@ Running the code snippet below starts a new Google Chrome browser (`driver`) and
 {{% codeblock %}}
 ```Python
 import selenium.webdriver
+from selenium.webdriver.common.by import By
 
 driver = selenium.webdriver.Chrome()
 driver.get("https://www.google.com")
 
 # retrieve first H1 header
-driver.find_element_by_tag_name("h1").text
+driver.find_element(By.TAG_NAME, "h1").text
 ```
 {{% /codeblock %}}
 
@@ -70,13 +71,13 @@ Alternatively, you can specify which elements to extract through attributes, cla
 {{% codeblock %}}
 ```Python
 # HTML classes
-driver.find_element_by_class_name("<CLASS_NAME>").text  
+driver.find_element(By.CLASS_NAME, "<CLASS_NAME>").text  
 
 # HTML identifiers ()
-driver.find_element_by_id("<ID_NAME>").text
+driver.find_element(By.ID,"<ID_NAME>").text
 
 # XPath
-driver.find_element_by_xpath("<XPATH>").text
+driver.find_element(By.XPATH, "<XPATH>").text
 
 ```
 {{% /codeblock %}}
@@ -96,7 +97,7 @@ One of the distinguishable features of Selenium is the ability to mimic user int
 driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
 
 # click on element (e.g., button)
-element_to_be_clicked = driver.find_element_by_class_name("<CLASS_NAME>")
+element_to_be_clicked = find_element(By.CLASS_NAME, "<CLASS_NAME>").text  
 element_to_be_clicked.click()
 ```
 {{% /codeblock %}}
