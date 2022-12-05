@@ -52,7 +52,14 @@
 		ga('send', 'pageview', {
 		   'dimension1': '{{ getenv "BRANCH" }}'
 		});
-	</script>
+		
+		gtag('config', 'UA-23035208-2', {
+		'custom_map': {'dimension1': 'branch'}
+		});
+
+		// Sends the custom dimension to Google Analytics.
+		gtag('event', 'any_event_name', {'branch': '{{ getenv "BRANCH" }}'});
+		</script>
 
 
 	<!-- Global site tag (gtag.js) - GA4 format-->
