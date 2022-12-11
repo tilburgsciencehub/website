@@ -12,7 +12,7 @@ aliases:
 
 ## Installing Stata
 
-Stata is a proprietary statistical software frequently used by scientific users.
+**Stata** is a proprietary statistical software frequently used by scientific users.
 First check with your local IT support whether your institution has Stata licenses available.
 
 If not, you can purchase a copy on [Stata's website](https://www.stata.com/) and follow the [installation guide](https://www.stata.com/install-guide/).
@@ -78,7 +78,7 @@ For you to be able to use Stata from the command line, you have to add Stata to 
 
 ## Verifying the installation
 
-To verify that Stata has been correctly installed and configured via your PATH settings,
+To verify that *Stata* has been correctly installed and configured via your PATH settings,
 follow the instructions below.
 
 ### Windows users
