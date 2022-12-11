@@ -1,6 +1,6 @@
 ---
 title: "Extract Data From APIs"
-description: "Learn how to collect data from APIs."
+description: "Learn how to extract data from APIs."
 keywords: "api, application programming interface"
 #weight: 4
 #date: 2020-11-11T22:02:51+05:30
@@ -10,8 +10,8 @@ aliases:
   - /collect-data/extract-data-api
 ---
 
-## Overview
-An Application Programming Interface (API) is a version of a website intended for computers, rather than humans, to talk to one another. APIs are everywhere, and most are used to *provide data* (e.g., retrieve a user name and demographics), *functions* (e.g., start playing music from Spotify, turn on your lamps in your "smart home"), or
+## Extracting Data From APIs
+An Application Programming Interface (*API*) is a version of a website intended for computers, rather than humans, to talk to one another. APIs are everywhere, and most are used to *provide data* (e.g., retrieve a user name and demographics), *functions* (e.g., start playing music from Spotify, turn on your lamps in your "smart home"), or
 *algorithms* (e.g., submit an image, retrieve a written text for what's on the image).
 
 APIs work very similar to websites. At the core, you obtain code that computers can easily understand to process the content of a website, instead of obtaining the source code of a rendered website. APIs provide you with simpler and more scalable ways to obtain data, so you really have to understand how they work.
