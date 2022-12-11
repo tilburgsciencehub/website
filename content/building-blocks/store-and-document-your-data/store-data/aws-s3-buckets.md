@@ -10,7 +10,7 @@ aliases:
   - "/use/aws-s3"
 ---
 
-## Overview <!-- Goal of the Building Block -->
+## AWS S3 Buckets <!-- Goal of the Building Block -->
 
 [Amazon Simple Storage Service](https://aws.amazon.com/s3/) (AWS S3) is an industry-leader object storage service that allows you to store and retrieve any kind of files fast, securely and anywhere in the world - basically Dropbox on steroids. It can be used for a range of use cases, from websites to backup and archives. It can also be particularly useful for research projects - storing a huge amount of raw data, for instance.
 
@@ -19,7 +19,7 @@ If you are using AWS S3 to store data necessary for your research and want to in
 {{% tip %}}
 **Some terminology**
 
-You will often read about AWS S3 "buckets". What are they?
+You will often read about **AWS S3 buckets**. What are they?
 Put simply, a bucket is a container for objects (files) stored in Amazon S3. Every object must be contained in a bucket. A single user can have as many buckets as they want. Inside a bucket, you can create as many folders you want.
 {{% /tip %}}
 
