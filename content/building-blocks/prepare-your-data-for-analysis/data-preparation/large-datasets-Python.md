@@ -2,13 +2,13 @@
 title: "Handle Large Datasets In Python"
 description: "Dask is a Python library for parallel computing, which is able to perform computations on larger-than-memory datasets."
 keywords: "Python, pandas, Dask, parallel computing, partitions, data preparation, big data, large datasets, memory, RAM"
-date: 2022-10-10
+date: 2022-10-10T22:01:14+05:30
 draft: false
 weight: 1
 author: "Paulina Ambroziak"
 authorlink: "https://www.linkedin.com/in/ambroziakp/"
 aliases:
-  - /import/large-datsets-Python
+  - /import/large-datsets-python
 ---
 
 ## Memory Errors when working with large datasets
