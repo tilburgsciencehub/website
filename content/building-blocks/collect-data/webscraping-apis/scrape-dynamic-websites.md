@@ -109,4 +109,4 @@ See the building block on [task automation](http://tilburgsciencehub.com/buildin
 
 
 ## See Also
-* Looking for a simple solution that does the job without any bells and whistles? Try out the BeautifulSoup package and follow our [web-scraping for statistic websites building block](/building-blocks/collect-data/webscraping-apis/scrape-static-websites/).
+* Looking for a simple solution that does the job without any bells and whistles? Try out the BeautifulSoup package and follow our [web-scraping for static websites building block](/building-blocks/collect-data/webscraping-apis/scrape-static-websites/).
