@@ -51,7 +51,7 @@ and reviews of proposed changes are all welcome.
 * By contributing you agree to abide by the [Code of Conduct](https://tilburgsciencehub.com/tutorials/more-tutorials/contribute-to-tilburg-science-hub/code-of-conduct/).
 
 ## Any questions?
-Feel free to reach out to us at `tsh [at] tilburguniversity [dot] edu`.
+Feel free to reach out to us at [tsh@tilburguniversity.edu](mailto:tsh@tilburguniversity.edu).
 
 ## License
 
