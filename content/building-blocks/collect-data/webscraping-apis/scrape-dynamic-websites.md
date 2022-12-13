@@ -97,7 +97,7 @@ One of the distinguishable features of Selenium is the ability to mimic user int
 driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
 
 # click on element (e.g., button)
-element_to_be_clicked = find_element(By.CLASS_NAME, "<CLASS_NAME>").text  
+element_to_be_clicked = driver.find_element(By.CLASS_NAME, "<CLASS_NAME>").text  
 element_to_be_clicked.click()
 ```
 {{% /codeblock %}}
