@@ -42,38 +42,42 @@
 			<div class="menu d-none d-xl-flex align-items-center justify-content-center">
 				<ul class="list-unstyled font-weight-normal">
 
-				<!--	<li><a class="headerLink" href="/tour">Tour</a></li>-->
+					<!--	<li><a class="headerLink" href="/tour">Tour</a></li>-->
 
-					<li><a href="/tour" class="headerLink">Tour</a></li>
+					<li><a style="position: relative;" href="#0" class="headerLink takeTour"><span class="pulse"></span>
+							Tour</a></li>
 
 					<li>
-						<a href="/tutorials" class="headerLink menuArrow">Tutorials</a>
+						<a onBoardTooltip="Our Tutorials bundle, simplify and structure valuable information to ensure a smooth learning experience"
+							weight="1" href="/tutorials" class="headerLink menuArrow">Tutorials</a>
 						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-5 px-3">
 
 							<div class="row">
 
 								{{- range where .Site.Home.Sections "Section" "tutorials"}}
 
-								    	{{ range .Pages }}
-								    	<div class="col-6 mb-4 px-3">
-								    		<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span>
-												{{ range .Pages }}
-													{{ if eq .Params.indexexclude "true" }}
-													<!--<a class="d-block mx-0" href="{{.Permalink}}">DONOTSHOW{{.Title}}</a>-->
-													{{ else }}
-													<a class="d-block mx-0" href="{{.Permalink}}{{ if .Params.indexPage }}{{ .Params.indexPage }}{{end}}">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
-													{{ end }}
-								    		{{ end }}
-								    		</div>
-								    	{{ end }}
+								{{ range .Pages }}
+								<div class="col-6 mb-4 px-3">
+									<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span>
+									{{ range .Pages }}
+									{{ if eq .Params.indexexclude "true" }}
+									<!--<a class="d-block mx-0" href="{{.Permalink}}">DONOTSHOW{{.Title}}</a>-->
+									{{ else }}
+									<a class="d-block mx-0"
+										href="{{.Permalink}}{{ if .Params.indexPage }}{{ .Params.indexPage }}{{end}}">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
+									{{ end }}
+									{{ end }}
+								</div>
+								{{ end }}
 
-								  {{- end}}
+								{{- end}}
 
 							</div>
 						</div>
 					</li>
 					<li>
-						<a href="/building-blocks" class="headerLink menuArrow">Building Blocks</a>
+						<a onBoardTooltip="Building blocks are the DNA of our platform. They offer specific information on all kinds of topics including code snippets and useful cheat sheets."
+							weight="1" href="/building-blocks" class="headerLink menuArrow">Building Blocks</a>
 						<div class="bg-white text-left w-100 border-top boxShadow subMenu">
 							<div class="row">
 								<div class="col-6 pr-0 h-100 border-right">
@@ -127,20 +131,21 @@
 						</div>
 					</li>
 					<li>
-						<a href="/examples" class="headerLink menuArrow">Examples</a>
+						<a onBoardTooltip="Examples are real-life cases, publications, templates, or research projects that put into practice the concepts explained on Tilburg Science Hub."
+							href="/examples" class="headerLink menuArrow">Examples</a>
 						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-5 px-3">
 							<div class="row">
 								{{- range where .Site.Pages "Section" "examples" -}}
 								{{ if eq .Title "Examples" }}
 
-									<!-- <h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5> -->
-									{{- range .Pages -}}
-									<div class="col-6 mb-4 px-2">
+								<!-- <h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5> -->
+								{{- range .Pages -}}
+								<div class="col-6 mb-4 px-2">
 									{{ if .Title }}
 									<a id="exampleMenu" class="heading d-block mb-3 text-secondary" href="{{.Permalink}}">{{- .Title -}}</a>
 									{{ end }}
-									</div>
-									{{ end }}
+								</div>
+								{{ end }}
 								{{ end }}
 								{{ end }}
 							</div>
@@ -154,70 +159,83 @@
 			<div class="text-right">
 				<form class="form-inline text-right float-right d-none d-xl-block" method="GET" action="/search">
 					<div style="width: 230px" class="form-control mr-sm-2 headerSearch bg-light border-0">
-						<input class="resetInput" type="search" name="q" placeholder="Search" aria-label="Search" required autocomplete="off">
-						<button style="background-color: transparent; padding: 0;" type="submit"><img src="/img/search.svg" /></button>
+						<input class="resetInput"
+							onBoardTooltip="Search for topics, tutorials, tips or tools, and see all pages we have in one overview"
+							type="search" name="q" placeholder="Search" aria-label="Search" required autocomplete="off">
+						<button style="background-color: transparent; padding: 0;" type="submit"><img
+								src="/img/search.svg" /></button>
 					</div>
+					<a href="/contribute/" class="btn btn-primary my-2 my-sm-0 px-4"
+						onBoardTooltip="Tilburg science hub is an opensource platform and welcomes all contributions. ">Contribute</a>
 
-					<a href="/contribute/" class="btn btn-primary my-2 my-sm-0 px-4">Contribute</a>
 				</form>
 			</div>
 		</div>
 
 
 
+
+
+
+		
 		<!-- mobile menu -->
-		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileSearchMenu" style="z-index: 10; margin-top: -2px;left: 0">
+		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileSearchMenu"
+			style="z-index: 10; margin-top: -2px;left: 0">
 			<div class="form-control mr-sm-2 headerSearchMobile bg-light border-0">
 				<form method="GET" action="/search">
-					<input class="resetInput" type="search" placeholder="Search" name="q" aria-label="Search" required autocomplete="off">
-					<button style="background-color: transparent; padding: 0; float: right;" type="submit"><img src="/img/search.svg" /></button>
+					<input class="resetInput" type="search" placeholder="Search" name="q" aria-label="Search" required
+						autocomplete="off">
+					<button style="background-color: transparent; padding: 0; float: right;" type="submit"><img
+							src="/img/search.svg" /></button>
 				</form>
 			</div>
 
 			<div class="mobileResults"></div>
 		</div>
-	<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileMenu" style="z-index: 10; margin-top: -2px;left: 0">
-		<!-- screen 1 -->
-		<div class="screen-1 d-none">
-			<!--<a href="/tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour for students</a>
+		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileMenu"
+			style="z-index: 10; margin-top: -2px;left: 0">
+			<!-- screen 1 -->
+			<div class="screen-1 d-none">
+				<!--<a href="/tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour for students</a>
 			<a href="/researcher-tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour for researchers</a>-->
 
-			<!--<a href="#0" data-screen-two="mobile-tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour<span
+				<!--<a href="#0" data-screen-two="mobile-tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour<span
 					class="icon mini-right float-right text-primary"></span> </a>
 -->
-		<a href="/tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour</a>
+				<a href="/tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour</a>
 
-			<a href="#0" data-screen-two="mobile-tutorials" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tutorials<span
-					class="icon mini-right float-right text-primary"></span> </a>
-			<a href="#0" data-screen-two="mobile-building-blocks" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Building Blocks<span
-					class="icon mini-right float-right text-primary"></span> </a>
-			<!--<a href="#0" data-screen-two="mobile-examples" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples<span
+				<a href="#0" data-screen-two="mobile-tutorials"
+					class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tutorials<span
+						class="icon mini-right float-right text-primary"></span> </a>
+				<a href="#0" data-screen-two="mobile-building-blocks"
+					class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Building Blocks<span
+						class="icon mini-right float-right text-primary"></span> </a>
+				<!--<a href="#0" data-screen-two="mobile-examples" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples<span
 					class="icon mini-right float-right text-primary"></span> </a>-->
 				<a href="/examples" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples</a>
 				<a href="/about" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">About</a>
 
-			<div>
-				<a href="/contribute/" class="btn btn-primary my-2 px-4 btn-block mt-5">Contribute</a>
+				<div>
+					<a href="/contribute/" class="btn btn-primary my-2 px-4 btn-block mt-5">Contribute</a>
+				</div>
 			</div>
-		</div>
 
-		<!-- screen 2 -->
-		<div class="screen-2 d-none">
-			<!-- building blocks -->
-			<div id="mobile-building-blocks" class="d-none">
-				<a href="#0" class="py-3 border-bottom d-block gotoMainMenu"><span
-					class="icon mini-left text-primary"></span> Building Blocks</a>
+			<!-- screen 2 -->
+			<div class="screen-2 d-none">
+				<!-- building blocks -->
+				<div id="mobile-building-blocks" class="d-none">
+					<a href="#0" class="py-3 border-bottom d-block gotoMainMenu"><span class="icon mini-left text-primary"></span>
+						Building Blocks</a>
 					<br>
-				{{- range where .Site.Pages "Section" "building-blocks" -}}
-				{{ if eq .Params.isParent "true" }}
-				{{- range $index, $value := .Pages -}}
-				<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="{{.Permalink}}"
-					>{{ .Title }} <span
-						class="icon mini-right float-right"></span> </a>
-				<div class="tab-pane {{ if eq $index 0 }} show active {{ end }} d-none" id="{{ .Title | urlize }}"
-					role="tabpanel" aria-labelledby="v-pills-home-tab">
-					<div class="pl-4 mb-4">
-						<!--
+					{{- range where .Site.Pages "Section" "building-blocks" -}}
+					{{ if eq .Params.isParent "true" }}
+					{{- range $index, $value := .Pages -}}
+					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="{{.Permalink}}">{{ .Title }} <span
+							class="icon mini-right float-right"></span> </a>
+					<div class="tab-pane {{ if eq $index 0 }} show active {{ end }} d-none" id="{{ .Title | urlize }}"
+						role="tabpanel" aria-labelledby="v-pills-home-tab">
+						<div class="pl-4 mb-4">
+							<!--
 						{{ range .Pages }}
 						<div class="mb-4">
 							<span class="heading d-block mb-0" style="font-size: 16px;">{{.Title}}</span>
@@ -228,27 +246,26 @@
 						</div>
 						{{ end }}
 						-->
+						</div>
 					</div>
+					{{- end -}}
+					{{ end }}
+					{{- end -}}
 				</div>
-				{{- end -}}
-				{{ end }}
-				{{- end -}}
-			</div>
 
-			<!-- Tutorials -->
-			<div class="mobile-tutorials d-none" id="mobile-tutorials">
-				<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
-					class="icon mini-left text-primary"></span> Tutorials</a>
+				<!-- Tutorials -->
+				<div class="mobile-tutorials d-none" id="mobile-tutorials">
+					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
+							class="icon mini-left text-primary"></span> Tutorials</a>
 					<br>
-				{{- range where .Site.Home.Sections "Section" "tutorials" -}}
-				{{ range .Pages }}
+					{{- range where .Site.Home.Sections "Section" "tutorials" -}}
+					{{ range .Pages }}
 
 
-				<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="{{.Permalink}}"
-					>{{ .Title }} <span
-						class="icon mini-right float-right"></span> </a>
+					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="{{.Permalink}}">{{ .Title }} <span
+							class="icon mini-right float-right"></span> </a>
 
-			<!--	<div class="mb-4">
+					<!--	<div class="mb-4">
 					<div class="text-secondary m-0 mt-2 heading" style="font-size: 16px; line-height: 2px">{{.Title}}</div>
 
 					
@@ -261,40 +278,44 @@
 				</div>
 
 				-->
-				{{ end }}
-				{{ end }}
-			</div>
-
-			<!-- Examples -->
-			<div class="mobile-examples d-none" id="mobile-examples">
-				<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
-					class="icon mini-left text-primary"></span> Examples</a>
-					<br>
-
-				{{- range where .Site.Pages "Section" "examples" -}}
-				{{ if ne .Title "Examples" }}
-				<div class="mb-4">
-					<a class=" d-block mb-3 text-secondary heading" style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="{{.Permalink}}">{{- .Title -}}</a>
-				</div>
-				{{ end }}
-				{{ end }}
-
-			</div>
-			<!-- Tour -->
-			<div class="mobile-tour d-none" id="mobile-tour">
-				<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
-					class="icon mini-left text-primary"></span> Take a tour!</a>
-					<br>
-
-				<div class="mb-4">
-					<a class=" d-block mb-3 text-secondary heading" style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="/tour">For students</a>
-					<a class=" d-block mb-3 text-secondary heading" style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="/researcher-tour">For researchers</a>
+					{{ end }}
+					{{ end }}
 				</div>
 
+				<!-- Examples -->
+				<div class="mobile-examples d-none" id="mobile-examples">
+					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
+							class="icon mini-left text-primary"></span> Examples</a>
+					<br>
 
+					{{- range where .Site.Pages "Section" "examples" -}}
+					{{ if ne .Title "Examples" }}
+					<div class="mb-4">
+						<a class=" d-block mb-3 text-secondary heading"
+							style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="{{.Permalink}}">{{- .Title -}}</a>
+					</div>
+					{{ end }}
+					{{ end }}
+
+				</div>
+				<!-- Tour -->
+				<div class="mobile-tour d-none" id="mobile-tour">
+					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
+							class="icon mini-left text-primary"></span> Take a tour!</a>
+					<br>
+
+					<div class="mb-4">
+						<a class=" d-block mb-3 text-secondary heading"
+							style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="/tour">For students</a>
+						<a class=" d-block mb-3 text-secondary heading"
+							style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="/researcher-tour">For
+							researchers</a>
+					</div>
+
+
+				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	<!-- search results -->
 	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder">

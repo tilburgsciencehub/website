@@ -16,9 +16,9 @@ $(".headerLink").hover(function () {
         $(vm).addClass("activeMenu");
       }, 300);
     }
-    $(this).siblings().addClass("active");
+    $(this).siblings().not(".onBoardTooltipContent").addClass("active");
     setTimeout(function () {
-      $(vm).siblings().addClass("subMenuAnimate");
+      $(vm).siblings().not(".onBoardTooltipContent").addClass("subMenuAnimate");
     }, 100);
   }
 });
@@ -260,7 +260,6 @@ $(".headerSearch2").on("keyup", function (e) {
     });
 });
 
-
 $(".headerSearchMobile").on("keyup", function (e) {
   const resultsHolder = $(".mobileResults");
   const val = e.target.value;
@@ -479,16 +478,17 @@ document.querySelectorAll('a[href^="#"]').forEach((trigger) => {
   trigger.onclick = function (e) {
     e.preventDefault();
     let hash = this.getAttribute("href");
-    let target = document.querySelector(hash);
-    let headerOffset = 140;
-    console.log(target.getBoundingClientRect().top);
-    let elementPosition = target.getBoundingClientRect().top;
-    let offsetPosition = elementPosition - headerOffset;
+    if (hash !== "#0") {
+      let target = document.querySelector(hash);
+      let headerOffset = 140;
+      let elementPosition = target.getBoundingClientRect().top;
+      let offsetPosition = elementPosition - headerOffset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
   };
 });
 
@@ -513,4 +513,69 @@ widetables.forEach((element) => {
     },
     false
   );
+});
+
+// onboarding tooltips
+const allTooltips = $("[onBoardTooltip]");
+
+// add all the tooltips
+for (let i = 0; i < allTooltips.length; i++) {
+  const div = document.createElement("div");
+  div.classList.add("onBoardTooltipContent");
+  div.setAttribute("current", i);
+
+  div.innerText = allTooltips[i]?.getAttribute("onBoardTooltip");
+  div.style = `left: ${
+    allTooltips[i].getBoundingClientRect().left - 80
+  }px`;
+
+  // navigation
+  const navigationDiv = document.createElement("div");
+  navigationDiv.classList.add("navigation");
+  navigationDiv.innerHTML = `
+    <span>
+      ${
+        i == allTooltips.length - 1
+          ? "&nbsp;"
+          : `<a href="#0" class="skipOnboarding">Skip</a>`
+      }
+    </span>
+    <span>
+      <button type="button" class="nextButton btn btn-primary btn-sm" style="font-size: 14px; padding:  4px 12px !important;" current="${i}">${
+    i == allTooltips.length - 1 ? "Finish" : "Next"
+  } ${i + 1}/${allTooltips.length}</button>
+    </span>
+  `;
+
+  div.appendChild(navigationDiv);
+  $(allTooltips[i]).parent().append(div);
+}
+
+if (localStorage.getItem("demoCompleted")) {
+  $(".pulse").remove();
+}
+
+$("body").on("click", ".nextButton", () => {
+  const allTooltipContents = $(".onBoardTooltipContent");
+  const currentActive = $(".onBoardTooltipContent.active").attr("current");
+
+  if (allTooltipContents.length > Number(currentActive) + 1) {
+    allTooltipContents[Number(currentActive)].classList.remove("active");
+    allTooltipContents[Number(currentActive) + 1].classList.add("active");
+  } else {
+    allTooltipContents[Number(currentActive)].classList.remove("active");
+    localStorage.setItem("demoCompleted", "true");
+    $(".pulse").remove();
+  }
+});
+
+$("body").on("click", ".skipOnboarding", () => {
+  const currentActive = $(".onBoardTooltipContent.active");
+  currentActive.removeClass("active");
+  localStorage.setItem("demoCompleted", "true");
+  $(".pulse").remove();
+});
+
+$(".takeTour").on("click", (event) => {
+  $(".onBoardTooltipContent:first").addClass("active");
 });
