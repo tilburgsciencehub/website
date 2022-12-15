@@ -29,7 +29,7 @@ The first thing you need to consider in order to install Docker in your instance
 
 {{% tip %}}
 
-While Debian is the default boot disk image in Google cloud instances, we strongly recommend you to consider using a Ubuntu image if you are include a GPU to your instance. 
+While Debian is the default boot disk image in Google cloud instances, we recommend the usage of an Ubuntu image if you are including a GPU in your instance. This will make easier the installation of NVIDIA container toolbox (covered below).
 
 {{% /tip %}}
 
