@@ -33,6 +33,17 @@ request_object = requests.get(url)
 # return the source code from the request object
 source_code = request_object.text
 ```
+
+```
+-R-
+#install.packages("rvest")
+library(rvest)
+
+url = "https://www.abcdefhijklmnopqrstuvwxyz.nl"
+
+# read the html from the URL
+source_code = read_html(url)
+```
 {{% /codeblock %}}
 
 ### Seed Generation
@@ -47,6 +58,15 @@ page_urls = []
 for counter in range(1, num_pages+1):
   full_url = base_url + "page-" + str(counter) + ".html"
   page_urls.append(full_url)
+```
+```
+-R-
+base_url = # the fixed part of the URL
+num_pages = # the number of pages you want to scrape
+page_urls = character(num_pages)
+
+for (i in 1:num_pages) {
+	page_urls[i] = paste0(base_url,"page-",i)}
 ```
 {{% /codeblock %}}
 
@@ -80,6 +100,20 @@ print(soup.find_all('h2')[0])
 # strip HTML tags from element
 print(soup.find_all('h2')[0].get_text())
 ```
+```
+-R-
+# the first matching <h1> element
+html_element(source_code,'h1')
+
+# all matching <h2> elements (returns a list of elements)
+html_elements(source_code,'h2')
+
+# first elementin in the list
+html_elements(source_code,'h2')[1]
+
+# strip HTML tags from element
+html_text(html_elements(source_code,'h2')[1])
+```
 {{% /codeblock %}}
 
 
@@ -101,6 +135,18 @@ soup.find(class_ = "<CLASS_NAME>")
 # HTML identifiers
 soup.find(id = "<ID_NAME>")
 ```
+```
+-R-
+# element attributes
+html_attr(html_elements(source_code,"a"),"href")
+
+# HTML classes (note the . before the class name)
+html_elements(source_code,".<CLASS_NAME>")
+
+# HTML identifiers
+html_elements(source_code,"#<ID_NAME>>")
+```
+
 {{% /codeblock %}}
 
 {{% tip %}}
