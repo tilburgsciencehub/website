@@ -34,8 +34,7 @@ request_object = requests.get(url)
 source_code = request_object.text
 ```
 
-```
--R-
+```R
 #install.packages("rvest")
 library(rvest)
 
@@ -59,8 +58,7 @@ for counter in range(1, num_pages+1):
   full_url = base_url + "page-" + str(counter) + ".html"
   page_urls.append(full_url)
 ```
-```
--R-
+```R
 base_url = # the fixed part of the URL
 num_pages = # the number of pages you want to scrape
 page_urls = character(num_pages)
@@ -100,8 +98,7 @@ print(soup.find_all('h2')[0])
 # strip HTML tags from element
 print(soup.find_all('h2')[0].get_text())
 ```
-```
--R-
+```R
 # the first matching <h1> element
 html_element(source_code,'h1')
 
@@ -135,8 +132,7 @@ soup.find(class_ = "<CLASS_NAME>")
 # HTML identifiers
 soup.find(id = "<ID_NAME>")
 ```
-```
--R-
+```R
 # element attributes
 html_attr(html_elements(source_code,"a"),"href")
 
