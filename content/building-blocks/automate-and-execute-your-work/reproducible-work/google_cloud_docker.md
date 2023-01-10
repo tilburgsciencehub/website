@@ -14,7 +14,7 @@ aliases:
 
 # Import and run a Python environment on Google cloud with Docker
 
-Take advantage of the versatility of containerized apps on Docker and the power of Google Cloud to easily reproduce and collaborate on projects! In this building block, you will learn how to replicate a Jupyter notebook Python environment from a project on an existing Google cloud instance using Docker. Additionally, you will also learn how to connect your replicated environment directly to Google cloud storage buckets to comfortably save and share your output. 
+Take advantage of the versatility of containerized apps on Docker and the power of Google Cloud to easily reproduce and collaborate on projects! In this building block, you will learn how to replicate a Python environment from a project on an existing Google cloud instance using Docker and then open Jupyter notebook on it. Additionally, you will also learn how to connect your replicated environment directly to Google Cloud storage buckets to comfortably save and share your output. 
 
 {{% warning %}}
 
@@ -209,11 +209,11 @@ $ docker compose up
 ```
 {{% /codeblock %}}
 
- If the execution of docker-compose (and all its services) was successful that means that your environment is up and running in jupyter and you should see something in your command line that resembles what is shown in the image below.
+ If the execution of docker-compose (and all its services) was successful that means that your environment is up and running as well as Jupyter notebook and you should see something in your command line that resembles what is shown in the image below.
 
 <p align = "center">
 <img src = "../img/jupyter_on.png" width="750">
-<figcaption> Typical log of a Jupyter instance, signaling you that the replication of the environment was completed. </figcaption>
+<figcaption> Typical log of a Jupyter notebook instance, signaling you that the replication of the environment was completed. </figcaption>
 </p>
 
 {{% tip %}}
@@ -230,7 +230,7 @@ To do this, first of all you will need to install [GCSFuse](https://github.com/G
 
 {{% warning %}}
  
-Carry out the following steps while your environment is not running. For that press "ctrl + c" to shut down Jupyter and then run `docker compose stop` in your instance to stop the execution of the container. 
+Carry out the following steps while your environment is not running. For that press "ctrl + c" to shut down Jupyter notebook and then run `docker compose stop` in your instance to stop the execution of the container. 
 
 {{% /warning %}}
 
@@ -266,9 +266,9 @@ Bear in mind that the absolute path to your bucket-sinchronized directory is not
 {{% /tip %}}
 
 
-### Step 4: Expose the port where Jupyter is running to access the environment from your computer
+### Step 4: Expose the port where Jupyter notebook is running to access the environment from your computer
 
-At this point, we need to make our instance accessible from the outside. The first element we need for this task is to know in which port of our instance is Jupyter running. To know this we just have to take a closer look at the last line of the output shown in the command line after we executed `docker compose up`. At the begginning of the line, you should see an address like the one shown below, from there you are interested in the four digits underlined in blue coming after the internal IP and before the slash. These correspond with the port where Jupyter is running in your instance.
+At this point, we need to make our instance accessible from the outside. The first element we need for this task is to know in which port of your instance is Jupyter notebook running. To know this we just have to take a closer look at the last line of the output shown in the command line after we executed `docker compose up`. At the begginning of the line, you should see an address like the one shown below, from there you are interested in the four digits underlined in blue coming after the internal IP and before the slash. These correspond with the port where Jupyter notebook is running in your instance.
 
 <p align = "center">
 <img src = "../img/find_port.png" width="750">
@@ -277,13 +277,13 @@ At this point, we need to make our instance accessible from the outside. The fir
 
 {{% warning %}}
 
-Note that the port in which your Jupyter environment is running (i.e the four-digit number that corresponds to that underlined in blue in the previous image) will probably be different from the one shown in the image above.
+Note that the port in which your Jupyter notebook is running (i.e the four-digit number that corresponds to that underlined in blue in the previous image) will probably be different from the one shown in the image above.
 
 {{% /warning %}}
 
 {{% tip %}}
 
-You can choose in which port you want Jupyter to be executed. In the context of this building block, this should be done by modifying the docker-compose, where the instructions on how Docker should set up Jupyter for your environment are contained. [Learn more about docker-compose.](https://docs.docker.com/compose/)
+You can choose in which port you want Jupyter notebook to be executed. In the context of this building block, this should be done by modifying the docker-compose, where the instructions on how Docker should set up Jupyter notebook for your environment's container are contained. [Learn more about docker-compose.](https://docs.docker.com/compose/)
 
 {{% /tip %}}
 
@@ -293,7 +293,7 @@ Now you should go back to the Google cloud console and click the button "Set up 
 2. Make sure that traffic direction is set on "Ingress"
 3. Indicate to which of your instances you want this rule to apply by selecting "Specified target tags" in the "Targets" drop-down list, and then specify the names of these in the "Target tags" box below. Alternatively, you can select the option "All instances in the network" in the drop-down menu so the rule automatically applies to all your instances. 
 4. Introduce "0.0.0.0/0" in the field "Source IPv4 ranges"
-5. In the section "Protocols and ports" check "TCP" and then in the box below introduce the four-digit number that identifies the port where Jupyter is being executed in your instance.
+5. In the section "Protocols and ports" check "TCP" and then in the box below introduce the four-digit number that identifies the port where Jupyter notebook is being executed in your instance.
 
 {{% warning %}}
 
@@ -303,22 +303,22 @@ In point three of the steps listed above you are told to introduce "0.0.0.0/0" i
 
 After completing the fields as described you can go to the bottom and click on "create" to make the firewall rule effective. 
 
-### Step 5: Access to your Jupyter environment
+### Step 5: Access Jupyter notebook within your environment's container
 
-To access the Jupyter environment you have to go back to the Google cloud console list of VM instances and copy your instance's external IP direction. With this information you can open a web browser on your local computer and type the following in the URL bar: 
+To access the Jupyter notebook running inside your environment's container you have to go back to the Google cloud console list of VM instances and copy your instance's external IP direction. With this information you can open a web browser on your local computer and type the following in the URL bar: 
  - `http://< external_ip_address >:< jupyter_port>`
 
 {{% example %}}
 
-Imagine the external IP of your instance is "12.345.678.9" and the port where Jupyter is being executed is port "1234". In that case, you should paste the following URL into your browser: http://12.345.678.9:1234
+Imagine the external IP of your instance is "12.345.678.9" and the port where Jupyter is running is port "1234". In that case, you should paste the following URL into your browser: http://12.345.678.9:1234
 
 {{% /example %}}
 
-After introducing the url as indicated, you will be directed to your instance's Jupyter landing page. Here Jupyter will request you a token to grant you access. This token can be found in the same output line of your google cloud instance's command line where you look at the port where Jupyter is being run.
+After introducing the url as indicated, you will be directed to your instance's Jupyter notebook landing page. Here Jupyter will request you a token to grant you access. This token can be found in the same output line of your google cloud instance's command line where you look at the port where Jupyter is being run.
 
 <p align = "center">
 <img src = "../img/find_token.png" width="750">
-<figcaption> Underlined in green: The token to access Jupyter. </figcaption>
+<figcaption> Underlined in green: The token to access Jupyter notebook. </figcaption>
 </p>
 
 As you can see in the image above, the token consists of a string of randomly generated alphanumeric characters comprising all that comes after the equal sign ("="). 
