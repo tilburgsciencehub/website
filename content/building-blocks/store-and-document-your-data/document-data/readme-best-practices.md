@@ -126,4 +126,4 @@ Want to go the extra mile? Include your [GitHub Stats Card](https://github.com/a
 
 ## Useful Other Resources
 
-A useful external resource is [Make A Readme] (https://www.makeareadme.com/). With Make A Readme, you can create readme's for repositories. Furthermore, it provides suggestions and good tips for good Readme's. 
+A useful external resource is [Make A Readme](https://www.makeareadme.com/) . With Make A Readme, you can create readme's for repositories. Furthermore, it provides suggestions and good tips for good Readme's. 
