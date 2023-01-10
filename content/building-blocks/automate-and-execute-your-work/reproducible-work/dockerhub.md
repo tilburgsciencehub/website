@@ -20,7 +20,7 @@ Avoid headaches regarding compatibility and installations by sharing your projec
 
 If you haven't installed docker on your computer yet, you can see how to do it on the building block on how to [set up Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/).
 
-Moreover, If you are new to Docker it is recommended that you review some of the basics of Docker before going ahead with this building block. You can do that by visiting TSH's building block on [Docker for reproducible research](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/), there you will also learn more on how to create your Dockerfiles and build images from them and more!
+In case you are new to Docker it is recommended that you review some of the basics of Docker before going ahead with this building block. You can do that by visiting TSH's building block on [Docker for reproducible research](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/), there you will also learn more on how to create your Dockerfiles and build images from them and more!
 
 {{% /tip %}}
 
