@@ -3,7 +3,8 @@ title: "Run RStudio on AWS using Docker"
 description: "Docker - the bridge between R and AWS"
 keywords: "docker,images, container, environments, virtual, R, cloud computing, virtual machine"
 weight: 2
-author: Roshini Sudhaharan
+author: "Roshini Sudhaharan"
+authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 draft: false
 aliases:
 - /run/r-in-the-cloud

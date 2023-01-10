@@ -10,7 +10,7 @@ aliases:
   - /install/docker
 ---
 ## What is Docker?
-[Docker](https://www.docker.com/) is the most common (and is also open-source) version of containerisation, i.e. a form of virtualisation where applications run in isolated **containers** while using a shared operating system (Linux in Docker's case).
+Docker is the most common (and is also open-source) version of containerisation, i.e. a form of virtualisation where applications run in isolated **containers** while using a shared operating system (Linux in Docker's case).
 
 ### What are containers?
  <cite>"A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another" [^1]</cite>.  
@@ -39,7 +39,7 @@ Say goodbye to "*but it works on my computer*", embrace the power of containeris
 ## Installing Docker
 
 ### Windows Users
-Docker Desktop on Windows can be [downloaded here](https://docs.docker.com/desktop/windows/install/). Detailed instructions are also presented in the prior link.
+Download docker from [Docker's official website](https://docs.docker.com/desktop/windows/install/), and follow the following steps to **install docker on windows**.
 {{% summary %}}
 Follow these steps:
 
@@ -59,7 +59,7 @@ If your admin account is different to your user account, you must add the user t
 {{% /warning %}}
 
 ### Mac Users
-Download Docker Desktop on Mac [from this link](https://docs.docker.com/desktop/mac/install/), where you will also find detailed instructions.
+**Download Docker Desktop on Mac** from [Docker's official website](https://docs.docker.com/desktop/mac/install/), where you will also find detailed instructions.
 
 {{% summary %}}
 1. Double-click **Docker.dmg** to open the installer, then drag the Docker icon to the Applications folder.
@@ -85,7 +85,7 @@ The requirements and recommendations are different depending on whether you have
   ```
   {{% /tip %}}
 ### Linux Users
-The Docker engine can be installed in different ways: setting up Docker's repositories, manually by downloading the DEB package or using convenience scripts. Here we will go through the installation using the repository. If you prefer the other methods, find detailed instructions [here.](https://docs.docker.com/engine/install/ubuntu/)
+The Docker engine can be installed in different ways: **setting up Docker's repositories**, manually by downloading the DEB package or using convenience scripts. Here we will go through the installation using the repository. If you prefer the other methods, find detailed instructions [Docker's install page](https://docs.docker.com/engine/install/ubuntu/)
 
 #### Installing using the repository
 {{% summary %}}
@@ -132,7 +132,7 @@ docker run hello-world
 ```
 If everything is working correctly, you should get the following output:
 
-<img src="../img/verify-installation.png" width="600" alt="centered image"/>
+<img src="../img/verify-installation.png" width="600" alt="docker hello-world message"/>
 
 
 

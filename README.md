@@ -51,7 +51,7 @@ and reviews of proposed changes are all welcome.
 * By contributing you agree to abide by the [Code of Conduct](https://tilburgsciencehub.com/tutorials/more-tutorials/contribute-to-tilburg-science-hub/code-of-conduct/).
 
 ## Any questions?
-Feel free to reach out to us at `tsh [at] tilburguniversity [dot] edu`.
+Feel free to reach out to us at [tsh@tilburguniversity.edu](mailto:tsh@tilburguniversity.edu).
 
 ## License
 
@@ -60,3 +60,4 @@ Text and materials are licensed under a Creative Commons CC-BY-NC-SA license. Th
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
 
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+

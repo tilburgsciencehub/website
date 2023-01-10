@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
- <!--snippet for google optimize (A/B tests) put back on when needed 
-	<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-N42NQJS"></script>-->
+	<!--- Add structured data, search engine--->
 
-	
-	<!-- Global site tag (gtag.js) - Google Ads: 10904740148 -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10904740148"></script>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org/",
+			"@type": "WebSite",
+			"name": "Tilburg Science Hub",
+			"url": "https://www.tilburgsciencehub.com",
+			"potentialAction": {
+			  "@type": "SearchAction",
+			  "target": "https://tilburgsciencehub.com/search?q={search_term_string}",
+			  "query-input": "required name=search_term_string"
+			}
+		  }
+	</script>
+	<script type="application/ld+json">
+		  {
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Tilburg Science Hub",
+			"alternateName": "tilburgsciencehub",
+			"url": "https://tilburgsciencehub.com",
+			"logo": "https://tilburgsciencehub.com/img/logo.svg",
+			"sameAs": [
+			  "https://www.linkedin.com/company/tilburgsciencehub",
+			  "https://github.com/tilburgsciencehub",
+			  "https://twitter.com/tilburgscience"
+			]
+		  }
+	</script>
+	<!-- Google tag (gtag.js) OLD FORMAT-->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23035208-2"></script>
 	<script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 
-	gtag('config', 'AW-10904740148');
+	gtag('config', 'UA-23035208-2');
+	</script>
+
+
+		<!--snippet for google optimize (A/B tests) put back on when needed 
+	<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-N42NQJS"></script>-->
+
+	<!-- Global site tag (gtag.js) - GA4 format-->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-6K27JFP2RV');
 	</script> 
 
 
@@ -26,14 +66,15 @@
 	<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
-	<script src="/js/terminal.js"></script>
+	
 	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
 	<title>{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }} {{ if .IsHome }}{{else}} - Tilburg Science Hub{{end}}</title>
 	{{- if .Params.keywords -}}
 	<meta name="keywords" content="{{ .Params.keywords }}">
 	{{- end -}}
 	{{ template "_internal/google_analytics.html" . }}
-	<meta property="og:title" content="{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }} {{ if .IsHome }}{{else}} - Tilburg Science Hub{{end}}" />
+	<meta property="og:title"
+		content="{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }} {{ if .IsHome }}{{else}} - Tilburg Science Hub{{end}}" />
 	{{ if .Params.description }}
 	<meta property="og:description" content="{{ .Params.description }}" />
 	<meta name="description" content="{{ .Params.description }}" />
@@ -47,23 +88,26 @@
 	<meta name="robots" content="noindex">
 	{{- end -}}
 
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async src="https://buttons.github.io/buttons.js"></script>
+	<!-- Place this tag in your head or just before your close body tag. -->
+	<script async src="https://buttons.github.io/buttons.js"></script>
 
-<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-TBJ77ND');</script>
-<!-- End Google Tag Manager -->
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-TBJ77ND');</script>
+	<!-- End Google Tag Manager -->
 
 
 </head>
 
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBJ77ND" loading="lazy"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBJ77ND" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
