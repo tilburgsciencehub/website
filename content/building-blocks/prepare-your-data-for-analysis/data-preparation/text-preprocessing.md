@@ -11,11 +11,19 @@ aliases:
   - /building-blocks/prepare-your-data-for-analysis/data-preparation/text-preprocessing
 ---
 # Overview
-From social media posts to reviews, there is a plethora of text data that could be turned into a gold mine of insights. Text analytics is the process of examining such unstructured data in text form to gather some insights on patterns and topics of interest.
 
-Even before converting text into machine-interpretable data, it is essential to *preprocess* the data before transforming it into numerical features. To illustrate the steps, we pre-process [data of amazon reviews](https://www.kaggle.com/datasets/bharadwaj6/kindle-reviews) for the kindle store category using the `tm-package` developed by Ingo Feinerer which uses a simplified text mining framework with easy-to-use functions for novices and experts alike.
+Text mining is all about deriving insights from unstructured text data such as social media posts, consumer reviews and newspaper articles.
+The ultimate goal is to turn a large collection of texts, a corpus, into insights that reveal important and interesting patterns in the data.
+This could include either computing sentiment of text or inferring the topic of a text among other common tasks.
+
+Before we can move into the analysis of text, the unstructured nature of the data means there is a need to pre-process the raw text to transform it to provide some additional structure and clean the text to make it more amenable for further analysis. To illustrate some common pre-processing steps we will take some data on [Amazon reviews](https://www.kaggle.com/datasets/bharadwaj6/kindle-reviews) and use the `tm package` in R to clean up the review texts.
+
+
 
 {{% cta-primary-center "Go to the GitHub Repository now" "https://github.com/srosh2000/book-review-analysis-example" %}}
+
+
+
 
 ## Steps for pre-processing text data
 
@@ -215,3 +223,10 @@ wordcloud2(df, color = "random-dark", backgroundColor = "white")
 <img src = "../img/wordcloud.png" width="600">
 <figcaption> Wordcloud of the most frequent words </figcaption>
 </p>
+
+{{% tip %}}
+Here are some alternative packages to check out
+- in R: [Quanteda](http://quanteda.io/), [Text2vec](https://text2vec.org/), [Tidytext](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html) and [Spacyr](https://cran.r-project.org/web/packages/spacyr/vignettes/using_spacyr.html)
+- in Python: [NLTK](https://www.nltk.org/), [Gensim](https://radimrehurek.com/gensim/), [TextBlob](https://textblob.readthedocs.io/en/dev/#), [spaCy](https://spacy.io/), and [CoreNLP](https://stanfordnlp.github.io/CoreNLP/)
+
+{{% /tip %}}
