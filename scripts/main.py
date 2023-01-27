@@ -54,7 +54,7 @@ def main():
 
     response = get_report()
     pages = get_popular_pages(response)
-    with open('/public/popular-pages.json', 'w') as f:
+    with open('/static/popular-pages.json', 'w') as f:
         json.dump(pages, f)
 
 if __name__ == "__main__":
