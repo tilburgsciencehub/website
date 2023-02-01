@@ -47,5 +47,7 @@ Right now, we’ve asked ChatGPT some simple questions about Amsterdam from a tr
 
 ## Useful videos to watch when using ChatGPT for your research project
 [ChatGPT for Scientific Research: How to use AI as a Partner in Your Research](https://www.youtube.com/watch?v=KhRY-ktKB-4)
+
 [Can ChatGPT Write Your Next Scientific Paper?](https://www.youtube.com/watch?v=wnGPt030IG4) 
+
 [ChatGPT Guide: 10x Your Results with Better Prompts](https://www.youtube.com/watch?v=os-JX1ZQwIA)
