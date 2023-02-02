@@ -3,7 +3,8 @@ title: "Import and run a Python environment on Google cloud with Docker"
 description: "Learn how to import a containerized python environment with docker, run it on a google cloud instance and connect it with Google cloud storage buckets"
 keywords: "Docker, environment, Python, Jupyter notebook, Google cloud, cloud computing, cloud storage "
 weight: 2
-author: Diego Sanchez Perez
+author: "Diego Sanchez Perez"
+authorlink: "https://www.linkedin.com/in/diego-s%C3%A1nchez-p%C3%A9rez-0097551b8/"
 draft: false
 date: 2022-10-11T22:01:14+05:30
 aliases: 

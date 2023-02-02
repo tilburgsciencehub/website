@@ -4,8 +4,9 @@ description: "Learn how to export a containerized python environment with Docker
 keywords: "Docker, environment, Python, Jupyter notebook, Docker-Hub "
 weight: 2
 author: Diego Sanchez Perez
+authorlink: "https://www.linkedin.com/in/diego-s%C3%A1nchez-p%C3%A9rez-0097551b8/"
 draft: false
-date: 
+date: 2022-02-02T17:05:00+01:00
 aliases: 
   - /export/python-environment-with-docker
 
