@@ -22,6 +22,8 @@ If you haven't installed docker on your computer yet, you can see how to do it o
 
 In case you are new to Docker it is recommended that you review some of the basics of Docker before going ahead with this building block. You can do that by visiting TSH's building block on [Docker for reproducible research](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/), there you will also learn more on how to create your Dockerfiles and build images from them and more!
 
+Also, you can check how to [import an environment's Docker image and run it on a Google Cloud virtual machine](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/google_cloud_docker/) on our building block on the topic. There you will see the entire process from installing Docker on your Google Cloud VM instance to having your imported environment running on Jupyter notebook within it!
+
 {{% /tip %}}
 
 ### Your environment's dockerfile
@@ -43,7 +45,7 @@ RUN mkdir /your-env
 
 Above you can see an example of a simple dockerfile suited for this building block. As with any dockerfile, it starts with the `FROM` instruction, which indicates which [parent image](https://docs.docker.com/build/building/base-images/) is going to be used. In this case, the parent image is a popular one that comes with [Miniconda](https://docs.conda.io/en/latest/miniconda.html) pre-installed, a minimalist version of the python distribution platform for data science [Anaconda](https://www.anaconda.com/). One of the main advantages of employing this parent image is that it will already contain the elemental components to run python on it without including too many additional elements which may not be of interest for a particular project and may make the container unnecessarily heavy.  
 
-After that the `RUN` instruction, which is used to execute commands within the container, is employed to install jupyter notebook as well as any packages that are necessary to replicate your environment. In this particular example, the "pytest" package is the only one that is going to be downloaded. Note that miniconda includes already some of the most widely used python packages such as Numpy and Pandas.
+After that the `RUN` instruction, which is used to execute commands within the container, is employed to install jupyter notebook as well as any packages that are necessary to replicate your environment. In this particular example, the `pytest` package is the only one that is going to be downloaded. Note that miniconda includes already some of the most widely used python packages such as Numpy and Pandas.
 
 {{% tip %}}
 
@@ -101,7 +103,7 @@ You can see a list of all your images and the details about them by running `doc
 Before you try to push your image make sure you are properly logged in to your Docker Hub account. To do that run `docker login` in the command line and then introduce your Docker Hub username and password.
 {{% /tip %}}
 
-A Docker Hub repository is designed to contain one or multiple versions of a docker image, which are differentiated by their tag. Optionally, it is recommended that you assign an appropriate tag to each of your images within a repository so you can appropriately differentiate them.  However do not panic if you don't do it as in that case Docker will simple automatically assign the `latest` tag to the last build of your image. To assign a tag to your recently built image you should type the following in the command line:
+A Docker Hub repository is designed to contain one or multiple versions of a docker image, which are differentiated by their tag. Optionally, it is recommended that you assign an appropriate tag to each of your images within a repository so you can appropriately differentiate them.  However, you don't have to worry if you don't do it, in that case Docker will simply automatically assign the `latest` tag to the last build of your image. To assign a tag to your recently built image you should type the following in the command line:
 
 `docker tag <image_id> <your_image_name>:<tag>`
 
@@ -118,7 +120,7 @@ Once you have assigned a tag to your image, it is time to push it to Docker Hub 
 
 `docker push <your_image_name>:<tag>`
 
-Et voilà! Your image is now on Docker Hub ready to be used by other users. 
+Et voilà! Your image is now on Docker Hub ready to be employed by other users. 
 
 ### Docker pull
 
