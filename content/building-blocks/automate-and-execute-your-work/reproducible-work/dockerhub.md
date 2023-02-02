@@ -34,7 +34,6 @@ Example dockerfile
 
 ```dockerfile
 FROM continuumio/miniconda3
-
 RUN conda install jupyter
 RUN pip install pytest
 RUN mkdir /your-env
@@ -42,20 +41,26 @@ RUN mkdir /your-env
 
 {{% /codeblock %}}
 
-Above you can see an example of a simple dockerfile suited for this building block. As with any dockerfile, it starts with the `FROM` instruction, which indicates which [parent image](https://docs.docker.com/build/building/base-images/) is going to be used. In this case, the parent image is a popular one that comes with [Miniconda](https://docs.conda.io/en/latest/miniconda.html) pre-installed, a minimalist version of the python distribution platform for data science [Anaconda](https://www.anaconda.com/). One of the main advantages of employing this parent image is that it will already contain the elemental components to run python on it without including too many additional elements which may not be of interest for a particular project and may make the container unnecessarily large.  
+Above you can see an example of a simple dockerfile suited for this building block. As with any dockerfile, it starts with the `FROM` instruction, which indicates which [parent image](https://docs.docker.com/build/building/base-images/) is going to be used. In this case, the parent image is a popular one that comes with [Miniconda](https://docs.conda.io/en/latest/miniconda.html) pre-installed, a minimalist version of the python distribution platform for data science [Anaconda](https://www.anaconda.com/). One of the main advantages of employing this parent image is that it will already contain the elemental components to run python on it without including too many additional elements which may not be of interest for a particular project and may make the container unnecessarily heavy.  
 
-After that the `RUN` instruction, which is used to execute commands within the container, is employed to install jupyter notebook as well as any packages that are necessary to replicate your environment. In this particular example, the "pytest" package is the only one that is going to be downloaded. Note that miniconda includes already some of the most widely used python packages such as Numpy and Pandas
+After that the `RUN` instruction, which is used to execute commands within the container, is employed to install jupyter notebook as well as any packages that are necessary to replicate your environment. In this particular example, the "pytest" package is the only one that is going to be downloaded. Note that miniconda includes already some of the most widely used python packages such as Numpy and Pandas.
+
+{{% tip %}}
+
+Alternatively, you could use a Conda `environment.yml` file and the `conda create` command instead of manually specifying all required dependencies as done in the third line of the sample dockerfile. However, bear in mind that the details of this alternative approach are not explored in this building block. You can read more about it [here](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file).
+
+{{% /tip %}}
 
 Lastly, the `RUN` instruction is employed again to create a new directory within the image's container that will be used to connect the container filesystem with your pc filesystem. Don't worry if you don't fully grasp this now, you will come back at this later in the building block. 
 
 Feel free to use this example dockerfile as a template to export your environment if it adjusts to your needs! For that, you should add to it the name of the packages included in your environment (instead of the included pytest) and save it as a text file without an extension named "dockerfile" (i.e. the file should be named "dockerfile" not "dockerfile.txt" or anything else, otherwise docker will not recognize it.) 
+
 {{% codeblock %}}
 
 Example dockerfile - Template
 
 ```dockerfile
 FROM continuumio/miniconda3
-
 RUN conda install jupyter
 RUN pip install <your-packages>
 RUN mkdir /your-env
@@ -96,7 +101,7 @@ You can see a list of all your images and the details about them by running `doc
 Before you try to push your image make sure you are properly logged in to your Docker Hub account. To do that run `docker login` in the command line and then introduce your Docker Hub username and password.
 {{% /tip %}}
 
-A Docker Hub repository is designed to contain one or multiple versions of a docker image, which are differentiated by their tag. It is important that you assign an appropriate tag to each of your images within a repository so you can appropriately differentiate them. To assign a tag to your recently built image you should type the following in the command line:
+A Docker Hub repository is designed to contain one or multiple versions of a docker image, which are differentiated by their tag. Optionally, it is recommended that you assign an appropriate tag to each of your images within a repository so you can appropriately differentiate them.  However do not panic if you don't do it as in that case Docker will simple automatically assign the `latest` tag to the last build of your image. To assign a tag to your recently built image you should type the following in the command line:
 
 `docker tag <image_id> <your_image_name>:<tag>`
 
@@ -191,7 +196,7 @@ You can also use any name for this directory where the volume has been mounted (
 
 ### Creating new versions of your images with "docker commit"
 
-Imagine that during your project, have started to use a new python package not included in the original image that you already made available to other users on Docker Hub. In that case, if you have this package already installed in your image's container, you could simply use the [docker commit](https://docs.docker.com/engine/reference/commandline/commit/) command to create a new version of your image including these changes and then push it. For that you just have to run:
+Imagine that during your project, you have started to use a new python package not included in the original image that you already made available to other users on Docker Hub. In that case, if you have this package already installed in your image's container, you could simply use the [docker commit](https://docs.docker.com/engine/reference/commandline/commit/) command to create a new version of your image including these changes and then push it. For that you just have to run:
 
 `docker commit <container_id> <repo_name>:<new_tag>`
 
