@@ -123,3 +123,7 @@ By default Github showcases your pinned repositories on your profile page (click
 {{% tip %}}
 Want to go the extra mile? Include your [GitHub Stats Card](https://github.com/anuraghazra/github-readme-stats) in your README! Simply add `https://github-readme-stats.vercel.app/api?username=<YOUR_USERNAME>` to the end of your README to incorporate a realtime widget of your number of stars, commits, PRs, issues, and contributions on Github ([see example](https://github-readme-stats.vercel.app/api?username=hannesdatta)).
 {{% /tip %}}
+
+## Useful Other Resources
+
+A useful external resource is [Make A Readme](https://www.makeareadme.com/) . With Make A Readme, you can create readme's for repositories. Furthermore, it provides suggestions and good tips for good Readme's. 

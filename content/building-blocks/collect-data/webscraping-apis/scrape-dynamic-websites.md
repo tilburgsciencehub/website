@@ -76,6 +76,7 @@ Running the code snippet below starts a new Google Chrome browser (`driver`) and
 {{% codeblock %}}
 ```Python
 import selenium.webdriver
+from selenium.webdriver.common.by import By
 
 driver = selenium.webdriver.Chrome()
 driver.get("https://www.google.com")
@@ -118,7 +119,7 @@ One of the distinguishable features of Selenium is the ability to mimic user int
 driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
 
 # click on element (e.g., button)
-element_to_be_clicked = driver.find_element(By.CLASS_NAME, "<CLASS_NAME>")
+element_to_be_clicked = driver.find_element(By.CLASS_NAME, "<CLASS_NAME>").text  
 element_to_be_clicked.click()
 ```
 {{% /codeblock %}}
@@ -131,4 +132,4 @@ See the building block on [task automation](http://tilburgsciencehub.com/buildin
 
 
 ## See Also
-* Looking for a simple solution that does the job without any bells and whistles? Try out the BeautifulSoup package and follow our [web-scraping for statistic websites building block](/building-blocks/collect-data/webscraping-apis/scrape-static-websites/).
+* Looking for a simple solution that does the job without any bells and whistles? Try out the BeautifulSoup package and follow our [web-scraping for static websites building block](/building-blocks/collect-data/webscraping-apis/scrape-static-websites/).
