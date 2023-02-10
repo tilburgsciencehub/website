@@ -10,8 +10,8 @@ aliases:
   - /collect-data/scrape-dynamic-websites
 ---
 
-## Overview
-While it's easy to get started with Beautifulsoup, it has limitations when it comes to dynamic websites. That is, websites of which the content changes after each page refresh. Selenium can handle both static and dynamic websites and mimic user behavior (e.g., scrolling, clicking, logging in). It launches another web browser window in which all actions are visible which makes it feel more intuitive. Here we outline the basic commands and installation instructions to get you started.
+## Scrape Dynamic Websites
+While it's easy to get started with Beautifulsoup, it has limitations when it comes to *scraping dynamic websites*. That is, websites of which the content changes after each page refresh. Selenium can handle both static and dynamic websites and mimic user behavior (e.g., scrolling, clicking, logging in). It launches another web browser window in which all actions are visible which makes it feel more intuitive. Here we outline the basic commands and installation instructions to get you started.
 
 ## Code
 
@@ -32,6 +32,7 @@ Once selenium and webdriver manager are installed, you can now install ChromeDri
 
    from selenium import webdriver
    from selenium.webdriver.chrome.options import Options
+   from selenium.webdriver.common.by import By
    from webdriver_manager.chrome import ChromeDriverManager
 
    #driver = webdriver.Chrome()
@@ -40,6 +41,27 @@ Once selenium and webdriver manager are installed, you can now install ChromeDri
    url = "https://untappd.com/"
    driver.get(url)
 
+   ```
+   {{% /codeblock %}}
+
+If you want to block all pop-ups automatically (e.g. cookie pop-ups), you can use the following code:
+
+  {{% codeblock %}}
+   ```Python
+   # Make selenium and chromedriver work for Untappd.com
+
+   from selenium import webdriver
+   from selenium.webdriver.chrome.options import Options
+   from selenium.webdriver.common.by import By
+   from webdriver_manager.chrome import ChromeDriverManager
+   
+   # Set Chrome Options
+   chrome_options = webdriver.ChromeOptions()
+   chrome_options.add_experimental_option("excludeSwitches", ["disable-popup-blocking"])
+   
+   #driver = webdriver.Chrome()
+   driver = webdriver.Chrome(chrome_options=chrome_options)
+   
    ```
    {{% /codeblock %}}
 
@@ -60,7 +82,7 @@ driver = selenium.webdriver.Chrome()
 driver.get("https://www.google.com")
 
 # retrieve first H1 header
-driver.find_element(By.TAG_NAME, "h1").text
+driver.find_element(By.TAG_NAME,"h1").text
 ```
 {{% /codeblock %}}
 
@@ -77,7 +99,7 @@ driver.find_element(By.CLASS_NAME, "<CLASS_NAME>").text
 driver.find_element(By.ID,"<ID_NAME>").text
 
 # XPath
-driver.find_element(By.XPATH, "<XPATH>").text
+driver.find_element(By.XPATH,"<XPATH>").text
 
 ```
 {{% /codeblock %}}
