@@ -1,8 +1,9 @@
 name: fetch-popular-pages-ga
 
 on:
-  schedule:
-    - cron: "0 12 * * *" # runs at 12:00 UTC everyday
+  #schedule:
+    #- cron: "0 12 * * *" # runs at 12:00 UTC everyday
+  workflow_dispatch:
 
 jobs:
   build:
