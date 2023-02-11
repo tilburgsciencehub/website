@@ -37,7 +37,7 @@ def get_report():
 
 
 def get_popular_pages(response):
-    print "Fetching popular pages..."
+    print("Fetching popular pages...")
     popular_pages = []
     reports = response.get("reports", [])
     if reports:
