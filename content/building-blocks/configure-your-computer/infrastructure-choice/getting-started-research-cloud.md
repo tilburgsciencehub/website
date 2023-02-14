@@ -14,7 +14,8 @@ aliases:
 
 ## Overview
 
-Research Cloud is a highly customizable cloud solution for conducting your research. Think of it as a “free” version of Amazon EC2 or Microsoft Azure machine, but then brought to you under the Dutch National e-Infrastructure.
+Research Cloud is a highly customizable cloud solution for conducting your research. Think of it as a “free” version of Amazon EC2 or Microsoft Azure machine, but then brought to you under the Dutch National e-Infrastructure. SURF services are only available for researchers affiliated with Dutch institutions (though collaborators from any institution can be added to a project by the primary researcher).
+
 
  -  **What can you do with it?**
  Start virtual computers that run R or Python, attach some storage space, and share these computers with co-authors.
@@ -33,7 +34,7 @@ At present, SURF offers year-long “start-up” grants, which can then be renew
 
 {{% warning %}}
 
-Check that you’re affiliated with a Dutch research institution to set up the workspace for yourself.
+Make sure that you’re affiliated with a Dutch research institution to set up the workspace for yourself.
 
 {{% /warning %}}
 
@@ -68,5 +69,15 @@ Once they become a member of your CO they can:
 The Dutch foundation SURF offers login via SurfConext, which is an easy way to keep things consistent. While this works for Research Drive which is operated by LIS <link here>, it is not yet enabled for Research Cloud. Therefore, one would need to create a separate account through eduID (step 4 under “logging in” [here](https://servicedesk.surfsara.nl/wiki/display/WIKI/How+to+get+on+board)).
 
 {{% warning %}}
-SURF services are only available for researchers affiliated with Dutch institutions.
+Make sure to check your workspace from time to time using df -h to prevent memory overload. You will get an alert from SURF if the root disk is at 80% capacity. If this happens, do the following:
+
+- Install ncdu command:
+- 
+{{% codeblock %}}
+$ sudo apt-get install ncdu
+{{% /codeblock %}}
+
+- Then run `ncdu` and it will show you the disk space usage stats and you click enter to dig deeper into each directory. Then look for cache files or other unnecessary files manually and press `d` to delete that file or directory. 
+- Run df -h again to check status of the disk space storage
+
 {{% /warning %}}
