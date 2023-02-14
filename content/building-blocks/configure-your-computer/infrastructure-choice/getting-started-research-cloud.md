@@ -72,10 +72,7 @@ The Dutch foundation SURF offers login via SurfConext, which is an easy way to k
 Make sure to check your workspace from time to time using df -h to prevent memory overload. You will get an alert from SURF if the root disk is at 80% capacity. If this happens, do the following:
 
 - Install ncdu command:
-- 
-{{% codeblock %}}
-$ sudo apt-get install ncdu
-{{% /codeblock %}}
+`sudo apt-get install ncdu`
 
 - Then run `ncdu` and it will show you the disk space usage stats and you click enter to dig deeper into each directory. Then look for cache files or other unnecessary files manually and press `d` to delete that file or directory. 
 - Run df -h again to check status of the disk space storage
