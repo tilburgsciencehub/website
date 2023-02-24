@@ -1,0 +1,2649 @@
+{{- partial "header.html" . -}}
+WE ARE NOW IN VIEW
+
+
+
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  <script src="https://kit.fontawesome.com/4e7776d591.js" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+
+</head>
+
+  <main class="main">
+
+    <section class="icon-scroll-bar-section">   
+      <div class="circle active-category" style="background-color: #b6d2f5;" onclick="category(this)">
+        <i class="fa-solid fa-house fa-2xl icon-bar-icon"></i>
+      </div>
+      <div class="circle" style="background-color:#FF9C00;" onclick="category(this)">
+        <i class="fa-solid fa-desktop fa-2xl icon-bar-icon"></i>
+      </div>
+      <div class="circle" style="background-color:#013365" onclick="category(this)">
+        <i class="fa-solid fa-graduation-cap fa-2xl icon-bar-icon"></i>
+      </div>
+      <div class="circle" style="background-color: #ffcc00;" onclick="category(this)">
+        <i class="fa-solid fa-folder-plus fa-2xl icon-bar-icon"></i>
+      </div>
+      <div class="circle" style="background-color:rgb(42, 91, 165);" onclick="category(this)">
+        <i class="fa-solid fa-database fa-2xl icon-bar-icon"></i>
+      </div>
+      <div class="circle" style="background-color:rgb(226, 183, 43);" onclick="category(this)">
+        <i class="fa-solid fa-diagram-predecessor fa-2xl icon-bar-icon"></i>
+      </div>
+      <div class="circle" style="background-color:#3F5E7E;" onclick="category(this)">
+        <i class="fa-solid fa-chart-simple fa-2xl icon-bar-icon"></i>
+      </div>
+      <div class="circle" style="background-color:#c3f1ea;" onclick="category(this)">
+        <i class="fa-solid fa-gears fa-2xl icon-bar-icon"></i>
+      </div>
+      <div class="circle" style="background-color:#517496;" onclick="category(this)">
+        <i class="fa-solid fa-share fa-2xl icon-bar-icon"></i>
+      </div>
+    </section>
+
+    <!-- Book tab 1-->
+    <section class="book-tab active-book-tab">
+      <div class="card-area">
+
+        <!-- Card Section-->
+        <div class="card-section">
+
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card1">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card1">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card1">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card2">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card2">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card2">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card3">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card3">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card3">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card3">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+
+      <div class="card-area">
+
+        <!-- Card Section-->
+        <section class="card-section">
+
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card1">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card1">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card1">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card2">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card2">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card2">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card3">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card3">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card3">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card3">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          
+        </section>
+
+      </div>
+    </section>
+
+    <!-- Book tab 2-->
+    <section class="book-tab">
+      <h2>tab 2</h2>
+      <div class="card-area">
+
+        <!-- Card Section-->
+        <section class="card-section">
+
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card1">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card1">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card1">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card2">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card2">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card2">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card3">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card3">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card3">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card3">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          
+        </section>
+
+      </div>
+
+      <div class="card-area">
+
+        <!-- Card Section-->
+        <section class="card-section">
+
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card1">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card1">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card1">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card2">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card2">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card2">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card3">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card3">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card3">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card3">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          
+        </section>
+
+      </div>
+    </section>
+
+    <!-- Book tab 3-->
+    <section class="book-tab">
+      <h2>tab 3</h2>
+      <div class="card-area">
+
+        <!-- Card Section-->
+        <section class="card-section">
+
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card1">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card1">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card1">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card2">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card2">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card2">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card3">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card3">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card3">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card3">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          
+        </section>
+
+      </div>
+
+      <div class="card-area">
+
+        <!-- Card Section-->
+        <section class="card-section">
+
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card1">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card1">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card1">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card1" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card2">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card2">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card2">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card2" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card2">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--card3">
+                    <img src="images/icon-computer.png" style="width:100px;height:75px;margin-top: -20px;">
+                    <h2 class="card-front__heading">
+                      Configure your computer
+                    </h2>
+                    <p class="card-front__text-description">
+                      Get instructions on the installation of different programs and libraries to install for performing
+                      data analysis
+                    </p>
+                  </div>
+
+                  <div class="card-front-bt">
+                    <p class="card-front__text-view card-front__text-view--card3">
+                      HOVER ME
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--card3">
+                      Configure your computer
+                    </h3>
+                    <p class="inside-page__text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut nulla tincidunt, accumsan massa
+                      quis, ultrices ex. Etiam at gravida lectus. Cras suscipit iaculis blandit. Aenean quis fermentum
+                      ipsum.
+                    </p>
+                    <div class="sub-card-main">
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-one">
+                          <h4 style="color:white;">Statistics and Computation</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-two">
+                          <h4 style="color:white;">Task-specific Configurations</h4>
+                        </div>
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-three">
+                          <h4 style="color:white;">Automation and Workflows</h4>
+                        </div>
+                      </div>
+
+                      <div class="sub-card-section">
+                        <div class="sub-card-cel card-front__tp--card3" onclick="subTabs(this)" id="subcardcel-four">
+                          <h4 style="color:white;">Research Infrastructure</h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="bookmark">
+                <div class="bookmark-icon-section">
+                  
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a></div>
+                  <div class="bookmark-icon"><a href="#" style="color:white"><i
+                        class="fa-solid fa-bookmark fa-2xl"></i></a></div>
+                </div>
+              </div>
+              <div class="inside-page__container">
+
+                <div class="inside-page__tab" id="inside-page__tab_one">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Get Text Editors</a></li>
+                    <li class="page_link"><a href="#">Python Packages</a></li>
+                    <li class="page_link"><a href="#">Set up Git and GitHub</a></li>
+                    <li class="page_link"><a href="#">Set up LaTeX</a></li>
+                    <li class="page_link"><a href="#">Set up MATLAB</a></li>
+                    <li class="page_link"><a href="#">Set up Pandoc</a></li>
+                    <li class="page_link"><a href="#">Set up Perl</a></li>
+                    <li class="page_link"><a href="#">Set up Python</a></li>
+                    <li class="page_link"><a href="#">Set up R and RStudio</a></li>
+                    <li class="page_link"><a href="#">Set up Stata</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_two">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Configuring Python for Web Scraping</a></li>
+                  </ul>
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_three">
+
+                  <h2 class="inside-page__heading inside-page__heading--card1">
+                    All Pages
+                  </h2>
+
+                  <ul>
+                    <li class="page_link"><a href="#">Making Path Settings Permanent</a></li>
+                    <li class="page_link"><a href="#">Set up Command Line Tools</a></li>
+                    <li class="page_link"><a href="#">Set up Docker</a></li>
+                    <li class="page_link"><a href="#">Set up Make</a></li>
+                    <li class="page_link"><a href="#">Set up Snakemake</a></li>
+                    <li class="page_link"><a href="#">Set up TeamViewer</a></li>
+                    <li class="page_link"><a href="#">Set up the AWS Client</a></li>
+                  </ul>
+
+                </div>
+
+                <div class="inside-page__tab" id="inside-page__tab_four">
+
+                  <h2 class="inside-page__heading inside-page__heading--card3">
+                    All Pages
+                  </h2>
+                  <ul>
+                    <li class="page_link"><a href="#">Learn About the Various Ways to Setup a Research Infrastructure</a>
+                    </li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's Cartesius Cluster</a></li>
+                    <li class="page_link"><a href="#">Cloud Computing with SURFsara's LISA Cluster</a></li>
+                    <li class="page_link"><a href="#">Getting Started with Research Cloud</a></li>
+                    <li class="page_link"><a href="#">HPC TiU for Cloud Computing</a></li>
+                    <li class="page_link"><a href="#">Set up SURF Research Drive and Rclone to Store Data</a></li>
+                    <li class="page_link"><a href="#">Use Google Colab to Run Python in the Cloud</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function subTabs(tab) {
+      var tabContents = document.getElementsByClassName('inside-page__tab');
+      for (var i = 0; i < tabContents.length; i++) {
+        tabContents[i].style.display = 'none';
+      }
+      var tabNumber = tab.id.split('-');
+      console.log('inside-page__tab_' + tabNumber[1]);
+      document.getElementById('inside-page__tab_' + tabNumber[1]).style.display = 'block';
+    };
+  </script>
+
+
+
+
+
+
+<div class="container content">
+  <br><br><br><br>
+  <div class="row justify-content-center">
+    <div class="col-lg-11 col-22">
+      <h1 class="text-center">Building Blocks</h1>
+      <p class="text-center text-secondary my-5">
+        Building blocks are the DNA of our platform. Use and "mix" our code snippets and workflows to create something unique.
+      </p>
+      <!-- <div class="position-relative mx-5 searchIconRight w-75 mx-auto">
+        <input
+          type="text"
+          class="form-control form-control-lg border-0 shadow-sm buildingBlockSearch px-4"
+          placeholder="What are you looking for?"
+        />
+        <div
+          class="position-absolute w-100 bg-white rounded shadow buildingBlocksSuggestions"
+        ></div>
+      </div> -->
+    </div>
+
+  </div>
+  <br><br><br><br>
+  <!-- all the building blocks -->
+  <div class="row justify-content-center buildingBlocksRow">
+    <div class="col-20">
+      {{- range where .Site.Pages "Section" "building-blocks" -}} {{ if eq .Params.isParent "true" }} {{- range .Pages -}}
+      <div class="p-5 bg-white mb-5 rounded">
+        <div class="row">
+          <div class="col-lg-8 col-24">
+            <h4 class="heading m-0 mb-3">{{ .Title }}</h4>
+          </div>
+          <div class="col-lg-16 col-24">
+            <div class="row">
+              {{- range .Pages -}}
+              <div class="col-24 col-lg-12 mb-4">
+                <h5 class="heading font-weight-normal" style="font-size: 16px; height: 22px;">{{ .Title }}</h5>
+                {{ range .Pages }}
+                <a class="d-block" href="{{.Permalink}}">{{.Title}}</a>
+                {{ end }}
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+      {{- end -}} {{ end }} {{- end -}}
+    </div>
+  </div>
+</div>
+
+{{- partial "footer.html" . -}}
