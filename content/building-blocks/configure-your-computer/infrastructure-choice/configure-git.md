@@ -12,7 +12,7 @@ aliases:
 
 # Overview
 
-This building block takes you through the steps to configure Git on a new virtual machine (VM) on Research Cloud once you have finished [setting up your account](https://tilburgsciencehub.com/configure/research-cloud/?utm_campaign=referral-short). Follow [these steps](https://servicedesk.surf.nl/wiki/display/WIKI/Start+a+simple+workspace) to create a workspace and [log in](https://servicedesk.surf.nl/wiki/display/WIKI/Log+in+to+your+workspace) to the instance.
+This building block takes you through the steps to configure Git on a new virtual machine (VM) on Research Cloud once you have finished setting up your account and creating a workspace following [these steps](https://tilburgsciencehub.com/configure/research-cloud/?utm_campaign=referral-short).
 
 ## Setting up SSH key authentication
 
@@ -30,6 +30,10 @@ You can access and write data in remote repositories on Github using SSH (Secure
     <source src="../img/ssh-keygen.mov" type="video/mp4">
   </video>
 
+{{% tip %}}
+  You could also create additional storage drive and link it to the instance when creating one. Then make sure to save the SSH key files in this external drive. This will be helpful when for example, you delete your current VM and mount this external drive to a new VM. In this case, you need not configure git from scratch again.
+{{% /tip %}}
+
 ### Step 2: Configure SSH
 If you configure multiple keys for an SSH client and connect to an SSH server, the client can try the keys one at a time until the server accepts one but this process desn’t work because of how Git SSH URLs are structured. Hence, you must configure SSH to explicitly use a specific key file. To do this, edit your `~/.ssh/config` file using the `nano` command and copy-paste the following and press F3 to save.
 
@@ -43,9 +47,14 @@ If you configure multiple keys for an SSH client and connect to an SSH server, t
 {{% /codeblock %}}
 
 
+
 {{% warning %}}
 Make sure to change the ‘IdentityFile’ to the directory where the id_rsa key is saved.
 {{% /warning %}}
+
+
+
+
 
 
 
@@ -77,14 +86,3 @@ Make sure to change the ‘IdentityFile’ to the directory where the id_rsa key
 <video width="500" height="300" controls>
   <source src="../img/git clone.mov" type="video/mp4">
 </video>
-
-{{% warning %}}
-Make sure to check your workspace from time to time using df -h to prevent memory overload. You will get an alert from SURF if the root disk is at 80% capacity. If this happens, do the following:
-
-- Install ncdu command:
-`sudo apt-get install ncdu`
-
-- Then run `ncdu` and it will show you the disk space usage stats and you click enter to dig deeper into each directory. Then look for cache files or other unnecessary files manually and press `d` to delete that file or directory.
-- Run df -h again to check status of the disk space storage
-
-{{% /warning %}}
