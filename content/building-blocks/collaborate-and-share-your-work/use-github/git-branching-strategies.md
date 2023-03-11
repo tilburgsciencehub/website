@@ -123,3 +123,4 @@ Git Flow is particularly well-suited for **larger development teams** that are w
 * **Trunk-Based Development** is a Git branching strategy that emphasizes frequent integration and testing on the `main` branch to ensure a high level of collaboration and continuous delivery.
 * **Feature Branching** is a Git branching strategy that involves creating separate branches for individual features or changes to allow for isolation, testing, and review before merging into the `main` branch.
 * **Git Flow** is a Git branching model that builds on Feature Branching by adding additional branches for managing releases and hotfixes, providing a structured approach for managing different types of changes in larger teams or more complex projects.
+{{% /summary %}}
