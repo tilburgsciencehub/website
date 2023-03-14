@@ -12,7 +12,7 @@ aliases:
 
 # Overview
 
-This building block takes you through the steps to configure Git on a new virtual machine (VM) on Research Cloud once you have finished setting up your account and creating a workspace following [these steps](https://tilburgsciencehub.com/configure/research-cloud/?utm_campaign=referral-short).
+This building block takes you through the steps to configure Git on a new virtual machine (VM) on Research Cloud once you have finished setting up your account and creating a workspace following [these steps](https://tilburgsciencehub.com/building-blocks/configure-your-computer/infrastructure-choice/getting-started-research-cloud/).
 
 ## Setting up SSH key authentication
 
