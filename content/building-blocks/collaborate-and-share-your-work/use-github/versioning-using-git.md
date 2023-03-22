@@ -38,7 +38,7 @@ that allow you to collaborate with each other more efficiently. A few examples:
 
 **For starters...**
 
-If you've never worked with Git or GitHub before, we recommend you following [this nteractive onboarding tutorial](https://lab.github.com/githubtraining/introduction-to-github).
+If you've never worked with Git or GitHub before, we recommend you following [this interactive onboarding tutorial](https://github.com/skills/introduction-to-github).
 
 **For more advanced learners..**
 
