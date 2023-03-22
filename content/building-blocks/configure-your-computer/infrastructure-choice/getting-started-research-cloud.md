@@ -38,7 +38,7 @@ Make sure that you’re affiliated with a Dutch research institution to set up t
 
 {{% /warning %}}
 
-1. Fill in the project [application form](https://www.surf.nl/en/research-ict/apply-for-access-to-compute-services). Click on "go to request portal" and login with SURFconext, selecting Tilburg University and using your TiU credentials.On the SURF servicedesk look for "apply for access" and select "small NWO request (EINF)."
+1. Fill in the project [application form](https://www.surf.nl/en/research-ict/apply-for-access-to-compute-services). Click on "go to request portal" and login with SURFconext, selecting Tilburg University and using your TiU credentials. You will be transfered to the SURF servicedesk. On the SURF servicedesk look for "apply for access" and select "small NWO request (EINF)."
 
 2. Once your wallet is approved, you will receive an email from SURF to set up your initial workspace. This will look like this:
 
