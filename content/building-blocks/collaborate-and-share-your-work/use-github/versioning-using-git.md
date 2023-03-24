@@ -238,7 +238,10 @@ After integrating changes from a particular branch, you ideally synchronize chan
 Want to know more about how to use Git? Check out this material:
 - [Lessons at Software Carpentry](https://software-carpentry.org/lessons/)
 - [GitHub Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)
-- [Tutorial on using Git at the University of Zürich](https://github.com/pp4rs/2020-uzh-course-material/blob/master/11-version-control/slides/git-local.pdf).
+- [Tutorial on using Git at the University of Zürich](https://github.com/pp4rs/2020-uzh-course-material/blob/master/11-version-control/slides/git-local.pdf)
+- [Introduction to Git](https://www.datacamp.com/courses/introduction-to-git)
+- [Git for Data Scientists](https://www.datacamp.com/courses/introduction-to-git-for-data-science)
+- [GitHub Concepts](https://www.datacamp.com/courses/github-concepts)
 
 <!--
 ![Git workflows.](../git.png)
