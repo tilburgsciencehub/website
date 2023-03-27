@@ -1,7 +1,7 @@
 ---
 title: "Working With Large Files on GitHub"
 description: "GitHub limits the size of files allowed in repositories. Use Git lfs and upload large files to GitHub. Follow how to install, set up, and use git lfs."
-weight: 7
+weight: 9
 keywords: "github, git-lfs, large files, versioning, organizing, git lfs, install"
 #date: 2021-01-06T22:01:14+05:30
 #draft: false

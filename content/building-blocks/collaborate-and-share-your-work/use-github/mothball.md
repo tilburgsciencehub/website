@@ -2,7 +2,7 @@
 title: "Archiving Repositories when They're Done"
 description: "Your repository is completed and no further work is expected? Keep it in good condition by making it ready to use again in the future if needed."
 keywords: "git, github, mothball, remove, sensitive, password"
-weight: 8
+weight: 10
 #date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
