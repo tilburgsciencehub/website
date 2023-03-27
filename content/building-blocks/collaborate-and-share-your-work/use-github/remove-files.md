@@ -2,7 +2,7 @@
 title: "Remove Sensitive or Large Files From Your Repository"
 description: "Accidentally committed large data sets or sensitive information to your repository? Here is how to entirely remove files from your repository's history!"
 keywords: "git, github, versioning, remove, sensitive, password"
-weight: 6
+weight: 8
 #date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
