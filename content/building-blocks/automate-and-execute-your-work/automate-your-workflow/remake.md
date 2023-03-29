@@ -9,13 +9,16 @@ aliases:
   - /remake
 ---
 # Overview
-When working on complex projects that contain several datasets and scripts to be run, it can get quite tedious to keep track of the order of running scripts or check if certain scripts need to be executed again to keep up-to-date. In this regard, [`Make`](https://tilburgsciencehub.com/learn/makefiles/?utm_campaign=referral-short) is a great tool to automate the execution of the entire workflow with a single command, making it reproducible.
 
-However, `make` can still be somewhat opaque when it comes to diagnostics. This is where the debugger `remake` comes in handy. Whenever you run into issues while running make, switching to `remake` is helpful as it provides extensive error information to then debug your workflow quickly.
+[`Make`](https://tilburgsciencehub.com/learn/makefiles/?utm_campaign=referral-short) is a useful tool for automating the execution of scripts and managing datasets in a complex project. However, diagnosing errors in the workflow can be challenging with `make`. To address this issue, the debugger `remake` can be used to provide extensive error information, facilitating the debugging process and helping to ensure that the project runs smoothly.
 
-## Steps to debugging
+# Steps to debugging
 
-To illustrate the steps to debugging with `remake` we will use an example workflow with the following directory structure. Now suppose the files `cleaned_listings.csv` and `cleaned_listings1.csv` were created after running the `cleaning. R` were not saved in the temp folder. The files in the output folder are dependent on these files in the temp folder which will result in an error while executing make. Let’s see how `remake` helps spot this bug in the workflow easily.
+To illustrate the steps to debugging with `remake` we will use an example workflow with the following directory structure.
+
+{{% cta-primary-center "Go to the GitHub Repository now" "https://github.com/srosh2000/Airbnb_Superhosts.git" %}}
+
+
 
 {{% codeblock %}}
 
@@ -58,21 +61,61 @@ To illustrate the steps to debugging with `remake` we will use an example workfl
 
 {{% /codeblock %}}
 
-{{% cta-primary-center "Go to the GitHub Repository now" "https://github.com/srosh2000/Airbnb_Superhosts.git" %}}
 
-### Tracing
+
+
+Suppose the files `cleaned_listings.csv` and `cleaned_listings1.csv` were created after running the `cleaning. R` were not saved in the temp folder. The files in the output folder are dependent on these files in the temp folder which will result in an error while executing make.
+
+
+**Here are the key steps we will take you through to debug using remake:**
+
+
+* Install `remake`
+* Run `remake`
+* Use the `remake --trace` command to run the `remake` tool with tracing enabled for more details on how each rule in your makefile is executed.
+* Set breakpoints using the `continue` or `break` command to pause the execution of your makefile at specific points to debug.
+
+Now, let's get started!
+
+
+## Installing remake
+
+### Debian/Ubuntu
+
+On Debian systems, remake can be installed by running:
+
+
+{{% codeblock %}}
+```bash
+$ sudo apt-get install remake
+```
+{{% /codeblock %}}
+
+
+### MacOSX
+
+On OSX systems, it can be installed from Homebrew or [MacPorts](https://ports.macports.org/port/remake/details/).
+
+{{% codeblock %}}
+```bash
+$ brew install remake
+```
+{{% /codeblock %}}
+
+
+## Tracing
 
 When you run make, it simply spots the error without further information on how the target needs to be updated but we might get more information by consulting the rules for the target.
 
 <p align = "center">
-<img src = "../images/1.png" width="600">
+<img src = "../images/make.png" width="700">
 <figcaption> Error output after running make </figcaption>
 </p>
 
 Now let us run *remake*:
 
 <p align = "center">
-<img src = "../images/remake.png" width="600">
+<img src = "../images/remake.png" width="700">
 <figcaption> Error output after running remake </figcaption>
 </p>
 
@@ -81,7 +124,7 @@ This displays additional information. We get the line number inside the Makefile
 For further traceback information, run `remake --trace analysis` or just `remake --trace` without target name.
 
 <p align = "center">
-<img src = "../images/trace.png" width="600">
+<img src = "../images/trace.png" width="800">
 <figcaption> Tracing output </figcaption>
 </p>
 
@@ -105,13 +148,13 @@ These lines separate shell commands about to be run from the output that they pr
 Run `remake -n` to see the sequence of steps that will be run to execute the workflow without actually running it.
 {{% /tip %}}
 
-### Entering the Debugger and Setting Breakpoints
+## Entering the Debugger and Setting Breakpoints
 The simple tracing method explained above is sometimes enough but we could also work with the built-in debugger which contains some useful commands for more efficient debugging.
 
 Run `remake --debugger` , `remake -X` or `remake --debugger analysis` (with a specific target name, here: analysis) to enter the debugger.
 
 <p align = "center">
-<img src = "../images/remake-x.png" width="600">
+<img src = "../images/remake-X.png" width="600">
 <figcaption> Initiating debugger session </figcaption>
 </p>
 
@@ -124,7 +167,7 @@ For a given target, there are three main stopping points:
 - after target is complete: end
 
 <p align = "center">
-<img src = "../images/breakpoint.png" width="600">
+<img src = "../images/breakpoint.png" width="800">
 <figcaption> Setting breakpoint </figcaption>
 </p>
 
@@ -139,7 +182,7 @@ Furthermore, you can run `break` to get a list of all breakpoints. To delete bre
 Additionally, once you enter the debugger the `backtrace` command comes in handy to trace the root of the error.
 
 <p align = "center">
-<img src = "../images/backtrace.png" width="600">
+<img src = "../images/backtrace.png" width="800">
 <figcaption> Output from backtracing </figcaption>
 </p>
 
@@ -149,14 +192,23 @@ Additionally, once you enter the debugger the `backtrace` command comes in handy
 
 Lastly, to exit the debugger session simply run `quit`.
 <p align = "center">
-<img src = "../images/quit.png" width="600">
+<img src = "../images/quit.png" width="500">
 <figcaption> Quitting debugger session </figcaption>
 </p>
 
-In summary, the following changes have been made to GNU Make to improve tracing and error reporting with remake:
 
-- The Makefile name and the line inside this file are reported when referring to a target.
-- A list of relevant targets with their locations is shown in the error message.
-- The command invocation used to run make is also shown.
-- There are useful options that allow for entering the debugger on error.
-- The shell input that is about to be run is separated from the output in running that shell code.
+{{% summary %}}
+**The following changes have been made to GNU Make to improve tracing and error reporting with remake**:
+
+* The Makefile name and the line inside this file are reported when referring to a *target*.
+* A list of relevant targets with their *locations* is shown in the error message.
+* The command invocation used to run make is also shown.
+* There are useful options that allow for entering the debugger on error.
+* The shell input that is about to be run is separated from the output in running that shell code.
+{{% /summary %}}
+
+# See also
+
+* [How to set up Make](https://tilburgsciencehub.com/get/make/?utm_campaign=referral-short)
+* [Use Makefiles to re-run your code](https://tilburgsciencehub.com/learn/makefiles/?utm_campaign=referral-short)
+* [Tutorial on Pipeline automation using make](https://tilburgsciencehub.com/practice/pipeline-automation/?utm_campaign=referral-short)
