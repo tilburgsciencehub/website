@@ -17,7 +17,6 @@ In many cases, when analyzing a model, for example, one with a binary dependent 
 
 Consider the case examined in Wooldridge's Introductory Econometrics textbook, where a binary variable such as female labor participation is analyzed as depending on education, partner's income, age, and number of children. A standard way to estimate this is using either a logit or a probit model.
 
-[comment]: <> {{% tip %}}
 
 Consider an outcome $a$, the marginal effect is the change of $a$ when $x$ changes: $\dfrac{\partial a}{\partial x}$. In the context of a binary model, we are generally interested in how the probability of $y$ being equal to 1 changes when a regressor $x_j$ changes:
 
@@ -29,8 +28,6 @@ $$\dfrac{\partial P(y=1|x_1,\dots,x_j,\dots,x_k)}{\partial x_j} = \beta_k \times
 
 Which depends on the specific values not only $x_j$ but every other regressor! That is, the marginal effect of a change in a regressor on the probability of $y$ being $1$ varies for different values of the regressors. A similar result is found for a probit model.
  
-[comment]: <> {{% /tip %}}
-
 {{% codeblock %}}
 ```R
 # Load necessary packages
