@@ -18,9 +18,9 @@ In many cases, when analyzing a model, for example, one with a binary dependent 
 Consider the case examined in Wooldridge's Introductory Econometrics textbook, where a binary variable such as female labor participation is analyzed as depending on education, partner's income, age, and number of children. A standard way to estimate this is using either a logit or a probit model.
 
 
-Consider an outcome $a$, the marginal effect is the change of $a$ when $x$ changes: $\dfrac{\partial a}{\partial x}$. In the context of a binary model, we are generally interested in how the probability of $y$ being equal to 1 changes when a regressor $x_j$ changes:
+Consider an outcome $a$, the marginal effect is the change of *a* when *x* changes: \frac{d a}{d x}. In the context of a binary model, we are generally interested in how the probability of $y$ being equal to 1 changes when a regressor $x_j$ changes:
 
-$$\dfrac{\partial P(y=1|x_1,\dots,x_j,\dots,x_k)}{\partial x_j}$$
+\dfrac{\partial P(y=1|x_1,\dots,x_j,\dots,x_k)}{\partial x_j}
 
 In the case of a logit model, this can be obtained as:
 
