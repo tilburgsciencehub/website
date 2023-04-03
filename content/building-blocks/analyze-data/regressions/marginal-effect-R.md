@@ -53,9 +53,11 @@ estimates store logit_model
 
 {{% tip %}}
 
-Consider an outcome {{< katex >}}$a${{< /katex >}}, the marginal effect is the change of $a$ when $x$ changes: $\dfrac{\partial a}{\partial x}$. In the context of a binary model, we are generally interested in how the probability of $y$ being equal to 1 changes when a regressor $x_j$ changes:
+Consider an outcome $a$, the marginal effect is the change of $a$ when $x$ changes: $\dfrac{\partial a}{\partial x}$. In the context of a binary model, we are generally interested in how the probability of $y$ being equal to 1 changes when a regressor $x_j$ changes:
 
-$$\dfrac{\partial P(y=1|x_1,\dots,x_j,\dots,x_k)}{\partial x_j}$$
+{{< katex >}}
+\dfrac{\partial P(y=1|x_1,\dots,x_j,\dots,x_k)}{\partial x_j}
+{{< /katex >}}
 
 In the case of a logit model, this can be obtained as:
 
