@@ -16,6 +16,16 @@ aliases:
 In many cases, when analyzing a model, for example, one with a binary dependent variable, we are interested in the marginal effects of the regressors on the outcome variable rather than the headline estimated coefficients. 
 
 Consider the case examined in Wooldridge's Introductory Econometrics textbook, where a binary variable such as female labor participation is analyzed as depending on education, partner's income, age, and number of children. A standard way to estimate this is using either a logit or a probit model.
+
+{{< katex display >}}
+\left(
+\begin{array}{lcr}
+  a & b & c \\
+  d & e & f \\
+  g & h & i
+\end{array}
+\right)
+{{< /katex >}}
  
 {{% codeblock %}}
 ```R
