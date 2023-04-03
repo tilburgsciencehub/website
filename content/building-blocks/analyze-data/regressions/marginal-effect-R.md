@@ -61,7 +61,7 @@ $$\dfrac{\partial P(y=1|x_1,\dots,x_j,\dots,x_k)}{\partial x_j}$$
 
 In the case of a logit model, this can be obtained as:
 
-$$\dfrac{\partial P(y=1|x_1,\dots,x_j,\dots,x_k)}{\partial x_j} = \beta_k \times P(y=1|x) \times (1 - P(y=1|x)$$
+$$\dfrac{\partial P(y=1|x_1,\dots,x_j,\dots,x_k)}{\partial x_j} = \beta_k \times P(y=1|x) \times (1 - P(y=1|x))$$
 
 Which depends on the specific values not only $x_j$ but every other regressor! That is, the marginal effect of a change in a regressor on the probability of $y$ being $1$ varies for different values of the regressors. A similar result is found for a probit model.
  
