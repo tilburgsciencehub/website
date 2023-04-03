@@ -17,15 +17,6 @@ In many cases, when analyzing a model, for example, one with a binary dependent 
 
 Consider the case examined in Wooldridge's Introductory Econometrics textbook, where a binary variable such as female labor participation is analyzed as depending on education, partner's income, age, and number of children. A standard way to estimate this is using either a logit or a probit model.
 
-{{< katex display >}}
-\left(
-\begin{array}{lcr}
-  a & b & c \\
-  d & e & f \\
-  g & h & i
-\end{array}
-\right)
-{{< /katex >}}
  
 {{% codeblock %}}
 ```R
@@ -59,6 +50,22 @@ estimates store logit_model
 
 ```
 {{% /codeblock %}}
+
+{{% tip %}}
+
+Consider an outcome $a$, the marginal effect is the change of $a$ when $x$ changes: $\dfrac{\partial a}{\partial x}$. In the context of a binary model, we are generally interested in how the probability of $y$ being equal to 1 changes when a regressor $x_j$ changes:
+
+{{< katex display >}}
+$$\dfrac{\partial P(y=1|x_1,\dots,x_j,\dots,x_k)}{\partial x_j}$$
+{{< /katex >}}
+
+In the case of a logit model, this can be obtained as:
+
+$$\dfrac{\partial P(y=1|x_1,\dots,x_j,\dots,x_k)}{\partial x_j} = \beta_k \times P(y=1|x) \times (1 - P(y=1|x)$$
+
+Which depends on the specific values not only $x_j$ but every other regressor! That is, the marginal effect of a change in a regressor on the probability of $y$ being $1$ varies for different values of the regressors. A similar result is found for a probit model.
+ 
+{{% /tip %}}
 
 ## Calculating the Average Marginal Effect (AME)
 
@@ -108,7 +115,7 @@ margins, dydx(*)
 ```
 {{% /codeblock %}}
 
-## Marginal Effect at different value of the regressors
+## Marginal Effect at different values of the regressors
 
 Alternatively, marginal effects can also be reported at given values of the regressors, which are of particular interest. For example, calculating the marginal effect of each variable for a women with 12 years of education and one children under age 6.  A common report is the Marginal Effect at the Mean (MEM) gives the marginal effects at the mean values for all regressors.
 
