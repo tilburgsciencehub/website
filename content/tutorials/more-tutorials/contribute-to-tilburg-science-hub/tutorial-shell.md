@@ -43,7 +43,7 @@ Explain the solution step by step. If there's code involved, explain small snipp
 
 Use subheaders if needed.
 
-## Code <!-- Provide your code in all the relevant languages and/or operating systems and specify them after the three back ticks. Do NOT remove {{% codeblock %}} -->
+## Code <!-- Provide your code in all the relevant languages and/or operating systems and specify them after the three back ticks. Do NOT remove % codeblock % -->
 
 {{% codeblock %}} <!-- You can provide more than one language in the same code block -->
 

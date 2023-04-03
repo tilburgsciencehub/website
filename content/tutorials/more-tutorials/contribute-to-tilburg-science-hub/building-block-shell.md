@@ -30,7 +30,7 @@ Provide a brief overview of the issue to solve, or describe why this is a best p
 Add any special requirements or attach a dummy data set if needed.
 
 
-## Code <!-- Provide your code in all the relevant languages and/or operating systems and specify them after the three back ticks. Do NOT remove {{% codeblock %}} -->
+## Code <!-- Provide your code in all the relevant languages and/or operating systems and specify them after the three back ticks. Do NOT remove % codeblock % -->
 
 {{% codeblock %}} <!-- You can provide more than one language in the same code block -->
 
