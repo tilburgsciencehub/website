@@ -2,7 +2,7 @@
 title: "Making Path Settings Permanent"
 description: "For our workflow to be command line driven, we need to be able to call software from the command line."
 keywords: "PATH, add, terminal, cli, bash"
-weight: 4
+#weight: 4
 #date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:

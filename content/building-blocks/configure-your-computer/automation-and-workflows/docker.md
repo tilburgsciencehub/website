@@ -2,7 +2,7 @@
 title: "Set up Docker"
 description: "Holy Grail of replicability: Say goodbye to *but it works on my computer*, embrace the power of containerisation"
 keywords: "docker, images, container, environments, virtual, install"
-weight: 2
+#weight: 2
 #date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
