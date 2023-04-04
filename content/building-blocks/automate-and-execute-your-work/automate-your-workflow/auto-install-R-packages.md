@@ -3,6 +3,7 @@ title: "Automatically Install R Packages Used in a Project"
 description: "Easily find all the R packages used in a project and automatically install them."
 keywords: "R packages, installation, find, gist"
 #date: 2021-01-06T22:01:14+05:30
+weight: 3
 draft: false
 aliases:
   - /install/r-packages

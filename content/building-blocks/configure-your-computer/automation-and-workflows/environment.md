@@ -37,7 +37,7 @@ If you accepted all defaults during your installation, and didn't have any other
         ;
 
 
-### Mac and Linux Users 
+### Mac and Linux Users
 
 You will need to add a line to the file ".bash_profile" or potentially create the file if it didn't already exist.
 This file lives in your home directory and it is hidden from your view by default.

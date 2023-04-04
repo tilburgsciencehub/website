@@ -1,7 +1,7 @@
 ---
 title: "Use this Checklist to Improve Your Project's Structure"
 description: "Audit data and computation efficient projects."
-weight: 3
+weight: 7
 keywords: "make, makefile, automation, recipes, workflow"
 date: 2021-01-06T22:01:14+05:30
 aliases:
