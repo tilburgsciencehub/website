@@ -3,7 +3,7 @@ title: "Integrating Stata in Automated Workflows"
 description: "Learn how to use R to check for errors and the completion of Stata code in batch mode or in a Makefile."
 keywords: "exception, handling, stata, R, make, error"
 #date: 2021-03-19
-#weight: 2
+weight: 4
 author: "Nazli Alagöz"
 authorlink: "https://www.tilburguniversity.edu/staff/n-m-alagoz"
 aliases:

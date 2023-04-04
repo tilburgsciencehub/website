@@ -1,7 +1,7 @@
 ---
 title: "Schedule Recurring Tasks (e.g., by day, hour)"
 description: "Learn how to execute scripts at specified intervals with cronjob and Task Scheduler."
-#weight: 3
+weight: 3
 keywords: "cron, cronjob, automation, task scheduler, task scheduling"
 #date: 2021-01-06T22:01:14+05:30
 aliases:

@@ -3,11 +3,11 @@ title: "tableFill for Reproducible Tables"
 description: "Learn how to use the function tablefill in R to create reproducible tables and autofill values."
 keywords: "autofilling, tablefill, latex, lyx, markdown"
 
-weight: 3
+weight: 4
 aliases:
  - /learn/tablefill/
  - /tablefill/
- 
+
 ---
 
 ## Why should you use tableFill?

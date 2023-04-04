@@ -3,7 +3,7 @@ title: "Make Tables and Figures Reproducible with Autofilling Values"
 description: "Learn how to use R to check for errors and the completion of Stata code in batch mode or in a Makefile."
 keywords: "autofilling, tablefill, latex, lyx"
 
-weight: 3
+weight: 5
 aliases:
  - /autofilling-values/
 ---

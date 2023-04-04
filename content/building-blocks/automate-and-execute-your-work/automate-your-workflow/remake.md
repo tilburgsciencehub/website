@@ -1,8 +1,9 @@
 ---
 title: "Debugging Makefiles With Remake"
-description: "Tool to debug makefiles"
+description: "Remake - tool to debug makefiles"
 keywords: "make, remake, debugging, makefile, automation, recipes, workflow"
 draft: false
+weight: 2
 author: "Roshini Sudhaharan"
 authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:
@@ -16,11 +17,7 @@ aliases:
 
 To illustrate the steps to debugging with `remake` we will use an example workflow with the following directory structure.
 
-{{% cta-primary-center "Go to the GitHub Repository now" "https://github.com/srosh2000/Airbnb_Superhosts.git" %}}
-
-
-
-{{% codeblock %}}
+{{% cta-primary-center "Go to the GitHub Repository now" "https://github.com/srosh2000/airbnb_superhost" %}}
 
 
 ```bash
@@ -59,12 +56,8 @@ To illustrate the steps to debugging with `remake` we will use an example workfl
 
 ```
 
-{{% /codeblock %}}
 
-
-
-
-Suppose the files `cleaned_listings.csv` and `cleaned_listings1.csv` were created after running the `cleaning. R` were not saved in the temp folder. The files in the output folder are dependent on these files in the temp folder which will result in an error while executing make.
+Suppose the files `cleaned_listings.csv` and `cleaned_listings1.csv` were created after running the `cleaning.R` script were not saved in the temp folder. The files in the output folder are dependent on these files in the temp folder which will result in an error while executing make.
 
 
 **Here are the key steps we will take you through to debug using remake:**
@@ -85,6 +78,7 @@ Now, let's get started!
 On Debian systems, remake can be installed by running:
 
 
+
 {{% codeblock %}}
 ```bash
 $ sudo apt-get install remake
@@ -99,9 +93,15 @@ On OSX systems, it can be installed from Homebrew or [MacPorts](https://ports.ma
 {{% codeblock %}}
 ```bash
 $ brew install remake
+
 ```
 {{% /codeblock %}}
 
+{{% tip %}}
+
+Haven't installed Homebrew yet? Check out our [building block](https://tilburgsciencehub.com/configure/cli/?utm_campaign=referral-short) to set it up!
+
+{{% /tip %}}
 
 ## Tracing
 
@@ -132,17 +132,7 @@ The indentation in the first few lines containing file name and line numbers giv
 
 Finally, we also get details on the scripts that were run to build the target ***data-preparation*** This tells us to check the `cleaning.R` script for bugs.
 
-Further, remake has lines of the form:
 
-``` bash
-
-
-##>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-##<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-```
-
-These lines separate shell commands about to be run from the output that they produce.
 
 {{% tip %}}
 Run `remake -n` to see the sequence of steps that will be run to execute the workflow without actually running it.
@@ -153,8 +143,9 @@ The simple tracing method explained above is sometimes enough but we could also 
 
 Run `remake --debugger` , `remake -X` or `remake --debugger analysis` (with a specific target name, here: analysis) to enter the debugger.
 
+
 <p align = "center">
-<img src = "../images/remake-X.png" width="600">
+<img src = "../images/remake-x.png" width="600">
 <figcaption> Initiating debugger session </figcaption>
 </p>
 
@@ -204,7 +195,6 @@ Lastly, to exit the debugger session simply run `quit`.
 * A list of relevant targets with their *locations* is shown in the error message.
 * The command invocation used to run make is also shown.
 * There are useful options that allow for entering the debugger on error.
-* The shell input that is about to be run is separated from the output in running that shell code.
 {{% /summary %}}
 
 # See also
