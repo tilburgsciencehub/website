@@ -204,34 +204,11 @@ git push
 
 {{% /codeblock %}}
 
-## Advanced Use Cases
-
 ### Branching
 
-Branches separate the main version of your project (the "main" branch), from any experimental code in which you develop new features.
+Branches separate the main version of your project (the "main" branch), from any experimental code in which you develop new features. This allows members of the team to make changes to the project without immediately affecting the main version of the project. See [Git Branching Strategies](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/git-branching-strategies/)
+and [Best Practices for Naming Git Branches](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/naming-git-branches/) for more detailed explanations on how to use branching.
 
-One team member is in charge of the "main" branch, while everybody
-else implements new features in feature branches (give them any name you like, but names should be easily understood by anybody in your team).
-
-{{% codeblock %}}
-```bash
-# create a branch [branch-name]
-git branch [branch-name]
-
-# switch to s specific branch [branch-name]
-git checkout [branch-name]
-
-# merge a specific branch [branch] to the working branch;
-#, e.g., if you're in the master branch, you can integrate
-# any changes done in the feature [branch].
-git merge [branch]
-
-# delete a specific branch [branch-name]
-git branch -d [branch-name]
-```
-{{% /codeblock %}}
-
-After integrating changes from a particular branch, you ideally synchronize changes with the remote repository on GitHub.
 
 ## See also
 
