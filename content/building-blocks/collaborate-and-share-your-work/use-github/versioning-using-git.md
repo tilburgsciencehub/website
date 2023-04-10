@@ -206,13 +206,18 @@ git push
 
 ### Branching
 
-Branches separate the main version of your project (the "main" branch), from any experimental code in which you develop new features. This allows members of the team to make changes to the project without immediately affecting the main version of the project. See [Git Branching Strategies](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/git-branching-strategies/)
-and [Best Practices for Naming Git Branches](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/naming-git-branches/) for more detailed explanations on how to use branching.
+Branches separate the main version of your project (the "main" branch), from any experimental code in which you develop new features. This allows members of the team to make changes to the project without immediately affecting the main version of the project. 
 
+We provide an introduction to branching and branch naming strategies in additional building blocks:
+
+*  [Git Branching Strategies](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/git-branching-strategies/)
+*  [Best Practices for Naming Git Branches](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/naming-git-branches/)
 
 ## See also
 
-Want to know more about how to use Git? Check out this material:
+Want to know even more about how to use Git? 
+Check out the links below for more information:
+
 - [Lessons at Software Carpentry](https://software-carpentry.org/lessons/)
 - [GitHub Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)
 - [Tutorial on using Git at the University of Zürich](https://github.com/pp4rs/2020-uzh-course-material/blob/master/11-version-control/slides/git-local.pdf)
