@@ -1,6 +1,6 @@
 ---
-title: "Find marginal effects in R"
-description: "Find marginal effects in R through margins package. Examples using probit and logit models"
+title: "Compute Marginal Effects"
+description: "Compute marginal effects from nonlinear models in R and Stata. Examples using probit and logit models"
 keywords: "logit, probit, marginal effects, binary model, AME, MEM, average marginal effects"
 weight: 3
 #date: 2022-05-16T22:02:51+05:30
@@ -9,14 +9,18 @@ aliases:
   - /run/margR/
   - /run/margR
 ---
-# Find marginal effects in R
+# Find marginal effects in R and Stata
 
 ## Loading the data and setting up the models
 
 In many cases, when analyzing a model, for example, one with a binary dependent variable, we are interested in the marginal effects of the regressors on the outcome variable rather than the headline estimated coefficients. 
+Consider the case examined in Wooldridge's Introductory Econometrics textbook, where a variable such as female labor participation is analyzed as depending on education, partner's income, age, and number of children. When studying the behavior of binary variables -variables that take a value of 0 or 1- it is standard to use probit or logit models.
 
-Consider the case examined in Wooldridge's Introductory Econometrics textbook, where a binary variable such as female labor participation is analyzed as depending on education, partner's income, age, and number of children. A standard way to estimate this is using either a logit or a probit model.
+In such models, the probability of $y$ being equal to one is modeled as a function of regressors $x$: $P(y=1|x) = F(x\beta)$. Depending on the assumptions made on the error term we get a probit or logit model.
 
+ - **Probit**. Error term is assumed to have a normal distribution. $P(y=1|x) = \Phi(x\beta)$. Where $\Phi()$ is the cummulative distribution function of a standard normal.
+ 
+ - **Logit**. Error term is assumed to have a logistic distribution. $P(y=1|x) = \frac{exp(x\beta)}{1+exp(x\beta)}$.
  
 {{% codeblock %}}
 ```R
@@ -69,7 +73,7 @@ Which depends on the specific values not only $x_j$ but every other regressor! T
 
 ## Calculating the Average Marginal Effect (AME)
 
-In either model, the estimated effect of the explanatory variables on the outcome variable (i.e., the increase or decrease in the probability of being in the labor force) is not constant but depends on the specific values of the explanatory variables. One standard way to report marginal effects in this situation is to calculate the Average Marginal Effect (AME), that is, computing the marginal effect at the regressors value for each observation and then averaging out for the whole sample.
+In either model, the estimated effect of the explanatory variables on the outcome variable (i.e., the increase or decrease in the probability of being in the labor force) is not constant but depends on the specific values of the explanatory variables. One standard way to report marginal effects in this situation is to calculate the Average Marginal Effect (AME), that is, computing the marginal effect at the regressors value for each observation and then averaging out for the whole sample. One can compute AMEs as follows:
 
 {{% codeblock %}}
 ```R
@@ -84,19 +88,6 @@ summary(probit_AME)
 # or equivalently
 margins_summary(probit_model)
 
-# Comparing AME for Probit and Logit against the OLS coefficients:
-
-# Probit AME
-plot(probit_AME)
-# Add Logit AME
-points(1:length(summary(logit_AME)$AME)+0.1,summary(logit_AME)$AME,col="blue",pch=16)
-invisible(sapply(1:length(summary(logit_AME)$AME),FUN=function(x) lines(c(x+0.1,x+0.1),c(summary(logit_AME)$lower[x],summary(logit_AME)$upper[x]),col="blue")))
-# OLS average marginal effects are equal to the estimated coefficients
-ols_AME = margins(ols_model)
-points(1:length(summary(ols_AME)$AME)+0.2,summary(ols_AME)$AME,col="red",pch=16)
-invisible(sapply(1:length(summary(ols_AME)$AME),FUN=function(x) lines(c(x+0.2,x+0.2),c(summary(ols_AME)$lower[x],summary(ols_AME)$upper[x]),col="red")))
-
-legend("bottomleft",legend=c("Probit","Logit","OLS"),col=c("black","blue", "red"),lty=1,box.lty=0)
 ```
 
 ```
@@ -114,6 +105,15 @@ margins, dydx(*)
 
 ```
 {{% /codeblock %}}
+
+| Variable  | Probit AME | Logit AME |
+| --------- | ---------- | --------- |
+|     age   | -0.0169    | -0.0165   |
+|    educ   |  0.0408    |  0.0411   |
+|   exper   |  0.0214    |  0.0216   |
+| kidsge6   |  0.0105    |  0.0105   |
+| kidslt6   | -0.2670    | -0.2608   |
+|nwifeinc   | -0.0035    | -0.0036   |
 
 ## Marginal Effect at different values of the regressors
 
@@ -172,9 +172,23 @@ graph combine age_probability.gph age_margins.gph
 ```
 {{% /codeblock %}}
 
+
+<p align = "center">
+Expected probability and marginal effect for different values of age
+<img src = "../cplotMargins.png" width="500">
+</p>
+
 ## Example with regressor squared
 
-Take the example above but suppose we want to allow experience to enter the model both with a linear and quadratic term, since we expect a more complex relation between experience and labor market participation. When including the quadratic term in the model its best to do so by making explicit that we are including experience squared and not just another regressor (which happens to be experience squared).
+Take the example above but suppose we want to allow experience to enter the model both with a linear and quadratic term, since we expect a more complex relation between experience and labor market participation. Now, the probability of being in the labor market depends on both experience and experience squared. Take the case of the logit model:
+
+$$P(y=1|x) = \frac{exp(\text{experience}\times \beta_1 + \text{experience}^2\times\beta_2 + \text{age}\times\beta_3 + \dots)}{1 + exp(\text{experience}\times \beta_1 + \text{experience}^2\times\beta_2 + \text{age}\times\beta_3 + \dots)}$$
+
+Then, the marginal effect with respect to experience will be:
+
+$$\dfrac{\partial P(y=1|x)}{\partial \text{experience}} = (\beta_1 + \text{experience} 2\times\beta_2)\times P(y=1|x) \times (1 - P(y=1|x))$$
+
+Then, when including the quadratic term in the model its best to do so by making explicit that we are including experience squared and not just another regressor (which happens to be experience squared).
 
 {{% codeblock %}}
 ```R
@@ -191,8 +205,8 @@ probit_model_exp_2 = glm(inlf ~ nwifeinc + educ + exper + I(exper^2) + age + kid
 # The two models do not produce the same marginal analysis:
 
 par(mfcol=c(1,2))
-cplot(object=probit_model_exp_1,x="exper",what="prediction",main = "Prediction: adding expersq as another regressor",ylim=c(0,1))
 cplot(object=probit_model_exp_2,x="exper",what="prediction",main = "Prediction: adding expersq using I() function",ylim=c(0,1))
+cplot(object=probit_model_exp_1,x="exper",what="prediction",main = "Prediction: adding expersq as another regressor",ylim=c(0,1))
 
 ```
 
@@ -226,5 +240,7 @@ graph combine exp_model_1.gph exp_model_2.gph
 ```
 {{% /codeblock %}}
 
-
+<p align = "center">
+<img src = "../diffExperModel.png" width="500">
+</p>
 
