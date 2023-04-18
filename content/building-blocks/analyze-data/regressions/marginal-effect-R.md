@@ -1,6 +1,6 @@
 ---
-title: "Find marginal effects"
-description: "Find marginal effects in R through margins package. Examples using probit and logit models"
+title: "Compute Marginal Effects"
+description: "Compute marginal effects from nonlinear models in R and Stata. Examples using probit and logit models"
 keywords: "logit, probit, marginal effects, binary model, AME, MEM, average marginal effects"
 weight: 3
 #date: 2022-05-16T22:02:51+05:30
