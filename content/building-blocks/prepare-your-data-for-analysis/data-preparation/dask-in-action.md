@@ -72,11 +72,6 @@ flights
 ```
 {{% /codeblock %}}
 
-_Output:_
-<p align = "center">
-<img src = "../img/output1.png" width=400">
-</p>
-
 
 Because the dataframe is large, it is hard to see all the columns, so we can print them as follows. Additionally, we can also check the shape of the dataframe:
 
@@ -97,11 +92,6 @@ flights.columns
 flights.shape 
 ```
 {{% /codeblock %}}
-
-_Output:_
-<p align = "center">
-<img src = "../img/output2.png" width=400">
-</p>
 
 
 When running the code we can notice that the function `shape` doesn't display the expected output we know from `pandas`, but gives this: `(Delayed('int-4b01ce40-f552-432c-b591-da8955b3ea9c'), 31)`. We can only see the number of columns, but not the number of rows, which happens again from the lazy evaluation characteristic of `dask`. This means that although we, for instance, create a new variable using some operations, it doesn't actually execute them until we use the new variable. 
@@ -134,18 +124,6 @@ flights.info()
 ```
 
 {{% /codeblock %}}
-_Output:_
-
-<p align = "left">                            <p align = "center">                         <p align = "right">
-<img src = "../img/output3.png" width=200">   <img src = "../img/output4.png" width=250">  <img src = "../img/output5.png" width=250">
-</p>                                          </p>                                         </p>
-
-
-
-
-
-
-
 
 
 
@@ -154,7 +132,7 @@ Most of the operations are the same between the two libraries, except that in `p
 
 ### Descriptive statistics, Grouping, Filtering
 
-We want to investigate the delays, more specifically, what is the biggest delay? What airline has the largest amount of summed delays? Are there more airlines operating in summer months than in winter?
+We want to investigate the delays, more specifically, what is the biggest delay? What airline has the largest amount of summed delays? Is there a difference in average arrival delay between certain periods of the year?
 
 Let's start with descriptive statistics to get a grasp of the data:
 
@@ -177,11 +155,6 @@ flights['ARRIVAL_DELAY'].describe()
 ```
 {{% /codeblock %}}
 
-_Output:_
-
-<p align = "center">
-<img src = "../img/output6.png" width=400">
-</p>
 
 What is the largest departure delay in the data? We can find that by using:
 
@@ -196,9 +169,6 @@ flights['DEPARTURE_DELAY'].max(axis = 0).compute()
 flights['DEPARTURE_DELAY'].max(axis = 0)
 ```
 {{% /codeblock %}}
-
-_Output_:
-1988
 
 
 What airline has the largest amount of summed delays? We can find this by computing the sum of the airline delays grouped by airlines.
@@ -216,63 +186,51 @@ flights.groupby(by = 'AIRLINE')['AIRLINE_DELAY'].sum()
 ```
 {{% /codeblock %}}
 
-_Output:_
-
-<p align = "center">
-<img src = "../img/output7.png" width=400">
-</p>
-
-Are there more airlines operating in summer months than in winter? We start by first checking if the data contains delays for all months of the year. Then, we count the airlines by grouping them per month.
+Is the average arrival delay higher in summer months given that more people travel then as opposed to other times of the year? We start by first checking if the data contains delays for all months of the year. Then, we compute the mean arrival delays by grouping them per month.
 
 {{% codeblock %}}
 ```dask
 #count the unique values for month column
 flights['MONTH'].nunique().compute()
 
-#group the airlines count per month
-flights.groupby(by = 'MONTH')['AIRLINE'].count().compute()
+#group the average arrival delay per month
+flights.groupby(by = 'MONTH')['ARRIVAL_DELAY'].mean().compute()
 
-#take the maximum count of grouped airlines
-flights.groupby(by = 'MONTH')['AIRLINE'].count().max().compute()
+#take the maximum average delay
+flights.groupby(by = 'MONTH')['ARRIVAL_DELAY'].mean().max().compute()
 
 ```
 ```pandas
 #count the unique values for month column
 flights['MONTH'].nunique()
 
-#group the airlines count per month
-flights.groupby(by = 'MONTH')['AIRLINE'].count()
+#group the average arrival delay per month
+flights.groupby(by = 'MONTH')['ARRIVAL_DELAY'].mean()
 
-#take the maximum count of grouped airlines
-flights.groupby(by = 'MONTH')['AIRLINE'].count().max()
+#take the maximum average delay
+flights.groupby(by = 'MONTH')['ARRIVAL_DELAY'].mean().max()
 
 ```
 
 {{% /codeblock %}}
-
-_Output:_
-
-<p align = "center">
-<img src = "../img/output8.png" width=400">
-</p>
 
 
 ### Variable creation and plotting
 
 When plotting large datasets, we can either use packages that can handle many data points, or bring the data that we want to plot to a smaller shape that fits the memory. For this simple example we want to plot the count of airlines per month, which is not a large dataframe, so we can just use the classic `matplotlib` to make a graph.
 
-Thus, in our answer to the question "Are there more airlines operating in summer months than in winter?", we can visualize the counts of airlines for each month with a plot:
+Thus, in our answer to the question "Is there a difference in average arrival delay between certain periods of the year?", we can visualize the average delays for each month with a plot:
 
 {{% codeblock %}}
-```
+```python
 #create new dataframe 
-monthly_flights = flights.groupby(by = 'MONTH')['AIRLINE'].count().reset_index()
+monthly_delay = flights.groupby(by = 'MONTH')['ARRIVAL_DELAY'].mean().reset_index()
 
 #converting the dataframe from dask to pandas
-monthly_flights = monthly_flights.compute()
+monthly_delay = monthly_delay.compute()
 
 #convert month column to int type
-monthly_flights['MONTH'] = monthly_flights['MONTH'].astype(int)
+monthly_delay['MONTH'] = monthly_delay['MONTH'].astype(int)
 
 #create bar plot
 import matplotlib.pyplot as plt
@@ -280,33 +238,31 @@ import matplotlib.pyplot as plt
 fig = plt.figure(figsize = (10, 7))
  
 # creating the bar plot
-plt.bar(monthly_flights["MONTH"], monthly_flights["AIRLINE"], color ='orange',
+plt.bar(monthly_delay["MONTH"], monthly_delay["ARRIVAL_DELAY"], color ='orange',
         width = 0.4)
  
-plt.xlabel("Month")
-plt.xticks(range(monthly_flights['MONTH'].nunique()+1)) #include all x values
-plt.ylabel("Airline count")
-plt.title("Airlines count per month")
-plt.grid()
+plt.xlabel("Month") 
+plt.xticks(range(monthly_delay['MONTH'].nunique()+1)) #display all values on x axis
+plt.ylabel("Average arrival delay")
+plt.title("Average arrival delay per month")
+plt.grid()    #display grid
 plt.rcParams.update({'text.color': "white",
                      'axes.labelcolor': "white",
                      'xtick.color': "white",
                      'ytick.color': "white" ,
-                     'font.size': 13})
+                     'font.size': 13})      #change text color and size for better readability
 plt.show()
 ```
-
-
 {{% /codeblock %}}
 
 _Output_:
 
 <p align = "center">
-<img src = "../img/output9.png" width=400">
+<img src = "../img/graph_output.png" width=450">
 </p>
 
 
-As such, we can see that the three months of summer register generally higher airlines count than winter months.
+As such, we can see that the highest average arrival delay is registered in June, with a second highest in February, while September and October register negative values, which mean that on average, arrivals were ahead of schedule. 
 
 {{% summary %}}
 
