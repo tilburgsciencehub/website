@@ -17,22 +17,24 @@ We learned how to [Handle Large Datasets in Python](https://tilburgsciencehub.co
 
 ### Loading the data 
 
-The first thing we need to do is import the `dask` library and load the data. Make sure that the downloaded data is in the same working directory as the Python file of the code.
+The first thing we need to do is import the `dask` library and load the data. Make sure that the downloaded data is in the same working directory as the Python file of the code. In dask, we do this as follows:
 
 {{% codeblock %}} 
 
-[python-link](code.py) <!-- OPTIONAL: You can also provide your code as a downloadable file (useful for very long codes). Make sure you place this file in the same folder. Specify in [square brackets] the language followed by "-link" as shown here.-->
-
-
-```dask
+```python
 # import the Dask DataFrame module
 import dask.dataframe as dd
 
 #read the downloaded csv file
 flights = dd.read_csv('flights.csv', assume_missing=True, dtype={'CANCELLATION_REASON': 'object'})
 ```
+{{% /codeblock %}}
 
-```pandas
+
+The equivalent `pandas` code would be:
+
+{{% codeblock %}} 
+```python
 # import the pandas module
 import pandas as pd
 
@@ -40,7 +42,6 @@ import pandas as pd
 flights = pd.read_csv('flights.csv')
 
 ```
-
 {{% /codeblock %}}
 
 
@@ -58,25 +59,22 @@ We can check to see in how many partitions the data has been divided and display
 
 {{% codeblock %}}
 
-```dask
+```python
 #check number of partitions
 flights.npartitions
 
 #display dataframe
 flights.compute()
 ```
-
-```pandas
-#display dataframe
-flights
-```
 {{% /codeblock %}}
 
+Since `pandas` does not partition a dataset there are not equivalent commands.
 
-Because the dataframe is large, it is hard to see all the columns, so we can print them as follows. Additionally, we can also check the shape of the dataframe:
+
+We can see the column names and shape of the dataframe too. In `dask`:
 
 {{% codeblock %}}
-```dask
+```python
 #display dataframe columns
 flights.columns
 
@@ -84,7 +82,19 @@ flights.columns
 flights.shape  #outputs delayed object
 flights.shape[0].compute() #actually calculates number of rows
 ```
-```pandas
+{{% /codeblock %}}
+
+Note that the output of the `.shape()` method in `dask` doesn't immediately return output. 
+Instead it gives this: `(Delayed('int-4b01ce40-f552-432c-b591-da8955b3ea9c'), 31)`.
+This is because `dask` uses lazy evaluation - it delays the evaluation of an expression until its value is needed.
+We use `.compute()` to evaluate the expression.
+Why the delay? It's because tp count the number of rows,  `dask` needs to work through each partition and sum of the rows in each.
+More information on lazy evaluation is available in our building block [Handle Large Datasets in Python](https://tilburgsciencehub.com/building-blocks/prepare-your-data-for-analysis/data-preparation/large-datasets-python/). 
+
+If we wanted the column names and shape via `pandas`:
+
+{{% codeblock %}}
+```python
 #display dataframe columns
 flights.columns
 
@@ -94,16 +104,13 @@ flights.shape
 {{% /codeblock %}}
 
 
-When running the code we can notice that the function `shape` doesn't display the expected output we know from `pandas`, but gives this: `(Delayed('int-4b01ce40-f552-432c-b591-da8955b3ea9c'), 31)`. We can only see the number of columns, but not the number of rows, which happens again from the lazy evaluation characteristic of `dask`. This means that although we, for instance, create a new variable using some operations, it doesn't actually execute them until we use the new variable. 
-For `dask` to count how many rows there are, it needs to load each partition and sum up all rows.     
-
 
 
 In `dask` the `info()` function doesn't give us the output we know from `pandas`, but instead only gives the number of columns, first and last column name and counts each dtype. Alternatively we can do the following to get each dtype and non-null/null counts:
 
 {{% codeblock %}}
 
-```dask
+```python
 #show types of columns
 flights.dtypes
 
@@ -114,7 +121,12 @@ flights.notnull().sum().compute()
 flights.isna().sum().compute()
 ```
 
-```pandas
+{{% /codeblock %}}
+
+To achieve the same thing in `pandas` we'd write the following:
+
+{{% codeblock %}}
+```python
 #show types of columns
 flights.dtypes
 
@@ -126,27 +138,28 @@ flights.info()
 {{% /codeblock %}}
 
 
-
-Most of the operations are the same between the two libraries, except that in `pandas` there is no `npartitions()` function and we don't need to use `.compute()`, as explained in [Handle Large Datasets in Python](https://tilburgsciencehub.com/building-blocks/prepare-your-data-for-analysis/data-preparation/large-datasets-python/).  
-
-
 ### Descriptive statistics, Grouping, Filtering
 
 We want to investigate the delays, more specifically, what is the biggest delay? What airline has the largest amount of summed delays? Is there a difference in average arrival delay between certain periods of the year?
 
-Let's start with descriptive statistics to get a grasp of the data:
+Let's start with descriptive statistics to get a grasp of the data.
+Starting with `dask`:
 
 {{% codeblock %}}
 
-```dask
+```python
 #compute descriptive statistics for the whole dataframe
 flights.describe().compute()
 
 #alternatively, for just one column
 flights['ARRIVAL_DELAY'].describe().compute()
 ```
+{{% /codeblock %}}
 
-```pandas
+Which is similar to how we'd work in `pandas`.
+
+{{% codeblock %}}
+```python
 #compute descriptive statistics for the whole dataframe
 flights.describe()
 
@@ -156,41 +169,51 @@ flights['ARRIVAL_DELAY'].describe()
 {{% /codeblock %}}
 
 
-What is the largest departure delay in the data? We can find that by using:
+If we wanted to find the largest departure delay, we'd need to use the `max()` command along the horizontal axis. In `dask`:
 
 {{% codeblock %}}
 
-```dask
+```python
 #compute the max value of a column
 flights['DEPARTURE_DELAY'].max(axis = 0).compute()
 ```
-```pandas
+{{% /codeblock %}}
+
+Or, equivalently in `pandas`:
+
+{{% codeblock %}}
+
+```python
 #compute the max value of a column
 flights['DEPARTURE_DELAY'].max(axis = 0)
 ```
 {{% /codeblock %}}
 
-
-What airline has the largest amount of summed delays? We can find this by computing the sum of the airline delays grouped by airlines.
+Next, we may be interested in which airline has the largest amount of minutes delay in the data.
+We can find this by computing the sum of the airline delays grouped by airlines.
 
 {{% codeblock %}}
 
-```dask
+```python
 #sum the total delay per airline with groupby
 flights.groupby(by = 'AIRLINE')['AIRLINE_DELAY'].sum().compute()
 ```
 
-```pandas
+Or in `pandas`:
+
+```python
 #sum the total delay per airline with groupby
 flights.groupby(by = 'AIRLINE')['AIRLINE_DELAY'].sum()
 ```
 {{% /codeblock %}}
 
-Is the average arrival delay higher in summer months given that more people travel then as opposed to other times of the year? We start by first checking if the data contains delays for all months of the year. Then, we compute the mean arrival delays by grouping them per month.
+We might also want to know if the average delay is different across months. 
+For example, delays could be higher in winter due to snowstorms and inclement weather.
+We start by first checking if the data contains delays for all months of the year. Then, we compute the mean arrival delays by grouping them per month.
 
 {{% codeblock %}}
-```dask
-#count the unique values for month column
+```python
+#count the unique values for month column to check we get 12
 flights['MONTH'].nunique().compute()
 
 #group the average arrival delay per month
@@ -200,8 +223,13 @@ flights.groupby(by = 'MONTH')['ARRIVAL_DELAY'].mean().compute()
 flights.groupby(by = 'MONTH')['ARRIVAL_DELAY'].mean().max().compute()
 
 ```
-```pandas
-#count the unique values for month column
+{{% /codeblock %}}
+
+The same operations would be executed in `pandas` as follows:
+
+{{% codeblock %}}
+```python
+#count the unique values for month column to check we get 12
 flights['MONTH'].nunique()
 
 #group the average arrival delay per month
@@ -211,7 +239,6 @@ flights.groupby(by = 'MONTH')['ARRIVAL_DELAY'].mean()
 flights.groupby(by = 'MONTH')['ARRIVAL_DELAY'].mean().max()
 
 ```
-
 {{% /codeblock %}}
 
 
