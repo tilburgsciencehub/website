@@ -1,7 +1,7 @@
 ---
 title: "Practical Example with Dask"
 description: "Dask in action, a practical example for how to use Dask in a simple analytics task: how is it different from Pandas, how to do descriptive statistics, create new variables, perform grouping, filtering and plotting."
-keywords: "any, relevant, keywords, separated, by, commas, like, this"
+keywords: "dask, pandas, python, data, statistics"
 date: 2023-04-06
 weight: 2
 author: "Ana Bianca Luca"
