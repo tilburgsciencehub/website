@@ -88,7 +88,7 @@ Note that the output of the `.shape()` method in `dask` doesn't immediately retu
 Instead it gives this: `(Delayed('int-4b01ce40-f552-432c-b591-da8955b3ea9c'), 31)`.
 This is because `dask` uses lazy evaluation - it delays the evaluation of an expression until its value is needed.
 We use `.compute()` to evaluate the expression.
-Why the delay? It's because tp count the number of rows,  `dask` needs to work through each partition and sum of the rows in each.
+Why the delay? It's because to count the number of rows,  `dask` needs to work through each partition and sum of the rows in each.
 More information on lazy evaluation is available in our building block [Handle Large Datasets in Python](https://tilburgsciencehub.com/building-blocks/prepare-your-data-for-analysis/data-preparation/large-datasets-python/). 
 
 If we wanted the column names and shape via `pandas`:
