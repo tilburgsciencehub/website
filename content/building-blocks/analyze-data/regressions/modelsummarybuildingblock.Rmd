@@ -1,11 +1,14 @@
 ---
 title: "Modelsummary building block"
+description: 
 author: "Valerie Vossen"
 date: "2023-04-04"
 output:
   html_document: default
   pdf_document: default
   word_document: default
+draft: TRUE
+
 ---
 
 # Overview
@@ -40,7 +43,9 @@ library(stringr)
 
 # Load data
 
-data_rent_100710 <-   read.delim("C:/Users/valer/OneDrive/TSH werk/modelsummaryexample/data_rent_100710.txt")
+urltable1 <- url("https://github.com/valerievossen/valerievossen/blob/55f03c96c676279c9b60e82ac3c5ea2c6231c8fe/data_rent_100710.Rdata?raw=true")
+
+load(urltable1) #file is being loaded in data_rent_100710
 
 data_rent <- data_rent_100710 %>%
   janitor::clean_names() #clean column names; for example, it converts all letters to lowercase
