@@ -15,8 +15,12 @@ aliases:
 
 ## Best Practices for Git Commits
 
-How large should a commit be? How often should we make a commit? How to write better commit messages?
-When collaborating on projects, it is important to have conventions for making Git Commits to ensure consistency in the way of working. In this building block we go over some of the most common best practices for Git Commits.
+When collaborating on projects, it is important to have conventions for making Git Commits to ensure consistency in the way of working. In this building block we outline some of the most common best practices for Git Commits. In the end we will be able to answer the questions:
+
+- How large should a commit be? 
+- How often should we make a commit? 
+- How to write better commit messages?
+
 
 ### 1. Relate every commit to a specific change
 
