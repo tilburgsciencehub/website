@@ -3,7 +3,7 @@ title: "Package Management for R: renv"
 description: "How to work with renv R package to manage project environments"
 keywords: "renv, package, environment, management, R, Packrat, alternative"
 date: 2023-04-29
-weight: 3
+weight: 2
 author: "Ana Bianca Luca"
 authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
 aliases:
@@ -14,13 +14,11 @@ aliases:
 
 ## Environment management for R projects with renv
 
-{{% warning %}}
-
-[Packrat](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/packrat/) is now deprecated. To switch from Packrat to renv, use `renv::migrate()` to migrate projects.
-
-{{% /warning %}}
-
-Although it comes as a replacement for the `Packrat` package, `renv` still has the same characteristics: it is **isolated**, **portable** and **reproducible**. It is a dependency management tool for R projects, facilitating the reproducibility of environments across computers or platforms. 
+`renv` is a dependency management tool for R projects, facilitating the reproducibility of environments across computers or platforms.
+As a package management tool, `renv` helps to make projects: 
+- **isolated** : installing or updating a certain package in one project doesn't affect other packages from other projects
+- **portable** : projects can easily be transferred to different devices
+- **reproducible** : `renv` makes it easy to reproduce projects by recording all package versions of each project
 
 
 ## Workflow
@@ -48,20 +46,24 @@ renv::init()
 {{% /codeblock %}}
 
 ### 3. Install/remove packages
-After initializing the project, we can install or remove packages on it:
+After initializing the project, we can install or remove packages from it:
 
 {{% codeblock %}}
 ```R
 #install packages
 install.packages()
+#or
+renv::install()
 
 #remove packages
 remove.packages()
+#or
+renv::remove()
 
 ```
 {{% /codeblock %}}
 
-### 4. Save state of project in `lockfile`
+### 4. Save library of project in `lockfile`
 After configuring the project, we should save the configuration into a `lockfile`, in which all packages versions are recorded. 
 
 {{% codeblock %}}
@@ -70,6 +72,15 @@ renv::snapshot()
 
 ```
 {{% /codeblock %}}
+
+We can also check the status of the library with:
+{{% codeblock %}}
+```R
+renv::status()
+
+```
+{{% /codeblock %}}
+
 
 If we continue to make changes to the packages after making the `lockfile`, but then we would like revert to the previous state (as recorded in the `lockfile`), we can use:
 
@@ -95,4 +106,18 @@ After running all the commands above, the directory in which the project was cre
 | `renv/activate.R` | Activation script run by `.Rprofile` |
 | `renv/library` | Private project library |
 | `renv/settings.json` | Project settings |
+
+## From packrat to renv
+
+{{% warning %}}
+
+[Packrat](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/packrat/) is now deprecated. To switch from Packrat to renv, use `renv::migrate()` to migrate projects.
+
+{{% /warning %}}
+
+## Why renv is better than groundhog
+
+`groundhog` is another R package that makes projects reproducible. However, it doesn't work by keeping records of packages versions necessary for each project, like `renv` does. Instead you have to manually load libraries with the option of giving a date on when the wanted version was available. Thus, `renv` has more advantages because it can load all necessary packages in one go, without having to manually input the dates certain versions were available on.
+
+
 
