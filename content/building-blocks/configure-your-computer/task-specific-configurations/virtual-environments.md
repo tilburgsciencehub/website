@@ -14,7 +14,12 @@ aliases:
 
 ## Setting up virtual environments with Python ```venvwrapper```
 
-When working on multiple projects that require different packages and libraries, we may run into the issue of needing different versions of packages for each project. To avoid upgrading or downgrading versions each time we work on a different project, we can make use of virtual environments. They allow us to keep certain combinations of package versions required for each project and access them when we work on the respective projects. 
+When working on multiple projects that require different packages and libraries, we may run into the issue of needing different versions of packages for each project. To avoid upgrading or downgrading versions each time we work on a different project, we can make use of virtual environments. 
+
+
+### Advantages of virtual environments
+
+Virtual environments allow us to keep certain combinations of package versions required for each project and access them when we work on the respective projects. This way, it is easy to separate project requirements and also ensure that the project scripts will continue to run even if we make changes to some package versions outside the project. Having virtual environments also helps to keep a clear overview of packages from each project and to easily reproduce workflows, even if it is on the same computer or a different one. 
 
 
 To configure the virtual environments, we use the Python package `venvwrapper`.
@@ -70,7 +75,7 @@ To **delete** virtual environments, we use:
 rmvirtualenv name_of_env
 ```
 
-### Mac Users
+### Mac and Linux Users
 
 To configure virtual environments on Mac OS, the commands are somehow similar to Windows, but additionally we need to set up path and virtual environment variable.
 We start by **installing** `virtualenvwrapper` by typing in the Terminal:
@@ -108,10 +113,6 @@ ls $WORKON_HOME
 ```
 To **create the _requirements.txt_ file**, **switch environments**, **deactivate** or **delete environments**, we use the same commands from Windows.
 
-### Linux Users
-
-For Linux, the configuration and managing of virtual environments is the same as for Mac.
-
 
 {{% summary %}}
 
@@ -131,3 +132,9 @@ Commands overview:
 |Delete environment | rmvirtualenv name_of_env | rmvirtualenv name_of_env | rmvirtualenv name_of_env |
 
 {{% /summary %}}
+
+## Other virtual environment packages
+Besides `venvwrapper`, there are other packages that create and manage virtual environments:
+- [virtualenv](https://virtualenv.pypa.io/en/latest/)
+- [venv](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment)
+- [conda](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/)
