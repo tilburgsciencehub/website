@@ -1,5 +1,5 @@
 ---
-title: "Generate a regression table in R with Modelsummary package"
+title: "Generate regression tables in R with the Modelsummary package"
 description: "An example on how to use the package Modelsummary to generate regression tables in R"
 keywords: "modelsummary, packages, regression, regressions, model, table, R"
 draft: false
