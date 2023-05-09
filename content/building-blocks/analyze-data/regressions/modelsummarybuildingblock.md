@@ -157,7 +157,7 @@ cm = c('green_rating'    = 'Green rating (1 = yes)',
 msummary(models, vcov="HC1",
          coef_map = cm)
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
 ## Selecting and formatting statistics
 
