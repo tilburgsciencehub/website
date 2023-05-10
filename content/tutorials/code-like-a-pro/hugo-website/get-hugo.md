@@ -29,6 +29,16 @@ brew install hugo
 ```
 
 ### Windows
+1. Install the ZIP file of the latest release for windows from this [repository](https://github.com/gohugoio/hugo/releases).
+2. Move the ZIP file and extract its content in the `C:\Hugo\bin` folder in your local machine. You should see three new files: hugo executable (i.e.  hugo.exe file), license.md and readme.md.
+3. Now add Hugo to your Windows PATH settings by following these steps. Click on `System` -> `Advanced System Settings` -> `Environment Variables`. In the User variables section, double-click on `PATH` and click on `New`. Then, type the file path `C:\Hugo\bin` where the `hugo.exe` was extracted. Click on OK and exit.
+4. Verify if Hugo is installed properly, type `hugo help` on a command prompt window. You should see the following output:
+
+<p align = "center">
+<img src = "../img/hugo-verify.png" width="500">
+<figcaption> Verify Hugo Installation </figcaption>
+</p>
+
 
 If you use [Chocolatey](https://chocolatey.org):
 
