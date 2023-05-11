@@ -1,5 +1,5 @@
 ---
-title: "Improve your Modelsummary regression table with the kableExtra package in R"
+title: "Create a publication-ready regression table with kableExtra in R"
 description: "An example showing useful functions of the kableExtra package to improve your Modelsummary output in R"
 keywords: "kableextra, kable, latex, modelsummary, regression, model, table, R"
 draft: false
