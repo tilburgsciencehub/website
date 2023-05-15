@@ -1,6 +1,6 @@
 ---
-title: "Create a publication-ready regression table with kableExtra in R"
-description: "An example showing useful functions of the kableExtra package to improve your Modelsummary output in R"
+title: "Create a publication-ready LaTeX regression table with `kableExtra` in R"
+description: "An example showing useful functions of the kableExtra package to improve your `modelsummary` output in R"
 keywords: "kableextra, kable, latex, modelsummary, regression, model, table, R"
 draft: false
 weight: 6
@@ -15,17 +15,18 @@ aliases:
 
 # Overview
 
-The main purpose of the `kableExtra` package is to simplify the process of creating tables with custom styles and formatting in R. In this building block, we will provide an example using some useful functions of `kableExtra` to improve the output of the `Modelsummary` package and create a table in LaTeX format suitable for a publishable paper.
+The main purpose of the `kableExtra` package is to simplify the process of creating tables with custom styles and formatting in R. In this building block, we will provide an example using some useful functions of `kableExtra` to improve the output of the `modelsummary` package and create a table in LaTeX format suitable for a publishable paper.
 
-The starting point is the final output of our Modelsummary building block, which is the replicated Table 1 of Eiccholtz et al. (2010). This table presents the results of a model regressing the rent of commercial office buildings on a dummy variable (1 if rated as green) and other building characteristics. More information about this paper and the table can be found in the Modelsummary building block!
+The starting point is the final output of our [`modelsummary` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/model-summary/), which is a replication of Table 1 of [Eiccholtz et al. (2010)](https://www.aeaweb.org/articles?id=10.1257/aer.100.5.2492). This table presents the results of a model investigating how green building certification impacts rental prices of commercial office buildings.
 
-The following `kableExtra` functions will be covered to get to a nice formatted final output!
+The following `kableExtra` functions will be covered to get to a formatted table that can be inserted into a research paper or slide deck that is built using LaTeX:
+
 - Output in LaTex format
-- Exporting the table
-- Specify the column alignment 
-- Add fixed effect rows
-- Add header
-- Group rows
+- Exporting the table to a file
+- Specifying the column alignment within the table
+- Add rows to the table to designate which fixed effects are included in each regression specification
+- Add a row that specifies the dependent variable in the regression
+- Formatting and grouping rows of regression coefficients 
 
 ## Load packages and data
 
@@ -48,7 +49,7 @@ load(url(data_url)) #data_rent is loaded now
 {{% /codeblock %}}
 
 
-## Modelsummary table 
+## The `modelsummary` table 
 - 'models' is a list which consists of five regression models (regression 1 to 5). For a detailed overview and understanding of these regressions, please refer to the Modelsummary building block.
 - `cm2` and `gm2` represent the variable names and statistics included in the regression table, respectively.
 
@@ -98,16 +99,17 @@ We want the table to be outputted in LaTeX format now. We set the `output` argum
 
 {{% codeblock %}}
 ```R
-msummary(models,     vcov = "HC1",
-                     fmt = 3,
-                     estimate = "{estimate}",
-                     statistic = "[{std.error}]",
-                     coef_map = cm2, 
-                     gof_omit = 'AIC|BIC|RMSE|Within|FE',
-                     gof_map = gm2,
-                     output = "latex",
-                   escape = FALSE
-                   )
+msummary(models,     
+         vcov = "HC1",
+         fmt = 3,
+         estimate = "{estimate}",
+         statistic = "[{std.error}]",
+         coef_map = cm2, 
+         gof_omit = 'AIC|BIC|RMSE|Within|FE',
+         gof_map = gm2,
+         output = "latex",
+         escape = FALSE
+         )
 ```
 {{% /codeblock %}}
 
@@ -116,22 +118,24 @@ When `escape = FALSE`, any special characters that are present in the output of 
 {{% /tip %}}
 
 
-## Export the table
+## Export the table to a file
 
 To save this LaTex code to a .tex file, we can use the `cat()` function. The `file` argument specifies the name of the file we want the output to be printed to: `my_table.tex`. Not including any `file` argument will print the output to the console. 
 
 {{% codeblock %}}
 ```R
-msummary(models,     vcov = "HC1",
-                     fmt = 3,
-                     stars  = c('*' = .1, '**' = 0.05, '***' = .01),
-                     estimate = "{estimate}",
-                     statistic = "[{std.error}]",
-                     coef_map = cm2, 
-                     gof_omit = 'AIC|BIC|RMSE|Within|FE',
-                     gof_map = gm2,
-                     output = "latex",
-                   escape = FALSE) %>%
+msummary(models,     
+         vcov = "HC1",
+         fmt = 3,
+         stars  = c('*' = .1, '**' = 0.05, '***' = .01),
+         estimate = "{estimate}",
+         statistic = "[{std.error}]",
+         coef_map = cm2, 
+         gof_omit = 'AIC|BIC|RMSE|Within|FE',
+         gof_map = gm2,
+         output = "latex",
+         escape = FALSE
+         ) %>%
   cat(.,file="my_table.tex")
 ```
 {{% /codeblock %}}
@@ -146,7 +150,7 @@ The %>% operator is being used to pipe the output of `msummary()` into the `cat(
 </p>
 
 {{% tip %}}
-The LaTex file requires the following packages:
+The LaTex file requires the following packages loaded in the header:
 
 ```LaTex
 \usepackage{booktabs}
@@ -155,7 +159,7 @@ The LaTex file requires the following packages:
 ```
 {{% /tip %}}
 
-## Specify the column aligment
+## Specify the column alignment
 
 You can customize the horizontal alignment of the table columns by including the `align` argument within the `msummary()` function. By setting `align = "lcccc"`, you can specify the alignment for each column as follows:
 - The first column, containing the variable names, will be left-aligned (l).
@@ -163,24 +167,23 @@ You can customize the horizontal alignment of the table columns by including the
 
 {{% codeblock %}}
 ```R
- msummary(models,     vcov = "HC1",
-                     fmt = 3,
-                     #stars  = c('*' = .1, '**' = 0.05, '***' = .01),
-                     estimate = "{estimate}",
-                     statistic = "[{std.error}]",
-                     coef_map = cm2, 
-                     gof_omit = 'AIC|BIC|RMSE|Within|FE',
-                     gof_map = gm2,
-                     #stars = NULL,
-                     align="lccccc",
-                     output = "latex",
-                   escape = FALSE
-                   )
+ msummary(models,     
+          vcov = "HC1",
+          fmt = 3,
+          estimate = "{estimate}",
+          statistic = "[{std.error}]",
+          coef_map = cm2, 
+          gof_omit = 'AIC|BIC|RMSE|Within|FE',
+          gof_map = gm2,
+          align="lccccc",
+          output = "latex",
+          escape = FALSE
+          )
 
 ```
 {{% /codeblock %}}
 
-## Add fixed effect rows 
+## Add rows designating fixed-effects specification
 
 In this step, we will integrate additional rows in the regression table to indicate the inclusion of fixed effects in each model.
 
@@ -217,20 +220,19 @@ Here is the `msummary()` function incorporating the mentioned arguments to gener
 
 {{% codeblock %}}
 ```R
-msummary(models,     vcov = "HC1",
-                     fmt = 3,
-                     #stars  = c('*' = .1, '**' = 0.05, '***' = .01),
-                     estimate = "{estimate}",
-                     statistic = "[{std.error}]",
-                     coef_map = cm2, 
-                     gof_omit = 'AIC|BIC|RMSE|Within|FE',
-                     gof_map = gm2,
-                     #stars = NULL,
-                     add_rows = rows,
-                     align="lccccc", 
-                     output = "latex",
-                   escape = FALSE
-                   ) %>%
+msummary(models,     
+         vcov = "HC1",
+         fmt = 3,
+         estimate = "{estimate}",
+         statistic = "[{std.error}]",
+         coef_map = cm2, 
+         gof_omit = 'AIC|BIC|RMSE|Within|FE',
+         gof_map = gm2,
+         add_rows = rows,
+         align="lccccc", 
+         output = "latex",
+         escape = FALSE
+         ) %>%
     row_spec(34, extra_latex_after = "\\midrule") %>%
     cat(., file = "my_table.tex")
 ```
@@ -250,20 +252,19 @@ To include a header above the existing column headers of the regression table, w
 
 {{% codeblock %}}
 ```R
-msummary(models,     vcov = "HC1",
-                     fmt = 3,
-                     #stars  = c('*' = .1, '**' = 0.05, '***' = .01),
-                     estimate = "{estimate}",
-                     statistic = "[{std.error}]",
-                     coef_map = cm2, 
-                     gof_omit = 'AIC|BIC|RMSE|Within|FE',
-                     gof_map = gm2,
-                     #stars = NULL,
-                     add_rows = rows,
-                     align="lccccc",
-                     output = "latex",
-                   escape = FALSE
-                   ) %>%
+msummary(models,     
+         vcov = "HC1",
+         fmt = 3,
+         estimate = "{estimate}",
+         statistic = "[{std.error}]",
+         coef_map = cm2, 
+         gof_omit = 'AIC|BIC|RMSE|Within|FE',
+         gof_map = gm2,
+         add_rows = rows,
+         align="lccccc", 
+         output = "latex",
+         escape = FALSE
+         ) %>%
     add_header_above(c(" " = 1,
                        "Dependent Variable: $log(rent)$" = 5),
                      escape = FALSE
@@ -292,20 +293,19 @@ To indicate that Energystar and LEED are subgroups of the variable Green rating 
 
 {{% codeblock %}}
 ```R
-msummary(models,     vcov = "HC1",
-                     fmt = 3,
-                     #stars  = c('*' = .1, '**' = 0.05, '***' = .01),
-                     estimate = "{estimate}",
-                     statistic = "[{std.error}]",
-                     coef_map = cm2, 
-                     gof_omit = 'AIC|BIC|RMSE|Within|FE',
-                     gof_map = gm2,
-                     #stars = NULL,
-                     add_rows = rows,
-                     align="lccccc",
-                     output = "latex",
-                   escape = FALSE
-                   ) %>%
+msummary(models,     
+         vcov = "HC1",
+         fmt = 3,
+         estimate = "{estimate}",
+         statistic = "[{std.error}]",
+         coef_map = cm2, 
+         gof_omit = 'AIC|BIC|RMSE|Within|FE',
+         gof_map = gm2,
+         add_rows = rows,
+         align="lccccc", 
+         output = "latex",
+         escape = FALSE
+         ) %>%
     pack_rows("Building Class:", 11, 13, italic = TRUE, bold = FALSE) %>%
     pack_rows("Age:", 17, 24, italic = TRUE, bold = FALSE) %>%
     pack_rows("Stories:", 27, 30, italic = TRUE, bold = FALSE) %>%
@@ -322,7 +322,7 @@ msummary(models,     vcov = "HC1",
 </p>
 
 {{% summary %}}
-The `kableExtra` package provides powerful tools for creating attractive and publication-ready tables in R. By combining it with the `Modelsummary` package, we can generate informative and visually appealing regression tables for our research papers or reports. 
+The `kableExtra` package provides powerful tools for creating attractive and publication-ready tables in R. By combining it with the `modelsummary` package, we can generate informative and visually appealing regression tables for our research papers or reports. 
 
 This example shows how to use some `kableExtra` functions to improve a standard `modelsummary` table and have it outputted in LaTex format. The functions covered include how export the table in LaTeX format, specify column alignment, add fixed effect rows, add a header, and group rows.
 {{% /summary %}}
