@@ -1,5 +1,5 @@
 ---
-title: "Reverting Git repository timestamps"
+title: "Restoring timestamps in Git Repositories"
 description: "How to restore the time of the cloned git repositories to the original time when they were originally committed"
 keywords: "git, tools, restore, timestamps"
 date: 2023-04-30
