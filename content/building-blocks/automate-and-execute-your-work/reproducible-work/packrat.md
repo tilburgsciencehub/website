@@ -10,6 +10,10 @@ aliases:
 - /reproduce/packrat
 ---
 
+{{% warning %}}
+`Packrat` is now soft-deprecated. It is still maintained, but there will be no new development for it. A better alternative that superseeds it is [`renv`](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/renv/). 
+{{% /warning %}}
+
 # Using Packrat to manage your R package library
 
 Suppose you’re trying to run someone else’s codes and are bombarded with package installation errors. It can be frustrating to guess what R packages are needed to be installed, right? Or, have you ever updated a package to get code in one of your projects to run, only to find that the updated package makes code in another project stop working?
