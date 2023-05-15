@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Estimatr"
+title: "Easy Standard Error Adjustment with `estimatr`"
 description: "Adjust standard errors efficiently and get fast estimators for design-based inference"
 keywords: "estimatr, robust standard errors, linear models, IV regression, R, regression, model "
 draft: false
@@ -8,7 +8,7 @@ aliases:
   - /estimatr
 ---
 # Overview
-The `estimatr` package is a specialized tool in R that is optimized for design-based inference resulting in accurate and reliable estimates as it accounts for potential sources of bias and violations of statistical assumptions.
+The `estimatr` package provides a range of commonly-used linear estimators that allow for easily computation of heteroscedasticity robust, cluster-robust, and other design appropriate standard error estimates
 
 In this building block we will walk you through the process of estimating regression coefficients using the most commonly used functions in `estimatr`: `lm_robust()` and `iv_robust()`. We analyse data from the `wage2` [data set](https://rdrr.io/cran/wooldridge/man/wage2.html) which is an in-built data set in R, provided by the `wooldridge` package.
 We are interested in examining how the education level of employees relates to their wages and to do so we use the following regression model:
@@ -62,10 +62,10 @@ summary(reg)
 <figcaption> Estimation results using lm() </figcaption>
 </p>
 
-The resulting regression estimates are prone to error and inefficiency because `lm()` function is specifically designed to fit linear models that assumes homoscedasticity, which may not always hold true.
-Therefore, using the `estimatr` package is a better option, because in the case of the homoscedasticity assumption being violated, this package offers quick and easy ways to adjust standard errors, allowing for robust and clustered standard errors.
+The resulting regression estimates are prone to inefficiency because `lm()` function is specifically designed to fit linear models that assumes homoscedasticity, which may not always hold true in a specific application.
+`estimatr` provides an alternative that offers quick and easy ways to adjust standard errors, allowing for robust and clustered standard errors.
 
-### Estimate with lm_robust()
+### Heteroscedasticity Robust Estimates with `lm_robust()`
 
 The `lm_robust()` function is used to get the robust standard errors from a linear regression model.
 
@@ -116,7 +116,7 @@ We can observe that this option gives us exactly the same result as we obtained 
 ### Cluster-Robust Standard Errors
 
 Cluster-robust standard errors are designed to allow for correlation between observations within a cluster.
-For cluster-robust inference, this package provides several estimators that are essentially analogs of the heteroskedastic-consistent variance estimators for the clustered case: `CR0` and `CR2`(default).
+For cluster-robust inference, `estimatr` provides cluster robust variance estimators: `CR0` and `CR2`(default).
 
 For illustrative purposes let's create an `ID` variable that will be used as a cluster variable.
 {{% codeblock %}}
@@ -147,9 +147,9 @@ Check out the [mathematical notes](https://declaredesign.org/r/estimatr/articles
 {{% /tip %}}  
 
 ### Estimate with iv_robust()
-The `iv_robust` function is used to estimate Instrumental Variable (IV) regressions.
+The `iv_robust` function is used to estimate Instrumental Variable (IV) regressions with heteroscedasticity robust and cluster robust standard errors.
 
-Suppose IQ is a potential instrument (i.e. it is correlated with education but not with the error term) we can obtain the standard errors in the following way:
+Suppose IQ is a potential instrument (i.e. it is correlated with education but not with the error term) we can obtain the heteroscedasticity robust standard errors as follows:
 
 {{% codeblock %}}
 ```R
