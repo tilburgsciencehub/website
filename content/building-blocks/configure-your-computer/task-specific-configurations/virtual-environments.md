@@ -12,9 +12,10 @@ aliases:
   - /use/venvwrapper
 ---
 
-## Setting up virtual environments with Python ```venvwrapper```
+## Setting up virtual environments for Python with ```venvwrapper```
 
-When working on multiple projects that require different packages and libraries, we may run into the issue of needing different versions of packages for each project. To avoid upgrading or downgrading versions each time we work on a different project, we can make use of virtual environments. 
+When working on multiple Python projects that require different packages and libraries, we may run into the issue of needing different versions of packages for each project. To avoid upgrading or downgrading versions each time we work on a different project, we can make use of virtual environments. 
+The core idea of a virtual environment is to create an isolated environment that has the packages a project needs contained within it, that can be easily "turned on" and "turned off" as needed. 
 
 
 ### Advantages of virtual environments
@@ -22,7 +23,7 @@ When working on multiple projects that require different packages and libraries,
 Virtual environments allow us to keep certain combinations of package versions required for each project and access them when we work on the respective projects. This way, it is easy to separate project requirements and also ensure that the project scripts will continue to run even if we make changes to some package versions outside the project. Having virtual environments also helps to keep a clear overview of packages from each project and to easily reproduce workflows, even if it is on the same computer or a different one. 
 
 
-To configure the virtual environments, we use the Python package `venvwrapper`.
+To configure a virtual environment, we use the Python package `venvwrapper`.
 
 
 ### Windows Users
@@ -138,3 +139,7 @@ Besides `venvwrapper`, there are other packages that create and manage virtual e
 - [virtualenv](https://virtualenv.pypa.io/en/latest/)
 - [venv](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment)
 - [conda](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/)
+
+## See also
+
+- [Python Virtual Environments - a Primer](https://realpython.com/python-virtual-environments-a-primer/)
