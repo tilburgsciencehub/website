@@ -143,14 +143,12 @@ modelplot(models = models2,
 {{% tip %}}
 Before specifying Times New Roman as the font type in our plot, we need to import this font into R. You can use the following code to import the font:
 
-{{% codeblock %}}
 ```R
 library(extrafont)
 
 font_import() 
 loadfonts(device = "win")
 ```
-{{% /codeblock %}}
 
 Note that running `font_import()` may take a few minutes to complete. 
 {{% /tip %}}
