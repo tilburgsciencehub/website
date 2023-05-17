@@ -98,7 +98,7 @@ modelplot(models = models2,
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/modelplotimage4.png" width="500">
+<img src = "../images/modelplotimage1.png" width="500">
 </p>
 
 ### Changing the confidence level
