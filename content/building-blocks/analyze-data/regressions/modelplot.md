@@ -29,6 +29,7 @@ We will generate two coefficient plots using the `modelplot` function:
 
 Let's begin by loading the required packages and data:
 
+{{% codeblock %}}
 ```R
 
 # Load packages
@@ -47,11 +48,13 @@ data_url <- "https://github.com/tilburgsciencehub/website/blob/buildingblock/mod
 load(url(data_url)) #data_rent is loaded now
 
 ```
+{{% /codeblock %}}
 
 ## The `modelsummary` table
 
 Below you see the five regression models for which results are displayed in Table 1 of Eiccholtz et al. (2010). For a detailed overview and understanding of these regressions, please refer to the [`modelsummary` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/model-summary/).
 
+{{% codeblock %}}
 ```R
 reg1 <- feols(logrent ~ green_rating + size_new + oocc_new + class_a + class_b + net + empl_new| id, data = data_rent)
 
@@ -65,6 +68,7 @@ reg4 <- feols(logrent ~ green_rating + size_new + oocc_new + class_a + class_b +
 reg5 <- feols(logrent ~ size_new + oocc_new + class_a + class_b + net + empl_new  + renovated + + age_0_10 + age_10_20 + age_20_30 + age_30_40 + story_medium + story_high + amenities | id + green_rating, data = data_rent)
   #regression 5 includes fixed effects for "id" and "green_rating" variable
 ```
+{{% /codeblock %}}
 
 <p align = "center">
 <img src = "../images/kableextraimage4.png" width="500">
@@ -79,6 +83,7 @@ We will include the regression models 1, 3, and 4 in the models list, as these i
 
 We can customize the variable names displayed in the coefficient plot using the `coef_map` argument. In the vector `cm`, we assign a new name to the original term name. Only variables included in `coef_map` will be shown in the plot. 
 
+{{% codeblock %}}
 ```R
 models2 <- list(
   "(4)" = reg4,
@@ -90,6 +95,7 @@ modelplot(models = models2,
           coef_map = cm
           )
 ```
+{{% /codeblock %}}
 
 <p align = "center">
 <img src = "../images/modelplotimage4.png" width="500">
@@ -99,12 +105,14 @@ modelplot(models = models2,
 
 By default, the confidence level is set to 95%. We can change this by specifying the desired level using the `conf_level` argument. 
 
+{{% codeblock %}}
 ```R
 modelplot(models = models2, 
           conf_level = 0.99, 
           coef_map = cm
           )
 ```
+{{% /codeblock %}}
 
 ## Further customization of the plot
 
@@ -116,6 +124,7 @@ Further customization of the plot can be done using `ggplot2` functions. In the 
 
 Within the `scale_color_manual()` functions, we specify the colors of the lines and control the order of the regressions in the legend. To do this, we need to define two vectors: `color_map` for the colors of the lines, and `legend_order` for the order of the regressions in the legend. 
 
+{{% codeblock %}}
 ```R
 color_map <- c("(1)" = "black", "(3)" = "blue", "(4)" = "red")
 legend_order <- c("(1)", "(3)", "(4)")
@@ -129,15 +138,20 @@ modelplot(models = models2,
                      breaks = legend_order
                      )
 ```
+{{% /codeblock %}}
+
 {{% tip %}}
 Before specifying Times New Roman as the font type in our plot, we need to import this font into R. You can use the following code to import the font:
 
+{{% codeblock %}}
 ```R
 library(extrafont)
 
 font_import() 
 loadfonts(device = "win")
 ```
+{{% /codeblock %}}
+
 Note that running `font_import()` may take a few minutes to complete. 
 {{% /tip %}}
 
@@ -149,6 +163,7 @@ argument. We omit the x-axis label and add a title, subtitle, and caption. Also,
 
 Furthermore, we can change the position of the text elements within `theme()`. Specifically, we adjust the position of the title and subtitle to be centered by setting `hjust = 0.5`. Similarly, the caption is placed on the left side by setting `hjust = 0`. 
 
+{{% codeblock %}}
 ```R
 modelplot(models = models2, 
           coef_map = cm
@@ -170,6 +185,7 @@ modelplot(models = models2,
         )
 
 ```
+{{% /codeblock %}}
 
 <p align = "center">
 <img src = "../images/modelplotimage2.png" width="500">
@@ -182,6 +198,7 @@ In this example, we will create a coefficient plot to showcase the coefficients 
 
 Note that when including more variables in the plot, the `coef_map` argument is also useful for rearranging the order of the coefficients. 
 
+{{% codeblock %}}
 ```R
 cm2 = c('age_30_40' = '30-40 years',
         'age_20_30' = '20-30 years',
@@ -192,6 +209,7 @@ modelplot(models = reg3,
           coef_map = cm2
           )
 ```
+{{% /codeblock %}}
 
 <p align = "center">
 <img src = "../images/modelplotimage3.png" width="500">
@@ -201,6 +219,7 @@ modelplot(models = reg3,
 
 Similar to the first example, we can customize the plot further with `ggplot` functions. We add a theme, change the font type and adjust the labels and captions.
 
+{{% codeblock %}}
 ```R
 modelplot(models = reg3, 
           coef_map = cm2
@@ -217,6 +236,7 @@ modelplot(models = reg3,
         plot.caption = element_text(hjust = 0)
         )
 ```
+{{% /codeblock %}}
 
 <p align = "center">
 <img src = "../images/modelplotimage4.png" width="500">
