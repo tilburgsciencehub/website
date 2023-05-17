@@ -19,7 +19,7 @@ output: html_document
 
 The `modelplot` function, part of the `modelsummary` package, enables the plotting of model estimates and confidence intervals. In this building block, we will provide you with two examples of coefficients plots to demonstrate the useful functions of `modelplot`. 
 
-We will be using the models from the paper ["Doing well by doing good? Green office buildings"](https://www.aeaweb.org/articles?id=10.1257/aer.100.5.2492) These models regress the logarithm of rent per square foot in commercial office buildings on a dummy variable representing a green rating (1 if rated as green) and other building characteristics. Please refer to the [`modelsummary` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/model-summary/) for more information about the paper.
+We will be using the models from the paper ["Doing well by doing good? Green office buildings"](https://www.aeaweb.org/articles?id=10.1257/aer.100.5.2492). These models regress the logarithm of rent per square foot in commercial office buildings on a dummy variable representing a green rating (1 if rated as green) and other building characteristics. Please refer to the [`modelsummary` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/model-summary/) for more information about the paper.
 
 We will generate two coefficient plots using the `modelplot` function:
 - A single coefficient across multiple models 
@@ -117,10 +117,10 @@ modelplot(models = models2,
 ## Further customization of the plot
 
 Further customization of the plot can be done using `ggplot2` functions. In the next code block, the following changes are made:
-- Add a theme
-- Change the font type to Times New Roman
-- Modify the color of the lines
-- Adjust the order of the legend 
+- Adding a theme
+- Changing the font type to Times New Roman
+- Modifying the color of the lines
+- Adjusting the order of the legend 
 
 Within the `scale_color_manual()` functions, we specify the colors of the lines and control the order of the regressions in the legend. To do this, we need to define two vectors: `color_map` for the colors of the lines, and `legend_order` for the order of the regressions in the legend. 
 
@@ -215,7 +215,7 @@ modelplot(models = reg3,
 
 ### Further customizations
 
-Similar to the first example, we can customize the plot further with `ggplot` functions. We add a theme, change the font type and adjust the labels and captions.
+Similar to the first example, we can customize the plot further with `ggplot2` functions. We add a theme, change the font type and adjust the labels and captions.
 
 {{% codeblock %}}
 ```R
