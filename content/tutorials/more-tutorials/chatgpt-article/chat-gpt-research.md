@@ -45,6 +45,9 @@ Right now, we’ve asked ChatGPT some simple questions about Amsterdam from a tr
 
 ![Extended question researcher ChatGPT.](../img/researcher_question_ext.png)
 
+## An interesting article describing use cases of ChatGPT in economic research
+As a researcher or student interested in ChatGPT, this [working paper by Anton Korinek (2023)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4356243) is definitely worth checking out. The paper explores the potential of large language models like ChatGPT in economic research. It describes 25 use cases of how these models can be used as research assistants and tutors, covering six dimensions: ideation, writing, background research, data analysis, coding, and mathematical derivations. For each dimension, the paper provides general instructions and specific examples of tasks that can be automated using LLMs.
+
 ## Useful videos to watch when using ChatGPT for your research project
 [ChatGPT for Scientific Research: How to use AI as a Partner in Your Research](https://www.youtube.com/watch?v=KhRY-ktKB-4)
 
