@@ -1,6 +1,6 @@
 ---
 title: "Set up TeXmacs"
-description: "Alternative to LaTeX editor: TeXmacs. Introduction and installation guide."
+description: "TeXmacs: A LaTeX editor. Introduction and installation guide."
 keywords: "editor, texmacs, installation, scientific, software"
 date: 2023-05-21
 weight: 3
@@ -12,7 +12,7 @@ aliases:
 ---
 
 ## What is TeXmacs
-TeXmacs is a scientific text editor that comes as an alternative for {{< katex >}}\LaTeX{{< /katex >}}. It provides a user friendly software to edit documents containing different elements: text, formulas, graphics, presentations, interactive content. It can be run on all platforms and is easy to set up.
+TeXmacs is a scientific text editor that can be used to write, edit and compile {{< katex >}}\LaTeX{{< /katex >}}. It provides a user friendly software to edit documents containing different elements: text, formulas, graphics, presentations, interactive content. It can be run on all platforms and is easy to set up.
 
 ### Installation
 For any platform, installation is easy and quick following the guide [here](https://www.texmacs.org/tmweb/download/other.en.html).
