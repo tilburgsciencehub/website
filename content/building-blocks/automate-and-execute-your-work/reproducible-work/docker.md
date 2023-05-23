@@ -48,7 +48,7 @@ CMD "default command to be executed"
 
 
 {{% tip %}}
-Dockerfiles can be written in any text editor, such as [Visual Study Core](https://code.visualstudio.com/), which is especially popular when working with Docker because of its official docker extension. This extension has some excellent features such as debugging and auto-completion, making things a lot easier.
+Dockerfiles can be written in any text editor, such as [Visual Studio Code](https://code.visualstudio.com/), which is especially popular when working with Docker because of its official docker extension. This extension has some excellent features such as debugging and auto-completion, making things a lot easier.
 {{% /tip %}}
 
 ### Let's first learn some theory - Docker 101
