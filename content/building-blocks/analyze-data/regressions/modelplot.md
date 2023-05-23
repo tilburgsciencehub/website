@@ -146,7 +146,7 @@ modelplot(models = models2,
 ```
 {{% /codeblock %}}
 
-## Further customization of the plot
+### Further customization of the plot
 
 Further customization of the plot can be done using `ggplot2` functions. In the next code block, the following changes are made:
 - Adding a theme
@@ -175,11 +175,20 @@ modelplot(models = models2,
 {{% tip %}}
 Before specifying Times New Roman as the font type in our plot, we need to import this font into R. You can use the following code to import the font:
 
+For Windows users:
 ```R
 library(extrafont)
 
 font_import() 
 loadfonts(device = "win")
+```
+
+For IOS users: 
+```R
+library(extrafont)
+
+font_import(prompt = FALSE)
+loadfonts()
 ```
 
 Note that running `font_import()` may take a few minutes to complete. 
