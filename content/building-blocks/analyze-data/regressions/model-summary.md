@@ -49,7 +49,7 @@ library(stringr)
 
 
 # Load data
-data_url <- "https://github.com/tilburgsciencehub/website/blob/buildingblock/modelsummary/content/building-blocks/analyze-data/regressions/data_rent.Rda?raw=true"
+data_url <- "https://github.com/tilburgsciencehub/website/blob/master/content/building-blocks/analyze-data/regressions/data_rent.Rda?raw=true"
 load(url(data_url)) #data_rent is the cleaned data set
 ```
 {{% /codeblock %}}
@@ -224,7 +224,9 @@ We can also add a title and note to our table.
 {{% codeblock %}}
 ```R
 notetable1 <- c(
-  "Notes: Each regression also includes 694 dummy variables, one for each locational cluster. Regression (5) also includes an additional 694 dummy variables, one for each green building in the sample. Standard errors are in parentheses")
+  "Notes: Each regression also includes 694 dummy variables, one for each locational cluster. 
+  Regression (5) also includes an additional 694 dummy variables, one for each green building in the sample. 
+  Standard errors are in parentheses")
 
 titletable1 <- 'Table 1—Regression Results, Commercial Office Rents and Green Ratings 
 (dependent variable: logarithm of effective rent in dollars per square foot)'
@@ -272,7 +274,9 @@ To replicate Table 1 of Eichholtz et al. (2010), we need to customize the output
 {{% codeblock %}}
 ```R
 note2table1 <- c(
-  "Notes: Each regression also includes 694 dummy variables, one for each locational cluster. Regression (5) also includes an additional 694 dummy variables, one for each green building in the sample. Standard errors are in brackets.",
+  "Notes: Each regression also includes 694 dummy variables, one for each locational cluster. 
+  Regression (5) also includes an additional 694 dummy variables, one for each green building in the sample. 
+  Standard errors are in brackets.",
   "***Significant at the 1 percent level.", 
   "**Significant at the 5 percent level.",
   "*Significant at the 10 percent level.")
@@ -328,7 +332,9 @@ In this step, we leave out the stars and report confidence intervals instead of 
 {{% codeblock %}}
 ```R
 #Change the note to be correct
-note3table1 <-  c("Notes: Each regression also includes 694 dummy variables, one for each locational cluster. Regression (5) also includes an additional 694 dummy variables, one for each green building in the sample. Confidence intervals are in brackets.")
+note3table1 <-  c("Notes: Each regression also includes 694 dummy variables, one for 
+each locational cluster. Regression (5) also includes an additional 694 dummy variables, 
+one for each green building in the sample. Confidence intervals are in brackets.")
 
 msummary(models,
          vcov = "HC1",
