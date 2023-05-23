@@ -158,8 +158,14 @@ Within the `scale_color_manual()` functions, we specify the colors of the lines 
 
 {{% codeblock %}}
 ```R
-color_map <- c("Model (1)" = "black", "Model (3)" = "blue", "Model (4)" = "red")
-legend_order <- c("Model (1)", "Model (3)", "Model (4)")
+color_map <- c("Model (1)" = "black", 
+               "Model (3)" = "blue", 
+               "Model (4)" = "red"
+               )
+legend_order <- c("Model (1)", 
+                  "Model (3)", 
+                  "Model (4)"
+                  )
 
 modelplot(models = models2, 
           coef_map = cm
@@ -175,11 +181,20 @@ modelplot(models = models2,
 {{% tip %}}
 Before specifying Times New Roman as the font type in our plot, we need to import this font into R. You can use the following code to import the font:
 
+For Windows users:
 ```R
 library(extrafont)
 
 font_import() 
 loadfonts(device = "win")
+```
+
+For IOS users: 
+```R
+library(extrafont)
+
+font_import(prompt = FALSE)
+loadfonts()
 ```
 
 Note that running `font_import()` may take a few minutes to complete. 
