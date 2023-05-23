@@ -44,7 +44,7 @@ library(extrafont)
 
 # Load data 
 
-data_url <- "https://github.com/tilburgsciencehub/website/blob/buildingblock/modelsummary/content/building-blocks/analyze-data/regressions/data_rent.Rda?raw=true"
+data_url <- "https://github.com/tilburgsciencehub/website/blob/master/content/building-blocks/analyze-data/regressions/data_rent.Rda?raw=true"
 load(url(data_url)) #data_rent is loaded now
 
 ```
@@ -118,9 +118,9 @@ We can customize the variable names displayed in the coefficient plot using the 
 {{% codeblock %}}
 ```R
 models2 <- list(
-  "(4)" = reg4,
-  "(3)" = reg3, 
-  "(1)" = reg1)
+  "Model (4)" = reg4,
+  "Model (3)" = reg3, 
+  "Model (1)" = reg1)
 
 cm = c('green_rating' = 'Green rating (1 = yes)')
 modelplot(models = models2, 
@@ -158,8 +158,8 @@ Within the `scale_color_manual()` functions, we specify the colors of the lines 
 
 {{% codeblock %}}
 ```R
-color_map <- c("(1)" = "black", "(3)" = "blue", "(4)" = "red")
-legend_order <- c("(1)", "(3)", "(4)")
+color_map <- c("Model (1)" = "black", "Model (3)" = "blue", "Model (4)" = "red")
+legend_order <- c("Model (1)", "Model (3)", "Model (4)")
 
 modelplot(models = models2, 
           coef_map = cm
@@ -205,10 +205,10 @@ modelplot(models = models2,
                     ) +
   labs(x= "", 
        title = "Coefficient 'Green rating' with 
-       95% confidence intervals",
+                95% confidence intervals",
        subtitle = "Dependent variable is log(rent)",
-       caption = "source: Doing well by doing good?: 
-       Green office buildings by Eiccholtz et al. (2010)",
+       caption = "source: Doing well by doing good?: Green 
+                  office buildings by Eiccholtz et al. (2010)",
        color = "Regression models"
        ) + 
   theme(plot.title = element_text(hjust = 0.5), 
@@ -261,8 +261,8 @@ modelplot(models = reg3,
   labs(x= "", 
        title = "Coefficients in Age category of regression (3)",
        subtitle = "Dependent variable is log(rent)",
-       caption = "source: Doing well by doing good?: 
-       Green office buildings by Eiccholtz et al. (2010)"
+       caption = "source: Doing well by doing good?: Green 
+                  office buildings by Eiccholtz et al. (2010)"
        ) + 
   theme(plot.title = element_text(hjust = 0.5), 
         plot.subtitle = element_text(hjust = 0.5),
