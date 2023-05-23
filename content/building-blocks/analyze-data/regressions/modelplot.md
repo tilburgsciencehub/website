@@ -1,10 +1,3 @@
-<style>
-.force-word-wrap pre code {
-   white-space: normal;
-   word-wrap: break-word;
-}
-</style>
-
 ---
 title: "Generate a coefficient plot in R with the `modelplot` function"
 description: "An example on how to use the `modelplot` function to generate nice coefficient plots in R"
@@ -37,8 +30,6 @@ We will generate two coefficient plots using the `modelplot` function:
 Let's begin by loading the required packages and data:
 
 {{% codeblock %}}
-<div class="force-word-wrap">
-
 ```R
 
 # Load packages
@@ -57,7 +48,6 @@ data_url <- "https://github.com/tilburgsciencehub/website/blob/buildingblock/mod
 load(url(data_url)) #data_rent is loaded now
 
 ```
-</div>
 {{% /codeblock %}}
 
 
@@ -67,8 +57,6 @@ load(url(data_url)) #data_rent is loaded now
 Below you see the five regression models for which results are displayed in Table 1 of Eiccholtz et al. (2010). For a detailed overview and understanding of these regressions, please refer to the [`modelsummary` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/model-summary/).
 
 {{% codeblock %}}
-<div class="force-word-wrap">
-
 ```R
 reg1 <- feols(logrent ~ 
                 green_rating + size_new + oocc_new + class_a + class_b + 
@@ -112,7 +100,6 @@ reg5 <- feols(logrent ~
                  data = data_rent
                  )
 ```
-</div>
 {{% /codeblock %}}
 
 <p align = "center">
@@ -129,8 +116,6 @@ We will include the regression models 1, 3, and 4 in the models list, as these i
 We can customize the variable names displayed in the coefficient plot using the `coef_map` argument. In the vector `cm`, we assign a new name to the original term name. Only variables included in `coef_map` will be shown in the plot. 
 
 {{% codeblock %}}
-<div class="force-word-wrap">
-
 ```R
 models2 <- list(
   "(4)" = reg4,
@@ -142,7 +127,6 @@ modelplot(models = models2,
           coef_map = cm
           )
 ```
-</div>
 {{% /codeblock %}}
 
 <p align = "center">
@@ -154,8 +138,6 @@ modelplot(models = models2,
 By default, the confidence level is set to 95%. We can change this by specifying the desired level using the `conf_level` argument. 
 
 {{% codeblock %}}
-<div class="force-word-wrap">
-
 ```R
 modelplot(models = models2, 
           conf_level = 0.99, 
@@ -175,8 +157,6 @@ Further customization of the plot can be done using `ggplot2` functions. In the 
 Within the `scale_color_manual()` functions, we specify the colors of the lines and control the order of the regressions in the legend. To do this, we need to define two vectors: `color_map` for the colors of the lines, and `legend_order` for the order of the regressions in the legend. 
 
 {{% codeblock %}}
-<div class="force-word-wrap">
-
 ```R
 color_map <- c("(1)" = "black", "(3)" = "blue", "(4)" = "red")
 legend_order <- c("(1)", "(3)", "(4)")
@@ -190,7 +170,6 @@ modelplot(models = models2,
                      breaks = legend_order
                      )
 ```
-</div>
 {{% /codeblock %}}
 
 {{% tip %}}
@@ -215,8 +194,6 @@ argument. We omit the x-axis label and add a title, subtitle, and caption. Also,
 Furthermore, we can change the position of the text elements within `theme()`. Specifically, we adjust the position of the title and subtitle to be centered by setting `hjust = 0.5`. Similarly, the caption is placed on the left side by setting `hjust = 0`. 
 
 {{% codeblock %}}
-<div class="force-word-wrap">
-
 ```R
 modelplot(models = models2, 
           coef_map = cm
@@ -227,9 +204,11 @@ modelplot(models = models2,
                      breaks = legend_order
                     ) +
   labs(x= "", 
-       title = "Coefficient 'Green rating' with 95% confidence intervals",
+       title = "Coefficient 'Green rating' with 
+       95% confidence intervals",
        subtitle = "Dependent variable is log(rent)",
-       caption = "source: Doing well by doing good?: Green office buildings by Eiccholtz et al. (2010)",
+       caption = "source: Doing well by doing good?: 
+       Green office buildings by Eiccholtz et al. (2010)",
        color = "Regression models"
        ) + 
   theme(plot.title = element_text(hjust = 0.5), 
@@ -238,7 +217,6 @@ modelplot(models = models2,
         )
 
 ```
-</div>
 {{% /codeblock %}}
 
 <p align = "center">
@@ -274,8 +252,6 @@ modelplot(models = reg3,
 Similar to the first example, we can customize the plot further with `ggplot2` functions. We add a theme, change the font type and adjust the labels and captions.
 
 {{% codeblock %}}
-<div class="force-word-wrap">
-
 ```R
 modelplot(models = reg3, 
           coef_map = cm2
@@ -285,14 +261,14 @@ modelplot(models = reg3,
   labs(x= "", 
        title = "Coefficients in Age category of regression (3)",
        subtitle = "Dependent variable is log(rent)",
-       caption = "source: Doing well by doing good?: Green office buildings by Eiccholtz et al. (2010)"
+       caption = "source: Doing well by doing good?: 
+       Green office buildings by Eiccholtz et al. (2010)"
        ) + 
   theme(plot.title = element_text(hjust = 0.5), 
         plot.subtitle = element_text(hjust = 0.5),
         plot.caption = element_text(hjust = 0)
         )
 ```
-</div>
 {{% /codeblock %}}
 
 <p align = "center">
