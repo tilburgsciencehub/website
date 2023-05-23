@@ -146,7 +146,7 @@ modelplot(models = models2,
 ```
 {{% /codeblock %}}
 
-## Further customization of the plot
+### Further customization of the plot
 
 Further customization of the plot can be done using `ggplot2` functions. In the next code block, the following changes are made:
 - Adding a theme

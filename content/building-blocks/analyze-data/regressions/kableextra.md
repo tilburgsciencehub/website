@@ -43,7 +43,7 @@ library(knitr)
 library(kableExtra)
 
 # Load data 
-data_url <- "https://github.com/tilburgsciencehub/website/blob/buildingblock/modelsummary/content/building-blocks/analyze-data/regressions/data_rent.Rda?raw=true"
+data_url <- "https://github.com/tilburgsciencehub/website/blob/master/content/building-blocks/analyze-data/regressions/data_rent.Rda?raw=true"
 load(url(data_url)) #data_rent is loaded now
 ```
 {{% /codeblock %}}
