@@ -1,3 +1,10 @@
+<style>
+.force-word-wrap pre code {
+   white-space: normal;
+   word-wrap: break-word;
+}
+</style>
+
 ---
 title: "Generate a coefficient plot in R with the `modelplot` function"
 description: "An example on how to use the `modelplot` function to generate nice coefficient plots in R"
