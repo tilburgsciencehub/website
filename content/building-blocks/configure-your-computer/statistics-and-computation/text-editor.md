@@ -48,7 +48,6 @@ Launching VS code from the command line requires an extra step for Mac users:
 
 Go to the [downloads page](https://code.visualstudio.com/download) and download the right package for the system you are using. Specific instructions for installing VS Code for different Linux distributions can be found [here](https://code.visualstudio.com/docs/setup/linux). 
 
-{{% tip %}}
 **Installing Additional Packages for VS Code**
 
 One of the advantages of VS Code is that there are many *extensions* that make your life easier, ranging from simple syntax highlighting to environments that can mimic a complete graphical user interface.
@@ -91,5 +90,3 @@ One of the advantages of VS Code is that there are many *extensions* that make y
     * `Data Preview`: Allows you to preview data files (CSV, JSON, Excel, etc.) directly within VS Code.
     * `Better Comments`: Improves the readability of comments by colorizing and formatting different types of comments.
     * `Remote - SSH`: Allows you to work with files on a remote machine over SSH, which can be useful for accessing data science environments.
-
-{{% /tip %}}
