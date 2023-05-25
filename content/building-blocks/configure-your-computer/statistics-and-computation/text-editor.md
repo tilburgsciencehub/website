@@ -56,7 +56,7 @@ One of the advantages of VS Code is that there are many *extensions* that make y
 * You can access VS Code's Extensions Marketplace with the shortcut `Ctrl+Shift+X ,` (`CMD+Shift+X` on Mac) on your keyboard or by clicking on this icon on the left side of your screen:
 
 <p align = "center">
-<img src = "../statistics-and-computation/VSCodeExtensions_icon.png" width="300">
+<img src = "../statistics-and-computation/images/VSCodeExtensions_icon.png" width="300">
 </p>
 
 * On this page, you can directly search for Extensions by typing in a name in the search bar. 
@@ -64,7 +64,7 @@ One of the advantages of VS Code is that there are many *extensions* that make y
 * With "@" you can filter your search. Filters such as "@recommended" and "@popular" exist to find popular or recommended extensions. With "@category", you can browse in specific categories. For example, all extensions of programming languages can be found with "@category:"programming languages". 
 
 <p align = "center">
-<img src = "../statistics-and-computation/VSCodeExtensions_example.png" width="500">
+<img src = "../statistics-and-computation/images/VSCodeExtensions_example.png" width="500">
 </p>
 
 * When you find the package that you need, you click the blue ‘Install’ button and the package will be installed.
