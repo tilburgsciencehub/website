@@ -4,7 +4,7 @@ type: "write-your-first-latex-document"
 indexexclude: "true"
 title: "Setup LaTeX"
 description: "Learn to setup your computer to produce LaTeX documents."
-keywords: "setup, latex, atom, editor"
+keywords: "setup, latex, vscode, overleaf, tex, editor"
 weight: 101
 draft: false
 aliases:
