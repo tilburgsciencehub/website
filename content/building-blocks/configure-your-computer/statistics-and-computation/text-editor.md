@@ -53,15 +53,15 @@ Go to the [downloads page](https://code.visualstudio.com/download) and download 
 
 One of the advantages of VS Code is that there are many *extensions* that make your life easier, ranging from simple syntax highlighting to environments that can mimic a complete graphical user interface.
 
-* You can access VS Code's Extensions Marketplace with the shortcut `Ctrl+Shift+X ,` (`CMD+Shift+X` on Mac) on your keyboard or by clicking on this icon on the left side of your screen:
+* You can access VS Code's Extensions Marketplace with the shortcut `Ctrl+Shift+X` (`CMD+Shift+X` on Mac) on your keyboard or by clicking on this icon on the left side of your screen:
 
 <p align = "center">
-<img src = "../images/VSCodeExtensions_icon.png" width="300">
+<img src = "../images/VSCodeExtensions_icon.png" width="200">
 </p>
 
-* On this page, you can directly search for Extensions by typing in a name in the search bar. 
+* On this page, you can directly search for extensions by typing in a name in the search bar. 
 
-* With "@" you can filter your search. Filters such as "@recommended" and "@popular" exist to find popular or recommended extensions. With "@category", you can browse in specific categories. For example, all extensions of programming languages can be found with "@category:"programming languages". 
+* With "@" you can filter your search. Filters such as `@recommended` and `@popular` exist to find recommended or popular extensions. With `@category`, you can browse in specific categories. For example, all extensions of programming languages can be found with `@category:"programming languages"`.
 
 <p align = "center">
 <img src = "../images/VSCodeExtensions_example.png" width="500">
