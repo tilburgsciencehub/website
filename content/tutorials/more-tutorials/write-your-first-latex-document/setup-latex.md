@@ -19,17 +19,14 @@ The first step is to setup a {{< katex >}}\TeX{{< /katex >}} distribution on you
 
 {{% cta-primary-center "How to Install $\LaTeX$" "/get/latex" %}}
 
-2. Once you've installed it, you'll need a text editor to work with. We recommend **[Atom](https://atom.io)**, a free and cross-platform editors with great functions and extra packages. You can download Atom from its official website or read the instructions from [our Building Block](/get/atom). Another great solution is [Visual Studio Code](https://code.visualstudio.com).
+2. Once you've installed it, you'll need a text editor to work with. We recommend **[Visual Studio Code](https://code.visualstudio.com/)**, a free text editor with great functions and extensions. You can download VS Code from its official website or read the instructions from [our Building Block](/get/VSCode). Another great online text editor is [Overleaf](https://www.overleaf.com/).
 
-3. The last piece of the puzzle: let's setup Atom so that it can run $\LaTeX$. By default, Atom can only work as a general text editor with your `.tex` files. Luckily, there are a number of (free) Atom packages that we can install to boost its functionalities and transform it into a proper $\LaTeX$ editor:
-    - `latex`, a package that allows Atom to compile $\LaTeX$ code: [download here](https://atom.io/packages/latex)
-    - `language-latex`, a package for syntax highlighting: [download here](https://atom.io/packages/language-latex)
-    - (Optional) `pdf-view`, a package for viewing PDF files side-by-side while you work: [download here](https://atom.io/packages/pdf-view)
-
+3. The last piece of the puzzle: let's setup VS Code so that it can run $\LaTeX$. Install the VS Code extension `LaTeX Workshop`. This extension provides all-in-one features and utilities for $\LaTeX$ typesetting, making it a comprehensive tool for editing, compiling, and previewing $\LaTeX$ documents. 
+    
 ## Setup
 
 Before starting to write anything, let's setup a directory for this project.
 
-Make a new folder wherever you prefer on your local disk. Then launch Atom, create a new file, and save it with a `.tex` file extension in said folder.
+Make a new folder wherever you prefer on your local disk. Then launch VS Code, create a new file, and save it with a `.tex` file extension in said folder.
 
 You're finally ready to start writing your first $\LaTeX$ document!
