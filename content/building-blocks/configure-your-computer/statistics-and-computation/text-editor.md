@@ -7,7 +7,7 @@ draft: false
 #weight: 9
 aliases:
   - /choose/text-editor
-  - /get/atom
+  - /get/VSCode
 ---
 
 ## Installing a text editor
@@ -19,113 +19,77 @@ Please download, install it along with the necessary packages and stick with it 
 There is a slight learning curve, but soon you hopefully will be wondering why no-one forced you to do this before!
 
 {{% tip %}}
-None of the skills on this website are tied to Atom,
-so if you do decide to move away to another editor, nothing will be lost. For example, [Visual Studio Code](https://code.visualstudio.com/) or [Vim](https://www.vim.org/) are also widely used text editors.
+None of the skills on this website are tied to Visual Studio Code, so if you do decide to move away to another editor, nothing will be lost. 
+
+A nice online text editor for LaTex is [Overleaf](https://www.overleaf.com/). Overleaf provides nice collaboration tools, and it can be used online without any setup needed.
+[Vim](https://www.vim.org/) is another widely used text editor.
 {{% /tip %}}
 
-<!-- ## Installing Sublime Text
+### Installing Visual Studio Code
 
-Go to the [downloads page](https://www.sublimetext.com/3) and download the live installer for your operating system.-->
+#### Windows Users
 
-### Installing Atom
+Go to the [downloads page](https://code.visualstudio.com/download) and download the installer for Windows. Run the installer (VSCodeUserSetup-{version}.exe) and follow the instructions. VS Code is now installed and can be opened from your computer. 
+You can open VS Code from your command prompt with just running the one word `code`. 
 
-#### Mac and Windows Users
+Additional instructions for the setup on Windows can be found [here](https://code.visualstudio.com/docs/setup/windows). 
 
-Go to the [downloads page](https://github.com/atom/atom/releases/latest) and download the installer for your operating system:
+#### Mac Users
 
-* Windows users download AtomSetup-x64.exe and execute the installer
-* Mac users download Atom-Mac.zip and copy the contained Atom.app into the applications folder
+Go to the [downloads page](https://code.visualstudio.com/download) and download the installer for Mac. Additional instructions for the installation on macOS can be found [here](https://code.visualstudio.com/docs/setup/mac#_alternative-manual-instructions). 
+
+Launching VS code from the command line requires an extra step for Mac users: 
+- Open the Command Palette in VS Code with the shortcut `Cmd+Shift+P` to find the command "Shell Command: Install 'code' command in PATH command." Hit enter. 
+- You should see a confirming message telling you that "the Shell command `code` is succesfully installed in PATH". 
+- Restart the terminal.
+- You can open VS Code in your terminal now by typing `$ code.` and hitting enter!
 
 #### Linux/Ubuntu users
 
-Enter the following information to add a repository that has the Atom installation, then press `Return`:
-
-```bash
-sudo add-apt-repository ppa:webupd8team/atom
-```
-
-Install Atom by entering the following commands into a terminal and then pressing `Return:`
-
-```bash
-sudo apt update; sudo apt install atom
-```
-
-### Verifying Atom Installation
-
-We want Atom to be available from the command line. For Mac and Linux Users this is the default after you have started the program once. So please open Atom. Then open your terminal and type the following into the command line:
-
-```bash
-atom --version
-```
-
-followed by pressing `Return` you should see output like the following
-
-```bash
-Atom    : 1.28.2
-Electron: 2.0.5
-Chrome  : 61.0.3163.100
-Node    : 8.9.3
-```
-Make sure that the version numbers are above `1.26.x` or newer.
-
-{{% warning %}}
-**Additional Step for Windows.**
-Getting things to run from the command line for Windows users is a bit harder. You will need local administration rights for your computer, but you should have these on your personal computers or those owned by the University.
-
-- Right-click on Computer.
-- Then go to "Properties" and select the tab "Advanced System Settings".
-- Choose "Environment Variables" and select `Path` from the list of system variables.
-- If you accepted all defaults during your installation, and didn't have any other non-default setting prior to starting this guide, choose `Edit.`
-
-- **On Windows 7 or 8 machines:**
-	Append the following (i.e., do not overwrite the previous value) modifying the string, with your relevant `username`:
-
-        `;C:\Users\username\AppData\Local\atom\bin`
-
-	to the variable value – make sure the rest remains as it is and do not include spaces between the ";" and preceeding text.
-
-- **On Windows 10 machines:**
-	Click `New` and paste the following string, modifying the `username`
-
-	`C:\Users\username\AppData\Local\atom\bin`
-
-Click on `OK` as often as needed.
-
-Close your current terminal session, open a new one, and again try `atom .` - the Atom editor will open if this was successful.
-{{% /warning %}}
+Go to the [downloads page](https://code.visualstudio.com/download) and download the right package for the system you are using. Specific instructions for installing VS Code for different Linux distributions can be found [here](https://code.visualstudio.com/docs/setup/linux). 
 
 {{% tip %}}
-**Installing Additional Packages for Atom**
+**Installing Additional Packages for VS Code**
 
-One of the advantages of Atom is that there are many *packages* that make your life easier, ranging from simple syntax highlighting to environments that can mimic a complete graphical user interface.
+One of the advantages of VS Code is that there are many *extensions* that make your life easier, ranging from simple syntax highlighting to environments that can mimic a complete graphical user interface.
 
-* To access Atom's settings press `Ctrl + ,` (`CMD + ,` on Mac) on your keyboard then click on the `Install` tab which is visible on the left hand side.
-* On the Installation page there is a prompt where you can type in a package name and then press `Return` and Atom will search for that package for you and return results with similar names.
-When you find the package that you need, you click the blue 'Install' button and the package will be installed.
-* If during the installation of a package Atom asks to install dependencies, always choose to accept.
+* You can access VS Code's Extensions Marketplace with the shortcut `Ctrl+Shift+X ,` (`CMD+Shift+X` on Mac) on your keyboard or by clicking on this icon on the left side of your screen:
 
-* If you decide to stick with Atom, you may find the following packages useful in your day-to-day work:
+<p align = "center">
+<img src = "../statistics-and-computation/VSCodeExtensions_icon.png" width="300">
+</p>
 
-    *   tablr
-    *   tablr-json
-    *   autocomplete-R
-    *   autocomplete-python (choose Jedi as your engine when asked)
-    *   autoflow
-    *   language-r
-    *   linter
-    *   linter-lintr
-    *   platformio-ide-terminal
-    *   project-plus
-    *   language-markdown
-    *   markdown-table-editor
-    *   markdown-preview-plus
-    *   autocomplete-citeproc
-    *   open-unsupported-files
-    *   advanced-open-file
-    *   language-latex
-    *   language-matlab
-    *   language-stata
-    *   atom-latex
-    *   whitespace
+* On this page, you can directly search for Extensions by typing in a name in the search bar. 
+
+* With "@" you can filter your search. Filters such as "@recommended" and "@popular" exist to find popular or recommended extensions. With "@category", you can browse in specific categories. For example, all extensions of programming languages can be found with "@category:"programming languages". 
+
+<p align = "center">
+<img src = "../statistics-and-computation/VSCodeExtensions_example.png" width="500">
+</p>
+
+* When you find the package that you need, you click the blue ‘Install’ button and the package will be installed.
+* A list of all your installed extensions can be found by typing "@installed" in the search bar in the Extension Marketplace. 
+
+* You may find the following extensions useful in your day-to-day work in VS Code:
+    *   `Python`
+    *   `Jupyter`
+    *   `R`
+    *   `MATLAB`
+    *   `LaTex Workshop`
+    *   `Markdown All in One`: shortcuts and productivity features for working with Markdown files.
+    *   `GitLens`: Enhances the Git integration in VS Code by displaying Git blame annotations and other features.
+    *   `Pylance`: A language server extension for Python that provides advanced type checking, autocompletion, and code navigation.
+    *   `Prettier`: Code formatter that helps maintain consistent code style across your project.
+    *  `Code Runner`: Allows you to run code snippets or entire files in various programming languages from within VS Code.
+    * `Visual Studio IntelliCode`: Enhances IntelliSense by providing AI-assisted code completion based on patterns and practices from thousands of open-source projects.
+    * `Bracket Pair Colorizer 2`: Helps identify matching brackets with colors, making code more readable.
+    * `Live Share`: Collaborative coding extension that enables real-time sharing and editing of code with other developers.
+    * `Docker`: Adds support for managing Docker containers and images within VS Code.
+    * `SQL Server (mssql)`: Provides SQL Server integration, enabling you to connect to and query databases directly from VS Code.
+    * `Excel Viewer`: Allows you to view Excel files within VS Code for quick data analysis.
+    * `EditorConfig for VS Code`   
+    * `Data Preview`: Allows you to preview data files (CSV, JSON, Excel, etc.) directly within VS Code.
+    * `Better Comments`: Improves the readability of comments by colorizing and formatting different types of comments.
+    * `Remote - SSH`: Allows you to work with files on a remote machine over SSH, which can be useful for accessing data science environments.
 
 {{% /tip %}}
