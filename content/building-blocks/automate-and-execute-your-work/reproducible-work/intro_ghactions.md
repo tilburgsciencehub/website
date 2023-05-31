@@ -1,5 +1,5 @@
 ---
-title: "Enhance the Reproducibility and Automation of your project with GitHub Actions" 
+title: "Enhance the Reproducibility and Automation of your data science project with GitHub Actions" 
 description: "The GitHub Actions platform offers set of tools for you to implement your own customized workflows, that can greatly amplify the automation and reproducibility in your projects. This building block introduces you to the essentials of GitHub Actions, guiding you through the necessary steps to modify your project structure to enable you to take advantage of it."
 keywords: "GitHub Actions, Data Science, Project, Project Structure, Reproducibility, Automation, Testing, Formatting"
 weight: 2
@@ -13,7 +13,7 @@ aliases:
 
 ---
 
-# GitHub Actions: a level up in terms of reproducibility and automation
+# GitHub Actions: a level up in terms of reproducibility and automation for your data science project
 
 When it comes to enhancing your data science project's automation and reproducibility, GitHub Actions is a tool that you should definitely consider. This building block will introduce the basic concepts to understand how GitHub Actions works and why it is a great option for your project, as well as two implementation proposals and how to adapt your project structure to incorporate these. This building block is meant to complement that other on [data management and directory structure](https://tilburgsciencehub.com/tutorials/reproducible-research-and-automation/principles-of-project-setup-and-workflow-management/directories/) presented within as part of our tutorial on [principles of project setup and workflow management](https://tilburgsciencehub.com/tutorials/reproducible-research-and-automation/principles-of-project-setup-and-workflow-management/project-setup-overview/) which we strongly recommend you to check out if you haven't already! 
 
