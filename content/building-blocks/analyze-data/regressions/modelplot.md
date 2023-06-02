@@ -107,7 +107,7 @@ reg5 <- feols(logrent ~
 </p>
 
 
-## Example 1: A single coefficient across multiple models
+## Single Coefficient Plot  Across Multiple Models
 
 In this example, we will create a coefficient plot of the Green rating variable. This plot visualizes the relationship between the presence of a green rating and the rent of the building. The Green rating variable indicates whether a building is rated as green (1 if rated as green and 0 otherwise). 
 
@@ -240,7 +240,8 @@ modelplot(models = models2,
 
 This plot visualises the relationship between the presence of a green rating and the rent of the building. For the different regression models, the magnitude and the statistical significance of the green rating is unchanged. Thus, the plot reveals that the rent in a green-rated building is significantly higher by 2.8 to 3.5 percent compared to building without a green rating. 
 
-## Example 2: Multiple Coefficients within a single model
+## Multiple Coefficients Within a Single Model
+
 In this example, we will create a coefficient plot to showcase the coefficients of the Age variables in regression 3. This plot allows us to understand the individual effects of different age variables on the outcome variable.
 
 Note that when including more variables in the plot, the `coef_map` argument is also useful for rearranging the order of the coefficients. 
