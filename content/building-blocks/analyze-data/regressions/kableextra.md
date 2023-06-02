@@ -43,14 +43,14 @@ library(knitr)
 library(kableExtra)
 
 # Load data 
-data_url <- "https://github.com/tilburgsciencehub/website/blob/buildingblock/modelsummary/content/building-blocks/analyze-data/regressions/data_rent.Rda?raw=true"
+data_url <- "https://github.com/tilburgsciencehub/website/blob/master/content/building-blocks/analyze-data/regressions/data_rent.Rda?raw=true"
 load(url(data_url)) #data_rent is loaded now
 ```
 {{% /codeblock %}}
 
 
 ## The `modelsummary` table 
-- 'models' is a list which consists of five regression models (regression 1 to 5). For a detailed overview and understanding of these regressions, please refer to the Modelsummary building block.
+- 'models' is a list which consists of five regression models (regression 1 to 5). For a detailed overview and understanding of these regressions, please refer to the [`modelsummary` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/model-summary/).
 - `cm2` and `gm2` represent the variable names and statistics included in the regression table, respectively.
 
 {{% codeblock %}}
