@@ -42,7 +42,7 @@ Launching VS code from the command line requires an extra step for Mac users:
 - Open the Command Palette in VS Code with the shortcut `Cmd+Shift+P` to find the command "Shell Command: Install 'code' command in PATH command." Hit enter. 
 - You should see a confirming message telling you that "the Shell command `code` is succesfully installed in PATH". 
 - Restart the terminal.
-- You can open VS Code in your terminal now by typing `$ code.` and hitting enter!
+- You can open VS Code in your terminal now by typing `$ code .` and hitting enter!
 
 #### Linux/Ubuntu users
 
