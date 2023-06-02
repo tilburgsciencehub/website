@@ -52,10 +52,6 @@ If you now compile the document, you should see "Hello, world!" together with a 
 
 That's because $\LaTeX$ **uses the document class to infer the page and document layout** that it should use.
 
-{{% tip %}}
-If you're using [Atom to compile your code](/setup/latex), you can quickly "build" your PDF output with the shortcut: `ctrl + alt + B`.
-{{% /tip %}}
-
 There are many document classes available out there. Here's [a comprehensive list](https://ctan.org/topic/class). In this tutorial, we will only use the `article` class.
 
 In case you wanted to slightly modify an existing class, you may use any of the available parameters for that class. For instance, you can specify a different font size (the default is 10pt) or a different paper format (the default is `letterpaper`) for the `article` class: `\documentclass[12pt,a4paper]{article}`.
