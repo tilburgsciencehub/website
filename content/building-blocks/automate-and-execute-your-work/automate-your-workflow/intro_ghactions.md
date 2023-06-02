@@ -56,4 +56,3 @@ The first elementary pre-requisite to take advantage of GitHub Actions is that y
 <img src = "../images/wf_dir_structure.png" width="450">
 <figcaption> Example of a project directory structure with the appropriate directories for including GitHub Actions workflows. There, besides the typical "data" "gen" and "src" directories that you may find in most research projects, there is also a ".github/workflows/" directory that is where workflow YAML files should be placed. </figcaption>
 </p>
-
