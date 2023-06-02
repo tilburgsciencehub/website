@@ -304,5 +304,5 @@ modelplot(models = reg3,
 This plot clearly demonstrates that newer buildings command a significant premium compared to older ones, indicating a positive relationship between building age and rent in these models.
 
 {{% summary %}}
-The `modelplot` function from the `modelsummary` package offers a useful tool for creating clear and informative coefficients plots in R. In this building block, two examples are provided. The first example demonstrates how to visualize a single coefficient across multiple models. The second example showcases how to visualize multiple coefficients within a single model.  
+The `modelplot` function from the `modelsummary` package offers a useful tool for creating clear and informative coefficients plots in `R`. In this building block, two examples are provided. The first example demonstrates how to visualize a single coefficient across multiple models. The second example showcases how to visualize multiple coefficients within a single model.  
 {{% /summary %}}
