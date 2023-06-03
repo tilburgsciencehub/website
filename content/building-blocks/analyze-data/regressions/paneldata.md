@@ -212,11 +212,13 @@ where:
 Now, let's focus on the specific equations for `t = 1935` and `t = 1940`:
 
 The regression equation for the year `t = 1935`:
+
 {{<katex>}}
 invest_{i1935} = \beta_0 + \beta_1 value_{i1935} + \beta_2 capital_{i1935} + \beta_3 Z_{i} + \u_{i1935}
 {{</katex>}}
 
 The regression equation for the year `t = 1940`:
+{{<katex>}}
 invest_{i1940} = \beta_0 + \beta_1 value_{i1940} + \beta_2 capital_{i1940} + \beta_3 Z_{i} + \u_{i1940}
 {{</katex>}}
 
