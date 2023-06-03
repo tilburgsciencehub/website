@@ -227,27 +227,25 @@ The regression equation for the year `t = 1935` is
 
 {{<katex>}}
 invest_{i1935} = \beta_0 + \beta_1 value_{i1935} + \beta_2 capital_{i1935} + \beta_3 \alpha_{i} + u_{i1935}
-{{</katex>}}
+{{</katex>}}  
 
-
+</br>
 The regression equation for the year `t = 1940` is
-
+  
 {{<katex>}}
 invest_{i1940} = \beta_0 + \beta_1 value_{i1940} + \beta_2 capital_{i1940} + \beta_3 \alpha_{i} + u_{i1940}
 {{</katex>}}
 
-
-To eliminate the firm-specific characteristics $\alpha_{i}$, we can use a differencing approach. By regressing the difference in the Investment variable between 1940 and 1935 on the difference in the independent variables during that period, we arrive at the differenced regression equation:
-
+</br>
+To eliminate the firm-specific characteristics $\alpha_{i}$, we can use a differencing approach. By regressing the difference in the Investment variable between 1940 and 1935 on the difference in the independent variables during that period, we arrive at the differenced regression equation:  
 
 {{<katex>}}
 invest_{i1940} - invest_{i1935} = \beta_1 (value_{i1940} - value_{i1935}) + \beta_2 (capital_{i1940} - capital_{i1935}) + (u_{i1940} - u_{i1935})
-{{</katex>}}
+{{</katex>}}  
 
 By taking differences between the years, we remove any unobserved variable that is constant over time: $\alpha_{i}$ is removed from the equation!
 
 The following code block estimates this regression in R.
-
 {{% codeblock %}}
 ```R
 # subset data for years 1935 and 1940 
@@ -290,9 +288,11 @@ In this step, time fixed effects will be added to the model. Time fixed effects 
 
 {{<katex>}}
 invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i +  \delta_t + \epsilon_{it}
-{{</katex>}}
+{{</katex>}}  
 
-where $\alpha_i$ is the fixed effect for firm `i` and $\delta_t$ is the fixed effect for year `t`
+where, 
+- $\alpha_i$ is the fixed effect for firm `i`
+- $\delta_t$ is the fixed effect for year `t`
  
 {{% tip %}}
 
