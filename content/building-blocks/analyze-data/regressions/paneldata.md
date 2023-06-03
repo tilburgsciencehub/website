@@ -236,7 +236,9 @@ The regression equation for the year `t = 1940` is
 invest_{i1940} = \beta_0 + \beta_1 value_{i1940} + \beta_2 capital_{i1940} + \beta_3 \alpha_{i} + u_{i1940}
 {{</katex>}}
 
+
 To eliminate the firm-specific characteristics $\alpha_{i}$, we can use a differencing approach. By regressing the difference in the Investment variable between 1940 and 1935 on the difference in the independent variables during that period, we arrive at the differenced regression equation:
+
 
 {{<katex>}}
 invest_{i1940} - invest_{i1935} = \beta_1 (value_{i1940} - value_{i1935}) + \beta_2 (capital_{i1940} - capital_{i1935}) + (u_{i1940} - u_{i1935})
@@ -298,7 +300,7 @@ The intuition behind this fixed effects regression equation is relatively straig
 
 The intercept of an observation is $\beta_0$ + $\alpha_i$  + $\delta_t$.
 
-For example, the observation $Y_{56}$ (firm 5 in year 6) has the intercept $\beta_0$ + $\alpha_5$  + $\delta_t$, where:
+For example, the observation $Y_{56}$ (firm 5 in year 6) has the intercept $\beta_0$ + $\alpha_5$  + $\delta_6$, where:
 - $\beta_0$ represents the baseline intercept
 - $\alpha_5$ captures the firm-specific effect for firm 5 (value of 1 for firm 5, and 0 otherwise)
 - $\delta_6$ represents the year-specific effect for year 6 (value of 1 for year 6, and 0 otherwise)
