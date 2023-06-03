@@ -199,7 +199,7 @@ Let's first consider a data set with 2 time periods, specifically the years 1935
 The multiple regression model is as follows:
 
 {{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \beta_3 Z_{i} + \u_{it}
+invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \beta_3 Z_{i} + u_{it}
 {{</katex>}}
 
 where:
@@ -207,7 +207,7 @@ where:
 - $value_{it}$ is the market value of assets of firm `i` in year `t`
 - $capital_{it}$ is the stock value of plant and equipment of firm `i` in year `t`
 - $Z_{i}$ is the fixed effect for firm `i` (capturing unobserved firm-specific characteristics that differ between firms but remain constant over time)
-- $\u_{it}$ is the error term, which includes all other unobserved factors that affect investment but are not accounted for by the independent variables or the fixed effects.
+- $u_{it}$ is the error term, which includes all other unobserved factors that affect investment but are not accounted for by the independent variables or the fixed effects.
 
 Now, let's focus on the specific equations for `t = 1935` and `t = 1940`:
 
