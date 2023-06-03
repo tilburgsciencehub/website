@@ -222,25 +222,25 @@ where:
 - $u_{it}$ is the error term, which includes all other unobserved factors that affect investment but are not accounted for by the independent variables or the fixed effects.
 
 Now, let's focus on the specific equations for `t = 1935` and `t = 1940`.
-
+<br/>
 The regression equation for the year `t = 1935` is  
-
+<br/>
 {{<katex>}}
 invest_{i1935} = \beta_0 + \beta_1 value_{i1935} + \beta_2 capital_{i1935} + \beta_3 \alpha_{i} + u_{i1935}
 {{</katex>}}  
-
+<br/>
 The regression equation for the year `t = 1940` is  
-  
+<br/>
 {{<katex>}}
 invest_{i1940} = \beta_0 + \beta_1 value_{i1940} + \beta_2 capital_{i1940} + \beta_3 \alpha_{i} + u_{i1940}
 {{</katex>}}  
-
+<br/>
 To eliminate the firm-specific characteristics $\alpha_{i}$, we can use a differencing approach. By regressing the difference in the Investment variable between 1940 and 1935 on the difference in the independent variables during that period, we arrive at the differenced regression equation:  
-
+<br/>
 {{<katex>}}
 invest_{i1940} - invest_{i1935} = \beta_1 (value_{i1940} - value_{i1935}) + \beta_2 (capital_{i1940} - capital_{i1935}) + (u_{i1940} - u_{i1935})
 {{</katex>}}  
-
+<br/>
 By taking differences between the years, we remove any unobserved variable that is constant over time: $\alpha_{i}$ is removed from the equation!
 
 The following code block estimates this regression in R.
