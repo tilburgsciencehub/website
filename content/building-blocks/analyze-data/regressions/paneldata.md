@@ -1,7 +1,7 @@
 ---
 title: "An introduction to Panel data"
 description: "A building block about the basics of panel data"
-keywords: "paneldata, panel, data, R, regression, model"
+keywords: "paneldata, panel, data, R, regression, model, fixed, effects"
 draft: false
 weight: 8
 author: "Valerie Vossen"
