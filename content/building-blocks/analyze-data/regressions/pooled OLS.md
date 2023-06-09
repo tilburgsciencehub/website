@@ -53,14 +53,15 @@ invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \epsilon_{it
 The model *pools* observations together from different time periods, ignoring they belong to specific groups (firms). As a result, all observations are treated as if they come from a single group, effectively combining the panel data into a cross-sectional data set. The model coefficients can then be estimated using OLS. 
 
 ## Estimation in R
-The `plm()` function in R is specifically designed for panel data analysis.
+The `plm()` function in R is specifically designed for panel data analysis. To estimate a Pooled OLS model using the `plm()` function, specify the model type as "pooling" within the function. 
 
-To estimate a Pooled OLS model using the `plm()` function, specify the model type as "pooling" within the function:
+The `index` argument specifies the index variables that define the panel structure of your data. Including this is not strictly necessary when the data is already in a default panel data format and the plm function will automatically detect the first column as the entity index and the second column as time index. 
 
 {{% codeblock %}}
 ```R
 model <- plm(invest ~ value + capital, 
               data = Grunfeld, 
+              index = c("firm", "year"), 
               model = "pooling")
 
 summary(model)
@@ -71,7 +72,7 @@ summary(model)
 <img src = "../images/summarypooledols.png" width="700">
 </p>
 
-Since the Pooled OLS model effectively treats the panel data as cross-sectional data by ignoring entity-specific effects, you can also use `lm()` and obtain the same results.
+Since the Pooled OLS model effectively treats the panel data as cross-sectional data by ignoring entity-specific effects, you can also use the function `lm()` and obtain the same results.
 
 {{% codeblock %}}
 ```R
@@ -82,7 +83,7 @@ summary(model)
 {{% /codeblock %}}
 
 {{% summary %}}
-Pooled OLS is the simplest model to estimate and interpret. However, be careful wit using it. Panel data without entity-specific effects is very unlikely and the assumption of independence within groups is unrealistic in many cases. 
+Pooled OLS is the simplest model to estimate and interpret. However, be careful using it. Panel data without entity-specific effects is very unlikely and the assumption of independence within groups is unrealistic in many cases. 
 
 Using pooled OLS in the presence of unobserved entity-specific factors can lead to omitted variable bias and produce biased results. 
 {{% /summary %}}
