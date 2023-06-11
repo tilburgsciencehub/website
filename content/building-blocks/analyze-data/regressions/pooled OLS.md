@@ -59,7 +59,13 @@ The `index` argument specifies the index variables that define the panel structu
 
 {{% codeblock %}}
 ```R
-model <- plm(invest ~ value + capital, 
+# Load packages & data
+library(fixest)
+library(AER) 
+data(Grunfeld) 
+
+# Model estimation
+model <- plm(inv ~ value + capital, 
               data = Grunfeld, 
               index = c("firm", "year"), 
               model = "pooling")
@@ -76,14 +82,12 @@ Since the Pooled OLS model effectively treats the panel data as cross-sectional 
 
 {{% codeblock %}}
 ```R
-model <- lm(invest ~ value + capital, 
+model2 <- lm(inv ~ value + capital, 
               data = Grunfeld)
-summary(model)
+summary(model2)
 ```
 {{% /codeblock %}}
 
 {{% summary %}}
-Pooled OLS is the simplest model to estimate and interpret. However, be careful using it. Panel data without entity-specific effects is very unlikely and the assumption of independence within groups is unrealistic in many cases. 
-
-Using pooled OLS in the presence of unobserved entity-specific factors can lead to omitted variable bias and produce biased results. 
+Pooled OLS is the simplest model to estimate and interpret. However, be careful using it. Panel data without entity-specific effects is very unlikely and the assumption of independence within groups is unrealistic in many cases. Using pooled OLS in the presence of unobserved entity-specific factors can lead to omitted variable bias and produce biased results. 
 {{% /summary %}}
