@@ -79,7 +79,7 @@ Another approach to estimate fixed effects is the *Least Square Dummy Variable* 
 However, it is important to note that the LSDV approach is not practical for larger panel data sets. When there are many observations (entities and/or time periods), creating dummy variables for each of them can result in a substantial number of variables, leading to computational challenges. Therefore, when dealing with larger data sets, the FE model is preferred as it is a more efficient approach to control for unobserved fixed effects.
 
 {{% summary %}}
-The FE model, also known as the Within estimator, is widely used approach in causal inference analysis. This model allows us to estimate changes within groups and control for unobserved entity-specific fixed effects. Additionally, the inclusion of time fixed effects accounts for common time trends in the data across groups. The resulting model with both types of fixed effects is called a **Two-way fixed effects model**.
+The FE model, also known as the Within estimator allows us to estimate changes within groups and control for unobserved entity-specific fixed effects. Additionally, the inclusion of time fixed effects accounts for common time trends in the data across groups. The resulting model with both types of fixed effects is called a **Two-way fixed effects model** and is a widely used approach in causal inference analysis.
 
 In R, the `fixest` package, specifically the `feols()` function, can be used to estimate the FE model.
 {{% /summary %}}
