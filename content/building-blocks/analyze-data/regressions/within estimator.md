@@ -73,10 +73,10 @@ summary(model_twoway)
 <img src = "../images/summarytwoway.png" width="700">
 </p>
 
-{{% tip %}}
-Another approach to estimate fixed effects is the **Least Square Dummy Variable (LSDV) model**. In the LSDV model, dummy variables are created for each entity and/or time period to capture the fixed effects. However, when the number of data points (entities and/or time periods) is large, many dummy variables are required. which can lead to computational challenges. In R, the LSDV can be implemented by using the `lm()` function and creating dummy variables for the entities and/or time periods. 
-{{% /tip %}}
+## The Least Square Dummy Variable (LSDV) model
+Another approach to estimate fixed effects is the *Least Square Dummy Variable* model. In this model, dummy variables are added for each entity and/or time period to capture the fixed effects. In R, the LSDV model can be implemented using the `lm()` function and creating dummy variables for the entities and/or time periods. 
 
+However, it is important to note that the LSDV approach is not practical for larger panel data sets. When there are many observations (entities and/or time periods), creating dummy variables for each of them can result in a substantial number of variables, leading to computational challenges. Therefore, when dealing with larger data sets, the FE model is preferred as it is a more efficient approach to control for unobserved fixed effects.
 
 {{% summary %}}
 The FE model, also known as the Within estimator, is widely used approach in causal inference analysis. This model allows us to estimate changes within groups and control for unobserved entity-specific fixed effects. Additionally, the inclusion of time fixed effects accounts for common time trends in the data across groups. The resulting model with both types of fixed effects is called a **Two-way fixed effects model**.
