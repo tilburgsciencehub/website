@@ -228,7 +228,9 @@ Standard errors are in parentheses.
 '**' Significant at the 5 percent level.
 '*' Significant at the 10 percent level.</strong></caption>
 
-
+{{% tip %}}
+Use the `modelsummary` package to summarise and export the regression results neatly and hassle-free. Check out this [building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/model-summary/) to help you get started!
+{{% /tip %}}
 
 
 In model 4, the estimated treatment effect is substantially larger compared to the previous models, emphasizing the significance of selecting an appropriate model specification. By incorporating fixed effects and clustering standard errors, we effectively control for potential unobserved heterogeneity, ensuring more reliable and valid inference. The inclusion of fixed effects allows us to account for time-invariant factors that may confound the treatment effect, while clustering standard errors addresses the within-cluster dependence commonly encountered in Difference-in-Differences (DiD) designs. This improved model specification enhances the robustness of the estimated treatment effect and strengthens the validity of our conclusions, emphasizing the importance of these methodological considerations in conducting rigorous empirical analyses.
