@@ -16,6 +16,7 @@ aliases:
   - /run/withinestimator
 ---
 
+# Overview
 
 The fixed effects (FE) model, also known as the "Within estimator", captures changes *within groups*. This model is useful when there are unobserved entity-specific fixed effects in your analysis, due to the heterogeneity across groups. By focusing on within-group variations, the FE model controls for these unobserved effects. 
 
