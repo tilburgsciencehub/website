@@ -42,6 +42,12 @@ You'll encounter four primary machine categories to select from:
 
 - **Accelerator-optimized:** The perfect choice for massively parallelized Compute Unified Device Architecture ([CUDA](https://developer.nvidia.com/cuda-zone#:~:text=CUDA%C2%AE%20is%20a%20parallel,harnessing%20the%20power%20of%20GPUs.)) compute workloads, such as machine learning and high-performance computing. This category is specifically tailored for workloads that demand GPU acceleration, ensuring exceptional performance for tasks that require substantial graphical processing power and parallel computing capabilities.
 
+{{% warning %}}
+
+Save on unnecessary costs! GPU-enabled VMs are vital for deep learning tasks like language models. However, for other uses, GPUs are redundant and increase expenses. See an example on how suboptimal GPU usage can slow compute time [here](https://rstudio-pubs-static.s3.amazonaws.com/15192_5965f6c170994ebb972deaf18f1ddf34.html).
+
+{{% /warning %}}
+
 A good choice to beat memory hitches and supercharge processing could be going with an **NVIDIA L4 g2-standard-32** machine. It's packed with 128GB of RAM and a GPU, perfect for heavyweight computing, but still cost-friendly.
 
 While we won't dive into all the configuration bells and whistles here, remember Google Cloud is your playground for [custom-tailoring your instance](https://cloud.google.com/compute/docs/machine-resource) just the way it better suits your needs.
