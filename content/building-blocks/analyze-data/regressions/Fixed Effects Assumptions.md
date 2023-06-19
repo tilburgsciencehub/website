@@ -84,3 +84,8 @@ By assuming the absence of large outliers, we expect that the observations will 
 Assumption 4 holds when there are no exact linear relationships among the independent variables. Perfect collinearity between two or more independent variables means that one variable can be written as a linear combination of the other(s). For example, one variable is a constant multiple of another. In the presence of perfect collinearity, the model cannot be estimated by OLS. 
 
 Note that the assumption does allow the independent variables to be correlated. They just cannot be perfectly correlated. 
+
+
+{{% summary %}}
+The Fixed Effects (FE) regression model relies on 4 key assumptions, which are discussed in this building block. These assumptions form the foundation for various models that account for different forms of error correlation over time. Subsequent building blocks will explore these models in more detail.
+{{% /summary %}}
