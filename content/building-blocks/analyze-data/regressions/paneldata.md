@@ -199,7 +199,7 @@ There are two types of fixed effects (until now, we only considered the first ty
 
 1. **Unobserved effects that are constant over time**
 
-In this case, they represent firm-specific characteristics that persistently influence investment behavior. Think of effects like managerial quality or reputation of the firm. For example, a higher managerial quality might result in a higher investment, independent of the firm value.
+In this case, they represent firm-specific characteristics that persistently influence investment behavior. Think of effects like managerial quality, reputation of the firm or the level of risk aversion. For example, a higher managerial quality might result in a higher investment, independent of the firm value.
 
 2. **Unobserved effects that vary over time**
 
@@ -282,7 +282,7 @@ where,
 - $\epsilon_{it}$ is the error term, which includes all other unobserved factors that affect investment but are not accounted for by the independent variables or the fixed effects.
 
 ### Entity & Time fixed effects
-In this step, time fixed effects will be added to the model. Time fixed effects capture the unobserved year-specific factors that are common to all firms in that year. With both time and entity fixed effects, this is the model:
+In this step, time fixed effects are added to the model. Time fixed effects capture the unobserved year-specific factors that are common to all firms in that year. With both time and entity fixed effects, this is the model:
 
 {{<katex>}}
 invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i +  \delta_t + \epsilon_{it}
@@ -325,4 +325,6 @@ This building block serves as an introductory guide to panel data analysis. It c
 Furthermore, an example analysis is conducted. This analysis starts with a regression using cross-sectional data. Then, panel data techniques are gradually introduced to address the potential bias of unobserved heterogeneity. Two types of fixed effects are explained and included in the model:
 - Entity fixed effects that are constant over time (and vary across entities)
 - Time fixed effects that are constant across entities (and vary over time)
+
+In the next building blocks, the assumptions of fixed effects regressions and the most popular models to analyse panel data are discussed.
 {{% /summary %}}
