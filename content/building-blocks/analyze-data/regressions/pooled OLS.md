@@ -1,5 +1,5 @@
 ---
-title: "Fixed Effects models: pooled OLS"
+title: "Fixed Effects Models: Pooled OLS"
 description: "A building block about the pooled OLS model, a model used to analyze panel data"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
