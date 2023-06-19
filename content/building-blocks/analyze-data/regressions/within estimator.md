@@ -33,7 +33,7 @@ Additionally, a FE model may encounter issues of collinearity when dealing with 
 Continuing with the same example as the previous building block, the FE model is estimated by removing the fixed effects from the original equation. The original model with fixed effects $\alpha_i$ is represented as:
 <br/>
 {{<katex>}}
-Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}, i = 1,...,n, t = 1,...,T,
+Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}
 {{</katex>}}
 <br/>
 
@@ -41,7 +41,7 @@ To remove the fixed effects from the model, the time-specific means are subtract
 
 <br/>
 {{<katex>}}
-Y_{i,t} - \bar{Y_{i,t-1}} = \beta_1 (X_{i,t} - \bar{X_{i, t-1}}) + (\alpha_i - \bar{\alpha_i}) + (u_{i,t} - \bar{u{i,t-1}})
+Y_{i,t} - \bar{Y}_{i,t-1} = \beta_1 (X_{i,t} - \bar{X}_{i, t-1}) + (\alpha_i - \bar{\alpha_i}) + (u_{i,t} - \bar{u}_{i,t-1})
 {{</katex>}}  
 <br/>
 
@@ -95,11 +95,9 @@ summary(model_twoway)
 
 To determine whether fixed effects are present in your model, you can use the function `pFtest()` from the `plm` package. The `pFtest` assesses the joint significance of the fixed effects by comparing the FE model to a model without fixed effects, such as the pooled OLS model. 
 
-The null hypothesis for the `pFtest` is that the fixed effects are equal to zero, indicating no unobserved entity-specific effects. The pooled OLS model will be preferred if H0 is true. The alternative hypothesis is that fixed effects are present in the model. Then, the FE model is preferred over the pooled OLS model.
+The null hypothesis for the `pFtest` is that the fixed effects are equal to zero, indicating no unobserved entity-specific effects. The pooled OLS model will be preferred if the null hypothesis is true. The alternative hypothesis is that fixed effects are present in the model. Then, the FE model is preferred over the pooled OLS model.
 
-One disadvantage of the `pFtest()` function is that it only allows `plm` objects as arguments. Therefore, we cannot directly use the `pFtest()` function on the FE model estimated with the `fixest` package. 
-
-We estimate the FE model using the `plm()` function below, to perform the `pFtest`. In the following example, we estimate the two-way FE model (including both entity and time FE). We also estimate the pooled OLS model for comparison:
+One disadvantage of the `pFtest()` function is that it only allows `plm` objects as arguments. Therefore, we cannot directly use the `pFtest()` function on the FE model estimated with the `fixest` package. We estimate the two-way FE model using the `plm()` function below, to perform the `pFtest`.  We also estimate the pooled OLS model for comparison:
 
 {{% codeblock %}}
 ```R
@@ -129,7 +127,7 @@ print(pFtest_result)
 <img src = "../images/pFtest.png" width="700">
 </p>
 
-The `pFtest` result will provide the test statistics, its associated p-value, and the degrees of freedom. If the p-value is less than your chosen significance level (e.g., 0.05), you can reject the null hypothesis and conclude that (two-way) ixed effects are present in the model. In this case, the H0 is rejected and therefore the FE model is preferred over the pooled OLS model. 
+The `pFtest` result providese the test statistics, its associated p-value, and the degrees of freedom. If the p-value is less than your chosen significance level (e.g., 0.05), you can reject the null hypothesis and conclude that (two-way) fixed effects are present in the model. In this case, the null hypothesis is rejected and therefore the FE model is preferred over the pooled OLS model. 
 
 ## The Least Square Dummy Variable (LSDV) model
 Another approach to estimate fixed effects is the *Least Square Dummy Variable* model. In this model, dummy variables are added for each entity and/or time period to capture the fixed effects. In R, the LSDV model can be implemented using the `lm()` function and creating dummy variables for the entities and/or time periods. 
