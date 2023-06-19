@@ -20,20 +20,17 @@ aliases:
 
 The **Between estimator** is a method used to estimate the relationship between variables by taking averages across time for each entity. It uses only the *between-group variation* in the data by averaging out the time component of panel data. 
 
-This results in a pooled cross-sectional data set Consequently, important information about how variables change over time is ignored.
+This results in a pooled cross-sectional data set. Consequently, important information about how variables change over time is ignored.
 
-# Estimation of the Between estimator 
+## Estimation of the Between estimator 
 The Between estimator is obtained by regressing the averaged variables on each other using OLS regression.
 
-It is important to note that that the error term should be uncorrelated with any of the averaged independent variables, for the estimated coefficients to be unbiased. 
-
-
-If the error term is assumed to be uncorrelated with the independent variables,the [Random Effects model]()is generally more appropriate. 
+It is important to note that that the error term should be uncorrelated with any of the averaged independent variables, for the estimated coefficients to be unbiased. And if the error term is assumed to be uncorrelated with the independent variables,the [Random Effects model]() is generally more appropriate. 
 
 Nonetheless, the Between estimator can be suitable for research question that specifically address variation between different entities rather than changes within entities over time. 
 
 ## Estimation in R
-To estimate the Between estimator in R, you can use the `plm()` function from the `plm` package. Specify the model type as "between".
+To estimate the Between estimator in R, you can use the `plm()` function from the `plm` package. Specify the model type as "between". 
 
 {{% codeblock %}}
 ```R
