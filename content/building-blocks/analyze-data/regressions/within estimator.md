@@ -24,12 +24,30 @@ Examples of unobserved entity-specific fixed effects in our model include factor
 
 Standard OLS regression fails to account for these unobserved effects, leading to an omitted variable bias. This bias arises when relevant independent variables are excluded from the regression. Hence, it is crucial to control for these unobserved effects to obtain reliable estimates!
 
-{{% warning %}}
+{{% tip %}}
 Note that a FE model cannot examine the influence of time-invariant variables on the dependent variable, as these variables are already captured in the fixed effects. 
 
 Also, a FE model may not work well with variables that change little over time due to the issue of collinearity.
 Collinearity occurs when independent variables are highly correlated, and when a variable changes very little over time, it becomes highly correlated with the fixed effects in the model. This high collinearity makes it hard to disentangle individual effects of this variable on the dependent variable, potentially leading to unreliable estimates. 
-{{% /warning %}}
+{{% /tip %}}
+
+## Estimation of model 
+
+We continue with the same example of the previous building blocks. Please go back if you want a better understanding of the model. 
+
+{{<katex>}}
+invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}
+{{</katex>}}
+
+where,
+- $invest_{it}$ is the gross investment of firm `i` in year `t`
+- $value_{it}$ is the market value of assets of firm `i` in year `t`
+- $capital_{it}$ is the stock value of plant and equipment of firm `i` in year `t`
+- $\alpha_i$ is the fixed effect for firm `i`
+- $\epsilon_{it}$ is the error term, which includes all other unobserved factors that affect investment but are not accounted for by the independent variables or the fixed effects.
+
+By taking differences between the years, changes are estimated **within** firms (over time) and any unobserved fixed effect that is constant over time is removed from the equation. We controlled for $\alpha_{i}$! 
+
 
 ## Estimation in R
 While the `plm()` function can also be used to estimate a FE model, we recommend using the `fixest` package. Refer to the [`fixest` building block]() for a comprehensive explanation of this package and its functions. 
