@@ -18,9 +18,9 @@ aliases:
 
 # Overview
 
-The Pooled OLS model can only be used under the assumption of independence across groups and no error term correlation over time with the independent variables. This assumption is violated in the presence of unobserved entity-specific effects, leading to omitted variable bias. In such cases, a model that controls for fixed effects is more appropriate.
+The Pooled OLS model can only be used under the assumption of independence across groups and no error term correlation over time with the independent variables. This assumption is violated in the presence of unobserved entity-specific effects, leading to omitted variable bias. This bias arises when relevant independent variables are excluded from the regression. Hence, it is crucial to control for these unobserved effects to obtain reliable estimates.
 
-The first-difference (FD) estimator is a method to address the problem of omitted variables. By taking the first-difference within each cross-section, it eliminates the firm-specific effects that remain constant over time. 
+The first-difference (FD) estimator is the first method we discuss to control for fixed effects and address the problem of omitted variables. By taking the first-difference within each cross-section, it eliminates the firm-specific effects that remain constant over time. Examples of unobserved entity-specific fixed effects in our model include factors like managerial quality, level of risk aversion, or technological advancements within firms. 
 
 ## First-difference estimator
 

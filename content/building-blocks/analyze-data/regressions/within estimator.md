@@ -3,7 +3,7 @@ title: "Fixed Effects Models: Within estimator"
 description: "A building block about the FE model (Within estimator)"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
-weight: 11
+weight: 12
 author: "Valerie Vossen"
 authorlink: "https://nl.linkedin.com/in/valerie-vossen"
 aliases:
@@ -18,36 +18,34 @@ aliases:
 
 # Overview
 
-The fixed effects (FE) model, also known as the "Within estimator", captures changes *within groups*. This model is useful when there are unobserved entity-specific fixed effects in your analysis, due to the heterogeneity across groups. By focusing on within-group variations, the FE model controls for these unobserved effects. 
+The fixed effects (FE) model, also known as the "Within estimator", captures changes *within groups*. By focusing on within-group variations, the FE model controls for unobserved effects. 
 
-Examples of unobserved entity-specific fixed effects in our model include factors like managerial quality, level of risk aversion, or technological advancements within firms. 
-
-Standard OLS regression fails to account for these unobserved effects, leading to an omitted variable bias. This bias arises when relevant independent variables are excluded from the regression. Hence, it is crucial to control for these unobserved effects to obtain reliable estimates!
+It is crucial to control for these unobserved entity-fixed effects when they are present in your model. Ignoring them can lead to an omitted variable bias and biased estimates. 
 
 {{% tip %}}
 Note that a FE model cannot examine the influence of time-invariant variables on the dependent variable, as these variables are already captured in the fixed effects. 
 
-Also, a FE model may not work well with variables that change little over time due to the issue of collinearity.
-Collinearity occurs when independent variables are highly correlated, and when a variable changes very little over time, it becomes highly correlated with the fixed effects in the model. This high collinearity makes it hard to disentangle individual effects of this variable on the dependent variable, potentially leading to unreliable estimates. 
+Additionally, a FE model may encounter issues of collinearity when dealing with variables that change little over time. Collinearity arises when independent variables are highly correlated, and if a variable changes very little over time, it becomes highly correlated with the fixed effects in the model. This high collinearity makes it hard to disentangle individual effects of this variable on the dependent variable, potentially leading to unreliable estimates. 
 {{% /tip %}}
 
-## Estimation of model 
+## Estimation of FE model 
 
-We continue with the same example of the previous building blocks. Please go back if you want a better understanding of the model. 
-
+Continuing with the same example as the previous building block, the FE model is estimated by removing the fixed effects from the original equation. The original model with fixed effects $\alpha_i$ is represented as:
+<br/>
 {{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}
+Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}, i = 1,...,n, t = 1,...,T,
 {{</katex>}}
+<br/>
 
-where,
-- $invest_{it}$ is the gross investment of firm `i` in year `t`
-- $value_{it}$ is the market value of assets of firm `i` in year `t`
-- $capital_{it}$ is the stock value of plant and equipment of firm `i` in year `t`
-- $\alpha_i$ is the fixed effect for firm `i`
-- $\epsilon_{it}$ is the error term, which includes all other unobserved factors that affect investment but are not accounted for by the independent variables or the fixed effects.
+To remove the fixed effects from the model, the time-specific means are subtracted from each variable, enablng estimation of changes **within firms** over time.
 
-By taking differences between the years, changes are estimated **within** firms (over time) and any unobserved fixed effect that is constant over time is removed from the equation. We controlled for $\alpha_{i}$! 
+<br/>
+{{<katex>}}
+Y_{i,t} - \bar{Y_{i,t-1}} = \beta_1 (X_{i,t} - \bar{X_{i, t-1}}) + (\alpha_i - \bar{\alpha_i}) + (u_{i,t} - \bar{u{i,t-1}})
+{{</katex>}}  
+<br/>
 
+Since we assume the unobserved fixed effects $\alpha_{i}$ to be constant, subtracting its mean results in a term of zero. As a result, the fixed effects are eliminated through this transformation, while the time-varying component of the error term $u_{it}$ remains.
 
 ## Estimation in R
 While the `plm()` function can also be used to estimate a FE model, we recommend using the `fixest` package. Refer to the [`fixest` building block]() for a comprehensive explanation of this package and its functions. 

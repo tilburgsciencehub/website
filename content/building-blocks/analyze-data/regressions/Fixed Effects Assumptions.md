@@ -43,7 +43,7 @@ Now, the assumptions are explained in greater detail.
 Examples are given to clarify the assumptions. This is done with the panel data set called `Grunfeld`, which is already used in the [panel data building block]() and [`fixest` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/fixest/). Please refer to these building blocks for further context on the `Grunfeld` data and the regression model. 
 
 ## Assumption 1: Zero Conditional Mean
-The error term $u_{it}$ has an expected value of zero given any values of the independent variables. In other words, $E(u_{it}|X_{i1},...,X_{it}) = 0$.
+This assumption is also called **Strict Exogeneity**. The error term $u_{it}$ has an expected value of zero given any values of the independent variables. In other words, $E(u_{it}|X_{i1},...,X_{it}) = 0$. 
 
 It states that the error term $u_{it}$ is uncorrelated with each explanatory variable for all entities (each `i`) across all time periods (each `t`). 
 
@@ -85,7 +85,14 @@ Assumption 4 holds when there are no exact linear relationships among the indepe
 
 Note that the assumption does allow the independent variables to be correlated. They just cannot be perfectly correlated. 
 
-
 {{% summary %}}
-The Fixed Effects (FE) regression model relies on 4 key assumptions, which are discussed in this building block. These assumptions form the foundation for various models that account for different forms of error correlation over time. Subsequent building blocks will explore these models in more detail.
+The Fixed Effects (FE) regression model relies on 4 key assumptions, which are discussed in this building block. These assumptions form the foundation for various models that account for different forms of error correlation over time. 
+
+Subsequent building blocks will explore these models commonly used to analyze panel data: 
+- Pooled OLS
+- First-difference estimator
+- Within estimator (Fixed effects)
+- Between estimator
+- Random effects
+
 {{% /summary %}}
