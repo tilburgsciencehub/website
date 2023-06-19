@@ -17,40 +17,38 @@ aliases:
 
 # Overview
 
-The next building blocks will explain various models commonly used to analyze panel data. Panel data refers to a type of data set that contains observations on multiple entities (such as individuals, firms, or countries) over a specified period of time. By combining cross-sectional and time-series variations, it is very useful in causal inference analysis. For a refresher on panel data, please refer to the [panel data building block]().
-
-Each of these models have their own strengths and assumptions and the choice of an appropriate model depends on the specific research question and the underlying assumptions that hold for the panel data set at hand. This series of building blocks aims to provide guidance in choosing the most suitable model for your analysis!
+The next building blocks will explain various models commonly used to analyze panel data. Each of these models have their own strengths and assumptions and the choice of an appropriate model depends on the specific research question and the underlying assumptions that hold for the panel data set at hand. This series of building blocks aims to provide guidance in choosing the most suitable model for your analysis!
 
 The following models will be discussed: 
 - Pooled OLS
+- First-difference estimator
 - Within estimator (Fixed effects)
 - Between estimator
 - Random effects
 
-To illustrate the models with a practical example, we apply them to the analysis on `Grunfeld` data from the [panel data]() building block.  The analysis is about exploring the relationship between market value (`value`) and gross investment (`invest`) of firms. This is the derived model:
-
-{{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}
-{{</katex>}}
-
-where,
-- $invest_{it}$ is the gross investment of firm `i` in year `t`
-- $value_{it}$ is the market value of assets of firm `i` in year `t`
-- $capital_{it}$ is the stock value of plant and equipment of firm `i` in year `t`
-- $\alpha_i$ is the fixed effect for firm `i`
-- $\epsilon_{it}$ is the error term, which includes all other unobserved factors that affect investment but are not accounted for by the independent variables or the fixed effects.
+In this building block, we start with the Pooled OLS model.
 
 ## Pooled OLS Model
 
 The Pooled OLS model applies the Ordinary Least Squares (OLS) methodology to panel data. This model assumes that there are no unobservable entity-specific effects, meaning that all entities in the data set are considered to have the same underlying characteristics. Consequently, $\alpha_i$ is assumed to be constant across individuals and there is no dependence within individual groups (firms). 
 
+By assuming no dependence within individual groups, Assumption 1 of the [Fixed Effects Regression Assumptions]() holds, which states that the error term is uncorrelated with the independent variables. Estimating the Pooled OLS model obtains unbiased estimates of the regression coefficients, under the condition that the other assumptions of the OLS model are satisfied.
+
+## The model with `Grunfeld` data
 The model can be represented as follows:
 
 {{<katex>}}
 invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \epsilon_{it}
 {{</katex>}}
 
-The model *pools* observations together from different time periods, ignoring they belong to specific groups (firms). As a result, all observations are treated as if they come from a single group, effectively combining the panel data into a cross-sectional data set. The model coefficients can then be estimated using OLS. 
+where,
+- $invest_{it}$ is the gross investment of firm `i` in year `t`
+- $value_{it}$ is the market value of assets of firm `i` in year `t`
+- $capital_{it}$ is the stock value of plant and equipment of firm `i` in year `t`
+- $\epsilon_{it}$ is the error term
+
+The model *pools* observations together from different time periods, ignoring they belong to specific firms. As a result, all observations are treated as if they come from a single group, effectively combining the panel data into a cross-sectional data set. The model coefficients can then be estimated using OLS. 
+
 
 ## Estimation in R
 The `plm` function in R is specifically designed for panel data analysis. To estimate a Pooled OLS model using the `plm` function, specify the model type as "pooling" within the function. 
@@ -89,5 +87,5 @@ summary(model2)
 {{% /codeblock %}}
 
 {{% summary %}}
-Pooled OLS is the simplest model to estimate and interpret. However, be careful using it. Panel data without entity-specific effects is very unlikely and the assumption of independence within groups is unrealistic in many cases. Using pooled OLS in the presence of unobserved entity-specific factors can lead to omitted variable bias and produce biased results. 
+Pooled OLS is the simplest model to estimate and interpret. However, be careful using it. Panel data without entity-specific effects is very unlikely and the assumption of independence within groups is unrealistic in many cases. Using pooled OLS in the presence of unobserved entity-specific factors can lead to omitted variable bias and produce biased results.
 {{% /summary %}}
