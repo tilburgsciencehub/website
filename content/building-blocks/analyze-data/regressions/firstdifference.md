@@ -18,7 +18,7 @@ aliases:
 
 # Overview
 
-The Pooled OLS model can only be used under the assumption of independence across groups and no error term correlation over time with the independent variables. However, this assumption is violated in the presence of unobserved entity-specific effects, leading to omitted variable bias. In such cases, a model that controls for fixed effects is more appropriate.
+The Pooled OLS model can only be used under the assumption of independence across groups and no error term correlation over time with the independent variables. This assumption is violated in the presence of unobserved entity-specific effects, leading to omitted variable bias. In such cases, a model that controls for fixed effects is more appropriate.
 
 The first-difference (FD) estimator is a method to address the problem of omitted variables. By taking the first-difference within each cross-section, it eliminates the firm-specific effects that remain constant over time. 
 
@@ -33,7 +33,7 @@ Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}, i = 1,...,n, t = 1,...,T,
 {{</katex>}}
 <br/>
 
-The first-difference transformation is applieda s follows:
+The first-difference transformation is applied as follows:
 <br/>
 {{<katex>}}
 Y_{i,t} - Y_{i,t-1} = \beta_1 (X_{i,t} - X_{i, t-1}) + (\alpha_i - \alpha_i) + (u_{i,t} - u{i,t-1})
@@ -46,7 +46,7 @@ Since $\alpha_{i}$ is constant over time, taking the difference between consecut
 
 Assumption 1 of the [Fixed Effects Regression Assumptions]() states that the error term is uncorrelated with the independent variables, expressed as $E[u_{it}|X_{i1},...,X_{it}] = 0$.
 
-In the context of the FD estimator, the assumption of error term correlation can be expressed in a slightly weaker form. Instead of requiring zero correlation between the error term and the independent variables at each point in time, it only requires that the difference in the error term between time $t$ and $t-1$ is uncorrelated with the difference in the independent variables between those two time periods. This weaker form is denoted as $E[(u_{it} - u_{i,t-1}|X_{i,t - X_{i,t-1}}) = 0$. 
+In the context of the FD estimator, the assumption of error term correlation can be expressed in a slightly weaker form. Instead of requiring zero correlation between the error term and the independent variables at each point in time, it only requires that the difference in the error term between time $t$ and $t-1$ is uncorrelated with the difference in the independent variables between those two time periods. This weaker form is denoted as $E[(u_{i,t} - u_{i,t-1}|X_{i,t} - X_{i,t-1}}) = 0$. 
 
 
 ## First-difference estimation in R
@@ -77,5 +77,5 @@ summary(model)
 {{% summary %}}
 The first-difference (FD) estimator is a useful approach to address the issue of omitted variable bias in the presence of unobserved entity-specific effects. By taking the first difference within each cross-section, the FD estimator eliminates the fixed effects. 
 
-It relies on the assumption of no correlation between the difference in the error term and the difference in the independent variables over time. This is a weaker assumption than the general Fixed Effects Assumption 1. This can be seen as an advantage of the FD estimator over a Fixed Effects model. The next building block will discuss this Fixed Effects model.
+It relies on the assumption of no correlation between the difference in the error term and the difference in the independent variables over time. This is a weaker assumption than the general Fixed Effects Assumption 1. This can be seen as an advantage of the FD estimator over a Fixed Effects model. The next building block will discuss this Fixed Effects model (the Within Estimator).
 {{% /summary %}}
