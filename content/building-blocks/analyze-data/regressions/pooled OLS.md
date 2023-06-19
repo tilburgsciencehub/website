@@ -1,6 +1,6 @@
 ---
-title: "Models analysing panel data: pooled OLS"
-description: "A building block about models used to analyze panel data, starting with pooled OLS"
+title: "Fixed Effects models: pooled OLS"
+description: "A building block about the pooled OLS model, a model used to analyze panel data"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
 weight: 10
@@ -32,7 +32,7 @@ In this building block, we start with the Pooled OLS model.
 
 The Pooled OLS model applies the Ordinary Least Squares (OLS) methodology to panel data. This model assumes that there are no unobservable entity-specific effects, meaning that all entities in the data set are considered to have the same underlying characteristics. Consequently, $\alpha_i$ is assumed to be constant across individuals and there is no dependence within individual groups (firms). 
 
-By assuming no dependence within individual groups, Assumption 1 of the [Fixed Effects Regression Assumptions]() holds, which states that the error term is uncorrelated with the independent variables. Estimating the Pooled OLS model obtains unbiased estimates of the regression coefficients, under the condition that the other assumptions of the OLS model are satisfied.
+By assuming no dependence across individual groups, Assumption 1 of the [Fixed Effects Regression Assumptions]() holds, which states that the error term is uncorrelated with the independent variables. Estimating the Pooled OLS model obtains unbiased estimates of the regression coefficients, under the condition that the other assumptions of the OLS model are satisfied.
 
 ## The model with `Grunfeld` data
 The model can be represented as follows:
@@ -58,7 +58,7 @@ The `index` argument specifies the index variables that define the panel structu
 {{% codeblock %}}
 ```R
 # Load packages & data
-library(fixest)
+library(plm)
 library(AER) 
 data(Grunfeld) 
 
@@ -87,5 +87,5 @@ summary(model2)
 {{% /codeblock %}}
 
 {{% summary %}}
-Pooled OLS is the simplest model to estimate and interpret. However, be careful using it. Panel data without entity-specific effects is very unlikely and the assumption of independence within groups is unrealistic in many cases. Using pooled OLS in the presence of unobserved entity-specific factors can lead to omitted variable bias and produce biased results.
+Pooled OLS is the simplest model to estimate and interpret. However, be careful using it. Panel data without entity-specific effects is very unlikely and the assumption of independence across groups is unrealistic in many cases. Using pooled OLS in the presence of unobserved entity-specific factors can lead to omitted variable bias and produce biased results.
 {{% /summary %}}
