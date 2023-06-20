@@ -61,7 +61,7 @@ library(AER)
 data(Grunfeld) 
 
 # Model estimation
-model_within <- feols(inv ~ value + capital | firm, 
+model_within <- feols(invest ~ value + capital | firm, 
                       data = Grunfeld)
 summary(model_within)
 ```
@@ -82,7 +82,7 @@ To include time fixed effects in your model in R, add the variable `year` to the
 
 {{% codeblock %}}
 ```R
-model_twoway <- feols(inv ~ value + capital | firm + year, 
+model_twoway <- feols(invest ~ value + capital | firm + year, 
                       data = Grunfeld)
 summary(model_twoway)
 ```
