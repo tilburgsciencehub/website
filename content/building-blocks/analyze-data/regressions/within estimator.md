@@ -91,7 +91,7 @@ summary(model_twoway)
 <img src = "../images/summarytwoway.png" width="700">
 </p>
 
-## Testing for Fixed Effects
+## Testing for Fixed Effects: pFtest
 
 To determine whether fixed effects are present in your model, you can use the function `pFtest()` from the `plm` package. The `pFtest` assesses the joint significance of the fixed effects by comparing the FE model to a model without fixed effects, such as the pooled OLS model. 
 
