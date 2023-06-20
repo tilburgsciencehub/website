@@ -47,7 +47,7 @@ This term captures the unobserved heterogeneity that varies across individuals b
 - A time-varying error component: $\epsilon_{it}$.
 This component captures the within-firm variation in gross investment over time. It accounts for the fluctuations and changes that occur within each firm over different time periods. Although this error term can be correlated within firms, it is uncorrelated across different firms. This term also exists in a FE model, where correlation of error across time is allowed as well.
 
-## Estimation in R
+### Estimation in R
 To estimate the RE model in R, you can use the `plm()` function and specify the model type as `"random"`. 
 
 {{% codeblock %}}
@@ -78,8 +78,6 @@ The estimated coefficients capture the average effect of the independent variabl
 
 The RE model can be extended to a `twoway` model by including time-specific effects. These time-specific effects are also uobservable and assumed to be uncorrelated with the independent variables, just like the entity-specific effects. 
 
-Like the one-way random effects model, the two-way random effects model can be estimated using feasible generalized least squares (FGLS) or maximum likelihood estimation (MLE).
-
 Include `effect = "twoways"` within the `plm()` function in R:
 
 
@@ -94,7 +92,7 @@ model_random_twoway <- plm(invest ~ value + capital,
 ```
 {{% /codeblock %}}
 
-## Choice Fixed/Random Effects
+## Choice between Fixed or Random Effects
 When deciding between the FE and RE model for panel data analysis, it is important to consider the correlation between the unobserved effects and the independent variables. If there is a correlation, the FE model is preferred as it controls for time-invariant heterogeneity. However, if the individual-specific effects are assumed to be uncorrelated with the independent variables, the RE model can be applied.
 
 ### Hausman test
@@ -123,7 +121,7 @@ phtest(model_within_twoway,
 <img src = "../images/hausmantest.png" width="700">
 </p>
 
-The p-value is 0.0 low enough to reject $H_{0}$. Therefore, a FE model is preferred.
+The p-value is 0.0013, which is lower than 0.05. Thus the $H_{0}$ is rejected and a FE model is preferred.
 
 {{% summary %}}
 The Random Effects (RE) model is a method for panel data analysis that treats unobserved entity-specific effects as random and assumes they are uncorrelated with the explanatory variables. Therefore, it also allows for the inclusion of time-invariant variables. 
