@@ -22,7 +22,7 @@ Thus, the biggest difference between RE and FE is:
 - In a RE model, the unobserved effects are assumed to be **uncorrelated** with the independent variables
 {{% /summary %}}
 
-## Estimation of the RE model
+## The Random Effects model
 
 Let's continue with the model where we estimate the relationship of market and stock value on gross investment of firms, using `Grunfeld` data. This is the regression equation:
 <br/>
@@ -39,19 +39,16 @@ where,
 
 The fixed effects $\alpha_i$ represent the time-invariant unobserved heterogeneity that differs across firms. This effect is assumed to be uncorrelated with the explanatory variables in the RE model. Consequently, the RE model also allows for the inclusion of time-invariant variables, such as a person's gender or education level, unlike the FE model.
 
-### Error term in RE model
+### Error term in the RE model
 The error term (capturing everything unobserved in the model) consists of two components: 
 
 - The individual-specific error component: $\alpha_i$.
 This term captures the unobserved heterogeneity that varies across individuals but remains constant over time. It is assumed to be uncorrelated with the explanatory variables.
-
 - A time-varying error component: $\epsilon_{it}$.
 This component captures the within-firm variation in gross investment over time. It accounts for the fluctuations and changes that occur within each firm over different time periods. Although this error term can be correlated within firms, it is uncorrelated across different firms. This term also exists in a FE model, where correlation of error across time is allowed as well.
 
-
 ## Estimation in R
 To estimate the RE model in R, you can use the `plm()` function and specify the model type as `"random"`. 
-
 
 {{% codeblock %}}
 ```R
@@ -75,7 +72,16 @@ summary(model_random)
 <img src = "../images/summaryrandomeffects.png" width="700">
 </p>
 
-The RE model can be extended to a `twoway` model by including time fixed effects. Include `effect = "twoways"` within the `plm()` function in R:
+The estimated coefficients capture the average effect of the independent variable (X) on the dependent variable (Y) while accounting for both within-entity and between-entity effects. This means that the coefficients represent the average effect of X on Y when X changes within each entity (e.g., firm) over time and when X varies between different entities.
+
+### Two-way Random Effects model
+
+The RE model can be extended to a `twoway` model by including time-specific effects. These time-specific effects are also uobservable and assumed to be uncorrelated with the independent variables, just like the entity-specific effects. 
+
+Like the one-way random effects model, the two-way random effects model can be estimated using feasible generalized least squares (FGLS) or maximum likelihood estimation (MLE).
+
+Include `effect = "twoways"` within the `plm()` function in R:
+
 
 {{% codeblock %}}
 ```R
@@ -96,11 +102,7 @@ To determine the appropriate model, a Hausman test can be conducted to test the 
 - The null hypothesis states no correlation between the independent variables and the entity-specific effects $\alpha_i$. If $H_{0}$ is true, the RE model is preferred.
 - The alternative hypothesis states correlation between the independent variables and the entity-specific effects($\alpha_i$). If $H_{0}$ is rejected, the FE model is preferred.
 
-#### Hausman test in R
-
-The Hausman test can be performed in R with the `phtest()` function from the package `plm`. Specify the FE and RE model as arguments in this function. 
-
-Note that these models need to be estimated with `plm`, the Within model estimated with `feols()` of the `fixest` package needs to be estimated with `plm()` first, to use for the `phtest()`
+The Hausman test can be performed in R with the `phtest()` function from the package `plm`. Specify the FE and RE model as arguments in this function. Note that the models includes as arguments shoudl be estimated with `plm`. Therefore, the Within model estimated is also estimated with `plm()` first (instead of with `feols()`from the `fixest` package like in the [Fixed Effects model building block](). 
 
 {{% codeblock %}}
 ```R
@@ -121,7 +123,7 @@ phtest(model_within_twoway,
 <img src = "../images/hausmantest.png" width="700">
 </p>
 
-The p-value is low enough to reject $H_{0}$. Therefore, a FE model is preferred in this case.
+The p-value is 0.0 low enough to reject $H_{0}$. Therefore, a FE model is preferred.
 
 {{% summary %}}
 The Random Effects (RE) model is a method for panel data analysis that treats unobserved entity-specific effects as random and assumes they are uncorrelated with the explanatory variables. Therefore, it also allows for the inclusion of time-invariant variables. 
