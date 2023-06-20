@@ -18,9 +18,9 @@ aliases:
 
 # Overview
 
-The fixed effects (FE) model, also known as the "Within estimator", captures changes *within groups*. By focusing on within-group variations, the FE model controls for unobserved effects. 
+The fixed effects (FE) model, also known as the "Within estimator", captures changes *within groups*. By focusing on within-group variations, the FE model is able to control for unobserved entity-specific effects. 
 
-It is crucial to control for these unobserved entity-fixed effects when they are present in your model. Ignoring them can lead to an omitted variable bias and biased estimates. 
+When analyzing panel data, it is crucial to account for these unobserved effects to obtain unbiased results. Not controlling for them when they are present in your model, will violate Assumption 1 of the [Fixed Effects Regression Assumptions](). In other words, the error term will be correlated with the independent variables. This correlation can introduce omitted variable bias.
 
 {{% tip %}}
 Note that a FE model cannot examine the influence of time-invariant variables on the dependent variable, as these variables are already captured in the fixed effects. 
@@ -48,6 +48,7 @@ Y_{i,t} - \bar{Y}_{i,t-1} = \beta_1 (X_{i,t} - \bar{X}_{i, t-1}) + (\alpha_i - \
 Since we assume the unobserved fixed effects $\alpha_{i}$ to be constant, subtracting its mean results in a term of zero. As a result, the fixed effects are eliminated through this transformation, while the time-varying component of the error term $u_{it}$ remains.
 
 ## Estimation in R
+
 While the `plm()` function can also be used to estimate a FE model, we recommend using the `fixest` package. Refer to the [`fixest` building block]() for a comprehensive explanation of this package and its functions. 
 
 To estimate a FE model using `fixest`, use the `feols()` function and specify the fixed effects variable (`firm`) within the model formula. 
@@ -104,13 +105,14 @@ One disadvantage of the `pFtest()` function is that it only allows `plm` objects
 library(plm)
 
 # Estimate the Within model (twoway: Time & Firm FE)
-model_within_plm <- plm(inv ~ value + capital, 
+model_within_plm <- plm(invest ~ value + capital, 
                     data = Grunfeld,
+                    index = c("firm", "year"),
                     model = "within",
                     effect = "twoway") 
 
 # Estimate the Pooled OLS model
-model_pooled <- plm(inv ~ value + capital, 
+model_pooled <- plm(invest ~ value + capital, 
               data = Grunfeld, 
               index = c("firm", "year"),
               model = "pooling")
@@ -127,7 +129,7 @@ print(pFtest_result)
 <img src = "../images/pFtest.png" width="700">
 </p>
 
-The `pFtest` result providese the test statistics, its associated p-value, and the degrees of freedom. If the p-value is less than your chosen significance level (e.g., 0.05), you can reject the null hypothesis and conclude that (two-way) fixed effects are present in the model. In this case, the null hypothesis is rejected and therefore the FE model is preferred over the pooled OLS model. 
+The `pFtest` result provides the test statistics, its associated p-value, and the degrees of freedom. If the p-value is less than your chosen significance level (e.g., 0.05), you can reject the null hypothesis and conclude that (two-way) fixed effects are present in the model. In this case, the null hypothesis is rejected and therefore the FE model is preferred over the pooled OLS model. 
 
 ## The Least Square Dummy Variable (LSDV) model
 Another approach to estimate fixed effects is the *Least Square Dummy Variable* model. In this model, dummy variables are added for each entity and/or time period to capture the fixed effects. In R, the LSDV model can be implemented using the `lm()` function and creating dummy variables for the entities and/or time periods. 

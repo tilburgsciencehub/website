@@ -62,13 +62,13 @@ library(plm)
 library(AER) 
 data(Grunfeld) 
 
-# Model estimation
-model <- plm(inv ~ value + capital, 
+# Estimate pooled OLS model
+model_pooled <- plm(invest ~ value + capital, 
               data = Grunfeld, 
               index = c("firm", "year"), 
               model = "pooling")
 
-summary(model)
+summary(model_pooled)
 ```
 {{% /codeblock %}}
 
@@ -80,9 +80,8 @@ Since the Pooled OLS model effectively treats the panel data as cross-sectional 
 
 {{% codeblock %}}
 ```R
-model2 <- lm(inv ~ value + capital, 
+model_pooled2 <- lm(invest ~ value + capital, 
               data = Grunfeld)
-summary(model2)
 ```
 {{% /codeblock %}}
 

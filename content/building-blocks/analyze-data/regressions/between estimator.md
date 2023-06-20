@@ -37,9 +37,10 @@ library(plm)
 library(AER) 
 data(Grunfeld) 
 
-# Estimate Between estimator
+# Estimate Between model
 model_between <- plm(inv ~ value + capital, 
                       data = Grunfeld,
+                      index = c("firm", "year"),
                       model = "between")
 ```
 {{% /codeblock %}}

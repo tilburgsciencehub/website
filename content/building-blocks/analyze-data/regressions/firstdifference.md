@@ -60,13 +60,13 @@ library(plm)
 library(AER) 
 data(Grunfeld) 
 
-# Model estimation
-model <- plm(inv ~ value + capital, 
+# Estimate First-difference model
+model_fd <- plm(inv ~ value + capital, 
               data = Grunfeld, 
               index = c("firm", "year"), 
               model = "fd")
 
-summary(model)
+summary(model_fd)
 ```
 {{% /codeblock %}}
 

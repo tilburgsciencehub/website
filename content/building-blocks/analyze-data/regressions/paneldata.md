@@ -154,6 +154,7 @@ The regression equation is estimated using R.
 # Extract data from year 1935
 Grunfeld1935 <- Grunfeld[Grunfeld$year== '1935',]  
 
+# Estimate model with cross-sectional data
 reg1 <- lm(invest ~ value + capital, 
            data = Grunfeld1935)
 summary(reg1)
@@ -246,16 +247,16 @@ By taking differences between the years, we remove any unobserved variable that 
 The following code block estimates this regression in R.
 {{% codeblock %}}
 ```R
-# subset data for years 1935 and 1940 
+# Subset data for years 1935 and 1940 
 Grunfeld1935 <- Grunfeld[Grunfeld$year== '1935',]
 Grunfeld1940 <- Grunfeld[Grunfeld$year== '1940',]
 
-# compute the differences of variables between the years 
+# Compute the differences of variables between the years 
 invest_diff <- Grunfeld1940$invest - Grunfeld1935$invest
 value_diff <- Grunfeld1940$value - Grunfeld1935$value
 capital_diff <- Grunfeld1940$capital - Grunfeld1935$capital
 
-# regression 
+# Model estimation 
 reg2 <- lm(invest_diff ~ value_diff + capital_diff)
 summary(reg2)
 ```
@@ -308,7 +309,7 @@ The following code estimates this fixed effects equation in R. Please refer to t
 
 {{% codeblock %}}
 ```R
-reg3 <- feols(invest ~ value + capital | firm + year , 
+reg3 <- feols(invest ~ value + capital | firm + year, 
               data = Grunfeld)
 summary(reg3)
 ```
