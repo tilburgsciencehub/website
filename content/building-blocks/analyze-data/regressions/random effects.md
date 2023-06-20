@@ -16,20 +16,20 @@ aliases:
 
 The **Random Effects (RE) model** is the last method for panel data analysis discussed in this series of building blocks. Unlike the Fixed Effects (FE) model, which focuses on within-group variations, the RE model treats the unobserved entity-specific effects in the model as random and assumes they are uncorrelated with the explanatory variables. 
 
-Thus, the biggest difference between RE and FE effects is:
-|---	|---	|
-| Fixed Effects	| Unobserved effects assumed to be **correlated** with the independent variables 	|
-| Random Effects	|   Unobserved effects assumed to be **uncorrelated** with the independent variables 	|
-
+{{% summary %}}
+Thus, the biggest difference between RE and FE is:
+- In a FE model, the unobserved effects are assumed to be **correlated** with the independent variables
+- In a RE model, the unobserved effects are assumed to be **uncorrelated** with the independent variables
+{{% /summary %}}
 
 ## Estimation of the RE model
 
-Let's continue with the model where we estimate the relationship of market and stock value on gross investment of firms. This is the regression equation:
-
+Let's continue with the model where we estimate the relationship of market and stock value on gross investment of firms, using `Grunfeld` data. This is the regression equation:
+<br/>
 {{<katex>}}
 invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}
 {{</katex>}}
- 
+<br/>
 where,
 - $invest_{it}$ is the gross investment of firm `i` in year `t`
 - $value_{it}$ is the market value of assets of firm `i` in year `t`
@@ -46,11 +46,11 @@ The error term (capturing everything unobserved in the model) consists of two co
 This term captures the unobserved heterogeneity that varies across individuals but remains constant over time. It is assumed to be uncorrelated with the explanatory variables.
 
 - A time-varying error component: $\epsilon_{it}$.
-This component captures the within-firm variation in gross investment over time. It accounts for the fluctuations and changes that occur within each firm over different time periods. Although this error term can be correlated within firms, it is uncorrelated across different firms. This term also exists in a FE model, where the correlation of error across time is also allowed.
+This component captures the within-firm variation in gross investment over time. It accounts for the fluctuations and changes that occur within each firm over different time periods. Although this error term can be correlated within firms, it is uncorrelated across different firms. This term also exists in a FE model, where correlation of error across time is allowed as well.
 
 
 ## Estimation in R
-To estimate the RE model in R, you can use the `plm()` function and specify the model as "random". 
+To estimate the RE model in R, you can use the `plm()` function and specify the model type as `"random"`. 
 
 
 {{% codeblock %}}
@@ -75,8 +75,7 @@ summary(model_random)
 <img src = "../images/summaryrandomeffects.png" width="700">
 </p>
 
-The RE model can be extended to a `twoway` model by including Time Fixed Effects. 
-Include `effect = "twoways"` within the `plm()` function in R:
+The RE model can be extended to a `twoway` model by including time fixed effects. Include `effect = "twoways"` within the `plm()` function in R:
 
 {{% codeblock %}}
 ```R
@@ -90,16 +89,18 @@ model_random_twoway <- plm(invest ~ value + capital,
 {{% /codeblock %}}
 
 ## Choice Fixed/Random Effects
-When deciding between the FE and RE model for panel data anlysis, it is important to consider the correlation between the unobserved effects and the independent variables. If there is a correlation, the FE model is preferred as it controls for time-invariant heterogeneity. However, if the individual-specific effects are assumed to be uncorrelated with the independent variables, the RE model can be applied.
+When deciding between the FE and RE model for panel data analysis, it is important to consider the correlation between the unobserved effects and the independent variables. If there is a correlation, the FE model is preferred as it controls for time-invariant heterogeneity. However, if the individual-specific effects are assumed to be uncorrelated with the independent variables, the RE model can be applied.
 
 ### Hausman test
 To determine the appropriate model, a Hausman test can be conducted to test the endogeneity of the entity-specific effects. 
 - The null hypothesis states no correlation between the independent variables and the entity-specific effects $\alpha_i$. If $H_{0}$ is true, the RE model is preferred.
-- The alternative hypothesis states correlation between the independent variables and the entity-specific effects($\alpha_i$). If $H_{1}$ is rejected, the FE model is preferred.
+- The alternative hypothesis states correlation between the independent variables and the entity-specific effects($\alpha_i$). If $H_{0}$ is rejected, the FE model is preferred.
 
 #### Hausman test in R
 
-The Hausman test can be performed in R with the `phtest()` function of the package `plm`. Specify the FE and RE model within the function. Note that these need to be `plm` models, so also the FE model is estimated with `plm()` first. 
+The Hausman test can be performed in R with the `phtest()` function from the package `plm`. Specify the FE and RE model as arguments in this function. 
+
+Note that these models need to be estimated with `plm`, the Within model estimated with `feols()` of the `fixest` package needs to be estimated with `plm()` first, to use for the `phtest()`
 
 {{% codeblock %}}
 ```R
@@ -120,7 +121,7 @@ phtest(model_within_twoway,
 <img src = "../images/hausmantest.png" width="700">
 </p>
 
-The p-value is low enough to reject $H_{0}$. Therefore, a FE model is preferred. 
+The p-value is low enough to reject $H_{0}$. Therefore, a FE model is preferred in this case.
 
 {{% summary %}}
 The Random Effects (RE) model is a method for panel data analysis that treats unobserved entity-specific effects as random and assumes they are uncorrelated with the explanatory variables. Therefore, it also allows for the inclusion of time-invariant variables. 
