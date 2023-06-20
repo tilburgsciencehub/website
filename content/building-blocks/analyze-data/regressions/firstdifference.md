@@ -7,10 +7,6 @@ weight: 11
 author: "Valerie Vossen"
 authorlink: "https://nl.linkedin.com/in/valerie-vossen"
 aliases:
-  - /fixedeffects
-  - /run/fixedeffects/
-  - /run/fixedeffects
-  - /fixedeffectsmodels
   - /firstdifference
   - /firstdifferenceestimator
   - /run/firstdifference

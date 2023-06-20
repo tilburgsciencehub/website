@@ -100,7 +100,7 @@ To determine the appropriate model, a Hausman test can be conducted to test the 
 - The null hypothesis states no correlation between the independent variables and the entity-specific effects $\alpha_i$. If $H_{0}$ is true, the RE model is preferred.
 - The alternative hypothesis states correlation between the independent variables and the entity-specific effects($\alpha_i$). If $H_{0}$ is rejected, the FE model is preferred.
 
-The Hausman test can be performed in R with the `phtest()` function from the package `plm`. Specify the FE and RE model as arguments in this function. Note that the models includes as arguments shoudl be estimated with `plm`. Therefore, the Within model estimated is also estimated with `plm()` first (instead of with `feols()`from the `fixest` package like in the [Fixed Effects model building block](/fixedeffects). 
+The Hausman test can be performed in R with the `phtest()` function from the package `plm`. Specify the FE and RE model as arguments in this function. Note that the models includes as arguments shoudl be estimated with `plm`. Therefore, the Within model estimated is also estimated with `plm()` first (instead of with `feols()`from the `fixest` package like in the [Fixed Effects model building block](/withinestimator). 
 
 {{% codeblock %}}
 ```R
