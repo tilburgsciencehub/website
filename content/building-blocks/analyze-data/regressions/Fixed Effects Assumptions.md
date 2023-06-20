@@ -7,16 +7,16 @@ weight: 9
 author: "Valerie Vossen"
 authorlink: "https://nl.linkedin.com/in/valerie-vossen"
 aliases:
-  - /paneldata
-  - /run/paneldata/
-  - /run/paneldata
+  - /fixedeffectsassumptions
+  - /run/fixedeffectsassumptions/
+  - /run/fixedeffectsassumptions
 ---
 
 # Overview
 
 This building block covers the Fixed Effects regression assumptions. These 4 assumptions should hold in a Fixed Effects regression model in order to establish unbiasedness of Ordinary Least Squares (OLS).
 
-To refresh your understanding of panel data and fixed effects, you can refer to the [panel data building block](). For a comprehensive explanation of fixed effects regressions in R, check the [`fixest` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/fixest/). 
+To refresh your understanding of panel data and fixed effects, you can refer to the [panel data building block](/paneldata.md). For a comprehensive explanation of fixed effects regressions in R, check the [`fixest` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/fixest/). 
 
 The assumptions are taken from the online course [Introduction to Econometrics with R](https://www.econometrics-with-r.org/10.5-tferaaseffer.html). 
 
@@ -40,7 +40,7 @@ When there are multiple regressors, $X_{it}$ is replaced by $X_{1,it}, X_{2,it},
 
 Now, the assumptions are explained in greater detail. 
 
-Examples are given to clarify the assumptions. This is done with the panel data set called `Grunfeld`, which is already used in the [panel data building block]() and [`fixest` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/fixest/). Please refer to these building blocks for further context on the `Grunfeld` data and the regression model. 
+Examples are given to clarify the assumptions. This is done with the panel data set called `Grunfeld`, which is already used in the [panel data building block](/paneldata.md) and [`fixest` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/fixest/). Please refer to these building blocks for further context on the `Grunfeld` data and the regression model. 
 
 ## Assumption 1: Zero Conditional Mean
 This assumption is also called **Strict Exogeneity**. The error term $u_{it}$ has an expected value of zero given any values of the independent variables. In other words, $E(u_{it}|X_{i1},...,X_{it}) = 0$. 

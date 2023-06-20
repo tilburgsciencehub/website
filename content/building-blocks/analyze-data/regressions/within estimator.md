@@ -20,7 +20,7 @@ aliases:
 
 The fixed effects (FE) model, also known as the "Within estimator", captures changes *within groups*. By focusing on within-group variations, the FE model is able to control for unobserved entity-specific effects. 
 
-When analyzing panel data, it is crucial to account for these unobserved effects to obtain unbiased results. Not controlling for them when they are present in your model, will violate Assumption 1 of the [Fixed Effects Regression Assumptions](). In other words, the error term will be correlated with the independent variables. This correlation can introduce omitted variable bias.
+When analyzing panel data, it is crucial to account for these unobserved effects to obtain unbiased results. Not controlling for them when they are present in your model, will violate Assumption 1 of the [Fixed Effects Regression Assumptions](/fixedeffectsassumptions). In other words, the error term will be correlated with the independent variables. This correlation can introduce omitted variable bias.
 
 {{% tip %}}
 Note that a FE model cannot examine the influence of time-invariant variables on the dependent variable, as these variables are already captured in the fixed effects. 
@@ -49,7 +49,7 @@ Since we assume the unobserved fixed effects $\alpha_{i}$ to be constant, subtra
 
 ## Estimation in R
 
-While the `plm()` function can also be used to estimate a FE model, we recommend using the `fixest` package. Refer to the [`fixest` building block]() for a comprehensive explanation of this package and its functions. 
+While the `plm()` function can also be used to estimate a FE model, we recommend using the `fixest` package. Refer to the [`fixest` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/fixest/) for a comprehensive explanation of this package and its functions. 
 
 To estimate a FE model using `fixest`, use the `feols()` function and specify the fixed effects variable (`firm`) within the model formula. 
 

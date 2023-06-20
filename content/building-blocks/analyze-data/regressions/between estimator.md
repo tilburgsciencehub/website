@@ -23,7 +23,7 @@ The **Between estimator** is a method used to estimate the relationship between 
 ## Estimation of the Between estimator 
 The Between estimator is obtained by regressing the averaged variables on each other using OLS regression.
 
-To obtain unbiased estimates, the error term should be uncorrelated with any of the averaged independent variables. And if the error term is assumed to be uncorrelated with the independent variables, the [Random Effects model](), discussed in the next building block, is generally more appropriate. 
+To obtain unbiased estimates, the error term should be uncorrelated with any of the averaged independent variables. And if the error term is assumed to be uncorrelated with the independent variables, the [Random Effects model](/randomeffects), discussed in the next building block, is generally more appropriate. 
 
 Nonetheless, the Between estimator can be suitable for research questions that specifically address variation between different entities rather than changes within entities over time. 
 

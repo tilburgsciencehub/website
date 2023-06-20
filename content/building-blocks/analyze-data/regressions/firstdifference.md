@@ -44,7 +44,7 @@ Since $\alpha_{i}$ is constant over time, taking the difference between consecut
 
 ### Assumption of Error term correlation
 
-Assumption 1 of the [Fixed Effects Regression Assumptions]() states that the error term is uncorrelated with the independent variables, expressed as $E[u_{it}|X_{i1},...,X_{it}] = 0$.
+Assumption 1 of the [Fixed Effects Regression Assumptions](/fixedeffectsassumptions) states that the error term is uncorrelated with the independent variables, expressed as $E[u_{it}|X_{i1},...,X_{it}] = 0$.
 
 In the context of the FD estimator, the assumption of error term correlation can be expressed in a slightly weaker form. Instead of requiring zero correlation between the error term and the independent variables at each point in time, it only requires that the difference in the error term between time $t$ and $t-1$ is uncorrelated with the difference in the independent variables between those two time periods. This weaker form is denoted as $E[(u_{i,t} - u_{i,t-1}|X_{i,t} - X_{i,t-1}}) = 0$. 
 
