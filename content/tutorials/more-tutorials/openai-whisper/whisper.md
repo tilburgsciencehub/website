@@ -13,15 +13,8 @@ aliases:
 
 ## What is Whisper?
 
-Whisper, developed by OpenAI, is an automatic speech recognition model. It can recognize multilingual speech, translate speech and transcribe audios. It has been trained on 680k hours of diverse multilingual data. Whisper is an API with two endpoints: `transcriptions` and `translations`. Specifically, it can transcribe audio in any of its trained languages, and it can translate the audios in English only (for now).
+Whisper, developed by OpenAI, is an automatic speech recognition model. It can recognize multilingual speech, translate speech and transcribe audios. It has been trained on 680k hours of diverse multilingual data. Whisper is an API with two endpoints: `transcriptions` and `translations`. Specifically, it can transcribe audio in any of its 98 trained languages, and it can translate the audios in English only (for now).
 
-## Supported languages
-
-Whisper has been trained on 98 languages, however, not all of them have a high accuracy. More than half, 57 of them, achieved a word error rate lower than 50% which represents an industry benchmark. A plot of this languages and their word error rates is shown below:
-
-<p align = "center">
-<img src = "../img/language-breakdown.svg" width=450">
-</p>
 
 ## Getting started
 
