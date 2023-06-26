@@ -1,6 +1,6 @@
 ---
 title: "Set up Visual Studio Code"
-description: "Learn how to install and use Sublime Text"
+description: "Learn how to install and use Visual Studio Code"
 keywords: "text, editor, VSCode, visualstudiocode, visual, studio, code, install, software"
 draft: false
 weight: 12
