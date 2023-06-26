@@ -1,31 +1,21 @@
 ---
-title: "Get Text Editors"
-description: "A good text editor lies at the heart of any serious programmer's toolkit."
-keywords: "text, editor, atom, install, software"
-#date: 2020-11-11T22:02:51+05:30
+title: "Set up Visual Studio Code"
+description: "Learn how to install and use Sublime Text"
+keywords: "text, editor, VSCode, visualstudiocode, visual, studio, code, install, software"
 draft: false
-#weight: 9
+weight: 12
 aliases:
   - /choose/text-editor
   - /get/VSCode
+  - /VSCode
+  - /install/VSCode
 ---
 
-## Installing a text editor
+Visual Studio Code (VS Code) is a popular open-source code editor developed by Microsoft. It provides a lightweight and versatile environmental for writing and editing code, making it a valuable tool for researchers, programmers and students alike.
 
-A good text editor lies at the heart of any serious programmer's toolkit: It can do almost anything and makes you much more productive. The editors built into each program often are not the best option (we will find certain cases where you may want to use them).
+In this tutorial, we will guide you through the process of installing VS Code on different operating systems and show you how to install useful extensions to boost your productivity. Let's get started!
 
-Please download, install it along with the necessary packages and stick with it for at least for some time to get a feel for how it works.
-
-There is a slight learning curve, but soon you hopefully will be wondering why no-one forced you to do this before!
-
-{{% tip %}}
-None of the skills on this website are tied to Visual Studio Code, so if you do decide to move away to another editor, nothing will be lost. 
-
-A nice online text editor for LaTex is [Overleaf](https://www.overleaf.com/). Overleaf provides nice collaboration tools, and it can be used online without any setup needed.
-[Vim](https://www.vim.org/) is another widely used text editor.
-{{% /tip %}}
-
-### Installing Visual Studio Code
+## Installing Visual Studio Code
 
 #### Windows Users
 
