@@ -13,28 +13,18 @@ aliases:
 ---
 
 ## Overview 
-<<<<<<< Updated upstream
+`deltaMethod` is a R function that approximates the standard error of a transformation $g(X)$ of a random variable $X = (x_{1}, x_{2},..)$, given estimates of the mean and the covariance matrix of $X$. The approximation is given by the formula:
+{{<katex>}} Cov(g(X)) = g'(\mu)Cov(X)[g'(\mu)]^T {{</katex>}}, where $\mu$ is an estimate of the mean of $X$.
 
 Having the regression coefficients might not be enough if we want to interpret some combined effects between them. Merely summing the coefficients does not ensure that the resulting effect is significant and it also does not offer any information on the resulting standard error. 
 
-To obtain the combined effects of coefficients we can use the `deltaMethod` function of the R `car` package. To illustrate it we use the "Boston Housing" dataset available in the `MASS` package of R. 
-
-## Implementation
-
-Let's first load the dataset and required packages. 
-=======
-`deltaMethod` is a R function that approximates the standard error of a transformation of a regression variable X. 
-
-Having the regression coefficients might not be enough if we want to interpret some combined effects between them. Merely summing the coefficients does not ensure that the resulting effect is significant and it also does not offer any information on the resulting standard error. 
-
-To obtain the combined effects of coefficients we can use the `deltaMethod` function of the R `car` package. To illustrate it we use two example datasets: the "Boston Housing" dataset available in the `MASS` package of R and "hernandez.nitrogen", a dataset of an agricultural trial of corn with nitrogen fertilizer. 
+To obtain the combined effects of coefficients we can use the `deltaMethod` function of the R `car` package. To illustrate how to implement it we use two example datasets: the ["Boston Housing" dataset example](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/deltamethod/#example1) available in the `MASS` package of R and the ["hernandez.nitrogen" example](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/deltamethod/#example2), a dataset of an agricultural trial of corn with nitrogen fertilizer available in the `agridat` package. 
 
 ## Implementation
 
 ### Example 1
 
 Let's first load the Boston dataset and required packages. 
->>>>>>> Stashed changes
 
 
 {{% codeblock %}}
@@ -52,96 +42,55 @@ data(Boston)
 ```
 {{% /codeblock %}}
 
-<<<<<<< Updated upstream
-Next, we perform a simple linear regression analysis. We regress the `medv` variable, which is the median value of owner-occupied homes in $1000s, on all other variables.
-=======
 Next, we perform a non-linear regression analysis. We regress the natural logarithm of the `medv` variable, which is the median value of owner-occupied homes in $1000s, on :
 - `rad`: the index of accessibility to radial highways, included as factor variable
 - `dis`: the weighted mean of distances to five Boston employment centres
 - `nox`: the nitrogen oxide concentration
 - `chas`: the Charles River dummy variable
 - `crim`: per capita crime rate 
->>>>>>> Stashed changes
 
 {{% codeblock %}}
 
 ```R
 #linear model
-<<<<<<< Updated upstream
-reg <- lm(medv~., data = Boston)
-summary(reg)
-=======
 mod <- lm(log(medv) ~ as.factor(rad) + dis + nox + chas + crim + I(crim^2), data = Boston)
 
 summary(mod)
->>>>>>> Stashed changes
 ```
 {{% /codeblock %}}
 
 _Output:_
 <p align = "center">
 <img src = "../images/deltamethod.png" width=350">
-<<<<<<< Updated upstream
-<figcaption> Regression output </figcaption>
-</p>
-
-Now let's calculate the combined effect of the lower status of the population (`lstat`) with the crime rate per capita (`crim`). The `deltaMethod` function takes as first argument the regression object, followed by the names of the coefficients between quotes:  
-=======
 </p>
 
 Now let's calculate the combined effect of the first order crime rate per capita (`crim`) with the second order `crim`. The `deltaMethod` function takes as first argument the regression object, followed by the names of the coefficients between quotes:  
->>>>>>> Stashed changes
 
 {{% codeblock %}}
 
 ```R
-<<<<<<< Updated upstream
-deltaMethod(reg, 'crim+lstat')
-=======
 deltaMethod(mod, "crim + `I(crim^2)`", rhs=1)
->>>>>>> Stashed changes
 ```
 {{% /codeblock %}}
 
 _Output:_
 <p align = "center">
-<<<<<<< Updated upstream
-<img src = "../images/deltamethod1.png" width=350">
-<figcaption> deltaMethod output </figcaption>
-</p>
-
-We see that the combined effect of the two coefficients is -0.632, with a standard error of 0.056 and a 95% confidence interval between -0.742 and -0.522, denoting that the resulting coefficient is significant at a 5% level.
-
-Alternatively, we can calculate the effect between the intercept and the weighted mean of distances to five Boston employment centers (`dis`).
-=======
 <img src = "../images/deltamethod1.png" width=450">
 </p>
 
 We see that the combined effect of the two coefficients is -0.044, with a standard error of 0.005 and p-value smaller than .000, denoting that the resulting coefficient is significant at a 0.1% level.
 
 Alternatively, we can calculate the effect of the Charles River dummy (`chas`) multiplied with the previous combination of first and second order crime rate per capita.
->>>>>>> Stashed changes
 
 {{% codeblock %}}
 
 ```R
-<<<<<<< Updated upstream
-deltaMethod(reg, '(Intercept)+dis')
-=======
 deltaMethod(mod, "chas*(crim + `I(crim^2)`)", vcov = hccm)
->>>>>>> Stashed changes
 ```
 {{% /codeblock %}}
 
 _Output:_
 <p align = "center">
-<<<<<<< Updated upstream
-<img src = "../images/deltamethod2.png" width=350">
-<figcaption> deltaMethod output </figcaption>
-</p>
-
-The output shows that the combined coefficient is 34.983, but with a high standard error of 5.035.
-=======
 <img src = "../images/deltamethod2.png" width=450">
 </p>
 
@@ -166,7 +115,9 @@ df <- hernandez.nitrogen
 
 This is a simple profit maximization problem: given the quantity of nitrogen and corn resulted, as well as input and sales prices, we aim to maximize the profit.
 
-We first create an income variable:
+We first create an income variable by subtracting the costs of fertilization (`nitro*input_price`) from the revenue resulted from selling the corn (`yield*sale_price`): 
+
+`income = yield*sale_price - nitro*input_price`
 
 {{% codeblock %}}
 
@@ -194,7 +145,7 @@ _Output:_
 <img src = "../images/deltamethod3.png" width=350">
 </p>
 
-We can now calculate the optimal nitrogen quantity given the prices and the resulted coefficients.
+We can now calculate the optimal nitrogen quantity given the prices and the resulted coefficients. We use the formula: $-nitro/(2*nitro^2)$.
 
 {{% codeblock %}}
 
@@ -211,8 +162,7 @@ _Output:_
 <img src = "../images/deltamethod4.png" width=450">
 </p>
 
-The  the optimum nitrogen is 166, as shown by the significant estimate of the `deltaMethod`.
->>>>>>> Stashed changes
+The optimum nitrogen quantity is 166, as shown by the significant estimate of the `deltaMethod`.
 
 ## See also
 [deltaMethod documentation](https://www.rdocumentation.org/packages/car/versions/3.1-2/topics/deltaMethod)
