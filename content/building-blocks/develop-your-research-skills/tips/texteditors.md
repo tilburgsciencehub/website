@@ -3,7 +3,7 @@ title: "Comparing text editors"
 description: "Learn the differences between text editors Visual Studio Code, Sublime Text, Emacs and Vim"
 keywords: "VSCode, Sublime, Emacs, Vim, text, editor"
 draft: false
-weight: 
+weight: 8
 aliases:
   - /texteditors
   - /texteditors
@@ -85,9 +85,9 @@ While Emacs and Vim share a similar in goal of use, there are some notable diffe
 
 {{% tip %}}
 Vim has two different editing modes: 
-- Command Mode: In this mode, every character typed is interpreted as a command that performs an action on the text file being edited. Typing a character in the command mode may also cause the Vim editor to enter the insert mode.
+- Command Mode: In this mode, every character typed is interpreted as a command that performs an action on the text file being edited. You execute commands in this mode, like undo, find and replace and quit, etcetera. To swith from Command to Insert Mode, type `i`.
 
-- Insert mode: In this mode, the entered text is directly inserted into the file. Each character typed is added to the text, allowing you to write or edit content. Pressing the `Escape` key turns off the insert mode and returns to the Command mode.
+- Insert Mode: In this mode, the entered text is directly inserted into the file. Each character typed is added to the text, allowing you to write or edit content. Pressing the `Escape` key turns off the Insert Mode and returns to the Command Mode.
 {{% /tip %}}
 
 {{% summary %}}
