@@ -92,14 +92,13 @@ Vim has two different editing modes:
 
 {{% summary %}}
 The best choice ultimately depends on your personal preferences and requirements since all 4 text editors are available cross-platform (on Windows, macOS or Linux). So,give them a try and see which one is the perfect fit for your programming journey! 
-{{% /summary %}}
 
 The following table provides the most important differences between the 4 text editors discussed in this building block:
 
 |      | **VS Code** 	| **Sublime Text** 	| **Emacs** and **Vim** |
 |---	|---	|--- | ---|
 | *Goal of use* |   General-purpose <BR> editor |  General-purpose <BR> editor  |  Command line <BR>power editors    |
-| *Ease of use*	| Beginner-friendly | Some learning, <BR> but user-friendly and <BR> intuitive | Steep learning <BR> curve | 
-| *Interface* | Feature-rich GUI | Distraction-free <BR> GUI | Text-based interface <BR> within command line <BR> interface |
-| *Customization* | Extension <BR> marketplace | Variety of <BR> packages | Almost infinite <BR> customization <BR> options <BR> (particularly Emacs) |
-
+| *Ease of use*	| Beginner-friendly | Some learning, but <BR> user-friendly and <BR> intuitive | Steep learning <BR> curve | 
+| *Interface* | Feature-rich GUI | Distraction-free GUI | Text-based <BR> interface within <BR> command line <BR> interface |
+| *Customization* | Extension <BR> marketplace | Variety of <BR> packages | Almost infinite <BR> customization <BR> options <BR> (particularly <BR> Emacs) |
+{{% /summary %}}
