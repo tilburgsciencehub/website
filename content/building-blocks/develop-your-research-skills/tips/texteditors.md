@@ -45,7 +45,7 @@ The advantage in this aspect depends on your personal preference - whether you p
 
 - **Performance and speed**
 
-*Sublime Text* is renowned for its exceptional performance and speed. It is one of the fastest text editors available and is known for its lightweight nature. *VS Code* is also fast and performs well, but it may have a higher resource usage compared to *Sublime Text*, particularly when working with large projects or using many extensions. If speed, simplicity and lightweight usage are your priorities, *Sublime Text* may have an advantage in this regard.
+*Sublime Text* is renowned for its exceptional performance and speed. It is one of the fastest text editors available and is known for its lightweight nature. *VS Code* is also fast and performs well, but it may have a higher resource usage compared to Sublime Text, particularly when working with large projects or using many extensions. If speed, simplicity and lightweight usage are your priorities, Sublime Text may have an advantage in this regard.
 
 - **Support**
 
@@ -65,7 +65,6 @@ They are different than VS Code and Sublime Text in their approach: They priorit
 - Emacs and Vim offer more customization options compared to VS Code and Sublime Text. 
 
 ### Comparing Emacs & Vim
-{{% tip %}}
 <p align = "center">
 <img src = "../images/emacsinterface.png" width="400">
 <figcaption> Emacs interface </figcaption>
@@ -75,15 +74,14 @@ They are different than VS Code and Sublime Text in their approach: They priorit
 <img src = "../images/viminterface.png" width="400">
 <figcaption> Vim interface </figcaption>
 </p>
-{{% /tip %}}
 
 While Emacs and Vim are quite similar in goal of use, there are some differences worth mentioning:
 
-- **Vim** is more lightweight and faster than Emacs. For instance, Vim minimizes the number of keystrokes that a user has to press. Emacs, on the contrary, involves pressing several keys simultaneously to enable a shortcut for a single function. 
+- *Vim* is more lightweight and faster than Emacs. For instance, Vim minimizes the number of keystrokes that a user has to press. Emacs, on the contrary, involves pressing several keys simultaneously to enable a shortcut for a single function. 
 
-- While both Emacs and Vim offer extensive customization options, **Emacs** stands out. Through Emacs Lisp, it provides users with the ability to modify almost every aspect of the editor's behavior and appearance. 
+- While both Emacs and Vim offer extensive customization options, *Emacs* stands out. Through Emacs Lisp, it provides users with the ability to modify almost every aspect of the editor's behavior and appearance. 
 
-- **Emacs** is simpler to learn compared to Vim, because it provides a more natural interface. Vim has different editing modes, which could be unintuitive for beginners.
+- *Emacs* is simpler to learn compared to Vim, because it provides a more natural interface. Vim has different editing modes, which could be unintuitive for beginners.
 
 {{% tip %}}
 Vim has two different editing modes: 
@@ -98,9 +96,10 @@ The best choice ultimately depends on your personal preferences and requirements
 The following table provides the most important differences between the 4 text editors discussed in this building block:
 
 |      | **VS Code** 	| **Sublime Text** 	| **Emacs** and **Vim** |
+|---	|---	|--- | ---|
 | *Goal of use* |   General-purpose editor |  General-purpose editor  |    Command line power editors    |
 | *Ease of use*	| Beginner-friendly | Some learning, but user-friendly and intuitive | Steep learning curve | 
 | *Interface* | Feature-rich GUI | Distraction-free GUI | Text-based interface within command line interface |
-| *Customization* | Extension marketplace | Variety of packages | Almost infinite customization options (particularly Vim) |
+| *Customization* | Extension marketplace | Variety of packages | Almost infinite customization options (particularly Emacs) |
 
 {{% /summary %}}
