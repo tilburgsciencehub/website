@@ -707,6 +707,17 @@ article {
   }
 }
 
+.community_members {
+max-width: 450px;
+}
+
+@media screen and (max-width: 600px) { 
+  .community_members {
+    max-width:350px !important;
+  }
+  
+} 
+
 .buildingBlocksRow {
   h4 {
     line-height: 28px;
