@@ -1,7 +1,7 @@
 ---
 title: "Install Stata Packages"
-description: "Learn how to install new Python packages with package management tools like pip."
-keywords: "python, pip, packages, selenium"
+description: "Learn how to install Stata packages"
+keywords: "stata, packages, ssc, ado"
 #date: 2023-06-05T22:02:51+05:30
 draft: false
 #weight: 4
