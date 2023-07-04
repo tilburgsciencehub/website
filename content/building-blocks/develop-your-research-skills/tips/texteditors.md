@@ -16,7 +16,7 @@ In this building block, we will compare some widely used text editors: **Visual 
 
 Please download and install the text editor of your choice, along with any necessary packages, and stick with it for a while to get a feel for how it works. Despite a slight learning curve, you'll quickly find yourself wondering why you didn't start using it sooner!
 
-## VS Code and Sublime Text
+## VS Code & Sublime Text
 Both *VS Code* and *Sublime Text* are highly capable editors with their own strengths and weaknesses. Choosing between the two depends on your preferences and the features that are most important to you. For setting up these text editors, check our building blocks [Set up VS Code](/get/VSCode) and [Set up Sublime Text](/get/sublime).
 
 Let's compare them in various aspects:
