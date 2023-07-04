@@ -90,7 +90,7 @@ Vim has two different editing modes:
 - Insert Mode: In this mode, the entered text is directly inserted into the file. Each character typed is added to the text, allowing you to write or edit content. Pressing the `Escape` key turns off the Insert Mode and returns to the Command Mode.
 {{% /tip %}}
 
-### Overview of the key comparing features
+## Overview of the key comparing features
 The following table provides the most important differences between the 4 text editors discussed in this building block:
 
 |      | **VS Code** 	| **Sublime Text** 	| **Emacs** and **Vim** |
