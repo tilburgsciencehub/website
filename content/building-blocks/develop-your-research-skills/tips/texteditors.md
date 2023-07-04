@@ -90,10 +90,7 @@ Vim has two different editing modes:
 - Insert Mode: In this mode, the entered text is directly inserted into the file. Each character typed is added to the text, allowing you to write or edit content. Pressing the `Escape` key turns off the Insert Mode and returns to the Command Mode.
 {{% /tip %}}
 
-{{% summary %}}
-The best choice ultimately depends on your personal preferences and requirements since all 4 text editors are available cross-platform (on Windows, macOS or Linux). So, give them a try and see which one is the perfect fit for your programming journey! 
-{{% /summary %}}
-
+### Overview of the key comparing features
 The following table provides the most important differences between the 4 text editors discussed in this building block:
 
 |      | **VS Code** 	| **Sublime Text** 	| **Emacs** and **Vim** |
@@ -102,3 +99,9 @@ The following table provides the most important differences between the 4 text e
 | *Ease of use*	| Beginner-friendly | Some learning, but <BR> user-friendly | Steep learning <BR> curve | 
 | *Interface* | Feature-rich GUI | Distraction-free GUI | Text-based <BR> interface within <BR> command line <BR> interface |
 | *Customization* | Extension <BR> marketplace | Variety of <BR> packages | Almost infinite <BR> customization <BR> options <BR> (particularly <BR> Emacs) |
+
+
+{{% summary %}}
+The best choice ultimately depends on your personal preferences and requirements since all 4 text editors are available cross-platform (on Windows, macOS or Linux). So, give them a try and see which one is the perfect fit for your programming journey! 
+{{% /summary %}}
+
