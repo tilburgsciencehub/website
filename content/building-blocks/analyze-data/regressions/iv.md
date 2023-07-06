@@ -62,15 +62,20 @@ lm(data=mroz, wage~educ)
 ```
 {{% /codeblock %}}
 
-In this regression, however, there are terms in the error term such as the employer's father's education `fatheduc` that potentially influences `educ` leading to an omitted variable bias.
-We obviously cannot add `fatheduc` as another independent variable as that will violate the assumption of 'no perfect multicollinearity'. Thus, a possible solution is to use `fatheduc` as an instrument for `educ`. Let us check if we can indeed use `fatheduc` as an instrument for  `educ`.
+
+However, this model likely suffers from endogeneity due to omitted variable bias. An employee's innate ability is likely correlated to their wages and to the level of education they have attained. As a result, the OLS estimate of the  effect of education and wages is an inconsistent estimate because this variable is omitted from the model.
+
+A possible solution is to use `fatheduc` as an instrument for `educ`. This is because a parent's level of education can serve as a proxy for the resources and opportunities available to their child. Parents with higher education often have better income, stability, and access to educational resources. Consequently, they can provide their children with a better education, which, in turn, can increase their earning potential. It is also important to note that a parent's education does not directly influence the wages their child may receive, nor does it have any direct impact on other variables that could potentially affect wages, such as the child's innate ability.
+
+Hence, intuitively `fatheduc` could be a good candidate for a IV but let us check if it indeed fulfills these criterion.
+
 
 ## Instrument validity
 A valid instrument, Z is the one that fulfills the following 2 conditions:
 
-1)It is correlated with the independent variable, X i.e. it is relevant.
+1) **Relevance**: It is correlated with the independent variable, X i.e. it is relevant.
 
-2)It is not correlated with the error term, $\mu$ i.e. it is exogenous.
+2) **Exogeneity**: It is not correlated with the error term, $\mu$ i.e. it is exogenous.
 
 In other words, Z should affect the outcome variable, Y, only through X to be considered as a valid instrument.
 
@@ -92,6 +97,7 @@ summary(reg)
 
 
 Therefore, including `fatheduc` as an instrument variable in a 2-Stage Least Squares (2SLS) analysis of the relationship between `wage` and `educ` can address the endogeneity issue and produce unbiased and consistent estimates.
+
 
 ## The 2SLS estimator
 The 2SLS proceeds in the following way:
@@ -155,13 +161,23 @@ This gives you information about 3 tests:
 
 1)Weak instrument:
 
-A good instrumental variable is highly correlated with one or more of the explanatory variables while remaining uncorrelated with the errors. If an endogenous regressor is only weakly related to the instrumental variables, then its coefficient will be estimated imprecisely. We hope for a large test statistic and small p-value in the diagnostic test for weak instruments, as is the case in our example.
+A good instrumental variable is highly correlated with one or more of the explanatory variables while remaining uncorrelated with the errors. If an endogenous regressor is only weakly related to the instrumental variables, then its coefficient will be estimated imprecisely. We hope for a large test statistic and small p-value in the diagnostic test to significantly say that our instrument is strong, as is the case in our example.
 
 2)Wu-Hausman:
 
-Applied to 2SLS regression, the Wu–Hausman test is a test of endogeneity. If all of the regressors are exogenous, then both the OLS and 2SLS estimators are consistent, and the OLS estimator is more efficient, but if one or more regressors are endogenous, then the OLS estimator is inconsistent. Again, we need a large test statistic and a small p-value for the OLS estimator is inconsistent. However, it is not true in our example and the 2SLS estimator is therefore not to be preferred.
+Applied to 2SLS regression, the Wu–Hausman test is a test of endogeneity. If all of the regressors are exogenous, then both the OLS and 2SLS estimators are consistent, and the OLS estimator is more efficient, but if one or more regressors are endogenous, then the OLS estimator is inconsistent. Again, we need a large test statistic and a small p-value for the OLS estimator to be inconsistent. However, it is not true in our example and the 2SLS estimator is therefore not to be preferred.
 
 3)Sargan:
 
- The Sargan test is a test of overidentification. That is, in an overidentified regression equation, where there are more instrumental variables than coefficients to estimate it is possible that the instrumental variables provide conflicting information about the values of the coefficients. A large test statistic and small p-value for the Sargan test suggest, therefore, that the model is misspecified.
- We obtain NA values for this test as it is inapplicable with an equal number of instrumental variables and coefficients.
+ The Sargan test is a test of overidentification. That is, in an overidentified regression equation, where there are more instrumental variables than coefficients to estimate it is possible that the instrumental variables provide conflicting information about the values of the coefficients. Unlike in the other 2 tests, a large test statistic and small p-value for the Sargan test suggest that the instruments are not valid. In our case, we obtain NA values for this test as we have an equal number of instrumental variables and coefficients.
+
+{{% summary %}}
+- Instrument variables address the issue of endogeneity and help obtain consistent estimates.
+
+- For an instrument to be valid, it should be `relevant` and `exogenous`. It should affect the outcome variable, Y only through the independent variable, X.
+
+- The `iv_reg()` function from the `AER` package can be used to run an instrumental variable regression in R.
+
+- The strength of the instrument can be tested via 3 tests: Weak instrument test, Wu-Hausman test and Sargan test. These can be obtained using the `diagnostics = TRUE` argument in the `summary()` function.
+
+{{% /summary %}}
