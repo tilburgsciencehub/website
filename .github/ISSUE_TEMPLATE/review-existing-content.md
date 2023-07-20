@@ -8,6 +8,12 @@ assignees: octocat
 
 # Request to update content
 
+__Background__
+
+Content (building blocks and tutorials) has been developed over many years by different RAs and faculty members. Our platform has also undergone continuous technical development, resulting in varying content quality, with some never being revised.
+
+The purpose of this issue is to test and update existing content, aiming to improve its quality by enhancing user experience, reflecting the latest tools or versions, and improving clarity and accuracy.
+
 __What needs to be updated?__
 
 - Please briefly describe here which building block/tutorial (links) or which section of the website needs to be updated.
