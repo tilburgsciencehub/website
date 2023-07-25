@@ -14,7 +14,7 @@ aliases:
 
 ## Plotting in Python
 
-Python has a lot of libraries for visualizing data, out of which `matplotlib` and `seaborn` are the most common. In this building block we construct the plots defined in [Data Visualization Theory and Best Practices](https://tilburgsciencehub.com/building-blocks/visualize-your-data/data-visualization/matplotlib-seaborn/) with both `matplotlib` and `seaborn`.
+Python has a lot of libraries for visualizing data, out of which `matplotlib` and `seaborn` are the most common. In this building block we construct the plots defined in [Data Visualization Theory and Best Practices](https://tilburgsciencehub.com/building-blocks/visualize-your-data/data-visualization/theory-best-practices/) with both `matplotlib` and `seaborn`.
 To install `matplotlib` follow this [guide](https://matplotlib.org/stable/users/installing/index.html). This is the base library for plotting in Python.
 
 {{% tip %}}
