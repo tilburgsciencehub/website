@@ -13,7 +13,7 @@ aliases:
 
 A *command-line* interface or command language interpreter (CLI), also known as a terminal, is a means of interacting with a computer program where the user issues commands to the program in the form of successive lines of text (command lines).
 
-Throughout the course we will emphasize use of the terminal and executing commands within it as our modus operandi.
+Throughout the course we will emphasize the use of the terminal and executing commands within it as our modus operandi.
 
 ### Windows Users
 
@@ -38,7 +38,7 @@ We will explain what all this means in the first day or so of the course.
 {{% tip %}}
 
 Why Cygwin?
-* We will uses Cygwin as our command line tool, and unlike other Windows shells such as PowerShell it uses Unix syntax.
+* We will use Cygwin as our command line tool, and unlike other Windows shells such as PowerShell it uses Unix syntax.
 *  Anywhere throughout the remainder of the installation guide where we suggest you to enter a command into a terminal, enter the text-based command into your Cygwin terminal followed by pressing `Return`, for example:
 
         userName@computerName: ~$ whoami
@@ -57,7 +57,7 @@ Should return your username.
 
 A command line interface comes already installed with MacOS.
 
-You will need to install some other software from the terminal thoughout the course, so it will be useful to install some additional "command line tools" now:
+You will need to install some other software from the terminal throughout the course, so it will be useful to install some additional "command line tools" now:
 
 *   First we want to install X-code command line tools. Open a terminal by searching for it with spotlight, `cmd + spacebar` then type terminal and press `Return` when it appears. Then, copy and paste the following
 
@@ -73,7 +73,7 @@ If you get an answer that the command line tools are already installed, you can 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/homebrew/install/master/install)"
 ```
 
-* To verify that Homebrew installed correctly, enter the following into your terminal
+* To verify that Homebrew is installed correctly, enter the following into your terminal
 ```
 brew doctor
 ```
@@ -82,7 +82,7 @@ And you should see the following output
 Your system is ready to brew
 ```
 
-* Now we can use Homebrew to easily install software. To use the current R version 3.5.1, we want to make sure you have some basic system tools that some packages require. Let's (re)install them real quick. First `libxml2`:
+* Now we can use Homebrew to easily install the software. To use the current R version 3.5.1, we want to make sure you have some basic system tools that some packages require. Let's (re)install them real quick. First `libxml2`:
 
 ```
 brew reinstall libxml2
@@ -90,7 +90,7 @@ brew reinstall libxml2
 
 If you system tells you that it is not yet installed, then try  ```brew install libxml2``` instead.
 
-We also want to link this so that terminal finds it later:
+We also want to link this so that the terminal finds it later:
 
 ```
 echo 'export PATH="/usr/local/opt/libxml2/bin:$PATH"' >> ~/.bash_profile
@@ -103,7 +103,7 @@ brew reinstall openssl
 ```
 Again, if it is already installed, then use ``` brew install openssl``` instead.
 
-Again, we need it to link to terminal:
+Again, we need it to link to the terminal:
 
 ```
 echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bash_profile
@@ -117,13 +117,13 @@ echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bash_profile
 brew install libgit2
 ```
 
-If terminal tells you it is not yet installed, then go for ```brew reinstall libgit2```
+If the terminal tells you it is not yet installed, then go for ```brew reinstall libgit2```
 
 ### Linux Users
 
 To use the current R version, we need to install some system tools. For this open a terminal session with `Ctrl` + `Alt` + `T`.
 
-* Now copy the following command into terminal and press `Enter`:
+* Now copy the following command into the terminal and press `Enter`:
 
 ```
   sudo apt-get install libcurl4-gnutls-dev librtmp-dev
