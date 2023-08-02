@@ -44,7 +44,7 @@ To illustrate why this is important, we should note that in any academic project
 Although the reproducible science community strongly advocates for transparency and openness, there are circumstances in which you are simply constrained by regulations, and you may even be required to take additional measures to prevent data leakage. This, in turn, affects how you should configure your tools and which safety measures you need to take.
 
 {{% example %}}
-Industrial partners may ask you to sign a Non-Disclosure Agreement (NDA) that enforces you to keep the supplied data private. As data leakage can severely harm a company's reputation, this comes with a great responsiblity on your end.
+Industrial partners may ask you to sign a Non-Disclosure Agreement (NDA) that enforces you to keep the supplied data private. As data leakage can severely harm a company's reputation, this comes with a great responsibility on your end.
 
 For example, you may need to use a private (instead of a public) repository, configure 2-factor authentication for your Github account, and use environmental variables as placeholders in your script rather than hard-coded login credentials of databases or APIs).
 {{% /example %}}
