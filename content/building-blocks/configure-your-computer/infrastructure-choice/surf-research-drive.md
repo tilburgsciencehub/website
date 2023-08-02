@@ -22,7 +22,7 @@ SURF services are only available for researchers affiliated with Dutch instituti
 
 ## Obtain an Account
 
-If you are an employee at Tilburg University, you can request access to Research Drive by contacting the **[Research Data Office](https://www.tilburguniversity.edu/intranet/research-support-portal/rdm/advice)**. Ask then a a member of your team to give you access to the appropriate directories you will need for your project(s).
+If you are an employee at Tilburg University, you can request access to Research Drive by contacting the **[Research Data Office](https://www.tilburguniversity.edu/intranet/research-support-portal/rdm/advice)**. Ask then a member of your team to give you access to the appropriate directories you will need for your project(s).
 
 ## Access your Files
 
