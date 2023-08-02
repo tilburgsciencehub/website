@@ -29,7 +29,7 @@ The big questions then become:
 - Which files are up-to-date and do not have to be executed again?
 
 For this purpose, we use a *workflow management system* - or, in technical terms - "build tool".
-Build tools will allow us to control the execution of a set scripts by by running them from the command line.
+Build tools will allow us to control the execution of a set scripts by running them from the command line.
 
 Some reasons we push this topic are:
 
