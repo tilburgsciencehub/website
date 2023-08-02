@@ -13,7 +13,7 @@ aliases:
 ## Installing Stata
 
 **Stata** is a proprietary statistical software frequently used by scientific users.
-First check with your local IT support whether your institution has Stata licenses available.
+First, check with your local IT support whether your institution has Stata licenses available.
 
 If not, you can purchase a copy on [Stata's website](https://www.stata.com/) and follow the [installation guide](https://www.stata.com/install-guide/).
 
@@ -94,7 +94,7 @@ followed by hitting the `Return` key. You can check the Stata version.
 {{% warning %}}
 If you obtain the following error:
 ```bash
-'C:\Program' is not recognized as and internal or external command
+'C:\Program' is not recognized as an internal or external command
 ```
 Add " " to your variable path, for instance
 `"c:\Program Files (x86)\Stata15\StataSE-64.exe"`.
