@@ -34,7 +34,7 @@ Once your request is approved, you can connect to LISA:
 
 **Windows**
 
-- There is more than one way to make a connection, we take PuTTY. If that program is not present on your system, you should install it now: go to the [PuTTY download page] (https://www.putty.org/) and download putty.exe. Start PuTTY and fill in under 'Host Name (or IP address)': lisa.surfsara.nl
+- There is more than one way to make a connection, we take PuTTY. If that program is not present on your system, you should install it now: go to the [PuTTY download page](https://www.putty.org/) and download putty.exe. Start PuTTY and fill in under 'Host Name (or IP address)': lisa.surfsara.nl
 
 - Check the 'Connection type' radio button labelled 'SSH', and click the 'Open' button.
 
