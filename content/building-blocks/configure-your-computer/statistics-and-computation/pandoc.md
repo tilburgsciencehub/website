@@ -54,7 +54,7 @@ The expected output starts with the following information:
 pandoc 1.19.2.1
 
 ```
-Ensure you have at least version 1.15.1 installed.
+Ensure you have at least version 3.1.6 installed.
 
 {{% warning %}}
 Because we want Pandoc available from the command line (it is by default for Mac and Linux), we again need to update our PATH settings.
