@@ -64,7 +64,7 @@ You should see some additional items - "Git Bash here", or "Git GUI here" appear
 
 #### Additional instructions for Mac Users
 
-Download the setup files from the link above. If your system says the file can't be opened (because it is from an unidentified developer), then open it via right-lick and `open`.
+Download the setup files from the link above. If your system says the file can't be opened (because it is from an unidentified developer), then open it via right-click and `open`.
 
 <!--Also install the command-line auto-completion script. For this go to [this website](https://github.com/git/git/raw/master/contrib/completion/git-completion.bash). You should now see a the text file starting with
 
