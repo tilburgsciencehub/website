@@ -11,7 +11,7 @@ aliases:
   - /install/VSCode
 ---
 
-##What is Visual Studio Code
+## What is Visual Studio Code
 Visual Studio Code (VS Code) is a popular open-source code editor developed by Microsoft. It provides a lightweight and versatile environmental for writing and editing code, making it a valuable tool for researchers, programmers and students alike.
 
 In this tutorial, we will guide you through the process of installing VS Code on different operating systems and show you how to install useful extensions to boost your productivity. Let's get started!
