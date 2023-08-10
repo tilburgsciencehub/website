@@ -10,7 +10,7 @@ aliases:
   - /install/make
 ---
 
-## Overview
+## What is Make
 
 [`Make`](https://www.gnu.org/software/make/) is a "build tool", allowing us to control the execution of a set of command line statements to assemble pipelines that define what gets executed when. Using `make`,
 our entire workflow becomes transparent and reproducible.

@@ -9,7 +9,9 @@ aliases:
   - /get/docker
   - /install/docker
 ---
+
 ## What is Docker?
+
 *Docker* is the most common (and is also open-source) version of containerisation, i.e. a form of virtualisation where applications run in isolated **containers** while using a shared operating system (Linux in Docker's case).
 
 ### What are containers?
