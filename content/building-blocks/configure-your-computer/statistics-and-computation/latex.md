@@ -10,9 +10,11 @@ aliases:
   - /install/latex
 ---
 
-## Installing Latex
+## What is Latex 
 
 {{< katex >}}\LaTeX{{< /katex >}} is [a great typesetting system](https://www.latex-project.org) that includes a lot of features that allow to produce scientific documents. Many researchers use Latex to produce their papers and presentations, and many journals require authors to hand in their articles in a TeX format.
+
+## Installing Latex
 
 Latex is free to use. To use the Latex system, a TeX distribution needs to be installed. Detailed instructions for the different platforms are provided below.
 
@@ -59,6 +61,7 @@ Primary author of TeX: D.E. Knuth.
 ```
 
 Note that additional packages for Tex Live should be installed through the apt package manager as well (using `tlmgr` leads to problems due to different versions)
+
 
 ## Installing LyX, a $\LaTeX$ Alternative
 
