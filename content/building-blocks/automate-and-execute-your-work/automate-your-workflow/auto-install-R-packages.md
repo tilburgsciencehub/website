@@ -14,13 +14,15 @@ aliases:
 ## Learning goals
 
 - Detect required packages from R scripts and R markdown files.
-- Compare and install any missing packages from the CRAN repository
+- Compare and install any missing packages from the CRAN repository.
 
 ## Overview
 
 Configuring the essential R packages for your project can be time-consuming. Rather than installing each package individually, there is a simplified approach. You can identify every R package your project requires and automatically auto-install the ones missing from your system. 
 
-All you need to do is save the code block shown below as an Rscript file in the root directory of your R project, such as "install_packages.R". After that, you can either run it directly or execute the command: `Rscript install_packages.R` in the command line.
+All you need to do is save the code block shown below as an Rscript file in the root directory of your R project, as an example, let's name it *install_packages.R*. 
+
+After that, you can either run it directly or execute the command: `Rscript install_packages.R` in the command line.
 
 {{% warning %}}
 
@@ -89,7 +91,7 @@ cat('\nDone!\n\n')
 The output should look like this:
 
 <p align = "center">
-<img src = "../images/success-install-R-packages.png" width="500" style="border:1px solid black;">
+<img src = "../images/success-install-R-packages.png" width="300" style="border:1px solid black;">
 <figcaption> Succesfull packages installation</figcaption>
 </p>
 
