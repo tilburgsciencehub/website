@@ -1,9 +1,9 @@
 ---
 title: "How to Automatically Install R Packages Used in a Project"
 description: "Discover how to identify and auto-install the necessary R packages for a given project."
-keywords: "R, R packages, automatic installation, project setup, code automation, dependency management, find, gist"
+keywords: "R, R packages, automatic installation, project setup, code automation, dependency management, gist, automation"
 #date: 2021-01-06T22:01:14+05:30
-#updated: 
+#updated: 2023-08-11
 weight: 3
 draft: false
 aliases:
@@ -18,9 +18,19 @@ aliases:
 
 ## Overview
 
-You can use the following code to easily find all the the R packages used in a project, and automatically install the uninstalled ones on your machine.
+Configuring the essential R packages for your project can be time-consuming. Rather than installing each package individually, there is a simplified approach. You can identify every R package your project requires and automatically auto-install the ones missing from your system. 
 
-Put this script in the root directory of your R project, and either source it or run it from the command line: ```> Rscript install_packages.R```
+All you need to do is save the code block shown below as an Rscript file in the root directory of your R project, such as "install_packages.R". After that, you can either run it directly or execute the command: `Rscript install_packages.R` in the command line.
+
+{{% warning %}}
+
+Before proceeding, ensure that Rscript.exe is added to your system's PATH environment variable. This ensures that the Rscript command can be recognized and executed from any command prompt or terminal session. If you're unsure how to do this, consult the [R installation guide](https://cran.r-project.org/doc/manuals/r-release/R-admin.html) or your system's documentation on modifying PATH variables.
+
+<p align = "center">
+<img src = "../images/Rscript-not-recognized.png" width="500" style="border:1px solid black;">
+<figcaption> Make sure Rscript.exe command is recognized</figcaption>
+</p>
+{{% /warning %}}
 
 ## Code
 
@@ -75,3 +85,14 @@ if (length(to_be_installed) > 0) {
 cat('\nDone!\n\n')
 ```
 {{% /codeblock %}}
+
+The output should look like this:
+
+<p align = "center">
+<img src = "../images/success-install-R-packages.png" width="500" style="border:1px solid black;">
+<figcaption> Succesfull packages installation</figcaption>
+</p>
+
+## Additional Resources
+- [Efficient ways to install and load R packages](https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/)
+- [Auto-install R packages](https://gist.github.com/mtandon09/4a870bf4addbe46e784059bce0e5d8d6)
