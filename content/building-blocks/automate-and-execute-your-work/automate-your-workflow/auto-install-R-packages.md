@@ -3,12 +3,18 @@ title: "How to Automatically Install R Packages Used in a Project"
 description: "Discover how to identify and auto-install the necessary R packages for a given project."
 keywords: "R, R packages, automatic installation, project setup, code automation, dependency management, find, gist"
 #date: 2021-01-06T22:01:14+05:30
+#updated: 
 weight: 3
 draft: false
 aliases:
   - /install/r-packages
   - /setup/r-environment
 ---
+
+## Learning goals
+
+- Detect required packages from R scripts and R markdown files.
+- Compare and install any missing packages from the CRAN repository
 
 ## Overview
 
