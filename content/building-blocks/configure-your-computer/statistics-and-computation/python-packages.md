@@ -11,6 +11,10 @@ aliases:
   - /install/python-packages
 ---
 
+## What are Python packages 
+
+Python packages are collections of modules and functions that provide additional functionality beyond what is available in the Python standard library. They allow developers to easily extend Python's capabilities by including pre-written code for specific tasks, such as data analysis, web development, machine learning, and more. 
+
 ## Installing Python packages
 
 Anaconda's Python Distribution comes with many of the packages we need to do scientific computing. If you're interested in all the packages included, click [here](https://docs.continuum.io/anaconda/packages/pkg-docs) and go to the Python 3.x tab.
@@ -49,8 +53,17 @@ pip install selenium
 If this succeeded, the last line it printed out should be:
 
 ```
-Successfully installed selenium-3.x.0
+Successfully installed selenium-4.x.0
 ```
+
+{{% tip %}}
+
+In order to update already installed packages on your system use the following command in your terminal: 
+
+```
+pip install --upgrade selenium
+```
+{{% /tip %}}
 
 ### Common problems
 

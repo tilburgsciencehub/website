@@ -11,6 +11,7 @@ aliases:
   - /install/VSCode
 ---
 
+## What is Visual Studio Code
 Visual Studio Code (VS Code) is a popular open-source code editor developed by Microsoft. It provides a lightweight and versatile environmental for writing and editing code, making it a valuable tool for researchers, programmers and students alike.
 
 In this tutorial, we will guide you through the process of installing VS Code on different operating systems and show you how to install useful extensions to boost your productivity. Let's get started!
@@ -30,7 +31,7 @@ Go to the [downloads page](https://code.visualstudio.com/download) and download 
 
 Launching VS code from the command line requires an extra step for Mac users: 
 - Open the Command Palette in VS Code with the shortcut `Cmd+Shift+P` to find the command "Shell Command: Install 'code' command in PATH command." Hit enter. 
-- You should see a confirming message telling you that "the Shell command `code` is succesfully installed in PATH". 
+- You should see a confirming message telling you that "the Shell command `code` is successfully installed in PATH". 
 - Restart the terminal.
 - You can open VS Code in your terminal now by typing `$ code .` and hitting enter!
 
@@ -70,7 +71,7 @@ One of the advantages of VS Code is that there are many *extensions* that make y
     *   `GitLens`: Enhances the Git integration in VS Code by displaying Git blame annotations and other features.
     *   `Pylance`: A language server extension for Python that provides advanced type checking, autocompletion, and code navigation.
     *   `Prettier`: Code formatter that helps maintain consistent code style across your project.
-    *  `Code Runner`: Allows you to run code snippets or entire files in various programming languages from within VS Code.
+    *   `Code Runner`: Allows you to run code snippets or entire files in various programming languages from within VS Code.
     * `Visual Studio IntelliCode`: Enhances IntelliSense by providing AI-assisted code completion based on patterns and practices from thousands of open-source projects.
     * `Bracket Pair Colorizer 2`: Helps identify matching brackets with colors, making code more readable.
     * `Live Share`: Collaborative coding extension that enables real-time sharing and editing of code with other developers.
