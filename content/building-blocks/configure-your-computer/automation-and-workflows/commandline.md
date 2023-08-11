@@ -9,11 +9,13 @@ aliases:
   - /configure/cli
 ---
 
-## Installing Command Line Tools
+## What are Command Line Tools
 
 A *command-line* interface or command language interpreter (CLI), also known as a terminal, is a means of interacting with a computer program where the user issues commands to the program in the form of successive lines of text (command lines).
 
-Throughout the course we will emphasize the use of the terminal and executing commands within it as our modus operandi.
+Throughout the course, we will emphasize the use of the terminal and executing commands within it as our modus operandi. Command line tools are software programs controlled through text-based commands entered in a terminal. They perform tasks like file manipulation, system administration, and data processing. These tools offer efficiency, flexibility, and scripting capabilities, making them valuable for tasks across programming, system management, and data analysis, providing direct access to a computer's operations.
+
+## Installation
 
 ### Windows Users
 

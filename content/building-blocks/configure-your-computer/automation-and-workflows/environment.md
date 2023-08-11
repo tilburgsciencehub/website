@@ -15,6 +15,8 @@ aliases:
 For our workflow to be command line driven, we need to be able to call software from the command line. Whilst much of the software we have installed has automatically made this possible, it is not universally the case.
 Here we will make the extra few changes to complete the installation guide.
 
+## Installation
+
 ### Windows Users
 
 You will need local administration rights for your computer, but you should have these on your personal computers or ones owned by the Department.

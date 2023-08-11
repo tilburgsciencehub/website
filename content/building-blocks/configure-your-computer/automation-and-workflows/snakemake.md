@@ -10,11 +10,13 @@ aliases:
   - /install/snakemake
 ---
 
-## Installing Snakemake
+## What is Snakemake
 
 [Snakemake](https://snakemake.readthedocs.io/en/stable/) is an easy to use workflow management system. Contrary to *make*, which was designed by computer scientists to build software, *snakemake* was designed for academic/professional research in Bioinformatics, so it may feel more intuitive for academic users.
 
 Snakemake is a python package - so we can install using the default python installer, pip.
+
+## Installing Snakemake
 
 ### Mac & Linux Users
 
