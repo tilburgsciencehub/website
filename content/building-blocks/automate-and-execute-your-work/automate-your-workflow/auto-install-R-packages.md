@@ -20,43 +20,51 @@ Put this script in the root directory of your R project, and either source it or
 
 {{% codeblock %}}
 ```R
-# find all source code files in (sub)folders
+# Identify all source code files in (sub)folders
 files <- list.files(pattern='[.](R|rmd)$', all.files=T, recursive=T, full.names = T, ignore.case=T)
 
-# read in source code
-code=unlist(sapply(files, scan, what = 'character', quiet = TRUE))
+# Extract the source code
+code = unlist(sapply(files, scan, what = 'character', quiet = TRUE))
 
-# retain only source code starting with library
+# Filter out only source code that starts with the library command
 code <- code[grepl('^library', code, ignore.case=T)]
 code <- gsub('^library[(]', '', code)
 code <- gsub('[)]', '', code)
 code <- gsub('^library$', '', code)
+code <- gsub('["\']', '', code)  # Remove quotation marks
 
-# retain unique packages
-uniq_packages <- unique(code)
+# Retain only unique package names and trim any white spaces
+uniq_packages <- unique(trimws(code))
 
-# kick out "empty" package names
+# Remove any "empty" package names
 uniq_packages <- uniq_packages[!uniq_packages == '']
 
-# order alphabetically
+# Organize the list alphabetically
 uniq_packages <- uniq_packages[order(uniq_packages)]
 
 cat('Required packages: \n')
-cat(paste0(uniq_packages, collapse= ', '),fill=T)
+cat(paste0(uniq_packages, collapse= ', '), fill=T)
 cat('\n\n\n')
 
-# retrieve list of already installed packages
+# Fetch the list of currently installed packages
 installed_packages <- installed.packages()[, 'Package']
 
-# identify missing packages
-to_be_installed <- setdiff(uniq_packages, installed_packages)
+# Check availability of packages for the current R version
+available_packages <- rownames(available.packages(repos = 'https://cloud.r-project.org'))
+to_be_installed <- setdiff(uniq_packages, intersect(uniq_packages, available_packages))
 
-if (length(to_be_installed)==length(uniq_packages)) cat('All packages need to be installed.\n')
-if (length(to_be_installed)>0) cat('Some packages already exist; installing remaining packages.\n')
-if (length(to_be_installed)==0) cat('All packages installed already!\n')
+if (length(to_be_installed) == length(uniq_packages)) {
+  cat('All packages need to be installed.\n')
+} else if (length(to_be_installed) > 0) {
+  cat('Some packages already exist; installing remaining packages.\n')
+} else {
+  cat('All packages installed already!\n')
+}
 
-# install missing packages
-if (length(to_be_installed)>0) install.packages(to_be_installed, repos = 'https://cloud.r-project.org')
+# Install the missing packages
+if (length(to_be_installed) > 0) {
+  install.packages(to_be_installed, repos = 'https://cloud.r-project.org')
+}
 
 cat('\nDone!\n\n')
 ```
