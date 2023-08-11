@@ -1,12 +1,13 @@
 ---
-title: "Automatically Install R Packages Used in a Project"
-description: "Easily find all the R packages used in a project and automatically install them."
-keywords: "R packages, installation, find, gist"
+title: "How to Automatically Install R Packages Used in a Project"
+description: "Discover how to identify and auto-install the necessary R packages for a given project."
+keywords: "R, R packages, automatic installation, project setup, code automation, dependency management, find, gist"
 #date: 2021-01-06T22:01:14+05:30
 weight: 3
 draft: false
 aliases:
   - /install/r-packages
+  - /setup/r-environment
 ---
 
 ## Overview
