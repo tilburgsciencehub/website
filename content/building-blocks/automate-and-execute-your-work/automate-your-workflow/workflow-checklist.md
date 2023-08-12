@@ -96,9 +96,9 @@ Ensuring your project works across different environments and systems is crucial
 To quickly visualize the structure of your project directories in a tree-like format, you can utilize the `tree` command in your terminal or command prompt.
 {{% /tip %}}
 
-## Additional resources
+## Additional Resources
 
 - Tutorial about [Pipeline Automation using Make](https://tilburgsciencehub.com/tutorials/reproducible-research-and-automation/practicing-pipeline-automation-make/pipeline-automation-overview/).
 - Free open-source Master level course on [Data Preparation and Workflow Management](https://dprep.hannesdatta.com/).
-- Reading about an example of a [Digital Project Folder Structure](https://medium.com/@dcbryan/staying-organized-a-project-folder-structure-7764651ff89f)
+- Reading about an example of a [Digital Project Folder Structure](https://medium.com/@dcbryan/staying-organized-a-project-folder-structure-7764651ff89f).
 
