@@ -288,6 +288,7 @@ def main():
     logging.info('Python HTTP trigger function processed a request.')
 
     response = get_report()
+    pages = get_popular_pages(response)
     
     with open('pages.json', 'w') as f:
         json.dump(pages, f)
