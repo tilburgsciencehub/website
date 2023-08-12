@@ -288,9 +288,6 @@ def main():
     logging.info('Python HTTP trigger function processed a request.')
 
     response = get_report()
-    pages = get_popular_pages(response)
-    with open('static/pages.json', 'w') as f:
-        json.dump(pages, f)
 
     popular_cards = create_popular_cards_json("reproducible,learn")
     
