@@ -295,7 +295,7 @@ def main():
 
     popular_cards = create_popular_cards_json('reproducible,learn')
 
-    # Write Popular Cards JSON
+    # Write Popular Cards
     with open('cards.json', 'w') as f:
         json.dump(popular_cards, f)
 
