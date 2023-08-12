@@ -1,11 +1,12 @@
 ---
-title: "Use this Checklist to Improve Your Project's Structure"
-description: "Audit data and computation efficient projects."
+title: "Use this Checklist to Improve Your Project's Structure and Efficiency"
+description: "Audit data, create and organize efficient projects."
 weight: 7
-keywords: "make, makefile, automation, recipes, workflow"
-date: 2021-01-06T22:01:14+05:30
+keywords: "make, makefile, automation, recipes, checklist, project, plan, workflow, project organization, code structure, project checklist"
+date: 2021-01-06T22:01:14+05:30 #updated 2023-08-12
 aliases:
   - "/audit/workflow-checklist"
+  - "/audit/organize-your-projects"
 ---
 
 ## Overview
