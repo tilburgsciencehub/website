@@ -23,10 +23,13 @@ This building block offers a comprehensive checklist to guide you towards achiev
 ## Checklist
 
 ### Project level
-* Implement a consistent [directory structure](/tutorials/project-management/principles-of-project-setup-and-workflow-management/directories/#working-example): data/src/gen
-* Include [readme with project description](/tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-code/#main-project-documentation) and technical instruction how to run/build the project
-* Store any authentication credentials outside of the repository (e.g., in a JSON file), NOT clear-text in source code
-* Mirror your `/data` folder to a secure backup location; alternatively, store all raw data on a secure server and download relevant files to `/data`
+
+Foundational guidelines that are essential for setting up any project, ensuring clarity and effective organization from the outset:
+
+* Implement a consistent [directory structure](/tutorials/project-management/principles-of-project-setup-and-workflow-management/directories/#working-example): `data/src/gen`.
+* Include [readme](/tutorials/project-management/principles-of-project-setup-and-workflow-management/documenting-code/#main-project-documentation) with project description and technical instructions on how to run/build the project.
+* Store any authentication credentials outside of the repository (e.g., in a JSON file), and NOT in clear-text within the source code.
+* Mirror your `/data` folder to a secure backup location. Alternatively, store all raw data on a secure server and download the relevant files to `/data`.
 
 ### Throughout the Pipeline
 #### File/directory structure  
