@@ -294,9 +294,7 @@ def main():
 
     popular_cards = create_popular_cards_json("reproducible,learn")
 
-    # Write Popular Cards Json
-    with open('static/popular-card.json', 'w') as f:
-        json.dump(popular_cards, f)
-
+    print(popular_cards)
+    
 if __name__ == "__main__":
     main()
