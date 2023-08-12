@@ -9,9 +9,16 @@ aliases:
   - "/audit/organize-your-projects"
 ---
 
+## Learning Goals
+
+- Understand the essential guidelines to structure and maintain a well-organized project.
+- Learn best practices for efficient and reproducible project workflows.
+
 ## Overview
 
-As time goes on, projects tend to become messy which inhibits reproducibility. Hence, we recommend keeping an eye on this housekeeping checklist from time to time.
+As projects progress, they can become disorganized and difficult to navigate. A structured approach not only facilitates collaboration and understanding but also ensures that the project remains efficient and reproducible. 
+
+This building block offers a comprehensive checklist to guide you towards achieving this goal.
 
 ## Checklist
 
