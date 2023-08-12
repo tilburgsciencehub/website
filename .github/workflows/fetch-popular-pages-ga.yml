@@ -2,7 +2,7 @@ name: fetch-popular-pages-ga
 
 on:
   schedule:
-    - cron: "0 12 * * *" # runs at 12:00 UTC everyday
+    - cron: "0 20 * * *" # runs at 20:00 UTC everyday
 
 jobs:
   build:
@@ -21,11 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: execute py script # run sj-gobierno.py to get the latest data
-        #env:
-        #EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
-        #EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-        #EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
+      - name: execute py script 
         run: python scripts/main.py
 
       - name: commit files
@@ -38,5 +34,5 @@ jobs:
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GIT_TOKEN }}
           branch: master
