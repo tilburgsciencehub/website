@@ -5,6 +5,8 @@ keywords: "api, application programming interface"
 #weight: 4
 #date: 2020-11-11T22:02:51+05:30
 draft: false
+icon: "fa-solid fa-database"
+category: "reproducible"
 aliases:
   - /use/api
   - /collect-data/extract-data-api
