@@ -196,152 +196,152 @@
 <!-- Feature divs -->
 
 <!-- 1 -->
-<div class="container mb-5 pb-4 px-0">
-  <div class="row justify-content-center mx-0 buildingBlocksRow">
-		<!-- 1 -->
-    <div class="col-lg-10 col-xl-7 col-22 mb-3">
-      <div class="h-100 p-5 rounded bg-white">
-        <h2 class="text-center heading px-3" style= "font-size: 20px ; line-height: 1 !important">
-          10+ tutorials on research and open science
-        </h2>
-        <!--
-        <ul class="my-4 list-unstyled">
-          <li class="pb-2">
-            <span class="icon link text-primary d-inline-block mr-2"></span>
-            <a href="/practice/pipeline-automation">Create a fully automated pipeline using Make</a>
-          </li>
-          <li class="pb-2">
-            <span class="icon link text-primary d-inline-block mr-2"></span>
-            <a href="/launch/academic-website">Create your own academic or personal website in 15 minutes</a>
-          </li>
-          <li class="pb-2">
-            <span class="icon link text-primary d-inline-block mr-2"></span>
-            <a href="/share/data">Document and share your data and workflow using GitHub</a>
-          </li>
-        </ul>
-        -->
-        <div class="text-center mt-4 mb-0">
-          <a href="/tutorials/">
-            <button class="btn tertiary " >Start with one of our tutorials</button>
-          </a>
+<div class="container mb-3 pb-4 px-0 mt-0 cards-home">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <div class="row justify-content-center mx-0 buildingBlocksRow">
+
+        <div class="col-lg-10 col-xl-8 col-22 mb-3">
+          <div class="h-100 p-4 rounded bg-white">
+            <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
+              Most read building blocks
+            </h2>
+            <ul class="my-2 list-unstyled most-popular-building-blocks" id="most-read-building-blocks-list">
+            </ul>
+          </div>
         </div>
-      </div>
-    </div>
-
-		<!-- 2 -->
-    <div class="col-lg-12 col-xl-7 col-22 mb-3">
-      <div class="h-100 p-5 rounded bg-white">
-        <h2 class="text-center heading px-3" style="font-size: 20px ; line-height: 1 !important">
-          Use our code snippets in your projects right away
-        </h2>
-
-<!--
-        <ul class="my-4 list-unstyled"> 
--->
-          
-					<!-- collect all relevant pages in new array -->
-<!--
-					{{ $s := slice }}
-
-					{{- range where .Site.Pages "Section" "building-blocks" -}} {{ if eq .Params.isParent "true" }} {{- range .Pages -}}
-								{{- range .Pages -}}
-										{{ range .Pages }}
-
-												{{ $s = $s | append . }}
-
-										{{ end }}
-									{{ end }}
-					{{- end -}} {{ end }} {{- end -}}
--->
-					<!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
-<!--
-					{{ range $s.ByPublishDate.Reverse | first 10 | shuffle | first 3 }}
-
-					<li class="pb-2">
-						<span class="icon link text-primary d-inline-block mr-2"></span>
-						<a href="{{ .Permalink }}">{{ .Title }}</a>
-					</li>
-					{{ end }}
--->
-          <!--
-					<li class="pb-2">
-            <span class="icon link text-primary d-inline-block mr-2"></span>
-            <a href="/build/web-app">Build interactive web dashboards with R Shiny</a>
-          </li>
-          <li class="pb-2">
-            <span class="icon link text-primary d-inline-block mr-2"></span>
-            <a href="/learn/versioning">Mirror your code to GitHub and create versions of your project</a>
-          </li>
-          <li class="pb-2">
-            <span class="icon link text-primary d-inline-block mr-2"></span>
-            <a href="/get/doi">Make your code citable by assigning a DOI to your GitHub repository</a>
-          </li>
-          -->
-<!--
-        </ul>
--->
-        <div class="text-center mt-4 mb-0">
-          <a href="/building-blocks/">
-            <button class="btn tertiary">Use a code snippet</button>
-          </a>
+        <div class="col-lg-10 col-xl-8 col-22 mb-3">
+          <div id="most-popular-block-single" class="h-100 p-4 rounded bg-white"
+            style="background-image: url('/img/card-background.svg');background-size: contain;background-position-y:bottom;background-position-x:right;background-repeat: no-repeat;">
+            <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">Titel</h2>
+            <p style="color: #6081a2!important;
+              font-family: acumin-pro,sans-serif;font-size:16px;width:80%">Description</p>
+            <div class="mt-4 mb-0">
+              <a href="/building-blocks/">
+                <button class="btn tertiary ">Start Reading</button>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-		<!-- 3 -->
-    <div class="col-lg-10 col-xl-7 col-22 mb-3">
-      <div class="h-100 p-4 rounded bg-white">
-      <h2 class="text-center heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
-        See our latest content
-      </h2>
-        <ul class="my-2 list-unstyled" >
-
-										{{ $s := slice }}
-
-										<!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
-
-										{{ range where .Site.Pages.ByPublishDate.Reverse "Section" "in" "[building-blocks, tutorials]"  }}
-
-
-											{{ $s = $s | append . }}
-
-                    {{ end }}
-
-										<!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
-
-
-										{{ range $s.ByPublishDate.Reverse | first 2 }}
-
-										<li class="pb-3">
-											<span class="icon link text-primary d-inline-block mr-2"></span>
-											<a href="{{ .Permalink }}">{{ .Title }}<sup style="color: #ffb222;"> new </sup></a>
-										</li>
-										{{ end }}
-                    </ul>
+        <div class="col-lg-10 col-xl-8 col-22 mb-3">
+          <div class="h-100 p-4 rounded bg-white">
+            <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
+              Most read tutorials
+            </h2>
+            <ul class="my-2 list-unstyled most-popular-building-blocks" id="most-read-tutorials-list">
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-10 col-xl-14 col-22 mb-3">
+          <div class="h-100 p-4 rounded bg-white d-flex flex-column card-category-carousel"
+            style="background-image: url('/img/card-icon.png');background-repeat: no-repeat;background-size: 30%;background-position-x: 110%;background-position-y: 190%;">
+            <div class="row mb-4">
+              <div class="col-xl-22 col-lg-20 col-md-22 col-sm-22">
+                <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
+                  Reproducible Research
+                </h2>
+              </div>
+              <div class="col-xl-2 col-lg-3 col-md-2 col-sm-2 carousel-nav">
+                <button style="background-image: none;background-color: transparent;color:#013365"
+                  class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="fa-solid fa-arrow-left" aria-hidden="true"></span>
+                </button>
+                <button style="background-image: none;background-color: transparent;color:#013365"
+                  class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="fa-solid fa-arrow-right" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div class="row" style="margin-top: auto; margin-bottom: auto;">
+              <div class="col-auto">
+                <div id="carouselExample" class="carousel slide h-100" data-bs-ride="carousel">
+                  <div class="carousel-inner h-100">
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-					<!--
-          <li class="pb-2">
-            <span class="icon link text-primary d-inline-block mr-2"></span>
-            <a href="/try/airbnb-workflow">Reproducible science with Make, Stata, Python and R: the AirBnB workflow</a>
-          </li>
-          <li class="pb-2">
-            <span class="icon link text-primary d-inline-block mr-2"></span>
-            <a href="/try/simple-workflow">A simple reproducible workflow with R and LaTeX</a>
-          </li>
-          <li class="pb-2">
-            <span class="icon link text-primary d-inline-block mr-2"></span>
-            <a href="/try/shiny-app">An interactive dashboard with R Shiny of Google's COVID-19 data</a>
-          </li>
-					-->
-<!--
-        </ul>
--->
+        <div class="col-lg-10 col-xl-6 col-22 mb-3">
+          <div class="h-100 p-4 rounded bg-white">
+            <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
+              Recently Published
+            </h2>
+            <ul class="my-2 list-unstyled">
+
+              {{ $s := slice }}
+
+              <!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
+
+              {{ range where .Site.Pages.ByPublishDate.Reverse "Section" "in" "[building-blocks, tutorials]" }}
 
 
+              {{ $s = $s | append . }}
+
+              {{ end }}
+
+              <!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
+
+
+              {{ range $s.ByPublishDate.Reverse | first 2 }}
+
+              <li class="pb-3">
+                <span class="icon link text-primary d-inline-block mr-2"></span>
+                <a href="{{ .Permalink }}">{{ .Title }}<sup style="color: #ffb222;"> new </sup></a>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-10 col-xl-4 col-22 mb-3">
+          <div class="h-100 p-3 rounded bg-white d-flex justify-content-center align-items-center">
+            <div>
+              <h2 class="text-center heading px-3" style="font-size: 20px ; line-height: 1 !important">
+                Use our code snippets in your projects
+              </h2>
+              <div class="text-center mt-4 mb-0">
+                <a href="/building-blocks/">
+                  <button class="btn tertiary ">Use a code snippet</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-10 col-xl-12 col-22 mb-3">
+          <div id="most-popular-tutorial-single" class="h-100 p-4 rounded bg-white text-right d-flex align-items-center"
+            style="background-image: url('/img/card-background-left.svg');background-size: contain;background-repeat: no-repeat;background-position-y:bottom;background-position-x:left;">
+            <div>
+              <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">title</h2>
+              <p style="color: #6081a2!important;
+              font-family: acumin-pro,sans-serif;font-size:16px;width:80%;float:right;">description</p>
+              <div class="mt-4 mb-0">
+                <a href="path">
+                  <button class="btn tertiary ">Start Reading</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-10 col-xl-12 col-22 mb-3">
+          <div class="h-100 p-4 rounded bg-white d-flex flex-column">
+            <div class="row mb-4">
+              <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
+                <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
+                  Learn something new
+                </h2>
+              </div>
+            </div>
+
+            <!-- Items row -->
+            <div class="row" id="itemsRow">
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- 1 on 1 features -->
 
@@ -489,7 +489,7 @@
   body::before {
     content: "";
     position: absolute;
-    top: 960px;
+    top: 1500px;
     width: 100%;
     height: 2400px;
     z-index: -1;
@@ -507,7 +507,40 @@
 
   @media only screen and (max-width: 990px) {
     body::before {
-      top: 2200px;
+      top: 2850px;
+    }
+  }
+
+  @media only screen and (max-width:578px) {
+    body::before {
+      top: 3000px;
+    }
+
+    #most-popular-block-single{
+      background-position-x: 130% !important;
+    }
+
+    .carousel-nav {
+      display: none;
+    }
+
+    .icon-col{
+    flex: 0 0 16.66666667%;
+    max-width: 16.66666667%;
+    }
+
+    .text-col{
+    flex: 0 0 75%;
+    max-width: 75%;
+    }
+
+    .card-category-carousel{
+      background-image:none !important;
+    }
+  }
+
+  @media only screen and (max-width:1339px) {
+    .card-category-carousel{
     }
   }
 </style>

@@ -5,6 +5,8 @@ keywords: "scrape, webscraping, headers, timers, proxies"
 #weight: 3
 #date: 2020-11-11T22:02:51+05:30
 draft: false
+icon: "fa-solid fa-database"
+category: "reproducible"
 aliases:
   - /scrape/avoid-getting-blocked
   - /collect-data/avoid-getting-blocked

@@ -2,17 +2,19 @@ import logging
 import os
 import googleapiclient.discovery
 import json
+import re
 from google.oauth2 import service_account
 import requests
 from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ET
 
 VIEW_ID = "265450145"
-MAX_PAGES = 10
+MAX_PAGES = 5
 SCOPES = ["https://www.googleapis.com/auth/analytics.readonly"]
-SCRIPT_DIR = os.path.dirname(__file__)
-SERVICE_ACCOUNT_FILE = "service_account.json"
-JSON_FILE = os.path.join(SCRIPT_DIR, SERVICE_ACCOUNT_FILE)
+# SCRIPT_DIR = os.path.dirname(__file__)
+# SERVICE_ACCOUNT_FILE = "service_account.json"
+JSON_FILE = "service_account.json"
+# JSON_FILE = os.path.join(SCRIPT_DIR, SERVICE_ACCOUNT_FILE)
 
 credentials = service_account.Credentials.from_service_account_file(
     JSON_FILE, scopes=SCOPES
@@ -24,33 +26,21 @@ analytics = googleapiclient.discovery.build(
 
 def get_report():
     body = {
-        "reportRequests": [
-            {
-                "viewId": VIEW_ID,
-                "dateRanges": [{"startDate": "56daysAgo", "endDate": "today"}],
-                "metrics": [{"expression": "ga:users"}],
-                "dimensions": [
+    "reportRequests": [
+        {
+            "viewId": VIEW_ID,
+            "dateRanges": [{"startDate": "56daysAgo", "endDate": "today"}],
+            "metrics": [{"expression": "ga:users"}],
+            "dimensions": [
                 {"name": "ga:pagePath"},
                 {"name": "ga:pageTitle"}
-                ],
-                "orderBys": [{"fieldName": "ga:users", "sortOrder": "DESCENDING"}],
-            }
-        ]
-    }
-    return analytics.reports().batchGet(body=body).execute()
+            ],
+            "orderBys": [{"fieldName": "ga:users", "sortOrder": "DESCENDING"}],
+        }
+    ]
+}
 
-def get_popular_pages(response):
-    print("Fetching popular pages...")
-    popular_pages = []
-    reports = response.get("reports", [])
-    if reports:
-        report = reports[0]
-        for row in report.get("data", {}).get("rows", []):
-            popular_pages.append(row["dimensions"][0])
-    filtered = [page for page in popular_pages]
-    if len(filtered) > MAX_PAGES:
-        filtered = filtered[:MAX_PAGES]
-    return filtered
+    return analytics.reports().batchGet(body=body).execute()
 
 # Fetch Description
 # page_path: url of the page to retrieve the description from
@@ -284,22 +274,12 @@ def create_popular_cards_json(input_categories):
     return data_dict
 
 def main():
-    
-    logging.info('Python HTTP trigger function processed a request.')
 
-    response = get_report()
-    pages = get_popular_pages(response)
-    
-    with open('pages.json', 'w') as f:
-        json.dump(pages, f)
+    popular_cards = create_popular_cards_json("reproducible,learn")
 
-    popular_cards = create_popular_cards_json('reproducible,learn')
-
-    # Write Popular Cards
-    with open('cards.json', 'w') as f:
+    # Write Json
+    with open('static/popular-card.json', 'w') as f:
         json.dump(popular_cards, f)
 
-    print(popular_cards)
-    
 if __name__ == "__main__":
     main()
