@@ -1,6 +1,6 @@
 ---
 title: "Intro to IV Estimation"
-description: "This is an intro to IV estimation"
+description: "A short introduction to estimation voa instrumental variables"
 keywords: "iv, causal inference, difference-in-difference, DID, R, regression, model, iv, instrumental variable "
 draft: false
 weight: 5
@@ -63,7 +63,7 @@ lm(data=mroz, wage~educ)
 {{% /codeblock %}}
 
 
-However, this model likely suffers from endogeneity due to omitted variable bias. An employee's innate ability is likely correlated to their wages and to the level of education they have attained. As a result, the OLS estimate of the  effect of education and wages is an inconsistent estimate because this variable is omitted from the model.
+This model likely suffers from endogeneity due to omitted variable bias. An employee's innate ability is likely correlated to their wages and to the level of education they have attained. As a result, the OLS estimate of the  effect of education and wages is an inconsistent estimate because this variable is omitted from the model.
 
 A possible solution is to use `fatheduc` as an instrument for `educ`. This is because a parent's level of education can serve as a proxy for the resources and opportunities available to their child. Parents with higher education often have better income, stability, and access to educational resources. Consequently, they can provide their children with a better education, which, in turn, can increase their earning potential. It is also important to note that a parent's education does not directly influence the wages their child may receive, nor does it have any direct impact on other variables that could potentially affect wages, such as the child's innate ability.
 
