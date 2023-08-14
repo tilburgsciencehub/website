@@ -1,7 +1,7 @@
 ---
 title: "Extract Data From APIs"
 description: "Learn how to extract data from APIs."
-keywords: "api, application programming interface"
+keywords: "api, application programming interface, data collection"
 #weight: 4
 #date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -16,16 +16,16 @@ aliases:
 An Application Programming Interface (*API*) is a version of a website intended for computers, rather than humans, to talk to one another. APIs are everywhere, and most are used to *provide data* (e.g., retrieve a user name and demographics), *functions* (e.g., start playing music from Spotify, turn on your lamps in your "smart home"), or
 *algorithms* (e.g., submit an image, retrieve a written text for what's on the image).
 
-APIs work very similar to websites. At the core, you obtain code that computers can easily understand to process the content of a website, instead of obtaining the source code of a rendered website. APIs provide you with simpler and more scalable ways to obtain data, so you really have to understand how they work.
+APIs work similarly to websites. At the core, you obtain code that computers can easily understand to process the content of a website, instead of obtaining the source code of a rendered website. APIs provide you with simpler and more scalable ways to obtain data, so you must understand how they work.
 
 {{% warning %}}
-In practice, most APIs require user authentication to get started. Each and every API has its own workflow to generate a kind of "password" that you need to include in your requests. Therefore, you should always consult the documentation of the API you plan on using for configuration instructions. In this building block, we cover some of the common themes you encounter when working with APIs and provide examples.
+In practice, most APIs require user authentication to get started. Each API has its workflow to generate a kind of "password" that you need to include in your requests. Therefore, you should always consult the documentation of the API you plan on using for configuration instructions. In this building block, we cover some of the common themes you encounter when working with APIs and provide examples.
 {{% /warning %}}
 
 {{% tip %}}
 One of the major advantages of APIs is that you can directly access the data you need without all the hassle of selecting the right HTML tags. Another advantage is that you can often customize your API request (e.g., the first 100 comments or only posts about science), which may not always be possible in the web interface.
-Last, using APIs is legitimized by a web site (mostly, you will have to pay a license fee to use APIs!). So it's a more stable and legit way to retrieve web data compared to web scraping. That's also why we recommend using an API whenever possible.
-In practice, though, APIs really can't give you all the data you possibly want, and web scraping allows you to access complementary data (e.g., viewable on a website or somewhere hidden in the source code). See our tutorial [web-scraping and api mining](https://tilburgsciencehub.com/tutorials/code-like-a-pro/web-scraping/web-scraping-tutorial/) for all the detials. 
+Last, using APIs is legitimized by a website (mostly, you will have to pay a license fee to use APIs!). So it's a more stable and legit way to retrieve web data compared to web scraping. That's also why we recommend using an API whenever possible.
+In practice, though, APIs really can't give you all the data you possibly want, and web scraping allows you to access complementary data (e.g., viewable on a website or somewhere hidden in the source code). See our tutorial [web-scraping and api mining](https://tilburgsciencehub.com/tutorials/code-like-a-pro/web-scraping/web-scraping-tutorial/) for all the details. 
 
 {{% /tip %}}
 
@@ -66,7 +66,7 @@ search_api("cow")
 {{% /codeblock %}}
 
 *Pagination*  
-Transferring data is costly - not strictly in a monetary sense, but in time. So - APIs are typically very greedy in returning data. Ideally, they only produce a very targeted data point that is needed for the user to see. It saves the web site owner paying for bandwidth and guarantees that the site responds fast to user input.
+Transferring data is costly - not strictly in a monetary sense, but in time. So - APIs are typically very greedy in returning data. Ideally, they only produce a very targeted data point that is needed for the user to see. It saves the website owner from paying for bandwidth and guarantees that the site responds fast to user input.
 
 By default, each page contains 20 jokes, where page 1 shows jokes 1 to 20, page 2 jokes 21 to 40, ..., and page 33 jokes 641 to 649.
 

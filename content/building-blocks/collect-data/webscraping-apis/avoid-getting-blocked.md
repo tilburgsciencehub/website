@@ -1,7 +1,7 @@
 ---
 title: "Avoid Getting Blocked While Scraping"
 description: "Take steps to make sure your scraper keeps on running!"
-keywords: "scrape, webscraping, headers, timers, proxies"
+keywords: "scrape, webscraping, headers, timers, proxies, data extraction, anti-scraping measures"
 #weight: 3
 #date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -13,12 +13,12 @@ aliases:
 ---
 
 ## Overview
-For better or worse, web servers can implement anti-scraping measures. For example, they want to protect users' privacy and avoid overloading their server by blocking unsuspicious traffic. To ensure the consistency of your data collection, it's therefore recommended to take steps to make sure your scraper keeps on running!
+Web servers can implement anti-scraping measures. For example, they want to protect users' privacy and avoid overloading their servers by blocking unsuspicious traffic. To ensure the consistency of your data collection, it's therefore recommended to take steps to make sure your scraper keeps on running!
 
 ## Code
 
 ### Timers
-Briefly pausing between requests, rather than constantly visiting the same website, avoids that your IP address (i.e., numerical label assigned to each device connected to the internet) gets blocked, and you can no longer visit (and scrape) the website. For example, the `sleep` method below forces Python to wait for 5 seconds before it proceeds and executes the print statement.
+To prevent your IP address (i.e., the numerical label assigned to each device connected to the internet) from being blocked and to maintain the ability to visit and scrape websites, it is crucial to briefly pause between requests instead of continuously visiting the same website.
 
 {{% codeblock %}}
 ```Python
@@ -53,6 +53,6 @@ The most common headers types are:
 
 
 ### Proxies
-The idea is that you use an IP address that is not your own. Hence, if get blocked, you switch to another IP address. Either you can use a package like [`scrapy-proxy-pool`](https://github.com/rejoiceinhope/scrapy-proxy-pool) or you use a Virtual Private Network (VPN) to alternate between IP addresses.
+The idea is that you use an IP address that is not your own. Hence, if getting blocked, you switch to another IP address. Either you can use a package like [`scrapy-proxy-pool`](https://github.com/rejoiceinhope/scrapy-proxy-pool) or you use a Virtual Private Network (VPN) to alternate between IP addresses.
 
 There are also many for-pay services, such as https://scraperapi.com, and https://zyte.com.
