@@ -14,7 +14,7 @@ aliases:
 An Application Programming Interface (*API*) is a version of a website intended for computers, rather than humans, to talk to one another. APIs are everywhere, and most are used to *provide data* (e.g., retrieve a user name and demographics), *functions* (e.g., start playing music from Spotify, turn on your lamps in your "smart home"), or
 *algorithms* (e.g., submit an image, retrieve a written text for what's on the image).
 
-APIs work very similar to websites. At the core, you obtain code that computers can easily understand to process the content of a website, instead of obtaining the source code of a rendered website. APIs provide you with simpler and more scalable ways to obtain data, so you must understand how they work.
+APIs work similarly to websites. At the core, you obtain code that computers can easily understand to process the content of a website, instead of obtaining the source code of a rendered website. APIs provide you with simpler and more scalable ways to obtain data, so you must understand how they work.
 
 {{% warning %}}
 In practice, most APIs require user authentication to get started. Each API has its workflow to generate a kind of "password" that you need to include in your requests. Therefore, you should always consult the documentation of the API you plan on using for configuration instructions. In this building block, we cover some of the common themes you encounter when working with APIs and provide examples.
