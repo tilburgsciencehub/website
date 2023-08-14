@@ -13,9 +13,8 @@ aliases:
 
 # Overview
 
-Researcher often work with both R and SPSS, so it is helpful to work with `.sav` files in R, especially for data cleaning and more advanced analysis and visualization. SPSS is not an open source software, so using it is generally not best practice for making your research FAIR. Regardless, SPSS is widely used and many workflows use it in conjunction with R (or a different programming language). The `.sav` file format actually comes with a handy feature for FAIR research compared to simple `.csv` files, which is the fact that variables can not only be given a name but also a label. This way, you can easily assign metadata to your data right at the beginning of your analysis and carry it along all the way until you publish your data in a repository.
-
-While working with SPSS and labelled data in R is not particularly hard, it can be quite confusing to chose the right approach. There are several packages available on [CRAN](https://cran.r-project.org/index.html) that offer more or less the same functionality in working with labelled data, but some of them don't work well in conjunction with each other and most of them don't offer all the features you might need. This building block is intended to guide you through the tasks you will find yourself doing most often when working with SPSS data in R.
+Researchers often work with both R and SPSS, so it is helpful to work with `.sav` files in R.
+While working with SPSS data in R is not particularly hard, it can be quite confusing to chose the right approach. There are several packages available on [CRAN](https://cran.r-project.org/index.html) that offer more or less the same functionality, but some of them don't work well in conjunction with each other and most of them don't offer all the features you might need. This building block is intended to guide you through the tasks you will find yourself doing most often when working with SPSS data in R.
 
 ## Required packages
 
