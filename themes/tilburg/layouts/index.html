@@ -253,7 +253,7 @@
               </div>
             </div>
             <div class="row" style="margin-top: auto; margin-bottom: auto;">
-              <div class="col-auto">
+              <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
                 <div id="carouselExample" class="carousel slide h-100" data-bs-ride="carousel">
                   <div class="carousel-inner h-100">
                   </div>
@@ -268,29 +268,28 @@
               Recently Published
             </h2>
             <ul class="my-2 list-unstyled">
-
               {{ $s := slice }}
-
-              <!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
-
+              {{ $displayedTitles := dict }}
+            
               {{ range where .Site.Pages.ByPublishDate.Reverse "Section" "in" "[building-blocks, tutorials]" }}
-
-
-              {{ $s = $s | append . }}
-
+                {{ $title := .Title }}
+                {{ if not (index $displayedTitles $title) }}
+                  {{ $s = $s | append . }}
+                  {{ $displayedTitles = merge $displayedTitles (dict $title true) }}
+                {{ end }}
               {{ end }}
-
-              <!-- loop through array of pages, and show randomly 3 out of the 10 most recent ones -->
-
-
-              {{ range $s.ByPublishDate.Reverse | first 2 }}
-
-              <li class="pb-3">
-                <span class="icon link text-primary d-inline-block mr-2"></span>
-                <a href="{{ .Permalink }}">{{ .Title }}<sup style="color: #ffb222;"> new </sup></a>
-              </li>
+            
+              {{ with $s.ByPublishDate.Reverse | first 3 }}
+                {{ range . }}
+                  <li class="pb-3">
+                    <span class="icon link text-primary d-inline-block mr-2"></span>
+                    <a href="{{ .Permalink }}">{{ .Title }}<sup style="color: #ffb222;"> new </sup></a>
+                  </li>
+                {{ end }}
               {{ end }}
             </ul>
+            
+            
           </div>
         </div>
         <div class="col-lg-10 col-xl-4 col-22 mb-3">

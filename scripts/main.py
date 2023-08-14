@@ -77,9 +77,11 @@ def fetch_cards_popular_pages(response, path_prefix):
         for row in report.get("data", {}).get("rows", []):
             page_path = row["dimensions"][0]
             page_title = row["dimensions"][1]
+            if "- Tilburg Science Hub" in page_title:
+                page_title = page_title.strip('Tilburg Science Hub').strip('-')
             if page_path.startswith(path_prefix) and page_path != path_prefix and page_title != "(not set)":
                 popular_pages.append({"path": page_path, "title": page_title})
-    filtered = popular_pages[:MAX_PAGES]
+    filtered = popular_pages[:5]
     return filtered
 
 # Collect Number 1 From BB or Tutorials (including description)
@@ -96,6 +98,8 @@ def get_most_popular_page(response, path_prefix):
         for row in report.get("data", {}).get("rows", []):
             page_path = row["dimensions"][0]
             page_title = row["dimensions"][1]
+            if "- Tilburg Science Hub" in page_title:
+                page_title = page_title.strip('Tilburg Science Hub').strip('-')
             users = int(row["metrics"][0]["values"][0])  # Convert users to an integer
             if page_path.startswith(path_prefix) and page_path != path_prefix and page_title != "(not set)":
                 if users > max_users:
@@ -286,6 +290,11 @@ def create_popular_cards_json(input_categories):
 def main():
     
     logging.info('Python HTTP trigger function processed a request.')
+    
+    # Navigate to the root folder (one level up from the current notebook file)
+    notebook_path = os.path.abspath('')
+    root_folder = os.path.abspath(os.path.join(notebook_path, '../static'))
+    os.chdir(root_folder)
 
     response = get_report()
     pages = get_popular_pages(response)
@@ -294,9 +303,10 @@ def main():
         json.dump(pages, f)
 
     popular_cards = create_popular_cards_json('reproducible,learn')
+    cards_file_path = os.path.join(root_folder, 'cards.json')
 
-    # Write Popular Cards
-    with open('cards.json', 'w') as f:
+    # Write Popular Cards to the 'cards.json' file in the 'static' folder
+    with open(cards_file_path, 'w') as f:
         json.dump(popular_cards, f)
 
     print(popular_cards)
