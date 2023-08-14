@@ -1,9 +1,8 @@
 name: fetch-popular-pages-ga
 
 on:
-  push:
-    branches: [ master ]
-
+  schedule:
+    - cron: "0 12 * * *" # runs at 12:00 UTC everyday
 jobs:
   build:
     runs-on: ubuntu-latest
