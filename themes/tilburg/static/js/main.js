@@ -651,7 +651,7 @@ $(".takeTour").on("click", (event) => {
 // Fill Cards Dynamically
 $(document).ready(function () {
   $('.cards-home').ready(function () {
-    fetch('/popular-card.json')
+    fetch('/cards.json')
       .then(response => response.json())
       .then(data => {
         // Building Blocks
@@ -669,8 +669,7 @@ $(document).ready(function () {
           const linkElement = document.createElement('a');
           linkElement.href = building_block.path;
 
-          let title_raw = building_block.title.split("-");
-          const title = title_raw[title_raw.length - 2];
+          const title = building_block.title
 
           linkElement.textContent = title;
 
@@ -694,8 +693,7 @@ $(document).ready(function () {
           const linkElement = document.createElement('a');
           linkElement.href = tutorial.path;
 
-          let title_raw = tutorial.title.split("-");
-          const title = title_raw[title_raw.length - 2].trim();
+          const title = tutorial.title
 
           linkElement.textContent = title;
 
