@@ -31,7 +31,7 @@ Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}, i = 1,...,n, t = 1,...,T,
 we assume the following: 
 
 1. Zero conditional mean: $E(u_{it}|X_{i1},...,X_{iT}) = 0$.
-2. Observations across entities are i.d.d. draws from their joint distribution.
+2. Observations across entities are i.i.d. draws from their joint distribution.
 3. Large outliers are unlikely.
 4. There is no perfect collinearity. 
 
