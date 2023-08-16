@@ -176,9 +176,9 @@ git log
 **Exclude or remove files from tracking**
 
 Want to avoid tracking specific files and folders from versioning? For example, there is no point in tracking *generated files* in `/gen`, as these files are purely created based on source code in `/src` (which, in
-turn, you *do* would like to track). Also, large data sets shouldn't be versioning, given the upload limit at GitHub. Learn how to exclude files and directories from tracking [here](../git-ignore).
+turn, you *do* would like to track). Also, large data sets shouldn't be versioning, given the upload limit at GitHub. Learn how to exclude files and directories from tracking in this [building block](../git-ignore).
 
-Similarly, you should not store any sensitive information (such as passwords or API keys) in your code. Similarly, you may have accidently committed a large data set and would like to take it out from the repository entirely? [Here's how!](../remove-files.md).
+Similarly, you should not store any sensitive information (such as passwords or API keys) in your code. Similarly, you may have accidently committed a large data set and would like to take it out from the repository entirely? This [building block](../remove-files.md) teaches you how to remove sensitive or large files from your repository. 
 
 {{% /tip %}}
 
@@ -210,9 +210,21 @@ We provide an introduction to branching and branch naming strategies in addition
 *  [Git Branching Strategies](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/git-branching-strategies/). This building block explains several Git Branching Strategies and its own set of advantages and disadvantages.
 *  [Best Practices for Naming Git Branches](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/naming-git-branches/). This building block covers useful practices for naming branches to ensure a clear and structured repository.
 
-## See also
 
-Check out the useful links below to learn more about Git and Github:
+{{% summary %}}
+In this building block, you've gained essential skills to use Git and GitHub for efficient version control and collaboration on coding projects.
+
+The following points summarize this building block:
+- **Git** is an open-source version control system that enables tracking of source files and changes. It allows you to revert to previous file versions and collaborate seamlessly with team members.
+- **GitHub** is an online hosting service that complements Git, providing features like code backup, synchronization across devices, and collaborative project work. GitHub offers additional tools such as Issues for task management and discussion, and Projects for organized project management.
+- You can set up Git on your local machine by configuring your name and email address. 
+- Git organizes your code in so-called **repositories**. You can either create a repository for new or existing projects, or join existing repositories. 
+- **Branches** allow development of new features without affecting the main project. Explore different Git branching strategies and naming best practices.
+{{% /summary %}}
+
+
+## Valuable links
+Continue expanding your Git and GitHub knowledge with these valuable links:
 
 - [Lessons at Software Carpentry](https://software-carpentry.org/lessons/): Free tutorials covering various programming and version control concepts, including Git and GitHub. 
 - [GitHub Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf): An essential cheat sheet to swiftly access and master crucial Git and GitHub commands.  
