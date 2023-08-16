@@ -93,20 +93,14 @@ Git to start versioning your files from now onwards.
 Just navigate to your main project directory, open `Git bash`, and
 type
 
-{{% codeblock %}}
 ```bash
 # initialize a new repository
 git init
 ```
-
-{{% /codeblock %}}
-
-
 #### Clone an existing repository to your local computer
 
 If you already have your own GitHub repository, or have become a member of the GitHub repository of a team member, you can just "clone" these repositories to your local computer.
 
-{{% codeblock %}}
 ```bash
 # clone an existing repository from Github to local PC
 git clone "[url]"
@@ -115,8 +109,6 @@ git clone "[url]"
 git clone "url" my-project # will clone the repository to the folder `my-project`.
 
 ```
-{{% /codeblock %}}
-
 {{% tip %}}
 __Start with example code__
 
@@ -145,7 +137,6 @@ you can roll back to later.
 gathered on a so-called "staging area" using the command `git add`. You can use multiple
 of these commands after each other. Then, in a second step, the changes are saved - or, in Git terminology - "committed". The command for this is `git commit`. See below for an example, which also adds a few other useful commands.
 
-{{% codeblock %}}
 ```bash
 # show files or directories that were changed (or that still need to be added)
 # files that are already in the staging area are green; files that are not
@@ -171,7 +162,6 @@ git commit -m "message"
 # optionally, use git log to see the versioning history
 git log
 ```
-{{% /codeblock %}}
 
 {{% tip %}}
 **Exclude or remove files from tracking**
@@ -186,7 +176,6 @@ Similarly, you should not store any sensitive information (such as passwords or 
 #### Synchronize your changes with a server
 Everyone can sync their local changes with the remote repository on GitHub. You can also "download" changes to your local repository from the remote repository.
 
-{{% codeblock %}}
 ```bash
 # (1) DOWNLOAD AND MERGE CHANGES
 
@@ -202,8 +191,6 @@ git merge # merges changes with your local files
 # upload all local branch commits to GitHub
 git push
 ```
-
-{{% /codeblock %}}
 
 ### Branching
 
