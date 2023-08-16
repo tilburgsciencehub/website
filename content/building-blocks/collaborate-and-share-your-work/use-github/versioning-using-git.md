@@ -85,14 +85,6 @@ For example, this [example-make-workflow](https://github.com/rgreminger/example-
 
 [screenshot]
 
-{{% tip %}}
-**Start with example code**
-Cloning is another fantastic way to use the work of others to start your own. For example, you can type `git clone "https://github.com/rgreminger/example-make-workflow"` to clone a copy of the example workflow using R and make (see also the [example projects](/examples)).
-
-You can also take a sneak preview of one of the thousands of projects hosted on GitHub? Just note down the
-URL of the repository (e.g., `https://github.com/[username]/[project-name]`), and clone the repository to your local computer.
-{{% /tip %}}
-
 #### Create a new repository for an existing project
 
 Chance is you are already working on a project, and you'd like to adopt
@@ -118,6 +110,15 @@ git clone "[url]"
 git clone "url" my-project # will clone the repository to the folder `my-project`.
 
 ```
+
+{{% tip %}}
+**Cloning to start with example code**
+
+Cloning is a fantastic way to use the work of others to start your own. For example, you can type `git clone "https://github.com/rgreminger/example-make-workflow"` to clone a copy of the example workflow using R and make (see also the [example projects](/examples)).
+
+You can also take a sneak preview of one of the thousands of projects hosted on GitHub? Just note down the
+URL of the repository (e.g., `https://github.com/[username]/[project-name]`), and clone the repository to your local computer.
+{{% /tip %}}
 
 {{% tip %}}
 **Storing your Git repositories**
@@ -210,6 +211,15 @@ We provide an introduction to branching and branch naming strategies in addition
 *  [Git Branching Strategies](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/git-branching-strategies/). This building block explains several Git Branching Strategies and its own set of advantages and disadvantages.
 *  [Best Practices for Naming Git Branches](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/naming-git-branches/). This building block covers useful practices for naming branches to ensure a clear and structured repository.
 
+## Valuable links
+Continue expanding your Git and GitHub knowledge with these valuable links:
+
+- [Lessons at Software Carpentry](https://software-carpentry.org/lessons/): Free tutorials covering various programming and version control concepts, including Git and GitHub. 
+- [GitHub Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf): An essential cheat sheet to swiftly access and master crucial Git and GitHub commands.  
+- [Tutorial on using Git at the University of Zürich](https://github.com/pp4rs/2020-uzh-course-material/blob/master/11-version-control/slides/git-local.pdf): A tutorial offering insights and practical guidance on using Git for version control.
+- [Introduction to Git](https://www.datacamp.com/courses/introduction-to-git): An introductory interactive DataCamp course to grasp the fundamentals of Git version control, perfect for beginners. 
+- [Git for Data Scientists](https://www.datacamp.com/courses/introduction-to-git-for-data-science): A DataCamp course tailored for Data Scientists that explores Git's application in data science projects. 
+- [GitHub Concepts](https://www.datacamp.com/courses/github-concepts): A DataCamp course that can help you enhance your understanding of GitHub's core concepts and functionalities, and provides insights into collaborative coding, project management, and more.
 
 {{% summary %}}
 In this building block, you've gained essential skills to use Git and GitHub for efficient version control and collaboration on coding projects.
@@ -221,17 +231,6 @@ The following points summarize this building block:
 - Git organizes your code in so-called **repositories**. You can either create a repository for new or existing projects, or join existing repositories. 
 - **Branches** allow development of new features without affecting the main project. Explore different Git branching strategies and naming best practices.
 {{% /summary %}}
-
-
-## Valuable links
-Continue expanding your Git and GitHub knowledge with these valuable links:
-
-- [Lessons at Software Carpentry](https://software-carpentry.org/lessons/): Free tutorials covering various programming and version control concepts, including Git and GitHub. 
-- [GitHub Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf): An essential cheat sheet to swiftly access and master crucial Git and GitHub commands.  
-- [Tutorial on using Git at the University of Zürich](https://github.com/pp4rs/2020-uzh-course-material/blob/master/11-version-control/slides/git-local.pdf): A tutorial offering insights and practical guidance on using Git for version control.
-- [Introduction to Git](https://www.datacamp.com/courses/introduction-to-git): An introductory interactive DataCamp course to grasp the fundamentals of Git version control, perfect for beginners. 
-- [Git for Data Scientists](https://www.datacamp.com/courses/introduction-to-git-for-data-science): A DataCamp course tailored for Data Scientists that explores Git's application in data science projects. 
-- [GitHub Concepts](https://www.datacamp.com/courses/github-concepts): A DataCamp course that can help you enhance your understanding of GitHub's core concepts and functionalities, and provides insights into collaborative coding, project management, and more.
 
 <!--
 ![Git workflows.](../git.png)
