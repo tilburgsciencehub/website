@@ -1,7 +1,7 @@
 ---
 title: "Get Started with Using Git and GitHub"
 description: "Git is an open-source version control system that allows you to keep track of your source files and the changes you make to them."
-keywords: "git, github, interactive tutorial, versioning, pull, push, fork, share, commit, add"
+keywords: "git, github, interactive tutorial, tutorial,versioning, pull, push, fork, share, commit, add, collaboration, branching, branch, configure, code, share, collaborate, version control, code sharing,"
 weight: 1
 #date: 2020-11-11T22:01:14+05:30
 draft: false
