@@ -73,21 +73,25 @@ Git organizes your code in so-called repositories. You can either create a repos
 #### Create a new repository for a new project
 
 If you would like to start a new project, it's easiest to start
-your repository from one of our [example projects](/examples).
-Just navigate to a project's GitHub page, and select *Use this template* (a green button). Choose a name for your new repository, and proceed with the standard options.
+your repository from one of our [example projects](/examples). 
 
-Note down the URL for your repository (e.g., `https://github.com/tilburgsciencehub/test-repository`).
+- If it is a template project, navigate to a project’s GitHub page, and select *Use this template* (a green button). Choose a name for your new repository, and proceed with the standard options. Note down the URL for your repository (e.g., `https://github.com/tilburgsciencehub/test-repository`).
 
+For example, this [example-make-workflow](https://github.com/rgreminger/example-make-workflow) can be used as a template directly:
+
+[screenshot]
+
+- If it is not a template project, you can fork the repository. Forking creates your own copy of a repository. For example, this example workflow can be forked:
+
+[screenshot]
 
 {{% tip %}}
 **Start with example code**
-
-Cloning is a fantastic way to use the work of others to start your own. For example, you can type `git clone "https://github.com/rgreminger/example-make-workflow"` to clone a copy of the example workflow using R and make (see also the [example projects](/examples)).
+Cloning is another fantastic way to use the work of others to start your own. For example, you can type `git clone "https://github.com/rgreminger/example-make-workflow"` to clone a copy of the example workflow using R and make (see also the [example projects](/examples)).
 
 You can also take a sneak preview of one of the thousands of projects hosted on GitHub? Just note down the
 URL of the repository (e.g., `https://github.com/[username]/[project-name]`), and clone the repository to your local computer.
 {{% /tip %}}
-
 
 #### Create a new repository for an existing project
 
@@ -119,15 +123,15 @@ git clone "url" my-project # will clone the repository to the folder `my-project
 **Storing your Git repositories**
 
 - Ideally, you use a main project folder on your computer, pretty high-up in your folder hierarchy (e.g., 'D:/projects/`) to save the repository.
-- Avoid complicated directory names, so you can navigate quickly to it. In this example, the folder is named `my-project`. 
+- Avoid complicated directory names, so you can navigate quickly to it. In this example, the folder is named `my-project`.
 - While technically feasible, you should avoid storing your Git repositories on Dropbox or Drive as this may lead to synchronization conflicts.
 {{% /tip %}}
 
 ### "Workcycles" to track your changes
 
 When working on your project, you do the following two things:
-- track changes to your project (e.g., such as adding, removing, or changing source files),
-- synchronize your repository with GitHub, so that (a) you make a backup of your changes, and (b) you allow other team members to see your changes, and (c) you see changes that team members (may) have done.
+- Make changes to your project (e.g., such as adding, removing, or changing source files),
+- Synchronize your repository with GitHub, so that (a) you make a backup of your changes, and (b) you allow other team members to see your changes, and (c) you see changes that team members (may) have done.
 
 ![Git workflow.](../git_workflow.png)
 
@@ -203,18 +207,22 @@ Branches separate the main version of your project (the "main" branch) from any 
 
 We provide an introduction to branching and branch naming strategies in additional building blocks:
 
-*  [Git Branching Strategies](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/git-branching-strategies/)
-*  [Best Practices for Naming Git Branches](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/naming-git-branches/)
+*  [Git Branching Strategies](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/git-branching-strategies/). This building block explains several Git Branching Strategies and its own set of advantages and disadvantages.
+*  [Best Practices for Naming Git Branches](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/naming-git-branches/). This building block covers useful practices for naming branches to ensure a clear and structured repository.
 
 ## See also
 
-Want to know even more about how to use Git? 
-Check out the links below for more information:
+Want to learn more about Git and GitHub? 
+Check out the links below:
 
-- [Lessons at Software Carpentry](https://software-carpentry.org/lessons/)
-- [GitHub Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)
+- [Lessons at Software Carpentry](https://software-carpentry.org/lessons/): 
+
+
+
+- [GitHub Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf): An essential cheat sheet to swiftly access and master crucial Git commands.  
 - [Tutorial on using Git at the University of Zürich](https://github.com/pp4rs/2020-uzh-course-material/blob/master/11-version-control/slides/git-local.pdf)
-- [Introduction to Git](https://www.datacamp.com/courses/introduction-to-git)
+- [Introduction to Git](https://www.datacamp.com/courses/introduction-to-git): This DataCamp course explores Git's application in data science projects. 
+
 - [Git for Data Scientists](https://www.datacamp.com/courses/introduction-to-git-for-data-science)
 - [GitHub Concepts](https://www.datacamp.com/courses/github-concepts)
 
