@@ -15,6 +15,17 @@ aliases:
 
 ## Overview
 
+Welcome to this introductory guide for Git and Github. In this building block, we'll help you with the essential skills to start using Git for version control and start collaborating effectively on coding projects. 
+
+The building block consists of the following sections:
+- What is Git & GitHub? 
+- Configuring Git 
+- Creating Repositories
+- Tracking changes
+- Branching
+
+By the end of this building block, you'll have a solid grasp of Git and GitHub, empowering you to manage code versions and collaborate confidently with fellow developers.
+
 ### What is Git?
 
 **Git** is an [open-source version control system](/building-blocks/configure-your-computer/statistics-and-computation/git/), which allows you to keep track of your source files, and the changes you make to them. Using Git, you can roll back to any previous version of a file, and easily collaborate with team members.
