@@ -212,19 +212,14 @@ We provide an introduction to branching and branch naming strategies in addition
 
 ## See also
 
-Want to learn more about Git and GitHub? 
-Check out the links below:
+Check out the useful links below to learn more about Git and Github:
 
-- [Lessons at Software Carpentry](https://software-carpentry.org/lessons/): 
-
-
-
-- [GitHub Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf): An essential cheat sheet to swiftly access and master crucial Git commands.  
-- [Tutorial on using Git at the University of Zürich](https://github.com/pp4rs/2020-uzh-course-material/blob/master/11-version-control/slides/git-local.pdf)
-- [Introduction to Git](https://www.datacamp.com/courses/introduction-to-git): This DataCamp course explores Git's application in data science projects. 
-
-- [Git for Data Scientists](https://www.datacamp.com/courses/introduction-to-git-for-data-science)
-- [GitHub Concepts](https://www.datacamp.com/courses/github-concepts)
+- [Lessons at Software Carpentry](https://software-carpentry.org/lessons/): Free tutorials covering various programming and version control concepts, including Git and GitHub. 
+- [GitHub Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf): An essential cheat sheet to swiftly access and master crucial Git and GitHub commands.  
+- [Tutorial on using Git at the University of Zürich](https://github.com/pp4rs/2020-uzh-course-material/blob/master/11-version-control/slides/git-local.pdf): A tutorial offering insights and practical guidance on using Git for version control.
+- [Introduction to Git](https://www.datacamp.com/courses/introduction-to-git): An introductory interactive DataCamp course to grasp the fundamentals of Git version control, perfect for beginners. 
+- [Git for Data Scientists](https://www.datacamp.com/courses/introduction-to-git-for-data-science): A DataCamp course tailored for Data Scientists that explores Git's application in data science projects. 
+- [GitHub Concepts](https://www.datacamp.com/courses/github-concepts): A DataCamp course that can help you enhance your understanding of GitHub's core concepts and functionalities, and provides insights into collaborative coding, project management, and more.
 
 <!--
 ![Git workflows.](../git.png)
