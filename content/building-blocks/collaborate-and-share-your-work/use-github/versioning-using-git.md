@@ -19,7 +19,7 @@ Welcome to this introductory guide for Git and Github. In this building block, w
 
 The building block consists of the following sections:
 - What is Git & GitHub? 
-- Configuring Git 
+- Configuring Git on a new computer
 - Creating Repositories
 - Tracking changes
 - Branching
@@ -28,31 +28,23 @@ By the end of this building block, you'll have a solid grasp of Git and GitHub, 
 
 ### What is Git?
 
-**Git** is an [open-source version control system](/building-blocks/configure-your-computer/statistics-and-computation/git/), which allows you to keep track of your source files, and the changes you make to them. Using Git, you can roll back to any previous version of a file, and easily collaborate with team members.
-
-Git runs on your computer, and allows you to configure
-so-called repositories that track files and directories.
+**Git** is an open-source version control system which allows you to keep track of your source files, and the changes you make to them. Using Git, you can roll back to any previous version of a file, and easily collaborate with team members. Git runs on your computer, and allows you to configure so-called repositories that track files and directories. Use our building block [Set up Git and Github](/building-blocks/configure-your-computer/statistics-and-computation/git/) to install Git and Github!
 
 ### What is GitHub?
 
-You can optionally use Git in combination with an online hosting service such as [**GitHub**](https://www.github.com), which allows you to backup your code, synchronize your work across multiple computers, or collaborate with others on joint projects. There are several alternatives to GitHub available, and maybe your institution even offers
-its own "Git" services.
+You can optionally use Git in combination with an online hosting service such as [**GitHub**](https://www.github.com), which allows you to backup your code, synchronize your work across multiple computers, or collaborate with others on joint projects. There are several alternatives to GitHub available, and maybe your institution even offers its own "Git" services.
 
 On top of the basic features of Git (like versioning), GitHub offers a range of tools
-that allow you to collaborate with each other more efficiently. A few examples:
+that allow you to collaborate with each other more efficiently. A few examples are:
 - *Issues* are sort of to-do lists, flavored with a discussion board
 - *Projects* are a sort of [*Scrum board*](https://www.visual-paradigm.com/scrum/how-to-use-scrum-board-for-agile-development/).
-
-## Let's Use Git!
 
 {{% tip %}}
 
 **For starters...**
-
 If you've never worked with Git or GitHub before, we recommend you following [this interactive onboarding tutorial](https://github.com/skills/introduction-to-github).
 
 **For more advanced learners..**
-
 There is no better summary of using Git and GitHub than [this official cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf). Download it, print it out or put it on your desktop. Consider it as your best friend for a while.
 
 {{% /tip %}}
