@@ -18,7 +18,8 @@ aliases:
 Welcome to this introductory guide for Git and Github. In this building block, we'll help you with the essential skills to start using Git for version control and start collaborating effectively on coding projects. 
 
 The building block consists of the following sections:
-- What is Git & GitHub? 
+- What is Git 
+- What is GitHub? 
 - Configuring Git on a new computer
 - Creating Repositories
 - Tracking changes
@@ -40,31 +41,28 @@ that allow you to collaborate with each other more efficiently. A few examples a
 - *Projects* are a sort of [*Scrum board*](https://www.visual-paradigm.com/scrum/how-to-use-scrum-board-for-agile-development/).
 
 {{% tip %}}
-
 **For starters...**
 If you've never worked with Git or GitHub before, we recommend you following [this interactive onboarding tutorial](https://github.com/skills/introduction-to-github).
 
 **For more advanced learners..**
 There is no better summary of using Git and GitHub than [this official cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf). Download it, print it out or put it on your desktop. Consider it as your best friend for a while.
-
 {{% /tip %}}
 
 ### Configuring Git on a new computer
 
-To use Git locally, tell Git your name and email address,
-so that any work you do (and potentially sync later) can be linked to your name.
+To use Git on your local machine, tell Git your name and email address. This way, any work you do (and potentially sync later) can be linked to your name.
 
 Open `Git bash`, and type the following commands:
 
-{{% codeblock %}}
 ```bash
-# set the author name for your commits
-git config --global user.name "[name]"
+# Set the author name for your commits
+git config --global user.name "[Your Name]"
 
-# set the author email for your commits
-git config --global user.email "[email address]"
+# Set the author email for your commits
+git config --global user.email "[your.email@example.com]"
 ```
-{{% /codeblock %}}
+
+This ensures every contribution you make is uniquely recognized and properly linked to you. 
 
 ### Create a new repository or join an existing one
 
