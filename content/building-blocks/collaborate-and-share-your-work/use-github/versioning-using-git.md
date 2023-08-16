@@ -18,11 +18,11 @@ aliases:
 Welcome to this introductory guide for Git and Github. In this building block, we'll help you with the essential skills to start using Git for version control and start collaborating effectively on coding projects. 
 
 The building block consists of the following sections:
-- What is Git 
+- What is Git?
 - What is GitHub? 
 - Configuring Git on a new computer
-- Creating Repositories
-- Tracking changes
+- Creating or joining Repositories
+- "Workcycles" to track your changes
 - Branching
 
 By the end of this building block, you'll have a solid grasp of Git and GitHub, empowering you to manage code versions and collaborate confidently with fellow developers.
@@ -54,6 +54,7 @@ To use Git on your local machine, tell Git your name and email address. This way
 
 Open `Git bash`, and type the following commands:
 
+{{% codeblock %}}
 ```bash
 # Set the author name for your commits
 git config --global user.name "[Your Name]"
@@ -61,21 +62,13 @@ git config --global user.name "[Your Name]"
 # Set the author email for your commits
 git config --global user.email "[your.email@example.com]"
 ```
+{{% /codeblock %}}
 
 This ensures every contribution you make is uniquely recognized and properly linked to you. 
 
-### Create a new repository or join an existing one
+### Creating or joining Repositories
 
 Git organizes your code in so-called repositories. You can either create a repository for new or existing projects, or join existing repositories. Keep on reading to find out how.
-
-{{% tip %}}
-__Avoid complicated directory names, or Dropbox/Drive__
-
-- Ideally, you use a main project folder on your computer, pretty high-up in your folder hierarchy (e.g., 'D:/projects/`).
-- Use simple directory names, so you can navigate quickly to it.
-- While technically feasible, you should avoid storing your Git repositories on Dropbox as this may lead to synchronization conflicts.
-
-{{% /tip %}}
 
 #### Create a new repository for a new project
 
@@ -84,6 +77,17 @@ your repository from one of our [example projects](/examples).
 Just navigate to a project's GitHub page, and select *Use this template* (a green button). Choose a name for your new repository, and proceed with the standard options.
 
 Note down the URL for your repository (e.g., `https://github.com/tilburgsciencehub/test-repository`).
+
+
+{{% tip %}}
+**Start with example code**
+
+Cloning is a fantastic way to use the work of others to start your own. For example, you can type `git clone "https://github.com/rgreminger/example-make-workflow"` to clone a copy of the example workflow using R and make (see also the [example projects](/examples)).
+
+You can also take a sneak preview of one of the thousands of projects hosted on GitHub? Just note down the
+URL of the repository (e.g., `https://github.com/[username]/[project-name]`), and clone the repository to your local computer.
+{{% /tip %}}
+
 
 #### Create a new repository for an existing project
 
@@ -97,6 +101,7 @@ type
 # initialize a new repository
 git init
 ```
+
 #### Clone an existing repository to your local computer
 
 If you already have your own GitHub repository, or have become a member of the GitHub repository of a team member, you can just "clone" these repositories to your local computer.
@@ -109,16 +114,16 @@ git clone "[url]"
 git clone "url" my-project # will clone the repository to the folder `my-project`.
 
 ```
+
 {{% tip %}}
-__Start with example code__
+**Storing your Git repositories**
 
-Cloning is a fantastic way to use the work of others to start your own. For example, you can type `git clone "https://github.com/rgreminger/example-make-workflow"` to clone a copy of the example workflow using R and make (see also the [example projects](/examples)).
-
-You can also take a sneak preview of one of the thousands of projects hosted on GitHub? Just note down the
-URL of the repository (e.g., `https://github.com/[username]/[project-name]`), and clone the repository to your local computer.
+- Ideally, you use a main project folder on your computer, pretty high-up in your folder hierarchy (e.g., 'D:/projects/`) to save the repository.
+- Avoid complicated directory names, so you can navigate quickly to it. In this example, the folder is named `my-project`. 
+- While technically feasible, you should avoid storing your Git repositories on Dropbox or Drive as this may lead to synchronization conflicts.
 {{% /tip %}}
 
-### Work on your project in "workcycles"
+### "Workcycles" to track your changes
 
 When working on your project, you do the following two things:
 - track changes to your project (e.g., such as adding, removing, or changing source files),
@@ -194,7 +199,7 @@ git push
 
 ### Branching
 
-Branches separate the main version of your project (the "main" branch), from any experimental code in which you develop new features. This allows members of the team to make changes to the project without immediately affecting the main version of the project. 
+Branches separate the main version of your project (the "main" branch) from any experimental code in which you develop new features. Branches allow team members to make changes to the project without immediately affecting the main version of the project. 
 
 We provide an introduction to branching and branch naming strategies in additional building blocks:
 
