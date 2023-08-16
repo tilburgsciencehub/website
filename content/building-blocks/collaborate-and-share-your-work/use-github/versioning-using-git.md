@@ -15,6 +15,16 @@ aliases:
 
 ## Overview
 
+{{% codeblock %}}
+```bash
+# set the author name for your commits
+git config --global user.name "[name]"
+
+# set the author email for your commits
+git config --global user.email "[email address]"
+```
+{{% /codeblock %}}
+
 ### What is Git?
 
 **Git** is an [open-source version control system](/building-blocks/configure-your-computer/statistics-and-computation/git/), which allows you to keep track of your source files, and the changes you make to them. Using Git, you can roll back to any previous version of a file, and easily collaborate with team members.
@@ -245,4 +255,4 @@ Check out the links below for more information:
     - Push (`git push`) your own local changes to the repository (so that others see your changes)
 5. Other useful commands
     - Use `git checkout` to switch branches
-    - Use `git clone` to clone repositories from GitHub
+    - Use `git clone` to clone repositories from GitHub -->
