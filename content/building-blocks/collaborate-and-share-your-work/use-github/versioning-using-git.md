@@ -79,11 +79,14 @@ your repository from one of our [example projects](/examples).
 
 For example, this [example-make-workflow](https://github.com/rgreminger/example-make-workflow) can be used as a template directly:
 
-[screenshot]
-
+<p align = "center">
+<img src = "../images/exampletemplateproject.png" width="500">
+</p>
 - If it is not a template project, you can fork the repository. Forking creates your own copy of a repository. For example, this example workflow can be forked:
 
-[screenshot]
+<p align = "center">
+<img src = "../images/exampleforking.png" width="500">
+</p>
 
 #### Create a new repository for an existing project
 
