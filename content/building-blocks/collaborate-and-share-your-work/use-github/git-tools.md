@@ -1,7 +1,7 @@
 ---
-title: "Restoring timestamps in Git Repositories"
+title: "Restoring Timestamps in Git Repositories"
 description: "How to restore the time of the cloned git repositories to the original time when they were originally committed"
-keywords: "git, tools, restore, timestamps"
+keywords: "git, tools, restore, timestamps, repository, repo, github, clone, tutorial, python"
 date: 2023-04-30
 weight: 3
 author: "Ana Bianca Luca"
@@ -27,7 +27,6 @@ In this building block, we will lead you step-by-step toward the end goal of ret
 For Linux and Mac platforms, we follow the instructions of the README file from [Git tools](https://github.com/MestreLion/git-tools/) repository, but for Windows, we need to take a somewhat different approach.
 
 ### 1.2 Windows users
-
 The first thing we need to do is to clone the Git tools repository. 
 Next, we need to make sure our computer meets the following requirements:
 - Git
@@ -36,7 +35,7 @@ Next, we need to make sure our computer meets the following requirements:
 - setuptools
 - pyinstaller
 
-- As mentioned in the [README](https://github.com/MestreLion/git-tools/tree/main/windows) of the Windows installation, to upgrade `pip` and `setuptools` to the latest versions we can use:
+As mentioned in the [README](https://github.com/MestreLion/git-tools/tree/main/windows) of the Windows installation, to upgrade `pip` and `setuptools` to the latest versions we can use:
 
 {{% codeblock %}}
 ```bash
@@ -44,7 +43,7 @@ pip.exe install --upgrade --trusted-host pypi.org --trusted-host files.pythonhos
 ```
 {{% /codeblock %}}
 
-- To install the latest version of `pyinstaller` we need to run:
+To install the latest version of `pyinstaller` we need to run:
 
 {{% codeblock %}}
 ```bash
@@ -53,8 +52,8 @@ pip.exe install --trusted-host pypi.org --trusted-host files.pythonhosted.org ^
 ```
 {{% /codeblock %}}
 
-- Then, we need to run the Windows executable file from the Windows folder of the repository: `build_windows_executable.bat`. If everything is successful, there should be a new file created: `dist/git-restore-mtime.exe`. 
-- Lastly, we need to add the path of the Git tools repository to the `PATH` system variables.
+Then, we need to run the Windows executable file from the Windows folder of the repository: `build_windows_executable.bat`. If everything is successful, there should be a new file created: `dist/git-restore-mtime.exe`. 
+Lastly, we need to add the path of the Git tools repository to the `PATH` system variables.
 
 ## 2. Restore repository timestamps
 
