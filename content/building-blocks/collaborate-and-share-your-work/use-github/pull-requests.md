@@ -40,13 +40,13 @@ Can you identify ways in which to contribute to the project?
 
 {{% /example %}}
 
-## Step 2: Run the repository’s code
+## Step 2: Run the code
 
-After installing the required software, you need to run the code to see whether you can actually test your changes to the project later.
+After installing the required software, you need to run the code to see whether you can test your changes to the project later.
 
-- Open the repository on GitHub, and fork it (click on the *fork* button in the upper right corner on Git). This creates a copy of the code in your GitHub account.
+- Open the repository on GitHub, and fork it (click on the *fork* button in the upper right corner on GitHub). This creates a copy of the code in your GitHub account.
 
-- Clone your own fork to the disk. You can do this with `git clone`. The example code below shows how to clone a fork of the Tilburg Science Hub website (Replace your user name).
+- Clone your own forked repository to the disk. You can do this with `git clone`. The example code below shows how to clone a fork of the Tilburg Science Hub website. (Replace your user name.)
 
 {{% codeblock %}}
 ```bash
@@ -58,7 +58,7 @@ After installing the required software, you need to run the code to see whether 
 
 ## Step 3: Make changes
 
-Find stuff that you want to add to the project, or fix! Each new feature that you introduce usually needs to be developed in a separate branch, which allows the repository owner to carefully screen which parts of the project to add to the public version of the main project. The websites are written in Markdown, and you can easily add or change the content!
+Find something that you want to add to the project, or fix! Each new feature that you introduce needs to be developed in a separate branch. This allows the repository owner to carefully screen which parts of the project to add to the public version of the main project. The websites are written in Markdown, and you can easily add or change the content.
 
 1. Create a new branch 
 
@@ -78,10 +78,10 @@ git push -u origin name-of-a-new-feature
 ```
 {{% /codeblock %}}
 
-At this stage, your changes are visible at your forked copy of the repository. The repository owner of the main project doesn't know about these changes yet.
+At this stage, your changes are visible in your forked copy of the repository. The repository owner of the main project doesn't know about these changes yet.
 
 {{% tip %}}
-**Preview the Tilburg Science Hub website with your changes**
+**Preview the Tilburg Science Hub website**
 
 When contributing to Tilburg Science Hub, it is very useful to preview changes and see how they will look on the website. 
 
@@ -112,10 +112,10 @@ Fully done and happy with your changes? Then let the project owner know about yo
 {{% summary %}}
 This guide takes you on a step-by-step explanation journey into open source contribution on GitHub:
 
-1. Get familiar: Explore the repository, read the README page and explore the *Issues* and *Projects* pages. You can found out how you can contribute. 
-2. Run the code: Fork the repository, clone it, and run the code. This sets the stage for your changes. 
-3. Make changes: Create a new branch, make your changes by adding new content or changing existing content. You can use Git commands to manage these changes.
-4. Submit your contribution: When satisfied, initiate a pull request from your fork. Explain your changes, and the project owner might merge your work into the main project. 
+1. **Get familiar**: Explore the repository, read the README page, and explore the *Issues* and *Projects* pages. You can find out how you can contribute. 
+2. **Run the code**: Fork the repository, clone it, and run the code. This sets the stage for your changes. 
+3. **Make changes**: Create a new branch, and make your changes by adding new content or changing existing content. You can use Git commands to manage these changes.
+4. **Submit your contribution**: When satisfied, initiate a pull request from your fork. Explain your changes, and the project owner might merge your work into the main project. 
 
 With these steps, you're set to make your first meaningful open source contribution!
 {{% /summary %}}
