@@ -1,7 +1,7 @@
 ---
 title: "Contribute to Open Source Projects"
 description: "Learn how to contribute to open source projects published on GitHub."
-weight: 3
+weight: 4
 keywords: "github, open source, pull request, collaborate, contribute, git, repository, forking, cloning, science, project, contribution"
 #date: 2021-01-06T22:01:14+05:30
 draft: false
