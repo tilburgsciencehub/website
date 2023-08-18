@@ -35,8 +35,8 @@ This table provides a quick comparison of Git and GitHub:
 |  | Git  | GitHub |
 | --- | --- | --- |
 | Environment | Installed locally | Entirely cloud-based |
-| Functionality | Exclusively Source Code Management (SCM) <br> tasks, like push, pull, <br> commit, fetch and merge | Serves as a centralised location <br> for uploading copies of a Git repository. <br> The GitHub GUI also offers <br> one access control, collaboration <br> features and other project-management tools. |
-| Ownership  | Developed by Linux  | Owned by Microsoft  |
+| Functionality | Exclusively Source Code <br> Management (SCM) tasks, like push,<br> pull, commit, fetch and merge | Serves as a centralised <br> location for uploading copies <br>  of a Git repository. The GitHub <br> GUI also offers one access <br>  control, collaboration <br> features and other  <br> project-management tools. |
+| Ownership  | Linux  | Microsoft  |
 
 Use this [building block](/versioning-using-git) to get started with Git and GitHub.
 
