@@ -4,7 +4,7 @@ description: "GitHub limits the size of files allowed in repositories. Use Git L
 weight: 9
 keywords: "github, git, git-lfs, large files, versioning, organizing, Git LFS, install, large, file, storage"
 #date: 2021-01-06T22:01:14+05:30
-draft: false
+#draft: false
 author: "Andrea Antonacci"
 authorlink: "https://www.tilburguniversity.edu/staff/a-d-antonacci"
 aliases:
@@ -22,14 +22,11 @@ But even if these limits didn't exist, versioning large files would be very impr
 
 A fundamental concept of versioning is that repositories retain every iteration of each file, ensuring a comprehensive historical record. Yet, this meticulous documentation comes with a trade-off. Cloning repositories that encompass multiple versions of large files can rapidly consume disk space and impede fetch times. This situation calls for a more efficient solution.
 
-### Introducing Git Large File Storage (LFS)
-This building block explains the solution to this: **Git Large File Storage (LFS)**! 
-
-The building block is structured into the following sections:
+This building block explains the solution to this: **Git Large File Storage (LFS)**! It is structured into the following sections:
 - Git LFS
-  - 1. Installation
-  - 2. Explicit tracking
-  - 3. Resuming workflow
+  1. Installation
+  2. Explicit tracking
+  3. Resuming workflow
 - Advanced use cases
 - Storing extremely large files
 
@@ -41,9 +38,12 @@ However, sometimes you wish to store raw data with moderate file sizes (between 
 
 In short, Git LFS allows you to version large files while saving disk space and cloning time, using the same Git workflow that you’re used to. It does not keep all your project’s data locally. It only provides the version you actually need in your checked out revision.
 
+{{% tip %}}
 *How Git LFS works*
+
 When you mark a file as LFS file, the extension replaces the actual large file with a small *pointer* on your PC. The actual files - and all their versions - are located on the LFS remote server and *only the pulled* files are stored in a local cache. In other words, when you `pull` to your local repository, the pointer is replaced with the file and only the actual version you've requested gets stored locally.
 {{% /tip %}}
+
 
 {{% summary %}}
 **The benefits of Git LFS:**
@@ -111,7 +111,7 @@ git lfs track "*.png"
 {{% /codeblock %}}
 
 {{% warning %}}
-Note: Always enclose file names in quotes!
+Always enclose file names in quotes!
 {{% /warning %}}
 
 ### 3. Resuming workflow
