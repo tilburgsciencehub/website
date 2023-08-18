@@ -108,7 +108,7 @@ After that, you continue working with `pandas`. You usually want to do this afte
 The entire dataset must fit in the memory before applying the `compute()` function.
 {{% /warning %}}
 
-### See also: Dask Array
+### Dask Array
 [Dask Array](https://docs.dask.org/en/stable/array.html) implements a large subset of `NumPy` API, breaking up the large array into many small arrays. You can use `Dask` Array instead of `NumPy` if you are out of RAM or experiencing performance issues.
 
 You can see the list of functionalities [here](https://docs.dask.org/en/stable/array-api.html).
@@ -119,3 +119,8 @@ You can see the list of functionalities [here](https://docs.dask.org/en/stable/a
 
 However, `Dask` DataFrame doesn't implement all `pandas` functionalities. Therefore, it is a good practice to reduce a large dataset with `Dask` to a manageable level and then switch to `pandas`.
 {{% /summary %}}
+
+### See Also
+
+If you want to learn more about `Dask` and how to use it, check out our building block [Dask in action](https://tilburgsciencehub.com/building-blocks/prepare-your-data-for-analysis/data-preparation/dask-in-action/). There you will find a practical example of how to perform some descriptive and analytics operations over a large dataset with `Dask`.
+ 
