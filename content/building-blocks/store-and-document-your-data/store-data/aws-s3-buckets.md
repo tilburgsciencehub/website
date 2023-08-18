@@ -136,7 +136,7 @@ s3.download_file(your_aws_bucket_name, "remote-object-name.txt", "local-file-nam
 ## See also
 
 - Learn more about [AWS S3](https://aws.amazon.com/s3)
-- Learn more about [`boto3`](https://aws.amazon.com/s3), the AWS SDK for Python
+- Learn more about [`boto3`](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html), the AWS SDK for Python
 - Learn more on how to upload files with [`boto3`](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html)
 - Learn more on how to download files with [`boto3`](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-example-download-file.html)
 
