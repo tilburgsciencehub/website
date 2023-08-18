@@ -111,7 +111,7 @@ You can use the following code snippet to upload files to your bucket through Py
 ```python
 # To upload a file
 # Source: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html
-filetoupload = open("hello.txt", "w")
+filetoupload = "hello.txt"
 
 # Upload the file to S3
 s3.upload_file(filetoupload, your_aws_bucket_name, "remote-object-name.txt")
