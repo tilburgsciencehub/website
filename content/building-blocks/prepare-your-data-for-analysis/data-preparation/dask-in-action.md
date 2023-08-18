@@ -1,7 +1,7 @@
 ---
 title: "Practical Example with Dask"
 description: "Dask in action, a practical example for how to use Dask in a simple analytics task: how is it different from Pandas, how to do descriptive statistics, create new variables, perform grouping, filtering and plotting."
-keywords: "dask, pandas, python, data, statistics"
+keywords: "dask, pandas, python, data, statistics, descriptive statistics, grouping, filtering, large datasets, lazy evaluation"
 date: 2023-04-06
 weight: 2
 author: "Ana Bianca Luca"
@@ -13,11 +13,12 @@ aliases:
 ---
 
 ## Using Dask to Describe Data
-We learned how to [Handle Large Datasets in Python](https://tilburgsciencehub.com/building-blocks/prepare-your-data-for-analysis/data-preparation/large-datasets-python/) in a general way, but now let's dive deeper into it by implementing a practical example. To illustrate how to use Dask, we perform simple descriptive and analytics operations on a large dataset. We use a flights dataset, available at [Kaggle.com](https://www.kaggle.com/datasets/usdot/flight-delays), containing over 5M flight delays and cancellations from 2015. When loaded with `pandas`, the dataframe occupies more than 1.3GB of memory, which would make operations rather slow. Let's load the data with `dask`. For all operations we also provide the equivalent `pandas` code for comparison.
+We learned how to [Handle Large Datasets in Python](https://tilburgsciencehub.com/building-blocks/prepare-your-data-for-analysis/data-preparation/large-datasets-python/) in a general way, but now let's dive deeper into it by implementing a practical example. To illustrate how to use Dask, we perform simple descriptive and analytics operations on a large dataset. We use a flight dataset, available at [Kaggle.com](https://www.kaggle.com/datasets/usdot/flight-delays), containing over 5M flight delays and cancellations from 2015. When loaded with `pandas`, the dataframe occupies more than 1.3GB of memory, which would make operations rather slow. Let's load the data with `dask`. For all operations we also provide the equivalent `pandas` code for comparison.
+
 
 ### Loading the data 
 
-The first thing we need to do is import the `dask` library and load the data. Make sure that the downloaded data is in the same working directory as the Python file of the code. In dask, we do this as follows:
+The first thing we need to do is import the `dask` library and load the data. Make sure that the downloaded data is in the same working directory as the Python file of the code. In Dask, we do this as follows:
 
 {{% codeblock %}} 
 
@@ -46,7 +47,7 @@ flights = pd.read_csv('flights.csv')
 
 
 {{% tip %}}
-The arguments `assume_missing` and `dtype` are added because it is likely that `dask` will raise a _ValueError_ due to its attempts to infer the types of all columns by reading a sample of the data from the start of the file. This attempt is sometimes incorrect, thus it may require to manually specify the type each column should have (with `dtype`) or to assume all integer columns have missing values and request their conversion to float (with `assume_missing`).
+The arguments `assume_missing` and `dtype` are added because it is likely that `dask` will raise a _ValueError_ due to its attempts to infer the types of all columns by reading a sample of the data from the start of the file. This attempt is sometimes incorrect, thus it may require manually specifying the type each column should have (with `dtype`) or assuming all integer columns have missing values and request their conversion to float (with `assume_missing`).
 
 If you don't mention these arguments when reading the data and it raises the error, Python will suggest a possible solution to fixing it. 
 
@@ -54,8 +55,8 @@ If you don't mention these arguments when reading the data and it raises the err
 
 ### Inspecting the data
 
-Now that we loaded the data, let's see how it looks like and find some basic info about it.
-We can check to see in how many partitions the data has been divided and display the data using the following commands:
+Now that we loaded the data, let's see what it looks like and find some basic info about it.
+We can check to see how many partitions the data has been divided and display the data using the following commands:
 
 {{% codeblock %}}
 
@@ -68,7 +69,7 @@ flights.compute()
 ```
 {{% /codeblock %}}
 
-Since `pandas` does not partition a dataset there are not equivalent commands.
+Since `pandas` does not partition a dataset there are no equivalent commands.
 
 
 We can see the column names and shape of the dataframe too. In `dask`:
@@ -78,17 +79,17 @@ We can see the column names and shape of the dataframe too. In `dask`:
 #display dataframe columns
 flights.columns
 
-#check shape of dataframe
+#check the shape of dataframe
 flights.shape  #outputs delayed object
-flights.shape[0].compute() #actually calculates number of rows
+flights.shape[0].compute() #calculates the number of rows
 ```
 {{% /codeblock %}}
 
 Note that the output of the `.shape()` method in `dask` doesn't immediately return output. 
-Instead it gives this: `(Delayed('int-4b01ce40-f552-432c-b591-da8955b3ea9c'), 31)`.
+Instead, it gives this: `(Delayed('int-4b01ce40-f552-432c-b591-da8955b3ea9c'), 31)`.
 This is because `dask` uses lazy evaluation - it delays the evaluation of an expression until its value is needed.
 We use `.compute()` to evaluate the expression.
-Why the delay? It's because to count the number of rows,  `dask` needs to work through each partition and sum of the rows in each.
+Why the delay? It's because to count the number of rows,  `dask` needs to work through each partition and sum the number of the rows in each one.
 More information on lazy evaluation is available in our building block [Handle Large Datasets in Python](https://tilburgsciencehub.com/building-blocks/prepare-your-data-for-analysis/data-preparation/large-datasets-python/). 
 
 If we wanted the column names and shape via `pandas`:
@@ -98,7 +99,7 @@ If we wanted the column names and shape via `pandas`:
 #display dataframe columns
 flights.columns
 
-#check shape of dataframe
+#check the shape of dataframe
 flights.shape 
 ```
 {{% /codeblock %}}
@@ -106,7 +107,7 @@ flights.shape
 
 
 
-In `dask` the `info()` function doesn't give us the output we know from `pandas`, but instead only gives the number of columns, first and last column name and counts each dtype. Alternatively we can do the following to get each dtype and non-null/null counts:
+In `dask` the `info()` function doesn't give us the output we know from `pandas`, but instead only gives the number of columns, the first and last column name and dtype counts. Alternatively, we can do the following to get each dtype and non-null/null counts:
 
 {{% codeblock %}}
 
@@ -198,9 +199,11 @@ We can find this by computing the sum of the airline delays grouped by airlines.
 #sum the total delay per airline with groupby
 flights.groupby(by = 'AIRLINE')['AIRLINE_DELAY'].sum().compute()
 ```
+{{% /codeblock %}}
 
 Or in `pandas`:
 
+{{% codeblock %}}
 ```python
 #sum the total delay per airline with groupby
 flights.groupby(by = 'AIRLINE')['AIRLINE_DELAY'].sum()
@@ -213,7 +216,7 @@ We start by first checking if the data contains delays for all months of the yea
 
 {{% codeblock %}}
 ```python
-#count the unique values for month column to check we get 12
+#count the unique values for the "month" column to check we get 12
 flights['MONTH'].nunique().compute()
 
 #group the average arrival delay per month
@@ -289,11 +292,11 @@ _Output_:
 </p>
 
 
-As such, we can see that the highest average arrival delay is registered in June, with a second highest in February, while September and October register negative values, which mean that on average, arrivals were ahead of schedule. 
+As such, we can see that the highest average arrival delay is registered in June, with the second highest in February, while September and October register negative values, which means that on average, arrivals were ahead of schedule. 
 
 {{% summary %}}
 
-`Dask` is a Python library suitable to use when dealing with larger datasets that don't fit the memory. It uses lazy evaluation, which means it doesn't actually execute operations or commands until actually necessary. Most of the functions are the same as in `pandas`, but remember to add `.compute()` after them if you actually want `dask` to compute the result at that point in your code. 
+`dask` is a Python library suitable to use when dealing with larger datasets that don't fit the memory. It uses lazy evaluation, which means it doesn't  execute operations or commands until actually necessary. Most of the functions are the same as in `pandas`, but remember to add `.compute()` after them if you want `dask` to compute the result at that point in your code. 
 
 {{% /summary %}}
 
