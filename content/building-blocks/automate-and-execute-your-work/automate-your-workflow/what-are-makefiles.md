@@ -54,8 +54,8 @@ targets: prerequisites [separated by spaces]
 dataset.csv: rawdata1.csv clean.R
   R --vanilla < clean.R
 ```
-- `dataset.csv`: the final and cleaned dataset
-- `rawdata1.csv clean.R`: before building `dataset.csv`, the raw data and a specific script to clean the raw data need to exist)
+- `dataset.csv`: the final and cleaned dataset.
+- `rawdata1.csv clean.R`: before building `dataset.csv`, the raw data and a specific script to clean the raw data need to exist.
 - The command `R --vanilla < clean.R` opens R, and runs the script `clean.R`.
 {{% /example %}}
 
