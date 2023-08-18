@@ -23,7 +23,7 @@ When you run Stata within an automated research pipeline (e.g., using a `makefil
 
 To remedy this issue, you can use R to check for any error that may have occurred in the log file. If there was an error, we can make the workflow to interrupt.
 
-## Code
+## Guidelines
 
 We will show you how to simply check the Stata log files for errors and stop the `makefile` if there are any errors.
 
@@ -31,14 +31,14 @@ We will show you how to simply check the Stata log files for errors and stop the
 
 	- Ensure you have installed [Make](/get/make), [Stata](/get/stata) and [R](/get/r/).
 	- Confirm that your Stata do-file is set up to generate a log file. This log file will be the primary source for error detection.
-	- Create an R script called `logcheck.R` that checks for errors and the completion of the do-file from the log file.
+	- Use the below code block to create an R script called `logcheck.R` that checks for errors and the completion of the do-file from the log file.
 
 {{% warning %}}
 It's crucial to add these software installations to your environment variable named "PATH" to ensure seamless integration. If you're unfamiliar with adding tools to the PATH, here's a [helpful resource](https://github.com/alexal1/Insomniac/wiki/Adding-platform-tools-to-the-PATH-environment-variable).
 {{% /warning %}}
 
 
-### Create an R script that checks for errors and completion of the do-file
+### Code
 
 {{% codeblock %}}
 ```R
@@ -68,6 +68,7 @@ cat(paste0('Log file for ', args, ' checked. No errors.'))
 {{% /codeblock %}}
 
 ### Incorporate the check in the Makefile
+
 Here, you can replicate any rule where you run a do-file which creates a log file. We just use some random rule:
 
 {{% codeblock %}}
