@@ -37,7 +37,7 @@ Learn more about AWS credentials [here](https://docs.aws.amazon.com/general/late
 
 ## Code
 
-The following code snippets show how to set up a connection to AWS S3 using Python with boto3, to then carry out some useful related operations including how to list files in your bucket, as well as upload and download them.
+The following code snippets show how to set up a connection with AWS S3 using Python with boto3, to then carry out some useful related operations including how to list files in your bucket, as well as upload and download them.
 
 The first step would be to install boto3 - the AWS SDK for Python - via [pip](/building-blocks/configure-your-computer/statistics-and-computation/python-packages/):
 
