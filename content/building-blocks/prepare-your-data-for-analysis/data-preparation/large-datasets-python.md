@@ -111,7 +111,7 @@ The entire dataset must fit in the memory before applying the `compute()` functi
 ### See also: Dask Array
 [Dask Array](https://docs.dask.org/en/stable/array.html) implements a large subset of `NumPy` API, breaking up the large array into many small arrays. You can use `Dask` Array instead of `NumPy` if you are out of RAM or experiencing performance issues.
 
-You can see the list of functionality [here](https://docs.dask.org/en/stable/array-api.html).
+You can see the list of functionalities [here](https://docs.dask.org/en/stable/array-api.html).
 
 
 {{% summary %}}
