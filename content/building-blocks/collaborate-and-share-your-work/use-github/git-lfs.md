@@ -26,13 +26,14 @@ A fundamental concept of versioning is that repositories retain every iteration 
 This building block explains the solution to this: **Git Large File Storage (LFS)**! 
 
 The building block is structured into the following sections:
-- Git LFS introduction
-- Installation
-- Usage
+- Git LFS
+  - 1. Installation
+  - 2. Explicit tracking
+  - 3. Resuming workflow
 - Advanced use cases
 - Storing extremely large files
 
-## Git LFS introduction
+## Git LFS
 
 Before delving into Git LFS, you should ask yourself whether storing large large files is necessary in the first place. Often, these large files are generated on the basis of existing data and code, and hence can be reconstructed using existing files.
 
@@ -60,7 +61,7 @@ Watch this informative video for a brief explanation on how Git LFS works.
 {{% /tip %}}
 
 
-## 1. Installation 
+### 1. Installation 
 
 - Ensure you have Git installed. If not, follow this [building block](/building-blocks/configure-your-computer/statistics-and-computation/git/) to set it up. 
 
@@ -90,7 +91,7 @@ git lfs install
 
 - If it was successful, you should see the message ```Git LFS initialized```.
 
-## 2. Explicit tracking
+### 2. Explicit tracking
 
 Git LFS doesn't autonomously manage files: you must **explicitly tell it which files to track**.
 
@@ -113,7 +114,7 @@ git lfs track "*.png"
 Note: Always enclose file names in quotes!
 {{% /warning %}}
 
-## 3. Resuming workflow
+### 3. Resuming workflow
 
 Now you can resume your usual Git workflow. You just need to make sure to track the `.gitattributes` file too.
 
@@ -146,7 +147,6 @@ git lfs pull
 
 {{% /tip %}}
 
-
 ## Advanced use cases
 
 For advanced scenarios, consider external LFS servers and storage options. 
@@ -158,11 +158,9 @@ For advanced scenarios, consider external LFS servers and storage options.
 You can follow [this tutorial by Atlassian](https://www.atlassian.com/git/tutorials/git-lfs) for more advanced use cases, like moving a LFS repository between hosts or deleting local LFS files.
 
 
-{{% tip %}}
-**Storing extremely large files**
+## Storing extremely large files
 
 If you're hitting the limits of Git LFS, or only want to store *one* version of a file, object storage (e.g., such as the one on AWS S3) may be a better way to handling large files.
-{{% /tip %}}
 
 {{% summary %}}
 Managing large files within Git repositories can be a challenge due to file size limitations and the storage demands of versioning. Git LFS presents an elegant solution by allowing you to incorporate large files while maintaining a lean local repository. With explicit tracking, effortless integration, and advanced options, Git LFS offers a versatile approach to handling large assets within your Git workflow.
