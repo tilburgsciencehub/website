@@ -14,7 +14,7 @@ aliases:
 
 Discover how to leverage the power of Amazon Simple Storage Service (AWS S3) to store and retrieve files in a fast and secure manner. In this building block, we'll explore how to establish a connection to an AWS S3 bucket, list the objects within it, and upload or download files using Python and the boto3 package. These skills will empower you to seamlessly integrate AWS S3 into your research workflows, boosting your data management capabilities.
 
-## AWS S3 Buckets <!-- Goal of the Building Block -->
+## AWS S3 Buckets 
 
 [Amazon Simple Storage Service](https://aws.amazon.com/s3/) (AWS S3) is an industry-leader object storage service that allows you to store and retrieve any kind of files fast, securely and anywhere in the world - basically Dropbox on steroids. It can be used for a range of use cases, from websites to backups and archives. It can also be particularly useful for research projects - storing a huge amount of raw data, for instance.
 
