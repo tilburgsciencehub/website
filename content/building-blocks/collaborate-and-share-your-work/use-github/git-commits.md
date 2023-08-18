@@ -15,7 +15,7 @@ aliases:
 
 ## Overview
 
-When collaborating on projects, it is important to have conventions for making Git commits to ensure consistency in the way of working. In this building block, we outline some of the most common best practices for Git Commits. In the end, we will be able to answer the questions:
+When collaborating on projects, it is important to have conventions for making Git commits to ensure consistency in the way of working. In this building block, we outline some of the most common best practices for Git commits. In the end, we will be able to answer the questions:
 
 - How large should a commit be? 
 - How often should we make a commit? 

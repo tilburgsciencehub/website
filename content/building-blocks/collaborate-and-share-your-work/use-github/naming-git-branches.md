@@ -12,7 +12,7 @@ aliases:
   - /naming/conventions
 ---
 
-## Best Practices for Naming Git Branches
+## Overview
 Apart from having good [Git Branching Strategies](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/git-branching-strategies/), it is important to follow some naming conventions to ensure proper maintenance of the repository and a clear, structured way of separating tasks.  To avoid confusions and have an organised overview of every feature that is being worked on, we go through seven best practices for naming branches.
 
 ### 1. Use Separators
