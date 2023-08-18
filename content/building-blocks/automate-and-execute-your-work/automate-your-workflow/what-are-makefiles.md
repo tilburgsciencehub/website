@@ -9,6 +9,12 @@ aliases:
   - /use/makefiles
 ---
 
+## Learning goals
+
+- Understand the fundamental elements of a makefile: targets, prerequisites, and instructions.
+- Dive into advanced use cases, including directory naming, phony targets, variable utilization, and executing make through `.bat` files.
+- Recognize the significance and functionality of make for automating tasks in reproducible research.
+
 ## Overview
 
 Makefiles are instructions ("rules") for a computer on how to build "stuff". Think of makefiles as a recipe you may know from cooking ("Baking a cake: First, take some flour, then add milk [...]") - but then for computers.
