@@ -119,9 +119,9 @@ Git Flow is particularly well-suited for **larger development teams** that are w
 ## Summary
 | Strategy | Project Type | Team Size | Collaboration Maturity |
 | --- | --- | --- | --- |
-| **Trunk-Based <br>Development** | For projects with frequent <br> code changes and continuous <br> releases | Smaller <br> teams | High collaboration and <br> communication needes, as all changes <br> are made directly to <br>`main` |
+| **Trunk-Based <br>Development** | For projects with <br> frequent code changes <br> and continuous releases | Smaller <br> teams | High collaboration and  <br> communication needed,<br> as all changes are <br> made directly to`main` |
 | **Feature <br>Branching** | Projects with <br> simultaneous <br> development of <br> different features | Medium or <br>large-sized <br>teams | Moderate collaboration <br> maturity, as changes <br> occur in separate <br> branches before <br> merging into `main` |
-| **Git Flow** | Projects requiring <br> a structured approach  | Larger teams | High collaboration <br> maturity, as changes <br> involve multiple <br> branches and a <br> formalized release <br> process |
+| **Git Flow** | Projects requiring <br> a structured approach  | Larger <br>  teams | High collaboration <br> maturity, as changes <br> involve multiple <br> branches and a <br> formalized release <br> process |
 
 {{% summary %}}
 * **Trunk-Based Development** is a Git branching strategy that emphasizes frequent integration and testing on the `main` branch to ensure a high level of collaboration and continuous delivery.
