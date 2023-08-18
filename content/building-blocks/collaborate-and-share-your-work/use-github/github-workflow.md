@@ -2,7 +2,7 @@
 title: "The GitHub Workflow"
 description: "GitHub flow is a lightweight, branch-based workflow. The GitHub flow is useful for everyone, not just developers."
 keywords: "github, workflow tutorial, branch, pull, push, fork, share, commit, merge, peer review, git"
-weight: 5
+weight: 3
 #date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
