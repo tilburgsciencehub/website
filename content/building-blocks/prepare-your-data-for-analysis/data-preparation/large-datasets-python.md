@@ -1,7 +1,7 @@
 ---
 title: "Handle Large Datasets In Python"
 description: "Dask is a Python library for parallel computing, which is able to perform computations on larger-than-memory datasets."
-keywords: "Python, pandas, Dask, parallel computing, partitions, data preparation, big data, large datasets, memory, RAM"
+keywords: "Python, pandas, Dask, parallel computing, partitions, data preparation, big data, large datasets, memory, RAM, dataframe, numpy, array"
 date: 2022-10-10T22:01:14+05:30
 draft: false
 weight: 1
@@ -10,6 +10,10 @@ authorlink: "https://www.linkedin.com/in/ambroziakp/"
 aliases:
   - /import/large-datsets-python
 ---
+
+
+## Overview
+Discover Dask, a valuable solution to handle large datasets in Python that provides parallel computing functionalities to popular libraries such as Pandas and Numpy. In this building block, you will be introduced to the package Dask. Moreover, you will learn some of Dask's fundamental operations that will allow you to handle and work with large datasets in Python in a much more effective and efficient manner.
 
 ## Memory Errors when working with large datasets
 When trying to import a large dataset to dataframe format with `pandas` (for example, using the `read_csv` function), you are likely to run into `MemoryError`. This error indicates that you have run out of memory in your RAM. `Pandas` uses in-memory analytics, so larger-than-memory datasets won't load. Additionally, any operations performed on the dataframe require memory as well.
@@ -23,6 +27,7 @@ You can check the [memory usage](https://pandas.pydata.org/docs/reference/api/pa
 {{% codeblock %}}
 ```python
 DataFrame.memory_usage(deep=True)
+```
 {{% /codeblock %}}
 
 Moreover, `pandas` only uses a single CPU core to perform computations, so it is relatively slow, especially when working with larger datasets.
@@ -30,17 +35,19 @@ Moreover, `pandas` only uses a single CPU core to perform computations, so it is
 
 
 ## Dask library
-One of the solutions to memory error is to use another library. Here `Dask` comes in handy. `Dask` is a Python library for parallel computing, which is able to perform computations on large datasets while scaling well-known Python libraries such as `pandas`, `NumPy`, and `scikit-learn`.
+One of the solutions to memory errors is to use another library. Here `Dask` comes in handy. `Dask` is a Python library for parallel computing, which can perform computations on large datasets while scaling well-known Python libraries such as `pandas`, `NumPy`, and `scikit-learn`.
 
 `Dask` splits the dataset into a number of partitions. Unlike `pandas`, each `Dask` partition is sent to a separate CPU core. This feature allows us to work on a larger-than-memory dataset but also speeds up the computations on that dataset.
 
 ### Installation
 `Dask` is included by default in the Anaconda distribution. Otherwise, you can also use pip to install everything required for the most common uses of `Dask` or choose to only install the `Dask` library:
-```
+
+{{% codeblock %}}
+```shell
 python -m pip install "dask[complete]"    # Install everything
 python -m pip install dask                # Install only core parts of Dask
-
 ```
+{{% /codeblock %}}
 
 Alternatively, see other installing options [here](https://docs.dask.org/en/stable/install.html).
 
@@ -57,7 +64,7 @@ import dask.dataframe as dd
 # read a single CSV file
 df = dd.read_csv('/path/example-01.csv')
 # read multiple CSV files at once
-df = dd.read.csv('/path/example-*.csv')
+df = dd.read_csv('/path/example-*.csv')
 
 # check the number of partitions
 df.npartitions
@@ -70,7 +77,7 @@ df.to_csv('/path/example-*.csv')
 df.compute().to_csv('/path/example.csv')
 {{% /codeblock %}}
 
-`Dask` DataFrame utilises a great portion of the `pandas` API; therefore, there are a lot of similarities in use. However, `Dask` DataFrame doesn't support all `pandas` features.
+`Dask` DataFrame utilizes a great portion of the `pandas` API; therefore, there are a lot of similarities in use. However, `Dask` DataFrame doesn't support all `pandas'` features.
 
 For the full list of operations, see the [Dask Dataframe documentation](https://docs.dask.org/en/stable/dataframe-api.html).
 
@@ -90,7 +97,7 @@ df['column1'].mean().compute()
 {{% /codeblock %}}
 
 
-In order to convert `Dask` DataFrame to `pandas` DataFrame, you call the `compute()` function on that dataframe:
+To convert a `Dask` DataFrame to a `pandas` DataFrame, you call the `compute()` function on that dataframe:
 {{% codeblock %}}
 ```python
 df = df.compute()
