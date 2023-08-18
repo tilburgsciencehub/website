@@ -12,7 +12,7 @@ aliases:
 ---
 # Overview
 
-As a project grows, managing the numerous code changes can become unwieldy. This is where **version control** comes into play as a fundamental apect of a streamlined workflow. 
+As a project grows, managing the numerous code changes can become unwieldy. This is where **version control** comes into play as a fundamental aspect of a streamlined workflow. 
 
 This building block aims to make you familiar with the GitHub workflow by covering the following key areas:
 - Introduction to Git and GitHub
@@ -28,14 +28,14 @@ This building block aims to make you familiar with the GitHub workflow by coveri
 
 **Git** is an open-source version control system that tracks changes made to a project's codebase. This facilitates efficient collaboration by allowing all team members to work simultaneously on the latest project version or access previous versions to make changes.
 
-[**GitHub**](https://www.github.com) is an online hosting service that not only provides version control but also offers tool for code backup, synchronization, and collaboration. It acts as a centralized hub for collaborative development. 
+[**GitHub**](https://www.github.com) is an online hosting service that not only provides version control but also offers tools for code backup, synchronization, and collaboration. It acts as a centralized hub for collaborative development. 
 
 This table provides a quick comparison of Git and GitHub:
 
 |  | Git  | GitHub |
 | --- | --- | --- |
 | Environment | Installed locally | Entirely cloud-based |
-| Functionality | Exclusively Source Code <br> Management (SCM) tasks, like push,<br> pull, commit, fetch and merge | Serves as a centralised <br> location for uploading copies <br>  of a Git repository. The GitHub <br> GUI also offers one access <br>  control, collaboration <br> features and other  <br> project-management tools. |
+| Functionality | Exclusively Source Code <br> Management (SCM) tasks, <br> like push, pull, commit, <br> fetch and merge | Serves as a centralised <br> location for uploading copies <br>  of a Git repository. The GitHub <br> GUI also offers one access <br>  control, collaboration <br> features, and other  <br> project-management tools. |
 | Ownership  | Linux  | Microsoft  |
 
 Use this [building block](/versioning-using-git) to get started with Git and GitHub.
@@ -56,7 +56,7 @@ The [GitHub Cheatsheet](../github_cheatsheet_tsh.pdf) also summarizes this appro
 
 ### Branching
 
-* The assignee should create a new branch. This can be done in three ways: Use `git branch` or `git checkout -b` on the command line, click the "Add branch" icon in the Github desktop or create the branch on the repository's Github page.
+* The assignee should create a new branch. This can be done in three ways: Use `git branch` or `git checkout -b` on the command line, click the "Add branch" icon on the GitHub desktop, or create the branch on the repository's GitHub page.
 
 * If you are resolving an issue, you can use the "Create a branch" option under Development on the issue page. This will automatically link the branch to the issue.
 
@@ -124,12 +124,12 @@ While for example commenting on fine points of code style from time to time is f
 
 ### Merging
 
-When peer review is complete, the output is finalized, and issue-specific content like the `/issue/` subdirectory has been deleted, the issue branch should be merged back to `master` using a [__squash__ merge](https://help.github.com/articles/about-pull-request-merge-squashing/). You can normally perform this merge automatically from the pull request page on Github.
+When peer review is complete, the output is finalized, and issue-specific content like the `/issue/` subdirectory has been deleted, the issue branch should be merged back to `master` using a [__squash__ merge](https://help.github.com/articles/about-pull-request-merge-squashing/). You can normally perform this merge automatically from the pull request page on GitHub.
 
 Once the merge is complete, you should delete the issue branch.
 
 ## Exceptions to the Standard Workflow
-In some cases we may use simpler workflows, for example by skipping the branch/merge steps and just committing directly to `master`. Here are a few exceptions:
+In some cases, we may use simpler workflows, for example by skipping the branch/merge steps and just committing directly to `master`. Here are a few exceptions:
 
 1. **No issue branch:** It is permissible to skip the step of creating an issue branch and commit changes directly to `master` when all of the following are true:
 - The issue is small in scope and will involve no more than a few commits
@@ -137,12 +137,12 @@ In some cases we may use simpler workflows, for example by skipping the branch/m
 - All commits follow complete runs of relevant build scripts (e.g., `make.py`)
 
 {{% warning %}}
-Separately, for some projects or repositories we may decide to use a simplified workflow where we commit everything to `master` by default. This could happen, for example, if some co-authors are unfamiliar with `git` and prefer the simpler workflow. In such cases we need to pay attention to avoid cases where many people will be working on the same content at the same time. We also impose a strict rule that all commits follow complete runs of `make.py`.
+Separately, for some projects or repositories, we may decide to use a simplified workflow where we commit everything to `master` by default. This could happen, for example, if some co-authors are unfamiliar with `git` and prefer the simpler workflow. In such cases, we need to pay attention to avoid cases where many people will be working on the same content at the same time. We also impose a strict rule that all commits follow complete runs of `make.py`.
 {{% /warning %}}
 
 2. **No pull request:** It is permissible to skip the step of creating a pull request if an issue does not require pull review and no changes will be merged back to the master branch.
 
-3. **No peer review:** It is permissible to skip the peer review step when the assignee is confident the output is correct and the issue involves no changes or only minor changes to code that is being merged back to the repository.
+3. **No peer review:** It is permissible to skip the peer review step when the assignee is confident the output is correct and the issue involves no changes or only minor changes to the code that is being merged back to the repository.
 
 {{% summary %}}
 Mastering the GitHub workflow empowers effective collaboration and version control in your project journey. Follow the **Branch-Commit-Push-Pull Request-Merge (BCPPM)** pattern for organized collaboration. Branch for each issue, commit with meaningful messages, initiate pull requests, conduct peer reviews, and merge changes systematically.
