@@ -1,7 +1,7 @@
 ---
 title: "Document New Data"
 description: "If your project contains data that has been newly created, learn how to include a documentation of that data in your project."
-keywords: "document, data, readme, raw, database, description"
+keywords: "document, data, readme, raw, database, description, documentation, dataset, collection, preprocessing, data mangement"
 weight: 1
 date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -11,7 +11,7 @@ aliases:
 
 ## Overview
 
-Ideally, your data description includes the *very elaborate questions* outlined in `Datasheets for datasets` by Gebru, Timnit, et al. (2018)[^1].
+Ideally, your data description includes the *very elaborate questions* outlined in Datasheets for datasets by Gebru, Timnit, et al. (2018)[^1].
 We **strongly** refer you to the [original paper](https://arxiv.org/abs/1803.09010), which explains in detail the seven key ingredients of a proper dataset documentation.
 
 Below, we have reproduced these questions, and we recommend you to include those as a **`readme.txt`**, together with your datasets. For *derived* data, it may be enough to point to a relevant source code file, and provide a list of variables and their operationalization.
@@ -173,8 +173,8 @@ You can download a formatted version (`.docx`) of this template using the button
      (e.g., deterministic, probabilistic with specific sampling probabilities)?
 
 3.4  Who was involved in the data collection process (e.g., students,
-	   crowdworkers, contractors) and how were they compensated (e.g., how
-		 much were crowdworkers paid)?
+	   crowd workers, contractors) and how were they compensated (e.g., how
+		 much were crowd workers paid)?
 
 3.5  Over what timeframe was the data collected? Does this timeframe
      match the creation timeframe of the data associated with the
@@ -382,7 +382,7 @@ Name of the dataset:
 
 [...]
 
-7. Maintenance (will the dataset be maintained? how? by whom?)
+7. Maintenance (will the dataset be maintained? How? by whom?)
 
 [...]
 ```
