@@ -1,7 +1,7 @@
 ---
 title: "Choose a Data Repository for Long-Term Storage"
 description: "Part of responsible research is making sure your research data is properly stored. But how do you decide which data to keep, document and where to archive it?"
-keywords: "archiving, data archiving, dataverse, zenodo, figshare, osf, dans"
+keywords: "archiving, data archiving, dataverse, zenodo, figshare, osf, dans, FAIR data, data repository, licensing, research data management"
 #date: 2021-02-08
 draft: false
 #weight: 1
@@ -11,9 +11,13 @@ aliases:
   - /choose/data-repository
 ---
 
+## Overview
+
+Discover the essential factors to consider when selecting the right data repository for long-term storage. This building block provides you with insights on data archiving, licensing, and publishing, as well as options for popular repository alternatives to ensure long-term access and preservation of your research data.
+
 ## Data Archiving
 
-Part of responsible research is making sure your research data are properly managed, both during your research as well as when your research is finished (and hopefully published). For replication purposes, the data needs to remain available for a minimum of 10 years. But how do you decide which data to keep, document and where to archive it?
+Part of responsible research is making sure your research data are properly managed, both during your research as well as when your research is finished (and hopefully published). For replication purposes, the data needs to remain available for a minimum of 10 years. But how do you decide which data to keep, document, and where to archive it?
 
 This [tutorial on data management](https://tilburgsciencehub.com/tutorials/project-management/principles-of-project-setup-and-workflow-management/directories/#data-management-for-each-of-the-projects-components) and this [article on documenting your data](https://tilburgsciencehub.com/document/new-data) provide some insights.
 
@@ -21,7 +25,7 @@ Research data archiving is about storing and preserving research data for the lo
 
 ## Licensing Your Data
 
-Attaching a usage license to your data tells others what they can or cannot do with the data. **[Creative Commons](https://creativecommons.org/licenses/)** licenses are widely used, for example a CC-BY license lets other distribute, re-use, mix, build upon your work as long as they give you credit. Adding NC to the license limits the use to non-commercial use only.  Another resource for selecting a license is [choosealicense.com](https://choosealicense.com/).
+Attaching a usage license to your data tells others what they can or cannot do with the data. **[Creative Commons](https://creativecommons.org/licenses/)** licenses are widely used, for example, a CC-BY license lets others distribute, re-use, mix, and build upon your work as long as they give you credit. Adding NC to the license limits the use to non-commercial use only.  Another resource for selecting a license is [choosealicense.com](https://choosealicense.com/).
 
 ![Licensing you data.](../images/licensing-data.png)
 
@@ -29,9 +33,9 @@ Attaching a usage license to your data tells others what they can or cannot do w
 
 A data repository is a digital archive collecting, preserving and displaying datasets, related documentation, and metadata.
 
-There are more than 1500 data repositories available to archive your research data, how do you know which one to choose? Sometimes journals or funders recommend a repository, a discipline specific repository might be commonly used, or maybe your university recommends a repository. For example, at Tilburg University, **[Dataverse](https://dataverse.nl/dataverse/tiu)** is recommended and the Research Data Office provides support depositing your data if desired.
+There are more than 1500 data repositories available to archive your research data, how do you know which one to choose? Sometimes journals or funders recommend a repository, a discipline-specific repository might be commonly used, or maybe your university recommends a repository. For example, at Tilburg University, **[Dataverse](https://dataverse.nl/dataverse/tiu)** is recommended and the Research Data Office provides support depositing your data if desired.
 
-Some well know repositories, besides Dataverse, are:
+Some well known repositories, besides Dataverse, are:
 
 - **[Zenodo](https://zenodo.org/)**
 - **[FigShare](https://figshare.com/)**
@@ -67,20 +71,17 @@ A well known certification for a trusted repository is for example [CoreTrustSea
 If you want to make your data reusable for purposes beyond the one for which you collected them, you should publish your data.
 
 Publishing your data is the act of publicly disclosing the research data you have collected, making them **findable, accessible, interoperable and reusable** (FAIR data).
-{{% tip %}}
-  Want to make your data FAIR? Check out this [page](https://www.tilburguniversity.edu/intranet/research-support-portal/rdm/fair-data-principles) to learn how to do so.
-{{% /tip %}}
 
 There are multiple reasons to publish your data:
--	Data publication may lead to increased visibility, reuse and citation and therefore recognition of scholarly work.
+-	Data publication may lead to increased visibility, reuse, and citation and therefore recognition of scholarly work.
 
--	Data archiving and publication has direct benefits for the research itself (more robust), for the discipline and for science in general by enabling new collaborations, new data uses and establishing links to the next generation of researchers.
+-	Data archiving and publication has direct benefits for the research itself (more robust), for the discipline, and science in general by enabling new collaborations, new data uses, and establishing links to the next generation of researchers.
 
 -	The openness of research data is at the heart of scientific ethics.
 
 -	External drivers like research data management policies from **research funders** and publishers might require data archiving and publication. For instance:
     - [European Commission guidelines on Data Management](https://ec.europa.eu/research/participants/data/ref/h2020/other/gm/reporting/h2020-tpl-oa-data-mgt-plan-annotated_en.pdf)
-    - [NWO data managament plan form](https://www.nwo.nl/en/research-data-management)
+    - [NWO data management plan form](https://www.nwo.nl/en/research-data-management)
     - [FAIR data and data management ZonMw](https://www.zonmw.nl/en/research-and-results/fair-data-and-data-management/)
 
 {{% tip %}}
@@ -89,10 +90,7 @@ Be sure to archive/publish only data you are allowed to archive/publish. Often a
 
 ## See Also
 
-- **Set up a [Data Management Plan](https://www.tilburguniversity.edu/intranet/research-support-portal/rdm/datamangementplan)** to make your work efficient, and create more value for your data, yourself and others, during and after your research.
 - **[OpenAIRE Guide](https://zenodo.org/record/4077212#.YGHVqK8zY2z)** on how to find a trustworthy repository for your data
-- **[Promote your research data](https://www.tilburguniversity.edu/intranet/research-support-portal/publish-and-preserve/promote/promote)**
-- **[Publish Open Access](https://www.tilburguniversity.edu/intranet/research-support-portal/publish-and-preserve/open-access/publishing)**
 - **[R3Data.org searchable database](https://www.re3data.org/search?query=)** of data repositories
 
 ---
