@@ -12,6 +12,11 @@ aliases:
  - /building-blocks/automate-and-execute-your-work/error-handling/stata-error-handling-make/
 ---
 
+## Learning Goals
+
+- Learn how to use R to monitor and handle errors in Stata log files.
+- Incorporate error-checking scripts into automated workflows, such as a Makefile.
+
 ## Overview
 
 When you run Stata within an automated research pipeline (e.g., using a `makefile`), Stata does *not stop the progression* of the Makefile, even if there is an error in your cod! Thus, you have no idea whether Stata code was executed without any errors until the end without checking the Stata log files.
