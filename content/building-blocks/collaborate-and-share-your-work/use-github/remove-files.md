@@ -15,7 +15,7 @@ aliases:
 ## Overview
 Your Git repository will eventually become the long-term memory of your project, and you may decide to make the repository public so others can learn from or use your work.
 Versioning is a powerful and good tool to use, unless...
-- you accidentally stored sensitive information in your source code that you really do not want to be out in the public (e.g., API credentials, passwords),
+- you accidentally stored sensitive information in your source code that you do not want to be out in the public (e.g., API credentials, passwords),
 - you accidentally stored files (e.g., large data sets, images) in your repository, that you cannot upload to GitHub (and hence can't synchronize your repository anymore)
 
 In such situations, the good news is that solutions exist! These solutions will be discussed in this building block: 
@@ -45,23 +45,20 @@ git filter-branch --index-filter 'git rm --cached --ignore-unmatch file_to_remov
 ```
 {{% /codeblock %}}
 
-Replace `file_to_remove` by the path and file name of the file that you want to wipe out.
+Replace `file_to_remove` with the path and file name of the file that you want to wipe out.
 
 3. If the command doesn't work, verify you have used the correct file name and path. Typically, the file name and path are indicated in a Git error message when trying to push or pull. Thanks to [StackOverflow](https://stackoverflow.com/questions/10676128/remove-deleted-files-from-git-history) for this solution!
 
 Check out the GitHub manuals for a [step-by-step guide](https://docs.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository)! Alternatively, use [BFG Repo Cleaner](https://rtyley.github.io/bfg-repo-cleaner/), a convenient tool to remove unwanted files from your project.
 
 {{% tip %}}
-__Proactive prevention of committing specific files__
-
 Avoid future mishaps by learning to [exclude files from versioning](../git-ignore).
-
 {{% /tip %}}
 
 {{% summary %}}
 This guide presents effective strategies for removing sensitive data or unwanted files: 
 - Undoing your last commit 
-- Entirely eliminating files
+- Entirely removing files
 
 By applying these techniques, you can navigate the challenges of preserving the integrity of your repository while sharing your work with the wider community.
 {{% /summary %}}
