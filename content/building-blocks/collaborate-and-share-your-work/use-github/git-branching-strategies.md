@@ -1,7 +1,7 @@
 ---
 title: "Git Branching Strategies"
 description: "Explore three popular Git branching strategies: Trunk-Based Development, Feature Branching, and Git Flow. Learn their workflow, strengths, weaknesses and suitable projects and teams."
-keywords: "git, github, branching, strategies, trunk-based development, feature branching, git flow"
+keywords: "git, github, branching, strategies, trunk-based development, feature branching, git flow, branch, branches"
 date: 2023-03-11
 weight: 5
 author: "Paulina Ambroziak"
@@ -16,10 +16,14 @@ aliases:
   - /suitable/projects/teams
 ---
 
-## Git Branching Strategies
-A **Git branching strategy** allows developers to collaborate on a project while also tracking changes and maintaining multiple versions of the codebase. There are several Git branching strategies available, each with its own set of advantages and disadvantages. The best strategy is determined by the project's and team's unique requirements. In this building block, we'll go over three popular Git branching strategies: **Trunk-Based Development**, **Feature Branching**, and **Git Flow**.
+## Overview
+A **Git branching strategy** allows developers to collaborate on a project while also tracking changes and maintaining multiple versions of the codebase. There are several Git branching strategies available, each with its own set of advantages and disadvantages. The best strategy is determined by the project's and team's unique requirements. In this building block, we'll go over three popular Git branching strategies: 
+1. **Trunk-Based Development**
+2. **Feature Branching**
+3. **Git Flow**
 
 ## Strategy 1: Trunk-Based Development
+
 ### What is Trunk-Based Development?
 **Trunk-based development (TBD)** is a branching strategy in which all developers make changes directly on the `main` branch, commonly referred to as the `trunk`, which holds the project's deployable code. Developers are encouraged to commit frequently and use feature toggles* and other techniques to manage changes that are not yet ready for release. Testing is typically automated, with a focus on continuous integration (CI) and continuous delivery (CD) to ensure that code changes are thoroughly tested before they are deployed.
 
@@ -43,11 +47,11 @@ If a coding task requires an extended duration, possibly spanning over several d
 ### Pros and Cons
 | Advantages | Disadvantages |
 | --- | --- |
-| Encourages collaboration and rapid feedback | Can lead to conflicts and integration issues <br>if not managed properly |
-| Promotes early detection and quick resolution <br>of issues | Requires robust automated testing and <br>continuous integration practices |
-| Facilitates faster delivery of new features <br>and improvements | Can be difficult to roll back changes once they are <br>integrated into the `main` branch |
-| Simplifies codebase management by keeping all <br>developers on the same branch | May not be suitable for larger teams or complex <br>projects |
-| Reduces the overhead of maintaining multiple <br>`feature` branches | Can create a single point of failure if the `main` branch <br>becomes unstable or broken |
+| Encourages collaboration and <br> rapid feedback | Can lead to conflicts and <br> integration issues if not <br> managed properly |
+| Promotes early issue detection <br> and quick resolution | Requires robust automated <br> testing and continuous <br> integration practices |
+| Facilitates faster feature <br> and improvement delivery | Can be difficult to roll <br> back changes once <br> integrated into `main` |
+| Simplifies codebase management <br> by keeping all developers <br> on the same branch | May not be suitable for <br> larger teams or complex <br> projects |
+| Reduces overhead of <br> multiple <br> `feature` branches | Single point of failure <br> if `main` becomes unstable |
 
 ### Teams and Projects
 Trunk-based development is suitable for projects with **small teams**, **short release cycles**, and a focus on **delivering new features and improvements quickly**.
@@ -71,10 +75,10 @@ Trunk-based development is suitable for projects with **small teams**, **short r
 ### Pros and Cons
 | Advantages | Disadvantages |
 | --- | --- |
-| Allows developers to work on different features or changes <br>simultaneously without interfering with each other's work | Can lead to a large number of branches that <br>need to be managed and kept up-to-date |
-| Facilitates review/testing of changes before merging <br>into the `main` branch | Longer review and testing on `feature` branches <br>can cause delays when merging changes <br>into the `main` branch |
-| Ensures that the `main` branch always contains stable, <br>production-ready code | Can lead to dependencies between different branches, <br>which can cause conflicts when merging changes <br>into the `main` branch |
-| Makes it easy to track changes related <br>to specific features/tasks | Requires additional effort to keep branches up-to-date <br>with changes in the `main` branch |
+| Allows parallel feature <br> development | Managing and updating <br> numerous branches |
+| Facilitates controlled <br> code review/testing | Delays in merging changes <br> into `main` due to <br> extended review |
+| Ensures consistent stability <br> of the `main` branch | Can lead to conflicts due <br> to branch dependencies |
+| Enhances change tracking | Extra effort to <br> synchronize branches with <br> changes in `main` |
 
 
 ### Teams and Projects
@@ -89,7 +93,7 @@ Feature Branching is commonly used in **collaborative software development envir
 *Git Flow* by [Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) / [CC BY](https://creativecommons.org/licenses/by/2.5/au/)
 
 ### Git Flow Workflow
-1. **Create the `develop` branch:** This branch will be used for ongoing development work. A `develop` branch is created from  the `main` branch.
+1. **Create the `develop` branch:** This branch will be used for ongoing development work. A `develop` branch is created from the `main` branch.
 2. **Create `feature` branches:** When starting work on a new feature or bug fix, create a new `feature` branch from the `develop` branch. 
 3. **Develop and merge the `feature` branch into `develop`:** Make any necessary changes to your local code on the `feature` branch. Once the feature is complete and tested, merge the branch back into the `develop` branch. 
 4. **Create the `release` branch:** When it's time to prepare a new release, create a new `release` branch from the `develop` branch with a descriptive name that includes the version number, for example, `release/1.0`. Test the release thoroughly to catch any bugs or issues to ensure it's production-ready.
@@ -103,11 +107,11 @@ If a critical issue in the `main` branch is detected:
 ### Pros and Cons
 | Advantages | Disadvantages |
 | --- | --- |
-| Provides clear structure for managing code changes | Can be more complex than other branching strategies |
-| Separates ongoing development from stable releases | Can lead to a larger number of branches |
-| Encourages use of short-lived `feature`, `release`, <br>and `hotfix` branches | Can result in conflicts or merge issues |
-| Facilitates code review and testing processes | Requires a certain level of discipline and adherence <br>to process |
-| Provides clear and predictable development pipeline | Can be seen as overly prescriptive or inflexible |
+| Provides clear structure <br> for managing code changes | Can be more complex <br> than other branching <br> strategies |
+| Separates ongoing development <br> from stable releases | Potential for larger <br> number of branches |
+| Encourages use of short-lived <br> `feature`, `release`, and <br> `hotfix` branches | Possibility of  <br>  merge conflicts |
+| Facilitates code review  <br> and testing processes | Requires a certain level  <br> of discipline and adherence <br> to process |
+| Predictable development  <br> flow | Can be seen as  <br> overly prescriptive or  <br> inflexible |
 
 ### Teams and Projects
 Git Flow is particularly well-suited for **larger development teams** that are working on **complex software applications** with **long development cycles** and **multiple releases**. Smaller teams or projects with shorter development cycles may find Git Flow to be overly complex.
@@ -115,9 +119,9 @@ Git Flow is particularly well-suited for **larger development teams** that are w
 ## Summary
 | Strategy | Project Type | Team Size | Collaboration Maturity |
 | --- | --- | --- | --- |
-| **Trunk-Based <br>Development** | Typically used for projects <br>that have frequent code changes <br>and are released continuously | Smaller <br>teams | Requires a high level of collaboration <br>and communication, as all changes <br>are made directly to the `main` branch |
-| **Feature <br>Branching** | Particularly useful in projects where <br>multiple developers are working on <br>different features simultaneously | Medium or <br>large-sized <br>teams | Requires moderate collaboration maturity, <br>as changes are made in separate branches <br>that must be merged into the `main` branch |
-| **Git Flow** | Projects that require a structured <br>approach to managing code <br>changes and releases | Larger teams | Requires high collaboration maturity, <br>as changes are made in multiple branches <br>with a formalized release process |
+| **Trunk-Based <br>Development** | For projects with frequent <br> code changes and continuous <br> releases | Smaller <br> teams | High collaboration and <br> communication needes, as all changes <br> are made directly to <br>`main` |
+| **Feature <br>Branching** | Projects with <br> simultaneous <br> development of <br> different features | Medium or <br>large-sized <br>teams | Moderate collaboration <br> maturity, as changes <br> occur in separate <br> branches before <br> merging into `main` |
+| **Git Flow** | Projects requiring <br> a structured approach  | Larger teams | High collaboration <br> maturity, as changes <br> involve multiple <br> branches and a <br> formalized release <br> process |
 
 {{% summary %}}
 * **Trunk-Based Development** is a Git branching strategy that emphasizes frequent integration and testing on the `main` branch to ensure a high level of collaboration and continuous delivery.
