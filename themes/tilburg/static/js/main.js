@@ -204,12 +204,8 @@ $(".headerSearch > .resetInput").on("click", function (e) {
   popularPages.then((results) => {
     resultsHolder.append(`<span style="font-weight: bold;">Popular Pages</span>`);
     results.map((result) => {
-      let urlArr = result.split("/")
-      const lastItem = urlArr[urlArr.length - 2]
 
-      if (!lastItem) return
-
-      resultsHolder.append(`<a href="${result}" style="display: flex;">
+      resultsHolder.append(`<a href="${result.path}" style="display: flex;">
         <span style="
           display: flex;
           width: 24px;
@@ -220,7 +216,7 @@ $(".headerSearch > .resetInput").on("click", function (e) {
           background-color: #003365;
           margin-right: 8px;
         "><img src="/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
-        <span>${makeTitle(lastItem)}</span></a>`);
+        <span>${result.title}</span></a>`);
     })
   })
 })
@@ -237,12 +233,8 @@ $(".headerSearchMobile .resetInput").on("click", function (e) {
   popularPages.then((results) => {
     resultsHolder.append(`<span style="font-weight: bold;">Popular Pages</span>`);
     results.map((result) => {
-      let urlArr = result.split("/")
-      const lastItem = urlArr[urlArr.length - 2]
 
-      if (!lastItem) return
-
-      resultsHolder.append(`<a href="${result}" style="display: flex;">
+      resultsHolder.append(`<a href="${result.path}" style="display: flex;">
         <span style="
           display: flex;
           width: 24px;
@@ -253,21 +245,10 @@ $(".headerSearchMobile .resetInput").on("click", function (e) {
           background-color: #003365;
           margin-right: 8px;
         "><img src="/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
-        <span>${makeTitle(lastItem)}</span></a>`);
+        <span>${result.title}</span></a>`);
     })
   })
 })
-
-function makeTitle(slug) {
-  var words = slug.split('-');
-
-  for (var i = 0; i < words.length; i++) {
-    var word = words[i];
-    words[i] = word.charAt(0).toUpperCase() + word.slice(1);
-  }
-
-  return words.join(' ');
-}
 
 $(".headerSearch").on("keyup", function (e) {
   const resultsHolder = $(".headerSearchResultsHolder");
