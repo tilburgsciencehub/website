@@ -33,10 +33,12 @@ Researchers can use makefiles to establish rules detailing how individual compon
 
 A rule in a makefile generally looks like this:
 
-```
+{{% codeblock %}}
+```bash
 targets: prerequisites [separated by spaces]
    commands to build
 ```
+{{% /codeblock %}}
 
 * The __targets__ are things that you want to build - for example, data sets, outputs of analyses, a PDF file, etc. You can define multiple targets for one rule. Typically, though, there is only one per rule. Think of this as the "dish" (or part of it) that you want to create with your recipe.
 
@@ -48,22 +50,26 @@ targets: prerequisites [separated by spaces]
 
 * The __commands__ are a series of steps to go through to build the target(s). These need to be indented with a tab, **not** spaces. The commands can be seen as the recipe "instructions".
 
+Here you have an easy example:
+{{% codeblock %}}
 
-{{% example %}}
-```
+```bash
 dataset.csv: rawdata1.csv clean.R
   R --vanilla < clean.R
 ```
+{{% /codeblock %}}
+
 - `dataset.csv`: the final and cleaned dataset.
 - `rawdata1.csv clean.R`: before building `dataset.csv`, the raw data and a specific script to clean the raw data need to exist.
 - The command `R --vanilla < clean.R` opens R, and runs the script `clean.R`.
-{{% /example %}}
 
 ### Multiple rules
 
-A makefile typically consist of multiple rules, which can depend on each other.
+A makefile typically consist of multiple rules, which can depend on each other:
 
-```
+{{% codeblock %}}
+
+```bash
 # rule to build target2
 target2: target1
   commands to build
@@ -72,19 +78,20 @@ target2: target1
 target1: prerequisite1
   commands to build
 ```
+{{% /codeblock %}}
 
 ## Advanced Use Cases
 
 ### Use directory names
 
-You can easily use directory names in makefiles, e.g., to specify that a prerequisite is in one directory, and the target in another.
+You can easily use directory names in makefiles, e.g., to specify that a prerequisite is in one directory, and the target in another. For instance:
 
-{{% example %}}
-```
+{{% codeblock %}}
+```bash
 gen/data-preparation/aggregated_df.csv: data/listings.csv data/reviews.csv
 	Rscript src/data-preparation/clean.R
 ```
-{{% /example %}}
+{{% /codeblock %}}
 
 ### "Phony" targets
 
@@ -94,8 +101,9 @@ Targets typically refer to output - such as files. Sometimes, it's not practical
 * The phony target `all` serves as a comprehensive rule encompassing all individual targets.
 * The target `clean` is typically used to remove generated temporary files, so you can start with a clean copy of your directory for testing.
 
-{{% example %}}
-```
+The structure could look like this:
+{{% codeblock %}}
+```bash
 all: one two
 
 one:
@@ -106,21 +114,21 @@ two:
 clean:
     rm -f one.txt two.txt
 ```
-{{% /example %}}
+{{% /codeblock %}}
 
 ### Use variables
 
-Variables in a make script prevent you from writing the same directory names (or command to execute a program) over and over again. They are typically defined at the top of the file and can be accessed with the `$` command. Note that variables can only be strings.
+Variables in a make script prevent you from writing the same directory names (or command to execute a program) over and over again. They are typically defined at the top of the file and can be accessed with the `$` command. Note that variables can only be strings. Check out the following example:
 
-{{% example %}}
-```
+{{% codeblock %}}
+```bash
 INPUT_DIR = src/data-preparation
 GEN_DATA = gen/data-preparation
 
 $(GEN_DATA)/aggregated_df.csv: data/listings.csv data/reviews.csv
   $(INPUT_DIR)/clean.R
 ```
-{{% /example %}}
+{{% /codeblock %}}
 
 ### Run make using `.bat` files
 
@@ -128,10 +136,12 @@ Running a pipeline with `make` usually requires you to work from the command lin
 
 Here's a small code snippet to achieve that. You just need to create a `.bat` file in your project's directory (i.e., the one where you would usually run `make` in). This snippet writes any output from `make` in a `make.log` file, which you can use to verify `make` was executed properly.
 
-```
+{{% codeblock %}}
+```bash
 make -k > make.log 2>&1
 pause
 ```
+{{% /codeblock %}}
 
 {{% warning %}}
 **Is your makefile structured properly?**
