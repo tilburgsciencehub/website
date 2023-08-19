@@ -3,24 +3,24 @@
 <!-- menu -->
 
 <div class="bg-secondary text-white p-5 d-none">
-	{{- range .Sections -}}
-		{{- range .Pages -}}
-			{{ if eq .Params.isParent "true" }}
-		 	<h1>{{ .Title }}</h1>
-			{{- range .Pages -}}
-				<h2>{{ .Title }}</h2>
-				{{- range .Pages -}}
-					<h3>{{ .Title }}</h3>
-					<ul>
-						{{- range .Pages -}}
-							<li>{{ .Title }}</li>
-						{{- end -}}
-					</ul>
-				{{ end }}
-			{{ end }}
-			{{ end }}
-		{{- end -}}
-	{{- end -}}
+  {{- range .Sections -}}
+  {{- range .Pages -}}
+  {{ if eq .Params.isParent "true" }}
+  <h1>{{ .Title }}</h1>
+  {{- range .Pages -}}
+  <h2>{{ .Title }}</h2>
+  {{- range .Pages -}}
+  <h3>{{ .Title }}</h3>
+  <ul>
+    {{- range .Pages -}}
+    <li>{{ .Title }}</li>
+    {{- end -}}
+  </ul>
+  {{ end }}
+  {{ end }}
+  {{ end }}
+  {{- end -}}
+  {{- end -}}
 </div>
 
 
@@ -34,14 +34,14 @@
     <div class="col-lg-9 col-24 mt-3 px-0 order-2 order-lg-1 text-center text-lg-left">
       <h1 class="mx-5 mx-lg-0">
         <!--<span class="text-primary heading">Tilburg Science Hub</span>-->
-				<span class="">Tilburg</span><span class="heading"> Science Hub</span>
+        <span class="">Tilburg</span><span class="heading"> Science Hub</span>
         <!--<br />
         <span>Conduct your research differently.</span>-->
       </h1>
 
       <p class="text-secondary mx-4 mx-lg-0 mt-4 mb-4 mr-lg-5 pr-lg-5">
-        We bring the <a class = "header" href = "/tour">value of open science</a> to Tilburg,
-				and valuable resources of Tilburg to the world.
+        We bring the <a class="header" href="/tour">value of open science</a> to Tilburg,
+        and valuable resources of Tilburg to the world.
       </p>
 
       <!-- buttons take the tour and start tutorial-->
@@ -50,19 +50,19 @@
           <b>New to Tilburg Science Hub?</b>
         </p>
         <a href="/tour">
-        <button class="btn btn-primary" style="margin: 5px;">Take the tour</button>
+          <button class="btn btn-primary" style="margin: 5px;">Take the tour</button>
         </a>
       </div>
     </div>
 
-			<!--<div class="form-inline text-center float-center d-none d-block d-xl-none">
+    <!--<div class="form-inline text-center float-center d-none d-block d-xl-none">
 				<br>space<br></div>
 -->
 
 
 
-<!-- for bigger screens: search -->
-<!--
+    <!-- for bigger screens: search -->
+    <!--
 <div class="d-none d-lg-block">
 	<form class="form-inline text-center float-center" method="GET" action="/search">
 		<div style="width: 500px" class="form-control headerSearch2 border-0">
@@ -73,16 +73,16 @@
 	</form>
   -->
 
-	<!-- search results -->
-  <!--
+    <!-- search results -->
+    <!--
 	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder2">
 	</div>
 
 </div>
   -->
 
-<!-- for smaller screens: search -->
- <!--
+    <!-- for smaller screens: search -->
+    <!--
 <div class="d-lg-none">
 
 	<form class="text-center float-center" method="GET" action="/search">
@@ -94,8 +94,8 @@
 	</form>
     -->
 
-	<!-- search results -->
-   <!--
+    <!-- search results -->
+    <!--
 	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder2">
 	</div>
    -->
@@ -107,14 +107,14 @@
 
 
 
-			<!--<span>Take a tour</span>-->
+    <!--<span>Take a tour</span>-->
 
-			<!--<p class="text-secondary text-right mx-4 mx-lg-0 mt-4 mb-4 mr-lg-5 pr-lg-5">
+    <!--<p class="text-secondary text-right mx-4 mx-lg-0 mt-4 mb-4 mr-lg-5 pr-lg-5">
         Take a tour.
 
       </p>
 -->
-<!--
+    <!--
 			<a href="/tour">
         <button class="btn  btn-sm mt-2">Take a tour</button>
       </a>
@@ -124,11 +124,12 @@
 
     </div> --->
 
-<!-- end of search on homepage feature -->
+    <!-- end of search on homepage feature -->
 
-<div class="col-lg-10 mt-3 col-16 order-1 order-lg-2 d-none d-md-flex d-lg-flex d-xl-flex text-center align-content-center">
-  <img src="/img/hero.png" alt="work with open science" class="hero-image mx-auto mx-lg-none" >
-</div>
+    <div
+      class="col-lg-10 mt-3 col-16 order-1 order-lg-2 d-none d-md-flex d-lg-flex d-xl-flex text-center align-content-center">
+      <img src="/img/hero.png" alt="work with open science" class="hero-image mx-auto mx-lg-none">
+    </div>
 
   </div>
 </div>
@@ -232,7 +233,12 @@
         </div>
         <div class="col-lg-10 col-xl-14 col-22 mb-3">
           <div class="h-100 p-4 rounded bg-white d-flex flex-column card-category-carousel"
-            style="background-image: url('/img/card-icon.png');background-repeat: no-repeat;background-size: 30%;background-position-x: 110%;background-position-y: 190%;">
+            style="position: relative;overflow:hidden">
+            <div class="d-none d-md-block d-lg-block d-xl-block" style="position: absolute;bottom: -50px;right: -25px;width: 200px;height: auto;z-index:2">
+              <img src="/img/card-icon.png" alt="Background Image">
+            </div>
+          
+            <div class="background-content">
             <div class="row mb-4">
               <div class="col-xl-22 col-lg-20 col-md-22 col-sm-22">
                 <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
@@ -253,10 +259,11 @@
             <div class="row" style="margin-top: auto; margin-bottom: auto;">
               <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
                 <div id="carouselExample" class="carousel slide h-100" data-bs-ride="carousel">
-                  <div class="carousel-inner h-100">
+                  <div class="carousel-inner h-100" style="z-index:1;">
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
@@ -268,26 +275,26 @@
             <ul class="my-2 list-unstyled">
               {{ $s := slice }}
               {{ $displayedTitles := dict }}
-            
+
               {{ range where .Site.Pages.ByPublishDate.Reverse "Section" "in" "[building-blocks, tutorials]" }}
-                {{ $title := .Title }}
-                {{ if not (index $displayedTitles $title) }}
-                  {{ $s = $s | append . }}
-                  {{ $displayedTitles = merge $displayedTitles (dict $title true) }}
-                {{ end }}
+              {{ $title := .Title }}
+              {{ if not (index $displayedTitles $title) }}
+              {{ $s = $s | append . }}
+              {{ $displayedTitles = merge $displayedTitles (dict $title true) }}
               {{ end }}
-            
+              {{ end }}
+
               {{ with $s.ByPublishDate.Reverse | first 3 }}
-                {{ range . }}
-                  <li class="pb-3">
-                    <span class="icon link text-primary d-inline-block mr-2"></span>
-                    <a href="{{ .Permalink }}">{{ .Title }}<sup style="color: #ffb222;"> new </sup></a>
-                  </li>
-                {{ end }}
+              {{ range . }}
+              <li class="pb-3">
+                <span class="icon link text-primary d-inline-block mr-2"></span>
+                <a href="{{ .Permalink }}">{{ .Title }}<sup style="color: #ffb222;"> new </sup></a>
+              </li>
+              {{ end }}
               {{ end }}
             </ul>
-            
-            
+
+
           </div>
         </div>
         <div class="col-lg-10 col-xl-4 col-22 mb-3">
@@ -362,7 +369,8 @@
         </h2>
 
         <p class="text-secondary mt-4 d-block">
-          Learn to write clean code, use conventions and version control to catch mistakes easily, make your work future-proof, and allow others to quickly review it.
+          Learn to write clean code, use conventions and version control to catch mistakes easily, make your work
+          future-proof, and allow others to quickly review it.
         </p>
       </div>
     </div>
@@ -377,7 +385,8 @@
         </h2>
 
         <p class="text-secondary mt-4">
-          Learn how to make teamwork exciting, not only efficient! Use SCRUM and collaboration tools to assign roles, manage tasks, and define milestones so that nobody is left behind.
+          Learn how to make teamwork exciting, not only efficient! Use SCRUM and collaboration tools to assign roles,
+          manage tasks, and define milestones so that nobody is left behind.
         </p>
       </div>
     </div>
@@ -402,7 +411,8 @@
         </h2>
 
         <p class="text-secondary mt-4">
-          Learn to automate your research workflow. Don't waste time manually running each step. Let your computer take care of it for you, while you can work on
+          Learn to automate your research workflow. Don't waste time manually running each step. Let your computer take
+          care of it for you, while you can work on
           something else.
         </p>
       </div>
@@ -418,21 +428,23 @@
         </h2>
 
         <p class="text-secondary mt-4">
-          When the going gets tough, the tough get cloud computing. Learn to quickly resume your work running instances on remote servers.
+          When the going gets tough, the tough get cloud computing. Learn to quickly resume your work running instances
+          on remote servers.
         </p>
       </div>
     </div>
     <div class="col-lg-2 col-0 order-lg-2"></div>
     <div class="col-lg-8 col-24 px-0 order-1 order-lg-3 text-center">
       <!-- <div class="bg-white rounded p-4 boxShadow pseudobox border"></div> -->
-      <img src="/img/audience-4.svg" alt= "Scale it up" style="max-width: 200px;" loading="lazy">
+      <img src="/img/audience-4.svg" alt="Scale it up" style="max-width: 200px;" loading="lazy">
     </div>
   </div>
   <!-- 5 -->
   <div class="row py-5">
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 text-center">
-      <img src="/img/community-members.png" style="max-width: 100%;height: auto;" alt="Open science community" loading="lazy" class="community_members"> 
+      <img src="/img/community-members.png" style="max-width: 100%;height: auto;" alt="Open science community"
+        loading="lazy" class="community_members">
     </div>
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 d-flex align-items-center">
@@ -442,7 +454,9 @@
         </h2>
 
         <p class="text-secondary mt-4">
-          Visit our <a href="https://github.com/tilburgsciencehub">GitHub</a> or <a href="https://www.linkedin.com/company/71039687/">LinkedIn</a> page to join the Tilburg Science Hub community,
+          Visit our <a href="https://github.com/tilburgsciencehub">GitHub</a> or <a
+            href="https://www.linkedin.com/company/71039687/">LinkedIn</a> page to join the Tilburg Science Hub
+          community,
           or visit our <a href="/contributors">contributors' Hall of Fame!</a>
           Want to change something or add new content? Learn <a href="/contribute">how to contribute</a> now!
         </p>
@@ -460,13 +474,13 @@
       <h4 class="text-primary heading">Who we are</h4>
       <br />
       <p class="mt-2 mb-4 h3">
-				Learn to work more efficiently on <a href="/tour">empirical research projects</a>,
-				using tools like R, Python, and Stata –
-				flavored with open science made in Tilburg.
-				Initially launched by researchers from
-				<a href="https://tilburguniversity.edu">Tilburg University</a>,
-				Tilburg Science Hub is developed on <a href="https://github.com/tilburgsciencehub/website">GitHub</a> and
-				welcomes <a href="/contribute">open source contributions</a>.
+        Learn to work more efficiently on <a href="/tour">empirical research projects</a>,
+        using tools like R, Python, and Stata –
+        flavored with open science made in Tilburg.
+        Initially launched by researchers from
+        <a href="https://tilburguniversity.edu">Tilburg University</a>,
+        Tilburg Science Hub is developed on <a href="https://github.com/tilburgsciencehub/website">GitHub</a> and
+        welcomes <a href="/contribute">open source contributions</a>.
 
       </p>
       <br />
@@ -486,7 +500,7 @@
   body::before {
     content: "";
     position: absolute;
-    top: 1500px;
+    top: 1400px;
     width: 100%;
     height: 2400px;
     z-index: -1;
@@ -504,16 +518,16 @@
 
   @media only screen and (max-width: 990px) {
     body::before {
-      top: 2850px;
+      top: 2450px;
     }
   }
 
   @media only screen and (max-width:578px) {
     body::before {
-      top: 3000px;
+      top: 2825px;
     }
 
-    #most-popular-block-single{
+    #most-popular-block-single {
       background-position-x: 130% !important;
     }
 
@@ -521,24 +535,23 @@
       display: none;
     }
 
-    .icon-col{
-    flex: 0 0 16.66666667%;
-    max-width: 16.66666667%;
+    .icon-col {
+      flex: 0 0 16.66666667%;
+      max-width: 16.66666667%;
     }
 
-    .text-col{
-    flex: 0 0 75%;
-    max-width: 75%;
+    .text-col {
+      flex: 0 0 75%;
+      max-width: 75%;
     }
 
-    .card-category-carousel{
-      background-image:none !important;
+    .card-category-carousel {
+      background-image: none !important;
     }
   }
 
   @media only screen and (max-width:1339px) {
-    .card-category-carousel{
-    }
+    .card-category-carousel {}
   }
 </style>
 
