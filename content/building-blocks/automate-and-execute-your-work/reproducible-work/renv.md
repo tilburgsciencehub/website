@@ -1,7 +1,7 @@
 ---
 title: "Package Management for R: renv"
 description: "How to work with renv R package to manage project environments"
-keywords: "renv, package, environment, management, R, Packrat, alternative"
+keywords: "renv, package, environment, management, R, Packrat, alternative, R projects, portability, reproducibility, dependency management"
 date: 2023-04-29
 weight: 2
 author: "Ana Bianca Luca"
