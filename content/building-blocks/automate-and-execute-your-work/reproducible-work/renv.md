@@ -2,7 +2,7 @@
 title: "Package Management for R: renv"
 description: "How to work with renv R package to manage project environments"
 keywords: "renv, package, environment, management, R, Packrat, alternative, R projects, portability, reproducibility, dependency management"
-date: 2023-04-29
+date: 2023-04-29 #updated 2023-08-20
 weight: 2
 author: "Ana Bianca Luca"
 authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
@@ -11,6 +11,12 @@ aliases:
   - /use/renv
   - /replace/packrat
 ---
+
+## Learning Goals
+
+- Understand the importance and features of `renv` as a dependency management tool for R projects.
+- Learn how to install and initialize a new environment using `renv`.
+- Know how to switch from Packrat to `renv`.
 
 ## Environment management for R projects with renv
 
