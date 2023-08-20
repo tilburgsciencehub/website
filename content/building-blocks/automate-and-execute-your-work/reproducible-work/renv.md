@@ -22,9 +22,9 @@ aliases:
 
 `renv` is a dependency management tool for R projects, facilitating the reproducibility of environments across computers or platforms.
 As a package management tool, `renv` helps to make projects: 
-- **isolated** : installing or updating a certain package in one project doesn't affect other packages from other projects
-- **portable** : projects can easily be transferred to different devices
-- **reproducible** : `renv` makes it easy to reproduce projects by recording all package versions of each project
+- **Isolated** : installing or updating a certain package in one project doesn't affect other packages from other projects.
+- **Portable** : projects can easily be transferred to different devices.
+- **Reproducible** : `renv` makes it easy to reproduce projects by recording all package versions of each project.
 
 
 ## Workflow
@@ -105,6 +105,7 @@ After running all the commands above, the directory in which the project was cre
 <img src = "../img/directory.png" width="500">
 </p>
 
+
 | File | Usage |
 | ---  |  ---  |
 |.`Rprofile` | File that activates renv for the new R sessions |
@@ -112,6 +113,7 @@ After running all the commands above, the directory in which the project was cre
 | `renv/activate.R` | Activation script run by `.Rprofile` |
 | `renv/library` | Private project library |
 | `renv/settings.json` | Project settings |
+
 
 ## From packrat to renv
 
