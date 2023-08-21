@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!--- Add structured data, search engine--->
 
@@ -31,30 +32,11 @@
 			]
 		  }
 	</script>
-	<!-- Google tag (gtag.js) OLD FORMAT-->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23035208-2"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
 
-	gtag('config', 'UA-23035208-2');
-	</script>
-
-
-		<!--snippet for google optimize (A/B tests) put back on when needed 
+	<!--snippet for google optimize (A/B tests) put back on when needed 
 	<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-N42NQJS"></script>-->
 
 	<!-- Global site tag (gtag.js) - GA4 format-->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'G-6K27JFP2RV');
-	</script> 
-
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -66,9 +48,10 @@
 	<link rel="icon" href="/img/favicon.png" type="image/x-icon">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
-	
+
 	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
-	<title>{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }} {{ if .IsHome }}{{else}} - Tilburg Science Hub{{end}}</title>
+	<title>{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }} {{ if .IsHome
+		}}{{else}} - Tilburg Science Hub{{end}}</title>
 	{{- if .Params.keywords -}}
 	<meta name="keywords" content="{{ .Params.keywords }}">
 	{{- end -}}
@@ -91,17 +74,6 @@
 	<!-- Place this tag in your head or just before your close body tag. -->
 	<script async src="https://buttons.github.io/buttons.js"></script>
 
-	<!-- Google Tag Manager -->
-	<script>(function (w, d, s, l, i) {
-			w[l] = w[l] || []; w[l].push({
-				'gtm.start':
-					new Date().getTime(), event: 'gtm.js'
-			}); var f = d.getElementsByTagName(s)[0],
-				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-TBJ77ND');</script>
-	<!-- End Google Tag Manager -->
-
 	<!-- FontAwesome (Needs to be Replaced) -->
 	<script src="https://kit.fontawesome.com/4e7776d591.js" crossorigin="anonymous"></script>
 
@@ -109,7 +81,3 @@
 
 
 <body>
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBJ77ND" height="0" width="0"
-			style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
