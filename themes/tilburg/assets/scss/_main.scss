@@ -417,6 +417,7 @@ html {
 .cover {
   .hero-image {
     max-width: 90%;
+    height:auto;
     margin-right: -70px;
   }
 }
@@ -1310,7 +1311,7 @@ a.text-secondary:hover {
 
 // .menu form {
 //   position: relative;
-// }
+/// }
 
 li,
 form {
@@ -1328,7 +1329,7 @@ form {
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
     font-weight: normal;
-    font-family: "apple-system", BlinkMacSystemFont, segoe ui, Roboto !important;
+    font-family: "acumin-pro", sans-serif;
     font-size: 14px;
 
     a {

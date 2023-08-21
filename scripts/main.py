@@ -46,7 +46,11 @@ def get_popular_pages(response):
     if reports:
         report = reports[0]
         for row in report.get("data", {}).get("rows", []):
-            popular_pages.append(row["dimensions"][0])
+            if (row["dimensions"][0]!= "/"):
+                path = row["dimensions"][0]
+                title = row["dimensions"][1].replace('- Tilburg Science Hub', '').strip()
+                data = {"path":path, "title":title}
+                popular_pages.append(data)
     filtered = [page for page in popular_pages]
     if len(filtered) > MAX_PAGES:
         filtered = filtered[:MAX_PAGES]
@@ -308,8 +312,6 @@ def main():
     # Write Popular Cards to the 'cards.json' file in the 'static' folder
     with open(cards_file_path, 'w') as f:
         json.dump(popular_cards, f)
-
-    print(popular_cards)
     
 if __name__ == "__main__":
     main()
