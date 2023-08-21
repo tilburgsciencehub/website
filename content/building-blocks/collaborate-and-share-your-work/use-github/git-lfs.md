@@ -133,7 +133,6 @@ git push origin master
 ```
 {{% /codeblock %}}
 
-{{% tip %}}
 To clone a repository and to pull the most recent changes before working on it, use:
 
 {{% codeblock %}}
@@ -142,8 +141,6 @@ git lfs clone {url}
 git lfs pull
 ```
 {{% /codeblock %}}
-
-{{% /tip %}}
 
 ## Advanced use cases
 
