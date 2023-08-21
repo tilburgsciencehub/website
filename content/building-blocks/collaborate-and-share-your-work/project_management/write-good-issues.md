@@ -1,7 +1,7 @@
 ---
-title: "Write GitHub Issues That Get the Job Done"
+title: "Best Practices for GitHub Issues Management"
 description: "You'll learn how to write good GitHub issues that get the job done. See our issue templates and learn the best practices for good GitHub issue management"
-keywords: "issues, project, git, github, issue, best practices, template, issue management"
+keywords: "issues, project, git, github, issue, best practices, template, issue management, best, practices"
 weight: 3
 #date: 2020-11-11T22:01:14+05:30
 draft: false
@@ -13,24 +13,26 @@ aliases:
 
 ## Overview
 
-### Why Issues?
+[Github Issues](https://guides.github.com/features/issues/) can be used to clearly define tasks that either you or your team members will eventually work on. In combination with Kanban-style [GitHub Project boards](/git-project-board/), they become a compelling way of coordinating teamwork. They also help you keep track of what's happening on projects and provide a durable, replicable record of the work for future reference.
 
-[Github Issues](https://guides.github.com/features/issues/) can be used to clearly define tasks that either you or your team members will eventually work on. In combination with Kanban-style GitHub Project boards, they become a compelling way of coordinating teamwork. They also help you keep track of what's happening on projects and provide a durable, replicable record of the work for future reference.
+This building block aims to provide comprehensive guidance on the efficient use of GitHub Issues, teaching you how to write GitHub issues that get the job done! It begins with an introduction to GitHub Issues and subsequently delves into the best practices. 
+
 
 ### Getting Started with Issues
 
 1. Every issue has a __creator__ (i.e., the person who created it) and should have __one or more assignees__ (the person(s) who will execute it). The creator chooses the assignee when the issue is created.
 2. An issue is a __discrete, well-defined unit of work on a project__. Usually, this means that an issue should not be more than a couple of weeks' worth of work and should not be open for more than a month or two.
-3. Issues are __adaptive__. For example, an issue that started with manageable scope may grow as the project expands or new questions arise. At this point, carve off subparts into separate issues and close the original issue with an interim summary.
-4. Issues are prioritized using the __Project Board on GitHub__. If you have time left, you can work on open issues that are not yet part of your current sprint.
+3. Issues are __adaptable__. For example, an issue that started with manageable scope may grow as the project expands or new questions arise. At this point, it can be split into separate issues, and the initial issue closed with an interim summary.
 
-All such rules are just a guideline. Using your time productively takes precedent over the priority ordering of tasks.
+4. Issues are prioritized using the __Project Board on GitHub__. You can work on open issues outside the current sprint if you have time left.
+
+All such rules are just a guideline. Using your time productively takes precedence over the priority ordering of tasks.
 
 
 {{% warning %}}
 One common problem with Issues is that they are formulated too broadly. They then are likely to become open-ended and end up mixing multiple work threads.
 
-"Write the follow-up paper" or "Do the analysis" are usually not good issues (unless the project is tiny).
+Phrases like "Write the follow-up paper" or "Do the analysis" are typically unsuitable unless the project is tiny.
 
 {{% /warning %}}
 
@@ -43,13 +45,13 @@ Issues should not be opened until the assignee is ready to work on them actively
 If work stops on an issue for any reason and is not expected to resume soon, the issue should be closed with an interim summary. If we plan to continue work later, this can be noted on the project outline in the repository's Github wiki, along with a link to the original issue.
 -->
 
-## Best Practices for Writing GitHub Issues
+### GitHub Issues Best Practices
 
-### Use Descriptive Titles!
+#### Use Descriptive Titles!
 
 - The issue title should be descriptive enough that somebody looking back at it later will understand what the purpose of the issue was and how it fits into the larger context.
 - Titles should use the *imperative mood*, and not end in a period ("Revise the main figure") not ("main figure.").
-- [This post](https://chris.beams.io/posts/git-commit/) by Chris Beams has an excellent discussion of what makes a good Git commit message; the same principles apply to good issue titles as well.
+- [This post](https://chris.beams.io/posts/git-commit/) by Chris Beams has an excellent discussion of what makes a good Git commit message; the same principles apply to issue titles.
 
 {{% tip %}}
 
@@ -69,14 +71,14 @@ Note that you can also *change* the title of an issue to make it more accurately
 
 {{% / tip %}}
 
-### Set Goals with Clear Descriptions
+#### Set Goals with Clear Descriptions
 
 - State the __goals of the issue clearly__.
 - Be __explicit about the deliverables__.
 - Like the title, it should usually be written in __imperative mode__.
 - The description should be __precise enough that a third party can judge__ whether the issue was completed or not.
 - It should include enough __explanation and context__ that someone who is not intimately familiar with the other work going on at that moment can understand it clearly -- remember that we will often be returning to these issues many months or even years later and trying to understand what was going on.
-- If an issue __relates directly to one or more other issues__, this should be stated in the description with a link to the other isssue(s) (e.g., "Follow-up to #5").
+- If an issue __relates directly to one or more other issues__, this should be stated in the description with a link to the other issue(s) (e.g., "Follow-up to #5").
 
 <!--The same principles regarding hyperlinks, @-references, etc. in the discussion of [comments](https://github.com/tilburgsciencehub/onboard/wiki/Issues#comments) below apply to issue descriptions as well.
 -->
@@ -100,9 +102,9 @@ __Bad description__
 
 {{% / tip %}}
 
-### Comments Document Your Progress
+#### Document Progress through Comments
 
-Comments in Github Issue threads are the main way we communicate about our work.
+Comments in the Github Issue threads are the main way we communicate about our work.
 
 - You can add comments to the thread in a browser or by replying to a notification email about the issue. When commenting by email reply, remember to *delete the quoted text of the email thread below your actual reply*. Otherwise, this will add duplicate text to the comment thread and make it hard to read.
 - You (the assignee) should post comments regularly summarizing progress.
@@ -117,13 +119,13 @@ Comments in Github Issue threads are the main way we communicate about our work.
 
 - If you have an important interaction about an issue outside of GitHub -- in person, over video chat, etc. -- add a comment to briefly summarize the content of that interaction and the conclusions reached.
 
-- Issues are referenced by their Github issue number (e.g., "#5") when it is clear from the context what repository the issue is in, or by the name of the repository plus the issue number (e.g., "news_trends #5") when it is not. Any reference to a Github issue in a comment thread, email, etc., should be hyperlinked to the issue itself. Note that Github does this automatically if you type "#" followed by a number in a Github issue thread.
+- Issues are referenced by their Github issue number (e.g., "#5") when it is clear from the context what repository the issue is in, or by the name of the repository plus the issue number (e.g., "news_trends #5") when it is not. Any reference to a GitHub issue in a comment thread, email, etc., should be hyperlinked to the issue itself. Note that GitHub does this automatically if you type "#" followed by a number in a GitHub issue thread.
 
 - Any reference to a file, directory, paper, or webpage should be hyperlinked to a permanent URL. [This page](https://help.github.com/articles/getting-permanent-links-to-files/) has instructions for getting permanent URLs for files in Github repositories. Links to Dropbox files and directories can be copied from the web or desktop client.
 
 
 
-### Provide Deliverables
+#### Provide Deliverables
 
 __Every issue must conclude with a reproducible deliverable.__
 
@@ -135,7 +137,7 @@ __Every issue must conclude with a reproducible deliverable.__
   - A PDF or markdown file
   - A summary in the final comment in the issue thread
 
-* The deliverable must be __self-contained__. It should usually begin with a concise summary of the task goal and the conclusions (e.g., answer to an empirical question), followed by supporting detail. A user should learn all relevant results from the deliverable without looking back at the comment thread or task description.
+* The deliverable must be __self-contained__. It should usually begin with a concise summary of the task goal and the conclusions (e.g., an answer to an empirical question), followed by supporting detail. A user should learn all relevant results from the deliverable without looking back at the comment thread or task description.
 
 {{% tip %}}
 __Use this template to start writing issues__
@@ -166,25 +168,39 @@ The deliverable must contain enough information that another user could replicat
 -->
 
 
-### Closing Issues
+#### Close Issues
 
 * When an issue is complete, you should post a final summary comment and then close it.
 * All closed issues must have one and only one summary comment. 
-* If changes made after the issue is closed (e.g., during peer review) require changes, you should edit the summary comment in place rather than creating a new one.
-* At this point, you will also normally open a [pull request](https://github.com/tilburgsciencehub/onboard/wiki/Workflow#pull-request) to peer review the issue and merge the issue branch back to master.
+* If changes are made after the issue is closed (e.g., during peer review), you should edit the summary comment in place rather than create a new one.
+* At this point, you will also normally open a [pull request](https://github.com/tilburgsciencehub/onboard/wiki/Workflow#pull-request) to peer review the issue and merge the issue branch back to the master.
 
 {{% tip %}}
 __Close an Issue with a final comment__
 
-* Your final comment should begin with "Summary" on the first line (usually bold or title font).
+* Your final comment should begin with "Summary" on the first line (usually in bold or title font).
 * It must also include a brief (usually a couple of paragraphs) recap of what was accomplished in the issue.
 * It must include a [revision-stable](https://help.github.com/en/github/managing-files-in-a-repository/getting-permanent-links-to-files) pointer to the deliverable -- usually a link along with additional information if needed (e.g., relevant page/table/figure numbers in the draft), or reference to a branch on GitHub.
 
 {{% /tip %}}
 
-### Setting Priorities
+#### Set Priorities
 
-- Priorities to work on issues are coordinated using the Project Boards on GitHub.
+- Priorities to work on issues are coordinated using the GitHub Project Boards.
 - If you have time left in your sprint, you can work on other open issues.
 - In prioritizing your work, note that peer review takes priority over all open issues; open issues created earlier should take precedence over tasks created later.
 - In some cases, we may give explicit instructions that override these defaults (e.g., we tag an issue with "good issue to start", or "critical"). If you are ever unsure about prioritization, you should ask.
+
+{{% summary %}}
+By adhering to these best practices, you'll harness the full potential of GitHub Issues, streamlining collaboration and enriching project management:
+- Use descriptive titles
+- Set goals with clear descriptions
+- Document progress through comments
+- Provide self-contained deliverables
+- Close issues with concise summaries
+- Prioritize tasks effectively
+{{% /summary %}}
+
+
+
+
