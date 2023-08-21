@@ -24,6 +24,8 @@ We do not allow Google to use the information obtained for other Google services
 Buttons are included on this website so users can promote or share pages via the social media networks Facebook, LinkedIn and Twitter. These social media buttons work with third party cookies (Facebook, LinkedIn, Twitter). Only when you click these buttons, these cookies are sent.
 
 ## Enabling, disabling and removing cookies
-You have the power to control cookies on our website. Simply scroll to the bottom, and by clicking the 'Manage Cookies' link, you can customize your preferences – whether to reject cookies, permit specific ones, or allow them all.
+You have the power to control cookies on our website. If you would like to disable or enable all or specific cookies, just click the button below to manage your cookies:
+
+{{% manage-consent "Manage Cookie Consent" "#manage-consent" %}}
 
 Please note: if you refuse and/or delete cookies, you can not always use all the website's features. In addition, the refusing or deleting cookies only affects the computer and browser with which you perform this operation. If you use multiple computers, public computers and/or browsers, you need to repeat the above operation(s) as many times as necessary. 
