@@ -18,7 +18,7 @@ aliases:
 This building block aims to provide comprehensive guidance on the efficient use of GitHub Issues, teaching you how to write GitHub issues that get the job done! It begins with an introduction to GitHub Issues and subsequently delves into the best practices. 
 
 
-### Getting Started with Issues
+## Getting Started with Issues
 
 1. Every issue has a __creator__ (i.e., the person who created it) and should have __one or more assignees__ (the person(s) who will execute it). The creator chooses the assignee when the issue is created.
 2. An issue is a __discrete, well-defined unit of work on a project__. Usually, this means that an issue should not be more than a couple of weeks' worth of work and should not be open for more than a month or two.
@@ -45,9 +45,9 @@ Issues should not be opened until the assignee is ready to work on them actively
 If work stops on an issue for any reason and is not expected to resume soon, the issue should be closed with an interim summary. If we plan to continue work later, this can be noted on the project outline in the repository's Github wiki, along with a link to the original issue.
 -->
 
-### GitHub Issues Best Practices
+## GitHub Issues Best Practices
 
-#### Use Descriptive Titles!
+### Use Descriptive Titles!
 
 - The issue title should be descriptive enough that somebody looking back at it later will understand what the purpose of the issue was and how it fits into the larger context.
 - Titles should use the *imperative mood*, and not end in a period ("Revise the main figure") not ("main figure.").
@@ -71,7 +71,7 @@ Note that you can also *change* the title of an issue to make it more accurately
 
 {{% / tip %}}
 
-#### Set Goals with Clear Descriptions
+### Set Goals with Clear Descriptions
 
 - State the __goals of the issue clearly__.
 - Be __explicit about the deliverables__.
@@ -102,7 +102,7 @@ __Bad description__
 
 {{% / tip %}}
 
-#### Document Progress through Comments
+### Document Progress through Comments
 
 Comments in the Github Issue threads are the main way we communicate about our work.
 
@@ -123,9 +123,7 @@ Comments in the Github Issue threads are the main way we communicate about our w
 
 - Any reference to a file, directory, paper, or webpage should be hyperlinked to a permanent URL. [This page](https://help.github.com/articles/getting-permanent-links-to-files/) has instructions for getting permanent URLs for files in Github repositories. Links to Dropbox files and directories can be copied from the web or desktop client.
 
-
-
-#### Provide Deliverables
+### Provide Deliverables
 
 __Every issue must conclude with a reproducible deliverable.__
 
@@ -168,7 +166,7 @@ The deliverable must contain enough information that another user could replicat
 -->
 
 
-#### Close Issues
+### Close Issues
 
 * When an issue is complete, you should post a final summary comment and then close it.
 * All closed issues must have one and only one summary comment. 
@@ -184,7 +182,7 @@ __Close an Issue with a final comment__
 
 {{% /tip %}}
 
-#### Set Priorities
+### Set Priorities
 
 - Priorities to work on issues are coordinated using the GitHub Project Boards.
 - If you have time left in your sprint, you can work on other open issues.
