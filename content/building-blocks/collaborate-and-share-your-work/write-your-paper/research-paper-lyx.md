@@ -13,7 +13,7 @@ aliases:
 
 ## Overview
 
-Welcome to this building block dedicated to LaTex and Lyx, where we equip you with the essential tools to create professional research papers and captivating presentations. First, we introduce you to LaTex and LyX. Then, we provide LyX templates for research papers and presentation slides.
+Welcome to this building block dedicated to LaTeX and Lyx, where we equip you with the essential tools to create professional research papers and captivating presentations. First, we introduce you to LaTeX and LyX. Then, we provide LyX templates for research papers and presentation slides.
 
 ## LaTeX
 
@@ -21,7 +21,7 @@ Welcome to this building block dedicated to LaTex and Lyx, where we equip you wi
 
 One of its main features is that **it separates the writing and the formatting stages**. The writer can focus solely on writing the content in plain text, and then use some markup tags and commands to stylize the text and define the document structure.
 
-This is mainly what sets $\LaTeX$ apart from WYSIWYG (an acronym for "What You See Is What You Get") editors, like Microsoft Word. Experienced users can **produce professional-looking documents very quickly**, but **at the expense of losing a Graphical User Interface**.
+This is mainly what sets $\LaTeX$ apart from WYSIWYG (an acronym for "What You See Is What You Get") editors, like Microsoft Word. Experienced users can produce professional-looking documents very quickly but at the expense of losing a Graphical User Interface.
 
 ## LyX: Where Form Meets Function
 
