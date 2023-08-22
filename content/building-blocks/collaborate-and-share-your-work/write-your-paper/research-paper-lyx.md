@@ -1,13 +1,14 @@
 ---
-title: "Write a Professional Research Paper with LyX"
-description: "How to write a professional research paper using LyX. Download our LyX template for research papers, academic papers, and thesis."
-keywords: "paper, template, lyx, tex, research paper, lyx template, thesis, paper, scientific, latex"
+title: "LyX for Professional Research Papers and Presentations"
+description: "How to write a professional research paper or create presentation slides using LyX. Download our LyX templates for academic papers and presentation slides."
+keywords: "paper, template, lyx, tex, research paper, lyx template, thesis, paper, scientific, latex, presentation, slides, slide, academic"
 weight: 101
 #date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /write/paper-with-lyx
   - /use/lyx
+  - /create/slides-with-lyx
 ---
 
 ## Overview
@@ -41,7 +42,7 @@ In case you need further guidance, refer to the comprehensive [list of official 
 
 Begin writing your research paper using our LyX template.
 
-{{% cta-primary "Download the LyX Template" "../lyx-research-paper-template.zip" %}}
+{{% cta-primary "Download the LyX Research Paper Template" "../lyx-research-paper-template.zip" %}}
 
 ![Academic paper in LaTeX](../img/research-paper-lyx-template.png)
 
@@ -49,6 +50,6 @@ Begin writing your research paper using our LyX template.
 
 Dive into creating captivating presentation slides with our LyX template.
 
-{{% cta-primary "Download the LyX Template" "../lyx-slides-template.zip" %}}
+{{% cta-primary "Download the LyX Slides Template" "../lyx-slides-template.zip" %}}
 
 ![Slides presentation in LaTeX](../img/slides-lyx-template.png)
