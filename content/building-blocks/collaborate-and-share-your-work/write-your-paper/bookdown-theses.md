@@ -15,7 +15,7 @@ aliases:
 
 [`Rmarkdown`](https://rmarkdown.rstudio.com/) and [`bookdown`](https://bookdown.org/yihui/bookdown/) are professional typesetting systems widely used in academia due to their ability to generate complex documents such as journal articles, books, technical reports, and more, with unparalleled output quality.
 
-This building block is created to equip you with the knowledge and tools to start creating this kind of documents yourself, with the use of these amazing systems!
+This building block is created to equip you with the knowledge and tools to start creating a document like your thesis yourself, with the use of these amazing systems!
 
 ## Getting Started
 
@@ -24,7 +24,7 @@ If you are new to `Rmarkdown` and `bookdown`, it's essential to understand the f
 - Explore the [`Rmarkdown documentation`](https://bookdown.org/yihui/rmarkdown/) to gain a foundational understanding.  
 - Thorougly review the [`bookdown documentation`](https://bookdown.org/yihui/bookdown/) to get up and running.
 
-## Download Our Templates
+## Download Our Thesis Template
 
 ### Tilburg School of Economics and Management (TiSEM)
 
