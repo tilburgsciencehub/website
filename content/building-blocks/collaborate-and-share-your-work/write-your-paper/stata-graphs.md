@@ -1,7 +1,7 @@
 ---
 title: "Stata Graphs Made Easy"
 description: "Learn how to quickly and efficiently prepare graphs in Stata."
-keywords: "stata, graphs, data visualization"
+keywords: "stata, graphs, data visualization, graph, data, twoway, command, dataset, example, tutorial"
 weight: 104
 date: 2022-06-20T22:02:51+05:30
 draft: false
@@ -12,7 +12,7 @@ aliases:
 
 ## Overview
 
-In this building block, we'll explore the convenient use of Stata graphs. We will use the command `twoway`, which allows you to create a variety of graph types. 
+In this building block, we'll explore the convenient use of Stata graphs with the use of the command `twoway`, which allows you to create a variety of graph types. 
 
 By specifying the graph type (e.g., line, scatter) and the relevant variables, you can swiftly create informative visualizations. Let's walk through an example together to illustrate this process.
 
