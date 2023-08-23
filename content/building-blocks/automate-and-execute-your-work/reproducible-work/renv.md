@@ -106,6 +106,7 @@ After running all the commands above, the directory in which the project was cre
 </p>
 
 
+
 | File | Usage |
 | ---  |  ---  |
 |.`Rprofile` | File that activates renv for the new R sessions |
@@ -113,6 +114,7 @@ After running all the commands above, the directory in which the project was cre
 | `renv/activate.R` | Activation script run by `.Rprofile` |
 | `renv/library` | Private project library |
 | `renv/settings.json` | Project settings |
+
 
 
 ## From packrat to renv
