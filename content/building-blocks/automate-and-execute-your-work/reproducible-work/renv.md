@@ -7,7 +7,7 @@ weight: 2
 author: "Ana Bianca Luca"
 authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
 aliases:
-  - /manage/R-dependencies
+  - /manage/R-packages
   - /use/renv
   - /replace/packrat
 ---
