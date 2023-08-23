@@ -13,7 +13,7 @@ aliases:
 
 ## Overview
 
-Easily transform your R data into beautifully-formatted tables with the aid of **[Stargazer](https://www.rdocumentation.org/packages/stargazer/versions/5.2.2/topics/stargazer)**, an easy-to-use R package. Regardless of whether you're working with ASCII, {{< katex >}}\LaTeX{{< /katex >}}, or HTML code, Stargazer seamlessly adapts to your preferences. 
+Easily transform your R data into beautifully-formatted tables with the aid of **[Stargazer](https://www.rdocumentation.org/packages/stargazer/versions/5.2.3)**, an easy-to-use R package. Regardless of whether you're working with ASCII, {{< katex >}}\LaTeX{{< /katex >}}, or HTML code, Stargazer seamlessly adapts to your preferences. 
 
 This package automatically recognizes the type of data you provide. For example, if you supply a set of regression model objects, it will generate a regression table. Similarly, if you feed it a data frame, it will create a summary statistics table.
 
