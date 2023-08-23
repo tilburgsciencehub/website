@@ -108,7 +108,7 @@ twoway (line price mpg if Origin == 1, lcolor(blue) lpatter(dash)) (line price m
 {{% example %}}
 The example code above generates a graph based on the `auto` dataset, showcasing different groupings.
 
-![Stata Grouping Graph.](../images/stata_group.png)
+![Stata Grouping Graph.](../img/stata_group.png)
 {{% /example %}}
 
 
