@@ -9,7 +9,7 @@ aliases:
 ---
 
 ## Overview
-When it comes to scientific document creation, **Overleaf** stands out as an online LaTex editor. With a very user-friendly interface and structure, Overleaf facilitates seamless collaboration in the cloud. By enabling real-time creation, editing, and sharing of documents, it empowers multiple collaborators to contribute effectively, fostering efficient teamwork. 
+When it comes to scientific document creation, **Overleaf** stands out as an online $\LaTeX$ editor. With a very user-friendly interface and structure, Overleaf facilitates seamless collaboration in the cloud. By enabling real-time creation, editing, and sharing of documents, it empowers multiple collaborators to contribute effectively, fostering efficient teamwork. 
 
 ## Setting up your Overleaf account
 Simply use your email address to set up an account.
@@ -36,6 +36,3 @@ Overleaf allows you to effortlessly integrate scientific characters, like Greek 
 {{% summary %}}
 Embrace the power of Overleaf to enhance collaborative prowess and elevate your scientific document creation process. Experience the synergy of seamless teamwork,  intricate scientific representation, and a comprehensive template library.
 {{% /summary %}}
-
-
-
