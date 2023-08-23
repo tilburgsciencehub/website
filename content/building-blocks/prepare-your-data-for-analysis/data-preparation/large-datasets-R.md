@@ -18,7 +18,7 @@ Switching from the `read.csv()` function to `fread()` can greatly improve the pe
 
 {{% tip %}}
 
-Oftentimes, datasets you previously worked with remain stored in memory, even if they're no longer in use. Click on the broom icon in the top right window to remove all objects from the environment. By removing objects which are no longer in use you will help improve RStudio's performance and reduce the risk of errors and conflicts.
+Oftentimes, datasets you previously worked with remain stored in memory, even if they're no longer in use. In RStudio, click on the broom icon in the top right window to remove all objects from the environment. By removing objects which are no longer in use you will help improve RStudio's performance and reduce the risk of errors and conflicts.
 
 {{% /tip %}}
 
