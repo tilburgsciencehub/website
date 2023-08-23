@@ -1,5 +1,5 @@
 ---
-title: "Dependency Management for R: renv"
+title: "Package Management for R: renv"
 description: "How to work with renv R package to manage project environments"
 keywords: "renv, package, environment, dependencies, management, R, Packrat, alternative, R projects, portability, reproducibility, dependency management"
 date: 2023-04-29 #updated 2023-08-23
@@ -14,7 +14,7 @@ aliases:
 
 ## Learning Goals
 
-- Understand the purpose, features, and setup of `renv` for R project dependency management.
+- Understand the purpose, features, and setup of `renv` for R project package management.
 - Get introduced to other R dependency tools.
 
 ## Environment management for R projects with renv
