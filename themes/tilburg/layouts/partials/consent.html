@@ -21,7 +21,7 @@
         #consent-notice button.btn {position: relative; bottom: 4px;}
     }
 </style>
-<div id="consent-notice"><span>We would like to use <a class="manage-consent" href="#manage-consent">third party code</a> to improve the functionality of this website.</span><button class="btn btn-secondary manage-consent">Manage preferences</button><button class="btn btn-primary deny-consent">Deny</button><button class="btn btn-primary approve-consent">Allow</button></div>
+<div id="consent-notice"><span>We would like to use <a class="manage-consent" href="#manage-consent">third party code</a> to improve the functionality of this website.</span><div style="display: inline;"><button class="btn btn-primary deny-consent">Deny</button><button class="btn btn-primary approve-consent">Allow</button><button class="btn btn-secondary manage-consent manage-preferences">Manage preferences</button></div></div>
 <div id="consent-overlay">
     <div>
         {{ range $index, $item := .Site.Data.consent.items }}
