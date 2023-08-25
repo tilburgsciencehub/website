@@ -12,16 +12,9 @@ aliases:
 ## Overview
 Many R-users rely on the `dplyr` or `read.table` packages to import their datasets as a dataframe. Although this works well for relatively small datasets, we recommend using the `data.table` R package instead because it is significantly faster. This building block provides you with some practical tips for dealing with large datasets in R.
 
-## Code
+## Using `data.table` package to import a Dataset
 
 Switching from the `read.csv()` function to `fread()` can greatly improve the performance of your program. The code block below illustrates how you can import your whole dataset as well as subsets of it, determine the size of the resulting object, and store your new/clean versions of the data as a new file for future use.
-
-{{% tip %}}
-
-Oftentimes, datasets you previously worked with remain stored in memory, even if they're no longer in use. In RStudio, click on the broom icon in the top right window to remove all objects from the environment. By removing objects which are no longer in use you will help improve RStudio's performance and reduce the risk of errors and conflicts.
-
-{{% /tip %}}
-
 
 {{% codeblock %}}
 ```R
@@ -42,6 +35,12 @@ df <- fread("YOUR_DATASET.csv", select=c("date", "country", "revenue"))  # colum
 object.size(df)
 
 # store the derivative file for future use
-fwrite(df, "YOUR_CLEANED_DATSET.csv")
+fwrite(df, "YOUR_CLEANED_DATASET.csv")
 ```
 {{% /codeblock %}}
+
+{{% tip %}}
+
+Oftentimes, datasets you previously worked with remain stored in memory, even if they're no longer in use. In RStudio, click on the broom icon in the top right window to remove all objects from the environment. By removing objects which are no longer in use you will help improve RStudio's performance and reduce the risk of errors and conflicts.
+
+{{% /tip %}}
