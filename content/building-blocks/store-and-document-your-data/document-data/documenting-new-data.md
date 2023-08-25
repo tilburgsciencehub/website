@@ -11,10 +11,9 @@ aliases:
 
 ## Overview
 
-Ideally, your data description includes the *very elaborate questions* outlined in Datasheets for datasets by Gebru, Timnit, et al. (2018)[^1].
-We **strongly** refer you to the [original paper](https://arxiv.org/abs/1803.09010), which explains in detail the seven key ingredients of a proper dataset documentation.
+Ideally, your data description should embody the comprehensive principles outlined in the "Datasheets for Datasets" by Gebru, Timnit, et al. (2018)[^1]. We highly recommend referring to the original paper for an in-depth exploration of the seven essential components crucial for meticulous dataset documentation.
 
-Below, we have reproduced these questions, and we recommend you to include those as a **`readme.txt`**, together with your datasets. For *derived* data, it may be enough to point to a relevant source code file, and provide a list of variables and their operationalization.
+In the following section, we have replicated these pivotal questions. It's advisable to incorporate them into a `readme.txt` file alongside your datasets. In the case of derived data, it may suffice to reference a relevant source code file and provide a comprehensive list of variables along with their operational definitions.
 
 You can download a formatted version (`.docx`) of this template using the button below. Alternatively, you can find a plain text version of it for copy & paste below.
 
