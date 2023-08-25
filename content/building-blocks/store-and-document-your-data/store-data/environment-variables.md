@@ -63,10 +63,15 @@ api_password = Sys.getenv("VARIABLE_NAME")
 {{% summary %}}
 
 - Environment variables provide a secure way to store credentials and secret keys for API or cloud service access.
+
 - They are stored permanently in the operating system and can be accessed in different coding environments.
+
 - Uploading scripts with environment variable references to public repositories is safe, as the variable values are not disclosed.
+
 - Mac/Linux users can configure environment variables using the terminal and modifying the .bash_profile or .zshrc files.
+
 - Windows users can access environment variables through the "Control Panel" settings.
+
 - You can assign environment variable values to variables within (e.g.) Python and R scripts through the appropriate code snippets.
 
 {{% /summary %}}
