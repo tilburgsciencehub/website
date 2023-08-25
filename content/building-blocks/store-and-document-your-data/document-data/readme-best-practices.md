@@ -124,6 +124,20 @@ By default Github showcases your pinned repositories on your profile page (click
 Want to go the extra mile? Include your [GitHub Stats Card](https://github.com/anuraghazra/github-readme-stats) in your README! Simply add `https://github-readme-stats.vercel.app/api?username=<YOUR_USERNAME>` to the end of your README to incorporate a real-time widget of your number of stars, commits, PRs, issues, and contributions on GitHub ([see example](https://github-readme-stats.vercel.app/api?username=hannesdatta)).
 {{% /tip %}}
 
-## Useful Other Resources
-
+{{% tip %}}
 A useful external resource is [Make A Readme](https://www.makeareadme.com/). With Make A Readme, you can create READMEs for repositories. Furthermore, it provides suggestions and good tips for good READMEs. 
+{{% /tip %}}
+
+{{% summary %}}
+
+- A README serves as both documentation and marketing for your project, making it essential to create a well-crafted one.
+
+- Markdown format is the standard for README files.
+
+- Including key sections like project title, motivation, method and results, and repository overview helps users understand and engage with your project.
+
+- Providing a directory structure overview makes it easier for users to navigate your repository.
+
+- Examples of well-crafted README files ar a great source inspiration for creating your own.
+
+{{% /summary %}}
