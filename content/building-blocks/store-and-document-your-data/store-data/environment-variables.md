@@ -62,7 +62,7 @@ api_password = Sys.getenv("VARIABLE_NAME")
 - Uploading scripts with environment variable references to public repositories is safe, as the variable values are not disclosed.
 - Mac/Linux users can configure environment variables using the terminal and modifying the .bash_profile or .zshrc files.
 - Windows users can access environment variables through the "Control Panel" settings.
-- You can assign environment varibale values to variables within (e.g.) Python and R scripts through the appropriate code snippets.
+- You can assign environment variable values to variables within (e.g.) Python and R scripts through the appropriate code snippets.
 
 {{% /summary %}}
 
