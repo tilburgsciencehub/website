@@ -115,12 +115,17 @@ You can see the list of functionalities [here](https://docs.dask.org/en/stable/a
 
 
 {{% summary %}}
-`Dask` is a library for managing datasets that are too large to fit in memory. `Dask` also increases the efficiency of the computations by dividing the datasets into several partitions and distributing the work across multiple CPU cores. `Dask` DataFrame should be simple to use for `pandas` users because it makes extensive use of the `pandas` API.
 
-However, `Dask` DataFrame doesn't implement all `pandas` functionalities. Therefore, it is a good practice to reduce a large dataset with `Dask` to a manageable level and then switch to `pandas`.
+- With `Dask` you can handle and manage efficiently large datasets in Python.
+
+- `Dask` divides datasets into partitions and distributes the work across multiple CPU cores.
+
+-Working with `Dask` DataFrames is user-friendly for `pandas` users due to extensive use of the `pandas` API.
+
+- However, `Dask` DataFrame doesn't support all pandas functionalities. This makes it an interesting option to Reduce datasets with Dask first, and then switch to pandas for detailed analysis.
+
 {{% /summary %}}
 
 ### See Also
 
-If you want to learn more about `Dask` and how to use it, check out our building block [Dask in action](https://tilburgsciencehub.com/building-blocks/prepare-your-data-for-analysis/data-preparation/dask-in-action/). There you will find a practical example of how to perform some descriptive and analytics operations over a large dataset with `Dask`.
- 
+[Practical Example Using Dask](https://tilburgsciencehub.com/building-blocks/prepare-your-data-for-analysis/data-preparation/dask-in-action/)
