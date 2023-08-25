@@ -18,14 +18,9 @@ Discover how to leverage the power of Amazon Simple Storage Service (AWS S3) to 
 
 [Amazon Simple Storage Service](https://aws.amazon.com/s3/) (AWS S3) is an industry-leader object storage service that allows you to store and retrieve any kind of files fast, securely and anywhere in the world - basically Dropbox on steroids. It can be used for a range of use cases, from websites to backups and archives. It can also be particularly useful for research projects - storing a huge amount of raw data, for instance.
 
+In AWS S3, storage units are referred to as **buckets**. Essentially, a bucket is a container for objects (files). Every object in S3 must reside within a bucket. Users have the flexibility to create as many buckets as they need. Moreover every bucket can contain as many folders as desired. 
+
 If you are using AWS S3 to store data necessary for your research and want to incorporate downloading and uploading your data files to AWS S3 into a [`make`](/building-blocks/configure-your-computer/automation-and-workflows/make/) script, it is useful to use a code script to interact with your AWS S3 bucket instead of the command line. Keep reading to learn how to do it.
-
-{{% tip %}}
-**Some terminology**
-
-You will often read about **AWS S3 buckets**. What are they?
-Put simply, a bucket is a container for objects (files) stored in Amazon S3. Every object must be contained in a bucket. A single user can have as many buckets as they want. Inside a bucket, you can create as many folders as you want.
-{{% /tip %}}
 
 {{% warning %}}
 You need to have access to an AWS S3 bucket and have the credentials to run the following code.
@@ -35,7 +30,7 @@ Whenever you interact with AWS, you must specify your security credentials to ve
 Learn more about AWS credentials [here](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html).
 {{% /warning %}}
 
-## Code
+## Handle AWS S3 through Python
 
 The following code snippets show how to set up a connection with AWS S3 using Python with boto3, to then carry out some useful related operations including how to list files in your bucket, as well as upload and download them.
 
@@ -47,7 +42,7 @@ pip install boto3
 ```
 {{% /codeblock %}}
 
-### Establish a connection
+### Set up a connection with AWS S3
 
 With boto3 installed, your next step will be to establish a connection with S3.
 
@@ -142,6 +137,14 @@ s3.download_file(your_aws_bucket_name, "remote-object-name.txt", "local-file-nam
 
 {{% summary %}}
 
-In this article, we showed you how to use Python to automate your uploads to and downloads from AWS S3. Hopefully, this is helpful to you.
+- AWS S3 is a reliable and flexible storage service that supports a variety of use cases, including research projects.
+
+- Boto3 simplifies the process of interacting with AWS S3 buckets using Python, enabling automation of file uploads and downloads and more.
+
+- You can employ the `list_objects` function to retrieve information from the objects in your bucket.
+
+- Uploading files to an S3 bucket can be done with the `upload_file` function, specifying the file and target object name.
+
+- Downloading files from an S3 bucket is straightforward with the `download_file` function, specifying the bucket, object name, and desired local file name.
 
 {{% /summary %}}
