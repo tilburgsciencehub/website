@@ -1,5 +1,5 @@
 ---
-title: "Store your credentials safely by configuring Environment Variables"
+title: "Safely Store Your Credentials By Configuring Environment Variables"
 description: "Learn how to configure environment variables to store personal credentials and secret keys in python and R"
 keywords: "environment variables, configuration, password, secret, credentials, hiding credentials, security, anonymous, anonymity, python, r, windows, mac, linux, API, cloud"
 #date: 2021-02-17
@@ -54,6 +54,17 @@ api_password = Sys.getenv("VARIABLE_NAME")
 ```
 
 {{% /codeblock %}}
+
+{{% summary %}}
+
+- Environment variables provide a secure way to store credentials and secret keys for API or cloud service access.
+- They are stored permanently in the operating system and can be accessed in different coding environments.
+- Uploading scripts with environment variable references to public repositories is safe, as the variable values are not disclosed.
+- Mac/Linux users can configure environment variables using the terminal and modifying the .bash_profile or .zshrc files.
+- Windows users can access environment variables through the "Control Panel" settings.
+- You can assign environment varibale values to variables within (e.g.) Python and R scripts through the appropriate code snippets.
+
+{{% /summary %}}
 
 
 
