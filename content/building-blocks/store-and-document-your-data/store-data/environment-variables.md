@@ -55,6 +55,11 @@ api_password = Sys.getenv("VARIABLE_NAME")
 
 {{% /codeblock %}}
 
+## See also
+
+- [Mac/Linux tutorial](https://www.youtube.com/watch?v=5iWhQWVXosU)
+- [Windows tutorial](https://www.youtube.com/watch?v=IolxqkL7cD8)
+
 {{% summary %}}
 
 - Environment variables provide a secure way to store credentials and secret keys for API or cloud service access.
@@ -65,10 +70,3 @@ api_password = Sys.getenv("VARIABLE_NAME")
 - You can assign environment variable values to variables within (e.g.) Python and R scripts through the appropriate code snippets.
 
 {{% /summary %}}
-
-
-
-## See also
-
-- [Mac/Linux tutorial](https://www.youtube.com/watch?v=5iWhQWVXosU)
-- [Windows tutorial](https://www.youtube.com/watch?v=IolxqkL7cD8)
