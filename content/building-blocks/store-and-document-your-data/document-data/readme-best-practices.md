@@ -138,6 +138,6 @@ A useful external resource is [Make A Readme](https://www.makeareadme.com/). Wit
 
 - Providing a directory structure overview makes it easier for users to navigate your repository.
 
-- Examples of well-crafted README files ar a great source inspiration for creating your own.
+- Examples of well-crafted README files ar a great source of inspiration for creating your own.
 
 {{% /summary %}}
