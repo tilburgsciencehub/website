@@ -158,7 +158,9 @@ The process of splitting text into smaller bites called tokens is called **token
 # Stemming
 review_corpus<- stemDocument(review_corpus, language = "english")
 # Lemmatization
-review_corpus<- tm_map(review_corpus, content_transformer(lemmatize_words))
+review_corpus<- tm_map(review_corpus, content_transformer(lemmatize_strings))
+
+# Note: `lemmatize_words` function is used when you have a vector of words but in a corpus we do not have a vector of words. Instead, we have strings with each string being a document's content. Hence, we use `lemmatize_strings` function instead.
 ```
 {{% /codeblock %}}
 
@@ -230,3 +232,19 @@ Here are some alternative packages to check out
 - in Python: [NLTK](https://www.nltk.org/), [Gensim](https://radimrehurek.com/gensim/), [TextBlob](https://textblob.readthedocs.io/en/dev/#), [spaCy](https://spacy.io/), and [CoreNLP](https://stanfordnlp.github.io/CoreNLP/)
 
 {{% /tip %}}
+
+{{% summary %}}
+- Text mining extracts insights from unstructured text data and the main goal is to transform a corpus of texts into interpretable patterns and valuable insights.
+- Steps to Pre-processing raw text data:
+  - Lowercase: Normalize text by converting it to lowercase.
+  - Remove special characters, punctuation, and numbers.
+  - Eliminate URLs, HTML tags, and other unwanted elements.
+  - Strip extra whitespaces and standardize formatting.
+  - Remove common stopwords that add little meaning.
+  - **Stemming**: reduces words to their root form by removing suffixes.
+  - **Lemmatization**: identifies base forms based on lexical knowledge.
+
+- Term Document Matrix (TDM): Represent the corpus as a matrix of terms and documents. Each row is a term, each column is a document, cells hold term weights.
+- Visualise the processed text data using Word Clouds which provide a quick overview of frequent words.
+
+{{% /summary %}}
