@@ -245,6 +245,7 @@ Here are some alternative packages to check out
   - **Lemmatization**: identifies base forms based on lexical knowledge.
 
 - Term Document Matrix (TDM): Represent the corpus as a matrix of terms and documents. Each row is a term, each column is a document, cells hold term weights.
+
 - Visualise the processed text data using Word Clouds which provide a quick overview of frequent words.
 
 {{% /summary %}}
