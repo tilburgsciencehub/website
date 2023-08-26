@@ -12,9 +12,9 @@ aliases:
 ## Coding styles in STATA
 We use two coding styles in Stata: a linear format for very short or simple scripts, and a functional style for longer or more complex scripts.
 
-### 1. Linear Format.
+### 1. Linear Format
 
-```{stata}
+```stata
 *****************************
 * Prepare data
 *****************************
@@ -35,11 +35,11 @@ We use two coding styles in Stata: a linear format for very short or simple scri
 If you include a comment as a header like this for one major block of code, you should include a similar header for every block of code at the same logical place in the hierarchy. This is a case where redundant comments are allowed. Comments are not there to provide information, but to make the code easy to scan.
 {{% /tip %}}
 
-### 2. Functional Style.
+### 2. Functional Style
 
 In the functional style in Stata, we enclose code within program... end blocks. **The first program is always called “main,” and the .do file always ends with an “Execute” step.**
 
-```{stata}
+```stata
 * PROGRAMS
 
 program main
@@ -94,7 +94,7 @@ Functions should be **shy** (see [Code and Data for the Social Sciences](http://
  - **Problem:** Data in memory is by definition a global variable in Stata.
  {{% example %}}
  From the following code:
-   ```{stata}
+   ```stata
    use x y z using autodata.xls, clear
    prepare_data
    update_variables
