@@ -1,7 +1,7 @@
 ---
 title: "Data Visualization Theory and Best Practices"
 description: "An introduction to data visualization: data encoding, marks and channels, chart types, elements of a chart, best practices to visualization"
-keywords: "data, visualization, introduction, theory, encoding, chart, types"
+keywords: "data, visualization, introduction, theory, encoding, chart, types, elements, marks, channels"
 date: 2023-07-18
 weight: 1
 author: "Ana Bianca Luca"
@@ -13,9 +13,11 @@ aliases:
   - /best/practices
 ---
 
-Data visualization is an important part of any data analysis process as it can help to make comparisons, follow trends and distributions or identify outliers.
+## Introduction and Learning Goals
 
-In this building block we go through the theory of data visualization, describe the chart types and conclude with best practices for plotting.
+The process of analyzing data does not stop after obtaining the requested statistics. Simply having some numbers or datasets could not transmit much information, but mapping them into charts and figures can help tell a story. Data visualization facilitates making comparisons, following trends and distributions or identifying outliers. It can also speed up the decision making process, as it makes it easier for the reader to comprehend the information, especially if it is a vast amount of complicated data. 
+
+In this building block we go through the theory of data visualization, describe the most common chart types and conclude with best practices for plotting.
 
 ## Theory of Data Visualization
 
@@ -54,6 +56,9 @@ First of all, a chart needs to have a **coordinate system** , **axes** and **sca
 A complete chart also has a **legend** for providing mapping information, **axes titles**, a **chart title**, **data labels** and **gridlines** for better readability of the data.
 
 ### Chart Types
+
+
+There is a vast range of chart types that could be used to visualize data, however in this building block we describe 7 of the most common ones, as they cover most of the visualization goals.
 
 #### 1. Scatterplot
 
