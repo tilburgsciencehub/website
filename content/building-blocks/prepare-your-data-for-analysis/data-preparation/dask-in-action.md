@@ -56,7 +56,7 @@ If you don't mention these arguments when reading the data and it raises the err
 ### Inspecting the data
 
 Now that we loaded the data, let's see what it looks like and find some basic info about it.
-We can check to see how many partitions the data has been divided and display the data using the following commands:
+We can check to see how many partitions the data has been divided in and display the data using the following commands:
 
 {{% codeblock %}}
 
