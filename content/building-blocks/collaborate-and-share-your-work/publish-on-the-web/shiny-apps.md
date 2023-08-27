@@ -1,7 +1,7 @@
 ---
 title: "Build Interactive Dashboards With R Shiny"
 description: "Learn how to build your own interactive R Shiny app with a good skeleton, layout, and placeholders. View our easy-to-follow tutorial with example code"
-keywords: "shiny, app, data visualisation, dashboard, r, dataviz, plots, charts, interactive"
+keywords: "shiny, app, data visualisation, dashboard, r, dataviz, plots, charts, interactive, data, science, plot, chart, package, library, analysis"
 #weight: 101
 #date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -13,16 +13,28 @@ aliases:
   - /building-blocks/share-your-results-and-project/publish-on-the-web/shiny-apps/
 ---
 
-## What is a Shiny App?
-The **[Shiny library](https://shiny.rstudio.com)** helps you turn your analyses into interactive web applications without requiring HTML, CSS, or Javascript knowledge, and provides a powerful web framework for building web applications using R.
+## Overview
 
-Being able to create Shiny apps is a great skill to have because it enables you to communicate your insights to non-technical stakeholders and give them the tools to conduct their own analysis!
+In the world of data analysis, the ability to communicate insights effectively is a great skill to have. 
 
-![R Shiny](https://shiny.rstudio.com/images/shinySiteBandOne.png)
+**[Shiny](https://shiny.rstudio.com)** is a package that helps you turn your analyses into interactive web applications all with R or Python without requiring HTML, CSS, or Javascript knowledge. Shiny empowers data analysts and scientists to create dynamic, user-friendly applications that allow non-technical stakeholders to explore and interact with data in real-time.
 
-## Code
+<p align = "center">
+<img src = "../images/shinylogo.png" width="400">
+</p>
 
-### Skeleton
+Whether you're looking to build an interactive dashboard for tracking key metrics, a tool for exploring complex datasets, or a platform for running simulations and models, Shiny provides a versatile framework that can fulfill a range of use cases.
+
+In this guide, we'll walk you through the fundamental concepts of creating Shiny apps, step by step. By the end, you'll have the skills to transform your static analyses into engaging web applications that empower your audience to conduct their own explorations. So, whether you're a data analyst, a scientist, or anyone who wants to convey insights in an interactive and impactful way, dive into the world of Shiny apps and unlock the potential of dynamic data visualization!
+
+The building blocks consists of the following sections
+- The skeleton of a Shiny App
+- The lay-out
+- Define placeholders
+- Control widgets
+- An example 
+
+### The skeleton
 The skeleton of any Shiny app consists of a user interface (`ui`) and a `server`. The UI is where the visual elements are placed such as a scatter plot or dropdown menu. The server is where the logic of the app is implemented, for example, what happens once you click on the download button. And this exactly where Shiny shines: combining inputs with outputs.
 
 {{% codeblock %}}
