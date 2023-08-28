@@ -1,6 +1,6 @@
 ---
-title: "Publish e-books and interactive articles directly from R"
-description: "Publish e-books and interactive articles directly from R"
+title: "Publish Ebooks and Interactive Articles Directly From R"
+description: "Publish ebooks and interactive articles directly from R with tools like Distill, Bookdown and Quarto"
 keywords: "publish, website, distill, bookdown, R, markdown, e-book, ebook, paper, scientific, interactive, article, web, tools, tutorial, example"
 #weight: 101
 #date: 2020-11-11T22:02:51+05:30
