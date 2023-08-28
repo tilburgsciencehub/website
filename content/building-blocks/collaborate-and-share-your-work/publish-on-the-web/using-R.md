@@ -1,7 +1,7 @@
 ---
 title: "Publish e-books and interactive articles directly from R"
 description: "Publish e-books and interactive articles directly from R"
-keywords: "publish,website,distill,bookdown,R,markdown,publish"
+keywords: "publish, website, distill, bookdown, R, markdown, e-book, ebook, paper, scientific, interactive, article, web, tools, tutorial, example"
 #weight: 101
 #date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -11,19 +11,22 @@ aliases:
   - /make/ebooks
   - /build/using-R
 ---
-# Overview
 
-Sometimes writing a paper is simply not enough: provide readers with an interactive article on the web, or start drafting your own ebook!
+## Overview
+
+Sometimes, writing a paper is simply not enough: provide readers with an interactive article on the web, or start drafting your own ebook!
 
 **Distill, Bookdown** and **Quarto** are some of the state-of-the-art tools to check out and get started.
-{{% wide-table %}}
-| 	| Distill 	| Bookdown 	| Quarto 	|  	
-|---	|---	|---	|---	|
-| **Possible input languages** 	| R 	| R 	| Python, R, Julia <br>  and Observable 	|  	
-| **Purpose** 	| Publish shorter content<br> like articles or <br> sets of articles <br> as a Distill website <br> or as a Distill blog 	| Publish books or <br> pretty much anything <br> that consists of <br> multiple R Markdown <br> documents meant to <br> be read in a linear sequence <br> (e.g. course materials,<br> thesis etc) 	| Used to publish articles,<br> reports, presentation, <br> websites,  blogs, and books 	|
-| **Output formats** 	| HTML 	| Multiple types of <br> output formats are possible:<br> PDF/HTML/Word 	| HTML, PDF, WORD, <br> ePub etc 	|  	
-{{% /wide-table %}}
 
+{{% wide-table %}}
+
+| 	| **Possible input  <br> languages** 	| **Purpose**  	| **Output <br> formats** 	|  	
+|---	|---	|---	|---	|
+|  	**Distill** | R | Publish shorter content<br> like articles or <br> sets of articles <br> as a Distill website <br> or as a Distill blog 	| HTML 	|  	
+| **Bookdown** | R | Publish books or <br> pretty much anything <br> that consists of <br> multiple R Markdown <br> documents meant to <br> be read in a linear <br> sequence (e.g. course <br> materials, thesis etc) 	| Multiple types of <br> output formats are <br> possible: PDF,  <br> HTML, or Word 	|
+| **Quarto** | Python, R, <br> Julia and <br> Observable 	|  Used to publish articles,<br> reports, presentation, <br> websites,  blogs, and books	| HTML, PDF, <br> WORD, ePub etc. 	|  	
+
+{{% /wide-table %}}
 
 
 # Get Started
