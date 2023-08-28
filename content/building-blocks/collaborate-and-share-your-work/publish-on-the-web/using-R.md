@@ -28,8 +28,7 @@ Sometimes, writing a paper is simply not enough: provide readers with an interac
 
 {{% /wide-table %}}
 
-
-# Get Started
+## Get Started
 
 Check out these tutorials/guides to help you get started with your preferred publishing tool:
 
@@ -37,7 +36,7 @@ Check out these tutorials/guides to help you get started with your preferred pub
 - [Guide to Bookdown](https://bookdown.org/yihui/bookdown/)
 - [Guide to Quarto](https://quarto.org/docs/guide/)
 
-# Examples
+## Examples
 <div id = "image-table">
 <table>
 <tr>
