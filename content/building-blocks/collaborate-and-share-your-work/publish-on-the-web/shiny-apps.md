@@ -1,7 +1,7 @@
 ---
 title: "Build Interactive Dashboards with R Shiny"
 description: "Learn how to build your own interactive R Shiny app with a good skeleton, layout, and placeholders. View our easy-to-follow tutorial with example code"
-keywords: "shiny, app, data visualisation, dashboard, r, dataviz, plots, charts, interactive, data, science, plot, chart, package, library, analysis"
+keywords: "shiny, app, data visualisation, dashboard, r, python, dataviz, plots, charts, interactive, data, science, plot, chart, package, library, analysis"
 #weight: 101
 #date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -17,7 +17,7 @@ aliases:
 
 In the world of data analysis, the ability to communicate insights effectively is a great skill to have. 
 
-**[Shiny](https://shiny.rstudio.com)** is a package that helps you turn your analyses into interactive web applications all with R or Python without requiring HTML, CSS, or Javascript knowledge. Shiny empowers data analysts and scientists to create dynamic, user-friendly applications that allow non-technical stakeholders to explore and interact with data in real-time.
+**[Shiny](https://shiny.rstudio.com)** is a package that helps you turn your analyses into interactive web applications all with R or Python without requiring HTML, CSS, or Javascript knowledge. Shiny empowers data analysts and scientists to create dynamic, user-friendly applications that allow non-technical stakeholders to explore and interact with data in real time.
 
 <p align = "center">
 <img src = "../images/shinylogo.png" width="400">
@@ -27,9 +27,9 @@ Whether you're looking to build an interactive dashboard for tracking key metric
 
 In this guide, we'll walk you through the fundamental concepts of creating Shiny apps, step by step. By the end, you'll have the skills to transform your static analyses into engaging web applications that empower your audience to conduct their own explorations. So, whether you're a data analyst, a scientist, or anyone who wants to convey insights in an interactive and impactful way, dive into the world of Shiny apps and unlock the potential of dynamic data visualization!
 
-The building blocks consists of the following sections
+The building block consists of the following sections
 - Skeleton 
-- Lay-out options
+- Layout options
 - Define placeholders
 - Control widgets
 - An example 
@@ -55,7 +55,7 @@ shinyApp(ui = ui, server = server)
 {{% /codeblock %}}
 
 
-### Lay-out options
+### Layout options
 
 **Sidebar**  
 A common layout structure in Shiny apps is the sidebar layout. This layout divides the app into a small sidebar panel on the left and a main content panel on the right.
@@ -77,7 +77,7 @@ ui <- fluidPage(
 
 
 **Tabs**  
-Tabs are another effective way to organize content in your Shiny app. They provide a convenient menas of switching between different sections of your app's content. 
+Tabs are another effective way to organize content in your Shiny app. They provide a convenient means of switching between different sections of your app's content. 
 
 {{% codeblock %}}
 ```R
@@ -297,7 +297,7 @@ server <- function(input, output) {
 
 ### An example
 
-The [Shiny app](https://royklaassebos.shinyapps.io/dPrep_Demo_Google_Mobility/) below  visualizes Google’s COVID-19 Community Mobility Reports of the Netherlands. A step-by-step tutorial and the source code can be found [here](https://tilburgsciencehub.com/examples/google-covid-shiny-app/).
+The [Shiny app](https://royklaassebos.shinyapps.io/dPrep_Demo_Google_Mobility/) below visualizes Google’s COVID-19 Community Mobility Reports of the Netherlands. A step-by-step tutorial and the source code can be found [here](https://tilburgsciencehub.com/examples/google-covid-shiny-app/).
 
 ![](../images/demo_app.png)
 
