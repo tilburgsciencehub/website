@@ -11,14 +11,18 @@ aliases:
   - building-blocks/prepare-your-data-for-analysis/data-preparation/spss-files-in-R
 ---
 
+# Learning goals
+- Read, process and manipulate SPSS (or other labelled) data in R while maintaining the labels
+- Learn the most common operations on labels
+- Enable you to seamlessly work with both R and SPSS so you can split your workflow between the two as you (or your teammates) wish
+
 # Overview
 
-Researchers often work with both R and SPSS, so it is helpful to work with `.sav` files in R.
-While working with SPSS data in R is not particularly hard, it can be quite confusing to chose the right approach. There are several packages available on [CRAN](https://cran.r-project.org/index.html) that offer more or less the same functionality, but some of them don't work well in conjunction with each other and most of them don't offer all the features you might need. This building block is intended to guide you through the tasks you will find yourself doing most often when working with SPSS data in R.
+Researchers often work with both R and SPSS, so it is helpful to work with `.sav` files in R. While working with SPSS data in R is not particularly hard, it can be quite confusing to chose the right approach. There are several packages available on [CRAN](https://cran.r-project.org/index.html) that offer more or less the same functionality, but some of them don't work well in conjunction with each other and most of them don't offer all the features you might need. This building block is intended to guide you through the tasks you will find yourself doing most often when working with SPSS data in R.
 
 ## Required packages
 
-For this workflow, we'll need two packages: the ubiquitous `tidyverse` and `sjlabelled`.
+For this workflow, we'll need two packages: the ubiquitous `tidyverse` as well as `sjlabelled`.
 
 {{% codeblock %}}
 
@@ -48,8 +52,9 @@ For this tutorial, we'll work with the `efc` dataset on informal care. It comes 
 {{% codeblock %}}
 
 ``` r
-# attach the dataset
+# attach the dataset and create a dataframe
 data(efc)
+df <- efc
 ```
 
 {{% /codeblock %}}
@@ -66,10 +71,10 @@ You can inspect the data labels with dedicated `sjlabelled` functions, though. `
 
 ``` r
 # vector of VARIABLE labels
-get_label(efc)
+get_label(df)
 
 # list of vectors with VALUE labels for the factor levels
-get_labels(efc)
+get_labels(df)
 ```
 
 {{% /tip %}}
@@ -81,8 +86,8 @@ Unlike SPSS, R does not gain any performance by storing categorical data as numb
 {{% codeblock %}}
 
 ``` r
-efc_factor <- as_label(efc)
-efc_factor
+df_factor <- as_label(df)
+df_factor
 ```
 
 {{% /codeblock %}}
@@ -92,8 +97,8 @@ If we want to be safe, we can also smush together the value ID and the value of 
 {{% codeblock %}}
 
 ``` r
-efc_id_factor <- as_label(efc, prefix = TRUE)
-efc_id_factor
+df_id_factor <- as_label(df, prefix = TRUE)
+df_id_factor
 ```
 
 {{% /codeblock %}}
@@ -116,11 +121,11 @@ The most common types of data frames, such as tibbles and data.tables should all
 
 ``` r
 # Store the labels
-variable_labels <- get_label(efc) # returns a named vector
-value_labels <- get_labels(efc) # retuns a named list of named vectors
+variable_labels <- get_label(df) # returns a named vector
+value_labels <- get_labels(df) # retuns a named list of named vectors
 
 # Simulate some analysis that drops all labels
-efc_processed <- remove_all_labels(efc_factor)
+df_processed <- remove_all_labels(df_factor)
 ```
 
 {{% /codeblock %}}
@@ -130,7 +135,7 @@ This data frame does not carry any labels anymore, just like a "normal" R datafr
 {{% codeblock %}}
 
 ``` r
-efc_processed |> 
+df_processed |> 
   var_labels(!!!variable_labels) |> 
   get_label()
 ```
@@ -142,7 +147,7 @@ Analogously, we can re-assign the value labels:
 {{% codeblock %}}
 
 ``` r
-efc_processed |> 
+df_processed |> 
   val_labels(!!!value_labels) |> 
   get_labels()
 ```
@@ -154,8 +159,8 @@ Now let's fully re-label the "processed" dataframe. As you saw before, both `var
 {{% codeblock %}}
 
 ``` r
-efc_proc_relabelled <- efc_processed |> 
-  select(order(colnames(efc_processed))) |> # order the columns alphabetically
+df_proc_relabelled <- df_processed |> 
+  select(order(colnames(df_processed))) |> # order the columns alphabetically
   var_labels(!!!variable_labels) |>
   val_labels(!!!value_labels)
 ```
@@ -167,7 +172,7 @@ Both `var_labels()` and `val_labels()` automatically skip variables that are giv
 {{% codeblock %}}
 
 ``` r
-efc_processed |> 
+df_processed |> 
   select(!e15relat) |> # removes the `e15relat` variable
   var_labels(!!!(variable_labels)) |> 
   get_label()
@@ -182,7 +187,7 @@ If you don't want the warning, you can create a makeshift version of `any_of()` 
 {{% codeblock %}}
 
 ``` r
-efc_processed |> 
+df_processed |> 
   select(!e15relat) |> 
   var_labels(!!!(variable_labels[names(variable_labels) %in% colnames(.data)]))
 ```
@@ -198,7 +203,7 @@ which_exist <- function(variable_labels) {
   variable_labels[names(variable_labels) %in% colnames(.data)]
 }
 
-efc_processed |> 
+df_processed |> 
   select(!e15relat) |> 
   var_labels(!!!(which_exist(variable_labels)))
 ```
@@ -255,7 +260,7 @@ SPSS knows two types of categorical measures, nominal and ordinal. In R, this di
 {{% codeblock %}}
 
 ``` r
-efc$c82cop1 <- as.ordered(efc$e42dep)
+df$c82cop1 <- as.ordered(df$e42dep)
 ```
 
 {{% /codeblock %}}
@@ -278,10 +283,10 @@ We can then perform conditional operations based on the `ordered` flag:
 
 ``` r
 # flag all variables related to coping ("cop") are ordinal data
-efc_processed_ordered <- efc_processed |> 
+df_processed_ordered <- df_processed |> 
   as_ordered_cols(contains("cop")) 
 
-efc_processed_ordered |>
+df_processed_ordered |>
   select(where(is.ordered))
 ```
 
@@ -292,20 +297,20 @@ To convert factors back to unordered (i.e. nominal) ones, you can use:
 {{% codeblock %}}
 
 ``` r
-efc$c82cop1 <- factor(efc$c82cop1, ordered = FALSE)
+df$c82cop1 <- factor(df$c82cop1, ordered = FALSE)
 ```
 
 {{% /codeblock %}}
 
 ### Quantitative statistics on ordinal data
 
-Questionnaire data is often ordinal. To group together several related questions, the data is often interpreted as numeric, which allows quantitative statistics. For this, we need to replace the values of factors with their corresponding numeric level identifier. In `sjlabelled`, we can do that with the `as_numeric()` function.
+Sometimes ordinal data is interpreted as numerical data. One example for this is questionnaire data, several related questions are grouped together and the numerical levels are used to perform quantitative statistics. To do this, we need to replace the values of factors with their corresponding numeric level identifier. In `sjlabelled`, we can do that with the `as_numeric()` function.
 
 {{% codeblock %}}
 
 ``` r
-efc_processed |> print() # text levels
-efc_processed_numeric <- efc_processed |> 
+df_processed |> print() # text levels
+df_processed_numeric <- df_processed |> 
   as_numeric() |> 
   print() # numeric levels, the text levels are stored in the value labels
 ```
@@ -319,7 +324,7 @@ We can now perform statistical operations. By calling `rowwise()`, we can ensure
 {{% codeblock %}}
 
 ``` r
-efc_processed_numeric |> 
+df_processed_numeric |> 
   select(c(c82cop1, c89cop8, c90cop9)) |> # positive measures
   rowwise() |> 
   mutate(
@@ -331,14 +336,14 @@ efc_processed_numeric |>
 
 ## Export data back to SPSS
 
-After we imported the SPSS file, we can clean and analyze the data as we normally would. Afterwards, we can save it either as a `.csv` or we can go back to a `.sav` file. In the latter case we need to go back to the SPSS standard, i.e. keep the *variable labels* and replace factors with numerical IDs plus corresponding value labels. Conveniently, both can be done automatically in R! This is the only time that we will be using a function that is not part of `sjlabelled`, but the `haven` package. We don't recommend attaching `haven` with `library()`, though. Instead we will be calling it with the `::` notation. Factor columns will be treated as nominal measures by default, so make sure to flag ordered variables (e.g. with our custom function `as_ordered_cols`) before exporting.
+After we imported the SPSS file, we can clean and analyze the data as we normally would. Afterwards, we can save it either as a `.csv` or we can go back to a `.sav` file. In the latter case we need to go back to the SPSS standard, i.e. keep the *variable labels* and replace factors with numerical IDs plus corresponding value labels. Conveniently, both can be done automatically in R! This is the only time that we will be using a function that is not part of `sjlabelled`, but the `haven` package. We don't recommend attaching `haven` with `library()`, though. Instead we will be calling it with the `::` notation. Factor columns will be treated as nominal measures by default, so make sure to flag ordered variables (e.g. with our custom function `as_ordered_cols()`) before exporting.
 
 {{% codeblock %}}
 
 ``` r
-efc_factor |> 
+df_factor |> 
   as_ordered_cols(contains("cop")) |> 
-  haven::write_sav("data/efc_processed.sav")
+  haven::write_sav("data/df_processed.sav")
 ```
 
 {{% /codeblock %}}
@@ -350,10 +355,28 @@ If you want to export the numeric version of the dataframe, make sure to convert
 {{% codeblock %}}
 
 ``` r
-efc_processed_numeric |>
+df_processed_numeric |>
   as_ordered_cols(contains("cop")) |> 
   as_label() |> 
-  haven::write_sav("data/efc_processed_num.sav")
+  haven::write_sav("data/df_processed_num.sav")
 ```
 
 {{% /codeblock %}}
+
+## Summary
+
+Here are the key takeaways from this building block:
+
+-   You can seamlessly work with both SPSS and R for your labelled data
+-   We recommend the `sjlabelled` package to handle SPSS (and labelled data in general) in R.
+-   Labelled data can have **variable** and **value** labels (aka levels).
+    -   Use `get_label()` to inspect the **variable** labels.
+    -   Use `get_labels()` to inspect the **value** labels.
+-   Use `as_label()` to replace the numerical level IDs with the text levels.
+-   To assign labels to the data with `dplyr`-syntax use
+    -   `var_labels(!!!variable_labels)`
+    -   `val_lables(!!!value_labels)`
+    -   `variable_labels` and `value_labels` are (nested) named lists with column name-label pairs
+-   Use `as.ordered()` to transfer categorical data to ordinal data.
+-   Use `as_numeric()` on ordinal data to before applying quantitative statistics.
+-   Use `haven::write_sav()` to export the data as SPSS files.
