@@ -5,7 +5,7 @@ indexexclude: "true"
 weight: 30
 title: "Transforming the Data"
 date: 2021-01-06T22:01:14+05:30
-draft: true
+draft: false
 ---
 
 # Transforming Data
@@ -45,11 +45,11 @@ Create a file `clean.R` that loads the data from the `data` directory and reshap
 Please adhere to the step-by-step guidelines below:  
 
 * Convert the date column of `reviews` into date/time format.
-* Filter for `reviews` published since January 1st 2015
+* Filter for `reviews` published since January 1st 2015.
 * Filter for `listings` that have received at least 1 review.
 * Merge the `reviews` and `listings` dataframes on a common column.
 * Group the number of reviews by date and neighborhood (aggregated on a monthly level).
-* Store the final data frames in `gen/data-preparation` as `aggregated_df.csv`
+* Store the final data frames in `gen/data-preparation` as `aggregated_df.csv`.
 
 
 ## Reshaping Data
@@ -66,4 +66,4 @@ If we want to compare neighbourhoods side by side (e.g., Centrum-West vs De Pijp
 ---
 
 
-Import the data from `gen/data-preparatin/aggregated_df.csv`, reshape the data into wide format and store the result as `pivot_table.csv` in `gen/data-preparation`.
+Import the data from `gen/data-preparation/aggregated_df.csv`, reshape the data into wide format and store the result as `pivot_table.csv` in `gen/data-preparation`.

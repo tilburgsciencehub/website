@@ -18,22 +18,34 @@ aliases:
 
 ## Install Hugo
 
-First off, make sure to have [Git](/get/git) properly installed and set up.
+Hugo comes in two versions: a standard one and a so-called "extended" one. Here, we need the extended version.
+
+Before you start, please check that [Git](/get/git) is properly installed and set up.
 
 ### MacOS & Linux
 
-Make sure you have [Brew](/building-blocks/configure-your-computer/automation-and-workflows/commandline/#mac-users) installed. Then, to install Hugo:
+Make sure you have [Brew](/building-blocks/configure-your-computer/automation-and-workflows/commandline/#mac-users) installed. Then, to install Hugo. `Brew` automatically installs the "extended" version:
 
 ```
 brew install hugo
 ```
 
 ### Windows
+1. Install the ZIP file of the latest `hugo-extended` release for Windows from this [repository](https://github.com/gohugoio/hugo/releases) (scroll down to "assets")
+2. Move the ZIP file and extract its content in the `c:\Hugo\bin` folder on your local machine. You should see three new files: Hugo executable (i.e., `hugo.exe` file), `license.md`, and `readme.md`.
+3. Add Hugo to your Windows PATH settings by following these steps. Click on `System` -> `Advanced System Settings` -> `Environment Variables`. In the User variables section, double-click on `PATH` and click `New`. Then, type the file path `C:\Hugo\bin` where the `hugo.exe` was extracted. Click on OK and exit.
+4. Verify if Hugo is installed properly. Type `hugo help` on a command prompt window. You should see the following output:
+
+<p align = "center">
+<img src = "../img/hugo-verify.png" width="500">
+<figcaption> Verify Hugo Installation </figcaption>
+</p>
+
 
 If you use [Chocolatey](https://chocolatey.org):
 
 ```
-choco install hugo -confirm
+choco install hugo-extended -confirm
 ```
 
 Alternatively, see other installing options [here](https://gohugo.io/getting-started/installing).

@@ -27,4 +27,6 @@ A so-called Graphical Processing Unit (GPU) is also offered in this environment.
 - There may be a queue and thus waiting time.
 - Less interactive because of the queue principle.
 
+## How to access SURFsara's Cartesius cluster
+
 You can find more information about the Cartesius cluster and how to connect to it on the [IT Service Desk](https://servicedesk.uvt.nl/tas/public/ssp/content/detail/service?unid=d3f67e5b448d4f629aa68ec1ac9578ce).

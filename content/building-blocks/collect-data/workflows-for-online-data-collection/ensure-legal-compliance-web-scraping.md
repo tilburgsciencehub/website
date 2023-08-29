@@ -10,7 +10,7 @@ aliases:
 ---
 
 ## Overview
-The legality of web scraping is an ongoing and complex issue, which might be perplexing for scholars interested in collecting and using web data. There is no clear consensus about whether collecting web data for scientific purposes is permissible under American and international intellectual and cybersecurity laws. Therefore, researchers should obtain legal advice to limit their exposure to legal risks when going forward. As legal experts may not be fully aware of all the steps involved in collecting and using web data, it is imperative to address aspects such as the purpose and framing of the research objective, the scale and scope of data capture, the characteristics of the data source, the relationship of the researcher with the data provider, and any details on the researcher’s data management and usage. Here we provide a template for researchers to prepare such meetings.
+The legality of web scraping is an ongoing and complex issue, which might be perplexing for scholars interested in collecting and using web data. There is no clear consensus about whether collecting web data for scientific purposes is permissible under American and international intellectual and cybersecurity laws. Therefore, researchers should obtain legal advice to limit their exposure to legal risks when going forward. As legal experts may not be fully aware of all the steps involved in collecting and using web data, it is imperative to address aspects such as the purpose and framing of the research objective, the scale and scope of data capture, the characteristics of the data source, the relationship of the researcher with the data provider, and any details on the researcher’s data management and usage. Here we provide a template for researchers to prepare for such meetings.
 
 ## Key Issues - Legal Advice
 
@@ -19,8 +19,8 @@ Collecting data via web scraping or APIs may violate a firm’s intellectual pro
 
 * Is the exact research question known/formulated?
 * Is answering the research question societally relevant and urgent?
-* Is the research carried out by members of a recognized research organization (e.g., university, research
-institute, other organization with a primary goal of conducting scientific research)? What is the role of
+* Is the research carried out by members of a recognized research organization (e.g., a university, research
+institute, or other organization with a primary goal of conducting scientific research)? What is the role of
 the person(s) involved in collecting the data within that organization (e.g., student, employee)?
 * Has the research project been approved by the institution’s legal or ethical review board?
 * How much does the study depend on the web data (e.g., is the data entirely based on one scraped data
@@ -30,7 +30,7 @@ feasibility to gather alternative data, including projected resource use)?
 * Are private parties involved in the project (e.g., for knowledge dissemination, as part of an industry
 collaboration), or is it a purely scientific project?
 * Are the results of the scientific research capable of commercial exploitation? If so, what product will be
-commercially exploited (e.g., the collected data, the results based on the data, a product developed based on the data)? Who will be exploiting the results for commercial purposes (e.g., the research organization vs. potential corporate collaborators)?
+commercially exploited (e.g., the collected data, the results based on the data, or a product developed based on the data)? Who will be exploiting the results for commercial purposes (e.g., the research organization vs. potential corporate collaborators)?
 * Does any party have preferential access to the data, results, or derived product (e.g., an artificial intelligence algorithm trained on the data) of the research project?
 
 
@@ -41,20 +41,20 @@ Web data collections vary in **scale** (e.g., number of instances and entities c
 * What is the scope of the data extraction (e.g., the absolute volume of data extracted, volume relative to all data available on the website; what is the frequency of the data collection (e.g., once, at regular intervals, in real-time); can the retrieval limit be determined and respected?)?
 * Which extraction technology is used (e.g., identifying as a data collector, degree of intrusiveness, software toolkit)?
 * How is the data extraction software deployed (e.g., outsourced to a data collector vs. self-administered via commercial tools, Python packages, or entirely self-coded software)?
-* From which location is the data extraction software deployed (e.g., geographical region, part of the research organization’s infrastructure or not)?
+* From which location is the data extraction software deployed (e.g., geographical region, part of the research organization’s infrastructure, or not)?
 
 
 ### 3. Characteristics of the data source (website/API)
 Some types of data providers explicitly make data available for use in scientific research projects. Others merely provide data as a way to grow their business ecosystem (“developer API”).
 * Where is the website or API owner located (e.g., registered office, central administration, place of business)? From where is the data extracted (e.g., server location)?
 * What type of data provider is data being extracted from (e.g., scraped from a website, collected from an API; is the data provider explicitly offering the data for extraction, or is the data provided as part of a development platform? Is the data source aggregating/collecting data from third parties (e.g., through web scraping or APIs)? Does the data provider have the right to display the data?)?
-* How public is the data access (e.g., public on the web, hidden behind a login screen but publicly accessible for anyone, hidden after login screen only accessible with special permissions)?
+* How public is the data access (e.g., public on the web, hidden behind a login screen but publicly accessible for anyone, hidden after a login screen only accessible with special permissions)?
 * Is the displayed data personalized or customized in any way (e.g., not personalized, customized for a larger group of persons, customized for a specific user)?
 * Could potential harm be inflicted from using the data, either for the users/entities or pertaining to the firm’s business model (e.g., competition)? What is the risk for users and/or firms if the raw data would become public unintentionally?
 * Does the data provider disallow the use of automated collections, either via robots.txt, the site’s or API’s terms of use, or any other contracts? Have contracts been accepted (implicitly by continuing to use the site/service, or explicitly by signing up for an account with the website or service)?
 * Does the data provider attach a specific license to the use of the data, and what does this license imply for subsequent data use?
 
-### 4. Relationship of researcher with the data provider
+### 4. Relationship of the researcher with the data provider
 Some of the legal concerns could be resolved if the researcher obtained the data provider’s permission.
 
 * Has the data provider approved the data collection (e.g., implicitly or explicitly)?
@@ -66,7 +66,7 @@ provider reacted?)? Would notification be feasible?
 
 
 ### 5. Data management and usage
-A researcher may risk violating privacy regulations or other laws when storing, working with, or sharing the data.
+A researcher may risk violating privacy regulations or other laws when storing, working with, or sharing data.
 * Is the raw data being stored during the collection or directly parsed?
 * How (e.g., file server, file format), why (e.g., reproducibility/verification of research results), and for
 how long is the raw data stored after the collection?

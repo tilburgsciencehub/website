@@ -12,9 +12,9 @@ aliases:
 
 ## Overview
 
-Open Science practices can boost your enjoyment and productivity when working on empirical research projects. Yet, imagine not only you, but also other members of your department and school to use similar tools and methods to collaborate?
+Open Science practices can boost your enjoyment and productivity when working on empirical research projects. Yet, imagine not only you but also other members of your department and school using similar tools and methods to collaborate.
 
-Luckily, you don't have to reinvent the wheel and can follow best-practices of leading research groups.
+Luckily, you don't have to reinvent the wheel and can follow the best practices of leading research groups.
 
 ### Experiences in transitioning to open science
 
@@ -26,5 +26,5 @@ Luckily, you don't have to reinvent the wheel and can follow best-practices of l
 
 ### Training material
 
-- Openscapes.org's ["Champions Program"](https://www.openscapes.org/champions/) (including an [ebook](https://openscapes.github.io/series))
+- Openscapes.org's ["Champions Program"](https://www.openscapes.org/champions/), including an [ebook](https://openscapes.github.io/series)
 - Ohi-Science's [Data Science Training](http://ohi-science.org/data-science-training/)

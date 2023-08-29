@@ -10,9 +10,11 @@ aliases:
   - /install/teamviewer
 ---
 
-Getting feedback on code or solving technical problems is crucial to your learning experience.
-When working remotely, you can make use of **TeamViewer**,
-which allows team members to *remote-control* your computer and help you right away.
+## What is Teamviewer
+
+TeamViewer is a software application that facilitates remote access, desktop sharing, online meetings, and collaboration tools. With TeamViewer, users can connect to and control computers and devices remotely over the internet, making it valuable for technical support, troubleshooting, file sharing, and communication among users who work remotely.
+
+This capability is especially significant when it comes to obtaining feedback on code or resolving technical issues, which are vital for enhancing your learning experience. When working remotely, you can leverage the power of **TeamViewer**. It empowers team members to *remotely control* your computer, enabling immediate assistance and collaboration to address your needs effectively.
 
 ## Installing Teamviewer
 
