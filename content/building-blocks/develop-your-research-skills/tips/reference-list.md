@@ -1,6 +1,6 @@
 ---
 title: "Build and Maintain a Reference List"
-description: "how to build and maintain a reference list without having to learn anything by heart or use MS. Use tools to keep organized."
+description: "How to build and maintain a reference list without having to learn anything by heart or use MS. Use tools to keep organized."
 keywords: "reference, list, bibtex, mendeley, zotero, endnote, literature"
 weight: 2
 date: 2020-11-11T22:01:14+05:30
@@ -10,9 +10,9 @@ aliases:
   - /build/maintain
 ---
 # Overview
-One of the most tedious tasks (if not the most) when writing a publication (e.g, article, thesis) is dealing with references. A good usage of reference management applications will save you a lot of time, which you can put to better use in your research.
+One of the most tedious tasks when writing a publication (e.g. article, thesis) is dealing with references. Good usage of reference management applications will save you a lot of time, which you can put to better use in your research.
 
-In this building block, we go trough the most widely used reference management applications: Mendeley, Zotero and EndNote.
+In this building block, we go through the most widely used reference management applications: Mendeley, Zotero and EndNote.
 
 
 ## Mendeley
@@ -26,15 +26,15 @@ In this building block, we go trough the most widely used reference management a
 
 ### Build your reference list
 
-From Mendelys's Reference manager there are several ways to add references to your library.
+From Mendelys's Reference manager, there are several ways to add references to your library.
 
-- **Import an existing library.** Do you already have a reference list in other formats such as bibtex, Endnote or RIS? No need to start building it over again, Mendeley Reference Manager allows you to import them easily: Go to "Add new > Import Library" and choose your desired preexisting library.
+- **Import an existing library.** Do you already have a reference list in other formats such as Bibtex, Endnote or RIS? No need to start building it over again. Mendeley Reference Manager allows you to import them easily: Go to "Add new > Import Library" and choose your desired preexisting library.
   <p align = "center">
   <img src = "../import_library.PNG" width="400">
   </p>
 
 
-- **Browse for local files.** Do you have files already downloaded in your computer? Go to "+Add new" and select "File(s) from computer".
+- **Browse for local files.** Do you have files already downloaded to your computer? Go to "+Add new" and select "File(s) from computer".
     <p align = "center">
     <img src = "../files_from_computer.PNG" width="200">
     </p>
@@ -54,7 +54,7 @@ Adding references manually is the most reliable way to add a reference because i
 {{% /tip %}}
 
 -  **Search for articles online.** Although the preferred search methods for literature on the web are the ones mentioned in our [building block](https://tilburgsciencehub.com/building-blocks/develop-your-research-skills/tips/search-literature/), Mendeley Reference Manager also has its own search engine. To use it,  go to "Tools" and select "Search for articles online". It will redirect you to the following [page](https://www.mendeley.com/search/?dgcid=refmandesktop).
-    - Having said this, the Mendeley searcher has an "Add to library" button for every search result, which allows to instantly add the reference to your Mendeley Reference Manager's library. However, this is no significant advantage compared to other search engines once the Mendeley Web Importer extension is added (see below)
+    - Having said this, the Mendeley searcher has an "Add to library" button for every search result, which allows you to instantly add the reference to your Mendeley Reference Manager's library. However, this is no significant advantage compared to other search engines once the Mendeley Web Importer extension is added (see below)
 
 
 ### Mendeley Web Importer
@@ -73,7 +73,7 @@ Mendeley Web Importer is a browser extension that can be downloaded [here](https
   <img src = "../web_importer.png" width="200">
   </p>
 
-  4. **Add to your library**. Click "Add to Mendeley" and the reference is added to your library!
+  4. **Add to your library**. Click "Add to Mendeley" and the reference will be added to your library!
 
 {{% warning %}}
   Double-check the import from Mendeley Web Importer. It sometimes retrieves incorrect information from the page. For instance, it might confuse the year of publication or change slightly the title.  
@@ -88,24 +88,24 @@ Mendeley Web Importer is a browser extension that can be downloaded [here](https
 
   - **Recently added.**
 
-  - **Favorites**. Click on the star icon next to your reference to add it to the favorites folder.
+  - **Favourites**. Click on the star icon next to your reference to add it to the favourites folder.
 
   - **My Publications.** This collection displays the publications that you have authored and claimed through the Scopus Author Profile.
 
   - **Trash**
 
 #### Custom Collections.
- Organize your references into the folders of your choosing. For instance, organize by topic (e.g., Economics, Data Modelling)
+ Organize your references into the folders of your choosing. For instance, organized by topic (e.g., Economics, Data Modelling)
 
-  - To create a new collection, select the "New Collection" button in the left hand navigation panel.
+  - To create a new collection, select the "New Collection" button in the left-hand navigation panel.
 
-  - To add a reference to a collection, drop it onto a collection in the left hand navigation panel.
+  - To add a reference to a collection, drop it onto a collection in the left-hand navigation panel.
 
 ### Export your references
 You can export references directly into a BibTex, EndNote, Word or RIS file. To do so:
   1. Select the references you want to export by clicking on the squared box next to the "Authors" column.
 
-  2. Click on the export drop down cell, and select the file format of your choosing.
+  2. Click on the export drop-down cell, and select the file format of your choosing.
 
 <p align = "center">
 <img src = "../export_refs.PNG" width="600">
@@ -120,7 +120,7 @@ If you require further information on Mendeley, go to the following [page](https
 
 - Its usage is very similar to Mendeley's Reference Manager, though it does not have an integrated PDF viewer (it will open PDFs in your computer’s default PDF viewer).
 
-- A cool feature from Zotero is that you can collect a reference with a click, similar to Mendeley Web Importer, but without having to add any other extension. Moreover, Zotero's single-click capture works with more databases, catalogs, and websites than Mendeley's Web Importer.
+- A cool feature from Zotero is that you can collect a reference with a click, similar to Mendeley Web Importer, but without having to add any other extension. Moreover, Zotero's single-click capture works with more databases, catalogues, and websites than Mendeley's Web Importer.
 
 - Want to learn more about Zotero's usage? Check this [page](https://www.zotero.org/support/)
 
@@ -128,13 +128,13 @@ If you require further information on Mendeley, go to the following [page](https
 ## Endnote
 The main reason to use EndNote over Mendeley or Zotero is that it offers more features and comes with unlimited reference storage locally and in Endnote Online. To download EndNote go [here](https://endnote.com/downloads)
 
-However, unlike those two, EndNote is **not free**. Therefore, it is not probably worth it unless your institution gives you free access to it.
+However, unlike those two, EndNote is **not free**. Therefore, it is probably not worth it unless your institution gives you free access to it.
 
 {{% tip %}}
-Don't know whether to go for Mendeley, Zotero or EndNote? Bottom line, they are very similar and the three options will do the job. However, if you want to delve into the differences between them, you can check this [page](https://libguides.navitas.com/reference-management/comparison) or this [one](https://aut.ac.nz.libguides.com/managingreferences)
+Don't be confused about whether you should go for Mendeley, Zotero or EndNote. The bottom line is that they are very similar and the three options will do the job. However, if you want to delve into the differences between them, you can check this [page](https://libguides.navitas.com/reference-management/comparison) or this [one](https://aut.ac.nz.libguides.com/managingreferences)
 {{% /tip %}}
 
 ## BibDesk
-Are you a Mac user? You then have another top-notch bibliography manager in [BibDesk](https://sourceforge.net/projects/bibdesk/), which is particularly well suited for LaTeX and is also a free-open source project.
+If you are a Mac user, you have another top-notch bibliography manager in [BibDesk](https://sourceforge.net/projects/bibdesk/). It is particularly well suited for LaTeX and is also a free open-source project.
 
 - Want to learn how to use it? Check out BibDesk's [wiki](https://sourceforge.net/p/bibdesk/wiki/Main_Page/)
