@@ -8,10 +8,10 @@ draft: false
 aliases:
   - /search/literature
 ---
-## How to search effectively?
+## What to search for? Search effectively.
 Although there is no exact recipe for an effective search, the following tips will surely help you find relevant literature for your research more effectively:
 
-  - **Identify your keywords.** Start by defining the research question that you aim to answer, what are the main ideas? Use such questions for identifying the keywords. Employing the jargon of your subject field will also help you to find the most effective words for your search.
+  - **Identify your keywords.** Start by defining the research question that you aim to answer, what are the main ideas? Use such question toward identifying the keywords. Employing the jargon of your subject area will also help you to find the most effective words for your search.
 
   - **Connect your keywords.** Use boolean logic to link your search words in specific ways:
       - **OR** will broaden your search to either (or both) of the two words.
@@ -27,7 +27,7 @@ Although there is no exact recipe for an effective search, the following tips wi
             (Elderly OR senior) NOT young
 
   - **Search tricks**
-      - *Truncation* (`*`): Helps to find different word endings.
+      - *Truncation* (`*`): Helps finding different word endings.
 
             senior* --> seniors, seniority
 
@@ -41,12 +41,12 @@ Although there is no exact recipe for an effective search, the following tips wi
 
   - **Narrow and refine your search results**. For instance, filter by year of publication or date range and by source type (e.g. article, book or review).
 
-## Where to search?
+## Where to search
 
-### Google Scholar
-  To make things easier use **Google Scholar**. It provides a simple way to find scholarly literature from multiple disciplines and sources (articles, books, journals...).
+### Google Scholar.
+  Make things easier: use **Google scholar**. It provides a simple way to find scholarly literature from multiple disciplines and sources (articles, books, journals...).
 
-  If for some reason, you cannot access a specific article, paper or book, paste the DOI at [libkey.io](https://libkey.io/) to retrieve the article (you need to log in through your institution).
+  If for some reason, you cannot access a specific article, paper or book, paste the DOI at [libkey.io](https://libkey.io/) to retrieve the article (you need to login through your institution).
 
 {{% tip %}}
   - **Useful tips from the search results:**
@@ -60,13 +60,13 @@ Although there is no exact recipe for an effective search, the following tips wi
 
         2- Click on the "library links" section and type in the name of your institution in the search box.
 
-        3- When the result appears, uncheck any other boxes to which you do not have access and click on the save button.
+        3- When the result appears, uncheck any other boxes to which you do not have access to and click on the save button.
 
         Once set, you will see at each result of the search a "Fulltext via [institution search tool]".
 {{% /tip %}}
 
 ### Crossref
-  It is another good alternative to find scholarly literature. It relies on the metadata of publications, making its search highly reliable and providing with consistent links to the publications, with the correct author names.
+  Another good alternative to find scholarly literature. Given that it relies on the metadata of publications,  its search is highly reliable providing with consistent links to the publications, with the correct author names.
 
 {{% tip %}}
   Click on **actions** under the search result to download citations in different styles and formats.
