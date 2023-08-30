@@ -1,12 +1,12 @@
 ---
-title: "Automate and Boost your Data Science Project's Reproducibility with GitHub Actions" 
+title: "Enhance Reproducibility and Automation with GitHub Actions" 
 description: "The GitHub Actions platform offers set of tools for you to implement your own customized workflows, that can greatly amplify the automation and reproducibility in your projects. This building block introduces you to the essentials of GitHub Actions, guiding you through the necessary steps to modify your project structure to enable you to take advantage of it."
 keywords: "GitHub Actions, Data Science, Project, Project Structure, Reproducibility, Automation, Testing, Formatting, Workflows, Runners, Jobs, Events"
 weight: 2
 author: "Diego Sanchez Perez"
 authorlink: "https://www.linkedin.com/in/diego-s%C3%A1nchez-p%C3%A9rez-0097551b8/"
 draft: false
-date: 2023-05-23T22:01:14+05:30
+date: 2023-05-23T22:01:14+05:30 #updated 2023-08-30
 aliases: 
   - /github_actions/introduction
 
