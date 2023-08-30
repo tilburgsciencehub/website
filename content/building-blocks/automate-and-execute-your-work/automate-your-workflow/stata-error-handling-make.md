@@ -12,16 +12,16 @@ aliases:
  - /building-blocks/automate-and-execute-your-work/error-handling/stata-error-handling-make/
 ---
 
-## Learning Goals
-
-- Learn how to use R to monitor and handle errors in Stata log files.
-- Incorporate error-checking scripts into automated workflows, such as a Makefile.
-
 ## Overview
 
 When you run Stata within an automated research pipeline (e.g., using a `makefile`), Stata does not stop the progression of the `makefile`, even if there is an error in your code!
 
-As a result, you won't know if the Stata code executed without errors unless you check the Stata log files. To remedy this issue, you can use R to check for any error that may have occurred in the log file. If there was an error, we can make the workflow to interrupt.
+As a result, you won't know if the Stata code executed without errors unless you check the Stata log files. To remedy this issue, you can use R to check for any error that may have occurred in the log file. If there was an error, we can make the workflow to interrupt. 
+
+Hence, in this building block, you will learn:
+
+- How to use R to monitor and handle errors in Stata log files.
+- Incorporate error-checking scripts into automated workflows, such as a Makefile.
 
 ## Guidelines
 
@@ -110,6 +110,15 @@ If the R script finds an error in the Stata log, it would interrupt the process 
 {{% /example %}}
 
 Remember, the above example assumes you've set up your Stata `do-file` to generate a log and you have the `logcheck.R` script as outlined before. Make sure to adjust the paths and filenames as per your specific project structure.
+
+{{% summary %}}
+
+- When running Stata in automated research pipelines like a `makefile`, Stata doesn't halt the progression if there's a code error, making it essential to check log files for any discrepancies.
+- An R script, `logcheck.R`, can be used to monitor and handle errors present in Stata log files, ensuring that if any error arises, the workflow is interrupted.
+- Integrating this R script within a `makefile` ensures a seamless workflow where Stata processes are executed and subsequently checked for errors or completion.
+
+{{% /summary %}}
+
 
 ## Additional Resources
 
