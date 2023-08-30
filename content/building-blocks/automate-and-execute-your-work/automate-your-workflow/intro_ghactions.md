@@ -1,6 +1,6 @@
 ---
 title: "Enhance Reproducibility and Automation with GitHub Actions" 
-description: "The GitHub Actions platform offers set of tools for you to implement your own customized workflows, that can greatly amplify the automation and reproducibility in your projects. This building block introduces you to the essentials of GitHub Actions, guiding you through the necessary steps to modify your project structure to enable you to take advantage of it."
+description: "Explore GitHub Actions, a platform offering tools for custom workflows that boost project automation and reproducibility"
 keywords: "GitHub Actions, Data Science, Project, Project Structure, Reproducibility, Automation, Testing, Formatting, Workflows, Runners, Jobs, Events"
 weight: 2
 author: "Diego Sanchez Perez"
@@ -9,15 +9,18 @@ draft: false
 date: 2023-05-23T22:01:14+05:30 #updated 2023-08-30
 aliases: 
   - /github_actions/introduction
-
-
 ---
 
-# GitHub Actions: Taking your Data Science Project's Reproducibility and Automation to the Next Level
+## Overview
 
-When it comes to enhancing your data science project's automation and reproducibility, GitHub Actions is a tool that you should definitely consider. This building block will introduce the basic concepts to understand what is GitHub Actions and how it works as well as how to adapt your project structure to implement GitHub Actions workflows. Moreover, this building block is meant to complement a previous building block on [data management and directory structure](https://tilburgsciencehub.com/tutorials/reproducible-research-and-automation/principles-of-project-setup-and-workflow-management/directories/) presented within our tutorial on [principles of project setup and workflow management](https://tilburgsciencehub.com/tutorials/reproducible-research-and-automation/principles-of-project-setup-and-workflow-management/project-setup-overview/) which we strongly recommend you to check out if you haven't already! 
+This building block introduces the fundamentals of GitHub Actions and how to integrate it into your project. It complements our previous guide on [data management and directory structure](https://tilburgsciencehub.com/tutorials/reproducible-research-and-automation/principles-of-project-setup-and-workflow-management/directories/), which we strongly recommend you to check out if you haven't already!
 
-### Introducing GitHub Actions
+As a result, you will:
+
+- Understand the core concepts of GitHub Actions within a data science project.
+- Familiarize yourself with its components, like events, jobs, runners, and workflows.
+
+## Introducing GitHub Actions
 
 [GitHub Actions](https://docs.github.com/en/actions) is GitHub's native platform for workflow automation. If your project is hosted in a GitHub repository, you can take advantage of it to define customized workflows that are automatically triggered when certain pre-specified conditions are met. Use case examples could include a workflow in charge of re-training your model and updating its results whenever you add new data to your project, running an automated code testing pipeline each time you push new code to your repository, or formatting and checking that your code structure adheres to certain desired standards. These are just some use cases, the great flexibility of GitHub Actions allows you to define your own customized workflows that can assist or automate most of your project's pipeline segments.
 
@@ -29,7 +32,7 @@ Moreover, GitHub Actions also offers many interesting advantages in terms of rep
 
 {{% /tip %}}
 
-### GitHub Actions functioning and relevant concepts
+## GitHub Actions functioning and relevant concepts
 
 The vehicles through which you will define your workflows in GitHub Actions are YAML files. In these files is where you indicate the set instructions to be followed by GitHub Actions to carry out your workflow, alongside other relevant details necessary to ensure that the workflow can be appropriately interpreted and executed. GitHub actions workflows are shaped by the following elements:
 
@@ -48,7 +51,7 @@ The vehicles through which you will define your workflows in GitHub Actions are 
 
 In the image above on the left you can see the conceptual structure of a GitHub Actions workflow, while on the right there is an example of how an actual workflow YAML file with the same proposed structure looks like approximately. This example workflow consists of two jobs, each one with three steps. Note how the workflow starts with the events that will trigger it (line 3 of the right-side image) right after the name given to the workflow. After that the different jobs are defined, first, a runner is assigned to each of these (lines 7 and 21 from the right-side image) and then the corresponding steps are listed. You can include as many jobs within a workflow and steps within a job as you want as long as the runner can handle it, however, in this example things are kept simple so it is easier for you to familiarize yourself with the structure of a GitHub Actions workflow. For that same reason, this example workflow will not be explored in detail here. To learn more about how to build your own workflows and the details of how to do so we recommend you to check out our upcoming building block on the topic. There you will see how to design workflows using as a reference a popular implementation for these: a pipeline for code formatting and testing.
 
-### Adapting your project structure to use GitHub Actions
+## Adapting your project structure to use GitHub Actions
 
 The first elementary pre-requisite to take advantage of GitHub Actions is that your project must be hosted in a GitHub repository. If this is the case then all you have to do is to include within your project's repository at the root level a directory called `.github` which in turn must contain another sub-directory called `workflows`. This subdirectory is where you will place your workflow YAML files so GitHub can recognize them. You can give your workflows any name you want as long as the files containing these have the appropriate extension `.yml`.
 
