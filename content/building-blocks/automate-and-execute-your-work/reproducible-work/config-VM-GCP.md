@@ -1,7 +1,7 @@
 ---
 title: "Configure a VM with GPUs in Google Cloud" 
 description: "Learn how to configure code in a Google Cloud instance with GPUs, importing heavy files from Google Drive and handling memory issues"
-keywords: "Docker, Environment, Python, Jupyter notebook, Google cloud, Cloud computing, Cloud storage, GPU, Virtual Machine, Instance"
+keywords: "Docker, Environment, Python, Jupyter notebook, Google cloud, Cloud computing, Cloud storage, GPU, Virtual Machine, Instance, Memory"
 weight: 2
 author: "Fernando Iscar"
 authorlink: "https://www.linkedin.com/in/fernando-iscar/"
@@ -13,15 +13,15 @@ aliases:
   - /import/heavy-files
 ---
 
-# Learning Goals
+## Overview
 
-- Establish and tailor a VM instance in Google Cloud with optimized configurations.
-- Use Docker and Google Colab for efficient file handling.
+In this building block, you will discover how to create and configure a simple and robust VM instance in [Google Cloud](https://cloud.google.com/?hl=en), designed to overcome memory or power constraints limitations. Say goodbye to obstacles and embrace seamless computing.
+
+With this guide you'll see how to:
+
+- Establish a VM instance in Google Cloud with optimized configurations.
+- Use [Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) and Google Colab for a reproducible environment and efficient file handling.
 - Monitor system resources and implement strategies to handle memory challenges.
-
-# Gear up your code with Google Cloud VMs
-
-In this building block, you will discover how to create and configure a simple and robust VM instance in [Google Cloud](https://cloud.google.com/?hl=en), designed to overcome memory or power constraints limitations. Say goodbye to obstacles and embrace seamless computing with this comprehensive guide.
 
 ## Initialize a new instance
 
@@ -351,3 +351,23 @@ Remember that beyond these strategies, it's always possible to leverage the scal
 - PyTorch [Documentation](https://pytorch.org/)
 - CUDA Toolkit [download](https://developer.nvidia.com/cuda-toolkit)
 - Memory management [Python documentation](https://docs.python.org/3/c-api/memory.html)
+
+{{% summary %}}
+- **Google Cloud VM Setup:**
+
+    - Register on Google Cloud.
+    - Create a Virtual Machine that satisfies your computational power needs.
+
+- **Enable reproducibility and large files handling:**
+
+    - Install Docker on the VM to aim for reproducibility.
+    - Authenticate in Colab, set project ID, and bucket name.
+    - Use Google Colab to move files from Google Drive to GCS.
+
+- **Memory Management:**
+
+    - Monitor with `htop` (CPU) and `nvtop` (GPU).
+    - Check CUDA availability for GPU tasks.
+    - Implement batching, efficient data structures and algorithms, and use job parallelization to handle memory issues.
+
+{{% /summary %}}
