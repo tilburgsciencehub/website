@@ -111,6 +111,12 @@ If the R script finds an error in the Stata log, it would interrupt the process 
 
 Remember, the above example assumes you've set up your Stata `do-file` to generate a log and you have the `logcheck.R` script as outlined before. Make sure to adjust the paths and filenames as per your specific project structure.
 
+## Additional Resources
+
+- Learn Stata with this [guides](https://sites.tufts.edu/datalab/learning-statistics/stats-online-tutorials/stata-resources/)
+- How to use log files in Stata [video](https://www.youtube.com/watch?v=3N9l9i5HyaE)
+- How to create log file in Stata [video](https://www.youtube.com/watch?v=kIjn_xJM2yQ)
+
 {{% summary %}}
 
 - When running Stata in automated research pipelines like a `makefile`, Stata doesn't halt the progression if there's a code error, making it essential to check log files for any discrepancies.
@@ -118,10 +124,3 @@ Remember, the above example assumes you've set up your Stata `do-file` to genera
 - Integrating this R script within a `makefile` ensures a seamless workflow where Stata processes are executed and subsequently checked for errors or completion.
 
 {{% /summary %}}
-
-
-## Additional Resources
-
-- Learn Stata with this [guides](https://sites.tufts.edu/datalab/learning-statistics/stats-online-tutorials/stata-resources/)
-- How to use log files in Stata [video](https://www.youtube.com/watch?v=3N9l9i5HyaE)
-- How to create log file in Stata [video](https://www.youtube.com/watch?v=kIjn_xJM2yQ)
