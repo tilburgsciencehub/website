@@ -1,8 +1,8 @@
 ---
-title: "Clean Data Scraped From Social Media"
+title: "Clean Numeric Data Scraped From Social Media"
 description: "This is a handy function that can be used to clean social media data scraped from the web."
 weight: 4
-keywords: "clean, wrangling, scraping, follow, likes, network"
+keywords: "clean, wrangling, scraping, follow, likes, network, social media, function, numeric conversion"
 date: 2021-01-06T22:01:14+05:30
 draft: false
 aliases:
@@ -14,7 +14,7 @@ aliases:
 
 This is a handy function that can be used to clean social media data scraped from the web.
 
-Usually, when scraping social media, the output data can contain letters like K's (Thousands), M's (Millions) and B's (Billions). You are won't be able to analyze them unless you first replace these letters with the appropriate zero digits.
+Usually, when scraping social media, the output data can contain letters like K's (Thousands), M's (Millions), and B's (Billions). You won't be able to analyze them unless you first replace these letters with the appropriate zero digits.
 
 ## Code
 

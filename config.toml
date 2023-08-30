@@ -4,7 +4,6 @@ title = "Tilburg Science Hub"
 theme = "tilburg"
 pygmentsUseClasses=true
 enableInlineShortcodes = true
-googleAnalytics = "G-6K27JFP2RV"
 
 pygmentsCodefences = true
 pygmentsCodefencesGuessSyntax = true

@@ -204,12 +204,8 @@ $(".headerSearch > .resetInput").on("click", function (e) {
   popularPages.then((results) => {
     resultsHolder.append(`<span style="font-weight: bold;">Popular Pages</span>`);
     results.map((result) => {
-      let urlArr = result.split("/")
-      const lastItem = urlArr[urlArr.length - 2]
 
-      if (!lastItem) return
-
-      resultsHolder.append(`<a href="${result}" style="display: flex;">
+      resultsHolder.append(`<a href="${result.path}" style="display: flex;">
         <span style="
           display: flex;
           width: 24px;
@@ -220,7 +216,7 @@ $(".headerSearch > .resetInput").on("click", function (e) {
           background-color: #003365;
           margin-right: 8px;
         "><img src="/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
-        <span>${makeTitle(lastItem)}</span></a>`);
+        <span>${result.title}</span></a>`);
     })
   })
 })
@@ -237,12 +233,8 @@ $(".headerSearchMobile .resetInput").on("click", function (e) {
   popularPages.then((results) => {
     resultsHolder.append(`<span style="font-weight: bold;">Popular Pages</span>`);
     results.map((result) => {
-      let urlArr = result.split("/")
-      const lastItem = urlArr[urlArr.length - 2]
 
-      if (!lastItem) return
-
-      resultsHolder.append(`<a href="${result}" style="display: flex;">
+      resultsHolder.append(`<a href="${result.path}" style="display: flex;">
         <span style="
           display: flex;
           width: 24px;
@@ -253,21 +245,10 @@ $(".headerSearchMobile .resetInput").on("click", function (e) {
           background-color: #003365;
           margin-right: 8px;
         "><img src="/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
-        <span>${makeTitle(lastItem)}</span></a>`);
+        <span>${result.title}</span></a>`);
     })
   })
 })
-
-function makeTitle(slug) {
-  var words = slug.split('-');
-
-  for (var i = 0; i < words.length; i++) {
-    var word = words[i];
-    words[i] = word.charAt(0).toUpperCase() + word.slice(1);
-  }
-
-  return words.join(' ');
-}
 
 $(".headerSearch").on("keyup", function (e) {
   const resultsHolder = $(".headerSearchResultsHolder");
@@ -586,6 +567,20 @@ widetables.forEach((element) => {
   );
 });
 
+// Confetti Button
+function animateButton(button) {
+  // Reset animation
+  button.classList.remove('animate');
+  
+  // Add animation class
+  button.classList.add('animate');
+  
+  // Remove animation class after a delay
+  setTimeout(function() {
+    button.classList.remove('animate');
+  }, 700);
+}
+
 // onboarding tooltips
 const allTooltips = $("[onBoardTooltip]");
 
@@ -605,13 +600,16 @@ for (let i = 0; i < allTooltips.length; i++) {
   navigationDiv.innerHTML = `
     <span>
       ${i == allTooltips.length - 1
-      ? "&nbsp;"
-      : `<a href="#0" class="skipOnboarding">Skip</a>`
-    }
+        ? "&nbsp;"
+        : `<a href="#0" class="skipOnboarding">Skip</a>`
+      }
     </span>
     <span>
-      <button type="button" class="nextButton btn btn-primary btn-sm" style="font-size: 14px; padding:  4px 12px !important;" current="${i}">${i == allTooltips.length - 1 ? "Finish" : "Next"
-    } ${i + 1}/${allTooltips.length}</button>
+      <button type="button" class="nextButton btn btn-primary btn-sm ${i == allTooltips.length - 1 ? "confetti-button" : ""}" style="font-size: 14px; padding:  4px 12px !important;" current="${i}">
+        ${i == allTooltips.length - 1
+          ? "Finish"
+          : "Next"
+        } ${i + 1}/${allTooltips.length}</button>
     </span>
   `;
 
@@ -626,14 +624,18 @@ if (localStorage.getItem("demoCompleted")) {
 $("body").on("click", ".nextButton", () => {
   const allTooltipContents = $(".onBoardTooltipContent");
   const currentActive = $(".onBoardTooltipContent.active").attr("current");
+  var confettiButton = document.querySelector('.confetti-button');
 
   if (allTooltipContents.length > Number(currentActive) + 1) {
     allTooltipContents[Number(currentActive)].classList.remove("active");
     allTooltipContents[Number(currentActive) + 1].classList.add("active");
   } else {
-    allTooltipContents[Number(currentActive)].classList.remove("active");
-    localStorage.setItem("demoCompleted", "true");
-    $(".pulse").remove();
+    animateButton(confettiButton);
+    setTimeout(function() {
+      allTooltipContents[Number(currentActive)].classList.remove("active");
+      localStorage.setItem("demoCompleted", "true");
+      $(".pulse").remove();
+    }, 700);
   }
 });
 

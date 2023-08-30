@@ -1,7 +1,7 @@
 ---
 title: "Document New Data"
 description: "If your project contains data that has been newly created, learn how to include a documentation of that data in your project."
-keywords: "document, data, readme, raw, database, description"
+keywords: "document, data, readme, raw, database, description, documentation, dataset, collection, preprocessing, data mangement"
 weight: 1
 date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -11,10 +11,9 @@ aliases:
 
 ## Overview
 
-Ideally, your data description includes the *very elaborate questions* outlined in `Datasheets for datasets` by Gebru, Timnit, et al. (2018)[^1].
-We **strongly** refer you to the [original paper](https://arxiv.org/abs/1803.09010), which explains in detail the seven key ingredients of a proper dataset documentation.
+Ideally, your data description should embody the comprehensive principles outlined in the "Datasheets for Datasets" by Gebru, Timnit, et al. (2018)[^1]. We highly recommend referring to the original paper for an in-depth exploration of the seven essential components crucial for meticulous dataset documentation.
 
-Below, we have reproduced these questions, and we recommend you to include those as a **`readme.txt`**, together with your datasets. For *derived* data, it may be enough to point to a relevant source code file, and provide a list of variables and their operationalization.
+In the following section, we have replicated these pivotal questions. It's advisable to incorporate them into a `readme.txt` file alongside your datasets. In the case of derived data, it may suffice to reference a relevant source code file and provide a comprehensive list of variables along with their operational definitions.
 
 You can download a formatted version (`.docx`) of this template using the button below. Alternatively, you can find a plain text version of it for copy & paste below.
 
@@ -173,8 +172,8 @@ You can download a formatted version (`.docx`) of this template using the button
      (e.g., deterministic, probabilistic with specific sampling probabilities)?
 
 3.4  Who was involved in the data collection process (e.g., students,
-	   crowdworkers, contractors) and how were they compensated (e.g., how
-		 much were crowdworkers paid)?
+	   crowd workers, contractors) and how were they compensated (e.g., how
+		 much were crowd workers paid)?
 
 3.5  Over what timeframe was the data collected? Does this timeframe
      match the creation timeframe of the data associated with the
@@ -382,7 +381,7 @@ Name of the dataset:
 
 [...]
 
-7. Maintenance (will the dataset be maintained? how? by whom?)
+7. Maintenance (will the dataset be maintained? How? by whom?)
 
 [...]
 ```

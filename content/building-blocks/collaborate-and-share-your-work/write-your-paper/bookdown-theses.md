@@ -13,22 +13,26 @@ aliases:
 
 ## Overview
 
-[`Rmarkdown`](https://rmarkdown.rstudio.com/) and [`bookdown`](https://bookdown.org/yihui/bookdown/) are a professional typesetting system widely used in academia because it can produce complex documents - like journal articles, books, technical reports, and similar - with unparalleled output quality.
+[`Rmarkdown`](https://rmarkdown.rstudio.com/) and [`bookdown`](https://bookdown.org/yihui/bookdown/) are professional typesetting systems widely used in academia due to their ability to generate complex documents such as journal articles, books, technical reports, and more, with unparalleled output quality.
+
+This building block is created to equip you with the knowledge and tools to start creating a document like your thesis yourself, with the use of these amazing systems!
 
 ## Getting Started
 
-If you are new to `Rmarkdown` and `bookdown`, before attempting to get writing, you should first learn the basics behind how these packages work.
+If you are new to `Rmarkdown` and `bookdown`, it's essential to understand the fundamental working of these packages before diving into writing. Here's how you can get started.
 
-- Check out the documentation for [`Rmarkdown`](https://bookdown.org/yihui/rmarkdown/), and 
-- carefully review the documentation of [`bookdown`](https://bookdown.org/yihui/bookdown/) to get up and running.
+- Explore the [`Rmarkdown documentation`](https://bookdown.org/yihui/rmarkdown/) to gain a foundational understanding.  
+- Thorougly review the [`bookdown documentation`](https://bookdown.org/yihui/bookdown/) to get up and running.
 
-## Download our Templates
+## Download Our Thesis Template
 
 ### Tilburg School of Economics and Management (TiSEM)
 
-The `tisemdown` thesis template provides a working template using `Rmarkdown` and `bookdown`, to get up and running with the writing of your thesis quickly. All the formatting requirements for your study programs are configured for you. You only need to modify some meta data, such as your thesis title, name and supervisor, and then get straight to writing!
+The `tisemdown` thesis template provides a working template using `Rmarkdown` and `bookdown`. It's designed to get you up and running quickly with the writing of your thesis. 
 
-To get started with the `tisemdown` thesis template, you can install it as an `R` package from GitHub by clicking [here](https://github.com/deer-marketing-lab/tisemdown) and following any further installation instructions in the README.
+All the formatting requirements for your study programs are configured for you. You only need to modify some metadata, such as your thesis title, name, and supervisor, and you're ready to start writing!
+
+To access the `tisemdown` thesis template, install it as an `R` package from GitHub by clicking [here](https://github.com/deer-marketing-lab/tisemdown) and following the provided installation instructions in the README.
 
 You can also download a PDF preview to see what the output file would look like.
 
