@@ -20,7 +20,7 @@ The first-difference (FD) estimator is the first method we discuss to control fo
 
 ## First-difference estimator
 
-The objective of the FD estimator is to eliminate firm-specific effects that do no vary over time, denoted by the variable $\alpha_{i}$. This is achieved by taking the first-difference fo the variables within each cross-section.
+The objective of the FD estimator is to eliminate firm-specific effects that do no vary over time, denoted by the variable $\alpha_{i}$. This is achieved by taking the first-difference of the variables within each cross-section.
 
 The original model with fixed effects $\alpha_i$ is represented as: 
 <br/>
