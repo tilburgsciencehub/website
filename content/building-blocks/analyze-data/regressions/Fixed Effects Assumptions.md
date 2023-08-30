@@ -14,7 +14,7 @@ aliases:
 
 # Overview
 
-This building block covers the Fixed Effects regression assumptions. These 4 assumptions should hold in a Fixed Effects regression model in order to establish unbiasedness of Ordinary Least Squares (OLS).
+This building block covers the Fixed Effects regression assumptions for Ordinary Least Squares (OLS) models. These 4 assumptions should hold in a Fixed Effects regression model in order to establish unbiasedness of OLS.
 
 To refresh your understanding of panel data and fixed effects, you can refer to the [panel data building block](/paneldata). For a comprehensive explanation of fixed effects regressions in R, check the [`fixest` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/fixest/). 
 
