@@ -42,7 +42,7 @@ model_between <- plm(inv ~ value + capital,
 {{% /codeblock %}}
 
 {{% summary %}}
-The Between estimator uses averaged variables across time to estimate the relationship between variables. By averaging out the time component of panel data, it effectively transforms the panel data into a pooled-cross sectional data set. This approach thus overlooks important information about how variables change over time. 
+The Between estimator averages out the time component of panel data to estimate the relationship between variables. This approach effectively transforms the panel data into a pooled-cross sectional data set and thus overlooks important information about how variables change over time. 
 
 To obtain unbiased estimates, it is crucial to ensure the assumption of zero correlation between the error term and averaged independent variables. 
 {{% /summary %}}
