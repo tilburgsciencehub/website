@@ -1,7 +1,7 @@
 ---
-title: "A Better Way to Manage your R Packages: Packrat"
+title: "Manage your R Packages with Packrat"
 description: "Isolated, portable and reproducible dependency management system for R."
-keywords: "packrat, R, package management system"
+keywords: "packrat, R, package management, R environment, dependency management, RStudio, package, renv"
 weight: 2
 draft: false
 author: "Roshini Sudhaharan"
@@ -11,19 +11,30 @@ aliases:
 ---
 
 {{% warning %}}
-`Packrat` is now soft-deprecated. It is still maintained, but there will be no new development for it. A better alternative that superseeds it is [`renv`](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/renv/). 
+**`Packrat` is now soft-deprecated** 
+
+It is still maintained, but there will be no new development for it. An updated alternative would be `renv`. 
+Do you want to learn about it? Visit [this building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/renv/)!
 {{% /warning %}}
 
-# Using Packrat to manage your R package library
+# Overview
 
-Suppose you’re trying to run someone else’s codes and are bombarded with package installation errors. It can be frustrating to guess what R packages are needed to be installed, right? Or, have you ever updated a package to get code in one of your projects to run, only to find that the updated package makes code in another project stop working?
+Suppose you’re trying to run someone else’s codes and you are bombarded with package installation errors. It can be frustrating to guess what R packages are needed to be installed, right? Or, have you ever updated a package to get code in one of your projects to run, only to find that the updated package makes code in another project stop working?
 
-Packrat is the solution to such dependency issues. It is a dependency management system for R packages which is isolated, portable, and reproducible.
+With `packrat` you won't be worrying anymore. In this guide you will:
 
-- **Isolated**: packrat gives each project its own **private package library** so installing a new or updated package for one project won’t affect other projects you may be working on. So, next time you start an R session in a packrat project directory, R will only look for packages in your private library and all changes to the packages are made in this private package.
+- Understand the benefits of using Packrat for managing R package dependencies.
+- Learn how to initialize, install, and manage packages using Packrat.
+- Grasp how to collaborate efficiently using Packrat for consistent R environments.
+
+## Get started with Packrat
+
+`Packrat` is one of the most typical solutions to dependency issues. It is a dependency management system for R packages which is:
+
+- **Isolated**: `Packrat` gives each project its own **private package library**, so installing a new or updated package for one project won’t affect other projects you may be working on. As a result, next time you start an R session in a packrat project directory, R will only look for packages in your private library and all changes to the packages are made in this private package.
 - **Portable**: Easy to transfer your R projects from one machine to another, or even across platforms.
-- **Reproducible**: Packrat saves the exact package version your project depends on, so those exact versions are installed always whenever you run the project anywhere.
-# Get started with Packrat
+- **Reproducible**: `Packrat` saves the exact package version your project depends on, so those exact versions are installed always whenever you run the project anywhere.
+
 
 ## Install packrat
 
