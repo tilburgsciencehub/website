@@ -73,11 +73,6 @@ This subdirectory is where you will place your workflow YAML files so GitHub can
 
 In the displayed structure above, you can see the essential `.github/workflows/` directory for storing workflow `yml` files. This sits alongside standard directories like `data`, `gen`, and `src` that you might typically find in many research projects.
 
-## Additional resources
-
-- Github Actions [Documentation](https://docs.github.com/en/actions)
-- [Workflow example](https://github.com/snpe-reputation-systems/snpe-reputation-systems/blob/master/.github/workflows/formatting-testing.yml) for code formatting and testing
-
 {{% summary %}}
 
 **GitHub Actions** is GitHub's built-in platform designed for workflow automation. Within this system, the core components are defined using `yaml` or `yml` files which guide the automation process. These components include:
@@ -90,3 +85,8 @@ In the displayed structure above, you can see the essential `.github/workflows/`
 To implement GitHub Actions into a project, one needs to integrate a special directory called `.github/workflows/` into the project's repository. Here, the workflow `yml` files are stored, allowing GitHub to detect and utilize them.
 
 {{% /summary %}}
+
+## Additional resources
+
+- Github Actions [Documentation](https://docs.github.com/en/actions)
+- [Workflow example](https://github.com/snpe-reputation-systems/snpe-reputation-systems/blob/master/.github/workflows/formatting-testing.yml) for code formatting and testing
