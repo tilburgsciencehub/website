@@ -1,7 +1,7 @@
 ---
 title: "Debugging Makefiles With Remake"
 description: "Remake - tool to debug makefiles"
-keywords: "make, remake, debugging, makefile, automation, recipes, workflow"
+keywords: "make, remake, debugging, makefile, automation, recipes, workflow, workflow management, script debugging, automated pipelines, GNU Make"
 draft: false
 weight: 2
 author: "Roshini Sudhaharan"
