@@ -14,7 +14,7 @@ aliases:
 
 # Overview
 
-This building block covers the Fixed Effects regression assumptions for Ordinary Least Squares (OLS) models. These 4 assumptions should hold in a Fixed Effects regression model in order to establish unbiasedness of OLS.
+This building block covers the fixed effects regression assumptions for Ordinary Least Squares (OLS) models. These 4 assumptions should hold in a Fixed Effects regression model in order to establish unbiasedness of OLS.
 
 To refresh your understanding of panel data and fixed effects, you can refer to the [panel data building block](/paneldata). For a comprehensive explanation of fixed effects regressions in R, check the [`fixest` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/fixest/). 
 
@@ -49,7 +49,7 @@ It states that the error term $u_{it}$ is uncorrelated with each explanatory var
 
 Violating this assumption introduces an **Omitted Variable Bias**.
 
-{{% tip %}}
+{{% example %}}
 This is the Fixed Effects model with `Grunfeld` data in which $\alpha_i$ denotes the firm fixed effects.
 
 {{<katex>}}
@@ -57,7 +57,7 @@ invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \
 {{</katex>}}  
 
 For assumption 1 to hold, the error term $\epsilon_{it}$ should be uncorrelated with each observation of the independent variables. This implies that all factors impacting `invest` that are not included in the model are uncorrelated with all the observations of `value` and `capital` over time. 
-{{% /tip %}}
+{{% /example %}}
 
 ##  Assumption 2: Observations across entities are i.d.d. draws from their joint distribution
 $(X_{i1}, X_{i2},...,X_{it}, u_{i1},...,u_{it})$, $i = 1,...,n$ are independent and identically distributed (i.i.d.) draws from their joint distribution. 
@@ -66,11 +66,11 @@ This assumption is justified when entities are selected through simple random sa
 
 It is important to note that this assumption is just about independence *across entities*. It does allow for observations to be correlated *within entities*, meaning that there can be autocorrelation within entities (firms) over time. This autocorrelation within an entity (over time) is commonly observed in time series and panel data. Similarly, the errors $u_{it}$ are allowed to be correlated over time. 
 
-{{% tip %}}
+{{% example %}}
 In the context of the `Grunfeld` data set, this assumption implies the following:
 - In the Fixed Effects model, we assume that the variables `value` and `capital`are independent across different firms. The firm `value` of U.S. Steel for example is assumed to be independent of the firm `value` of General Motors. 
 - Within each firm, there can still be autocorrelation over time. For instance, the firm `value` of U.S. Steel in one year may be dependent on its `value` in the previous year. 
-{{% /tip %}}
+{{% /example %}}
 
 ## Assumption 3: Large outliers are unlikely
 This assumption tells that $(X_{it}, u_{it})$ have nonzero finite fourth moments. In other words, the observations and error term have finite distributions.
