@@ -345,13 +345,6 @@ In Python, this translates to choosing dictionaries over lists when wrestling wi
 
 Remember that beyond these strategies, it's always possible to leverage the scalability and flexibility of cloud services such as Google Cloud. These services allow for a dynamic allocation of resources according to your needs. 
 
-## Additional Resources
-
-- Google Cloud Compute Engine [guides](https://cloud.google.com/compute/docs/instances)
-- PyTorch [Documentation](https://pytorch.org/)
-- CUDA Toolkit [download](https://developer.nvidia.com/cuda-toolkit)
-- Memory management [Python documentation](https://docs.python.org/3/c-api/memory.html)
-
 {{% summary %}}
 - **Google Cloud VM Setup:**
 
@@ -371,3 +364,11 @@ Remember that beyond these strategies, it's always possible to leverage the scal
     - Implement batching, efficient data structures and algorithms, and use job parallelization to handle memory issues.
 
 {{% /summary %}}
+
+## Additional Resources
+
+- Google Cloud Compute Engine [guides](https://cloud.google.com/compute/docs/instances)
+- PyTorch [Documentation](https://pytorch.org/)
+- CUDA Toolkit [download](https://developer.nvidia.com/cuda-toolkit)
+- Memory management [Python documentation](https://docs.python.org/3/c-api/memory.html)
+
