@@ -1,5 +1,5 @@
 ---
-title: "Fixed Effects Models: Random Effects model"
+title: "Fixed Effects Models: Random Effects Model"
 description: "A building block about the Random Effects model"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false

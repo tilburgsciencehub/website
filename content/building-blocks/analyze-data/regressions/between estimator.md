@@ -1,5 +1,5 @@
 ---
-title: "Fixed Effects Models: Between estimator"
+title: "Fixed Effects Models: Between Estimator"
 description: "A building block about the Between estimator"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false

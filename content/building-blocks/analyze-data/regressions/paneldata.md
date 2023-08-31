@@ -1,5 +1,5 @@
 ---
-title: "An introduction to Panel data"
+title: "An Introduction to Panel Data"
 description: "A building block about the basics of panel data"
 keywords: "paneldata, panel, data, R, regression, model, fixed, effects"
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Fixed Effects Models: Within estimator"
+title: "Fixed Effects Models: Within Estimator"
 description: "A building block about the FE model (Within estimator)"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
