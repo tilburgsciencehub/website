@@ -13,6 +13,12 @@ aliases:
 
 [`Make`](https://tilburgsciencehub.com/learn/makefiles/?utm_campaign=referral-short) is a useful tool for automating the execution of scripts and managing datasets in a complex project. However, diagnosing errors in the workflow can be challenging with `make`. To address this issue, the debugger `remake` can be used to provide extensive error information, facilitating the debugging process and helping to ensure that the project runs smoothly.
 
+Hence, in this building block, you will:
+
+- Learn how to install and run `remake`.
+- Understand the importance of `remake` in debugging `makefiles`.
+- Get hands-on with debugging sessions, setting breakpoints, and error tracing.
+
 # Steps to debugging
 
 To illustrate the steps to debugging with `remake` we will use an example workflow with the following directory structure.
