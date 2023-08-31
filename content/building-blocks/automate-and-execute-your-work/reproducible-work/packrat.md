@@ -35,7 +35,6 @@ With `packrat` you won't be worrying anymore. In this guide you will:
 - **Portable**: Easy to transfer your R projects from one machine to another, or even across platforms.
 - **Reproducible**: `Packrat` saves the exact package version your project depends on, so those exact versions are installed always whenever you run the project anywhere.
 
-
 ## Install packrat
 
 {{% codeblock %}}
@@ -43,8 +42,9 @@ With `packrat` you won't be worrying anymore. In this guide you will:
 install.packages("packrat")
 
 # Alternatively, you can also install the development version of Packrat with:
+
 install.packages("devtools")
-devtools::install_github("rstudio/packrat)
+devtools::install_github("rstudio/packrat")
 ```
 {{% /codeblock %}}
 
@@ -52,13 +52,12 @@ devtools::install_github("rstudio/packrat)
 You’ll also need to make sure your machine is able to build packages from source. See [Package Development Prerequisites](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites#:~:text=Overview,building%20R%20manuals%20and%20vignettes.) for the tools needed for your operating system.
 {{% /warning %}}
 
-## Initialize Packrat
+## Launch Packrat
 
 Before starting to write the codes for your R project, initialize packrat by running `packrat::init("...")` and enter your project directory path inside the parantheses. If you already set the working directory to your desired project directory then simple run `packrat::init()`.
 <p align = "center">
 <img src = "../initialize.png" width="500">
 </p>
-
 
 Now, you’re in a Packrat project which has its own private package library. Any packages installed from inside a packrat project are only available to that project and the ones installed outside of the project are not avilable to the project. This is basically the “isolation” feature of Packrat.
 
