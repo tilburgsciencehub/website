@@ -35,7 +35,7 @@ With `packrat` you won't be worrying anymore. In this guide you will:
 - **Portable**: Easy to transfer your R projects from one machine to another, or even across platforms.
 - **Reproducible**: `Packrat` saves the exact package version your project depends on, so those exact versions are installed always whenever you run the project anywhere.
 
-## Install packrat
+### Install packrat
 
 {{% codeblock %}}
 ```R
@@ -52,7 +52,7 @@ devtools::install_github("rstudio/packrat")
 You’ll also need to make sure your machine is able to build packages from source. See [Package Development Prerequisites](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites#:~:text=Overview,building%20R%20manuals%20and%20vignettes.) for the tools needed for your operating system.
 {{% /warning %}}
 
-## Launch Packrat
+### Launch Packrat
 
 Before starting to write the codes for your R project, initialize `packrat` by running `packrat::init("...")` and enter your project directory path inside the parantheses. If you already set the working directory to your desired project directory then simple run `packrat::init()`.
 <p align = "center">
@@ -73,7 +73,8 @@ Once you run this initialization code, you’ll see a `packrat` folder created i
 - **`packrat/lib/`:** This is the private package library for the current project.
 - **`packrat/src/`:** This folder contains the source packages of all the dependecies packrat has detected.
 - **`.Rprofile`:** Instructs R to use the private package library when starting the project.
-## Adding, removing, and updating packages
+
+### Adding, removing, and updating packages
 
 Simply install the packages as you normally would with `install.packages()` and these packages now get installed in your project’s private package library. Then, take a **snapshot** to save these changes to `packrat` by running:
 {{% codeblock %}}
@@ -95,7 +96,7 @@ Suppose you made some changes to your code and remove one of the libraries. When
 <figcaption> Packrat proposes to remove no longer needed packages </figcaption>
 </p>
 
-## Restoring snapshot
+### Restoring snapshot
 
 So let’s say you are collaborating with a co-author/teammate on GitHub and you made changes to your R project and took snapshot of the packages **before** comitting the changes. Now, your collaborator fetches these changes by pulling the commits made to their local machine. They can check “status” which shows the differences between the project’s `packrat` dependencies, its private package library, and R scripts. Then they can “restore” the changes made.
 {{% codeblock %}}
@@ -110,7 +111,7 @@ packrat::restore()
 
 Now, `packrat` installs all the dependencies and your collaborator’s private library looks just like yours did when you wrote the codes and they will be able to run all the codes smoothly.
 
-## Cleaning up packages
+### Cleaning up packages
 
 As your project progresses, your package libraries may have outgrown and some of the packages installed may no longer be needed. `Packrat` can analyze your .R script files and filter packages that are needed depending on your codes and keep the package library tidy.
 {{% codeblock %}}
