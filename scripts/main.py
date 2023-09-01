@@ -27,7 +27,7 @@ def get_report():
         "reportRequests": [
             {
                 "viewId": VIEW_ID,
-                "dateRanges": [{"startDate": "56daysAgo", "endDate": "today"}],
+                "dateRanges": [{"startDate": "14daysAgo", "endDate": "today"}],
                 "metrics": [{"expression": "ga:users"}],
                 "dimensions": [
                 {"name": "ga:pagePath"},
