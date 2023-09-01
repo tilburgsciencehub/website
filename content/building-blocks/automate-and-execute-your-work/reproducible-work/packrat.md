@@ -162,3 +162,5 @@ Packrat is soft-deprecated with no new developments planned, and users are advis
 
 ## Additional Resources
 
+- Packrat [step-by-step](https://rstudio.github.io/packrat/walkthrough.html)
+- Most common [commands in Packrat](https://rstudio.github.io/packrat/commands.html)
