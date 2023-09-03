@@ -650,6 +650,14 @@ $(".takeTour").on("click", (event) => {
   $(".onBoardTooltipContent:first").addClass("active");
 });
 
+$(".takeTourFooter").on("click", (event) => {
+  $("html, body").animate({ scrollTop: 0 }, "fast", function() {
+    setTimeout(function() {
+      $(".onBoardTooltipContent:first").addClass("active");
+    }, 1000);
+  });
+});
+
 // Fill Cards Dynamically
 $(document).ready(function () {
   $('.cards-home').ready(function () {
