@@ -40,7 +40,7 @@
       </h1>
 
       <p class="text-secondary mx-4 mx-lg-0 mt-4 mb-4 mr-lg-5 pr-lg-5">
-        We bring the <a class="header takeTour" href="#0" >value of open science</a> to Tilburg,
+        We bring the <a class="header takeTour" href="#0">value of open science</a> to Tilburg,
         and valuable resources of Tilburg to the world.
       </p>
 
@@ -234,36 +234,37 @@
         <div class="col-lg-10 col-xl-14 col-22 mb-3">
           <div class="h-100 p-4 rounded bg-white d-flex flex-column card-category-carousel"
             style="position: relative;overflow:hidden">
-            <div class="d-none d-md-block d-lg-block d-xl-block" style="position: absolute;bottom: -50px;right: -25px;width: 200px;height: auto;z-index:2">
+            <div class="d-none d-md-block d-lg-block d-xl-block"
+              style="position: absolute;bottom: -50px;right: -25px;width: 200px;height: auto;z-index:2">
               <img src="/img/card-icon.png" alt="Background Image">
             </div>
-          
+
             <div class="background-content">
-            <div class="row mb-4">
-              <div class="col-xl-22 col-lg-20 col-md-22 col-sm-22">
-                <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
-                  Reproducible Research
-                </h2>
+              <div class="row mb-4">
+                <div class="col-xl-22 col-lg-20 col-md-22 col-sm-22">
+                  <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
+                    Reproducible Research
+                  </h2>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-2 col-sm-2 carousel-nav">
+                  <button style="background-image: none;background-color: transparent;color:#013365"
+                    class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="fa-solid fa-arrow-left" aria-hidden="true"></span>
+                  </button>
+                  <button style="background-image: none;background-color: transparent;color:#013365"
+                    class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="fa-solid fa-arrow-right" aria-hidden="true"></span>
+                  </button>
+                </div>
               </div>
-              <div class="col-xl-2 col-lg-3 col-md-2 col-sm-2 carousel-nav">
-                <button style="background-image: none;background-color: transparent;color:#013365"
-                  class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                  <span class="fa-solid fa-arrow-left" aria-hidden="true"></span>
-                </button>
-                <button style="background-image: none;background-color: transparent;color:#013365"
-                  class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                  <span class="fa-solid fa-arrow-right" aria-hidden="true"></span>
-                </button>
-              </div>
-            </div>
-            <div class="row" style="margin-top: auto; margin-bottom: auto;">
-              <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
-                <div id="carouselExample" class="carousel slide h-100" data-bs-ride="carousel">
-                  <div class="carousel-inner h-100" style="z-index:1;">
+              <div class="row" style="margin-top: auto; margin-bottom: auto;">
+                <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
+                  <div id="carouselExample" class="carousel slide h-100" data-bs-ride="carousel">
+                    <div class="carousel-inner h-100" style="z-index:1;">
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
@@ -311,7 +312,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-10 col-xl-12 col-22 mb-3">
+        <div class="col-lg-10 col-xl-8 col-22 mb-3">
           <div id="most-popular-tutorial-single" class="h-100 p-4 rounded bg-white text-right d-flex align-items-center"
             style="background-image: url('/img/card-background-left.svg');background-size: contain;background-repeat: no-repeat;background-position-y:bottom;background-position-x:left;">
             <div>
@@ -326,7 +327,26 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-10 col-xl-12 col-22 mb-3">
+        <div class="col-lg-10 col-xl-6 col-22 mb-3">
+          <div class="h-100 p-4 rounded bg-white d-flex flex-column">
+            <div class="row mb-4">
+              <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
+                <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
+                  Announcements
+                </h2>
+                <ul class="my-2 list-unstyled cards-announcements" id="cards-announcements">
+                  {{ range where .Site.Pages "Section" "announcements" }}
+                  {{ if ne .Title "Announcements" }}
+                  <li class="pb-3"><span class="icon link text-primary d-inline-block mr-2"></span><a
+                      href="{{ .Permalink }}">{{ .Title }}</a></li>
+                  {{ end }}
+                  {{ end }}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-10 col-xl-10 col-22 mb-3">
           <div class="h-100 p-4 rounded bg-white d-flex flex-column">
             <div class="row mb-4">
               <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
@@ -342,6 +362,7 @@
 
           </div>
         </div>
+
       </div>
     </div>
   </div>

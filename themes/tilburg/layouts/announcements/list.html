@@ -1,0 +1,32 @@
+{{- partial "header.html" . -}}
+
+<div class="container content">
+  <div class="row justify-content-md-center mt-5 mb-2 py-4">
+    <div class="col-lg-12 col-24">
+      <h1 class="text-center">Announcements</h1>
+      <p class="text-center text-secondary my-4 px-5">Find out what recently changed at Tilburg Science Hub.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="row justify-content-center justify-content-lg-start">
+      {{ range where .Site.Pages "Section" "announcements" }}
+      {{ if ne .Title "Announcements" }}
+        <div class="col-lg-8 col-22 mb-4 d-flex flex-wrap">
+          <div class="bg-white p-5 text-center w-100 rounded d-flex flex-column">
+            <span class="flex-fill">
+              <h4 class="heading">{{ .Title }}</h4>
+              <p class="my-3" style="color: #6081A2;">{{ .Params.description }}</p>
+            </span>
+            <span>
+              <a href="{{ .Permalink }}" class="btn btn-primary mt-5">View Announcement</a>
+            </span>
+          </div>
+        </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>
+<br><br><br>
+{{- partial "footer.html" . -}}

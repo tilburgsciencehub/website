@@ -39,6 +39,7 @@ def get_report():
     }
     return analytics.reports().batchGet(body=body).execute()
 
+
 def get_popular_pages(response):
     print("Fetching popular pages...")
     popular_pages = []
@@ -46,10 +47,11 @@ def get_popular_pages(response):
     if reports:
         report = reports[0]
         for row in report.get("data", {}).get("rows", []):
-            if (row["dimensions"][0]!= "/"):
+            if (row["dimensions"][0] != "/"):
                 path = row["dimensions"][0]
-                title = row["dimensions"][1].replace('- Tilburg Science Hub', '').strip()
-                data = {"path":path, "title":title}
+                title = row["dimensions"][1].replace(
+                    '- Tilburg Science Hub', '').strip()
+                data = {"path": path, "title": title}
                 popular_pages.append(data)
     filtered = [page for page in popular_pages]
     if len(filtered) > MAX_PAGES:
@@ -104,10 +106,12 @@ def get_most_popular_page(response, path_prefix):
             page_title = row["dimensions"][1]
             if "- Tilburg Science Hub" in page_title:
                 page_title = page_title.strip('Tilburg Science Hub').strip('-')
-            users = int(row["metrics"][0]["values"][0])  # Convert users to an integer
+            # Convert users to an integer
+            users = int(row["metrics"][0]["values"][0])
             if page_path.startswith(path_prefix) and page_path != path_prefix and page_title != "(not set)":
                 if users > max_users:
-                    most_popular_page = {"path": page_path, "title": page_title}
+                    most_popular_page = {
+                        "path": page_path, "title": page_title}
                     max_users = users
 
     if most_popular_page:
@@ -125,10 +129,12 @@ def get_sitemap(url):
         if response.status_code == 200:
             sitemap_content = response.content
             sitemap_root = ET.fromstring(sitemap_content)
-            urls = [loc.text for loc in sitemap_root.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
+            urls = [loc.text for loc in sitemap_root.findall(
+                ".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
             return urls
         else:
-            print(f"Failed to retrieve sitemap. Status code: {response.status_code}")
+            print(
+                f"Failed to retrieve sitemap. Status code: {response.status_code}")
             return []
     except requests.exceptions.RequestException as e:
         print(f"Error fetching sitemap: {e}")
@@ -136,7 +142,7 @@ def get_sitemap(url):
 
 # type_page: Building Block or Tutorial
 # category_slug: The Name of the Category
-def get_tsh_sitemap_category(type_page,category_slug):
+def get_tsh_sitemap_category(type_page, category_slug):
     sitemap_url = "https://tilburgsciencehub.com/sitemap.xml"
     urls = get_sitemap(sitemap_url)
     common_part = 'https://tilburgsciencehub.com/'+type_page+'/'+category_slug+'/'
@@ -150,7 +156,7 @@ def get_tsh_sitemap_category(type_page,category_slug):
                 trimmed_url = trimmed_url.replace('/', '')
                 trimmed_url = trimmed_url.replace('-', ' ')
                 title = trimmed_url.title()
-                data_dict = {"path": path, "title" : title}
+                data_dict = {"path": path, "title": title}
                 url_list.append(data_dict)
 
     return url_list
@@ -271,7 +277,7 @@ def create_popular_cards_json(input_categories):
     # Create the categories output dictionary
     categories_output = category_vars
 
-    #Get Analytics, Populate popular tutorials and building blocks
+    #set popular cards data
     response = get_report()
     tutorials = fetch_cards_popular_pages(response, "/tutorials/")
     building_blocks = fetch_cards_popular_pages(response, "/building-blocks/")

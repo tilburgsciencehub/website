@@ -1,1 +1,96 @@
-{"tutorials": [{"path": "/tutorials/more-tutorials/chatgpt-article/chat-gpt-research/", "title": "Use ChatGPT for your research! "}, {"path": "/tutorials/reproducible-research-and-automation/share-data/share-data/", "title": "Document and Share your Data using GitHub "}, {"path": "/tutorials/more-tutorials/openai-whisper/whisper/", "title": "Making transcriptions using OpenAI's Whisper "}, {"path": "/tutorials/reproducible-research-and-automation/principles-of-project-setup-and-workflow-management/project-setup-overview/", "title": "Principles of Project Setup and Workflow Management "}, {"path": "/tutorials/more-tutorials/write-your-first-latex-document/your-first-article/", "title": "Write Your First LaTeX Document in 15 Minutes "}], "building_blocks": [{"path": "/building-blocks/collaborate-and-share-your-work/use-github/naming-git-branches/", "title": "Best Practices for Naming Git Branches "}, {"path": "/building-blocks/collaborate-and-share-your-work/use-github/git-branching-strategies/", "title": "Git Branching Strategies "}, {"path": "/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/", "title": "Configuring Python for Web Scraping "}, {"path": "/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/", "title": "Cheatsheet for LaTeX Math Commands "}, {"path": "/building-blocks/develop-your-research-skills/tips/principles-good-coding/", "title": "Principles for Good Coding "}], "most_popular_building_block": {"path": "/building-blocks/collaborate-and-share-your-work/use-github/naming-git-branches/", "title": "Best Practices for Naming Git Branches ", "description": "Learn the conventions to properly name the created Git branches"}, "most_popular_tutorial": {"path": "/tutorials/more-tutorials/chatgpt-article/chat-gpt-research/", "title": "Use ChatGPT for your research! ", "description": "Currently, ChatGPT is everywhere. Learn how to use it efficiently to improve your research."}, "categories": {"reproducible": [{"title": "Extract Data From APIs", "path": "/collect-data/extract-data-api", "description": "Learn how to extract data from APIs.", "icon": "fa-solid fa-database"}, {"title": "Avoid Getting Blocked While Scraping", "path": "/collect-data/avoid-getting-blocked", "description": "Take steps to make sure your scraper keeps on running!", "icon": "fa-solid fa-database"}], "learn": [{"title": "Online Data Collection and Management", "path": "/tutorials/open-education/online-data-collection-and-management/odcm-course", "description": "Learn to use web scraping and APIs to collect data for your empirical research project.", "icon": "fa-solid fa-database"}, {"title": "Web Scraping and API Mining", "path": "/tutorials/more-tutorials/web-scraping/web-scraping-tutorial", "description": "Learn to extract data from the web and APIs", "icon": "fa-solid fa-database"}]}}
+{
+    "tutorials": [
+        {
+            "path": "/tutorials/more-tutorials/chatgpt-article/chat-gpt-research/",
+            "title": "Use ChatGPT for your research! "
+        },
+        {
+            "path": "/tutorials/reproducible-research-and-automation/share-data/share-data/",
+            "title": "Document and Share your Data using GitHub "
+        },
+        {
+            "path": "/tutorials/more-tutorials/openai-whisper/whisper/",
+            "title": "Making transcriptions using OpenAI's Whisper "
+        },
+        {
+            "path": "/tutorials/reproducible-research-and-automation/principles-of-project-setup-and-workflow-management/project-setup-overview/",
+            "title": "Principles of Project Setup and Workflow Management "
+        },
+        {
+            "path": "/tutorials/more-tutorials/write-your-first-latex-document/your-first-article/",
+            "title": "Write Your First LaTeX Document in 15 Minutes "
+        }
+    ],
+    "building_blocks": [
+        {
+            "path": "/building-blocks/collaborate-and-share-your-work/use-github/naming-git-branches/",
+            "title": "Best Practices for Naming Git Branches "
+        },
+        {
+            "path": "/building-blocks/collaborate-and-share-your-work/use-github/git-branching-strategies/",
+            "title": "Git Branching Strategies "
+        },
+        {
+            "path": "/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/",
+            "title": "Configuring Python for Web Scraping "
+        },
+        {
+            "path": "/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/",
+            "title": "Cheatsheet for LaTeX Math Commands "
+        },
+        {
+            "path": "/building-blocks/develop-your-research-skills/tips/principles-good-coding/",
+            "title": "Principles for Good Coding "
+        }
+    ],
+    "most_popular_building_block": {
+        "path": "/building-blocks/collaborate-and-share-your-work/use-github/naming-git-branches/",
+        "title": "Best Practices for Naming Git Branches ",
+        "description": "Learn the conventions to properly name the created Git branches"
+    },
+    "most_popular_tutorial": {
+        "path": "/tutorials/more-tutorials/chatgpt-article/chat-gpt-research/",
+        "title": "Use ChatGPT for your research! ",
+        "description": "Currently, ChatGPT is everywhere. Learn how to use it efficiently to improve your research."
+    },
+    "categories": {
+        "reproducible": [
+            {
+                "title": "Extract Data From APIs",
+                "path": "/collect-data/extract-data-api",
+                "description": "Learn how to extract data from APIs.",
+                "icon": "fa-solid fa-database"
+            },
+            {
+                "title": "Avoid Getting Blocked While Scraping",
+                "path": "/collect-data/avoid-getting-blocked",
+                "description": "Take steps to make sure your scraper keeps on running!",
+                "icon": "fa-solid fa-database"
+            }
+        ],
+        "learn": [
+            {
+                "title": "Online Data Collection and Management",
+                "path": "/tutorials/open-education/online-data-collection-and-management/odcm-course",
+                "description": "Learn to use web scraping and APIs to collect data for your empirical research project.",
+                "icon": "fa-solid fa-database"
+            },
+            {
+                "title": "Web Scraping and API Mining",
+                "path": "/tutorials/more-tutorials/web-scraping/web-scraping-tutorial",
+                "description": "Learn to extract data from the web and APIs",
+                "icon": "fa-solid fa-database"
+            }
+        ]
+    },
+    "announcements": [
+        {
+            "announcement": "This is the anouncement",
+            "link": "https://google.nl"
+        },
+        {
+            "announcement": "This is the anouncement",
+            "link": "https://google.nl"
+        }
+    ]
+}
