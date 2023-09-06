@@ -16,6 +16,11 @@ aliases:
 
 The **Between estimator** is a method used to estimate the relationship between variables by taking averages across time for each entity. It uses only the *between-group variation* in the data by averaging out the time component of panel data. With, this, the panel data effectively turns into a pooled cross-sectional data set. Consequently, important information about how variables change over time is ignored.
 
+{{% tip %}}
+**Practical application of between estimator**
+The Between estimator is considerd more of a technical concept than a model to use in practice. Think of it as a step between the Fixed Effects and Random Effects model.
+{{% /tip %}}
+
 ## Estimation of the Between estimator 
 The Between estimator is obtained by regressing the averaged variables on each other using OLS regression.
 
