@@ -19,7 +19,8 @@ The Pooled OLS model can only be used under the assumption of independence acros
 The first-difference (FD) estimator is the first method we discuss to control for fixed effects and address the problem of omitted variables. By taking the first-difference within each cross-section, it eliminates the firm-specific effects that remain constant over time. Examples of unobserved entity-specific fixed effects in our model include factors like managerial quality, level of risk aversion, or technological advancements within firms. 
 
 {{% tip %}}
-**Practical application of FD estimator**
+__Practical application of FD estimator__
+
 The Fixed Effects (FE) model discussed in the next [building block](/within) is often the preferred choice in practice to address the problem of omitted variables. The FD estimator can be seen as a technical intermediary step between the Pooled OLS and the FE model.
 {{% /tip %}}
 
