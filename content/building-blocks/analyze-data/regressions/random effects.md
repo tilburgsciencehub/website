@@ -16,6 +16,8 @@ aliases:
 
 The **Random Effects (RE) model** is the last method for panel data analysis discussed in this series of building blocks. Unlike the Fixed Effects (FE) model, which focuses on within-group variations, the RE model treats the unobserved entity-specific effects in the model as random and assumes they are uncorrelated with the explanatory variables. 
 
+In this building block, we first delve into the RE model. Then, to conclude this series of building blocks on panel data analysis, we address probably the most critical choice to make when working with panel data: deciding between a FE or RE model. 
+
 {{% summary %}}
 Thus, the biggest difference between RE and FE is:
 - In a FE model, the unobserved effects are assumed to be **correlated** with the independent variables
@@ -93,6 +95,7 @@ model_random_twoway <- plm(invest ~ value + capital,
 {{% /codeblock %}}
 
 ## Choice between Fixed or Random Effects
+
 When deciding between the FE and RE model for panel data analysis, it is important to consider the correlation between the unobserved effects and the independent variables. If there is a correlation, the FE model is preferred as it controls for time-invariant heterogeneity. However, if the individual-specific effects are assumed to be uncorrelated with the independent variables, the RE model can be applied.
 
 ### Hausman test
