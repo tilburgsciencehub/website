@@ -4,74 +4,63 @@
   <div class="row justify-content-md-center mt-5 mb-2 py-4">
     <div class="col-lg-12 col-24">
       <h1 class="text-center">Meet our Contributors</h1>
-      <p class="text-center text-secondary my-4 px-5">We're a community of enthousiastic researchers and data scientists,
-         seeking to shape the future of reproducible and open science. <a href="/contribute">Join us!</a></p>
+      <p class="text-center text-secondary my-4 px-5">We're a community of enthousiastic researchers and data
+        scientists,
+        seeking to shape the future of reproducible and open science. <a href="/contribute">Join us!</a></p>
     </div>
   </div>
 
   <div>
-
-   
-    {{ $authors := slice }}
-    {{ $uniqauthors := slice }}
-    
-    
-    <!-- loop through array of pages (building blocks, tutorials)-->
-
-    {{ range where .Site.Pages "Section" "building-blocks" }}
-      {{ if ne .Title "building-blocks" }}
-        {{ if isset .Params "author" }} 
-            
-      {{ $authors = $authors | append . }}
-      
-      {{ end }}
-
-      {{ end }}
-    {{ end }}
-
-    {{ range where .Site.Pages "Section" "tutorials" }}
-      {{ if ne .Title "tutorials" }}
-        {{ if isset .Params "author" }} 
-            
-      {{ $authors = $authors | append . }}
-      
-      {{ end }}
-
-      {{ end }}
-    {{ end }}
-
-    {{ range where .Site.Pages "Section" "examples" }}
-      {{ if ne .Title "examples" }}
-        {{ if isset .Params "author" }} 
-            
-      {{ $authors = $authors | append . }}
-      
-      {{ end }}
-
-      {{ end }}
-    {{ end }}
-
-    {{ range $authors }}
-      {{ $uniqauthors = $uniqauthors | append .Params.Author }}
-    
-    {{ end }}
-    
-    {{ $uniqauthors = append "Hannes Datta" $uniqauthors }}
-    {{ $uniqauthors = append "Tobias Klein" $uniqauthors }}
-    
-    <div class="row justify-content-center justify-content-lg-start">
-      {{ range $uniqauthors | uniq }}
-        <div class="col-lg-8 col-22 mb-4 d-flex flex-wrap">
+    <h3 style="font-weight: 700;">Active Contributors</h3>
+    <div class="row justify-content-center justify-content-lg-start mb-3">
+      {{ range where .Pages "Params.status" "==" "active" }}
+      <div class="col-lg-6 col-22 mb-4 d-flex flex-wrap">
+        <a style="color:inherit" href="{{ .Permalink }}">
           <div class="bg-white p-5 text-center w-100 rounded d-flex flex-column">
             <span class="flex-fill">
-              <h4 class="heading">{{ . }}</h4>
-             
+              <div class="image-circle-overview">
+                {{ if .Params.image }}
+                <img src="/img/contributors/{{ .Params.image }}">
+                {{ else }}
+                <img src="/img/contributors/no-image.png">
+                {{ end }}
+
+              </div>
+              <h4 class="heading mt-3">{{ .Params.name }}</h4>
+              <p>{{ .Params.description_short }}</p>
+
             </span>
             <span>
-             <!-- <a href="" class="btn btn-primary mt-5">View contributor's content</a> -->
+              <!-- <a href="" class="btn btn-primary mt-5">View contributor's content</a> -->
             </span>
           </div>
-        </div>
+        </a>
+      </div>
+      {{ end }}
+
+    </div>
+    <h3 style="font-weight: 700;">Alumni</h3>
+    <div class="row justify-content-center justify-content-lg-start">
+      {{ range where .Pages "Params.status" "==" "alumni" }}
+      <div class="col-lg-6 col-22 mb-4 d-flex flex-wrap">
+        <a style="color:inherit" href="{{ .Permalink }}">
+          <div class="bg-white p-5 text-center w-100 rounded d-flex flex-column">
+            <span class="flex-fill">
+              {{ if .Params.image }}
+              <img src="/img/contributors/{{ .Params.image }}">
+              {{ else }}
+              <img src="/img/no-image.png">
+              {{ end }}
+              <h4 class="heading mt-3">{{ .Params.name }}</h4>
+              <p>{{ .Params.description_short }}</p>
+
+            </span>
+            <span>
+              <!-- <a href="" class="btn btn-primary mt-5">View contributor's content</a> -->
+            </span>
+          </div>
+        </a>
+      </div>
       {{ end }}
 
     </div>

@@ -1552,3 +1552,42 @@ form {
 	}
 }
 
+// contributors
+.image-circle{
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border-top: 3px dashed #FE9C00;
+  border-right: 3px dashed #FE9C00;
+  border-left: 3px dashed #013365;
+  border-bottom: 3px dashed #013365;
+  animation: spin 40s infinite linear;
+
+  img {
+    width: 400px; 
+    height: auto; 
+    border-radius: 50%; 
+    border: 20px solid white;
+    animation: spin 40s reverse infinite linear;
+  }
+}
+
+.image-circle-overview{
+  width: 200;
+  height: 200;
+  border-radius: 50%;
+
+  img {
+    width: 400px; 
+    height: auto; 
+    border-radius: 50%; 
+    border: 5px solid #013365;
+  }
+}
+
+.skills-ul {
+  padding-inline-start: 5px; 
+  list-style: none; 
+  display: flex;
+  margin-bottom: 0px;
+}
