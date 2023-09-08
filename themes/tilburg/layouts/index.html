@@ -299,20 +299,36 @@
           </div>
         </div>
         <div class="col-lg-10 col-xl-4 col-22 mb-3">
-          <div class="h-100 p-3 rounded bg-white d-flex justify-content-center align-items-center">
-            <div>
-              <h2 class="text-center heading px-3" style="font-size: 20px ; line-height: 1 !important">
-                Use our code snippets in your projects
-              </h2>
-              <div class="text-center mt-4 mb-0">
-                <a href="/building-blocks/">
-                  <button class="btn tertiary ">Use a code snippet</button>
-                </a>
+          <div class="mb-3">
+            <div class="h-100 p-3 rounded bg-white d-flex justify-content-center align-items-center">
+              <div>
+                <h2 class="text-center heading px-3" style="font-size: 20px ; line-height: 1 !important">
+                  Use our code snippets in your projects
+                </h2>
+                <div class="text-center mt-4 mb-0">
+                  <a href="/building-blocks/">
+                    <button class="btn tertiary ">Use a code snippet</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="h-100 p-3 rounded bg-white d-flex justify-content-center align-items-center">
+              <div>
+                <h2 class="text-center heading px-3" style="font-size: 20px ; line-height: 1 !important">
+                  Start reading our recent blogs
+                </h2>
+                <div class="text-center mt-4 mb-0">
+                  <a href="/blog/">
+                    <button class="btn tertiary ">Visit our blog</button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-10 col-xl-8 col-22 mb-3">
+        <div class="col-lg-12 col-xl-12 col-22 mb-3">
           <div id="most-popular-tutorial-single" class="h-100 p-4 rounded bg-white text-right d-flex align-items-center"
             style="background-image: url('/img/card-background-left.svg');background-size: contain;background-repeat: no-repeat;background-position-y:bottom;background-position-x:left;">
             <div>
@@ -327,26 +343,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-10 col-xl-6 col-22 mb-3">
-          <div class="h-100 p-4 rounded bg-white d-flex flex-column">
-            <div class="row mb-4">
-              <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
-                <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
-                  Announcements
-                </h2>
-                <ul class="my-2 list-unstyled cards-announcements" id="cards-announcements">
-                  {{ range where .Site.Pages "Section" "announcements" }}
-                  {{ if ne .Title "Announcements" }}
-                  <li class="pb-3"><span class="icon link text-primary d-inline-block mr-2"></span><a
-                      href="{{ .Permalink }}">{{ .Title }}</a></li>
-                  {{ end }}
-                  {{ end }}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-10 col-xl-10 col-22 mb-3">
+        <div class="col-lg-12 col-xl-12 col-22 mb-3">
           <div class="h-100 p-4 rounded bg-white d-flex flex-column">
             <div class="row mb-4">
               <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">

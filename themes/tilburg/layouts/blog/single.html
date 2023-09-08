@@ -9,12 +9,7 @@
 	<div class="row justify-content-center mx-0">
 		<div class="col-lg-8 col-22 pr-lg-5">
 			<div class="sticky-top mb-lg-5 pb-lg-5 d-flex flex-column tableOfContentParent">
-				{{ if .Params.tutorialTitle }}
-				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{
-					.Params.tutorialTitle }}</h1>
-				{{ else }}
 				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
-				{{ end }}
 				<div class="TableOfContents">
 					<span class="arrow-icon"></span>
 					<div class="pseudo-btn d-block d-lg-none"></div>
@@ -53,6 +48,7 @@
 						{{ end }}
 						{{ end }}
 					</div>
+					<p class="mb-0">{{ .Date.Format "January 2, 2006" }}</p>
 					<!-- <div class="d-none d-lg-block">
             <a href="{{ .Site.Params.repo_url }}/edit/master/content/{{ .File }}" class="btn btn-secondary">Edit this page</a>
           </div> -->
