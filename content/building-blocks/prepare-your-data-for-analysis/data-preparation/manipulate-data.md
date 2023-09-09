@@ -1,7 +1,7 @@
 ---
 title: "Manipulate Data"
 weight: 3
-keywords: "manipulate, cleaning, wrangling, prep, data, machone learning, visualization"
+keywords: "manipulate, cleaning, wrangling, prep, data, machine learning, visualization"
 date: 2021-01-06T22:01:14+05:30
 draft: false
 aliases:
