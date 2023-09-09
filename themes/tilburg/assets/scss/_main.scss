@@ -6,10 +6,6 @@
   opacity: 1; /* Firefox */
 }
 
-* {
-  // outline: solid 1px rgba(255, 100, 0, 0.6);
-}
-
 // share
 .share {
   display: inline-flex;
@@ -522,9 +518,6 @@ ul {
     margin: 0 !important;
     padding: 0 !important;
     line-height: 36px;
-
-    a {
-    }
   }
 }
 
@@ -979,10 +972,6 @@ footer {
   }
 }
 
-footer {
-  .footerCollapse {
-  }
-}
 .text-primary {
   color: $primary !important;
 }

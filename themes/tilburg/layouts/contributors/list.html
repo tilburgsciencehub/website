@@ -16,7 +16,7 @@
       {{ range where .Pages "Params.status" "==" "active" }}
       <div class="col-lg-6 col-22 mb-4 d-flex flex-wrap">
         <a style="color:inherit" href="{{ .Permalink }}">
-          <div class="bg-white p-5 text-center w-100 rounded d-flex flex-column">
+          <div class="p-5 text-center w-100 rounded d-flex flex-column">
             <span class="flex-fill">
               <div class="image-circle-overview">
                 {{ if .Params.image }}
