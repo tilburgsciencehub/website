@@ -13,127 +13,59 @@ aliases:
 
 ---
 
-# Import and run a Python environment on Google cloud with Docker
+## Import and run a Python environment on Google cloud with Docker
 
 Take advantage of the versatility of containerized apps on Docker and the power of Google Cloud to easily reproduce and collaborate on projects! In this building block, you will learn how to replicate a Python environment from a project on an existing Google cloud instance using Docker and then open Jupyter notebook on it. Additionally, you will also learn how to connect your replicated environment directly to Google Cloud storage buckets to comfortably save and share your output. 
 
 {{% warning %}}
 
+DISCLAIMER HERE - WORK ALONGSIDE PREVIOUS BB
+
 To be able to follow this building block you will need that the project you want to import already provides both  a dockerfile and a docker-compose.yml file, with the adequate information to run the latter.
 
 {{% /warning %}}
 
-### Step 1: Install and Set up Docker in a Google cloud instance
+### Step 1: Install and Set up Docker in your Google cloud instance
 
-The first thing you need to consider  to install Docker in your instance is which boot disk image is it using. You can check a detailed version of the installation procedure in [the official Docker documentation](https://docs.docker.com/engine/install/debian/), where you will find instructions for installing Docker on all supported Linux distributions and operative systems through the command line. If on the contrary, you prefer to cut it straight to the chase, you can simply execute one by one the code lines below on your instance's command line to get Docker installed. These cover the installation of Docker for Ubuntu and Debian boot disk images. The instructions for these two Linux distributions are essentially the same except for steps #5 and #6 which have been duplicated to cover both, you have to pick the one that adjusts to your case.
+Google Cloud's virtual machines are configured to operate on Debian Linux by default. As a result, installing Docker on these machines follows the standard procedures for Linux-based systems. You can learn how to do so by visiting our building block on how to [Set up Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/), which covers the setup of Docker in Windows, MacOS and Ubuntu Linux.
 
+For those who prefer a more streamlined approach, we have condensed these instruction into two Docker installation scripts available for download below. These scripts work for Debian and Ubuntu Linux, which are among the most commonly used Linux distributions on Google Cloud's virtual machines. Feel free to either follow these scripts step-by-step or directly upload and execute them on your virtual machine. Either method will successfully install Docker on your VM and thus allow you to continue with this building block!
 
-{{% tip %}}
+{{% cta-primary-center "Download script for installing Docker in Debian Linux" "https://raw.githubusercontent.com/social-science-data-editors/template_README/releases/README.md" %}}
 
-While Debian is the default boot disk image in Google cloud instances, we recommend the usage of a Ubuntu image if you are including a GPU in your instance. This will make easier the installation of the NVIDIA container toolbox (covered below).
+{{% cta-primary-center "Download script for installing Docker in Ubuntu Linux" "https://raw.githubusercontent.com/social-science-data-editors/template_README/releases/README.md" %}}
 
-{{% /tip %}}
+{{% warning %}}
 
-{{% codeblock %}}
-```bash
-#1
-$ sudo apt-get remove docker docker-engine docker.io containerd runc
+Docker's set up process differs slightly accross Linux distributions, so make sure to follow the appropriate instruction for your distribution wehther it is Ubuntu, Debian or any other. If your Google cloud VM is not running in any of these distributions, check [the official Docker documentation](https://docs.docker.com/engine/install/debian/) which provides guidelines to install Docker in many different Linux distributions.
 
-#2
-$ sudo apt-get update
-
-#3
-$ sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-
-#4
-$ sudo mkdir -p /etc/apt/keyrings
-
-#5 - Debian
-$ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-
-#5 - Ubuntu
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-
-#6 - Debian
-$ echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-#6 - Ubuntu
-$ echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-#7
-$ sudo apt-get update
-
-#8
-$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
-
-#9
-$ sudo groupadd docker 
-
-#10
-$ sudo usermod -aG docker <your-user-name>
-
-#11
-$ newgrp docker
-
-#12
-$ docker run hello-world
-
-```
-{{% /codeblock %}}
-
-Code lines #1 to #8 from the above deal with the installation of Docker itself, while code lines #9 to #11 are in charge of allowing your user within the instance to handle Docker without security privileges being required every time you use the `docker` command (This is done by adding you username to the Docker group, for more detailed information on these instructions you can visit [the Docker website](https://docs.docker.com/engine/install/linux-postinstall/)). Finally, the last line of the code (#12 - `$ docker run hello-world`) is meant to act as a check to see if the installation was completed successfully. The command line output after running it will tell you if this was the case.
+{{% /warning %}}
 
 <p align = "center">
 <img src = "../img/output_dock_install.png" width="750">
 <figcaption> If the installation was successful the final command line output should look similar to this!</figcaption>
 </p>
 
-#### Extra! - Install the NVIDIA container toolkit (for instances including a GPU)
+{{% tip %}}
 
-If your instance includes a GPU, besides the regular [drivers](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#ubuntu-lts) you need to install the NVIDIA container toolkit for Docker. This toolkit is the key to allowing Docker containers within your instance to function taking full advantage of all the benefits that Google cloud machines of the GPU family offer. To carry out the installation you just need to execute the step-by-step code in the cell below, though you can also check the detailed instructions on the [NVIDIA toolkit site](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).
+To run `docker` commands on you VM after following the Docker setup steps provided above, you will always have to do so alongside the `sudo` command. To avoid this, you can execute the code provided in the codeblock below. 
+
+{{% /tip %}}
 
 {{% codeblock %}}
 ```bash
+# Add your user to the `docker`` command group
+# to get rid of the need to `sudo` to handle Docker
 
-#1
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
-      && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
-      && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
-            sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
-            sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+usermod -aG docker your-user-name
 
-#2
-sudo apt-get update
-
-#3
-sudo apt-get install -y nvidia-docker2
-
-#4
-sudo systemctl restart docker
-
-#5
-sudo docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
-
+newgrp docker
 ```
 {{% /codeblock %}}
 
-<p align = "center">
-<img src = "../img/nvidia-toolkit.png" width="750">
-<figcaption> If the installation was successful you should observe something looking like in your command line this after running the code in step #5. </figcaption>
-</p>
-
-
 ### Step 2: Build the environment's image from a Dockerfile
 
-Once you have Docker installed and working, the first thing you'll need to import your environment is a [Dockerfile](https://docs.docker.com/engine/reference/builder/). A Dockerfile provides Docker with the necessary indications to produce a Docker image, each of the instances of an image is known as a container. 
+Once you have Docker successfully installed and working, the first thing you'll need to import your environment is a [Dockerfile](https://docs.docker.com/engine/reference/builder/). A Dockerfile provides Docker with the necessary indications to produce a Docker image, each of the instances of an image is known as a container. 
 
 {{% tip %}}
 
@@ -141,7 +73,7 @@ You can think of the Docker image as a template of our environment, and the Dock
 
 {{% /tip %}}
 
-First, you will need to upload your dockerfile to the instance. In Google cloud's browser SSH the easiest way to do this is to click on the "Upload file" button located close to the top right corner of the interface. There you will be able to select the files you want to upload from your local machine and these will be transferred to the instance. 
+First, you will need to upload your dockerfile to the instance. In Google Cloud's browser SSH the easiest way to do this is to click on the "Upload file" button located close to the top right corner of the interface. There you will be able to select the files you want to upload from your local machine and these will be transferred to the instance. 
 
 {{% tip %}}
 
@@ -170,7 +102,7 @@ Do not forget to include the dot at the end of the code block above as it indica
 
 {{% /warning %}}
 
-With this command, Docker will build the images and their context, the latter comprised of all the files located in the same path as your dockerfile. As a result of this, it is generally advised to place your dockerfiles in a directory with just the files it requires in to ensure the building process is as efficient as posdible. If you want to learn more about the build command and its options you can visit [this site](https://docs.docker.com/engine/reference/commandline/build/).
+With this command, Docker will build the image alongside its context, the latter comprised of all the files located in the same path as your dockerfile and which are relevant to the image. In the context of a research project whose environment is being reproduced with Docker, this would generally imply that you should place all the files which are relevant to your project's environments in the same directory as the dockerfile. However, this is highly dependant on the structure of the dockerfile and the particularities of the project. The safest approach is to follow each project's instructions on how to reproduce its environment through Docker.
 
 {{% tip %}}
  
@@ -191,9 +123,10 @@ $ docker build -t <your-image-name> .
 
 ### Step 3: Docker compose
 
-Docker compose is a tool within the Docker ecosystem whose main functionality is to coordinate your containers and provide them with the services required to run smoothly. These services include actions such as communication between containers or starting up containers that require additional instructions to do so. Although this can sound a bit confusing if you are new to Docker (You can learn more about Docker compose [here](https://docs.docker.com/compose/)), the key takeaway is that it will assist and simplify the task of replicating your environment by providing some extra information to Docker about how to do so. Additionally, it is worth noting that we could perform these actions manually by employing the `docker run` command, however in this way the process is not as straightforward.
+Docker compose is a tool within the Docker ecosystem whose main functionality is to coordinate your containers and provide them with the services required to run smoothly. These services include actions such as communication between containers or starting up containers that require additional instructions to do so. Although this can sound a bit confusing if you are new to Docker (You can learn more about Docker compose [here](https://docs.docker.com/compose/)), the key takeaway is that it will assist and simplify the task of replicating your environment by providing some extra information to Docker about how to do so. Particularly, in thsi context the Docker-compose file will be in charge of the following two "services":
 
-In the same way that you needed a dockerfile to provide Docker with the necessary instructions to build an image, a docker-compose file is required to tell docker how to provide these services to a (series of) container(s).
+1. Connecting your environment's container with the rest of your system to make it posible to move files from one to the other.
+2. Launch jupyter notebook.
 
 {{% tip %}}
 
@@ -210,66 +143,22 @@ $ docker compose up
 ```
 {{% /codeblock %}}
 
- If the execution of docker-compose (and all its services) was successful that means that your environment is up and running as well as Jupyter notebook and you should see something in your command line that resembles what is shown in the image below.
+{{% tip %}}
+
+If your environment's `dockerfile` is hosted on Dockerhub you don't need to manually build it as explained in Step 2 of this building block. Instead you could just run its associated docker-compose as shown above and Docker will take care of the rest automatically, pulling the image from Dockerhub, building it and finally executing the instructions included in the docker-compose itself.
+
+{{% /tip %}}
+
+If the execution of docker-compose was successful that means that your environment's container is up and with Jupyter notebook running. In such case and you should see something in your command line tresembling the following:
 
 <p align = "center">
 <img src = "../img/jupyter_on.png" width="750">
 <figcaption> Typical log of a Jupyter notebook instance, signaling you that the replication of the environment was completed. </figcaption>
 </p>
 
-{{% tip %}}
-
-You can also specify which services you want to run within a docker-compose file by executing the command shown above followed by the name of the service desired: `docker compose up <service-to-be-run>` .
-
-{{% /tip %}}
-
-#### Extra! - Connect the Docker container within your instance to a Google Cloud Storage bucket 
-
-Your docker-compose file likely provides Docker with the necessary instructions to employ [Docker volumes](https://docs.docker.com/storage/volumes/) to save any output file or data that you produce while working in your environment's container. If this is the case you may be also interested in connecting such volume to Google cloud storage so you don't have to manually download the output to your machine and make it easier to share and make available to your team.
-
-To do this, first of all you will need to install [GCSFuse](https://github.com/GoogleCloudPlatform/gcsfuse) in your instance by running the following code:
-
-{{% warning %}}
- 
-Carry out the following steps while your environment is not running. For that press "ctrl + c" to shut down Jupyter notebook and then run `docker compose stop` in your instance to stop the execution of the container. 
-
-{{% /warning %}}
-
-{{% codeblock %}}
-```bash
-#1
-$ export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
-echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-
-#2
-$ sudo apt-get update
-
-#3
-$ sudo apt-get install gcsfuse
-```
-{{% /codeblock %}}
-
-Now navigate to the directory of your instance which is connected to the container by the volume and create a new directory inside of it to be the one connected with your bucket. After you can run the following:
-
-{{% codeblock %}}
-```bash
-$ sudo gcsfuse -o allow_other your-bucket volume_path/new_dir/
-```
-{{% /codeblock %}}
-
-This code will tell GCSFuse to synchronize your new directory within the path with your bucket and allow your container to access it. After this, you just have to store any output produced in your environment in this new directory that you just created in your instance a few moments ago (Referred to in the previous code block as "new_dir") and it will be immediately available to you in your GCS bucket.
-
-{{% tip %}}
-
-Bear in mind that the absolute path to your bucket-sinchronized directory is not the same for your instance and for your container given that containers have independent file systems. However, its relative path will be the same to that where the Docker volume is mounted.
-
-{{% /tip %}}
-
-
 ### Step 4: Expose the port where Jupyter notebook is running to access the environment from your computer
 
-At this point, we need to make our instance accessible from the outside. The first element we need for this task is to know in which port of your instance is Jupyter notebook running. To know this we just have to take a closer look at the last line of the output shown in the command line after we executed `docker compose up`. At the begginning of the line, you should see an address like the one shown below, from there you are interested in the four digits underlined in blue coming after the internal IP and before the slash. These correspond with the port where Jupyter notebook is running in your instance.
+At this point, you need to make the Jupyter Notebook running on your container accessible from the outside. The first element we need for this task is to know in which port of your instance is it running. To know this we just have to take a closer look at the last line of the output shown in the command line after having executed `docker compose up`. At the begginning of the line, you should see an address like the one shown below, from there you are interested in the four digits underlined in blue coming after the internal IP and before the slash. These correspond with the port where Jupyter notebook is running in your instance.
 
 <p align = "center">
 <img src = "../img/find_port.png" width="750">
@@ -278,13 +167,13 @@ At this point, we need to make our instance accessible from the outside. The fir
 
 {{% warning %}}
 
-Note that the port in which your Jupyter notebook is running (i.e the four-digit number that corresponds to that underlined in blue in the previous image) will probably be different from the one shown in the image above.
+Note that the port in which your container's Jupyter notebook is running (i.e the four-digit number that corresponds to that underlined in blue in the previous image) will probably be different from the one shown in the image above.
 
 {{% /warning %}}
 
 {{% tip %}}
 
-You can choose in which port you want Jupyter notebook to be executed. In the context of this building block, this should be done by modifying the docker-compose, where the instructions on how Docker should set up Jupyter notebook for your environment's container are contained. [Learn more about docker-compose.](https://docs.docker.com/compose/)
+It is possible to adjust the port in which you want Jupyter notebook to be executed. In the context of this building block, this is defined by the instructions contained in the environment's docker-compose. [Learn more about docker-compose.](https://docs.docker.com/compose/)
 
 {{% /tip %}}
 
@@ -306,7 +195,7 @@ After completing the fields as described you can go to the bottom and click on "
 
 ### Step 5: Access Jupyter notebook within your environment's container
 
-To access the Jupyter notebook running inside your environment's container you have to go back to the Google cloud console list of VM instances and copy your instance's external IP direction. With this information you can open a web browser on your local computer and type the following in the URL bar: 
+To finally access the Jupyter notebook running inside your environment's container you have to go back to the Google cloud console list of virtual machine instances and copy your instance's external IP direction. With this information you can open a web browser on your local computer and type the following in the URL bar: 
  - `http://< external_ip_address >:< jupyter_port>`
 
 {{% example %}}
@@ -322,7 +211,7 @@ After introducing the url as indicated, you will be directed to your instance's 
 <figcaption> Underlined in green: The token to access Jupyter notebook. </figcaption>
 </p>
 
-As you can see in the image above, the token consists of a string of randomly generated alphanumeric characters comprising all that comes after the equal sign ("="). 
+As you can see in the image above, the token consists of a string of alphanumeric characters comprising all that comes after the equal sign ("="). 
 
 {{% warning %}}
 
