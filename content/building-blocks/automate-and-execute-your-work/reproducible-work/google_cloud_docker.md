@@ -1,7 +1,7 @@
 ---
-title: "Import and run a Python environment on Google cloud with Docker" 
-description: "Learn how to import a containerized python environment with docker, run it on a google cloud instance and connect it with Google cloud storage buckets"
-keywords: "Docker, environment, Python, Jupyter notebook, Google cloud, cloud computing, cloud storage "
+title: "Import and run a Project environment with Docker on Google Cloud" 
+description: "Learn how to import a containerized project environment through Docker on a Google Cloud virtual machine."
+keywords: "Docker, environment, Python, Jupyter notebook, Google Cloud, cloud ,cloud computing, cloud storage, Jupyter, docker-compose, dockerfile "
 weight: 2
 author: "Diego Sanchez Perez"
 authorlink: "https://www.linkedin.com/in/diego-s%C3%A1nchez-p%C3%A9rez-0097551b8/"
@@ -22,6 +22,12 @@ Take advantage of the versatility of containerized apps on Docker and the power 
 This building block is meant to be a complement to our previous one on [how to export project environments with Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/). Thus, while the steps here presented are valid is a general sense, its details were designed to match the particularities of the containerization process described in the preceding building block. We strongly recommend you to [visit that other building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/) to get a firmer understanding of the present one's content.
 
 {{% /warning %}}
+
+{{% tip %}}
+
+Cloud virtual machines offer many advantages in terms of flexibility and computational power. However, if you are trying to replicate a Docker-containerized project environment in your local computer, simply follow Steps 2 and 3 of this building block and access Jupyter Notebook as you usually do. Alternatively, after Steps 2 and 3, you can jump straight to Step 5 and follow it but employing your internal IP address (Which is typically: `127.0.0.1`) instead of the Cloud virtual machine's external IP.
+
+{{% /tip %}}
 
 ### Step 1: Install and Set up Docker in your Google cloud instance
 
