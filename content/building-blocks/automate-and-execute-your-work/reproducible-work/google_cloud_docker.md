@@ -187,7 +187,7 @@ Now you should go back to the Google cloud console and click the button "Set up 
 
 {{% warning %}}
 
-In point three of the steps listed above you are told to introduce "0.0.0.0/0" in the field "Source IPv4 ranges". Beware that what this means is that your instance will allow connections from any external IP (i.e. any other computer). If you are concerned about the safety risk this involves and/or you know beforehand the list of IP addresses that you want to allow to connect to your instance, you could list them here instead of typing the one-size-fits-all "0.0.0.0/0".
+In point three of the steps listed above you are told to introduce "0.0.0.0/0" in the field "Source IPv4 ranges". Beware this means that your instance will allow connections from any external IP (i.e. any other computer). If you are concerned about the safety risk this involves and/or you know beforehand the list of IP addresses that you want to allow to connect to your instance, you could list them here instead of typing the one-size-fits-all "0.0.0.0/0".
 
 {{% /warning %}}
 
