@@ -1,5 +1,5 @@
 ---
-title: "Import and run a Project environment with Docker on Google Cloud" 
+title: "Import and run a project environment with Docker on Google Cloud" 
 description: "Learn how to import a containerized project environment through Docker on a Google Cloud virtual machine."
 keywords: "Docker, environment, Python, Jupyter notebook, Google Cloud, cloud ,cloud computing, cloud storage, Jupyter, docker-compose, dockerfile "
 weight: 2
@@ -15,25 +15,25 @@ aliases:
 
 ## Import and run a Python environment on Google Cloud with Docker
 
-Take advantage of the versatility of containerized apps on Docker and the power of Google Cloud to easily reproduce and collaborate on projects! In this building block, you will learn step-by-step how to reproduce a containerized project environment on a Google Cloud virtual machine. Moreover, you will also see how to run Jupyter Notebook in your replicated environment and access to it so you can work with the project's Python code. 
+Take advantage of the versatility of containerized apps on Docker and the power of Google Cloud to easily reproduce and collaborate on projects! In this building block, you will learn step-by-step how to reproduce a containerized project environment on a Google Cloud virtual machine. Additionally, you will also learn how to run Jupyter Notebook in your cloned environment and how to access it so you can interact with the project's Python code. 
 
 {{% warning %}}
 
-This building block is meant to be a complement to our previous one on [how to export project environments with Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/). Thus, while the steps here presented are valid is a general sense, its details were designed to match the particularities of the containerization process described in the preceding building block. We strongly recommend you to [visit that other building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/) to get a firmer understanding of the present one's content.
+This building block is meant to be a complement to our previous one on [how to export project environments with Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/). Thus, while the steps here presented are valid in a general sense, its details were designed to match the particularities of the containerization process described in the preceding building block. We strongly recommend you to [visit that other building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/) to get a firmer understanding of the present one's content.
 
 {{% /warning %}}
 
 {{% tip %}}
 
-Cloud virtual machines offer many advantages in terms of flexibility and computational power. However, if you are trying to replicate a Docker-containerized project environment in your local computer, simply follow Steps 2 and 3 of this building block and access Jupyter Notebook as you usually do. Alternatively, after Steps 2 and 3, you can jump straight to Step 5 and follow it but employing your internal IP address (Which is typically: `127.0.0.1`) instead of the Cloud virtual machine's external IP.
+Cloud virtual machines offer many advantages in terms of flexibility and computational power. However, if you are trying to replicate a Docker-containerized project environment in your local computer, simply follow Steps 2 and 3 of this building block and access Jupyter Notebook as you usually do. Alternatively, after Steps 2 and 3, you can jump straight to Step 5 and follow it employing your internal IP address (Which is typically: `127.0.0.1`) instead of the cloud virtual machine's external IP.
 
 {{% /tip %}}
 
 ### Step 1: Install and Set up Docker in your Google cloud instance
 
-Google Cloud's virtual machines are configured to operate on Debian Linux by default. As a result, installing Docker on these machines follows the standard procedures for Linux-based systems. You can learn how to do so by visiting our building block on how to [Set up Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/), which covers the setup of Docker in Windows, MacOS and Ubuntu Linux.
+Google Cloud's virtual machines are configured to operate on Debian Linux by default. As a result, installing Docker on these machines follows the standard procedure for Linux-based systems. You can learn how to do so by visiting our building block on how to [set up Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/), which covers the setup of Docker in Windows, MacOS and Ubuntu Linux.
 
-For those who prefer a more streamlined approach, we have condensed these instructions into two Docker installation scripts available below. These scripts work for Debian and Ubuntu Linux, which are among the most commonly used Linux distributions on Google Cloud's virtual machines. Feel free to either follow these scripts step-by-step, or save them in a shell script format file (`.sh`) to upload and execute them on your virtual machine. Either method will successfully install Docker on your VM and thus allow you to continue with this building block!
+If you prefer to cut to the chase, we have condensed these instructions into two Docker installation scripts available below. These scripts work for Debian and Ubuntu Linux, which are among the most commonly used Linux distributions on Google Cloud's virtual machines. Feel free to either follow these scripts step-by-step, or save them in a shell script format file (`.sh`) to then upload and execute them on your virtual machine. Either method will successfully install Docker on your VM and thus allow you to continue with the building block.
 
 {{% cta-primary-center "Script for installing Docker in Debian Linux" "https://raw.githubusercontent.com/tilburgsciencehub/website/master/content/building-blocks/automate-and-execute-your-work/reproducible-work/install-docker-debian.sh" %}}
 
@@ -52,46 +52,37 @@ Docker's setup process differs slightly accros Linux distributions, so make sure
 
 {{% tip %}}
 
-To run `docker` commands on your VM after following the Docker setup steps provided above, you will always have to do so alongside the `sudo` command. To avoid this, you can execute the code provided in the code block below. 
+After completing the Docker setup steps outlined above, you'll need to prefix all Docker commands with `sudo` when running them on your VM. If you find it more convenient to bypass this requirement, you can run the following code snippet.
 
 {{% /tip %}}
 
 {{% codeblock %}}
 ```bash
-# Add your user to the `docker`` command group
+# Add your user to the `docker` command group
 # to get rid of the need to `sudo` to handle Docker
 
-usermod -aG docker your-user-name
+$ usermod -aG docker your-user-name
 
-newgrp docker
+$ newgrp docker
 ```
 {{% /codeblock %}}
 
 ### Step 2: Build the environment's image from a Dockerfile
 
-Once you have Docker successfully installed and working, the first thing you'll need to import your environment is a [Dockerfile](https://docs.docker.com/engine/reference/builder/). A Dockerfile provides Docker with the necessary indications to produce a Docker image, each of the instances of an image is known as a container. 
+After successfully installing Docker, the next step is to build your project's [dockerfile](https://docs.docker.com/engine/reference/builder/). This file provides Docker with the instructions needed to create a Docker image. To start, you'll need to transfer your project's `dockerfile` to your virtual machine. If you're using Google Cloud's browser-based SSH interface, the simplest way to do this is by clicking the 'Upload file' button, located near the top right corner of the screen. From there, you can select and upload the `dockerfile` from your local machine, and it will be transferred to your virtual machine instance.
 
 {{% tip %}}
 
-You can think of the Docker image as a template of our environment, and the Dockerfile as the manual with instructions on how to build this template. This template can be used to generate containers, and containers can be thought of as instantiations (or, instances) of the template. So, each time you tell Docker to generate a new container from the image, it generates a new replica of the environment from the template you previously provided
+You can think of the Docker image as a template of our environment, and the `dockerfile` as the manual with instructions on how to build this template. This template can be used to generate containers, which can be thought of as individual instances based on the template. So, each time you tell Docker to generate a new container from the image, it generates a brand new copy of the environment from the template you previously provided.
 
 {{% /tip %}}
-
-First, you will need to upload your dockerfile to the instance. In Google Cloud's browser SSH the easiest way to do this is to click on the "Upload file" button located close to the top right corner of the interface. There you will be able to select the files you want to upload from your local machine and these will be transferred to the instance. 
-
-{{% tip %}}
-
-Recently uploaded files will be placed in your current directory at the moment of the upload
-
-{{% /tip %}}
-
 
 <p align = "center">
 <img src = "../img/upload_base.png" width="700">
 <figcaption> Locate the upload button in Google cloud's browser SSH</figcaption>
 </p>
 
-Upon having uploaded the dockerfile you can run the following code to tell Docker to build the image from it:
+Upon having uploaded the `dockerfile`, navigate to the directory where it is located and run the following code snippet to instruct Docker to build the environment's image from it:
 
 {{% codeblock %}}
 ```bash
@@ -102,17 +93,17 @@ $ docker build .
 
 {{% warning %}}
  
-Do not forget to include the dot at the end of the code block above as it indicates to Docker that it has to look for your dockerfile in the current directory.
+Do not forget to include the dot at the end of the code block above as it indicates to Docker that it has to look for your `dockerfile` in the current directory.
 
 {{% /warning %}}
 
-With this command, Docker will build the image alongside its context, the latter comprised of all the files located in the same path as your dockerfile and which are relevant to the image. In the context of a research project whose environment is being reproduced with Docker, this would generally imply that you should place all the files which are relevant to your project's environments in the same directory as the dockerfile. However, this is highly dependent on the structure of the dockerfile and the particularities of the project. The safest approach is to follow each project's instructions on how to reproduce its environment through Docker.
+With this command, Docker will build the image alongside its context, the latter comprised of all the files located in the same path as your `dockerfile` and which are relevant to the image. In the context of a research project whose environment is being reproduced with Docker, this would generally imply that you should place all the files which are relevant to your project's environments in the same directory as the `dockerfile`.
 
 {{% tip %}}
  
-You can assign a name (i.e. tag) to your new Docker image by adding to the code above the flag "-t" followed by the name you want to assign in between the build command and the dot at the end as shown in the code block below. 
+You can assign a name (i.e. tag) to your new Docker image by adding to the code above the flag `-t` followed by the name you want to assign in between the build command and the dot at the end as shown in the code block below. 
 
-Don't worry if you don't include this information as in that case, Docker will automatically assign a name to the image. However, specifying a name is advisable as it will allow you to identify your images more easily.
+Don't worry if you don't include this information, as in that case, Docker will automatically assign a name to the image. However, specifying a name is advisable as it will allow you to identify your images more easily.
 
 You can view a list of all your docker images in your Docker Desktop dashboard or by typing `docker images` in the command line.
 
@@ -127,18 +118,18 @@ $ docker build -t <your-image-name> .
 
 ### Step 3: Docker compose
 
-Docker compose is a tool within the Docker ecosystem whose main functionality is to coordinate your containers and provide them with the services required to run smoothly. These services include actions such as communication between containers or starting up containers that require additional instructions to do so. Although this can sound a bit confusing if you are new to Docker (You can learn more about Docker compose [here](https://docs.docker.com/compose/)), the key takeaway is that it will assist and simplify the task of replicating your environment by providing some extra information to Docker about how to do so. Particularly, in this context, the Docker-compose file will be in charge of the following two "services":
+Docker compose is a tool within the Docker ecosystem whose main functionality is to coordinate your containers and provide them with the services required to run smoothly and in the intended manner. These services include actions such as communication between containers or starting up containers that require additional instructions to do so. Although this can sound a bit confusing if you are new to Docker (You can learn more about Docker compose [here](https://docs.docker.com/compose/)), the key takeaway is that it will assist and simplify the task of replicating your environment by providing some extra information to Docker about how to do so. Particularly, in this context, the `docker-compose` file will be in charge of the following two "services":
 
 1. Connect your environment's container with the rest of your system to make it possible to move files from one to the other.
-2. Launch jupyter notebook.
+2. Launch Jupyter Notebook.
 
 {{% tip %}}
 
-Docker compose files must be YAML files, so make sure that your docker-compose file is denoted as such with the extension ".yml" 
+Docker-compose files must be YAML files, so make sure that your docker-compose file is denoted as such with the extension `.yml`.
 
 {{% /tip %}}
 
-Now it is time to upload your Docker-compose in the same way you did it with your dockerfile, and then execute the following code in the directory where your docker-compose file is located:
+Upload your `docker-compose.yml` in the same way you did it with your `dockerfile`, navigate to the directory where it is located and and then execute the following:
 
 {{% codeblock %}}
 ```bash
@@ -149,7 +140,7 @@ $ docker compose up
 
 {{% tip %}}
 
-If your environment's `dockerfile` is hosted on Dockerhub you don't need to manually build it as explained in Step 2 of this building block. Instead, you could just run its associated docker-compose as shown above and Docker will take care of the rest automatically, pulling the image from Dockerhub, building it, and finally executing the instructions included in the docker-compose itself.
+If your environment's `dockerfile` is hosted on Dockerhub you don't need to manually build it as explained in Step 2 of this building block. Instead, you could just run its associated docker-compose file as shown above and Docker will take care of the rest automatically, pulling the image from Dockerhub, building it, and finally executing the instructions included in the docker-compose itself.
 
 {{% /tip %}}
 
@@ -195,12 +186,12 @@ In point three of the steps listed above you are told to introduce "0.0.0.0/0" i
 
 {{% /warning %}}
 
-After completing the fields as described you can go to the bottom and click on "create" to make the firewall rule effective. 
+After completing the fields as described, you can go to the bottom and click on "create" to make the firewall rule effective. 
 
 ### Step 5: Access Jupyter Notebook within your environment's container
 
 To finally access the Jupyter Notebook running inside your environment's container you have to go back to the Google Cloud console list of virtual machine instances and copy your instance's external IP direction. With this information, you can open a web browser on your local computer and type the following in the URL bar: 
- - `http://< external_ip_address >:< jupyter_port>`
+ - `http://< external_ip_address >:< jupyter_port >`
 
 {{% example %}}
 
