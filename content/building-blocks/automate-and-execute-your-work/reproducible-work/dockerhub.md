@@ -15,13 +15,13 @@ aliases:
 
 ## Overview
 
-Avoid headaches regarding compatibility and installations by sharing your project's environment as a Docker image that can be easily imported by your peers and collaborators from Docker Hub and deployed in minutes. In this building block, you will learn how to export a Python-based project environment with Docker (i.e containerize) in a few simple steps. For that you will be provided with templates to create two elements for this process: 
+Avoid headaches regarding compatibility and installations by sharing your project's environment as a Docker image that can be easily imported by your peers and collaborators from Docker Hub and deployed in minutes. In this building block, you will learn how to export a Python-based project environment with Docker (i.e containerize) in a few simple steps. Along the way you will be provided with templates to create the two key elements of this process: 
 
-1. A `dockerfile`, containing the instructions to replicate your environment. 
+1. A `dockerfile`, containing the instructions to replicate your environment as a Docker image. 
 
 2. A `docker-compose.yml` file, containing a series of aditional instructions to allow you to easily interact with your containerized environment throguh Jupyter Notebook and retrieve files from it. 
   
-Additionally, along the way you will be introduced to Docker Hub, a platform that will allow you to easily share you project's environment image, making it readily available to anyone willing to replicate your environment.
+Additionally, you will be introduced to Docker Hub, a platform that will allow you to easily share you project's environment image, making it readily available to anyone willing to replicate it.
 
 {{% tip %}}
 
@@ -60,7 +60,7 @@ As with any `dockerfile`, the example above starts with the `FROM` instruction, 
 
 {{% tip %}}
 
-In this building block, we will focus on exporting a project environment comprised by Python libraries as a simple but really practical example of project containerization with Docker. However, one of Docker's most powerful features is that it allows you to package your entire project environment, going way beyond just code libraries. You can learn about these advanced features by visiting [Docker's official documentation](https://docs.docker.com/get-started/).
+In this building block, we will focus on exporting a project environment comprised by Python libraries as a simple but really practical example of project containerization with Docker. However, one of Docker's most powerful features is that it allows you to package your entire project environment, going far beyond just code libraries. You can learn about these advanced features by visiting [Docker's official documentation](https://docs.docker.com/get-started/).
 
 {{% /tip %}}
 
@@ -96,7 +96,7 @@ Once your dockerfile is ready, open the command line in the directory where it i
 
 {{% warning %}}
 
-Docker builds images from a `dockerfile` and its context (i.e. files located alongside the dockerfile), thus it is generally recommended to place your `dockerfile` in a directory dedicated to storing the dockerfile itself and its context to ensure the building process can be completed smoothly. If you are building an image for an environment where the `dockerfile` will mostly cover the installation of the appropriate packages and no contextual actions will take place (as this example), just place it in an empty directory. However, bear in mind this may not always be the case.
+Docker builds images from a `dockerfile` and its context (i.e. files located alongside the dockerfile), thus it is generally recommended to place your `dockerfile` in a directory dedicated to storing the `dockerfile` itself and its context to ensure the building process can be completed smoothly. If you are building an image for an environment where the `dockerfile` will mostly cover the installation of the appropriate packages and no contextual actions will take place (as this example), just place it in an empty directory. However, bear in mind this may not always be the case.
 
 {{% /warning %}}
 
@@ -123,7 +123,7 @@ Before you try to push your image make sure you are properly logged in to your D
 
 {{% /tip %}}
 
-A Docker Hub repository is designed to contain one or multiple versions of a Docker image, which are differentiated by their tag. Optionally, it is recommended that you assign an appropriate tag to each of your images within a repository so you can appropriately differentiate them.  However, you don't have to worry if you don't do it, in that case Docker will simply automatically assign the `latest` tag to the last build of your image. To assign a tag to your recently built image you should type the following in the command line:
+A Docker Hub repository is designed to contain one or multiple versions of a Docker image, which are differentiated by their tag. Optionally, it is recommended that you assign an appropriate tag to each of your images within a repository so you can appropriately differentiate them.  However, you don't have to worry if you don't do it, in that case Docker will simply automatically assign the "latest" tag to the last build of your image. To assign a tag to your recently built image you should type the following in the command line:
 
 `docker tag <image_id> <your_image_name>:<tag>`
 
@@ -158,7 +158,7 @@ Then, to push it, this user will execute the following in the command line:
 
 `docker push mickey_docker/mickeys_environment:1.0`
 
-Finally, when one a collaborator of this user needs to import the environment's image, by typing:
+Finally, when a collaborator of this user needs to import the environment's image, by typing:
 
 `docker pull mickey_docker/mickeys_environment:1.0`
 
@@ -192,7 +192,7 @@ services:
 
 {{% /codeblock %}}
 
-If you introduce the appropriate repository name, the tag of the image you are interested in, and the port where you want jupyter to be executed (e.g. 4444) this docker-compose will be ready to allow you to work with your imported environment. Again, feel free to copy it, use it as your docker-compose template, and share it with your colleagues soo they can take advantage of it while reproducing your environment!. It has been designed to work properly in conjunction with the `dockerfile` template provided above by following the steps within this building block. For that you should save it (for example, in the same directory where you placed your dockerfile previously) as "docker-compose.yml", open the command line there and run:
+If you introduce the appropriate repository name, the tag of the image you are interested in, and the port where you want jupyter to be executed (e.g. 4444) this docker-compose will be ready to allow you to work with your imported environment. Again, feel free to copy it, use it as your docker-compose template, and share it with your colleagues so they can take advantage of it while reproducing your environment!. It has been designed to work properly in conjunction with the `dockerfile` template provided above by following the steps within this building block. For that you should save it (for example, in the same directory where you placed your dockerfile previously) as "docker-compose.yml", open the command line there and run:
 
 `docker compose up`
 
