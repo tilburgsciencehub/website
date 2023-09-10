@@ -226,8 +226,8 @@ As a result, Docker will have created a new image that contains all the newly in
 
 ### Does your project involve computationally demanding tasks?
 
-If your project includes computationally demanding tasks visit out building block on how to [Import and run a Python environment on Google Cloud with Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/google_cloud_docker/). Designed in a complementary manner to this building block, there you will learn how to import your recently containerized project and how to interact with it through Jupyter notebook on a Google Cloud virtual machine, process which features some key diferences with respect to the steps presented in this building block. 
+If your project includes computationally demanding tasks visit our building block on how to [Import and run a Python environment on Google Cloud with Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/google_cloud_docker/). Designed in a complementary manner to this building block, you will learn how to import your recently containerized project and how to interact with it through Jupyter Notebook on a Google Cloud virtual machine, a process that features some key differences compared to the steps presented in this building block. 
 
-In case you are new to these, we also invite you to check out our building block on [configuring high-preformance Google Cloud virtual machines](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/config-vm-gcp/), a great resource to work in project that involve computationally-demanding and memory-intensive tasks.
+In case you are new to these, we also invite you to check out our building block on [configuring high-performance Google Cloud virtual machines](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/config-vm-gcp/), a great resource to work on projects that involve computationally demanding and memory-intensive tasks.
 
 
