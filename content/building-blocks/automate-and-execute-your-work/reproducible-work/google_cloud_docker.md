@@ -15,11 +15,11 @@ aliases:
 
 ## Import and run a Python environment on Google Cloud with Docker
 
-Take advantage of the versatility of containerized apps on Docker and the power of Google Cloud to easily reproduce and collaborate on projects! In this building block, you will learn step-by-step how to reproduce a containerized project environment on a Google Cloud virtual machine. Additionally, you will also learn how to run Jupyter Notebook in your cloned environment and how to access it so you can interact with the project's Python code. 
+Take advantage of the versatility of containerized apps on Docker and the power of Google Cloud to easily reproduce and collaborate on projects! In this building block, you will learn step-by-step how to reproduce a containerized project environment on a Google Cloud virtual machine. Additionally, you will learn how to run Jupyter Notebook in your cloned environment and how to access it so you can interact with the project's Python code. 
 
 {{% warning %}}
 
-This building block is meant to be a complement to our previous one on [how to export project environments with Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/). Thus, while the steps here presented are valid in a general sense, its details were designed to match the particularities of the containerization process described in that building block. We strongly recommend you to [visit it](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/) to get a more comprehensive understanding of the present one's content and the containerization process.
+This building block is meant to be a complement to our previous one on [how to export project environments with Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/). Thus, while the steps here presented are valid in a general sense, their details were designed to match the particularities of the containerization process described in that building block. We strongly recommend you to [visit it](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/) to get a more comprehensive understanding of the present one's content and the containerization process.
 
 {{% /warning %}}
 
@@ -31,9 +31,9 @@ Cloud virtual machines offer many advantages in terms of flexibility and computa
 
 ### Step 1: Install and Set up Docker in your Google cloud instance
 
-Google Cloud's virtual machines are configured to operate on Debian Linux by default. As a result, installing Docker on these machines follows the standard procedure for Linux-based systems. You can learn how to do so by visiting our building block on how to [set up Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/), which covers the setup of Docker in Windows, MacOS and Ubuntu Linux.
+Google Cloud's virtual machines are configured to operate on Debian Linux by default. As a result, installing Docker on these machines follows the standard procedure for Linux-based systems. You can learn how to do so by visiting our building block on how to [set up Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/), which covers the setup of Docker in Windows, MacOS, and Ubuntu Linux.
 
-If you prefer to cut to the chase, we have condensed these instructions into two Docker installation scripts available below. These scripts work for Debian and Ubuntu Linux, which are among the most commonly used Linux distributions on Google Cloud's virtual machines. Feel free to either follow these scripts step-by-step, or save them in a shell script format file (`.sh`) to then upload and execute them on your virtual machine. Either method will successfully install Docker on your VM and thus allow you to continue with the building block.
+If you prefer to cut to the chase, we have condensed these instructions into two Docker installation scripts available below. These scripts work for Debian and Ubuntu Linux, which are among the most commonly used Linux distributions on Google Cloud's virtual machines. Feel free to either follow these scripts step-by-step or save them in a shell script format file (`.sh`) to then upload and execute them on your virtual machine. Either method will successfully install Docker on your VM and thus allow you to continue with the building block.
 
 {{% cta-primary-center "Script for installing Docker in Debian Linux" "https://raw.githubusercontent.com/tilburgsciencehub/website/master/content/building-blocks/automate-and-execute-your-work/reproducible-work/install-docker-debian.sh" %}}
 
@@ -41,7 +41,7 @@ If you prefer to cut to the chase, we have condensed these instructions into two
 
 {{% warning %}}
 
-Docker's setup process differs slightly accros Linux distributions, so make sure to follow the appropriate instructions for your distribution whether it is Ubuntu, Debian, or any other. If your Google Cloud VM is not running in any of these distributions, check [the official Docker documentation](https://docs.docker.com/engine/install/debian/) which provides guidelines for installing Docker in many different Linux distributions.
+Docker's setup process differs slightly across Linux distributions, so make sure to follow the appropriate instructions for your distribution whether it is Ubuntu, Debian, or any other. If your Google Cloud VM is not running in any of these distributions, check [the official Docker documentation](https://docs.docker.com/engine/install/debian/) which provides guidelines for installing Docker in many different Linux distributions.
 
 {{% /warning %}}
 
@@ -129,7 +129,7 @@ Docker-compose files must be YAML files, so make sure that your docker-compose f
 
 {{% /tip %}}
 
-Upload your `docker-compose.yml` in the same way you did it with your `dockerfile`, navigate to the directory where it is located and and then execute the following:
+Upload your `docker-compose.yml` in the same way you did it with your `dockerfile`, navigate to the directory where it is located and then execute the following:
 
 {{% codeblock %}}
 ```bash
