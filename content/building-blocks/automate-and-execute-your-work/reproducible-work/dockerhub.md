@@ -115,6 +115,8 @@ You can see a list of all your images and the details about them by running `doc
 
 [Docker Hub](https://hub.docker.com/) is the most popular platform for hosting and distributing Docker images, which are organized in repositories. One of the advantages of hosting your container image on Docker Hub is that anyone willing to use it (i.e. replicate your environment in this case) will be able to do so remotely simply by pulling from their command line.
 
+We encourage you to share your images thorugh Docker Hub due to its simplicty and versatility. However, you can also distribute your `dockerfile` to collaborators. If you choose this route, they'll need to build the image themselves using the `docker build` command you've just learned about.
+
 {{% tip %}}
 
 Before you try to push your image make sure you are properly logged in to your Docker Hub account. To do that run `docker login` in the command line and then introduce your Docker Hub username and password.
@@ -190,7 +192,7 @@ services:
 
 {{% /codeblock %}}
 
-If you introduce the appropriate repository name, the tag of the image you are interested in, and the port where you want jupyter to be executed (e.g. 4444) this docker-compose will be ready to allow you to work with your imported environment. Again, feel free to copy it and use it as your docker-compose template! It has been designed to work properly in conjunction with the `dockerfile` template provided above by following the steps within this building block. For that you should save it (for example, in the same directory where you placed your dockerfile previously) as "docker-compose.yml", open the command line there and run:
+If you introduce the appropriate repository name, the tag of the image you are interested in, and the port where you want jupyter to be executed (e.g. 4444) this docker-compose will be ready to allow you to work with your imported environment. Again, feel free to copy it, use it as your docker-compose template, and share it with your colleagues soo they can take advantage of it while reproducing your environment!. It has been designed to work properly in conjunction with the `dockerfile` template provided above by following the steps within this building block. For that you should save it (for example, in the same directory where you placed your dockerfile previously) as "docker-compose.yml", open the command line there and run:
 
 `docker compose up`
 
@@ -221,5 +223,11 @@ Imagine that during your project, you have started to use a new python package n
 `docker commit <container_id> <repo_name>:<new_tag>`
 
 As a result, Docker will have created a new image that contains all the newly installed packages which you can push to your repository as previously shown. 
+
+### Does your project involve computationally demanding tasks?
+
+If your project includes computationally demanding tasks visit out building block on how to [Import and run a Python environment on Google Cloud with Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/google_cloud_docker/). Designed in a complementary manner to this building block, there you will learn how to import your recently containerized project and how to interact with it through Jupyter notebook on a Google Cloud virtual machine, process which features some key diferences with respect to the steps presented in this building block. 
+
+In case you are new to these, we also invite you to check out our building block on [configuring high-preformance Google Cloud virtual machines](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/config-vm-gcp/), a great resource to work in project that involve computationally-demanding and memory-intensive tasks.
 
 
