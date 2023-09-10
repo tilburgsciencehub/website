@@ -19,7 +19,7 @@ Take advantage of the versatility of containerized apps on Docker and the power 
 
 {{% warning %}}
 
-This building block is meant to be a complement to our previous one on [how to export project environments with Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/). Thus, while the steps here presented are valid in a general sense, its details were designed to match the particularities of the containerization process described in the preceding building block. We strongly recommend you to [visit that other building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/) to get a firmer understanding of the present one's content.
+This building block is meant to be a complement to our previous one on [how to export project environments with Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/). Thus, while the steps here presented are valid in a general sense, its details were designed to match the particularities of the containerization process described in that building block. We strongly recommend you to [visit it](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/) to get a more comprehensive understanding of the present one's content and the containerization process.
 
 {{% /warning %}}
 
