@@ -81,41 +81,16 @@ def fetch_cards_popular_pages(response, path_prefix):
         for row in report.get("data", {}).get("rows", []):
             page_path = row["dimensions"][0]
             page_title = row["dimensions"][1]
-            if "- Tilburg Science Hub" in page_title:
-                page_title = page_title.strip('Tilburg Science Hub').strip('-')
+            parts = page_title.split(" - ")
+            if len(parts) > 1:
+                page_title = parts[0]
+            else:
+                page_title = page_title
+            page_description = fetch_og_description(page_path)
             if page_path.startswith(path_prefix) and page_path != path_prefix and page_title != "(not set)":
-                popular_pages.append({"path": page_path, "title": page_title})
+                popular_pages.append({"path": page_path, "title": page_title, "description": page_description})
     filtered = popular_pages[:5]
     return filtered
-
-# Collect Number 1 From BB or Tutorials (including description)
-# response: result from get_report()
-# path_prefix: "building_blocks" or "tutorials"
-def get_most_popular_page(response, path_prefix):
-    print(f"Fetching the most popular {path_prefix}...")
-    most_popular_page = None
-    max_users = 0
-
-    reports = response.get("reports", [])
-    if reports:
-        report = reports[0]
-        for row in report.get("data", {}).get("rows", []):
-            page_path = row["dimensions"][0]
-            page_title = row["dimensions"][1]
-            if "- Tilburg Science Hub" in page_title:
-                page_title = page_title.strip('Tilburg Science Hub').strip('-')
-            users = int(row["metrics"][0]["values"][0])  # Convert users to an integer
-            if page_path.startswith(path_prefix) and page_path != path_prefix and page_title != "(not set)":
-                if users > max_users:
-                    most_popular_page = {"path": page_path, "title": page_title}
-                    max_users = users
-
-    if most_popular_page:
-        # Fetch the description (og:description) for the most popular page
-        description = fetch_og_description(most_popular_page["path"])
-        most_popular_page["description"] = description
-
-    return most_popular_page
 
 # Retrieve Sitemap
 # url: root url of the website
@@ -275,15 +250,11 @@ def create_popular_cards_json(input_categories):
     response = get_report()
     tutorials = fetch_cards_popular_pages(response, "/tutorials/")
     building_blocks = fetch_cards_popular_pages(response, "/building-blocks/")
-    most_popular_block = get_most_popular_page(response, "/building-blocks/")
-    most_popular_tutorial = get_most_popular_page(response, "/tutorials/")
 
     #Create Dictionary
     data_dict = {
         "tutorials": tutorials,
         "building_blocks": building_blocks,
-        "most_popular_building_block": most_popular_block,
-        "most_popular_tutorial": most_popular_tutorial,
         "categories": categories_output
     }
 
@@ -312,6 +283,8 @@ def main():
     # Write Popular Cards to the 'cards.json' file in the 'static' folder
     with open(cards_file_path, 'w') as f:
         json.dump(popular_cards, f)
+
+    print('JSON created')
     
 if __name__ == "__main__":
     main()
