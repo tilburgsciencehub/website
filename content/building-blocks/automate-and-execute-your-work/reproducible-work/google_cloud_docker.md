@@ -13,8 +13,7 @@ aliases:
 
 ---
 
-## Import and run a Python environment on Google Cloud with Docker
-
+## Overview
 Take advantage of the versatility of containerized apps on Docker and the power of Google Cloud to easily reproduce and collaborate on projects! In this building block, you will learn step-by-step how to reproduce a containerized project environment on a Google Cloud virtual machine. Additionally, you will learn how to run Jupyter Notebook in your cloned environment and how to access it so you can interact with the project's Python code. 
 
 {{% warning %}}
@@ -73,7 +72,7 @@ After successfully installing Docker, the next step is to build your project's [
 
 {{% tip %}}
 
-You can think of the Docker image as a template of our environment, and the `dockerfile` as the manual with instructions on how to build this template. This template can be used to generate containers, which can be thought of as individual instances based on the template. So, each time you tell Docker to generate a new container from the image, it generates a brand new copy of the environment from the template you previously provided.
+If the image of the project environment you are trying to import has been published on Docker Hub, you don't need to upload and build it manually as described. Instead you can use the [`docker pull`](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/) command and Docker will automatically retrieve and build the image from Docker Hub. Then you will be ready to jump to Step 3.
 
 {{% /tip %}}
 
@@ -90,6 +89,12 @@ Upon having uploaded the `dockerfile`, navigate to the directory where it is loc
 $ docker build .
 ```
 {{% /codeblock %}}
+
+{{% tip %}}
+
+You can think of the Docker image as a template of our environment, and the dockerfile as the manual with instructions on how to build this template. This template can be used to generate containers, which can be thought of as individual instances based on the template. So, each time you tell Docker to generate a new container from the image, it generates a brand new copy of the environment from the template you previously provided.
+
+{{% /tip %}}
 
 {{% warning %}}
  
