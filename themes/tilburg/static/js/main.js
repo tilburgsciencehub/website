@@ -664,10 +664,37 @@ $(document).ready(function () {
     fetch('/cards.json')
       .then(response => response.json())
       .then(data => {
+
         // Building Blocks
         const building_blocks = data.building_blocks || [];
         const ulElementBlock = document.getElementById('most-read-building-blocks-list');
-        const buildingBlocksToDisplay = building_blocks.slice(1);
+
+        // Select a random building block
+        const randomIndex = Math.floor(Math.random() * building_blocks.length);
+        const randomBuildingBlock = building_blocks[randomIndex];
+
+        // Populate the random popular building block
+        const titleElementBlock = document.querySelector('#most-popular-block-single h2.heading');
+        const descriptionElementBlock = document.querySelector('#most-popular-block-single p');
+        const linkElementBlock = document.querySelector('#most-popular-block-single a');
+
+        if (randomBuildingBlock) {
+          titleElementBlock.textContent = randomBuildingBlock.title;
+          if (randomBuildingBlock.description === ""){
+            descriptionElementBlock.textContent = "Start reading this article";
+          }
+          else {
+            descriptionElementBlock.textContent = randomBuildingBlock.description;
+          }
+          linkElementBlock.href = randomBuildingBlock.path;
+        } else {
+          // If there's no random building block data, hide the container
+          const containerElement = document.querySelector('#most-popular-block-single');
+          containerElement.style.display = 'none';
+        }
+
+        // Filter out the selected random building block from the list
+        const buildingBlocksToDisplay = building_blocks.filter((_, index) => index !== randomIndex);
 
         buildingBlocksToDisplay.forEach(building_block => {
           const liElement = document.createElement('li');
@@ -691,7 +718,32 @@ $(document).ready(function () {
         // Tutorials
         const tutorials = data.tutorials || [];
         const ulElementTutorial = document.getElementById('most-read-tutorials-list');
-        const tutorialsToDisplay = tutorials.slice(1);
+
+        // Select a random tutorial
+        const randomTutorial = tutorials[randomIndex];
+
+        // Populate the random popular tutorial
+        const titleElement = document.querySelector('#most-popular-tutorial-single h2.heading');
+        const descriptionElement = document.querySelector('#most-popular-tutorial-single p');
+        const linkElement = document.querySelector('#most-popular-tutorial-single a');
+
+        if (randomTutorial) {
+          titleElement.textContent = randomTutorial.title;
+          if (randomTutorial.description === ""){
+            descriptionElement.textContent = "Start reading this article."
+          }
+          else {
+            descriptionElement.textContent = randomTutorial.description;
+          }
+          linkElement.href = randomTutorial.path;
+        } else {
+          // If there's no random tutorial data, hide the container
+          const containerElement = document.querySelector('#most-popular-tutorial-single');
+          containerElement.style.display = 'none';
+        }
+
+        // Filter out the selected random tutorial from the list
+        const tutorialsToDisplay = tutorials.filter((_, index) => index !== randomIndex);
 
         tutorialsToDisplay.forEach(tutorial => {
           const liElement = document.createElement('li');
@@ -703,7 +755,7 @@ $(document).ready(function () {
           const linkElement = document.createElement('a');
           linkElement.href = tutorial.path;
 
-          const title = tutorial.title
+          const title = tutorial.title;
 
           linkElement.textContent = title;
 
@@ -711,38 +763,6 @@ $(document).ready(function () {
           liElement.appendChild(linkElement);
           ulElementTutorial.appendChild(liElement);
         });
-
-        // Most Popular Building Block
-        const mostPopularBuildingBlock = data.most_popular_building_block;
-        const titleElementBlock = document.querySelector('#most-popular-block-single h2.heading');
-        const descriptionElementBlock = document.querySelector('#most-popular-block-single p');
-        const linkElementBlock = document.querySelector('#most-popular-block-single a');
-
-        if (mostPopularBuildingBlock) {
-          titleElementBlock.textContent = mostPopularBuildingBlock.title;
-          descriptionElementBlock.textContent = mostPopularBuildingBlock.description;
-          linkElementBlock.href = mostPopularBuildingBlock.path;
-        } else {
-          // If there's no most popular building block data, hide the container
-          const containerElement = document.querySelector('#most-popular-block-single');
-          containerElement.style.display = 'none';
-        }
-
-        // Most Popular Tutorial
-        const mostPopularTutorial = data.most_popular_tutorial;
-        const titleElement = document.querySelector('#most-popular-tutorial-single h2.heading');
-        const descriptionElement = document.querySelector('#most-popular-tutorial-single p');
-        const linkElement = document.querySelector('#most-popular-tutorial-single a');
-
-        if (mostPopularTutorial) {
-          titleElement.textContent = mostPopularTutorial.title;
-          descriptionElement.textContent = mostPopularTutorial.description;
-          linkElement.href = mostPopularTutorial.path;
-        } else {
-          // If there's no most popular tutorial data, hide the container
-          const containerElement = document.querySelector('#most-popular-tutorial-single');
-          containerElement.style.display = 'none';
-        }
 
         // Code for dynamically generating carousel items
         const carouselInner = document.querySelector('.carousel-inner');
