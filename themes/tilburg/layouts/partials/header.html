@@ -18,13 +18,16 @@
 <div class=" container mt-lg-5 mt-3 px-0 fixed-top" style="z-index: 10000;">
 	<div class="bg-white rounded boxShadow navMenu d-relative px-1 mx-3 mx-lg-0" style="position: relative;">
 
-		<!-- Desktop menu -->
+		<!-- Main nav -->
 
 		<div class="customNavbar px-4 py-3">
+
+			<!-- Logo -->
 			<div><a class="navbar-brand" href="/">
 					<img src="/img/logo.svg" alt="tilburg science hub logo">
 				</a></div>
-
+			
+			<!-- Mobile Icons for Nav -->
 			<div class="text-right d-block d-xl-none ">
 				<a href="#0" id="mobileSearchIcon">
 					<img src="/img/search.svg" alt="search">
@@ -39,10 +42,10 @@
 					<img src="/img/close.svg" alt="close">
 				</a>
 			</div>
+
+			<!-- Main Nav -->
 			<div class="menu d-none d-xl-flex align-items-center justify-content-center">
 				<ul class="list-unstyled font-weight-normal">
-
-					<!--	<li><a class="headerLink" href="/tour">Tour</a></li>-->
 
 					<li><a style="position: relative;" href="#0" class="headerLink takeTour"><span class="pulse"></span>
 							Tour</a></li>
@@ -137,8 +140,6 @@
 							<div class="row">
 								{{- range where .Site.Pages "Section" "examples" -}}
 								{{ if eq .Title "Examples" }}
-
-								<!-- <h5 class="text-secondary" style="font-size: 16px;">{{.Title}}</h5> -->
 								{{- range .Pages -}}
 								<div class="col-6 mb-4 px-2">
 									{{ if .Title }}
@@ -152,10 +153,20 @@
 						</div>
 					</li>
 
-					<li><a href="/about" class="headerLink">About</a></li>
+					<li><a href="/about" class="headerLink menuArrow">About</a>
+						<div style="margin-left:63%;" class="bg-white text-left border-top boxShadow subMenu p-4">
+							<div class="row">
+								<div class="col-24 h-100">
+									<a class="d-block mx-0" href="/contributors/">Contributors</a>
+								</div>
+							</div>
+						</div>
+					</li>
 
 				</ul>
 			</div>
+
+			<!-- Search & Contribute -->
 			<div class="text-right">
 				<form class="form-inline text-right float-right d-none d-xl-block" method="GET" action="/search">
 					<div style="width: 230px" class="form-control mr-sm-2 headerSearch bg-light border-0">
@@ -175,7 +186,6 @@
 									<a class="d-block mx-0" href="https://github.com/tilburgsciencehub/website/issues/new/choose">Submit a new issue on GitHub</a>
 									<a class="d-block mx-0" href="https://tilburgsciencehub.com/onboarding">View our lab documentation</a>
 									<a class="d-block mx-0" href="https://github.com/orgs/tilburgsciencehub/repositories">Check out our repositories</a>
-									
 								</div>
 							</div>
 						</div>
@@ -183,13 +193,7 @@
 			</div>
 		</div>
 
-
-
-
-
-
-		
-		<!-- mobile menu -->
+		<!-- Mobile Search menu -->
 		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileSearchMenu"
 			style="z-index: 10; margin-top: -2px;left: 0">
 			<div class="form-control mr-sm-2 headerSearchMobile bg-light border-0">
@@ -201,11 +205,15 @@
 				</form>
 			</div>
 
+			<!-- Mobile Search Results-->
 			<div class="mobileResults"></div>
 		</div>
+
+		<!-- Mobile Menu -->
 		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileMenu"
 			style="z-index: 10; margin-top: -2px;left: 0">
-			<!-- screen 1 -->
+
+			<!-- Main Screen -->
 			<div class="screen-1 d-none">
 				<!--<a href="/tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour for students</a>
 			<a href="/researcher-tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour for researchers</a>-->
@@ -224,14 +232,16 @@
 				<!--<a href="#0" data-screen-two="mobile-examples" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples<span
 					class="icon mini-right float-right text-primary"></span> </a>-->
 				<a href="/examples" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples</a>
-				<a href="/about" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">About</a>
+				<a href="#0" data-screen-two="mobile-about"
+					class="nav-link mx-0 px-3 py-3 text-dark border-bottom">About<span
+						class="icon mini-right float-right text-primary"></span> </a>
 
 				<div>
 					<a href="/contribute/" class="btn btn-primary my-2 px-4 btn-block mt-5">Contribute</a>
 				</div>
 			</div>
 
-			<!-- screen 2 -->
+			<!-- Screen 2 If (applicable) -->
 			<div class="screen-2 d-none">
 				<!-- building blocks -->
 				<div id="mobile-building-blocks" class="d-none">
@@ -293,6 +303,17 @@
 					{{ end }}
 				</div>
 
+				<!-- About -->
+				<div class="mobile-about d-none" id="mobile-about">
+					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
+							class="icon mini-left text-primary"></span> About</a>
+					<br>
+					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="/about">About Tilburg Science Hub<span
+						class="icon mini-right float-right"></span> </a>
+					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="/contributors">Contributors<span
+							class="icon mini-right float-right"></span> </a>
+				</div>
+
 				<!-- Examples -->
 				<div class="mobile-examples d-none" id="mobile-examples">
 					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
@@ -309,6 +330,7 @@
 					{{ end }}
 
 				</div>
+				
 				<!-- Tour -->
 				<div class="mobile-tour d-none" id="mobile-tour">
 					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
@@ -328,7 +350,8 @@
 			</div>
 		</div>
 	</div>
-	<!-- search results -->
+
+	<!-- Search results -->
 	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder">
 	</div>
 
