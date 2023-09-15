@@ -5,7 +5,6 @@ weight: 4
 keywords: "clean, wrangling, scraping, follow, likes, network, social media, function, numeric conversion"
 date: 2021-01-06T22:01:14+05:30
 draft: false
-author: Thierry Lahaije
 aliases:
   - /clean/social-media-counts
   - /building-blocks/prepare-your-data-for-analysis/data-preparation/clean-social-media-data/

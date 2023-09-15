@@ -58,8 +58,8 @@
 				{{ .Content }}
 				{{ if (and (.Params.author) (.Params.authorlink)) }}
 				<div class="admonition author">
-					<div class="admonition-content">Contributed by <b><a href="/contributors/{{ replace (lower .Params.author) " " "_" }}">{{ .Params.author }}</a></b></div>
-				</div>	
+					<div class="admonition-content">Contributed by <b><a href="{{ .Params.authorlink }}">{{ .Params.author }}</a></b></div>
+				</div>
 				{{ else }}
 				{{ end }}
 				<div class="d-flex justify-content-between mt-5 align-items-center">
