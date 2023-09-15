@@ -10,6 +10,9 @@ skills:
 social:
   - name: LinkedIn
     link: https://www.linkedin.com/in/hannes-datta
+  - name: Twitter
+    link: https://twitter.com/hannesdatta
+    
 email: h.datta@tilburguniversity.edu
 image: hannesdatta.png
 status: "active"
