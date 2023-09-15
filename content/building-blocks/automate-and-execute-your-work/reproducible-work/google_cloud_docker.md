@@ -14,17 +14,26 @@ aliases:
 ---
 
 ## Overview
-Take advantage of the versatility of containerized apps on Docker and the power of Google Cloud to easily reproduce and collaborate on projects! In this building block, you will learn step-by-step how to reproduce a containerized project environment on a Google Cloud virtual machine. Additionally, you will learn how to run Jupyter Notebook in your cloned environment and how to access it so you can interact with the project's Python code. 
+Take advantage of the versatility of containerized apps on Docker and the power of Google Cloud to easily reproduce and collaborate on projects! 
+
+This building block is meant to be a step-by-step guide in order for you to learn: 
+
+- How to reproduce a containerized project environment on a Google Cloud virtual machine. 
+- How to run Jupyter Notebook in your cloned environment and how to access it so you can interact with the project's Python code.
 
 {{% warning %}}
+**Good to know!**
 
-This building block is meant to be a complement to our previous one on [how to export project environments with Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/). Thus, while the steps here presented are valid in a general sense, their details were designed to match the particularities of the containerization process described in that building block. We strongly recommend you to [visit it](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/) to get a more comprehensive understanding of the present one's content and the containerization process.
+This building block complements our previous one on [how to export project environments with Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/). Thus, while the steps here presented are valid in a general sense, their details were designed to match the particularities of the containerization process described in that building block. We strongly recommend you to [visit it](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/) to get a more comprehensive understanding of the present one's content and the containerization process.
 
 {{% /warning %}}
 
 {{% tip %}}
+**Not using Virtual Machines?**
 
-Cloud virtual machines offer many advantages in terms of flexibility and computational power. However, if you are trying to replicate a Docker-containerized project environment in your local computer, simply follow Steps 2 and 3 of this building block and access Jupyter Notebook as you usually do. Alternatively, after Steps 2 and 3, you can jump straight to Step 5 and follow it employing your internal IP address (Which is typically: `127.0.0.1`) instead of the cloud virtual machine's external IP.
+Cloud virtual machines offer many advantages in terms of flexibility and computational power. However, if you are trying to replicate a Docker-containerized project environment in your local computer, simply follow Steps 2 and 3 of this building block and access Jupyter Notebook as you usually do. 
+
+Alternatively, after Steps 2 and 3, you can jump straight to Step 5 and follow it employing your internal IP address (Which is typically: `127.0.0.1`) instead of the cloud virtual machine's external IP.
 
 {{% /tip %}}
 
