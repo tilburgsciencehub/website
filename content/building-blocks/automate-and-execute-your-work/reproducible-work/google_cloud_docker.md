@@ -1,7 +1,7 @@
 ---
 title: "Import and run a project environment with Docker on Google Cloud" 
 description: "Learn how to import a containerized project environment through Docker on a Google Cloud virtual machine."
-keywords: "Docker, environment, Python, Jupyter notebook, Google Cloud, cloud ,cloud computing, cloud storage, Jupyter, docker-compose, dockerfile "
+keywords: "Docker, environment, Python, Jupyter notebook, Google Cloud, cloud ,cloud computing, cloud storage, Jupyter, docker-compose, dockerfile, Containerization, Virtual Machine"
 weight: 2
 author: "Diego Sanchez Perez"
 authorlink: "https://www.linkedin.com/in/diego-s%C3%A1nchez-p%C3%A9rez-0097551b8/"
@@ -28,7 +28,7 @@ Cloud virtual machines offer many advantages in terms of flexibility and computa
 
 {{% /tip %}}
 
-### Step 1: Install and Set up Docker in your Google cloud instance
+## Step 1: Install and Set up Docker in your Google cloud instance
 
 Google Cloud's virtual machines are configured to operate on Debian Linux by default. As a result, installing Docker on these machines follows the standard procedure for Linux-based systems. You can learn how to do so by visiting our building block on how to [set up Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/), which covers the setup of Docker in Windows, MacOS, and Ubuntu Linux.
 
@@ -66,7 +66,7 @@ $ newgrp docker
 ```
 {{% /codeblock %}}
 
-### Step 2: Build the environment's image from a Dockerfile
+## Step 2: Build the environment's image from a Dockerfile
 
 After successfully installing Docker, the next step is to build your project's [dockerfile](https://docs.docker.com/engine/reference/builder/). This file provides Docker with the instructions needed to create a Docker image. To start, you'll need to transfer your project's `dockerfile` to your virtual machine. If you're using Google Cloud's browser-based SSH interface, the simplest way to do this is by clicking the 'Upload file' button, located near the top right corner of the screen. From there, you can select and upload the `dockerfile` from your local machine, and it will be transferred to your virtual machine instance.
 
@@ -121,7 +121,7 @@ $ docker build -t <your-image-name> .
 ```
 {{% /codeblock %}}
 
-### Step 3: Docker compose
+## Step 3: Docker compose
 
 Docker compose is a tool within the Docker ecosystem whose main functionality is to coordinate your containers and provide them with the services required to run smoothly and in the intended manner. These services include actions such as communication between containers or starting up containers that require additional instructions to do so. Although this can sound a bit confusing if you are new to Docker (You can learn more about Docker compose [here](https://docs.docker.com/compose/)), the key takeaway is that it will assist and simplify the task of replicating your environment by providing some extra information to Docker about how to do so. Particularly, in this context, the `docker-compose` file will be in charge of the following two "services":
 
@@ -156,7 +156,7 @@ If the execution of docker-compose was successful that means that your environme
 <figcaption> Typical log of a Jupyter Notebook instance, signaling it is running successfully. </figcaption>
 </p>
 
-### Step 4: Expose the port where Jupyter Notebook is running to access the environment from your computer
+## Step 4: Expose the port where Jupyter Notebook is running to access the environment from your computer
 
 At this point, you need to make the Jupyter Notebook running on your container accessible from the outside. The first element we need for this task is to know in which port of your instance is it running. To know this we just have to take a closer look at the last line of the output shown in the command line after having executed `docker compose up`. At the beginning of the line, you should see an address like the one shown below, from there you are interested in the four digits underlined in blue coming after the internal IP and before the slash. These correspond with the port where Jupyter Notebook is running in your instance.
 
@@ -193,7 +193,7 @@ In point three of the steps listed above you are told to introduce "0.0.0.0/0" i
 
 After completing the fields as described, you can go to the bottom and click on "create" to make the firewall rule effective. 
 
-### Step 5: Access Jupyter Notebook within your environment's container
+## Step 5: Access Jupyter Notebook within your environment's container
 
 To finally access the Jupyter Notebook running inside your environment's container you have to go back to the Google Cloud console list of virtual machine instances and copy your instance's external IP direction. With this information, you can open a web browser on your local computer and type the following in the URL bar: 
  - `http://< external_ip_address >:< jupyter_port >`
