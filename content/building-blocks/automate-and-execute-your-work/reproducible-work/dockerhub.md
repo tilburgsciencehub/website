@@ -1,12 +1,12 @@
 ---
 title: "Export a Python environment with Docker and share it through Docker Hub" 
 description: "Learn how to export a containerized python environment with Docker, and make it available to your collaborators in Docker Hub "
-keywords: "Docker, environment, Python, Jupyter notebook, Docker-Hub "
+keywords: "Docker, environment, Python, Jupyter notebook, Docker-Hub, Containerization, Environment Setup, Collaboration, Reproducible Environment"
 weight: 2
 author: Diego Sanchez Perez
 authorlink: "https://www.linkedin.com/in/diego-s%C3%A1nchez-p%C3%A9rez-0097551b8/"
 draft: false
-date: 2022-02-02T17:05:00+01:00
+date: 2022-02-02T17:05:00+01:00 #updated 15-09-2023
 aliases: 
   - /export/python-environment-with-docker
 
@@ -15,7 +15,9 @@ aliases:
 
 ## Overview
 
-Avoid headaches regarding compatibility and installations by sharing your project's environment as a Docker image that can be easily imported by your peers and collaborators from Docker Hub and deployed in minutes. In this building block, you will learn how to export a Python-based project environment with Docker (i.e containerize) in a few simple steps. Along the way you will be provided with templates to create the two key elements of this process: 
+Avoid headaches regarding compatibility and installations by sharing your project's environment as a Docker image that can be easily imported by your peers and collaborators from Docker Hub and deployed in minutes. In this building block, you will learn how to export a Python-based project environment with Docker (i.e containerize) in a few simple steps. 
+
+Along the way you will be provided with templates to create the two key elements of this process: 
 
 1. A `dockerfile`, containing the instructions to replicate your environment as a Docker image. 
 
