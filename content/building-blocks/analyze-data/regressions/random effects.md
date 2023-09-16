@@ -162,6 +162,10 @@ phtest(model_within_twoway,
 
 The p-value is 0.0013, which is lower than 0.05. Thus the $H_{0}$ is rejected and an FE model is preferred according to the Hausman test.
 
+### Recommended reading
+
+A recommended paper for delving deeper into Random Effects Models is [Wooldridge (2019)](https://www.sciencedirect.com/science/article/abs/pii/S0304407618302392), which introduces strategies for allowing unobserved heterogeneity to be correlated with observed covariates in unbalanced panels.
+
 {{% summary %}}
 The Random Effects (RE) model is a method for panel data analysis that treats unobserved entity-specific effects as random and uncorrelated with the explanatory variables. 
 
