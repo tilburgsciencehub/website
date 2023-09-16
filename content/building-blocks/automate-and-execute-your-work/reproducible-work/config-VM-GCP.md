@@ -15,11 +15,11 @@ aliases:
 
 In this building block, you will discover how to create and configure a simple and robust VM instance in [Google Cloud](https://cloud.google.com/?hl=en), designed to overcome memory or power constraints limitations. Say goodbye to obstacles and embrace seamless computing.
 
-With this guide you'll see how to:
+After going through this guide, you'll get more familiar with:
 
-- Establish a VM instance in Google Cloud with optimized configurations.
-- Use [Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) for a reproducible environment.
-- Learn about NVIDIA drivers in order to access GPUs power.
+- Establishing a VM instance in Google Cloud with optimized configurations.
+- Using [Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) for a reproducible environment.
+- NVIDIA drivers in order to access GPUs power.
 
 ## Initialize a new instance
 
@@ -123,13 +123,15 @@ After fine-tuning your instance's setup and firewall rules, you can go ahead and
 
 ## Establish your environment using Docker
 
-Your next task involves setting up a reproducible environment on your instance, for which we'll be utilizing [Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/). If you're not already acquainted with it, we strongly recommend visiting this [building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/google_cloud_docker/). 
+In the realm of open science and reproducibility, we will be setting up our project environment using a [Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) container within our instance. 
 
-This guide provides a comprehensive step-by-step walkthrough that you need to follow to progress further. After you're done, move on into the next step.
+If you're not already acquainted with it, we strongly recommend visiting this [building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/google_cloud_docker/). 
+
+This guide provides a comprehensive step-by-step walkthrough that you need to follow to progress further. After you're done, come back here to move on into the next step.
 
 ## Install the NVIDIA drivers and container toolkit
 
-If your instance includes a GPU you need to install the [NVIDIA drivers](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#ubuntu-lts). These are specialized software components designed to allow the operating system and other software applications to effectively communicate with and leverage the capabilities of NVIDIA GPUs. Installing the correct drivers is essential to unlocking the full potential of the GPU, whether it is for computational tasks, deep learning applications, or graphics rendering.
+If your instance includes a GPU, you need to install the [NVIDIA drivers](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#ubuntu-lts). These are specialized software components designed to allow the operating system and other software applications to effectively communicate with and leverage the capabilities of NVIDIA GPUs. Installing the correct drivers is essential to unlocking the full potential of the GPU, whether it is for computational tasks, deep learning applications, or graphics rendering.
 
 Besides the regular drivers, if you have your project containerized within Docker, you need to install the NVIDIA container toolkit. 
 This toolkit is the key to allowing Docker containers within your instance to function taking full advantage of all the benefits that Google cloud machines of the GPU family offer. 
@@ -163,14 +165,14 @@ sudo docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
 
 <p align = "center">
 <img src = "../img/nvidia-toolkit.png" width="750">
-<figcaption> If the installation was successful you should observe something looking like in your command line this after running the code in step #5. </figcaption>
+<figcaption> Terminal display after a successful installation </figcaption>
 </p>
 
 ## Confirm GPUs availability
 
 To ensure that GPUs are accessible for your tasks, you can use specific commands depending on the framework you're using. 
 
-For instance, let's say you're working in a Python deep learning project. If you are using `PyTorch`, the following command `` can be used to check if CUDA (GPU acceleration) is currently available, returning a boolean value.
+For instance, let's say you're working in a Python deep learning project. If you are using `PyTorch`, the following command can be used to check if CUDA (GPU acceleration) is currently available, returning a boolean value.
 
 {{% codeblock %}}
 ```python
@@ -184,11 +186,12 @@ else:
 ```
 {{% /codeblock %}}
 
-If you are working with other common deep learning libraries like tensorflow, you could verify it this way:
+If you are working with other common deep learning libraries like `Tensorflow`, you could verify it this way:
 
 {{% codeblock %}}
 ```python
 import tensorflow as tf
+
 physical_devices = tf.config.list_physical_devices('GPU')
 if len(physical_devices) > 0:
     print("GPUs ready!")
@@ -196,18 +199,20 @@ else:
     print("GPUs not available")
 
 ```
+{{% /codeblock %}}
+
 {{% tip %}}
-Heavy files or memory issues?
+**Working with heavy files or having memory issues?**
 
-Your Virtual Machine can be monitored, this will be useful specially when those tasks are memory demanding. Also, sometimes there are ways to manage storage better, specially for heavy files, and importing them to the virtual machine can be tricky...
+Your Virtual Machine can be monitored, this will be useful specially when the tasks you are running are memory demanding. 
 
-Luckily for you, you'll learn ways to handle these constraints in our buidling block....
+Also, oftentimes you'll be working with large files in where you'll need to use the so-called "buckets" to access extra storage, and the ways to establish the connection with them might not be that intuitive...
+
+Luckily for you, you'll learn these and more useful skills in our [next building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/mem-storage-gcp/) on the topic!
 
 
 {{% /tip %}}
 
-
-{{% codeblock %}}
 
 {{% summary %}}
 
@@ -230,4 +235,3 @@ Luckily for you, you'll learn ways to handle these constraints in our buidling b
 - Google Cloud Compute Engine [guides](https://cloud.google.com/compute/docs/instances)
 - PyTorch [Documentation](https://pytorch.org/)
 - CUDA Toolkit [download](https://developer.nvidia.com/cuda-toolkit)
-
