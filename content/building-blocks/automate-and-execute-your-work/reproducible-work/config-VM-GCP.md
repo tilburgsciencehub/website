@@ -233,5 +233,6 @@ Luckily for you, you'll learn these and more useful skills in our [next building
 ## Additional Resources
 
 - Google Cloud Compute Engine [guides](https://cloud.google.com/compute/docs/instances)
-- PyTorch [Documentation](https://pytorch.org/)
 - CUDA Toolkit [download](https://developer.nvidia.com/cuda-toolkit)
+- PyTorch [Documentation](https://pytorch.org/)
+- Tensorflow [Documentation](https://www.tensorflow.org/api_docs/python/tf)
