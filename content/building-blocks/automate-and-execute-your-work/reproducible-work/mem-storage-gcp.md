@@ -1,5 +1,5 @@
 ---
-title: "Manage memory and storage in your Google Cloud VM" 
+title: "Handle memory and storage within your Google Cloud instance" 
 description: "After configuring a Google Cloud instance with GPUs, learn to import heavy files from Google Drive and handling memory issues"
 keywords: "Docker, Environment, Python, Jupyter notebook, Google cloud, Cloud computing, Cloud storage, GPU, Virtual Machine, Instance, Memory, Bucket, Storage"
 weight: 3
@@ -13,23 +13,28 @@ aliases:
 
 ## Overview
 
-After [configuring our Virtual Machine](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/config-vm-gcp/) in Google Cloud, we might be in the need to handle heavy files or prevent memory issues when running your code in the instance.
+This building block builds upon the foundational steps outlined in [Configure a VM with GPUs in Google Cloud](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/config-vm-gcp/).
 
-In this building block, you will learn how to:
+After configuring our instance, we may find the necessity to manage large files proficiently or to circumvent memory issues that could potentially arise during code execution within the instance.
 
-- 
--
--
+In this guide, you will learn how to:
 
-## Connect the Docker container within your instance to a Google Cloud Storage bucket 
+- Connect our Docker container with Google Cloud Storage using GCSFuse.
+- Use Google Colab for seamless file transfers between Google Drive and Google Cloud Storage.
+- Manage and monitor resources in Linux environments to prevent memory allocation issues.
 
-Your docker-compose file likely provides Docker with the necessary instructions to employ [Docker volumes](https://docs.docker.com/storage/volumes/) to save any output file or data that you produce while working in your environment's container. If this is the case you may be also interested in connecting such volume to Google cloud storage so you don't have to manually download the output to your machine and make it easier to share and make available to your team.
+## Connect the Docker container to a GCS bucket 
+
+Your `docker-compose` file likely provides Docker with the necessary instructions to employ [Docker volumes](https://docs.docker.com/storage/volumes/) to save any output file or data that you produce while working in your environment's container. 
+
+If this is the case, you may be also interested in connecting such volume to Google Cloud Storage (GCS) so you don't have to manually download the output to your machine, making it easier to share with your team.
 
 To do this, first of all you will need to install [GCSFuse](https://github.com/GoogleCloudPlatform/gcsfuse) in your instance by running the following code:
 
 {{% warning %}}
+**Don't run the container yet**
  
-Carry out the following steps while your environment is not running. For that press "ctrl + c" to shut down Jupyter notebook and then run `docker compose stop` in your instance to stop the execution of the container. 
+Carry out the following steps while your environment is not running. For that press "Ctrl + c" to shut down Jupyter notebook and then run `docker compose stop` in your instance to stop the execution of the container. 
 
 {{% /warning %}}
 
@@ -48,7 +53,7 @@ $ sudo apt-get install gcsfuse
 ```
 {{% /codeblock %}}
 
-Now navigate to the directory of your instance which is connected to the container by the volume and create a new directory inside of it to be the one connected with your bucket. After you can run the following:
+Now, navigate to the directory of your instance, which is connected to the container by the volume and create a new directory inside of it, which will be the one connected with your bucket. After that, you can run the following:
 
 {{% codeblock %}}
 ```bash
@@ -56,17 +61,20 @@ $ sudo gcsfuse -o allow_other your-bucket volume_path/new_dir/
 ```
 {{% /codeblock %}}
 
-This code will tell GCSFuse to synchronize your new directory within the path with your bucket and allow your container to access it. After this, you just have to store any output produced in your environment in this new directory that you just created in your instance a few moments ago (Referred to in the previous code block as "new_dir") and it will be immediately available to you in your GCS bucket.
+This code will tell GCSFuse to synchronize your new directory within the path with your bucket and allow your container to access it. Then, you just have to store any output produced in your environment in this new directory that you just created in your instance (Referred as "new_dir" in the previous code block) and it will be immediately at your disposal within your GCS bucket.
 
 {{% tip %}}
+**Bear in mind**
 
-Bear in mind that the absolute path to your bucket-sinchronized directory is not the same for your instance and for your container given that containers have independent file systems. However, its relative path will be the same to that where the Docker volume is mounted.
+The absolute path to your bucket-sinchronized directory is not the same for your instance and for your container given that containers have independent file systems. 
+
+However, its relative path will be the same to that where the Docker volume is mounted.
 
 {{% /tip %}}
 
 ## Import heavy files: Use Google Colab as a bridge
 
-In the moment you open your Jupyter notebook window with the instance running, you'll see its directory is empty. Is it the time to import the files we want to work with. 
+At the moment you open your Jupyter notebook window with the instance running, you'll see its directory is empty. Is it the time to import the files we want to work with. 
 
 The common way would be to import then via the **Upload file** button on the top-right corner of our commands prompt. Nonetheless, if the files are heavy, this would either take an eternity or probably incurre in a connection error after some time. Hence, What can we do? We can use **Google Colab** as a bridge to send the files from **Google Drive** into our **GCS bucket**!
 
@@ -105,7 +113,7 @@ auth.authenticate_user()
 ```
 {{% /codeblock %}}
 
-Next, we set our **project ID**. This is the identifier corresponding to your **GCS bucket** that you intend to populate with files:
+After, we set our **project ID**. This is the identifier corresponding to your **GCS bucket** that you intend to populate with files:
 
 {{% codeblock %}}
 ```python
@@ -131,14 +139,6 @@ The output of this last cell will say at the end *"Operation completed..."*.
 Now your data should be available in your **GCS bucket** and can be accessed from your Google Cloud instance. Refresh your bucket webpage and confirm it.
 
 After following the steps outlined so far, you will be able to import your files and execute your code within the Docker container.
-
-{{% tip %}}
-**GPUs ready?**
-
-To ensure that GPUs are accessible for your tasks, you can use specific commands depending on the framework you're using. 
-
-For instance, in `PyTorch`, the command `torch.cuda.is_available()` can be used to check if CUDA (GPU acceleration) is currently available, returning a boolean value.
-{{% /tip %}}
 
 ## Handling memory allocation issues
 
@@ -286,26 +286,21 @@ In Python, this translates to choosing dictionaries over lists when wrestling wi
 Remember that beyond these strategies, it's always possible to leverage the scalability and flexibility of cloud services such as Google Cloud. These services allow for a dynamic allocation of resources according to your needs. 
 
 {{% summary %}}
-- **Google Cloud VM Setup:**
 
-    - Register on Google Cloud.
-    - Create a Virtual Machine that satisfies your computational power needs.
+- **GCS buckets for large files handling:**
 
-- **Enable reproducibility and large files handling:**
-
-    - Install Docker on the VM to aim for reproducibility.
-    - Authenticate in Colab, set project ID, and bucket name.
-    - Use Google Colab to move files from Google Drive to GCS.
+    - Connect your Docker container with your GCS bucket
+    - Use Google Colab to move files from Google Drive to the bucket.
 
 - **Memory Management:**
 
     - Monitor with `htop` (CPU) and `nvtop` (GPU).
-    - Check CUDA availability for GPU tasks.
     - Implement batching, efficient data structures and algorithms, and use job parallelization to handle memory issues.
 
 {{% /summary %}}
 
 ## Additional Resources
 
-- PyTorch [Documentation](https://pytorch.org/)
-- Memory management [Python documentation](https://docs.python.org/3/c-api/memory.html)
+- Google Cloud [Memory-Optimized](https://cloud.google.com/compute/docs/memory-optimized-machines) machines
+- Memory management [Python Documentation](https://docs.python.org/3/c-api/memory.html)
+- Machine type [recommendations for VM instances](https://cloud.google.com/compute/docs/instances/apply-machine-type-recommendations-for-instances)
