@@ -19,7 +19,7 @@ The **Between estimator** is a method used to estimate the relationship between 
 {{% tip %}}
 __Practical application of between estimator__
 
-The Between estimator is considerd more of a technical concept than a model to use in practice. Think of it as a step between the Fixed Effects and Random Effects model.
+The Between estimator is considered more of a technical concept than a model to use in practice. Think of it as a step between the Fixed Effects and Random Effects model.
 {{% /tip %}}
 
 ## Estimation of the Between estimator 

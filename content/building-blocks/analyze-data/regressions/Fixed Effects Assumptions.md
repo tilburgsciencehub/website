@@ -14,7 +14,7 @@ aliases:
 
 # Overview
 
-This building block covers the fixed effects regression assumptions for Ordinary Least Squares (OLS) models. These 4 assumptions should hold in a Fixed Effects regression model in order to establish unbiasedness of OLS.
+This building block covers the fixed effects regression assumptions for Ordinary Least Squares (OLS) models. These 4 assumptions should hold in a Fixed Effects regression model to establish the unbiasedness of OLS.
 
 To refresh your understanding of panel data and fixed effects, you can refer to the [panel data building block](/paneldata). For a comprehensive explanation of fixed effects regressions in R, check the [`fixest` building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/fixest/). 
 
@@ -68,7 +68,7 @@ It is important to note that this assumption is just about independence *across 
 
 {{% example %}}
 In the context of the `Grunfeld` data set, this assumption implies the following:
-- In the Fixed Effects model, we assume that the variables `value` and `capital`are independent across different firms. The firm `value` of U.S. Steel for example is assumed to be independent of the firm `value` of General Motors. 
+- In the Fixed Effects model, we assume that the variables `value` and `capital` are independent across different firms. The firm `value` of U.S. Steel for example is assumed to be independent of the firm `value` of General Motors. 
 - Within each firm, there can still be autocorrelation over time. For instance, the firm `value` of U.S. Steel in one year may be dependent on its `value` in the previous year. 
 {{% /example %}}
 

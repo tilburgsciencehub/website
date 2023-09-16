@@ -14,12 +14,12 @@ aliases:
 
 # Overview
 
-The fixed effects (FE) model, also known as the "Within estimator", captures changes *within groups*. By focusing on within-group variations, the FE model is able to control for unobserved entity-specific effects. 
+The fixed effects (FE) model, also known as the "Within estimator", captures changes *within groups*. By focusing on within-group variations, the FE model can control for unobserved entity-specific effects. 
 
 When analyzing panel data, it is crucial to account for these unobserved effects to obtain unbiased results. Not controlling for them when they are present in your model, will violate Assumption 1 of the [Fixed Effects Regression Assumptions](/fixedeffectsassumptions). In other words, the error term will be correlated with the independent variables. This correlation can introduce omitted variable bias.
 
 {{% warning %}}
-Note that a FE model cannot examine the influence of time-invariant variables on the dependent variable, as these variables are already captured in the fixed effects. 
+Note that an FE model cannot examine the influence of time-invariant variables on the dependent variable, as these variables are already captured in the fixed effects. 
 
 Additionally, a FE model may encounter issues of collinearity when dealing with variables that change little over time. Collinearity arises when independent variables are highly correlated, and if a variable changes very little over time, it becomes highly correlated with the fixed effects in the model. This high collinearity makes it hard to disentangle individual effects of this variable on the dependent variable, potentially leading to unreliable estimates. 
 {{% /warning %}}
@@ -33,7 +33,7 @@ Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}
 {{</katex>}}
 <br/>
 
-To remove the fixed effects from the model, the time-specific means are subtracted from each variable, enablng estimation of changes **within firms** over time.
+To remove the fixed effects from the model, the time-specific means are subtracted from each variable, enabling estimation of changes **within firms** over time.
 
 <br/>
 {{<katex>}}
@@ -70,7 +70,7 @@ summary(model_within)
 
 ## Time Fixed Effects
 
-Including time fixed effects controls for time trends that are constant across all groups in the panel data and potentially influence the dependent variable. In our analysis with the `Grunfeld` data set, examples of time trends could be economic cycles, policy changes or market trends impacting firms' investment decisions. 
+Including time fixed effects controls for time trends that are constant across all groups in the panel data and potentially influence the dependent variable. In our analysis of the `Grunfeld` data set, examples of time trends could be economic cycles, policy changes, or market trends impacting firms' investment decisions. 
 
 The model that incorporates both entity-specific and time fixed effects is called a **Two-way Fixed Effects model**. This model is very commonly used in causal inference analysis. 
 
@@ -139,5 +139,5 @@ Additionally, the inclusion of time fixed effects accounts for common time trend
 
 In R, the `fixest` package provides the `feols()` function for estimating the FE model. 
 
-The `pFtest()` funtion from the `plm` package can be used to test for the presence of fixed effects. This can help you decide whether including fixed effects is necessary in your model. However, keep in mind that the `pFtest()` function requires `plm` objects as arguments.
+The `pFtest()` function from the `plm` package can be used to test for the presence of fixed effects. This can help you decide whether including fixed effects is necessary in your model. However, keep in mind that the `pFtest()` function requires `plm` objects as arguments.
 {{% /summary %}}
