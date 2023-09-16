@@ -18,11 +18,11 @@ The fixed effects (FE) model, also known as the "Within estimator", captures cha
 
 When analyzing panel data, it is crucial to account for these unobserved effects to obtain unbiased results. Not controlling for them when they are present in your model, will violate Assumption 1 of the [Fixed Effects Regression Assumptions](/fixedeffectsassumptions). In other words, the error term will be correlated with the independent variables. This correlation can introduce omitted variable bias.
 
-{{% tip %}}
+{{% warning %}}
 Note that a FE model cannot examine the influence of time-invariant variables on the dependent variable, as these variables are already captured in the fixed effects. 
 
 Additionally, a FE model may encounter issues of collinearity when dealing with variables that change little over time. Collinearity arises when independent variables are highly correlated, and if a variable changes very little over time, it becomes highly correlated with the fixed effects in the model. This high collinearity makes it hard to disentangle individual effects of this variable on the dependent variable, potentially leading to unreliable estimates. 
-{{% /tip %}}
+{{% /warning %}}
 
 ## Estimation of FE model 
 
