@@ -13,7 +13,7 @@ aliases:
 
 ## Overview
 
-In this building block, you will discover how to create and configure a simple and robust VM instance in [Google Cloud](https://cloud.google.com/?hl=en), designed to overcome memory or power constraints limitations. Say goodbye to obstacles and embrace seamless computing.
+In this building block, you will discover how to create and configure a simple and robust VM instance in [Google Cloud](https://cloud.google.com/?hl=en), designed to overcome power constraints limitations. Say goodbye to obstacles and embrace seamless computing!
 
 After going through this guide, you'll get more familiar with:
 
