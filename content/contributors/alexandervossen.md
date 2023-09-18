@@ -7,9 +7,7 @@ skills:
   - R
 social:
   - name: LinkedIn
-    link: [https://www.linkedin.com/in/hannes-datta](https://www.linkedin.com/in/alexander-vossen-198a6b51/)
-  - name: Twitter
-    link: https://twitter.com/hannesdatta
+    link: https://www.linkedin.com/in/alexander-vossen-198a6b51/
 email: a.vossen@tilburguniversity.edu 
 image: alexvossen.png 
 status: "active"
