@@ -3,7 +3,7 @@ title: "The Between Estimator"
 description: "A building block about the Between estimator"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
-weight: 6
+weight: 7
 author: "Valerie Vossen"
 authorlink: "https://nl.linkedin.com/in/valerie-vossen"
 aliases:

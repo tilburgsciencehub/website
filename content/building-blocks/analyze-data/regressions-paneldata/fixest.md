@@ -3,7 +3,7 @@ title: "Fixed-Effects Estimation in R With the `fixest` Package"
 description: "Efficient and fast fixed-effects estimation in R with the fixest package"
 keywords: "fixest, causal inference, difference-in-difference, DID, fixed-effects, R, regression, model "
 draft: false
-weight: 8
+weight: 6
 author: "Roshini Sudhaharan"
 authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:
