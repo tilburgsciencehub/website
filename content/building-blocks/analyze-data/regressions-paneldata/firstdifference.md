@@ -1,5 +1,5 @@
 ---
-title: "Fixed Effects Models: First-Difference Estimator"
+title: "The First-Difference Estimator"
 description: "A building block about the First-difference estimator"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between, first-difference"
 draft: false
