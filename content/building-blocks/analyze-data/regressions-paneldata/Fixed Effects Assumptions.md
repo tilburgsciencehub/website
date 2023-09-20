@@ -3,7 +3,7 @@ title: "Fixed Effects Regression Assumptions"
 description: "A building block that covers the Fixed Effects Regression Assumptions"
 keywords: "paneldata, panel, data, R, regression, model, assumptions, fixed, effects"
 draft: false
-weight: 9
+weight: 2
 author: "Valerie Vossen"
 authorlink: "https://nl.linkedin.com/in/valerie-vossen"
 aliases:

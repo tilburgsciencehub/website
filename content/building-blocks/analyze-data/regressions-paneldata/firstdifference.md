@@ -3,7 +3,7 @@ title: "The First-Difference Estimator"
 description: "A building block about the First-difference estimator"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between, first-difference"
 draft: false
-weight: 11
+weight: 4
 author: "Valerie Vossen"
 authorlink: "https://nl.linkedin.com/in/valerie-vossen"
 aliases:

@@ -3,7 +3,7 @@ title: "The Random Effects Model"
 description: "A building block about the Random Effects model and on the decision between an Fixed or Random Effects model"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
-weight: 14
+weight: 7
 author: "Valerie Vossen"
 authorlink: "https://nl.linkedin.com/in/valerie-vossen"
 aliases:

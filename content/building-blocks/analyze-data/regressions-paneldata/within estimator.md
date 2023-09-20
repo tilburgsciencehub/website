@@ -3,7 +3,7 @@ title: "The Fixed Effects Model (Within Estimator)"
 description: "A building block about the FE model (Within estimator)"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
-weight: 12
+weight: 5
 author: "Valerie Vossen"
 authorlink: "https://nl.linkedin.com/in/valerie-vossen"
 aliases:

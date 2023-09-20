@@ -3,7 +3,7 @@ title: "The Pooled OLS Model"
 description: "A building block about the pooled OLS model, a model used to analyze panel data"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
-weight: 10
+weight: 3
 author: "Valerie Vossen"
 authorlink: "https://nl.linkedin.com/in/valerie-vossen"
 aliases:
