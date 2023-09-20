@@ -9,6 +9,6 @@ social:
   - name: LinkedIn
     link: https://www.linkedin.com/in/shrabastee-banerjee-71144977
 email: shrabastee.b@tilburguniversity.edu
-image: shrabastee.jpg
+image: Shrabastee.jpg
 status: "active"
 ---

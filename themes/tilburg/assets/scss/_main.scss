@@ -1552,12 +1552,23 @@ form {
   border-bottom: 3px dashed #013365;
   animation: spin 40s infinite linear;
 
-  img {
-    width: 400px; 
-    height: auto; 
-    border-radius: 50%; 
+  .img-container {
     border: 20px solid white;
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+    background-size: cover;
     animation: spin 40s reverse infinite linear;
+  }
+}
+
+.contribute-row{
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  .contribute-row{
+    justify-content: center;
   }
 }
 

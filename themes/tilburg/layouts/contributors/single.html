@@ -11,15 +11,12 @@
 
 	<div>
 
-		<div class="row justify-content-between">
-			<div class="col-xl-10 col-lg-10 col-22 mb-4 d-flex flex-wrap pr-4">
+		<div class="row contribute-row">
+			<div class="col-xl-10 col-lg-10 col-22 mb-4 d-flex flex-wrap pr-xl-4">
 				<div class="w-100 rounded d-flex flex-column align-items-center justify-content-center">
 					<div class="image-circle">
-						{{ if .Params.image }}
-						<img src="/contributors/{{ .Params.image }}">
-						{{ else }}
-						<img src="static/contributors/no-image.png">
-						{{ end }}
+						<div class="img-container" style="background-image: url('{{ if .Params.image }}/contributors/{{ .Params.image }}{{ else }}static/contributors/no-image.png{{ end }}');">
+						</div>
 					</div>
 				</div>
 			</div>
