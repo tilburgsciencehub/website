@@ -11,16 +11,17 @@
   </div>
 
   <div>
-    <h3 style="font-weight: 700;">Active Contributors</h3>
+    <h3 class="text-center-mobile" style="font-weight: 700;">Active Contributors</h3>
     <div class="row justify-content-center justify-content-lg-start mb-3">
       {{ range where .Pages "Params.status" "==" "active" }}
-      <div class="col-lg-6 col-22 mb-4 d-flex flex-wrap">
+      <div class="col-xl-6 col-lg-6 col-md-12 col-22 mb-4 d-flex flex-wrap">
         <a style="color:inherit" href="{{ .Permalink }}">
           <div class="p-5 text-center w-100 rounded d-flex flex-column">
             <span class="flex-fill">
               <div class="image-circle-overview">
                 {{ if .Params.image }}
-                <img src="/contributors/{{ .Params.image }}">
+                <div class="img-container-overview" style="background-image: url('{{ if .Params.image }}/contributors/{{ .Params.image }}{{ else }}static/contributors/no-image.png{{ end }}');">
+                </div>
                 {{ else }}
                 <img src="/contributors/no-image.png">
                 {{ end }}
@@ -39,7 +40,7 @@
       {{ end }}
 
     </div>
-    <h3 style="font-weight: 700;">Alumni</h3>
+    <h3 class="text-center-mobile" style="font-weight: 700;">Alumni</h3>
     <div class="row justify-content-center justify-content-lg-start">
       {{ range where .Pages "Params.status" "==" "alumni" }}
       <div class="col-lg-6 col-22 mb-4 d-flex flex-wrap">
