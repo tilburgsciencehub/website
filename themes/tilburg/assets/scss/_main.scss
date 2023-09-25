@@ -1043,6 +1043,10 @@ a.text-secondary:hover {
 }
 
 @media only screen and (max-width: 991px) {
+  .text-center-mobile {
+    text-align: center;
+  }
+  
   .tableOfContentParent {
     height: auto;
   }
@@ -1573,15 +1577,18 @@ form {
 }
 
 .image-circle-overview{
-  width: 200;
-  height: 200;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
 
-  img {
-    width: 400px; 
-    height: auto; 
+  .img-container-overview {
+    width: 100%; 
+    height: 100%; 
     border-radius: 50%; 
     border: 5px solid #013365;
+    background-size: cover;
   }
 }
 
