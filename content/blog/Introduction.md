@@ -1,7 +1,7 @@
 ---
 title: "Introducing the Tilburg Science Hub Blog"
 description: "Discover More about Our Work and Community"
-date: 2023-09-21T12:02:51+05:30
+date: 2023-09-14T12:02:51+05:30
 draft: false
 aliases:
   - /blog/introduction

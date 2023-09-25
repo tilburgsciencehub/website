@@ -1,6 +1,6 @@
 ---
-title: "Last semester: Diving into the World of Causal Inference and Virtual Machines"
-description: "Exploring Our Latest Contributions"
+title: "Diving into the World of Causal Inference and Virtual Machines"
+description: "Exploring What We've Worked on in the Last Semester"
 date: 2023-09-21T12:02:51+05:30
 draft: false
 aliases:
@@ -16,20 +16,20 @@ We have mainly been busy creating new content in the field of causal inference a
 
 Causal inference has been the most important subject of our exploration. We have put together a comprehensive set of tools to guide you through this complex but captivating subject:
 
-- [Intro to IV Estimation](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/iv/): We start with a thorough introduction to IV (Instrumental Variable) estimation, which is a fundamental concept in the field of causal inference.
+- [Introduction to Instrumental Variables Estimation](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/iv/): We start with a thorough introduction to IV (Instrumental Variable) estimation, which is a fundamental concept in the field of causal inference.
 
-- [Doing Calculations with Regression Coefficients Using deltaMethod](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/deltamethod/): We learn you how to handle regression coefficients with precision through the deltaMethod.
+- [Doing Calculations with Regression Coefficients Using deltaMethod](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/deltamethod/): We show you how to handle regression coefficients with precision through the deltaMethod.
 
-- [https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/impact-evaluation/](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/impact-evaluation/): We take a closer look at impact evaluation through regressions, uncovering how interventions and policies can be rigorously analyzed to make informed decisions.
+- [Impact evaluation](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/impact-evaluation/): We take a closer look at impact evaluation through regressions, uncovering how interventions and policies can be rigorously analyzed to make informed decisions.
 
-- [https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/synth-control/](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/synth-control/): Discover the power of the Synthetic Control Method, which is an invaluable tool for causal inference in diverse research scenarios.
+- [Synthetic Controls](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/synth-control/): Discover the power of the Synthetic Control Method, which is an invaluable tool for causal inference in diverse research scenarios.
 
-- [Fixed-Effects Estimation in R with the fixest Package](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/fixest/): Lastly, we dive into fixed-effects estimation using the fixest package in R, which is particularly useful for panel data analyses.
+- [Fixed-Effects Estimation in R with the fixest Package](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/fixest/): Lastly, we dive into fixed-effects estimation using the `fixest`` package in R, which is particularly useful for panel data analyses (and, super super fast!).
 
 
 ### **Virtual Machines**
 
-Besides our focus on causal inference, we've also explored virtual machines (VMs). We created some building blocks related to virtual machines to help you set them up and run environments in the cloud with Docker.
+Besides our focus on causal inference, we've also explored virtual machines (VMs). Think of them like a supercomputer that you can rent on-demand. We've created some building blocks related to virtual machines to help you set them up and run environments in the cloud.
 
 - [Configure a VM with GPUs in Google Cloud](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/config-vm-gcp/): Learn how to use the computing power of GPUs on Google Cloud by setting up a customized VM to meet your research requirements.
 
