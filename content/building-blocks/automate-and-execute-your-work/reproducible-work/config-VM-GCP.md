@@ -123,43 +123,24 @@ After fine-tuning your instance's setup and firewall rules, you can go ahead and
 
 ## Establish your environment using Docker
 
-In the realm of open science and reproducibility, we will be setting up our project environment using a [Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) container within our instance. 
+At this point we strongly recommend you [set up Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/)
+as a great tool to easily [deploy your projects and environments within your newly created virtual machine](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/). If you are not familiar with the advantages that Docker offers in terms of productivity and open science value for your project, check out our building block on [Docker for reproducible research](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) 
 
-If you're not already acquainted with it, we strongly recommend visiting this [building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/google_cloud_docker/). 
 
-This guide provides a comprehensive step-by-step walkthrough that you need to follow to progress further. After you're done, come back here to move on into the next step.
+You can check Docker's setup process in a Google Cloud virtual machine by visiting [this building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/google_cloud_docker/), where you'll find more details as well as a setup script that will get you Docker up and running in your virtual machine in the blink of an eye. After you're done, come back here to move on to the next step.
+
 
 ## Install the NVIDIA drivers and container toolkit
 
-If your instance includes a GPU, you need to install the [NVIDIA drivers](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#ubuntu-lts). These are specialized software components designed to allow the operating system and other software applications to effectively communicate with and leverage the capabilities of NVIDIA GPUs. Installing the correct drivers is essential to unlocking the full potential of the GPU, whether it is for computational tasks, deep learning applications, or graphics rendering.
+If your instance includes GPUs, you need to [install the appropriate NVIDIA drivers](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#ubuntu-lts) to be able to use them. These drivers are specialized software components designed to allow the operating system and other software applications to effectively communicate with and leverage the capabilities of NVIDIA GPUs. Installing the correct drivers is essential to unlocking the full potential of the GPU, whether it is for computational tasks, deep learning applications, or graphics rendering.
 
-Besides the regular drivers, if you have your project containerized within Docker, you need to install the NVIDIA container toolkit. 
-This toolkit is the key to allowing Docker containers within your instance to function taking full advantage of all the benefits that Google cloud machines of the GPU family offer. 
+Besides the regular drivers, if you have your project containerized within Docker or, more generally, you intend to make use of your instance's GPUs from within Docker containers, you need to install the NVIDIA container toolkit. This toolkit is the key component allowing Docker containers within your instance to function taking full advantage of all the benefits that Google cloud machines of the GPU family offer. You can check the detailed instructions on the [NVIDIA container toolkit site](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).
 
-To carry out the installation you just need to execute the step-by-step code in the cell below, though you can also check the detailed instructions on the [NVIDIA toolkit site](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).
+After completing the installation process of the NVIDIA container toolkit, you can run the following in your virtual machine terminal to check if the installation was successful. In that case, you will see in your command line something resembling the image below.
 
 {{% codeblock %}}
 ```bash
-
-#1
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
-      && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
-      && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
-            sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
-            sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
-
-#2
-sudo apt-get update
-
-#3
-sudo apt-get install -y nvidia-docker2
-
-#4
-sudo systemctl restart docker
-
-#5
-sudo docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
-
+sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
 ```
 {{% /codeblock %}}
 
@@ -200,6 +181,8 @@ else:
 
 ```
 {{% /codeblock %}}
+
+Bear in mind that the particular framework you are using within your project, such as `Pytorch` or `Tensorflow` may have specific additional requirements to make use of your machine's GPUs on top of the ones already presented in this building block.
 
 {{% tip %}}
 **Working with heavy files or having memory issues?**
