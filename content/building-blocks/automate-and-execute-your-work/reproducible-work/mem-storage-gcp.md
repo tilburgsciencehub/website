@@ -25,18 +25,9 @@ In this guide, you will learn how to:
 
 ## Connect the Docker container to a GCS bucket 
 
-Your `docker-compose` file likely provides Docker with the necessary instructions to employ [Docker volumes](https://docs.docker.com/storage/volumes/) to save any output file or data that you produce while working in your environment's container. 
-
-If this is the case, you may be also interested in connecting such volume to Google Cloud Storage (GCS) so you don't have to manually download the output to your machine, making it easier to share with your team.
+[Storage buckets](https://cloud.google.com/storage/docs/buckets) are the native storage units of the Google Cloud platform. Linking them to your virtual machine offers integrated and efficient data management, simplifying scaling, backup, and access from anywhere in the Google Cloud infrastructure, eliminating, for example, the need to perform manual uploads/downloads via the Google Cloud's browser interface.
 
 To do this, first of all you will need to install [GCSFuse](https://github.com/GoogleCloudPlatform/gcsfuse) in your instance by running the following code:
-
-{{% warning %}}
-**Don't run the container yet**
- 
-Carry out the following steps while your environment is not running. For that press "Ctrl + c" to shut down Jupyter notebook and then run `docker compose stop` in your instance to stop the execution of the container. 
-
-{{% /warning %}}
 
 {{% codeblock %}}
 ```bash
@@ -53,30 +44,20 @@ $ sudo apt-get install gcsfuse
 ```
 {{% /codeblock %}}
 
-Now, navigate to the directory of your instance, which is connected to the container by the volume and create a new directory inside of it, which will be the one connected with your bucket. After that, you can run the following:
+Now, create a new directory in your virtual machine, which will be the one connected to your bucket. After that, you can run the following, substituting 'YOUR_BUCKET' with the name of the storage bucket you wish to connect with your instance, and 'PATH_TO/NEW_DIRECTORY' to the path of the newly created directory that will host that connection:
 
 {{% codeblock %}}
 ```bash
-$ sudo gcsfuse -o allow_other your-bucket volume_path/new_dir/
+$ sudo gcsfuse -o allow_other YOUR_BUCKET PATH_TO/NEW_DIRECTORY
 ```
 {{% /codeblock %}}
 
-This code will tell GCSFuse to synchronize your new directory within the path with your bucket and allow your container to access it. Then, you just have to store any output produced in your environment in this new directory that you just created in your instance (Referred as "new_dir" in the previous code block) and it will be immediately at your disposal within your GCS bucket.
+This code will tell GCSFuse to synchronize your new directory with your bucket. Then, you would be able to store any output produced in your projects in this new directory that you just created in your instance and it will be immediately at your disposal within your GCS bucket, and vice versa.
 
-{{% tip %}}
-**Bear in mind**
 
-The absolute path to your bucket-sinchronized directory is not the same for your instance and for your container given that containers have independent file systems. 
+## Import large files: Use Google Colab as a bridge
 
-However, its relative path will be the same to that where the Docker volume is mounted.
-
-{{% /tip %}}
-
-## Import heavy files: Use Google Colab as a bridge
-
-At the moment you open your Jupyter notebook window with the instance running, you'll see its directory is empty. Is it the time to import the files we want to work with. 
-
-The common way would be to import then via the **Upload file** button on the top-right corner of our commands prompt. Nonetheless, if the files are heavy, this would either take an eternity or probably incurre in a connection error after some time. Hence, What can we do? We can use **Google Colab** as a bridge to send the files from **Google Drive** into our **GCS bucket**!
+The transfer and management of large files can be challenging due to extended upload/download durations. Yet, having connected your Google Cloud virtual machine to your storage buckets, you can swiftly transfer files that you already have hosted on **Google Drive** and **GCS Buckets** (And in turn to your virtual machine as well) using **Google Colab** as a bridge. This bypasses the need to manually Download/Upload files from Drive to your local machine and then to your cloud instance, potentially saving you significant amounts of time in the process.
 
 It is suggested to utilize the same account for all Google tools. Doing so simplifies the authentication process and prevents potential permission issues, fostering a more seamless workflow.
 
