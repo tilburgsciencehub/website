@@ -13,19 +13,19 @@ aliases:
 
 ## Overview
 
-In this building block, you will discover how to create and configure a simple and robust VM instance in [Google Cloud](https://cloud.google.com/?hl=en), designed to overcome power constraints limitations. Say goodbye to obstacles and embrace seamless computing!
+In this building block, you will discover how to create and configure a simple and robust VM instance in [Google Cloud](https://cloud.google.com/?hl=en), designed to overcome power constraints. Say goodbye to obstacles and embrace seamless computing!
 
 After going through this guide, you'll get more familiar with:
 
 - Establishing a VM instance in Google Cloud with optimized configurations.
-- Using [Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) for a reproducible environment.
-- NVIDIA drivers in order to access GPUs power.
+- The usefulness of [Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) in combination with cloud virtual machines.
+- NVIDIA drivers to access GPU power.
 
 ## Initialize a new instance
 
 ### Create a Google Cloud account
 
-First of all, we will need to have a Google Cloud account and a project created in order to create an instance. After this is done, we can go to the welcome page and click on **"Create a VM"**.
+First of all, we will need to have a Google Cloud account and a project created to create a **virtual machine instance**. After this is done, we can go to the welcome page and click on **"Create a VM"**.
 
 <p align = "center">
 <img src = "../img/welcome1.png" width="600" style="border:1px solid black;">
@@ -40,7 +40,7 @@ You will be directed to the instance configuration page. Here, you will need to 
 
 You'll encounter four primary machine categories to select from:
 
-- **General-purpose:** Offers the best balance between price and performance, making it suitable for a wide range of workloads. It provides a cost-effective solution without compromising efficiency.
+- **General Purpose:** Offers the best balance between price and performance, making it suitable for a wide range of workloads. It provides a cost-effective solution without compromising efficiency.
 
 - **Compute-optimized:** Delivers the highest performance per core on Compute Engine, specifically designed for compute-intensive tasks. It excels in scenarios that require substantial computational power, ensuring faster processing and reduced execution times.
 
@@ -54,7 +54,7 @@ You'll encounter four primary machine categories to select from:
 
 GPU-enabled VMs are vital for deep learning tasks like language models. However, for other uses, GPUs are redundant and increase expenses. 
 
-See an example on how suboptimal GPU usage can slow compute time [here](https://rstudio-pubs-static.s3.amazonaws.com/15192_5965f6c170994ebb972deaf18f1ddf34.html).
+See an example of how suboptimal GPU usage can slow compute time [here](https://rstudio-pubs-static.s3.amazonaws.com/15192_5965f6c170994ebb972deaf18f1ddf34.html).
 
 {{% /warning %}}
 
@@ -83,7 +83,7 @@ In the top right corner, you'll see a real-time **pricing summary**. As you adju
 
 #### Bost disk settings
 
-As we scroll-down through the configuration process, we'll skip to [Boot Disk settings](https://cloud.google.com/compute/docs/disks). 
+As we scroll down through the configuration process, we'll skip to [Boot Disk settings](https://cloud.google.com/compute/docs/disks). 
 
 Think of your boot disk as your instance's storage locker - here, you get to pick its type (standard or SSD), size, and the VM image (Operating System) you want to load on it. 
 
@@ -119,11 +119,11 @@ Since we're not handling sensitive data in this example, we'll be activating bot
 <figcaption> Firewall rules </figcaption>
 </p>
 
-After fine-tuning your instance's setup and firewall rules, you can go ahead and establish the instance. Take into account that the instance will start automatically after you create it. So if you won't inmediatly need it make sure you stop it.
+After fine-tuning your instance's setup and firewall rules, you can go ahead and establish the instance. Take into account that the instance will start automatically after you create it. So if you won't inmediately need it make sure you stop it.
 
 ## Establish your environment using Docker
 
-At this point we strongly recommend you [set up Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/)
+At this point, we strongly recommend you [set up Docker](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/)
 as a great tool to easily [deploy your projects and environments within your newly created virtual machine](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/dockerhub/). If you are not familiar with the advantages that Docker offers in terms of productivity and open science value for your project, check out our building block on [Docker for reproducible research](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) 
 
 
@@ -134,7 +134,7 @@ You can check Docker's setup process in a Google Cloud virtual machine by visiti
 
 If your instance includes GPUs, you need to [install the appropriate NVIDIA drivers](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#ubuntu-lts) to be able to use them. These drivers are specialized software components designed to allow the operating system and other software applications to effectively communicate with and leverage the capabilities of NVIDIA GPUs. Installing the correct drivers is essential to unlocking the full potential of the GPU, whether it is for computational tasks, deep learning applications, or graphics rendering.
 
-Besides the regular drivers, if you have your project containerized within Docker or, more generally, you intend to make use of your instance's GPUs from within Docker containers, you need to install the NVIDIA container toolkit. This toolkit is the key component allowing Docker containers within your instance to function taking full advantage of all the benefits that Google cloud machines of the GPU family offer. You can check the detailed instructions on the [NVIDIA container toolkit site](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).
+Besides the regular drivers, if you have your project containerized within Docker or, more generally, you intend to make use of your instance's GPUs from within Docker containers, you need to install the NVIDIA container toolkit. This toolkit is the key component allowing Docker containers within your instance to function taking full advantage of all the benefits that Google Cloud machines of the GPU family offer. You can check the detailed instructions on the [NVIDIA container toolkit site](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).
 
 After completing the installation process of the NVIDIA container toolkit, you can run the following in your virtual machine terminal to check if the installation was successful. In that case, you will see in your command line something resembling the image below.
 
@@ -153,7 +153,7 @@ sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
 
 To ensure that GPUs are accessible for your tasks, you can use specific commands depending on the framework you're using. 
 
-For instance, let's say you're working in a Python deep learning project. If you are using `PyTorch`, the following command can be used to check if CUDA (GPU acceleration) is currently available, returning a boolean value.
+For instance, let's say you're working on a Python deep learning project. If you are using `PyTorch`, the following command can be used to check if CUDA (GPU acceleration) is currently available, returning a boolean value.
 
 {{% codeblock %}}
 ```python
@@ -187,11 +187,9 @@ Bear in mind that the particular framework you are using within your project, su
 {{% tip %}}
 **Working with heavy files or having memory issues?**
 
-Your Virtual Machine can be monitored, this will be useful specially when the tasks you are running are memory demanding. 
+Your Virtual Machine can be monitored, this will be useful especially when the tasks you are running are memory-demanding. 
 
-Also, oftentimes you'll be working with large files in where you'll need to use the so-called "buckets" to access extra storage, and the ways to establish the connection with them might not be that intuitive...
-
-Luckily for you, you'll learn these and more useful skills in our [next building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/mem-storage-gcp/) on the topic!
+Also, oftentimes you'll be working with large files and you'll need to use the so-called "buckets" to access extra storage. The ways to establish the connection with them might not be that intuitive, but luckily for you, you'll learn these and more useful skills in our [next building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/mem-storage-gcp/) on the topic!
 
 
 {{% /tip %}}
@@ -203,13 +201,13 @@ Luckily for you, you'll learn these and more useful skills in our [next building
 
     - Register on Google Cloud.
     - Create a Virtual Machine that satisfies your computational power needs.
-    - Select the most appropiate Boot Disk and Firewall Rules
+    - Select the most appropriate Boot Disk and Firewall Rules
 
 - **Enable reproducibility and access the GPU power**
 
     - Install Docker on the VM to aim for reproducibility.
     - Install NVIDIA drivers and the container toolkit for GPUs
-    - Confirm GPUs availability
+    - Confirm GPU availability
 
 {{% /summary %}}
 
