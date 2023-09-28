@@ -14,7 +14,7 @@ social:
     link: https://github.com/Fernando-Iscar
 
 email: f.iscar@tilburguniversity.edu
-image: diegosanchez.jpg
+image: fernandoiscar.png
 status: "active"
 ---
 
