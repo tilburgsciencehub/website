@@ -27,7 +27,7 @@ In this guide, you will learn how to:
 
 [Storage buckets](https://cloud.google.com/storage/docs/buckets) are the native storage units of the Google Cloud platform. Linking them to your virtual machine offers integrated and efficient data management, simplifying scaling, backup, and access from anywhere in the Google Cloud infrastructure, eliminating, for example, the need to perform manual uploads/downloads via the Google Cloud's browser interface.
 
-To do this, first of all you will need to install [GCSFuse](https://github.com/GoogleCloudPlatform/gcsfuse) in your instance by running the following code:
+To do this, first of all, you will need to install [GCSFuse](https://github.com/GoogleCloudPlatform/gcsfuse) in your instance by running the following code:
 
 {{% codeblock %}}
 ```bash
@@ -64,9 +64,9 @@ It is suggested to utilize the same account for all Google tools. Doing so simpl
 {{% tip %}}
 **Copy all directories you need**
 
-When syncronizing the bucket with your directory inside the container, if your bucket contains other directories as well, the command `$ sudo gcsfuse -o allow_other your-bucket volume_path/new_dir/` might not copy those directories. 
+When synchronizing the bucket with your directory inside the container, if your bucket contains other directories as well, the command `$ sudo gcsfuse -o allow_other your-bucket volume_path/new_dir/` might not copy those directories. 
 
-Try `$ sudo gcsfuse --implicit-dirs -o allow_other your-bucket volume_path/new_dir/` to make sure the implicit directories are also included, if you want them to.
+Try `$ sudo gcsfuse --implicit-dirs -o allow_other your-bucket volume_path/new_dir/` to make sure the implicit directories are also included if you want them to.
 
 {{% /tip %}}
 
@@ -106,7 +106,7 @@ project_id = 'your_project_id'
 
 The `gcloud config set project {project_id}` command configures the gcloud command-line tool to use the specified **project ID** by default.
 
-Finally, we define our bucket's name and use the `gsutil -m cp -r` command to recursively copy the directory you're interested on sending from our mounted **Google Drive** to our specified **GCS bucket**:
+Finally, we define our bucket's name and use the `gsutil -m cp -r` command to recursively copy the directory you're interested in sending from our mounted **Google Drive** to our specified **GCS bucket**:
 
 {{% codeblock %}}
 ```python
@@ -134,7 +134,7 @@ A crucial part of managing any computational task is continuously monitoring you
 In Linux-based environments, such as **Ubuntu**, [htop](https://github.com/htop-dev/htop) and [nvtop](https://github.com/Syllo/nvtop) are two widely used tools for tracking CPU and GPU usage, respectively.
 
 `htop` is an interactive process viewer and system monitor. It's similar to the `top` command but provides a more visually appealing and human-readable format.
-In fact, it allows us to sort by the task we're most interested in monitoring by pressing `F6`, among other interesting features.
+It allows us to sort by the task we're most interested in monitoring by pressing `F6`, among other interesting features.
 
 <p align = "center">
 <img src = "../img/htop1.png" width="1000" style="border:1px solid black;">
@@ -262,13 +262,13 @@ In Python, this translates to choosing dictionaries over lists when wrestling wi
 
 {{% /example %}}
 
-- **Parallelizing your Work:** Divide the task among multiple identical instances, each running a part of the code. This approach is particularly useful when your code involves training or using multiple machine learning models. For example, if you have three BERT models to run, you could use three instances.
+- **Parallelizing your Work:** Divide the task among multiple identical instances, each running a part of the code. This approach is particularly useful when your code involves training or using multiple machine-learning models. For example, if you have three BERT models to run, you could use three instances.
 
 Remember that beyond these strategies, it's always possible to leverage the scalability and flexibility of cloud services such as Google Cloud. These services allow for a dynamic allocation of resources according to your needs. 
 
 {{% summary %}}
 
-- **GCS buckets for large files handling:**
+- **GCS buckets for large file handling:**
 
     - Connect your Docker container with your GCS bucket
     - Use Google Colab to move files from Google Drive to the bucket.
