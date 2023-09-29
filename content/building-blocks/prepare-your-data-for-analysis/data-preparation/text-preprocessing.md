@@ -1,7 +1,7 @@
 ---
 title: "Text Pre-processing in R"
 description: "Learn how to pre-process text data in R using the tm-package"
-keywords: "R, preparation, raw data, text, cleaning, wrangling, NLP, preprocessing, tm, text analysis"
+keywords: "R, preparation, raw data, text, cleaning, wrangling, NLP, preprocessing, tm, text analysis, corpus, stemming, lemmatization, document matrix, tokenization"
 #weight: 4
 #date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -13,17 +13,19 @@ aliases:
 
 ## Overview
 
-Text mining is all about deriving insights from unstructured text data such as social media posts, consumer reviews and newspaper articles.
+In this building block, you will learn the essential steps of text pre-processing in R. You will use the 'tm' package and create a corpus, the main structure for managing text documents, to then conduct a range of text preprocessing tasks. These steps will allow you to transform raw text into a more structured and suitable form for analysis. Finally, you will explore the process of visualizing and analyzing text data using term-document matrices and word clouds.
+
+## Introduction
+
+Text mining is all about deriving insights from unstructured text data such as social media posts, consumer reviews, and newspaper articles.
 The ultimate goal is to turn a large collection of texts, a corpus, into insights that reveal important and interesting patterns in the data.
-This could include either computing sentiment of text or inferring the topic of a text among other common tasks.
+This could include either computing the sentiment of a text or inferring the topic of a text among other common tasks.
 
 Before we can move into the analysis of text, the unstructured nature of the data means there is a need to pre-process the raw text to transform it to provide some additional structure and clean the text to make it more amenable for further analysis. To illustrate some common pre-processing steps we will take some data on [Amazon reviews](https://www.kaggle.com/datasets/bharadwaj6/kindle-reviews) and use the `tm package` in R to clean up the review texts.
 
-
+In the GitHub repository linked below you can find the full R script `text_cleaning.R` which is used as a reference during this building block. We will cover the most relevant code snippets within it. However, we strongly recommend that you review the full script and keep it on hand while following the building block so you can replicate the presented results and get a comprehensive picture of the content.
 
 {{% cta-primary-center "Go to the GitHub Repository now" "https://github.com/srosh2000/book-review-analysis-example" %}}
-
-
 
 
 ## Steps for pre-processing text data
@@ -82,11 +84,11 @@ The `tm` package has several built-in transformation functions that enable pre-p
 
 This procedure might include (depending on the data) :
 
-- removal of extra spaces
-- lowering case
-- removal of special characters
-- removal of URLs and HTML tags
-- removal of stopwords
+- The removal of extra spaces
+- Lowering case
+- The removal of special characters
+- The removal of URLs and HTML tags
+- The removal of stopwords
 
 #### Lowering case
 
@@ -139,7 +141,7 @@ Stopwords such as “the”, “an” etc. do not provide much of valuable infor
 {{% codeblock %}}
 ```R
 review_corpus<- tm_map(review_corpus, removeWords, stopwords("english"))
-# OR: creating and using custom stopwords in adddition
+# OR: creating and using custom stopwords in addition
 mystopwords<- c(stopwords("english"),"book","people")
 review_corpus<- tm_map(review_corpus, removeWords, mystopwords)
 ```
@@ -160,10 +162,10 @@ The process of splitting text into smaller bites called tokens is called **token
 
 - Lemmatization: is the process of identifying the correct base forms of words using lexical knowledge bases. This overcomes the challenge of stemming where words might lose meaning and makes words more interpretable.
 
+In this example we will stick to Lemmatization, which can be conducted in R as shown in the code block below:
+
 {{% codeblock %}}
 ```R
-# Stemming
-review_corpus<- stemDocument(review_corpus, language = "english")
 # Lemmatization
 review_corpus<- tm_map(review_corpus, content_transformer(lemmatize_strings))
 
