@@ -10,7 +10,8 @@ authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:
   - /building-blocks/prepare-your-data-for-analysis/data-preparation/text-preprocessing
 ---
-# Overview
+
+## Overview
 
 Text mining is all about deriving insights from unstructured text data such as social media posts, consumer reviews and newspaper articles.
 The ultimate goal is to turn a large collection of texts, a corpus, into insights that reveal important and interesting patterns in the data.
@@ -27,25 +28,26 @@ Before we can move into the analysis of text, the unstructured nature of the dat
 
 ## Steps for pre-processing text data
 
-### Install tm package
+### Install `tm` package
 
 
 {{% codeblock %}}
+
 ```R
 install.packages("tm")
 library(tm)
 ```
-{{% /codeblock %}}
 
+{{% /codeblock %}}
 
 
 
 ### Step 1: Create Corpus
 
-The `tm-package` uses a so-called Corpus as the main structure for managing text documents. A corpus is a collection of documents and is classified into two types based on how the corpus is stored:
+The `tm` package uses a so-called corpus as the main structure for managing text documents. A corpus is a collection of documents and is classified into two types based on how the corpus is stored:
 
-- Volatile Corpus (VCorpus) -  a temporary R object. This is the default implementation when creating a corpus.
-- Permanent Corpus (PCorpus) -  a permanent object that can be stored outside of R (e.g. in a database)
+- Volatile corpus (VCorpus) -  a temporary R object. This is the default implementation when creating a corpus.
+- Permanent corpus (PCorpus) -  a permanent object that can be stored outside of R (e.g., in a database)
 
 Next, to create the corpus you need to identify the *source* type of the object. *Sources*
 abstract input locations, like a directory, a connection, or simply an **R**
@@ -76,7 +78,7 @@ A data frame source interprets each row of the data frame x as a document. The
 {{% /tip %}}
 
 ### Step 2: Cleaning Raw Data
-The `tm-package` has several built-in transformation functions that enable pre-processing without *too much* code!
+The `tm` package has several built-in transformation functions that enable pre-processing without *too much* code!
 
 This procedure might include (depending on the data) :
 
@@ -100,6 +102,8 @@ review_corpus<- tm_map(review_corpus, content_transformer(tolower))
 
 #### Whitespaces, Punctuation and Numbers
 
+Whitespaces, while ensuring readability, can introduce inconsistencies in text data, necessitating standardized handling. Punctuation, essential for sentence structure, can cause variability in text mining, making its removal or normalization crucial. While numbers offer context, they might divert attention from the main textual content, so their normalization or removal can be beneficial.
+
 {{% codeblock %}}
 ```R
 review_corpus<- tm_map(review_corpus, stripWhitespace) # removes whitespaces
@@ -110,25 +114,28 @@ review_corpus<- tm_map(review_corpus, removeNumbers) # removes numbers
 
 
 #### Special characters, URLs or HTML tags
-For this purpose, you may create a custom function based on your needs and use it neatly under the tm framework.
+For this purpose, you may create a custom function based on your needs and use it neatly under the `tm` framework.
+
 {{% codeblock %}}
 ```R
 # create custom function to remove other misc characters
-text_preprocessing<- function(x)
-{gsub('http\\S+\\s*','',x) # remove URLs
-  gsub('#\\S+','',x) # remove hashtags
-  gsub('[[:cntrl:]]','',x) # remove controls and special characters
-  gsub("^[[:space:]]*","",x) # remove leading whitespaces
-  gsub("[[:space:]]*$","",x) # remove trailing whitespaces
-  gsub(' +', ' ', x) # remove extra whitespaces
-}
+text_preprocessing<- function(x) {
+    gsub('http\\S+\\s*','',x) # remove URLs
+    gsub('#\\S+','',x) # remove hashtags
+    gsub('[[:cntrl:]]','',x) # remove controls and special characters
+    gsub("^[[:space:]]*","",x) # remove leading whitespaces
+    gsub("[[:space:]]*$","",x) # remove trailing whitespaces
+    gsub(' +', ' ', x) # remove extra whitespaces
+  }
+
 # Now apply this function
 review_corpus<-tm_map(review_corpus,text_preprocessing)
 ```
 {{% /codeblock %}}
 
 #### Stopwords
-Stopwords such as “the”, “an” etc do not provide much of valuable information and can be removed from the text. Based on the context, you could also create custom stopwords list and remove them.
+Stopwords such as “the”, “an” etc. do not provide much of valuable information and can be removed from the text. Based on the context, you could also create custom stopwords list and remove them.
+
 {{% codeblock %}}
 ```R
 review_corpus<- tm_map(review_corpus, removeWords, stopwords("english"))
@@ -145,11 +152,11 @@ The process of splitting text into smaller bites called tokens is called **token
 - Stemming: it is the process of getting the root form (stem) of the word by removing and replacing suffixes. However, watch out for *overstemming* or *understemming.*
     - *Overstemming occurs when words are over-truncated which might distort or strip the meaning of the word.*
 
-    E.g. the words “university” and “universe” may be reduced to “univers” but this implies both words mean the same which is incorrect.
+    E.g., the words “university” and “universe” may be reduced to “univers” but this implies both words mean the same which is incorrect.
 
     - *Understemming occurs when two words are stemmed from the same root that is not of different stems.*
 
-    E.g. consider the words “data” and “datum” which have “dat” as the stem. Reducing the words to “dat” and “datu” respectively results in understemming.
+    E.g., consider the words “data” and “datum” which have “dat” as the stem. Reducing the words to “dat” and “datu”, respectively, results in understemming.
 
 - Lemmatization: is the process of identifying the correct base forms of words using lexical knowledge bases. This overcomes the challenge of stemming where words might lose meaning and makes words more interpretable.
 
@@ -164,8 +171,8 @@ review_corpus<- tm_map(review_corpus, content_transformer(lemmatize_strings))
 ```
 {{% /codeblock %}}
 
-### Step 4: Term Document Matrix
-The corpus can now be represented in the form of a Term Document Matrix which represents document vectors in matrix format. The rows of this matrix correspond to the terms in the document, columns represent the documents in the corpus and cells correspond to the weights of the terms.
+### Step 4: Creating the Term-Document Matrix
+The corpus can now be represented in the form of a Term-Document Matrix, which represents document vectors in matrix format. The rows of this matrix correspond to the terms in the document, columns represent the documents in the corpus and cells correspond to the weights of the terms.
 
 {{% codeblock %}}
 ```R
@@ -173,9 +180,11 @@ tdm<- TermDocumentMatrix(review_corpus, control = list(wordlengths = c(1,Inf)))
 ```
 {{% /codeblock %}}
 
-#### Operations on Term-Document Matrices
+## Inspect and Analyze your Textual Data
 
-Imagine you want to quickly view the terms with certain frequency, say at least 50. You can use `findFreqTerms()` for this. `findAssocs()` is another useful function if you want to find associations with at least certain percentage of correlation for certain term.
+### Inspecting Word Frequemcies
+
+Now that we've created the term-document matrix, we can start analyzing our data. For example, imagine you want to quickly view the terms with certain frequency, say at least 50. You can use `findFreqTerms()` for this. `findAssocs()` is another useful function if you want to find associations with at least certain percentage of correlation for certain term.
 
 {{% codeblock %}}
 ```R
@@ -207,7 +216,8 @@ ggplot(df_plot, aes(x = reorder(term, +freq), y = freq, fill = freq)) + geom_bar
 Term-document matrices tend to get very big with increasing sparsity. You can remove sparse terms, i.e., terms occurring only in very few documents. This reduces the matrix dimensionality without losing too much important information. Use the `removeSparseTerms()` function for this.
 {{% /tip %}}
 
-### Step 5: Visualise
+### Visualizing the Data
+
 Let’s build a word cloud that gives quick insights into the most frequently occurring words across documents at a glance. We will use the `wordcloud2` package for this purpose.
 
 {{% codeblock %}}
@@ -226,12 +236,7 @@ wordcloud2(df, color = "random-dark", backgroundColor = "white")
 <figcaption> Wordcloud of the most frequent words </figcaption>
 </p>
 
-{{% tip %}}
-Here are some alternative packages to check out
-- in R: [Quanteda](http://quanteda.io/), [Text2vec](https://text2vec.org/), [Tidytext](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html) and [Spacyr](https://cran.r-project.org/web/packages/spacyr/vignettes/using_spacyr.html)
-- in Python: [NLTK](https://www.nltk.org/), [Gensim](https://radimrehurek.com/gensim/), [TextBlob](https://textblob.readthedocs.io/en/dev/#), [spaCy](https://spacy.io/), and [CoreNLP](https://stanfordnlp.github.io/CoreNLP/)
-
-{{% /tip %}}
+That's it! You're now equipped with the basics in doing text analysis using the `tm` package in R!
 
 {{% summary %}}
 - Text mining extracts insights from unstructured text data and the main goal is to transform a corpus of texts into interpretable patterns and valuable insights.
@@ -249,3 +254,13 @@ Here are some alternative packages to check out
 - Visualise the processed text data using Word Clouds which provide a quick overview of frequent words.
 
 {{% /summary %}}
+
+{{% tip %}}
+__Curious for more?__
+
+Here are some alternative packages to check out!
+
+- in R: [Quanteda](http://quanteda.io/), [Text2vec](https://text2vec.org/), [Tidytext](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html) and [Spacyr](https://cran.r-project.org/web/packages/spacyr/vignettes/using_spacyr.html)
+- in Python: [NLTK](https://www.nltk.org/), [Gensim](https://radimrehurek.com/gensim/), [TextBlob](https://textblob.readthedocs.io/en/dev/#), [spaCy](https://spacy.io/), and [CoreNLP](https://stanfordnlp.github.io/CoreNLP/)
+
+{{% /tip %}}
