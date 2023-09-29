@@ -81,7 +81,7 @@ In the top right corner, you'll see a real-time **pricing summary**. As you adju
 
 {{% /tip %}}
 
-#### Bost disk settings
+#### Boot disk settings
 
 As we scroll down through the configuration process, we'll skip to [Boot Disk settings](https://cloud.google.com/compute/docs/disks). 
 
