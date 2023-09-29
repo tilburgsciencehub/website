@@ -56,9 +56,13 @@ This code will tell GCSFuse to synchronize your new directory with your bucket. 
 
 ## Import large files: Use Google Colab as a bridge
 
+<<<<<<< HEAD
 The transfer and management of large files can be challenging due to extended upload/download durations. Yet, having connected your Google Cloud virtual machine to your storage buckets, you can swiftly transfer files that you already have hosted on **Google Drive** and **GCS Buckets** (And in turn to your virtual machine as well) using **Google Colab** as a bridge. 
 
 This bypasses the need to manually Download/Upload files from Drive to your local machine and then to your cloud instance, potentially saving you significant amounts of time in the process.
+=======
+The transfer and management of large files can be challenging due to extended upload/download durations. Yet, having connected your Google Cloud virtual machine to your storage buckets, you can swiftly transfer files that you already have hosted on **Google Drive** and **GCS Buckets** (and in turn to your virtual machine as well) using **Google Colab** as a bridge. This bypasses the need to manually Download/Upload files from Drive to your local machine and then to your cloud instance, potentially saving you significant amounts of time in the process.
+>>>>>>> origin/config-GCP-VM-part2
 
 It is suggested to utilize the same account for all Google tools. Doing so simplifies the authentication process and prevents potential permission issues, fostering a more seamless workflow.
 
