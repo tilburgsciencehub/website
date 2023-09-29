@@ -1,12 +1,13 @@
 ---
-title: "Export a Python environment with Docker and share it through Docker Hub" 
+title: "Export a Python Environment with Docker and Share It Through Docker Hub" 
 description: "Learn how to export a containerized python environment with Docker, and make it available to your collaborators in Docker Hub "
 keywords: "Docker, environment, Python, Jupyter notebook, Docker-Hub, Containerization, Environment Setup, Collaboration, Reproducible Environment"
 weight: 2
 author: Diego Sanchez Perez
 authorlink: "https://www.linkedin.com/in/diego-s%C3%A1nchez-p%C3%A9rez-0097551b8/"
 draft: false
-date: 2022-02-02T17:05:00+01:00 #updated 15-09-2023
+date: 2022-02-02T17:05:00+01:00
+updated: 2023-09-15T00:00:00+01:00
 aliases: 
   - /export/python-environment-with-docker
 
@@ -17,13 +18,17 @@ aliases:
 
 Avoid headaches regarding compatibility and installations by sharing your project's environment as a Docker image that can be easily imported by your peers and collaborators from Docker Hub and deployed in minutes. 
 
-In this building block, you will learn how to export a Python-based project environment with Docker (i.e containerize) in a few simple steps. Along the way you will be provided with templates to create the two key elements of this process: 
+In this building block, we'll walk you through the steps to containerize a Python-based project environment using Docker. Once set up, you'll be able to launch a Jupyter Notebook within this containerized environment. This is especially handy when you want to share a sophisticated environment (e.g., with certain software and packages installed) with collaborators, allowing them to dive right into a familiar Jupyter Notebook workspace.
+
+Along the way you will be provided with templates to create the two key elements of this process: 
 
 1. A `dockerfile`, containing the instructions to replicate your environment as a Docker image. 
 
 2. A `docker-compose.yml` file, containing a series of aditional instructions to allow you to easily interact with your containerized environment throguh Jupyter Notebook and retrieve files from it. 
   
-Additionally, you will be introduced to Docker Hub, a platform that will allow you to easily share you project's environment image, making it readily available to anyone willing to replicate it.
+Additionally, you will 
+- discover Docker Hub, a platform to easily share you project's environment image, making it readily available to anyone willing to replicate it, and
+- use docker volumes - a file storage that is *sychronized* between your container and your computer's file system (so that the files you generate are actually accessible to you later!).
 
 {{% tip %}}
 **New to Docker?**
@@ -176,7 +181,7 @@ docker push <your_image_name>:<tag>
 
 Et voilà! Your image is now on Docker Hub ready to be employed by other users. 
 
-## Docker pull
+## Getting your image from Docker Hub
 
 At this point when your environment's image is already available on Docker Hub, getting it will be as simple as using the `docker pull` command to tell docker that you want to import a given image from a Docker Hub repository. The resulting command line sentence to run will be:
 
