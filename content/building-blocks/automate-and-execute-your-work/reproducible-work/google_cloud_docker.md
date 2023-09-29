@@ -1,12 +1,13 @@
 ---
 title: "Import and run a project environment with Docker on Google Cloud" 
 description: "Learn how to import a containerized project environment through Docker on a Google Cloud virtual machine."
-keywords: "Docker, environment, Python, Jupyter notebook, Google Cloud, cloud ,cloud computing, cloud storage, Jupyter, docker-compose, dockerfile, Containerization, Virtual Machine"
+keywords: "Docker, environment, Python, Jupyter notebook, Google Cloud, cloud, cloud computing, cloud storage, Jupyter, docker-compose, dockerfile, Containerization, Virtual Machine"
 weight: 2
-author: "Diego Sanchez Perez"
+author: "Diego Sanchez Perez, Fernando Iscar"
 authorlink: "https://www.linkedin.com/in/diego-s%C3%A1nchez-p%C3%A9rez-0097551b8/"
 draft: false
 date: 2022-10-11T22:01:14+05:30
+updated: 2023-09-29
 aliases: 
   - /run/jupyter-on-cloud
 
