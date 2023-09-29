@@ -1,6 +1,6 @@
 ---
 title: "Cheatsheet for LaTeX Math Commands"
-description: "Download our latex math cheat sheet and learn the most important AMS-Math LaTeX commands. View our overview for mathematical expressions, greek letters and more"
+description: "Download our LaTeX math cheat sheet and learn the most important AMS-Math LaTeX commands. View our overview for mathematical expressions, Greek letters and more"
 keywords: "ams, math, latex, tex, cheatsheet, cheat sheet, commands, latex math cheat sheet"
 weight: 105
 #date: 2020-11-11T22:02:51+05:30
@@ -14,11 +14,13 @@ aliases:
 
 ## Overview
 
-This is a quick overview of the main {{< katex >}}\LaTeX{{< /katex >}} commands to render mathematical expressions.
+{{< katex >}}\LaTeX{{< /katex >}}, a powerful typesetting system, is widely used for creating professional documents with complex formatting, especially in academic domains. It empowers you to convey complex mathematical ideas with precision.
 
-We also provide a compiled PDF version of this cheatsheet.
+This cheat sheet serves as your guide to mastering the main {{< katex >}}\LaTeX{{< /katex >}} commands that allow you to render mathematical expressions in your documents. 
 
-{{% cta-primary "Download the PDF Cheatsheet" "https://github.com/manuelemacchia/math-latex/raw/master/amsmath.pdf" %}}
+We also provide a compiled PDF version of this cheat sheet. Print it out or save it on your computer ensuring that you have easy access whenever you require it!
+
+{{% cta-primary "Download the PDF Cheat Sheet" "https://github.com/manuelemacchia/math-latex/raw/master/amsmath.pdf" %}}
 
 ## Commands
 
