@@ -1,5 +1,5 @@
 ---
-title: "Data Visualization Theory and Best Practices"
+title: "Data Visualization Best Practices"
 description: "An introduction to data visualization: data encoding, marks and channels, chart types, elements of a chart, best practices to visualization"
 keywords: "data, visualization, introduction, theory, encoding, chart, types, elements, marks, channels"
 date: 2023-07-18
@@ -10,14 +10,15 @@ aliases:
   - /visualize/data
   - /data/encoding
   - /choose/chart
-  - /best/practices
 ---
 
-## Introduction and Learning Goals
+## Overview
 
-The process of analyzing data does not stop after obtaining the requested statistics. Simply having some numbers or datasets could not transmit much information, but mapping them into charts and figures can help tell a story. Data visualization facilitates making comparisons, following trends and distributions or identifying outliers. It can also speed up the decision making process, as it makes it easier for the reader to comprehend the information, especially if it is a vast amount of complicated data. 
+The process of simply preparing your data set and creating some summary statistics often isn't enough for understanding your data well. However, mapping some statistics into charts and figures can help you tell a compelling story!
 
-In this building block we go through the theory of data visualization, describe the most common chart types and conclude with best practices for plotting.
+Data visualization facilitates making comparisons, understanding trends or identifying outliers. Visualization also speeds up the decision making process, as it makes it easier for you (or your reader) to comprehend the information, especially if it is a vast amount of complicated data. 
+
+In this building block, we go through the theory of data visualization, describe the most common chart types and conclude with best practices for plotting.
 
 ## Theory of Data Visualization
 
@@ -48,7 +49,7 @@ Several aspects should be considered when constructing a data visualization:
 The chart below contains all necessary elements for a proper visualization.
 
 <p align = "center">
-<img src = "../../img/chart_elements.png" width=450">
+<img src = "../img/chart_elements.png" width=450">
 </p>
 
 First of all, a chart needs to have a **coordinate system** , **axes** and **scaling** of data. In the above example there are two coordinates, the X and Y axes representing months on the horizontal axis and financial indicators on the primary vertical axis. Additionally, it has a secondary vertical axis showing the ROI. 
@@ -57,7 +58,6 @@ A complete chart also has a **legend** for providing mapping information, **axes
 
 ### Chart Types
 
-
 There is a vast range of chart types that could be used to visualize data, however in this building block we describe 7 of the most common ones, as they cover most of the visualization goals.
 
 #### 1. Scatterplot
@@ -65,7 +65,7 @@ There is a vast range of chart types that could be used to visualize data, howev
 The scatterplot can represent data with 2 quantitative attributes in horizontal and vertical channel positions. The used marks are points and the purposes of a scatterplot are to find trends or outliers, visualize a distribution or correlations, or identify clusters. 
 
 <p align = "center">
-<img src = "../../img/scatterplot.png" width=350">
+<img src = "../img/scatterplot.png" width=350">
 </p>
 
 #### 2. Bar plot
@@ -73,7 +73,7 @@ The scatterplot can represent data with 2 quantitative attributes in horizontal 
 The bar plot can visualize one categorical and one quantitative attribute. It uses bars (thick lines) as marks and the used channels are length (to express quantitative value) and spatial regions (one per mark). These can be separated horizontally and aligned vertically (or the other way around) and are ordered by attribute values (either by label/alphabetical or by attribute length). The task of the bar chart is to compare or lookup values. 
 
 <p align = "center">
-<img src = "../../img/bar_chart.png" width=450">
+<img src = "../img/bar_chart.png" width=450">
 </p>
 
 #### 3. Stacked bar chart
@@ -81,7 +81,7 @@ The bar plot can visualize one categorical and one quantitative attribute. It us
 The stacked bar chart can visualize two categorical attributes and one quantitative attribute. As a mark it uses a vertical stack of line marks. For the channels the stacked bar chart uses length and color hue, as well as spatial regions to represent data. Its task is again to compare and lookup values, and additionally, it can inspect part-to-whole relationships. 
 
 <p align = "center">
-<img src = "../../img/stacked_bar.png" width=350">
+<img src = "../img/stacked_bar.png" width=350">
 </p>
 
 #### 4. Line chart
@@ -89,7 +89,7 @@ The stacked bar chart can visualize two categorical attributes and one quantitat
 The line chart represents 2 quantitative attributes and uses points with line connections between them as marks. The channels are aligned lengths to express quantitative value and are separated and ordered by attributes into horizontal regions. The task of the line chart is to find trends. 
 
 <p align = "center">
-<img src = "../../img/line_chart.png" width=400">
+<img src = "../img/line_chart.png" width=400">
 </p>
 
 #### 5. Heatmap
@@ -97,7 +97,7 @@ The line chart represents 2 quantitative attributes and uses points with line co
 The heatmap can visualize 2 categorical attributes, usually in order, and one quantitative attribute. It uses areas as marks in the shape of a matrix indexed by the 2 categorical attributes. The channel is color hue ordered by the quantitative attribute. The purpose of the heatmap is to find clusters and outliers.
 
 <p align = "center">
-<img src = "../../img/heatmap.png" width=400">
+<img src = "../img/heatmap.png" width=400">
 </p>
 
 #### 6. Histogram
@@ -105,7 +105,7 @@ The heatmap can visualize 2 categorical attributes, usually in order, and one qu
 The histogram is used to find the distribution or shape inside some data. It visualizes the frequency of an attribute from a table by using bins and counts. The bins are intervals in which the range of values is divided into, and counts are the frequencies of the values inside each interval. 
 
 <p align = "center">
-<img src = "../../img/histogram.png" width=350">
+<img src = "../img/histogram.png" width=350">
 </p>
 
 #### 7. Box plot
@@ -118,19 +118,33 @@ The box plot is also used to find the distribution of the data. It maps the attr
 Any values outside the limits are considered outliers. 
 
 <p align = "center">
-<img src = "../../img/box_plot.png" width=350">
+<img src = "../img/box_plot.png" width=350">
 </p>
 
-## Best Practices
+## Best Practices for Data Visualization
+
+We have compiled a few best practices geared towards academic publishing.
 
 {{% tip %}}
 
-1. Design the charts for color deficiency - the safest color combination is blue-orange
-2. Use position for the most important aspects to visualize and color for categories
-3. Limit the amount and detail of data in a visualization
-4. Default formats are easier to read
-5. Consider the reader's context - representation formats for different devices/printing and directional orientation for reading
-6. Always include descriptive titles, axes labels and units (if applicable), legends and captions
-7. Choose appropriate ranges for the axes and appropriate font sizes
+1. **Monochrome Compatibility**: Prioritize monochrome (black and white) designs for figures, especially when unsure of the printing format. If the publication medium allows for color, use a distinct and color-blind friendly palette. Tools like [ColorBrewer](https://colorbrewer2.org) can assist in choosing appropriate colors.
+ 
+2. **Simplicity and Clarity**: Don't overcrowd the visualization. It's better to have multiple clear visualizations than one cluttered and hard-to-decipher chart. Each visualization should convey a singular, focused message.
+
+3. **Stick to Recognizable Formats**: While innovative charts can be captivating, academic readers expect clarity and familiarity (such as the common formats shown above).
+
+4. **Detailed Annotation**: Every visualization should self-contain all necessary information:
+    - **Title**: A succinct description of what the visualization represents.
+    - **Axes Labels**: Clearly labeled with variables being represented.
+    - **Units**: Always specify the units of measurement.
+    - **Legends**: Ensure that any symbols, colors, or patterns used are clearly explained.
+    - **Captions**: Provide a brief overview or important insight, especially if there's a key takeaway or if the visualization requires additional context.
+
+5. **Scaling and Typography**: 
+    - **Axes Ranges**: Choose ranges that highlight the data's key aspects without misrepresenting any variability or skewing perception.
+    - **Font Size & Style**: Fonts should be legible even when the figure is downsized for print. Avoid decorative fonts; stick to clean, universally-readable fonts like Arial, Helvetica, or Times New Roman.
+
+Remember, the primary goal of data visualization in academic papers is clarity and effective communication of the research findings. Your visualization should aid comprehension rather than introduce confusion.
+
 
 {{% /tip %}}
