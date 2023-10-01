@@ -2,8 +2,8 @@
 title: "Synthetic control for impact evaluation"
 description: "Use Synthetic control to evaluate impacts of quasi-experiments"
 keywords: "model, Synthetic Control, RD, impact evaluation, inference, quasi-experiment, abadie"
-weight: 3
-#date: 2022-05-16T22:02:51+05:30
+weight: 101
+date: 2023-10-01T01:00:00+01:00
 draft: false
 aliases:
   - /impact/syntCont
@@ -79,7 +79,7 @@ The code uses data from [Abadie, Diamond and Hainmueller](https://www.nber.org/p
 library(Synth)
 	
 # Open the dataset
-url_synth=url("https://github.com/tilburgsciencehub/website/blob/9a0409c87948eb2cc523f9233b8e622574f55cac/content/building-blocks/analyze-data/regressions/synth_smoking.Rdata?raw=true")
+url_synth=url("https://github.com/tilburgsciencehub/website/blob/9a0409c87948eb2cc523f9233b8e622574f55cac/content/building-blocks/analyze-data/regressions-paneldata/synth_smoking.Rdata?raw=true")
 load(url_synth)
 
 # Data Preparation to pass the dataset to the correct format

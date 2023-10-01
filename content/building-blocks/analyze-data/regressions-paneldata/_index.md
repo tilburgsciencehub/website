@@ -1,5 +1,5 @@
 ---
 draft: false
 title: "Regressions With Panel Data"
-weight: 1
+weight: 20
 ---
