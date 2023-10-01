@@ -8,17 +8,205 @@ author: "Niels Rahder"
 authorlink: "https://www.linkedin.com/in/nielsrahder" 
 ---
 
-# Overview 
 
-## What is Extreme gradient boosting
+## Overview
 
-Extreme gradient boosting is an highly effective and widely used machine learning prediction model developed by Chen and Guestrin in their 2016 paper [XGBoost: A Scalable Tree Boosting System](https://dl.acm.org/doi/10.1145/2939672.2939785). 
+Extreme gradient boosting is an highly effective and widely used machine learning prediction model, developed by [Chen and Guestrin 2016](https://dl.acm.org/doi/10.1145/2939672.2939785). 
 
-The method has proven to be effective in working with large and complex datasets and was used to address a wide range of problems (e.g., at the KDDCup in 2015, XGBoost was used by every team ranked in the top 10). The algorithm works by using gradient boosting to build a collection of trees, which works by iteratively adding new trees to the collection. The goal of adding an additional tree is to correct the errors made by previous trees. You can see it as taking very small steps towards "the ultimate truth". Additionally, the algorithm makes use of a regularized model to prevent overfitting. 
+The method has proven to be effective in working with 
+- large and complex datasets,  and 
+- was used to address a wide range of problems (for example, at the KDDCup in 2015, XGBoost was used by every team ranked in the top 10!)
 
-## How does it work 
+The algorithm works by 
+- gradient boosting to build a collection of trees (i.e., iteratively adding new trees to the collection to correct the errors made by previous trees - think of it as taking very small steps towards the "ultimate truth"), and 
+- regularization to prevent overfitting. 
 
-First, the algorithm start by calculating the residual values for each data point, based on an initial estimate. For instance, given the variables `age` and `degree`, we compute the residual values relative to `salary`, for which the value `49` will serve as our initial estimation:
+## Using `XGBoost` in R
+
+You can get started by using the [`xgboost` package in R](https://cran.r-project.org/web/packages/xgboost/xgboost.pdf). 
+
+In what follows, we use [this dataset from Kaggle](https://www.kaggle.com/datasets/ashydv/housing-dataset) for illustration.
+
+```r
+# Load necessary packages
+library(xgboost)
+library(tidyverse)
+library(caret)
+
+# Open the dataset 
+data <- read.csv("../all_v2.csv", nrows = 7500)
+
+#remove columns
+data <- data %>%
+  select(-date, -time, -geo_lat, -geo_lon, -region)
+```
+{{% warning %}}
+XGBoost only works with numeric vectors, so you need to one-hot encode you data.
+
+{{% /warning %}}
+
+```r
+
+data <- data %>%
+  mutate(building_type_1 = as.integer(building_type == 1),
+        building_type_2 = as.integer(building_type == 2),
+        building_type_3 = as.integer(building_type == 3),
+        building_type_4 = as.integer(building_type == 4),
+        building_type_5 = as.integer(building_type == 5)) %>%
+  select(-building_type)
+```
+
+Next, we separate the target variable `price` from the input variables. Subsequently, the data is divided into training and testing sets using an 80/20 split ratio. Finally the data is converted into separate data matrices in order for `XGBoost` to use it.
+
+```r
+#separate target variable (price) from input variables
+X <- data %>% select(-price)  
+Y <- data$price 
+
+set.seed(123)
+
+train_indices <- sample(nrow(data), 0.8 * nrow(data))
+X_train <- X[train_indices, ]
+y_train <- Y[train_indices]
+X_test <- X[-train_indices, ]
+y_test <- Y[-train_indices]
+
+dtrain <- xgb.DMatrix(data = as.matrix(X_train), label = y_train)
+dtest <- xgb.DMatrix(data = as.matrix(X_test), label = y_test)
+```
+
+Let us now set up some hyperparameters. We are going to conduct a grid search later for optimizing them!
+
+```r
+params <- list(
+  max_depth = 4,  # Limit the tree depth
+  min_child_weight = 1, 
+  gamma = 1,
+  eta = 0.1, 
+  colsample_bytree = 0.8, 
+  objective = "reg:squarederror", # Set the objective for regression
+  eval_metric = "rmse", # Use RMSE for evaluation
+  nrounds = 100 
+)
+
+```
+
+We can now pass the parameters to the command `xgb.train` to train the model on the `dtrain` data!
+
+```r
+xgb_model <- xgb.train(
+  params = params,
+  data = dtrain,
+  nrounds = params$nrounds, 
+  early_stopping_rounds = 20, # stop iteration when there test set does not improve for 20 rounds
+  watchlist = list(train = dtrain, test = dtest),
+  verbose = 1 #print progress to screen
+)
+
+```
+
+Finally, let us make some predictions on the new data set.
+
+```r
+predictions <- predict(model, newdata = dtest)
+
+```
+
+{{% tip %}}
+You can also use objective = `binary:logistic` for classification.
+{{% /tip %}}
+
+## Hyperparameter optimization using grid search 
+Selecting the correct hyperparameter selection can prove to be quite a time-consuming task. Fortunately, there exists a technique in the form of grid search that can help alleviate this burden. 
+
+Using a grid search entails the usage of a predefined range encompassing potential hyperparameters that are subject to exploration. Following this, the process systematically traverses through these specified options, resulting in the identification of the configuration that offers the highest degree of optimization. 
+
+Next, we make use of a 5-fold cross validation in order to robustly assess the models performance across different subsets of the data. Moreover, to expedite the overall procedure, parallel processing is used, enabling (when possible) simultaneous computation and thus acceleration of the analysis. 
+
+```r
+ctrl <- trainControl(
+  method = "cv",
+  number = 5,  # 5-fold cross-validation
+  verboseIter = TRUE, # print progress messages 
+  allowParallel = TRUE 
+)
+```
+
+Following which we define the hyperparameter grid 
+
+```r
+hyper_grid <- expand.grid(
+  nrounds = c(100, 200),
+  max_depth = c(3, 6, 8),
+  eta = c(0.001, 0.01, 0.1),
+  gamma = c(0, 0.1, 0.5),
+  colsample_bytree = c(0.6, 0.8, 1),
+  min_child_weight = c(1, 3, 5),
+  subsample = c(1)
+)
+
+```
+In order to run the grid search we run the following code. With `X` and `Y` representing the input features and the target variable, respectively. 
+
+```r
+# Perform grid search
+xgb_grid <- train(
+  X, Y,
+  method = "xgbTree", # specify that xgboost is used
+  trControl = ctrl, 
+  tuneGrid = hyper_grid, 
+  metric = "RMSE" # specify the evaluation method
+)
+
+# Print the best model
+print(xgb_grid$bestTune)
+```
+
+from which the output is: 
+
+|           | **nrounds** | **max_depth** | **eta** | **gamma** | **colsample_bytree** | **min_child_weight** | **subsample** |
+| --------- | ---------- | ------------- | ------- | --------- | -------------------- | ------------------- | -------------- |
+| 679   | 100        | 3             | 0.1     | 0         | 1                    | 3                   | 1              |
+
+indicating the following: 
+- `nrounds ` = 100 means that the training process will involve 100 boosting rounds or iterations. 
+- The value of 3 for `max_depth` means that the maximum depth of each decision tree in the ensemble was limited to 3 levels.
+- `eta` = 0.1 indicates that a relatively small learning rate was applied making the model learn slow (but steady!)
+- the value of 0 for `gamma` means that there was no minimum loss reduction requred to make a further split. In other words, the algorithm could split nodes even if the split did't lead to a reduction in the loss function. 
+- `colsample_bytree` = 1 indicated that all avalable features are considered during training
+- a new split in a tree node was required to have a minimum sum of instance weights of 3, as indicated by `min_child_weight`
+- the full `subsample` was used
+
+for the full set of combinations the command below can be used. 
+```r
+print(xgb_grid$results)
+```
+
+This will also return all indicators like 
+- RMSE
+- Rsquared 
+- MAE
+- RMSESD
+- RsquaredSD
+- MAESD
+
+## Visualization
+
+In order to visualize the created tree (using the hyperparameters found in the grid search), let's run the next line of code:
+
+```r
+xgb.plot.multi.trees(feature_names = names(data), 
+                     model = xgb_model) #the size of this plot can be adjusted by limiting the max_depth varibale
+```
+
+<p align = "center">
+<img src = "../img/tree_plot.png" width="400">
+</p>
+
+{{% tip hint %}}
+__Under the hood: How does XGboost work?__
+
+The algorithm start by calculating the residual values for each data point, based on an initial estimate. For instance, given the variables `age` and `degree`, we compute the residual values relative to `salary`, for which the value `49` will serve as our initial estimation:
 
   | **Salary**  | **age** | **degree** | **Residual** |
   | --------- | ---------- | --------- | --------- |
@@ -170,179 +358,5 @@ The tree is pruned when the gain value - gamma < 0 (then the branch is removed).
 
 <br> 
 
-## Working with XGBoost in R
-
-For the full package documentation click [here](https://cran.r-project.org/web/packages/xgboost/xgboost.pdf). The following [dataset]( https://www.kaggle.com/datasets/ashydv/housing-dataset) from Kaggle is used. 
-
-For working with the algorithm you can download the specified package `xgboost` with the following command in R. 
-
-```{r]
-# Load necessary packages
-library(xgboost)
-library(tidyverse)
-library(caret)
-
-# Open the dataset 
-data <- read.csv("../all_v2.csv", nrows = 7500)
-
-#remove columns
-data <- data %>%
-  select(-date, -time, -geo_lat, -geo_lon, -region)
-```
-{{% warning %}}
-XGBoost only works with numeric vectors, so you need to one-hot encode you data
-{{% /warning %}}
-
-```
-data <- data %>%
-  mutate(building_type_1 = as.integer(building_type == 1),
-         building_type_2 = as.integer(building_type == 2),
-         building_type_3 = as.integer(building_type == 3),
-         building_type_4 = as.integer(building_type == 4),
-         building_type_5 = as.integer(building_type == 5)) %>%
-  select(-building_type)
-```
-
-In the code below the target variable `price` is separated from the input variables. Subsequently, the data is divided into training and testing sets using an 80/20 split ratio. Finally the data is converted into separate data matrices in order for `XGBoost` to be able to work with it. 
-
-``` 
-#separate target variable (price) from input variables
-X <- data %>% select(-price)  
-Y <- data$price 
-
-set.seed(123)
-
-train_indices <- sample(nrow(data), 0.8 * nrow(data))
-X_train <- X[train_indices, ]
-y_train <- Y[train_indices]
-X_test <- X[-train_indices, ]
-y_test <- Y[-train_indices]
-
-dtrain <- xgb.DMatrix(data = as.matrix(X_train), label = y_train)
-dtest <- xgb.DMatrix(data = as.matrix(X_test), label = y_test)
-```
-
-Following the parameters (as discussed above) need to be defined.
-
-```
-params <- list(
-  max_depth = 4,  # Limit the tree depth
-  min_child_weight = 1, 
-  gamma = 1,
-  eta = 0.1, 
-  colsample_bytree = 0.8, 
-  objective = "reg:squarederror", # Set the objective for regression
-  eval_metric = "rmse", # Use RMSE for evaluation
-  nrounds = 100 
-)
-
-```
-And passed to the command `xgb.train` to train the model on the `dtrain` data
-```
-xgb_model <- xgb.train(
-  params = params,
-  data = dtrain,
-  nrounds = params$nrounds, 
-  early_stopping_rounds = 20, # stop iteration when there test set does not improve for 20 rounds
-  watchlist = list(train = dtrain, test = dtest),
-  verbose = 1 #print progress to screen
-)
-
-```
-
-following which we make predictions on the new data 
-
-```
-predictions <- predict(model, newdata = dtest)
-
-```
-
-{{% tip %}}
-You can also use objective = `binary:logistic` for classification
 {{% /tip %}}
-
-## grid search 
-Selecting the correct hyperparameter selection can prove to be quite a time-consuming task. Fortunately, there exists a technique in the form of grid search that can help alleviate this burden. 
-
-Using a grid search entails the usage of a predefined range encompassing potential hyperparameters that are subject to exploration. Following this, the process systematically traverses through these specified options, resulting in the identification of the configuration that offers the highest degree of optimization. 
-
-In the following code we make use of a 5-fold cross validation in order to robustly assess the models performance across different subsets of the data. Moreover, to expedite the overall procedure parallel processing is harnessed, enabling (when possible) simultaneous computation and thus acceleration of the analysis. 
-
-```
-ctrl <- trainControl(
-  method = "cv",
-  number = 5,  # 5-fold cross-validation
-  verboseIter = TRUE, # print progress messages 
-  allowParallel = TRUE 
-)
-```
-Following which we define the hyperparameter grid 
-
-```
-hyper_grid <- expand.grid(
-  nrounds = c(100, 200),
-  max_depth = c(3, 6, 8),
-  eta = c(0.001, 0.01, 0.1),
-  gamma = c(0, 0.1, 0.5),
-  colsample_bytree = c(0.6, 0.8, 1),
-  min_child_weight = c(1, 3, 5),
-  subsample = c(1)
-)
-
-```
-In order to run the grid search we run the following code. With `X` and `Y` representing the input features and the target variable, respectively. 
-```
-# Perform grid search
-xgb_grid <- train(
-  X, Y,
-  method = "xgbTree", # specify that xgboost is used
-  trControl = ctrl, 
-  tuneGrid = hyper_grid, 
-  metric = "RMSE" # specify the evaluation method
-)
-
-# Print the best model
-print(xgb_grid$bestTune)
-```
-from which the output is: 
-
-|           | **nrounds** | **max_depth** | **eta** | **gamma** | **colsample_bytree** | **min_child_weight** | **subsample** |
-| --------- | ---------- | ------------- | ------- | --------- | -------------------- | ------------------- | -------------- |
-| 679   | 100        | 3             | 0.1     | 0         | 1                    | 3                   | 1              |
-
-indicating the following: 
-- `nrounds ` = 100 means that the training process will involve 100 boosting rounds or iterations. 
-- The value of 3 for `max_depth` means that the maximum depth of each decision tree in the ensemble was limited to 3 levels.
-- `eta` = 0.1 indicates that a relatively small learning rate was applied making the model learn slow (but steady!)
-- the value of 0 for `gamma` means that there was no minimum loss reduction requred to make a further split. In other words, the algorithm could split nodes even if the split did't lead to a reduction in the loss function. 
-- `colsample_bytree` = 1 indicated that all avalable features are considered during training
-- a new split in a tree node was required to have a minimum sum of instance weights of 3, as indicated by `min_child_weight`
-- the full `subsample` was used
-
-for the full set of combinations the command below can be used. 
-```
-print(xgb_grid$results)
-```
-
-This will also return all indicators like 
-- RMSE
-- Rsquared 
-- MAE
-- RMSESD
-- RsquaredSD
-- MAESD
-
-## visualization
-
-In order to visualize the created tree (using the hyperparameters found in the grid search) the following command can be run:
-```
-xgb.plot.multi.trees(feature_names = names(data), 
-                     model = xgb_model) #the size of this plot can be adjusted by limiting the max_depth varibale
-```
-which returns the following image 
-
-<p align = "center">
-<img src = "../img/tree_plot.png" width="400">
-</p>
-
 
