@@ -3,6 +3,7 @@
 <br><br>
 <div class="container mt-4">
 	{{ partial "breadcrumbs.html" . }}
+
 </div>
 <div class="container content px-0 mt-5">
 	<div class="row justify-content-center mx-0">
@@ -47,10 +48,10 @@
 				<script>window.location = "/{{.Section}}"</script>
 				{{ else }}
 				{{ .Content }}
-				{{ if (and (.Params.author) (.Params.authorlink)) }}
+				{{ if .Params.author }}
 				<div class="admonition author">
-					<div class="admonition-content">Contributed by <b><a href="{{ .Params.authorlink }}">{{ .Params.author }}</a></b></div>
-				</div>
+					<div class="admonition-content">Contributed by <b><a href="/contributors/{{ replace (lower .Params.author) " " "_" }}">{{ .Params.author }}</a></b></div>
+				</div>				
 				{{ else }}
 				{{ end }}
 

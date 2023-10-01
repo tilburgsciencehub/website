@@ -9,6 +9,8 @@ aliases:
   - /get/awscli
 ---
 
+## What is AWS
+
 Amazon Web Services (AWS) provides cloud-computing and storage facilities that can be used for research projects. To make optimal use of AWS, you can control AWS resources (e.g., starting computers, downloading data) using a so-called command-line interface.
 
 The AWS command-line interface is a light-weight tool that provides you with a "remote control" to the AWS cloud.
@@ -25,7 +27,7 @@ Note: here, we install AWS CLI version 1, not version 2 (required for backwards-
 
 - Open a new terminal / command line window
 - Type: `aws configure`
-- Enter your login credentials for AWS. Typically, these are provided to you by your research institution or team member.
+- Enter your log-in credentials for AWS. Typically, these are provided to you by your research institution or team member.
 
 ```
 AWS Access Key ID [****************7EPQ]: [enter here]

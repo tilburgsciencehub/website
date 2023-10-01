@@ -10,9 +10,9 @@ aliases:
   - /compare/texteditors
 ---
 
-A good text editor lies at the heart of any serious programmer's toolkit: It can do almost anything and makes you much more productive. The text editors bundled with programming languages, like python's IDLE, are often not the best option (although there may be certain cases where you may want to use them). 
+A good text editor lies at the heart of any serious programmer's toolkit: It can do almost anything and makes you much more productive. The text editors bundled with programming languages, like Python's IDLE, are often not the best option (although there may be certain cases where you may want to use them).
 
-In this building block, we will compare some widely used text editors: **Visual Studio Code (VS Code), Sublime Text, Emacs and Vim**. 
+In this building block, we will compare some widely used text editors: **Visual Studio Code (VS Code), Sublime Text, Emacs and Vim**.
 
 Please download and install the text editor of your choice, along with any necessary packages, and stick with it for a while to get a feel for how it works. Despite a slight learning curve, you'll quickly find yourself wondering why you didn't start using it sooner!
 
@@ -30,7 +30,7 @@ Let's compare them in various aspects:
 <figcaption> VS Code interface </figcaption>
 </p>
 
-On the other hand, *Sublime Text* offers a cleaner and more minimalistic user interface, which can be less distracting. It is also customizable. 
+On the other hand, *Sublime Text* offers a cleaner and more minimalistic user interface, which can be less distracting. It is also customizable.
 
 <p align = "center">
 <img src = "../images/sublimetextinterface.png" width="400">
@@ -49,20 +49,20 @@ The advantage in this aspect depends on your personal preference - whether you p
 
 - **Support**
 
-*VS Code* benefits from a larger user base, extensive documentation, and a vibrant support community. It is likely easier to find tutorials, guides, and answers to questions related to VS Code due to its popularity and active community. *Sublime Text* has its own dedicated user base and documentation, but the community support and available resources may be relatively smaller compared to VS Code. 
+*VS Code* benefits from a larger user base, extensive documentation, and a vibrant support community. It is likely easier to find tutorials, guides, and answers to questions related to VS Code due to its popularity and active community. *Sublime Text* has its own dedicated user base and documentation, but the community support and available resources may be relatively smaller compared to VS Code.
 
 ## Emacs & Vim
 
-Emacs and Vim are powerful text editors designed for efficient and productive editing in a terminal environment. While they may have a steeper learning curve than VS Code and Sublime Text, they offer unique features and capabilities that cater to the needs of experienced users and those who prefer working in a command-line environment. 
+Emacs and Vim are powerful text editors designed for efficient and productive editing in a terminal environment. While they may have a steeper learning curve than VS Code and Sublime Text, they offer unique features and capabilities that cater to the needs of experienced users and those who prefer working in a command-line environment.
 
 ### Emacs/Vim compared to VS Code/Sublime Text
-They are different than VS Code and Sublime Text in their approach: They prioritize efficiency and keyboard-centric workflows. This makes them often favored by advanced users who value speed and precise control over their editing. Key differences of Emacs/Vim with VS Code/Sublime Text are:
+They are different from VS Code and Sublime Text in their approach: They prioritize efficiency and keyboard-centric workflows. This makes them often favoured by advanced users who value speed and precise control over their editing. Key differences between Emacs/Vim and VS Code/Sublime Text are:
 
-- Emacs and Vim are primarily designed as *command-line editors*, while they do offer graphical user interfaces by now. This makes them tend to have a lower memory footprint and require fewer system resources than GIU-based editors VS Code and Sublime Text. This can be advantageous, especially working on older or resource-constrained machines, or machines without a desktop environment.
+- Emacs and Vim are primarily designed as *command-line editors*, while they do offer graphical user interfaces now. This makes them tend to have a lower memory footprint and require fewer system resources than GIU-based editors VS Code and Sublime Text. This can be advantageous, especially working on older or resource-constrained machines, or machines without a desktop environment.
 
 - While Emacs and Vim are available on various platforms, including Windows and macOS, they have a strong presence in the Linux community. Many Linux users appreciate the lightweight nature and versatility of these editors, making them popular choices for programming tasks on Linux systems.
 
-- Emacs and Vim offer more customization options compared to VS Code and Sublime Text. 
+- Emacs and Vim offer more customization options compared to VS Code and Sublime Text.
 
 ### Comparing Emacs and Vim
 <p align = "center">
@@ -75,19 +75,19 @@ They are different than VS Code and Sublime Text in their approach: They priorit
 <figcaption> Vim interface </figcaption>
 </p>
 
-While Emacs and Vim share a similar in goal of use, there are some notable differences:
+While Emacs and Vim share a similar goal of use, there are some notable differences:
 
-- *Vim* is more lightweight and faster than Emacs. For instance, Vim minimizes the number of keystrokes required for certain commands. Emacs, on the contrary, involves pressing multiple keys simultaneously to enable a shortcut for a single function. 
+- *Vim* is more lightweight and faster than Emacs. For instance, Vim minimizes the number of keystrokes required for certain commands. Emacs, on the contrary, involves pressing multiple keys simultaneously to enable a shortcut for a single function.
 
-- While both Emacs and Vim offer extensive customization options, *Emacs* stands out. Through Emacs Lisp, it provides users with the ability to modify almost every aspect of the editor's behavior and appearance. 
+- While both Emacs and Vim offer extensive customization options, *Emacs* stands out. Through Emacs Lisp, it provides users with the ability to modify almost every aspect of the editor's behaviour and appearance.
 
-- *Emacs* is generally considered simpler to learn compared to Vim, because it provides a more natural interface. Vim has different editing modes, which could be unintuitive for beginners.
+- *Emacs* is generally considered simpler to learn compared to Vim because it provides a more natural interface. Vim has different editing modes, which could be unintuitive for beginners.
 
 {{% tip %}}
-Vim has two different editing modes: 
-- Command Mode: In this mode, every character typed is interpreted as a command that performs an action on the text file being edited. You execute commands in this mode, like undo, find and replace and quit, etcetera. To swith from Command to Insert Mode, type `i`.
+Vim has two different editing modes:
+- **Command Mode**: In this mode every character typed is interpreted as a command that performs an action on the text file being edited. You execute commands in this mode, like undo, find and replace and quit etcetera. To switch from Command to Insert Mode, type `i`.
 
-- Insert Mode: In this mode, the entered text is directly inserted into the file. Each character typed is added to the text, allowing you to write or edit content. Pressing the `Escape` key turns off the Insert Mode and returns to the Command Mode.
+- **Insert Mode**: In this mode, the entered text is directly inserted into the file. Each character typed is added to the text, allowing you to write or edit content. Pressing the `Escape` key turns off the Insert Mode and returns to the Command Mode.
 {{% /tip %}}
 
 ## Overview of the key comparing features
@@ -96,12 +96,11 @@ The following table provides the most important differences between the 4 text e
 |      | **VS Code** 	| **Sublime Text** 	| **Emacs** and **Vim** |
 |---	|---	|--- | ---|
 | *Goal of use* |   General-purpose <BR> editor |  General-purpose <BR> editor  |  Command line <BR>power editors    |
-| *Ease of use*	| Beginner-friendly | Some learning, but <BR> user-friendly | Steep learning <BR> curve | 
+| *Ease of use*	| Beginner-friendly | Some learning, but <BR> user-friendly | Steep learning <BR> curve |
 | *Interface* | Feature-rich GUI | Distraction-free GUI | Text-based <BR> interface within <BR> command line <BR> interface |
 | *Customization* | Extension <BR> marketplace | Variety of <BR> packages | Almost infinite <BR> customization <BR> options <BR> (particularly <BR> Emacs) |
 
 
 {{% summary %}}
-The best choice ultimately depends on your personal preferences and requirements since all 4 text editors are available cross-platform (on Windows, macOS or Linux). So, give them a try and see which one is the perfect fit for your programming journey! 
+The best choice ultimately depends on your personal preferences and requirements since all 4 text editors are available cross-platform (on Windows, macOS or Linux). So, give them a try and see which one is the perfect fit for your programming journey!
 {{% /summary %}}
-

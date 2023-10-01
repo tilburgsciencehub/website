@@ -10,11 +10,13 @@ aliases:
   - /install/pandoc
 ---
 
-## Installing Pandoc
+## What is Pandoc 
 
 Pandoc is an extremely useful 'swiss army knife' for converting between different types of markup languages from the command line. For example, it readily builds PDFs with latex, and markdown - both of which are heavily used in academic research.
 
 <!--We do not actively address how to use Pandoc - but we will utilize it in some lessons where we produce PDF, Word or HTML output from plain text files.-->
+
+## Installing Pandoc
 
 ### Linux
 
@@ -24,7 +26,7 @@ Open a terminal window and type
 sudo apt install pandoc
 ```
 
- to install pandoc from the command line
+to install pandoc from the command line
 
 ### Mac
 
@@ -51,10 +53,10 @@ pandoc --version
 The expected output starts with the following information:
 
 ```bash
-pandoc 1.19.2.1
+pandoc 3.1.6.1
 
 ```
-Ensure you have at least version 1.15.1 installed.
+Ensure you have at least version 3.1.6 installed.
 
 {{% warning %}}
 Because we want Pandoc available from the command line (it is by default for Mac and Linux), we again need to update our PATH settings.
