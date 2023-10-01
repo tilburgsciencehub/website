@@ -3,18 +3,17 @@ title: "Validation and Falsification Analysis"
 description: "Validation and falsification analysis methods for the RD designs. Explanation of methods, how to implement them for both continuity and local randomization approaches, how to interpret results"
 keywords: "regression, discontinuity, validation, falsification, analysis"
 date: 2023-07-17
-weight: 7
+weight: 30
 author: "Ana Bianca Luca"
 authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
 aliases:
-  - /regression/discontinuity
   - /validation/analysis
   - /falsification/analysis
 ---
 
 ## Introduction
 
-The main advantage of RD designs is that the treatment assignment rule is known and based on observable features. However, this is not enough to guarantee that the needed assumptions to recover the RD effect are met.
+The main advantage of regression discontinuity (RD) designs is that the treatment assignment rule is known and based on observable features. However, this is not enough to guarantee that the needed assumptions to recover the RD effect are met.
 
 If units know the cutoff, they can actively change the value of their score when they barely miss the treatment, which can threat the validity of the RD design. For this, there are validation methods based on various empirical implications of the unobservable RD assumptions that are expected to hold in most cases. We discuss them next, both from the stand point of continuity-based approach and local randomization approach. 
 
