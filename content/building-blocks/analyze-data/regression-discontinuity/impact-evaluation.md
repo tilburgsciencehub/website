@@ -2,7 +2,7 @@
 title: "Impact evaluation with Difference-in-Differences and Regression Discontinuity"
 description: "Use Difference-in-Differences and Regression Discontinuity Design to evaluate impacts of quasi-experiments"
 keywords: "regression, model, DiD, RD, impact evaluation, inference, quasi-experiment"
-weight: 10
+weight: 1
 date: 2023-10-01T01:00:00+01:00
 draft: false
 aliases:

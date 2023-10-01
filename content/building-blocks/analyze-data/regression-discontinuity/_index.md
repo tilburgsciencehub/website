@@ -1,5 +1,5 @@
 ---
 draft: false
-title: "Causal Impact Analysis"
-weight: 30
+title: "Regression Discontinuity"
+weight: 2
 ---
