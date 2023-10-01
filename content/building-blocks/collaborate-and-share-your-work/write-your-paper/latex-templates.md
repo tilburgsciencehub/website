@@ -1,30 +1,34 @@
 ---
-title: "Get Started With Our LaTeX Templates"
+title: "Get Started With Our LaTeX Thesis Template"
 description: "Download our Latex template for research papers, scientific papers, and more. Get started with the LaTeX template and start writing your thesis"
-keywords: "template, latex, download, start, document, research papers, scientific papers, thesis, example, lay-out"
+keywords: "template, latex, download, start, document, research papers, scientific papers, thesis, example, lay-out, paper, academic, scientific"
 weight: 103
 #date: 2020-11-11T22:02:51+05:30
 draft: false
 aliases:
   - /get/latex-templates
   - /use/latex-templates
+  - /use/latex-template
+  - /latextemplate
+  - /latex-template
+
 ---
 
 ## Overview
 
 [{{< katex >}}\LaTeX{{< /katex >}}](https://www.latex-project.org) is a professional typesetting system widely used in academia because it can produce complex documents - like journal articles, books, technical reports, and similar - with unparalleled output quality.
 
-However, setting up new documents can be time consuming and a bit daunting, especially at the beginning. If you want to get started writing your $\LaTeX$ documents quicker, you can use one of our custom-made templates below.
+However, setting up new documents can be time-consuming and a bit daunting, especially at the beginning. To help you get started writing your $\LaTeX$ document more quickly, we provide you with our custom-made thesis template in this building block. 
 
-## The Basics
+## Master the Basics
 
-If you are new to $\LaTeX$, before attempting to customize any of our templates, you should first learn about its basics and how it works. We've made **[a tutorial that can help you get started with $\LaTeX$](/learn/latex)** and write your very first document within minutes.
-
-In case you haven't installed $\LaTeX$ yet, you can **[follow our installation guide here](/get/latex)**.
+If you're new to $\LaTeX$, it's essential to grasp the basics before customizing templates. 
+- Our tutorial, [Getting started with $\LaTeX$](/learn/latex) will guide you through your very first $\LaTeX$ document within minutes.
+- Haven't installed $\LaTeX$ yet? Follow our [installation guide](/get/latex).
 
 ## Download our Thesis Template
 
-We provide a $\LaTeX$ template to get you started working on your thesis project very quickly.
+We provide a ready-to-use $\LaTeX$ template to get you started working on your thesis project.
 
 {{% cta-primary-center "Download Thesis Template" "../latex-thesis-template.zip" %}}
 

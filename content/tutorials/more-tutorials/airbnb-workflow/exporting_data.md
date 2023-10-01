@@ -5,7 +5,7 @@ indexexclude: "true"
 weight: 40
 title: "Exporting the Data"
 date: 2021-01-06T22:01:14+05:30
-draft: true
+draft: false
 ---
 
 # Exporting Data
@@ -17,7 +17,7 @@ A time-series plot that shows the total number of reviews over time (across all 
 
 * Import the data from `gen/data-preparation/aggregated_df.csv`
 * Convert the `date` column into date format.
-* Group by date and calculate the sum of all reviews across neighourhoods.
+* Group by date and calculate the sum of all reviews across neighborhoods.
 * Plot the chart and store the visualisation.
 
 ![](../images/plot_all.png)

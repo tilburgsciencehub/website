@@ -5,7 +5,7 @@ indexexclude: "true"
 weight: 50
 title: "Automating Workflows"
 date: 2021-01-06T22:01:14+05:30
-draft: true
+draft: false
 ---
 
 # Automating Workflows
@@ -36,7 +36,7 @@ Revisit the [study notes](/automate/project-setup) on *"Automating your Pipeline
 
 
 **Exercise**     
-Swap the `url_listings` and `url_reviews` for a historical dataset of Amsterdam from the year 2016 (gather the links from the "[show archived page](http://insideairbnb.com/get-the-data.html)"). Run `make` again in the root directory.
+Swap the `url_listings` and `url_reviews` for a historical dataset of Amsterdam from the previous year (gather the links from the "[show archived page](http://insideairbnb.com/get-the-data.html)"). Run `make` again in the root directory.
 
 
 Do the same for a recent Airbnb dataset from New York.  If done correctly, it should not take more than a minute (power to automation!). Do your workflows still run as expected? How about the `plot_Amsterdam.R` file? Why is that?

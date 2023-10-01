@@ -102,11 +102,13 @@ In this example, these “functions” are really just blocks of code:
 Functions should be **shy** (see [Code and Data for the Social Sciences](http://web.stanford.edu/~gentzkow/research/CodeAndData.pdf)), that is, so that they operate only on local variables.
 
  - **Problem:** Data in memory is by definition a global variable in Stata.
+ 
  {{% example %}}
 
  From the following code:
    ```
    -Stata-
+
    use x y z using autodata.xls, clear
    prepare_data
    update_variables

@@ -5,7 +5,7 @@ indexexclude: "true"
 weight: 20
 title: "Loading the Data"
 date: 2021-01-06T22:01:14+05:30
-draft: true
+draft: false
 ---
 
 # Loading the Data
@@ -16,14 +16,14 @@ The [data](http://insideairbnb.com/get-the-data.html) underlying Inside Airbnb h
 Information about the host, location, room type, price, reviews, and availability.
 
 *Reviews*  
-The listing ID and the date of the review. More details about the review such as the comment and author can be `reviews.csv.gz.` file but is outside the scope of this tutorial.
+The listing ID and the date of the review. More details about the review such as the comment and author can be seen in the `reviews.csv.gz` file, but it is beyond the scope of this tutorial.
 
 **Exercise**     
 Before we fully automate our workflows, it is imperative to have a close look at the data.
 
-1. Set up a directory structure in accordance with these [guidelines](http://tilburgsciencehub.com/workflow/directories/). It should have a `data`, `gen`, and `src` directory and a `data-preparation` subdirectory in `src` and `gen`.
-2. Manually download the most recent version of `listings.csv` and `reviews.csv` listed on [Inside Airbnb](http://insideairbnb.com/get-the-data.html) and store them in the `data` folder.
-3. Create a data report (like you did in Data Challenge 1) .  
+1. Set up a directory structure in accordance with this [template](https://github.com/rgreminger/example-make-workflow). It should have a `data`, `gen`, and `src` directory and a `data-preparation` subdirectory in `src` and `gen`.
+2. Manually download the most recent version of `listings.csv` and `reviews.csv` listed on [Inside Airbnb](http://insideairbnb.com/get-the-data.html) for Amsterdam and store them in the `data` folder.
+3. Create a data report:  
   * Read the data into R and generate an overview of the data (e.g., summary statistics, report on missingness, number of observations, etc.).
   * Explore interesting relationships in the data.
 
@@ -56,7 +56,7 @@ Say that you want to share your work with others, you could essentially give the
 ```
 download.file(url = url, destfile = filename)
 ```
-4. Run the R script from the command line and test whether it works as expected. First, type `R` in the command line (e.g., Terminal on Mac) and see whether it opens the R command line. If not, you may need to configure a path to the R library as described [here](https://stackoverflow.com/questions/44336345/running-r-from-mac-osx-terminal). Next, run the command below to run the download.R script from the terminal. It downloads the data from Inside Airbnb and stores it into the `data` directory.
+4. Run the R script from the command line and test whether it works as expected. Make sure to open the command line in the folder with the script.  First, type `R` in the command line (e.g., Terminal on Mac or Command Prompt on Windows) and see whether it opens the R command line. If not, you may need to configure a path to the R library as described [here](/building-blocks/configure-your-computer/statistics-and-computation/r/). Next, run the command below to run the download.R script from the terminal. It downloads the data from Inside Airbnb and stores it into the `data` directory.
 
 ```
 R < download.R --save

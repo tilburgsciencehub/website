@@ -2,6 +2,7 @@ name: Edit content request
 description: Improve existing content on Tilburg Science Hub
 title: "[Edit]: "
 labels: ["edit content request"]
+draft: true
 assignees:
   - octocat
 body:

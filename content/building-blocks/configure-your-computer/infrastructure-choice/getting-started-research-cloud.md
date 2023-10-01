@@ -12,7 +12,7 @@ aliases:
   - /get/chromedriver
 ---
 
-## Overview
+## What is Research Cloud
 
 Research Cloud is a highly customizable cloud solution for conducting your research. Think of it as a “free” version of Amazon EC2 or Microsoft Azure machine, but then brought to you under the Dutch National e-Infrastructure. SURF services are only available for researchers affiliated with Dutch institutions (though collaborators from any institution can be added to a project by the primary researcher).
 
@@ -34,11 +34,11 @@ At present, SURF offers year-long “start-up” grants, which can then be renew
 
 {{% warning %}}
 
-Make sure that you’re affiliated with a Dutch research institution to set up the workspace for yourself.
+Make sure that you’re affiliated with a Dutch research institution to set up the work space for yourself.
 
 {{% /warning %}}
 
-1. Fill in the project [application form](https://www.surf.nl/en/research-ict/apply-for-access-to-compute-services). Click on "go to request portal" and login with SURFconext, selecting Tilburg University and using your TiU credentials. You will be transfered to the SURF servicedesk. On the SURF servicedesk look for "apply for access" and select "small NWO request (EINF)."
+1. Fill in the project [application form](https://www.surf.nl/en/research-ict/apply-for-access-to-compute-services). Click on "go to request portal" and login with SURFconext, selecting Tilburg University and using your TiU credentials. You will be transferred to the SURF servicedesk. On the SURF servicedesk look for "apply for access" and select "small NWO request (EINF)."
 
 2. Once your wallet is approved, you will receive an email from SURF to set up your initial workspace. This will look like this:
 
@@ -51,7 +51,6 @@ Make sure that you’re affiliated with a Dutch research institution to set up t
 5. You can access the [workspace via this portal](https://portal.live.surfresearchcloud.nl/). In the case that you cannot login via SSO, you can [create a so-called EduID yourself](https://www.surf.nl/en/eduid-1-digital-identity-for-students/what-is-eduid) and use this as your identity provider for logging in to the Research Cloud Portal.
 
 7. All set up and want to learn more? Then check these detailed instructions on [how to use Research Cloud (including adding data sources)](https://servicedesk.surfsara.nl/wiki/display/WIKI/How+to+get+on+board).
-
 
 ## Advanced use cases
 

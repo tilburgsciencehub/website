@@ -1,62 +1,100 @@
 ---
-title: "Automatically Install R Packages Used in a Project"
-description: "Easily find all the R packages used in a project and automatically install them."
-keywords: "R packages, installation, find, gist"
+title: "How to Automatically Install R Packages Used in a Project"
+description: "Discover how to identify and auto-install the necessary R packages for a given project."
+keywords: "R, R packages, automatic installation, project setup, code automation, dependency management, gist, automation"
 #date: 2021-01-06T22:01:14+05:30
+#updated: 2023-08-11
 weight: 3
 draft: false
 aliases:
   - /install/r-packages
+  - /setup/r-environment
 ---
+
+## Learning goals
+
+- Detect required packages from R scripts and R markdown files.
+- Compare and install any missing packages from the CRAN repository.
 
 ## Overview
 
-You can use the following code to easily find all the the R packages used in a project, and automatically install the uninstalled ones on your machine.
+Configuring the essential R packages for your project can be time-consuming. Rather than installing each package individually, there is a simplified approach. You can identify every R package your project requires and automatically auto-install the ones missing from your system. 
 
-Put this script in the root directory of your R project, and either source it or run it from the command line: ```> Rscript install_packages.R```
+All you need to do is save the code block shown below as an Rscript file in the root directory of your R project, as an example, let's name it *install_packages.R*. 
+
+After that, you can either run it directly or execute the command: `Rscript install_packages.R` in the command line.
+
+{{% warning %}}
+
+Before proceeding, ensure that Rscript.exe is added to your system's PATH environment variable. This ensures that the Rscript command can be recognized and executed from any command prompt or terminal session. If you're unsure how to do this, consult the [R installation guide](https://cran.r-project.org/doc/manuals/r-release/R-admin.html) or your system's documentation on modifying PATH variables.
+
+<p align = "center">
+<img src = "../images/Rscript-not-recognized.png" width="500" style="border:1px solid black;">
+<figcaption> Make sure Rscript.exe command is recognized</figcaption>
+</p>
+{{% /warning %}}
 
 ## Code
 
 {{% codeblock %}}
 ```R
-# find all source code files in (sub)folders
+# Identify all source code files in (sub)folders
 files <- list.files(pattern='[.](R|rmd)$', all.files=T, recursive=T, full.names = T, ignore.case=T)
 
-# read in source code
-code=unlist(sapply(files, scan, what = 'character', quiet = TRUE))
+# Extract the source code
+code = unlist(sapply(files, scan, what = 'character', quiet = TRUE))
 
-# retain only source code starting with library
+# Filter out only source code that starts with the library command
 code <- code[grepl('^library', code, ignore.case=T)]
 code <- gsub('^library[(]', '', code)
 code <- gsub('[)]', '', code)
 code <- gsub('^library$', '', code)
+code <- gsub('["\']', '', code)  # Remove quotation marks
 
-# retain unique packages
-uniq_packages <- unique(code)
+# Retain only unique package names and trim any white spaces
+uniq_packages <- unique(trimws(code))
 
-# kick out "empty" package names
+# Remove any "empty" package names
 uniq_packages <- uniq_packages[!uniq_packages == '']
 
-# order alphabetically
+# Organize the list alphabetically
 uniq_packages <- uniq_packages[order(uniq_packages)]
 
 cat('Required packages: \n')
-cat(paste0(uniq_packages, collapse= ', '),fill=T)
+cat(paste0(uniq_packages, collapse= ', '), fill=T)
 cat('\n\n\n')
 
-# retrieve list of already installed packages
+# Fetch the list of currently installed packages
 installed_packages <- installed.packages()[, 'Package']
 
-# identify missing packages
-to_be_installed <- setdiff(uniq_packages, installed_packages)
+# Check availability of packages for the current R version
+available_packages <- rownames(available.packages(repos = 'https://cloud.r-project.org'))
+to_be_installed <- setdiff(uniq_packages, intersect(uniq_packages, available_packages))
 
-if (length(to_be_installed)==length(uniq_packages)) cat('All packages need to be installed.\n')
-if (length(to_be_installed)>0) cat('Some packages already exist; installing remaining packages.\n')
-if (length(to_be_installed)==0) cat('All packages installed already!\n')
+if (length(to_be_installed) == length(uniq_packages)) {
+  cat('All packages need to be installed.\n')
+} else if (length(to_be_installed) > 0) {
+  cat('Some packages already exist; installing remaining packages.\n')
+} else {
+  cat('All packages installed already!\n')
+}
 
-# install missing packages
-if (length(to_be_installed)>0) install.packages(to_be_installed, repos = 'https://cloud.r-project.org')
+# Install the missing packages
+if (length(to_be_installed) > 0) {
+  install.packages(to_be_installed, repos = 'https://cloud.r-project.org')
+}
 
 cat('\nDone!\n\n')
 ```
 {{% /codeblock %}}
+
+The output should look like this:
+
+<p align = "center">
+<img src = "../images/success-install-R-packages.png" width="300" style="border:1px solid black;">
+<figcaption> Succesfull packages installation</figcaption>
+</p>
+
+## Additional Resources
+- [Efficient ways to install and load R packages](https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/)
+- [Auto-install R packages](https://gist.github.com/mtandon09/4a870bf4addbe46e784059bce0e5d8d6)
