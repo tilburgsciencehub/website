@@ -21,7 +21,7 @@ This building block takes you through the steps to configure Git on a new virtua
 You can access and write data in remote repositories on Github using SSH (Secure Shell Protocol). When you connect via SSH, you authenticate using a private key file on your local machine. To create the SSH key:
 
 - Go to the directory `~/.ssh` using `cd .ssh` command on the terminal and create a ‘config’ file using `touch config` command.
-- Then, create your SSH keys with the `ssh-keygen` command. Click enter to save the key in the default directory specified or mention an alternative directory if you would like to save it elsewhere. Then you may enter a passphrase for your private key which gives an additional layer of security for the private key.
+- Then, create your SSH keys with the `ssh-keygen` command. Click enter to save the key in the default directory specified or mention an alternative directory if you would like to save it elsewhere. Then you may enter a passphrase for your private key, providing an additional layer of security.
 - Now, we have generated two keys that are required for SSH authentication: private key (id_rsa) and the public key (id_rsa.pub).
 
 
@@ -35,7 +35,7 @@ You can access and write data in remote repositories on Github using SSH (Secure
 {{% /tip %}}
 
 ### Step 2: Configure SSH
-If you configure multiple keys for an SSH client and connect to an SSH server, the client can try the keys one at a time until the server accepts one but this process desn’t work because of how Git SSH URLs are structured. Hence, you must configure SSH to explicitly use a specific key file. To do this, edit your `~/.ssh/config` file using the `nano` command and copy-paste the following and press F3 to save.
+If you configure multiple keys for an SSH client and connect to an SSH server, the client can try the keys one at a time until the server accepts one but this process doesn’t work because of how Git SSH URLs are structured. Hence, you must configure SSH to explicitly use a specific key file. To do this, edit your `~/.ssh/config` file using the `nano` command and copy-paste the following and press F3 to save.
 
 {{% codeblock %}}
 ```bash
@@ -80,7 +80,7 @@ Make sure to change the ‘IdentityFile’ to the directory where the id_rsa key
   <source src="../img/config-key-on-git.mov" type="video/mp4">
 </video>
 
-- Lastly, to make sure the key file is readable and writeable only by the owner run `chmod 600 ~/.ssh/config`
+- Lastly, to make sure the key file is readable and writable only by the owner run `chmod 600 ~/.ssh/config`
 - Now, clone the repository using the SSH URL
 
 <video width="500" height="300" controls>

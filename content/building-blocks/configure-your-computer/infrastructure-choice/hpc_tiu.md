@@ -39,7 +39,7 @@ Once your request is approved, you can access HPC TiU:
 {{% warning %}}
 **Scheduled maintenance**
 
-Every **Friday after the 2nd Tuesday of the month** the TiU HPC TiUs will be put offline for maintenance. You will receive an email reminder each month.
+Every **Friday after the 2nd Tuesday of the month** the TiU HPC servers will be put offline for maintenance. You will receive an email reminder each month.
 
 Do **NOT** run your analyses when maintenance is performed, because unsaved work will be lost.
 

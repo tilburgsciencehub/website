@@ -1,31 +1,37 @@
 ---
 title: "Configure a VM with GPUs in Google Cloud" 
 description: "Learn how to configure code in a Google Cloud instance with GPUs, importing heavy files from Google Drive and handling memory issues"
-keywords: "Docker, Environment, Python, Jupyter notebook, Google cloud, Cloud computing, Cloud storage, GPU, Virtual Machine, Instance"
+keywords: "Docker, Environment, Python, Jupyter notebook, Google cloud, Cloud computing, Cloud storage, GPU, Virtual Machine, Instance, Memory"
 weight: 2
 author: "Fernando Iscar"
 authorlink: "https://www.linkedin.com/in/fernando-iscar/"
 draft: false
-date: 2023-06-05
+date: 2023-06-05 #updated 2023-08-23
 aliases: 
   - /run/vm-on-google-cloud
   - /handle/memory-issues
   - /import/heavy-files
 ---
 
-# Gear up your code with Google Cloud VMs
+## Overview
 
-Tired of encountering memory or power constraints while running your code or waiting long due to your machine's limited capacity? In this building block, you'll discover how to create and configure a simple and robust VM instance in **Google Cloud**, designed to overcome these limitations. Say goodbye to obstacles and embrace seamless computing with this comprehensive guide.
+In this building block, you will discover how to create and configure a simple and robust VM instance in [Google Cloud](https://cloud.google.com/?hl=en), designed to overcome memory or power constraints limitations. Say goodbye to obstacles and embrace seamless computing.
+
+With this guide you'll see how to:
+
+- Establish a VM instance in Google Cloud with optimized configurations.
+- Use [Docker](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) and Google Colab for a reproducible environment and efficient file handling.
+- Monitor system resources and implement strategies to handle memory challenges.
 
 ## Initialize a new instance
 
 ### Create a Google Cloud account
 
-First of all, we will need to have a [Google Cloud](https://cloud.google.com/?hl=en) account and a project created in order to create an instance. After this is done, we can go to the welcome page and click on **Create a VM**.
+First of all, we will need to have a Google Cloud account and a project created in order to create an instance. After this is done, we can go to the welcome page and click on **"Create a VM"**.
 
 <p align = "center">
-<img src = "../img/welcome.png" width="700" style="border:1px solid black;">
-<figcaption> Click the button to create a new instance</figcaption>
+<img src = "../img/welcome1.png" width="600" style="border:1px solid black;">
+<figcaption> Click in "Create a VM"</figcaption>
 </p>
 
 ### Set up your Virtual Machine
@@ -40,26 +46,38 @@ You'll encounter four primary machine categories to select from:
 
 - **Memory-optimized:** Specifically designed for memory-intensive workloads, this category offers a higher memory capacity per core compared to other machine families. With the ability to support up to 12 TB of memory, it empowers applications that heavily rely on data storage and manipulation, enabling efficient data processing and analysis.
 
-- **Accelerator-optimized:** The perfect choice for massively parallelized Compute Unified Device Architecture ([CUDA](https://developer.nvidia.com/cuda-zone#:~:text=CUDA%C2%AE%20is%20a%20parallel,harnessing%20the%20power%20of%20GPUs.)) compute workloads, such as machine learning and high-performance computing. This category is specifically tailored for workloads that demand GPU acceleration, ensuring exceptional performance for tasks that require substantial graphical processing power and parallel computing capabilities.
+- **Accelerator-optimized (GPUs):** The perfect choice for massively parallelized Compute Unified Device Architecture ([CUDA](https://developer.nvidia.com/cuda-zone#:~:text=CUDA%C2%AE%20is%20a%20parallel,harnessing%20the%20power%20of%20GPUs.)) compute workloads, such as machine learning and high-performance computing. This category is specifically tailored for workloads that demand GPU acceleration, ensuring exceptional performance for tasks that require substantial graphical processing power and parallel computing capabilities.
 
 {{% warning %}}
 
-Save on unnecessary costs! GPU-enabled VMs are vital for deep learning tasks like language models. However, for other uses, GPUs are redundant and increase expenses. See an example on how suboptimal GPU usage can slow compute time [here](https://rstudio-pubs-static.s3.amazonaws.com/15192_5965f6c170994ebb972deaf18f1ddf34.html).
+**Save on unnecessary costs!** 
+
+GPU-enabled VMs are vital for deep learning tasks like language models. However, for other uses, GPUs are redundant and increase expenses. 
+
+See an example on how suboptimal GPU usage can slow compute time [here](https://rstudio-pubs-static.s3.amazonaws.com/15192_5965f6c170994ebb972deaf18f1ddf34.html).
 
 {{% /warning %}}
 
-A good choice to beat memory hitches and supercharge processing could be going with an **NVIDIA L4 g2-standard-32** machine. It's packed with 128GB of RAM and a GPU, perfect for heavyweight computing, but still cost-friendly.
+A good choice to balance between price and performance could be selecting an **NVIDIA T4 n1-standard-8** machine. It's packed with 30GB of RAM and a GPU. If we would need more vCPUs or memory, we can improve it by selecting a customized version, under the **"Machine type"** header.
 
-While we won't dive into all the configuration bells and whistles here, remember Google Cloud is your playground for [custom-tailoring your instance](https://cloud.google.com/compute/docs/machine-resource) just the way it better suits your needs.
 
 <p align = "center">
-<img src = "../img/machine-config.png" width="800" style="border:1px solid black;">
+<img src = "../img/machine-config.png" width="700" style="border:1px solid black;">
 <figcaption> Adjust the machine configuration to your needs</figcaption>
 </p>
 
+While we won't dive into all the configuration bells and whistles here, remember Google Cloud is your playground for [custom-tailoring your instance](https://cloud.google.com/compute/docs/machine-resource) just the way it better suits your needs.
+
 {{% tip %}}
 
-In the top right corner, you'll see a real-time **pricing summary**. As you adjust your instance's configuration, the cost estimate updates accordingly. Use this feature to balance your budget and computational needs, and find the optimal setup that suits your specific requirements.
+**Balance your budget and computational needs**
+
+In the top right corner, you'll see a real-time **pricing summary**. As you adjust your instance's configuration, you'll be able to find the optimal setup that suits your specific requirements.
+
+<p align = "center">
+<img src = "../img/price-vm.png" width="350" style="border:1px solid black;">
+<figcaption> Pricing summary</figcaption>
+</p>
 
 {{% /tip %}}
 
@@ -74,19 +92,18 @@ A bigger boot disk equals more space for data and apps. So, if you're playing wi
 <figcaption> Boot disk configuration summary</figcaption>
 </p>
 
-{{% tip %}}
 
 If you're considering integrating GPUs into your instance, it's recommended to switch the default boot disk from **Debian** to **Ubuntu**.
 
 **Ubuntu** simplifies the installation of proprietary software drivers and firmware, making the process of installing necessary [NVIDIA drivers](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#ubuntu-lts) for GPU utilization significantly smoother. This could save you time and effort in the long run.
 
-{{% /tip %}}
 
-In the [Firewall Rules](https://cloud.google.com/compute/docs/samples/compute-firewall-create) section, you'll see the default settings that manage your network traffic flow. HTTP or HTTPS? Go for HTTPS whenever you can. It's the safer bet, wrapping your data transfers in an encryption layer for added security. 
+As you scroll down, you will find the [Firewall Rules](https://cloud.google.com/compute/docs/samples/compute-firewall-create) section. Here, you will see the default settings that manage your network traffic flow. HTTP or HTTPS? Go for HTTPS whenever you can. It's the safer bet, wrapping your data transfers in an encryption layer for added security. 
 
 However, many developers activate both HTTP and HTTPS for broader compatibility, handling secure (HTTPS) and insecure (HTTP) requests alike. But let's keep it modern and secure, HTTPS should be your go-to, especially when handling sensitive data.
 
 {{% warning %}}
+**Custom firewall rules?**
 
 Beyond the standard rules, you can also craft custom firewall rules in **Google Cloud**. These can be shaped to match your individual security needs and traffic flow. But be cautious, as incorrect firewall configurations can either expose your instance to threats or obstruct valid traffic.
 
@@ -111,17 +128,18 @@ It's worth noting that the supplementary information provided there regarding th
 
 In the moment you open your Jupyter notebook window with the instance running, you'll see its directory is empty. Is it the time to import the files we want to work with. 
 
-The common way would be to import then via the **Upload file** button on the top-right corner of our commands prompt. Nonetheless, if the files are heavy, this would either take an eternity or probably incurre in a connection error after some time. Hence, What can we do? We can use **Google Colab** as a bridge to send the files from **Google Drive** into our **GCS bucket**.
+The common way would be to import then via the **Upload file** button on the top-right corner of our commands prompt. Nonetheless, if the files are heavy, this would either take an eternity or probably incurre in a connection error after some time. Hence, What can we do? We can use **Google Colab** as a bridge to send the files from **Google Drive** into our **GCS bucket**!
 
 It is suggested to utilize the same account for all Google tools. Doing so simplifies the authentication process and prevents potential permission issues, fostering a more seamless workflow.
 
-{{% warning %}}
+{{% tip %}}
+**Copy all directories you need**
 
 When syncronizing the bucket with your directory inside the container, if your bucket contains other directories as well, the command `$ sudo gcsfuse -o allow_other your-bucket volume_path/new_dir/` might not copy those directories. 
 
 Try `$ sudo gcsfuse --implicit-dirs -o allow_other your-bucket volume_path/new_dir/` to make sure the implicit directories are also included, if you want them to.
 
-{{% /warning %}}
+{{% /tip %}}
 
 To start with, make sure your bucket is created. To do so, you can follow [these](https://cloud.google.com/storage/docs/creating-buckets)  short guidelines.
 
@@ -172,10 +190,14 @@ The output of this last cell will say at the end *"Operation completed..."*.
 
 Now your data should be available in your **GCS bucket** and can be accessed from your Google Cloud instance. Refresh your bucket webpage and confirm it.
 
-{{% tip %}}
 After following the steps outlined so far, you will be able to import your files and execute your code within the Docker container.
 
-To ensure that GPUs are accessible for your tasks, you can use specific commands depending on the framework you're using. For instance, in `PyTorch`, the command `torch.cuda.is_available()` can be used to check if CUDA (GPU acceleration) is currently available, returning a boolean value.
+{{% tip %}}
+**GPUs ready?**
+
+To ensure that GPUs are accessible for your tasks, you can use specific commands depending on the framework you're using. 
+
+For instance, in `PyTorch`, the command `torch.cuda.is_available()` can be used to check if CUDA (GPU acceleration) is currently available, returning a boolean value.
 {{% /tip %}}
 
 ## Extra: Handling memory allocation issues
@@ -186,7 +208,7 @@ These situations can give rise to runtime errors when the CPU cannot allocate th
 
 ### Monitor resources usage
 
-Therefore, a crucial part of managing any computational task is continuously monitoring your system's resource usage. This way, you can promptly identify potential bottlenecks and inefficiencies and address them proactively.
+A crucial part of managing any computational task is continuously monitoring your system's resource usage. This way, you can promptly identify potential bottlenecks and inefficiencies and address them proactively.
 
 In Linux-based environments, such as **Ubuntu**, [htop](https://github.com/htop-dev/htop) and [nvtop](https://github.com/Syllo/nvtop) are two widely used tools for tracking CPU and GPU usage, respectively.
 
@@ -321,8 +343,27 @@ In Python, this translates to choosing dictionaries over lists when wrestling wi
 
 - **Parallelizing your Work:** Divide the task among multiple identical instances, each running a part of the code. This approach is particularly useful when your code involves training or using multiple machine learning models. For example, if you have three BERT models to run, you could use three instances.
 
-Beyond these strategies, it's always possible to leverage the scalability and flexibility of cloud services such as Google Cloud. These services allow for a dynamic allocation of resources according to your needs. 
+Remember that beyond these strategies, it's always possible to leverage the scalability and flexibility of cloud services such as Google Cloud. These services allow for a dynamic allocation of resources according to your needs. 
 
+{{% summary %}}
+- **Google Cloud VM Setup:**
+
+    - Register on Google Cloud.
+    - Create a Virtual Machine that satisfies your computational power needs.
+
+- **Enable reproducibility and large files handling:**
+
+    - Install Docker on the VM to aim for reproducibility.
+    - Authenticate in Colab, set project ID, and bucket name.
+    - Use Google Colab to move files from Google Drive to GCS.
+
+- **Memory Management:**
+
+    - Monitor with `htop` (CPU) and `nvtop` (GPU).
+    - Check CUDA availability for GPU tasks.
+    - Implement batching, efficient data structures and algorithms, and use job parallelization to handle memory issues.
+
+{{% /summary %}}
 
 ## Additional Resources
 
@@ -330,3 +371,4 @@ Beyond these strategies, it's always possible to leverage the scalability and fl
 - PyTorch [Documentation](https://pytorch.org/)
 - CUDA Toolkit [download](https://developer.nvidia.com/cuda-toolkit)
 - Memory management [Python documentation](https://docs.python.org/3/c-api/memory.html)
+

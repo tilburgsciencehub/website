@@ -1,7 +1,7 @@
 ---
 title: "Best Practices for Naming Git Branches "
 description: "Learn the conventions to properly name the created Git branches"
-keywords: "git, github, branching, naming, practices, conventions"
+keywords: "git, github, branching, naming, practices, conventions, name, branch, branches, best"
 date: 2023-03-25
 weight: 6
 author: "Ana Bianca Luca"
@@ -12,7 +12,7 @@ aliases:
   - /naming/conventions
 ---
 
-## Best Practices for Naming Git Branches
+## Overview
 Apart from having good [Git Branching Strategies](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/git-branching-strategies/), it is important to follow some naming conventions to ensure proper maintenance of the repository and a clear, structured way of separating tasks.  To avoid confusions and have an organised overview of every feature that is being worked on, we go through seven best practices for naming branches.
 
 ### 1. Use Separators
@@ -28,7 +28,7 @@ When writing a branch name, using separators such as hyphen (-) or slash (/) hel
 It is recommended to begin the name of a branch with a **category word**, which indicates the type of task that is being solved with that branch. Some of the most used **category words** are:
 | Category Word | Meaning |
 | --- | --- |
-|`hotfix` | for quickly fixing critical issues, usually with a temporary solution |
+|`hotfix` | for quickly fixing critical issues, <br> usually with a temporary solution |
 |`bugfix` | for fixing a bug |
 |`feature` | for adding, removing or modifying a feature |
 |`test` | for experimenting something which is not an issue |

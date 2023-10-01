@@ -14,7 +14,7 @@ We use two coding styles in Stata: a linear format for very short or simple scri
 
 ### 1. Linear Format.
 
-```{stata}
+```stata
 *****************************
 * Prepare data
 *****************************
@@ -39,7 +39,7 @@ If you include a comment as a header like this for one major block of code, you 
 
 In the functional style in Stata, we enclose code within program... end blocks. **The first program is always called “main,” and the .do file always ends with an “Execute” step.**
 
-```{stata}
+```stata
 * PROGRAMS
 
 program main
@@ -92,9 +92,10 @@ In this example, these “functions” are really just blocks of code:
 Functions should be **shy** (see [Code and Data for the Social Sciences](http://web.stanford.edu/~gentzkow/research/CodeAndData.pdf)), that is, so that they operate only on local variables.
 
  - **Problem:** Data in memory is by definition a global variable in Stata.
+ 
  {{% example %}}
  From the following code:
-   ```{stata}
+   ```stata
    use x y z using autodata.xls, clear
    prepare_data
    update_variables

@@ -1,7 +1,7 @@
 ---
-title: "Build Interactive Dashboards With R Shiny"
+title: "Build Interactive Dashboards with R Shiny"
 description: "Learn how to build your own interactive R Shiny app with a good skeleton, layout, and placeholders. View our easy-to-follow tutorial with example code"
-keywords: "shiny, app, data visualisation, dashboard, r, dataviz, plots, charts, interactive"
+keywords: "shiny, app, data visualisation, dashboard, r, python, dataviz, plots, charts, interactive, data, science, plot, chart, package, library, analysis"
 #weight: 101
 #date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -13,32 +13,52 @@ aliases:
   - /building-blocks/share-your-results-and-project/publish-on-the-web/shiny-apps/
 ---
 
-## What is a Shiny App?
-The **[Shiny library](https://shiny.rstudio.com)** helps you turn your analyses into interactive web applications without requiring HTML, CSS, or Javascript knowledge, and provides a powerful web framework for building web applications using R.
+## Overview
 
-Being able to create Shiny apps is a great skill to have because it enables you to communicate your insights to non-technical stakeholders and give them the tools to conduct their own analysis!
+In the world of data analysis, the ability to communicate insights effectively is a great skill to have. 
 
-![R Shiny](https://shiny.rstudio.com/images/shinySiteBandOne.png)
+**[Shiny](https://shiny.rstudio.com)** is a package that helps you turn your analyses into interactive web applications all with R or Python without requiring HTML, CSS, or Javascript knowledge. Shiny empowers data analysts and scientists to create dynamic, user-friendly applications that allow non-technical stakeholders to explore and interact with data in real time.
 
-## Code
+<p align = "center">
+<img src = "../images/shinylogo.png" width="400">
+</p>
+
+Whether you're looking to build an interactive dashboard for tracking key metrics, a tool for exploring complex datasets, or a platform for running simulations and models, Shiny provides a versatile framework that can fulfill a range of use cases.
+
+In this guide, we'll walk you through the fundamental concepts of creating Shiny apps, step by step. By the end, you'll have the skills to transform your static analyses into engaging web applications that empower your audience to conduct their own explorations. So, whether you're a data analyst, a scientist, or anyone who wants to convey insights in an interactive and impactful way, dive into the world of Shiny apps and unlock the potential of dynamic data visualization!
+
+The building block consists of the following sections
+- Skeleton 
+- Layout options
+- Define placeholders
+- Control widgets
+- An example 
 
 ### Skeleton
-The skeleton of any Shiny app consists of a user interface (`ui`) and a `server`. The UI is where the visual elements are placed such as a scatter plot or dropdown menu. The server is where the logic of the app is implemented, for example, what happens once you click on the download button. And this exactly where Shiny shines: combining inputs with outputs.
+The skeleton of any Shiny app consists of a user interface (`ui`) and a `server`. The `ui` defines the visual elements, such as plots and widgets, while the `server` handles the reactive behavior and interactions. This is for example what happens once you click on the download button. And this is exactly where Shiny shines: combining inputs with outputs.
 
 {{% codeblock %}}
 ```R
 library(shiny)
-ui <- fluidPage()
-server <- function(input, output){}
+
+
+ui <- fluidPage( 
+	# Define UI components here
+	)
+ 
+server <- function(input, output){
+	# Implement server logic here
+}
+
 shinyApp(ui = ui, server = server)
 ```
 {{% /codeblock %}}
 
 
-### Lay-out
+### Layout options
 
 **Sidebar**  
-Create a 2-column structure with a small panel on the left and a main panel on the right.
+A common layout structure in Shiny apps is the sidebar layout. This layout divides the app into a small sidebar panel on the left and a main content panel on the right.
 
 {{% codeblock %}}
 ```R
@@ -57,7 +77,7 @@ ui <- fluidPage(
 
 
 **Tabs**  
-Distribute your data across multiple tabs (alternative to a sidebar layout).
+Tabs are another effective way to organize content in your Shiny app. They provide a convenient means of switching between different sections of your app's content. 
 
 {{% codeblock %}}
 ```R
@@ -78,11 +98,12 @@ tabsetPanel(
 {{% /example %}}
 
 ### Placeholders
+
 Define a placeholder for plots, tables, and text in the user interface (`ui`) and server side (`server`).
+
 * Text can be formatted as headers (e.g., `h1()`, `h2()`) or printed in bold (`strong()`) or italics (`em()`) format.
 * The [`ggplotly()` function](https://www.rdocumentation.org/packages/plotly/versions/4.9.3/topics/ggplotly) can convert a `ggplot2` plot into an interactive one (e.g., move, zoom, export image features that are not available in the standard `renderPlot()` function).
 *   Similarly, the `DT::dataTableOutput("table")` (in the `ui`) and the `DT::renderDataTable()` (in the `server`) from the `DT` package enrich the `renderTable` function. See a live example [here](https://royklaassebos.shinyapps.io/dPrep_Demo_Google_Mobility/).
-
 
 
 {{% codeblock %}}
@@ -112,6 +133,8 @@ output$text <- renderText({
 
 
 ### Control Widgets
+
+Shiny provides a range of control widgets that allow users to interact with your app: 
 
 **Text box**
 
@@ -272,13 +295,22 @@ server <- function(input, output) {
 ```
 {{% /codeblock %}}
 
-## An Example
+### An example
 
-The [Shiny app](https://royklaassebos.shinyapps.io/dPrep_Demo_Google_Mobility/) below  visualizes Google’s COVID-19 Community Mobility Reports of the Netherlands. A step-by-step tutorial (incl. source code) can be found [here](https://tilburgsciencehub.com/examples/google-covid-shiny-app/).
+The [Shiny app](https://royklaassebos.shinyapps.io/dPrep_Demo_Google_Mobility/) below visualizes Google’s COVID-19 Community Mobility Reports of the Netherlands. A step-by-step tutorial and the source code can be found [here](https://tilburgsciencehub.com/examples/google-covid-shiny-app/).
 
 ![](../images/demo_app.png)
 
-## See Also
+### More resources
+
 * [A course on learning Shiny](https://debruine.github.io/shinyintro/) and its necessary [package](https://github.com/debruine/shinyintro)
 * [Interactive Web Apps with shiny Cheat Sheet](https://shiny.rstudio.com/images/shiny-cheatsheet.pdf)
 * [Shiny User Showcase](https://shiny.rstudio.com/gallery/)
+
+{{% summary %}}
+You've now gained a solid understanding of how to create interactive web applications using Shiny. Feel free to experiment, explore the vast capabilities of Shiny, and tailor your apps to fit your specific needs. With the resources provided and your newfound knowledge, you're well-equipped to embark on your journey into the world of Shiny app development. Happy coding!
+{{% /summary %}}
+
+
+
+

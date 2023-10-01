@@ -12,8 +12,10 @@ aliases:
 
 ## Overview
 
-For our workflow to be command line driven, we need to be able to call software from the command line. Whilst much of the software we have installed as automatically made this possible, it is not universally the case.
-Here we will make the extra few changes we need to complete the installation guide.
+For our workflow to be command line driven, we need to be able to call software from the command line. Whilst much of the software we have installed has automatically made this possible, it is not universally the case.
+Here we will make the extra few changes to complete the installation guide.
+
+## Installation
 
 ### Windows Users
 
@@ -42,7 +44,7 @@ If you accepted all defaults during your installation, and didn't have any other
 You will need to add a line to the file ".bash_profile" or potentially create the file if it didn't already exist.
 This file lives in your home directory and it is hidden from your view by default.
 
-We now provide a guide of how to create / adjust this file using a tiny editor called nano, if you are familiar with editing text files, just use your editor of choice.
+We now provide a guide on how to create/adjust this file using a tiny editor called Nano, if you are familiar with editing text files, just use your editor of choice.
 
 Open a Terminal and type:
 

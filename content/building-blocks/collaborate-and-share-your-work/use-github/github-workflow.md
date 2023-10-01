@@ -1,7 +1,7 @@
 ---
 title: "The GitHub Workflow"
 description: "GitHub flow is a lightweight, branch-based workflow. The GitHub flow is useful for everyone, not just developers."
-keywords: "github, workflow tutorial, branch, pull, push, fork, share, commit, merge, peer review"
+keywords: "github, workflow tutorial, branch, pull, push, fork, share, commit, merge, peer review, git"
 weight: 3
 #date: 2020-11-11T22:01:14+05:30
 draft: false
@@ -11,72 +11,86 @@ aliases:
   - /github/workflow
 ---
 # Overview
-As a project grows, the myriad changes made to the codebase may become intractable and this is why **version control** is an important principle to adhere to in one’s workflow.
-## Version Control with Git
-**Git** is a command-line tool that functions as an **open-source version control system** - a system that keeps track of all the changes made to a file/codebase of an empirical project or app development, which facilitates efficient collaboration as all team members can work simultaneously on the latest version of the project or access previous versions of the file to make changes.
 
-## Git vs. GitHub
+As a project grows, managing the numerous code changes can become unwieldy. This is where **version control** comes into play as a fundamental aspect of a streamlined workflow. 
+
+This building block aims to make you familiar with the GitHub workflow by covering the following key areas:
+- Introduction to Git and GitHub
+- The GitHub workflow
+  - Branching
+  - Commits
+  - Pull requests
+  - Peer reviews
+  - Merging
+- Exceptions to the standard workflow
+
+## Introduction to Git and GitHub
+
+**Git** is an open-source version control system that tracks changes made to a project's codebase. This facilitates efficient collaboration by allowing all team members to work simultaneously on the latest project version or access previous versions to make changes.
+
+[**GitHub**](https://www.github.com) is an online hosting service that not only provides version control but also offers tools for code backup, synchronization, and collaboration. It acts as a centralized hub for collaborative development. 
+
+This table provides a quick comparison of Git and GitHub:
+
 |  | Git  | GitHub |
 | --- | --- | --- |
-| Environment | Installed locally on a system <br> and source code history can <br> be managed on local machines  | Entirely cloud-based |
-| Functional scope | Git focuses exclusively on <br> Source Code Management (SCM) <br> tasks like push, pull, <br> commit, fetch and merge. | It serves as a centralised location <br> for uploading copies of a Git repository. <br> The GitHub GUI also offers <br> one access control, collaboration <br> features and other project-management tools. |
+| Environment | Installed locally | Entirely cloud-based |
+| Functionality | Exclusively Source Code <br> Management (SCM) tasks, <br> like push, pull, commit, <br> fetch and merge | Serves as a centralised <br> location for uploading copies <br>  of a Git repository. The GitHub <br> GUI also offers one access <br>  control, collaboration <br> features, and other  <br> project-management tools. |
 | Ownership  | Linux  | Microsoft  |
 
-## How does it work?
+Use this [building block](/versioning-using-git) to get started with Git and GitHub.
 
-In a nutshell, a standard Git workflow involves Branch-Commit-Push-Pull request-Merge (BCPPM).
+## The GitHub workflow
 
-
-{{% summary %}}
+In a nutshell, a standard GitHub workflow follows the **Branch-Commit-Push-Pull request-Merge (BCPPM)** pattern:
  - All work on an issue happens in a separate repository *branch*.
+ - When work is done, the assigned contributor *commits* the changes. 
+ - The assignee creates a *pull request*, often involving peer review.
+ - Once review (if any) is complete, the changes are *merged* into the main branch. 
 
- - When work is done, whoever is assigned to the issue *commits* the changes and creates a *pull request* which may include a request for peer review.
+The default approach we follow is the [GitHub Flow](https://guides.github.com/introduction/flow/). This workflow model is explained in the rest of this building block. 
 
- - Once review (if any) is complete, the changes are *merged* back to the master branch and the final comment / deliverable are posted.
-{{% /summary %}}
+{{% tip %}}
+The [GitHub Cheatsheet](../github_cheatsheet_tsh.pdf) also summarizes this approach, so you can easily follow along or refresh your memory in case you ever forget a step in the workflow!
+{{% /tip %}}
 
-By default, we follow the [Github Flow](https://guides.github.com/introduction/flow/) workflow model, which is explained below. This information is also summarized in a [Github Cheatsheet](../github_cheatsheet_tsh.pdf), so you can easily follow along or refresh your memory in case you ever forget a step in the workflow!
+### Branching
 
+* The assignee should create a new branch. This can be done in three ways: Use `git branch` or `git checkout -b` on the command line, click the "Add branch" icon on the GitHub desktop, or create the branch on the repository's GitHub page.
 
-
-## Branch
-
-* The assignee should create a new branch using `git branch` or `git checkout -b` on the command line, by clicking the "add branch" icon in the Github desktop client, or by creating the branch on the repository's Github page.
-
-* If you are resolving an issue you can create a new branch most easily by going to the issue page and clicking "Create a branch" under Development. This will automatically link the branch to the issue and their pull requests. 
+* If you are resolving an issue, you can use the "Create a branch" option under Development on the issue page. This will automatically link the branch to the issue.
 
   ![Create a branch for an issue.](../create-issue-branch.png)
 
-* The issue branch should be named `issueXXX-description`, where `XX` is the Github issue number and `description` is a version of the issue title (e.g., `issue123-update-appx-figures`). The description can be more compact than the issue title itself, but should be descriptive enough that other team members can understand what is being worked on in the branch.
+* The issue branch should be named `issueXXX-description`, where `XX` is the GitHub issue number and `description` is a version of the issue title (e.g., `issue123-update-appx-figures`). The description can be more compact than the issue title itself, but should be comprehensive enough that other team members can understand what is being worked on in the branch.
 
 {{% tip %}}
 For complex issues, additional branches can be made off of the main issue branch. These should be named `issueXXX-description/sub-branch-description` (e.g., `issue123-update-appx-figures/refactor`) These sub-issue branches should be merged into the main issue branch before the main issue branch is merged back to the master branch.
 {{% /tip %}}
 
-## Commit
+### Commit
 
-* All commits related to an issue should be made to the issue branch(es).
+* All commits related to an issue should be made in its dedicated branch.
 
-* Every commit must have a commit message whose first line has the form `#X Description of commit` where `X` is the Github issue number (e.g., "#123 Add first appendix figure").
+* Each commit should have a message in the format `#X Description of commit` where `X` is the GitHub issue number (e.g., "#123 Add first appendix figure").
 
-* Any commit to master, that is merged to master, or that defines an issue deliverable should follow a complete run of the relevant modules / directories' build scripts (e.g., `make.py`).
+* Any commit to master, that is merged to master, or that defines an issue deliverable should follow a complete run of the relevant build scripts (e.g., `make.py`).
 
-{{% warning %}}
-Crafting good commit messages is crucial to the history of work on a project being clear and readable. In this sense, a good commit message:
-  - should describe the purpose of the commit
+{{% tip %}}
+**Best commit message practices**
 
+Crafting good commit messages is crucial to the history of work on a project being clear and readable. 
+A good commit message:
+  - should describe the purpose of the commit.
   - should not be redundant with what Git is already recording ("Update code" or "Modify slides.lyx" are redundant; "Refactor estimate() function" and "Add robustness figure to slides" are better).
-
   - should be written in sentence caps, use the imperative mood, and not end in a period ("#123 Revise abstract") not ("#123 abstract.").
 
-  [This post](https://chris.beams.io/posts/git-commit/) by Chris Beams has an excellent discussion of what makes a good commit message.
-{{% /warning %}}
+[This post](https://chris.beams.io/posts/git-commit/) by Chris Beams has an excellent discussion of what makes a good commit message.
+{{% /tip %}}
 
+### Pull Requests
 
-
-## Pull Request
-
-* When work on an issue is complete, the assignee should create a pull request by selecting the issue branch on the `code` tab of the repository's Github page then clicking `New Pull Request`.
+* When work on an issue is complete, the assignee should create a pull request by clicking `New Pull Request` on the page of the right branch.
 
 * The title of the pull request should be `PR for #X: original_issue_title` where `X` is the Github issue   number (e.g., "PR for #123: Update appendix figures").
 
@@ -84,14 +98,13 @@ Crafting good commit messages is crucial to the history of work on a project bei
 
 * The pull request should be assigned to the assignee of the original issue.
 
-## Peer Review
+### Peer Reviews
 
 If an issue requires **peer review**, the assignee should assign the reviewer(s) in the pull request. In this case the description / first comment of the pull request should provide instructions that define the scope of the peer review along with any information the reviewer will need to execute it efficiently.
 
-{{% warning %}}
-Any issue that involves substantial changes to code should be peer reviewed by at least one other lab member (e.g. a research assistant), though it is ultimately up to the assignee's discretion whether or not to send the issue for peer review.
-{{% /warning %}}
+Any issue that involves substantial changes to code should be peer reviewed by at least one other lab member, though it is ultimately up to the assignee's discretion whether or not to send the issue for peer review.
 
+{{% tip %}}
 The job of the peer reviewer **IS** to verify that:
    *  The deliverable is clear, complete, and conforms to the standards from the deliverables section [here](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/project_management/write-good-issues/)
    *  Files committed to the repository conform to our organizational and code style rules
@@ -100,8 +113,8 @@ The job of the peer reviewer **IS** to verify that:
 It is **NOT** typically the job of the peer reviewer to:
   * go over every detail of the output and every line of code.
 
-While commenting on fine points of code style from time to time is fine, for example, this should not be the primary content of the peer review. When requesting peer review the assignee can request feedback in addition to the above: e.g., particular code or results that need a careful check.
-
+While for example commenting on fine points of code style from time to time is fine, this should not be the primary content of the peer review. When requesting peer review the assignee can request feedback in addition to the above: e.g., particular code or results that need a careful check.
+{{% /tip %}}
 
 {{% warning %}}
 * All peer review comments should be made on the pull request itself, not on the original issue.
@@ -109,24 +122,30 @@ While commenting on fine points of code style from time to time is fine, for exa
 * Revision to the code and other files in the repository as part of the peer review process should be made in the original issue branch (`issueXXX_description`) since the pull request will automatically track changes made in the branch.
 {{% /warning %}}
 
-## Merge
+### Merging
 
-When peer review is complete, the output is finalized, and issue-specific content like the `/issue/` subdirectory has been deleted, the issue branch should be merged back to `master` using a [__squash__ merge](https://help.github.com/articles/about-pull-request-merge-squashing/). You can normally perform this merge automatically from the pull request page on Github.
+When peer review is complete, the output is finalized, and issue-specific content like the `/issue/` subdirectory has been deleted, the issue branch should be merged back to `master` using a [__squash__ merge](https://help.github.com/articles/about-pull-request-merge-squashing/). You can normally perform this merge automatically from the pull request page on GitHub.
 
 Once the merge is complete, you should delete the issue branch.
 
 ## Exceptions to the Standard Workflow
-In some cases we may use simpler workflows, for example skipping the branch/merge steps and just committing directly to `master`. Here are a few exceptions:
+In some cases, we may use simpler workflows, for example by skipping the branch/merge steps and just committing directly to `master`. Here are a few exceptions:
 
 1. **No issue branch:** It is permissible to skip the step of creating an issue branch and commit changes directly to `master` when all of the following are true:
 - The issue is small in scope and will involve no more than a few commits
 - No one else is likely to be working on the same content at the same time
 - All commits follow complete runs of relevant build scripts (e.g., `make.py`)
 
-  {{% warning %}}
-Separately, for some projects or repositories we may decide to use a simplified workflow where we commit everything to `master` by default. This could happen, for example, if some co-authors are unfamiliar with `git` and prefer the simpler workflow. In such cases we need to pay attention to avoid cases where many people will be working on the same content at the same time. We also impose a strict rule that all commits follow complete runs of `make.py`.
-  {{% /warning %}}
+{{% warning %}}
+Separately, for some projects or repositories, we may decide to use a simplified workflow where we commit everything to `master` by default. This could happen, for example, if some co-authors are unfamiliar with `git` and prefer the simpler workflow. In such cases, we need to pay attention to avoid cases where many people will be working on the same content at the same time. We also impose a strict rule that all commits follow complete runs of `make.py`.
+{{% /warning %}}
 
 2. **No pull request:** It is permissible to skip the step of creating a pull request if an issue does not require pull review and no changes will be merged back to the master branch.
 
-3. **No peer review:** It is permissible to skip the peer review step when the assignee is confident the output is correct and the issue involves no changes or only minor changes to code that is being merged back to the repository.
+3. **No peer review:** It is permissible to skip the peer review step when the assignee is confident the output is correct and the issue involves no changes or only minor changes to the code that is being merged back to the repository.
+
+{{% summary %}}
+Mastering the GitHub workflow empowers effective collaboration and version control in your project journey. Follow the **Branch-Commit-Push-Pull Request-Merge (BCPPM)** pattern for organized collaboration. Branch for each issue, commit with meaningful messages, initiate pull requests, conduct peer reviews, and merge changes systematically.
+{{% /summary %}}
+
+
