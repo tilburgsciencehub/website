@@ -9,13 +9,13 @@ aliases:
   - /configure/cli
 ---
 
-## What are command Line Tools 
+## What are Command Line Tools
 
 A *command-line* interface or command language interpreter (CLI), also known as a terminal, is a means of interacting with a computer program where the user issues commands to the program in the form of successive lines of text (command lines).
 
 Throughout the course, we will emphasize the use of the terminal and executing commands within it as our modus operandi. Command line tools are software programs controlled through text-based commands entered in a terminal. They perform tasks like file manipulation, system administration, and data processing. These tools offer efficiency, flexibility, and scripting capabilities, making them valuable for tasks across programming, system management, and data analysis, providing direct access to a computer's operations.
 
-## Installing Command Line Tools 
+## Installation
 
 ### Windows Users
 
@@ -84,7 +84,7 @@ And you should see the following output
 Your system is ready to brew
 ```
 
-* Now we can use Homebrew to easily install the software. To use the current R version 4.2.2, we want to make sure you have some basic system tools that some packages require. Let's (re)install them real quick. First `libxml2`:
+* Now we can use Homebrew to easily install the software. To use the current R version 3.5.1, we want to make sure you have some basic system tools that some packages require. Let's (re)install them real quick. First `libxml2`:
 
 ```
 brew reinstall libxml2
