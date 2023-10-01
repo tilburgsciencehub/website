@@ -1,6 +1,6 @@
 ---
 title: "Learn with open-interpreter"
-description: "Explanation and usage of Decision Trees in R"
+description: "Explanation and usage of open-interpreter"
 keywords: "open-interpreter, terminal, cmd, webscraping, web scraping, learning"
 draft: false
 weight: 2
