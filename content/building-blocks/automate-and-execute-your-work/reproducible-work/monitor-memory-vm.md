@@ -19,7 +19,7 @@ In this guide, we delve deep into:
 
 - **Memory Monitoring Tools:** Equip yourself with tools like `htop` and `nvtop` to keep an eye on your system's performance in real-time.
 
-- **Strategies for Handling Memory Issues:** Learn hands-on strategies, from batching to efficient algorithm choices, to avert memory-related setbacks. We'll also touch upon a real-world example using the BERT model in PyTorch to exemplify how memory can be optimized in machine learning scenarios.
+- **Strategies for Handling Memory Issues:** Learn hands-on strategies, from batching to efficient algorithm choices, to avert memory-related setbacks. We'll also touch upon a real-case example using the BERT model in PyTorch to exemplify how memory can be optimized in machine learning scenarios.
 
 {{% tip %}}
 **Linux for Virtual Machines**
@@ -40,7 +40,7 @@ While the straightforward solution might seem to be upgrading hardware, it isn't
 
 A crucial part of managing any computational task is continuously monitoring your system's resource usage. This way, you can promptly identify potential bottlenecks and inefficiencies and address them proactively.
 
-In Linux-based environments, such as **Ubuntu**, [htop](https://github.com/htop-dev/htop) and [nvtop](https://github.com/Syllo/nvtop) are two widely used tools for tracking CPU and GPU usage, respectively.
+As introduced before, [htop](https://github.com/htop-dev/htop) and [nvtop](https://github.com/Syllo/nvtop) are two widely used tools for tracking CPU and GPU usage, respectively.
 
 `htop` is an interactive process viewer and system monitor. It's similar to the `top` command but provides a more visually appealing and human-readable format.
 It allows us to sort by the task we're most interested in monitoring by pressing `F6`, among other interesting features.
@@ -92,7 +92,9 @@ Use `htop` and `nvtop` to keep an eye on your resource usage. If you notice your
 
 There are several practical solutions to avoid running out of memory. These are some common strategies:
 
-- **Batching:** Break your task into smaller, more manageable chunks, or batches. This strategy works well with large datasets. 
+- **Batching:** When working with large datasets, especially in machine learning scenarios, it's efficient to break the task into smaller chunks. For demonstration purposes, we'll use a BERT model in PyTorch. BERT is a large neural network model that can easily consume memory, making it a good example for this discussion.
+
+In PyTorch, the `DataLoader` class facilitates batching:
 
 {{% example %}}
 In **PyTorch**, the `DataLoader` class can implement batching. An illustration of creating a `DataLoader` for a text dataset, using a tokenizer for a **BERT** model, is shown below:
@@ -171,16 +173,11 @@ In Python, this translates to choosing dictionaries over lists when wrestling wi
 
 {{% /example %}}
 
-- **Parallelizing your Work:** Divide the task among multiple identical instances, each running a part of the code. This approach is particularly useful when your code involves training or using multiple machine-learning models. For example, if you have three BERT models to run, you could use three instances.
+- **Parallelizing your Work:** Divide the task among multiple identical instances, each running a part of the code. This approach is particularly useful when your code involves training or using multiple machine-learning models. For instance, instead of running three BERT models sequentially on one instance, distribute them across three instances.
 
 Remember that beyond these strategies, it's always possible to leverage the scalability and flexibility of cloud services such as Google Cloud. These services allow for a dynamic allocation of resources according to your needs. 
 
 {{% summary %}}
-
-- **GCS buckets for large file handling:**
-
-    - Connect your Docker container with your GCS bucket
-    - Use Google Colab to move files from Google Drive to the bucket.
 
 - **Memory Management:**
 
