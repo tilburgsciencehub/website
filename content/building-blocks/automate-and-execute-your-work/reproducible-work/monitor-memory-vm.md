@@ -1,131 +1,40 @@
 ---
 title: "Monitor and solve memory constraints in your VM" 
 description: "After configuring a Google Cloud instance with GPUs, learn to monitor and handle memory issues"
-keywords: "Docker, Environment, Python, Jupyter notebook, Google cloud, Cloud computing, Cloud storage, GPU, Virtual Machine, Instance, Memory, Bucket, Storage"
+keywords: "Environment, Python, Jupyter notebook, Google cloud, Cloud computing, Cloud storage, GPU, Virtual Machine, Instance, Memory"
 weight: 3
 author: "Fernando Iscar"
 authorlink: "https://www.linkedin.com/in/fernando-iscar/"
 draft: false
-date: 2023-09-16 
+date: 2023-10-02
 aliases: 
-  - /handle/memory-storage-issues
+  - /handle/memory-issues
 ---
 
 ## Overview
 
-This building block builds upon the foundational steps outlined in [Configure a VM with GPUs in Google Cloud](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/config-vm-gcp/).
+In any computational environment, monitoring and managing memory allocation is crucial. Regardless of how advanced or powerful your machine might be, there are always potential bottlenecks, especially when working with memory-intensive tasks. 
 
-After configuring our instance, we may find the necessity to manage large files proficiently or to circumvent memory issues that could potentially arise during code execution within the instance.
+In this guide, we delve deep into:
 
-In this guide, you will learn how to:
+- **Memory Monitoring Tools:** Equip yourself with tools like `htop` and `nvtop` to keep an eye on your system's performance in real-time.
 
-- Connect our Docker container with Google Cloud Storage using GCSFuse.
-- Use Google Colab for seamless file transfers between Google Drive and Google Cloud Storage.
-- Manage and monitor resources in Linux environments to prevent memory allocation issues.
-
-## Connect the Docker container to a GCS bucket 
-
-[Storage buckets](https://cloud.google.com/storage/docs/buckets) are the native storage units of the Google Cloud platform. Linking them to your virtual machine offers integrated and efficient data management, simplifying scaling, backup, and access from anywhere in the Google Cloud infrastructure, eliminating, for example, the need to perform manual uploads/downloads via the Google Cloud's browser interface.
-
-To do this, first of all, you will need to install [GCSFuse](https://github.com/GoogleCloudPlatform/gcsfuse) in your instance by running the following code:
-
-{{% codeblock %}}
-```bash
-#1
-$ export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
-echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-
-#2
-$ sudo apt-get update
-
-#3
-$ sudo apt-get install gcsfuse
-```
-{{% /codeblock %}}
-
-Now, create a new directory in your virtual machine, which will be the one connected to your bucket. After that, you can run the following, substituting 'YOUR_BUCKET' with the name of the storage bucket you wish to connect with your instance, and 'PATH_TO/NEW_DIRECTORY' to the path of the newly created directory that will host that connection:
-
-{{% codeblock %}}
-```bash
-$ sudo gcsfuse -o allow_other YOUR_BUCKET PATH_TO/NEW_DIRECTORY
-```
-{{% /codeblock %}}
-
-This code will tell GCSFuse to synchronize your new directory with your bucket. Then, you would be able to store any output produced in your projects in this new directory that you just created in your instance and it will be immediately at your disposal within your GCS bucket, and vice versa.
-
-
-## Import large files: Use Google Colab as a bridge
-
-The transfer and management of large files can be challenging due to extended upload/download durations. Yet, having connected your Google Cloud virtual machine to your storage buckets, you can swiftly transfer files that you already have hosted on **Google Drive** and **GCS Buckets** (And in turn to your virtual machine as well) using **Google Colab** as a bridge. This bypasses the need to manually Download/Upload files from Drive to your local machine and then to your cloud instance, potentially saving you significant amounts of time in the process.
-
-It is suggested to utilize the same account for all Google tools. Doing so simplifies the authentication process and prevents potential permission issues, fostering a more seamless workflow.
+- **Strategies for Handling Memory Issues:** Learn hands-on strategies, from batching to efficient algorithm choices, to avert memory-related setbacks. We'll also touch upon a real-world example using the BERT model in PyTorch to exemplify how memory can be optimized in machine learning scenarios.
 
 {{% tip %}}
-**Copy all directories you need**
+**Linux for Virtual Machines**
 
-When synchronizing the bucket with your directory inside the container, if your bucket contains other directories as well, the command `$ sudo gcsfuse -o allow_other your-bucket volume_path/new_dir/` might not copy those directories. 
+The commands `htop` and `nvtop` are designed for Linux-based environments (such as Ubuntu or Debian) given their widespread use in virtual machine contexts due to their open-source nature, robust security, and versatility.
 
-Try `$ sudo gcsfuse --implicit-dirs -o allow_other your-bucket volume_path/new_dir/` to make sure the implicit directories are also included if you want them to.
+If you wonder how to set-up a Virtual Machine with a Linux system, go through our [building block!](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/config-vm-gcp/)
 
 {{% /tip %}}
 
-To start with, make sure your bucket is created. To do so, you can follow [these](https://cloud.google.com/storage/docs/creating-buckets)  short guidelines.
-
-To continue, launch a notebook in **Google Colab**, preferably the one you plan to run on your instance later. This approach helps you maintain a record of the code you've used. 
-
-Subsequently, to mount your **Google Drive** to this notebook, use the following code:
-
-{{% codeblock %}}
-```python
-from google.colab import drive
-drive.mount('/content/gdrive')
-
-```
-{{% /codeblock %}}
-
-Next, we authenticate our user:
-
-{{% codeblock %}}
-```python
-from google.colab import auth
-auth.authenticate_user()
-
-```
-{{% /codeblock %}}
-
-After, we set our **project ID**. This is the identifier corresponding to your **GCS bucket** that you intend to populate with files:
-
-{{% codeblock %}}
-```python
-project_id = 'your_project_id'
-!gcloud config set project {project_id}
-
-```
-{{% /codeblock %}}
-
-The `gcloud config set project {project_id}` command configures the gcloud command-line tool to use the specified **project ID** by default.
-
-Finally, we define our bucket's name and use the `gsutil -m cp -r` command to recursively copy the directory you're interested in sending from our mounted **Google Drive** to our specified **GCS bucket**:
-
-{{% codeblock %}}
-```python
-bucket_name = 'your_bucket_name'
-!gsutil -m cp -r <copy your directory path here>/* gs://{bucket_name}/
-```
-{{% /codeblock %}}
-
-The output of this last cell will say at the end *"Operation completed..."*.
-
-Now your data should be available in your **GCS bucket** and can be accessed from your Google Cloud instance. Refresh your bucket webpage and confirm it.
-
-After following the steps outlined so far, you will be able to import your files and execute your code within the Docker container.
-
 ## Handling memory allocation issues
 
-Regardless of how powerful your machine is, it's not immune to running out of memory, especially when dealing with intensive computational tasks and large datasets. 
+It's not uncommon for systems to run out of memory, especially when dealing with large datasets or computation-heavy processes. When a system can't allocate required memory, it can result in runtime errors. 
 
-These situations can give rise to runtime errors when the CPU cannot allocate the required memory. While you could remedy this by using more powerful hardware, this isn't always an affordable or practical solution.
+While the straightforward solution might seem to be upgrading hardware, it isn't always feasible. Hence, the necessity to monitor and manage memory efficiently.
 
 ### Monitor resources usage
 
