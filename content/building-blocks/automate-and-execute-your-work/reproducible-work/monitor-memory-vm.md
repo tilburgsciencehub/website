@@ -1,5 +1,5 @@
 ---
-title: "Monitor and solve memory constraints in your VM" 
+title: "Monitor and solve memory constraints in your computational environment" 
 description: "After configuring a Google Cloud instance with GPUs, learn to monitor and handle memory issues"
 keywords: "Environment, Python, Jupyter notebook, Google cloud, Cloud computing, Cloud storage, GPU, Virtual Machine, Instance, Memory"
 weight: 3
@@ -13,20 +13,20 @@ aliases:
 
 ## Overview
 
-In any computational environment, monitoring and managing memory allocation is crucial. Regardless of how advanced or powerful your machine might be, there are always potential bottlenecks, especially when working with memory-intensive tasks. 
+In any local or virtual machine, monitoring and managing memory allocation is crucial. Regardless of how advanced or powerful your machine might be, there are always potential bottlenecks, especially when working with memory-intensive tasks. 
 
 In this guide, we delve deep into:
 
-- **Memory Monitoring Tools:** Equip yourself with tools like `htop` and `nvtop` to keep an eye on your system's performance in real-time.
+- **Memory monitoring tools:** Learn commands like `htop` and `nvtop` to keep an eye on your system's performance in real-time.
 
-- **Strategies for Handling Memory Issues:** Learn hands-on strategies, from batching to efficient algorithm choices, to avert memory-related setbacks. We'll also touch upon a real-case example using the BERT model in PyTorch to exemplify how memory can be optimized in machine learning scenarios.
+- **Strategies for handling memory issues:** Learn hands-on strategies to avert memory-related setbacks. We'll also touch upon an example using the BERT model in PyTorch to exemplify how memory can be optimized in machine learning scenarios.
 
 {{% tip %}}
 **Linux for Virtual Machines**
 
 The commands `htop` and `nvtop` are designed for Linux-based environments (such as Ubuntu or Debian) given their widespread use in virtual machine contexts due to their open-source nature, robust security, and versatility.
 
-If you wonder how to set-up a Virtual Machine with a Linux system, go through our [building block!](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/config-vm-gcp/)
+If you wonder how to set-up a Virtual Machine with a Linux system, go through our [building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/config-vm-gcp/)!
 
 {{% /tip %}}
 
@@ -89,7 +89,7 @@ With `nvtop`, you can monitor GPU usage by typing `nvtop` into your terminal.
 Use `htop` and `nvtop` to keep an eye on your resource usage. If you notice your system is running out of memory or your GPU utilization is too high, it's a good idea to take steps to address the issue before it leads to a crash.
 
 {{% warning %}}
-**Back-ups**
+**Have a back-up**
 
 Overloading system memory can lead to unsaved data loss. Regularly save your work during memory-intensive tasks.
 
@@ -104,7 +104,7 @@ There are several practical solutions to avoid running out of memory. These are 
 In PyTorch, the `DataLoader` class facilitates batching:
 
 {{% example %}}
-In **PyTorch**, the `DataLoader` class can implement batching. An illustration of creating a `DataLoader` for a text dataset, using a tokenizer for a **BERT** model, is shown below:
+An illustration of creating a `DataLoader` for a text dataset, using a tokenizer for a **BERT** model, is shown below:
 
     from torch.utils.data import Dataset, DataLoader
 
@@ -198,3 +198,4 @@ Remember that beyond these strategies, it's always possible to leverage the scal
 - Google Cloud [Memory-Optimized](https://cloud.google.com/compute/docs/memory-optimized-machines) machines
 - Memory management [Python Documentation](https://docs.python.org/3/c-api/memory.html)
 - Machine type [recommendations for VM instances](https://cloud.google.com/compute/docs/instances/apply-machine-type-recommendations-for-instances)
+- BERT [GitHub repository](https://github.com/google-research/bert)
