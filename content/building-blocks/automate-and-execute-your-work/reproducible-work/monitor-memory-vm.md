@@ -88,6 +88,13 @@ With `nvtop`, you can monitor GPU usage by typing `nvtop` into your terminal.
 
 Use `htop` and `nvtop` to keep an eye on your resource usage. If you notice your system is running out of memory or your GPU utilization is too high, it's a good idea to take steps to address the issue before it leads to a crash.
 
+{{% warning %}}
+**Back-ups**
+
+Overloading system memory can lead to unsaved data loss. Regularly save your work during memory-intensive tasks.
+
+{{% /warning %}}
+
 ### Practical approaches 
 
 There are several practical solutions to avoid running out of memory. These are some common strategies:
