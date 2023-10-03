@@ -403,7 +403,7 @@ xgb.plot.importance(importance_matrix)
 Which results in the following graph, from which it can be see that `kitchen_area` is the most important feature in predicting house prices. 
 
 <p align = "center">
-<img src = "../img/FI_XGB.png" width="500">
+<img src = "../img/Features_XGB.png" width="500">
 </p>
 
  
