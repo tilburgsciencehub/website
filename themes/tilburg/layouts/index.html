@@ -241,9 +241,15 @@
             <div class="background-content">
             <div class="row mb-4">
               <div class="col-xl-22 col-lg-20 col-md-22 col-sm-22">
-                <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
-                  Reproducible Research
-                </h2>
+                <div style="display: inline-flex;justify-content: space-between;width: 100%;align-items: center;">
+                  <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
+                    Reproducible Research
+                  </h2>
+                  <button style="background-image: none;background-color: transparent;color:#013365;"
+                    class="carousel-control-next-mobile" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="fa-solid fa-arrow-right" aria-hidden="true"></span>
+                  </button>
+                </div>
               </div>
               <div class="col-xl-2 col-lg-3 col-md-2 col-sm-2 carousel-nav">
                 <button style="background-image: none;background-color: transparent;color:#013365"
@@ -258,7 +264,7 @@
             </div>
             <div class="row" style="margin-top: auto; margin-bottom: auto;">
               <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
-                <div id="carouselExample" class="carousel slide h-100" data-bs-ride="carousel">
+                <div id="carouselExample" class="carousel slide h-100" data-bs-touch="true" data-bs-ride="carousel">
                   <div class="carousel-inner h-100" style="z-index:1;">
                   </div>
                 </div>
@@ -522,6 +528,12 @@
     }
   }
 
+  @media only screen and (min-width:578px) {
+    .carousel-control-next-mobile {
+      display: none;
+    }
+  }
+
   @media only screen and (max-width:578px) {
     body::before {
       top: 2825px;
@@ -533,6 +545,10 @@
 
     .carousel-nav {
       display: none;
+    }
+
+    .carousel-control-next-mobile {
+      display: flex;
     }
 
     .icon-col {
