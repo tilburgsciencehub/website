@@ -40,11 +40,17 @@
 				<script>window.location = "/{{.Section}}"</script>
 				{{ else }}
 				{{ .Content }}
-				{{ if (and (.Params.author) (.Params.authorlink)) }}
+				{{ if .Params.author }}
 				<div class="admonition author">
-					<div class="admonition-content">Contributed by <b><a href="/contributors/{{ replace (lower .Params.author) " " "_" }}">{{ .Params.author }}</a></b></div>
-				</div>	
-				{{ else }}
+					<div class="admonition-content">Contributed by
+					{{ $authors := split .Params.author ", " }}
+					{{ $numAuthors := len $authors }}
+					{{ range $i, $author := $authors }}
+						<b><a href="/contributors/{{ replace (lower $author) " " "" }}">{{ $author }}</a></b>
+						{{ if ne $i (sub $numAuthors 1) }},{{ end }}
+					{{ end }}
+					</div>
+				</div>
 				{{ end }}
 				<div class="d-flex justify-content-between mt-5 align-items-center">
           <!-- <div class="flex-fill">
