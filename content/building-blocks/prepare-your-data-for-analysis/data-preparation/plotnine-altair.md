@@ -11,7 +11,7 @@ aliases:
   - /python/plotting
 ---
 
-## Plotnine
+# Plotnine
 
 An additional plotting library in Python is `plotnine`, which is an equivalent to the R package `ggplot2`. It has a similar syntax and uses a concept of grammar of graphics. This means that the plots are built incrementally, layer by layer. 
 
@@ -90,13 +90,12 @@ To create a bar plot, we just change the `geom function` from `geom_point()` to 
 To create a line chart we change the same function to `geom_line()`.
 
 
-We can also create a box plot:
+We can also create a box plot using the function `geom_boxplot()` or a histogram `geom_histogram()`.
 
+<br/>
+<br/>
 
-Or a histogram:
-
-
-## Altair
+# Altair
 
 `Vega-Altair` is a declarative visualization library, built on `Vega` and `Vega Lite`.
 
@@ -131,3 +130,26 @@ We identify 3 basic elements:
 
 
 ### Plotting
+
+We illustrate how to visualize data with `altair` by using the same dataset used for the `plotnine` example. 
+
+{{% codeblock %}}
+```python
+alt.Chart(df).mark_circle().encode(
+    x = "sepal width"
+    y = "sepal length"
+)
+```
+{{% /codeblock %}}
+
+To create a bar plot, we just change the `mark_markname()` function from `mark_circle()` to `mark_bar()`.
+
+{{% codeblock %}}
+```python
+alt.Chart(df).mark_bar().encode(
+    x = "sepal width"
+    y = "sepal length"
+)
+```
+{{% /codeblock %}}
+
