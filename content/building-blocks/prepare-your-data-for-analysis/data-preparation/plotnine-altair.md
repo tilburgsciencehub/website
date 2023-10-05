@@ -23,7 +23,7 @@ To install `plotnine` we can either use `pip` or `conda`:
 ```python
 pip install plotnine
 
-#to include extra packages
+# to include extra packages
 
 pip install 'plotnine[all]'
 ```
@@ -64,11 +64,11 @@ We illustrate how to visualize data with `plotnine` by using the same examples a
 ```python
 from plotnine import *
 
-(ggplot(iris, aes('sepal width', 'sepal length'))
+(ggplot(iris, aes("sepal width", "sepal length", color = "species"))
  + geom_point()
- + labs(title = 'Scatterplot')
- + theme_bw()
-)
+ + coord_cartesian()
+ + labs(title = "Scatterplot", x = Sepal Width, y = Sepal Length)
+ + theme_bw())
 
 ```
 {{% /codeblock %}}
@@ -79,16 +79,14 @@ To create a bar plot, we just change the `geom function` from `geom_point()` to 
 
 {{% codeblock %}}
 ```python
-(
-    ggplot(data = stocks)+
-    geom_bar(aes(x = 'Date',
-                 y = 'GOOG'),
-            stat = 'identity')+
-    labs(title = 'Bar plot of GOOG closing price')+
-    xlab('Date')+
-    ylab('Closing price')+
-    theme_bw()    
-)
+(ggplot(data = stocks)+
+    geom_bar(aes(x = "Date",
+                 y = "GOOG"),
+            stat = "identity")+
+    labs(title = "Bar plot of GOOG closing price")+
+    xlab("Date")+
+    ylab("Closing price")+
+    theme_bw())
 ```
 {{% /codeblock %}}
 
@@ -124,9 +122,9 @@ The basic template for plotting with `altair` is:
 ```
 alt.Chart(data).mark_markname().encode( 
 
-       encoding1 = ‘column1’, 
+       encoding1 = "column1", 
 
-       encoding2 = ‘column2’)
+       encoding2 = "column2")
 ```
 
 We identify 3 basic elements: 
@@ -137,11 +135,11 @@ We identify 3 basic elements:
 
 ### Plotting
 
-We illustrate how to visualize data with `altair` by using the same dataset used for the `plotnine` example. However, this time we import it from the `vega_datasets` library.
+We illustrate how to visualize data with `altair` by using the same dataset used for the `plotnine` example (Iris). This time we import it from the `vega_datasets` library.
 
 {{% codeblock %}}
 ```python
-pip install altair vega_datasets #if not already in your environmennt
+pip install altair vega_datasets 
 ```
 {{% /codeblock %}}
 
@@ -149,7 +147,7 @@ pip install altair vega_datasets #if not already in your environmennt
 ```python
 from vega_datasets import data
 df = data.iris()
-df.head(15) # first glimpse on the dataset
+df.head(15) # first glimpse of the dataset
 ```
 {{% /codeblock %}}
 
@@ -172,12 +170,12 @@ alt.Chart(df).mark_bar().encode(
     x = "sepalWidth",
     y = "sepalLength",
     color = "species",
-    size = "petalLength
+    size = "petalLength"
 )
 ```
 {{% /codeblock %}}
 
-If you want to create a bar plot change the `mark_markname()` function from `mark_circle()` to `mark_bar()`.
+If you want to create a bar plot change the `mark_circle()` function to `mark_bar()`.
 
 {{% codeblock %}}
 ```python
