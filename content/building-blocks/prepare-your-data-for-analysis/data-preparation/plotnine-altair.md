@@ -17,23 +17,28 @@ An additional plotting library in Python is `plotnine`, which is an equivalent t
 
 ### Installation 
 
-To install `plotnine` we can either use the `pip` command:
-```
+To install `plotnine` we can either use `pip` or `conda`: 
+
+{{% codeblock %}}
+```python
 pip install plotnine
 
 #to include extra packages
+
 pip install 'plotnine[all]'
 ```
+{{% /codeblock %}}
 
-Or we can install using `conda`:
-
-```
+{{% codeblock %}}
+```python
 conda install -c conda-forge plotnine
 ```
+{{% /codeblock %}}
 
 ### Syntax
 
 The base syntax of `plotnine` is:
+
 
 ```
 ggplot(data = <DATA>) +         #to create the background layer containing the dataset as input
@@ -92,24 +97,25 @@ To create a line chart we change the same function to `geom_line()`.
 
 We can also create a box plot using the function `geom_boxplot()` or a histogram `geom_histogram()`.
 
-<br/>
-<br/>
-
 # Altair
 
 `Vega-Altair` is a declarative visualization library, built on `Vega` and `Vega Lite`.
 
 ### Installation
 
-We can install `altair` using:
+We can install `altair` using `pip` or `conda`:
 
-```
-#using pip
+{{% codeblock %}}
+```python
 pip install altair
+```
+{{% /codeblock %}}
 
-#using conda
+{{% codeblock %}}
+```python
 conda install -c conda-forge altair 
 ```
+{{% /codeblock %}}
 
 ### Syntax
 
@@ -124,32 +130,65 @@ alt.Chart(data).mark_markname().encode(
 ```
 
 We identify 3 basic elements: 
-- data: the input dataset used to make the plot
-- mark: specifies how the data is to be represented (bar, point, line, etc)
-- encoding: the visual properties of the chart (axes values, position channels, color, etc)
+- *data*: the input dataset used to make the plot
+- *mark*: specifies the type of graphical representation (bar, point, line, etc)
+- *encoding*: the visual properties of the chart (axes values, position channels, color, etc)
 
 
 ### Plotting
 
-We illustrate how to visualize data with `altair` by using the same dataset used for the `plotnine` example. 
+We illustrate how to visualize data with `altair` by using the same dataset used for the `plotnine` example. However, this time we import it from the `vega_datasets` library.
+
+{{% codeblock %}}
+```python
+pip install altair vega_datasets #if not already in your environmennt
+```
+{{% /codeblock %}}
+
+{{% codeblock %}}
+```python
+from vega_datasets import data
+df = data.iris()
+df.head(15) # first glimpse on the dataset
+```
+{{% /codeblock %}}
+
+To create a scatterplot change the `mark_markname()` function to `mark_circle()`.
 
 {{% codeblock %}}
 ```python
 alt.Chart(df).mark_circle().encode(
-    x = "sepal width"
-    y = "sepal length"
+    x = "sepalWidth",
+    y = "sepalLength"
 )
 ```
 {{% /codeblock %}}
 
-To create a bar plot, we just change the `mark_markname()` function from `mark_circle()` to `mark_bar()`.
+To add a different colour for every unique species add the argument `color` to `encode()`. In addition, the argument `size` allows us to change the size of each data point conditional on the length of the petals.
 
 {{% codeblock %}}
 ```python
 alt.Chart(df).mark_bar().encode(
-    x = "sepal width"
-    y = "sepal length"
+    x = "sepalWidth",
+    y = "sepalLength",
+    color = "species",
+    size = "petalLength
 )
 ```
 {{% /codeblock %}}
+
+If you want to create a bar plot change the `mark_markname()` function from `mark_circle()` to `mark_bar()`.
+
+{{% codeblock %}}
+```python
+alt.Chart(df).mark_bar().encode(
+    x = "sepalWidth",
+    y = "sepalLength",
+    color = "species"
+)
+```
+{{% /codeblock %}}
+
+
+
 
