@@ -29,7 +29,7 @@ In the context of non-feasible randomized controlled experiments, we [previously
 By considering the context and benefits outlined above, the regression approach proves to be advantageous for assessing causal relationships. It enables us to obtain standard errors, account for additional control variables, and interpret treatment effects in a meaningful way, contributing to a more comprehensive and robust analysis of the treatment's impact.
 
 ### An illustrative example (Continued)
-In the [previous building block](https://tilburgsciencehub.com/building-blocks/analyze-data/causal-inference/canonical-did-table/), we introduced an example to illustrate how to obtain the difference-in-means table for a 2 x 2 DiD design. This example looks into  the effect of the Q&A on subsequent ratings using a cross-platform identification strategy with Goodreads as the treatment and Amazon as the control group.
+In the [previous building block](/canonical-DiD), we introduced an example to illustrate how to obtain the difference-in-means table for a 2 x 2 DiD design. This example looks into  the effect of the Q&A on subsequent ratings using a cross-platform identification strategy with Goodreads as the treatment and Amazon as the control group.
 Since we have 2 groups (Amazon vs Goodreads) and 2 time periods (pre Q&A and post Q&A), we use the canonical 2 x 2 DiD design. This can be estimated with the following regression equation. You can find all the analysis code in this [Gist](https://gist.github.com/srosh2000/f52600b76999e88f0fe316e8f23b419e).
 {{<katex>}}
 {{</katex>}}
