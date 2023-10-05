@@ -1,9 +1,9 @@
 ---
-title: "The Canonical Difference-in-Difference Approach"
+title: "An Introduction to Difference-in-Difference Analysis"
 description: "This building block motivates causal inference, provides theoretical background for the difference-in-difference method and an example that walks you through how to set up the data to compute difference in means table for the 2 x 2 case.  "
 keywords: "causal inference, difference-in-difference, DID, R, regression, model, canonical DiD, difference in means table, potential outcomes framework, average treatment effect, ATE, ATT, ATU, treatment effects"
 draft: false
-weight: 8
+weight: 9
 author: "Roshini Sudhaharan"
 authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:

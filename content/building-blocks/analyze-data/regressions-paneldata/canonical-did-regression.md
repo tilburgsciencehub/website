@@ -3,7 +3,7 @@ title: "Canonical Difference-in-Difference as a Regression"
 description: "This building block walks you through DiD as a regression, motivates the use of Two-Way Fixed Effects (TWFE) and clustered standard errors  "
 keywords: "causal inference, difference-in-difference, DID, R, regression, model, canonical DiD, difference in means table, potential outcomes framework, average treatment effect, ATE, ATT, ATU, treatment effects, regression, TWFE, clustered standard errors"
 draft: false
-weight: 8
+weight: 12
 author: "Roshini Sudhaharan"
 authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:
@@ -12,7 +12,7 @@ aliases:
 ---
 # Overview
 
-In the context of non-feasible randomized controlled experiments, we [previously](https://tilburgsciencehub.com/building-blocks/analyze-data/causal-inference/canonical-did-table/) discussed the importance of the difference-in-difference (DiD) approach for causal inference. While calculating treatment effects using the difference-in-means method is a starting point, it lacks sufficient grounds for reliable inference. To obtain more robust results, it is crucial to estimate treatment effects through regression analysis with the appropriate model specification. Regression models allow for controlling confounding variables, accounting for unobserved heterogeneity, and incorporating fixed effects, leading to more accurate and meaningful interpretations of treatment effects. Next, we’ll dig a little deeper into the merits of the regression approach and how to carry out the estimation in R using an illustrative example.
+In the context of non-feasible randomized controlled experiments, we [previously](/canonical-DiD) discussed the importance of the difference-in-difference (DiD) approach for causal inference. While calculating treatment effects using the difference-in-means method is a starting point, it lacks sufficient grounds for reliable inference. To obtain more robust results, it is crucial to estimate treatment effects through regression analysis with the appropriate model specification. Regression models allow for controlling confounding variables, accounting for unobserved heterogeneity, and incorporating fixed effects, leading to more accurate and meaningful interpretations of treatment effects. Next, we’ll dig a little deeper into the merits of the regression approach and how to carry out the estimation in R using an illustrative example.
 
 ## Why Regression Approach?
 
@@ -71,18 +71,8 @@ tidy(model_1, conf.int = TRUE)
 {{% /codeblock %}}
 
 
-However, there might be time-varying and group-specific factors that may affect the outcome variable which requires us to estimate a two-way fixed effects regression. More on this in the next section!
-### Two-Way Fixed Effects Regression
+However, there might be time-varying and group-specific factors that may affect the outcome variable which requires us to estimate a two-way fixed effects (TWFE) regression. Check out [this building block](/withinestimator) to learn more about the TWFE model.
 
-When conducting a Difference-in-Differences (DiD) design, incorporating time and group fixed effects (TWFE) in the analysis can offer significant advantages over a simple regression approach. TWFE allows us to account for time-varying and group-specific factors that may affect the outcome variable, thereby improving the estimation of the treatment effect. By considering these fixed effects, we can address potential biases and enhance the robustness of our findings.
-
-Time-fixed effects captures any time-specific shocks, trends, or seasonality that may impact the outcome variable, ensuring that the estimated treatment effect is not biased due to these time effects.
-
-Furthermore, group fixed effects account for group-specific characteristics that are constant over time and might influence the outcome variable. These fixed effects control for unobserved heterogeneity across different groups and ensure that any differences in outcomes between the treatment and control groups are solely attributed to the treatment effect, rather than inherent group differences.
-
-By including both these fixed effects in the analysis, we effectively control for time-varying factors and group-specific characteristics, thereby isolating the treatment effect. This approach improves the **internal validity** of the DiD design by reducing the potential for omitted variable bias and unobserved heterogeneity.
-
-Moreover, TWFE can help address concerns related to time trends or parallel trends assumptions in the DiD design. The inclusion of fixed effects mitigates the need for strict assumptions about the absence of time-varying confounders or parallel trends in the control group, making the estimation more robust and reliable.
 
 {{% codeblock %}}
 ```R
