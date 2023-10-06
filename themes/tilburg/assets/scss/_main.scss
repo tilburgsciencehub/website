@@ -6,6 +6,22 @@
   opacity: 1; /* Firefox */
 }
 
+/* No margin for sub-lists */
+li {
+  p {
+    margin-bottom: 0 !important;
+  }
+
+  ol {
+    margin: 0 !important;
+  }
+
+  ul {
+    margin: 0 !important;
+  }
+}
+
+
 // share
 .share {
   display: inline-flex;
