@@ -81,17 +81,15 @@
 
 
         {{ if eq (len .Content) 0 }}
-        <script>
-          window.location = "/{{.Section}}";
-        </script>
-        {{ else }} {{ .Content }} {{ if (and (.Params.author) (.Params.authorlink)) }}
-        <div class="admonition author">
-          <div class="admonition-content">
-            Contributed by
-            <b><a href="{{ .Params.authorlink }}">{{ .Params.author }}</a></b>
-          </div>
-        </div>
-        {{ else }} {{ end }}
+				<script>window.location = "/{{.Section}}"</script>
+				{{ else }}
+				{{ .Content }}
+				{{ if .Params.author }}
+				<div class="admonition author">
+					<div class="admonition-content">Contributed by <b><a href="/contributors/{{ replace (lower .Params.author) " " "" }}">{{ .Params.author }}</a></b></div>
+				</div>				
+				{{ else }}
+				{{ end }}
 
         <div class="d-flex justify-content-between mt-5 align-items-center">
           <!-- <div class="flex-fill">

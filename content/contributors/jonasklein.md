@@ -10,6 +10,6 @@ social:
   - name: LinkedIn
     link: https://www.linkedin.com/in/kleinjonas/
 email: j.b.klein@tilburguniversity.edu
-image: jonasklein.jpg
+image: jonasklein.webp
 status: "active"
 ---

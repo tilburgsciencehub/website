@@ -10,6 +10,6 @@ social:
   - name: LinkedIn
     link: https://www.linkedin.com/in/aakriti-gupta-91450821b/
 email: a.gupta_4@tilburguniversity.edu
-image: aakriti_pic2.png
+image: aakriti_pic2.webp
 status: "active"
 ---
