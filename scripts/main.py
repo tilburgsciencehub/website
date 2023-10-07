@@ -22,6 +22,7 @@ analytics = googleapiclient.discovery.build(
     serviceName="analyticsreporting", version="v4", credentials=credentials,
 )
 
+
 def get_report():
     body = {
         "reportRequests": [
@@ -30,14 +31,15 @@ def get_report():
                 "dateRanges": [{"startDate": "14daysAgo", "endDate": "today"}],
                 "metrics": [{"expression": "ga:users"}],
                 "dimensions": [
-                {"name": "ga:pagePath"},
-                {"name": "ga:pageTitle"}
+                    {"name": "ga:pagePath"},
+                    {"name": "ga:pageTitle"}
                 ],
                 "orderBys": [{"fieldName": "ga:users", "sortOrder": "DESCENDING"}],
             }
         ]
     }
     return analytics.reports().batchGet(body=body).execute()
+
 
 def get_popular_pages(response):
     print("Fetching popular pages...")
@@ -46,10 +48,11 @@ def get_popular_pages(response):
     if reports:
         report = reports[0]
         for row in report.get("data", {}).get("rows", []):
-            if (row["dimensions"][0]!= "/"):
+            if (row["dimensions"][0] != "/"):
                 path = row["dimensions"][0]
-                title = row["dimensions"][1].replace('- Tilburg Science Hub', '').strip()
-                data = {"path":path, "title":title}
+                title = row["dimensions"][1].replace(
+                    '- Tilburg Science Hub', '').strip()
+                data = {"path": path, "title": title}
                 popular_pages.append(data)
     filtered = [page for page in popular_pages]
     if len(filtered) > MAX_PAGES:
@@ -58,6 +61,8 @@ def get_popular_pages(response):
 
 # Fetch Description
 # page_path: url of the page to retrieve the description from
+
+
 def fetch_og_description(page_path):
     # Fetch the webpage's HTML and extract the og:description using BeautifulSoup
     url = "https://tilburgsciencehub.com" + page_path
@@ -72,6 +77,8 @@ def fetch_og_description(page_path):
 # Collect Top 5 From BB or Tutorials
 # response: result from get_report()
 # path_prefix: "building_blocks" or "tutorials"
+
+
 def fetch_cards_popular_pages(response, path_prefix):
     print(f"Fetching popular {path_prefix}...")
     popular_pages = []
@@ -87,23 +94,30 @@ def fetch_cards_popular_pages(response, path_prefix):
             else:
                 page_title = page_title
             page_description = fetch_og_description(page_path)
-            if page_path.startswith(path_prefix) and page_path != path_prefix and page_title != "(not set)":
-                popular_pages.append({"path": page_path, "title": page_title, "description": page_description})
+            # Eerst een lijst maken van alle page_titles in popular_pages
+            existing_titles = [page['title'] for page in popular_pages]
+            if page_path.startswith(path_prefix) and page_path != path_prefix and page_title != "(not set)" and page_title not in existing_titles and 'contribute-to-tilburg-science-hub' not in page_path:
+                popular_pages.append(
+                    {"path": page_path, "title": page_title, "description": page_description})
     filtered = popular_pages[:5]
     return filtered
 
 # Retrieve Sitemap
 # url: root url of the website
+
+
 def get_sitemap(url):
     try:
         response = requests.get(url)
         if response.status_code == 200:
             sitemap_content = response.content
             sitemap_root = ET.fromstring(sitemap_content)
-            urls = [loc.text for loc in sitemap_root.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
+            urls = [loc.text for loc in sitemap_root.findall(
+                ".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc")]
             return urls
         else:
-            print(f"Failed to retrieve sitemap. Status code: {response.status_code}")
+            print(
+                f"Failed to retrieve sitemap. Status code: {response.status_code}")
             return []
     except requests.exceptions.RequestException as e:
         print(f"Error fetching sitemap: {e}")
@@ -111,7 +125,9 @@ def get_sitemap(url):
 
 # type_page: Building Block or Tutorial
 # category_slug: The Name of the Category
-def get_tsh_sitemap_category(type_page,category_slug):
+
+
+def get_tsh_sitemap_category(type_page, category_slug):
     sitemap_url = "https://tilburgsciencehub.com/sitemap.xml"
     urls = get_sitemap(sitemap_url)
     common_part = 'https://tilburgsciencehub.com/'+type_page+'/'+category_slug+'/'
@@ -125,16 +141,18 @@ def get_tsh_sitemap_category(type_page,category_slug):
                 trimmed_url = trimmed_url.replace('/', '')
                 trimmed_url = trimmed_url.replace('-', ' ')
                 title = trimmed_url.title()
-                data_dict = {"path": path, "title" : title}
+                data_dict = {"path": path, "title": title}
                 url_list.append(data_dict)
 
     return url_list
 
 # Retrieve MD Files
+
+
 def get_md_files():
     # Get the absolute path of the current notebook file
     notebook_path = os.path.abspath('')
-    
+
     # Navigate to the root folder (one level up from the current notebook file)
     root_folder = os.path.abspath(os.path.join(notebook_path, '..'))
     os.chdir(root_folder)
@@ -157,12 +175,14 @@ def get_md_files():
 
     return md_files
 
-# Get the Data for a Category 
+# Get the Data for a Category
 # md_files: the results from get_md_files()
 # category_input: name of the category
+
+
 def get_category_files(md_files, category_input):
 
-    category_list =[]
+    category_list = []
 
     for file in md_files:
         with open(file, 'r') as f:
@@ -195,10 +215,10 @@ def get_category_files(md_files, category_input):
         # If the category is "reproducible", find the "title", "description", "icon", "aliases" keys
         if category == category_input:
 
-            #Set Icon Empty
+            # Set Icon Empty
             icon = ""
 
-            #Loop Through each Line
+            # Loop Through each Line
             for line in front_matter_lines:
                 if 'title:' in line:
                     title = line.split(':', 1)[1].strip().strip('\"')
@@ -220,13 +240,16 @@ def get_category_files(md_files, category_input):
                 path = f"{path}{indexpage}"
 
             # Put the file location, title, description, and path in Dict
-            data_dict = {"title" : title, "path" : path, "description" : description, "icon" : icon}
+            data_dict = {"title": title, "path": path,
+                         "description": description, "icon": icon}
             category_list.append(data_dict)
 
     return category_list
 
 # Create Populard Cards JSON
 # input_categories: Names of the input categories separated by comma
+
+
 def create_popular_cards_json(input_categories):
 
     # Split the input_categories string by comma to get individual category names
@@ -234,24 +257,24 @@ def create_popular_cards_json(input_categories):
 
     # Get all MD files
     md_files = get_md_files()
-    
+
     # Create a dictionary to store the category variables
     category_vars = {}
-    
+
     # Loop through input categories and create variables
     for category_name in category_names:
         category_var = get_category_files(md_files, category_name)
         category_vars[category_name] = category_var
-    
+
     # Create the categories output dictionary
     categories_output = category_vars
 
-    #Get Analytics, Populate popular tutorials and building blocks
+    # Get Analytics, Populate popular tutorials and building blocks
     response = get_report()
     tutorials = fetch_cards_popular_pages(response, "/tutorials/")
     building_blocks = fetch_cards_popular_pages(response, "/building-blocks/")
 
-    #Create Dictionary
+    # Create Dictionary
     data_dict = {
         "tutorials": tutorials,
         "building_blocks": building_blocks,
@@ -262,10 +285,11 @@ def create_popular_cards_json(input_categories):
 
     return data_dict
 
+
 def main():
-    
+
     logging.info('Python HTTP trigger function processed a request.')
-    
+
     # Navigate to the root folder (one level up from the current notebook file)
     notebook_path = os.path.abspath('')
     root_folder = os.path.abspath(os.path.join(notebook_path, '../static'))
@@ -273,7 +297,7 @@ def main():
 
     response = get_report()
     pages = get_popular_pages(response)
-    
+
     with open('pages.json', 'w') as f:
         json.dump(pages, f)
 
@@ -285,6 +309,7 @@ def main():
         json.dump(popular_cards, f)
 
     print('JSON created')
-    
+
+
 if __name__ == "__main__":
     main()
