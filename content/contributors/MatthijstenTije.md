@@ -8,6 +8,6 @@ social:
     - name: Linkedin
     - link: https://www.linkedin.com/in/matthijstentije/
 email: m.a.n.tentije@tilburguniversity.edu
-image: MatthijstenTije.png
+image: MatthijstenTije.webp
 status: "active"
 ---

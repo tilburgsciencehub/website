@@ -10,6 +10,6 @@ social:
   - name: LinkedIn
     link: https://www.linkedin.com/in/valerie-vossen/
 email: v.a.p.m.vossen@tilburguniversity.edu
-image: valerievossen.png
+image: valerievossen.webp
 status: "active"
 ---

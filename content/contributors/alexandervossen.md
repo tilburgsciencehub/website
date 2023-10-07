@@ -9,6 +9,6 @@ social:
   - name: LinkedIn
     link: https://www.linkedin.com/in/alexander-vossen-198a6b51/
 email: a.vossen@tilburguniversity.edu 
-image: alexvossen.png 
+image: alexvossen.webp
 status: "active"
 ---

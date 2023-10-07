@@ -13,7 +13,7 @@ social:
     link: https://twitter.com/hannesdatta
     
 email: h.datta@tilburguniversity.edu
-image: hannesdatta.png
+image: hannesdatta.webp
 status: "active"
 ---
 

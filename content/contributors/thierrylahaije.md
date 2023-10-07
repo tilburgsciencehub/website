@@ -14,7 +14,7 @@ social:
   - name: LinkedIn
     link: https://www.linkedin.com/in/thierry-lahaye-983b80215/
 email: t.p.lahaije@tilburguniversity.edu
-image: thierry.png
+image: thierry.webp
 status: "active"
 ---
 

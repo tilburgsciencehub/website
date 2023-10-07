@@ -14,7 +14,7 @@ social:
     link: https://github.com/Fernando-Iscar
 
 email: f.iscar@tilburguniversity.edu
-image: fernandoiscar.png
+image: fernandoiscar.webp
 status: "active"
 ---
 

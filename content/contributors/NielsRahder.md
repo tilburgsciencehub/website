@@ -9,6 +9,6 @@ social:
   - name: LinkedIn
     link: https://www.linkedin.com/in/nielsrahder
 email: n.j.rahder@tilburguniversity.edu
-image: NielsRahder.jpg
+image: NielsRahder.webp
 status: "active"
 ---
