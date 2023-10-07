@@ -573,5 +573,13 @@
 {{ .Content }}
 
 
+<script>
+  // Controleer of het scherm kleiner is dan 768 pixels (mobiel)
+  if (window.innerWidth <= 768) {
+    // Schakel de automatische sliding uit
+    var carousel = document.getElementById('carouselExample');
+    carousel.removeAttribute('data-bs-ride');
+  }
+</script>
 
 {{ partial "footer.html" . }}
