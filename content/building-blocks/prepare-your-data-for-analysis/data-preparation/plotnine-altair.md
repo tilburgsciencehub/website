@@ -187,6 +187,3 @@ alt.Chart(df).mark_bar().encode(
 ```
 {{% /codeblock %}}
 
-
-
-
