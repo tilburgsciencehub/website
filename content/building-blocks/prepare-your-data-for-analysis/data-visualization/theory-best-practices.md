@@ -64,49 +64,208 @@ There is a vast range of chart types that could be used to visualize data, howev
 
 The scatterplot can represent data with 2 quantitative attributes in horizontal and vertical channel positions. The used marks are points and the purposes of a scatterplot are to find trends or outliers, visualize a distribution or correlations, or identify clusters. 
 
-<p align = "center">
-<img src = "../img/scatterplot.png" width=350">
-</p>
+#### Code
+With the following code you can create a scatterplot with self-generated data in R. You can substitute this kind of data with any dataset you are working with. This process will be replicated for every figure in this building block. 
+
+{{% codeblock %}}
+```R
+# Generate random data (you can replace this with your actual data)
+set.seed(123)  # For reproducibility
+data <- data.frame(
+  x = rnorm(100),   # X-axis values
+  y = rnorm(100),   # Y-axis values
+  group = sample(1:3, 100, replace = TRUE)
+)
+
+# Create the scatterplot using ggplot2
+scatter_plot <- ggplot(data, aes(x = x, y = y, color = factor(group))) +
+  geom_point(size = 3) +  # Customize the size of the points
+  scale_color_manual(values = c("DarkGreen", "blue", "Yellow")) +  # Define colors for groups
+  labs(
+    title = "Scatterplot",
+    x = "X-Axis Label",
+    y = "Y-Axis Label",
+    color = "Group"
+  ) 
+
+# Display the scatterplot
+print(scatter_plot)
+
+```
+{{% /codeblock %}}
+
+The output should look like this: 
+![Scatterplot](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Scatterplot.png)
+
 
 #### 2. Bar plot
 
 The bar plot can visualize one categorical and one quantitative attribute. It uses bars (thick lines) as marks and the used channels are length (to express quantitative value) and spatial regions (one per mark). These can be separated horizontally and aligned vertically (or the other way around) and are ordered by attribute values (either by label/alphabetical or by attribute length). The task of the bar chart is to compare or lookup values. 
 
-<p align = "center">
-<img src = "../img/bar_chart.png" width=450">
-</p>
+#### Code
+
+{{% codeblock %}}
+```R
+# Generate sample data
+data <- data.frame(
+  Category = c("Category A", "Category B", "Category C", "Category D"),
+  Value = c(10, 25, 15, 30)
+)
+
+# Create a bar chart
+bar_plot <- ggplot(data, aes(x = Category, y = Value)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "Bar Chart", x = "Categories", y = "Values") 
+
+bar_plot
+
+```
+{{% codeblock %}}
+
+The output should look like this:
+![Bar plot](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Barplot.png)
+
 
 #### 3. Stacked bar chart
 
 The stacked bar chart can visualize two categorical attributes and one quantitative attribute. As a mark it uses a vertical stack of line marks. For the channels the stacked bar chart uses length and color hue, as well as spatial regions to represent data. Its task is again to compare and lookup values, and additionally, it can inspect part-to-whole relationships. 
 
-<p align = "center">
-<img src = "../img/stacked_bar.png" width=350">
-</p>
+#### Code 
+
+{{% codeblock %}}
+```R
+# Generate sample data for a stacked bar chart
+data <- data.frame(
+  Category = rep(c("Category A", "Category B", "Category C", "Category D"), each = 3),
+  Subcategory = rep(c("Subcategory 1", "Subcategory 2", "Subcategory 3"), times = 4),
+  Value = c(5, 3, 2, 15, 7, 3, 10, 5, 10, 20, 5, 5)
+)
+
+# Create a stacked bar chart
+stacked_bar_chart <-  ggplot(data, aes(x = Category, y = Value, fill = Subcategory)) +
+  geom_bar(stat = "identity", position = "stack") +
+  labs(title = "Stacked Bar Chart", x = "Categories", y = "Values") +
+  scale_fill_manual(values = c("Subcategory 1" = "skyblue", "Subcategory 2" = "lightgreen", "Subcategory 3" = "salmon")) +
+  theme_minimal()
+
+stacked_bar_chart
+```
+{{% codeblock %}}
+
+The output should look like this:
+![Stacked Bar chart](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/StackedBarChart.png)
 
 #### 4. Line chart
 
 The line chart represents 2 quantitative attributes and uses points with line connections between them as marks. The channels are aligned lengths to express quantitative value and are separated and ordered by attributes into horizontal regions. The task of the line chart is to find trends. 
 
-<p align = "center">
-<img src = "../img/line_chart.png" width=400">
-</p>
+#### Code 
+
+{{% codeblock %}}
+```R
+set.seed(456)  # Set a random seed for reproducibility
+
+# Generate data for three lines
+years <- 2000:2023
+line1 <- rnorm(length(years), mean = 15, sd = 5)
+line2 <- rnorm(length(years), mean = 30, sd = 2)
+line3 <- rnorm(length(years), mean = 25, sd = 6)
+
+data <- data.frame(
+  Year = years,
+  Line1 = line1,
+  Line2 = line2,
+  Line3 = line3
+)
+
+line_chart <- ggplot(data, aes(x = Year)) +
+  geom_line(aes(y = Line1), color = "LightBlue", linetype = "solid") +
+  geom_line(aes(y = Line2), color = "LightGreen", linetype = "solid") +
+  geom_line(aes(y = Line3), color = "red", linetype = "solid") +
+  labs(title = "Line Chart",
+       x = "Year",
+       y = "Value") 
+
+print(line_chart)
+```
+{{% codeblock %}}
+
+The output should look like this:
+![Line chart](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/LineChart.png)
 
 #### 5. Heatmap
 
 The heatmap can visualize 2 categorical attributes, usually in order, and one quantitative attribute. It uses areas as marks in the shape of a matrix indexed by the 2 categorical attributes. The channel is color hue ordered by the quantitative attribute. The purpose of the heatmap is to find clusters and outliers.
 
-<p align = "center">
-<img src = "../img/heatmap.png" width=400">
-</p>
+#### Code 
+
+{{% codeblock %}}
+```R
+install.packages("tidyr")
+
+# Load the required packages
+library(ggplot2)
+library(tibble)
+
+# Create a 5x5 matrix with random values between 1 and 10
+data_matrix <- matrix(runif(25, 1, 10), nrow = 5)
+
+# Convert the matrix to a data frame and add rownames as a column
+data_df <- as.data.frame(data_matrix)
+data_df <- tibble::rownames_to_column(data_df, var = "Row")
+
+# Convert the data to a long format
+data_df <- tidyr::gather(data_df, key = "Column", value = "Value", -Row)
+
+# Create the heatmap using ggplot2 and add text labels
+heatmap_plot <- ggplot(data_df, aes(x = Column, y = Row, fill = Value, label = round(Value, 1))) +
+  geom_tile() +
+  geom_text(size = 4, color = "black") +  # Add text labels
+  scale_fill_gradient(low = "white", high = "red") +
+  theme_minimal() +
+  labs(x = "Column", y = "Row", fill = "Value") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x-axis labels for better readability
+
+print(heatmap_plot)
+```
+{{% codeblock %}}
+
+The output should look like this:
+![Heatmap](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Heatmap.png)
 
 #### 6. Histogram
 
 The histogram is used to find the distribution or shape inside some data. It visualizes the frequency of an attribute from a table by using bins and counts. The bins are intervals in which the range of values is divided into, and counts are the frequencies of the values inside each interval. 
 
-<p align = "center">
-<img src = "../img/histogram.png" width=350">
-</p>
+#### Code 
+
+{{% codeblock %}}
+```R
+# Set a seed for reproducibility
+set.seed(123)
+
+# Generate random data with a normal distribution
+data <- rnorm(1000, mean = 0, sd = 1)
+
+# Create a histogram with bins
+hist_with_bins <- ggplot(data.frame(x = data), aes(x)) +
+  geom_histogram(binwidth = 0.5, fill = "blue", color = "black", alpha = 0.7) +
+  labs(title = "Histogram with Bins")
+
+# Create a line plot of the distribution
+line_plot <- ggplot(data.frame(x = data), aes(x)) +
+  geom_density(fill = "blue", color = "black", alpha = 0.7) +
+  labs(title = "Distribution Line Plot")
+
+# Display the plots
+hist_with_bins
+line_plot
+```
+{{% codeblock %}}
+
+The output should look like this:
+![Histogram with bins](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/HistogramBins.png)
+![Distribution line](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/DistributionPlot.png)
 
 #### 7. Box plot
 
@@ -117,9 +276,29 @@ The box plot is also used to find the distribution of the data. It maps the attr
 
 Any values outside the limits are considered outliers. 
 
-<p align = "center">
-<img src = "../img/box_plot.png" width=350">
-</p>
+#### Code 
+
+{{% codeblock %}}
+```R
+set.seed(123)  
+data <- data.frame(
+  categories = rep(c("A", "B", "C", "D"), each = 50),
+  values = rnorm(200)
+)
+
+box_plot <- ggplot(data, aes(x = categories, y = values)) +
+  geom_boxplot() +
+  labs(
+    title = "Box Plot Example",
+    x = "Categories",
+    y = "Values"
+  )
+box_plot
+```
+{{% codeblock %}}
+
+The output should look like this:
+![Box plot](website/content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Box_plot.png)
 
 ## Best Practices for Data Visualization
 
@@ -146,5 +325,22 @@ We have compiled a few best practices geared towards academic publishing.
 
 Remember, the primary goal of data visualization in academic papers is clarity and effective communication of the research findings. Your visualization should aid comprehension rather than introduce confusion.
 
-
 {{% /tip %}}
+
+## Saving plots 
+
+To save the plots just created we will use the function ggsave, part of the ggplot2 package. 
+
+The first necessary step is downloading and calling the package:
+
+```R
+install.packages("ggplot2")
+library(ggplot2)
+```
+The second step is saving the plot, so that is available for future use. You can do the following step for all figures, here it is displayed for one only. 
+
+```R
+#Saving the last plot we created as a PNG file with custom dimensions and resolution
+ggsave("my_box_plot.png", plot = box_plot, width = 8, height = 6, dpi = 600)
+```
+## Summary 
