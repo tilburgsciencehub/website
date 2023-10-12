@@ -97,7 +97,7 @@ print(scatter_plot)
 The output should look like this: 
 <p align = "center" >
 <img src = "content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Scatterplot.png" > 
-<figcaption> Scatterplot </figcaption>
+<figcaption> Scatterplots </figcaption>
 </p>
 
 
