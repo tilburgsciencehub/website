@@ -24,7 +24,6 @@ To install `plotnine` we can either use `pip` or `conda`:
 pip install plotnine
 
 # to include extra packages
-
 pip install 'plotnine[all]'
 ```
 {{% /codeblock %}}
@@ -41,59 +40,56 @@ The base syntax of `plotnine` is:
 
 
 ```
-ggplot(data = <DATA>) +         #to create the background layer containing the dataset as input
-  <GEOM_FUNCTION>(              #main layer to build a chart type
+ggplot(data = <DATA>) +         # to create the background layer containing the dataset as input
+  <GEOM_FUNCTION>(              # main layer to build a chart type
      mapping = aes(<MAPPINGS>),
      stat = <STAT>, 
      position = <POSITION>
   ) +
-  <COORDINATE_FUNCTION> +       #layer for axes, titles, etc
+  <COORDINATE_FUNCTION> +       # layer for axes, titles, etc
   <LABS>(
      title = <TITLE>,
      subtitle = <SUBTITLE>,
      caption = <CAPTION>
   )+
-  <FACET_FUNCTION>              #optional layer
+  <FACET_FUNCTION>              # optional layer
 ```
 
 ### Plotting
 
-We illustrate how to visualize data with `plotnine` by using the same examples as in [Matplotlib vs Seaborn](https://tilburgsciencehub.com/building-blocks/visualize-your-data/data-visualization/matplotlib-seaborn). Let's import the library and recreate the Iris scatterplot.
+We illustrate how to visualize data with `plotnine` by using the Iris dataset from `sklearn`. 
+
+Importing needed packages and dataset:
 
 {{% codeblock %}}
 ```python
+import sklearn
+import plotnine
+import pandas as pd
+from sklearn import datasets
 from plotnine import *
 
-(ggplot(iris, aes("sepal width", "sepal length", color = "species"))
- + geom_point()
- + coord_cartesian()
- + labs(title = "Scatterplot", x = Sepal Width, y = Sepal Length)
- + theme_bw())
+iris = datasets.load_iris()
 
+# transforming Iris into a data frame
+iris_df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
 ```
 {{% /codeblock %}}
 
-
-To create a bar plot, we just change the `geom function` from `geom_point()` to `geom_bar()`. We use the monthly stocks dataset.
-
-
+Plotting:
 {{% codeblock %}}
 ```python
-(ggplot(data = stocks)+
-    geom_bar(aes(x = "Date",
-                 y = "GOOG"),
-            stat = "identity")+
-    labs(title = "Bar plot of GOOG closing price")+
-    xlab("Date")+
-    ylab("Closing price")+
-    theme_bw())
+
+(ggplot(iris_df, aes(x = "sepal width (cm)", y = "sepal length (cm)"))
+  + geom_point()
+  + coord_cartesian()
+  + labs(title = "Scatterplot", x = "Sepal Width", y = "Sepal Length")
+  + theme_bw())
+
 ```
 {{% /codeblock %}}
 
-To create a line chart we change the same function to `geom_line()`.
-
-
-We can also create a box plot using the function `geom_boxplot()` or a histogram `geom_histogram()`.
+Alternative geometric functions are `geom_bar()`, `geom_line()`, `geom_boxplot()`, and `geom_histogram()`.
 
 # Altair
 
@@ -135,7 +131,7 @@ We identify 3 basic elements:
 
 ### Plotting
 
-We illustrate how to visualize data with `altair` by using the same dataset used for the `plotnine` example (Iris). This time we import it from the `vega_datasets` library.
+We illustrate how to visualize data with `altair` by using the same dataset used for the `plotnine` example (Iris). However, this time,2 we import it from the `vega_datasets` library.
 
 {{% codeblock %}}
 ```python
@@ -145,9 +141,10 @@ pip install altair vega_datasets
 
 {{% codeblock %}}
 ```python
+import altair as alt
 from vega_datasets import data
-df = data.iris()
-df.head(15) # first glimpse of the dataset
+iris_df = data.iris()
+
 ```
 {{% /codeblock %}}
 
@@ -155,18 +152,20 @@ To create a scatterplot change the `mark_markname()` function to `mark_circle()`
 
 {{% codeblock %}}
 ```python
-alt.Chart(df).mark_circle().encode(
+alt.Chart(iris_df).mark_circle().encode(
     x = "sepalWidth",
     y = "sepalLength"
 )
 ```
 {{% /codeblock %}}
 
+If you want to create a bar plot change the `mark_circle()` function to `mark_bar()`.
+
 To add a different colour for every unique species add the argument `color` to `encode()`. In addition, the argument `size` allows us to change the size of each data point conditional on the length of the petals.
 
 {{% codeblock %}}
 ```python
-alt.Chart(df).mark_bar().encode(
+alt.Chart(iris_df).mark_bar().encode(
     x = "sepalWidth",
     y = "sepalLength",
     color = "species",
@@ -175,15 +174,5 @@ alt.Chart(df).mark_bar().encode(
 ```
 {{% /codeblock %}}
 
-If you want to create a bar plot change the `mark_circle()` function to `mark_bar()`.
 
-{{% codeblock %}}
-```python
-alt.Chart(df).mark_bar().encode(
-    x = "sepalWidth",
-    y = "sepalLength",
-    color = "species"
-)
-```
-{{% /codeblock %}}
 
