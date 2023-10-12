@@ -94,7 +94,7 @@ print(scatter_plot)
 ```
 {{% /codeblock %}}
 
-The output should look like this: 
+The output should look like this:
 
 ![Scatterplot](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Scatterplot.png)
 
