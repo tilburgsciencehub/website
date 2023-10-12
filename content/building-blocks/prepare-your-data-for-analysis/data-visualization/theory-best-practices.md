@@ -95,11 +95,8 @@ print(scatter_plot)
 {{% /codeblock %}}
 
 The output should look like this: 
-<p align = "center" >
-<img src = "content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Scatterplot.png" > 
-<figcaption> Scatterplots </figcaption>
-</p>
 
+![Scatterplot](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Scatterplot.png)
 
 
 #### 2. Bar plot
@@ -348,3 +345,11 @@ The second step is saving the plot, so that is available for future use. You can
 ggsave("my_box_plot.png", plot = box_plot, width = 8, height = 6, dpi = 600)
 ```
 ## Summary 
+
+Data visualization is essential for understanding data. It uses marks (like points and lines) and channels (such as color and size) to create charts. A complete chart includes axes, legends, titles, and labels for clarity.
+
+Common chart types include scatterplots, bar plots, stacked bar charts, line charts, heatmaps, histograms, and box plots.
+
+Best practices for data visualization in academic publishing include monochrome compatibility, simplicity, recognizable formats, detailed annotation, and attention to scaling and typography.
+
+The text also includes code examples in R for creating these visualizations and explains how to save them using the `ggsave` function.
