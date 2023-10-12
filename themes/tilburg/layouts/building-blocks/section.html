@@ -39,7 +39,17 @@
               <div class="col-24 col-lg-12 mb-4" id="{{ .Title | urlize }}-ezo">
                 <h5 class="heading font-weight-normal" style="font-size: 16px; height: -webkit-fit-content;">{{ .Title }}</h5>
                 {{ range .Pages }}
-                <a class="d-block" href="{{.Permalink}}">{{.Title}}</a>
+
+                  {{ $wordCount := .Content | countwords }}
+                {{ $readingTimeMinutes := div $wordCount 200 }}
+                {{ if eq $readingTimeMinutes 0 }}
+                    {{ $readingTimeMinutes = 1 }}
+                {{ end }}
+                
+                <a class="d-block mr-3" href="{{.Permalink}}">{{.Title}}
+                  <sup style="color: #ffb222;">{{ $readingTimeMinutes }} mins <i class="fa-regular fa-clock mr-2"></i></sup>
+                </a>
+              
                 {{ end }}
               </div>
               {{ end }}
