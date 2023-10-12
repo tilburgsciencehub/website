@@ -280,7 +280,7 @@
               {{ $s := slice }}
               {{ $displayedTitles := dict }}
 
-              {{ range where .Site.Pages.ByPublishDate.Reverse "Section" "in" "[building-blocks, tutorials]" }}
+              {{ range where .Site.Pages.ByLastmod.Reverse "Section" "in" "[building-blocks, tutorials]" }}
               {{ $title := .Title }}
               {{ if not (index $displayedTitles $title) }}
               {{ $s = $s | append . }}
@@ -288,7 +288,7 @@
               {{ end }}
               {{ end }}
 
-              {{ with $s.ByPublishDate.Reverse | first 3 }}
+              {{ with $s.ByLastmod.Reverse | first 3 }}
               {{ range . }}
               <li class="pb-3">
                 <span class="icon link text-primary d-inline-block mr-2"></span>
