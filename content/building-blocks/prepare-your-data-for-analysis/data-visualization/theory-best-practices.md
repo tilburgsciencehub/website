@@ -95,7 +95,11 @@ print(scatter_plot)
 {{% /codeblock %}}
 
 The output should look like this: 
-![Scatterplot](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Scatterplot.png)
+<p align = "center" >
+<img src = "content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Scatterplot.png" > 
+<figcaption> Scatterplot </figcaption>
+</p>
+
 
 
 #### 2. Bar plot
