@@ -131,7 +131,7 @@ We identify 3 basic elements:
 
 ### Plotting
 
-We illustrate how to visualize data with `altair` by using the same dataset used for the `plotnine` example (Iris). However, this time,2 we import it from the `vega_datasets` library.
+We illustrate how to visualize data with `altair` by using the same dataset used for the `plotnine` example (Iris). However, this time, we import it from the `vega_datasets` library.
 
 {{% codeblock %}}
 ```python
@@ -159,20 +159,20 @@ alt.Chart(iris_df).mark_circle().encode(
 ```
 {{% /codeblock %}}
 
-If you want to create a bar plot change the `mark_circle()` function to `mark_bar()`.
 
-To add a different colour for every unique species add the argument `color` to `encode()`. In addition, the argument `size` allows us to change the size of each data point conditional on the length of the petals.
+To add a different colour for every unique species add the argument `color` to `encode()`. In addition, the argument `size` allows to change the size of each data point conditional on the length of the petals.
 
 {{% codeblock %}}
 ```python
-alt.Chart(iris_df).mark_bar().encode(
-    x = "sepalWidth",
-    y = "sepalLength",
-    color = "species",
-    size = "petalLength"
+alt.Chart(iris_df).mark_circle().encode(
+    x = alt.X("sepalWidth", axis = alt.Axis(title="Sepal Width")),
+    y = alt.Y("sepalLength", axis = alt.Axis(title="Sepal Length")),
+    color="species",
+    size="petalLength"
 )
 ```
 {{% /codeblock %}}
 
+To create a different type of plot `mark_circle()` can be changed to `mark_bar()`, `mark_point()`, or `mark_line()`. 
 
 
