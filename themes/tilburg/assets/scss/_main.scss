@@ -721,6 +721,21 @@ article {
 max-width: 450px;
 }
 
+.community-member-row {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.community-member-single {
+  border: 1px solid #000;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 5px;
+}
+
 @media screen and (max-width: 600px) { 
   .community_members {
     max-width:350px !important;

@@ -447,8 +447,31 @@
   <div class="row py-5">
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 text-center">
-      <img src="/img/community-members.png" style="max-width: 100%;height: auto;" alt="Open science community"
-        loading="lazy" class="community_members">
+      <div class="community-members-container">
+        {{ $contributors := where .Site.Pages "Section" "contributors" }}
+        {{ $contributorsCount := sub (len $contributors) 1 }}
+        {{ $counter := 0 }}
+        {{- range where .Site.Pages "Section" "contributors" -}}
+          {{- range $index, $value := .Pages -}}
+          {{- if or (eq $counter 0) (eq $counter 3) (eq $counter 7) (eq $counter 12) (eq $counter 16) (eq $counter 19) -}}
+              <div class="community-member-row">
+            {{- end -}}
+            <div class="community-member-single" style="background-image: url('{{ if .Params.image }}/contributors/{{ .Params.image }}{{ else }}static/contributors/no-image.png{{ end }}');">
+            </div>
+            {{ $counter = add $counter 1 }}
+            {{- if or (eq $counter 3) (eq $counter 7) (eq $counter 12) (eq $counter 16) (eq $counter 19) (eq $counter 21) -}}
+              </div>
+            {{- end -}}
+            {{- if or (eq $counter $contributorsCount) -}}
+              <div class="community-member-single" style="padding-top:15px;">
+                <i class="fa-solid fa-plus" style="font-size:40px;"></i>
+              </div>
+            {{- end -}} 
+          {{- end -}}
+        {{- end -}}
+
+      </div>
+      </div>
     </div>
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 d-flex align-items-center">
