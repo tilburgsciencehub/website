@@ -11,39 +11,27 @@ aliases:
   - /r/forest plots
 ---
 
----
-title: "Your building block title (50-70 characters + most important keyword must be in the title atleast once)"
-description: "A brief description of this tutorial page (130–160 characters + most important keyword must be in the descripion atleast once)."
-keywords: "any, relevant, keywords, separated, by, commas, like, this"
-date: YYYY-MM-DD
-weight: #
-author: "Your Name"
-authorlink: "A link to your personal webpage"
-aliases:
-  - /verb/noun
-  - /do/this
-  - /get/that
-  - add as many as you want, but at least one
----
+## Overview
 
-## Overview <!-- Goal of the Building Block -->
+`Forest plots` are a visual representation of findings from various scientific studies that investigate a common research question. They find significant application in the field of `meta-analysis`, a type of statistical analysis that combines and examines results from a number of independent studies. 
+More practically, forest plots identify a statistic that is common to such set of studies and report the various instances of that statistic. This, in turn, allows to compare the different results and the significance of the overall pooled summary effect. <br/>
+<br/>
+Among the **benefits** of forest plots, we find:
 
-Provide a brief overview of the issue to solve, or describe why this is a best practice.
-
-Add any special requirements or attach a dummy data set if needed.
+* clear and concise `visual representation` of results;
+* `effect size` and `confidence interval` comparison across different studies;
+* overall, useful tool to evaluate the consistency and strength of evidence, identify potential sources of bias, 
+  and make informed judgments about the effect of interventions or exposures.
 
 
-## Code <!-- Provide your code in all the relevant languages and/or operating systems and specify them after the three back ticks. Do NOT remove % codeblock % -->
+## Code 
+
+
 
 {{% codeblock %}} <!-- You can provide more than one language in the same code block -->
 
 [python-link](code.py) <!-- OPTIONAL: You can also provide your code as a downloadable file (useful for very long codes). Make sure you place this file in the same folder. Specify in [square brackets] the language followed by "-link" as shown here.-->
 
-
-```python
-# some Python code here
-print("Hello, world!")
-```
 
 ```R
 # some R code here
