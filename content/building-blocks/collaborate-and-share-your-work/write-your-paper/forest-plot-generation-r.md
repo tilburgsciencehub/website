@@ -16,6 +16,7 @@ aliases:
 `Forest plots` are a visual representation of findings from various scientific studies that investigate a common research question. They find significant application in the field of `meta-analysis`, a type of statistical analysis that combines and examines results from a number of independent studies. 
 More practically, forest plots identify a statistic that is common to such set of studies and report the various instances of that statistic. This, in turn, allows to compare the different results and the significance of the overall pooled summary effect. <br/>
 <br/>
+
 Among the **benefits** of forest plots, we find:
 
 * clear and concise `visual representation` of results;
@@ -26,30 +27,65 @@ Among the **benefits** of forest plots, we find:
 
 ## Code 
 
+One of the most popular packages used for forest plots is [forestploter](https://cran.r-project.org/web/packages/forestploter/vignettes/forestploter-intro.html). Compared to other packages (e.g., forestplot), `forestploter` focuses entirely on forest plots, which are treated as a table. Moreover, it allows to control for graphical parameters with a theme and to have confidence intervals spread across multiple columns and divided by groups.
 
+<br/>
 
-{{% codeblock %}} <!-- You can provide more than one language in the same code block -->
+The code snippet below shows how to create a `basic layout` for the forest plot:
 
-[python-link](code.py) <!-- OPTIONAL: You can also provide your code as a downloadable file (useful for very long codes). Make sure you place this file in the same folder. Specify in [square brackets] the language followed by "-link" as shown here.-->
-
-
+{{% codeblock %}}
 ```R
-# some R code here
-cat('Hello, world!')
-```
+# Load necessary packages
+library(forestploter)
+library(grid)
 
+# Retrieve example dataset from the `forestploter` package
+data <- read.csv(system.file("extdata", "example_data.csv", package = "forestploter"))
+
+# Data manipulation
+data <- data[,1:6]
+
+data$Subgroup <- ifelse(is.na(data$Placebo), 
+                      data$Subgroup,
+                      paste0("   ", data$Subgroup))
+
+data$Treatment <- ifelse(is.na(data$Treatment), "", data$Treatment)
+data$Placebo <- ifelse(is.na(data$Placebo), "", data$Placebo)
+data$se <- (log(data$hi) - log(data$est))/1.96
+
+data$` ` <- paste(rep(" ", 20), collapse = " ")
+
+data$`HR (95% CI)` <- ifelse(is.na(data$se), "",
+                             sprintf("%.2f (%.2f to %.2f)",
+                                     data$est, data$low, data$hi))
+
+```
+{{% /codeblock %}}
+
+Drawing simple forest plot:
+
+{{% codeblock %}}
+```R
+p <- forest(data[,c(1:3, 8:9)],
+            est = data$est,
+            lower = data$low, 
+            upper = data$hi,
+            sizes = data$se,
+            ci_column = 4,
+            ref_line = 1,
+            arrow_lab = c("Placebo Better", "Treatment Better"),
+            xlim = c(0, 4),
+            ticks_at = c(0, 1, 2, 3),
+            footnote = "This is the demo data. Please feel free to change\nanything you want.")
+
+print(p)
+
+```
 {{% /codeblock %}}
 
 
-## Examples
-
-Provide examples to support the solution.
-
-{{% example %}}
-
-This is an example. It will be formatted differently to grab the viewer's attention.
-
-{{% /example %}}
+{{% tip %}}
+Type `help(forest)` in your R terminal for more info about the `forest()` function arguments.
+{{% /tip %}}
 
 
-### You can use third- or fourth-level headers like this one
