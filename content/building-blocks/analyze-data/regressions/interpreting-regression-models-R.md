@@ -21,16 +21,30 @@ In this example, we will analyze how to interpret `linear regression models in R
 
 For concrete examples in R, we will make use of the PIAAC survey. PIAAC is a programme of assessment and analysis of adult skills. The Survey measures adults’ proficiency in key information-processing skills: literacy, numeracy and problem-solving.
 
+I will report the regression tables using the package `modelsummary`. For an explanation of how to use modelsummary, see this [building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/model-summary/).
+
 {{% codeblock %}} 
 
 ```R
+# Load packages
+library(modelsummary)
+library(stringr)
+library(readr)
+
+# Modelsummary setup
+gm <- list(
+  list("raw" = "nobs", "clean" = "Sample size", "fmt" = 0),
+  list("raw" = "r.squared", "clean" = "R<sup>2</sup>", "fmt" = 2),
+  list("raw" = "adj.r.squared", "clean" = "Adjusted R<sup>2</sup>", "fmt" = 2))
+notes <- c('* = .1', '** = 0.05', '*** = .01')
+
 # Downloading the dataset
 piaac <- read_csv("~/Desktop/TSH/Tilburg Science Hub/Content/Development_Calls/Interpreting Linear Regression Models/Dataset/PIAAC.csv")
 
 # Asserting the data is in the correct format
 piaac$experience <- as.numeric(piaac$experience)
 piaac$yrsqual <- as.numeric(piaac$yrsqual)
-piaac$gender_dummy <- as.factor(piaac$gender_dummy)
+piaac$gender <- as.factor(piaac$gender_dummy)
 ```
 
 {{% /codeblock %}}
@@ -60,30 +74,42 @@ In words, if we change X by 1 unit (i.e. $△X = 1$) then we can expect Y to cha
 If the dependent variable (Y) would be dichotomous, meaning either a 0 or 1. Then a change in X would mean that Y changes by $\beta_1 * 100$ and would state the change in percentage **points** of Y.  
 {{% /tip %}}
 
-
-{{% example %}}
 Here I run a regression, that tries to explain the hourly wage given the years of education.
 
 {{% codeblock %}}
 
 ```R
-LinearLinear <- lm(earnhr ~ yrsqual, data = Piaac)
-summary(LinearLinear)
+# Regression
+LinearLinear <- lm(earnhr ~ yrsqual, data = piaac)
+
+# Model Output 
+cm_1 = c('yrsqual' = 'Years of Education')
+titleLinLin <- 'Table 1: Single-Variable Linear-Linear Regression Model Results'
+msummary(LinearLinear, 
+         fmt = 3,
+         stars  = c('*' = .1, 
+                    '**' = 0.05, 
+                    '***' = .01),
+         estimate = "{estimate}",
+         statistic = "[{std.error}]{stars}",
+         coef_map = cm_1,
+         gof_omit = 'AIC|BIC|RMSE|Within|FE',
+         gof_map = gm,
+         title = titleLinLin,
+         notes = notes)
 ```
 
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/Linear-Linear-Model.png" width="700">
+<img src = "../images/Linear-Linear-Model.png" width="400">
 </p>
 
-The linear-linear regression above can be interpreted as follows: For each additional year of education ($\triangle X =1$), the hourly wages ($\triangle Y$) is expected to increase by 6.30.
-
-{{% /example %}}
+The linear-linear regression above can be interpreted as follows: For each additional year of education ($\triangle X =1$), the hourly wages ($\triangle Y$) is expected to increase by 6.304.
 
 {{% tip %}}
 
-Avoid language stating a causal effect. Instead, we are making a prediction for the dependent variable based on the predictor variables. Therefore, be cautious with your interpretation statement. I am careful to avoid saying "a one-unit increase in education raises the hourly wage by 6.30". This would imply that I've estimated a causal effect. The correct phrasing reflects that we're discussing predictions, not causation.
+Avoid language stating a **causal** effect. Instead, we are stating the **correlation** between the dependent variable and an explanatory variable based on predictor variables. Therefore, be cautious with your interpretation statement. I am careful to avoid saying "a one-unit increase in education raises the hourly wage by 6.30". This would imply that I've estimated a causal effect. The correct phrasing reflects that we're discussing correlations, not causation.
 
 {{% /tip %}}
 
@@ -92,6 +118,7 @@ The `Linear-Log  model` is a model where the dependent variable (Y) has not been
 
  {{<katex>}}
 Y = \beta_0 + \beta_1 · ln X + ε 
+
  {{</katex>}}
 
 
@@ -115,22 +142,34 @@ a $\beta_1$ unit change in Y.
 
 Let's look at an example, to make things clear!
 
-{{% example %}}
-
 {{% codeblock %}}
 ```R
-LinearLog <- lm(earnhr ~ log(yrsqual), data = Piaac)
-summary(LinearLog)
+# Regression
+LinearLog <- lm(earnhr ~ log(yrsqual), data = piaac)
+
+# Model Output
+cm_2 = c('log(yrsqual)' = 'Logarithmic Scale Years of Education')
+titleLinLog <- 'Table 2: Single-Variable Linear-Log Regression Model Results'
+msummary(LinearLog, 
+         fmt = 3,
+         stars  = c('*' = .1, 
+                    '**' = 0.05, 
+                    '***' = .01),
+         estimate = "{estimate}",
+         statistic = "[{std.error}]{stars}",
+         coef_map = cm_2,
+         gof_omit = 'AIC|BIC|RMSE|Within|FE',
+         gof_map = gm,
+         title = titleLinLog,
+         notes = notes)
 ```
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/Linear-Log-Model.png" width="700">
+<img src = "../images/Linear-Log-Model.png" width="400">
 </p>
 
 The logarithmic-linear regression above can be interpreted as follows.  For a 1\%  increase in years of education ($\triangle X = 0.01$), the hourly wage is expected to increase by 80.716 · 0.01 = 0.81
-
-{{% /example %}}
 
 
 {{% tip %}}
@@ -155,30 +194,44 @@ In symbols, this would mean
  
 So the interpretation is that a 1 unit change in X is associated with a 100 · $\beta_1$ \%  change in Y. Note again this rule applies only for small changes.
 
-{{% example %}}
 
 {{% codeblock %}}
 
 ```R
-LogLinear <- lm(log(earnhr) ~ yrsqual, data = Piaac)
-summary(LogLinear)
+# Regression
+LogLinear <- lm(log(earnhr) ~ yrsqual, data = piaac)
+
+# Model Output
+cm_3 = c('yrsqual' = 'Years of Education')
+titleLogLin <- 'Table 3: Single-Variable Log-Linear Regression Model Results'
+msummary(LogLinear, 
+         fmt = 3,
+         stars  = c('*' = .1, 
+                    '**' = 0.05, 
+                    '***' = .01),
+         estimate = "{estimate}",
+         statistic = "[{std.error}]{stars}",
+         coef_map = cm_3,
+         gof_omit = 'AIC|BIC|RMSE|Within|FE',
+         gof_map = gm,
+         title = titleLogLin,
+         notes = notes)
 ```
 
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/Log-Linear-Model.png" width="700">
+<img src = "../images/Log-Linear-Model.png" width="400">
 </p>
 
-The logarithmic-linear regression above can be interpreted as follows: For each year of education ($\triangle X =1$), the hourly wages is expected to increase by 100 · 0.076440 = 7.64\%
-
-{{% /example %}}
+The logarithmic-linear regression above can be interpreted as follows: For each year of education ($\triangle X =1$), the hourly wages is expected to increase by 100 · 0.0764 = 7.64\%
 
 ### The Log-Log Model
 The `Log-Log Model` is one in which both the dependent variable (Y) and independent variable (X) have been transformed to a logarithmic scale. These types of models can be mathematically expressed as follows: 
 
  {{<katex>}}
 ln Y = \beta_0 + \beta_1 ln X + ε
+
  {{</katex>}}
 
 
@@ -194,23 +247,38 @@ In symbols, this would mean
  
 In a log-log model, a 1\% change in X is associated with a $\beta_1$\%  change in Y.
 
-{{% example %}}
+
 
 {{% codeblock %}}
 
 ```R
-LogLog <- lm(log(earnhr) ~ log(yrsqual), data = Piaac)
-summary(LogLog)
+# Regression
+LogLog <- lm(log(earnhr) ~ log(yrsqual), data = piaac)
+
+# Model Output
+cm_4 = c('log(yrsqual)' = 'Logarithmic Scale Years of Education')
+titleLogLog <- 'Table 4: Single-Variable Log-Log Regression Model Results'
+msummary(LogLog, 
+         fmt = 3,
+         stars  = c('*' = .1, 
+                    '**' = 0.05, 
+                    '***' = .01),
+         estimate = "{estimate}",
+         statistic = "[{std.error}]{stars}",
+         coef_map = cm_4,
+         gof_omit = 'AIC|BIC|RMSE|Within|FE',
+         gof_map = gm,
+         title = titleLogLog,
+         notes = notes)
 ```
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/Log-Log-Model.png" width="700">
+<img src = "../images/Log-Log-Model.png" width="400">
 </p>
 
 For the model where both the dependent variable and independent variable are transformed to a logarithmic scale, the interpretation goes as follows: For a 1\% change in years of education ($\triangle X = 0.01$), hourly wages is expected to increase by 0.99\%  (0.99 · 0.01).
 
-{{% /example %}}
 
 ## Multivariable Regression Models Interpretation 
 Now, let's delve into the interpretation of models with multiple independent variables. To be precise, the interpretation of a coefficient is denoted as $\beta_1$ for variable X in a regression with more control variables. It will require a concept called `Ceteris Paribus`, which is Latin for "holding other things constant." I will limit the explanation to the linear-linear model, as the interpretation differences only differ in the concept of `Ceteris Paribus`.
@@ -239,23 +307,41 @@ Nevertheless, the interpretation of changes in the variable X remains consistent
 This can be interpreted as the rate of change in Y associated with a change in X1 and requires the concept that all the other variables are not changing. 
 Thus the interpretation remains: When X increases by 1 unit, Y  increases by $\beta_1$ units. However, we added a line stating that this happens in `Ceteris Paribus`.
 
-{{% example %}}
+
 
 {{% codeblock %}}
 
 ```R
-Mincer_LinearLinear <- lm(log(earnhr) ~ experience + yrsqual + gender_dummy, data = Piaac)
-summary(Mincer_LinearLinear)
+# Regression
+Mincer_LinearLinear <- lm(log(earnhr) ~ experience + yrsqual + gender, data = piaac)
+
+# Model Output
+cm_5 = c('experience' = 'Work Experience (Years)',
+         'yrsqual' = 'Education (Years)',
+         '(gender)' = 'Gender (Women = 1)')
+title5 <- 'Table 5: Multivariable Log-Linear Regression Model Results'
+
+msummary(Mincer_LinearLinear, 
+         fmt = 3,
+         stars  = c('*' = .1, 
+                    '**' = 0.05, 
+                    '***' = .01),
+         estimate = "{estimate}",
+         statistic = "[{std.error}]{stars}",
+         coef_map = cm_5,
+         gof_omit = 'AIC|BIC|RMSE|Within|FE',
+         gof_map = gm,
+         title = title5,
+         notes = notes)
 ```
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/Multivariable-Log-Linear-Model.png" width="700">
+<img src = "../images/Multivariable-Log-Linear-Model.png" width="400">
 </p>
 
-The `Log-Linear Model` with multiple control variables above can be interpreted as follows: For each additional year of education, yrsqual variable, the hourly wages is expected to increase by 7.49\%, `Ceteris Paribus`.
+The `Log-Linear Model` with multiple control variables above can be interpreted as follows: For each additional year of education, yrsqual variable, the hourly wages is expected to increase by 9.1\%, `Ceteris Paribus`.
 
-{{% /example %}}
 
 {{% summary %}}
 
