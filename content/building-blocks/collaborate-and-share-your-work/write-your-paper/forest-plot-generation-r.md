@@ -3,7 +3,7 @@ title: "Forest Plot Generation in R"
 description: "Forest Plots in R - using forest plots to gain insights on your data"
 keywords: "data, visualization, r, forest, plot"
 date: 2023-10-10
-weight: 3
+weight: 1
 author: "Matteo Zicari"
 authorlink: "https://www.linkedin.com/in/matteozicari/"
 aliases:
@@ -13,7 +13,7 @@ aliases:
 
 ## Overview
 
-`Forest plots` are a visual representation of findings from various scientific studies that investigate a common research question. They find significant application in the field of `meta-analysis`, a type of statistical analysis that combines and examines results from a number of independent studies. 
+`Forest plots` are a visual representation that summarises findings from various scientific studies that investigate a common research question. They find significant application in the field of `meta-analysis`, a type of statistical analysis that combines and examines results from a number of independent studies. 
 More practically, forest plots identify a statistic that is common to such set of studies and report the various instances of that statistic. This, in turn, allows to compare the different results and the significance of the overall pooled summary effect. <br/>
 <br/>
 
@@ -25,13 +25,14 @@ Among the **benefits** of forest plots, we find:
   and make informed judgments about the effect of interventions or exposures.
 
 
-## Code 
+## Forest Plots in R
 
-One of the most popular packages used for forest plots is [forestploter](https://cran.r-project.org/web/packages/forestploter/vignettes/forestploter-intro.html). Compared to other packages (e.g., forestplot), `forestploter` focuses entirely on forest plots, which are treated as a table. Moreover, it allows to control for graphical parameters with a theme and to have confidence intervals spread across multiple columns and divided by groups.
+One of the most popular R packages used for forest plots is [forestploter](https://cran.r-project.org/web/packages/forestploter/vignettes/forestploter-intro.html). Compared to other packages (e.g., forestplot), `forestploter` focuses entirely on forest plots, which are treated as a table. Moreover, it allows to control for graphical parameters with a theme and to have confidence intervals spread across multiple columns and divided by groups.
 
 <br/>
 
-The code snippet below shows how to create a `basic layout` for the forest plot:
+### Upload/Generate Dataset
+The code snippet below shows how to upload an **example dataset** and generate a **basic layout** for the forest plot:
 
 {{% codeblock %}}
 ```R
@@ -62,7 +63,8 @@ data$`HR (95% CI)` <- ifelse(is.na(data$se), "",
 ```
 {{% /codeblock %}}
 
-Drawing simple forest plot:
+### Draw Forest Plot
+The following code snippet shows how to **draw** a **simple forest plot** starting from the above dataset:
 
 {{% codeblock %}}
 ```R
@@ -76,7 +78,7 @@ p <- forest(data[,c(1:3, 8:9)],
             arrow_lab = c("Placebo Better", "Treatment Better"),
             xlim = c(0, 4),
             ticks_at = c(0, 1, 2, 3),
-            footnote = "This is the demo data. Please feel free to change\nanything you want.")
+            footnote = "Type something here")
 
 print(p)
 
@@ -88,4 +90,15 @@ print(p)
 Type `help(forest)` in your R terminal for more info about the `forest()` function arguments.
 {{% /tip %}}
 
+### Change Forest Plot Theme
 
+{{% codeblock %}}
+```R
+
+
+```
+{{% /codeblock %}}
+
+{{% tip %}}
+Type `help(forest_theme)` in your R terminal for more info about the `forest_theme()` function arguments.
+{{% /tip %}}
