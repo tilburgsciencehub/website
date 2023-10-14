@@ -148,7 +148,7 @@ iris_df = data.iris()
 ```
 {{% /codeblock %}}
 
-To create a scatterplot change the `mark_markname()` function to `mark_circle()`.
+To create a scatterplot change the `mark` argument to `mark_circle()`.
 
 {{% codeblock %}}
 ```python
@@ -173,6 +173,6 @@ alt.Chart(iris_df).mark_circle().encode(
 ```
 {{% /codeblock %}}
 
-To create a different type of plot `mark_circle()` can be changed to `mark_bar()`, `mark_point()`, or `mark_line()`. 
+To create a different type of plot, you can change `mark_circle()` to `mark_bar()`, `mark_point()`, or `mark_line()`. 
 
 
