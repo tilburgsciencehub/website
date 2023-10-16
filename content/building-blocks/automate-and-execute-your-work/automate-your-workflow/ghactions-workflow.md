@@ -13,22 +13,29 @@ aliases:
 
 ## Overview
 
-This building block delves deeper into GitHub Actions by providing a hands-on example. We’ll craft a workflow specifically for code formatting and testing. 
+This building block delves deeper into GitHub Actions by providing a hands-on example. We’ll craft a workflow specifically for code formatting and testing. After that, you'll discover how to integrate and track it into your own repository.
 
+{{% tip %}}
 If you are new to GitHub Actions, we suggest you review [this building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/automate-your-workflow/intro_ghactions/) first to get familiar with the foundational concepts.
 
-By the end of this block, you will:
+{{% /tip %}}
 
-- Know how to set up a workflow for code formatting using Super Linter.
-- Understand how to integrate code testing into your workflow.
+Hence, by the end of this block, you will:
+
+- Know how to set up a GitHub Actions workflow for code formatting and testing.
+- Learn how to monitor your workflow from the GitHub interface.
 
 ## Building a GitHub Actions Workflow
 
-In this section, we're going to build upon the `YAML` file structure introduced in the previous guide. Our primary goal is to integrate code formatting using the Super Linter and code testing.
+In this section, we're going to build upon the `YAML` file structure introduced in the previous guide. 
+
+To illustrate a useful workflow example, our goal would be to integrate code formatting (using Super Linter) and code testing.
 
 ### Code Formatting with Super Linter
 
-[Super Linter](https://github.com/marketplace/actions/super-linter) is a simple combination of various linters to help validate source code. When incorporated into GitHub Actions, it can automatically validate and format code pushed into your repository.
+[Super Linter](https://github.com/marketplace/actions/super-linter) is a simple combination of various linters to help validate source code. It works automatically whenever your workflow is activated by an event, like pushing new code. 
+
+Super Linter will check the new code to make sure it follows the correct coding rules and guidelines. This helps keep your code clean and easy to understand.
 
 Here’s a breakdown of the `YAML` configuration for the code formatting job using Super Linter:
 
@@ -67,8 +74,7 @@ jobs:
 ```
 {{% /codeblock %}}
 
-
-This portion first checks out the code from the repository using actions/checkout@v3. After that, it uses the Super Linter action to validate the code. The environment variables under env specify the configuration for Super Linter.
+This portion first checks out the code from the repository using `actions/checkout@v3`. After that, it uses the Super Linter action to validate the code. The environment variables under env specify the configuration for Super Linter.
 
 ### Code Testing with pytest
 
@@ -104,28 +110,69 @@ Below is the configuration for the testing section of our workflow:
 ```
 {{% /codeblock %}}
 
-Note that originally, the runs-on field was set to run on a self-hosted runner. For simplicity, we've set it to ubuntu-latest, which means the job will run on GitHub's servers. You can, however, easily revert it back to your self-hosted runner if desired.
-
 This portion again checks out the code and then runs pytest to execute tests present in your repository.
 
-{{% tip %}}
-**Want to use a self-hosted runner?**
-
-A self-hosted runner can offer more computational power and flexibility. To learn more about setting it up, look out for our future building block dedicated to this topic.
-
-{{% /tip %}}
-
-### Integrate into Your Repository
+### Integrate it into your Repository
 
 To incorporate this workflow into your repository:
 
+- Make sure you have a GitHub repository with some Python code to review.
 - Create a `.github/workflows/` directory at the root of your repository.
-- Save the full `YAML` configuration (including both formatting and testing jobs) into a file, e.g., `formatting-testing.yml`.
-- Push your changes to the repository. GitHub will automatically detect the workflow and run it based on the specified triggers.
+- Save the full `YAML` file into a file, e.g., `formatting-testing.yml`.
+- Push your changes to the repository. GitHub will automatically detect the workflow and run it based on the specified events.
+
+{{% tip %}}
+**Start Simple**
+
+Don't worry if you don’t have tests for pytest to run. Begin with the code formatting job, it's a great introduction to GitHub Actions.
+
+{{% /tip %}}
+
+### Tracking Workflows
+
+Once you have set up and activated your workflow, you can monitor and manage its execution directly from GitHub's user interface: 
+
+#### 1. Accessing GitHub Actions
+
+Go to your repository on GitHub.
+Click on the *'Actions'* tab, located between the *'Pull requests'* and *'Projects'* tabs.
+
+#### 2. Check out your workflows
+
+You’ll see a list of all the workflows in your repository whose titles will correspond to the latest commits. 
+
+You can see the status of each workflow (e.g., in progress, successful, failed) along with a brief description and the execution duration. On the right side, you can filter these by 'Event', 'Status', 'Branch' or 'Actor'. 
+
+Click on the name of the workflow you want to explore to view more details.
+Here you will find a list of all the jobs within the workflow, along with their individual status.
+
+<p align = "center">
+<img src = "../images/actions-workflows.png" width="900" style="border:1px solid black;">
+<figcaption> Actions Workflow display</figcaption>
+</p>
+
+#### 3. Investigating a Specific Job
+Clicking on a specific job allows you to access a more detailed view.
+Here you can see each step within the job, the time taken for each step, and execution logs. This is what you should do when you want to check why a job failed, as shown in the picture below:
+
+<p align = "center">
+<img src = "../images/errors-ghactions.png" width="800" style="border:1px solid black;">
+<figcaption> If a job fails, investigate the logs to address it</figcaption>
+</p>
+
+### GitHub hosted runner vs self-hosted runners
+
+In GitHub Actions, besides using GitHub-hosted runners to execute your workflows, there’s also an option to use self-hosted runners. 
+
+A self-hosted runner is a server set up by you, where jobs from your GitHub Actions workflows can be executed. This allows for more customization and control over the environment where your code runs, enabling you to ensure that the runner meets the specific requirements of your project, thus potentially improving the performance and consistency of your CI/CD setup.
+
+If you're interested in learning more, follow our next building block on the topic!
 
 {{% summary %}}
 
-With GitHub Actions, you can automate code formatting using tools like Super Linter and integrate testing with tools like pytest. By structuring your workflow correctly with a `.yml` file and placing it in the .github/workflows/ directory, GitHub can automatically process your workflow, ensuring code quality and functionality every time you make changes to your repository.
+With GitHub Actions, you can automate code formatting using tools like Super Linter and integrate testing with tools like pytest. 
+
+By structuring your workflow correctly with a `.yml` file and placing it in the `.github/workflows/` directory, GitHub can automatically process your workflow, ensuring code quality and functionality every time you make changes to your repository.
 
 {{% /summary %}}
 
