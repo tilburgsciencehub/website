@@ -654,7 +654,7 @@ $(".takeTourFooter").on("click", (event) => {
   $("html, body").animate({ scrollTop: 0 }, "fast", function() {
     setTimeout(function() {
       $(".onBoardTooltipContent:first").addClass("active");
-    }, 1000);
+    }, 500);
   });
 });
 
