@@ -3,7 +3,7 @@ title: "Staggered Difference-in-Difference Estimation"
 description: "Staggered difference-in-difference estimation in R using the `did` package"
 keywords: "difference-in-difference, causal inference, did, DID, staggered treatment, regression, model "
 draft: false
-weight: 2
+weight: 12
 author: "Roshini Sudhaharan"
 authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:
