@@ -1,5 +1,5 @@
 ---
-title: "Interaction in Regression Analysis"
+title: "Interaction Terms"
 description: "Interpreting and coding interaction terms in R. Various scenarios will be discussed involving continuous and discrete independent variables, continuous and discrete dependent variables, with and without control variables. Specifically for the discrete variables, binary and multilevel interaction terms are explained."
 keywords: "R, regression, interpretation, interaction, discrete, continuous, multilevel, binary"
 draft: false 
@@ -19,17 +19,42 @@ aliases:
 ## Overview 
 
 ### What are Interaction Terms
-In a standard regression analysis, you use an explanatory variable (X) to understand how it influences the dependent variable (Y). 
-However, when you introduce an `interaction term` into the regression, you are adding an extra layer to this relationship. The main idea is that the relationship between X and Y is not solely determined by X; it also varies with another variable, which we'll call Z. 
+
+Let's consider an example from economics. specifically, the determinants of income. We are interested in understanding how years of education and living in an urban or rural area affect a person's income. You could start by looking at these variables individually:
+- Education: Generally, more education leads to higher income.
+- Urban vs. Rural: Living in an urban area might also be associated with higher income due to more job opportunities.
+
+However, what if living in an urban area amplifies the benefits of having more education? Or in other words, does being educated in an urban area lead to significantly higher income compared to being equally educated in a rural area?
+
+This is where interaction terms come into play.
+In a standard regression analysis, you use an explanatory variable (X) to understand how it influences the dependent variable, income (Y). 
+However, when you introduce an `interaction term`  into the regression, you are adding an extra layer to this relationship. 
+<br>
+
+The main idea is that the relationship between X and Y is not solely determined by X; it also varies with another variable, which we'll call Z. Combing back to our example: the relationship between education and income is not solely determined by education; it also varies whether a person lives in a rural or urban area. 
+ 
 An interaction term is included in the regression when you multiply two different variables and include their product in the regression. The model is now called a `fully interacted model`.
 
 
 {{<katex>}}
  Y = \beta_0 + \beta_1 X + \beta_2 Z + \beta_3 X Z + \epsilon
  {{</katex>}}
+ 
+<br> 
+<br>
+
+Or as in our example: 
 
 
-### Interpretation
+{{<katex>}}
+ Income = \beta_0 + \beta_1 Education + \beta_2 Area + \beta_3 Education * Area  + \epsilon
+ {{</katex>}}
+ 
+ <br>
+ <br>
+ 
+### How to Interpret Interaction Terms?
+
 The concept of `interaction terms` can be best explained with calculus. It answers the question: "What is the impact of X when it interacts with another variable, Z?"  
 The answer can be found by taking the `derivative` of the main formula. We take out of the regression equation, the derivative with respect to X. That's it!  
 
@@ -40,14 +65,17 @@ So, The `fully interacted model`:
  
 {{</katex>}} 
 
- 
+<br>
+<br> 
+
 and its derivative: 
+<br>
 
  
 {{<katex>}}
  \frac{\partial Y}{\partial X} = \beta_1 + \beta_3 Z 
 {{</katex>}}
-  
+ <br>
   
 This represents the effect of X on Y, which is now conditional on Z! For those unfamiliar with calculus, look how we just took the terms with an X including $\beta_1 X$ and $\beta_3 X Z$ and took out the X, leaving us with the expression above. 
 
@@ -77,7 +105,7 @@ It contains the following variables:
 
 **Short remark**: CPS data lacks direct work experience information, so a common workaround is to estimate potential experience as age minus education minus 6. This method can result in negative experience values for some respondents.
 
-I will use the `modelsummary` package, to present the regression output. For elobaration, about the package and how this works look at the following [building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/model-summary/).
+I will use the `modelsummary` package, to present the regression output. For a guide, about the package and how it works look at the following [building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/model-summary/).
 
 {{% codeblock %}} 
 ```R 
@@ -147,24 +175,29 @@ However, it's important to note that this relationship is influenced by a person
 
 {{% tip %}} 
 
-A common method for visualizing how variable Z affects the relationship between X and Y is by creating a marginal effect plot. You can find a brief introduction to this concept here: [building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/marginal-effect-r/). In this discussion, I will utilize the R package called "interflex," which enables us to generate marginal effect plots.
+
+It's always beneficial to plot interaction terms for a clearer understanding of their impact. This `marginal effect plot` is a useful way to visualize how one variable modifies the effect of another on the outcome. For a quick guide on marginal effects in R, you can refer to this building block:  [building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/marginal-effect-r/). In this discussion, I will utilize the R package called "`ggpredict`,"  which enables us to generate marginal effect plots by combining the function with `ggplot`.
 
 {{% /tip %}} 
 
 {{% codeblock %}} 
 ```R
-marginal_effect_plot <- interflex(Y = "wage", D = "education", X = "ethnicity", bin.labs = F, data = CPS1988, estimator = "linear")
-plot(marginal_effect_plot)
+plot1 <- ggpredict(model = reg1, terms = c("education", "ethnicity"))
+
+ggplot(plot1, aes(x, predicted, colour = group)) + 
+  geom_line() +
+  labs(x= "Years of Education",
+       y = "Wage",
+       colour = "Ethnicity: African American = 1")
 ```
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/interflex-reg1-intr.png" width="300">
+<img src = "../images/ggpredict-reg1-intr.png" width="400">
 </p>
 
-The command first estimates a model and then displays the marginal effect plot. 
-In this instance, I utilized a linear estimator. Y represents the outcome variable, D represents the treatment variable, X stands for the moderator (our interaction variable), and Z represents the covariates in the model.  
-Furthermore, interflex provides the option for fixed effects and clustering of standard errors. It's important to note that the model also displays the confidence interval and the distribution of the moderating variable. In this case, the moderating variable is binary, as expected. 
+To make ggpredict work, the model to be predicted is specified. Next, the 'terms' argument identifies the variables, the so-called **`focal terms`** from the model for which predictions will be displayed. The command estimates the model, shows the predicted outcome based on the first focal term, and incorporates interactions by adding a 'colour=group' specification.
+
 
 ### 2. Discrete Multilevel Independent variable without controls
 The independent variable doesn't have to be binary (0 or 1); it can also be multilevel, taking on various values or categories. For example, it could represent different levels of education, such as primary school, secondary school, or tertiary school.
@@ -228,6 +261,8 @@ In the case of individuals from the West, the estimated average treatment effect
 ### 3. Continuous Independent Variable
 Here, we're studying a model that tries to understand how a person's wage (Y) is affected by their level of education (X). We're also looking into whether being a more experienced worker (Z) plays a role in moderating or influencing this relationship. 
 
+In addition, I introduce a new function that allows us to display a marginal effect plot. This time I will use the function `interflex`. Interflex first estimates a model and then displays the marginal effect plot. Where ggpredict shows us predicted values for different groups, interflex shows marginal effects at each variable X on Y given Z. 
+
 {{% codeblock %}}
 
 ```R
@@ -266,8 +301,11 @@ print(marginal_effect_plot$tests$p.wald)
 <img src = "../images/interflex-reg3-intr.png" width="300">
 </p>
 
-Here the marginal effect plot provides valuable insights into the model's accuracy.  
-By using the "binning" argument in the estimator, we break down the interaction term into groups and calculate the interaction effect for each group. This reveals that the relationship seems to be non-linear. The marginal effect plot offers additional information that isn't available from the summary of the regression alone.  
+I utilized a linear estimator. Y represents the outcome variable, D represents the treatment variable, X stands for the moderator (our interaction variable), and Z represents the covariates in the model.  
+Furthermore, interflex provides the option for fixed effects and clustering of standard errors. It's important to note that the model also displays the confidence interval and the distribution of the moderating variable. In this case, the moderating variable is binary, as expected. 
+
+ The marginal effect plot can provide valuable insights into the model's accuracy
+ By using the "binning" argument in the estimator, we break down the interaction term into groups and calculate the interaction effect for each group. This reveals that the relationship seems to be non-linear. The marginal effect plot offers additional information that isn't available from the summary of the regression alone.  
 To confirm the significance, you can use the Wald test within the interflex function. The Wald test compares the linear interaction model to the more flexible binning model. The null hypothesis is that the linear interaction model and the three-bin model are statistically equivalent. If the p-value of the Wald test is close to zero, you can confidently reject the null hypothesis. For our example, this is the case!
 
 ### 4. Discrete Dependent Variable
@@ -338,6 +376,14 @@ msummary(reg5,
 marginal_effect_plot <- interflex(Y = "wage", D = "ethnicity", X = "education", Z = c("experience2", "smsa","parttime","region"),
 data = CPS1988, estimator = "linear")
 plot(marginal_effect_plot)
+
+# Using ggpredict
+plot2 <- ggpredict(model = reg5, terms = c("education", "ethnicity"))
+ggplot(plot1, aes(x, predicted, colour = group)) + 
+  geom_line() +
+  labs(x= "Years of Education",
+       y = "Wage",
+       colour = "Ethnicity: African American = 1")
 ```
 {{% /codeblock %}} 
 
@@ -349,7 +395,11 @@ plot(marginal_effect_plot)
 <img src = "../images/interflex-reg5-intr.png" width="300">
 </p>
 
-By examining the p-value linked to the interaction term coefficient, which is 0.0254, we can conclude that the interaction term is statistically significant at the 5\% significance level. This suggests strong evidence supporting the existence of an interaction between education and ethnicity. However, we also need to determine whether this interaction is practically meaningful. To do so, we compare the variance explained, represented by R-squared, in the model with interaction terms to that in the model without interaction terms.
+<p align = "center">
+<img src = "../images/ggpredict-reg5-intr.png" width="300">
+</p>
+
+The p-value associated with the interaction term coefficient is 0.0254, thereby indicating statistical significance at the 5\% significance level. This provides strong evidence to suggest that an interaction exists between education and ethnicity. However, determining statistical significance is only one part of the equation; it's also necessary to assess the explanatory significance of this interaction.
 
 {{% codeblock %}}
 
@@ -365,7 +415,7 @@ summary(reg6)$r.squared
 </p>
 
 
-In this instance, the model without interaction accounts for 45.72\% of the wage variance, while the model with interaction explains 45.73\% of the wage variance. This implies that the interaction only explains an additional 0.01\% of the wage variance, which is a negligible effect.
+When examining the variance explained by R-squared, the model without the interaction term accounts for 45.72\% of the wage variance, while the model incorporating the interaction term explains 45.73\%. This indicates a marginal increase of 0.01\% in explained variance. While this may appear to suggest that the interaction has a negligible explanatory impact, it's worth noting that a small change in R-squared doesn't necessarily equate to a lack of practical significance. Further research and contextual factors should also be considered to fully understand the implications of this interaction.
 
 
 ## Summary
@@ -377,7 +427,7 @@ This building block explains `interaction terms` in regression analysis, their m
 
 2. **Scenario Analysis**: The article explores different scenarios involving `continuous` and `discrete` independent and dependent variables. It covers models with and without control variables and examines interactions in `binary` and `multi-level` contexts.
 
-3. **Significance and Relevance**: The article emphasizes the importance of assessing both the `statistical significance` and practical relevance of interaction terms. 
+3. **Significance and Relevance**: The article emphasizes the importance of assessing both the `statistical significance` and `explanatory significance` of interaction terms. 
 
 
 {{% /summary %}}
