@@ -27,9 +27,13 @@ Hence, by the end of this block, you will:
 
 ## Building a GitHub Actions Workflow
 
-In this section, we're going to build upon the `YAML` file structure introduced in the previous guide. 
+In this section, we're going to build upon the `.yml` file structure introduced in the previous [guide](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/automate-your-workflow/intro_ghactions/). 
 
 To illustrate a useful workflow example, our goal would be to integrate code formatting (using Super Linter) and code testing.
+
+In case you're interested, the example was retrieved from the following GitHub repository:
+
+{{% cta-primary-center "Click to go to the repository example" "https://github.com/snpe-reputation-systems/snpe-reputation-systems/blob/master/.github/workflows/formatting-testing.yml" %}}
 
 ### Code Formatting with Super Linter
 
@@ -37,7 +41,7 @@ To illustrate a useful workflow example, our goal would be to integrate code for
 
 Super Linter will check the new code to make sure it follows the correct coding rules and guidelines. This helps keep your code clean and easy to understand.
 
-Here’s a breakdown of the `YAML` configuration for the code formatting job using Super Linter:
+Here’s a breakdown of the `.yml` configuration for the code formatting job using Super Linter:
 
 {{% codeblock %}}
 ```yaml
@@ -118,7 +122,7 @@ To incorporate this workflow into your repository:
 
 - Make sure you have a GitHub repository with some Python code to review.
 - Create a `.github/workflows/` directory at the root of your repository.
-- Save the full `YAML` file into a file, e.g., `formatting-testing.yml`.
+- Save the full `yml` file into a file, e.g., `formatting-testing.yml`.
 - Push your changes to the repository. GitHub will automatically detect the workflow and run it based on the specified events.
 
 {{% tip %}}
@@ -181,4 +185,3 @@ By structuring your workflow correctly with a `.yml` file and placing it in the 
 - GitHub Actions [Marketplace](https://github.com/marketplace?type=actions)
 - Super Linter [Documentation](https://github.com/marketplace/actions/super-linter)
 - Pytest [Documentation](https://docs.pytest.org/en/7.4.x/)
-- [Workflow example](https://github.com/snpe-reputation-systems/snpe-reputation-systems/blob/master/.github/workflows/formatting-testing.yml) for code formatting and testing
