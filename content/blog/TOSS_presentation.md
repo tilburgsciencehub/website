@@ -4,7 +4,7 @@ description: "Exploring Open Science at the Tilburg 'Open to Complexity' Symposi
 date: 2023-10-11T12:02:51+05:30
 draft: false
 aliases:
-  - /blog/TOSS_presentation
+  - /blog/toss_presentation
 ---
 ## **Exploring Open Science with Tilburg Science Hub at the 'Open to Complexity' Symposium** ##
 
