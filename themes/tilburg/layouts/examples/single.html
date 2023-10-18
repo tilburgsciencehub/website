@@ -46,7 +46,9 @@
 				{{ .Content }}
 				{{ if .Params.author }}
 				<div class="admonition author">
-					<div class="admonition-content">Contributed by <b><a href="/contributors/{{ replace (lower .Params.author) " " "" }}">{{ .Params.author }}</a></b></div>
+					<div class="admonition-content">Contributed by <b>
+						<a href='/contributors/{{ replace (lower .Params.author) " " "" }}'>{{ .Params.author }}</a></b>
+          </div>
 				</div>				
 				{{ else }}
 				{{ end }}
