@@ -1,5 +1,5 @@
 ---
-title: "Build a workflow on a GitHub hosted runner" 
+title: "Implement a GitHub Actions workflow for code formatting and testing" 
 description: "Learn a practical example of a GitHub actions workflow for code formatting and testing"
 keywords: "GitHub Actions, Data Science, Project, Project Structure, Reproducibility, Automation, Testing, Formatting, Workflows, Runners, Jobs, Events, Testing, Formatting"
 weight: 2
@@ -13,7 +13,7 @@ aliases:
 
 ## Overview
 
-This building block delves deeper into GitHub Actions by providing a hands-on example. We’ll craft a workflow specifically for code formatting and testing. After that, you'll discover how to integrate and track it into your own repository.
+This building block delves deeper into GitHub Actions by providing a hands-on example. We’ll craft a workflow specifically for Python code formatting and testing. After that, you'll discover how to integrate and track it into your own repository.
 
 {{% tip %}}
 If you are new to GitHub Actions, we suggest you review [this building block](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/automate-your-workflow/intro_ghactions/) first to get familiar with the foundational concepts.
@@ -31,13 +31,13 @@ In this section, we're going to build upon the `.yml` file structure introduced 
 
 To illustrate a useful workflow example, our goal would be to integrate code formatting (using Super Linter) and code testing.
 
-In case you're interested, the example was retrieved from the following GitHub repository:
+In case you're interested, the example was based on the following GitHub repository:
 
 {{% cta-primary-center "Click to go to the repository example" "https://github.com/snpe-reputation-systems/snpe-reputation-systems/blob/master/.github/workflows/formatting-testing.yml" %}}
 
 ### Code Formatting with Super Linter
 
-[Super Linter](https://github.com/marketplace/actions/super-linter) is a simple combination of various linters to help validate source code. It works automatically whenever your workflow is activated by an event, like pushing new code. 
+The [Super Linter](https://github.com/marketplace/actions/super-linter) action is a simple combination of various linters to help validate source code. It works automatically whenever your workflow is activated by an event, like pushing new code. 
 
 Super Linter will check the new code to make sure it follows the correct coding rules and guidelines. This helps keep your code clean and easy to understand.
 
@@ -83,6 +83,14 @@ This portion first checks out the code from the repository using `actions/checko
 ### Code Testing with pytest
 
 After code formatting, it's important to ensure that your code functions as expected. One popular tool for testing Python code is pytest.
+
+{{% tip %}}
+**Why testing?**
+
+Testing ensures that your code works reliably under different scenarios. It helps in identifying bugs early, preventing unexpected failures, and improving code quality. 
+
+Automated testing in a CI environment, like GitHub Actions, verifies that changes and additions haven’t broken existing functionality. For more insights, check this [site](https://docs.python-guide.org/writing/tests/).
+{{% /tip %}}
 
 Below is the configuration for the testing section of our workflow:
 
@@ -132,16 +140,16 @@ Don't worry if you don’t have tests for pytest to run. Begin with the code for
 
 {{% /tip %}}
 
-### Tracking Workflows
+## Tracking Workflows
 
 Once you have set up and activated your workflow, you can monitor and manage its execution directly from GitHub's user interface: 
 
-#### 1. Accessing GitHub Actions
+### 1. Accessing GitHub Actions
 
 Go to your repository on GitHub.
 Click on the *'Actions'* tab, located between the *'Pull requests'* and *'Projects'* tabs.
 
-#### 2. Check out your workflows
+### 2. Check out your workflows
 
 You’ll see a list of all the workflows in your repository whose titles will correspond to the latest commits. 
 
@@ -155,7 +163,7 @@ Here you will find a list of all the jobs within the workflow, along with their 
 <figcaption> Actions Workflow display</figcaption>
 </p>
 
-#### 3. Investigating a Specific Job
+### 3. Investigating a Specific Job
 Clicking on a specific job allows you to access a more detailed view.
 Here you can see each step within the job, the time taken for each step, and execution logs. This is what you should do when you want to check why a job failed, as shown in the picture below:
 
@@ -164,7 +172,7 @@ Here you can see each step within the job, the time taken for each step, and exe
 <figcaption> If a job fails, investigate the logs to address it</figcaption>
 </p>
 
-### GitHub hosted runner vs self-hosted runners
+## GitHub hosted runner vs self-hosted runners
 
 In GitHub Actions, besides using GitHub-hosted runners to execute your workflows, there’s also an option to use self-hosted runners. 
 
