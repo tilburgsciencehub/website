@@ -29,7 +29,7 @@ library("readr") # Read in the data file
 {{% /codeblock %}}
 
 ## What is Mediation Analysis?
-Imagine I am researching the relationship between income and happiness: X (Income) → Y (happiness). I could do a regression analysis looking at this direct relationship.
+Imagine I am researching the relationship between income and happiness: X (Income) → Y (Happiness). I could do a regression analysis looking at this direct relationship.
 
 <p align = "center">
 <img src = "../images/Diagram-1-mechanisms.png" width="300">
@@ -55,16 +55,19 @@ digraph {
 {{% /codeblock %}}
 
 However, upon closer examination, do you believe that money alone guarantees happiness?  
-Let's hypothesize that higher income enables enjoyable spending, which, in turn, boosts happiness: X (Income) → M (Enjoyable Spending) → Y (Happiness).  
+Let's hypothesize that higher income enables enjoyable spending, which, in turn, boosts happiness:  
+X (Income) → M (Enjoyable Spending) → Y (Happiness).  
 This is a classic case of `mediation analysis`.
-
+<br>
+ 
 <p align = "center">
 <img src = "../images/Diagram-2-mechanisms.png" width="500">
 </p>
-
+<br>
+ 
  
 `Mediation analysis` is a statistical technique that uncovers the "how" and "why" behind observed relationships. 
-It is widely used in economics, psychology, and other fields. It explores how `independent variables` (the X's) influence `dependent variables` (Y) through an intermediary: a `mediator` (M). 
+It is widely used in economics, psychology, and other fields. It explores how `independent variables` (the X's) influences the  `dependent variable` (Y) through an intermediary: a `mediator` (M). 
 
 In essence, mediation analysis helps us understand the `mechanisms` at work that explain the relationship between variables. Furthermore, we can estimate how much a mediator mattered, by attributing part of the treatment effect to a mediator.
 
@@ -88,7 +91,7 @@ The process involves three key regression equations:
 <img src = "../images/Diagram-4-mechanisms.png" width="500">
 </p>
 
-Regression equation:
+Regression equation (1):
  
 
 {{<katex>}}
@@ -110,7 +113,7 @@ The significance of this relationship ($\beta_1$) indicates if X affects Y at al
 <img src = "../images/Diagram-5-mechanisms.png" width="500">
 </p>
 
-Regression equation:
+Regression equation (2):
 
 {{<katex>}}
 
@@ -121,9 +124,7 @@ M = \beta_0 + \beta_2 X + \epsilon
 <br>
 <br>
 
-This equation examines the first part of the indirect effect, establishing whether X impacts the mediator M.
-
-The significance of this relationship ($\beta_2$) indicates if X affects M. If X and M have no correlation, further research is not necessary. A mediation is only meaningful if X affects M.
+This equation examines the first part of the indirect effect, establishing whether X impacts the mediator M. The significance of this relationship ($\beta_2$) indicates if X affects M. If X and M have no correlation, further research is not necessary. A mediation is only meaningful if X affects M.
 
 **3. Second Part Indirect Effect and Direct Effect: X + M → Y**
 
@@ -142,15 +143,10 @@ Y = \beta_0 + \beta_4 X + \beta_3 M + \epsilon
 <br>
 <br>
 
-The direct effect can be defined as the change we would see in the outcome due to a change in the treatment variable if we keep the mediator variable *constant*.
-
 $\beta_3$ assesses the total indirect effect.  
-Is the effect of X on Y, $\beta_4$, non-significant or smaller than before $\beta_1$, then it suggests that M mediates the relationship of X and Y.
+The direct effect can be defined as the change we would see in the outcome due to a change in the treatment variable if we keep the mediator variable *constant*. If the effect of X on Y, $\beta_4$, is non-significant or smaller than before $\beta_1$, then it suggests that M mediates the relationship of X and Y. 
 
-If the effect of X on Y completely disappears $\beta_4 = 0$, then M fully mediates between X and Y (**`full mediation`**).  
-If the effect of X on Y still exists, but in a smaller magnitude, M partially mediates between X and Y (**`partial mediation`**). 
-
-Thus, If a mediation effect exists, the effect of X on Y will disappear (or at least weaken) when M is included in the regression.
+If the effect of X on Y completely disappears $\beta_4 = 0$, then M fully mediates between X and Y (**`full mediation`**).  If the effect of X on Y still exists, but in a smaller magnitude, M partially mediates between X and Y (**`partial mediation`**). Thus, If a mediation effect exists, the effect of X on Y will disappear (or at least weaken) when M is included in the regression.
 
 The relative size of the mediated effect can be assessed using the `proportion mediated`, which represents the size of the indirect effect estimated relative to the total effect estimated.
  
@@ -235,14 +231,14 @@ In our example, the total effect is calculated using the following formula:
 
 In replicating the analysis for this tutorial, it's crucial to note that the authors of our example used an Instrumental Variable (IV) approach, which adds a layer of complexity to the regression analysis. Let's break down the steps to understand this better.
  
-Our chosen instrumental variable for women's labor force participation is the presence of a wartime factory in counties with high wartime casualties.
+
 {{% tip %}}
 
 For an introduction to an instrumental variable regression, look at this [building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/iv/). 
 
 {{% /tip %}}
 
-To implement the IV approach, we first run a "`first-stage`" regression, represented by the following formula:
+Our chosen instrumental variable for women's labor force participation is the presence of a wartime factory in counties with high wartime casualties.To implement the IV approach, we first run a "`first-stage`" regression, represented by the following formula:
 
 <br>
 
@@ -441,7 +437,7 @@ msummary(reg_3,
 </p>
 
 Based on the calculated values, we can make several conclusions about the mediation effect:
-1.  The total direct effect $\beta_4$ = 0.3031, which is significant and smaller than the total effect $\beta_1$ = 1.68, this suggests that Household Income (M) partially mediates the relationship between Women Labour Force Participation (X) and Refrigerator Ownership (Y).
+1.  The total direct effect $\beta_4$ = 0.3031, which is significant and smaller than the total effect $\beta_1$ = 1.68, this suggests that Household Income (M) **partially mediates** the relationship between Women Labour Force Participation (X) and Refrigerator Ownership (Y).
 2. The value of the second part of the indirect effect is $\beta_3$ = 13.6352.
 3. The total indirect effect can be calculated as $\beta_2$ * $\beta_3$ = 0.1008 * 13.6352 = 1.375.
 
@@ -484,14 +480,14 @@ mediation.test(data$ihs_hhinc, data$LFP, data$mech_fridge)[1]
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/Sobel-mechanisms.png" width="200">
+<img src = "../images/Sobel-Mechanisms.png" width="400">
 </p>
 
 
 {{% tip %}}
 
 **Bootstrapping**
-Recent research has used `Bootstrapping` over the `Sobel Test` when assessing the statistical signifcance of a mediation effect. Bootstrapping has several advantages over the Sobel Test when assessing mediation effects:
+Recent research has used `Bootstrapping` over the `Sobel Test` when assessing the statistical significance of a mediation effect. Bootstrapping has several advantages over the Sobel Test when assessing mediation effects:
 -  Non-Normality: Bootstrapping doesn't assume that the sampling distribution of the indirect effect is normally distributed.
 -  Power: Bootstrapping often has higher statistical power, increasing the likelihood of detecting a mediation effect when one exists.
 -  Confidence Intervals: Bootstrapping provides confidence intervals for the indirect effect, offering a range of plausible values rather than just a point estimate.
@@ -500,10 +496,11 @@ Recent research has used `Bootstrapping` over the `Sobel Test` when assessing th
 
 {{% /tip %}}
 
-{{% example %}}
-In R, use the mediate() function from the 'mediation' package for bootstrapping. This function needs two regression models: the first model explains the mediator variable by the treatment variable (X → M), and the second includes both the treatment and mediator variables to explain the dependent variable (X + M → Y). For bootstrapping, set boot = TRUE and sims to at least 500. After running, check the ACME (Average Causal Mediation Effects) in the results to see if it's different from zero. Note that this package is not compatible with the feols() function. Here's a stylized example:
 
-{{% /example %}}
+In R, use the `mediate()` function from the **mediation** package for bootstrapping. This function needs two regression models: the first model explains the mediator variable by the treatment variable (X → M), and the second includes both the treatment and mediator variables to explain the dependent variable (X + M → Y). For bootstrapping, set boot = TRUE and sims to at least 500. After running, check the ACME (Average Causal Mediation Effects) in the results to see if it's different from zero. Note that this package is not compatible with the feols() function.  
+ Here's a stylized example:
+
+
 
 {{% codeblock %}}
 
@@ -518,17 +515,16 @@ summary(results)
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/Bootstrapping-Mechanisms.png" width="200">
+<img src = "../images/Bootstrapping-Mechanisms.png" width="300">
 </p>
 
-{{% example %}} 
+
 
 In this mediation analysis, three key effects are assessed: the total effect of X on Y, the direct effect (ADE), and the indirect or mediation effect (ACME).
 - The total effect of X on Y without considering M was 1.6940.
 - The direct effect of X on Y, accounting for M, was 1.5026.
 The Mediation Effect (ACME) measures how much of X's influence on Y goes through M. It's calculated as the total effect minus the direct effect (1.6940 - 1.5026 = 0.1915). Importantly, this mediation effect was found to be statistically significant.
 
-{{% /example %}}
 
 {{% summary %}}
 
@@ -538,8 +534,8 @@ The Mediation Effect (ACME) measures how much of X's influence on Y goes through
   - 1. Total Effect: $Y = \beta_0 + \beta_1 X + \epsilon$
   - 2. Indirect Effect (1): $M = \beta_0 + \beta_2 X + \epsilon$
   - 3. Indirect Effect (2) + Direct Effect: $Y = \beta_0 + \beta_4 X + \beta_3 M + \epsilon$
-- Significance & Magnitude: The `Sobel test` is commonly used to validate the significance of a mediation effect, however recent research uses `bootstrapping`. The `magnitude` can be tested using a proportion test.
+- Significance & Magnitude: The `Sobel test` is commonly used to validate the significance of a mediation effect, however, recent research uses `bootstrapping`. The `magnitude` can be tested using a proportion test.
 
-This tutorial provides a outline of mediation analysis, its key components, and its application using an example.
+This tutorial provides an outline of mediation analysis, its key components, and its application using an example.
 
 {{% /summary %}}
