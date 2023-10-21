@@ -176,7 +176,7 @@ However, it's important to note that this relationship is influenced by a person
 {{% tip %}} 
 
 
-It's always beneficial to plot interaction terms for a clearer understanding of their impact. This `marginal effect plot` is a useful way to visualize how one variable modifies the effect of another on the outcome. For a quick guide on marginal effects in R, you can refer to this building block:  [building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/marginal-effect-r/). In this discussion, I will utilize the R package called "`ggpredict`,"  which enables us to generate marginal effect plots by combining the function with `ggplot`.
+It's always beneficial to plot interaction terms for a clearer understanding of their impact. This `marginal effect plot` is a useful way to visualize how one variable modifies the effect of another on the outcome. For a quick guide on marginal effects in R, you can refer to this [building block](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/marginal-effect-r/). In this discussion, I will utilize the R package called "`ggpredict`,"  which enables us to generate marginal effect plots by combining the function with `ggplot`.
 
 {{% /tip %}} 
 
@@ -252,10 +252,10 @@ Based on this specific dataset and model, we observe that a one-year increase in
 
 However, it's important to note that this relationship is influenced by a person's region, look at the significance level of the interaction term of the north-east and mid-west. We observe different conditional average treatment effects for each region:
 
-The estimated average treatment effect for individuals from the South is 8.00\% ($\beta_1$).
-For individuals from the North-East, the estimated average treatment effect is 7.04\% (0.0798 - 0.0094).
-Individuals from the Mid-West have an estimated average treatment effect of 6.55\% (0.0798 - 0.0143).
-In the case of individuals from the West, the estimated average treatment effect is 7.85\% (0.0798 - 0.0013), and it's not statistically significant at the 5\% level, indicating no significant difference in the relationship between education and wage from people in the south and the west.
+- The estimated average treatment effect for individuals from the South is 8.00\% ($\beta_1$).
+- For individuals from the North-East, the estimated average treatment effect is 7.04\% (0.0798 - 0.0094).
+- Individuals from the Mid-West have an estimated average treatment effect of 6.55\% (0.0798 - 0.0143).
+- In the case of individuals from the West, the estimated average treatment effect is 7.85\% (0.0798 - 0.0013), and it's not statistically significant at the 5\% level, indicating no significant difference in the relationship between education and wage from people in the south and the west.
 
 
 ### 3. Continuous Independent Variable
@@ -304,8 +304,9 @@ print(marginal_effect_plot$tests$p.wald)
 I utilized a linear estimator. Y represents the outcome variable, D represents the treatment variable, X stands for the moderator (our interaction variable), and Z represents the covariates in the model.  
 Furthermore, interflex provides the option for fixed effects and clustering of standard errors. It's important to note that the model also displays the confidence interval and the distribution of the moderating variable. In this case, the moderating variable is binary, as expected. 
 
- The marginal effect plot can provide valuable insights into the model's accuracy
- By using the "binning" argument in the estimator, we break down the interaction term into groups and calculate the interaction effect for each group. This reveals that the relationship seems to be non-linear. The marginal effect plot offers additional information that isn't available from the summary of the regression alone.  
+The marginal effect plot can provide valuable insights into the model's accuracy
+By using the "binning" argument in the estimator, we break down the interaction term into groups and calculate the interaction effect for each group. This reveals that the relationship seems to be non-linear. The marginal effect plot offers additional information that isn't available from the summary of the regression alone.  
+
 To confirm the significance, you can use the Wald test within the interflex function. The Wald test compares the linear interaction model to the more flexible binning model. The null hypothesis is that the linear interaction model and the three-bin model are statistically equivalent. If the p-value of the Wald test is close to zero, you can confidently reject the null hypothesis. For our example, this is the case!
 
 ### 4. Discrete Dependent Variable
@@ -429,5 +430,6 @@ This building block explains `interaction terms` in regression analysis, their m
 
 3. **Significance and Relevance**: The article emphasizes the importance of assessing both the `statistical significance` and `explanatory significance` of interaction terms. 
 
+4. **Importance of visualization**: Always make a visualization of your analyses, as it will deepen your knowledge about the relationship. A good standard practice, is to create a `marginal effect plot`.
 
 {{% /summary %}}
