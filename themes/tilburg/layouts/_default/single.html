@@ -1,4 +1,15 @@
 {{ $siteURL := .Site.BaseURL }} {{ partial "header.html" . }} <br /><br />
+
+<!-- Count words -->
+{{ $wordCount := 0 }}
+{{- range .Parent.Pages -}}
+  {{ $wordCount = add $wordCount (.Content | countwords) }}
+{{ end }}
+{{ $readingTimeMinutes := div $wordCount 200 }}
+{{ if eq $readingTimeMinutes 0 }}
+    {{ $readingTimeMinutes = 1 }}
+{{ end }}
+<!-- End word count -->
 <div class="container mt-4">{{ partial "breadcrumbs.html" . }}</div>
 <div class="container content px-0 mt-5">
   <div class="row justify-content-center mx-0">
@@ -11,6 +22,7 @@
         >
           {{ .Params.tutorialTitle }}
         </h1>
+        <sup class="mt-2" style="color: #ffb222;font-size: 14px;"><i class="fa-regular fa-clock mr-2"></i>{{ $readingTimeMinutes }} mins </sup>
         {{ else }}
         <h1
           class="text-center text-lg-left"
@@ -18,6 +30,7 @@
         >
           {{ .Title }}
         </h1>
+        <sup style="color: #ffb222;">{{ $readingTimeMinutes }} mins <i class="fa-regular fa-clock mr-2"></i></sup>
         {{ end }}
         <div class="TableOfContents">
           <span class="arrow-icon"></span>
