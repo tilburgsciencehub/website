@@ -13,10 +13,16 @@
     <div class="row justify-content-center justify-content-lg-start">
       {{ range where .Site.Pages "Section" "examples" }}
       {{ if ne .Title "Examples" }}
+        {{ $wordCount := .Content | countwords }}
+        {{ $readingTimeMinutes := div $wordCount 200 }}
+        {{ if eq $readingTimeMinutes 0 }}
+            {{ $readingTimeMinutes = 1 }}
+        {{ end }}
         <div class="col-lg-8 col-22 mb-4 d-flex flex-wrap">
           <div class="bg-white p-5 text-center w-100 rounded d-flex flex-column">
             <span class="flex-fill">
               <h4 class="heading">{{ .Title }}</h4>
+              <sup style="color: #ffb222;"><i class="fa-regular fa-clock mr-2"></i>{{ $readingTimeMinutes }} mins</sup>
               <p class="my-3" style="color: #6081A2;">{{ .Params.description }}</p>
             </span>
             <span>
