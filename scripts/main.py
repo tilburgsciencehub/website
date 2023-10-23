@@ -292,7 +292,7 @@ def main():
 
     # Navigate to the root folder (one level up from the current notebook file)
     notebook_path = os.path.dirname(__file__)
-    root_folder = os.path.abspath(os.path.join(notebook_path, '/static'))
+    root_folder = os.path.join(notebook_path, '/static')
     os.chdir(root_folder)
 
     response = get_report()
