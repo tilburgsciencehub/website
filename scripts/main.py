@@ -291,8 +291,8 @@ def main():
     logging.info('Python HTTP trigger function processed a request.')
 
     # Navigate to the root folder (one level up from the current notebook file)
-    notebook_path = os.path.abspath('')
-    root_folder = os.path.abspath(os.path.join(notebook_path, 'static'))
+    notebook_path = os.path.dirname(__file__)
+    root_folder = os.path.abspath(os.path.join(notebook_path, '../static'))
     os.chdir(root_folder)
 
     response = get_report()
