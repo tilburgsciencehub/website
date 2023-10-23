@@ -1,5 +1,14 @@
 {{ $siteURL := .Site.BaseURL }}
 {{ partial "header.html" . }}
+
+<!-- Count words -->
+{{ $wordCount := .Content | countwords }}
+{{ $readingTimeMinutes := div $wordCount 200 }}
+{{ if eq $readingTimeMinutes 0 }}
+	{{ $readingTimeMinutes = 1 }}
+{{ end }}
+<!-- End Count words-->	
+
 <br><br>
 <div class="container mt-4">
 	{{ partial "breadcrumbs.html" . }}
@@ -10,7 +19,8 @@
 		<div class="col-lg-8 col-22 pr-lg-5">
 			<div class="sticky-top pr-lg-3 mb-lg-5 pb-lg-5 d-flex flex-column tableOfContentParent">
 				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
-
+				<sup class="mt-2" style="color: #ffb222;font-size: 14px;"><i class="fa-regular fa-clock mr-2"></i>{{ $readingTimeMinutes }} mins </sup>
+				
 				{{ if gt (len .TableOfContents) 32 }}
 				<div class="TableOfContents">
 					<span class="arrow-icon"></span>
