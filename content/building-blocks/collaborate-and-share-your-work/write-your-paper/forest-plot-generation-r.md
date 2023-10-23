@@ -7,8 +7,8 @@ weight: 1
 author: "Matteo Zicari"
 authorlink: "https://www.linkedin.com/in/matteozicari/"
 aliases:
-  - /visualize/data
-  - /r/forest plots
+  - /visualise/data
+  - /r/forest/plots
 ---
 
 ## Overview
@@ -31,39 +31,9 @@ One of the most popular R packages used for forest plots is [forestploter](https
 
 <br/>
 
-### Upload/Generate Dataset
-The code snippet below shows how to `upload` an **example dataset** and generate a **basic layout** for the forest plot:
+### Generate Dataset
 
-{{% codeblock %}}
-```R
-# Load necessary packages
-library(forestploter)
-library(grid)
-
-# Retrieve example dataset from the `forestploter` package
-data <- read.csv(system.file("extdata", "example_data.csv", package = "forestploter"))
-
-# Data manipulation
-data <- data[,1:6]
-
-data$Subgroup <- ifelse(is.na(data$Placebo), 
-                      data$Subgroup,
-                      paste0("   ", data$Subgroup))
-
-data$Treatment <- ifelse(is.na(data$Treatment), "", data$Treatment)
-data$Placebo <- ifelse(is.na(data$Placebo), "", data$Placebo)
-data$se <- (log(data$hi) - log(data$est))/1.96
-
-data$` ` <- paste(rep(" ", 20), collapse = " ")
-
-data$`HR (95% CI)` <- ifelse(is.na(data$se), "",
-                             sprintf("%.2f (%.2f to %.2f)",
-                                     data$est, data$low, data$hi))
-
-```
-{{% /codeblock %}}
-
-A valid alternative is to `generate` a simulated dataset of our own:
+The code snippet below shows how to `generate` a `dataset` and create a `basic layout` for a forest plot:
 
 {{% codeblock %}}
 ```R
@@ -86,8 +56,14 @@ data$se <- (data$CI_Upper - data$CI_Lower) / (2 * 1.96)
 data$Weight <- 1/data$se^2
 data$Weight <- data$Weight/sum(data$Weight)
 
-pooled_effect <- round(sum(data$smd*data$Weight),2)
-pooled_se <- round(1 / sqrt(sum(1 / (data$se^2))),2)
+pooled_effect <- round(sum(data$smd * data$Weight),2)
+
+data$n <- (data$Group1 + data$Group2)
+n_studies <- 5 
+pooled_se <- sqrt(
+  (sum((data$n - 1) * data$se^2)) / ((sum(data$n) - n_studies))
+)
+
 z_score <- qnorm(0.975)
 lower_bound <- round(pooled_effect - z_score * pooled_se, 2)
 upper_bound <- round(pooled_effect + z_score * pooled_se, 2)
@@ -113,7 +89,7 @@ data[nrow(data), 1] <- "Overall"
 {{% /codeblock %}}
 
 ### Create Forest Plot Theme
-The following code snippet shows how to **set** a **personalised theme** for the forest plot:
+The following code snippet shows how to **set** a **personalised theme** for a forest plot:
 
 {{% codeblock %}}
 ```R
@@ -146,7 +122,7 @@ Type `help(forest_theme)` in your R terminal for more info about the `forest_the
 {{% /tip %}}
 
 ### Draw Forest Plot
-The following code snippet shows how to **draw** a **forest plot** starting from the simulated dataset:
+The following code snippet shows how to **generate** a **forest plot** once dataset and theme are set:
 
 {{% codeblock %}}
 ```R
@@ -194,11 +170,11 @@ This is what the `final output` should look like:
 ## Interpret Forest Plots
 The following is an explanation of how to interpret the figure above:
 
-* **Study**: results source;
-* **Group 1/2**: number of participants in the study. Normally the two groups are split between `treatment` and `control` groups;
-* **Squares**  (red): effect size of the indvidual studies. In this example, the effect size is represented by the `standardised mean difference` between the averages of the two groups. Other possible effect sizes are `mean difference`, `odds ratio`, or `hazard ratio`;
-* **Horizontal** (blue) **lines**: `95% confidence intervals` (CI). The interpretation is that we are 95% confident that the true value of the effect size lies between the lower and upper bounds. The wider the CI the less precise the study;
-* **Diamond** (green): `pooled summary effect` of all the studies included in the meta-analysis. The middle points of the diamond represent the pooled effect, while the points on the sides its 95% confidence interval;
-* **Dotted Line**: this line is known as `line of no effect` and it is plotted at the exact point where, relative to the effect size chosen in the analyis, there is no difference between the estimates of the two groups. If the effect size is based on a difference, the line of no effect will be at 0, whereas if the effect size is based on a ratio, the line of no effect will be at 1;
-* **Weight**: study weight is proportional to study precision and it represents the influence of each individual study on the pooled effect size. More practically, when the standard error of the estimate of a study increases, its weight decreases. An alternative approach is to use a weight that is positively correlated with sample size;
-* **SMD (95% CI)**: summary of effect size and confidence intervals of the graphical representation.
+* **Study**: results source.
+* **Group 1/2**: number of participants in the study. Normally the two groups are split between `treatment` and `control` groups.
+* **Squares**  (red): effect size of the indvidual studies. In this example, the effect size is represented by the `standardised mean difference` between the averages of the two groups. Other possible effect sizes are `mean difference`, `odds ratio`, or `hazard ratio`.
+* **Horizontal** (blue) **lines**: `95% confidence intervals` (CI). The interpretation is that we are 95% confident that the true value of the effect size lies between the lower and upper bounds. The wider the CI the less precise the study.
+* **Diamond** (green): `pooled summary effect` of all the studies included in the meta-analysis. The middle points of the diamond represent the pooled effect, while the points on the sides its 95% confidence interval.
+* **Dotted Line**: this line is known as `line of no effect` and it is plotted at the exact point where, relative to the effect size chosen in the analyis, there is no difference between the estimates of the two groups. If the effect size is based on a difference, the line of no effect will be at 0, whereas if the effect size is based on a ratio, the line of no effect will be at 1. This line is very useful to `interpret the results`, in fact, if the CI intersects the line, the results are **NOT significant**. In this case the pooled summary effect is not significant.
+* **Weight**: study weight is proportional to study precision and it represents the influence of each individual study on the pooled effect size. More practically, when the standard error of the estimate of a study increases, its weight decreases. An alternative approach is to use a weight that is positively correlated with sample size.
+* **SMD (95% CI)**: summary of effect size and confidence intervals in the graphical representation.
