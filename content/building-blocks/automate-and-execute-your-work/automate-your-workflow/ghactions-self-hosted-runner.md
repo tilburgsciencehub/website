@@ -11,6 +11,10 @@ aliases:
   - /github_actions/self-hosted_runner
 ---
 
+<p align = "center">
+<img src = "../images/runner-cover.png" width="800" style="border:1px solid black;">
+<figcaption> Image by Dall-E 3</figcaption>
+</p>
 
 ## Overview
 
