@@ -69,6 +69,7 @@ With the following code you can create a scatterplot with self-generated data in
 
 {{% codeblock %}}
 ```R
+library(ggplot2)
 # Generate random data (you can replace this with your actual data)
 set.seed(123)  # For reproducibility
 data <- data.frame(
@@ -97,6 +98,10 @@ print(scatter_plot)
 The output should look like this: 
 
 ![Scatterplot](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Scatterplot.png)
+The output should look like this:
+<p align = "center">
+<img src = "./images/"Scatterplot.png" width="400">
+</p>
 
 
 #### 2. Bar plot
@@ -124,7 +129,9 @@ bar_plot
 {{% codeblock %}}
 
 The output should look like this:
-![Bar plot](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Barplot.png)
+<p align = "center">
+<img src = "../images/"Bar plot.png" width="400">
+</p>
 
 
 #### 3. Stacked bar chart
@@ -154,7 +161,9 @@ stacked_bar_chart
 {{% codeblock %}}
 
 The output should look like this:
-![Stacked Bar chart](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/StackedBarChart.png)
+<p align = "center">
+<img src = "../images/"StackedBarChart.png" width="400">
+</p>
 
 #### 4. Line chart
 
@@ -191,8 +200,10 @@ print(line_chart)
 ```
 {{% codeblock %}}
 
-The output should look like this:
-![Line chart](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/LineChart.png)
+The output should look like this: 
+<p align = "center">
+<img src = "../images/"LineChart.png" width="400">
+</p>
 
 #### 5. Heatmap
 
@@ -232,7 +243,9 @@ print(heatmap_plot)
 {{% codeblock %}}
 
 The output should look like this:
-![Heatmap](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Heatmap.png)
+<p align = "center">
+<img src = "./images/"Heatmap.png" width="400">
+</p>
 
 #### 6. Histogram
 
@@ -265,8 +278,9 @@ line_plot
 {{% codeblock %}}
 
 The output should look like this:
-![Histogram with bins](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/HistogramBins.png)
-![Distribution line](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/DistributionPlot.png)
+<p align = "center">
+<img src = "../images/"HistogramBins.png" width="400">
+</p>
 
 #### 7. Box plot
 
@@ -299,7 +313,9 @@ box_plot
 {{% codeblock %}}
 
 The output should look like this:
-![Box plot](website/content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Box_plot.png)
+<p align = "center">
+<img src = "./images/"Box_plot.png" width="400">
+</p>
 
 ## Best Practices for Data Visualization
 
