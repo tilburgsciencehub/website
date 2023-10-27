@@ -10,10 +10,17 @@ aliases:
   - /visualize/data
   - /python/plotting
 ---
+## Overview
 
-# Plotnine
+This building block is an introduction to `Plotnine` and `Altair`, two libraries used for data visualisation in Python. For each library, we provide a guide covering:
+ * Installation 
+ * Syntax
+ * Plotting
 
-An additional plotting library in Python is `plotnine`, which is an equivalent to the R package `ggplot2`. It has a similar syntax and uses a concept of grammar of graphics. This means that the plots are built incrementally, layer by layer. 
+
+## Plotnine
+
+`Plotnine` uses a syntax that is similar to that of the R package `ggplot2` and is built on the principles of **grammar of graphics**. In this approach, plots are constructed incrementally, layer by layer.
 
 ### Installation 
 
@@ -57,29 +64,26 @@ ggplot(data = <DATA>) +         # to create the background layer containing the 
 
 ### Plotting
 
-We illustrate how to visualize data with `plotnine` by using the Iris dataset from `sklearn`. 
-
-Importing needed packages and dataset:
+We illustrate how to visualize data with `plotnine` by using the Iris dataset from `sklearn`:
 
 {{% codeblock %}}
 ```python
-import sklearn
-import plotnine
+# Importing needed packages and dataset
 import pandas as pd
+import sklearn
 from sklearn import datasets
+import plotnine
 from plotnine import *
 
 iris = datasets.load_iris()
 
-# transforming Iris into a data frame
+# Transforming Iris into a data frame
 iris_df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
 ```
 {{% /codeblock %}}
 
-Plotting:
 {{% codeblock %}}
 ```python
-
 (ggplot(iris_df, aes(x = "sepal width (cm)", y = "sepal length (cm)"))
   + geom_point()
   + coord_cartesian()
@@ -89,11 +93,18 @@ Plotting:
 ```
 {{% /codeblock %}}
 
+<div style="text-align: center;">
+    <div style="position: relative; left: -20px;">
+        <img src="../img/plotnine.png" width="500" alt="Forest Plot">
+    </div>
+</div>
+
+
 Alternative geometric functions are `geom_bar()`, `geom_line()`, `geom_boxplot()`, and `geom_histogram()`.
 
-# Altair
+## Altair
 
-`Vega-Altair` is a declarative visualization library, built on `Vega` and `Vega Lite`.
+`Vega-Altair` is a declarative visualization library, built on `Vega-Lite` visualisation grammar, which allows for easy interactivity and customisation.
 
 ### Installation
 
@@ -113,20 +124,18 @@ conda install -c conda-forge altair
 
 ### Syntax
 
-The basic template for plotting with `altair` is:
+The basic syntax for plotting with `altair` is:
 
 ```
-alt.Chart(data).mark_markname().encode( 
-
-       encoding1 = "column1", 
-
+alt.Chart(data).mark_markname().encode(
+       encoding1 = "column1",
        encoding2 = "column2")
 ```
 
 We identify 3 basic elements: 
-- *data*: the input dataset used to make the plot
-- *mark*: specifies the type of graphical representation (bar, point, line, etc)
-- *encoding*: the visual properties of the chart (axes values, position channels, color, etc)
+- *data*: input dataset used to make the plot
+- *mark*: to specify the type of graphical representation (bar, point, line, etc..)
+- *encoding*: visual properties of the chart (axes values, position channels, color, etc..)
 
 
 ### Plotting
@@ -160,6 +169,13 @@ alt.Chart(iris_df).mark_circle().encode(
 {{% /codeblock %}}
 
 
+<div style="text-align: center;">
+    <div style="position: relative; left: -50px;">
+        <img src="../img/altair1.png" width="400" alt="Forest Plot">
+    </div>
+</div>
+
+
 To add a different colour for every unique species add the argument `color` to `encode()`. In addition, the argument `size` allows to change the size of each data point conditional on the length of the petals.
 
 {{% codeblock %}}
@@ -173,6 +189,22 @@ alt.Chart(iris_df).mark_circle().encode(
 ```
 {{% /codeblock %}}
 
+<div style="text-align: center;">
+    <img src="../img/altair2.png" width="500" alt="Forest Plot">
+</div>
+
 To create a different type of plot, you can change `mark_circle()` to `mark_bar()`, `mark_point()`, or `mark_line()`. 
 
 
+{{% summary %}}
+How to efficiently visualise your data with `plotnine` and `altair`:
+
+1. Identify **variables** of interest within your dataset;
+
+2. Select ideal **type of plot** (e.g., scattarplot, bar plot) according to chosen variables;
+
+3. **Install** relevant packages; 
+
+4. Starting from the basic syntax of each package, **generate insights** on your data and efficiently **communicate** them to others.
+
+{{% /summary %}}
