@@ -5,10 +5,21 @@ keywords: "XGBoost, Extreme Gradient Boosting, Machine Learning, R, decision tre
 draft: false
 weight: 2
 author: "Niels Rahder"
-authorlink: "https://www.linkedin.com/in/nielsrahder" 
+authorlink: "https://tilburgsciencehub.com/contributors/nielsrahder/" 
 ---
 
-# Overview
+## Overview
+
+In this building block, you will delve deep into the inner workings of XGBoost, a top-tier machine learning algorithm known for its efficiency and effectiveness.
+
+Navigating through this guide, you will gain hands-on experience and broaden your understanding of:
+
+- The 'under the hood' process of how XGboost works.
+- How to use XGBoost in `R`, what the hyperparameters are, and how to tune them using a grid search. 
+- How to interpret the results. 
+- How to visualize the algorithm. 
+
+Step into the world of XGBoost, where you'll learn to build, fine-tune, and interpret highly reliable models, ready to make impactful predictions across various industries.
 
 ## What is XGBoost?
 
@@ -182,7 +193,7 @@ In this case the branch is removed. In other words the gain-value always needs t
 
 <br> 
 
-## Using `XGBoost` in R
+## Using XGBoost in R
 
 You can get started by using the [`xgboost` package in R](https://cran.r-project.org/web/packages/xgboost/xgboost.pdf). 
 
@@ -432,3 +443,19 @@ xgb.plot.multi.trees(feature_names = names(data),
 <p align = "center">
 <img src = "../img/tree_plot.png" width="400">
 </p>
+
+{{% summary %}}
+
+- **Understanding XGBoost:**
+  - Dive into the mechanics of XGBoost's functionality.
+  - Explore its application within the `R`.
+
+- **Setting Up and Tuning the Algorithm:**
+  - Define and understand the hyperparameters.
+  - Employ a systematic grid search for optimal model performance.
+
+- **Interpreting and Visualizing Outcomes:**
+  - Analyze model results for meaningful insights.
+  - Visualize your algorithm's efficacy and decision process.
+
+{{% /summary %}}
