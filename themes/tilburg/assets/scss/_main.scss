@@ -846,6 +846,11 @@ footer {
   }
 }
 
+.article-date{
+  width:fit-content;
+  text-align: center;
+}
+
 .customNavbar {
   display: grid;
   grid-template-columns: 12fr 18fr 12fr;
@@ -1044,6 +1049,24 @@ a.text-secondary:hover {
 
     a {
       margin-left: 33px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .article-date{
+    width:100%;
+    text-align: center;
+  }
+
+  .share {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-bottom:1rem;
+
+    a {
+      margin-left: 20px;
     }
   }
 }

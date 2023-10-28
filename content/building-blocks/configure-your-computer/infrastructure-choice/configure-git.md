@@ -1,5 +1,5 @@
 ---
-title: "Setting Up a New Workspace and Configuring Git "
+title: "Setting Up a New Workspace, Configuring Git and Adding Research Drive on Research Cloud"
 description: "Learn how to set up a new workspace/VM instance on Research Cloud and configure Git on the instance."
 keywords: "surf, rd, rclone, large files, webdav, store, storage, git, configure"
 weight: 3
@@ -37,33 +37,21 @@ You can access and write data in remote repositories on Github using SSH (Secure
 ### Step 2: Configure SSH
 If you configure multiple keys for an SSH client and connect to an SSH server, the client can try the keys one at a time until the server accepts one but this process doesn’t work because of how Git SSH URLs are structured. Hence, you must configure SSH to explicitly use a specific key file. To do this, edit your `~/.ssh/config` file using the `nano` command and copy-paste the following and press F3 to save.
 
-{{% codeblock %}}
-```bash
+```
 # Host github.com
 #   User git
 #   Hostname github.com
 #   IdentityFile ~/.ssh/id_rsa
-
-{{% /codeblock %}}
-
-
+```
 
 {{% warning %}}
 Make sure to change the ‘IdentityFile’ to the directory where the id_rsa key is saved.
 {{% /warning %}}
 
 
-
-
-
-
-
-
 <video width="500" height="300" controls>
   <source src="../img/nano.mov" type="video/mp4">
 </video>
-
-
 
 
 ### Step 3: Adding a New SSH key to your Github Account
@@ -86,3 +74,17 @@ Make sure to change the ‘IdentityFile’ to the directory where the id_rsa key
 <video width="500" height="300" controls>
   <source src="../img/git clone.mov" type="video/mp4">
 </video>
+
+### Step 4: Adding Research Drive
+
+To use Research Drive, you should first make sure that you have an account, or a collaborator has given you access to Research Drive. If so, you can log in and view/upload files using instructions here: https://wiki.surfnet.nl/display/RDRIVE/How+to+login
+
+You should then be able to connect research drive on your workspace following these instructions:
+
+https://servicedesk.surf.nl/wiki/display/WIKI/Connect+Research+Drive (In most cases, you would be using the "branded" research drive instance (e.g., provided by Tilburg).
+
+{{% tip %}}
+If you do not see any files displayed in the Research Drive folder of your workspace, there is some issue with mounting. Please follow the steps above to re-link Research Drive to your collaborative organization (CO) and it should work.
+{{% /tip %}}
+
+
