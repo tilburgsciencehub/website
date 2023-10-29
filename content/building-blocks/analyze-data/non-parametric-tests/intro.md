@@ -22,7 +22,7 @@ In a perfect world, where everything follows a bell-shaped curve (a normal distr
 <figcaption> Bell-shaped curve of a normal distribution</figcaption>
 </p>
 
-Now, let's say you measure the heights of both groups, but your data doesn't look like a nice, symmetric bell curve as above . Instead, the data is kind of all over the place, and you're not sure if the variances are equal. Hence, in such a case, one should use a non-parametric test instead
+Now, let's say you measure the heights of both groups, but your data doesn't look like a nice, symmetric bell curve as above. Instead, the data is kind of all over the place, and you're not sure if the variances are equal. Hence, in such a case, one should use a non-parametric test instead
 
 {{% tip %}}
 In situations where the distribution of the sample is unknown, using a parametric test like the t-test might not be appropriate because it relies on those assumptions.
@@ -30,8 +30,12 @@ So, you should instead turn to non-parametric tests. These tests don't make as m
 
 {{% /tip %}}  
 
+After reading this building block you will be able to:
+- Understand the importance of non-parametric tests.
+- Accurately identify the kind of data you are dealing with.
+- Distinguish between dependent and independent data samples.
+- Choose an apt non-parametric test based on the characteristics of the data set.
 
-In this building block, we will describe the various non-parametric test that you can use according to the data sample you have.
 
 
 ## Which test to use?
@@ -66,7 +70,7 @@ Now that you know the characteristics of your sample, you can accordingly choose
 ### Binomial Test
 If you are dealing with a **binary data** with a **nominal** measurement scale, binomial test is the most appropriate test. It answers the question: "Is the observed outcome significantly different from what we would expect by a random chance?"; such as: Testing if a coin is fair, testing if a an election outcome favours the Republican or the Democrats, etc.
 
-Check out the building block on the binomial test [# I'll add link here] to learn how to use this test on R and how the formula works mathematically.
+Check out the building block on the [binomial test](content\building-blocks\analyze-data\non-parametric-tests\binomial.md) to learn how to use this test on R and how the formula works mathematically.
 
 ### Chi-Squared Goodness of Fit
 Another test you can use with a **binary** and **nominal** data is the Chi-Squared Goodness of Fit. It tests whether a significant difference exists between an observed number of outcomes falling in each category and an expected number based on the null hypothesis (which we call the goodness-of-fit)
@@ -164,7 +168,23 @@ Check out this building block [#Add link] to learn how to use this test.
 
 {{% summary %}}
 
--
+- Non-parametric tests are used when you have no information about the underlying population distribution.
+- It is important to be able to identify your data sample based on these 3 characteristics:
+  - Measurement scale: Nominal, ordinal, interval or ratio scale
+  - Type of data: Binary, discrete or continuous
+  - Data structure: One sample, dependent or independent samples
+- You can choose an apt non-parametric test based on these characteristics:
+
+|   **Test**  | **Scale** | **Type** | **Structure**|
+|-------------|------------|--------------|---------------|
+| Binomial    | Nominal  | Binary | One-sample  |
+| Chi-squared goodness of fit    | Nominal  | Binary | One-sample |
+| Wilcoxon-matched pairs   | Ordinal | Disc/Cont | Dependent   |
+| McNemar's test | Nominal | Discrete  | Dependent   |
+| Fisher' Exact    | Ordinal  | Discrete  | Independent   |
+| Median test   | Ordinal  | Discrete  | Independent   |
+| Mann-Whitney U test | Ordinal  | Continuous  | Independent   |
+
 
 
 
