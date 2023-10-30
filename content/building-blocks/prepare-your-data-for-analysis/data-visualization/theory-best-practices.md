@@ -49,7 +49,7 @@ Several aspects should be considered when constructing a data visualization:
 The chart below contains all necessary elements for a proper visualization.
 
 <p align = "center">
-<img src = "../img/chart_elements.png" width=450">
+<img src = "../img/chart_elements.png" width="450">
 </p>
 
 First of all, a chart needs to have a **coordinate system** , **axes** and **scaling** of data. In the above example there are two coordinates, the X and Y axes representing months on the horizontal axis and financial indicators on the primary vertical axis. Additionally, it has a secondary vertical axis showing the ROI. 
@@ -69,6 +69,7 @@ With the following code you can create a scatterplot with self-generated data in
 
 {{% codeblock %}}
 ```R
+library(ggplot2)
 # Generate random data (you can replace this with your actual data)
 set.seed(123)  # For reproducibility
 data <- data.frame(
@@ -95,8 +96,9 @@ print(scatter_plot)
 {{% /codeblock %}}
 
 The output should look like this:
-
-![Scatterplot](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Scatterplot.png)
+<p align = "center">
+<img src = "../img/Scatterplot.png" width="400">
+</p>
 
 
 #### 2. Bar plot
@@ -121,10 +123,12 @@ bar_plot <- ggplot(data, aes(x = Category, y = Value)) +
 bar_plot
 
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
 The output should look like this:
-![Bar plot](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Barplot.png)
+<p align = "center">
+<img src = "../img/barplot.png" width="400">
+</p>
 
 
 #### 3. Stacked bar chart
@@ -151,10 +155,12 @@ stacked_bar_chart <-  ggplot(data, aes(x = Category, y = Value, fill = Subcatego
 
 stacked_bar_chart
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
 The output should look like this:
-![Stacked Bar chart](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/StackedBarChart.png)
+<p align = "center">
+<img src = "../img/StackedBarChart.png" width="400">
+</p>
 
 #### 4. Line chart
 
@@ -189,10 +195,12 @@ line_chart <- ggplot(data, aes(x = Year)) +
 
 print(line_chart)
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
-The output should look like this:
-![Line chart](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/LineChart.png)
+The output shoudl look like this: 
+<p align = "center">
+<img src = "../img/LineChart.png" width="400">
+</p>
 
 #### 5. Heatmap
 
@@ -229,10 +237,12 @@ heatmap_plot <- ggplot(data_df, aes(x = Column, y = Row, fill = Value, label = r
 
 print(heatmap_plot)
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
 The output should look like this:
-![Heatmap](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Heatmap.png)
+<p align = "center">
+<img src = "../img/Heatmap.png" width="400">
+</p>
 
 #### 6. Histogram
 
@@ -262,11 +272,12 @@ line_plot <- ggplot(data.frame(x = data), aes(x)) +
 hist_with_bins
 line_plot
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
 The output should look like this:
-![Histogram with bins](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/HistogramBins.png)
-![Distribution line](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/DistributionPlot.png)
+<p align = "center">
+<img src = "../img/HistogramBins.png" width="400">
+</p>
 
 #### 7. Box plot
 
@@ -296,10 +307,12 @@ box_plot <- ggplot(data, aes(x = categories, y = values)) +
   )
 box_plot
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
 The output should look like this:
-![Box plot](website/content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Box_plot.png)
+<p align = "center">
+<img src = "../img/Box_plot.png" width="400">
+</p>
 
 ## Best Practices for Data Visualization
 
@@ -333,17 +346,22 @@ Remember, the primary goal of data visualization in academic papers is clarity a
 To save the plots just created we will use the function ggsave, part of the ggplot2 package. 
 
 The first necessary step is downloading and calling the package:
-
+{{% codeblock %}}
 ```R
 install.packages("ggplot2")
 library(ggplot2)
 ```
+{{% /codeblock %}}
+
 The second step is saving the plot, so that is available for future use. You can do the following step for all figures, here it is displayed for one only. 
 
+{{% codeblock %}}
 ```R
 #Saving the last plot we created as a PNG file with custom dimensions and resolution
 ggsave("my_box_plot.png", plot = box_plot, width = 8, height = 6, dpi = 600)
 ```
+{{% /codeblock %}}
+
 ## Summary 
 
 Data visualization is essential for understanding data. It uses marks (like points and lines) and channels (such as color and size) to create charts. A complete chart includes axes, legends, titles, and labels for clarity.
