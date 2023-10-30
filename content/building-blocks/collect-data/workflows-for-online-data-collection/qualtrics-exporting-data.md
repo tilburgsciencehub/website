@@ -13,36 +13,55 @@ aliases:
 
 ---
 
-
 ## Overview
 
-When writing a thesis, a paper, or simply performing a market research, surveys are among the most used and reliable alternatives to using existing datasets.
+When writing a thesis, a paper, or conducting market research, surveys are among the most frequently used and reliable alternatives to pre-existing datasets. [Qualtrics](https://www.qualtrics.com) is an experience management platform that allows one to create professional surveys to obtain valuable data on a specific target. Being able to integrate such results with statistical software is crucial for performing more advanced data analysis and gaining relevant insights.
 
-<br/>
 
-Among the `advantages` of surveys are:
-* the possibility to target a specific niche;
-* tailor it to your exact research needs;
-* generate data (otherwise non-existent) on novel research ideas.
 
-In terms of `drawbacks`:
-* really often not generalisable to the whole population due to biases that might affect the data generated;
-* difficult to optimally design questions to avoid errors;
-* good surveys require a lot of work and might still be less rigorous than existing datasets.
+Among the `advantages` of surveys are the ability to:
+* target a specific niche;
+* tailor questions to one's exact research needs;
+* generate data that would not otherwise exist for novel research ideas.
 
-Talk about how one can work around the limitations and use it as an introduction to how important it is to use a software that, first, allows to run professional and well structured surveys, and, second, allows for an optimal data analysis once the responses are collected. 
+In terms of `drawbacks`, surveys often suffer from the following issues:
+* limited generalisability to the entire population due to potential biases that can affect the data;
+* difficult to design optimally;
+* despite the substantial amount of work required, lower rigor when compared to pre-existing datasets.
+
+
+{{% warning %}}
+
+It is essential to be aware of survey data collection limitations to account for possible biases when designing questions.
+
+{{% /warning %}}
 
 ### Design your own survey
 
+During the design phase, a general **rule of thumb** is to ask *broad and general questions at the beginning* (e.g., gender, age), followed by *more specific questions* (e.g., strictly related to research question), and finally more *easy to answer questions* (e.g., demographics) at the end of the questionnaire.
 
+{{% tip %}}
+While drafitng the questions, one should consider that:
+
+* the survey must align with the main `research question` and `target sample`. Always think about your respondents and tailor your questions to them;
+
+* at the outset of the survey, include an `exclusion question` to filter out respondents who do not fall within your target audience. For instance, if you are focusing on married couples, the initial question could inquire about the respondent's current relationship status;
+
+* survey `length` is crucial; typically, respondents should be able to complete it within 5 to 10 minutes. Beyond this threshold, an increasing number of respondents are likely to drop out;
+
+* `avoid` complex (e.g., technical jargon) and loaded (e.g., unjustified assumptions about the respondent) questions as well as non-specific ones (e.g., asking two or more questions at once).
+
+{{% /tip %}}
 
 ## Qualtrics
 
+This section provides a `step-by-step` `guide` to building a survey in Qualtrics.
 
 
 
 
-.....
+
+
 
 
 ## R 
@@ -62,28 +81,22 @@ library(qualtRics)
 
 ## Pyhton
 
+{{% codeblock %}} 
+
+```python
+
+
+
+```
+
+{{% /codeblock %}}
+
 
 ## Stata
 
 
 
 
-
-
-
-{{% tip %}}
-
-**This is a tip.**
-
-You can use special formatting options to highlight some paragraphs in your article.
-
-{{% /tip %}}
-
-{{% warning %}}
-
-And this is a warning.
-
-{{% /warning %}}
 
 
 {{% summary %}}
