@@ -13,14 +13,16 @@ aliases:
 
 ## Overview
 
+The **goal** of this **building block** is to provide a guide to create basic forest plots, compare the results of different studies, and assess the significance of their pooled effects.
+
 `Forest plots` are a visual representation that summarises findings from various scientific studies that investigate a common research question. They find significant application in the field of `meta-analysis`, a type of statistical analysis that combines and examines results from a number of independent studies. 
-More practically, forest plots identify a statistic that is common to such set of studies and report the various instances of that statistic. This, in turn, allows to compare the different results and the significance of the overall pooled summary effect. <br/>
+More practically, forest plots identify a statistic that is common to such set of studies and report the various instances of that statistic. This, in turn, allows to compare the different results and the significance of the overall pooled summary effect.
 <br/>
 
 Among the **benefits** of forest plots, we find:
 
-* clear and concise `visual representation` of results;
-* `effect size` and `confidence interval` comparison across different studies;
+* clear and concise `visual` `representation` of results;
+* `effect` `size` and `confidence` `interval` comparison across different studies;
 * overall, useful tool to evaluate the consistency and strength of evidence, identify potential sources of bias, 
   and make informed judgments about the effect of interventions or exposures.
 
@@ -29,19 +31,18 @@ Among the **benefits** of forest plots, we find:
 
 One of the most popular R packages used for forest plots is [forestploter](https://cran.r-project.org/web/packages/forestploter/vignettes/forestploter-intro.html). Compared to other packages (e.g., forestplot), `forestploter` focuses entirely on forest plots, which are treated as a table. Moreover, it allows to control for graphical parameters with a theme and to have confidence intervals spread across multiple columns and divided by groups.
 
-<br/>
 
 ### Generate Dataset
 
-The code snippet below shows how to `generate` a `dataset` and create a `basic layout` for a forest plot:
+The code blocks below shows how to `generate` a `dataset` and create a `basic` `layout` for a forest plot.
+
+1. **Load** the **required packages** and **generate a simulated dataset**.
 
 {{% codeblock %}}
 ```R
-# Load necessary packages
 library(forestploter)
 library(dplyr)
 
-# Create dataset
 data <- data.frame(
   Study = c("Study A", "Study B", "Study C", "Study D", "Study E"),
   Group1 = c(200, 150, 180, 250, 120),
@@ -50,29 +51,47 @@ data <- data.frame(
   CI_Lower = c(-0.25, -0.74, -1.6, 0.55, -0.1),
   CI_Upper = c(1.25, 1.4, -0.1, 2.1, 1.3)
 )
+```
+{{% /codeblock %}}
 
-# Prepare forest plot layout
+2. Calculate **standard errors** and **weights** to be used in the derivation of the **pooled standard error** and the **overall pooled effect**.
+
+{{% codeblock %}}
+```R
 data$se <- (data$CI_Upper - data$CI_Lower) / (2 * 1.96)
 data$Weight <- 1/data$se^2
-data$Weight <- data$Weight/sum(data$Weight)
+data$Weight <- data$Weight / sum(data$Weight)
+pooled_effect <- round(sum(data$smd * data$Weight), 2)
 
-pooled_effect <- round(sum(data$smd * data$Weight),2)
+data$Weight <- round(100 * (data$Weight), 2)
 
 data$n <- (data$Group1 + data$Group2)
 n_studies <- 5 
 pooled_se <- sqrt(
   (sum((data$n - 1) * data$se^2)) / ((sum(data$n) - n_studies))
 )
+```
+{{% /codeblock %}}
 
+3. Calculate the **confidence interval** for the pooled summary effect, insert **empty cells** to match the forest plot's graphical representation, and include a final **summary column**.
+
+{{% codeblock %}}
+```R
 z_score <- qnorm(0.975)
 lower_bound <- round(pooled_effect - z_score * pooled_se, 2)
 upper_bound <- round(pooled_effect + z_score * pooled_se, 2)
 
-data$Weight <- round(100*(data$Weight), 2)
-
 data$` ` <- paste(rep(" ", 30), collapse = " ")
+
 data$`SMD (95% CI)` <- paste(data$smd, " [", data$CI_Lower, ", ", data$CI_Upper, "]", sep = "")
 
+```
+{{% /codeblock %}}
+
+4. **Reorder** the **columns** and keep only those necessary for the final forest plot. Generate a **totals** row to append to the original dataset and make any **adjustments** necessary to ensure that variables appear neat.
+
+{{% codeblock %}}
+```R
 data <- data %>%
   select(Study, Group1, Group2, smd, CI_Lower, CI_Upper, se, ` `, Weight, `SMD (95% CI)`)
 
@@ -89,7 +108,8 @@ data[nrow(data), 1] <- "Overall"
 {{% /codeblock %}}
 
 ### Create Forest Plot Theme
-The following code snippet shows how to **set** a **personalised theme** for a forest plot:
+
+5. **Generate** and **customise** forest plot theme.
 
 {{% codeblock %}}
 ```R
@@ -122,7 +142,8 @@ Type `help(forest_theme)` in your R terminal for more info about the `forest_the
 {{% /tip %}}
 
 ### Draw Forest Plot
-The following code snippet shows how to **generate** a **forest plot** once dataset and theme are set:
+
+6. Once dataset and theme are set, **generate forest plot**.
 
 {{% codeblock %}}
 ```R
@@ -168,7 +189,7 @@ This is what the `final output` should look like:
 
 
 ## Interpret Forest Plots
-The following is an explanation of how to interpret the figure above:
+The following is an explanation of how to **interpret** the figure above.
 
 * **Study**: results source.
 * **Group 1/2**: number of participants in the study. Normally the two groups are split between `treatment` and `control` groups.
