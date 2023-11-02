@@ -1,5 +1,5 @@
 ---
-title: "Validation and Falsification Analysis"
+title: "Validation and Falsification Analysis for RDD"
 description: "Validation and falsification analysis methods for the RD designs. Explanation of methods, how to implement them for both continuity and local randomization approaches, how to interpret results"
 keywords: "regression, discontinuity, validation, falsification, analysis"
 date: 2023-07-17
@@ -13,13 +13,18 @@ aliases:
 
 ## Introduction
 
-The main advantage of regression discontinuity (RD) designs is that the treatment assignment rule is known and based on observable features. However, this is not enough to guarantee that the needed assumptions to recover the RD effect are met.
+The Regression Discontuinity Design (RDD) assumes **no precise manipulation** at the cutoff. 
 
-If units know the cutoff, they can actively change the value of their score when they barely miss the treatment, which can threat the validity of the RD design. For this, there are validation methods based on various empirical implications of the unobservable RD assumptions that are expected to hold in most cases. We discuss them next, both from the stand point of continuity-based approach and local randomization approach. 
+Precise manipulation happens if subjects know the cutoff and manipulate accordingly whether they end up below or above the cutoff, which determines whether they belong to the treatment or control group. As a result, treatment assignment is not as good as random anymore at the cutoff value of the running variable. An example of precise manipulation would be if in a targeted aid program for lower-income groups, some subject position themselves just below the cutoff of income level to qualify for this aid. 
+
+In this building block we discuss validation methods, based on various empirical implications of the unobservable RD assumptions that are expected to hold in most cases. 
+
+These methods are explored within both the standard [continuity-based approach](/continuity/approach) and the extended [local randomization approach](/local/randomization). 
+
 
 ### Predetermined Covariates and Placebo Outcomes
 
-The first and most important falsification test is examining if near the cutoff the treated units are similar to the control units, in terms of observable characteristics. The units with scores just above and below the cutoff should be similar in the variables that couldn't have been affected by the treatment. These variables are:
+The first and most important falsification test is examining if near the cutoff the treated units are similar to the control units, in terms of observable characteristics. The units with scores just above and below the cutoff should be similar in the variables that could not have been affected by the treatment. These variables include are:
 - **predetermined covariates**: variables that are determined before the treatment is assigned
 - **placebo outcomes**: variables that are determined after the treatment is assigned and that couldn't have been affected by the treatment
 
@@ -66,7 +71,6 @@ In the **continuity-based approach** this test is conducted by changing the band
 This test is the **local randomization approach** equivalent of the Sensitivity to Bandwidth choice of the **continuity-based approach**. Here, the sensitivity to the window choice is analyzed instead of the bandwidth choice. This analysis should consider smaller windows than the original one, since a larger window would not lead to reliable results because the treated and control groups would be imbalanced in such windows. 
 
 To implement it, we can simply use the `rdrandinf` function to specify a smaller window and analyze the results. As the statistic test of this function is the difference in means, a p-value higher than .05 shows no significant difference in the results when a smaller window is implemented. 
-
 
 
 ## See also
