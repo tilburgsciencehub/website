@@ -4,6 +4,7 @@ description: "Importing large datasets in R is made easy by data.table R package
 weight: 2
 keywords: "import, data, data preparation, big data, large datsets, memory, RAM, data.table, big data, R, dataframe, object size"
 date: 2023-10-26
+author: "Matthijs ten Tije"
 draft: false
 aliases:
   - /import/large-datsets
