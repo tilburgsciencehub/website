@@ -24,7 +24,7 @@ __Falsification Test__
 A falsification test serves to "falsify" (=prove something to be false) other discontinuities at the cutoff. By doing this test and proving there are no other discontinuities, we can be sure the observed effects are not the result of other factors and ensure the robustness of the RD Design.
 {{% /tip %}}
 
-## 1. Falsification test: Observable variables
+## 1. Predetermined covariates and placebo outcomes
 
 The first and most important falsification test examines whether units near the cutoff (in both treatment and control groups) are similar in terms of observable characteristics. For the validity of the RDD to hold, the units with scores just above and below the cutoff should be similar in the variables that could not have been affected by the treatment.
 
@@ -34,52 +34,85 @@ These variables include:
 
 The principle behind this test is that all predetermined covariates and placebo outcomes are analyzed in the same way as the outcome of interest. The null hypothesis is: the treatment effect is 0 for each predetermined covariate and placebo outcome. 
 
-If the p-value is lower than 0.05, the H0 can be rejected and other discontinuities than just the treatment effect on the outcome variable are found around the cutoff. Thus, for the validity of the RDD to hold, the p-value should be higher than 0.05 such that the $H_0$ cannot be rejected.
+If the p-value is lower than 0.05, the null hypothesis can be rejected and other discontinuities than just the treatment effect on the outcome variable are found around the cutoff. Thus, for the validity of the RDD to hold, the p-value should be higher than 0.05 such that the H0 cannot be rejected.
 
-### The continuity-based approach
+#### The continuity-based approach
 
-For each observed variable, an optimal bandwidth should be chosen first. Then, the `rdrobust` can be used to conduct local polynomial estimation within this chosen bandwidth. In the [continuity-based approach building block](/continuity/approach), this method is discussed in more detail. 
+For each predetermined covariate or placebo outcome, an optimal bandwidth should be chosen first, and then the local polynomial estimation techniques within that bandwidth can be used to estimate the treatment effect. In the [continuity-based approach building block](/continuity/approach), this estimation method is explaiend in more detail. 
 
-In the code below, the bandwith (`bw`) is set to 0.2 and the kernel used is the triangular kernel. 
+Specifically, `rdrobust` function should be run using each covariate of interest as the outcome variable (`Y` in the code). The running variable is specified by `R` and bandwidth (`bw`) is set to 0.2 here. The kernel used is the triangular kernel. 
 
 {{% codeblock %}}
 ```R
 # Continuity-Based Approach
-out <- rdrobust(Y, X, bw = 0.2, kernel = "triangular")
+out <- rdrobust(Y, R, bw = 0.2, kernel = "triangular")
 summary(out)
 ```
 {{% /codeblock %}}
 
-If the p-value is higher than 0.05, the H0 cannot be rejected and the validity of the RDD is ensured. 
+If the resulting p-values are higher than 0.05, H0 cannot be rejected and there is no evidence of discontuinities in the variables. 
 
-### The local randomization approach
+#### The local randomization approach
 
-In the local randomization approach, the analysis is conducted within the window where the assumption of randomization is assumed to hold. The `rdrandinf` function should be run using each covariate as outcome. `wl` and `wr` represent the left and right bounds of the window and the `seed` parameter is used for setting the random seed.
+In the local randomization approach, the analysis is conducted within the window where the assumption of randomization is assumed to hold. The `rdrandinf` function should be run using each covariate as outcome (specified by `Y`). `R` is the running variable and `wl` and `wr` represent the left and right bounds of the window. The `seed` parameter is used for setting the random seed.
 
 {{% codeblock %}}
 ```R
 # Local Randomization Approach
-out <- rdrandinf(Y, X, wl = -2.5, wr = 2.5, seed = 50)
+out <- rdrandinf(Y, R, wl = -2.5, wr = 2.5, seed = 50)
 summary(out)
 ```
 {{% /codeblock %}}
 
 Again, if the p-values are above 0.05, it indicates that the variables are balanced inside the window, suggesting that no other discontinuities are found around the cutoff, thus reinforcing the validity of the RD design.
 
+### 2. Density of the running variable
 
-### Density of Running Variable
+The test for the density of the running variable analyzes whether the number of observations slightly below the cutoff is significantly different from the number of observations slightly above it. If units don't have the ability to change the scores (and precisely manipulate themselves to a score below or above the cutoff), the number of treated observations above the cutoff should be similar to the number of control observations below it. 
 
-The test for the density of running variable analyzes whether in a neighborhood around the cutoff the number of observations below the cutoff is very different from the number of observations above. The assumption is that if units don't have the ability to change the scores, the number of treated observations above the cutoff should be similar to the number of control observations below it.  
+#### The continuity-based approach
 
-For the **continuity-based approach** the null hypothesis is that the density of the running variable is continuous at the cutoff. Thus, the test consists of a density estimation of observations near the cutoff using the `rddensity` function from the `rddensity` library, which only requires the running variable as argument. If the p-value is above .05 there is no difference in the density of the treated and control variables at the cutoff.
+For the continuity-based approach, the null hypothesis is that the density of the running variable is continuous at the cutoff. Thus, the test consists of a density estimation of observations near the cutoff using the `rddensity` function from the `rddensity` library, which only requires the running variable as argument (`R`).
 
-For the **local randomization approach** the null hypothesis is that within the window where the treatment is assumed to be random, the number of treated and control observations is consistent with the assumed assignment mechanism inside the window. To test this we can use the `rdwinselect` function of the `rdlocrand` package, with the score and `nwindows = 1` as arguments. When the p-value is above .05 there is no evidence against the null hypothesis.
+{{% codeblock %}}
+```R
+# Continuity-Based Approach
+out <- rddensity(R)
+summary(out)
+```
+{{% /codeblock %}}
 
-### Placebo Cutoffs
+If the p-value is above 0.05, there is no significant difference in the density of the treated and control variables at the cutoff.
 
-This analysis studies the treatment effects at artificial or placebo cutoff values. This artificial value replaces the true cutoff. The test then performs estimation and inference using the artificial cutoff. The goal is that no significant treatment effect occurs at the placebo cutoff values. 
+#### The local randomization approach
+
+For the local randomization approach, the null hypothesis is that the number of treated and control observations is consistent with the assumed randomization assignment mechanism within the specified window. To test this we can use the `rdwinselect` function of the `rdlocrand` package. The running variable is specified with `R` and `X` is a matrix of the predetermined covariates considered to be independent of the assignment treatment.
+
+Further arguments include:
+- `seed` to specify the seed to be used for the randomization test
+- `reps` to specify the number of replications
+- `wobs` to specify the number of observations to be added at each side of the cutoff at each step
+- `nwindows = 1` to specify we only use one window
+
+{{% codeblock %}}
+```R
+# Local Randomization Approach
+out <- rdwinselect(R, X, seed = 50, reps = 1000, wobs = 2, nwindows = 1)
+summary(out)
+```
+{{% /codeblock %}}
+
+Again, when the p-value is above 0.05, there is no evidence against the null hypothesis and the density of the running variable does not change significantly from below and above the cutoff.
+
+### 3. Placebo cutoffs
+
+This analysis studies the treatment effects at artificial or placebo cutoff values. This artificial value replaces the true cutoff. The test then performs estimation and inference using the artificial cutoff. To ensure the validity of the RD Design, no significant treatment effect should occur at the placebo cutoff values. 
+
+#### The continuity-based approach 
 
 For the **continuity-based approach** this test is implemented using the local polynomial estimation by employing `rdrobust` and specifying the artificial cutoff as argument. A p-value higher than .05 would show that the outcome of interest doesn't jump at the artificial cutoff.
+
+#### The local randomization approach 
 
 In the **local randomization approach** this test is conducted using a randomization-based analysis of the outcome using a symmetric window equal to the original window around each of the chosen artificial cutoffs. The necessary function is `rdrandinf`.
 
