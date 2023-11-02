@@ -17,26 +17,55 @@ The Regression Discontuinity Design (RDD) assumes **no precise manipulation** at
 
 Precise manipulation happens if subjects know the cutoff and manipulate accordingly whether they end up below or above the cutoff, which determines whether they belong to the treatment or control group. As a result, treatment assignment is not as good as random anymore at the cutoff value of the running variable. An example of precise manipulation would be if in a targeted aid program for lower-income groups, some subject position themselves just below the cutoff of income level to qualify for this aid. 
 
-In this building block we discuss validation methods, based on various empirical implications of the unobservable RD assumptions that are expected to hold in most cases. 
+In this building block we discuss validation methods, based on various empirical implications of the unobservable RD assumptions that are expected to hold in most cases. These methods are explored within both the standard [continuity-based approach](/continuity/approach) and the extended [local randomization approach](/local/randomization). 
 
-These methods are explored within both the standard [continuity-based approach](/continuity/approach) and the extended [local randomization approach](/local/randomization). 
+{{% tip %}}
+__Falsification Test__
+A falsification test serves to "falsify" (=prove something to be false) other discontinuities at the cutoff. By doing this test and proving there are no other discontinuities, we can be sure the observed effects are not the result of other factors and ensure the robustness of the RD Design.
+{{% /tip %}}
 
+## 1. Falsification test: Observable variables
 
-### Predetermined Covariates and Placebo Outcomes
+The first and most important falsification test examines whether units near the cutoff (in both treatment and control groups) are similar in terms of observable characteristics. For the validity of the RDD to hold, the units with scores just above and below the cutoff should be similar in the variables that could not have been affected by the treatment.
 
-The first and most important falsification test is examining if near the cutoff the treated units are similar to the control units, in terms of observable characteristics. The units with scores just above and below the cutoff should be similar in the variables that could not have been affected by the treatment. These variables include are:
-- **predetermined covariates**: variables that are determined before the treatment is assigned
-- **placebo outcomes**: variables that are determined after the treatment is assigned and that couldn't have been affected by the treatment
+These variables include:
+- **Predetermined covariates**: variables that are determined before the treatment is assigned
+- **Placebo outcomes**: variables that are determined after the treatment is assigned and that could not have been affected by the treatment
 
-The principle of this analysis is that all predetermined covariates and placebo outcomes should be analyzed the same as the outcome of interest.
+The principle behind this test is that all predetermined covariates and placebo outcomes are analyzed in the same way as the outcome of interest. The null hypothesis is: the treatment effect is 0 for each predetermined covariate and placebo outcome. 
 
-The null hypothesis of this analysis becomes: the treatment effect is zero for each predetermined covariate and placebo outcome (no treatment effect). Since the predetermined covariate or placebo outcome couldn't have been affected by the treatment, the null hypothesis shouldn't be rejected if the RDD is valid.
+If the p-value is lower than 0.05, the H0 can be rejected and other discontinuities than just the treatment effect on the outcome variable are found around the cutoff. Thus, for the validity of the RDD to hold, the p-value should be higher than 0.05 such that the $H_0$ cannot be rejected.
 
-In the **continuity-based approach** for each predetermined covariate or placebo outcome, an optimal bandwidth should be chosen first, and then use local polynomial techniques within that bandwidth to estimate the treatment effect. By contrast, in the **local randomization approach**, all covariates and placebo outcomes are analyzed within one window, a window where the assumption of local randomization is assumed to hold. 
+### The continuity-based approach
 
-For the **continuity-based approach** the test consists of the local polynomial estimation steps discussed in the [Continuity-based approach](https://tilburgsciencehub.com/building-blocks/analyze-data/regression-discontinuity/continuity-approach/) building block. Specifically, `rdrobust` function should be run using each covariate of interest as the outcome variable. If the resulting p-values are higher than .05, then there is no evidence of discontinuities in the variables. 
+For each observed variable, an optimal bandwidth should be chosen first. Then, the `rdrobust` can be used to conduct local polynomial estimation within this chosen bandwidth. In the [continuity-based approach building block](/continuity/approach), this method is discussed in more detail. 
 
-For the **local randomization approach** `rdrandinf` function should be run using each covariate as outcome. Again, if the p-values are above .05 it means the covariates are balanced inside the window.
+In the code below, the bandwith (`bw`) is set to 0.2 and the kernel used is the triangular kernel. 
+
+{{% codeblock %}}
+```R
+# Continuity-Based Approach
+out <- rdrobust(Y, X, bw = 0.2, kernel = "triangular")
+summary(out)
+```
+{{% /codeblock %}}
+
+If the p-value is higher than 0.05, the H0 cannot be rejected and the validity of the RDD is ensured. 
+
+### The local randomization approach
+
+In the local randomization approach, the analysis is conducted within the window where the assumption of randomization is assumed to hold. The `rdrandinf` function should be run using each covariate as outcome. `wl` and `wr` represent the left and right bounds of the window and the `seed` parameter is used for setting the random seed.
+
+{{% codeblock %}}
+```R
+# Local Randomization Approach
+out <- rdrandinf(Y, X, wl = -2.5, wr = 2.5, seed = 50)
+summary(out)
+```
+{{% /codeblock %}}
+
+Again, if the p-values are above 0.05, it indicates that the variables are balanced inside the window, suggesting that no other discontinuities are found around the cutoff, thus reinforcing the validity of the RD design.
+
 
 ### Density of Running Variable
 
