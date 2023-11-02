@@ -119,15 +119,18 @@ For all three methods, the parameter of interest is {{<katex>}} \mathbb{E}_{W}[.
 
 ## Practical Example: US Senate Elections
 
-To illustrate the theory we use the example of US Senate elections. The example studies the effect of winning elections on future vote shares. There is a discontinuous relationship between the incumbency status of a political party and the vote share obtained in an election. This means that when there are two parties that compete for a seat, the party with just above 50% of the vote wins and becomes the incumbent, while the other loses. 
+To demonstrate the Local Randomization Approach, we analyze the effect of winning elections on future vote shares in the context of US Senate Elections. 
 
-Here, the unit of analysis is the US state and the score is the Democratic party's margin of victory at election $t$ (the margin is the difference between the vote share of the Democratic party and the vote share of its strongest opponent).
+There is a discontinuous relationship between the incumbency status of a political party and the vote share obtained in an election. This means that when there are two parties that compete for a seat, the party with just above 50% of the vote wins and becomes the incumbent, while the other loses. 
+
+Here, the unit of analysis is the US state and the score is the Democratic party's margin of victory at election $t$. This is calculated as the difference between the vote share of the Democratic party and the vote share of its strongest opponent.
+
 The variables are defined as follows:
 - $Y$ - vote share obtained by the Democratic party in the election in a given state
-- $X$ - margin of victory of the Democratic party
+- $X$ - margin of victory of the Democratic party. This is the running variable. 
 - $T$ - electoral victory of the Democratic party, being equal to 1 if they won and 0 otherwise
 
-### Coding
+### Estimation in R
 
 The R library for local randomization is `rdlocrand`, from which we use the function `rdrandinf`. The main parameters of the function are the outcome variable $Y$, the running variable $X$ and the bounds of the window: `wr` (right bound), `wl` (left bound). For now we set them to -2.5 and 2.5. 
 
@@ -147,25 +150,22 @@ _Output_:
 
 The output shows that there are 1297 observations in total, with a default polynomial order of 0 and a uniform kernel. It also shows that there are 1000 simulations used, the null hypothesis tested (by default $\tau_{0} = 0$) and the randomization mechanism is by default fixed margins randomization. 
 
-{{% tip %}}
-Kernel type can be changed with the argument `kernel`.
-
-Number of simulations can be changed with the `reps` argument.
-
-{{% /tip %}}
-
 The middle part of the output shows the distribution of the observations left and right of the cutoff. There are 595 control and 702 treated observations, but in the chosen window there are only 63 elections below the cutoff and 57 above.
 
-The difference in means of 9.167 means that this is the difference between a Democratic vote share of 53.235% (mean of outcome above cutoff) in elections where this party barely wins, and 44.068% (mean of outcome below cutoff) in elections where the Democratic party barely loses.
+The mean difference of 9.167 is the difference between the mean of outcome above cutoff and the mean of outcome below the cutoff. It shows the difference of Democratic vote shares in election where the party wins (53.235%) and the Democratic vote shares in elections where the party loses (44.068%). It highlights the importance of a cutoff value of 50% on the election outcome. 
 
-The p-value shows that we can reject the null hypothesis.
+The p-value shows that we can reject the null hypothesis, suggesting a significant impact of the incumbency status on future vote shares.
 
-### How to choose the window
+{{% tip %}}
+Kernel type can be changed using the `kernel` argument and number of simulations can be changed using the `reps` argument.
+{{% /tip %}}
 
-Manually choosing the window lacks transparency and objectivity. The `rdlocrand` library contains the function `rdwinselect` which selects a window. It takes as argument the score variable $X$ and a matrix of predetermined covariates. We can also set the number of simulations to 1000 by using `reps`. Additionally, one can use `wstep` to increase the length of the windows in fixed steps, or `wobs` to increase the window length so that the observations number increases by a minimum fixed amount every step. `wobs` = 2 means that at least 2 observations are added on each side of the cutoff in every step.
+
+### Choice of window
+
+Manually choosing the window around the cutoff lacks transparency and objectivity. The `rdlocrand` library contains the function `rdwinselect` which selects a window. It takes as argument the score variable $X$ and a matrix of predetermined covariates. We can also set the number of simulations to 1000 by using `reps`. Additionally, one can use `wstep` to increase the length of the windows in fixed steps, or `wobs` to increase the window length so that the observations number increases by a minimum fixed amount every step. `wobs` = 2 means that at least 2 observations are added on each side of the cutoff in every step.
 
 {{% codeblock %}}
-
 ```R
 out <- rdwinselect(X, Z, seed = 50, reps = 1000, wobs = 2)
 summary(out)
@@ -179,8 +179,12 @@ _Output_:
 </p>
 
 The output shows that the optimum window is [-0.7652, 0.7652]. 
-
 The function only shows the first 20 windows, but we can increase it by using the argument `nwindows`.
+
+{{% summary %}}
+The Local Randomization Approach extend the standard continuity-based RD Design by treating the running variable as if it were randomized within a defined window around the cutoff. Three methods are discussed for estimation and inference, each suitable depending on the size of the sample within this window. 
+{{% /summary %}}
+
 
 ## See also
 [A Practical Introduction to Regression Discontinuity Designs: Extensions - Cattaneo, Idrobo & Titiunik (2023)](https://rdpackages.github.io/references/Cattaneo-Idrobo-Titiunik_2023_CUP.pdf)
