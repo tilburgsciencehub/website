@@ -106,15 +106,34 @@ Again, when the p-value is above 0.05, there is no evidence against the null hyp
 
 ### 3. Placebo cutoffs
 
-This analysis studies the treatment effects at artificial or placebo cutoff values. This artificial value replaces the true cutoff. The test then performs estimation and inference using the artificial cutoff. To ensure the validity of the RD Design, no significant treatment effect should occur at the placebo cutoff values. 
+This analysis studies the treatment effects at artificial or placebo cutoff values. This artificial value replaces the true cutoff and the test then performs estimation and inference using the artificial cutoff. To ensure the validity of the RD Design, no significant treatment effect should occur at the placebo cutoff values. 
 
 #### The continuity-based approach 
 
-For the **continuity-based approach** this test is implemented using the local polynomial estimation by employing `rdrobust` and specifying the artificial cutoff as argument. A p-value higher than .05 would show that the outcome of interest doesn't jump at the artificial cutoff.
+For the continuity-based approach, this test is implemented using the local polynomial estimation by employing `rdrobust`. The artificial cutoff (`c`) is set to 2.5 here instead of the default which is `c = 0`.
+
+{{% codeblock %}}
+```R
+# Continuity-Based Approach
+out <- rdrobust(Y, X, c = 2.5, kernel = "triangular")
+summary(out)
+```
+{{% /codeblock %}}
+
+A p-value higher than 0.05 would show that the outcome of interest doesn't jump at the artificial cutoff. This ensures the validity of the RD Design, by indicating that the observed treatment effects are indeed the result of the treatment itself. 
 
 #### The local randomization approach 
 
-In the **local randomization approach** this test is conducted using a randomization-based analysis of the outcome using a symmetric window equal to the original window around each of the chosen artificial cutoffs. The necessary function is `rdrandinf`.
+In the local randomization approach, this test is conducted using a randomization-based analysis of the outcome with a symmetric window, equal to the original window, that is used around each of the chosen artificial cutoffs. The necessary function is `rdrandinf`.
+
+{{% codeblock %}}
+```R
+# Local Randomization Approach
+out <- rdrandinf(Y, R, wl = -2.5, wr = 2.5, seed = 50)
+summary(out)
+```
+{{% /codeblock %}}
+
 
 ### Sensitivity of Observations around the Cutoff
 
