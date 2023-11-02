@@ -59,6 +59,19 @@ cursor.execute('''
     )
 ''')
                
+# Create the blogs table
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS blogs (
+        id INTEGER PRIMARY KEY,
+        title TEXT,
+        description TEXT,
+        path TEXT,
+        date TEXT,
+        draft TEXT,
+        content TEXT
+    )
+''')
+               
 # Create tables commit
 conn.commit()
 
@@ -128,7 +141,7 @@ for type in ['tutorials', 'building-blocks']:
                                     # Construct the full path of the Markdown file
                                     md_file_path = os.path.join(folder_path_full, md_file_name)
 
-                                    path = md_file_name.replace('.md', '')
+                                    path = md_file_name.replace('.md', '').lower()
 
                                     #Init Vars
                                     description = None
@@ -189,7 +202,7 @@ for md_file_name in os.listdir(examples_root_folder):
         # Construct the full path of the Markdown file
         md_file_path = os.path.join(examples_root_folder, md_file_name)
 
-        path = md_file_name.replace('.md', '')
+        path = md_file_name.replace('.md', '').lower()
 
         #Init Vars
         description = None
@@ -307,6 +320,52 @@ for md_file_name in os.listdir(contributors_root_folder):
             INSERT INTO contributors (name, description_short, description_long, skills, linkedin, facebook, twitter, email, image, status, path, content)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (name, description_short, description_long, skills, linkedin, facebook, twitter, email, image, status, path, content))
+
+# Fetch Blogs
+blog_root_folder = os.path.join(content_directory, 'blog')
+for md_file_name in os.listdir(blog_root_folder):
+    if md_file_name != '_index.md' and md_file_name.endswith('.md'):
+        # Construct the full path of the Markdown file
+        md_file_path = os.path.join(blog_root_folder, md_file_name)
+
+        path = md_file_name.replace('.md', '').lower()
+
+        #Init Vars
+        description = None
+        title = None
+        date = None
+        draft = None
+        content = None 
+
+        # Read the contents of the Markdown file
+        with open(md_file_path, 'r', encoding='utf-8') as md_file:
+
+            # YAML
+            for line in md_file:
+                
+                if line.startswith('description:'):
+                    description = line.strip().replace('description:', '', 1).replace('"','').strip()
+                elif line.startswith('title:'):
+                    title = line.strip().replace('title:', '', 1).replace('"','').strip()
+                elif line.startswith('date:'):
+                    date = line.strip().replace('date:', '', 1).strip()
+                elif line.startswith('draft:'):
+                    draft = line.strip().replace('draft:', '', 1).strip()
+        
+        with open(md_file_path, 'r', encoding='utf-8') as md_file:
+            
+            # Fetch Content
+            md_file_content = md_file.read()
+            match = re.match(r'---(.*?)---(.*)', md_file_content, re.DOTALL)
+            if match:
+                file_content = match.group(2)
+                content = file_content
+
+        # Execute an SQL INSERT statement to add data to the 'articles' table
+        cursor.execute('''
+            INSERT INTO blogs (title, description, path, date, draft, content)
+            VALUES (?, ?, ?, ?, ?, ?)
+        ''', (title, description, path, date, draft, content))
 
 # Submit to Database
 conn.commit()

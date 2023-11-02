@@ -43,3 +43,12 @@ class Contributors(db.Model):
     status = db.Column(db.Text)
     path = db.Column(db.Text)
     content = db.Column(db.Text)
+
+class blogs(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.Text)
+    description = db.Column(db.Text)
+    path = db.Column(db.Text)
+    date = db.Column(db.Text)
+    draft = db.Column(db.Text)
+    content = db.Column(db.Text)

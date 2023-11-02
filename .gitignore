@@ -1,0 +1,2 @@
+# Negeer alle .db-bestanden in het hele project
+*.db
