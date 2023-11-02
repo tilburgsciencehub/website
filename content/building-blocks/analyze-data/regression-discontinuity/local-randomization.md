@@ -14,11 +14,11 @@ aliases:
 
 ## Introduction
 
-This building block introduces the local randomization approach, which can be considered as an extension to the standard [Contuinity-Based Approach to RD Analysis](/continuity/approach). It is recommended to read this Continuity Based Approach building block before delving into this one.
+This building block introduces the local randomization approach, which can be considered as an extension to the standard [Contuinity-Based Approach to RD Analysis](/continuity/approach). It is recommended to read this continuity-based approach building block before delving into this one.
 
-In a sharp RDD, the assignment mechanism is determined by the running variable being above or below a prespecified cutoff. The local randomized approach views the running variable as random, allowing to interpret the RD design as a randomized experiment near the cutoff. 
+In a sharp RDD, the assignment mechanism is determined by the running variable being above or below a prespecified cutoff. The local randomized approach views the running variable as random, allowing to interpret the RDD as a randomized experiment near the cutoff. 
 
-The local randomization approaches imposes certain conditions, ensuring that units who are in a small window around the cutoff are comparable and treated as if they were randomly assigned to treatment and control. The next section discusses these conditions in detail. After that, estimation and inference methods for are discussed followed by a practical example.
+The local randomization approach imposes certain conditions, ensuring that units who are in a small window around the cutoff are comparable and treated as if they were randomly assigned to treatment and control. The next section discusses these conditions in detail. After that, estimation and inference methods for are discussed followed by a practical example.
 
 {{% tip %}}
 _Choice of approach depending on variable type_
@@ -28,7 +28,6 @@ Depending on the nature of the running variable, one can choose whether to use t
 If the variable is discrete, the local randomization approach does not impose strong assumptions and can be used for estimation and inference. However, if the variable is continuous, the local randomization requires stronger assumptions than the continuity-based approach Here, the continuity-based approach is preferred for main RD analysis and the local randomization as a robustness check.
 {{% /tip %}}
 
-
 ## The assumptions
 
 As mentioned in the introduction, certain conditions are imposed to make sure that units in a small window are treated as if they were randomly assigned to treatment. We make the following assumptions:
@@ -37,9 +36,9 @@ As mentioned in the introduction, certain conditions are imposed to make sure th
 
 - There is perfect compliance. Each subject assigned to the treatment actually received the treatment. 
 
-- *As if random assignment* assumption. This means within the window $W = [c-w, c+w]$ around the cutoff value $c$, unit placement into treatment or control is random (as if it would have been assigned in a random experiment), regardless of their actual scores. Due to this assumption, the running variable is unrelated to the average potential outcomes of these units within the defined window.
+- The *As if random assignment* assumption. This means within the window $W = [c-w, c+w]$ around the cutoff value $c$, unit placement into treatment or control is as if it would have been assigned in a random experiment. Due to this assumption, the running variable is unrelated to the average potential outcomes of these units within the defined window.
 
-### Graphical comparison: Randomized experiment and a Continuity-based design
+### Graphical comparison: Randomized experiment and a continuity-based design
 
 <p align = "center">
 <img src = "../images/local-rand.png" width="500">
@@ -52,14 +51,15 @@ In the left graph, the randomized experiment implies that the treatment assignme
 This emphasizes that for allowing to interpret the RD design as a randomized experiment, the value of the score (the running variable) within the defined window needs to be unrelated to the potential outcomes. 
 
 {{% summary %}}
-The local randomization approach needs to fill two conditions:
-- The joint probability distribution of scores within $W$ is known.
-- The potential outcomes are not affected by the score within $W$.
+The local randomization approach needs to fullfill two conditions:
+- The joint probability distribution of scores within the window $W$ is known.
+- The potential outcomes are not affected by the score within window $W$.
 {{% /summary %}}
 
 ### Notations
 
 To clarify the conditions of the local randomization approach discussed above, these are its notations:
+
 - Condition 1
 
 The probability is defined as {{<katex>}}\mathbb{P}_{W}[.]{{</katex>}} for those units with $X_{i}\in W$. As such, the first condition requires that {{<katex>}}\mathbb{P}_{W}[X_{W} \leq x] = F(x){{</katex>}} for some known joint cumulative distribution function $F(x)$.
@@ -182,7 +182,7 @@ The output shows that the optimum window is [-0.7652, 0.7652].
 The function only shows the first 20 windows, but we can increase it by using the argument `nwindows`.
 
 {{% summary %}}
-The Local Randomization Approach extend the standard continuity-based RD Design by treating the running variable as if it were randomized within a defined window around the cutoff. Three methods are discussed for estimation and inference, each suitable depending on the size of the sample within this window. 
+The Local randomization approach extends the standard continuity-based RD Design by treating the running variable as if it were randomized within a defined window around the cutoff. Three methods are discussed for estimation and inference, each suitable depending on the size of the sample within this window. 
 {{% /summary %}}
 
 
