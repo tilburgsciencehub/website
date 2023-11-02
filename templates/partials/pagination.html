@@ -1,0 +1,28 @@
+<!-- pagination -->
+<div class="pagination">
+    <div>
+        {% if previous_article %}
+        <a href="{{ previous_article.path }}" class="pagination-title d-none d-lg-block text-secondary">Go back</a>
+        <a href="{{ previous_article.path }}" class="pagination-button">
+            <div class="arrow-circle">
+                <img src="{{ url_for('static', filename='img/arrow-right.svg') }}" />
+            </div>
+            <span class="d-inline-block d-lg-none">Previous</span>
+            <span class="d-none d-lg-inline-block btnTitle">{{ previous_article.title }}</span>
+        </a>
+        {% endif %}
+    </div>
+    <div class="pagination-right">
+        {% if next_article %}
+        <a href="{{ next_article.path }}" class="pagination-title d-none d-lg-block text-secondary">Continue reading</a>
+        <a href="{{ next_article.path }}" class="pagination-button">
+            <span class="d-none d-lg-inline-block btnTitle">{{ next_article.title }}</span>
+            <span class="d-inline-block d-lg-none">Next</span>
+            <div class="arrow-circle">
+                <img src="{{ url_for('static', filename='img/arrow.svg') }}" />
+            </div>
+        </a>
+        {% endif %}
+    </div>
+</div>
+<!-- /pagination -->

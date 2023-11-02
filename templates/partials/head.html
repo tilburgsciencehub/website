@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--- Add structured data, search engine--->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org/",
+			"@type": "WebSite",
+			"name": "Tilburg Science Hub",
+			"url": "https://www.tilburgsciencehub.com",
+			"potentialAction": {
+			  "@type": "SearchAction",
+			  "target": "https://tilburgsciencehub.com/search?q={search_term_string}",
+			  "query-input": "required name=search_term_string"
+			}
+		  }
+	</script>
+	<script type="application/ld+json">
+		  {
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Tilburg Science Hub",
+			"alternateName": "tilburgsciencehub",
+			"url": "https://tilburgsciencehub.com",
+			"logo": "https://tilburgsciencehub.com/img/logo.svg",
+			"sameAs": [
+			  "https://www.linkedin.com/company/tilburgsciencehub",
+			  "https://github.com/tilburgsciencehub",
+			  "https://twitter.com/tilburgscience"
+			]
+		  }
+	</script>
+	<!--snippet for google optimize (A/B tests) put back on when needed 
+	<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-N42NQJS"></script>-->
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{ assets['scss_all'].urls()[0] }}">
+	<link rel="stylesheet" href="https://use.typekit.net/pzc6ybk.css">
+	<link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
+	
+	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
+
+	<!-- Place this tag in your head or just before your close body tag. -->
+	<script async src="https://buttons.github.io/buttons.js"></script>
+
+	<!-- FontAwesome (Needs to be Replaced) -->
+	<script src="https://kit.fontawesome.com/4e7776d591.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>

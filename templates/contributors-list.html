@@ -1,0 +1,75 @@
+{% include 'partials/header.html' %}
+<div class="container content">
+    <div class="row justify-content-md-center mt-5 mb-2 py-4">
+      <div class="col-lg-12 col-24">
+        <h1 class="text-center">Meet our Contributors</h1>
+        <p class="text-center text-secondary my-4 px-5">We're a community of enthousiastic researchers and data
+          scientists,
+          seeking to shape the future of reproducible and open science. <a href="{{ url_for('contribute') }}">Join us!</a></p>
+      </div>
+    </div>
+  
+    <div>
+      <h3 class="text-center-mobile" style="font-weight: 700;">Active Contributors</h3>
+      <div class="row justify-content-center justify-content-lg-start mb-3">
+        {% for contributor in contributors_list %}
+            {% if contributor.status == 'active' %}
+            <div class="col-xl-6 col-lg-6 col-md-12 col-22 mb-4 d-flex flex-wrap">
+            <a style="color:inherit" href="{{ url_for('contributors') }}/{{ contributor.path }}">
+                <div class="p-5 text-center w-100 rounded d-flex flex-column">
+                <span class="flex-fill">
+                    <div class="image-circle-overview">
+                    {% if contributor.image %}
+                    <div class="img-container-overview" style="background-image: url({% if contributor.image %}{{ url_for('static', filename='img/contributors/' + contributor.image) }}{% else %}{{ url_for('static', filename='img/no-image.png') }}{% endif %});">
+                    </div>                    
+                    {% endif %}
+    
+                    </div>
+                    <h4 class="heading mt-3">{{ contributor.name }}</h4>
+                    <p>{{ contributor.description_short }}</p>
+    
+                </span>
+                <span>
+                    <!-- <a href="" class="btn btn-primary mt-5">View contributor's content</a> -->
+                </span>
+                </div>
+            </a>
+            </div>
+            {% endif %}
+        {% endfor %}
+  
+      </div>
+      <h3 class="text-center-mobile" style="font-weight: 700;">Alumni</h3>
+      <div class="row justify-content-center justify-content-lg-start">
+        {% for contributor in contributors_list %}
+            {% if contributor.status == 'alumni' %}
+            <div class="col-xl-6 col-lg-6 col-md-12 col-22 mb-4 d-flex flex-wrap">
+            <a style="color:inherit" href="#">
+                <div class="p-5 text-center w-100 rounded d-flex flex-column">
+                <span class="flex-fill">
+                    <div class="image-circle-overview">
+                    {% if contributor.image %}
+                    <div class="img-container-overview" style="background-image: url('{% if contributor.image %}/contributors/{{ url_for('static', filename='img/' + contributor.image) }}{% else %}{{ url_for('static', filename='img/no-image.png') }}{% endif %}');">
+                    </div>                    
+                    {% endif %}
+    
+                    </div>
+                    <h4 class="heading mt-3">{{ contributor.name }}</h4>
+                    <p>{{ contributor.description_short }}</p>
+    
+                </span>
+                <span>
+                    <!-- <a href="" class="btn btn-primary mt-5">View contributor's content</a> -->
+                </span>
+                </div>
+            </a>
+            </div>
+            {% endif %}
+        {% endfor %}
+  
+      </div>
+  
+    </div>
+  </div>
+  <br><br><br>
+{% include 'partials/footer.html' %}

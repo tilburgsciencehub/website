@@ -1,0 +1,70 @@
+{% include 'partials/header.html' %}
+<div class="container content">
+	<div class="row justify-content-md-center mt-5 mb-2 py-4">
+		<div class="col-lg-12 col-24">
+			<h1 class="text-center">Meet {{ contributor_single.name }}</h1>
+			<p class="text-center text-secondary my-4 px-5">{{ contributor_single.description_short }}</p>
+		</div>
+	</div>
+
+	<div>
+
+		<div class="row contribute-row">
+			<div class="col-xl-10 col-lg-10 col-22 mb-4 d-flex flex-wrap pr-xl-4">
+				<div class="w-100 rounded d-flex flex-column align-items-center justify-content-center">
+					<div class="image-circle">
+						<div class="img-container" style="background-image: url({% if contributor_single.image %}{{ url_for('static', filename='img/contributors/' + contributor_single.image) }}{% else %}{{ url_for('static', filename='img/no-image.png') }}{% endif %});">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-14 col-lg-14 col-22 mb-4 d-flex flex-wrap pl-4">
+				<div class="bg-white p-5 w-100 rounded d-flex flex-column">
+					<span class="flex-fill">
+						<h2 class="heading mt-3">{{ contributor_single.name }}</h4>
+							<p>{{ contributor_single.description_long }}</p>
+
+							<!-- Get Contributions -->
+
+							<!-- Get Email -->
+							{% if contributor_single.email %}
+							<p><strong style="font-weight: 700;">Email:</strong> {{ contributor_single.email }}</p>
+							{% endif %}
+
+							<!-- Get Skills -->
+							<div style="display: flex; align-items: center;">
+								<p class="mb-0"><strong style="font-weight: 700;">Skills:</strong> {{ contributor_single.skills }}</p>
+							</div>
+
+							<!-- Get Free Text (content) -->
+							{% if contributor_single.content %}
+							<br>
+							<p style="color: #013365;">{{ contributor_single.content }}</p>
+							{% endif %}
+
+							<!-- Get Socials -->
+							{% if contributor_single.linkedin %}
+							<a style="color: #013365;" href="{{ contributor_single.linkedin }}">
+								<i class="fab fa-linkedin fa-xl"></i>
+							</a>
+							{% endif %}
+
+							{% if contributor_single.facebook %}
+							<a style="color: #013365;" href="{{ contributor_single.facebook }}">
+								<i class="fab fa-facebook fa-xl"></i>
+							</a>
+							{% endif %}
+
+							{% if contributor_single.twitter %}
+							<a style="color: #013365;" href="{{ contributor_single.twitter }}">
+								<i class="fab fa-twitter fa-xl"></i>
+							</a>
+							{% endif %}
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br><br><br>
+{% include 'partials/footer.html' %}

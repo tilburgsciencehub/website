@@ -1,0 +1,62 @@
+{% include 'partials/header.html' %}
+<br><br>
+<div class="container mt-4">
+	<!--- partial "breadcrumbs.html" -->
+</div>
+<div class="container content px-0 mt-5">
+	<div class="row justify-content-center mx-0">
+		<div class="col-lg-8 col-22 pr-lg-5">
+			<div class="sticky-top mb-lg-5 pb-lg-5 d-flex flex-column tableOfContentParent">
+				<h1 style="font-size: 38px; line-height: 48px;">{{ example.title }}</h1>
+				<div class="TableOfContents">
+                    <span class="arrow-icon"></span>
+                    <div class="pseudo-btn"></div>
+                    <nav id="TableOfContents">
+                        <ul>
+                          {% for h2 in table_of_contents %}
+                            <li><a href="#{{ h2.anchor }}">{{ h2.text }}</a>
+                            {% if h2.subheadings %}
+                              <ul>
+                                {% for h3 in h2.subheadings %}
+                                  <li><a href="#{{ h3.anchor }}">{{ h3.text }}</a></li>
+                                {% endfor %}
+                              </ul>
+                            {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                    </nav>                      
+                </div>
+			</div>
+		</div>
+		<article class="col-lg-16 col-22">
+			<div class="p-5 bg-white rounded mb-5">
+				<div class="d-flex justify-content-between mb-4 align-items-center">
+					<div class="flex-fill">
+						<div class="d-flex justify-content-between mb-4 align-items-center">
+							<div class="flex-fill">
+								{% include 'partials/sharelinks.html' %}
+							</div>
+						</div>
+		
+						{% include 'partials/announcement.html' %}
+						{{ content|safe }}
+						{% if example.author %}
+						<div class="admonition author">
+							<div class="admonition-content">Contributed by <b><a href="/contributors/">{{ example.author }}</a></b></div>
+						</div>
+						{% endif %}
+						<div class="d-flex justify-content-between mt-5 align-items-center">
+							<div class="d-none d-lg-block">
+								<a href="/edit/master/content/"
+									class="btn btn-secondary">Edit this page</a>
+							</div>
+						</div>
+						<!--	partial "pagination.html" -->
+					</div>
+					<!-- partial "relatedposts.html" -->
+		</article>
+	</div>
+</div>
+
+{% include 'partials/footer.html' %}

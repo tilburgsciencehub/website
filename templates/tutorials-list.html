@@ -1,0 +1,53 @@
+{% include 'partials/header.html' %}
+
+<span id="scrollTo" class="d-none"><a href="#"></a></span>
+<div class="container content">
+  <br><br><br><br>
+  <div class="row justify-content-center">
+    <div class="col-lg-11 col-22">
+      <h1 class="text-center">Tutorials</h1>
+      <p class="text-center text-secondary my-5">
+        Tutorials simplify and structure valuable (yet sometimes complex) toolkits, ensuring a smooth learning experience when embracing open science skills.
+      </p>
+    </div>
+  </div>
+  <br><br><br><br>
+  <!-- Loop through first-level categories -->
+  {% for parent_id, parent_data in data_dict['tutorials'].items() %}
+  <div class="row justify-content-center buildingBlocksRow">
+    <div class="col-20">
+      <!-- Render first-level category -->
+      <div class="p-5 bg-white mb-5 rounded" id="{{ parent_data['category_data'].title }}">
+        <div class="row">
+          <div class="col-lg-8 col-24">
+            <h4 class="heading m-0 mb-3 mr-3">{{ parent_data['category_data'].title }}</h4>
+          </div>
+          <div class="col-lg-16 col-24">
+            <div class="row">
+              <!-- Loop through subcategories for the first-level category -->
+              {% for child_id, child_data in parent_data['children_categories'].items() %}
+								{% if child_data['category_data'].parent == parent_id and child_data['category_data'].draft != true %}
+              <div class="col-24 col-lg-12 mb-4" id="{{ child_data['category_data'].path }}">
+                <a href="tutorials/{{ parent_data['category_data'].path }}/{{ child_data['category_data'].path }}/{{ child_data['category_data'].indexpage }}">
+                  <h5 class="heading font-weight-normal" style="font-size: 16px; height: -webkit-fit-content;color:#003365;">{{ child_data['category_data'].title }}</h5>
+                </a>
+                <span class="d-block" style="color: #6081A2;">{{ child_data['category_data'].description }}</span>
+                <a href="tutorials/{{ parent_data['category_data'].path }}/{{ child_data['category_data'].path }}/{{ child_data['category_data'].indexpage }}">
+                  <button class="btn btn-primary mt-4 btn-sm">Start Tutorial</button>
+                </a>
+              </div>
+                {% endif %}
+              {% endfor %}
+              <!-- End Loop -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Render -->
+    </div>
+  </div>
+  {% endfor %}
+  <!-- End Loop -->
+</div>
+
+{% include 'partials/footer.html' %}
