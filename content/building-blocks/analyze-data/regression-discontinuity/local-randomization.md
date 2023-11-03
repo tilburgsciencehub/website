@@ -183,6 +183,8 @@ The function only shows the first 20 windows, but we can increase it by using th
 
 {{% summary %}}
 The Local randomization approach extends the standard continuity-based RD Design by treating the running variable as if it were randomized within a defined window around the cutoff. Three methods are discussed for estimation and inference, each suitable depending on the size of the sample within this window. 
+
+The next and last [building block](/validation/analysis) in this series about Regression Discontuinity describes several tests that can be used to validate the robustness of your RDD. 
 {{% /summary %}}
 
 
