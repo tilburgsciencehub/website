@@ -1,5 +1,5 @@
 ---
-title: "Regression Discontinuity plots"
+title: "Regression Discontinuity Plots"
 description: "Visualizing the RD design with plots: how to choose the bins - location, number"
 keywords: "regression, discontinuity, plots, bins"
 date: 2023-05-17
@@ -11,10 +11,13 @@ aliases:
   - /regression/discontinuity
 ---
 
-## How to plot RD designs
-We can visualize a graphical representation of a regression discontinuity design by illustrating the relationship between the outcome and the running variable. This can be done with a scatter plot of the observed outcome against the score, where each point would represent one observation. 
+## Introduction
 
-However, simply plotting the raw data makes it hard to see discontinuities in the relationship between score and outcome. To illustrate this, we use the example described in [Sharp RD Designs](https://tilburgsciencehub.com/building-blocks/analyze-data/regression-discontinuity/sharp-rdd/) of the Meyersson application. The data is available here: [data-link](regdata0.dta).
+In the [last building block](/sharp/designs), we provided an introduction to the Regression Discontuinity Design and specifically the sharp RDD.Now, we will focus on RDD plots. We can visualize a graphical representation of a RDD by illustrating the relationship between the outcome and the running variable. 
+
+Plotting RD Designs can be done with a scatter plot of the observed outcome against the score, where each point would represent one observation. However, simply plotting the raw data makes it hard to see discontinuities in the relationship between score and outcome. To illustrate this, we use the example described in [Sharp RD Designs](/sharp/designs) of the Meyersson application. The data is available here: [data-link](regdata0.dta).
+
+## A plot with raw data
 
 First we need to open the dataset, rename the columns for better readability and filter the NA values. We do as follows:
 
@@ -81,7 +84,14 @@ Now let's create a scatter plot of the educational attainment of women against t
 
 ```R
 
-plot(df$win_margin_islam_1994, df$share_women_hs_1520, xlab = "Score", ylab = "Outcome", col = 1, pch = 20, cex.axis = 1.5, cex.lab = 1.5)
+plot(df$win_margin_islam_1994, 
+     df$share_women_hs_1520, 
+     xlab = "Score", 
+     ylab = "Outcome", 
+     col = 1, 
+     pch = 20, 
+     cex.axis = 1.5, 
+     cex.lab = 1.5)
 abline(v = 0)
 
 ```
@@ -93,18 +103,20 @@ _Output_:
 <img src = "../images/raw-data.png" width=400">
 </p>
 
-The resulting plot can help to detect outliers and visualize the raw observations, but it makes it hard to effectively visualize the RD design, for instance, we can't see a jump in the values of the outcome by just looking at the raw data.
+The resulting plot can help to detect outliers and visualize the raw observations, but it makes it hard to effectively visualize the RD design. For instance, we can't see a jump in the values of the outcome by just looking at the raw data.
+
+## A typical RD plot
 
 To solve this, we should aggregate the data before plotting. A typical RD plot has two features:
-- a **global polynomial fit**, represented by a solid line: a smooth approximation to the unknown regression functions, based on a polynomial fit of the outcome on the score
-- **local sample means**, represented by dots: a non-smooth approximation to the unknown regression functions; they are created by choosing disjoint bins (intervals) of the score followed by a calculation of the mean outcome for observations within each bin and then plotting this average outcome for each bin
+- A **global polynomial fit**, represented by a solid line: a smooth approximation to the unknown regression functions, based on a polynomial fit of the outcome on the score
+- **Local sample means**, represented by dots: a non-smooth approximation to the unknown regression functions; they are created by choosing disjoint bins (intervals) of the score followed by a calculation of the mean outcome for observations within each bin and then plotting this average outcome for each bin
 
 Binning the data can reveal patterns that can't be seen when plotting the raw data in a simple scatter plot. There are two important aspects for choosing the bins: location and number.
 
 ## Location of bins
 We can create two different types of bins: 
-- **evenly-spaced** (ES): bins that have equal length; however, if observations are not uniformly distributed, each bin might have a different number of observations
-- **quantile-spaced** (QS): bins that contain roughly the same number of observations but the length may differ; the bins are larger in regions where there are fewer observations
+- **Evenly-spaced** (ES): bins that have equal length; however, if observations are not uniformly distributed, each bin might have a different number of observations.
+- **Quantile-spaced** (QS): bins that contain roughly the same number of observations but the length may differ; the bins are larger in regions where there are fewer observations.
 
 
 We create two graphs using 20 evenly-spaced and quantile-spaced bins. To do this we use the `rdplot` command:
@@ -113,11 +125,25 @@ We create two graphs using 20 evenly-spaced and quantile-spaced bins. To do this
 
 ```R
 #evenly spaced bins
-out <- rdplot(df$share_women_hs_1520, df$win_margin_islam_1994, nbins = c(20, 20), binselect = "es", y.lim = c(0,.25), title = "Evenly-spaced bins", x.label = "Win margin", y.label = "Educational attainment")
+out <- rdplot(df$share_women_hs_1520, 
+              df$win_margin_islam_1994, 
+              nbins = c(20, 20), 
+              binselect = "es", 
+              y.lim = c(0,.25), 
+              title = "Evenly-spaced bins", 
+              x.label = "Win margin", 
+              y.label = "Educational attainment")
 summary(out)
 
 #quantile spaced bins
-out2 <- rdplot(df$share_women_hs_1520, df$win_margin_islam_1994, nbins = c(20, 20), binselect = "qs", y.lim = c(0,.25), title = "Quantile-spaced bins", x.label = "Win margin", y.label = "Educational attainment")
+out2 <- rdplot(df$share_women_hs_1520, 
+               df$win_margin_islam_1994, 
+               nbins = c(20, 20), 
+               binselect = "qs", 
+               y.lim = c(0,.25), 
+               title = "Quantile-spaced bins", 
+               x.label = "Win margin", 
+               y.label = "Educational attainment")
 summary(out2) 
 
 ```
@@ -150,7 +176,14 @@ We first create a plot with evenly-spaced bins and a number of bins that follows
 {{% codeblock %}}
 
 ```R
-out3 <- rdplot(df$share_women_hs_1520, df$win_margin_islam_1994, binselect = "es", x.lim = c(-1, 1), y.lim = c(0,.25), title = "IMSE ES", x.label = "Win margin", y.label = "Educational attainment")
+out3 <- rdplot(df$share_women_hs_1520, 
+               df$win_margin_islam_1994, 
+               binselect = "es", 
+               x.lim = c(-1, 1), 
+               y.lim = c(0,.25), 
+               title = "IMSE ES", 
+               x.label = "Win margin", 
+               y.label = "Educational attainment")
 summary(out3)
 ```
 {{% /codeblock %}}
@@ -169,7 +202,14 @@ We now create a plot with quantile-spaced bins.
 {{% codeblock %}}
 
 ```R
-out4 <- rdplot(df$share_women_hs_1520, df$win_margin_islam_1994, binselect = "qs", x.lim = c(-1, 1), y.lim = c(0,.25), title = "IMSE QS", x.label = "Win margin", y.label = "Educational attainment")
+out4 <- rdplot(df$share_women_hs_1520, 
+              df$win_margin_islam_1994, 
+              binselect = "qs", 
+              x.lim = c(-1, 1), 
+              y.lim = c(0,.25), 
+              title = "IMSE QS", 
+              x.label = "Win margin", 
+              y.label = "Educational attainment")
 summary(out4)
 ```
 {{% /codeblock %}}
@@ -194,7 +234,12 @@ To create a plot using the MV method with ES bins we use `binselect = esmv`.
 {{% codeblock %}}
 
 ```R
-out5 <- rdplot(df$share_women_hs_1520, df$win_margin_islam_1994, binselect = "esmv", title = "MV ES", x.label = "Win margin", y.label = "Educational attainment")
+out5 <- rdplot(df$share_women_hs_1520, 
+              df$win_margin_islam_1994, 
+              binselect = "esmv", 
+              title = "MV ES", 
+              x.label = "Win margin", 
+              y.label = "Educational attainment")
 summary(out5)
 ```
 {{% /codeblock %}}
@@ -213,7 +258,12 @@ For a plot with QS bins and MV method we use `binselect = qsmv`.
 {{% codeblock %}}
 
 ```R
-out6 <- rdplot(df$share_women_hs_1520, df$win_margin_islam_1994, binselect = "qsmv", title = "MV QS", x.label = "Win margin", y.label = "Educational attainment")
+out6 <- rdplot(df$share_women_hs_1520, 
+               df$win_margin_islam_1994, 
+               binselect = "qsmv", 
+               title = "MV QS", 
+               x.label = "Win margin", 
+               y.label = "Educational attainment")
 summary(out6)
 ```
 {{% /codeblock %}}
