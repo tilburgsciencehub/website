@@ -41,5 +41,11 @@ flask run
 - [ ] Header does not display BB's when hovering over it
 - [ ] urls on homepage dont work
 - [ ] Edit page url doesn't work
-- [ ] Table do not render (e.g. BB on Cloud computing)
+- [ ] Table do not render (e.g. BB on Cloud computing/ webscraping vs API's)
 - [ ] ODCM tutorial does not work (specific)
+- [ ] formatting does not render in {{% blocks %}} (e.g. Learn R BB)
+- [ ] {{% example }} block does not render (e.g. use Scrum in your team BB)
+- [ ] under automate and execute your work there is a "new" category called error handling?
+- [ ] Text out of line (e.g. BB on cars/ interactive Interactive shiny COVID-19)
+- [ ] external youtube link does not render {{< youtube DK7TYR68kqc iframe-video-margins >}} (BB practicing pipeline automation > verify)
+- [ ] 
