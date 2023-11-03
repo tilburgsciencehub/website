@@ -13,18 +13,19 @@ aliases:
 
 ## Introduction
 
-The Regression Discontuinity Design (RDD) assumes **no precise manipulation** at the cutoff. 
+This building block provides a comprehensive overview of several tests used to verify the assumptions of the RDD design that ensure robustness of the analysis. 
 
-Precise manipulation happens if subjects know the cutoff and manipulate accordingly whether they end up below or above the cutoff, which determines whether they belong to the treatment or control group. As a result, treatment assignment is not as good as random anymore at the cutoff value of the running variable. An example of precise manipulation would be if in a targeted aid program for lower-income groups, some subject position themselves just below the cutoff of income level to qualify for this aid. 
+The Regression Discontuinity Design (RDD) assumes **no precise manipulation** at the cutoff. Precise manipulation happens if subjects know the cutoff and manipulate accordingly whether they end up below or above the cutoff, which determines whether they belong to the treatment or control group. As a result, treatment assignment is not as good as random anymore at the cutoff value of the running variable. An example of precise manipulation would be if in a targeted aid program for lower-income groups, some subject position themselves just below the cutoff of income level to qualify for this aid. 
 
-In this building block we discuss validation methods, based on various empirical implications of the unobservable RD assumptions that are expected to hold in most cases. These methods are explored within both the standard [continuity-based approach](/continuity/approach) and the extended [local randomization approach](/local/randomization). 
+In this building block we discuss 6 validation methods, based on various empirical implications of the unobservable RD assumptions that are expected to hold in most cases. These methods are explored within both the standard [continuity-based approach](/continuity/approach) and the extended [local randomization approach](/local/randomization).
 
 {{% tip %}}
 __Falsification Test__
+
 A falsification test serves to "falsify" (=prove something to be false) other discontinuities at the cutoff. By doing this test and proving there are no other discontinuities, we can be sure the observed effects are not the result of other factors and ensure the robustness of the RD Design.
 {{% /tip %}}
 
-## 1. Predetermined covariates and placebo outcomes
+### 1. Predetermined covariates and placebo outcomes
 
 The first and most important falsification test examines whether units near the cutoff (in both treatment and control groups) are similar in terms of observable characteristics. For the validity of the RDD to hold, the units with scores just above and below the cutoff should be similar in the variables that could not have been affected by the treatment.
 
@@ -34,7 +35,7 @@ These variables include:
 
 The principle behind this test is that all predetermined covariates and placebo outcomes are analyzed in the same way as the outcome of interest. The null hypothesis is: the treatment effect is 0 for each predetermined covariate and placebo outcome. 
 
-If the p-value is lower than 0.05, the null hypothesis can be rejected and other discontinuities than just the treatment effect on the outcome variable are found around the cutoff. Thus, for the validity of the RDD to hold, the p-value should be higher than 0.05 such that the H0 cannot be rejected.
+If the p-value is lower than 0.05, the null hypothesis can be rejected and other discontinuities in covariates around found are found around the cutoff. This may imply that the discontinuity found in the outcome variable is not due to the treatment effect but a discontuinity in a confounder. Thus, for the validity of the RDD to hold, the p-value should be higher than 0.05 such that the H0 cannot be rejected.
 
 #### The continuity-based approach
 
@@ -135,26 +136,92 @@ summary(out)
 {{% /codeblock %}}
 
 
-### Sensitivity of Observations around the Cutoff
+### 4. Sensitivity of observations around the cutoff
 
-This test investigates how sensitive the results are to the response of units located very close to the cutoff. If there is any manipulation of the score, the units closest to the cutoff are most likely to be involved in the manipulation. The goal is to exclude these units and redo the estimation using the remaining sample. 
+This test investigates how sensitive the results are to the response of units located very close to the cutoff. If there is any manipulation of the score, the units closest to the cutoff are most likely to be involved in the manipulation. This sensitivity analysis is done by excluding these units and redoing the estimation using the remaining sample. 
 
-In the **continuity-based approach** we can simply use `rdrobust` on the remaining subset of data. The goal is that the new result remains largely unchanged compared to the original result containing the entire sample of data.
+Simply use `rdrobust` for the [continuity-based approach](/continuity/approach) and `rdrandinf` in the context of the [local randomization approach](/local/randomization), but now on the reduced dataset.
 
-### Sensitivity to Bandwidth Choice
+{{% codeblock %}}
+```R
+# Continuity-Based Approach
+out_reduced <- rdrobust(Y_reduced, R_reduced, bw = 0.2, kernel = "triangular")
+summary(out_reduced)
 
-This method analyzes the sensitivity of the results to the bandwidth choice as units are added or removed at the end points of the neighborhood. 
+# Local Randomization Approach
+out_reduced <- rdrandinf(Y_reduced, R_reduced, wl = -2.5, wr = 2.5, seed = 50)
+summary(out_reduced)
+```
+{{% /codeblock %}}
+ 
+In both cases, the comparison of the results from the full dataset and the reduced dataset helps to evaluate whether leaving out the units closest to the cutoff changed the overall results of the analysis. With no precise manipulation, the new results remain largely unchanged compared to the original results using the entire sample of the data.
 
-In the **continuity-based approach** this test is conducted by changing the bandwidth used for local polynomial estimation. An increased bandwidth leads to an increased bias of the local polynomial estimator and a decreased variance. A broadly consistent result under different bandwidth choices is preferred. For more details on bandwidth selection, see the [Continuity-based approach](https://tilburgsciencehub.com/building-blocks/analyze-data/regression-discontinuity/continuity-approach/) building block.
+### 5. Sensitivity to Bandwidth Choice
 
-### Sensitivity to Window Choice
+This method analyzes how the results respond to changes in the bandwidth choice when units are added or removed at the end points of the neighborhood. 
 
-This test is the **local randomization approach** equivalent of the Sensitivity to Bandwidth choice of the **continuity-based approach**. Here, the sensitivity to the window choice is analyzed instead of the bandwidth choice. This analysis should consider smaller windows than the original one, since a larger window would not lead to reliable results because the treated and control groups would be imbalanced in such windows. 
+In the **continuity-based approach** this test is conducted by changing the bandwidth used for local polynomial estimation. Example code is given below. Adjust the bandwith values (`bw`) as necessary. 
 
-To implement it, we can simply use the `rdrandinf` function to specify a smaller window and analyze the results. As the statistic test of this function is the difference in means, a p-value higher than .05 shows no significant difference in the results when a smaller window is implemented. 
+{{% codeblock %}}
+```R
+# Conducting sensitivity to bandwidth choice analysis
+out_low <- rdrobust(Y, R, bw = 0.1, kernel = "triangular")
+out_mid <- rdrobust(Y, R, bw = 0.2, kernel = "triangular")
+out_high <- rdrobust(Y, R, bw = 0.3, kernel = "triangular")
+
+# Compare the results
+summary(out_low)
+summary(out_mid)
+summary(out_high)
+```
+{{% /codeblock %}}
+
+A desirable outcome is to obtain broadly consistent results across various bandwidth choices, as this indicates the robustness of the findings.
+
+
+{{% tip %}}
+**The bandwidth choice: a trade-off between noise and bias**
+
+An increase in the bandwidth leads to:
+- An increased bias of the local polynomial estimator: data points that are more distant from the cutoff are included now.
+- A lower variance ("noise") in the estimator: more observations are considered, so the treatment effect becomes less noisy.
+
+For more details on bandwidth selection, see the [Continuity-based approach](/continuity/approach) building block.
+{{% /tip %}}
+
+### 6. Sensitivity to Window Choice
+
+This test is the **local randomization approach** equivalent of the previous discussed Sensitivity to Bandwidth choice of the continuity-based approach. 
+
+Here, the sensitivity to the window choice is analyzed instead of the bandwidth choice. This analysis should only consider smaller windows than the original one, since a larger window would not lead to reliable results because the treated and control groups would be imbalanced in such windows. 
+
+To implement the test, you can use the `rdrandinf` function to specify a smaller window (`wl = -1.5` and `wr = 1.5` in this case) and analyze the results. 
+
+{{% codeblock %}}
+```R
+# Local Randomization Approach, 
+out_small_w <- rdrandinf(Y, R, wl = -1.5, wr = 1.5, seed = 50)
+summary(out_small_w)
+```
+{{% /codeblock %}}
+
+Given that the statistic test of this function is the difference in means, a p-value higher than 0.05 indicates that there is no significant difference in the results when a smaller window is implemented. 
+
+## Overview
+
+This table gives an overview of all the tests for validation of the RDD discussed in this building block, including which function in R to use in the context of a continuity-based or local randomization approach.
+
+| Test | Description | Continuity-<BR> based <BR> Approach | Local <BR> Randomization <BR> Approach |
+| --- | --- | --- | --- |
+| 1. Predetermined <BR> covariates and <BR> placebo outcomes | Checks for <BR>  similar observable <BR> characteristics <BR> near the cutoff | `rdrobust` | `rdrandinf` |
+| 2. Density of <BR> Running Variable | Analyzes density <BR> differences near the <BR> cutoff | `rddensity` | `rdwinselect` |
+| 3. Placebo cutoffs | Tests for treatment <BR> effects at artificial <BR> cutoff values | `rdrobust` | `rdrandinf` |
+| 4. Sensitivity of <BR> observations around <BR> the cutoff | Investigates the effect <BR> of excluding units near <BR> the cutoff | `rdrobust` | - |
+| 5. Sensitivity to <BR> Bandwidth Choice | Analyzes the impact <BR> of bandwidth changes <BR> on the results | `rdrobust` | - |
+| 6. Sensitivity to <BR> Window Choice | Examines the effect of <BR> changes in window size <BR> on the results | - | `rdrandinf` |
 
 
 ## See also
-[A Practical Introduction to Regression Discontinuity Designs: Foundations - Cattaneo, Idrobo & Titiunik (2020)](https://rdpackages.github.io/references/Cattaneo-Idrobo-Titiunik_2020_CUP.pdf)
+- [A Practical Introduction to Regression Discontinuity Designs: Foundations - Cattaneo, Idrobo & Titiunik (2020)](https://rdpackages.github.io/references/Cattaneo-Idrobo-Titiunik_2020_CUP.pdf)
 
-[A Practical Introduction to Regression Discontinuity Designs: Extensions - Cattaneo, Idrobo & Titiunik (2023)](https://rdpackages.github.io/references/Cattaneo-Idrobo-Titiunik_2023_CUP.pdf)
+- [A Practical Introduction to Regression Discontinuity Designs: Extensions - Cattaneo, Idrobo & Titiunik (2023)](https://rdpackages.github.io/references/Cattaneo-Idrobo-Titiunik_2023_CUP.pdf)
