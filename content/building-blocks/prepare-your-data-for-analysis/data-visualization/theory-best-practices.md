@@ -197,7 +197,7 @@ print(line_chart)
 ```
 {{% /codeblock %}}
 
-The output shoudl look like this: 
+The output should look like this: 
 <p align = "center">
 <img src = "../img/LineChart.png" width="400">
 </p>
