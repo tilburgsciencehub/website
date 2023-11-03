@@ -5,7 +5,7 @@ keywords: "qualtrics, surveys, export, R, Python, Stata"
 date: 24/10/2023
 weight: #
 author: "Matteo Zicari"
-authorlink: "https://www.linkedin.com/in/matteozicari/"
+authorlink: "https://tilburgsciencehub.com/contributors/matteozicari/"
 aliases:
   - /qualtrics/survey
   - /export/data
@@ -43,9 +43,9 @@ During the design phase, a general **rule of thumb** is to ask *broad and genera
 {{% tip %}}
 While drafitng the questions, one should consider that:
 
-* the survey must align with the main `research question` and `target sample`. Always think about your respondents and tailor your questions to them;
+* the survey must align with the main `research` `question` and `target` `sample`. Always think about your respondents and tailor your questions to them;
 
-* at the outset of the survey, include an `exclusion question` to filter out respondents who do not fall within your target audience. For instance, if you are focusing on married couples, the initial question could inquire about the respondent's current relationship status;
+* at the outset of the survey, include an `exclusion` `question` to filter out respondents who do not fall within your target audience. For instance, if you are focusing on married couples, the initial question could inquire about the respondent's current relationship status;
 
 * survey `length` is crucial; typically, respondents should be able to complete it within 5 to 10 minutes. Beyond this threshold, an increasing number of respondents are likely to drop out;
 
@@ -55,11 +55,38 @@ While drafitng the questions, one should consider that:
 
 ## Qualtrics
 
-This section provides a `step-by-step` `guide` to building a survey in Qualtrics.
+This section provides a `step-by-step` `guide` to designing a survey in Qualtrics.
 
+1. Sign in/sign up on Qualtrics [here](https://www.qualtrics.com), and you will be directed to your Qualtrics `homepage` which should resemble the image below.
 
+<div style="text-align: center;">
+    <img src="../img/qualt1.png" width="700" alt="homepage">
+</div>
 
+2. Click `Create` `a` `survey` to start creating your survey from scratch, or click `Create` `a` `new` `project` to access survey templates and guided projects. Then, click `Survey` to begin.
 
+3. Enter the `name` of your `survey` and then select `Create` `a` `blank` `survey` `project` to access the `survey` `editor`.
+
+<div style="text-align: center;">
+    <img src="../img/qualt2.png" width="500" alt="create project">
+</div>
+
+4. Within the `survey` `editor` you will find Qualtrics' most relevant features to help you create your online survey. 
+
+<div style="text-align: center;">
+    <img src="../img/qualt3.png" width="700" alt="homepage">
+</div>
+
+<br/>
+<br/>
+
+**(A)**: tabs that allow you to build and edit survey features. For now, we will focus on the default tab (`builder`).
+
+**(B)**: select the most appropriate `question` `type` and customise it according to your needs.
+
+**(C)**: type your actual questions and all the available answers. 
+
+**(D)**: once the survey is complete, you can generate a `preview` to identify and address any potential issues, and then `publish` it. 
 
 
 
@@ -79,7 +106,7 @@ library(qualtRics)
 {{% /codeblock %}}
 
 
-## Pyhton
+## Python
 
 {{% codeblock %}} 
 
@@ -101,6 +128,5 @@ library(qualtRics)
 
 {{% summary %}}
 
-Lastly, include a brief summary to wrap up your article.
 
 {{% /summary %}}
