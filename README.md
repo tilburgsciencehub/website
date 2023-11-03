@@ -48,4 +48,4 @@ flask run
 - [ ] under automate and execute your work there is a "new" category called error handling?
 - [ ] Text out of line (e.g. BB on cars/ interactive Interactive shiny COVID-19)
 - [ ] external youtube link does not render {{< youtube DK7TYR68kqc iframe-video-margins >}} (BB practicing pipeline automation > verify)
-- [ ] 
+- [ ] #'s in a ``` block get converted to headers instead of to just small text within the block (BB configure git)
