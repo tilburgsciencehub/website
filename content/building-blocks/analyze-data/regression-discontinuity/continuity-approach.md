@@ -11,9 +11,11 @@ aliases:
   - /regression/discontinuity
 ---
 
-# Continuity-Based Approach to RD Analysis
+# Introduction
 
-In this framework the parameter of interest is $\tau_{SRD}$. To approximate the regression function $\mathbb{E}[Y_{i}|X_{i} = x]$, defined in [Sharp RD Designs](https://tilburgsciencehub.com/building-blocks/analyze-data/regression-discontinuity/sharp-rdd/), least-squares method is used to fit a polynomial of the observed outcome on the score. If all observations are used for the estimation, the polynomial fits are **global** or **parametric**, however, if only the observations with scores around the cutoff are used, the polynomial fits are **local** or **non-parametric**.  In this building block we discuss the local polynomial approach.
+In this building block, we discuss the local polynomial approach in the context of the [Sharp RD Design](/sharp/designs) for estimating the paramter of interest, $\tau_{SRD}$. 
+
+To approximate the regression function $\mathbb{E}[Y_{i}|X_{i} = x]$, defined in the building block about [Sharp RD Designs](/sharp/designs), least-squares method is used to fit a polynomial of the observed outcome on the score. If all observations are used for the estimation, the polynomial fits are **global** or **parametric**, however, if only the observations with scores around the cutoff are used, the polynomial fits are **local** or **non-parametric**.  In this building block we discuss the local polynomial approach.
 
 ## Local Polynomial Point Estimation
 
@@ -97,6 +99,13 @@ Additionally, we can opt to report all the bandwidth choices. To do this, we rep
 - `cersum` 
 - `cercomb1`
 - `cercomb2`
+
+{{% summary %}}
+The local polynomial approach in sharp regression discontinuity design (SRD) offers a robust estimation method by focusing on observations around the cutoff, minimizing overfitting issues. The careful selection of the kernel function, polynomial order, and bandwidth is crucial for accurate estimation and reliable results.
+
+The local randomization approach can be seen as an extension of this contuinity-based approach and is discussed in [this building block](/local/randomization).
+
+{{% /summary %}}
 
 ## See also
 [A Practical Introduction to Regression Discontinuity Designs: Foundations - Cattaneo, Idrobo & Titiunik (2020)](https://rdpackages.github.io/references/Cattaneo-Idrobo-Titiunik_2020_CUP.pdf)
