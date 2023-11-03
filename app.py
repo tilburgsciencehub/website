@@ -3,7 +3,7 @@ from flask_assets import Environment, Bundle
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
 from datetime import datetime
-from functions import build_data_dict, generate_table_of_contents
+from functions import build_data_dict, generate_table_of_contents, get_breadcrumbs, find_related_articles
 import os
 from models import db, categories, articles, Contributors, blogs
 from html_parser import htmlize
@@ -52,7 +52,7 @@ def home():
 @app.route('/building-blocks/<category_path>/<child_category_path>/<article_path>')
 def building_block(category_path, child_category_path, article_path):
     data_dict = build_data_dict(categories, articles)
-
+    breadcrumbs = get_breadcrumbs()
     current_url = request.url
     article = None
     category = categories.query.filter_by(path=category_path).first()
@@ -63,11 +63,14 @@ def building_block(category_path, child_category_path, article_path):
             article = articles.query.filter_by(
                 path=article_path, parent=child_category.id).first()
             if article:
+                top_related_articles = find_related_articles(article.keywords, articles, categories, article.id)
+                for related_article in top_related_articles:
+                    print(related_article.url)
                 buildingblock = article
                 content = htmlize(article.content)
                 table_of_contents = generate_table_of_contents(content)
 
-    return render_template('building-block-single.html', assets=assets, buildingblock=buildingblock, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, content=content)
+    return render_template('building-block-single.html', assets=assets, breadcrumbs=breadcrumbs, buildingblock=buildingblock, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, content=content, top_related_articles=top_related_articles)
 
 # Single Tutorial
 
@@ -75,7 +78,7 @@ def building_block(category_path, child_category_path, article_path):
 @app.route('/tutorials/<category_path>/<child_category_path>/<article_path>')
 def tutorial(category_path, child_category_path, article_path):
     data_dict = build_data_dict(categories, articles)
-
+    breadcrumbs = get_breadcrumbs()
     current_url = request.url
     parts = current_url.split('/')
     current_tutorial_url = '/'.join(parts[:-1])
@@ -105,7 +108,7 @@ def tutorial(category_path, child_category_path, article_path):
                     .filter(articles.parent == child_category.id, articles.weight == (article.weight + 1)) \
                     .first()
 
-    return render_template('tutorials-single.html', assets=assets, tutorial=tutorial, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, articles_child_category=articles_child_category, previous_article=previous_article, next_article=next_article, current_tutorial_url=current_tutorial_url, content=content)
+    return render_template('tutorials-single.html', breadcrumbs=breadcrumbs, assets=assets, tutorial=tutorial, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, articles_child_category=articles_child_category, previous_article=previous_article, next_article=next_article, current_tutorial_url=current_tutorial_url, content=content)
 
 # Single Example
 
@@ -113,6 +116,7 @@ def tutorial(category_path, child_category_path, article_path):
 @app.route('/examples/<article_path>')
 def example(article_path):
     data_dict = build_data_dict(categories, articles)
+    breadcrumbs = get_breadcrumbs()
     current_url = request.url
     article = None
     article = articles.query.filter_by(path=article_path).first()
@@ -121,11 +125,14 @@ def example(article_path):
         content = htmlize(example.content)
         table_of_contents = generate_table_of_contents(content)
 
-    return render_template('examples-single.html', assets=assets, example=example, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, content=content)
+    return render_template('examples-single.html', breadcrumbs=breadcrumbs, assets=assets, example=example, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, content=content)
 
+
+# Single Blog
 @app.route('/blog/<blog_path>')
 def blogs_single(blog_path):
     data_dict = build_data_dict(categories, articles)
+    breadcrumbs = get_breadcrumbs()
     blog_query = None
     blog_data = None
     blog_query = blogs.query.filter_by(path=blog_path).first()
@@ -134,7 +141,7 @@ def blogs_single(blog_path):
         content = htmlize(blog_query.content)
         table_of_contents = generate_table_of_contents(content)
 
-    return render_template('blog-single.html', assets=assets, blog=blog_data, data_dict=data_dict, table_of_contents=table_of_contents, content=content)
+    return render_template('blog-single.html', assets=assets, breadcrumbs=breadcrumbs, blog=blog_data, data_dict=data_dict, table_of_contents=table_of_contents, content=content)
 
 # List Tutorials
 

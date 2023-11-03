@@ -20,18 +20,21 @@ After successfully creating the database, you are ready to start up the flask ap
 flask run
 
 ## Updated & Implemented
+- [x] Fix Authors
+- [x] Related Articles
 - [x] Blogs
-    - [x] Single
     - [x] List
     - [x] Add to db
+    - [x] Single
+- [x] Breadcrumbs
     
-## Features to Implement
-- [ ] Recent Issues
-    - [ ] make slider on mobile only move when clicked/touched
-    - [ ] Most read tutorials - duplicates
-    - [ ] scaling of tilburg science hub image on landing page off
-    - [ ] bug w/ slider on mobile
-    - [ ] About page in footer
-    - [ ] add reading time estimate
-    - [ ] Recently updated/published settings
-- [ ] Fix Authors
+## Features/Issues to Update/Implement
+- [ ] make slider on mobile only move when clicked/touched
+- [ ] Most read tutorials - duplicates
+- [ ] scaling of tilburg science hub image on landing page off
+- [ ] bug w/ slider on mobile
+- [ ] About page in footer
+- [ ] add reading time estimate
+- [ ] Recently updated/published settings
+- [ ] Cookies
+

@@ -1,0 +1,15 @@
+<nav class="breadcrumbs px-4 px-lg-0 text-center text-lg-left">
+    {% set counter = 0 %}
+    {% for breadcrumb in breadcrumbs %}
+        {% set counter = counter + 1 %}
+        {% if breadcrumb.name == "Home" %}
+            <a href="/"><img src="{{ url_for('static', filename='/img/home.svg') }}" /></a>
+        {% else %}
+            {% if counter != (breadcrumbs|length) %}
+                <a href="{{ breadcrumb.url }}" style="color: #6081A2;">{{ breadcrumb.name }}</a>
+                <img src="{{ url_for('static', filename='/img/chevron-right.svg') }}">
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    <a href="#" style="color: #6081A2;">{{ current_page }}</a>
+</nav>

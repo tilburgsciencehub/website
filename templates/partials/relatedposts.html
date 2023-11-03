@@ -1,16 +1,25 @@
+{% set related = top_related_articles %}
+{% set len = related|length %}
+
+{% if len > 0 %}
 <div class="row bg-white rounded p-5 mb-5" style="margin: 0px;">
-	<div class="col-lg-8 col-24 mb-4">
-		<h1 style="line-height: 42px; font-size: 38px;">Related <br>
-			<span class="heading text-primary">Posts</span></h1>
-	</div>
-	<div class="col-lg-16 col-24">
-		<ul class="my-4 list-unstyled relatedPosts">
-      <li class="pb-2">
-      	<a href="#">
-      		<span class="icon link text-primary d-inline-block mr-2"></span>
-        	Title
-      	</a>
-      </li>
-	</ul>
-	</div>
+    <div class="col-lg-8 col-24 mb-4">
+        <h1 style="line-height: 42px; font-size: 38px;">Related <br>
+            <span class="heading text-primary">Posts</span></h1>
+    </div>
+    <div class="col-lg-16 col-24">
+        <ul class="my-4 list-unstyled relatedPosts">
+        
+        {% for related_article in related %}
+          <li class="pb-2">
+            <a href="{{ url_for('home') }}{{ related_article.url }}">
+              <span class="icon link text-primary d-inline-block mr-2"></span>
+              {{ related_article.title }}
+            </a>
+          </li>
+        {% endfor %}
+        
+    </ul>
+    </div>
 </div>
+{% endif %}
