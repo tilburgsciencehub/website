@@ -16,7 +16,7 @@ editor_options:
 
 ## Introduction
 
-The purpose of regression analysis is to study the causal effect of a so
+The purpose of regression analysis is to study the causal effect of a so-
 called treatment on a variable of interest, for instance the effect of
 minimum wage increase on unemployment. When the units are assigned
 randomly to treatment and control groups, the analysis is
@@ -29,33 +29,34 @@ threshold.
 
 ### Elements of RD design
 
-The three elements of RD designs are: 
-- **score**: each units have a score (also called running variable) 
-- **cutoff** 
-- **treatment**: a treatment is only assigned to units that have a score above the cutoff
+The three elements of RD designs (RDD) are: 
+- **Score**: each units have a score (also called the running variable) 
+- **Cutoff** 
+- **Treatment**: a treatment is only assigned to units that have a score above the cutoff (dependent on the specific case, the treatment can be assigned to units below the cutoff)
 
-There are two types of RD designs, **sharp** and **fuzzy** RDD. In this building block we cover the sharp design.
+There are two types of RD designs, **sharp** and **fuzzy** RDD. In this building block we cover the sharp design. We start by discussing the setup of a Sharp RDD, followed by a practical example. The fuzzy RDD is covered in this [buiding block](/fuzzy/designs) of the series about RDD.
 
 ## Sharp RDD setup
 
-The sharp RD design is defined by these features: 
-- the score is continuously distributed and only has one dimension 
-- there is a unique cutoff 
-- there is perfect compliance with the treatment assignment: all units with score below the cutoff receive the control condition, all units with score equal or greater than the cutoff receive the treatment
+The sharp RDD is defined by these features: 
+- The score is continuously distributed and only has one dimension.
+- There is a unique cutoff.
+- There is perfect compliance with the treatment assignment: all units with score below the cutoff receive the control condition, all units with score equal or greater than the cutoff receive the treatment.
 
 Suppose we have $n$ units, indexed *i = 1, 2, ..., n*, and each unit has
-a score $X_{i}$ and $c$ is the known cutoff. All units with $X_{i} >= c$
-are assigned to the treatment condition, while units with $X_{i} < c$
-are assigned to the control condition. 
+a score $X_{i}$ and $c$ is the known cutoff. 
+
+- All units with $X_{i} >= c$ are assigned to the treatment condition
+- All units with $X_{i} < c$ are assigned to the control condition. 
 
 The treatment assignment is
-denoted with $T_{i}$ and is defined as $T\_{i} = \mathbb{1}(X_{i} >= c)$, where $\mathbb{1}(.)$ is the indicator function and it is equal to 1 if the condition in the brackets is satisfied, and equal to 0 otherwise. 
+denoted with $T_{i}$ and is defined as $T\_{i} = \mathbb{1}(X_{i} >= c)$, where $\mathbb{1}(.)$ is the indicator function which is equal to 1 if the condition in the brackets is satisfied, and equal to 0 otherwise. 
 
 We need to make a distinction between being *assigned* to the treatment and *receiving* or *complying with* the treatment. In the sharp RD design, the treatment condition assigned is the same with the treatment actually received by the units. 
 
 ### Treatment probability
 
-We go back to the defining feature of any RD design: the conditional probability of actually receiving treatment changes discontinuously at the cutoff. For the sharp design, the probability changes from 0 to 1 at the cutoff, as we can see in the graph below. 
+We go back to the defining feature of any RDD: the conditional probability of actually receiving treatment changes discontinuously at the cutoff. For the sharp design, the probability changes from 0 to 1 at the cutoff, as we can see in the graph below. 
 
 
 <p align = "center">
@@ -101,11 +102,11 @@ This parameter can be interpreted as the average treatment effect on the treated
 To illustrate the theory with a practical example, we use the example given by Cattaneo, Idrobo & Titiunik (2020) in their paper on regression discontinuity. Meyersson (2014) studied the effect of Islamic parties' control of local governments on the educational attainment of young women. There are two possibilities: municipalities in which the support for Islamic parties is high and results in the election of an Islamic mayor, and municipalities in which the support for Islamic parties is weaker and it results in the election of a non-Islamic mayor (also called secular). 
 
 Sharp RDD can be configured as follows:
-- the **unit of analysis** is the municipality
-- the **score $X_{i}$** is the Islamic margin of victory - the difference between the vote percentage of the largest Islamic party and the vote percentage of the largest non-Islamic opponent
-- the **treatment group $T_{i} = 1$** consists of the municipalities that elected an Islamic party mayor
-- the **control group $T_{i} = 0$** consists of municipalities that elected a non-Islamic party mayor
-- the **outcome $Y_{i}$** is the educational attainment of women, measured as the percentage of women (aged 15 to 20) who had completed high school by 2000
+- The **unit of analysis** is the municipality
+- The **score $X_{i}$** is the Islamic margin of victory - the difference between the vote percentage of the largest Islamic party and the vote percentage of the largest non-Islamic opponent
+- The **treatment group $T_{i} = 1$** consists of the municipalities that elected an Islamic party mayor
+- The **control group $T_{i} = 0$** consists of municipalities that elected a non-Islamic party mayor
+- The **outcome $Y_{i}$** is the educational attainment of women, measured as the percentage of women (aged 15 to 20) who had completed high school by 2000
 
 ## Local nature of RD effects
 
@@ -116,6 +117,13 @@ To extrapolate the RD treatment effect, certain assumptions should be imposed ab
 - local independence assumptions
 - exploiting specific features of the design, like imperfect compliance
 - the presence of multiple cutoffs
+
+{{% summary %}}
+RDD is a non-experimental research design used to analyze causal effects. In this first building block of a series on Regression Discontuinity Design, we discussed the sharp RDD. The sharp RD relies on a few important features, like a continuous distribution of the score that has only one dimension, existence of a unique cutoff and perfect compliance with treatment assignment. The sharp RD treatment effect is the average difference in potential outcomes between treatment and control at the cutoff.
+
+In the [next building block](/plot/designs), we will dive deeper into the RDD subject by discussing Regression Discontuinity plots. 
+{{% /summary %}}
+
 
 ## See also
 [A Practical Introduction to Regression Discontinuity Designs: Foundations - Cattaneo, Idrobo & Titiunik (2020)](https://rdpackages.github.io/references/Cattaneo-Idrobo-Titiunik_2020_CUP.pdf)
