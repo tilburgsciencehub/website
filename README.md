@@ -37,4 +37,9 @@ flask run
 - [ ] add reading time estimate
 - [ ] Recently updated/published settings
 - [ ] Cookies
-
+- [ ] In text links with {{% cta-primary-center .. %}} do not render
+- [ ] Header does not display BB's when hovering over it
+- [ ] urls on homepage dont work
+- [ ] Edit page url doesn't work
+- [ ] Table do not render (e.g. BB on Cloud computing)
+- [ ] ODCM tutorial does not work (specific)
