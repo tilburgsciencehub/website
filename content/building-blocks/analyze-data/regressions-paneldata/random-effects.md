@@ -29,10 +29,11 @@ Let's continue with the model where we estimate the relationship of market and s
 <br/>
 <br/>
 {{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}
+$invest_{it}$ = $\beta_0 + $\beta_1 value_{it}$ + $\beta_2 capital_{it}$ + $\alpha_i$ + $\epsilon_{it}$
 {{</katex>}}
 <br/>
 where,
+
 - $invest_{it}$ is the gross investment of firm `i` in year `t`
 - $value_{it}$ is the market value of assets of firm `i` in year `t`
 - $capital_{it}$ is the stock value of plant and equipment of firm `i` in year `t`

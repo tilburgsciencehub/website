@@ -33,6 +33,25 @@
 	<!--snippet for google optimize (A/B tests) put back on when needed 
 	<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-N42NQJS"></script>-->
 
+	<!-- Katex -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='katex/katex.min.css') }}" />
+    <script defer src="{{ url_for('static', filename='katex/katex.min.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}"></script>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(
+                document.body,
+                {
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '\\[', right: '\\]', display: true },
+                        { left: '$', right: '$', display: false },
+                        { left: '\\(', right: '\\)', display: false }
+                    ]
+                }
+            );
+        });
+    </script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="{{ assets['scss_all'].urls()[0] }}">

@@ -64,8 +64,6 @@ def building_block(category_path, child_category_path, article_path):
                 path=article_path, parent=child_category.id).first()
             if article:
                 top_related_articles = find_related_articles(article.keywords, articles, categories, article.id)
-                for related_article in top_related_articles:
-                    print(related_article.url)
                 buildingblock = article
                 content = htmlize(article.content)
                 table_of_contents = generate_table_of_contents(content)
@@ -98,15 +96,19 @@ def tutorial(category_path, child_category_path, article_path):
                 content = htmlize(article.content)
                 table_of_contents = generate_table_of_contents(content)
 
+                if (article.weight != None):
                 # Get the previous article
-                previous_article = articles.query \
-                    .filter(articles.parent == child_category.id, articles.weight == (article.weight - 1)) \
-                    .first()
+                    previous_article = articles.query \
+                        .filter(articles.parent == child_category.id, articles.weight == (article.weight - 1)) \
+                        .first()
 
-                # Get the next article
-                next_article = articles.query \
-                    .filter(articles.parent == child_category.id, articles.weight == (article.weight + 1)) \
-                    .first()
+                    # Get the next article
+                    next_article = articles.query \
+                        .filter(articles.parent == child_category.id, articles.weight == (article.weight + 1)) \
+                        .first()
+                else:
+                    previous_article = None
+                    next_article = None
 
     return render_template('tutorials-single.html', breadcrumbs=breadcrumbs, assets=assets, tutorial=tutorial, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, articles_child_category=articles_child_category, previous_article=previous_article, next_article=next_article, current_tutorial_url=current_tutorial_url, content=content)
 
@@ -223,7 +225,6 @@ def search():
 def contributors():
     data_dict = build_data_dict(categories, articles)
     contributors_list = Contributors.query.all()
-    print(len(contributors_list))
     return render_template('contributors-list.html', assets=assets, data_dict=data_dict, contributors_list=contributors_list)
 
 # Single Contributor

@@ -374,14 +374,12 @@ conn.close()
 ## Copy All images to img folder
 img_directory = os.path.join(script_directory, "static/img")
 
-# Zorg ervoor dat de doelmap (img) bestaat, zo niet, maak deze aan
+## IMAGES AND VIDS
 if not os.path.exists(img_directory):
     os.makedirs(img_directory)
 
-# Lijst van ondersteunde afbeeldingsextensies
-image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp']
+image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.mov']
 
-# Functie om te controleren of een bestand een afbeelding is op basis van de extensie
 def is_image(filename):
     _, ext = os.path.splitext(filename)
     return ext.lower() in image_extensions

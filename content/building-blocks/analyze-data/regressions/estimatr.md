@@ -18,10 +18,24 @@ Wage_{i}  =  \beta_{0} + \beta_{1} Educ_{i} + \mu
 {{</katex>}}
 
 
-| **Variable** | **Description**            |
-| :------  | :---------             |
-| `wage`     | monthly earnings       |
-| `educ`     | years of education     |
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>wage</td>
+      <td>monthly earnings</td>
+    </tr>
+    <tr>
+      <td>educ</td>
+      <td>years of education</td>
+    </tr>
+  </tbody>
+</table>
 
 
 ## Load packages

@@ -34,10 +34,25 @@ wage_{i}  =  \beta_{0} + \beta_{1} educ_{i} + \mu
 <br>
 where,
 
-| **Variable** | **Description**            |
-| :------  | :---------             |
-| `wage`     | earnings per hour      |
-| `educ`     | years of schooling    |
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>wage</td>
+      <td>earnings per hour</td>
+    </tr>
+    <tr>
+      <td>educ</td>
+      <td>years of schooling</td>
+    </tr>
+  </tbody>
+</table>
+
 
 
 ## Loading the data

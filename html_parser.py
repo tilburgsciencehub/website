@@ -2,10 +2,12 @@ import re
 from bs4 import BeautifulSoup
 import markdown
 
+# Markdown Basic Conversion
 def convert_md_to_html(md_content):
     html_content = markdown.markdown(md_content)
     return html_content
 
+# Shortcodes
 def convert_code_blocks_to_html(md_content):
     # Regelmatige expressie om codeblokken in Markdown te matchen
     codeblock_pattern = re.compile(r'{{%\s+codeblock\s+%}}(.*?){{%\s+/codeblock\s+%}}', re.DOTALL)
@@ -48,79 +50,160 @@ def convert_code_blocks_to_html(md_content):
     return md_content
 
 def convert_tips_to_html(md_content):
-    # Regelmatige expressie om codeblokken in Markdown te matchen
-    tipblock_pattern = re.compile(r'{{%\s+tip\s+%}}(.*?){{%\s+/tip\s+%}}', re.DOTALL)
+    # Definieer een reguliere expressie om de Markdown voorbeeldblokken te matchen
+    tipblock_shortcode_pattern = re.compile(r'{{%\s+tip\s+%}}(.*?){{%\s+/tip\s+%}}', re.DOTALL)
 
-    # Vervang de codeblokken door hun HTML-equivalenten
-    def replace_codeblock(match):
-        tip_content = match.group(1).strip()
-
-        # Functie om code binnen dubbele backticks om te zetten naar <code> tags
-        def replace_code(match_code):
-            code_content = match_code.group(1)
-            return f'<code>{code_content}</code>'
-
-        # Zoek naar code binnen dubbele backticks en vervang deze door <code> tags
-        tip_content = re.sub(r'`(.*?)`', replace_code, tip_content)
+    # Vervang de Markdown voorbeeldblokken door de juiste HTML-opmaak
+    def replace_tip_shortcode(match):
+        
+        tip_content = match.group(1)
+        html_content = convert_md_to_html(tip_content)
 
         return f'  <div class="admonition tip">' \
             f'     <div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/tip.svg"> Tip</div>\n' \
-            f'     <div class="admonition-content"><p>{tip_content}</p></div>' \
+            f'     <div class="admonition-content"><p>{html_content}</p></div>' \
             f'     </div>\n'
 
-    # Gebruik de reguliere expressie om codeblokken te vervangen in de Markdown-inhoud
-    md_content_with_tips = re.sub(tipblock_pattern, replace_codeblock, md_content)
+    # Gebruik de reguliere expressie om de Markdown voorbeeldblokken te vervangen
+    html_output = tipblock_shortcode_pattern.sub(replace_tip_shortcode, md_content)
 
-    return md_content_with_tips
+    return html_output
 
 def convert_summary_to_html(md_content):
-    # Regelmatige expressie om codeblokken in Markdown te matchen
+    # Definieer een reguliere expressie om de Markdown voorbeeldblokken te matchen
     summaryblock_pattern = re.compile(r'{{%\s+summary\s+%}}(.*?){{%\s+/summary\s+%}}', re.DOTALL)
 
-    # Vervang de codeblokken door hun HTML-equivalenten
-    def replace_codeblock(match):
-        summary_content = match.group(1).strip()
-
-        def replace_code(match_code):
-            code_content = match_code.group(1)
-            return f'<code>{code_content}</code>'
-
-        # Zoek naar code binnen dubbele backticks en vervang deze door <code> tags
-        summary_content = re.sub(r'`(.*?)`', replace_code, summary_content)
+    # Vervang de Markdown voorbeeldblokken door de juiste HTML-opmaak
+    def replace_summary_shortcode(match):
         
+        summary_content = match.group(1)
+        html_content = convert_md_to_html(summary_content)
+
         return f'  <div class="admonition summary">' \
             f'     <div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/summary.svg"> Summary</div>\n' \
-            f'     <div class="admonition-content"><p>{summary_content}</p></div>' \
+            f'     <div class="admonition-content"><p>{html_content}</p></div>' \
             f'     </div>\n' \
 
-    md_content = summaryblock_pattern.sub(replace_codeblock, md_content)
+    # Gebruik de reguliere expressie om de Markdown voorbeeldblokken te vervangen
+    html_output = summaryblock_pattern.sub(replace_summary_shortcode, md_content)
 
-    return md_content
+    return html_output
 
 def convert_warning_to_html(md_content):
-    # Regelmatige expressie om codeblokken in Markdown te matchen
+    # Definieer een reguliere expressie om de Markdown voorbeeldblokken te matchen
     warningblock_pattern = re.compile(r'{{%\s+warning\s+%}}(.*?){{%\s+/warning\s+%}}', re.DOTALL)
 
-    # Vervang de codeblokken door hun HTML-equivalenten
-    def replace_codeblock(match):
-        warning_content = match.group(1).strip()
-
-        def replace_code(match_code):
-            code_content = match_code.group(1)
-            return f'<code>{code_content}</code>'
-
-        # Zoek naar code binnen dubbele backticks en vervang deze door <code> tags
-        warning_content = re.sub(r'`(.*?)`', replace_code, warning_content)
+    # Vervang de Markdown voorbeeldblokken door de juiste HTML-opmaak
+    def replace_warning_shortcode(match):
         
+        warning_content = match.group(1)
+        html_content = convert_md_to_html(warning_content)
+
         return f'  <div class="admonition warning">' \
             f'     <div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/warning.svg"> Warning</div>\n' \
-            f'     <div class="admonition-content"><p>{warning_content}</p></div>' \
+            f'     <div class="admonition-content"><p>{html_content}</p></div>' \
             f'     </div>\n' \
 
-    md_content = warningblock_pattern.sub(replace_codeblock, md_content)
+    # Gebruik de reguliere expressie om de Markdown voorbeeldblokken te vervangen
+    html_output = warningblock_pattern.sub(replace_warning_shortcode, md_content)
 
-    return md_content
+    return html_output
 
+def convert_example_shortcode_to_html(md_content):
+    # Definieer een reguliere expressie om de Markdown voorbeeldblokken te matchen
+    example_shortcode_pattern = re.compile(r'{{%\s+example\s+%}}(.*?){{%\s+/example\s+%}}', re.DOTALL)
+
+    # Vervang de Markdown voorbeeldblokken door de juiste HTML-opmaak
+    def replace_example_shortcode(match):
+        
+        example_content = match.group(1)
+        html_content = convert_md_to_html(example_content)
+
+        return f'<div class="admonition example">\n' \
+               f'    <div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/example.svg" width="20px"> Example</div>\n' \
+               f'    <div class="admonition-content">{html_content}</div>\n' \
+               f'</div>'
+
+    # Gebruik de reguliere expressie om de Markdown voorbeeldblokken te vervangen
+    html_output = example_shortcode_pattern.sub(replace_example_shortcode, md_content)
+
+    return html_output
+
+def convert_youtube_shortcode_to_html(md_content):
+    # Definieer een reguliere expressie om YouTube-shortcodes te matchen
+    youtube_shortcode_pattern = re.compile(r'{{<\s*youtube\s+(.*?)\s+iframe-video-margins\s*>}}')
+
+    # Vervang de Markdown voorbeeldblokken door de juiste HTML-opmaak
+    def replace_youtube_shortcode(match):
+        
+        youtube_content = match.group(1)
+
+        return f'<div class="iframe-video-margins">\n' \
+               f'  <iframe src="https://www.youtube.com/embed/{youtube_content}" ' \
+               f'allowfullscreen="" title="YouTube Video"></iframe>\n' \
+               f'</div>\n'
+
+    # Gebruik de reguliere expressie om de Markdown voorbeeldblokken te vervangen
+    html_output = youtube_shortcode_pattern.sub(replace_youtube_shortcode, md_content)
+
+    return html_output
+
+def convert_cta_center_shortcode_to_html(md_content):
+    # Definieer een reguliere expressie om de shortcode te matchen
+    cta_shortcode_pattern = re.compile(r'{{%\s+cta-primary-center\s+"([^"]+)"\s+"([^"]+)"\s+%}}')
+
+    # Vervang de shortcode door de juiste HTML-opmaak
+    def replace_cta_shortcode(match):
+        button_text = match.group(1).strip()
+        button_url = match.group(2).strip()
+
+        return f'<div class="cta-primary" style="text-align:center;">' \
+               f'    <a href="{button_url}">' \
+               f'        <button class="btn btn-primary btn-md mt-2">{button_text}</button>' \
+               f'    </a>' \
+               f'</div><br>'
+
+    # Gebruik de reguliere expressie om de shortcode te vervangen
+    html_output = cta_shortcode_pattern.sub(replace_cta_shortcode, md_content)
+
+    return html_output
+
+def convert_cta_shortcode_to_html(md_content):
+    # Definieer een reguliere expressie om de shortcode te matchen
+    cta_shortcode_pattern = re.compile(r'{{%\s+cta-primary\s+"([^"]+)"\s+"([^"]+)"\s+%}}')
+
+    # Vervang de shortcode door de juiste HTML-opmaak
+    def replace_cta_shortcode(match):
+        button_text = match.group(1).strip()
+        button_url = match.group(2).strip()
+
+        return f'<div class="cta-primary">' \
+               f'    <a href="{button_url}">' \
+               f'        <button class="btn btn-primary btn-md mt-2">{button_text}</button>' \
+               f'    </a>' \
+               f'</div><br>'
+
+    # Gebruik de reguliere expressie om de shortcode te vervangen
+    html_output = cta_shortcode_pattern.sub(replace_cta_shortcode, md_content)
+
+    return html_output
+
+def convert_katex_shortcode_to_html(input_text):
+    # Definieer een reguliere expressie om KaTeX-shortcodes te matchen (over meerdere regels)
+    katex_shortcode_pattern = re.compile(r'{{<katex>}}(.*?){{<\/katex>}}', re.DOTALL)
+
+    # Vervang de KaTeX-shortcodes door de juiste HTML-opmaak
+    def replace_katex_shortcode(match):
+        katex_content = match.group(1).replace('"','').strip()
+
+        return f'<span class="katex">{katex_content}</span>'
+
+    # Gebruik de reguliere expressie om de KaTeX-shortcodes te vervangen
+    html_output = katex_shortcode_pattern.sub(replace_katex_shortcode, input_text)
+
+    return html_output
+
+# Extra HTML Functions
 def convert_md_titles_to_html(md_content):
     def replace_title_h1(match):
         title = match.group(1)
@@ -170,6 +253,29 @@ def replace_img_src(md_content):
 
     return md_content_with_new_img_src
 
+def replace_video_src(html_content):
+    # Parse de HTML-inhoud met BeautifulSoup
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    # Zoek alle <video> tags in de geparseerde inhoud
+    video_tags = soup.find_all('video')
+
+    for video_tag in video_tags:
+        sources = video_tag.find_all('source')
+        for source_tag in sources:
+            src = source_tag.get('src')
+            if src:
+                # Pak alleen de bestandsnaam (laatste deel na /)
+                filename = src.split('/')[-1]
+                # Vervang de src door de gewenste bronindeling
+                new_src = '/static/img/' + filename
+                source_tag['src'] = new_src
+
+    # Converteer de aangepaste inhoud terug naar een string
+    html_content_with_new_video_src = str(soup)
+
+    return html_content_with_new_video_src
+
 def replace_links(md_content):
     # Regelmatige expressie om links te vinden
     link_pattern = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
@@ -189,15 +295,27 @@ def replace_links(md_content):
 
     return md_content_with_new_links
 
+# Html Parse Function
 def htmlize(md_file_content):
-    code_block_content = convert_code_blocks_to_html(md_file_content)
-    tip_content = convert_tips_to_html(code_block_content)
-    summary_content = convert_summary_to_html(tip_content)
-    warning_content = convert_warning_to_html(summary_content)
-    content_paragraph = convert_md_to_html(warning_content)
-    titled_content = convert_md_titles_to_html(content_paragraph)
-    imaged_content = replace_img_src(titled_content)
-    replaced_links = replace_links(imaged_content)
-    html_content = replaced_links
+    transformations = [
+        convert_code_blocks_to_html,
+        convert_tips_to_html,
+        convert_summary_to_html,
+        convert_warning_to_html,
+        convert_cta_shortcode_to_html,
+        convert_cta_center_shortcode_to_html,
+        convert_example_shortcode_to_html,
+        convert_youtube_shortcode_to_html,
+        convert_md_to_html,
+        replace_links,
+        convert_katex_shortcode_to_html,
+        convert_md_titles_to_html,
+        replace_img_src,
+        replace_video_src
+    ]
+
+    html_content = md_file_content
+    for transform_func in transformations:
+        html_content = transform_func(html_content)
 
     return html_content

@@ -1,4 +1,5 @@
 <!-- pagination -->
+{% if previous_article or next_article %}
 <div class="pagination">
     <div>
         {% if previous_article %}
@@ -25,4 +26,5 @@
         {% endif %}
     </div>
 </div>
+{% endif %}
 <!-- /pagination -->

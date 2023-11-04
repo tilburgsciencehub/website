@@ -27,6 +27,19 @@ flask run
     - [x] Add to db
     - [x] Single
 - [x] Breadcrumbs
+- [x] In text links with {{% cta-primary-center .. %}} do not render -> shortcode added to parser
+- [x] Header does not display BB's when hovering over it -> first item added classes active
+- [x] urls on homepage cards dont work -> removed backslash at the end
+- [x] Edit page url doesn't work -> url fixed
+- [x] ODCM tutorial does not work (specific) -> pagination problem (empty weight), issue solved
+- [x] formatting does not render in {{% blocks %}} (e.g. Learn R BB/ set up docker) -> adjust formatting in tips, example, warning.
+- [x] {{% example }} block does not render (e.g. use Scrum in your team BB) -> implemented example
+- [x] under automate and execute your work there is a "new" category called error handling? -> this is an error in the index.md of that file. For some reason it contains 2 draft parameters, which ofcourse results in problems. 
+- [x] videos are not able to play (BB configuring git) -> corrected video parsing and move video files to img
+- [x] symbols (e.g. $\alpha$) do not render -> issue with katex, fixed, stil a problem in content, documented in section "Issues related to content".
+- [x] formulas in {{}} {{}} also do not render (both in BB on fixed effects) -> issue with katex, fixed.
+- [x] << katex >> also does not render (BB sample size on webscrapers) -> issue with katex, fixed.
+- [x] external youtube link does not render {{< youtube DK7TYR68kqc iframe-video-margins >}} (BB practicing pipeline automation > verify)
     
 ## Features/Issues to Update/Implement
 - [ ] make slider on mobile only move when clicked/touched
@@ -37,21 +50,19 @@ flask run
 - [ ] add reading time estimate
 - [ ] Recently updated/published settings
 - [ ] Cookies
-- [ ] In text links with {{% cta-primary-center .. %}} do not render
-- [ ] Header does not display BB's when hovering over it
-- [ ] urls on homepage dont work
-- [ ] Edit page url doesn't work
-- [ ] Table do not render (e.g. BB on Cloud computing/ webscraping vs API's)
-- [ ] ODCM tutorial does not work (specific)
-- [ ] formatting does not render in {{% blocks %}} (e.g. Learn R BB/ set up docker)
-- [ ] {{% example }} block does not render (e.g. use Scrum in your team BB)
-- [ ] under automate and execute your work there is a "new" category called error handling?
+
+## Issues by Revisor
+- [ ] Table do not render (e.g. BB on Cloud computing/ webscraping vs API's) -> Issue will be created
 - [ ] Text out of line (e.g. BB on cars/ interactive Interactive shiny COVID-19)
-- [ ] external youtube link does not render {{< youtube DK7TYR68kqc iframe-video-margins >}} (BB practicing pipeline automation > verify)
 - [ ] #'s in a ``` block get converted to headers instead of to just small text within the block (BB configure git/ reschedule tasks)
-- [ ] videos are not able to play (BB configuring git)
-- [ ] symbols (e.g. $\alpha$) do not render
-- [ ] formulas in {{}} {{}} also do not render (both in BB on fixed effects)
-- [ ] << katex >> also does not render (BB sample size on webscrapers)
 - [ ] dual code blocks (R and Stata) do not work (BB on synthetic control on impact evaluation)
 - [ ] strings in code blocks do not render (BB on scheduling tasks)
+
+## Issues related to content
+- [ ] The way people use katex is inconsistent which gives problems during rendering. Some people forget to add the $ sign in front and at the end of a variable, which was not really an issue for some reason in Hugo, but in Flask this makes applying these Katex Formulas why harder. We should fix the katex boxes in content and make sure it is used correctly in all content.
+- [ ] Tables currently to complex to parse to html by hardcoding. The most effective way would be to convert them all to html with ChatGPT (tried it, is very easy and quickly done) and add context to the styleguide on how people can add a html table (very easy and logical). Another option would to self design a new structure for a table. We should discuss this with Hannes.
+- [] Some articles have lists without an enter (break) in front of it. The markdown package then cannot convert them to html lists.
+
+
+
+

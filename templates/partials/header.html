@@ -13,7 +13,7 @@
 			<div><a class="navbar-brand" href="/">
 					<img src="{{ url_for('static', filename='img/logo.svg') }}" alt="tilburg science hub logo">
 				</a></div>
-			
+
 			<!-- Mobile Icons for Nav -->
 			<div class="text-right d-block d-xl-none ">
 				<a href="#0" id="mobileSearchIcon">
@@ -46,11 +46,15 @@
 
 								{% for parent_id, parent_data in data_dict['tutorials'].items() %}
 								<div class="col-6 mb-4 px-3">
-									<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{ parent_data['category_data'].title }}</span>
+									<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{
+										parent_data['category_data'].title }}</span>
 									{% for child_id, child_data in parent_data['children_categories'].items() %}
-										{% if child_data['category_data'].parent == parent_id and child_data['category_data'].draft != 'true' %}
-										<a class="d-block mx-0" href="{{ url_for('tutorials') }}/{{ parent_data['category_data'].path }}/{{ child_data['category_data'].path }}/{{ child_data['category_data'].indexpage }}">{{ child_data['category_data'].title }}</a>
-										{% endif %}
+									{% if child_data['category_data'].parent == parent_id and
+									child_data['category_data'].draft != 'true' %}
+									<a class="d-block mx-0"
+										href="{{ url_for('tutorials') }}/{{ parent_data['category_data'].path }}/{{ child_data['category_data'].path }}/{{ child_data['category_data'].indexpage }}">{{
+										child_data['category_data'].title }}</a>
+									{% endif %}
 									{% endfor %}
 								</div>
 								{% endfor %}
@@ -59,7 +63,8 @@
 					</li>
 					<li>
 						<a onBoardTooltip="Building blocks are the DNA of our platform. They offer specific information on various topics, including code snippets and useful cheat sheets."
-							weight="1" href="{{ url_for('buildingblocks') }}" class="headerLink menuArrow">Building Blocks</a>
+							weight="1" href="{{ url_for('buildingblocks') }}" class="headerLink menuArrow">Building
+							Blocks</a>
 						<div class="bg-white text-left w-100 border-top boxShadow subMenu">
 							<div class="row">
 								<div class="col-6 pr-0 h-100 border-right">
@@ -67,39 +72,49 @@
 									<div class="my-4 nav flex-column nav-pills" id="v-pills-tab" role="tablist"
 										aria-orientation="vertical">
 										{% for parent_id, parent_data in data_dict['building-blocks'].items() %}
-											{% if parent_data['category_data'].draft != 'true' %}
-												<a class="nav-link mx-0 px-5 py-3 heading pillx"
-												id="v-pills-home-tab" data-toggle="pill" href="{{ url_for('buildingblocks') }}#{{ parent_data['category_data'].path }}" role="tab"
-												aria-controls="v-pills-home" aria-selected="false">
-												{{ parent_data['category_data'].title }}
-												<span class="icon mini-right float-right"></span>
-												</a>
-											{% endif %}
+										{% if parent_data['category_data'].draft != 'true' %}
+										<a class="nav-link mx-0 px-5 py-3 heading pillx {% if loop.first %}active{% endif %}"
+											id="v-pills-home-tab" data-toggle="pill"
+											href="{{ url_for('buildingblocks') }}#{{ parent_data['category_data'].path }}"
+											role="tab" aria-controls="v-pills-home"
+											aria-selected="{% if loop.first %}true{% else %}false{% endif %}">
+											{{ parent_data['category_data'].title }}
+											<span class="icon mini-right float-right"></span>
+										</a>
+										{% endif %}
 										{% endfor %}
 									</div>
+
+
 
 								</div>
 								<div class="p-5 px-3 col">
 									<div class="tab-content rightMenu" id="v-pills-tabContent">
 
 										{% for parent_id, parent_data in data_dict['building-blocks'].items() %}
-											<div class="tab-pane fade" id="{{ parent_data['category_data'].path }}"
-												role="tabpanel" aria-labelledby="v-pills-home-tab">
-												<div class="row">
-													{% for child_id, child_data in parent_data['children_categories'].items() %}
-														{% if child_data['category_data'].parent == parent_id %}
-														<div class="col-8 mb-4 px-2">
-															<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{ child_data['category_data'].title }}</span>
-															{% for article in child_data['articles'] %}
-																{% if article.parent == child_data['category_data'].id and article.draft != 'true' %}
-																<a class="d-block mx-0" href="{{ url_for('buildingblocks') }}/{{ parent_data['category_data'].path }}/{{ child_data['category_data'].path }}/{{ article.path }}">{{ article.title }}</a>
-																{% endif %}													
-															{% endfor %}
-														</div>
-														{% endif %}
+										<div class="tab-pane fade {% if loop.first %}active show{% endif %}" id="{{ parent_data['category_data'].path }}"
+											role="tabpanel" aria-labelledby="v-pills-home-tab">
+											<div class="row">
+												{% for child_id, child_data in
+												parent_data['children_categories'].items() %}
+												{% if child_data['category_data'].parent == parent_id %}
+												<div class="col-8 mb-4 px-2">
+													<span class="heading d-block mb-3 text-secondary"
+														style="font-size: 16px;">{{ child_data['category_data'].title
+														}}</span>
+													{% for article in child_data['articles'] %}
+													{% if article.parent == child_data['category_data'].id and
+													article.draft != 'true' %}
+													<a class="d-block mx-0"
+														href="{{ url_for('buildingblocks') }}/{{ parent_data['category_data'].path }}/{{ child_data['category_data'].path }}/{{ article.path }}">{{
+														article.title }}</a>
+													{% endif %}
 													{% endfor %}
 												</div>
+												{% endif %}
+												{% endfor %}
 											</div>
+										</div>
 										{% endfor %}
 
 									</div>
@@ -115,7 +130,8 @@
 								{% for example in data_dict['examples'] %}
 								<div class="col-6 mb-4 px-2">
 									{% if example.title %}
-									<a id="exampleMenu" class="heading d-block mb-3 text-secondary" href="{{ url_for('examples') }}/{{ example.path }}">{{ example.title }}</a>
+									<a id="exampleMenu" class="heading d-block mb-3 text-secondary"
+										href="{{ url_for('examples') }}/{{ example.path }}">{{ example.title }}</a>
 									{% endif %}
 								</div>
 								{% endfor %}
@@ -144,34 +160,43 @@
 							onBoardTooltip="Search for topics, tutorials, tips, or tools, and explore our content at a glance."
 							type="search" name="q" placeholder="Search" aria-label="Search" required autocomplete="off">
 						<button style="background-color: transparent; padding: 0;" type="submit"><img
-								src="{{ url_for('static', filename='img/search.svg') }}" aria-label="search button"/></button>
+								src="{{ url_for('static', filename='img/search.svg') }}"
+								aria-label="search button" /></button>
 					</div>
-					<a href="{{ url_for('contribute') }}" style="position: inherit;" class="btn btn-primary my-2 py-2 my-sm-0 px-4 headerLink"
+					<a href="{{ url_for('contribute') }}" style="position: inherit;"
+						class="btn btn-primary my-2 py-2 my-sm-0 px-4 headerLink"
 						onBoardTooltip="Tilburg Science Hub is an open-source platform and welcomes new contributors!">Contribute</a>
-						<div style="margin-left:85%" class="bg-white js text-left w-20 boxShadow subMenu">
-							<div class="row">
-								<div class="col-24 pr-0 h-100 p-5 px-3">
-									<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Contribute to Tilburg Science Hub</span>
-									<a class="d-block mx-0" href="{{ url_for('contribute') }}">What and how to contribute?</a>
-									<a class="d-block mx-0" href="https://github.com/tilburgsciencehub/website/issues/new/choose">Submit a new issue on GitHub</a>
-									<a class="d-block mx-0" href="https://tilburgsciencehub.com/onboarding">View our lab documentation</a>
-									<a class="d-block mx-0" href="https://github.com/orgs/tilburgsciencehub/repositories">Check out our repositories</a>
-								</div>
+					<div style="margin-left:85%" class="bg-white js text-left w-20 boxShadow subMenu">
+						<div class="row">
+							<div class="col-24 pr-0 h-100 p-5 px-3">
+								<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Contribute to
+									Tilburg Science Hub</span>
+								<a class="d-block mx-0" href="{{ url_for('contribute') }}">What and how to
+									contribute?</a>
+								<a class="d-block mx-0"
+									href="https://github.com/tilburgsciencehub/website/issues/new/choose">Submit a new
+									issue on GitHub</a>
+								<a class="d-block mx-0" href="https://tilburgsciencehub.com/onboarding">View our lab
+									documentation</a>
+								<a class="d-block mx-0"
+									href="https://github.com/orgs/tilburgsciencehub/repositories">Check out our
+									repositories</a>
 							</div>
 						</div>
+					</div>
 				</form>
 			</div>
 		</div>
 
 		<!-- Mobile Search menu -->
-		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileSearchMenu"
-			style="z-index: 10; margin-top: -2px;left: 0">
+		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm"
+			id="mobileSearchMenu" style="z-index: 10; margin-top: -2px;left: 0">
 			<div class="form-control mr-sm-2 headerSearchMobile bg-light border-0">
 				<form method="GET" action="/search">
 					<input class="resetInput" type="search" placeholder="Search" name="q" aria-label="Search" required
 						autocomplete="off">
 					<button style="background-color: transparent; padding: 0; float: right;" type="submit"><img
-							src="{{ url_for('static', filename='img/search.svg') }}" alt="search"/></button>
+							src="{{ url_for('static', filename='img/search.svg') }}" alt="search" /></button>
 				</form>
 			</div>
 
@@ -215,7 +240,8 @@
 			<div class="screen-2 d-none">
 				<!-- building blocks -->
 				<div id="mobile-building-blocks" class="d-none">
-					<a href="#0" class="py-3 border-bottom d-block gotoMainMenu"><span class="icon mini-left text-primary"></span>
+					<a href="#0" class="py-3 border-bottom d-block gotoMainMenu"><span
+							class="icon mini-left text-primary"></span>
 						Building Blocks</a>
 				</div>
 
@@ -230,9 +256,10 @@
 					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
 							class="icon mini-left text-primary"></span> About</a>
 					<br>
-					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="{{ url_for('about') }}">About Tilburg Science Hub<span
-						class="icon mini-right float-right"></span> </a>
-					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="{{ url_for('contributors') }}">Contributors<span
+					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="{{ url_for('about') }}">About Tilburg
+						Science Hub<span class="icon mini-right float-right"></span> </a>
+					<a class="nav-link mx-0 py-2 text-dark font-weight-bold"
+						href="{{ url_for('contributors') }}">Contributors<span
 							class="icon mini-right float-right"></span> </a>
 				</div>
 
@@ -242,7 +269,7 @@
 							class="icon mini-left text-primary"></span> Examples</a>
 					<br>
 				</div>
-				
+
 				<!-- Tour -->
 				<div class="mobile-tour d-none" id="mobile-tour">
 					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
@@ -251,9 +278,11 @@
 
 					<div class="mb-4">
 						<a class=" d-block mb-3 text-secondary heading"
-							style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="/tour">For students</a>
+							style="color: #003365!important; font-family: forma-djr-display,sans-serif;"
+							href="/tour">For students</a>
 						<a class=" d-block mb-3 text-secondary heading"
-							style="color: #003365!important; font-family: forma-djr-display,sans-serif;" href="/researcher-tour">For
+							style="color: #003365!important; font-family: forma-djr-display,sans-serif;"
+							href="/researcher-tour">For
 							researchers</a>
 					</div>
 

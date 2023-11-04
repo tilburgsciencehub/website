@@ -64,10 +64,12 @@
 								}}</a></b></div>
 				</div>
 				{% endif %}
-				<div class="d-none d-lg-block">
-					<a href="/edit/master/content/" class="btn btn-secondary">Edit
-						this page</a>
-				</div>
+				<div class="d-flex justify-content-between mt-5 align-items-center">
+                    <div class="d-none d-lg-block">
+                        <a href="https://github.com/tilburgsciencehub/website/issues/new/?template=edit-content-request.yml&title=Suggest+change+to:+{{ current_url }}&labels=edit+content+request"
+                            target="_blank" class="btn btn-secondary">Suggest changes to this page</a>
+                    </div>
+                </div>
 				{% include 'partials/pagination.html' %}
 			</div>
 			{% include 'partials/relatedposts.html' %}

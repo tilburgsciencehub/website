@@ -667,6 +667,9 @@ $(document).ready(function () {
           else {
             descriptionElementBlock.textContent = randomBuildingBlock.description;
           }
+          if (randomBuildingBlock.path.endsWith('/')) {
+            randomBuildingBlock.path = randomBuildingBlock.path.slice(0, -1);
+          }
           linkElementBlock.href = randomBuildingBlock.path;
         } else {
           // If there's no random building block data, hide the container
@@ -685,6 +688,11 @@ $(document).ready(function () {
           iconElement.classList.add('icon', 'link', 'text-primary', 'd-inline-block', 'mr-2');
 
           const linkElement = document.createElement('a');
+
+          if (building_block.path.endsWith('/')) {
+            building_block.path = building_block.path.slice(0, -1);
+          }
+
           linkElement.href = building_block.path;
 
           const title = building_block.title
@@ -716,6 +724,9 @@ $(document).ready(function () {
           else {
             descriptionElement.textContent = randomTutorial.description;
           }
+          if (randomTutorial.path.endsWith('/')) {
+            randomTutorial.path = randomTutorial.path.slice(0, -1);
+          }
           linkElement.href = randomTutorial.path;
         } else {
           // If there's no random tutorial data, hide the container
@@ -734,6 +745,11 @@ $(document).ready(function () {
           iconElement.classList.add('icon', 'link', 'text-primary', 'd-inline-block', 'mr-2');
 
           const linkElement = document.createElement('a');
+
+          if (tutorial.path.endsWith('/')) {
+            tutorial.path = tutorial.path.slice(0, -1);
+          }
+
           linkElement.href = tutorial.path;
 
           const title = tutorial.title;
@@ -783,6 +799,11 @@ $(document).ready(function () {
           ctaElement.textContent = 'Read more';
           ctaElement.style.setProperty('color', 'white', 'important');
           ctaElement.style.setProperty('font-family', 'forma-djr-display', 'important')
+
+          if (item.path.endsWith('/')) {
+            item.path = item.path.slice(0, -1);
+          }
+
           ctaElement.href = item.path;
           ctaElement.classList.add('btn', 'btn-primary', 'my-2', 'my-sm-0', 'px-4');
 
@@ -835,7 +856,13 @@ $(document).ready(function () {
             titleElement.textContent = item.title;
 
             const titleLinkElement = document.createElement('a');
+
+            if (item.path.endsWith('/')) {
+              item.path = item.path.slice(0, -1);
+            }
+            
             titleLinkElement.href = item.path;
+
             titleLinkElement.style.cssText = 'color: inherit !important;';
             titleLinkElement.append(titleElement);
 
