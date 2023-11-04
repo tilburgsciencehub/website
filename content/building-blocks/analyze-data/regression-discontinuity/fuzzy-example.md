@@ -26,7 +26,7 @@ The dataset used by Cattaneo, Idrobo & Titiunik (2023) contains 23,132 observati
 - treatment received $D$: indicator that equals 1 when the student actually receives the treatment 
 - outcome of interest $Y$: indicator that equals 1 if the student enrolled in a higher education institution after receiving the treatment
 
-In the dataset, 66.7% of students are eligible for the treatment, but only 40% actually receive it.
+In the dataset, 66.7\% of students are eligible for the treatment, but only 40\% actually receive it.
 
 ## Fuzzy RD in Practice
 
@@ -54,7 +54,7 @@ _Output_:
 <img src = "../images/fuzzy2.png" width="400">
 </p>
 
-The shown coefficient of 0.625 represents the first-stage effect, which corresponds to the jump seen in the graph above. The effect is highly significant, showing that around 62% of those who are barely eligible to receive subsidy actually receive it. 
+The shown coefficient of 0.625 represents the first-stage effect, which corresponds to the jump seen in the graph above. The effect is highly significant, showing that around 62\% of those who are barely eligible to receive subsidy actually receive it. 
 
 Next we analyze the effect of the ITT on the outcome of attending post-secondary education after becoming eligible ($Y$). For this we use a third-order polynomial fit to avoid overfitting near the boundary. Below is the corresponding plot.
 
@@ -77,11 +77,18 @@ _Output_:
 <img src = "../images/fuzzy4.png" width="400">
 </p>
 
-The output shows that around 27% (0.269) of students whose scores are above the cutoff are more likely to enroll in post-secondary education, jumping from around 50% enrollment below the cutoff to around 77% above the cutoff, as visible in the graph. 
+The output shows that around 27\% (0.269) of students whose scores are above the cutoff are more likely to enroll in post-secondary education, jumping from around 50\% enrollment below the cutoff to around 77\% above the cutoff, as visible in the graph. 
 
-In [Fuzzy RDD](https://tilburgsciencehub.com/building-blocks/analyze-data/regression-discontinuity/fuzzy-rdd/), we defined the formula for the Fuzzy RD parameter: {{<katex>}}\tau_{FRD} = \tau_{Y}/\tau_{D}{{</katex>}}
+In [Fuzzy RDD](/fuzzy/designs), we defined the formula for the Fuzzy RD parameter: {{<katex>}}\tau_{FRD} = \tau_{Y}/\tau_{D}{{</katex>}}
 
-Thus, we can calculate $\tau_{FRD}$ by taking the ratio $0.269/0.625 = 0.4304$. This means that receiving the subsidy results in a 43% increase in the probability of enrolling in post-secondary education for students who are compliers.
+Thus, we can calculate $\tau_{FRD}$ by taking the ratio $0.269/0.625 = 0.4304$. This means that receiving the subsidy results in a 43\% increase in the probability of enrolling in post-secondary education for students who are compliers.
+
+{{% summary %}}
+In this building block, a practical, hands-on example of the Fuzzy RDD methodology is explored. 
+
+In the next [building block](/local/randomization) in the series on regression discontinuity, the local randomization approach is explained, that augments the traditional continuity-based RD design by considering the running variable as quasi-randomized within a specific bandwidth surrounding the cutoff.
+
+{{% /summary %}}
 
 ## See also
 [A Practical Introduction to Regression Discontinuity Designs: Extensions - Cattaneo, Idrobo & Titiunik (2023)](https://rdpackages.github.io/references/Cattaneo-Idrobo-Titiunik_2023_CUP.pdf)

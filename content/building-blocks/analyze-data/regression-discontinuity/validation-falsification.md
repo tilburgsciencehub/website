@@ -3,7 +3,7 @@ title: "Validation and Falsification Analysis for RDD"
 description: "Validation and falsification analysis methods for the RD designs. Explanation of methods, how to implement them for both continuity and local randomization approaches, how to interpret results"
 keywords: "regression, discontinuity, validation, falsification, analysis"
 date: 2023-07-17
-weight: 30
+weight: 7
 author: "Ana Bianca Luca"
 authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
 aliases:
@@ -220,6 +220,11 @@ This table gives an overview of all the tests for validation of the RDD discusse
 | 5. Sensitivity to <BR> Bandwidth Choice | Analyzes the impact <BR> of bandwidth changes <BR> on the results | `rdrobust` | - |
 | 6. Sensitivity to <BR> Window Choice | Examines the effect of <BR> changes in window size <BR> on the results | - | `rdrandinf` |
 
+{{% summary %}}
+
+In this building block we have discussed 6 validation methods, based on various empirical implications of the unobservable RD assumptions that are expected to hold in most cases. These methods were explored within both the standard [continuity-based approach](/continuity/approach) and the extended [local randomization approach](/local/randomization).
+
+{{% /summary %}}
 
 ## See also
 - [A Practical Introduction to Regression Discontinuity Designs: Foundations - Cattaneo, Idrobo & Titiunik (2020)](https://rdpackages.github.io/references/Cattaneo-Idrobo-Titiunik_2020_CUP.pdf)

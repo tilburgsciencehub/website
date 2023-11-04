@@ -13,7 +13,7 @@ aliases:
 
 # Introduction
 
-In this building block, we discuss the local polynomial approach in the context of the [Sharp RD Design](/sharp/designs) for estimating the paramter of interest, $\tau_{SRD}$. 
+In this building block, we discuss the local polynomial approach in the context of the [Sharp RD Design](/sharp/designs) for estimating the parameter of interest, $\tau_{SRD}$. 
 
 To approximate the regression function $\mathbb{E}[Y_{i}|X_{i} = x]$, defined in the building block about [Sharp RD Designs](/sharp/designs), least-squares method is used to fit a polynomial of the observed outcome on the score. If all observations are used for the estimation, the polynomial fits are **global** or **parametric**, however, if only the observations with scores around the cutoff are used, the polynomial fits are **local** or **non-parametric**.  In this building block we discuss the local polynomial approach.
 

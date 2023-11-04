@@ -2,7 +2,7 @@
 title: "Synthetic Control for Impact Evaluation"
 description: "Use Synthetic control to evaluate impacts of quasi-experiments"
 keywords: "model, Synthetic Control, RD, impact evaluation, inference, quasi-experiment, abadie"
-weight: 200
+weight: 9
 date: 2023-10-01T01:00:00+01:00
 draft: false
 aliases:
@@ -14,7 +14,7 @@ aliases:
 
 ## What is Synthetic Control
 
-Synthetic Control is a tool developed by Abadie and Gardeazabal (2003) used widely in applied econometrics and particularly in impact evaluation. Synthetic control is best used in a framework in which we are interested in measuring effects to some outcome in units at an aggregate level, for example countries or states. As opposed to other techniques like [Difference in Difference](https://tilburgsciencehub.com/building-blocks/analyze-data/regressions/impact-evaluation/) that give clear-cut definition of what is a control unit, Synthetic Control uses a data-driven approach to construct a control measure.
+Synthetic Control is a tool developed by Abadie and Gardeazabal (2003) used widely in applied econometrics and particularly in impact evaluation. Synthetic control is best used in a framework in which we are interested in measuring effects to some outcome in units at an aggregate level, for example countries or states. As opposed to other techniques like [Difference in Difference](/impact/evaluation) that give clear-cut definition of what is a control unit, Synthetic Control uses a data-driven approach to construct a control measure.
 
 {{% tip %}}
 Some useful vocabulary:

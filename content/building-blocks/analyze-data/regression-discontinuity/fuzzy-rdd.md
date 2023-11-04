@@ -40,6 +40,7 @@ This is essential to eliminate local selection bias, ensuring that units near th
 {{% tip %}}
 
 Want to learn more about local randomization? Check this [building block](/local/randomization).
+
 {{% /tip %}}
 
 ### Continuity Assumption 
@@ -103,7 +104,13 @@ In a Sharp RDD, the average treatment effect can be estimated for a subpopulatio
 
 The procedure for selecting bandwidth and window selection for the ITT parameters aligns with what is outlined in the [Sharp RDD building block](/sharp/designs). However, when calculating $\tau_{FRD}$, which is a ratio, the question arises whether to use the same bandwidth for both the numerator and the denominator. If the focus is on the ITT effects ($\tau_{Y}$), then it is advisable to have different bandwidths for the denominator and numerator. On the other hand, if the focus is on the ratio $\tau_{FRD}$, then maintaining identical bandwidths enhances the transparency of the analysis. 
 
-## See also
+{{% summary %}}
+ in a Fuzzy RDD, the treatment's probability changes discontinuously at the cutoff but does not jump immediately from zero to one. Therefore in a Fuzzy RDD, the treatment estimated can either be focused on the intention-to-treat (ITT) or on the Local Average Treatment Effect (LATE) requiring the concept of Monotonicity.  
+ 
+ The next [builing block](/practical/example) in the series about Regression Discontuitnity implements the fuzzy design in practice. The fuzzy RDD is used to evaluate the effect of financial aid on post-secondary education attainment.
+ {{% /summary %}} 
+ 
+ ## See also
 - [A Practical Introduction to Regression Discontinuity Designs: Extensions - Cattaneo, Idrobo & Titiunik (2023)](https://rdpackages.github.io/references/Cattaneo-Idrobo-Titiunik_2023_CUP.pdf)
 
 - For visualizations about the differences between Fuzzy RDD and Sharp RD: [Regression discontinuity designs: A guide to practice, Imbens & Lemieux ](https://www.sciencedirect.com/science/article/pii/S0304407607001091)

@@ -13,7 +13,7 @@ aliases:
 
 ## Introduction
 
-In the [last building block](/sharp/designs), we provided an introduction to the Regression Discontuinity Design and specifically the sharp RDD.Now, we will focus on RDD plots. We can visualize a graphical representation of a RDD by illustrating the relationship between the outcome and the running variable. 
+In the [last building block](/sharp/designs), we provided an introduction to the Regression Discontuinity Design and specifically the sharp RDD. Now, we will focus on RDD plots. We can visualize a graphical representation of a RDD by illustrating the relationship between the outcome and the running variable. 
 
 Plotting RD Designs can be done with a scatter plot of the observed outcome against the score, where each point would represent one observation. However, simply plotting the raw data makes it hard to see discontinuities in the relationship between score and outcome. To illustrate this, we use the example described in [Sharp RD Designs](/sharp/designs) of the Meyersson application. The data is available here: [data-link](regdata0.dta).
 
@@ -280,6 +280,8 @@ The resulting number of bins below the cutoff is similar to the MV method with E
 {{% summary %}}
 
 There are more methods for choosing the bins for plotting RD designs, depending on the goal. If the goal is to illustrate the variability of the outcome it is better to use MV bins, but if the goal is to test the global features of the regression function, then IMSE method is better. Regardless of the method for number of bins, it is advised to compare both ES and QS bins to highlight the distributional features of the score.
+
+The next [building block](/continuity/approach) in this series about Regression Discontuinity describes the local polynomial approach in the context of the [Sharp RD Design](/sharp/designs) for estimating the parameter of interest.
 
 {{% /summary %}}
 ## See also
