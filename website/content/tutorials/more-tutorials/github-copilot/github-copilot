@@ -27,10 +27,10 @@ Some of it's features include:
 - Language support: supports multiple programming languages including R, Python, SQL, HTML, JavaScript. In this tutorial we will be focusing on R. 
 
 {{% warning %}}
-Verified students, teachers, and maintainers of popular open source projects on GitHub are eligible to use Copilot for Individuals for free. Otherwise, a paid subscription is needed to use the tool.
-{{% /warning %}}
 
-*Sources: [RStudio GitHub Copilot](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html); [GitHub Copilot](https://docs.github.com/en/copilot/overview-of-github-copilot/about-github-copilot-for-individuals)*
+Verified students, teachers, and maintainers of popular open source projects on GitHub are eligible to use Copilot for Individuals for free. Otherwise, a paid subscription is needed to use the tool.
+
+{{% /warning %}}
 
 ## Set up GitHub and Copilot 
 
@@ -108,6 +108,7 @@ The simpler the instructions the better for your output as Copilot is a new intr
 {{% /tip %}}
 
 {{% codeblock %}}
+
 ```R
 #summary statistics on two variables (e.g. fertility and education)
 mean(swiss$Education)
@@ -123,6 +124,7 @@ plot(swiss$Fertility, swiss$Education)
 A great adavantage of using Copilot in RStudio is data visualization. With a simple request to Copilot, you can change the apperance of your visualization and implement small changes to quickly elevate your graphs. An example is the following code: 
 
 {{% codeblock %}}
+
 ```R
 #create a scatterplot between Fertility and Agriculture using ggplot2
 ggplot(data = swiss, aes(x = Fertility, y = Agriculture)) + geom_point()
@@ -144,6 +146,14 @@ ggplot(data = swiss, aes(x = Fertility, y = Agriculture)) + geom_point(color = "
 
 For your reference, a comparison between the starting and the final scatterplot: 
 
+<p align = "center">
+<img src = "../img/Rplot.png" width="400">
+</p>
+
+<p align = "center">
+<img src = "../img/Rplot01.png" width="400">
+</p>
+
 ### Data manipulation 
 
 In this case, the data manipulation consists of adding the cantons names as the first column instead of having them as indexes. This can be useful in case you want to perform a cluster analysis grouping cantons with similar socio-economic features. 
@@ -152,6 +162,7 @@ In case you do not know how to proceed, you can simply ask Copilot how to do it 
 The following code block represents Copilot's suggestion. 
 
 {{% codeblock %}}
+
 ```R
 #I want to remove the index and add it as a column in the dataset, suggest me a way to do it 
 swiss$Cantones <- rownames(swiss) 
@@ -164,6 +175,7 @@ After running this command, visualize the dataset. Notice that the cantons names
 After some research, one of the possible ways to do this is the following: 
 
 {{% codeblock %}}
+
 ```R
 data("swiss")
 library(tibble)
@@ -172,7 +184,9 @@ swiss <- as_tibble(swiss, rownames = "Cantons")
 {{% /codeblock %}}
 
 {{% tip %}}
+
 Re-load the swiss dataset to work on the original one, othwerwise you would be running the above code on the modified one. 
+
 {{% /tip %}}
 
 This last step was to show that Copilot, as every AI powered tool, is not to be followed blindly as it is constantly learning and hence can cause mistakes or simply not execute what yo have in mind. 
@@ -182,6 +196,7 @@ This last step was to show that Copilot, as every AI powered tool, is not to be 
 A nice feature of Copilot is the possibility to ask questions adn receive a response on the RStudio script. A simple example is the following: 
 
 {{% codeblock %}}
+
 ```R
 #You can also ask questions to Copilot. 
 
@@ -192,17 +207,19 @@ A nice feature of Copilot is the possibility to ask questions adn receive a resp
 {{% /codeblock %}}
 
 {{% tip %}}
+
 To ensure accuracy, ask relatively clear and simple questions. 
+
 {{% /tip %}}
-
-Next steps: 
-
-- add code and small explainations OK
-- add some pictures (remember to add them in a folder in github)
-- add tips OK 
-- add summary, tips and warning if necessary 
 
 
 {{% summary %}}
+This tutorial provides an overview of GitHub Copilot and its application in RStudio for research purposes. 
+It comprises three blocks: 
 
+1. Explaining what GitHub Copilot is, its main features and applications. 
+2. The setup process to enure a smooth start with this new tool in RStudio. 
+3. Demonstrations on how to use Copilot in RStudio. 
 {{% /summary %}}
+
+*Sources: [RStudio GitHub Copilot](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html); [GitHub Copilot](https://docs.github.com/en/copilot/overview-of-github-copilot/about-github-copilot-for-individuals)*
