@@ -16,13 +16,15 @@ This building block provides you with some practical tips for dealing with __lar
 
 Many R users rely on the base R commands `read.csv` or `read.table` to import their datasets as a dataframe. Although this works well for relatively small datasets, we recommend using the `readr` or `data.table` packages instead - simply because it is significantly faster and offers enhanced functionality.
 
-## Advantages of the  `data.table` and `readr` packages
+You can obtain the data for the examples from this [link](http://download.geonames.org/export/zip/GB_full.csv.zip).
 
-Why should you use the `data.table` package or the `readr` package instead of `read.csv`?
+## Advantages of the  `readr` and `data.table` packages
+
+Why should you use the `readr` package or the `data.table` package instead of `read.csv`?
 
 ### 1. Significant speed gains
 
-Both `data.table`'s `fread()` and `readr` `read_csv` functions are significantly faster. Take for example, loading in this specific dataset containing 1809903 rows and 12 columns, both functions are 2 or 3 times faster than the base R `read.csv` function.
+Both  `readr` `read_csv` and `data.table`'s `fread()` andfunctions are significantly faster. Take for example, loading in this specific dataset containing 1809903 rows and 12 columns, both functions are 2 or 3 times faster than the base R `read.csv` function.
 
 {{% codeblock %}}
 ```R
@@ -45,9 +47,20 @@ dim(dt)
 
 ### 2. Quick data wrangling
 
-`data.table` comes shipped with extremely efficient data manipulation (e.g., aggregation, merging) functionality for big datasets! Hence, it usually outperforms other popular tools like `dplyr`. For example: `data.table` has processed the task underneath more than 100x faster than dplyr!
+`Readr` and `Data.table` are coming shipped with efficient data manipulation functionality for large  datasets.
 
-Why is it so fast? Well, it's smart about how it uses your computer's memory. Unlike `dplyr`, which makes a complete new copy of your data during each step, `data.table` just makes a simple reference to the original data. This means it doesn't use up as much memory, making it faster.
+Readr Package:
+- *Selective Loading*: Only required data is loaded, this targeted appraoch speeds up importing.
+- *Automatic Typing*: Columns are auto-specified correctly, avoiding post-load type conversions.
+- *Progressive Processing*: Data is processed while loading, not after, for faster access.
+
+Data.table Package:
+- *In-Place Modification*: Changes data directly without unnecessary copies, enhancing speed.
+- *Keys and Indices*: Setting keys speeds up data searching and sorting.
+- *Multithreading*: Utilizes all CPU cores for parallel processing of tasks.
+- *Minimal Copying*: Reduces memory usage by avoiding redundant data duplication.
+
+The code example below, shows the power of data.table. Which can be 100 times faster!
 
 {{% codeblock %}}
 ```R
@@ -66,11 +79,11 @@ system.time(dt["Variable 2" =="England", mean("Variable 3"), by = "Variable 1"])
 <figcaption> Running time using different packages </figcaption>
 </p>
 
-### 3. Immensely fast saving of data
+### 3. Boost file writing performance
 
 Both `readr` and `data.table` packages are massively quicker when writing files compared to `write.csv()`. 
 
-Just try out the `fwrite()` function in `data.table` package, or the `write_csv` function of `readr`.
+Just try out the `write_csv` function of `readr`, or the `fwrite()` function in `data.table` package.
 
 {{% codeblock %}}
 ```R
@@ -90,7 +103,9 @@ system.time({write_csv(my_df, "readr.csv") }) # readr
 
 <br>
 
-## Using the `readr` package to import a large dataset
+## Practical Examples
+
+### Importing with Readr 
 
 `read_csv()` from the `readr` package offers several advantages over the base R function `read.csv()`:
 - **Integration and Type Detection**: `read_csv()` works well with other tidyverse packages and intelligently determines the data type for each variable.
@@ -126,7 +141,7 @@ write_csv(df, "YOUR_CLEANED_DATASET.csv")
 
 {{% /tip %}}
 
-## Using the `data.table` package to import a large dataset
+### Importing with data.table
 
 Switching from the `read.csv()` function to `fread()` can greatly improve the performance of your program. It is often dubbed the "fast and friendly file finagler," and is highly efficient and straightforward to use in R. 
 
