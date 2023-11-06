@@ -1,11 +1,11 @@
 ---
 title: "Extreme gradient boosting with XGBoost in R"
 description: "Explanation and usage of XGBoost in R"
-keywords: "XGBoost, Extreme Gradient Boosting, Machine Learning, R, decision tree, model "
+keywords: "XGBoost, Extreme Gradient Boosting, Machine Learning, R, decision tree, model, Python "
 draft: false
 weight: 2
-author: "Niels Rahder"
-authorlink: "https://tilburgsciencehub.com/contributors/nielsrahder/" 
+author: "Niels Rahder & Kheiry Sohooli"
+authorlink: "https://tilburgsciencehub.com/contributors/nielsrahder/" & "www.linkedin.com/in/kheiry-sohooli"
 ---
 
 ## Overview
@@ -23,23 +23,23 @@ Step into the world of XGBoost, where you'll learn to build, fine-tune, and inte
 
 ## What is XGBoost?
 
-Extreme gradient boosting is an highly effective and widely used machine learning algorithm developed by [Chen and Guestrin 2016](https://dl.acm.org/doi/10.1145/2939672.2939785). The algorithm works by iteratively building a collection of decision trees, where newer trees are used to correct the errors made by previous trees (think of it as taking small steps in order to come closer to the "ultimate truth"). Additionally, the algorithm also makes use of regularization (penalizing complexity of individual trees, and the total number of trees in the collection) to prevent overfitting. 
+Extreme gradient boosting is an highly effective and widely used machine learning algorithm developed by [Chen and Guestrin 2016](https://dl.acm.org/doi/10.1145/2939672.2939785). The algorithm works by iteratively building a collection of decision trees, where newer trees are used to correct the errors made by previous trees (think of it as taking small steps in order to come closer to the "ultimate truth"). Additionally, the algorithm use L1 (Lasso regression) and L2 (Ridge regression) regularization terms in its cost function, and a penalizing term to prevent overfitting and complexity of the model.
 
-This method has proven to be effective in working with large and complex datasets, and is used to address a wide range of problems (both classification and regression) (for example, at the KDDCup in 2015, XGBoost was used by every team ranked in the top 10!).
+This method has proven to be effective in working with large and complex datasets. Also it is famous to handle sparse datasets. XGBoost provides a parallel tree boosting that solve many data science problems such as classification, regression, and recommendation in a fast and accurate way (for example, at the KDDCup in 2015, XGBoost was used by every team ranked in the top 10!).
 
 ### How does XGBoost work?
 
-The algorithm starts by calculating the residual values for each data point based on an initial estimate. For instance, given the variables `age` and `degree`, we compute the residual values relative to `salary`, for which the value `49` will serve as our initial estimation:
+The algorithm starts by calculating the residual values for each data point based on an initial estimate. For instance, given the variables `age` and `degree`, we compute the residual values relative to `salary`(target variable), for which the value `49` will serve as our initial estimation:
 
 
   
-  | **Salary** | **age** | **degree** | **Residual** |
-  | ---------- | ------- | --------- | -----------   |
-  |     40    |     20   |    yes    |     -9      | 
-  |     46     |    28   |    yes    |    -3       |
-  |     50     |    31   |    no     |     1       | 
-  |     54     |   34    |    yes    |     5       |
-  |     61     |   38    |    no     |     12      |
+ | **age** | **degree** |**Salary** | **Residual** |
+ | ------- | --------- | -----------| ------------
+ |     20  |    yes    |    40      |  -9          |
+ |    28   |    yes    |    46      |  -3          |
+ |    31   |    no     |    50      |   1          | 
+ |   34    |    yes    |    54      |  5           |
+ |   38    |    no     |    61      |  12          |
   
 
 Next, the algorithm calculates the similarity score for the entire tree and the individual splits, especially focusing on an arbitrarily chosen mean value of 24 (the mean between the first two age values) using the following formula:  
@@ -78,7 +78,7 @@ Next, the algorithm calculates the similarity score for the entire tree and the 
 <br>
 
 {{% warning %}}
-λ is a regularization parameter which is used to prune the tree. For now, we set it to the default value of 1
+λ is a regularization parameter which is used to prune the tree.In practice, the optimal value for λ is best determined through cross-validation or a similar technique where various values of the parameter are tested to see which gives the best performance on a validation set. For now, we set it to the default value of 1.
 {{% /warning %}}
 
 Following the calculation of the individual similarity scores, the gain is calculated as:
@@ -138,7 +138,7 @@ Which is a higher value than that of the split based on our initial values, and 
 <img src = "../img/tree_structure.png" width="400">
 </p>
 
-The ouput value for each datapoint is then calculated via the following formula: 
+The ouput value for each data point is then calculated via the following formula: 
 
 <div style="text-align: center;">
 {{<katex>}}
@@ -221,7 +221,7 @@ data <- data %>%
 {{% /codeblock %}}
 
 {{% warning %}}
-Because XGBoost only works with numeric vectors, so you need to one-hot encode you data.
+Because XGBoost only works with numeric vectors, so you need to convert the categorical values into numerical ones using one-hot encoding or any other approaches.
 {{%/ warning %}}
 
 Luckily, this is straightforward to do using the `dplyr` package. One-hot encoding is a process that transforms categorical data into a format that machine learning algorithms can understand. In the code below each category value in a column is transformed into its own column where the presence of the category is marked with a 1, and its absence is marked with a 0.
@@ -401,7 +401,7 @@ indicating the following:
 - a new split in a tree node was required to have a minimum sum of instance weights of 1, as indicated by `min_child_weight`
 - the full `subsample` was used
 
-## Assessment
+### Assessment
 
 for the full set of combinations the command below can be used. This will also return all other indicators like RMSE, R2, MAE, R2SD, MAESD. 
 {{% codeblock %}}
@@ -429,7 +429,7 @@ Which results in the following graph, from which it can be see that `kitchen_are
 </p>
 
 
-## Visualization
+### Visualization
 
 In order to visualize the created tree (using the hyperparameters found in the grid search), let's run the next line of code:
 {{% codeblock %}}
@@ -444,18 +444,168 @@ xgb.plot.multi.trees(feature_names = names(data),
 <img src = "../img/tree_plot.png" width="400">
 </p>
 
+## Using XGBoost in Python 
+
+To use XGBoost for classification or regression tasks in Python, you'll need to install and import the `xgboost` package. 
+
+
+{{% codeblock %}}
+
+```Python
+# install XGBoost 
+pip install xgboost 
+
+# import XGBoost
+import xgboost as xgb
+```
+{{% /codeblock %}}
+
+You can load Diamond dataset from Seaborn package to implement XGBoost with the following codes:
+
+{{% codeblock %}}
+
+```Python
+# import Seaborn 
+import seaborn as sns
+
+# loading dataset
+diamonds = sns.load_dataset("diamonds")
+```
+{{% /codeblock %}}
+
+After loading and inspecting your data, you should define your X and y variables. In this case, for example, if you're predicting the price of a diamond based on its various characteristics, you would set "price" as your y variable and the diamond's characteristics as your predictors (X).
+
+{{% codeblock %}}
+
+```Python
+# selecting all column except 'price' as predictors
+X= diamonds.loc[:, diamonds.columns != 'price']
+
+# specify 'price' column to 'y'
+y = diamonds[['price']]
+```
+{{% /codeblock %}}
+
+Now, let's divide the data into training and testing sets using the `sklearn.model_selection` module and then check the shape of the data.
+
+{{% codeblock %}}
+
+```Python
+# importing train_test_split 
+from sklearn.model_selection import train_test_split
+# split data
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
+
+# check the shapes
+import os 
+print('X-train shape:',X_train.shape,
+     'X-test shape:' , X_test.shape,
+     'y_train shape:' ,y_train.shape,
+     'y_test shape:' ,y_test.shape,sep=os.linesep )
+```
+{{% /codeblock %}}
+
+Before training the dataset using the XGBoost algorithm, we need to complete two essential steps: storing the dataset in a `DMatrix` and setting the algorithm's parameters. 
+XGBoost uses the `DMatrix` class to efficiently store the dataset, enabling you to run XGBoost optimally.
+
+{{% codeblock %}}
+
+```Python
+# import xgboost package
+import xgboost as xgb
+
+# train train and test data which automaticaly create regression matrices
+train = xgb.DMatrix(X_train, y_train, enable_categorical=True)
+test= xgb.DMatrix(X_test, y_test, enable_categorical=True)
+```
+{{% /codeblock %}}
+
+{{% tip %}}
+You can also import XGBoost from Scikit-learn but native API of XGBoost has more capabilities.
+{{% /tip %}}
+
+Use dictionary or list of tuples to specify both `Booster parameters` and `evaluation parameter`. 
+
+{{% codeblock %}}
+
+```Python
+# Define Parameters
+param = {"objective": "reg:squarederror"}
+
+# set evaluation 
+evallist = [(train, 'train'), (test, 'eval')]
+```
+{{% /codeblock %}}
+ 
+You also need to decide on the number of boosting rounds, which determines how many rounds the XGBoost algorithm will use to minimize the loss function. For now, let's set it to 10, but it's important to note that this is one of the parameters that should be tuned.
+
+{{% codeblock %}}
+
+```Python
+# train the model 
+num_round = 10
+model = xgb.train(param, train, num_round, evallist)
+```
+{{% /codeblock %}}
+
+The output displays the model's performance (RMSE) on both the training and validation sets. As mentioned earlier, the number of boosting rounds is a crucial tuning parameter. In fact, more rounds mean more attempts to minimize the loss. However, it's important to be careful to prevent overfitting. Sometimes, the model may stop improving after a certain number of rounds. To address this, you can use the following code. We increase the number of rounds to 1000 and introduce the `early_stopping_rounds` parameter to the code above. This ensures that training stops after 50 rounds if there is no improvement in the results. 
+
+{{% codeblock %}}
+
+```Python
+# increase number of boosting rounds 
+num_round = 1000
+model = xgb.train(param, train, num_round, evallist,
+   # enabeling early stopping
+   early_stopping_rounds=50)
+```
+{{% /codeblock %}}
+
+### Visualization in python 
+
+Use the following code to visualize the feature importance when using the XGBoost algorithm to predict the outcome variable. Furthermore, you can also see the trees that have been created.
+
+{{% codeblock %}}
+
+```Python
+import matplotlib.pyplot as plt 
+# visualize the importance of predictors
+xgb.plot_importance(model)
+```
+{{% /codeblock %}}
+
+To visualize the trees:
+
+{{% codeblock %}}
+
+```Python
+
+xgb.plot_tree(model)
+plt.show()
+```
+{{% /codeblock %}}
+
+{{% tip %}}
+Note that to visualize the trees you need `graphviz`.
+{{% /tip %}}
+
 {{% summary %}}
 
 - **Understanding XGBoost:**
   - Dive into the mechanics of XGBoost's functionality.
   - Explore its application within the `R`.
 
-- **Setting Up and Tuning the Algorithm:**
+- **Setting Up and Tuning the Algorithm in R:**
   - Define and understand the hyperparameters.
   - Employ a systematic grid search for optimal model performance.
 
-- **Interpreting and Visualizing Outcomes:**
+- **Interpreting and Visualizing Outcomes in R:**
   - Analyze model results for meaningful insights.
   - Visualize your algorithm's efficacy and decision process.
+  
+- **Implementing of XGBoost in Python:**
+  - Training the model and evaluation 
+  - visualization of important features and created tree by XGBoost 
+
 
 {{% /summary %}}
