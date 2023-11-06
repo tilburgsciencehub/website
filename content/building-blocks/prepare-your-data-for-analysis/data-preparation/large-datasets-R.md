@@ -11,16 +11,18 @@ aliases:
 ---
 
 ## Overview
-Many R-users rely on the base R `read.csv` command or the `read.table` package to import their datasets as a dataframe. Although this works well for relatively small datasets, we recommend using the `data.table` package or the `readr` package instead because it is significantly faster.  
-This building block provides you with some practical tips for dealing with large datasets in R.
 
-### Advantages of the  `data.table` package and the `readr` package
+This building block provides you with some practical tips for dealing with __large datasets in R__.
 
-Why should you use the `data.table` package or the `readr` package instead of `read.csv`:
+Many R users rely on the base R commands `read.csv` or `read.table` to import their datasets as a dataframe. Although this works well for relatively small datasets, we recommend using the `readr` or `data.table` packages instead - simply because it is significantly faster and offers enhanced functionality.
 
-1 **Both `data.table`'s `fread()` and `readr` `read_csv` functions are significantly faster.**
+## Advantages of the  `data.table` and `readr` packages
 
-Take for example, loading in this specific dataset containing 1809903 rows and 12 columns, both functions are 2 or 3 times faster than the base R `read.csv` function.
+Why should you use the `data.table` package or the `readr` package instead of `read.csv`?
+
+### 1. Significant speed gains
+
+Both `data.table`'s `fread()` and `readr` `read_csv` functions are significantly faster. Take for example, loading in this specific dataset containing 1809903 rows and 12 columns, both functions are 2 or 3 times faster than the base R `read.csv` function.
 
 {{% codeblock %}}
 ```R
@@ -41,14 +43,11 @@ dim(dt)
 </p>
 
 
+### 2. Quick data wrangling
 
-2 **Using `data.table` makes data manipulation with big datasets much quicker than using other popular tools like `dplyr`.**
-
-As easy as the `dplyr` package is, the `data.table` package provides enough room for tasks such as aggregating, filtering, merging, grouping and other related tasks.  
-For example: `data.table` has processed the task underneath more than 100x faster than dplyr!
+`data.table` comes shipped with extremely efficient data manipulation (e.g., aggregation, merging) functionality for big datasets! Hence, it usually outperforms other popular tools like `dplyr`. For example: `data.table` has processed the task underneath more than 100x faster than dplyr!
 
 Why is it so fast? Well, it's smart about how it uses your computer's memory. Unlike `dplyr`, which makes a complete new copy of your data during each step, `data.table` just makes a simple reference to the original data. This means it doesn't use up as much memory, making it faster.
-
 
 {{% codeblock %}}
 ```R
@@ -67,9 +66,11 @@ system.time(dt["Variable 2" =="England", mean("Variable 3"), by = "Variable 1"])
 <figcaption> Running time using different packages </figcaption>
 </p>
 
-3 **Both `readr` and `data.table` packages are massively quicker when writing files compared to `write.csv()`.**
-  
-The `fwrite()` function in `data.table` is perfectly suited as well as the `write_csv` function of `readr`.
+### 3. Immensely fast saving of data
+
+Both `readr` and `data.table` packages are massively quicker when writing files compared to `write.csv()`. 
+
+Just try out the `fwrite()` function in `data.table` package, or the `write_csv` function of `readr`.
 
 {{% codeblock %}}
 ```R
@@ -90,6 +91,7 @@ system.time({write_csv(my_df, "readr.csv") }) # readr
 <br>
 
 ## Using the `readr` package to import a large dataset
+
 `read_csv()` from the `readr` package offers several advantages over the base R function `read.csv()`:
 - **Integration and Type Detection**: `read_csv()` works well with other tidyverse packages and intelligently determines the data type for each variable.
 - **Tibble Output**: Unlike `read.csv()`, which produces a data.frame, `read_csv()` outputs a tibble. Tibbles offer enhanced functionality and behave more consistently when subsetting.
