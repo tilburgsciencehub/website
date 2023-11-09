@@ -1,8 +1,8 @@
 ---
-tutorialtitle: "Giude to GitHub Copilot in RStudio"
+tutorialtitle: "Guide to GitHub Copilot in RStudio"
 type: "guide-to-github-copilot-in-rstudio"
-title: "Giude to GitHub Copilot in RStudio"
-description: "Learnign what GitHub Copilot is, how and why it can be used"
+title: "Guide to GitHub Copilot in RStudio"
+description: "Learning what GitHub Copilot is, how and why it can be used"
 keywords: "setup, RStudio, R, GitHub, GitHub Copilot, AI"
 weight: 1
 draft: false
@@ -185,7 +185,7 @@ swiss <- as_tibble(swiss, rownames = "Cantons")
 
 {{% tip %}}
 
-Re-load the swiss dataset to work on the original one, othwerwise you would be running the above code on the modified one. 
+Re-load the swiss dataset to work on the original version, othwerwise you would be running the above code on the modified one. 
 
 {{% /tip %}}
 
