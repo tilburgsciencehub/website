@@ -4,10 +4,28 @@ from bs4 import BeautifulSoup
 import nltk
 from nltk.corpus import stopwords
 from flask import request
+import math
 
 nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 
+# Get reading time estimate
+def calculate_reading_time(content):
+    
+    if (content != None):
+        words = content.split()
+
+        # Calculate the reading time (in minutes) assuming 200 words per minute
+        reading_time = len(words) / 200
+
+        # Round up the reading time to the nearest whole minute
+        reading_time = math.ceil(reading_time)
+
+        return reading_time
+    
+    else:
+
+        return 0
 
 def urlize(text):
     # Remove leading and trailing whitespace
@@ -148,6 +166,22 @@ def build_data_dict(categories, articles,):
         # Add the parent category dictionary to the data_dict
         tutorials[parent_category.id] = parent_category_dict
 
+    # Voeg de reading_time toe aan elk artikel in building-blocks
+    for parent_category_id, parent_category_data in building_blocks.items():
+        for child_category_id, child_category_data in parent_category_data['children_categories'].items():
+            for article in child_category_data['articles']:
+                article.reading_time = calculate_reading_time(article.content)
+
+    # Voeg de reading_time toe aan elk artikel in tutorials
+    for parent_category_id, parent_category_data in tutorials.items():
+        for child_category_id, child_category_data in parent_category_data['children_categories'].items():
+            for article in child_category_data['articles']:
+                article.reading_time = calculate_reading_time(article.content)
+
+    # Voeg de reading_time toe aan elk artikel in examples
+    for article in articles_examples:
+        article.reading_time = calculate_reading_time(article.content)
+
     # Add to dict
     data_dict['building-blocks'] = building_blocks
     data_dict['tutorials'] = tutorials
@@ -247,3 +281,4 @@ def find_related_articles(keywords, articles, categories, id):
             top_article.url = url
 
     return top_related_articles
+

@@ -1,0 +1,240 @@
+<style>
+    #consent-notice {
+        padding: 1rem 1rem;
+        display: none;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: calc(100%);
+        background: #3F5E7E;
+        color: rgba(255, 255, 255, 0.8);
+        z-index: 999
+    }
+
+    #consent-notice span {
+        margin-right: 1rem;
+    }
+
+    #consent-notice button {
+        cursor: pointer;
+        display: inline-block;
+        width: auto;
+    }
+
+    #consent-notice span a {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: rgba(255, 255, 255, 0.5);
+    }
+
+    #consent-notice button.btn {
+        margin-left: 0.5rem;
+    }
+
+    #consent-overlay {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        display: none;
+        background: rgba(0, 0, 0, 0.75);
+        z-index: 999999;
+        overflow: auto;
+        cursor: pointer;
+    }
+
+    #consent-overlay.active {
+        display: flex;
+    }
+
+    #consent-overlay>div {
+        background: white;
+        width: 100%;
+        max-width: 30rem;
+        padding: 1.75rem;
+        margin: auto;
+        cursor: initial;
+    }
+
+    #consent-overlay>div>div {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    #consent-overlay>div>div:last-child {
+        margin: 0;
+    }
+
+    #consent-overlay h3 {
+        padding-top: 0;
+    }
+
+    #consent-overlay input {
+        margin-top: 0.3rem;
+    }
+
+    #consent-overlay label {
+        display: block;
+    }
+
+    #consent-overlay .btn {
+        margin-right: 0.5rem;
+    }
+
+    @media (max-width: 767px) {
+        #consent-overlay>div {
+            padding: 1.75rem 1rem;
+        }
+
+        #consent-notice span {
+            display: block;
+            padding-top: 3px;
+            margin-bottom: 1.5rem;
+        }
+
+        #consent-notice button.btn {
+            position: relative;
+            bottom: 4px;
+        }
+    }
+</style>
+<div id="consent-notice"><span>We would like to use <a class="manage-consent" href="#manage-consent">third party
+            code</a> to improve the functionality of this website.</span>
+    <div style="display: inline;"><button class="btn btn-primary deny-consent">Deny</button><button
+            class="btn btn-primary approve-consent">Allow</button>
+        <button class="btn btn-secondary manage-consent">Manage preferences</button>
+    </div>
+</div>
+<div id="consent-overlay" class="consent-overlay">
+    <div>
+        <div class="d-block">
+            <div class="d-flex align-items-center">
+                <input class="mr-3" type="checkbox" id="analytics" value="1" name="analytics" />
+                <h4 class="mb-0" style="font-weight: 700;font-size: 18px;">Analytics</h4>
+            </div>
+            <div>
+                <p class="text-secondary" style="font-weight: 200;">Analytics Content</p>
+            </div>
+        </div>
+        <div class="d-block">
+            <div class="d-flex align-items-center">
+                <input class="mr-3" type="checkbox" id="personalized" value="1" name="personalized" />
+                <h4 class="mb-0" style="font-weight: 700;font-size: 18px;">Personalized Cookies</h4>
+            </div>
+            <div>
+                <p class="text-secondary" style="font-weight: 200;">Full content</p>
+            </div>
+        </div>
+        <div>
+            <p>Want to know more? Check our <a href="/disclaimer">Disclaimer</a>.</p>
+        </div>
+        <div>
+            <button id="save-consent" class="btn btn-primary save-consent">Save preferences</button>
+            <button class="btn btn-secondary approve-consent-preferences">Allow all</button>
+        </div>
+    </div>
+</div>
+<script>
+    function addScript(src) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = src;
+        // (document.head.appendChild(script);) ALLEEN AANZETTEN WANNEER ONLINE!
+    }
+
+    // JavaScript voor cookiebeheer
+    document.addEventListener('DOMContentLoaded', function () {
+        const consentNotice = document.getElementById('consent-notice');
+        const denyConsentButton = document.querySelector('.deny-consent');
+        const approveConsentButton = document.querySelector('.approve-consent');
+        const approveConsentButtonPref = document.querySelector('.approve-consent-preferences');
+        const manageConsentButton = document.querySelector('.manage-consent');
+        const consentOverlay = document.querySelector('.consent-overlay');
+        const saveConsentButton = document.getElementById('save-consent');
+
+        // Controleer of de gebruiker de banner eerder heeft gesloten of cookies heeft geaccepteerd
+        const cookiesAccepted = localStorage.getItem('tshCookies');
+        if (cookiesAccepted === 'false' || cookiesAccepted === 'true' || cookiesAccepted === 'analytics') {
+            consentNotice.style.display = 'none';
+            if (cookiesAccepted === 'true') {
+                // Add Scripts
+                addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
+                addScript('https://www.google-analytics.com/analytics.js');
+                addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
+            }
+        } else {
+            consentNotice.style.display = 'block';
+        }
+
+        denyConsentButton.addEventListener('click', function () {
+            // Local Cookie
+            localStorage.setItem('tshCookies', 'false');
+            consentNotice.style.display = 'none';
+        });
+
+        approveConsentButton.addEventListener('click', function () {
+            // Local Cookie
+            localStorage.setItem('tshCookies', 'true');
+            consentNotice.style.display = 'none';
+
+            // Add Scripts
+            addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
+            addScript('https://www.google-analytics.com/analytics.js');
+            addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
+        });
+
+        approveConsentButtonPref.addEventListener('click', function () {
+            // Local Cookie
+            localStorage.setItem('tshCookies', 'true');
+            document.getElementById('consent-overlay').classList.toggle('active');
+            document.getElementById('consent-notice').classList.remove('active');
+            consentNotice.style.display = 'none';
+
+            // Add Scripts
+            addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
+            addScript('https://www.google-analytics.com/analytics.js');
+            addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
+        });
+
+        var elements = document.querySelectorAll('.manage-consent');
+        elements.forEach(function (el) {
+            el.addEventListener("click", function () {
+                document.getElementById('consent-overlay').classList.toggle('active');
+            });
+        });
+
+        saveConsentButton.addEventListener('click', function () {
+            // Verwerk de voorkeuren van de gebruiker en sla deze op
+            const analyticsCheckbox = document.getElementById('analytics');
+            const personalizedCheckbox = document.getElementById('personalized');
+
+            if (analyticsCheckbox.checked && !personalizedCheckbox.checked) {
+                localStorage.setItem('tshCookies', 'analytics');
+                console.log('Analytics')
+            }
+            else if (!analyticsCheckbox.checked && !personalizedCheckbox.checked) {
+                localStorage.setItem('tshCookies', 'false');
+                console.log('False')
+            }
+            else if (!analyticsCheckbox.checked && personalizedCheckbox.checked) {
+                localStorage.setItem('tshCookies', 'true');
+                console.log('True')
+            }
+            else if (analyticsCheckbox.checked && personalizedCheckbox.checked) {
+                localStorage.setItem('tshCookies', 'true');
+                console.log('True')
+            }
+            else {
+                localStorage.setItem('tshCookies', 'false');
+                console.log('False')
+            }
+
+            document.getElementById('consent-overlay').classList.toggle('active');
+            document.getElementById('consent-notice').classList.remove('active');
+            consentNotice.style.display = 'none';
+        });
+    });
+</script>

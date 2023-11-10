@@ -15,39 +15,54 @@ def convert_code_blocks_to_html(md_content):
     # Vervang de codeblokken door hun HTML-equivalenten
     def replace_codeblock(match):
         code_content = match.group(1).strip()
-        language_match = re.search(r'```(\w+)', code_content)
-    
-        if language_match:
-            language = language_match.group(1)
-            code_content = re.sub(r'```(\w+)', '', code_content)
-            code_content = re.sub(r'```', '', code_content)
-        else:
-            language = 'plaintext'
-            code_content = re.sub(r'```', '', code_content)
+        language_matches = re.finditer(r'```(\w+)(.*?)```', code_content, re.DOTALL)
+        code_blocks = []
 
-        code_content = code_content.strip().strip()
-        code_content = f'<pre><code class="language-{language}">\n{code_content}\n</code></pre>'
-        
+        tab_nav = []  # Lijst om tabbladnavigatie bij te houden
+
+        for idx, language_match in enumerate(language_matches):
+            language = language_match.group(1)
+            code = language_match.group(2).strip()
+            code = re.sub(r'```', '', code)
+            
+            # Bepaal of dit het eerste codeblok is
+            is_first_codeblock = idx == 0
+            
+            active_class = ' active' if is_first_codeblock else ''
+            highlight_class = 'highlight active' if is_first_codeblock else 'highlight inactive'
+            
+            code_blocks.append(f'<div class="{highlight_class}" data-language="{language}">\n'
+                            f'<pre><code class="language-{language}">\n{code}\n</code></pre>\n'
+                            f'</div>\n')
+
+            # Voeg een tabblad toe voor elke taal
+            tab_nav.append(f'<li class="nav-item" role="presentation">'
+                        f'<a class="nav-link nav-language{active_class}" aria-selected="true" data-language="{language}">{language}</a>'
+                        f'</li>')
+
+        code_content = ''.join(code_blocks)
+
+        # Genereer de tabbladnavigatie
+        tab_nav_html = f'<ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">\n' \
+                       f'    {" ".join(tab_nav)}\n' \
+                       f'</ul>'
+
         return f'<div class="codeblock">\n' \
-            f'    <div class="float-right">\n' \
-            f'        <a class="downloadCodeBtn" href="#0" style="margin-right: 20px;">' \
-            f'           <img src="/img/download.svg"></a>\n' \
+            f'<div class="d-flex justify-content-between">\n' \
+            f'    {tab_nav_html}\n' \
+            f'    <div class="float-right d-flex align-items-center">\n' \
             f'        <a class="copyCodeBtn" href="#0"><img src="/img/copy-code.svg"></a>\n' \
             f'    </div>\n' \
-            f'    <div class="inner d-none">\n' \
-            f'        <div class="highlight">\n' \
-            f'            {code_content}\n' \
-            f'        </div>\n' \
-            f'    </div>\n' \
-            f'    <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">\n' \
-            f'    </ul>\n' \
-            f'    <div class="tab-content" id="pills-tabContent">\n' \
+            f'</div>\n' \
+            f'    <div class="inner">\n' \
+            f'        {code_content}\n' \
             f'    </div>\n' \
             f'</div>'
 
     md_content = codeblock_pattern.sub(replace_codeblock, md_content)
 
     return md_content
+
 
 def convert_tips_to_html(md_content):
     # Definieer een reguliere expressie om de Markdown voorbeeldblokken te matchen
@@ -203,6 +218,20 @@ def convert_katex_shortcode_to_html(input_text):
 
     return html_output
 
+def convert_fallback_block_to_html(md_content):
+    # Definieer een reguliere expressie om Markdown-codeblokken te matchen
+    code_block_pattern = re.compile(r'```(.*?)```', re.DOTALL)
+
+    # Vervang de Markdown-codeblokken door de juiste HTML-opmaak
+    def replace_code_blocks(match):
+        code_content = match.group(1).strip()
+        return f'<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{code_content}</code></pre></div>'
+
+    # Gebruik de reguliere expressie om de Markdown-codeblokken te vervangen
+    html_output = code_block_pattern.sub(replace_code_blocks, md_content)
+
+    return html_output
+
 # Extra HTML Functions
 def convert_md_titles_to_html(md_content):
     def replace_title_h1(match):
@@ -306,6 +335,7 @@ def htmlize(md_file_content):
         convert_cta_center_shortcode_to_html,
         convert_example_shortcode_to_html,
         convert_youtube_shortcode_to_html,
+        convert_fallback_block_to_html,
         convert_md_to_html,
         replace_links,
         convert_katex_shortcode_to_html,

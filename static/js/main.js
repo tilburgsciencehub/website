@@ -53,77 +53,6 @@ $(document).ready(function () {
     var height = $(".sticky-top").height();
   }
 
-  // working on codeblock
-  let codeblocks = $(".codeblock");
-  $(`.codeblock .downloadCodeBtn`).hide();
-  for (x = 0; x < codeblocks.length; x++) {
-    let blocks = $(`.codeblock:eq(${x}) .inner .highlight`);
-    let d = 0;
-    blocks.map((block) => {
-      let title = "";
-      let desc = blocks[block];
-      if (
-        blocks[block].children[0].children[0].className.replace(
-          "language-",
-          ""
-        ) == "fallback"
-      ) {
-        title =
-          blocks[block].children[0].children[0].innerHTML.match(/\-(.*?)\-/)[1];
-
-        if (title) {
-          desc = blocks[block].children[0].children[0].innerHTML.replace(
-            /\-(.*?)\-/g,
-            ""
-          );
-          blocks[block].children[0].children[0].innerHTML = desc;
-        }
-      } else {
-        title = blocks[block].children[0].children[0].className.replace(
-          "language-",
-          ""
-        );
-      }
-
-      $(`.codeblock:eq(${x}) .nav`).append(`
-        <li class="nav-item" role="presentation">
-          <a class="nav-link ${block == 0 ? "active" : ""}" id="pills-${blocks[block].children[0].children[0].className
-        }-tab-${x}-${d}" data-toggle="tab" href="#${blocks[block].children[0].children[0].className
-        }-${x}-${d}" role="tab" aria-controls="pills-${blocks[block].children[0].children[0].className
-        }" aria-selected="true">${title}</a>
-        </li>
-      `);
-
-      $(`.codeblock:eq(${x}) .tab-content`).append(`
-        <div class="tab-pane ${block == 0 ? "fade show active" : ""}" id="${blocks[block].children[0].children[0].className
-        }-${x}-${d}" role="tabpanel" aria-labelledby="pills-${blocks[block].children[0].children[0].className
-        }-tab">
-        </div>
-      `);
-
-      $(
-        `.codeblock:eq(${x}) #${blocks[block].children[0].children[0].className}-${x}-${d}`
-      ).append(blocks[block]);
-
-      d++;
-
-      var el = $(
-        `.codeblock:eq(${x}) a:contains('${blocks[
-          block
-        ].children[0].children[0].className.replace("language-", "")}-link')`
-      );
-
-      if (el.length) {
-        if ($(`.codeblock:eq(${x}) .downloadCodeBtn`).is(":hidden")) {
-          $(`.codeblock:eq(${x}) .downloadCodeBtn`).show();
-        }
-      }
-
-      $(`.codeblock:eq(${x}) .copyCodeBtn`).attr("data-index", x);
-      $(`.codeblock:eq(${x}) .downloadCodeBtn`).attr("data-index", x);
-    });
-  }
-
   $(".share-button.copyURL").on("click", function () {
     let url = $(this).attr("data-url");
     var $temp = $('<textarea id="toCopy"></textarea>');
@@ -136,43 +65,67 @@ $(document).ready(function () {
 
   // make code copy-able
   $(".copyCodeBtn").on("click", function () {
-    var $temp = $('<textarea id="toCopy"></textarea>');
-    $("body").append($temp);
-    $temp
-      .val(
-        $(
-          `.codeblock:eq(${$(this).attr("data-index")}) .tab-pane.active code`
-        ).text()
-      )
-      .select();
+    // Zoek het <code> element binnen dezelfde "codeblock" div als de copy-knop
+    const codeElement = $(this).closest(".codeblock").find(".highlight.active code");
 
-    document.execCommand("copy");
-    $temp.remove();
-  });
+    // Controleer of het codeElement bestaat
+    if (codeElement.length > 0) {
+      // Maak een nieuw textarea-element om de tekst te kopiëren
+      const textarea = document.createElement('textarea');
+      textarea.value = codeElement.text();
+      document.body.appendChild(textarea);
 
-  $(".downloadCodeBtn").on("click", function () {
-    var $currentlanguage = $(
-      `.codeblock:eq(${$(this).attr("data-index")}) .nav-link.active`
-    ).html();
-    var el = $(
-      `.codeblock:eq(${$(this).attr(
-        "data-index"
-      )}) a:contains('${$currentlanguage}-link')`
-    );
-    var link = el.attr("href");
+      // Selecteer de inhoud van het textarea-element
+      textarea.select();
+      textarea.setSelectionRange(0, 99999); // Voor mobiele apparaten
 
-    window.location.href = "../" + link;
-  });
+      // Probeer de tekst te kopiëren naar het klembord
+      document.execCommand('copy');
 
-  $(".codeblock .nav-link").on("click", function () {
-    var $currentlanguage = $(this).html();
-    var el = $(`.codeblock a:contains('${$currentlanguage}-link')`);
+      // Verwijder het textarea-element
+      document.body.removeChild(textarea);
 
-    if (!el.length) {
-      $(".downloadCodeBtn").hide();
-    } else {
-      $(".downloadCodeBtn").show();
+      // Geef aan de gebruiker terug dat de tekst is gekopieerd (optioneel)
+      alert('Code is gekopieerd naar het klembord.');
     }
+  });
+
+  // JavaScript om tussen codebloktalen te schakelen
+  $(document).ready(function () {
+    const codeBlocks = document.querySelectorAll('.highlight');
+
+    // Voeg een klikgebeurtenis toe aan de taalkeuzes in de ul
+    const languageLinks = document.querySelectorAll('.nav-language');
+    languageLinks.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        // Haal de geselecteerde taal op uit de data-language attribuut
+        const selectedLanguage = link.getAttribute('data-language');
+
+        // Loop door alle codeblokken en schakel de klassen
+        codeBlocks.forEach(function (block) {
+          const blockLanguage = block.getAttribute('data-language');
+
+          if (blockLanguage === selectedLanguage) {
+            block.classList.remove('inactive');
+            block.classList.add('active');
+          } else {
+            block.classList.remove('active');
+            block.classList.add('inactive');
+          }
+        });
+
+        // Voeg de class "active" toe aan de geselecteerde taal
+        languageLinks.forEach(function (otherLink) {
+          if (otherLink === link) {
+            link.classList.add('active');
+          } else {
+            otherLink.classList.remove('active');
+          }
+        });
+      });
+    });
   });
 });
 
@@ -551,12 +504,12 @@ widetables.forEach((element) => {
 function animateButton(button) {
   // Reset animation
   button.classList.remove('animate');
-  
+
   // Add animation class
   button.classList.add('animate');
-  
+
   // Remove animation class after a delay
-  setTimeout(function() {
+  setTimeout(function () {
     button.classList.remove('animate');
   }, 700);
 }
@@ -580,16 +533,16 @@ for (let i = 0; i < allTooltips.length; i++) {
   navigationDiv.innerHTML = `
     <span>
       ${i == allTooltips.length - 1
-        ? "&nbsp;"
-        : `<a href="#0" class="skipOnboarding">Skip</a>`
-      }
+      ? "&nbsp;"
+      : `<a href="#0" class="skipOnboarding">Skip</a>`
+    }
     </span>
     <span>
       <button type="button" class="nextButton btn btn-primary btn-sm ${i == allTooltips.length - 1 ? "confetti-button" : ""}" style="font-size: 14px; padding:  4px 12px !important;" current="${i}">
         ${i == allTooltips.length - 1
-          ? "Finish"
-          : "Next"
-        } ${i + 1}/${allTooltips.length}</button>
+      ? "Finish"
+      : "Next"
+    } ${i + 1}/${allTooltips.length}</button>
     </span>
   `;
 
@@ -611,7 +564,7 @@ $("body").on("click", ".nextButton", () => {
     allTooltipContents[Number(currentActive) + 1].classList.add("active");
   } else {
     animateButton(confettiButton);
-    setTimeout(function() {
+    setTimeout(function () {
       allTooltipContents[Number(currentActive)].classList.remove("active");
       localStorage.setItem("demoCompleted", "true");
       $(".pulse").remove();
@@ -631,8 +584,8 @@ $(".takeTour").on("click", (event) => {
 });
 
 $(".takeTourFooter").on("click", (event) => {
-  $("html, body").animate({ scrollTop: 0 }, "fast", function() {
-    setTimeout(function() {
+  $("html, body").animate({ scrollTop: 0 }, "fast", function () {
+    setTimeout(function () {
       $(".onBoardTooltipContent:first").addClass("active");
     }, 1000);
   });
@@ -641,258 +594,258 @@ $(".takeTourFooter").on("click", (event) => {
 // Fill Cards Dynamically
 $(document).ready(function () {
   if ($('.cards-home').length > 0) {
-  $('.cards-home').ready(function () {
-    fetch('static/json/cards.json')
-      .then(response => response.json())
-      .then(data => {
+    $('.cards-home').ready(function () {
+      fetch('static/json/cards.json')
+        .then(response => response.json())
+        .then(data => {
 
-        // Building Blocks
-        const building_blocks = data.building_blocks || [];
-        const ulElementBlock = document.getElementById('most-read-building-blocks-list');
+          // Building Blocks
+          const building_blocks = data.building_blocks || [];
+          const ulElementBlock = document.getElementById('most-read-building-blocks-list');
 
-        // Select a random building block
-        const randomIndex = Math.floor(Math.random() * building_blocks.length);
-        const randomBuildingBlock = building_blocks[randomIndex];
+          // Select a random building block
+          const randomIndex = Math.floor(Math.random() * building_blocks.length);
+          const randomBuildingBlock = building_blocks[randomIndex];
 
-        // Populate the random popular building block
-        const titleElementBlock = document.querySelector('#most-popular-block-single h2.heading');
-        const descriptionElementBlock = document.querySelector('#most-popular-block-single p');
-        const linkElementBlock = document.querySelector('#most-popular-block-single a');
+          // Populate the random popular building block
+          const titleElementBlock = document.querySelector('#most-popular-block-single h2.heading');
+          const descriptionElementBlock = document.querySelector('#most-popular-block-single p');
+          const linkElementBlock = document.querySelector('#most-popular-block-single a');
 
-        if (randomBuildingBlock) {
-          titleElementBlock.textContent = randomBuildingBlock.title;
-          if (randomBuildingBlock.description === ""){
-            descriptionElementBlock.textContent = "Start reading this article";
-          }
-          else {
-            descriptionElementBlock.textContent = randomBuildingBlock.description;
-          }
-          if (randomBuildingBlock.path.endsWith('/')) {
-            randomBuildingBlock.path = randomBuildingBlock.path.slice(0, -1);
-          }
-          linkElementBlock.href = randomBuildingBlock.path;
-        } else {
-          // If there's no random building block data, hide the container
-          const containerElement = document.querySelector('#most-popular-block-single');
-          containerElement.style.display = 'none';
-        }
-
-        // Filter out the selected random building block from the list
-        const buildingBlocksToDisplay = building_blocks.filter((_, index) => index !== randomIndex);
-
-        buildingBlocksToDisplay.forEach(building_block => {
-          const liElement = document.createElement('li');
-          liElement.classList.add('pb-3');
-
-          const iconElement = document.createElement('span');
-          iconElement.classList.add('icon', 'link', 'text-primary', 'd-inline-block', 'mr-2');
-
-          const linkElement = document.createElement('a');
-
-          if (building_block.path.endsWith('/')) {
-            building_block.path = building_block.path.slice(0, -1);
+          if (randomBuildingBlock) {
+            titleElementBlock.textContent = randomBuildingBlock.title;
+            if (randomBuildingBlock.description === "") {
+              descriptionElementBlock.textContent = "Start reading this article";
+            }
+            else {
+              descriptionElementBlock.textContent = randomBuildingBlock.description;
+            }
+            if (randomBuildingBlock.path.endsWith('/')) {
+              randomBuildingBlock.path = randomBuildingBlock.path.slice(0, -1);
+            }
+            linkElementBlock.href = randomBuildingBlock.path;
+          } else {
+            // If there's no random building block data, hide the container
+            const containerElement = document.querySelector('#most-popular-block-single');
+            containerElement.style.display = 'none';
           }
 
-          linkElement.href = building_block.path;
+          // Filter out the selected random building block from the list
+          const buildingBlocksToDisplay = building_blocks.filter((_, index) => index !== randomIndex);
 
-          const title = building_block.title
+          buildingBlocksToDisplay.forEach(building_block => {
+            const liElement = document.createElement('li');
+            liElement.classList.add('pb-3');
 
-          linkElement.textContent = title;
+            const iconElement = document.createElement('span');
+            iconElement.classList.add('icon', 'link', 'text-primary', 'd-inline-block', 'mr-2');
 
-          liElement.appendChild(iconElement);
-          liElement.appendChild(linkElement);
-          ulElementBlock.appendChild(liElement);
-        });
+            const linkElement = document.createElement('a');
 
-        // Tutorials
-        const tutorials = data.tutorials || [];
-        const ulElementTutorial = document.getElementById('most-read-tutorials-list');
+            if (building_block.path.endsWith('/')) {
+              building_block.path = building_block.path.slice(0, -1);
+            }
 
-        // Select a random tutorial
-        const randomTutorial = tutorials[randomIndex];
+            linkElement.href = building_block.path;
 
-        // Populate the random popular tutorial
-        const titleElement = document.querySelector('#most-popular-tutorial-single h2.heading');
-        const descriptionElement = document.querySelector('#most-popular-tutorial-single p');
-        const linkElement = document.querySelector('#most-popular-tutorial-single a');
+            const title = building_block.title
 
-        if (randomTutorial) {
-          titleElement.textContent = randomTutorial.title;
-          if (randomTutorial.description === ""){
-            descriptionElement.textContent = "Start reading this article."
-          }
-          else {
-            descriptionElement.textContent = randomTutorial.description;
-          }
-          if (randomTutorial.path.endsWith('/')) {
-            randomTutorial.path = randomTutorial.path.slice(0, -1);
-          }
-          linkElement.href = randomTutorial.path;
-        } else {
-          // If there's no random tutorial data, hide the container
-          const containerElement = document.querySelector('#most-popular-tutorial-single');
-          containerElement.style.display = 'none';
-        }
+            linkElement.textContent = title;
 
-        // Filter out the selected random tutorial from the list
-        const tutorialsToDisplay = tutorials.filter((_, index) => index !== randomIndex);
+            liElement.appendChild(iconElement);
+            liElement.appendChild(linkElement);
+            ulElementBlock.appendChild(liElement);
+          });
 
-        tutorialsToDisplay.forEach(tutorial => {
-          const liElement = document.createElement('li');
-          liElement.classList.add('pb-3');
+          // Tutorials
+          const tutorials = data.tutorials || [];
+          const ulElementTutorial = document.getElementById('most-read-tutorials-list');
 
-          const iconElement = document.createElement('span');
-          iconElement.classList.add('icon', 'link', 'text-primary', 'd-inline-block', 'mr-2');
+          // Select a random tutorial
+          const randomTutorial = tutorials[randomIndex];
 
-          const linkElement = document.createElement('a');
+          // Populate the random popular tutorial
+          const titleElement = document.querySelector('#most-popular-tutorial-single h2.heading');
+          const descriptionElement = document.querySelector('#most-popular-tutorial-single p');
+          const linkElement = document.querySelector('#most-popular-tutorial-single a');
 
-          if (tutorial.path.endsWith('/')) {
-            tutorial.path = tutorial.path.slice(0, -1);
-          }
-
-          linkElement.href = tutorial.path;
-
-          const title = tutorial.title;
-
-          linkElement.textContent = title;
-
-          liElement.appendChild(iconElement);
-          liElement.appendChild(linkElement);
-          ulElementTutorial.appendChild(liElement);
-        });
-
-        // Code for dynamically generating carousel items
-        const carouselInner = document.querySelector('.carousel-inner');
-
-        const reproducibleData = data.categories.reproducible;
-
-        // Iterate through the reproducible data and create carousel items
-        reproducibleData.forEach(item => {
-          const carouselItem = document.createElement('div');
-          carouselItem.classList.add('carousel-item', 'h-100');
-
-          if (item === reproducibleData[0]) {
-            carouselItem.classList.add('active');
+          if (randomTutorial) {
+            titleElement.textContent = randomTutorial.title;
+            if (randomTutorial.description === "") {
+              descriptionElement.textContent = "Start reading this article."
+            }
+            else {
+              descriptionElement.textContent = randomTutorial.description;
+            }
+            if (randomTutorial.path.endsWith('/')) {
+              randomTutorial.path = randomTutorial.path.slice(0, -1);
+            }
+            linkElement.href = randomTutorial.path;
+          } else {
+            // If there's no random tutorial data, hide the container
+            const containerElement = document.querySelector('#most-popular-tutorial-single');
+            containerElement.style.display = 'none';
           }
 
-          const carouselContent = document.createElement('div');
-          carouselContent.classList.add('w-100', 'h-100');
-          carouselContent.style.display = 'flex';
-          carouselContent.style.alignItems = 'flex-end';
+          // Filter out the selected random tutorial from the list
+          const tutorialsToDisplay = tutorials.filter((_, index) => index !== randomIndex);
 
-          const innerContent = document.createElement('div');
+          tutorialsToDisplay.forEach(tutorial => {
+            const liElement = document.createElement('li');
+            liElement.classList.add('pb-3');
 
-          const titleElement = document.createElement('h3');
-          titleElement.classList.add('heading');
-          titleElement.style.fontSize = '16px';
-          titleElement.style.lineHeight = '1';
-          titleElement.textContent = item.title;
+            const iconElement = document.createElement('span');
+            iconElement.classList.add('icon', 'link', 'text-primary', 'd-inline-block', 'mr-2');
 
-          const descriptionElement = document.createElement('p');
-          descriptionElement.style.fontSize = '16px';
-          descriptionElement.style.color = '#6081a2';
-          descriptionElement.style.fontFamily = 'acumin-pro,sans-serif';
-          descriptionElement.style.width = '70%';
-          descriptionElement.textContent = item.description;
+            const linkElement = document.createElement('a');
 
-          const ctaElement = document.createElement('a');
-          ctaElement.textContent = 'Read more';
-          ctaElement.style.setProperty('color', 'white', 'important');
-          ctaElement.style.setProperty('font-family', 'forma-djr-display', 'important')
+            if (tutorial.path.endsWith('/')) {
+              tutorial.path = tutorial.path.slice(0, -1);
+            }
 
-          if (item.path.endsWith('/')) {
-            item.path = item.path.slice(0, -1);
-          }
+            linkElement.href = tutorial.path;
 
-          ctaElement.href = item.path;
-          ctaElement.classList.add('btn', 'btn-primary', 'my-2', 'my-sm-0', 'px-4');
+            const title = tutorial.title;
 
+            linkElement.textContent = title;
 
-          innerContent.appendChild(titleElement);
-          innerContent.appendChild(descriptionElement);
-          innerContent.appendChild(ctaElement);
-          carouselContent.appendChild(innerContent);
-          carouselItem.appendChild(carouselContent);
-          carouselInner.appendChild(carouselItem);
-        });
+            liElement.appendChild(iconElement);
+            liElement.appendChild(linkElement);
+            ulElementTutorial.appendChild(liElement);
+          });
 
+          // Code for dynamically generating carousel items
+          const carouselInner = document.querySelector('.carousel-inner');
 
-        // Code for Dynamically Setting the learn Data
-        const learnData = data.categories.learn;
-        const itemsRow = document.getElementById('itemsRow');
+          const reproducibleData = data.categories.reproducible;
 
-        // Iterate through the 'learn' data and create item blocks
-        for (let i = 0; i < learnData.length; i += 2) {
-          // Create a new row for each pair of items
-          const row = document.createElement('div');
-          row.classList.add('row', 'mb-3');
+          // Iterate through the reproducible data and create carousel items
+          reproducibleData.forEach(item => {
+            const carouselItem = document.createElement('div');
+            carouselItem.classList.add('carousel-item', 'h-100');
 
-          // Create two item columns within the row
-          for (let j = i; j < i + 2 && j < learnData.length; j++) {
-            const item = learnData[j];
+            if (item === reproducibleData[0]) {
+              carouselItem.classList.add('active');
+            }
 
-            // Create the item column element
-            const col = document.createElement('div');
-            col.classList.add('col-xl-12', 'col-lg-12', 'col-md-12', 'col-sm-12');
+            const carouselContent = document.createElement('div');
+            carouselContent.classList.add('w-100', 'h-100');
+            carouselContent.style.display = 'flex';
+            carouselContent.style.alignItems = 'flex-end';
 
-            // Create the item element
-            const itemElement = document.createElement('div');
-            itemElement.classList.add('row', 'mb-3');
+            const innerContent = document.createElement('div');
 
-            // Create the icon element
-            const iconElement = document.createElement('div');
-            iconElement.classList.add('icon-col', 'col-xl-4', 'col-lg-4', 'col-md-4', 'col-sm-4', 'd-flex', 'align-items-center', 'justify-content-center');
-            iconElement.innerHTML = `<div class="cards-home-circle"><i class="${item.icon} fa-2xl"></i></div>`;
-
-            // Create the content element
-            const contentElement = document.createElement('div');
-            contentElement.classList.add('text-col', 'col-xl-20', 'col-lg-20', 'col-md-20', 'col-sm-20');
-
-            // Create the title and description elements
-            const titleElement = document.createElement('h2');
+            const titleElement = document.createElement('h3');
             titleElement.classList.add('heading');
             titleElement.style.fontSize = '16px';
             titleElement.style.lineHeight = '1';
             titleElement.textContent = item.title;
 
-            const titleLinkElement = document.createElement('a');
-
-            if (item.path.endsWith('/')) {
-              item.path = item.path.slice(0, -1);
-            }
-            
-            titleLinkElement.href = item.path;
-
-            titleLinkElement.style.cssText = 'color: inherit !important;';
-            titleLinkElement.append(titleElement);
-
             const descriptionElement = document.createElement('p');
             descriptionElement.style.fontSize = '16px';
             descriptionElement.style.color = '#6081a2';
             descriptionElement.style.fontFamily = 'acumin-pro,sans-serif';
+            descriptionElement.style.width = '70%';
             descriptionElement.textContent = item.description;
 
-            // Append title and description to the content element
-            contentElement.appendChild(titleLinkElement);
-            contentElement.appendChild(descriptionElement);
+            const ctaElement = document.createElement('a');
+            ctaElement.textContent = 'Read more';
+            ctaElement.style.setProperty('color', 'white', 'important');
+            ctaElement.style.setProperty('font-family', 'forma-djr-display', 'important')
 
-            // Append icon and content to the item element
-            itemElement.appendChild(iconElement);
-            itemElement.appendChild(contentElement);
+            if (item.path.endsWith('/')) {
+              item.path = item.path.slice(0, -1);
+            }
 
-            // Append the item element to the column
-            col.appendChild(itemElement);
+            ctaElement.href = item.path;
+            ctaElement.classList.add('btn', 'btn-primary', 'my-2', 'my-sm-0', 'px-4');
 
-            // Append the column to the row
-            row.appendChild(col);
+
+            innerContent.appendChild(titleElement);
+            innerContent.appendChild(descriptionElement);
+            innerContent.appendChild(ctaElement);
+            carouselContent.appendChild(innerContent);
+            carouselItem.appendChild(carouselContent);
+            carouselInner.appendChild(carouselItem);
+          });
+
+
+          // Code for Dynamically Setting the learn Data
+          const learnData = data.categories.learn;
+          const itemsRow = document.getElementById('itemsRow');
+
+          // Iterate through the 'learn' data and create item blocks
+          for (let i = 0; i < learnData.length; i += 2) {
+            // Create a new row for each pair of items
+            const row = document.createElement('div');
+            row.classList.add('row', 'mb-3');
+
+            // Create two item columns within the row
+            for (let j = i; j < i + 2 && j < learnData.length; j++) {
+              const item = learnData[j];
+
+              // Create the item column element
+              const col = document.createElement('div');
+              col.classList.add('col-xl-12', 'col-lg-12', 'col-md-12', 'col-sm-12');
+
+              // Create the item element
+              const itemElement = document.createElement('div');
+              itemElement.classList.add('row', 'mb-3');
+
+              // Create the icon element
+              const iconElement = document.createElement('div');
+              iconElement.classList.add('icon-col', 'col-xl-4', 'col-lg-4', 'col-md-4', 'col-sm-4', 'd-flex', 'align-items-center', 'justify-content-center');
+              iconElement.innerHTML = `<div class="cards-home-circle"><i class="${item.icon} fa-2xl"></i></div>`;
+
+              // Create the content element
+              const contentElement = document.createElement('div');
+              contentElement.classList.add('text-col', 'col-xl-20', 'col-lg-20', 'col-md-20', 'col-sm-20');
+
+              // Create the title and description elements
+              const titleElement = document.createElement('h2');
+              titleElement.classList.add('heading');
+              titleElement.style.fontSize = '16px';
+              titleElement.style.lineHeight = '1';
+              titleElement.textContent = item.title;
+
+              const titleLinkElement = document.createElement('a');
+
+              if (item.path.endsWith('/')) {
+                item.path = item.path.slice(0, -1);
+              }
+
+              titleLinkElement.href = item.path;
+
+              titleLinkElement.style.cssText = 'color: inherit !important;';
+              titleLinkElement.append(titleElement);
+
+              const descriptionElement = document.createElement('p');
+              descriptionElement.style.fontSize = '16px';
+              descriptionElement.style.color = '#6081a2';
+              descriptionElement.style.fontFamily = 'acumin-pro,sans-serif';
+              descriptionElement.textContent = item.description;
+
+              // Append title and description to the content element
+              contentElement.appendChild(titleLinkElement);
+              contentElement.appendChild(descriptionElement);
+
+              // Append icon and content to the item element
+              itemElement.appendChild(iconElement);
+              itemElement.appendChild(contentElement);
+
+              // Append the item element to the column
+              col.appendChild(itemElement);
+
+              // Append the column to the row
+              row.appendChild(col);
+            }
+
+            // Append the row to the items row
+            itemsRow.appendChild(row);
           }
 
-          // Append the row to the items row
-          itemsRow.appendChild(row);
-        }
-
-      })
-      .catch(error => console.error('Error fetching data:', error));
-  });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    });
   }
 });

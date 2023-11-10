@@ -1,4 +1,5 @@
 {% include 'partials/header.html' %}
+{% include 'partials/cookies.html' %}
 <br><br>
 <div class="container mt-4">
     {% include 'partials/breadcrumbs.html' %}
@@ -37,6 +38,13 @@
                             <div class="flex-fill">
                                 {% include 'partials/sharelinks.html' %}
                             </div>
+                            {% if blog.date_modified %}
+							<p class="mb-0 article-date">{{ blog.date_modified }}</p>
+							{% else %}
+							{% if blog.date %}
+							<p class="mb-0 article-date">{{ blog.date }}</p>
+							{% endif %}
+							{% endif %}
                         </div>
 
                         {% include 'partials/announcement.html' %}

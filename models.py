@@ -1,4 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import text
+from flask_sqlalchemy import SQLAlchemy
 
 # Initialize SQLAlchemy with the app
 db = SQLAlchemy()
@@ -24,6 +26,7 @@ class articles(db.Model):
     path = db.Column(db.Text)
     keywords = db.Column(db.Text)
     date = db.Column(db.Text)
+    date_modified = db.Column(db.Text)
     draft = db.Column(db.Text)
     weight = db.Column(db.Integer)
     author = db.Column(db.Text)
@@ -50,5 +53,6 @@ class blogs(db.Model):
     description = db.Column(db.Text)
     path = db.Column(db.Text)
     date = db.Column(db.Text)
+    date_modified = db.Column(db.Text)
     draft = db.Column(db.Text)
     content = db.Column(db.Text)

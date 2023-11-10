@@ -157,10 +157,17 @@
   padding: 10px;
   margin-bottom: 20px;
 
+  .highlight.active{
+    display: flex !important;
+  }
+
+  .highlight.inactive{
+    display: none !important;
+  }
+
   pre,
   .highlight {
-    margin: 20px 0 0 0;
-    display: flex;
+    margin: 0 0 0 0;
     width: 100%;
   }
 
@@ -830,6 +837,11 @@ footer {
   }
 }
 
+.article-date{
+  width:fit-content;
+  text-align: center;
+}
+
 .customNavbar {
   display: grid;
   grid-template-columns: 12fr 18fr 12fr;
@@ -1021,13 +1033,19 @@ a.text-secondary:hover {
 }
 
 @media only screen and (min-width: 768px) {
+  .article-date{
+    width:100%;
+    text-align: center;
+  }
+
   .share {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    justify-content: start;
+    justify-items: center;
+    margin-bottom:1rem;
 
     a {
-      margin-left: 33px;
+      margin-left: 20px;
     }
   }
 }

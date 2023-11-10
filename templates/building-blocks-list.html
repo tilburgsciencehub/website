@@ -1,4 +1,5 @@
 {% include 'partials/header.html' %}
+{% include 'partials/cookies.html' %}
 
 <div class="container content">
   <br><br><br><br>
@@ -30,7 +31,8 @@
                     <h5 class="heading font-weight-normal" style="font-size: 16px; height: 22px;">{{ child_data['category_data'].title }}</h5>
                     {% for article in child_data['articles'] %}
                       {% if article.parent == child_data['category_data'].id and article.draft != 'true' %}
-                      <a class="d-block" href="building-blocks/{{ parent_data['category_data'].path }}/{{ child_data['category_data'].path }}/{{ article.path }}">{{ article.title }}</a>
+                      <a class="d-block" href="building-blocks/{{ parent_data['category_data'].path }}/{{ child_data['category_data'].path }}/{{ article.path }}">{{ article.title }}
+                      <sup style="color: #ffb222;"><i class="fa-regular fa-clock mr-2"></i>{{ article.reading_time }} mins</sup></a>
                       {% endif %}
                     {% endfor %}
                   </div>

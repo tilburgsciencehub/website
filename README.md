@@ -40,29 +40,37 @@ flask run
 - [x] formulas in {{}} {{}} also do not render (both in BB on fixed effects) -> issue with katex, fixed.
 - [x] << katex >> also does not render (BB sample size on webscrapers) -> issue with katex, fixed.
 - [x] external youtube link does not render {{< youtube DK7TYR68kqc iframe-video-margins >}} (BB practicing pipeline automation > verify)
+- [x] Text out of line (e.g. BB on cars/ interactive Interactive shiny COVID-19)
+- [x] #'s in a ``` block get converted to headers instead of to just small text within the block (BB configure git/ reschedule tasks) -> created a fallback codeblock such as in the current website
+- [x] remove google console bugs (js bugs mainly)
+- [x] make slider on mobile only move when clicked/touched -> implemented from main
+- [x] Most read tutorials - duplicates -> implemented from main
+- [x] scaling of tilburg science hub image on landing page off -> implemented from main
+- [x] bug w/ slider on mobile -> implemented from main
+- [x] About page in footer -> implemented from main
+- [x] Recently updated/published settings -> works now with date and date_modified.
+- [x] About menu in header -> Added al necessary pages
+- [x] add reading time estimate -> implemented
+- [x] Cookies -> Fixed, we only need a basic analytics script.
+- [x] Code Block 
+- [x] Dual Code Blocks 
+- [x] Copy Button in Codeblock
     
 ## Features/Issues to Update/Implement
-- [ ] make slider on mobile only move when clicked/touched
-- [ ] Most read tutorials - duplicates
-- [ ] scaling of tilburg science hub image on landing page off
-- [ ] bug w/ slider on mobile
-- [ ] About page in footer
-- [ ] add reading time estimate
-- [ ] Recently updated/published settings
-- [ ] Cookies
-
-## Issues by Revisor
-- [ ] Table do not render (e.g. BB on Cloud computing/ webscraping vs API's) -> Issue will be created
-- [ ] Text out of line (e.g. BB on cars/ interactive Interactive shiny COVID-19)
-- [ ] #'s in a ``` block get converted to headers instead of to just small text within the block (BB configure git/ reschedule tasks)
-- [ ] dual code blocks (R and Stata) do not work (BB on synthetic control on impact evaluation)
-- [ ] strings in code blocks do not render (BB on scheduling tasks)
-
+- [ ] MetaData
+- [ ] Implement New Basic Web Analytics Cookies
+ 
 ## Issues related to content
 - [ ] The way people use katex is inconsistent which gives problems during rendering. Some people forget to add the $ sign in front and at the end of a variable, which was not really an issue for some reason in Hugo, but in Flask this makes applying these Katex Formulas why harder. We should fix the katex boxes in content and make sure it is used correctly in all content.
 - [ ] Tables currently to complex to parse to html by hardcoding. The most effective way would be to convert them all to html with ChatGPT (tried it, is very easy and quickly done) and add context to the styleguide on how people can add a html table (very easy and logical). Another option would to self design a new structure for a table. We should discuss this with Hannes.
 - [] Some articles have lists without an enter (break) in front of it. The markdown package then cannot convert them to html lists.
+- [ ] In Task Scheduling BB: someone wrote the following:
 
+```
+# e.g., * * * * * /usr/bin/python3 /script.py
+<CRON CODE> <PATH OF YOUR PYTHON INSTALLATION> <PATH TO PYTHON FILE>
+```
 
-
+and also in a codeblock. It would be more efficient to change this since html sees < > as tag elements, which it now tries to autocomplete, instead as interpreting it as a string. The autocomplete process is something outside of my control (happens by browser).
+- [ ] All Codeblock languages should be shown as follows ```Stata, so in the same line straight after the three signs, without any other signs such as - or others.
 

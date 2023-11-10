@@ -33,6 +33,7 @@ cursor.execute('''
         path TEXT,
         keywords TEXT,
         date TEXT,
+        date_modified TEXT,
         draft TEXT,
         weight INTEGER,
         author TEXT,
@@ -67,6 +68,7 @@ cursor.execute('''
         description TEXT,
         path TEXT,
         date TEXT,
+        date_modified TEXT,
         draft TEXT,
         content TEXT
     )
@@ -99,6 +101,7 @@ for type in ['tutorials', 'building-blocks']:
                 title = None
                 keywords = None
                 date = None
+                date_modified = None
                 draft = None
                 author = None
                 content = None 
@@ -119,6 +122,8 @@ for type in ['tutorials', 'building-blocks']:
                                     keywords = line.strip().replace('keywords:', '', 1).replace('"','').strip()
                                 elif line.startswith('date:'):
                                     date = line.strip().replace('date:', '', 1).strip()
+                                elif line.startswith('date_modified:'):
+                                    date_modified = line.strip().replace('date_modified:', '', 1).strip()
                                 elif line.startswith('draft:'):
                                     draft = line.strip().replace('draft:', '', 1).strip()
                                 elif line.startswith('author:'):
@@ -148,6 +153,7 @@ for type in ['tutorials', 'building-blocks']:
                                     title = None
                                     keywords = None
                                     date = None
+                                    date_modified = None
                                     draft = None
                                     article_weight = None
                                     author = None
@@ -167,6 +173,8 @@ for type in ['tutorials', 'building-blocks']:
                                                 keywords = line.strip().replace('keywords:', '', 1).replace('"','').strip()
                                             elif line.startswith('date:'):
                                                 date = line.strip().replace('date:', '', 1).strip()
+                                            elif line.startswith('date_modified:'):
+                                                date_modified = line.strip().replace('date_modified:', '', 1).strip()
                                             elif line.startswith('draft:'):
                                                 draft = line.strip().replace('draft:', '', 1).strip()
                                             elif line.startswith('author:'):
@@ -185,9 +193,9 @@ for type in ['tutorials', 'building-blocks']:
 
                                     # Execute an SQL INSERT statement to add data to the 'articles' table
                                     cursor.execute('''
-                                        INSERT INTO articles (type, title, parent, description, path, keywords, date, draft, weight, author, content)
-                                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                                    ''', (type, title, parent_id_article, description, path, keywords, date, draft, article_weight, author, content))
+                                        INSERT INTO articles (type, title, parent, description, path, keywords, date, date_modified, draft, weight, author, content)
+                                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                                    ''', (type, title, parent_id_article, description, path, keywords, date, date_modified, draft, article_weight, author, content))
 
                     # Get the ID of the last inserted row
                     last_row_id = cursor.lastrowid
@@ -209,6 +217,7 @@ for md_file_name in os.listdir(examples_root_folder):
         title = None
         keywords = None
         date = None
+        date_modified = None
         draft = None
         author = None
         content = None 
@@ -227,6 +236,8 @@ for md_file_name in os.listdir(examples_root_folder):
                     keywords = line.strip().replace('keywords:', '', 1).replace('"','').strip()
                 elif line.startswith('date:'):
                     date = line.strip().replace('date:', '', 1).strip()
+                elif line.startswith('date_modified:'):
+                    date_modified = line.strip().replace('date_modified:', '', 1).strip()
                 elif line.startswith('draft:'):
                     draft = line.strip().replace('draft:', '', 1).strip()
                 elif line.startswith('author:'):
@@ -243,9 +254,9 @@ for md_file_name in os.listdir(examples_root_folder):
 
         # Execute an SQL INSERT statement to add data to the 'articles' table
         cursor.execute('''
-            INSERT INTO articles (type, title, description, path, keywords, date, draft, author, content)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ''', ('examples', title, description, path, keywords, date, draft, author, content))
+            INSERT INTO articles (type, title, description, path, keywords, date, date_modified, draft, author, content)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', ('examples', title, description, path, keywords, date, date_modified, draft, author, content))
 
 # Fetch Contributors
 contributors_root_folder = os.path.join(content_directory, 'contributors')
@@ -334,6 +345,7 @@ for md_file_name in os.listdir(blog_root_folder):
         description = None
         title = None
         date = None
+        date_modified = None
         draft = None
         content = None 
 
@@ -349,6 +361,8 @@ for md_file_name in os.listdir(blog_root_folder):
                     title = line.strip().replace('title:', '', 1).replace('"','').strip()
                 elif line.startswith('date:'):
                     date = line.strip().replace('date:', '', 1).strip()
+                elif line.startswith('date_modified:'):
+                    date_modified = line.strip().replace('date_modified:', '', 1).strip()
                 elif line.startswith('draft:'):
                     draft = line.strip().replace('draft:', '', 1).strip()
         
@@ -363,9 +377,9 @@ for md_file_name in os.listdir(blog_root_folder):
 
         # Execute an SQL INSERT statement to add data to the 'articles' table
         cursor.execute('''
-            INSERT INTO blogs (title, description, path, date, draft, content)
-            VALUES (?, ?, ?, ?, ?, ?)
-        ''', (title, description, path, date, draft, content))
+            INSERT INTO blogs (title, description, path, date, date_modified, draft, content)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        ''', (title, description, path, date, date_modified, draft, content))
 
 # Submit to Database
 conn.commit()

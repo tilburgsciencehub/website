@@ -1,14 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_assets import Environment, Bundle
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import text
 from datetime import datetime
 from functions import build_data_dict, generate_table_of_contents, get_breadcrumbs, find_related_articles
 import os
 from models import db, categories, articles, Contributors, blogs
 from html_parser import htmlize
 
-
+# Initialize App
 app = Flask(__name__, static_url_path='/static')
 
 # DB

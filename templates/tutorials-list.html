@@ -1,4 +1,5 @@
 {% include 'partials/header.html' %}
+{% include 'partials/cookies.html' %}
 
 <span id="scrollTo" class="d-none"><a href="#"></a></span>
 <div class="container content">
@@ -27,9 +28,18 @@
               <!-- Loop through subcategories for the first-level category -->
               {% for child_id, child_data in parent_data['children_categories'].items() %}
 								{% if child_data['category_data'].parent == parent_id and child_data['category_data'].draft != true %}
+                {% set total_min = 0 %}
+                {% for article in child_data['articles'] %}
+                  {% if article.parent == child_data['category_data'].id and
+                  article.draft != 'true' %}
+                    <!-- Add minutes to variable total_min = total_min + article.reading_time -->
+                    {% set total_min = total_min + article.reading_time %}
+                  {% endif %}
+                {% endfor %}
               <div class="col-24 col-lg-12 mb-4" id="{{ child_data['category_data'].path }}">
-                <a href="tutorials/{{ parent_data['category_data'].path }}/{{ child_data['category_data'].path }}/{{ child_data['category_data'].indexpage }}">
-                  <h5 class="heading font-weight-normal" style="font-size: 16px; height: -webkit-fit-content;color:#003365;">{{ child_data['category_data'].title }}</h5>
+                <a class="d-flex align-items-center" href="tutorials/{{ parent_data['category_data'].path }}/{{ child_data['category_data'].path }}/{{ child_data['category_data'].indexpage }}">
+                  <h5 class="heading font-weight-normal w-75" style="font-size: 16px; height: -webkit-fit-content;color:#003365;">{{ child_data['category_data'].title }}</h5>
+                  <sup style="color: #ffb222;"><i class="fa-regular fa-clock mr-2"></i>{{ total_min }} mins</sup>
                 </a>
                 <span class="d-block" style="color: #6081A2;">{{ child_data['category_data'].description }}</span>
                 <a href="tutorials/{{ parent_data['category_data'].path }}/{{ child_data['category_data'].path }}/{{ child_data['category_data'].indexpage }}">

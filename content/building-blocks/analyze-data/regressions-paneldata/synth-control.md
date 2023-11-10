@@ -107,12 +107,9 @@ time.optimize.ssr = c(1970:1988),
 treatment.identifier = 3,
 unit.names.variable = "state",
 time.plot=c(1970:2000))
-
-
 ```
 
-```
--Stata-
+```Stata
 * install necessary packages
 	ssc install synth
 
@@ -122,8 +119,6 @@ time.plot=c(1970:2000))
 * Pass panel data format to the dataset
 
 tsset state year
-
-
 ```
 {{% /codeblock %}}
 

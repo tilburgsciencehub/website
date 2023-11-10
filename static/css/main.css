@@ -10927,10 +10927,15 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 10px;
   margin-bottom: 20px;
 }
+.codeblock .highlight.active {
+  display: flex !important;
+}
+.codeblock .highlight.inactive {
+  display: none !important;
+}
 .codeblock pre,
 .codeblock .highlight {
-  margin: 20px 0 0 0;
-  display: flex;
+  margin: 0 0 0 0;
   width: 100%;
 }
 .codeblock ul {
@@ -11505,6 +11510,11 @@ footer a:hover {
   color: #ff9c00 !important;
 }
 
+.article-date {
+  width: fit-content;
+  text-align: center;
+}
+
 .customNavbar {
   display: grid;
   grid-template-columns: 12fr 18fr 12fr;
@@ -11662,13 +11672,19 @@ a.text-secondary:hover {
 }
 
 @media only screen and (min-width: 768px) {
+  .article-date {
+    width: 100%;
+    text-align: center;
+  }
+
   .share {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    justify-content: start;
+    justify-items: center;
+    margin-bottom: 1rem;
   }
   .share a {
-    margin-left: 33px;
+    margin-left: 20px;
   }
 }
 @media only screen and (min-width: 991px) {
@@ -12169,7 +12185,7 @@ form div.onBoardTooltipContent .navigation {
 
 @font-face {
   font-family: "icomoon";
-  src: url("fonts/icomoon.woff");
+  src: url("/static/fonts/icomoon.woff") format("woff");
 }
 .icon {
   font-family: "icomoon";

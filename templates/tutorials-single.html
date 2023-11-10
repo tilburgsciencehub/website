@@ -1,4 +1,5 @@
 {% include 'partials/header.html' %}
+{% include 'partials/cookies.html' %}
 <br><br>
 
 <div class="container mt-4">
@@ -9,6 +10,7 @@
 		<div class="col-lg-8 col-22 pr-lg-5">
 			<div class="sticky-top mb-lg-5 pb-lg-5 d-flex flex-column tableOfContentParent">
 				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ tutorial.title}}</h1>
+				<sup class="mt-2" style="color: #ffb222;font-size: 14px;"><i class="fa-regular fa-clock mr-2"></i>{{ tutorial.reading_time }} mins </sup>
 				<div class="TableOfContents">
 					<span class="arrow-icon"></span>
 					<div class="pseudo-btn"></div>
@@ -55,6 +57,13 @@
 					<div class="flex-fill">
 						{% include 'partials/sharelinks.html' %}
 					</div>
+					{% if tutorial.date_modified %}
+					<p class="mb-0 article-date">{{ tutorial.date_modified }}</p>
+					{% else %}
+                        {% if tutorial.date %}
+                        <p class="mb-0 article-date">{{ tutorial.date }}</p>
+                        {% endif %}
+					{% endif %}
 				</div>
 				{% include 'partials/announcement.html' %}
 				{{ content|safe }}

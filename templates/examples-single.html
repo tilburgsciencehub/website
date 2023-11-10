@@ -1,4 +1,5 @@
 {% include 'partials/header.html' %}
+{% include 'partials/cookies.html' %}
 <br><br>
 <div class="container mt-4">
 	{% include 'partials/breadcrumbs.html' %}
@@ -8,6 +9,7 @@
 		<div class="col-lg-8 col-22 pr-lg-5">
 			<div class="sticky-top mb-lg-5 pb-lg-5 d-flex flex-column tableOfContentParent">
 				<h1 style="font-size: 38px; line-height: 48px;">{{ example.title }}</h1>
+				<sup class="mt-2" style="color: #ffb222;font-size: 14px;"><i class="fa-regular fa-clock mr-2"></i>{{ example.reading_time }} mins </sup>
 				<div class="TableOfContents">
 					<span class="arrow-icon"></span>
 					<div class="pseudo-btn"></div>
@@ -31,12 +33,19 @@
 		</div>
 		<article class="col-lg-16 col-22">
 			<div class="p-5 bg-white rounded mb-5">
-				<div class="d-flex justify-content-between mb-4 align-items-center">
+				<div class="mb-4">
 					<div class="flex-fill">
 						<div class="d-flex justify-content-between mb-4 align-items-center">
 							<div class="flex-fill">
 								{% include 'partials/sharelinks.html' %}
 							</div>
+							{% if example.date_modified %}
+							<p class="mb-0 article-date">{{ example.date_modified }}</p>
+							{% else %}
+							{% if example.date %}
+							<p class="mb-0 article-date">{{ example.date }}</p>
+							{% endif %}
+							{% endif %}
 						</div>
 
 						{% include 'partials/announcement.html' %}
