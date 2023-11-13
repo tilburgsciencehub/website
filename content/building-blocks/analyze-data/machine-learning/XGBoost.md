@@ -4,8 +4,8 @@ description: "Explanation and usage of XGBoost in R"
 keywords: "XGBoost, Extreme Gradient Boosting, Machine Learning, R, decision tree, model, Python "
 draft: false
 weight: 2
-author: "Niels Rahder & Kheiry Sohooli"
-authorlink: "https://tilburgsciencehub.com/contributors/nielsrahder/" & "www.linkedin.com/in/kheiry-sohooli"
+author: "Niels Rahder"
+authorlink: "https://tilburgsciencehub.com/contributors/nielsrahder/" 
 ---
 
 ## Overview
@@ -593,7 +593,7 @@ Note that to visualize the trees you need `graphviz`.
 
 - **Understanding XGBoost:**
   - Dive into the mechanics of XGBoost's functionality.
-  - Explore its application within the `R`.
+  - Explore its application within R.
 
 - **Setting Up and Tuning the Algorithm in R:**
   - Define and understand the hyperparameters.
