@@ -20,14 +20,14 @@ On the contrary, API mining usually involves requiring permission from data prov
 
 {{% wide-table %}}
 
-|  | Web scraping | Application Programming <br> Interfaces (APIs) |
+|  | Web scraping | Application <br> Programming <br> Interfaces (APIs) |
 | --- | --- | --- |
-| **Usage scope** | Extract any content displayed <br> in a web browser/websites/apps | Extract any content made <br> available by the API provider |
-| **Data extraction & content format** | Browse the website programmatically <br> and extract information available <br> in the website’s HTML source code | Extract information directly <br> from API interfaces which <br> are typically in JSON or XML format |
-| **Cost** | Free | Usually on a subscription <br> but some can be free |
+| **Usage scope** | Extract any content <br> displayed in a web <br> browser/websites/apps | Extract any content <br> made available by <br> the API provider |
+| **Data extraction & <br> content format** | Browse the website <br> programmatically and <br> extract information <br> available in the website’s <br> HTML source code | Extract information <br> directly from API <br> interfaces which are <br> typically in JSON or <br> XML format |
+| **Cost** | Free | Usually on a <br> subscription but <br>  some can be free |
 | **Scalability** | Moderate | High |
 | **Legal risks** | Low-high | Low-moderate |
-| **Example sources** | E-commerce( amazon.com); <br> Online review(yelp.com) | Discussion forum(Reddit API); <br> Social media(Twitter API) |
+| **Example sources** | E-commerce (amazon.com); <br> Online review (yelp.com) | Discussion forum <br> (Reddit API); <br> Social media <br> (Twitter API) |
 
 {{% /wide-table %}}
 
