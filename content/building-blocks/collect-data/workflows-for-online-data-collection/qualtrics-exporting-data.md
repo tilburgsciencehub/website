@@ -93,11 +93,23 @@ This section provides a `step-by-step` `guide` to designing a survey in Qualtric
 
 ## R 
 
-Useful package: [qualtRics](https://cran.r-project.org/web/packages/qualtRics/vignettes/qualtRics.html)
+The [qualtRics](https://cran.r-project.org/web/packages/qualtRics/vignettes/qualtRics.html) R package is designed to facilitate the retrieval of survey data through the Qualtrics API with the goal of streamlining the preprocessing required for the analysis of these surveys. This package offfers an alternative to manually downloading surveys from Qualtrics and then importing them into R. Moreover, it allows to update your dataset in real time without having to download and updated version and upload it again into R.
+
+The following points will guide you to successfully importing your survey data into R by using the Qualtrics API:
+
+1. Log in to your Qualtrics profile and navigate to `Account` `Settings` > `Qualtrics` `IDs`. Your instituion must support API access, and you should ensure that the API is enabled for your account. 
+
+2. Within `Qualtrics` `IDs`, you are going to need your `API` `Token` (click `generate` `token` if you don't have one), `Datacenter` `ID`, and `Survey` `ID`. 
+
+3. Open/Install [RStudio](https://posit.co/download/rstudio-desktop/) and follow the code snippets below.
+
+
 
 {{% codeblock %}} 
 
 ```R
+# You need to install the package only once in your environment
+install.packages("qualtRics")
 
 library(qualtRics)
 
@@ -106,17 +118,110 @@ library(qualtRics)
 {{% /codeblock %}}
 
 
-## Python
-
 {{% codeblock %}} 
 
-```python
+```R
+# API info
+qualtrics_api_credentials(api_key = "ADD_YOUR_API_Token", 
+                          base_url = "ADD_YOUR_DATACENTER_ID.qualtrics.com/",
+                          install = TRUE,
+                          overwrite = TRUE)
 
-
+readRenviron("~/.Renviron")                          
 
 ```
 
 {{% /codeblock %}}
+
+{{% tip %}} 
+
+Using `readRenviron("~/.Renviron")` enables you to reload your environment and use your credentials without having to restart R.
+
+{{% /tip %}}
+
+{{% codeblock %}} 
+
+```R
+# List of all your available surveys
+surveys <- all_surveys()  
+
+# Select survey to download
+mysurvey <- fetch_survey(surveyID = surveys$id[1], # Open "surveys" and replace "1" with the position of the survey you want to download
+                         force_request = TRUE) # Needed to update "mysurvey" with new responses if still active
+```
+{{% /codeblock %}}
+
+After you have worked with your data, you can export the new file as a `.csv` file.
+
+{{% codeblock %}} 
+
+```R
+write.csv(mysurvey, file = "/YOUR/PATH/file_name.csv")
+
+```
+{{% /codeblock %}}
+
+
+## Python
+
+Package: [QualtricsAPI](https://pypi.org/project/QualtricsAPI/)
+
+{{% codeblock %}} 
+```python
+pip install QualtricsAPI
+
+```
+{{% /codeblock %}}
+
+
+{{% codeblock %}} 
+```python
+from QualtricsAPI.Setup import Credentials
+
+```
+{{% /codeblock %}}
+
+
+
+
+{{% codeblock %}} 
+```python
+
+#Call the qualtrics_api_credentials() method (Non-XM Directory Users)
+Credentials().qualtrics_api_credentials(token='Your API Token',data_center='Your Data Center')
+
+#Call the qualtrics_api_credentials() method (XM Directory Users)
+Credentials().qualtrics_api_credentials(token='Your API Token',data_center='Your Data Center',directory_id='Your Directory ID')
+
+```
+{{% /codeblock %}}
+
+
+{{% codeblock %}} 
+
+```python
+from QualtricsAPI.Survey import Responses
+
+```
+{{% /codeblock %}}
+
+{{% codeblock %}} 
+```python
+#Get Survey Questions
+Responses().get_survey_questions(survey="<survey_id>")
+
+```
+{{% /codeblock %}}
+
+
+{{% codeblock %}} 
+```python
+#Get Survey Responses
+Responses().get_survey_responses(survey="<survey_id>")
+
+```
+{{% /codeblock %}}
+
 
 
 ## Stata
