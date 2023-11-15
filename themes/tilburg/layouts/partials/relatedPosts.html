@@ -1,26 +1,34 @@
-{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ $related := .Site.RegularPages.Related . | first 3 }}
 {{ $len := len $related }}
 {{ if $len }}
 <div class="row bg-white rounded p-5 mb-5" style="margin: 0px;">
-	<div class="col-lg-8 col-24 mb-4">
-		<h1 style="line-height: 42px; font-size: 38px;">Related <br>
-			<span class="heading text-primary">Posts</span></h1>
+	<div class="col-lg-24 col-24 mb-4">
+		<h1 style="line-height: 42px; font-size: 38px;">Related <span class="heading text-primary">Posts</span>
+		</h1>
 	</div>
-	<div class="col-lg-16 col-24">
-		<ul class="my-4 list-unstyled relatedPosts">
-		
-		{{ with $related }}
-		{{ range . }}
-      <li class="pb-2">
-      	<a href="{{ .Permalink }}">
-      		<span class="icon link text-primary d-inline-block mr-2"></span>
-        	{{ .Title }}
-      	</a>
-      </li>
-      {{ end }}
-		
-	</ul>
+	<div class="col-lg-24 col-24">
+		<div class="row px-0 my-4 relatedPosts justify-content-between">
+
+			{{ with $related }}
+			{{ range . }}
+			<div class="col-xl-8 col-lg-8 col-md-24 col-sm-24 pr-5 mb-5 mb-xl-0 mb-lg-0">
+
+				<a href="{{ .Permalink }}">
+					<h4>{{ .Title }}</h4>
+					<p>{{ .Description }}</p>
+					<div class="row">
+						{{ $keywords := .Params.keywords }}
+						{{ range $keyword := $keywords | first 4 }}
+						{{ $cleanedKeyword := replace $keyword "," "" }}
+						<div class="col-auto"><i>{{ $cleanedKeyword }}</i></div>
+						{{ end }}
+					</div>
+				</a>
+			</div>
+			{{ end }}
+
+			</ul>
+		</div>
 	</div>
-</div>
-{{ end }}
-{{ end }}
+	{{ end }}
+	{{ end }}

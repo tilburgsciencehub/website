@@ -166,6 +166,22 @@ li {
       color: $primary;
     }
   }
+  ul {
+    list-style: none;
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+    li {
+      border-radius: 20px;
+      background-color: #013365;
+      color: white;
+      padding-top:5px;
+      padding-bottom:5px;
+      padding-right:10px;
+      padding-left:10px;
+      margin-right: 10px;
+    }
+  }
 }
 .codeblock {
   border: solid 1px #e0e0e0;
