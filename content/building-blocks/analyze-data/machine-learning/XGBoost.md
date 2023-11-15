@@ -4,8 +4,7 @@ description: "Explanation and usage of XGBoost in R"
 keywords: "XGBoost, Extreme Gradient Boosting, Machine Learning, R, decision tree, model, Python "
 draft: false
 weight: 2
-author: "Niels Rahder & Kheiry Sohooli"
-authorlink: "https://tilburgsciencehub.com/contributors/nielsrahder/" & "www.linkedin.com/in/kheiry-sohooli"
+author: "Niels Rahder, Kheiry Sohooli"
 ---
 
 ## Overview
@@ -19,11 +18,9 @@ Navigating through this guide, you will gain hands-on experience and broaden you
 - How to interpret the results. 
 - How to visualize the algorithm. 
 
-Step into the world of XGBoost, where you'll learn to build, fine-tune, and interpret highly reliable models, ready to make impactful predictions across various industries.
-
 ## What is XGBoost?
 
-Extreme gradient boosting is an highly effective and widely used machine learning algorithm developed by [Chen and Guestrin 2016](https://dl.acm.org/doi/10.1145/2939672.2939785). The algorithm works by iteratively building a collection of decision trees, where newer trees are used to correct the errors made by previous trees (think of it as taking small steps in order to come closer to the "ultimate truth"). Additionally, the algorithm use L1 (Lasso regression) and L2 (Ridge regression) regularization terms in its cost function, and a penalizing term to prevent overfitting and complexity of the model.
+Extreme gradient boosting is an highly effective and widely used machine learning algorithm developed by [Chen and Guestrin 2016](https://dl.acm.org/doi/10.1145/2939672.2939785). The algorithm works by iteratively building a collection of decision trees, where newer trees are used to correct the errors made by previous trees (think of it as taking small steps in order to come closer to the "ultimate truth"). Additionally, the algorithm uses L1 (Lasso regression) and L2 (Ridge regression) regularization terms in its cost function, and a penalizing term to prevent overfitting and complexity of the model.
 
 This method has proven to be effective in working with large and complex datasets. Also it is famous to handle sparse datasets. XGBoost provides a parallel tree boosting that solve many data science problems such as classification, regression, and recommendation in a fast and accurate way (for example, at the KDDCup in 2015, XGBoost was used by every team ranked in the top 10!).
 
@@ -78,7 +75,7 @@ Next, the algorithm calculates the similarity score for the entire tree and the 
 <br>
 
 {{% warning %}}
-λ is a regularization parameter which is used to prune the tree.In practice, the optimal value for λ is best determined through cross-validation or a similar technique where various values of the parameter are tested to see which gives the best performance on a validation set. For now, we set it to the default value of 1.
+λ is a regularization parameter which is used to prune the tree. In practice, the optimal value for λ is best determined through cross-validation or a similar technique where various values of the parameter are tested to see which gives the best performance on a validation set. For now, we set it to the default value of 1.
 {{% /warning %}}
 
 Following the calculation of the individual similarity scores, the gain is calculated as:
@@ -221,7 +218,7 @@ data <- data %>%
 {{% /codeblock %}}
 
 {{% warning %}}
-Because XGBoost only works with numeric vectors, so you need to convert the categorical values into numerical ones using one-hot encoding or any other approaches.
+Because XGBoost only works with numeric vectors, you need to convert the categorical values into numerical ones using one-hot encoding or any other approaches.
 {{%/ warning %}}
 
 Luckily, this is straightforward to do using the `dplyr` package. One-hot encoding is a process that transforms categorical data into a format that machine learning algorithms can understand. In the code below each category value in a column is transformed into its own column where the presence of the category is marked with a 1, and its absence is marked with a 0.
