@@ -121,7 +121,7 @@ bar_plot <- ggplot(data, aes(x = Category, y = Value)) +
 bar_plot
 
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
 The output should look like this:
 ![Bar plot](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Barplot.png)
@@ -151,7 +151,7 @@ stacked_bar_chart <-  ggplot(data, aes(x = Category, y = Value, fill = Subcatego
 
 stacked_bar_chart
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
 The output should look like this:
 ![Stacked Bar chart](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/StackedBarChart.png)
@@ -189,7 +189,7 @@ line_chart <- ggplot(data, aes(x = Year)) +
 
 print(line_chart)
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
 The output should look like this:
 ![Line chart](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/LineChart.png)
@@ -229,7 +229,7 @@ heatmap_plot <- ggplot(data_df, aes(x = Column, y = Row, fill = Value, label = r
 
 print(heatmap_plot)
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
 The output should look like this:
 ![Heatmap](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Heatmap.png)
@@ -262,7 +262,7 @@ line_plot <- ggplot(data.frame(x = data), aes(x)) +
 hist_with_bins
 line_plot
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
 The output should look like this:
 ![Histogram with bins](content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/HistogramBins.png)
@@ -296,7 +296,7 @@ box_plot <- ggplot(data, aes(x = categories, y = values)) +
   )
 box_plot
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
 The output should look like this:
 ![Box plot](website/content/building-blocks/prepare-your-data-for-analysis/data-visualization/img/Box_plot.png)
