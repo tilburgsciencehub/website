@@ -2,12 +2,14 @@
 This is the repository thats hosts the news flask application for Tilburg Science Hub
 
 ## Install Packages
-- pip install Flask-SQLAlchemy
-- pip install SQLAlchemy
-- pip install beautifulsoup4
-- pip install nltk
-- pip install markdown
-- pip install Flask-Assets
+```
+pip install Flask-SQLAlchemy
+pip install SQLAlchemy
+pip install beautifulsoup4
+pip install nltk
+pip install markdown
+pip install Flask-Assets
+```
 
 ## Content To Database
 To create the database with all necessary data, simply go to the root folder and run the following command:
