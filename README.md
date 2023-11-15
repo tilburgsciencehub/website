@@ -14,7 +14,7 @@ pip install Flask-Assets
 ## Content To Database
 To create the database with all necessary data, simply go to the root folder and run the following command:
 
-python3 content_to_db.py
+```python3 content_to_db.py```
 
 ## Start Up Flask Application
 After successfully creating the database, you are ready to start up the flask application. To do so run the following command in the root folder:
