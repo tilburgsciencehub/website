@@ -40,7 +40,7 @@
       </h1>
 
       <p class="text-secondary mx-4 mx-lg-0 mt-4 mb-4 mr-lg-5 pr-lg-5">
-        We bring the <a class="header" href="/tour">value of open science</a> to Tilburg,
+        We bring the <a class="header takeTour" href="#0" >value of open science</a> to Tilburg,
         and valuable resources of Tilburg to the world.
       </p>
 
@@ -49,7 +49,7 @@
         <p class="text-secondary mb-xl-0 pr-3">
           <b>New to Tilburg Science Hub?</b>
         </p>
-        <a href="/tour">
+        <a href="#0" class="takeTour">
           <button class="btn btn-primary" style="margin: 5px;">Take the tour</button>
         </a>
       </div>
@@ -126,9 +126,7 @@
 
     <!-- end of search on homepage feature -->
 
-    <div
-      class="col-lg-10 mt-3 col-16 order-1 order-lg-2 d-none d-md-flex d-lg-flex d-xl-flex text-center align-content-center">
-      <img src="/img/hero.png" alt="work with open science" class="hero-image mx-auto mx-lg-none">
+    <div class="col-lg-10 mt-3 col-16 order-1 order-lg-2 d-none d-md-flex d-lg-flex d-xl-flex text-center align-content-center" style="background-image: url('/img/hero.png');background-size: contain;background-repeat: no-repeat;background-position: center;">
     </div>
 
   </div>
@@ -241,9 +239,15 @@
             <div class="background-content">
             <div class="row mb-4">
               <div class="col-xl-22 col-lg-20 col-md-22 col-sm-22">
-                <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
-                  Reproducible Research
-                </h2>
+                <div style="display: inline-flex;justify-content: space-between;width: 100%;align-items: center;">
+                  <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
+                    Reproducible Research
+                  </h2>
+                  <button style="background-image: none;background-color: transparent;color:#013365;"
+                    class="carousel-control-next-mobile" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="fa-solid fa-arrow-right" aria-hidden="true"></span>
+                  </button>
+                </div>
               </div>
               <div class="col-xl-2 col-lg-3 col-md-2 col-sm-2 carousel-nav">
                 <button style="background-image: none;background-color: transparent;color:#013365"
@@ -258,7 +262,7 @@
             </div>
             <div class="row" style="margin-top: auto; margin-bottom: auto;">
               <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
-                <div id="carouselExample" class="carousel slide h-100" data-bs-ride="carousel">
+                <div id="carouselExample" class="carousel slide h-100" data-bs-touch="true" data-bs-ride="carousel">
                   <div class="carousel-inner h-100" style="z-index:1;">
                   </div>
                 </div>
@@ -276,7 +280,7 @@
               {{ $s := slice }}
               {{ $displayedTitles := dict }}
 
-              {{ range where .Site.Pages.ByPublishDate.Reverse "Section" "in" "[building-blocks, tutorials]" }}
+              {{ range where .Site.Pages.ByLastmod.Reverse "Section" "in" "[building-blocks, tutorials]" }}
               {{ $title := .Title }}
               {{ if not (index $displayedTitles $title) }}
               {{ $s = $s | append . }}
@@ -284,7 +288,7 @@
               {{ end }}
               {{ end }}
 
-              {{ with $s.ByPublishDate.Reverse | first 3 }}
+              {{ with $s.ByLastmod.Reverse | first 3 }}
               {{ range . }}
               <li class="pb-3">
                 <span class="icon link text-primary d-inline-block mr-2"></span>
@@ -314,7 +318,7 @@
         <div class="col-lg-10 col-xl-12 col-22 mb-3">
           <div id="most-popular-tutorial-single" class="h-100 p-4 rounded bg-white text-right d-flex align-items-center"
             style="background-image: url('/img/card-background-left.svg');background-size: contain;background-repeat: no-repeat;background-position-y:bottom;background-position-x:left;">
-            <div>
+            <div style="width:100%">
               <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">title</h2>
               <p style="color: #6081a2!important;
               font-family: acumin-pro,sans-serif;font-size:16px;width:80%;float:right;">description</p>
@@ -522,6 +526,12 @@
     }
   }
 
+  @media only screen and (min-width:578px) {
+    .carousel-control-next-mobile {
+      display: none;
+    }
+  }
+
   @media only screen and (max-width:578px) {
     body::before {
       top: 2825px;
@@ -533,6 +543,10 @@
 
     .carousel-nav {
       display: none;
+    }
+
+    .carousel-control-next-mobile {
+      display: flex;
     }
 
     .icon-col {
@@ -559,5 +573,13 @@
 {{ .Content }}
 
 
+<script>
+  // Controleer of het scherm kleiner is dan 768 pixels (mobiel)
+  if (window.innerWidth <= 768) {
+    // Schakel de automatische sliding uit
+    var carousel = document.getElementById('carouselExample');
+    carousel.removeAttribute('data-bs-ride');
+  }
+</script>
 
 {{ partial "footer.html" . }}

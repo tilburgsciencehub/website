@@ -24,7 +24,7 @@ __Deadline__
 
 ## Checklist
 
-__IMPORTANT:__ Before starting, ensure you are familiar with our [style guide](https://tilburgsciencehub.com/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide/).
+__IMPORTANT:__ Before starting, ensure you are familiar with our [style guide](https://tilburgsciencehub.com/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide/). Also, please read some of our content on the site to get familiar with the style. 
 
 *See this checklist below for what needs to be done.*
 
@@ -35,7 +35,7 @@ A first reality check can be conducted by actually WORKING with our content. Jus
 Ask yourself the following questions:
 - [ ] a. Is it clear what you will learn after reading the building block?
 - [ ] b. Is the language professional and transparent, or does the content come across as amateurish?
-- [ ] c. Do you run into any issues when working on this building block? Are the visuals clear? 
+- [ ] c. Do you run into any issues when working on this building block or tutorial? Are the visuals clear? 
 
 Write down any weird things you want to fix, and keep these notes.
 
@@ -46,14 +46,16 @@ Write down any weird things you want to fix, and keep these notes.
 - [ ] **Section structure and learning goals:**
    - Identify a few (say, 1-3) learning goals/objectives of the building block or tutorial, and highlight them at the start.
 - [ ] **Title and Headings within the Content:**
-   - Update titles and headings to create a clear and descriptive language that accurately reflects the content's focus.
+   - Update titles and headings to create a clear and descriptive language that accurately reflects the content's focus. Ensure to the correct capitalization.
 - [ ] **Grammar and Style:**
-   - Use Grammarly or other language tools to review and correct any grammatical errors or writing inconsistencies in the content.
+   - Use Grammarly, ChatGPT, or other language proofing tools to review and correct any grammatical errors or writing inconsistencies in the content.
 - [ ] **Use of Code Tabs:**
    - Check that code that is most optimally presented in a code box is actually included in the code box.
    - If software packages are missing from the code tab (e.g., Stata, R, Python) and you have the expertise, then please add the implementation for the other software packages.
 - [ ] **Use of Explanation Boxes:**
    - Ensure that explanation boxes are used effectively where necessary (e.g., info, warning), providing additional context, tips, or warnings to the users.
+- [ ] **Have a Summary Box at the end:**
+   - For more complex content, you can briefly recap the key lessons learnt in a summary box toward the end of the article.
 - [ ] **Media and Visuals:**
    - Review and update images or screenshots to enhance the understanding of the content.
    - Add new visuals where this is needed.

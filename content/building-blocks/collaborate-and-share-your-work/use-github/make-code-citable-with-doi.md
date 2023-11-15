@@ -2,7 +2,7 @@
 title: "Make Your GitHub Repository Citable using DOIs"
 description: "Learn how to obtain a DOI with Zenodo to make your GitHub repository citable in the academic literature."
 weight: 7
-keywords: zenodo, doi, cite, github, literature, code, references, citable, citations
+keywords: "zenodo, doi, cite, github, literature, code, references, citable, citations, git, digital, object, identifier, academic"
 #date: 2021-01-06T22:01:14+05:30
 draft: false
 aliases:
