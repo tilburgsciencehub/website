@@ -90,10 +90,10 @@ A useful source is [Set up Git and GitHub](https://tilburgsciencehub.com/get/git
 
 In this tutorial, we will see the application of Copilot in RStudio in the following contexts: 
 
-- Exploratory analysis of a dataset 
-- Data visualization 
-- Data manipulation 
-- Questions & answers 
+- Exploratory analysis of a dataset: simply tell R how to explore your dataset
+- Data visualization: improve your plots instantly
+- Data manipulation: use Copilot to save time on managing your data
+- Questions & answers: Copilot also answers your (statistical) questions
 
 ### Exploratory data analysis 
 
@@ -144,8 +144,7 @@ sd(swiss$Fertility)
 
 {{% tip %}}
 
-The simpler the instructions, the better for your output, as Copilot is a new introduction in RStudio and constantly being trained.
-Moreover, to keep Copilot going, press the tab key on its previous suggestions to get more commands.
+To get the best output from Copilot, it's important to keep your instructions simple. Remember, Copilot is still a new feature in RStudio and is continuously learning. Additionally, if you want to maintain Copilot's momentum, just press the tab key on its previous suggestions to bring up more commands.
 
 {{% /tip %}}
 
@@ -260,7 +259,7 @@ Before running the above code chunk, re-load the “swiss” dataset to work on 
 
 {{% /tip %}}
 
-This last step was to show you that Copilot, as every AI powered tool, is not to be followed blindly as it is constantly learning and can cause mistakes or not execute what you have in mind due to the phrasing of the request. 
+Recall that, as every AI powered tool, GitHub Copilot is not to be followed blindly as it is constantly learning and can cause mistakes or not execute what you have in mind due to the phrasing of the request. 
 
 ### Questions & Answers
 
