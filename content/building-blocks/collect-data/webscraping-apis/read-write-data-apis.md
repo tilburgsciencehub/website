@@ -1,7 +1,7 @@
 ---
 title: "Read & Write Data From APIs"
 description: "Learn how to store your API data locally and read in the data for future use."
-keywords: "api, application programming interface, read, write, export"
+keywords: "api, application programming interface, read, write, export, csv, json"
 #weight: 5
 #date: 2020-11-11T22:02:51+05:30
 draft: false
@@ -15,7 +15,7 @@ After you have requested data from an API and extracted the required fields, you
 
 ## Code
 ### Write Data to CSV
-To faciliate writing to a CSV file, we'll make use of the `csv` library. If you want to add to an existing CSV file - rather than overwriting it - use the `a` flag (append) instead of the `w` flag (write).
+To facilitate writing to a CSV file, we'll make use of the `csv` library. If you want to add to an existing CSV file - rather than overwriting it - use the `a` flag (append) instead of the `w` flag (write).
 
 {{% codeblock %}}
 ```Python
@@ -43,12 +43,12 @@ df = pd.read_csv("<FILENAME>.csv", sep=";")
 {{% /codeblock %}}
 
 {{% tip %}}
-If you encounter CSV files with a custom delimiter (i.e., symbol used to separate the data into rows and columns), you can explicitly indicate that with the `sep` parameter. For example, in this case the interpreter expects that data fields have been separated by semi-colons (`;`).
+If you encounter CSV files with a custom delimiter (i.e., a symbol used to separate the data into rows and columns), you can explicitly indicate that with the `sep` parameter. For example, in this case, the interpreter expects that data fields have been separated by semi-colons (`;`).
 {{% /tip %}}
 
 
 ### Write Data to JSON
-The `json` packages makes exporting raw JSON data (`JSON_FILE`) straightforward:
+The `json` packages make exporting raw JSON data (`JSON_FILE`) straightforward:
 
 {{% codeblock %}}
 ```Python
@@ -60,7 +60,7 @@ with open("<NAME_OF_JSON_EXPORT>.json", "w") as outfile:
 
 
 ### Read JSON Data
-In a similar way, you can import the JSON files with the same library.
+Similarly, you can import the JSON files with the same library.
 
 {{% codeblock %}}
 ```Python

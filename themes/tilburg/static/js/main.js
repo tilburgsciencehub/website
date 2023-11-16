@@ -87,22 +87,17 @@ $(document).ready(function () {
 
       $(`.codeblock:eq(${x}) .nav`).append(`
         <li class="nav-item" role="presentation">
-          <a class="nav-link ${block == 0 ? "active" : ""}" id="pills-${
-        blocks[block].children[0].children[0].className
-      }-tab-${x}-${d}" data-toggle="tab" href="#${
-        blocks[block].children[0].children[0].className
-      }-${x}-${d}" role="tab" aria-controls="pills-${
-        blocks[block].children[0].children[0].className
-      }" aria-selected="true">${title}</a>
+          <a class="nav-link ${block == 0 ? "active" : ""}" id="pills-${blocks[block].children[0].children[0].className
+        }-tab-${x}-${d}" data-toggle="tab" href="#${blocks[block].children[0].children[0].className
+        }-${x}-${d}" role="tab" aria-controls="pills-${blocks[block].children[0].children[0].className
+        }" aria-selected="true">${title}</a>
         </li>
       `);
 
       $(`.codeblock:eq(${x}) .tab-content`).append(`
-        <div class="tab-pane ${block == 0 ? "fade show active" : ""}" id="${
-        blocks[block].children[0].children[0].className
-      }-${x}-${d}" role="tabpanel" aria-labelledby="pills-${
-        blocks[block].children[0].children[0].className
-      }-tab">
+        <div class="tab-pane ${block == 0 ? "fade show active" : ""}" id="${blocks[block].children[0].children[0].className
+        }-${x}-${d}" role="tabpanel" aria-labelledby="pills-${blocks[block].children[0].children[0].className
+        }-tab">
         </div>
       `);
 
@@ -202,19 +197,15 @@ $(".headerSearch > .resetInput").on("click", function (e) {
   const value = e.target.value;
   const popularPages = fetch("/pages.json").then(res => res.json()).then(res => res)
   const resultsHolder = $(".headerSearchResultsHolder");
-  
+
   resultsHolder.html(" ");
   resultsHolder.addClass("active");
 
   popularPages.then((results) => {
     resultsHolder.append(`<span style="font-weight: bold;">Popular Pages</span>`);
     results.map((result) => {
-      let urlArr = result.split("/")
-      const lastItem = urlArr[urlArr.length - 2]
 
-      if (!lastItem) return
-
-      resultsHolder.append(`<a href="${result}" style="display: flex;">
+      resultsHolder.append(`<a href="${result.path}" style="display: flex;">
         <span style="
           display: flex;
           width: 24px;
@@ -225,7 +216,7 @@ $(".headerSearch > .resetInput").on("click", function (e) {
           background-color: #003365;
           margin-right: 8px;
         "><img src="/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
-        <span>${makeTitle(lastItem)}</span></a>`);
+        <span>${result.title}</span></a>`);
     })
   })
 })
@@ -235,19 +226,15 @@ $(".headerSearchMobile .resetInput").on("click", function (e) {
   const value = e.target.value;
   const popularPages = fetch("/pages.json").then(res => res.json()).then(res => res)
   const resultsHolder = $(".mobileResults");
-  
+
   resultsHolder.html(" ");
   resultsHolder.addClass("active");
 
   popularPages.then((results) => {
     resultsHolder.append(`<span style="font-weight: bold;">Popular Pages</span>`);
     results.map((result) => {
-      let urlArr = result.split("/")
-      const lastItem = urlArr[urlArr.length - 2]
 
-      if (!lastItem) return
-
-      resultsHolder.append(`<a href="${result}" style="display: flex;">
+      resultsHolder.append(`<a href="${result.path}" style="display: flex;">
         <span style="
           display: flex;
           width: 24px;
@@ -258,21 +245,10 @@ $(".headerSearchMobile .resetInput").on("click", function (e) {
           background-color: #003365;
           margin-right: 8px;
         "><img src="/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
-        <span>${makeTitle(lastItem)}</span></a>`);
+        <span>${result.title}</span></a>`);
     })
   })
 })
-
-function makeTitle(slug) {
-  var words = slug.split('-');
-
-  for (var i = 0; i < words.length; i++) {
-    var word = words[i];
-    words[i] = word.charAt(0).toUpperCase() + word.slice(1);
-  }
-
-  return words.join(' ');
-}
 
 $(".headerSearch").on("keyup", function (e) {
   const resultsHolder = $(".headerSearchResultsHolder");
@@ -591,6 +567,20 @@ widetables.forEach((element) => {
   );
 });
 
+// Confetti Button
+function animateButton(button) {
+  // Reset animation
+  button.classList.remove('animate');
+  
+  // Add animation class
+  button.classList.add('animate');
+  
+  // Remove animation class after a delay
+  setTimeout(function() {
+    button.classList.remove('animate');
+  }, 700);
+}
+
 // onboarding tooltips
 const allTooltips = $("[onBoardTooltip]");
 
@@ -601,25 +591,25 @@ for (let i = 0; i < allTooltips.length; i++) {
   div.setAttribute("current", i);
 
   div.innerText = allTooltips[i]?.getAttribute("onBoardTooltip");
-  div.style = `left: ${
-    allTooltips[i].getBoundingClientRect().left - 80
-  }px`;
+  div.style = `left: ${allTooltips[i].getBoundingClientRect().left - 80
+    }px`;
 
   // navigation
   const navigationDiv = document.createElement("div");
   navigationDiv.classList.add("navigation");
   navigationDiv.innerHTML = `
     <span>
-      ${
-        i == allTooltips.length - 1
-          ? "&nbsp;"
-          : `<a href="#0" class="skipOnboarding">Skip</a>`
+      ${i == allTooltips.length - 1
+        ? "&nbsp;"
+        : `<a href="#0" class="skipOnboarding">Skip</a>`
       }
     </span>
     <span>
-      <button type="button" class="nextButton btn btn-primary btn-sm" style="font-size: 14px; padding:  4px 12px !important;" current="${i}">${
-    i == allTooltips.length - 1 ? "Finish" : "Next"
-  } ${i + 1}/${allTooltips.length}</button>
+      <button type="button" class="nextButton btn btn-primary btn-sm ${i == allTooltips.length - 1 ? "confetti-button" : ""}" style="font-size: 14px; padding:  4px 12px !important;" current="${i}">
+        ${i == allTooltips.length - 1
+          ? "Finish"
+          : "Next"
+        } ${i + 1}/${allTooltips.length}</button>
     </span>
   `;
 
@@ -634,14 +624,18 @@ if (localStorage.getItem("demoCompleted")) {
 $("body").on("click", ".nextButton", () => {
   const allTooltipContents = $(".onBoardTooltipContent");
   const currentActive = $(".onBoardTooltipContent.active").attr("current");
+  var confettiButton = document.querySelector('.confetti-button');
 
   if (allTooltipContents.length > Number(currentActive) + 1) {
     allTooltipContents[Number(currentActive)].classList.remove("active");
     allTooltipContents[Number(currentActive) + 1].classList.add("active");
   } else {
-    allTooltipContents[Number(currentActive)].classList.remove("active");
-    localStorage.setItem("demoCompleted", "true");
-    $(".pulse").remove();
+    animateButton(confettiButton);
+    setTimeout(function() {
+      allTooltipContents[Number(currentActive)].classList.remove("active");
+      localStorage.setItem("demoCompleted", "true");
+      $(".pulse").remove();
+    }, 700);
   }
 });
 
@@ -654,4 +648,242 @@ $("body").on("click", ".skipOnboarding", () => {
 
 $(".takeTour").on("click", (event) => {
   $(".onBoardTooltipContent:first").addClass("active");
+});
+
+$(".takeTourFooter").on("click", (event) => {
+  $("html, body").animate({ scrollTop: 0 }, "fast", function() {
+    setTimeout(function() {
+      $(".onBoardTooltipContent:first").addClass("active");
+    }, 500);
+  });
+});
+
+// Fill Cards Dynamically
+$(document).ready(function () {
+  $('.cards-home').ready(function () {
+    fetch('/cards.json')
+      .then(response => response.json())
+      .then(data => {
+
+        // Building Blocks
+        const building_blocks = data.building_blocks || [];
+        const ulElementBlock = document.getElementById('most-read-building-blocks-list');
+
+        // Select a random building block
+        const randomIndex = Math.floor(Math.random() * building_blocks.length);
+        const randomBuildingBlock = building_blocks[randomIndex];
+
+        // Populate the random popular building block
+        const titleElementBlock = document.querySelector('#most-popular-block-single h2.heading');
+        const descriptionElementBlock = document.querySelector('#most-popular-block-single p');
+        const linkElementBlock = document.querySelector('#most-popular-block-single a');
+
+        if (randomBuildingBlock) {
+          titleElementBlock.textContent = randomBuildingBlock.title;
+          if (randomBuildingBlock.description === ""){
+            descriptionElementBlock.textContent = "Start reading this article";
+          }
+          else {
+            descriptionElementBlock.textContent = randomBuildingBlock.description;
+          }
+          linkElementBlock.href = randomBuildingBlock.path;
+        } else {
+          // If there's no random building block data, hide the container
+          const containerElement = document.querySelector('#most-popular-block-single');
+          containerElement.style.display = 'none';
+        }
+
+        // Filter out the selected random building block from the list
+        const buildingBlocksToDisplay = building_blocks.filter((_, index) => index !== randomIndex);
+
+        buildingBlocksToDisplay.forEach(building_block => {
+          const liElement = document.createElement('li');
+          liElement.classList.add('pb-3');
+
+          const iconElement = document.createElement('span');
+          iconElement.classList.add('icon', 'link', 'text-primary', 'd-inline-block', 'mr-2');
+
+          const linkElement = document.createElement('a');
+          linkElement.href = building_block.path;
+
+          const title = building_block.title
+
+          linkElement.textContent = title;
+
+          liElement.appendChild(iconElement);
+          liElement.appendChild(linkElement);
+          ulElementBlock.appendChild(liElement);
+        });
+
+        // Tutorials
+        const tutorials = data.tutorials || [];
+        const ulElementTutorial = document.getElementById('most-read-tutorials-list');
+
+        // Select a random tutorial
+        const randomTutorial = tutorials[randomIndex];
+
+        // Populate the random popular tutorial
+        const titleElement = document.querySelector('#most-popular-tutorial-single h2.heading');
+        const descriptionElement = document.querySelector('#most-popular-tutorial-single p');
+        const linkElement = document.querySelector('#most-popular-tutorial-single a');
+
+        if (randomTutorial) {
+          titleElement.textContent = randomTutorial.title;
+          if (randomTutorial.description === ""){
+            descriptionElement.textContent = "Start reading this article."
+          }
+          else {
+            descriptionElement.textContent = randomTutorial.description;
+          }
+          linkElement.href = randomTutorial.path;
+        } else {
+          // If there's no random tutorial data, hide the container
+          const containerElement = document.querySelector('#most-popular-tutorial-single');
+          containerElement.style.display = 'none';
+        }
+
+        // Filter out the selected random tutorial from the list
+        const tutorialsToDisplay = tutorials.filter((_, index) => index !== randomIndex);
+
+        tutorialsToDisplay.forEach(tutorial => {
+          const liElement = document.createElement('li');
+          liElement.classList.add('pb-3');
+
+          const iconElement = document.createElement('span');
+          iconElement.classList.add('icon', 'link', 'text-primary', 'd-inline-block', 'mr-2');
+
+          const linkElement = document.createElement('a');
+          linkElement.href = tutorial.path;
+
+          const title = tutorial.title;
+
+          linkElement.textContent = title;
+
+          liElement.appendChild(iconElement);
+          liElement.appendChild(linkElement);
+          ulElementTutorial.appendChild(liElement);
+        });
+
+        // Code for dynamically generating carousel items
+        const carouselInner = document.querySelector('.carousel-inner');
+
+        const reproducibleData = data.categories.reproducible;
+
+        // Iterate through the reproducible data and create carousel items
+        reproducibleData.forEach(item => {
+          const carouselItem = document.createElement('div');
+          carouselItem.classList.add('carousel-item', 'h-100');
+
+          if (item === reproducibleData[0]) {
+            carouselItem.classList.add('active');
+          }
+
+          const carouselContent = document.createElement('div');
+          carouselContent.classList.add('w-100', 'h-100');
+          carouselContent.style.display = 'flex';
+          carouselContent.style.alignItems = 'flex-end';
+
+          const innerContent = document.createElement('div');
+
+          const titleElement = document.createElement('h3');
+          titleElement.classList.add('heading');
+          titleElement.style.fontSize = '16px';
+          titleElement.style.lineHeight = '1';
+          titleElement.textContent = item.title;
+
+          const descriptionElement = document.createElement('p');
+          descriptionElement.style.fontSize = '16px';
+          descriptionElement.style.color = '#6081a2';
+          descriptionElement.style.fontFamily = 'acumin-pro,sans-serif';
+          descriptionElement.style.width = '70%';
+          descriptionElement.textContent = item.description;
+
+          const ctaElement = document.createElement('a');
+          ctaElement.textContent = 'Read more';
+          ctaElement.style.setProperty('color', 'white', 'important');
+          ctaElement.style.setProperty('font-family', 'forma-djr-display', 'important')
+          ctaElement.href = item.path;
+          ctaElement.classList.add('btn', 'btn-primary', 'my-2', 'my-sm-0', 'px-4');
+
+
+          innerContent.appendChild(titleElement);
+          innerContent.appendChild(descriptionElement);
+          innerContent.appendChild(ctaElement);
+          carouselContent.appendChild(innerContent);
+          carouselItem.appendChild(carouselContent);
+          carouselInner.appendChild(carouselItem);
+        });
+
+
+        // Code for Dynamically Setting the learn Data
+        const learnData = data.categories.learn;
+        const itemsRow = document.getElementById('itemsRow');
+
+        // Iterate through the 'learn' data and create item blocks
+        for (let i = 0; i < learnData.length; i += 2) {
+          // Create a new row for each pair of items
+          const row = document.createElement('div');
+          row.classList.add('row', 'mb-3');
+
+          // Create two item columns within the row
+          for (let j = i; j < i + 2 && j < learnData.length; j++) {
+            const item = learnData[j];
+
+            // Create the item column element
+            const col = document.createElement('div');
+            col.classList.add('col-xl-12', 'col-lg-12', 'col-md-12', 'col-sm-12');
+
+            // Create the item element
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('row', 'mb-3');
+
+            // Create the icon element
+            const iconElement = document.createElement('div');
+            iconElement.classList.add('icon-col', 'col-xl-4', 'col-lg-4', 'col-md-4', 'col-sm-4', 'd-flex', 'align-items-center', 'justify-content-center');
+            iconElement.innerHTML = `<div class="cards-home-circle"><i class="${item.icon} fa-2xl"></i></div>`;
+
+            // Create the content element
+            const contentElement = document.createElement('div');
+            contentElement.classList.add('text-col', 'col-xl-20', 'col-lg-20', 'col-md-20', 'col-sm-20');
+
+            // Create the title and description elements
+            const titleElement = document.createElement('h2');
+            titleElement.classList.add('heading');
+            titleElement.style.fontSize = '16px';
+            titleElement.style.lineHeight = '1';
+            titleElement.textContent = item.title;
+
+            const titleLinkElement = document.createElement('a');
+            titleLinkElement.href = item.path;
+            titleLinkElement.style.cssText = 'color: inherit !important;';
+            titleLinkElement.append(titleElement);
+
+            const descriptionElement = document.createElement('p');
+            descriptionElement.style.fontSize = '16px';
+            descriptionElement.style.color = '#6081a2';
+            descriptionElement.style.fontFamily = 'acumin-pro,sans-serif';
+            descriptionElement.textContent = item.description;
+
+            // Append title and description to the content element
+            contentElement.appendChild(titleLinkElement);
+            contentElement.appendChild(descriptionElement);
+
+            // Append icon and content to the item element
+            itemElement.appendChild(iconElement);
+            itemElement.appendChild(contentElement);
+
+            // Append the item element to the column
+            col.appendChild(itemElement);
+
+            // Append the column to the row
+            row.appendChild(col);
+          }
+
+          // Append the row to the items row
+          itemsRow.appendChild(row);
+        }
+
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  });
 });

@@ -26,13 +26,13 @@ It is time to create your own Colab notebook!
 ## How to use Colab
 Once you are in your Colab notebook you can use it just like any offline Jupyter notebook.
 
-Type your code in the darker gray box en pres the run arrow to run the code. Your output will be placed below the box. To create a new code box, press **+ Code** in the navigation bar.
+Type your code in the darker gray box and press the run arrow to run the code. Your output will be placed below the box. To create a new code box, press **+ Code** in the navigation bar.
 
 ![A screenshot of Google Colab](../googlecolab.jpg)
 
 
 ### Import packages
-Colab environment already has a number of pre-installed packages such as ``pandas``, ``pytorch``, ``scipy``, ``tenserflow`` and ``numpy``. To check all installed packages use **pip freeze**
+Colab environment already has a number of pre-installed packages such as ``pandas``, ``pytorch``, ``scipy``, ``tensorflow`` and ``numpy``. To check all installed packages use **pip freeze**
 ```bash
 !pip freeze
 ```

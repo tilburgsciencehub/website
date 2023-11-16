@@ -10,6 +10,10 @@ aliases:
   - /install/stata-packages
 ---
 
+## What are Stata packages 
+
+Stata packages are user-contributed programs or commands that expand the capabilities of the Stata statistical software. They provide additional tools for tasks like data analysis, econometrics, and visualization, enhancing Stata's built-in features.
+
 ## Installing Stata packages from SSC
 
 Installing packages from SSC is straight forward. For example if you wish to install `egenemore` package:

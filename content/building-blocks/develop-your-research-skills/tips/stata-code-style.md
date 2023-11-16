@@ -14,7 +14,11 @@ We use two coding styles in Stata: a linear format for very short or simple scri
 
 ### 1. Linear Format
 
-```stata
+{{% codeblock %}}
+
+```
+-Stata-
+
 *****************************
 * Prepare data
 *****************************
@@ -31,6 +35,10 @@ We use two coding styles in Stata: a linear format for very short or simple scri
 *****************************
  ...
 ```
+
+{{% /codeblock %}}
+
+
 {{% tip %}}
 If you include a comment as a header like this for one major block of code, you should include a similar header for every block of code at the same logical place in the hierarchy. This is a case where redundant comments are allowed. Comments are not there to provide information, but to make the code easy to scan.
 {{% /tip %}}
@@ -39,7 +47,10 @@ If you include a comment as a header like this for one major block of code, you 
 
 In the functional style in Stata, we enclose code within program... end blocks. **The first program is always called “main,” and the .do file always ends with an “Execute” step.**
 
-```stata
+{{% codeblock %}}
+```
+-Stata-
+
 * PROGRAMS
 
 program main
@@ -73,6 +84,9 @@ end
 * EXECUTE
 main
 ```
+
+{{% /codeblock %}}
+
 {{% warning %}}
 The `main` command must come at the end of the script is because Stata (like Python) reads in programs in order of appearance.
 {{% /warning %}}
@@ -92,15 +106,22 @@ In this example, these “functions” are really just blocks of code:
 Functions should be **shy** (see [Code and Data for the Social Sciences](http://web.stanford.edu/~gentzkow/research/CodeAndData.pdf)), that is, so that they operate only on local variables.
 
  - **Problem:** Data in memory is by definition a global variable in Stata.
+ 
  {{% example %}}
+
  From the following code:
-   ```stata
+   {{% codeblock %}}
+   ```
+   -Stata-
+
    use x y z using autodata.xls, clear
    prepare_data
    update_variables
    merge_new_data 
    regress productivity y_average z_average
    ```
+  {{% /codeblock %}}
+  
  there is no way to tell what are the inputs and outputs to the `prepare_data`, `update_variables`, and `merge_new_data` functions and no way to tell where the `productivity`, `y_average`, and `z_average` variables came from.
  {{% /example %}}
 
@@ -110,10 +131,6 @@ Functions should be **shy** (see [Code and Data for the Social Sciences](http://
   - If a function creates new variable(s), the names of these variables can be specified as part of the function call.
     - This should always be true of ado files.
     - For programs only defined and used within a given .do file, it’s a matter of judgment.
-
-
-
-
 
 
 ## Merging

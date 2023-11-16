@@ -12,6 +12,7 @@ aliases:
   - /install/sublime
 ---
 
+## What is Sublime Text
 Sublime Text is a powerful and lightweight text editor that is widely used by programmers and developers. The current version, Sublime Text 4, offers a range of features designed to enhance coding productivity and efficiency. It provides support for multiple programming languages and comes with a Python application programming interface (API), allowing users to customize and extend its functionality.
 
 With Sublime Text 4 installed, you are ready to dive into the world of coding and take advantage of its powerful features and customization options.

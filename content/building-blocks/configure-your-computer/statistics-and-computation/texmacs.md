@@ -12,7 +12,8 @@ aliases:
 ---
 
 ## What is TeXmacs
-TeXmacs is a scientific text editor that can be used to write, edit and compile {{< katex >}}\LaTeX{{< /katex >}}. It provides a user friendly software to edit documents containing different elements: text, formulas, graphics, presentations, interactive content. It can be run on all platforms and is easy to set up.
+TeXmacs is a scientific text editor that can be used to write, edit and compile {{< katex >}}\LaTeX{{< /katex >}}. 
+LaTeX is a typesetting system commonly used for creating documents with intricate formatting, especially in fields such as mathematics, physics, computer science, and academic research. TeXmacs provides a user friendly software to edit these documents containing different elements: text, formulas, graphics, presentations, and interactive content. It can be run on all platforms and is easy to set up.
 
 ### Installation
 For any platform, installation is easy and quick following the guide [here](https://www.texmacs.org/tmweb/download/other.en.html).

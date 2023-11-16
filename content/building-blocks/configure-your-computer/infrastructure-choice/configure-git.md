@@ -1,5 +1,5 @@
 ---
-title: "Setting Up a New Workspace and Configuring Git "
+title: "Setting Up a New Workspace, Configuring Git and Adding Research Drive on Research Cloud"
 description: "Learn how to set up a new workspace/VM instance on Research Cloud and configure Git on the instance."
 keywords: "surf, rd, rclone, large files, webdav, store, storage, git, configure"
 weight: 3
@@ -21,7 +21,7 @@ This building block takes you through the steps to configure Git on a new virtua
 You can access and write data in remote repositories on Github using SSH (Secure Shell Protocol). When you connect via SSH, you authenticate using a private key file on your local machine. To create the SSH key:
 
 - Go to the directory `~/.ssh` using `cd .ssh` command on the terminal and create a ‘config’ file using `touch config` command.
-- Then, create your SSH keys with the `ssh-keygen` command. Click enter to save the key in the default directory specified or mention an alternative directory if you would like to save it elsewhere. Then you may enter a passphrase for your private key which gives an additional layer of security for the private key.
+- Then, create your SSH keys with the `ssh-keygen` command. Click enter to save the key in the default directory specified or mention an alternative directory if you would like to save it elsewhere. Then you may enter a passphrase for your private key, providing an additional layer of security.
 - Now, we have generated two keys that are required for SSH authentication: private key (id_rsa) and the public key (id_rsa.pub).
 
 
@@ -35,35 +35,23 @@ You can access and write data in remote repositories on Github using SSH (Secure
 {{% /tip %}}
 
 ### Step 2: Configure SSH
-If you configure multiple keys for an SSH client and connect to an SSH server, the client can try the keys one at a time until the server accepts one but this process desn’t work because of how Git SSH URLs are structured. Hence, you must configure SSH to explicitly use a specific key file. To do this, edit your `~/.ssh/config` file using the `nano` command and copy-paste the following and press F3 to save.
+If you configure multiple keys for an SSH client and connect to an SSH server, the client can try the keys one at a time until the server accepts one but this process doesn’t work because of how Git SSH URLs are structured. Hence, you must configure SSH to explicitly use a specific key file. To do this, edit your `~/.ssh/config` file using the `nano` command and copy-paste the following and press F3 to save.
 
-{{% codeblock %}}
-```bash
+```
 # Host github.com
 #   User git
 #   Hostname github.com
 #   IdentityFile ~/.ssh/id_rsa
-
-{{% /codeblock %}}
-
-
+```
 
 {{% warning %}}
 Make sure to change the ‘IdentityFile’ to the directory where the id_rsa key is saved.
 {{% /warning %}}
 
 
-
-
-
-
-
-
 <video width="500" height="300" controls>
   <source src="../img/nano.mov" type="video/mp4">
 </video>
-
-
 
 
 ### Step 3: Adding a New SSH key to your Github Account
@@ -80,9 +68,23 @@ Make sure to change the ‘IdentityFile’ to the directory where the id_rsa key
   <source src="../img/config-key-on-git.mov" type="video/mp4">
 </video>
 
-- Lastly, to make sure the key file is readable and writeable only by the owner run `chmod 600 ~/.ssh/config`
+- Lastly, to make sure the key file is readable and writable only by the owner run `chmod 600 ~/.ssh/config`
 - Now, clone the repository using the SSH URL
 
 <video width="500" height="300" controls>
   <source src="../img/git clone.mov" type="video/mp4">
 </video>
+
+### Step 4: Adding Research Drive
+
+To use Research Drive, you should first make sure that you have an account, or a collaborator has given you access to Research Drive. If so, you can log in and view/upload files using instructions here: https://wiki.surfnet.nl/display/RDRIVE/How+to+login
+
+You should then be able to connect research drive on your workspace following these instructions:
+
+https://servicedesk.surf.nl/wiki/display/WIKI/Connect+Research+Drive (In most cases, you would be using the "branded" research drive instance (e.g., provided by Tilburg).
+
+{{% tip %}}
+If you do not see any files displayed in the Research Drive folder of your workspace, there is some issue with mounting. Please follow the steps above to re-link Research Drive to your collaborative organization (CO) and it should work.
+{{% /tip %}}
+
+
