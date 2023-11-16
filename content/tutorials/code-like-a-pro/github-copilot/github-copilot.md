@@ -7,8 +7,9 @@ keywords: "setup, RStudio, R, GitHub, GitHub Copilot, AI"
 weight: 2
 draft: false
 aliases:
-- /tutorials/more-tutorials/github-copilot/github-copilot
-- /tutorials/more-tutorials/github-copilot/_index
+- /learn/copilot
+- /tutorials/github-copilot-in-rstudio/
+
 ---
 
 ## Overview 
