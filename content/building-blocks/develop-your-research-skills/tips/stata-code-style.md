@@ -47,6 +47,8 @@ If you include a comment as a header like this for one major block of code, you 
 
 In the functional style in Stata, we enclose code within program... end blocks. **The first program is always called “main,” and the .do file always ends with an “Execute” step.**
 
+
+{{% codeblock %}}
 ```
 -Stata-
 
@@ -83,6 +85,9 @@ end
 * EXECUTE
 main
 ```
+
+{{% /codeblock %}}
+
 {{% warning %}}
 The `main` command must come at the end of the script is because Stata (like Python) reads in programs in order of appearance.
 {{% /warning %}}
@@ -106,6 +111,7 @@ Functions should be **shy** (see [Code and Data for the Social Sciences](http://
  {{% example %}}
 
  From the following code:
+   {{% codeblock %}}
    ```
    -Stata-
 
@@ -115,6 +121,8 @@ Functions should be **shy** (see [Code and Data for the Social Sciences](http://
    merge_new_data 
    regress productivity y_average z_average
    ```
+  {{% /codeblock %}}
+  
  there is no way to tell what are the inputs and outputs to the `prepare_data`, `update_variables`, and `merge_new_data` functions and no way to tell where the `productivity`, `y_average`, and `z_average` variables came from.
  {{% /example %}}
 
