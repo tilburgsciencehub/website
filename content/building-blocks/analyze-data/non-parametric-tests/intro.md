@@ -3,6 +3,7 @@ title: "Introduction to non parametric tests"
 description: "Describing the types of non parametric tests and their usage"
 keywords: "non, para, test, binom, chi, wilcoxon, mcnemar, fisher, median, mann, whitney, in, dep, dist"
 weight: 1
+author: "Aakriti Gupta"
 date:
 draft: false
 aliases:
@@ -66,12 +67,10 @@ Now that you know the characteristics of your sample, you can accordingly choose
 ### Binomial Test
 If you are dealing with a **binary data** with a **nominal** measurement scale, binomial test is the most appropriate test. It answers the question: "Is the observed outcome significantly different from what we would expect by a random chance?"; such as: Testing if a coin is fair, testing if a an election outcome favours the Republican or the Democrats, etc.
 
-Check out the building block on the binomial test [# I'll add link here] to learn how to use this test on R and how the formula works mathematically.
+
 
 ### Chi-Squared Goodness of Fit
 Another test you can use with a **binary** and **nominal** data is the Chi-Squared Goodness of Fit. It tests whether a significant difference exists between an observed number of outcomes falling in each category and an expected number based on the null hypothesis (which we call the goodness-of-fit)
-
-Check out the building block on the chi-squared goodness of fit [# I'll add link here] to learn how to use this test on R and how the formula works mathematically.
 
 {{% warning %}}
 The two tests discussed above are useful when you only have **one sample** of data. However, when there are multiple samples of data, it is important to be mindful if those data samples are independent or if they are related to each other. You should accordingly choose the most apt test.
@@ -92,7 +91,7 @@ But before going over the Wilcoxon Matched-Pairs Sign Test, let's first discuss 
 
 The Sign Test, however, only accounts for the sign of the differences between the two dependent samples and not for the magnitude of the difference. Hence, the **Wilcoxon Signed-Ranks Test** serves as a **powerful extension** of the Sign test as it uses both the sign and relative magnitude (ranks) of the differences.
 
-Check out how to use this test on the building block [#Add link here]
+
 
 ### McNemar's test
 The final test suitable for two dependent samples is the McNemar's Test. It is suitable for **nominal** and **discrete** data. It's often used in situations where you have two sets of observations, like before and after measurements or two different treatments on the same group.
@@ -111,7 +110,7 @@ In this case, each patient serves as their own control because they receive both
 
 The McNemar's test helps answer the question: "Is there a significant difference in improvement rates between the two treatments?"
 
-To know how to use this test, check out the building block [#Add link here].
+
 
 {{% warning %}}
 The tests above deal with a **within subject** design in which all participants take part in every condition (treatment), making the observations dependent on each other. However, many experiments tend to have a **between subject** design where each participant experiences only one of the treatments. As a result, the decisions made in the two (or more) treatments are **independent** of each other.
@@ -135,7 +134,7 @@ Hence, the data can be expressed as a 2x2 as such,
 
 The Fisher's Exact test tries to determine whether there is statistically significant relationship between the **'Sample'** (such as, gender: male or female) and **'Class'** (such as, preference of a colour: blue or pink ). In other words, you can check if gender has any influence on whether someone prefers the colour blue or pink.  
 
-Check out the building block on Fisher's Exact test [#add link] to learn how to use the test.
+
 
 ### Median test
 The Median test can be interpreted as an application of the Fisher’s Exact test in a case where each observation is compared to the median of all the observations. Therefore, the Fisher's Exact test is applied to the following 2x2 contingency table with the *'Class'* constructed by comparison of each observation to the median of both independent samples.
@@ -149,7 +148,7 @@ The Median test can be interpreted as an application of the Fisher’s Exact tes
 
 Because an ordering of data is required to accurately define the median, it is important to have an **ordinal** data to use this test.
 
-Check out this building block [#Add link] to learn how to use this test.
+
 
 
 ### Mann-Whitney U test
@@ -159,12 +158,18 @@ parametric test and the non-parametric alternative to Student's t-test.
 You can use this test when you have two independent groups (samples) and you want to know if there is a significant difference in the distribution or median of a variable between these groups.
 For example: Are the median test scores of students who received Tutoring Group A significantly different from those who received Tutoring Group B?
 
-Check out this building block [#Add link] to learn how to use this test.
 
 
 {{% summary %}}
 
--
+- Non parametric tests are important because parametric tests like the t-test and f-test make certain assumptions about the underlying population distribution which are not always reasonable to make.
+
+- The choice of the non-parametric test depends on 3 characteristics of your data:
+   - Measurement scale: Nominal, ordinal, interval or ratio scale
+   - Type of data: binary, discrete or continuous
+   - Data structure: One sample, dependent or independent samples
+
+
 
 
 
