@@ -1,5 +1,5 @@
 ---
-title: "Plotting with Matplotlib vs Seaborn"
+title: "Plotting with Matplotlib and Seaborn in Python"
 description: "Plotting in Python - comparison between matplotlib and seaborn"
 keywords: "data, visualization, python, plotting, seaborn, matplotlib"
 date: 2023-07-19
@@ -11,10 +11,12 @@ aliases:
   - /python/plotting
 ---
 
-
-## Plotting in Python
+## Overview
 
 Python has a lot of libraries for visualizing data, out of which `matplotlib` and `seaborn` are the most common. In this building block we construct the plots defined in [Data Visualization Theory and Best Practices](https://tilburgsciencehub.com/building-blocks/visualize-your-data/data-visualization/theory-best-practices/) with both `matplotlib` and `seaborn`.
+
+## Setup
+
 To install `matplotlib` follow this [guide](https://matplotlib.org/stable/users/installing/index.html). This is the base library for plotting in Python.
 
 {{% tip %}}
@@ -47,9 +49,11 @@ stocks = pd.read_csv('stocks-monthly.csv',parse_dates=[0])
 ```
 {{% /codeblock %}}
 
+## Gallery of Plots
+
 ### 1. Scatterplot
 
-#### Matplotlib
+*Matplotlib*
 
 Creating a scatterplot with `matplotlib` is simple, we just need to follow a simple syntax. For this plot type we use the Iris dataset.
 
@@ -76,7 +80,7 @@ The scatterplot visualizes the sepal width on the X axis and the sepal length on
 
 _Output:_
 <p align = "center">
-<img src = "../../img/scatterplot_plt.png" width=350">
+<img src = "../img/scatterplot_plt.png" width=350">
 </p>
 
 {{% tip %}}
@@ -98,7 +102,7 @@ sns.scatterplot(iris['sepal width'], iris['sepal length'], hue = iris['species']
 
 _Output:_
 <p align = "center">
-<img src = "../../img/scatterplot_sns.png" width=350">
+<img src = "../img/scatterplot_sns.png" width=350">
 </p>
 
 
@@ -132,7 +136,7 @@ plt.grid()
 
 _Output:_
 <p align = "center">
-<img src = "../../img/bar_plot_plt.png" width=350">
+<img src = "../img/bar_plot_plt.png" width=350">
 </p>
 
 #### Seaborn
@@ -147,7 +151,7 @@ sns.barplot(stocks['Date'].dt.month, stocks['GOOG']).set(title="Bar plot")
 
 _Output:_
 <p align = "center">
-<img src = "../../img/bar_plot_sns.png" width=350">
+<img src = "../img/bar_plot_sns.png" width=350">
 </p>
 
 ### 3. Stacked bar chart
@@ -181,7 +185,7 @@ plt.ylim(0,800)
 
 _Output:_
 <p align = "center">
-<img src = "../../img/stacked.png" width=350">
+<img src = "../img/stacked.png" width=350">
 </p>
 
 `seaborn` doesn't have a direct function for plotting stacked bar charts. An alternative is to create it using the `pandas` library following this syntax: `DataFrameName.plot(kind='bar', stacked=True, color=[.....])`
@@ -200,7 +204,7 @@ sns.lineplot(data = stocks, x = 'Date', y = 'NASDAQ').set(title="Line plot")
 
 _Output:_
 <p align = "center">
-<img src = "../../img/line_plot_sns.png" width=350">
+<img src = "../img/line_plot_sns.png" width=350">
 </p>
 
 #### Matplotlib & Pandas
@@ -220,7 +224,7 @@ plt.title("Stock prices over time")
 
 _Output:_
 <p align = "center">
-<img src = "../../img/line_plot_plt.png" width=350">
+<img src = "../img/line_plot_plt.png" width=350">
 </p>
 
 #### Subplotting
@@ -253,7 +257,7 @@ fig.suptitle("Development of stocks over time", size=18, weight='bold')
 
 _Output:_
 <p align = "center">
-<img src = "../../img/subplots.png" width=450">
+<img src = "../img/subplots.png" width=450">
 </p>
 
 ### 5. Heatmap
@@ -295,7 +299,7 @@ plt.title("Heatmap with color bar")
 
 _Output:_
 <p align = "center">
-<img src = "../../img/heatmap_plt.png" width=300">
+<img src = "../img/heatmap_plt.png" width=300">
 </p>
 
 #### Seaborn
@@ -308,7 +312,7 @@ sns.heatmap(iris_matrix, square=True).set(title="Heatmap with color bar")
 
 _Output:_
 <p align = "center">
-<img src = "../../img/heatmap_sns.png" width=350">
+<img src = "../img/heatmap_sns.png" width=350">
 </p>
 
 ### 6. Histogram
@@ -327,7 +331,7 @@ sns.distplot(iris['petal length'], fit=norm).set(title="Histogram with normal di
 
 _Output:_
 <p align = "center">
-<img src = "../../img/histogram_sns.png" width=350">
+<img src = "../img/histogram_sns.png" width=350">
 </p>
 
 The blue line represents the density plot and the black line is the fitted normal distribution
@@ -345,7 +349,7 @@ iris.boxplot(column = 'petal length', by = 'species', figsize = (5,5))
 
 _Output:_
 <p align = "center">
-<img src = "../../img/boxplot_plt.png" width=300">
+<img src = "../img/boxplot_plt.png" width=300">
 </p>
 
 #### Seaborn
@@ -358,7 +362,7 @@ sns.boxplot(data=iris, x='species', y='petal length').set(title="Box plot of pet
 
 _Output:_
 <p align = "center">
-<img src = "../../img/boxplot_sns.png" width=350">
+<img src = "../img/boxplot_sns.png" width=350">
 </p>
 
 
