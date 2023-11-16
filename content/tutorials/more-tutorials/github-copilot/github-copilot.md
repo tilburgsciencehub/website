@@ -10,6 +10,7 @@ aliases:
 - /tutorials/more-tutorials/github-copilot/github-copilot
 - /tutorials/more-tutorials/github-copilot/_index
 ---
+
 ## Overview 
 
 In this tutorial you will learn what GitHub Copilot is and how it can be used for you research in RStudio. 
