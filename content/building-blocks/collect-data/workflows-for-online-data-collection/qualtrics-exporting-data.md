@@ -93,7 +93,7 @@ This section provides a `step-by-step` `guide` to designing a survey in Qualtric
 
 ## R 
 
-The [qualtRics](https://cran.r-project.org/web/packages/qualtRics/vignettes/qualtRics.html) R package is designed to facilitate the retrieval of survey data through the Qualtrics API with the goal of streamlining the preprocessing required for the analysis of these surveys. This package offfers an alternative to manually downloading surveys from Qualtrics and then importing them into R. Moreover, it allows to update your dataset in real time without having to download and updated version and upload it again into R.
+The [qualtRics](https://cran.r-project.org/web/packages/qualtRics/vignettes/qualtRics.html) R package is designed to facilitate the retrieval of survey data through the Qualtrics API with the goal of streamlining the preprocessing required for the analysis of these surveys. This package offfers an alternative to manually downloading surveys from Qualtrics and then importing them into R. Moreover, it allows to update your dataset in real time without having to download an updated version and upload it again into R.
 
 The following points will guide you to successfully importing your survey data into R by using the Qualtrics API:
 
@@ -164,14 +164,26 @@ write.csv(mysurvey, file = "/YOUR/PATH/file_name.csv")
 
 ## Python
 
-Package: [QualtricsAPI](https://pypi.org/project/QualtricsAPI/)
+If you are a Python user, the package [QualtricsAPI](https://pypi.org/project/QualtricsAPI/) allows you to leverage the Qualtrics API to upload data to your local environment and proceed with the required analysis.
+
+
+{{% warning %}}
+
+To successfully use the package it is necessary to have access to one's personal Qualtrics API. Points 1 and 2 of the R section still hold here.
+
+{{% /warning %}}
+
+Open your Python environment and follow the code snippets below.
 
 {{% codeblock %}} 
 ```python
+# Install package
 pip install QualtricsAPI
 
 ```
 {{% /codeblock %}}
+
+Import the `Credentials` module to create variables that `store` your `Qualtrics` `API` `credentials`. 
 
 
 {{% codeblock %}} 
@@ -182,20 +194,17 @@ from QualtricsAPI.Setup import Credentials
 {{% /codeblock %}}
 
 
-
+Set up your credentials (see numbered list within the R section for a step-by-step guide).
 
 {{% codeblock %}} 
 ```python
 
-#Call the qualtrics_api_credentials() method (Non-XM Directory Users)
-Credentials().qualtrics_api_credentials(token='Your API Token',data_center='Your Data Center')
-
-#Call the qualtrics_api_credentials() method (XM Directory Users)
-Credentials().qualtrics_api_credentials(token='Your API Token',data_center='Your Data Center',directory_id='Your Directory ID')
+Credentials().qualtrics_api_credentials(token='Your API Token', data_center='Your Data Center ID', directory_id='Your Directory ID')
 
 ```
 {{% /codeblock %}}
 
+Import the `Responses` module to download your `survey` `questions` and `responses` to your local environment. 
 
 {{% codeblock %}} 
 
@@ -205,9 +214,10 @@ from QualtricsAPI.Survey import Responses
 ```
 {{% /codeblock %}}
 
+
 {{% codeblock %}} 
 ```python
-#Get Survey Questions
+# Get Survey Questions
 Responses().get_survey_questions(survey="<survey_id>")
 
 ```
@@ -216,22 +226,39 @@ Responses().get_survey_questions(survey="<survey_id>")
 
 {{% codeblock %}} 
 ```python
-#Get Survey Responses
+# Get Survey Responses
 Responses().get_survey_responses(survey="<survey_id>")
+
+```
+{{% /codeblock %}}
+
+All your survey responses should be downloaded now, you can start working with your data.
+
+## Stata
+
+
+{{% codeblock %}} 
+
+``` 
+-Stata-
+ssc install qualtricsload
+ssc install 
+ssc install stcmd
+
+qualtricslaod <YOUR SURVEY ID>, apitoken(<YOUR API TOKEN>) datacenter(<YOUR DATACENTER ID>)
+
 
 ```
 {{% /codeblock %}}
 
 
 
-## Stata
-
-
-
-
-
-
 {{% summary %}}
 
+Survey workflow developed in this building block:
+
+- Consider the `Pros` and `Cons` of gathering data through a survey to determine whether conducting a survey is the optimal choice in your specific case.
+- Learn how to `design` a `survey` and `practically` `implement` it in Qualtrics.
+- Explore how to `export` data (survey responses) from Qualtrics to `R`, `Python`, and `Stata` using the Qualtrics API.
 
 {{% /summary %}}
