@@ -52,12 +52,12 @@
 
 					<li>
 						<a onBoardTooltip="Our tutorials bundle, simplify and structure valuable information to ensure a smooth learning experience."
-							weight="1" href="/tutorials" class="headerLink menuArrow">Tutorials</a>
+							weight="1" href="/building-blocks" class="headerLink menuArrow">Topics</a>
 						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-5 px-3">
 
 							<div class="row">
 
-								{{- range where .Site.Home.Sections "Section" "tutorials"}}
+								{{- range where .Site.Home.Sections "Section" "building-blocks"}}
 
 								{{ range .Pages }}
 								<div class="col-6 mb-4 px-3">
@@ -78,7 +78,9 @@
 							</div>
 						</div>
 					</li>
-					<li>
+
+					<!--
+						<li>
 						<a onBoardTooltip="Building blocks are the DNA of our platform. They offer specific information on various topics, including code snippets and useful cheat sheets."
 							weight="1" href="/building-blocks" class="headerLink menuArrow">Building Blocks</a>
 						<div class="bg-white text-left w-100 border-top boxShadow subMenu">
@@ -133,6 +135,7 @@
 
 						</div>
 					</li>
+				-->
 					<li>
 						<a onBoardTooltip="Examples are real-life cases, publications, templates, or research projects that put into practice the concepts explained on Tilburg Science Hub."
 							href="/examples" class="headerLink menuArrow">Examples</a>
@@ -225,12 +228,12 @@
 -->
 				<a href="/tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour</a>
 
-				<a href="#0" data-screen-two="mobile-tutorials"
-					class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tutorials<span
-						class="icon mini-right float-right text-primary"></span> </a>
 				<a href="#0" data-screen-two="mobile-building-blocks"
-					class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Building Blocks<span
+					class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Topics<span
 						class="icon mini-right float-right text-primary"></span> </a>
+				<!--<a href="#0" data-screen-two="mobile-building-blocks"
+					class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Building Blocks<span
+						class="icon mini-right float-right text-primary"></span> </a>-->
 				<!--<a href="#0" data-screen-two="mobile-examples" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples<span
 					class="icon mini-right float-right text-primary"></span> </a>-->
 				<a href="/examples" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples</a>
