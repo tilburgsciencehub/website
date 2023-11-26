@@ -161,13 +161,13 @@ def get_md_files():
     md_files = []
 
     # Iterate through all subdirectories and find .md files
-    for dirpath, _, filenames in os.walk(os.path.join(root_folder, ('content/building-blocks'))):
+    for dirpath, _, filenames in os.walk(os.path.join(root_folder, ('content/topics'))):
         for filename in filenames:
             if filename.endswith('.md'):
                 # Append the full path of the .md file to the list
                 md_files.append(os.path.join(dirpath, filename))
 
-    for dirpath, _, filenames in os.walk(os.path.join(root_folder, ('content/tutorials'))):
+    for dirpath, _, filenames in os.walk(os.path.join(root_folder, ('content/topics'))):
         for filename in filenames:
             if filename.endswith('.md'):
                 # Append the full path of the .md file to the list
@@ -271,8 +271,8 @@ def create_popular_cards_json(input_categories):
 
     # Get Analytics, Populate popular tutorials and building blocks
     response = get_report()
-    tutorials = fetch_cards_popular_pages(response, "/tutorials/")
-    building_blocks = fetch_cards_popular_pages(response, "/building-blocks/")
+    tutorials = fetch_cards_popular_pages(response, "/topics/")
+    building_blocks = fetch_cards_popular_pages(response, "/topics/")
 
     # Create Dictionary
     data_dict = {

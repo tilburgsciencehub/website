@@ -57,17 +57,20 @@
 
 							<div class="row">
 
-								{{- range where .Site.Home.Sections "Section" "building-blocks"}}
+								{{- range where .Site.Home.Sections "Section" "topics"}}
 
 								{{ range .Pages }}
 								<div class="col-6 mb-4 px-3">
-									<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{.Title}}</span>
+									<span class="heading d-block mb-3 text-secondary"
+										style="font-size: 16px;">{{.Title}}</span>
 									{{ range .Pages }}
 									{{ if eq .Params.indexexclude "true" }}
 									<!--<a class="d-block mx-0" href="{{.Permalink}}">DONOTSHOW{{.Title}}</a>-->
 									{{ else }}
-									<a class="d-block mx-0"
-										href="{{.Permalink}}{{ if .Params.indexPage }}{{ .Params.indexPage }}{{end}}">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
+									<a class="d-block mx-0" href="{{ .Permalink }}">{{ if
+										.Params.tutorialtitle
+										}}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
+
 									{{ end }}
 									{{ end }}
 								</div>
@@ -90,7 +93,7 @@
 									<div class="my-4 nav flex-column nav-pills" id="v-pills-tab" role="tablist"
 										aria-orientation="vertical">
 
-										{{- range where .Site.Pages "Section" "building-blocks" -}}
+										{{- range where .Site.Pages "Section" "topics" -}}
 										{{ if eq .Params.isParent "true" }}
 										{{- range $index, $value := .Pages -}}
 										<a class="nav-link mx-0 px-5 py-3 heading pillx {{ if eq $index 0 }} active  {{ end }}"
@@ -107,7 +110,7 @@
 								<div class="p-5 px-3 col">
 									<div class="tab-content rightMenu" id="v-pills-tabContent">
 
-										{{- range where .Site.Pages "Section" "building-blocks" -}}
+										{{- range where .Site.Pages "Section" "topics" -}}
 										{{ if eq .Params.isParent "true" }}
 										{{- range $index, $value := .Pages -}}
 										<div class="tab-pane fade {{ if eq $index 0 }} show active {{ end }}" id="{{ .Title | urlize }}"
@@ -253,7 +256,7 @@
 					<a href="#0" class="py-3 border-bottom d-block gotoMainMenu"><span class="icon mini-left text-primary"></span>
 						Building Blocks</a>
 					<br>
-					{{- range where .Site.Pages "Section" "building-blocks" -}}
+					{{- range where .Site.Pages "Section" "topics" -}}
 					{{ if eq .Params.isParent "true" }}
 					{{- range $index, $value := .Pages -}}
 					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="{{.Permalink}}">{{ .Title }} <span

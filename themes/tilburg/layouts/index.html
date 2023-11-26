@@ -203,7 +203,7 @@
             <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
               Most read building blocks
             </h2>
-            <ul class="my-2 list-unstyled most-popular-building-blocks" id="most-read-building-blocks-list">
+            <ul class="my-2 list-unstyled most-popular-topics" id="most-read-topics-list">
             </ul>
           </div>
         </div>
@@ -214,7 +214,7 @@
             <p style="color: #6081a2!important;
               font-family: acumin-pro,sans-serif;font-size:16px;width:80%">Description</p>
             <div class="mt-4 mb-0">
-              <a href="/building-blocks/">
+              <a href="/topics/">
                 <button class="btn tertiary ">Start Reading</button>
               </a>
             </div>
@@ -225,7 +225,7 @@
             <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
               Most read tutorials
             </h2>
-            <ul class="my-2 list-unstyled most-popular-building-blocks" id="most-read-tutorials-list">
+            <ul class="my-2 list-unstyled most-popular-topics" id="most-read-tutorials-list">
             </ul>
           </div>
         </div>
@@ -280,7 +280,7 @@
               {{ $s := slice }}
               {{ $displayedTitles := dict }}
 
-              {{ range where .Site.Pages.ByLastmod.Reverse "Section" "in" "[building-blocks, tutorials]" }}
+              {{ range where .Site.Pages.ByLastmod.Reverse "Section" "in" "[topics, tutorials]" }}
               {{ $title := .Title }}
               {{ if not (index $displayedTitles $title) }}
               {{ $s = $s | append . }}
@@ -308,7 +308,7 @@
                 Use our code snippets in your projects
               </h2>
               <div class="text-center mt-4 mb-0">
-                <a href="/building-blocks/">
+                <a href="/topics/">
                   <button class="btn tertiary ">Use a code snippet</button>
                 </a>
               </div>

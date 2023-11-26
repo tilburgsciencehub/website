@@ -35,3 +35,6 @@ pygmentsStyle = "pygments"
       hardWraps = false
       unsafe = true
       xhtml = false
+
+[taxonomies]
+third_level = "third_levels"

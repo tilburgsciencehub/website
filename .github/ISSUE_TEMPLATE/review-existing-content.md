@@ -24,7 +24,7 @@ __Deadline__
 
 ## Checklist
 
-__IMPORTANT:__ Before starting, ensure you are familiar with our [style guide](https://tilburgsciencehub.com/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide/). Also, please read some of our content on the site to get familiar with the style. 
+__IMPORTANT:__ Before starting, ensure you are familiar with our [style guide](https://tilburgsciencehub.com/topics/more-tutorials/contribute-to-tilburg-science-hub/style-guide/). Also, please read some of our content on the site to get familiar with the style. 
 
 *See this checklist below for what needs to be done.*
 

@@ -32,7 +32,7 @@
 					<div class="heading text-white d-block py-2">Tutorials</div>
 
 					<div class="d-none d-lg-block links">
-						{{- range where .Site.Pages "Section" "tutorials" -}}
+						{{- range where .Site.Pages "Section" "topics" -}}
 						{{ if eq .Params.isParent true }}
 						<a href="{{ .Permalink }}{{ if .Params.indexPage }}{{ .Params.indexPage }}{{end}}">{{ .Title }}</a>
 						{{ end }}
@@ -47,7 +47,7 @@
 					<div class="heading text-white d-block py-2">Building Blocks</div>
 
 					<div class="d-none d-lg-block links">
-						{{- range where .Site.Pages "Section" "building-blocks" -}}
+						{{- range where .Site.Pages "Section" "topics" -}}
 						{{ if eq .Params.isParent "true" }}
 						{{- range $index, $value := .Pages -}}
 						<a href="{{ .Permalink }}">{{ .Title }}</a>

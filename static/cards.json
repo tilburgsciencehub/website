@@ -6,54 +6,54 @@
             "description": "Check out our tutorial with illustrative use cases for GitHub Copilot in RStudio!"
         },
         {
-            "path": "/tutorials/more-tutorials/chatgpt-article/chat-gpt-research/",
+            "path": "/topics/more-tutorials/chatgpt-article/chat-gpt-research/",
             "title": "Use ChatGPT for your research!",
             "description": "Currently, ChatGPT is everywhere. Learn how to use it efficiently to improve your research."
         },
         {
-            "path": "/tutorials/more-tutorials/openai-whisper/whisper/",
+            "path": "/topics/more-tutorials/openai-whisper/whisper/",
             "title": "Making transcriptions using OpenAI's Whisper",
             "description": "Guidance page for using Whisper for translations and transcriptions"
         },
         {
-            "path": "/tutorials/reproducible-research-and-automation/practicing-pipeline-automation-make/pipeline-automation-overview/",
+            "path": "/topics/reproducible-research-and-automation/practicing-pipeline-automation-make/pipeline-automation-overview/",
             "title": "Practicing Pipeline Automation using Make",
             "description": "Follow our tutorial to implement a fully automated workflow to conduct sentiment analysis on tweets."
         },
         {
-            "path": "/tutorials/code-like-a-pro/hugo-website/get-hugo/",
+            "path": "/topics/code-like-a-pro/hugo-website/get-hugo/",
             "title": "Create Your Own Website in 15 Minutes",
             "description": "Learn how to install Hugo, a famous static site generator."
         },
         {
-            "path": "/tutorials/reproducible-research-and-automation/",
+            "path": "/topics/reproducible-research-and-automation/",
             "title": "Reproducible Research and Automation",
             "description": ""
         }
     ],
     "building_blocks": [
         {
-            "path": "/building-blocks/collaborate-and-share-your-work/use-github/git-branching-strategies/",
+            "path": "/topics/collaborate-and-share-your-work/use-github/git-branching-strategies/",
             "title": "Git Branching Strategies",
             "description": "Explore three popular Git branching strategies: Trunk-Based Development, Feature Branching, and Git Flow. Learn their workflow, strengths, weaknesses and suitable projects and teams."
         },
         {
-            "path": "/building-blocks/configure-your-computer/statistics-and-computation/r/",
+            "path": "/topics/configure-your-computer/statistics-and-computation/r/",
             "title": "Set up R and RStudio",
             "description": "Learn how to install R and rstudio on your windows, linux or mac. Follow this tutorial on setting up r studio and how to add r to windows path."
         },
         {
-            "path": "/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/",
+            "path": "/topics/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/",
             "title": "Cheatsheet for LaTeX Math Commands",
             "description": "Download our LaTeX math cheat sheet and learn the most important AMS-Math LaTeX commands. View our overview for mathematical expressions, Greek letters and more"
         },
         {
-            "path": "/building-blocks/configure-your-computer/automation-and-workflows/make/",
+            "path": "/topics/configure-your-computer/automation-and-workflows/make/",
             "title": "Set up Make",
             "description": "Learn how to install make on windows, mac, and Linux. Use make to automate the execution of projects, and see how to check if make is installed correctly"
         },
         {
-            "path": "/building-blocks/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/",
+            "path": "/topics/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/",
             "title": "Configuring Python for Web Scraping",
             "description": "Learn to web scrape using ChromeDriver, Selenium, and Webdriver manager for python. Web scraping using an automated browser by installing ChromeDrive"
         }
@@ -76,13 +76,13 @@
         "learn": [
             {
                 "title": "Online Data Collection and Management",
-                "path": "/tutorials/open-education/online-data-collection-and-management/odcm-course",
+                "path": "/topics/open-education/online-data-collection-and-management/odcm-course",
                 "description": "Learn to use web scraping and APIs to collect data for your empirical research project.",
                 "icon": "fa-solid fa-database"
             },
             {
                 "title": "Web Scraping and API Mining",
-                "path": "/tutorials/more-tutorials/web-scraping/web-scraping-tutorial",
+                "path": "/topics/more-tutorials/web-scraping/web-scraping-tutorial",
                 "description": "Learn to extract data from the web and APIs",
                 "icon": "fa-solid fa-database"
             }
