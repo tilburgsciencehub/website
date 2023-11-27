@@ -68,96 +68,21 @@ In this section, we introduce the basics of the lubridate package in R, focusing
 
 {{% codeblock %}}
 
-```R 
-# Install packages if needed
-## install.packages(lubridate"))
-library(lubridate)
-
-# 1. Parsing Dates and Times
-## lubridate provides functions to parse dates and times from character strings:
-ymd("2023-11-20") # Year-month-day format
-mdy("11/20/2023") # Month-day-year format
-dmy("20-11-2023") # Day-month-year format
-
-# 2. Handling Time Zones
-## Specify time zones with the tz argument:
-ymd("2023-11-20", tz = "UTC")
-
-# 3. Manipulating Dates and Times
-## Perform arithmetic operations like addition and subtraction:
-my_date <- ymd("2023-01-01")
-my_date + days(30) # Add 30 days
-my_date - months(2) # Subtract 2 months
-
-## Extract specific components from a date-time object:
-year(my_date)
-month(my_date)
-day(my_date)
-wday(my_date, label = TRUE) # Day of the week
-
-#  4. Interval, Period, and Duration
-## Working with Intervals
-interval_start <- ymd_hms("2023-01-01 00:00:00")
-interval_end <- ymd_hms("2023-12-31 23:59:59")
-my_interval <- interval(interval_start, interval_end) # Time span between two specific points.
-
-## Period vs. Duration
-my_period <- as.period(my_interval) # Human-readable time spans (years, months, etc.)
-my_duration <- as.duration(my_interval) #  Exact time spans in seconds
-
-# 5. Comparison and Operations
-## Use logical operators to compare dates:
-date1 <- ymd("2023-01-01")
-date2 <- ymd("2023-06-01")
-date1 < date2 # TRUE
+```R
+# Download in the top right corner
 ```
+[R-link](starting-with-lubridate.R)
+
 {{% /codeblock %}}
 
 #### Advanced lubridate functions
 Here, we explore more advanced features of lubridate, including custom parsing techniques, advanced arithmetic, time zone manipulations, and integration with other R packages for enhanced data analysis.
 
 {{% codeblock %}}
-
 ```R
-# 1. Advanced Parsing Techniques
-## Custom Date Formats
-parse_date_time("20th Nov 2023", orders = "dmy") # If your dates don't fit standard formats, use parse_date_time()
-
-## Handle multiple date formats simultaneously:
-dates <- c("2023-11-20", "20/11/2023", "November 20, 2023")
-parse_date_time(dates, orders = c("Ymd", "dmy", "BdY"))
-
-# 2. Advanced Arithmetic
-## Combine periods and durations for precise calculations:
-my_date <- ymd("2023-01-01")
-my_date + years(1) + ddays(30) # Add 1 year and 30 days
-
-# 3. Time Zone Manipulations
-## Convert times to different time zones:
-my_time <- ymd_hms("2023-01-01 12:00:00", tz = "UTC")
-with_tz(my_time, tz = "America/New_York")
-
-# 4. Periodic Patterns in Time Series Data
-## Aggregating by Time Periods
-time_series_data %>%
-  group_by(floor_date(date, unit = "month")) %>%
-  summarize(total = sum(value))
-
-# 5. Advanced Date Comparison
-## Comparing Periods and Intervals
-check_date <- ymd("2023-06-15")
-check_date %within% my_interval # Use set operations like %within% to check if a date falls within an interval:
-
-## Sequence Generation
-seq.Date(from = ymd("2023-01-01"), to = ymd("2023-12-31"), by = "month") # Generate sequences of dates for simulations or testing:
-
-# 6. Integrating with Other R Packages
-## dplyr and ggplot2 Integration
-data %>%
-  mutate(quarter = quarter(date)) %>%
-  ggplot(aes(x = quarter, y = value)) +
-  geom_line()
+# Download in the top right corner
 ```
+[R-link](advanced-lubridate-functions.R)
 
 {{% /codeblock %}}
 
