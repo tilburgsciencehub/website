@@ -6,15 +6,22 @@
 {{- $baseCategoryRaw := index (split $currentURL "/") 5 -}}
 {{- $baseCategory:= humanize $baseCategoryRaw -}}
 
+<!--
+<br><br>
+<div class="container mt-4">
+	{{ partial "breadcrumbs.html" . }}
+
+</div>
+-->
 
 <div class="container content">
     <br><br><br><br>
     <div class="row justify-content-center">
         <div class="col-lg-11 col-22">
             <h1 class="text-center">{{ $baseCategory }}</h1>
-            <p class="text-center text-secondary my-5">
+            <!--p class="text-center text-secondary my-5">
                 Find out more about <strong style="font-weight: 500;">{{ $baseCategory }}</strong>
-            </p>
+            </p>-->
         </div>
 
     </div>
