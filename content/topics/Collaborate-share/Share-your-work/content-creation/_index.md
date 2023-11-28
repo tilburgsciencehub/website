@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Starting a New Project"
+title: "Content Creation for Research"
 weight: 1
 type: subcategory
 ---

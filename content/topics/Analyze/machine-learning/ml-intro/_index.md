@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Starting a New Project"
+title: "Machine Learning 101"
 weight: 1
 type: subcategory
 ---

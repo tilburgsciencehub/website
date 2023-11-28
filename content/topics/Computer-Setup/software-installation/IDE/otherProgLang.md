@@ -1,7 +1,8 @@
 ---
 title: "Other Programming Languages"
 date: 2021-01-06T22:01:14+05:30
-draft: true
+weight: 5
+draft: false
 ---
 
 R, Stata and Python offer great functionality that is sufficient for most uses. But of course they are not the only languages available. Below we summarize several alternatives that are also commonly used by researchers and data scientists.

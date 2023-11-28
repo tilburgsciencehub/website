@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Reporting"
-weight: 2
+title: "Linear Regression"
+weight: 1
 type: subcategory
 ---

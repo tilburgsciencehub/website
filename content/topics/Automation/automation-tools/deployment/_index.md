@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Docker"
-weight: 3
+title: "Deployment"
+weight: 2
 type: subcategory
 ---

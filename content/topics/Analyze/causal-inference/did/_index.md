@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Auditing Existing Projects"
+title: "Difference in Difference"
 weight: 2
 type: subcategory
 ---

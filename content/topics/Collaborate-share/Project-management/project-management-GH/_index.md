@@ -1,6 +1,7 @@
 ---
 draft: false
-title: "Starting a New Project"
+title: "Project Management on GitHub"
 weight: 1
 type: subcategory
 ---
+

@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Docker"
-weight: 3
+title: "Bash"
+weight: 2
 type: subcategory
 ---

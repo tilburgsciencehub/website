@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Reporting"
-weight: 2
+title: "Getting Started"
+weight: 1
 type: subcategory
 ---

@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Reporting"
-weight: 2
+title: "Writing Process"
+weight: 1
 type: subcategory
 ---

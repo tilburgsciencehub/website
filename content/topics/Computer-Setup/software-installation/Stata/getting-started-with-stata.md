@@ -1,6 +1,5 @@
 ---
 tutorialtitle: "Getting started with Stata"
-type: "stata-programming"
 title: "Getting started with Stata"
 description: "Learn to code in Stata"
 keywords: "learn, Stata, resources, installation, style, code, guidelines, best practices"
@@ -13,7 +12,7 @@ aliases:
   - /topics/reproducible-research/stata-tutorial/stata-tutorial/
 ---
 ## Overview: Why Stata?
-<a href= '../../getting-started-with-stata/img/advantagesstata.png' target="blank"> <img src="../../getting-started-with-stata/img/advantagesstata.png" alt="overview of perks R offers" width="300" style="float:right;"></a>
+<a href= '/images/advantagesstata.png' target="blank"> <img src="/images/advantagesstata.png" alt="overview of perks Stata offers" width="300" style="float:right;"></a>
 
 Stata is a statistical software package that is often used for data manipulation, visualization, and automated reporting. In this tutorial, we guide you to learn coding in Stata and its applications.
 

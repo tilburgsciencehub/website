@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Auditing Existing Projects"
+title: "Supervised Machine Learning"
 weight: 2
 type: subcategory
 ---

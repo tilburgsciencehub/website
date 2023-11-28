@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Starting a New Project"
+title: "Regression Discontinuity Designs (RDD)"
 weight: 1
 type: subcategory
 ---

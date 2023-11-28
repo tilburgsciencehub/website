@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Reporting"
-weight: 2
+title: "Graphs and Charts"
+weight: 1
 type: subcategory
 ---

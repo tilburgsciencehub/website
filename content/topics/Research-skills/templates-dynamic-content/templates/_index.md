@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Docker"
-weight: 3
+title: "Templates"
+weight: 1
 type: subcategory
 ---
