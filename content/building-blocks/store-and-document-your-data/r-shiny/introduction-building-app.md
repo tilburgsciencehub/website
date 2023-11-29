@@ -7,7 +7,7 @@ weight: 1
 author: "Matthijs ten Tije"
 authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
-  - /Shiny
+  - /Shiny/App
   - /UI
   - /Server
   - /App 
@@ -33,13 +33,14 @@ The strength of Shiny lies in its ability to make data and statistical analyses 
 
 ### Core Structure 
 In R Shiny, every application consists of two main components: 
-1. The **User Interface (UI)**
-2. The **Server**.
-
+1. The **User Interface (UI)** 
+   
 The UI is what users interact with when they run your Shiny application. It's essentially a web page constructed using R commands. This interface is responsible for:
 - Displaying information: Text, tables, charts, images, etc.
 - Collecting `user input`: Through interactive elements like text boxes, sliders, and buttons.
 
+2. The **Server**.
+   
 The Server, on the other hand, is where the app's logic resides. It processes the input from the UI, performs computations, and sends output back to the UI. Key aspects of the Server include:
 - `Reactivity`: The server responds to changes in user input specified in the UI, recalculating outputs as needed.
 - R code: All processing is done using R
@@ -48,7 +49,7 @@ The Server, on the other hand, is where the app's logic resides. It processes th
 
 **Reactivity: The Magic of Shiny**
 
-One of the most powerful features of Shiny is reactivity. Reactivity in a Shiny app means that the output automatically updates whenever the user changes an input.
+One of the most powerful features of Shiny is reactivity. Reactivity in a Shiny app means that the output automatically updates whenever the user changes an input. To learn more about reactivity, check out this [building block](/shiny/reactivity).
 
 {{% /tip %}}
 
@@ -80,8 +81,10 @@ shinyApp(ui = ui, server = server)
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/introduction-1.png" width="700">
+<img src = "../images/introduction-1.png" width="500">
 </p>
+
+Even though this basic app only displays the welcome message: "Welcome to the TilburgScienceHub!!!", you are now familiar with and using the appropriate functions to create the UI, server, and run an R Shiny app.
 
 {{% tip %}}
 
@@ -93,14 +96,12 @@ shinyApp(ui = ui, server = server)
 
 {{% /tip %}}
 
-Even though this basic app only displays the welcome message: "Welcome to the TilburgScienceHub!!!", you are now familiar with and using the appropriate functions to create the UI, server, and run an R Shiny app.
-
 ### Building The User Interface 
 
 #### Formatting
-Recall that in every R Shiny application, there are two fundamental components: the User Interface (UI) and the Server. Let's begin with the UI construction, focusing on its layout design using the `fluidPage()` function. This function helps create a fluid and responsive web page layout. Here's how to structure it:
+Let's begin with the UI construction. We will focus on its layout design using the `fluidPage()` function. This function helps create a fluid and responsive web page layout. Here's how to structure it:
 
-- Create a Header: Utilize `titlePanel()` to add a prominent header to your app.
+- Create a Header: Utilize `titlePanel()` to add a header to your app.
 - Layout Organization: Use `sidebarLayout()` to arrange your app's inputs and outputs. This layout divides the page into a sidebar and a main panel.
 - Inputs Section: Place input controls in the `sidebarPanel()`. This section typically appears on the left side of your app.
 - Outputs Section: The `mainPanel()` is used for displaying outputs like plots, tables, or text outputs. It usually occupies the central or right portion of the layout.
@@ -132,27 +133,24 @@ ui <- fluidPage(
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/introduction-2.png" width="700">
+<img src = "../images/introduction-2.png" width="500">
 </p>
 
 {{% tip %}}
 
 **Important Coding Practices**
 
-Remember to separate UI elements with commas in your Shiny code. This is essential for the functionality of your app, as missing commas can cause the app to crash.
-When writing Shiny code, it's crucial to ensure that all UI elements within functions like `fluidPage`, `sidebarLayout`, and `tabsetPanel`are separated by commas. This is essential for the functionality of your app, as missing commas can cause the app to crash, so it's a good habit to double-check your code for these small but significant details.
+When writing Shiny code, it's crucial to ensure that all UI elements within functions like `fluidPage`, `sidebarLayout`, and `tabsetPanel`are separated by commas. Missing commas can cause the app to crash, so it's a good habit to double-check your code for these small but significant details.
 
 {{% /tip %}}
 
 
 #### Creating inputs
-So far, we've established the basic structure of our Shiny app with a header. In Shiny, creating interactive input controls is a key aspect of engaging user interfaces. The variety of input types within Shiny available allows for a highly interactive and customizable user experience.  
+So far, we've established the basic structure of our Shiny app with a header. In Shiny, creating interactive input controls is the key aspect of engaging user interfaces. The variety of input types within Shiny available allows for a highly interactive and customizable user experience.  
 
 Incorporating an input control in Shiny is a straightforward two-step process:
-You first add an ...Input(“x”) function to the UI and then access its value in the server using input$"Input Id".
-
-Add an Input Function in the UI: This is done by using a specific ...Input("id", ...) function, where "id" is a unique identifier for the input control.
-Access the Input Value in the Server: Retrieve the input's value in the server logic using input$id, where id is the identifier assigned in the first step.
+- *Add an Input Function in the UI*: This is done by using a specific ...Input("id", ...) function, where "id" is a unique identifier for the input control.
+- *Access the Input Value in the Server*: Retrieve the input's value in the server logic using input$id, where id is the identifier assigned in the first step.
 
 {{% example %}}
 
@@ -165,18 +163,13 @@ Access the Input Value in the Server: Retrieve the input's value in the server l
 
 Shiny offers a wide range of input types. Choose controls that best fit your app's design and user needs.
 
-For example, an economist might create an app that allows users to explore different economic indicators. The app could have a dropdown menu for selecting a country and a slider for selecting a range of years. The output could be a plot showing the economic growth trend for the selected country and years.
-
 {{% /example %}}
 
 All input functions in Shiny share common characteristics: 
-Every input control in Shiny requires two primary parameters
 - *Input ID*: A unique identifier for each input control, crucial for accessing its value in the server.
 - *Label*: A descriptive text label for the input, visible to users.
 - *Unique Arguments*: Each input type has specific parameters. 
 For instance, selectInput needs a list of choices, while sliderInput requires default values, minimum, and maximum limits.
-
-Input functions are always used in the UI of your Shiny app. You can refer to any input in the server part of the app using input$inputId. This underscores the importance of having unique IDs for each input.
 
 Let's dive into a more advanced app: 
 
@@ -222,9 +215,9 @@ With the inputs configured, we've laid the groundwork for interactive user exper
 When developing a Shiny app, one of the initial steps is to define the output objects and their placement within the user interface (UI). This is achieved using `output placeholders`.
 
 Shiny provides a variety of output functions, each tailored to different output types. To use these functions:
-1. Assign a Unique Name or ID: Each output function requires a unique name or ID. This identifier should be a character string enclosed in double quotes.
-2. Place Output Placeholders in the UI: These placeholders specify the locations and types of outputs that will appear in the app. They are not the actual outputs but markers for where the outputs will be displayed.
-3. Creation of Outputs in the Server Function: While placeholders are set in the UI, the actual outputs are generated in the server function.
+1. *Assign a Unique Name or ID*: Each output function requires a unique name or ID. This identifier should be a character string enclosed in double quotes.
+2. *Place Output Placeholders in the UI*: These placeholders specify the locations and types of outputs that will appear in the app. They are not the actual outputs but markers for where the outputs will be displayed.
+3. *Creation of Outputs in the Server Function*: While placeholders are set in the UI, the actual outputs are generated in the server function.
 
 Our user interface is ready: we have created both input controls and output placeholders. In the following sections, we’ll move our focus to the server function, because it’s the server side of our app that builds the output objects.
 
@@ -258,13 +251,13 @@ Reactive programming is key to Shiny's `interactivity`. It establishes a dynamic
 
 #### Defining Outputs in the Server Function 
 
-In Shiny, the relationship between inputs, outputs, and render functions is vital for an interactive experience. The functionality of inputs is fully realized when linked to outputs. Outputs are generated within the server using render functions, each tailored to produce specific types of visualizations, such as renderTable for tables, renderImage for images, and renderPlot for plots. These outputs, once generated by the server, are then displayed in the UI using corresponding output functions.
+Outputs are generated within the server using render functions, each tailored to produce specific types of visualizations, such as renderTable for tables, renderImage for images, and renderPlot for plots. These outputs, once generated by the server, are then displayed in the UI using corresponding output functions.
 
 The process of adding outputs to a Shiny app involves several key steps:
-1. Creating the Output: Define the type of output (plot, table, text, etc.).
-2. Render the Output: Use a suitable render... function matching the output type
-3. Assign the Rendered Object: Connect the output to an identifier (output$ID).
-4. Incorporating the Output in UI: Place the output in the UI using the matching ...Output function.
+1. *Creating the Output*: Define the type of output (plot, table, text, etc.).
+2. *Render the Output*: Use a suitable render... function matching the output type
+3. *Assign the Rendered Object*: Connect the output to an identifier (output$ID).
+4. *Incorporating the Output in UI*: Place the output in the UI using the matching ...Output function.
 Remember, the content within a render... function is enclosed in curly braces ({...}), ensuring proper execution and display of the output.
 
 {{% codeblock %}} 
@@ -315,13 +308,13 @@ In Shiny, each `render{Type}` function is designed to produce a specific type of
 {{% summary %}}
 
 In this first building block of the series we have discussed: 
-- `R Shiny` Overview: We introduced R Shiny, a tool for creating web applications using R, highlighting its accessibility and practicality for non-web developers.
+- `R Shiny` Overview: We introduced R Shiny, a tool for creating web applications using R.
 - Shiny's Core Structure: We explored the two main components of Shiny apps: the `User Interface` (UI) and the `Server`. The UI is the front end that users interact with, while the Server is the backend where the app's logic and data processing occur.
-- Building the UI: This section walked through the process of constructing a user interface, detailing how to use various layout elements and input types to create an engaging and interactive UI.
-- Server Function and `Reactivity`: We delved into the server function and the concept of reactive programming, crucial for Shiny's interactivity. We discussed how the server responds to user inputs and updates the UI dynamically.
-- Output Creation and Placement: Finally, we covered how to define and place output objects in the UI and generate them in the server, using Shiny's various render functions for different types of visualizations.
+- Building the UI: This section walked through the process of constructing a user interface. 
+- Server Function and `Reactivity`: We delved into the server function and the concept of reactive programming.
+- Output Creation and Placement: Finally, we covered how to define and place output objects in the UI and generate them in the server.
 
-This building block is aimed to provide a clear, structured pathway to understand and start building web apps with R Shiny, setting a foundation for more advanced learning and application development. 
+This building block is aimed to provide a clear, structured pathway to understand and start building web apps with R Shiny, setting a foundation for more advanced learning and application development. The next building block in the series dives deeper into the [user interface](/shiny/user/interface).
 
 {{% /summary %}}
 
@@ -331,54 +324,8 @@ This building block is aimed to provide a clear, structured pathway to understan
 {{% codeblock %}} 
 
 ```R
-library(shiny)
-library(gapminder)
-library(ggplot2)
-library(dplyr)
-
-ui <- fluidPage(
-    titlePanel("Gapminder Data Visualization Shiny App"),
-    sidebarLayout(
-        sidebarPanel(
-            sliderInput("yearInput", "Year", 
-                        min = 1952,
-                         max = 2007, 
-                        value = 1952, 
-                        step = 5,
-                        animate = TRUE), 
-             selectInput("continentInput", "Continent", 
-                        choices = c("All", sort(unique(as.character(gapminder$continent)))),
-                        selected = "All",
-                        multiple = TRUE)
-        ),
-        mainPanel(
-            plotOutput("gapPlot")
-        )
-    )
-)
-
-
-server <- function(input, output) {
-    output$gapPlot <- renderPlot({
-        data <- gapminder %>%
-            filter(year == input$yearInput)
-        
-        if (input$continentInput != "All") {
-            data <- data %>% filter(continent == input$continentInput)
-        }
-        
-        ggplot(data, aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) +
-            geom_point(alpha = 0.7) +
-            scale_size(range = c(3, 20), name="Population") +
-            scale_x_log10() +
-            theme_minimal() +
-            labs(title = paste("Year:", input$yearInput),
-                 x = "GDP Per Capita",
-                 y = "Life Expectancy")
-    })
-}
-
-shinyApp(ui = ui, server = server)
+# Download the code used in this building block via the top right corner
 ```
+[R-link](building-your-first-shiny-app.R)
 
 {{% /codeblock %}} 

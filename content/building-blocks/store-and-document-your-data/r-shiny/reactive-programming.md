@@ -5,16 +5,16 @@ keywords: "Shiny, Reactive Programming, R Programming, Interactive Applications,
 date: 2023-11-18
 weight: 3
 author: "Matthijs ten Tije"
-authorlink: "A link to your personal webpage"
+authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
-  - /shiny
+  - /shiny/reactivity
   - /reactive-programming
   - /shiny/app-development
   - /shiny/fundamentals
 ---
 
 ## Overview
-Welcome to this building block focused on one of the main concepts in Shiny: `reactive programming`. This feature stands at the core of Shiny’s dynamic capabilities. Reactive programming in Shiny is essentially about creating a dynamic link between inputs and outputs, ensuring that outputs refresh automatically when there's a change in inputs. This connection simplifies the app's workflow.
+Welcome to this building block focused on one of the main concepts in Shiny: `reactive programming`. This feature stands at the core of Shiny’s dynamic capabilities. Reactive programming in Shiny is essentially about creating a dynamic link between inputs and outputs, ensuring that outputs refresh automatically when there's a change in inputs. 
 
 The Shiny app we will use is the airquality dataset, which is available in R by default. This dataset contains daily air quality measurements in New York, May to September 1973. We will progressively build a Shiny app that demonstrates various aspects of reactivity in Shiny using ggplot2 for visualization. The app will allow users to interact with the airquality data, filtering and visualizing it based on their inputs.
 
@@ -50,7 +50,7 @@ shinyApp(ui, server)
 
 **DT package**
 
-The `DT package`, short for `DataTables`, significantly boosts the presentation as well as it adds interactivity within tables in Shiny apps. It provides features that are not available with standard Shiny tables: 
+The `DT package`, short for `DataTables`, allows for a better presentation as well as it adds interactivity within tables in Shiny apps. It provides features that are not available with standard Shiny tables: 
 
 - *Pagination*: Allows users to navigate through large datasets easily.
 - *Search Functionality*: Users can quickly search and filter data in the table.
@@ -149,11 +149,11 @@ shinyApp(ui, server)
 
 **Breakdown of the Example**
 
-*Reactive Source (monthInput)*: This selectInput dropdown menu is the reactive source in the app. When the user selects a month, it triggers the reactivity.
-*Reactive Conductor (processedData)*: This reactive expression processes the airquality data based on the selected month from the reactive source.
-*Reactive Endpoints (avgTemp and avgWind):* These text outputs display the average temperature and wind speed, respectively. They update reactively when the processedData changes.
+- *Reactive Source (monthInput)*: This selectInput dropdown menu is the reactive source in the app. When the user selects a month, it triggers the reactivity.
+- *Reactive Conductor (processedData)*: This reactive expression processes the airquality data based on the selected month from the reactive source.
+- *Reactive Endpoints (avgTemp and avgWind):* These text outputs display the average temperature and wind speed, respectively. They update reactively when the processedData changes.
 
-By combining reactive sources, conductors, and endpoints, this Shiny app dynamically updates its outputs based on user interaction, showcasing the power and efficiency of reactive programming in Shiny.
+By combining reactive sources, conductors, and endpoints, this Shiny app dynamically updates its outputs based on user interaction.
 
 {{% /example %}}
 
@@ -179,6 +179,7 @@ Understanding the difference between reactive expressions (reactive conductors) 
 
 
 {{% codeblock %}}
+
 ```R
 # Server logic
 server <- function(input, output) {
@@ -253,98 +254,9 @@ Let's examine a comprehensive example that integrates observers, reactive source
 {{% codeblock %}}
 
 ```R 
-# Load necessary libraries
-library(shiny)
-library(ggplot2)
-library(dplyr)
-library(bslib)
-library(thematic)
-library(DT)
-
-# Enable thematic with automatic font adjustment - improves visual consistency between UI and ggplot
-thematic_shiny(font = "auto") 
-
-# Define a theme using bslib - sets the visual theme of the app
-theme <- bslib::bs_theme(
-  bootswatch = "yeti"  # Choice of theme 
-)
-
-# UI definition
-ui <- fluidPage(
-  theme = theme,  # Apply the bslib theme for a cohesive look
-  titlePanel("Air Quality Analysis"),
-  sidebarLayout(
-    sidebarPanel(
-      # Interactive element: Dropdown for month selection
-      selectInput("monthInput", "Select Month:", 
-                  choices = month.abb[5:9], 
-                  selected = "May"),
-      sliderInput("windSlider", "Select Wind Speed Threshold:", 
-                  min = 0, 
-                  max = 20, 
-                  value = 10),
-      selectInput("variableInput", "Select Variable to Plot:",
-                 choices = c("Temp", "Wind", "Solar.R", "Ozone"), 
-                 selected = "Temp")
-    ),
-    mainPanel(
-      textOutput("summary"),  # Display area for textual summary
-      plotOutput("airQualityPlot"),  # Display area for the ggplot visualization
-      DTOutput("dataTable")  # DataTable output for airquality data
-    )
-  )
-)
-
-# Server logic
-server <- function(input, output, session) {
-  summaryData <- reactiveVal()  # Store summary in a reactive value for dynamic update
-  
-  # Observer for reactivity: Responds to month selection changes
-  observe({
-    selectedMonth <- match(input$monthInput, month.abb)
-    # Data processing based on user selection
-    summaryResult <- airquality %>% 
-      filter(Month == selectedMonth) %>%
-      summarize(AvgTemp = mean(Temp, na.rm = TRUE), 
-                AvgWind = mean(Wind, na.rm = TRUE))
-    
-    summaryData(summaryResult)  # Update reactive value dynamically
-    # Console message for debugging and insight into app's reactivity
-    message("Summary for ", month.abb[selectedMonth], ": Avg Temp = ", summaryResult$AvgTemp, ", Avg Wind = ", summaryResult$AvgWind)
-  })
-  
-  # Reactive output: Dynamically displays the calculated summary
-  output$summary <- renderText({
-    data <- summaryData()
-    paste("Average temperature: ", round(data$AvgTemp, 2), " degrees. Average wind speed: ", round(data$AvgWind, 2), " mph")
-  })
-  
-  # Reactive plot output: Updates the plot based on the month selected by the user
-  output$airQualityPlot <- renderPlot({
-    filteredData <- airquality %>% 
-      filter(Month == match(input$monthInput, month.abb), 
-             Wind > input$windSlider)
-    
-    ggplot(filteredData, aes_string(x = "Day", y = input$variableInput)) +
-      geom_line() +
-      ggtitle(paste("Air Quality -", input$variableInput, "Trends in", input$monthInput)) +
-      theme_minimal() + 
-      theme(text = element_text(size = 12)) +
-      xlab("Day of Month") + 
-      ylab(input$variableInput)
-  })
-  
-  # Display the airquality data in a DataTable
-  output$dataTable <- renderDT({
-    airquality %>%
-      filter(Month == match(input$monthInput, month.abb),
-             Wind > input$windSlider)
-  })
-}
-
-# Run the App
-shinyApp(ui, server)
+# Download the example file in the right corner
 ```
+[R-link](reactivity-source-code.R)
 
 {{% /codeblock %}}
 
@@ -381,4 +293,6 @@ This building block introduces the concept of `reactive programming` in Shiny, k
 - Use of `Observers`: Implements observers in Shiny for immediate actions based on changes in reactive inputs, like updating UI or triggering events.
 - Reactivity Visualization with `Reactlog`: Utilizes the reactlog package to trace and visually represent the interactions and flow of reactivity within the application.
   
+In the next building block of the series, we will dive into [modules](/shiny/modules).
+
 {{% /summary %}}

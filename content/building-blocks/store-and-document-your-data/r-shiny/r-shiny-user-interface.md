@@ -6,9 +6,9 @@ keywords: "R Shiny, User Interface Design, Layout, Custom CSS, shinythemes, Cont
 date: YYYY-MM-DD
 weight: 2
 author: "Matthijs ten Tije"
-authorlink: "A link to your personal webpage"
+authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
-  - /user/interface
+  - /shiny/ui
   - /shiny
   - /CSS
   - /interactivity
@@ -17,7 +17,7 @@ aliases:
 
 ## Overview 
 
-In this second building block in the R shiny series, we delve into refining your Shiny app’s UI, focusing on aesthetics and user experience. You'll learn how to effectively arrange inputs and outputs using layout functions and customize the app's visual appeal. We’ll also explore interactive control widgets to create responsive interfaces.
+In this second building block in the R shiny series, we delve into the  Shiny app’s user interface. We will be focusing on aesthetics and user experience. You'll learn how to effectively arrange inputs and outputs using layout functions and customize the app's visual appeal. We’ll also explore interactive control widgets to create responsive interfaces.
 
 By the end of this building block, you'll be equipped with skills to design dynamic, engaging, and user-centred Shiny applications. Let's dive in!
 
@@ -136,8 +136,10 @@ tabsetPanel(
 </p>
 
 **Alternative Layouts: Navbar and Navlist Panels**
-1. Navbar Pages
-The `navbarPage()` function in R Shiny is used for creating a user-friendly navigation bar at the top of the application. This layout is especially beneficial for complex apps with multiple sections or functionalities. Unlike the basic tabset panel, the navbar layout offers a more website-like feel, making it intuitive for users who are familiar with navigating web pages. The function creates a layout allowing the multiple distinct sub-components to have their sidebar, tabsets, or other layout constructs.
+
+1. **Navbar Pages**:  
+   
+The `navbarPage()` function in R Shiny is used for creating a navigation bar at the top of the application. This layout is especially beneficial for complex apps with multiple sections or functionalities. Unlike the basic tabset panel, the navbar layout offers a more website-like feel. The function creates a layout allowing the multiple distinct sub-components to have their own sidebar, tabsets, or other layout constructs.
 
 {{% codeblock %}}
 
@@ -156,9 +158,9 @@ ui <- navbarPage("My Application",
 <img src = "../images/ui-fundamentals-4.png" width="500">
 </p>
 
-2. Navlist Panel:
+2. **Navlist Panel**:
 
-The `navlistPanel()` is an alternative to `tabsetPanel()`, organizing tab titles vertically in a sidebar. This layout is particularly useful for apps with many components, as it allows for a clear and structured presentation of options. It's also helpful when you have long or descriptive titles for your tabs, which might be cumbersome in a horizontal layout.
+The `navlistPanel()` is an alternative to `tabsetPanel()`, organizing tab titles vertically in a sidebar. This layout is particularly useful for apps with many components. It's also helpful when you have long or descriptive titles for your tabs. 
 
 {{% codeblock %}}
 
@@ -323,7 +325,7 @@ ui <- fluidPage(
 {{% tip %}}
 
 **Styling Shiny using bootstrap with bslib & thematic**
-To continue your app customisation journey, you’ll need to learn a little more about the Bootstrap framework used by Shiny. For an advanced case of customizing using `Bootstrap` in R Shiny, look at this building block [reference]. `bslib` and `thematic` are powerful tools for customizing the appearance of Shiny apps using Bootstrap, a widely-used HTML, CSS, and JS framework. With bslib, you can use Bootstrap themes directly in R, making it easier to style Shiny apps and R Markdown documents. thematic further allows for automated styling of R plots in Shiny to match your Bootstrap theme.
+For an advanced case of customizing your UI using `Bootstrap` in R Shiny, look at this [building block](/shiny/advanced/ui). 
 
 {{% /tip %}}
 
@@ -331,7 +333,7 @@ To continue your app customisation journey, you’ll need to learn a little more
 In this part, we will dive into `control widgets`. Widgets are interactive web elements that allow your app users to communicate with the Shiny application. These widgets are essential in creating dynamic and interactive apps. 
 
 Each widget is created with a transparently named R function in Shiny. For example, the `actionButton` function creates an Action Button, and `sliderInput` creates a slider bar. These widgets are instrumental in collecting values from users and triggering responses in the app.
-We have already considered control widgets in the first building block of the series, where we discussed some basic widgets and their arguments. So for the basic instruction check this building block [Reference].
+We have already considered control widgets in the first building block of the series, where we discussed some basic widgets and their arguments. So for the basic instruction check this [building block][/Shiny/App].
 
 {{% codeblock %}}
 
@@ -374,7 +376,7 @@ ui <- fluidPage(
 {{% tip %}}
 
 **Go Further with the Shiny Widgets Gallery**
-For more advanced examples and templates, visit the `shinyWidgets` package. It comes with a neat built-in function, `shinyWidgetsGallery()` that opens a pre-built Shiny app that allows you to explore these pre-built inputs and gives you the code for implementing them. 
+For more advanced examples and templates, visit the `shinyWidgets` package. `shinyWidgetsGallery()`  opens a pre-built Shiny app that allows you to explore these pre-built inputs and gives you the code for implementing them. 
 
 Within the gallery, simply choose a widget and click on the “See Code” button located beneath it. You'll be directed to a detailed example app that provides insights into the widget's functionality. To incorporate the widget into your Shiny app, just copy the provided code and paste it into your app.R file.
 
@@ -400,6 +402,6 @@ In this building block of the R shiny series we have discussed `User Interace`:
 - Discusses various customization approaches, from using default Shiny styles to applying `shinythemes` and integrating `custom CSS`.
 - Covers `control widgets`, teaches how to create responsive interfaces, and highlights the `shinyWidgets` gallery for advanced examples.
 
-This building block is aimed to equipe the user with techniques for crafting user-oriented Shiny applications, making them not only functional but also visually attractive and intuitive.
+This building block is aimed to equipe the user with techniques for crafting user-oriented Shiny applications, making them not only functional but also visually attractive and intuitive. In the next building block we will dive into the concept of [reactivity](/shiny/reactivity)
 
 {{% /summary %}}
