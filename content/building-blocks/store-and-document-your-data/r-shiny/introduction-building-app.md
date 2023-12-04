@@ -326,6 +326,6 @@ This building block is aimed to provide a clear, structured pathway to understan
 ```R
 # Download the code used in this building block via the top right corner
 ```
-[R-link](building-your-first-shiny-app.R)
+[R-link](/building-your-first-shiny-app.R)
 
 {{% /codeblock %}} 

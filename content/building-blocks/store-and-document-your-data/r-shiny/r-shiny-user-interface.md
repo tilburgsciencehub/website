@@ -9,6 +9,7 @@ author: "Matthijs ten Tije"
 authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
   - /shiny/ui
+  - /shiny/user/interface
   - /shiny
   - /CSS
   - /interactivity

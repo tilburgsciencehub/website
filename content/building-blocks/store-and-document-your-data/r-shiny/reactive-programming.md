@@ -9,6 +9,8 @@ authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
   - /shiny/reactivity
   - /reactive-programming
+  - /shiny
+  - /shiny/reactivity
   - /shiny/app-development
   - /shiny/fundamentals
 ---
