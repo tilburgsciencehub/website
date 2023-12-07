@@ -49,12 +49,14 @@ Censoring can occur in different ways:
 - *Left Censoring*: Occurs when the event's starting point is unknown, but its event is confirmed.
 - *Interval Censoring*: Happens when participants are not continuously observed, and the status of the event is only known at certain times.
 
+{{% example %}}
 Here, subjects 1, 3, and 5 experience the event within the first year, while subjects 2, 4, 6, 7, 8, 9, and 10 do not. These latter subjects are 'censored' after one year, meaning we only know they didn't encounter the event in the first year, but their status thereafter is unknown.  
 
 <p align = "center">
 <img src = "../images/example_censoring.png" width="500">
 </p>
 
+{{% /example %}}
 
 ## Lubridate 
 This section will guide you through the basic functionalities of lubridate, helping you manage and manipulate date-time data more efficiently.
@@ -85,7 +87,7 @@ Here, we explore more advanced features of lubridate, including custom parsing t
 ### Calculating Survival Times Using Lubridate
 In survival analysis, data often includes two date columns, like start_date and followup_date. R may initially treat these as character strings, requiring conversion into date objects. The `ymd()` function in the `lubridate` package is useful for converting strings in the "year-month-day" format into dates. 
 
-To calculate the event-time variable, the interval between the two dates is measured. The %--% operator in lubridate creates an interval object, which can then be converted into a duration in seconds using `as.duration()`. The difference in days is obtained by dividing this duration by `ddays()`.
+To calculate the event-time or the survival-time variable, the interval between the two dates is measured. The %--% operator in lubridate creates an interval object, which can then be converted into a duration in seconds using `as.duration()`. The difference in days is obtained by dividing this duration by `ddays()`.
 
 {{% codeblock %}}
 
@@ -155,38 +157,43 @@ To conduct a Kaplan-Meier estimation in R, follow these steps:
    1. Basic syntax: survfit(Surv(time, event) ~ 1, data = your_data).
       1. ~ 1 calculates the overall survival curve without data grouping.
       2. For group comparisons, replace 1 with a grouping variable.
-   2. The output of `survfit()` includes estimated survival probabilities at different time points, the number of subjects at risk, and the number of events. 
+      3. The output of `survfit()` includes estimated survival probabilities at different time points, the number of subjects at risk, and the number of events.
+   2. Between group significance test: Log-rank test.
+      1. Use the `survdiff` formula to obtain the p-values
+      2. Compares survival times, weighting all observations equally.
 4. *Visualizing the Estimate*: Use the `ggsurvplot()` function for Kaplan-Meier estimate visualizations. It combines ggplot2 aesthetics with a risk table, displaying subjects at risk over time.
 
-{{% codeblock  %}}
+{{% codeblock %}}
 
 ```R
 # Load the survival package
 library(survival)
 
-# Convert to Date objects
+# 1. Dataset Preparation 
+## Convert to Date objects
 data$start_date <- ymd(data$start_date)
 data$event_date <- ymd(data$event_date)
 
-# Calculate time to event or censoring
+## Calculate time to event or censoring
 data$time_to_event <- interval(start = data$start_date, end = data$event_date) / ddays(1)
 
-# Create the censoring indicator (1 if event occurred, 0 if censored)
+## Create the censoring indicator (1 if event occurred, 0 if censored)
 data$censoring_indicator <- ifelse(is.na(data$event_date), 0, 1)
 
-# View the updated dataset
-print(data)
-
-# Create the survival object
+## 2. Creating the Survival Object
 surv_obj <- with("YOUR DATASET", 
                 Surv(time = "EVENTTIME VARIABLE", # Eventtime Variable 
                      event = "CHURNING / CENSORED VARIABLE")) # Churning / Censored Variable
 
-# Compute the Kaplan-Meier estimate
+# 3. Compute the Kaplan-Meier estimate
 km_fit <- survfit(surv_obj ~ "COVARIATE 1" + "COVARIATE 2" + ... , data = "DATASET")
- # km_fit <- survfit(surv_obj ~ 1) implies a model without covariates.
+ ## km_fit <- survfit(surv_obj ~ 1) implies a model without covariates.
 
-# Plot the Kaplan-Meier curve
+## Test for significance between groups
+survdiff(surv_obj ~ "GROUPING VARIABLE", data = "DATASET")
+
+# 4. Visualizing the Estimate 
+## Plot the Kaplan-Meier curve
 km_plot <- ggsurvplot(
   km_fit, # Kaplan-Meier estimate
   conf.int = FALSE, # Omit Confidence Interval
@@ -194,7 +201,7 @@ km_plot <- ggsurvplot(
   surv.median.line = "hv", # Add a median horziontal line 
 )
 
-# Display the plot
+## Display the plot
 km_plot
 ```
 
@@ -202,7 +209,12 @@ km_plot
 
 {{% example %}}
 
-This `Kaplan-Meier curve` illustrates customer churning across three promotional strategies over time. The y-axis quantifies the likelihood of customers staying, while the timeline is plotted along the x-axis. Each promotional group—Buy One Get One, Discount, and No Promotion—shows similar retention patterns, as the curves proceed with only slight differences. The lack of significant drop-offs suggests that the promotions have a marginal impact on churn rates. Combined with the p-value of 0.23, indicating no statistical significance in the differences observed among the groups. This insight suggests promotions, in this case, does not significantly influence customer loyalty.
+This `Kaplan-Meier curve` illustrates customer churning across three promotional strategies over time. The y-axis quantifies the likelihood of customers staying, while the timeline is plotted along the x-axis. Each promotional group—Buy One Get One, Discount, and No Promotion—shows similar retention patterns, as the curves proceed with only slight differences.    
+The `survdiff` function's output, with a p-value of 0.2, indicates no statistically significant differences in retention across these promotional strategies.  The lack of significant drop-offs suggests that the promotions have a marginal impact on churn rates. This insight suggests promotions, in this case, does not significantly influence customer loyalty.
+
+<p align = "center">
+<img src = "../images/significance-test-surv-time.png" width="600">
+</p>
 
 <p align = "center">
 <img src = "../images/Kaplan-Meier-curve.png" width="600">
