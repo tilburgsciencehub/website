@@ -1,20 +1,21 @@
 ---
-title: "Chi-Squared Goodness of Fit Test"
-description: "Short guide to understanding the workings of the Chi-Squared Goodness of Fit test and how to use it in R"
-keywords: ""
+title: "Chi-Squared Test"
+description: "Short guide to understanding the workings of the Chi-Squared test for independence and goodness of fit, and how to use it in R"
+keywords: "chi, test, nominal, bin, disc, goodness, indep, R "
 weight: 2
 date:
 draft: false
+author: "Aakriti Gupta"
 aliases:
   - /chi-squared test
   - /Chi-Squared Goodness of Fit test
+  - /Chi-squared test of independence
 ---
 
-
 ## Overview
-The Chi-Squared Goodness of Fit test is used when you are dealing with **binary** data with a **nominal** measurement scale. It tests whether a significant difference exists between an observed number of outcomes falling in each category and an expected number based on the null hypothesis (which we call the goodness-of-fit)
+The Chi-Squared test can be used when you are dealing with **nominal** measurement scale with a **single** sample (**binary** data) or **two independent** samples with **discrete** data. With a binary data, you use **Chi-squared test of goodness of fit**. It tests whether a significant difference exists between an observed number of outcomes falling in each category and an expected number based on the null hypothesis (goodness of fit). With two independent samples you use **Chi-squared test of independence**. It tests whether the two groups differ with respect to the relative frequency with which group members fall into several categories. For both these tests, R offers an inbuilt test called the `chisq.test()`.
 
-In this building block we will describe how the formula works mathematically and how to use it in R. Let's look at an example.
+In this building block we will describe how this code works for both these tests. Let's first look at an example for goodness of fit test.
 
 ## Is your ice-cream preference same as the expected distribution?
 Suppose you conduct a survey asking 200 people about their preferred ice-cream flavors. You want to test whether the distribution of preferred flavors in your sample matches a theoretical distribution based on industry standards, which is as follows:
@@ -42,50 +43,14 @@ Moreover, from the survey, you collect the following data:
 
 We will refer to this as the **observed distribution** for category i (Oi).
 
-## Hypothesis testing
-To statistically test for this case, we first describe the hypotheses. The null hypothesis (H0) states that the observed distribution of ice cream flavors in the sample matches the expected distribution and the alternative hypothesis (H1) states that the observed distribution in the sample is significantly different from the expected distribution. Hence, we have:
+### Hypothesis testing
+To statistically test for this case, we first describe the hypotheses. The null hypothesis (H0) states that the observed distribution of ice-cream flavors in the sample matches the expected distribution and the alternative hypothesis (H1) states that the observed distribution in the sample is significantly different from the expected distribution. Hence, we have:
 
 - H0: Oi = Ei
 - H1: Oi ≠ Ei
 
-## Reject or accept H0?
-In order to conclude if you can reject the null hypothesis, it is important to compare the chi-square statistic with the critical value. According to the data available to us, this comparison can be made using the following steps:
-### Step1: Calculate the chi-square statistic
-
-{{<katex>}}
-\chi^2 = \sum_{i=1}^k \frac{(O_i - E_i)^2}{E_i}
-{{</katex>}}
-
-<br>
-<br>
-
-where k describes the number of categories, which in our case equals 5.
-
-According to the data, the chi-square statistic will be as follows:
-
-{{<katex>}}
-\chi^2 = \frac{(70 - 80)^2}{80} + \frac{(60 - 60)^2}{60} + \frac{(30 - 30)^2}{30} + \frac{(20 - 20)^2}{20} + \frac{(20 - 10)^2}{10}
-{{</katex>}}
-
-= **11.25**
-
-### Step2: Compute the degrees of freedom
-An important step for computing the critical value is to know the degrees of freedom (df), which equals k-1. Therefore, in this case, df = 5 - 1 = **4**.
-
-### Step3: Set the significance level
-Similar to most hypothesis tests, it is necessary to set a significance level (alpha) to be able to make a statistical conclusion. Let us choose alpha = **0.05**.
-
-### Step4: Note the chi-square critical value
-Lookup the critical chi-square value for a significance level of 0.05 and df of 4 from a chi-square distribution table. This is approximately **9.49**.
-
-### Step5: Make a comparison
-From our calculations is the previous steps, we get the chi-square statistics equal to 11.25 and the critical value to be 9.49. Since the calculated chi-square statistic (11.25) is greater than the critical value (9.49), we **reject** the null hypothesis.
-
-Thus, we have evidence to conclude that the observed distribution of ice cream flavors in the sample is **significantly different** from the expected distribution based on industry standards. In other words, there is a statistically significant difference, suggesting that the preferences in your sample **deviate** from what was expected.
-
-
-## Testing this in R
-In the previous examples, we worked with relatively small datasets, simplifying the calculations. However, in practice, you may frequently encounter larger datasets. Handling these manually not only consumes time but also increases the risk of mathematical errors, especially for a one-tailed test. That's where R comes to the rescue. R offers a built-in function called `chisq.test()`, which efficiently performs the chi-sqaured goodness of fit test, making it a reliable and time-saving tool for such scenarios.
+### Testing this in R
+R offers a built-in function called `chisq.test()`, which efficiently performs the chi-squared goodness of fit test, making it a reliable and time-saving tool.
 
 Let's have a quick look at how it works for our given example.
 {{% codeblock %}}
@@ -116,15 +81,97 @@ print(chi_square_test)
 {{% /codeblock %}}
 
 
-The output of this code, gives the value of the chi-sqaure statistic and the df. You can use this information, to compare the statistic with the critical value and make the final conclusion as we did before. The output also gives the p-value which you compare with the alpha.
+The output of this code, gives the value of the chi-sqaure statistic which is equal to **11.25** and the degrees of freedom (df) which equals one less than the number of categories. Since we have 5 ice-cream flavours, the df is **4**.
 
-Here's the general interpretation:
 
-If the p-value is **less than or equal** to the chosen significance level (e.g., 0.05), you **reject** the null hypothesis.
+You need the df to lookup the critical chi-square value for a certain significance level (alpha) using a distribution table or an online calculator. This is approximately **9.49** if you take alpha equal to **0.05**.
 
-If the p-value is **greater** than the chosen significance level, you **fail to reject** the null hypothesis.
+Since, the critical value(9.49) is smaller than the chi-square statistic(11.25), you can **reject** the null hypothesis and conclude that there is a **significant** difference between the observed and expected ice-cream preferences at 5% significance level.
 
-In our case, the **p-value is 0.02**  which is less than 0.05, so verifying our previous analysis, you would reject the null hypothesis.
+The R output also gives the p-value which you can compare with alpha to make the final conclusion. If the p-value is **less than or equal** to the chosen alpha, you **reject** the null hypothesis. In our case, the **p-value is 0.02**  which is less than 0.05, verifying our previous analysis.
+
+### Understanding chisq.test ()
+
+{{% codeblock %}}
+```r
+chisq.test( x,
+            p = rep(1/length(x), length(x)),
+            rescale.p = FALSE)
+{{% /codeblock %}}
+
+The syntax of the `chisq.test()` includes two important arguments:
+- **x**: A numeric vector that provides the observed frequencies. In our case it is the variable, *Count*.
+- **p**: A vector of probabilities of the same length of x.
+- **rescale.p**: A logical scalar; if TRUE p is rescaled (if necessary) to sum to 1. It is set to FALSE by default.
+
+
+## Chi-squared test with two independent samples
+Suppose you are interested in studying the relationship between smoking status (smoker or non-smoker) and the occurrence of a respiratory condition (yes or no). Assuming that the observations of these categorical variables are independent, you can use the `chisq.test` to perform the **chi-sqaured test of independence**. This test is often referred to as the test of contingency or simply the contingency test. The term "contingency" in this context reflects the idea that the test is used to examine whether there is a contingency (association or dependence) between two categorical variables. So, this test is usually used when you have data in a form of a contingency table (matrix).
+
+### Usage in R
+When using `chisq.test()` for test of independence, you need two other arguments in addition to the ones mentioned before:
+- **y**: It describes the other numeric vector with the same length as x.
+
+{{% warning %}}
+y should be ignored if x is a matrix.
+
+{{% /warning %}}
+
+- **correct**: A logical indicating whether to apply continuity correction when computing the test statistic for a 2x2 table. The default is set to TRUE.
+
+Before we look at how this works on R, let us first create our hypothetical data set.
+
+{{% codeblock %}}
+```r
+# Create a hypothetical dataset
+set.seed(123)  # for reproducibility
+n <- 200  # number of observations
+
+smoking_status <- sample(c("Smoker", "Non-Smoker"), n, replace = TRUE)
+respiratory_condition <- sample(c("Yes", "No"), n, replace = TRUE)
+
+# Combine into a data frame
+my_data <- data.frame(Smoking = smoking_status, RespiratoryCondition = respiratory_condition)
+
+# Create a contingency table
+contingency_table <- table(my_data$Smoking, my_data$RespiratoryCondition)
+
+# Print the contingency table
+print(contingency_table)
+
+{{% /codeblock %}}
+
+The contingency table will look like this:
+
+|           | **No**     | **Yes** |
+| :------  | :---------  |  :---------  |
+|  **Non-smoker**   |  38 | 59      |
+|  **Smoker**   |  54 | 49    |
+
+and the hypothesis will be set as:
+
+
+H0: Smoking status and respiratory condition are independent
+
+
+H1: Smoking status and respiratory condition are not independent; there is an association.
+
+Now let's see how to use the test in R.
+
+{{% codeblock %}}
+```r
+# Perform a chi-squared test of independence
+chi_square_result <- chisq.test(contingency_table)
+
+# Print the result
+print(chi_square_result)
+
+
+{{% /codeblock %}}
+
+The output of this code, gives the value of the chi-sqaure statistic which is equal to **3.0184** and the df is **1**. The critical chi-square value at alpha equal to **0.05** is **3.841**.
+
+Since, the critical value is not smaller than the chi-square statistic, you cannot **reject** the null hypothesis. Thus, there is **not sufficient evidence** to conclude a significant dependence of smoking on a person's respiratory condition.
 
 
 
@@ -132,16 +179,9 @@ In our case, the **p-value is 0.02**  which is less than 0.05, so verifying our 
 
 - The chi-squared goodness of fit is apt for binary and nominal data.
 
-- The formula of the chi-square statistic is:
+- The chi-squared test of independence is used when you have two independent samples.
 
-{{<katex>}}
-\chi^2 = \sum_{i=1}^k \frac{(Oi - Ei)^2}{Ei}
-{{</katex>}}
-
-where k describes the number of categories, Oi is the observed data and Ei is the expected data.
-
-
-- This test can be performed on r using its inbuilt test `chisq.test()`
+- These test can be performed on r using its inbuilt test `chisq.test()`
 
 
 {{% /summary %}}
