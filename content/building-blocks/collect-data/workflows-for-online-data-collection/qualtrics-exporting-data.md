@@ -1,15 +1,15 @@
 ---
-title: "Creating Qualtrics Surveys and Exporting Data to R, Pyhton, and Stata"
-description: "Being Qualtrics one of the most widely used tools to create online surveys, this building block aims at providing a step by step guide to creating online surveys, instructions on how to export the results to R (qualtRics R package), Python, and Stata. "
-keywords: "qualtrics, surveys, export, R, Python, Stata"
+title: "Creating Qualtrics Surveys and Exporting Data to R and Pyhton"
+description: "Being Qualtrics one of the most widely used tools to create online surveys, this building block aims at providing a step by step guide to creating online surveys and instructions on how to export the results to R and Python. "
+keywords: "qualtrics, surveys, export, R, Python"
 date: 24/10/2023
-weight: #
+weight: #1
 author: "Matteo Zicari"
 authorlink: "https://tilburgsciencehub.com/contributors/matteozicari/"
 aliases:
   - /qualtrics/survey
   - /export/data
-  - /R/Python/Stata
+  - /R/Python
 
 ---
 
@@ -93,7 +93,7 @@ This section provides a `step-by-step` `guide` to designing a survey in Qualtric
 
 ## R 
 
-The [qualtRics](https://cran.r-project.org/web/packages/qualtRics/vignettes/qualtRics.html) R package is designed to facilitate the retrieval of survey data through the Qualtrics API with the goal of streamlining the preprocessing required for the analysis of these surveys. This package offfers an alternative to manually downloading surveys from Qualtrics and then importing them into R. Moreover, it allows to update your dataset in real time without having to download an updated version and upload it again into R.
+The [qualtRics](https://cran.r-project.org/web/packages/qualtRics/vignettes/qualtRics.html) R package is designed to facilitate the retrieval of survey data through the Qualtrics API with the goal of streamlining the preprocessing required for the analysis of these surveys. This package offers an alternative to manually downloading surveys from Qualtrics and then importing them into R. Moreover, it allows to update your dataset in real time without having to download an updated version and upload it again into R.
 
 The following points will guide you to successfully importing your survey data into R by using the Qualtrics API:
 
@@ -156,7 +156,7 @@ After you have worked with your data, you can export the new file as a `.csv` fi
 {{% codeblock %}} 
 
 ```R
-write.csv(mysurvey, file = "/YOUR/PATH/file_name.csv")
+write.csv(mysurvey, file = "/YOUR_PATH/file_name.csv")
 
 ```
 {{% /codeblock %}}
@@ -199,7 +199,7 @@ Set up your credentials (see numbered list within the R section for a step-by-st
 {{% codeblock %}} 
 ```python
 
-Credentials().qualtrics_api_credentials(token='Your API Token', data_center='Your Data Center ID', directory_id='Your Directory ID')
+Credentials().qualtrics_api_credentials(token = "ADD_YOUR_API_Token", data_center = "ADD_YOUR_DATACENTER_ID", directory_id = "ADD_YOUR_DIRECTORY_ID")
 
 ```
 {{% /codeblock %}}
@@ -234,23 +234,6 @@ Responses().get_survey_responses(survey="<survey_id>")
 
 All your survey responses should be downloaded now, you can start working with your data.
 
-## Stata
-
-
-{{% codeblock %}} 
-
-``` 
--Stata-
-ssc install qualtricsload
-ssc install 
-ssc install stcmd
-
-qualtricslaod <YOUR SURVEY ID>, apitoken(<YOUR API TOKEN>) datacenter(<YOUR DATACENTER ID>)
-
-
-```
-{{% /codeblock %}}
-
 
 
 {{% summary %}}
@@ -259,6 +242,6 @@ Survey workflow developed in this building block:
 
 - Consider the `Pros` and `Cons` of gathering data through a survey to determine whether conducting a survey is the optimal choice in your specific case.
 - Learn how to `design` a `survey` and `practically` `implement` it in Qualtrics.
-- Explore how to `export` data (survey responses) from Qualtrics to `R`, `Python`, and `Stata` using the Qualtrics API.
+- Explore how to `export` data (survey responses) from Qualtrics to `R` and `Python` using the Qualtrics API.
 
 {{% /summary %}}
