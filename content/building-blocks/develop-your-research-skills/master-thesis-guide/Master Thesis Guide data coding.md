@@ -16,9 +16,8 @@ The Master Thesis Guide will serve as support throughout the entire thesis proce
 - Code versioning: GitHub
 - Data collection techniques
 - Data import
-- Raw data exploration and visualization
-- Model estimation
-- Establishing workflow and reproducibility
+- Inspecting raw data
+- Building your project pipeline 
 
 ## Code versioning: GitHub
 
@@ -111,5 +110,5 @@ Use [this tutorial that covers the principles of project setup and workflow mana
 If your thesis is data-oriented, e.g. related to marketing analytics or data science, consider automating your pipeline. [This tutorial](/practice/pipeline-automation) is helpful to teach you how to automate your pipeline automation using `Make`.
 
 {{% summary %}}
-This part of the Master Thesis guide aims at making the data management and coding of your thesis as smooth as possible. [The next section](/masterthesisguide/writing) is about the writing of your thesis, providing you with useful tips and resources. 
+This part of the Master Thesis guide aims at making the data management and coding of your thesis as smooth as possible. [Part 3](/masterthesisguide/writing) is about the writing of your thesis, providing you with useful tips and resources. 
 {{% /summary %}}

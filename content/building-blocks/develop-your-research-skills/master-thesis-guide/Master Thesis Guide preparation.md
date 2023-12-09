@@ -134,7 +134,7 @@ The following resources on the Tilburg Science Hub website and beyond can help y
 [DataCamp](https://www.datacamp.com/) is a great platform to grow your data skills. It offers courses on everything that involves data (importing, manipulating, analyzing, etc.), and programming languages (like R, Python, and SQL) and it has courses on AI. You can [request free access](https://www.tilburguniversity.edu/form/datacamp-registration) as a student of Tilburg University. 
 {{% /tip %}}
 
-## Some general tips
+## General tips
 
 ### Communication with your supervisor
 
