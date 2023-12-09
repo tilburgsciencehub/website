@@ -1,5 +1,5 @@
 ---
-title: "The Master Thesis Guide - Writing"
+title: "The Writing of your Thesis"
 description: "The Master Thesis Guide will serve as a guidance throughout the whole writing process of a thesis that consists of an empirical research project, for studies in marketing, economics, management, etc. This chapter focuses on the writing of your thesis."
 keywords: "master, thesis, guide, marketing, economics, management, tisem, research, guidance, preparation, question, proposal, skills, resources, writing, latex"
 date: 2023-07-10

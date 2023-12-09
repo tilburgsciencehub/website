@@ -1,5 +1,5 @@
 ---
-title: "The Master Thesis Guide - Coding, Workflow, and Data Management"
+title: "Coding, Workflow, and Data Management in the Master Thesis"
 description: "The Master Thesis Guide will serve as a guidance throughout the whole writing process of a thesis that consists of an empirical research project, for studies in marketing, economics, management, etc. This chapter focuses on coding, workflow and data management."
 keywords: "master, thesis, guide, marketing, economics, management, tisem, research, guidance, preparation, question, proposal, skills, resources"
 date: 2023-07-10

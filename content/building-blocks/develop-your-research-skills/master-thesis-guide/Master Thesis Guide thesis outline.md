@@ -1,5 +1,5 @@
 ---
-title: "The Master Thesis Guide - Thesis outline"
+title: "Thesis Outline: Chapter-specific Tips"
 description: "The Master Thesis Guide will serve as a guidance throughout the whole writing process of a thesis that consists of an empirical research project, for studies in marketing, economics, management, etc. This chapter focuses on the thesis outline and provides you with chapter-specific tips."
 keywords: "master, thesis, guide, marketing, economics, management, tisem, research, guidance, preparation, question, proposal, skills, resources, writing, latex, chapter, outline"
 date: 2023-07-10

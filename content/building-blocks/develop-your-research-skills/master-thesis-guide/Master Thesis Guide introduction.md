@@ -1,5 +1,5 @@
 ---
-title: "The Master Thesis Guide - Introduction"
+title: "Introduction to the Thesis Guide"
 description: "The Master Thesis Guide will serve as a guidance throughout the whole writing process of a thesis that consists of an empirical research project, for studies in marketing, economics, management, etc. The introduction will give you a good overview of all the sections in this guide."
 keywords: "master, thesis, guide, marketing, economics, management, tisem, research, guidance, introduction"
 date: 2023-07-10
