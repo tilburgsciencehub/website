@@ -11,7 +11,7 @@ aliases:
 
 ## Overview
 
-The Master Thesis Guide will serve as a guidance throughout the whole writing process of a thesis that consists of an empirical research project, for studies in marketing, economics, management, etc. This page gives guidance in **coding, workflow and data management**, compriving the following sections:
+The Master Thesis Guide will serve as support throughout the entire thesis process, consisting of an empirical research project for studies in marketing, economics, data science, management, and related fields. This page covers the **coding, workflow and data management**, divided into the following sections:
 
 - Code versioning: GitHub
 - Data collection techniques
@@ -26,39 +26,51 @@ GitHub is a powerful version control platform that allows you to manage and trac
 
 ### Why use GitHub for the Master Thesis?
 
-Even though your thesis is probably not a collaborative project with many others, keeping your work on GitHub still offers a lot of advantages:
+Even though your thesis is probably not a collaborative project, keeping your work on GitHub still offers a lot of advantages:
 
-- **Version control:** Easily track changes, view previous versions, and revert to earlier drafts if needed. No more confusions with multiple versions of the same document (e.g. saving your thesis as "Thesisdraft1", "Thesisdraft2" and so on). 
+- *Version control* 
+<br>
+Easily track changes, view previous versions, and revert to earlier drafts if needed. No more confusions with multiple versions of the same document (e.g. saving the file as "Thesisdraft1", "Thesisdraft2" and so on). 
 
-- **Transparent documentation:** The commit history provides a clear record of all the edits made. Leaving clear commit messages help in understanding what edits you made when revisiting your work after months of working on it. 
+- *Transparent documentation*
+<br>
+The commit history provides a clear record of all the edits made. Leaving clear commit messages help in understanding what edits you made when revisiting your work after months of working on it. 
 
-- **Branching:** You can create branches for different sections without impacting the main thesis draft in which you can experiment as much as you want.  
+- *Branching*
+<br>
+You can create branches for different sections without impacting the main thesis draft in which you can experiment as much as you want.  
 
-- **Remote accessibility:** Access your thesis from anywhere as GitHub is a cloud-based platform.
+- *Remote accessibility*
+<br>
+Access your thesis from anywhere as GitHub is a cloud-based platform.
 
-- **Backup:** GitHub serves as a secure backup, minimizing the risk of losing your data or work.  
+- *Backup*
+<br>
+GitHub serves as a secure backup, minimizing the risk of losing your data or work.  
 
-- **Showcasing your work:** After finishing the thesis, you can keep your thesis on GitHub, making it accessible for others to use and showcasing your research!
+- *Showcasing your work*
+<br>
+After finishing the thesis, you can keep your thesis on GitHub, making it accessible for others to use and showcasing your research!
 
-Follow [this building block](/share-data/) to learn how to use GitHub for your project!
+Follow [this building block](/share/data) to learn how to use GitHub for your project!
 
 ## Data collection techniques
 
 Depending on your research, you might want to create your own data. Techniques for data collection include web scraping or APIs. 
-- The [Web scraping and API Mining tutorial](/web-scraping-tutorial/) discusses the difference between web scraping and API mining. It also shows you how to scrape static and dynamic websites and how to extract data from APIs. 
-- When you are new to web scraping and APIs, you can follow the open course [Online Data Collection and Management](https://hannesdatta.com) of Tilburg University. 
+- The [Web scraping and API Mining tutorial](/learn/web-scraping-and-api-mining) discusses the difference between web scraping and API mining. It also shows you how to scrape static and dynamic websites and how to extract data from APIs. 
+- When you are new to web scraping and APIs, you can follow the open course [Online Data Collection and Management](https://odcm.hannesdatta.com/) of Tilburg University. 
 
 ## Data import
 
-You might want to analyze data for your thesis that already exists. There are several techniques to import data, dependent on your data source. There are various building blocks available on Tilburg science Hub that provide knowledge and example cases on importing data. 
+You might want to analyze data sets for your thesis that already exist somewhere. There are several techniques to import data, dependent on your data source. Use these building blocks to learn about importing data and see example cases.
 
 - [Download data directly from URLs using R and Python](/download-data/)
 - [Import larger datasets into R](/large-datasets-r/)
-- [The package `Dask`for processing large datasets in Python](/large-datasets-python/): 
+- [The package `Dask` for processing large datasets in Python](/large-datasets-python/)
 - [Integrating SPSS data in R](/spss-files-in-r/): useful when your data source is an SPSS file.
 - [Text pre-processing in R](/text-preprocessing/): useful when working with text data in R.
+- Data sources for economists
 
-(data SourceS for economiStS)
 
 ## Inspecting raw data
 
