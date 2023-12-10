@@ -172,13 +172,13 @@ Typically, you will describe your model in a formula, and an accompanying text. 
 
 For regression models, there are some good resources at Tilburg Science Hub to help you in the analysis and model selection:
 
-- [The basics of regression analysis](/regressions/regression-analysis/): A building block on how to estimate a model with regression analysis and make predictions on the relationship between variables.
+- [The basics of regression analysis](/analyze/regression): A building block on how to estimate a model with regression analysis and make predictions on the relationship between variables.
 
 - [Regression with panel data](/paneldata/): A series that includes several methods for panel data analysis, and helps you to choose between a fixed and random effects model. 
 - [An introduction to Instrumental Variable regression](/iv)
-- [An introduction to Difference-in-Difference analysis](/canonical-did-table/)
-- [A series on Regression Discontinuity Design](/sharp-rdd/)
-- [An introduction to the Synthetic Control Method](/synth-control/)
+- [An introduction to Difference-in-Difference analysis](/canonical-DiD)
+- [A series on Regression Discontinuity Design](/regression/discontinuity)
+- [An introduction to the Synthetic Control Method](/impact/syntCont)
 
 ## Results
 
@@ -186,7 +186,7 @@ For regression models, there are some good resources at Tilburg Science Hub to h
 
 Report your estimation results in a table. Don't just copy this from your statistical software. You might want a table combining multiple models or making other adjustments, e.g. like adding fit metrics to the table, or deleting controls not relevant to mention.
 
-[This building block](/regressions/kableextra/) teaches how to create LaTeX regression table, ready to use in your thesis, in R.
+[This building block](/kableextra) teaches how to create LaTeX regression table, ready to use in your thesis, in R.
 
 ### Metrics about the model
 
@@ -197,10 +197,10 @@ If you've explored competing models, showcase the fit statistics for each model 
 ### Diagnostic plots
 Think about adding a diagnostic plot to serve as a visual tool to assess the adequacy and assumptions of the model fit. Which kind of plot really depends on your type of model. 
 
-An example for a linear regression model is a residual plot. Here, the independent variable is YEAR0 = (year-1990) and the residuals represent the expected temperature for the year 1990. A random scatter of points indicates that the residuals are independent and identically distributed (i.i.d.) and the assumption holds. 
+An example for a linear regression model is a **residual plot**. Here, the independent variable is *YEAR0 = (year-1990)* and the residuals represent the expected temperature for the year 1990. A random scatter of points indicates that the residuals are independent and identically distributed (i.i.d.) and the assumption holds. 
 
 <p align = "center">
-<img src = "../images/residualplot.png" width="500">
+<img src = "../images/residualplot.png" width="400">
 </p>
 
 *[Source](https://www.sciencedirect.com/topics/mathematics/residual-plot)*
@@ -208,15 +208,15 @@ An example for a linear regression model is a residual plot. Here, the independe
 ### Explain your results
 
 For each hypothesis tested in the study, follow these steps to report the findings:
-- Restate the hypothesis briefly
+- Restate the hypothesis briefly.
 - Report the obtained result within brackets, including the coefficient and the significance level. For example, "The effect of A on B is statistically significant (β = xx, p = .012)" or "A increases B by x% (β = xx, p = .025)".
-- Explain the result
+- Explain the result:
   - For confirmed hypotheses, provide reasoning that reinforces your hypothesis. For instance, "As hypothesized, A leads to B because..."
   - For unconfirmed hypotheses, elaborate on this as well. It could be due to conceptual reasons (if the effect might not exist, provide arguments), measurement issues, or other relevant factors impacting the expected relationship.
-- Discuss the impacts of control variables. For instance, "Control variables like age and gender exhibit observable effects. For instance, age positively influences the intention to purchase (β = xx, p = .12). However, education does not significantly predict intention to purchase (β = xx, p = .63). This lack of significance might be due to..."
+- Discuss the impacts of control variables. For example, *"Control variables like age and gender exhibit observable effects. For instance, age positively influences the intention to purchase (β = xx, p = .12). However, education does not significantly predict intention to purchase (β = xx, p = .63). This lack of significance might be due to..."*
 
 {{% tip %}}
-**p-value**
+**Exact p-values**
 <br>
 Report the exact p-values in the text and tables. For example, p = 0.049 instead of p < 0.05. Also, the p-value needs to be written in italic.
 {{% /tip %}}
@@ -237,3 +237,7 @@ Consider plotting some results, e.g. relevant coefficients of your estimated mod
 
 - Briefly mention the **main findings and their interpretations**. Emphasize the significance of these findings in addressing the research objectives.
 - Summarize **any policy or business recommendations** stemming from your research findings. Highlight actionable insights derived from the study that could be practically implemented or considered by policymakers or business stakeholders.
+
+{{% summary %}}
+A well-structured thesis is crucial for clear communication of your research. With completing Part 4, covering the thesis outline, you reached the end of this guide. Remember, you can always refer back to this resource when you encounter specific challenges during the process. Best of luck with your thesis!
+{{% /summary %}}
