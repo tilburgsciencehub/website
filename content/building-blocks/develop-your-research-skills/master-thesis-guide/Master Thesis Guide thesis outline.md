@@ -11,7 +11,7 @@ aliases:
 
 ## Overview
 
-The Master Thesis Guide will serve as a guidance throughout the whole writing process of a thesis that consists of an empirical research project, for studies in marketing, economics, management, etc. In this part, the thesis chapters are discussed one-by-one. Keep in mind that the thesis format might slightly differ depending on your official formatting guidelines, but the content should be more or less in the same order.
+The Master Thesis Guide will serve as a guidance throughout the whole writing process of a thesis that consists of an empirical research project, for studies in marketing, economics, management, etc. In this part, the outline is discussed chapter-by-chapter. Keep in mind that the thesis outline might slightly differ depending on your official formatting guidelines, but the content should be more or less in the same order.
 
 - Introduction
 - Literature review
@@ -30,7 +30,7 @@ A good introduction contains the following five paragraphs, each serving a clear
 
 You can always revisit the tips for refining your research question in [Part 1: Preparation](/masterthesisguide/preparation).
 
-2. **Motivate your research question**: Explain why it is important to study this topic. Think about using economic factors, social or political implications, or evidence relevance to top management to convince the reader of the importance. Example sentences are *"Studying the effect of X on Y is crucial to.."*, or *"The effect of X on Y is worth studying because.."*
+2. **Motivate your research question**: Explain why it is important to study this topic. Think about using economic factors, social or political implications, or evidence relevance to top management, to convince the reader of the importance. Example sentences are *"Studying the effect of X on Y is crucial to.."*, or *"The effect of X on Y is worth studying because.."*
 
 3. **Literature review**: The literature review is included in the introduction or has its own chapter right after the introduction.
 
@@ -61,7 +61,7 @@ Creating a table to categorize existing literature alongside your contribution c
 
 ## Conceptual framework
 
-This chapter explains the hypothesized relationship between *X*(the covariates) and *Y* (the dependent variable) by grounding it in existing theory or your own logical reasoning. 
+This chapter explains the hypothesized relationship between *X* (the covariates) and *Y* (the dependent variable) by grounding it in existing theory or your own logical reasoning. 
 
 Moreover, consider alternative arguments: while X may predominantly suggest a positive relationship, it's valuable to think about potential scenarios where it could demonstrate a negative correlation. 
 
@@ -175,7 +175,7 @@ For regression models, there are some good resources at Tilburg Science Hub to h
 - [The basics of regression analysis](/regressions/regression-analysis/): A building block on how to estimate a model with regression analysis and make predictions on the relationship between variables.
 
 - [Regression with panel data](/paneldata/): A series that includes several methods for panel data analysis, and helps you to choose between a fixed and random effects model. 
-- [An introduction to Instrumental Variable regression]()
+- [An introduction to Instrumental Variable regression](/iv)
 - [An introduction to Difference-in-Difference analysis](/canonical-did-table/)
 - [A series on Regression Discontinuity Design](/sharp-rdd/)
 - [An introduction to the Synthetic Control Method](/synth-control/)
