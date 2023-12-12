@@ -1,12 +1,10 @@
 ---
 title: "Styling Bar Charts in ggplot2"
-description: "Effective data visualization requires not just accuracy but also aesthetics. The ggplot2 package in R is a versatile tool, but many users struggle with custom styling. Step-by-step guide on customizing color, theme, and labels.
-Demonstrating various styles suitable for different data scenarios. Particularly zoom in on use in academic papers. Standard errors/error bars. Black-and white or greyscale formatting. How to use grouping. How to save as publishable PNG or PDF"
-keywords: "ggplot2, bar chart, ggsave, categorical variable, dplyr, tidyverse, data visualization"
+description: "Effective data visualization balances accuracy and aesthetics. The R package ggplot2, while versatile, can be challenging for custom styling. This guide covers color, theme, and label customization, with styles for various data scenarios, especially academic papers. It includes using standard errors/error bars, black-and-white formatting, data grouping, and saving visuals as high-quality PNG or PDF for publication."
 date: 11-12-2023
-weight: 3
+weight: 4
 author: "Matthijs ten Tije"
-authorlink: "A link to your personal webpage"
+authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
   - /bar/chart
   - /ggplot2
@@ -14,21 +12,20 @@ aliases:
 ---
 
 ## Overview
-This building block is designed to guide you through the best practices of data visualization, with a specific focus on styling `bar charts` using `ggplot2`. It is aimed to equipe you with the skills to create bar charts. By the end of this building block, you will have learned how to visually represent your statistical data in a way that is both informative and compliant with academic rigor.
+This building block is designed to guide you to the process of creating `bar charts` using `ggplot2`. Starting with the basics, we'll guide you through each step to evolve a simple bar chart into one that meets academic standards. You'll learn techniques to enhance information delivery and ensure compliance with scholarly presentation norms. By the end of the building block, you'll have the skills to represent statistical data in a clear, academically rigorous format.
 
-Effective data visualization requires both accuracy and aesthetics, a balance that can be challenging to achieve. Therefore, we will use the R package: `ggplot2`, a versitale tool for custom styling of your visualizations. We will discuss customizing colors, themes, and labels. In addition, this building block will include practical tips for various data scenarios, especially for academic papers, covering aspects like standard errors, black-and-white formatting, and effective data grouping. The guide also teaches how to save charts in high-quality PNG or PDF formats, ensuring they are suitable for academic publication.
+Effective data visualization requires both accuracy and aesthetics, a balance that can be challenging to achieve. Therefore, we will use the R package: `ggplot2`, a versitale tool for custom styling of your visualizations. We'll explore customizing colors, themes, and labels, and provide practical tips for academic presentations. This includes handling standard errors, black-and-white formatting, and effective data grouping. Additionally, we'll cover saving charts in high-quality PNG or PDF formats, ensuring they're ready for academic publication.
 
 {{% tip %}}
 **Data Visualization Best Practices**
 
-Explore, our [building block](/visualize/data) on Data Visualization, here we go through the theory of data visualisation, describe the most common chart types and conclude with best practices for plotting.
+Explore, our [building block](/visualize/data) on Data Visualization, here we describe the most common chart types and conclude with best practices for plotting.    
+Also look at this [building block](/Grammar/of/Graphics) to explore the inner workings fo `ggplot2`.
 
 {{% /tip %}}
 
-## Step-by-Step Guide: Crafting Publishable Bar Charts with ggplot2
-
-### Step 1: Data retrieval and Manipulation
-In this building block, we will make use of the PIAAC dataset, to examine the wage premium of obtaining a higher education level. We will illustrate the variance in wage across different education levels and between genders in the Netherlands. Let's first load the required packages and download the data.
+## Data Retrieval
+In this building block, we make use of the PIAAC dataset, to examine the wage premium of obtaining a higher education level. We will illustrate the variance in wage across different education levels and later on between genders in the Netherlands. Let's first load the required packages and download the data.
 
 {{% codeblock %}}
 
@@ -40,46 +37,52 @@ install.packages("tidyverse")
 library(tidyverse)
 
 # Load data 
-data_url <- "https://github.com/tilburgsciencehub/website/tree/master/content/building-blocks/prepare-your-data-for-analysis/data-visualization/piaac.Rda?raw=true"
-load(url(data_url)) #piaac.Rda is loaded now
+data_url <- "https://github.com/tilburgsciencehub/website/tree/master/content/building-blocks/prepare-your-data-for-analysis/data-visualization/piaac.rda"
+load(url(data_url)) #piaac.rda is loaded now
 ```
 
 {{% /codeblock %}}
 
-A bar plot effectively displays the interaction between numerical and categorical variables. To prepare our dataset for such a plot, we use the `dplyr` package from `tidyverse`. The process involves:
 
-- Ordering the categorical variable with `mutate()` and `factor()`.
-- Grouping by the categorical variable using `group_by()` for summary statistics.
-- Computing the mean, standard deviation (SD), count (N), and standard error (SE) for the numerical variable within each group.
+## Step-by-Step Guide: Crafting Publishable Bar Charts
+
+### Step 1: Data Manipulation
+A bar plot effectively displays the interaction between numerical and categorical variables.   
+The preparation of our dataset includes several steps:
+
+- Using `mutate()` and `factor()` to order the categorical variable.
+- Applying `group_by()` to group the data by the categorical variable, facilitating summary statistics.
+- Calculating mean, standard deviation (SD), count (N), and standard error (SE) of the numerical variable for each group.
 
 {{% codeblock %}}
 
 ```R
-# Data manipulation for bar plot
+# Using dplyr for data manipulation
 data_barplot <- data %>%
-  mutate("Categorical Variable" = factor("Categorical Variable", 
-                                          levels = c("A", "B", "C")
-                                        )
-        ) %>%
+  # Organizing the categorical variable
+  mutate("Categorical Variable" = factor("Categorical Variable", levels = c("A", "B", "C"))) %>%
+  # Grouping data by the categorical variable
   group_by("Categorical Variable") %>%
+  # Summarizing statistical measures for the numerical variable
   summarise(
     mean = mean("Numerical Variable"),
     sd = sd("Numerical Variable"),
     N = length("Numerical Variable"),
-    se = sd / sqrt(N) # Calculating SE for error bars
+    se = sd / sqrt(N) # Calculating Standard Error (SE) for error bars
   )
+
 
 ```
 {{% /codeblock %}}
 
-In this example, the manipulated PIAAC dataset includes 'edlevel3' (education levels) as a categorical variable and numerical variables like hourly wages, their standard deviations, counts, and standard errors. The calculated SE is particularly useful for adding error bars in the bar plot, a common practice to visually represent data variability. This dataset facilitates insights into the relationship between education and earnings.
+The code above transforms a specified Categorical Variable into a categorical data type, orders its levels, and then groups the data by this variable. It calculates summary statistics (mean, standard deviation, count, and standard error) for a numerical variable within each category (level). These steps prepare the dataset for creating a bar plot with error bars, useful for visualizing differences between categories.
 
 {{% tip %}}
 
 **Refactoring Categorical Variables**
-Refactoring categorical variables is crucial for ordered and meaningful bar plot visualization.
-- Using Base R Functions: Base R offers `fct_relevel()` to specify the preferred order of your factor levels using character strings.
-- Leveraging the `factor()` Function: Our approach involves `factor()`, where the levels argument sets the desired order, ensuring the bar plot accurately represents the data sequence.
+Refactoring categorical variables is essential for bar plot visualizations.
+- Using the `fct_relevel()` function. This function allows for reordering factor levels using character strings, ensuring the categorical data is displayed in a preferred sequence.
+- Utilizing Base R's `factor()` Function: Our approach involves `factor()`, where the levels argument sets the desired order
 
 {{% /tip %}}
 
@@ -103,25 +106,19 @@ data_barplot %>%
 {{% example %}}
 
 **Key Points**:
-- g`eom_col()` vs. `geom_bar()`: We use `geom_col()` here, as it's suitable when bar heights need to directly represent data values. In contrast, `geom_bar()` is used when you want to count cases at each x position, as it employs `stat_count()` by default.
+- `geom_col()` vs. `geom_bar()`: We use `geom_col()` here, as it's suitable when bar heights need to directly represent data values. In contrast, `geom_bar()` is used when you want to count cases at each x position, as it employs `stat_count()` by default.
 - Adding Error Bars: `geom_errorbar()` is utilized to add error bars to the bar chart. This function takes ymin and ymax aesthetics, calculated here as mean - se and mean + se, respectively. The width parameter controls the width of the error bars.
 - Aesthetics: The fill aesthetic within `aes()` is set to Categorical Variable to color the bars based on the categorical groups.
 
 {{% /example %}}
 
-{{% tip %}}
-
-**Understanding the Language of ggplot2**
-Explore our [building block](/Grammar/of/Graphics) for insights into ggplot2 mechanics, best practices, and how to avoid common pitfalls in using the package.
-
-{{% /tip %}}
-
 ### Step 3: Enhancing Aesthatics 
 The initial visualization is a solid starting point, but to meet academic standards, we need to refine it further. The primary issues are:
 - Redundant x-axis text: The legend duplicates information already conveyed by the x-axis labels.
 - Non-Descriptive Axis Titles: Axis titles need to be more informative for clarity.
-- Lack of Contextual Information: The plot lacks a title and a caption explaining the error bars.
-- Color Scheme: The default color palette may not suffice for academic rigor.
+- Lack of Contextual Information: The plot lacks a title.
+- Color Scheme: The default color palette does not meet the academic rigor.
+  
 Let's address these issues with the following enhanced visualization:
 
 {{% codeblock %}}
@@ -140,7 +137,6 @@ data_barplot %>%
 
 {{% /codeblock %}}
 
-
 <p align = "center">
 <img src = "../img/basicplot2.png" width="450">
 </p>
@@ -149,12 +145,13 @@ Let's go over these changes.
 - `scale_fill_manual`: This function customizes bar colors to specified ones. 
 - `theme_minimal()`: It removes the grey background panel, creating a cleaner look.
 - `scale_y_continuous`: Adjusts the y-axis scale. 
-  - The limits parameter, since we still have to add the p-values, we need more space above the highest bar.
+  - limits sets the y-axis limit. Since we still have to add the p-values, we need more space above the highest bar.
   - expand sets the axis to start precisely at 0.
 - `labs()` Function: Adds informative titles for axes, and the plot itself.
   
 ### Step 4: Enhancing Bar Chart Aesthetics with Theme Customization
-After the initial setup, further customization using the theme function in ggplot2 can significantly enhance the visual appeal and clarity of your bar chart. Here's how you can apply these enhancements:
+After the initial setup, further customization using the `theme()` function in ggplot2 can significantly enhance the visual appeal and clarity of your bar chart. Here's how you can apply these enhancements:
+
 {{% codeblock %}}
 
 ```R
@@ -205,11 +202,12 @@ Suppose you've analyzed how education levels and gender influence mean hourly wa
 {{% tip %}}
 
 Automating statistical tests and visualization with `ggpubr` streamlines the process, making it more efficient, as explained [here](/ggpubr).  
-However, customizing visualizations directly in ggplot2 offers greater flexibility and control over the final output. 
+However, customizing visualizations directly in ggplot2 offers greater flexibility and control over the final output. Let's dive into the latter.
 
 {{% /tip %}}
 
 **Creating Data for Significance Lines**
+
 First, we need to set up data points to draw lines indicating significance. These lines typically connect the relevant categories with a central peak to denote significance.
 
 {{% codeblock %}}
@@ -230,14 +228,15 @@ p_value_one <- tibble(
 This setup creates a line that starts at the center of the 'Low' bar at y = 20, peaks at y = 22 (indicating significance), travels across to the 'Medium' bar, and descends back to y = 20.
 
 **Adding Significance Lines and Annotations**
-Next, we add these lines and annotations (like asterisks) to highlight significance.
+
+Next, we add these lines and annotations (like asterisks) to highlight the significance levels found in your statistical analysis.
 
 {{% codeblock %}}
 ```R
   # [Insert previous ggplot() + geom_() code here]
   geom_line(data = significance_data, aes(x = x, y = y, group = 1)) +
   annotate("text", x = "1.5", y = 23.5, label = "***", size = 8, color = "#22292F") + 
-  geom_text(aes(label = round(mean, 2)) , vjust = -1.5) +
+  geom_text(aes(label = round(mean, 2)) , vjust = -1.5) + # Add the average value for more information
   # [Insert previous customization code here]
 ```
 
@@ -255,12 +254,12 @@ In this code:
 Remember, the positions and labels are adjustable based on your specific data and results. Experiment with the x and y values in the annotate function to achieve the best placement in your bar chart. This approach provides a clear, customized way to denote significant findings in your visualization.
 
 ## Advanced Techniques for Multi-Group Bar Charts in ggplot2
-Utilizing ggplot2 for complex data involving multiple categorical variables can be challenging, especially when creating faceted plots. This section delves into effectively using p-value annotations in such scenarios, focusing on a dataset with variables like education level (edlevel3), gender (gender_r), and mean hourly wage.
+When working with ggplot2 to visualize complex datasets with multiple categorical variables, creating faceted plots can pose unique challenges. This section focuses on the effective use of p-value annotations in such scenarios. 
 
 **Visualizing Wage Differences by Education and Gender**
 Imagine plotting the mean hourly wage by education level, segmented by gender. Our goal is to highlight significant differences between education levels using p-values.
 
-*Step 1: Grouping the Data*
+*Step 1: Grouping the Data*   
 Begin by organizing your data using `group_by()` to focus on the interaction between the chosen categories.
 
 {{% codeblock %}}
@@ -276,7 +275,7 @@ grouped_barplot <- data %>%
 ```
 {{% /codeblock %}}
 
-*Step 2: Faceted Visualization with facet_wrap*
+*Step 2: Faceted Visualization with facet_wrap*   
 Employ `facet_wrap()` to create distinct plots for each gender, allowing for a clear comparison across categories.
 
 {{% codeblock %}}
@@ -287,7 +286,7 @@ grouped_barplot <- ggplot(grouped_data, aes(x = edlevel3, y = mean, fill = edlev
 ```
 {{% /codeblock %}}
 
-*Step 3: Preparing P-Value Data for Annotations*
+*Step 3: Preparing P-Value Data for Annotations*   
 To annotate your plot with p-values, prepare a separate dataset containing these values along with the corresponding coordinates and the faceting variable.
 
 {{% codeblock %}}
@@ -308,7 +307,7 @@ annotations <- tibble(
 ```
 {{% /codeblock %}}
 
-*Step 4: Adding Annotations in ggplot2*
+*Step 4: Adding Annotations in ggplot2*   
 Incorporate these annotations into your ggplot2 chart, ensuring they align accurately with the respective facets.
 
 {{% codeblock %}}

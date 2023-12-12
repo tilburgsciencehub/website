@@ -1,11 +1,11 @@
 ---
-title: "Creating Plots with Statistical Significance in R using ggpubr and rstatix"
-description: "exploration of the combination of ggpubr and rstatix packages. Learn how to prepare, analyze, and visualize data, making it easy to create publication-quality visualizations."
+title: "Combining Analysis and Visualization in R with ggpubr and rstatix"
+description: "This building block blends ggpubr's visualization tools with rstatix's statistical analysis in R. It's designed for researchers and data scientists who seek to elevate their data stories with visually engaging and statistically sound plots."
 keywords: "ggplot2, bar chart, ggpubr, categorical variable, dplyr, rstatix, data visualization"
 date: 11-12-2023
-weight: 4
+weight: 5
 author: "Matthijs ten Tije"
-authorlink: "A link to your personal webpage"
+authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
   - /ggpubr
   - /rstatix
@@ -24,7 +24,7 @@ Furthermore we will use the `rstatix` package. `rstatix` provides functions for 
 ### Data preparation 
 
 #### Step 1: Installing and Loading ggpubr adn rstatix
-First, ensure that you have ggpubr installed and loaded in your R environment:
+First, ensure that you have ggpubr and rstatix installed and loaded in your R environment:
 
 {{% codeblock %}}
 
@@ -50,7 +50,7 @@ load(url(data_url)) #piaac.Rda is loaded now
 # Data cleaning and Preparation (General)
 ggpubr_data <- data %>%
   # Remove observations with missing values
-  drop_na("Specify Variables of interest") %>% 
+  drop_na("Specify Variables of Interest") %>% 
   # Group by your categorical variable 
   group_by("Categorical variable") %>%
   # convert variables to appropriate types, and order categorical variable
@@ -80,17 +80,22 @@ ggpubr_data <- data %>%
 {{% /codeblock %}}
 
 ### Statistical Analysis using Rstatix
-In this building block, i will use the `compare_means()` function from the rstatix package. Using rstatix alongside ggpubr in R provides a streamlined workflow for both statistical testing and visualization, particularly suited for users working with the ggplot2 system. rstatix offers easy-to-use functions for conducting statistical tests, such as t-tests and ANOVA, which can then be directly incorporated into ggpubr for creating informative visualizations. This integration with the ggplot2 ecosystem enhances the ease and efficiency of the analysis process. 
+In this building block, I will use the `compare_means()` function from the rstatix package. rstatix offers easy-to-use functions for conducting statistical tests, such as t-tests and ANOVA, which can then be directly incorporated into ggpubr for creating informative visualizations. This integration with the ggplot2 ecosystem enhances the ease and efficiency of the analysis process. 
 
 #### Step 3: Performing T-Test with rstatix
-The compare_means function compares the average (mean) values of a certain variable across different groups. Here's a simple breakdown of how to use it:
--  *Syntax*: compare_means(formula, data, method, ref.group)
-   -  formula: You write what you want to compare here. 
-      -  For example, height ~ gender means you want to compare the average height across genders.
-   -  *data*: Here you specify your dataset
-   -  *method*: This tells the function what statistical test to use. 
-   -  *ref.group*: the reference group for comparison. 
-      -  If your groups are 'A', 'B', and 'C', and you choose 'A' as the reference, the function will compare 'B' and 'C' against 'A'.
+The compare_means function in rstatix is designed to compare the mean values of a specific variable across different groups. Here's a structured guide on how to use this function:
+
+- **Syntax**:
+  - compare_means(formula, data, method, ref.group)
+- **Components:**
+- formula: This is where you specify the comparison you want to make.
+  - Example: height ~ gender implies comparing the average height across different genders.
+- data: This parameter is used to specify the dataset in which the comparison is to be made.
+- method: This parameter defines the statistical test to be used for comparison.
+- ref.group: This is the reference group against which other groups are compared.
+  - Example: If you have groups 'A', 'B', and 'C', and 'A' is set as the reference group, the function will compare 'B' and 'C' with 'A'.
+  
+This function is a powerful tool for conducting and interpreting various statistical comparisons, particularly useful in data analysis and research.
 
 {{% codeblock %}}
 
@@ -115,10 +120,16 @@ stat.test
 `ggbarplot()` is a function from the ggpubr package, which is used to create bar plots. 
 
 **Key Features of ggbarplot():**
-- Simplicity: 
+
+*Simplicity:*  
 One of the main advantages of ggbarplot() is its simplicity. It allows you to create bar plots with minimal coding, making it user-friendly, especially for those new to data visualization in R.
-- Customization: Despite its simplicity, ggbarplot() offers a wide range of customization options. You can change colors, add labels, adjust the width of the bars, and much more.
-- Integration with ggplot2: ggpubr, the package that includes ggbarplot(), is built on top of ggplot2, a powerful and popular plotting system in R. This means that ggbarplot() benefits from the robustness and flexibility of ggplot2.
+
+
+*Customization:*   
+Despite its simplicity, ggbarplot() offers a wide range of customization options. You can change colors, add labels, adjust the width of the bars, and much more.
+  
+*Integration with ggplot2:*    
+ggpubr, the package that includes ggbarplot(), is built on top of ggplot2, a powerful and popular plotting system in R. This means that ggbarplot() benefits from the robustness and flexibility of ggplot2.
 
 
 Let's look at a practical example: 
@@ -149,7 +160,8 @@ ggbarplot(
 
 #### Step 5: Adding Statistical Significance with stat_p_value()`
 Now, integrate the test results (step 3) into the bar plot (step 4) using `stat_p_value()`.  
-The stat_pvalue_manual() function comes from the ggpubr package in R, and it's used in conjunction with bar plots or other types of plots to add statistical annotations, specifically p-values, to the plot. P-values are a way to measure the significance of your statistical test results. Adding these to a plot can provide a quick visual cue about the statistical differences between groups.
+The stat_pvalue_manual() function comes from the ggpubr package in R, and it's used in conjunction with bar plots or other types of plots to add statistical annotations, specifically p-values, to the plot.  
+Adding these to a plot can provide a quick visual cue about the statistical differences between groups.
 
 **Breaking Down stat_pvalue_manual():**
 - *stat.test*: This is your statistical test result that you want to annotate on the plot. The function uses information from this result to create the annotations.
