@@ -27,24 +27,11 @@
 
 			</div>
 			<div class="col-lg-1 col-0"></div>
-			<div class="col-lg-4 col-21">
-				<div class="footerCollapse">
-					<div class="heading text-white d-block py-2">Tutorials</div>
-
-					<div class="d-none d-lg-block links">
-						{{- range where .Site.Pages "Section" "topics" -}}
-						{{ if eq .Params.isParent true }}
-						<a href="{{ .Permalink }}{{ if .Params.indexPage }}{{ .Params.indexPage }}{{end}}">{{ .Title }}</a>
-						{{ end }}
-						{{- end -}}
-					</div>
-				</div>
-			</div>
 
 			<div class="col-lg-1 col-0"></div>
 			<div class="col-lg-4 col-21">
 				<div class="footerCollapse">
-					<div class="heading text-white d-block py-2">Building Blocks</div>
+					<div class="heading text-white d-block py-2">Topics</div>
 
 					<div class="d-none d-lg-block links">
 						{{- range where .Site.Pages "Section" "topics" -}}

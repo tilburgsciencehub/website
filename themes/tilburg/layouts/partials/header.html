@@ -61,8 +61,8 @@
 
 								{{ range .Pages }}
 								<div class="col-6 mb-4 px-3">
-									<span class="heading d-block mb-3 text-secondary"
-										style="font-size: 16px;">{{.Title}}</span>
+									<a href="{{ .Permalink }}" class="mb-3 mt-0"><span class="heading d-block text-secondary"
+										style="font-size: 16px;">{{.Title}}</span></a>
 									{{ range .Pages }}
 									{{ if eq .Params.indexexclude "true" }}
 									<!--<a class="d-block mx-0" href="{{.Permalink}}">DONOTSHOW{{.Title}}</a>-->

@@ -290,25 +290,10 @@ def main():
 
     logging.info('Python HTTP trigger function processed a request.')
 
-    # Navigate to the root folder (one level up from the current notebook file)
-    notebook_path = os.path.dirname(__file__)
-    root_folder = os.path.join(notebook_path, 'static')
-    os.chdir(root_folder)
-
     response = get_report()
     pages = get_popular_pages(response)
 
-    with open('pages.json', 'w') as f:
-        json.dump(pages, f)
-
-    popular_cards = create_popular_cards_json('reproducible,learn')
-    cards_file_path = os.path.join(root_folder, 'cards.json')
-
-    # Write Popular Cards to the 'cards.json' file in the 'static' folder
-    with open(cards_file_path, 'w') as f:
-        json.dump(popular_cards, f)
-
-    print('JSON created')
+    print(pages)
 
 
 if __name__ == "__main__":

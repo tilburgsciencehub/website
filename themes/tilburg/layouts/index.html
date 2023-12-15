@@ -280,7 +280,7 @@
               {{ $s := slice }}
               {{ $displayedTitles := dict }}
 
-              {{ range where .Site.Pages.ByLastmod.Reverse "Section" "in" "[topics, tutorials]" }}
+              {{ range where .Site.Pages.ByLastmod.Reverse "Section" "in" "topics" }}
               {{ $title := .Title }}
               {{ if not (index $displayedTitles $title) }}
               {{ $s = $s | append . }}

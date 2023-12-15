@@ -1,5 +1,5 @@
 ---
 draft: false
-title: "Reporting"
+title: "Reporting Tables"
 weight: 2
 ---
