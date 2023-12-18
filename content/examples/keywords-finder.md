@@ -11,7 +11,7 @@ aliases:
 
 ## Overview
 
-This is a template for a reproducible [Dockerized](https://tilburgsciencehub.com/building-blocks/automate-and-execute-your-work/reproducible-work/docker/) application, based on [R](https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/r/), that **finds keywords and/or sentences in multiple `PDF` files**.
+This is a template for a reproducible [Dockerized](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/docker/) application, based on [R](https://tilburgsciencehub.com/topics/configure-your-computer/statistics-and-computation/r/), that **finds keywords and/or sentences in multiple `PDF` files**.
 
 {{% summary %}}
 * We use `R` to first, convert the `PDF` files into plain text files (`.txt`).
@@ -19,7 +19,7 @@ This is a template for a reproducible [Dockerized](https://tilburgsciencehub.com
 * Matches are reported into an Excel file, reporting what keyword or sentence was found in which file.
 {{% /summary %}}
 
-`Docker` is used to run the above mentioned process inside an isolated container (*see [this building block](https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/docker/) to learn more about containers*). By doing so, you can run this application without even having to have `R` installed in your computer plus it will also run smoothly, regardless of what operating system (OS) you're using.  
+`Docker` is used to run the above mentioned process inside an isolated container (*see [this building block](https://tilburgsciencehub.com/topics/configure-your-computer/automation-and-workflows/docker/) to learn more about containers*). By doing so, you can run this application without even having to have `R` installed in your computer plus it will also run smoothly, regardless of what operating system (OS) you're using.  
 
 
 

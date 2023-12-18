@@ -446,7 +446,7 @@ function resetEverythingInMenu() {
 }
 
 function hideScreenTwoMenuItems() {
-  $("#mobile-building-blocks").addClass("d-none");
+  $("#mobile-topics").addClass("d-none");
   $("#mobile-tutorials").addClass("d-none");
   $("#mobile-examples").addClass("d-none");
 }
@@ -483,7 +483,7 @@ $(".tutorialsSearch").on("keyup", function (e) {
   const val = e.target.value;
 
   $.ajax({
-    url: "/tutorials/index.json",
+    url: "/topics/index.json",
   }).done(function (result) {
     resultsHolder.html("");
     let newResults = result.filter((result) => {
@@ -507,7 +507,7 @@ $(".buildingBlockSearch").on("keyup", function (e) {
   const val = e.target.value;
 
   $.ajax({
-    url: "/building-blocks/index.json",
+    url: "/topics/index.json",
   }).done(function (result) {
     resultsHolder.html("");
     let newResults = result.filter((result) => {
@@ -528,11 +528,10 @@ $(".buildingBlockSearch").on("keyup", function (e) {
 
 document.querySelectorAll('a[href^="#"]').forEach((trigger) => {
   trigger.onclick = function (e) {
-    e.preventDefault();
     let hash = this.getAttribute("href");
     if (hash !== "#0") {
       let target = document.querySelector(hash);
-      let headerOffset = 140;
+      let headerOffset = 100;
       let elementPosition = target.getBoundingClientRect().top;
       let offsetPosition = elementPosition - headerOffset;
 
@@ -667,7 +666,7 @@ $(document).ready(function () {
 
         // Building Blocks
         const building_blocks = data.building_blocks || [];
-        const ulElementBlock = document.getElementById('most-read-building-blocks-list');
+        const ulElementBlock = document.getElementById('most-read-topics-list');
 
         // Select a random building block
         const randomIndex = Math.floor(Math.random() * building_blocks.length);
