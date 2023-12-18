@@ -29,7 +29,7 @@
     "building_blocks": [
         {
             "path": "/topics/automation/ai/transcription/whisper/",
-            "title": "Making transcriptions using OpenAI's Whisper 3 mins",
+            "title": "Making transcriptions using OpenAI's Whisper",
             "description": "Guidance page for using Whisper for translations and transcriptions"
         },
         {
