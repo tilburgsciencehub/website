@@ -3,7 +3,7 @@ title: "The Shift-Share Instrumental Variable"
 description: "The Shift-share IV is an innovative approach to address endogeneity and selection challenges in regression analysis."
 keywords: "instrumental, variable, iv, shift-share, shiftshare, regression, causal, inference, effect, regressions, analysis"
 draft: false
-weight: 1
+weight: 3
 author: "Valerie Vossen"
 aliases:
   - /shiftshare
@@ -14,113 +14,128 @@ aliases:
 - Motivation
 - The shift-share instrument
 - Assumptions
-- A practical application: effect immigration on unemployment
+- A practical application: migration case
 - Other examples from literature
 - Application in R
 
 
 ## Motivation
 
-Analyzing the causal impact of exogenous shocks within regional economic studies, will come with challenges
-Think of endogeneity, making it difficult to isolate the true relationships between the variables of interest with normal OLS. 
+Analyzing the causal impact of exogenous shocks within regional economic studies will come with challenges. It is often difficult to isolate the true relationships between the variables of interest with normal OLS. Then, endogeneity problems can arise, where the independent variable is correlated with the error term and the coefficients, estimating the relationship you are interested in, are biased. 
 
-To illustrate this challenge, and the shift-share instrument, we will use the following analysis as an example throughout this article:
+### Effect of immigration on unemployment
+To illustrate with an example, the following analysis will be us throughout this article:
 
-A typical question asked in economics is the impact of immigration on unemployment. It seems straightforward to estimate this effect when you have national panel data on immigration and unemployment rates. You can run the following regression: 
+A typical question asked in economics is the impact of immigration on unemployment. If immigrants are substitutes to natives, immigration inflow is expected to rise unemployment. It might seem straightforward to estimate this effect when you have national panel data on immigration and unemployment rates. You can run the following regression: 
 
-unemploymentrate_{i,t} = beta_0 + beta_1 * immigrationinflow_{i,t} + controls + e_{i,t}
+{{<katex>}}
+UR_{i,t} = \beta_0 + \beta_1 IM_{i,t} + \beta_2 X_{i,t} + \epsilon_{i,t}
+{{</katex>}}
+<br>
+<br>
+where
+- $UR_{i,t}$ is the unemployment rate in region $i$, at time $t$
+- $IM_{i,t}$ is the immigration inflow (from a specific origin country, or total immigration depending on your research question) to region $i$ in the destination country, at time $t$
+- $X_{i,t}$ is a vector of controls, like variables for GDP growth or educational level in each region $i$, at time $t$
+- $\epsilon_{i,t}$ is the error term
 
 
 ### Problem: Endogeneity of the independent variable
-However, there is a typical concern with this specification. Endogeneity arises if immigration might itself be driven by regional unemployment rates. This makes sense: immigrants, seeking opportunities, are likely to grativate towards regions which lower unemployment rates.
+However, there is a concern with this specification. Endogeneity arises if immigration to each region is itself driven by regional unemployment rates. This reasoning makes sense: immigrants, seeking opportunities, are likely to grativate towards regions which lower unemployment rates. If this is true, there is reverse causality (unemployment affects immigration which is the other way around). The estimated effect of immigration on the unemployment rate will be biased. 
 
-This is a reverse causality problem, and the estimated effect of immigration on the unemployment rate will be biased. 
-
-A shift-share instrument can be used as an instrument, to help solve this issue. it decomposes changes in economic variables within regions into two components which are both assumed to be exogenous: the shift and the share. Together the shift and the share can exogenously predict immigration inflows.
+A shift-share instrument (also called Bartik instrument) can be used to help solve this issue. In short, the shift-share IV decomposes changes in economic variables within regions into two components which are both assumed to be **exogenous**: the shift and the share. Together, the shift and the share can exogenously predict immigration inflows.
 
 
 ## The shift-share instrument
 
 The essence of the shift-share instrument is that it deconstructs changes in economic variables within regions into two distinct components: the shift and the share. 
 
-The predicted inflow of migrants into a destination country is a weighted average of the national inflow rates from each country ("the shift"), with weights depending on the initial distribution of immigrants ("the shares"). 
+The predicted inflow of migrants into a destination country is a weighted average of the national inflow rates from each country (*shifts*), with weights depending on the initial distribution of immigrants (*shares*). In other words, the instrument combines the past settlement and national inflow.
 
 {{<katex>}}
-z_{i,t} = sum_i z_{i,j,t-1} m{j,t}
+z_{i,t} = \sum_{i=1}^I s_{i,t-1} * m_{t}
 {{</katex>}}  
+<br>
+Where:
 
-- z are the lagged or "initial" distribution of the share of immigrants from source country j in location i.
+- The share $s_{i,t-1}$: The lagged or "initial" distribution of the share of immigrants in region $i$.
 
-- m is the normalized change in immigration from country j into the country as a whole. 
+- The shift $m_{j,t}$: The national immigration inflow. Note that the shifts vary at a "higher" level than the shares, namely the shifts are national and not varying at regional level $i$ like the shares. 
 
+### The regression model
 
-The shocks vary at a different "level" j = 1,...,J than the shares i = 1,...,I, where we also observe an outcome y_i and treatment x_i
+The shift-share instrument $z_{i,t}$ is used as to estimate $\beta_1$ in the following regression model:
+<br>
+<br>
+{{<katex>}}
+UR_{i,t} = \beta_0 + \beta_1 z_{i,t} + \beta_2 X_{i,t} + \epsilon_{i,t}
+{{</katex>}}
+<br>
 
-z_{i,t} is used as an estimator in the model y_{i,t} = beta*x_{i,j,t} + epsilon_{i,j,y}, where it exogenously predicts the endogenous shift. 
+The shift-share instrument exogenously predicts the endogenous shift (the immigration inflow into each region).
 
-sum_n s_ln = 1 for all l. 
+## Instrument validity
+For the shift-share instrumental approach to work, instrument exogeneity should hold. On average, the product of the instrument, $z_{i,t}$, and the error term $\epsilon_{i,t}$ balance out to zero. This is the following condition in mathematical terms:
 
-maths: until slide 45
+{{<katex>}}
+E[\frac{1}{I} \sum_{i} z_{i,t} \epsilon_{i,t}] = 0
+{{</katex>}}
 
-## Assumptions
+## Identifying assumptions
 
-Properties of shocks and shares to make this condition hold. 
+There are two recent views in literature about which assumptions should hold for the shift-share IV to be valid: the share- and the shift-view. 
 
-1. Exogeneity of initial shares
+### Share-view 
 
-Initial shares of immigrants across locations are exogenous or independent from the outcomes being studied. 
+[Goldsmith-Pinkham et al. (2020)]() show that the shift-share instrument is equivalent to using the shares as instruments, and so identification is based on **exogeneity of the shares**. The shares measure the differential exogenous exposure to the common shock ("shift"). The shifts only provide the weights and do not affect the instrument endogeneity.
 
+The identifying assumption is: shares $s_{i,t}$ are exogenous, which is the following condition in mathematical terms:
 
-## shift exogeneity
+$E[\epsilon_{t} | s_{i,t} ] = 0$ for each $t$
 
-1. Quasi-random shock assignment
-
-Each shift has the same expected value, conditional on the shift-level unobservables e_n, and average exposure s_n. 
-
-
- 
-2. Many uncorrelated shocks
-
-Share exogeneity assumes that the shocks affecting one region are unrelated or uncorrelated with the shocks affecting other regions, given the unobservable factors
-
-The aspect highlighted, where the expected Herfindahl index of average shock exposure converges to zero as the number of regions (N) approaches infinity, implies a situation where shocks become increasingly uncorrelated across regions
-
-### Absence of spatial spillovers
-
-The Bartik instrument's validity assumes that there are no spatial spillover effects or interdependencies among locations. This means that the outcomes in one location are not influenced by the outcomes in neighboring regions, ensuring the independence of observations. This is not straightforward in our example: If local workers respond to immigration inflow by moving to other regions, domestic migration is likely to overestimate the negative effect of immigration on unemployment rates in each region. 
-
-### Independent data periods
-
-The assumption of steady-state or independence among data periods is important, especially in considering adjustment dynamics. The instrument's validity assumes that the data represent distinct periods without significant intertemporal correlations that might confound the estimation.
+In our migration example, this implies arguing whether the past settlement (initial distribution) of migrants can assumed to be uncorrelated with the local unemployment rates (the dependent variable).
 
 
+{{% tip %}}
+some ways how to explore the validity of this assumption:
+
+- Identify the correlation between the *shares* and potential confounders. In the migration example, you could for example examine whether areas with higher initial immigrant shares also display distinct characteristics (such as higher education levels) that might affect the unemployment rate.
+- If you have a pre-period, test for parallel pre-trends.
+{{% /tip %}}
+
+### Other assumptions
+
+- Absence of spatial spillover effects or interdependencies among locations
+
+This means that the outcomes in one location are not influenced by the outcomes in neighboring regions, ensuring the independence of observations. This is not straightforward: If local workers respond to immigration inflow by moving to other regions, domestic migration is likely to overestimate the negative effect of immigration on unemployment rates in each region. 
+
+- Independent data periods
+
+The instrument's validity assumes that the data represent distinct periods without significant intertemporal correlations that might confound the estimation. This  assumption of steady-state is important, especially in considering adjustment dynamics.
+
+jaeger (2018): concern lt-short term
+
+### Shift (Shock) view
+
+Another approach is introduced by [Borusyak, Hull, and Jaravel (2022)]() in which identification follows from the quasi-random assignment of shocks, while exposure shares are allowed to be endogenous. The two baseline assumptions are
+
+- 1: Quasi-random shift assignment
 
 
-## Immigration on unemployment example
+$E[m_{t} | \bar{\epsilon}, s] = \mu$ for all $t$
 
+Each shift has the same expected value, conditional on the shift-level unobservables $\bar{e_{t}}$, and average
+exposure $s_{t}$. 
 
+-  2: Many uncorrelated shifts
 
-y_l = beta x_l + gamma' x w_l + e_l
+This assumption implies that when ther are many regions, the shifts are becoming increasingly uncorrelated to each other. Mathematically, this is represented as the covariance between the shifts in one region and the shifts in another region becoming close to zero when comparing different regions.
 
-where:
-- y_l = unemployment in region l
-- x_l = immigration
+$Cov(m_t, m_t' | \bar{\epsilon}, s) = 0$ for all $m' =! m$
 
-- reverse causality
-- need an IV to give a relative labor supply instrument 
+- Jaeger 2018
 
-instrument = share of migrants predicted from enclaves & recent growth (= past settlement and national inflow?)
-
-chatgpt:
-Share of Migrants Predicted from Enclaves: This part of the instrument captures the predicted share of migrants coming to a region based on the historical presence of enclaves (areas with a high concentration of migrants) and recent growth trends.
-
-Recent Growth: Recent growth includes factors like past settlement patterns and national inflow of migrants. It accounts for the changes in the flow of migrants to a region due to factors unrelated to the treatment or policy being studied.
-
-shift = national immigration growht from origin country n
-share = lagged shares of migrants from origin n in region 
-
-shift: the national inflow of immigrants
-share: past settlement of immigrations in the different regions. Both assumed to have no direct effect on local unemployment rates = exogenous!
+short run/long run
 
 
 ## Other practical examples in literature
@@ -139,18 +154,20 @@ instrument = predicted employment growth due to national industry trends
 - shift (shocks): national growth of industry n
 - shares = lagged employment shares (of industry in a region)
 
-
 # Practical application in R
 
 - package "ShiftShareSE"
 ssaggregate? slide 67
 - which data for example?
 
-Thesis
-
+see also
+- Goldsmith-Pinkman et al. (2018)
+- Jaeger et al. (2018)
 
 # references
 - shiftshare mixtape
 - any papers?
+
+- https://blogs.worldbank.org/impactevaluations/rethinking-identification-under-bartik-shift-share-instrument
 
 
