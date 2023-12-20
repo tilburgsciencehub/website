@@ -1,6 +1,6 @@
 ---
 title: "The User Interface: Enhancing User Experience"
-description: "Building Block about how to enhance your R Shiny apps with this tutorial on UI design. The building block is about layout functions, applying shinythemes, custom CSS, and control widgets for dynamic, user-friendly interfaces. elevating the Shiny app's aesthetics and interactivity."
+description: "article about how to enhance your R Shiny apps with this tutorial on UI design. The article is about layout functions, applying shinythemes, custom CSS, and control widgets for dynamic, user-friendly interfaces. elevating the Shiny app's aesthetics and interactivity."
 Objective: Build up the the user interface of Shiny apps by learning layout functions, customization, and control widgets ."
 keywords: "R Shiny, User Interface Design, Layout, Custom CSS, shinythemes, Control Widgets, interactivity, shinyWidgets Gallery"
 date: YYYY-MM-DD
@@ -18,9 +18,9 @@ aliases:
 
 ## Overview 
 
-In this second building block in the R shiny series, we delve into the  Shiny app’s user interface. We will be focusing on aesthetics and user experience. You'll learn how to effectively arrange inputs and outputs using layout functions and customize the app's visual appeal. We’ll also explore interactive control widgets to create responsive interfaces.
+In this second article in the R shiny series, we delve into the  Shiny app’s user interface. We will be focusing on aesthetics and user experience. You'll learn how to effectively arrange inputs and outputs using layout functions and customize the app's visual appeal. We’ll also explore interactive control widgets to create responsive interfaces.
 
-By the end of this building block, you'll be equipped with skills to design dynamic, engaging, and user-centred Shiny applications. Let's dive in!
+By the end of this article, you'll be equipped with skills to design dynamic, engaging, and user-centred Shiny applications. Let's dive in!
 
 ##  Enhancing UI Layout and Aesthetics
 
@@ -326,7 +326,7 @@ ui <- fluidPage(
 {{% tip %}}
 
 **Styling Shiny using bootstrap with bslib & thematic**
-For an advanced case of customizing your UI using `Bootstrap` in R Shiny, look at this [building block](/shiny/advanced/ui). 
+For an advanced case of customizing your UI using `Bootstrap` in R Shiny, look at this [article](/shiny/advanced/ui). 
 
 {{% /tip %}}
 
@@ -334,7 +334,7 @@ For an advanced case of customizing your UI using `Bootstrap` in R Shiny, look a
 In this part, we will dive into `control widgets`. Widgets are interactive web elements that allow your app users to communicate with the Shiny application. These widgets are essential in creating dynamic and interactive apps. 
 
 Each widget is created with a transparently named R function in Shiny. For example, the `actionButton` function creates an Action Button, and `sliderInput` creates a slider bar. These widgets are instrumental in collecting values from users and triggering responses in the app.
-We have already considered control widgets in the first building block of the series, where we discussed some basic widgets and their arguments. So for the basic instruction check this [building block][/Shiny/App].
+We have already considered control widgets in the first article of the series, where we discussed some basic widgets and their arguments. So for the basic instruction check this [article][/Shiny/App].
 
 {{% codeblock %}}
 
@@ -397,12 +397,12 @@ shinyWidgets::shinyWidgetsGallery() # Run the Shiny Widgets Gallery
 
 {{% summary %}}
 
-In this building block of the R shiny series we have discussed `User Interace`: 
+In this article of the R shiny series we have discussed `User Interace`: 
 - Aimed at enhancing app UI for improved visual appeal, intuitiveness, and user-friendliness.
 - Explores advanced layout options, including sidebar layouts and multipage layouts.
 - Discusses various customization approaches, from using default Shiny styles to applying `shinythemes` and integrating `custom CSS`.
 - Covers `control widgets`, teaches how to create responsive interfaces, and highlights the `shinyWidgets` gallery for advanced examples.
 
-This building block is aimed to equipe the user with techniques for crafting user-oriented Shiny applications, making them not only functional but also visually attractive and intuitive. In the next building block we will dive into the concept of [reactivity](/shiny/reactivity)
+This article is aimed to equipe the user with techniques for crafting user-oriented Shiny applications, making them not only functional but also visually attractive and intuitive. In the next article we will dive into the concept of [reactivity](/shiny/reactivity)
 
 {{% /summary %}}

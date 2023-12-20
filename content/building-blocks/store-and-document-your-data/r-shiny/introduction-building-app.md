@@ -15,9 +15,9 @@ aliases:
 
 ## Overview 
 
-This building block is tailored for beginners embarking on their journey of creating interactive web applications with `R Shiny`. The goal is to simplify the learning curve and provide a clear, structured pathway for those new to Shiny.  
+This article is tailored for beginners embarking on their journey of creating interactive web applications with `R Shiny`. The goal is to simplify the learning curve and provide a clear, structured pathway for those new to Shiny.  
 
-By the end of this building block, you'll grasp the fundamental concepts of Shiny app architecture, including the interplay between UI (`User Interface`) and `server` components. Additionally, you'll learn to implement basic `interactivity` and customization features. We'll apply these concepts to develop an interactive web application using the `Gapminder` dataset, providing a practical, hands-on experience.
+By the end of this article, you'll grasp the fundamental concepts of Shiny app architecture, including the interplay between UI (`User Interface`) and `server` components. Additionally, you'll learn to implement basic `interactivity` and customization features. We'll apply these concepts to develop an interactive web application using the `Gapminder` dataset, providing a practical, hands-on experience.
 
 ## Introduction to R Shiny 
 
@@ -49,7 +49,7 @@ The Server, on the other hand, is where the app's logic resides. It processes th
 
 **Reactivity: The Magic of Shiny**
 
-One of the most powerful features of Shiny is reactivity. Reactivity in a Shiny app means that the output automatically updates whenever the user changes an input. To learn more about reactivity, check out this [building block](/shiny/reactivity).
+One of the most powerful features of Shiny is reactivity. Reactivity in a Shiny app means that the output automatically updates whenever the user changes an input. To learn more about reactivity, check out this [article](/shiny/reactivity).
 
 {{% /tip %}}
 
@@ -307,14 +307,14 @@ In Shiny, each `render{Type}` function is designed to produce a specific type of
 
 {{% summary %}}
 
-In this first building block of the series we have discussed: 
+In this first article of the series we have discussed: 
 - `R Shiny` Overview: We introduced R Shiny, a tool for creating web applications using R.
 - Shiny's Core Structure: We explored the two main components of Shiny apps: the `User Interface` (UI) and the `Server`. The UI is the front end that users interact with, while the Server is the backend where the app's logic and data processing occur.
 - Building the UI: This section walked through the process of constructing a user interface. 
 - Server Function and `Reactivity`: We delved into the server function and the concept of reactive programming.
 - Output Creation and Placement: Finally, we covered how to define and place output objects in the UI and generate them in the server.
 
-This building block is aimed to provide a clear, structured pathway to understand and start building web apps with R Shiny, setting a foundation for more advanced learning and application development. The next building block in the series dives deeper into the [user interface](/shiny/user/interface).
+This article is aimed to provide a clear, structured pathway to understand and start building web apps with R Shiny, setting a foundation for more advanced learning and application development. The next article in the series dives deeper into the [user interface](/shiny/user/interface).
 
 {{% /summary %}}
 
@@ -324,7 +324,7 @@ This building block is aimed to provide a clear, structured pathway to understan
 {{% codeblock %}} 
 
 ```R
-# Download the code used in this building block via the top right corner
+# Download the code used in this article via the top right corner
 ```
 [R-link](/building-your-first-shiny-app.R)
 

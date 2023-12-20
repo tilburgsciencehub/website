@@ -1,6 +1,6 @@
 ---
 title: "Advanced Customization: The bslib and thematic packages"
-description: "This building block introduces users to the bslib and thematic packages and teaches them how to use them to apply advanced theming to their Shiny apps. It covers basic theming, advanced theming with the thematic package, customization of UI elements, and practical application in Shiny app development."
+description: "This article introduces users to the bslib and thematic packages and teaches them how to use them to apply advanced theming to their Shiny apps. It covers basic theming, advanced theming with the thematic package, customization of UI elements, and practical application in Shiny app development."
 keywords: "Shiny, Bootstrap, bslib, Bootswatch, thematic, Real-Time theming, Data visualization, Rstudio"
 date: YYYY-MM-DD
 weight: 5
@@ -17,11 +17,11 @@ aliases:
 
 ## Overview
 
-In this advanced building block of the series R Shiny, We will explore the integration and application of `Bootstrap`, `bslib`, and `thematic` in R Shiny applications. Whether you're new to Shiny or looking to enhance your existing apps, this guide will equip you with the knowledge and tools to create your own customized Shiny application.
+In this advanced article of the series R Shiny, We will explore the integration and application of `Bootstrap`, `bslib`, and `thematic` in R Shiny applications. Whether you're new to Shiny or looking to enhance your existing apps, this guide will equip you with the knowledge and tools to create your own customized Shiny application.
 
 We'll begin with an introduction, explaining concepts like Bootstrap and Bootswatch. Then, we will start diving into the bslib and thematic packages, exploring their theming options and how they can be used to customize UI elements in Shiny. I will guide you to the basic and advanced theming capabilities of these packages. 
 
-By the end of this building block, you will have the ability to enhance the visual design of your Shiny apps using the theming options provided by bslib and thematic. Throughout the building block, I will give code snippets as hands-on examples. These practical demonstrations will show you how to apply bslib and thematic themes to various UI elements, bringing your Shiny apps to life.
+By the end of this article, you will have the ability to enhance the visual design of your Shiny apps using the theming options provided by bslib and thematic. Throughout the article, I will give code snippets as hands-on examples. These practical demonstrations will show you how to apply bslib and thematic themes to various UI elements, bringing your Shiny apps to life.
 
 ### Introducing Concepts
 [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/) is the most popular HTML, CSS, and JavaScript framework for developing responsive websites. It offers pre-designed elements and a responsive grid system, simplifying the creation of professional websites. In R Shiny it enhances the user interface design with responsive layouts and interactive elements. 
@@ -123,7 +123,7 @@ ui <- fluidPage(
 
 {{% tip %}}
 
-All the Bootswatch themes are available through the bs_theme()’s bootswatch argument. Note, we have seen bootswatch themes earlier in the R shiny series, specifically in this [building block](/shiny/ui). Where we used the `Shinythemes` package. This approach allows you to make use of `Bootswatch 3 themes`, but with the bslib package, you can use in addition use `Bootswatch 4` themes, like `minty` or `zephyr`.
+All the Bootswatch themes are available through the bs_theme()’s bootswatch argument. Note, we have seen bootswatch themes earlier in the R shiny series, specifically in this [article](/shiny/ui). Where we used the `Shinythemes` package. This approach allows you to make use of `Bootswatch 3 themes`, but with the bslib package, you can use in addition use `Bootswatch 4` themes, like `minty` or `zephyr`.
 
 {{% /tip %}}
 
@@ -277,8 +277,8 @@ In R Markdown, call `thematic_rmd()` before generating plots inside R Markdown t
 
 {{% summary %}}
 
-In this advanced building block in the R shiny series, we delved into the integration and application of `Bootstrap` using `bslib`, and `thematic`. 
-this building block consists of:
+In this advanced article in the R shiny series, we delved into the integration and application of `Bootstrap` using `bslib`, and `thematic`. 
+this article discusses:
 - An overview of `Bootstrap` and `Bootswatch` for responsive web designs in Shiny, 
 - Exploration of the `bslib` package for easy customization of `Bootstrap CSS` using R functions, facilitating unique app appearances. 
 - Introduction of `real-time theming` with bslib, offering hands-on experimentation with themes, colors, and fonts. 

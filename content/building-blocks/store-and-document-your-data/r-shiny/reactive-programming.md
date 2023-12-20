@@ -16,7 +16,7 @@ aliases:
 ---
 
 ## Overview
-Welcome to this building block focused on one of the main concepts in Shiny: `reactive programming`. This feature stands at the core of Shiny’s dynamic capabilities. Reactive programming in Shiny is essentially about creating a dynamic link between inputs and outputs, ensuring that outputs refresh automatically when there's a change in inputs. 
+Welcome to this article focused on one of the main concepts in Shiny: `reactive programming`. This feature stands at the core of Shiny’s dynamic capabilities. Reactive programming in Shiny is essentially about creating a dynamic link between inputs and outputs, ensuring that outputs refresh automatically when there's a change in inputs. 
 
 The Shiny app we will use is the airquality dataset, which is available in R by default. This dataset contains daily air quality measurements in New York, May to September 1973. We will progressively build a Shiny app that demonstrates various aspects of reactivity in Shiny using ggplot2 for visualization. The app will allow users to interact with the airquality data, filtering and visualizing it based on their inputs.
 
@@ -288,13 +288,13 @@ This example contains:
 
 {{% summary %}}
 
-This building block introduces the concept of `reactive programming` in Shiny, key to developing dynamic, interactive web applications. We have discussed the following concepts: 
+This article introduces the concept of `reactive programming` in Shiny, key to developing dynamic, interactive web applications. We have discussed the following concepts: 
 
 - `Reactive Programming`: Creates a dynamic link between user inputs and outputs, automatically updating outputs when inputs change.
 - Components of `Reactivity`: Consists of `reactive sources` (user inputs), `reactive conductor`s (data processing expressions), and `reactive endpoints` (UI elements that update in response to changes).
 - Use of `Observers`: Implements observers in Shiny for immediate actions based on changes in reactive inputs, like updating UI or triggering events.
 - Reactivity Visualization with `Reactlog`: Utilizes the reactlog package to trace and visually represent the interactions and flow of reactivity within the application.
   
-In the next building block of the series, we will dive into [modules](/shiny/modules).
+In the next article of the series, we will dive into [modules](/shiny/modules).
 
 {{% /summary %}}

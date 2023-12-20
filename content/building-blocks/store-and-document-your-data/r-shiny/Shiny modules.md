@@ -12,7 +12,7 @@ aliases:
 
 
 ## Overview
-As we progress in this R-Shiny series, our Shiny apps have become more complex and larger. To address these challenges, we focus in this building block of the use of `Shiny Modules`.
+As we progress in this R-Shiny series, our Shiny apps have become more complex and larger. To address these challenges, we focus in this article of the use of `Shiny Modules`.
 
 In R, functions are essential for simplifying and structuring code, and Shiny is designed to be compatible with them. You have the ability to create UI-generating functions and integrate them into your app, as well as develop functions for the server side that are responsible for defining outputs and creating reactive expressions.
 
@@ -272,13 +272,13 @@ shinyApp(ui, server)
 
 {{% summary %}}
 
-In this building block of the R Shiny series, we've focused on enhancing the functionality of Shiny apps through the use of Shiny `Modules`. 
+In this article of the R Shiny series, we've focused on enhancing the functionality of Shiny apps through the use of Shiny `Modules`. 
 - *Shiny Modules Introduction*: Shiny Modules are self-contained, composable components of a Shiny app, designed to be integrated into larger applications or other modules.
 - *Module Functionality*: Modules can handle inputs, outputs, or both, ranging from simple to complex interfaces with various controls and reactive elements.
 - *Module Creation*: We detailed the process of creating Shiny modules, emphasizing the importance of namespacing with `NS()` to maintain distinct input and output IDs.
 - *UI and Server Module Construction*: The tutorial included examples of building UI and server module components. 
 - *Nesting Modules*: We delved into nesting modules, where an outer module uses an inner module.
   
-This building block is designed to provide a clear pathway for understanding and utilizing Shiny Modules, laying the groundwork for creating more sophisticated and organized web apps with R Shiny.
+This article is designed to provide a clear pathway for understanding and utilizing Shiny Modules, laying the groundwork for creating more sophisticated and organized web apps with R Shiny.
 
 {{% /summary %}}
