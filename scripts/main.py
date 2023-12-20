@@ -161,13 +161,13 @@ def get_md_files():
     md_files = []
 
     # Iterate through all subdirectories and find .md files
-    for dirpath, _, filenames in os.walk(os.path.join(root_folder, ('content/building-blocks'))):
+    for dirpath, _, filenames in os.walk(os.path.join(root_folder, ('content/topics'))):
         for filename in filenames:
             if filename.endswith('.md'):
                 # Append the full path of the .md file to the list
                 md_files.append(os.path.join(dirpath, filename))
 
-    for dirpath, _, filenames in os.walk(os.path.join(root_folder, ('content/tutorials'))):
+    for dirpath, _, filenames in os.walk(os.path.join(root_folder, ('content/topics'))):
         for filename in filenames:
             if filename.endswith('.md'):
                 # Append the full path of the .md file to the list
@@ -271,8 +271,8 @@ def create_popular_cards_json(input_categories):
 
     # Get Analytics, Populate popular tutorials and building blocks
     response = get_report()
-    tutorials = fetch_cards_popular_pages(response, "/tutorials/")
-    building_blocks = fetch_cards_popular_pages(response, "/building-blocks/")
+    tutorials = fetch_cards_popular_pages(response, "/topics/")
+    building_blocks = fetch_cards_popular_pages(response, "/topics/")
 
     # Create Dictionary
     data_dict = {
@@ -290,25 +290,10 @@ def main():
 
     logging.info('Python HTTP trigger function processed a request.')
 
-    # Navigate to the root folder (one level up from the current notebook file)
-    notebook_path = os.path.abspath('')
-    root_folder = os.path.abspath(os.path.join(notebook_path, '../static'))
-    os.chdir(root_folder)
-
     response = get_report()
     pages = get_popular_pages(response)
 
-    with open('pages.json', 'w') as f:
-        json.dump(pages, f)
-
-    popular_cards = create_popular_cards_json('reproducible,learn')
-    cards_file_path = os.path.join(root_folder, 'cards.json')
-
-    # Write Popular Cards to the 'cards.json' file in the 'static' folder
-    with open(cards_file_path, 'w') as f:
-        json.dump(popular_cards, f)
-
-    print('JSON created')
+    print(pages)
 
 
 if __name__ == "__main__":

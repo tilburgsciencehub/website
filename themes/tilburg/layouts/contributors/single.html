@@ -29,8 +29,8 @@
 							<!-- Get Contributions -->
 							{{ $contributions := slice }}
 
-							{{ range where .Site.Pages "Section" "building-blocks" }}
-							{{ if ne .Title "building-blocks" }}
+							{{ range where .Site.Pages "Section" "topics" }}
+							{{ if ne .Title "topics" }}
 							{{ if isset .Params "author" }}
 							{{ if eq .Params.Author $.Params.name }}
 							{{ $contributions = $contributions | append . }}
@@ -39,7 +39,7 @@
 							{{ end }}
 							{{ end }}
 
-							{{ range where .Site.Pages "Section" "tutorials" }}
+							{{ range where .Site.Pages "Section" "topics" }}
 							{{ if ne .Title "tutorials" }}
 							{{ if isset .Params "author" }}
 							{{ if eq .Params.Author $.Params.name }}

@@ -47,8 +47,8 @@ bug reports,
 and reviews of proposed changes are all welcome.
 
 * See the contributing guide [here](https://tilburgsciencehub.com/contribute/).
-* Check out our [styling and writing guidelines](https://tilburgsciencehub.com/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide/).
-* By contributing you agree to abide by the [Code of Conduct](https://tilburgsciencehub.com/tutorials/more-tutorials/contribute-to-tilburg-science-hub/code-of-conduct/).
+* Check out our [styling and writing guidelines](https://tilburgsciencehub.com/topics/more-tutorials/contribute-to-tilburg-science-hub/style-guide/).
+* By contributing you agree to abide by the [Code of Conduct](https://tilburgsciencehub.com/topics/more-tutorials/contribute-to-tilburg-science-hub/code-of-conduct/).
 
 ## Any questions?
 Feel free to reach out to us at [tsh@tilburguniversity.edu](mailto:tsh@tilburguniversity.edu).

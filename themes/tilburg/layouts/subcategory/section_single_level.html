@@ -1,0 +1,79 @@
+{{- partial "header.html" . -}}
+<!-- THIS VERSION SHOWS Only Current level 3 -->
+<span id="scrollTo" class="d-none"><a href="#{{ .CurrentSection.Name | urlize }}"></a></span>
+
+
+<div class="container content">
+    <br><br><br><br>
+    <div class="row justify-content-center">
+        <div class="col-lg-11 col-22">
+            <h1 class="text-center">{{ .Title }}</h1>
+            <p class="text-center text-secondary my-5">
+                Find out more about "{{ .Title }}
+            </p>
+        </div>
+
+    </div>
+    <br><br><br><br>
+    <!-- all the tutorials -->
+    <div class="row justify-content-center buildingBlocksRow">
+        <div class="col-20">
+
+            <div class="p-5 bg-white mb-5 rounded" id="{{ .Title | urlize }}">
+                <div class="row">
+                    <div class="col-lg-8 col-24">
+                        <h4 class="heading m-0 mb-3 mr-3">{{ .Title }}</h4>
+
+                    </div>
+                    <div class="col-lg-16 col-24">
+                        <div class="row">
+
+                            {{- range .Pages -}}
+                            {{ if ne .Params.indexexclude "true" }}
+                            {{ if .Title }}
+
+                            <!-- Count words -->
+                            {{ $wordCount := 0 }}
+                            {{- range .Pages -}}
+                            {{ $wordCount = add $wordCount (.Content | countwords) }}
+                            {{ end }}
+                            {{ $readingTimeMinutes := div $wordCount 200 }}
+                            {{ if eq $readingTimeMinutes 0 }}
+                            {{ $readingTimeMinutes = 1 }}
+                            {{ end }}
+                            <!-- End word count -->
+
+                            <div class="col-24 col-lg-12 mb-4"
+                                id="{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle | urlize }}{{ else }}{{ .Title | urlize }}{{ end }}">
+                                <a href="{{ .Permalink }}{{.Params.indexPage}}">
+
+                                    <h5 class="heading font-weight-normal"
+                                        style="font-size: 16px; height: -webkit-fit-content;color:#003365;">{{ .Title }}
+                                    </h5>
+                                    <sup style="color: #ffb222;"><i class="fa-regular fa-clock mr-2"></i>{{ $readingTimeMinutes }} mins</sup>
+                                </a>
+
+                                <span class="d-block" style="color: #6081A2;">{{ .Params.description }}</span>
+
+                                <a href="{{ .Permalink }}{{.Params.indexPage}}">
+                                    <button class="btn btn-primary mt-4 btn-sm">Start Tutorial</button>
+                                </a>
+
+                                <!--    {{ range .Pages }}
+                <a class="d-block" href="{{.Permalink}}">{{ .Title }}</a>
+                {{ end }}
+                -->
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{- partial "footer.html" . -}}
