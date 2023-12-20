@@ -45,7 +45,6 @@ However, there is a concern with this specification. Endogeneity arises if immig
 
 A shift-share instrument (also called Bartik instrument) can be used to help solve this issue. In short, the shift-share IV decomposes changes in economic variables within regions into two components which are both assumed to be **exogenous**: the shift and the share. Together, the shift and the share can exogenously predict immigration inflows.
 
-
 ## The shift-share instrument
 
 The essence of the shift-share instrument is that it deconstructs changes in economic variables within regions into two distinct components: the shift and the share. 
@@ -95,64 +94,91 @@ $E[\epsilon_{t} | s_{i,t} ] = 0$ for each $t$
 
 In our migration example, this implies arguing whether the past settlement (initial distribution) of migrants can assumed to be uncorrelated with the local unemployment rates (the dependent variable).
 
-
 {{% tip %}}
-some ways how to explore the validity of this assumption:
+Some strategies to explore the validity of this share exogeneity assumption:
 
-- Identify the correlation between the *shares* and potential confounders. In the migration example, you could for example examine whether areas with higher initial immigrant shares also display distinct characteristics (such as higher education levels) that might affect the unemployment rate.
-- If you have a pre-period, test for parallel pre-trends.
+- A balance test: Identify the correlation between the *shares* and potential confounders. In the migration example, you could for example examine whether areas with higher initial immigrant shares also display distinct characteristics (such as higher education levels) that might affect the unemployment rate.
+- A pre-trend test: If you have a pre-period, test for parallel pre-trends.
+- Overidentification test
 {{% /tip %}}
 
 ### Other assumptions
 
-- Absence of spatial spillover effects or interdependencies among locations
+- **Absence of spatial spillover effects**
 
-This means that the outcomes in one location are not influenced by the outcomes in neighboring regions, ensuring the independence of observations. This is not straightforward: If local workers respond to immigration inflow by moving to other regions, domestic migration is likely to overestimate the negative effect of immigration on unemployment rates in each region. 
+Absence of spatial spillovers and interdependencies between locations means that the outcomes in one location are not influenced by the outcomes in neighboring regions, ensuring the independence of observations. This assumption is not straightforward: If local workers respond to immigration inflow by moving to other regions, domestic migration is likely to overestimate the negative effect of immigration on unemployment rates in each region. 
 
-- Independent data periods
+- **Independent data periods**
 
 The instrument's validity assumes that the data represent distinct periods without significant intertemporal correlations that might confound the estimation. This  assumption of steady-state is important, especially in considering adjustment dynamics.
-
-jaeger (2018): concern lt-short term
 
 ### Shift (Shock) view
 
 Another approach is introduced by [Borusyak, Hull, and Jaravel (2022)]() in which identification follows from the quasi-random assignment of shocks, while exposure shares are allowed to be endogenous. The two baseline assumptions are
 
-- 1: Quasi-random shift assignment
-
+- **Quasi-random shift assignment**
 
 $E[m_{t} | \bar{\epsilon}, s] = \mu$ for all $t$
 
 Each shift has the same expected value, conditional on the shift-level unobservables $\bar{e_{t}}$, and average
 exposure $s_{t}$. 
 
--  2: Many uncorrelated shifts
+-  **Many uncorrelated shifts**
 
-This assumption implies that when ther are many regions, the shifts are becoming increasingly uncorrelated to each other. Mathematically, this is represented as the covariance between the shifts in one region and the shifts in another region becoming close to zero when comparing different regions.
+This assumption implies that when there are many regions, the shifts are becoming increasingly uncorrelated to each other. Mathematically, this is represented as the covariance between the shifts in one region and the shifts in another region becoming close to zero when comparing different regions.
 
-$Cov(m_t, m_t' | \bar{\epsilon}, s) = 0$ for all $m' =! m$
-
-- Jaeger 2018
-
-short run/long run
+$Cov(m_t, m_t' | \bar{\epsilon}, s) = 0$ for all $m' \neq m$
 
 
 ## Other practical examples in literature
 
-- labour markets
-employment (x) --> wage growth (y)
+table
 
-y_l = beta x_l + gamma' x w_l + e_l
 
-IV = labor demand shifter
- - IV relevance = should be a strong enough predictor for employment
- - IV exogeneity = should not affect wage growth as a direct effect
+instrument z_l = sum s_ln g_n
 
-instrument = predicted employment growth due to national industry trends
+where shocks vary at another level (n) than the shares (l), and outcome and treatment are observed at level l. 
 
-- shift (shocks): national growth of industry n
-- shares = lagged employment shares (of industry in a region)
+for model y_l = beta*x_l + gamma'w_l + e_l
+
+| Context                                   | Instrument                                         | Shocks                                           | Shares                                             | Authors                                   |
+|-------------------------------------------|----------------------------------------------------|--------------------------------------------------|----------------------------------------------------|-------------------------------------------|
+| Effect employment on wage growth on region `l` | **Predicted employment due to national industry trends** | National growth of industry `n` | Lagged employment shares of industry in a region | Bartik (1991); Blanchard & Katz (1992)    |
+| Effect of growth of import competition in region `l` | **Predicted growth of import competition** | Growth of China exports in manufacturing industry `n` | 10-year lagged employment shares over total employment | Autor Dorn, and Hanson (2013)     |
+| Effect of import by Danish firm on wages  | **Predicted change in firm inputs via transport costs**| Changes in transport costs by `n` = (product, country) | Lagged import shares  | Hummels et al. (2014) |
+
+| Context                                        | Instrument                                         | Shocks                                               | Shares                                                 | Authors                                    |
+|-------------------------------------------|----------------------------------------------------|--------------------------------------------------|----------------------------------------------------|-------------------------------------------|
+| Employment's impact <br> on wage growth <br> in region `l` | **Predicted employment<br> due to national <br> industry trends** | National growth <br> of industry `n` | Lagged employment <br> shares of industry <br> in region `l` | Bartik (1991); <br> Blanchard & Katz (1992)    |
+| Growth of import <br> competition in region `l   | **Predicted growth <br> of import competition**           | Growth of China <br> exports in <br> manufacturing <br> industry `n` | 10-year lagged <br> employment shares <br> over total employment <br> in region `l` | Autor Dorn, and <br> Hanson (2013)     |
+| Import impact by <br> Danish firm on wages  | **Predicted change <br> in firm inputs via <br> transport costs** | Changes in <br> transport costs by <br> `n` = (product, country) | Lagged import shares  | Hummels et al. (2014)   |
+
+| Context                                        | Shift-Share Instrument                                | Authors                                    |
+|-------------------------------------------|----------------------------------------------------|--------------------------------------------------|
+| Employment's impact <br> on wage growth <br> in region `l` | *Predicted employment due to <br> national industry trends* <br><br> **Shifts:** National growth of industry `n` <br><br> **Shares:** Lagged employment <br> shares of industry in region `l` | Bartik (1991); <br> Blanchard & <br> Katz (1992)  |
+| Growth of import <br> competition in region `l` | *Predicted growth of <br> import competition* <br><br> **Shifts:** Growth of China exports <br> in manufacturing industry `n` <br><br> **Shares:** 10-year lagged <br> employment shares over total <br> employment in region `l` | Autor, Dorn, <br> and Hanson <br> (2013)     |
+| Import impact by <br> Danish firm on wages  | *Predicted change in firm inputs <br> via transport costs*<br><br> **Shifts:** Changes in transport <br> costs by `n` = (product, country) <br><br> **Shares:** Lagged import shares  | Hummels <br> et al. (2014)   |
+
+*Shifts:*
+*Shares:*
+columns: context, instrument: shifts, shares, authors
+
+Bartik (1991); Blanchard & Katz (1992)
+- labour markets: effect employment on wage growth on region l, instrument: predicted employment due to national industry trends
+- shares: lagged employment shares (of industry in a region)
+- shifts: national growth of industry n
+
+Autor Dorn, and Hanson (2013)
+- effect of growth of import competition in region l on growht of manufacturing employment, unemployment etc.
+- instrument: predicted growth of import competition
+- shares: 10-year lagged employment shares (over total employment)
+- shifts: growth of China exports in manufacturing industry n to 8 other (i.e. non-U.s.) countries
+
+Hummels et al. (2014)
+- effect of import by Danish firm on wages
+- instrument: predicted change in firm inputs via transport costs
+- shares: lagged import shares
+- changes in transport costs by n = (product, country)
 
 # Practical application in R
 
