@@ -1,6 +1,6 @@
 ---
 title: "Styling Bar Charts in ggplot2"
-description: "Effective data visualization balances accuracy and aesthetics. The R package ggplot2, while versatile, can be challenging for custom styling. This guide covers color, theme, and label customization, with styles for various data scenarios, especially academic papers. It includes using standard errors/error bars, black-and-white formatting, data grouping, and saving visuals as high-quality PNG or PDF for publication."
+description: "Effective data visualization balances accuracy and aesthetics. The R package `ggplot2`, while versatile, can be challenging for custom styling. This guide covers color, theme, and label customization, with styles for various data scenarios, especially academic papers. It includes using standard errors/error bars, black-and-white formatting, data grouping, and saving visuals as high-quality PNG or PDF for publication."
 date: 11-12-2023
 weight: 4
 author: "Matthijs ten Tije"
@@ -12,20 +12,19 @@ aliases:
 ---
 
 ## Overview
-This building block is designed to guide you to the process of creating `bar charts` using `ggplot2`. Starting with the basics, we'll guide you through each step to evolve a simple bar chart into one that meets academic standards. You'll learn techniques to enhance information delivery and ensure compliance with scholarly presentation norms. By the end of the building block, you'll have the skills to represent statistical data in a clear, academically rigorous format.
+This article is designed to guide you to the process of creating `bar charts` using `ggplot2`. Starting with the basics, we'll guide you through each step to evolve a simple bar chart into one that meets academic standards. You'll learn techniques to enhance information delivery and ensure compliance with scholarly presentation norms. By the end of the building block, you'll have the skills to represent statistical data in a clear, academically rigorous format.
 
 Effective data visualization requires both accuracy and aesthetics, a balance that can be challenging to achieve. Therefore, we will use the R package: `ggplot2`, a versitale tool for custom styling of your visualizations. We'll explore customizing colors, themes, and labels, and provide practical tips for academic presentations. This includes handling standard errors, black-and-white formatting, and effective data grouping. Additionally, we'll cover saving charts in high-quality PNG or PDF formats, ensuring they're ready for academic publication.
 
 {{% tip %}}
 **Data Visualization Best Practices**
 
-Explore, our [building block](/visualize/data) on Data Visualization, here we describe the most common chart types and conclude with best practices for plotting.    
-Also look at this [building block](/Grammar/of/Graphics) to explore the inner workings fo `ggplot2`.
+Explore, our [article](/visualize/data) on Data Visualization, here we describe the most common chart types and conclude with best practices for plotting. Also look at this [article](/Grammar/of/Graphics) to explore the inner workings of `ggplot2`, called the "Grammar of Graphics".
 
 {{% /tip %}}
 
 ## Data Retrieval
-In this building block, we make use of the PIAAC dataset, to examine the wage premium of obtaining a higher education level. We will illustrate the variance in wage across different education levels and later on between genders in the Netherlands. Let's first load the required packages and download the data.
+Let's use the exemplary PIAAC dataset to examine the wage premium of obtaining a higher education level. We will illustrate the variance in wage across different education levels and later on between genders in the Netherlands. Let's first load the required packages and download the data.
 
 {{% codeblock %}}
 
@@ -37,7 +36,8 @@ install.packages("tidyverse")
 library(tidyverse)
 
 # Load data 
-data_url <- "https://github.com/tilburgsciencehub/website/tree/master/content/building-blocks/prepare-your-data-for-analysis/data-visualization/piaac.rda"
+data_url <- "https://github.com/tilburgsciencehub/website/tree/master/content/topics/Visualization/data-visualization/graphs-charts/piaac.rda"
+
 load(url(data_url)) #piaac.rda is loaded now
 ```
 
@@ -47,6 +47,7 @@ load(url(data_url)) #piaac.rda is loaded now
 ## Step-by-Step Guide: Crafting Publishable Bar Charts
 
 ### Step 1: Data Manipulation
+
 A bar plot effectively displays the interaction between numerical and categorical variables.   
 The preparation of our dataset includes several steps:
 
@@ -75,19 +76,21 @@ data_barplot <- data %>%
 ```
 {{% /codeblock %}}
 
-The code above transforms a specified Categorical Variable into a categorical data type, orders its levels, and then groups the data by this variable. It calculates summary statistics (mean, standard deviation, count, and standard error) for a numerical variable within each category (level). These steps prepare the dataset for creating a bar plot with error bars, useful for visualizing differences between categories.
+The code above transforms a specified categorical variable into a categorical data type, orders its levels, and then groups the data by this variable. It calculates summary statistics (mean, standard deviation, count, and standard error) for a numerical variable within each category (level). These steps prepare the dataset for creating a bar plot with error bars, useful for visualizing differences between categories.
 
 {{% tip %}}
 
 **Refactoring Categorical Variables**
-Refactoring categorical variables is essential for bar plot visualizations.
+Refactoring categorical variables is essential for bar plot visualizations, as it allows you to decide in which order particular labels appear.
+
 - Using the `fct_relevel()` function. This function allows for reordering factor levels using character strings, ensuring the categorical data is displayed in a preferred sequence.
 - Utilizing Base R's `factor()` Function: Our approach involves `factor()`, where the levels argument sets the desired order
 
 {{% /tip %}}
 
-### Step 2: Creating the first barchart
-With the data in place. Let's visualize the data using a bar chart. The code snippet below demonstrates how to create a bar chart with error bars using ggplot2:
+### Step 2: Creating your first barchart
+
+With the data in place, let's visualize it using a bar chart. The code snippet below demonstrates how to create a bar chart with error bars using ggplot2:
 
 {{% codeblock %}}
 ```R
@@ -107,13 +110,15 @@ data_barplot %>%
 
 **Key Points**:
 - `geom_col()` vs. `geom_bar()`: We use `geom_col()` here, as it's suitable when bar heights need to directly represent data values. In contrast, `geom_bar()` is used when you want to count cases at each x position, as it employs `stat_count()` by default.
-- Adding Error Bars: `geom_errorbar()` is utilized to add error bars to the bar chart. This function takes ymin and ymax aesthetics, calculated here as mean - se and mean + se, respectively. The width parameter controls the width of the error bars.
+- Adding Error Bars: `geom_errorbar()` is utilized to add error bars to the bar chart. This function takes ymin and ymax aesthetics, calculated here as mean - se and mean + se, respectively. The width parameter controls the width of the error bars. Error bars are essential in reporting the "confidence" of particular estimates (e.g., whether they are closer or further away from zero).
 - Aesthetics: The fill aesthetic within `aes()` is set to Categorical Variable to color the bars based on the categorical groups.
 
 {{% /example %}}
 
 ### Step 3: Enhancing Aesthatics 
-The initial visualization is a solid starting point, but to meet academic standards, we need to refine it further. The primary issues are:
+
+The initial visualization is a solid starting point, but to meet publication standards, we need to refine it further. The primary issues are:
+
 - Redundant x-axis text: The legend duplicates information already conveyed by the x-axis labels.
 - Non-Descriptive Axis Titles: Axis titles need to be more informative for clarity.
 - Lack of Contextual Information: The plot lacks a title.
@@ -190,10 +195,10 @@ theme(
 <img src = "../img/basicplot3.png" width="450">
 </p>
 
-Now the barchart looks much better. We used the function theme to:
+Now the barchart looks much better. We used the function theme to adjust:
 - Plot Title: Enhanced with a larger font size, boldface, and added bottom margin for clarity and spacing.
 - Plot Margins: Uniform margins added around the plot to create balanced spacing.
-- Axis Text and Titles: Adjusted text size and color for better readability; additional margins for x-axis text and removal of the y-axis title to simplify the plot.
+- Axis Text and Titles: Changed text size and color for better readability; additional margins for x-axis text and removal of the y-axis title to simplify the plot.
 - Legend Customization: Removed the redundant legend title and repositioned the legend to the top for a cleaner layout and easier comparison.
 
 ### Step 5: Visualizing Statistical Significance in Bar Charts
@@ -201,12 +206,11 @@ Suppose you've analyzed how education levels and gender influence mean hourly wa
 
 {{% tip %}}
 
-Automating statistical tests and visualization with `ggpubr` streamlines the process, making it more efficient, as explained [here](/ggpubr).  
-However, customizing visualizations directly in ggplot2 offers greater flexibility and control over the final output. Let's dive into the latter.
+Automating statistical tests and visualization with `ggpubr` streamlines the process, making it more efficient, as explained [here](/ggpubr). However, customizing visualizations directly in `ggplot2` offers greater flexibility and control over the final output. Let's dive into the latter.
 
 {{% /tip %}}
 
-**Creating Data for Significance Lines**
+#### Creating Data for Confidence Bounds
 
 First, we need to set up data points to draw lines indicating significance. These lines typically connect the relevant categories with a central peak to denote significance.
 
@@ -227,7 +231,7 @@ p_value_one <- tibble(
 
 This setup creates a line that starts at the center of the 'Low' bar at y = 20, peaks at y = 22 (indicating significance), travels across to the 'Medium' bar, and descends back to y = 20.
 
-**Adding Significance Lines and Annotations**
+#### Adding Significance Lines and Annotations**
 
 Next, we add these lines and annotations (like asterisks) to highlight the significance levels found in your statistical analysis.
 
@@ -253,8 +257,41 @@ In this code:
 
 Remember, the positions and labels are adjustable based on your specific data and results. Experiment with the x and y values in the annotate function to achieve the best placement in your bar chart. This approach provides a clear, customized way to denote significant findings in your visualization.
 
-## Advanced Techniques for Multi-Group Bar Charts in ggplot2
-When working with ggplot2 to visualize complex datasets with multiple categorical variables, creating faceted plots can pose unique challenges. This section focuses on the effective use of p-value annotations in such scenarios. 
+## Saving Your Plots
+`ggsave()` is an essential function in R, primarily used in conjunction with the ggplot2 package. The key role of ggsave() is to facilitate the saving of these ggplot2-generated plots into various file formats such as JPEG, PNG, PDF, and SVG, making it a versatile tool in data visualization.
+
+The main purpose of ggsave is to provide a straightforward method for saving ggplot2-generated plots.
+
+The function follows the following syntax:
+
+{{% codeblock %}}
+```R
+ggsave(filename, plot = last_plot(), device = NULL, path = NULL, scale = 1, width = NA, height = NA, dpi = 300, limitsize = TRUE, ...).
+```
+{{% /codeblock %}}
+
+**Key Parameters:**
+- filename: Specifies the desired name for the saved file.
+- plot: Indicates the ggplot object to be saved. If omitted, the function saves the last displayed plot.
+- device: Determines the output file format (e.g., PNG, PDF).
+- width, height, dpi: These parameters control the dimensions and resolution of the saved plot, allowing for customization of the output size and quality.
+
+### Practical example
+
+{{% codeblock %}}
+```R
+plotExample <- ggplot(mpg, aes(displ, hwy)) + geom_point()
+plotExample # This command displays the plot.
+Using ggsave to Save the Plot:
+ggsave("my_plot.png", plotExample, width = 10, height = 8, dpi = 300)
+```
+{{% /codeblock %}}
+
+This command saves the plotExample as a PNG file named "my_plot.png", with specified dimensions of 10 inches in width and 8 inches in height, and a resolution of 300 dpi.
+
+## Advanced Techniques for Multi-Group Bar Charts in `ggplot2`
+
+When working with `ggplot2` to visualize complex datasets with multiple categorical variables, creating faceted plots can pose unique challenges. This section focuses on the effective use of p-value annotations in such scenarios. 
 
 **Visualizing Wage Differences by Education and Gender**
 Imagine plotting the mean hourly wage by education level, segmented by gender. Our goal is to highlight significant differences between education levels using p-values.
@@ -322,54 +359,16 @@ Incorporate these annotations into your ggplot2 chart, ensuring they align accur
 <img src = "../img/basicplot6.png" width="450">
 </p>
 
-## Saving Your Plots
-`ggsave()` is an essential function in R, primarily used in conjunction with the ggplot2 package. The key role of ggsave() is to facilitate the saving of these ggplot2-generated plots into various file formats such as JPEG, PNG, PDF, and SVG, making it a versatile tool in data visualization.
-
-### Understanding ggsave
-The main purpose of ggsave is to provide a straightforward method for saving ggplot2-generated plots.
-- Syntax Overview: The function follows the syntax
-
-{{% codeblock %}}
-```R
-ggsave(filename, plot = last_plot(), device = NULL, path = NULL, scale = 1, width = NA, height = NA, dpi = 300, limitsize = TRUE, ...).
-```
-{{% /codeblock %}}
-
-**Key Parameters:**
-- filename: Specifies the desired name for the saved file.
-- plot: Indicates the ggplot object to be saved. If omitted, the function saves the last displayed plot.
-- device: Determines the output file format (e.g., PNG, PDF).
-- width, height, dpi: These parameters control the dimensions and resolution of the saved plot, allowing for customization of the output size and quality.
-
-### Practical example
-
-{{% codeblock %}}
-```R
-plotExample <- ggplot(mpg, aes(displ, hwy)) + geom_point()
-plotExample # This command displays the plot.
-Using ggsave to Save the Plot:
-ggsave("my_plot.png", plotExample, width = 10, height = 8, dpi = 300)
-```
-{{% /codeblock %}}
-
-This command saves the plotExample as a PNG file named "my_plot.png", with specified dimensions of 10 inches in width and 8 inches in height, and a resolution of 300 dpi.
 
 {{% summary %}}
-The building block uses `ggplot2` for effective bar chart styling, crucial in academic data presentation.
-- Bar charts in ggplot2 are ideal for categorical data, showcasing groups and their quantitative measures.
+This article uses `ggplot2` for effective bar chart styling, crucial in academic data presentation.
+- Bar charts in `ggplot2` are ideal for categorical data, showcasing groups and their quantitative measures.
 - Key functions covered include `ggplot()` for initial plot creation and `geom_col()` for constructing bar charts.
 - Advanced customization is achieved using `geom_errorbar() `for error bars and `scale_fill_manual()` for color themes.
 - Showcases how to add p-values inside your ggplot.
 - Uses `ggsave()`, demonstrating how to save the final plots in publication-ready formats like PNG or PDF.
 
+Interested in the source code used in this analysis? Download it [here](source-code-barchart-visualization.R).
+
 {{% /summary %}}
 
-## Source Code 
-Here is the source code for the analysis: 
-{{% codeblock %}}
-
-```R
-# Download the file in the top right corner
-```
-[R-link](source-code-barchart-visualization.R)
-{{% /codeblock %}}

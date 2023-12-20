@@ -8,6 +8,7 @@ author: "Matthijs ten Tije"
 authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
   - /ggpubr
+  - /learn/ggpubr
   - /rstatix
   - /data/visualization
 ---
