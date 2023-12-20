@@ -198,7 +198,7 @@ stat_pvalue_manual(
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../img/ggpubr.png" width="450">
+<img src = "../images/ggpubr.png" width="450">
 </p>
 
 {{% tip %}}
@@ -255,7 +255,7 @@ ggsave("my_plot.png", plot = p)
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../img/ggpubr2.png" width="450">
+<img src = "../images/ggpubr2.png" width="450">
 </p>
 
 {{% summary %}}

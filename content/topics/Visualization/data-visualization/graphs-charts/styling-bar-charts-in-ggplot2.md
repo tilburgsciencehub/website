@@ -103,7 +103,7 @@ data_barplot %>%
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../img/basicplot.png" width="450">
+<img src = "../images/basicplot.png" width="450">
 </p>
 
 {{% example %}}
@@ -143,7 +143,7 @@ data_barplot %>%
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../img/basicplot2.png" width="450">
+<img src = "../images/basicplot2.png" width="450">
 </p>
 
 Let's go over these changes. 
@@ -192,7 +192,7 @@ theme(
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../img/basicplot3.png" width="450">
+<img src = "../images/basicplot3.png" width="450">
 </p>
 
 Now the barchart looks much better. We used the function theme to adjust:
@@ -247,7 +247,7 @@ Next, we add these lines and annotations (like asterisks) to highlight the signi
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../img/basicplot4.png" width="450">
+<img src = "../images/basicplot4.png" width="450">
 </p>
 
 In this code:
@@ -356,7 +356,7 @@ Incorporate these annotations into your ggplot2 chart, ensuring they align accur
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../img/basicplot6.png" width="450">
+<img src = "../images/basicplot6.png" width="450">
 </p>
 
 
