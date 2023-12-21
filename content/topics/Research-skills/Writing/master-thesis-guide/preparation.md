@@ -1,5 +1,5 @@
 ---
-title: "Preparation for your Thesis"
+title: "Preparation for your Master Thesis"
 description: "The preparation phase of your thesis includes finding a good research question and investing in useful skills you will use during the thesis"
 keywords: "master, thesis, guide, marketing, economics, management, tisem, research, guidance, preparation, question, proposal, skills, resources"
 date: 2023-07-10
@@ -11,9 +11,7 @@ aliases:
 
 ## Overview
 
-This topic covers the **Preparation** phase of your Master thesis process, giving you thorough guidance by bundling resources from Tilburg Science Hub and beyond. It is primarily focused on Master's students in the quantitative social sciences, while also being beneficial for Bachelor students or Ph.D. candidates. Think of studies within departments such as economics, data science, marketing analytics, and management. 
-
-The following sections are included:
+We help you to prepare for your Master (or Ph.D. or Bachelor) thesis process, covering the following topics:
 - The research question
 - The research proposal
 - Invest in skills beforehand
