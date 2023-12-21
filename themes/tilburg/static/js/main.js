@@ -213,7 +213,7 @@ $(".headerSearch > .resetInput").on("click", function (e) {
           align-items: center;
           justify-content: center;
           border-radius: 40px;
-          background-color: #003365;
+          background-color: #035F94;
           margin-right: 8px;
         "><img src="/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
         <span>${result.title}</span></a>`);
@@ -242,7 +242,7 @@ $(".headerSearchMobile .resetInput").on("click", function (e) {
           align-items: center;
           justify-content: center;
           border-radius: 40px;
-          background-color: #003365;
+          background-color: #035F94;
           margin-right: 8px;
         "><img src="/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
         <span>${result.title}</span></a>`);
@@ -802,7 +802,7 @@ $(document).ready(function () {
           ctaElement.style.setProperty('color', 'white', 'important');
           ctaElement.style.setProperty('font-family', 'forma-djr-display', 'important')
           ctaElement.href = item.path;
-          ctaElement.classList.add('btn', 'btn-primary', 'my-2', 'my-sm-0', 'px-4');
+          ctaElement.classList.add('btn', 'btn-primary', 'my-2', 'my-sm-0');
 
 
           innerContent.appendChild(titleElement);
