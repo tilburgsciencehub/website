@@ -1,6 +1,6 @@
 ---
-title: "Thesis Outline: Chapter-specific Tips"
-description: "Part 4 of the Master Thesis Guide: the thesis outline, with tips for the content of each chapter"
+title: "Chapter Structure of a Thesis or Academic Paper"
+description: "The thesis or paper structure, with tips for the content of each chapter"
 keywords: "master, thesis, guide, marketing, economics, management, tisem, research, guidance, preparation, question, proposal, skills, resources, writing, latex, chapter, outline"
 date: 2023-07-10
 weight: 5
@@ -11,30 +11,46 @@ aliases:
 
 ## Overview
 
-The Master Thesis Guide will serve as a guidance throughout the whole writing process of a thesis that consists of an empirical research project, for studies in marketing, economics, management, etc. In this part, the outline is discussed chapter-by-chapter. Keep in mind that the thesis outline might slightly differ depending on your official formatting guidelines, but the content should be more or less in the same order.
+The typical structure of an empirical paper, a master or Ph.D. thesis in economics and business involves the following sections:
 
+- Abstract
 - Introduction
 - Literature review
+- Institutional background
 - Conceptual framework
 - Data
 - Method
 - Results
 - Discussion
 - Conclusion
+- References
+- Appendix
+- Online appendix
+
+
+The outline is discussed chapter-by-chapter. Keep in mind that the chapter structure/order might slightly differ depending on your official formatting guidelines, but the content should be more or less in the same order.
+
+### Abstract
+Be as brief as possible and avoid word-by-word duplication with the introduction. State very clearly what the main take-away is for your paper. This can be a qualitative finding, but it can also be a number.
 
 ## Introduction
+There is not one structure that always works, but here's a structured approach that is well-suited as a starting point: 
 
-A good introduction contains the following five paragraphs, each serving a clear purpose without using subheadings:
+1. **Implicit research question**
+Begin your introduction by providing a general motivation for your paper, introducing the reader to the topic and establishing the importance of the practical problem. 
 
-1. **Implicit research question**: Establish the importance of the practical problem/subject you are studying without directly stating your main question. Instead of saying *"My research question is: "What is the effect of X on Y?"*, state it as *"Therefore, it is crucial to understand ..."*
+Subsequently, implicitly state your research question. 
+Instead of saying *"My research question is: "What is the effect of X on Y?"*, state it as *"Therefore, it is crucial to understand ..."*
 
-You can always revisit the tips for refining your research question in [Part 1: Preparation](/masterthesisguide/preparation).
+For refining your research question, check out the topic on [Preparation for your Thesis](/masterthesisguide/preparation).
 
-2. **Motivate your research question**: Explain why it is important to study this topic. Think about using economic factors, social or political implications, or evidence relevance to top management, to convince the reader of the importance. Example sentences are *"Studying the effect of X on Y is crucial to.."*, or *"The effect of X on Y is worth studying because.."*
+2. **Motivate your research question**
 
-3. **Literature review**: The literature review is included in the introduction or has its own chapter right after the introduction.
+Explain why it this topic is important and interesting. Think about using economic factors, social or political implications, or evidence relevance to top management, to convince the reader of the importance. Example sentences are *"Studying the effect of X on Y is crucial to.."*, or *"The effect of X on Y is worth studying because.."*
 
-4. **Briefly explain your data and methods**: Give an overview of what data you are using and with what methods you will study the research question. 
+3. **Literature review**: Briefly summarize the relevant literature (not all the literature) and explain in detail how you contribute to it with your paper.
+
+4. **Briefly explain your data, methods, and results.**: Give an overview of what data you are using, with what methods you will study the research question, and what the results are.
 
 5. **The outline of the next chapters**: Describe what sections will come after the introduction. 
 
@@ -44,7 +60,7 @@ Look at other (similar) papers as an example on how to phrase what you want to s
 
 ## Literature review
 
-The literature review serves to explain existing research, what is missing and what your contribution will be. A good approach is to keep the order as of answering these three questions:
+The literature review is included in the introduction or has its own chapter right after the introduction. It serves to explain existing research, what is missing and what your contribution will be. A good approach is to keep the order as of answering these three questions:
 
 1. **What is known already?**
 Explain what other studies say about your topic and show connections between your work and theirs. Example sentences are: *“My research relates to extant literature in the following ways..."/"My research contributes to the following literature..."* Rather than just giving a summary, give a "synthesis" of existing literature. 
@@ -58,6 +74,10 @@ Explain how your thesis adds to the existing knowledge. E.g. a new problem, new 
 {{% tip %}}
 Creating a table to categorize existing literature alongside your contribution can provide a clear visual representation of how your research adds value to the existing knowledge.
 {{% /tip %}}
+
+## Institutional Background
+
+The institutional background aims to provide contextual information within which your research takes place. It can include details about the institution, organization, or broader socio-economic factors that might influence or impact the subject under investigation. Be brief and focus on what is relevant for your study. Provide one or a few references. Don't go too much into the details unless necessary.
 
 ## Conceptual framework
 
@@ -122,7 +142,9 @@ The most important thing is that you **choose a format that fits your research!*
 
 ## Data
 
-This chapter typically consists of the following parts:
+In this chapter, you explain which data you use and what you do to construct your estimation sample. Put additional details into an appendix or the online appendix. Provide meaningful summary statistics that are closely related to the analysis you will do. Spend time on thinking what is really relevant for the reader.
+
+The Data chapter typically consists of the following parts:
 - Description of data collection and raw data
 - Data preparation: raw to final data
 - Descriptive statistics of the final dataset
@@ -166,7 +188,7 @@ The [Data visualization](/data-visualization/theory-best-practices/) building bl
 
 ## Method
 
-Typically, you will describe your model in a formula, and an accompanying text. Draw inspiration from existing literature on this particular research method and how to define it. Pay attention to the correct sub indices!
+Write this section such that a graduate student with general training could run the analysis if you give him the data. Typically, you will describe your model in a formula, and an accompanying text. Draw inspiration from existing literature on this particular research method and how to define it. Pay attention to the correct sub indices!
 
 ### Regression models
 
@@ -181,6 +203,8 @@ For regression models, there are some good resources at Tilburg Science Hub to h
 - [An introduction to the Synthetic Control Method](/impact/syntCont)
 
 ## Results
+
+Think hard about how to present and discuss the results. Make a careful selection. For each table and figure, ask yourself what exactly it is meant to convey to the reader.
 
 ### Results table 
 
@@ -230,14 +254,18 @@ Consider plotting some results, e.g. relevant coefficients of your estimated mod
 
 - Start by giving a **concise summary of your main findings**. You can also have a summary table with your results (e.g., hypotheses/expectations, confirmed/not confirmed, etc.). 
 - Discuss **the implications of your findings**. Elaborate on how the results challenge existing theories and their real-word implications for relevant stakeholders. Provide theoretical and managerial takeaways, or policy recommendations that elucidate the practical relevance of your research findings.
-- Address **the limitations** in your research design. This demonstrates a nuanced understanding of the study's scope and potential constraints. 
+- Address **the limitations** in your research design. This demonstrates a nuanced understanding of the study's scope and potential constraints.Try to address all the concerns people may have. Don't be too defensive, but stay honest.
+- You can include some **robustness testing**, where you examin the reliability of the results by conducting various sensitivity analyses or alternative methods.
 - Suggest **possibilities for future research** based on the identified limitations or unanswered questions arising from your study.
+
 
 ## Conclusion
 
-- Briefly mention the **main findings and their interpretations**. Emphasize the significance of these findings in addressing the research objectives.
+- Briefly mention the **main takeaways and their interpretations**. Emphasize the significance of these findings in addressing the research objectives.
 - Summarize **any policy or business recommendations** stemming from your research findings. Highlight actionable insights derived from the study that could be practically implemented or considered by policymakers or business stakeholders.
 
-{{% summary %}}
-A well-structured thesis is crucial for clear communication of your research. With completing Part 4, covering the thesis outline, you reached the end of this guide. Remember, you can always refer back to this resource when you encounter specific challenges during the process. Best of luck with your thesis!
-{{% /summary %}}
+## References
+
+## Appendix
+
+## Online Appendix
