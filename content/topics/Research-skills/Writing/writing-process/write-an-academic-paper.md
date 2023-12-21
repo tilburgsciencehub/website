@@ -1,7 +1,6 @@
 ---
-tutorialtitle: "Write an Academic Paper"
-title: "Writing an Academic Paper"
-description: "Learn the typical structure of an empirical paper in economics and business."
+title: "Mastering Academic Writing"
+description: "Learn strategies for academic writing, formatting, and referencing to ensure clear presentation of your research within your academic paper or thesis."
 keywords: "latex, writing, paper, thesis, structure, academic, abstract"
 weight: 1
 date: 2020-11-11T22:01:14+05:30
@@ -13,89 +12,118 @@ aliases:
 ---
 
 ## Overview
+Well-structured, academic writing is essential for effectively conveying your research in a paper or thesis. Here are key tips to refine your approach, divided into the following sections:
+- Structured approach to writing
+- Polish your writing
+- Seek feedback
+- Typesetting
+- Tables and figures formatting
+- References
+- The review process
 
-The typical structure of an empirical paper in economics and business (or a master thesis, or a chapter of a Ph.D. thesis) involves the following sections, roughly in this order:
+### Structured approach to writing
 
-## Structure of your paper
+- **Divide your work**
 
-### Abstract
-Be as brief as possible and avoid word-by-word duplication with the introduction. State very clearly what the main take-away is for your paper. This can be a qualitative finding, but it can also be a number.
+Keep a structured approach and divide your work into manageable sections and set (realistic!) deadlines for each
 
-### Introduction
-There is no one structure that always works. But the following is often very well-suited as a starting point: Start by providing a general motivation for your paper introducing the reader to the topic, then state which question you answer with your paper, then explain why this question is important and interesting, followed by a short description of the approach you use to answer the question. Then provide an overview over the results. Only then you briefly summarize the relevant literature (not all the literature) and explain in detail how you contribute to it with your paper. There could also be multiple literatures your paper relates and/or contributes to. But don't overdo it with the literature review.
+- **Standard outline**: 
 
-### Literature (review)
-Usually, papers have no separate literature sections anymore. Sometimes it may still be the case, but it's more the exception than the rule.
+Stick more or less to [the standard outline of a thesis/academic paper](/masterthesisguide/outline).
 
-### Institutional Background
-Be brief. Focus on what is relevant for your study. Provide one or a few references. Don't go too much into the details unless necessary.
+Readers will appreciate that they find it easy to find their way, because your paper reads like many others. At the same time, make the structure of the paper work for you, to convey the contents as well as possible. Add subsections or whatever suits the purpose of the reader.
 
-### Data
-Briefly explain which data you use and what you do to construct your estimation sample. Put additional details into an appendix or the online appendix. Normal readers are usually not so interested in those. Provide meaningful summary statistics that are closely related to the analysis you will do. Spend time on thinking what is really relevant for the reader.
+- Each paragraph usually makes one point or contains only one argument or line of thought.
 
-### Empirical Approach
-Write this section such that a graduate student with general training could run the analysis if you give him the data.
+- **Avoid lengthiness:** 
+Don't be afraid that your paper will be too short. Usually, it will become long by itself, when you address all the concerns you learn about on the way and explain everything well, even if the analysis that you are doing is actually not too difficult.
 
-### Results
-Think hard about how to present and discuss the results. Make a careful selection. For each table and figure, ask yourself what exactly it is meant to convey to the reader.
+- **Write and revise!**
+Don't be afraid to delete things. Leave old text behind. Replace it. Make sure your paper contains only what is necessary. This will take a long time! One rule of thumb is that doing the analysis takes 50% of your time, writing your paper takes the other 50%. Therefore, start early with writing a very first rough draft and get your ideas on paper. Then refine it from there in steps. This will give you peace of mind.
 
-### Robustness
-Try to address all the concerns people may have. Don't be too defensive, but stay honest.
+Some other general tips about the structure are:
+- Use page numbers, with the same font as your text.
+- Be consistent in page settings over the whole document.
+- Footnotes are usually placed after the end of a sentence.
 
-### Summary and Conclusions
-Also describe the main take-away.
+### Polish your writing
+- Use an active tense as much as possible.
+- Keep sentences concise and easy to understand and read. Take the reader in mind as someone who has a general education in your field but might not be an expert on the topic. 
+- Pay attention to spelling, using tools such as [Grammarly](https://app.grammarly.com/). 
 
-### References
+### Seek feedback
+- Seek feedback from peers during the writing process.
+- [The Scriptorium](https://www.tilburguniversity.edu/students/studying/writing-information-skills/scriptorium) is also a great place to go for free-of-charge assistance in the writing process of your thesis. 
 
-### Appendix
+{{% tip %}}
+Other great resources are:
+- “How to Write a Lot: A Practical Guide to Productive Academic Writing”, by Paul Silvia.
+- [Writing resources for graduate students](https://writingcenter.gmu.edu/writing-resources)
+{{% /tip %}}
 
-### Online Appendix
 
-## Reflections on Academic Writing
+## Typesetting
 
-### Stick to the outline!
-You should more or less stick to this outline. Readers will appreciate that they find it easy to find their way, because your paper reads like many others. At the same time, make the structure of the paper work for you, to convey the contents as well as possible. Add subsections or whatever suits the purpose of the reader.
+### Latex
+**[{{< katex >}}\LaTeX{{< /katex >}}](https://www.latex-project.org)** is a typesetting system ideal for a thesis or academic paper. Although it has a bit of a learning curve, it offers substantial advantages like:
 
-Notice that usually, there is one question one answers per paper, not multiple ones. You should write a paper keeping this in mind. Don't be afraid that your paper will be too short. Usually, it will become long by itself, when you address all the concerns you learn about on the way and explain everything well, even if the analysis that you are doing is actually not too difficult.
+- It enables more precise formatting, especially in typesetting mathematical symbols and formulas.
+- It is easy to stay consistent with the formatting throughout the whole document. 
+- It can automatically update citations and cross-references with document structure changes. 
 
-### Curate the paper!
-Put only tables and figures that are important for what you want to say in your paper. The main body of the paper should not have more than 10 tables and figures, often less. Put extra information in an online appendix, but only if it's referred to and discussed somewhere. Don't use this as a place to dump extra things you did at some point.
+We prepared a short guide on [how to install](/setup/latex) a $\LaTeX$ distribution on your system, and [how to write your first LaTex document in 15 minutes](/write/latex). 
 
-### Writing Tips
-A book that we found helpful in this context is called ["How to Write a Lot: A Practical Guide to Productive Academic Writing"](https://www.apa.org/pubs/books/4441010), by Paul Silvia. It also gives some more general advice.
+{{% tip %}}
+Download a [ready-to-use LaTeX template for your thesis](/latex-template).
+{{% /tip %}}
 
-### Polish your Writing
-As for the writing of the text, keep in mind that each paragraph makes one point or contains one argument or line of thought. Sentences in scientific papers in econ and business should be short and easy to understand and read---one should for instance use active tense as much as possible. Keep in mind that readers are often busy or tired. Help them as much as possible.
+### LyX
 
-**Write. Revise. Revise. Revise. Revise. Revise. Revise. Revise. Revise. Revise. Revise...**
-
-Don't be afraid to delete things. Leave old text behind. Replace it. Make sure your paper contains only what is necessary.
-
-This will take a long time. One rule of thumb is that doing the analysis takes 50% of your time, writing your paper takes the other 50%. Therefore, start early with writing a very first rough draft. Then take it from there in steps. This will give you peace of mind.
-
-### Typesetting is important
-
-When it comes to producing high-quality technical and scientific documentation, researchers and professionals often rely on **[{{< katex >}}\LaTeX{{< /katex >}}](https://www.latex-project.org)**, an unrivalled document preparation system in many fields.
-
-We prepared [a short guide](/topics/configure-your-computer/statistics-and-computation/latex/) on how to install a $\LaTeX$ distribution on your system.
-
-### Using LyX?
+LyX is an alternative platform for academic writing. There is a [short guide on LyX, including a research paper template](/write/paper-with-lyx). 
 
 Some technical tips when you are using LyX:
-
 - The booktabs package is nice.
 - It's a good idea to put table and figure notes into minipage environments.
 - Use a normal size font and the resizebox package to make tables smaller.
 - Use Roman 12pt, 1.5 line space, and page margins 2.5cm on all margins as a starting point.
 
-### A few additional, small things
+## Format of tables and figures
+- Put only tables and figures that are important for what you want to say in your paper. The main body of the paper should not have more than 10 tables and figures, often less. 
+- Tables and figures need to be clear enough to be understood without reading the main text! 
+- There are packages available that format or combine output of your statistical analyses (e.g. `stargazer`, and [`kableextra`](/regressions/kableextra/) in R).
+- Use a descriptive title that summarizes the main point ("X increases Y") rather than using a generic title ("Results").
+- Give variables and figure axes clear names.
+- Avoid colors in figures.
+- Always refer back to tables and figures in the text. And place the tables and figures close to where you discuss them, don't put them in the very end of the paper as this is less convenient for the reader.
+- Only the equations that are referred back to in the text need to be numbered.
+- Use an (online) appendix for extra information, but only if it's referred to and discussed somewhere. Don't use this as a place to dump extra things you did at some point.
+- Make sure capitalization is consistent. This for as well figure titles as within tables and figures. 
 
-- Put only equation numbers when you refer to the equation.
-- Footnotes are usually placed after the end of a sentence.
-- Invest time into the formatting of tables and figures. Make sure that they are easily accessible even if readers do not read the entire paper, but only browse through it. Add table and figure notes that describe what is in the figure.
-- Make sure capitalization is consistent. For instance, you either want all figure titles to be capitalized ("This is a Figure Title"), or not ("This is a figure title"). Usually the first letter is a capital one. Within tables and figures the same thing holds. One easy way to go is to only have no capitalization inside of tables and figures (except for names etc. of course).
-- Put tables and figures close to where they are referred to. Don't put them in the very end of the paper. This is less convenient for the reader.
+For titles, you either want all figure titles to be capitalized ("This is a Figure Title"), or not ("This is a figure title"). Usually the first letter is a capital one. Inside tables and figures, one easy way to go have no capitalization (except for names etc.). 
 
-### Move your paper ahead!
+### References
 
-Finally, keep in mind from the very beginning that your paper will go through a messy reviewing process and that it may be rejected many times. Don't be discouraged. Learn from the comments, but don't sit on your paper for too long. Revise it and send it off again. A good motivating read that also provides some background information in this context is ["Secrets of Economics Editors"](https://mitpress.mit.edu/books/secrets-economics-editors).
+Use tools for referencing that can automatically update the work. However, don't rely on them completely and still check the accuracy yourself.
+
+Check out [this building block](/develop-your-research-skills/tips/reference-list/) to learn more about the available tools for building and maintaining reference lists. 
+
+{{% tip %}}
+Add and manage your references while writing. Avoid leaving it for the last minute, this will cause a lot of stress!
+{{% /tip %}}
+
+### The review process
+
+#### Academic papers
+Finally, keep in mind from the very beginning that your paper will go through a messy reviewing process and that it may be rejected many times. Don't be discouraged. Learn from the comments, but don't sit on your paper for too long. Revise it and send it off again. 
+
+{{% tip %}}
+A good motivating read that also provides some background information in this context is ["Secrets of Economics Editors"](https://mitpress.mit.edu/books/secrets-economics-editors).
+{{% /tip %}}
+
+#### Master's or PhD Theses
+The review journey for your thesis can be demanding as well. Anticipate iterations and feedback loops. Don't let feedback discourage you; instead, learn from it and revise!
+
+
+
+
+
