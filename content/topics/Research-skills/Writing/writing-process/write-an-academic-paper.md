@@ -2,7 +2,7 @@
 title: "Mastering Academic Writing"
 description: "Learn strategies for academic writing, formatting, and referencing to ensure clear presentation of your research within your academic paper or thesis."
 keywords: "latex, writing, paper, thesis, structure, academic, abstract"
-weight: 1
+weight: 4
 date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:

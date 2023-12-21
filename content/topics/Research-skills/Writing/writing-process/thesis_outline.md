@@ -3,7 +3,7 @@ title: "Chapter Structure of a Thesis or Academic Paper"
 description: "The thesis or paper structure, with tips for the content of each chapter"
 keywords: "master, thesis, guide, marketing, economics, management, tisem, research, guidance, preparation, question, proposal, skills, resources, writing, latex, chapter, outline"
 date: 2023-07-10
-weight: 5
+weight: 3
 author: "Valerie Vossen"
 aliases:
   - /masterthesisguide/outline
