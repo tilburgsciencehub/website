@@ -103,9 +103,7 @@ For titles, you either want all figure titles to be capitalized ("This is a Figu
 
 ### References
 
-Use tools for referencing that can automatically update the work. However, don't rely on them completely and still check the accuracy yourself.
-
-Check out [this building block](/develop-your-research-skills/tips/reference-list/) to learn more about the available tools for building and maintaining reference lists. 
+Use tools for referencing that can automatically update the work. However, don't rely on them completely and still check the accuracy yourself. Check out [this building block](/reference/list) to learn more about the available tools for building and maintaining reference lists. 
 
 {{% tip %}}
 Add and manage your references while writing. Avoid leaving it for the last minute, this will cause a lot of stress!

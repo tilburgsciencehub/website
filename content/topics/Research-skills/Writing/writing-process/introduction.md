@@ -9,7 +9,7 @@ aliases:
   - /masterthesisguide/introduction
 ---
 
-This Master Thesis Guide bundles all the relevant resources for Master's students in the quantitative social sciences starting their Thesis. Although primarly focused Masters, it is also beneficial for Bachelor students or Ph.D. candidates. Think of studies within departments such as economics, data science, marketing analytics, and management. Go through the following 4 steps and come across all the relevant resources on our website:
+This Master Thesis Guide bundles all the relevant resources for Master's students in the quantitative social sciences starting their Thesis. Although primarly focused Masters, it is also beneficial for Bachelor students or Ph.D. candidates. Think of studies within departments such as economics, data science, marketing analytics, and management. Go through the following 4 steps and come across all the resources relevant for your thesis writing process:
 
 1. [Preparation phase](/masterthesisguide/preparation)
 2. [Coding, Workflow, and Data Management](/masterthesisguide/datacoding): The core foundation of your research.
