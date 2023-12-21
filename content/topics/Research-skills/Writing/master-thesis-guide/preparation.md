@@ -1,6 +1,6 @@
 ---
 title: "Preparation for your Thesis"
-description: "Part 1 of the Master Thesis Guide: the preparation phase, e.g. finding a good research question and in which skills you can invest beforehand"
+description: "The preparation phase of your thesis includes finding a good research question and investing in useful skills you will use during the thesis"
 keywords: "master, thesis, guide, marketing, economics, management, tisem, research, guidance, preparation, question, proposal, skills, resources"
 date: 2023-07-10
 weight: 2
@@ -11,7 +11,9 @@ aliases:
 
 ## Overview
 
-The Master Thesis Guide will serve as support throughout the entire thesis process, consisting of an empirical research project for studies in marketing, economics, data science, management, and related fields. This page covers the **Preparation** phase of your thesis process. The following sections are included:
+This topic covers the **Preparation** phase of your Master thesis process, giving you thorough guidance by bundling resources from Tilburg Science Hub and beyond. It is primarily focused on Master's students in the quantitative social sciences, while also being beneficial for Bachelor students or Ph.D. candidates. Think of studies within departments such as economics, data science, marketing analytics, and management. 
+
+The following sections are included:
 - The research question
 - The research proposal
 - Invest in skills beforehand
@@ -161,6 +163,5 @@ If you need professional support, the university offers individual therapy and g
 - Interact with fellow students for mutual support.
 
 
-{{% summary %}}
-This page covers all the essential parts of the preparation phase of writing your thesis. Once you are confident with the research question and feel prepared, proceed to [Part 2 on Coding, workflow, and data management](/masterthesisguide/datacoding). 
-{{% /summary %}}
+### References
+This topic is based on [the Thesis Guide for Marketing Analytics of Hannes Datta](https://thesis.hannesdatta.com/).
