@@ -1,6 +1,6 @@
 ---
-title: "Coding, Workflow, and Data Management in the Master Thesis"
-description: "Part 2 of the Master Thesis Guide: coding, workflow and data management as the core foundation of your research."
+title: "Coding, Workflow, and Data Management in a Research Project/Thesis"
+description: "Coding, workflow and data management as the core foundation of your research."
 keywords: "master, thesis, guide, marketing, economics, management, tisem, research, guidance, preparation, question, proposal, skills, resources"
 date: 2023-07-10
 weight: 3
@@ -11,7 +11,7 @@ aliases:
 
 ## Overview
 
-The Master Thesis Guide will serve as support throughout the entire thesis process, consisting of an empirical research project for studies in marketing, economics, data science, management, and related fields. This page covers the **coding, workflow, and data management**, divided into the following sections:
+**Coding, workflow, and data management** is the core foundation of any independent research project within the quantitative social sciences (e.g. in economics, data science, or marketing). Think of any big course project or the research for your Master thesis. This is an overview of the sections covered:
 
 - Code versioning: GitHub
 - Data collection techniques
@@ -23,22 +23,22 @@ The Master Thesis Guide will serve as support throughout the entire thesis proce
 
 GitHub is a powerful version control platform that allows you to manage and track changes in your code. This ensures transparency, and organization throughout the research process. 
 
-### Why use GitHub for the Master Thesis?
+### Why use GitHub for your research project, or Master Thesis?
 
-Even though your thesis is probably not a collaborative project, keeping your work on GitHub still offers a lot of advantages:
+Even if your project/thesis is not a collaborative project, keeping your work on GitHub still offers a lot of advantages:
 
 - *Version control*: Easily track changes, view previous versions, and revert to earlier drafts if needed. No more confusion with multiple versions of the same document (e.g. saving the file as "Thesisdraft1", "Thesisdraft2" and so on). 
 <br>
 
 - *Transparent documentation:* The commit history provides a clear record of all the edits made. Leaving clear commit messages helps in understanding what edits you made when revisiting your work after months of working on it. 
 
-- *Branching:* You can create branches for different sections without impacting the main thesis draft in which you can experiment as much as you want.  
+- *Branching:* You can create branches for different sections without impacting the main project draft in which you can experiment as much as you want.  
 
-- *Remote accessibility:* Access your thesis from anywhere as GitHub is a cloud-based platform.
+- *Remote accessibility:* Access your project from anywhere as GitHub is a cloud-based platform.
 
-- *Backup:* GitHub serves as a secure backup, minimizing the risk of losing your data or work.  
+- *Backup:* GitHub serves as a secure backup, minimizing the risk of losing your work.  
 
-- *Showcasing your work:* After finishing the thesis, you can keep your thesis on GitHub, making it accessible for others to use and showcasing your research!
+- *Showcasing your work:* After finishing the project, you can keep it on GitHub, making it accessible for others to use and showcasing your research!
 
 Follow [this building block](/share/data) to learn how to use GitHub for your project!
 
@@ -50,7 +50,7 @@ Depending on your research, you might want to create your own data. Techniques f
 
 ## Data import
 
-You might want to analyze data sets for your thesis that already exist somewhere. There are several techniques to import data, dependent on your data source. Use these building blocks to learn about importing data and see example cases.
+You might want to analyze data sets for your project that already exist somewhere. There are several techniques to import data, dependent on your data source. Use these building blocks to learn about importing data and see example cases.
 
 - [Download data directly from URLs using R and Python](/store/data)
 - [Import larger datasets into R](/import/large-datsets)
@@ -96,7 +96,7 @@ Tilburg University has provided [specific guidelines for students](https://www.t
 
 A project pipeline is a systematic framework that gives a structured sequence of the steps included in your research. It outlines the flow of tasks, from data collection and cleaning to analysis and visualization. 
 
-Depending on your field of study, your project pipeline might quickly become more complex, which makes a clear structure even more important. A good project pipeline ensures consistency and facilitates efficiency by breaking down the complex process into smaller manageable steps. 
+Your project pipeline might quickly become more complex, which makes a clear structure even more important. A good project pipeline ensures consistency and facilitates efficiency by breaking down the complex process into smaller manageable steps. 
 
 It also ensures transparency. For example, a project where code files are separated into multiple smaller components (e.g. one for data cleaning, one for running the model, one for producing tables and figures) is way easier for others to read and understand.
 
@@ -107,8 +107,4 @@ Use [this tutorial that covers the principles of project setup and workflow mana
 {{% /tip %}}
 
 #### Pipeline automation
-If your thesis is data-oriented, e.g. related to marketing analytics or data science, consider automating your pipeline. [This tutorial](/practice/pipeline-automation) is helpful to teach you how to automate your pipeline automation using `Make`.
-
-{{% summary %}}
-This part of the Master Thesis guide aims at making the data management and coding of your thesis as smooth as possible. [Part 3](/masterthesisguide/writing) is about the writing of your thesis, providing you with useful tips and resources. 
-{{% /summary %}}
+If your project is data-oriented, e.g. related to marketing analytics or data science, consider automating your pipeline. [This tutorial](/practice/pipeline-automation) is helpful to teach you how to automate your pipeline automation using `Make`.
