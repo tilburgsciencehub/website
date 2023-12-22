@@ -30,7 +30,7 @@ The typical structure of an empirical paper, a master or Ph.D. thesis in economi
 
 The outline is discussed chapter-by-chapter. Keep in mind that the chapter structure/order might slightly differ depending on your official formatting guidelines, but the content should be more or less in the same order.
 
-### Abstract
+## Abstract
 Be as brief as possible and avoid word-by-word duplication with the introduction. State very clearly what the main take-away is for your paper. This can be a qualitative finding, but it can also be a number.
 
 ## Introduction
@@ -136,7 +136,7 @@ If you have a strong theory, you can cleanly predict what happens to Y if you ch
 
 If your theory is not strong, or your predictions are frequently going in both ways (e.g., both positive and negative), it is better to keep it to **expectations**, rather than writing out hypotheses. An example paper having expectations is [Datta, Ailawadi , and Van Heerde (2017)](https://journals.sagepub.com/doi/10.1509/jm.15.0340).
 
-Alternatively, a paper can very well do without any hypotheses or expectations. See the example of [Danna, Knox, and Bronnenberg (2018)](https://pubsonline.informs.org/doi/pdf/10.1287/mksc.2017.1051). 
+Alternatively, a paper can very well do without any hypotheses or expectations. See the example of [Datta, Knox, and Bronnenberg (2018)](https://pubsonline.informs.org/doi/pdf/10.1287/mksc.2017.1051). 
 
 The most important thing is that you **choose a format that fits your research!**
 
@@ -210,7 +210,7 @@ Think hard about how to present and discuss the results. Make a careful selectio
 
 Report your estimation results in a table. Don't just copy this from your statistical software. You might want a table combining multiple models or making other adjustments, e.g. like adding fit metrics to the table, or deleting controls not relevant to mention.
 
-[This building block](/kableextra) teaches how to create LaTeX regression table, ready to use in your thesis, in R.
+[Learn here](/kableextra) how to create a ready-to-use LaTeX regression table in R.
 
 ### Metrics about the model
 
@@ -266,6 +266,13 @@ Consider plotting some results, e.g. relevant coefficients of your estimated mod
 
 ## References
 
+[Learn here](/reference/list) how to build and maintain a reference list effectively.
+
 ## Appendix
 
+The appendix includes supplementary information that supports the main content but might be too detailed or lengthy to include in the main body of the paper. 
+
 ## Online Appendix
+
+The online appendix serves as a repository for additional materials that complement the main content of the document. It's a place for extra datasets, tables, figures, or any information that enhances the understanding of the paper but might disrupt the flow if included within the main body.
+
