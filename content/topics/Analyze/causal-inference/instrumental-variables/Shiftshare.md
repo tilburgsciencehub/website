@@ -132,68 +132,52 @@ $Cov(m_t, m_t' | \bar{\epsilon}, s) = 0$ for all $m' \neq m$
 
 ## Other practical examples in literature
 
-table
-
-
-instrument z_l = sum s_ln g_n
-
-where shocks vary at another level (n) than the shares (l), and outcome and treatment are observed at level l. 
-
-for model y_l = beta*x_l + gamma'w_l + e_l
-
-| Context                                   | Instrument                                         | Shocks                                           | Shares                                             | Authors                                   |
-|-------------------------------------------|----------------------------------------------------|--------------------------------------------------|----------------------------------------------------|-------------------------------------------|
-| Effect employment on wage growth on region `l` | **Predicted employment due to national industry trends** | National growth of industry `n` | Lagged employment shares of industry in a region | Bartik (1991); Blanchard & Katz (1992)    |
-| Effect of growth of import competition in region `l` | **Predicted growth of import competition** | Growth of China exports in manufacturing industry `n` | 10-year lagged employment shares over total employment | Autor Dorn, and Hanson (2013)     |
-| Effect of import by Danish firm on wages  | **Predicted change in firm inputs via transport costs**| Changes in transport costs by `n` = (product, country) | Lagged import shares  | Hummels et al. (2014) |
-
-| Context                                        | Instrument                                         | Shocks                                               | Shares                                                 | Authors                                    |
-|-------------------------------------------|----------------------------------------------------|--------------------------------------------------|----------------------------------------------------|-------------------------------------------|
-| Employment's impact <br> on wage growth <br> in region `l` | **Predicted employment<br> due to national <br> industry trends** | National growth <br> of industry `n` | Lagged employment <br> shares of industry <br> in region `l` | Bartik (1991); <br> Blanchard & Katz (1992)    |
-| Growth of import <br> competition in region `l   | **Predicted growth <br> of import competition**           | Growth of China <br> exports in <br> manufacturing <br> industry `n` | 10-year lagged <br> employment shares <br> over total employment <br> in region `l` | Autor Dorn, and <br> Hanson (2013)     |
-| Import impact by <br> Danish firm on wages  | **Predicted change <br> in firm inputs via <br> transport costs** | Changes in <br> transport costs by <br> `n` = (product, country) | Lagged import shares  | Hummels et al. (2014)   |
+Note: the instrument is $z_{l} = \sum_{n} s_{l,n} * m_{n}$ where shifts (shocks) vary at another level (`n`) than the shares (`l`), and outcome and treatment are observed at level `l`.
 
 | Context                                        | Shift-Share Instrument                                | Authors                                    |
 |-------------------------------------------|----------------------------------------------------|--------------------------------------------------|
-| Employment's impact <br> on wage growth <br> in region `l` | *Predicted employment due to <br> national industry trends* <br><br> **Shifts:** National growth of industry `n` <br><br> **Shares:** Lagged employment <br> shares of industry in region `l` | Bartik (1991); <br> Blanchard & <br> Katz (1992)  |
-| Growth of import <br> competition in region `l` | *Predicted growth of <br> import competition* <br><br> **Shifts:** Growth of China exports <br> in manufacturing industry `n` <br><br> **Shares:** 10-year lagged <br> employment shares over total <br> employment in region `l` | Autor, Dorn, <br> and Hanson <br> (2013)     |
-| Import impact by <br> Danish firm on wages  | *Predicted change in firm inputs <br> via transport costs*<br><br> **Shifts:** Changes in transport <br> costs by `n` = (product, country) <br><br> **Shares:** Lagged import shares  | Hummels <br> et al. (2014)   |
+| Employment's impact <br> on wage growth <br> in region `l` | *Predicted employment due to <br> national industry trends* <br><br> **Shifts:** National growth of industry `n` <br> **Shares:** Lagged employment <br> shares of industry in region `l` | [Bartik (1991)](); <br> [Blanchard & <br> Katz (1992)]()  |
+| Local labor market effects <br> of rising Chinese import <br> competition in the US | *Predicted growth of <br> import competition* <br><br> **Shifts:** Growth of China exports <br> in manufacturing industry `n` <br> **Shares:** 10-year lagged <br> employment shares over total <br> employment in region `l` | [Autor, Dorn, <br> and Hanson <br> (2013)](https://www.aeaweb.org/articles?id=10.1257/aer.103.6.2121)  |
+| Import impact by <br> Danish firm on wages  | *Predicted change in firm inputs <br> via transport costs*<br><br> **Shifts:** Changes in transport <br> costs by `n` = (product, country) <br> **Shares:** Lagged import shares  | [Hummels <br> et al. (2014)]()  |
 
-*Shifts:*
-*Shares:*
-columns: context, instrument: shifts, shares, authors
 
-Bartik (1991); Blanchard & Katz (1992)
-- labour markets: effect employment on wage growth on region l, instrument: predicted employment due to national industry trends
-- shares: lagged employment shares (of industry in a region)
-- shifts: national growth of industry n
+## Practical example in R
 
-Autor Dorn, and Hanson (2013)
-- effect of growth of import competition in region l on growht of manufacturing employment, unemployment etc.
-- instrument: predicted growth of import competition
-- shares: 10-year lagged employment shares (over total employment)
-- shifts: growth of China exports in manufacturing industry n to 8 other (i.e. non-U.s.) countries
+The code block illustrates an estimation of the second literature example in the table above (Autor, Dorn, and Hanson, 2013), with use of the [`ShiftShareSE` package](https://cran.r-project.org/web/packages/ShiftShareSE/ShiftShareSE.pdf). The data set (`ADH`) is already included in the package. The `ivreg_ss()` function is used to estimate a regression model with the shift-share instrument.
 
-Hummels et al. (2014)
-- effect of import by Danish firm on wages
-- instrument: predicted change in firm inputs via transport costs
-- shares: lagged import shares
-- changes in transport costs by n = (product, country)
+{{% codeblock %}}
+```R
+# Install and load the ShiftShareSE package
+install.packages("ShiftShareSE")
+library(ShiftShareSE)
 
-# Practical application in R
+# Estimate the shift-share instrumental variable regression
+ivreg_ss(d_sh_empl ~ 1 | shock, 
+          X=IV, 
+          data=ADH$reg, 
+          W=ADH$W,
+          method=c("ehw", "akm", "akm0")
+          )
 
-- package "ShiftShareSE"
-ssaggregate? slide 67
-- which data for example?
+```
+{{% /codeblock %}}
 
-see also
-- Goldsmith-Pinkman et al. (2018)
-- Jaeger et al. (2018)
+The first part represents the formula:
+  - `d_sh_empl`, the dependent variable; the change in the share of the working-age population
+  - No controls are added, thus the `controls` term equals `1`.
+  - `shock` is the endogenous regressor and represents the local China imports. 
+  - The instrument used to replace `shock` is `IV`: This is the shift-share vector, with length N of sectoral shocks, aggregated to regional level using the share matrix W
+- `W` is a matrix of sector shares (the weights)
+- `method` specifies which inference methods to use
 
-# references
+<p align = "center">
+<img src = "../images/shiftshare_r.png" width="400">
+<figcaption> Regression output </figcaption>
+</p>
+
+# References
 - shiftshare mixtape
 - any papers?
-
 - https://blogs.worldbank.org/impactevaluations/rethinking-identification-under-bartik-shift-share-instrument
 
 
