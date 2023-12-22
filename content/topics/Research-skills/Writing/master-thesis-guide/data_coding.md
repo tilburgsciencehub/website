@@ -23,7 +23,7 @@ aliases:
 
 GitHub is a powerful version control platform that allows you to manage and track changes in your code. This ensures transparency, and organization throughout the research process. 
 
-### Why use GitHub for your research project, or Master Thesis?
+### Why use GitHub for your course project or Master Thesis?
 
 Even if your project/thesis is not a collaborative project, keeping your work on GitHub still offers a lot of advantages:
 
@@ -40,7 +40,7 @@ Even if your project/thesis is not a collaborative project, keeping your work on
 
 - *Showcasing your work:* After finishing the project, you can keep it on GitHub, making it accessible for others to use and showcasing your research!
 
-Follow [this building block](/share/data) to learn how to use GitHub for your project!
+Use [this topic](/share/data) to learn how to use GitHub for your project!
 
 ## Data collection techniques
 
@@ -50,7 +50,7 @@ Depending on your research, you might want to create your own data. Techniques f
 
 ## Data import
 
-You might want to analyze data sets for your project that already exist somewhere. There are several techniques to import data, dependent on your data source. Use these building blocks to learn about importing data and see example cases.
+You might want to analyze data sets for your project that already exist somewhere. There are several techniques to import data, dependent on your data source. Use these topics to learn about importing data and see example cases.
 
 - [Download data directly from URLs using R and Python](/store/data)
 - [Import larger datasets into R](/import/large-datsets)
@@ -74,7 +74,7 @@ Upon importing your raw data, explore it right away to assess its quality. There
 
 Key considerations when assessing your raw data quality include the following points:
 
-- **Documentation**: study any provided ReadMe file or documentation thoroughly. Or if there is no documentation available, create your own using [this building block which includes a template](/document/new-data).
+- **Documentation**: study any provided ReadMe file or documentation thoroughly. Or if there is no documentation available, create your own using [this tutorial which includes a template](/document/new-data).
 
 - **Variable names and columns**: Ensure you understand the meaning of each variable and column. Confirm if any columns are incomplete.
 
