@@ -1,5 +1,5 @@
 ---
-title: "Preparation for your Master Thesis"
+title: "Prepare for your Master Thesis"
 description: "The preparation phase of your thesis includes finding a good research question and investing in useful skills you will use during the thesis"
 keywords: "master, thesis, guide, marketing, economics, management, tisem, research, guidance, preparation, question, proposal, skills, resources"
 date: 2023-07-10
@@ -11,11 +11,19 @@ aliases:
 
 ## Overview
 
-We help you to prepare for your Master (or Ph.D. or Bachelor) thesis process, covering the following topics:
+We help you to prepare for your Master (or Ph.D. or Bachelor) thesis process. In preparation, we cover the following topics:
 - The research question
 - The research proposal
 - Invest in skills beforehand
 - General tips on the thesis process
+
+{{% summary %}}
+Go through the following 4 steps and come across all the resources relevant for your thesis writing process:
+1. [Preparation phase](/masterthesisguide/preparation): The current page
+2. [Coding, Workflow, and Data Management](/masterthesisguide/datacoding): The core foundation of your research.
+3. [Thesis structure](/masterthesisguide/outline): The standard structure of a thesis and chapter-specific insights.
+4. [Academic Writing tips](/write/academic-paper): Learn effective academic writing and thesis formatting.
+{{% /summary %}}
 
 ## The research question
 
@@ -160,6 +168,5 @@ If you need professional support, the university offers individual therapy and g
 - While being ambitious is good, also set expectations and realize that your thesis most likely will not single-handedly change the world. 
 - Interact with fellow students for mutual support.
 
-
-### References
-This topic is based on [the Thesis Guide for Marketing Analytics of Hannes Datta](https://thesis.hannesdatta.com/).
+#### References
+Information is based on [the Thesis Guide for Marketing Analytics of Hannes Datta](https://thesis.hannesdatta.com/).
