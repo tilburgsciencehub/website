@@ -285,48 +285,7 @@ To fully leverage the strengths of both `ggplot2` and `Plotly`, the following co
 
 {{% codeblock %}}
 ```R
-# Step 1: Create a Customized ggplot2 Scatter Plot
-gg_scatter_plot <- ggplot(gapminder, 
-                          aes(x = gdpPercap, 
-                              y = lifeExp, 
-                              color = continent)) +
-                  geom_point(aes(size = pop, 
-                                 frame = year, 
-                                 ids = country), 
-                            alpha = 0.7) +
-  scale_size(range = c(2, 12)) +  # Adjusting point sizes for better visualization
-  scale_x_log10() +  # Using logarithmic scale for x-axis (GDP per Capita)
-  scale_color_brewer(palette = "Set1") +  # Applying a distinct color palette
-  theme_minimal(base_size = 12) +  # Utilizing a minimalist theme for a clean look
-  theme(legend.position = "bottom",  # Adjusting legend position for better layout
-        panel.grid.major = element_blank(),  # Removing major grid lines for clarity
-        panel.grid.minor = element_blank())  # Removing minor grid lines
-  
-# Step 2: Convert the ggplot2 Scatter Plot to an Interactive Plotly Visualization
-plotly_interactive <- 
-  ggplotly(gg_scatter_plot, 
-           tooltip = c("text", "size")) %>%
-  # Setting animation options for smooth transitions
-  animation_opts(frame = 100, 
-                 easing = "elastic", 
-                 redraw = TRUE) %>%  
-  # Adding a play/pause animation button
-  animation_button(x = 1,
-                   xanchor = "right", 
-                   y = 0, 
-                   yanchor = "bottom") %>%  
-  # Adding a slider for navigating through years
-  animation_slider(currentvalue = list(prefix = "Year: ")) %>%  
-  # Customizing layout
-  layout(title = "GDP per Capita vs Life Expectancy",  
-         xaxis = list(title = "GDP per Capita (log scale)"),
-         yaxis = list(title = "Life Expectancy"),
-  # Customizing hover label for readability
-         hoverlabel = list(bgcolor = "white"))  
-
-# Display the interactive plot
-plotly_interactive
-```
+# Load necessary librarieslibrary(ggplot2)library(plotly)library(dplyr)library(gapminder)# Load Gapminder datadata(gapminder)# Step 1: Create a Customized ggplot2 Scatter Plotgg_scatter_plot <- ggplot(gapminder,                           aes(x = gdpPercap,                               y = lifeExp,                               color = continent)) +  # Adding points with adjusted sizes based on population  geom_point(aes(size = pop,                  frame = year,                  ids = country,                 text = paste("Country:", country,                               "<br>GDP per Capita:", round(gdpPercap, 2),                               "<br>Life Expectancy:", round(lifeExp,1))),              alpha = 0.7) +  # Adjusting point sizes for better visualization  scale_size(range = c(2, 12)) +  # Using logarithmic scale for x-axis (GDP per Capita)  scale_x_log10(labels = scales::label_number()) +   # Utilizing a minimalist theme for a clean look  theme_minimal(base_size = 12) +  # Applying a distinct color palette  scale_color_brewer(palette = "Set1") +  # Customizing various theme aspects for aesthetics  theme(    text = element_text(family = "Times New Roman"), # Set global font family    legend.title = element_blank(),    legend.position = "top",    plot.title = element_text(face = "bold", size = 14),    plot.subtitle = element_text(face = "italic", size = 12),    plot.caption = element_text(face = "italic", size = 10),    panel.grid.major = element_blank(),    panel.grid.minor = element_blank(),    axis.text.x = element_text(color = "grey24", size = 12),    axis.text.y = element_text(color = "grey24", size = 12),    axis.title = element_text(face = "bold", color = "grey24", size = 14),    axis.ticks = element_blank(),    plot.margin = margin(1, 1, 1, 1, "cm"))# Convert ggplot to an interactive Plotly plotplotly_interactive <- ggplotly(gg_scatter_plot, tooltip = c("text")) %>%  # Setting animation options for smooth transitions  animation_opts(frame = 1000, easing = "elastic", redraw = TRUE) %>%  # Adding a play/pause animation button  animation_button(x = 1, xanchor = "right", y = 0, yanchor = "bottom") %>%  # Adding a slider for navigating through years  animation_slider(currentvalue = list(prefix = "Year: ")) %>%  # Customizing layout and hover label for readability  layout(title = "GDP per Capita vs Life Expectancy",           xaxis = list(title = "GDP per Capita (log scale)", font = list(family = "Times New Roman")),         yaxis = list(title = "Life Expectancy", font = list(family = "Times New Roman")),         legend = list(title = "Continent",font = list(family = "Times New Roman", size = 12)),         hoverlabel = list(bgcolor = "white", font = list(family = "Times New Roman", size = 12)))# Display the interactive plotplotly_interactive```
 {{% /codeblock %}}
 
 <p align = "center">
