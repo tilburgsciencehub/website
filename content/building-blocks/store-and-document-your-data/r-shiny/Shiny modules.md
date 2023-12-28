@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Shiny Modules"
+title: "Shiny Fundamnetals: Introduction to Shiny Modules"
 description: "Learn to structure Shiny apps using Modules, a key approach for managing complex applications effectively."
 keywords: "R, Shiny, Modules, RStudio, Web Apps, Programming, User Interface, Server Functionality"
 date: YYYY-MM-DD

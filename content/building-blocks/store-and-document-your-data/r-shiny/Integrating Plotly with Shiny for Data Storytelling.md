@@ -1,5 +1,5 @@
 ---
-title: "Integrating Plotly with Shiny for Data Storytelling"
+title: "How to: Integrate Plotly within Shiny for Data Storytelling"
 description: "Explore the synergy of Plotly and Shiny in R to create dynamic, interactive data visualizations that tell compelling stories."
 keywords: "R Shiny, Plotly, Data Visualization, Interactive Plots, ggplot2, Data Storytelling, Web Applications, Shiny Dashboard"
 date: 2023-12-20

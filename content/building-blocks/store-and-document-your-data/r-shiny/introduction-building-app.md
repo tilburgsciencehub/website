@@ -1,5 +1,5 @@
 ---
-title: "Introduction and Building Your First Shiny App"
+title: "Shiny Fundamentals: Introduction and Building Your First Shiny App"
 description: "Introduce R Shiny and guide learners in building their first basic Shiny app. Introducing concepts as basic app structure (UI & Server), UI elements, server functions."
 keywords: "R Shiny, UI, Server, UI elements, server functions"
 date: YYYY-MM-DD

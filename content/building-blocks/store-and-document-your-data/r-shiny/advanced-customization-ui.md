@@ -3,8 +3,8 @@ title: "Advanced Customization: The bslib and thematic packages"
 description: "This article introduces users to the bslib and thematic packages and teaches them how to use them to apply advanced theming to their Shiny apps. It covers basic theming, advanced theming with the thematic package, customization of UI elements, and practical application in Shiny app development."
 keywords: "Shiny, Bootstrap, bslib, Bootswatch, thematic, Real-Time theming, Data visualization, Rstudio"
 date: YYYY-MM-DD
-weight: 5
-author: "Matthijs ten Tije "
+weight: 7
+author: "Matthijs ten Tije"
 authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
   - /shiny/advanced/ui

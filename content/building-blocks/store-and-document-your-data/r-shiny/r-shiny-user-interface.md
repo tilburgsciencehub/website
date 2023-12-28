@@ -1,5 +1,5 @@
 ---
-title: "The User Interface: Enhancing User Experience"
+title: "Shiny Fundamentals: The User Interface"
 description: "article about how to enhance your R Shiny apps with this tutorial on UI design. The article is about layout functions, applying shinythemes, custom CSS, and control widgets for dynamic, user-friendly interfaces. elevating the Shiny app's aesthetics and interactivity."
 Objective: Build up the the user interface of Shiny apps by learning layout functions, customization, and control widgets ."
 keywords: "R Shiny, User Interface Design, Layout, Custom CSS, shinythemes, Control Widgets, interactivity, shinyWidgets Gallery"
@@ -18,7 +18,7 @@ aliases:
 
 ## Overview 
 
-In this second article in the R shiny series, we delve into the  Shiny app’s user interface. We will be focusing on aesthetics and user experience. You'll learn how to effectively arrange inputs and outputs using layout functions and customize the app's visual appeal. We’ll also explore interactive control widgets to create responsive interfaces.
+In this second article in the R shiny series, we delve into the Shiny app’s user interface. We will be focusing on aesthetics and user experience. You'll learn how to effectively arrange inputs and outputs using layout functions and customize the app's visual appeal. We’ll also explore interactive control widgets to create responsive interfaces.
 
 By the end of this article, you'll be equipped with skills to design dynamic, engaging, and user-centred Shiny applications. Let's dive in!
 
