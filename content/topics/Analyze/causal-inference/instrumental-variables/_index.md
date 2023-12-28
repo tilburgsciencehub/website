@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "Instrumental Variables and Regression Discontinuity"
+title: "Instrumental Variables"
 weight: 4
 type: subcategory
 ---
