@@ -17,25 +17,25 @@ aliases:
 
 ## Overview
 
-In this advanced article of the series R Shiny, We will explore the integration and application of `Bootstrap`, `bslib`, and `thematic` in R Shiny applications. Whether you're new to Shiny or looking to enhance your existing apps, this guide will equip you with the knowledge and tools to create your own customized Shiny application.
+In this advanced article of the series R Shiny, We will explore the integration and application of `Bootstrap`, `bslib`, and `thematic` in R Shiny applications. Whether you're new to Shiny or looking to enhance your existing apps, this article will equip you with the knowledge and tools to create your own customized Shiny application.
 
-We'll begin with an introduction, explaining concepts like Bootstrap and Bootswatch. Then, we will start diving into the bslib and thematic packages, exploring their theming options and how they can be used to customize UI elements in Shiny. I will guide you to the basic and advanced theming capabilities of these packages. 
+We will start with an introduction, explaining concepts like `Bootstrap` and `Bootswatch`. Then, we will start diving into the `bslib` and `thematic` packages, exploring their theming options and how they can be used to customize UI elements in Shiny. We will guide you to the basic and advanced theming capabilities of these packages. 
 
-By the end of this article, you will have the ability to enhance the visual design of your Shiny apps using the theming options provided by bslib and thematic. Throughout the article, I will give code snippets as hands-on examples. These practical demonstrations will show you how to apply bslib and thematic themes to various UI elements, bringing your Shiny apps to life.
+By the end of this article, you will have the ability to enhance the visual design of your Shiny apps using the theming options provided by `bslib` and `thematic`. Throughout the article, we will give code snippets as hands-on examples. These practical demonstrations will show you how to apply bslib and thematic themes to various UI elements, bringing your Shiny apps to life.
 
 ### Introducing Concepts
 [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/) is the most popular HTML, CSS, and JavaScript framework for developing responsive websites. It offers pre-designed elements and a responsive grid system, simplifying the creation of professional websites. In R Shiny it enhances the user interface design with responsive layouts and interactive elements. 
 
-With `Bootstrap` integrated into R Shiny, you can create web applications with only R code, without needing extensive knowledge of traditional web technologies like HTML or CSS. Shiny leverages Bootstrap for its user interface components, This integration is the basis for the appearance and interactivity of Shiny applications.
+With `Bootstrap` integrated into R Shiny, you can create web applications with only R code, without needing extensive knowledge of traditional web technologies like HTML or CSS. Shiny leverages `Bootstrap` for its user interface components, This integration is the basis for the appearance and interactivity of Shiny applications.
 
 Customization of your Shiny app is important, and this is where [Bootswatch](https://bootswatch.com) steps in. It offers themed Bootstrap stylesheets for quick customization. These themes are showcased in resources like the `Shiny Theme Gallery`. The `bslib` package further extends customization capabilities in Shiny, supporting the more modern `Bootstrap 4` instead of `shinythemes Bootstrap 3` integration. `bslib` smoothly integrates with Shiny, enabling a broader range of design options, and making it easier to tailor the appearance of your Shiny app.
 
-Complementing this bslib package with the thematic package in R aligns your plotting style with the active Bootstrap theme from bslib. Thematic ensures consistency across all visual elements of a Shiny application, including data visualizations, maintaining a uniform look and feel.
+Complementing this `bslib` package with the `thematic` package in R aligns your plotting style with the active `Bootstrap` theme from `bslib`. `Thematic` ensures consistency across all visual elements of a Shiny application, including data visualizations, maintaining a uniform look and feel.
 
-Together, Bootstrap, Bootswatch, bslib, and thematic offer a comprehensive toolkit for R Shiny developers, streamlining the process of creating a visually cohesive, coherent and attractive shiny app.
+Together, `Bootstrap`, `Bootswatch`, `bslib`, and `thematic` offer a comprehensive toolkit for R Shiny developers, streamlining the process of creating a visually cohesive, coherent and attractive shiny app.
 
 ## The bslib package
-Writing CSS code within your R shiny app using inline CSS or a CSS file, can get complicated and is error-prone. And as an R user, it requires learning a new language. Instead of doing that, you can use bslib, which simplifies the customization of Bootstrap CSS within Shiny apps and R Markdown documents using R functions. bslib allows to override many Bootstrap defaults to create a unique app appearance. 
+Writing CSS code within your R shiny app using inline CSS or a CSS file, can get complicated and is error-prone. And as an R user, it requires learning a new language. Instead of doing that, you can use `bslib`, which simplifies the customization of `Bootstrap` CSS within Shiny apps and R Markdown documents using R functions. `bslib` allows to override many `Bootstrap` defaults to create a unique app appearance. 
 
 Here is the code to instal the bslib package:
 
@@ -59,8 +59,8 @@ library(bslib)
 {{% /codeblock %}}
 
 ### Real-Time Theming
-Hands-on practice is the easiest to understand the power of the bslib package. Luckily, it is incorporated with real-time theming to let you hands-on experiment with different (Bootswatch) themes, main colors, fonts and more. 
-  Just call bs_themer() within the server function, and you can get started:
+Hands-on practice is the easiest to understand the power of the z package. Luckily, it is incorporated with real-time theming to let you hands-on experiment with different (`Bootswatch`) themes, main colors, fonts and more. 
+  Just call `bs_themer()` within the server function, and you can get started:
 
 {{% codeblock %}}
 
@@ -123,19 +123,19 @@ ui <- fluidPage(
 
 {{% tip %}}
 
-All the Bootswatch themes are available through the bs_theme()’s bootswatch argument. Note, we have seen bootswatch themes earlier in the R shiny series, specifically in this [article](/shiny/ui). Where we used the `Shinythemes` package. This approach allows you to make use of `Bootswatch 3 themes`, but with the bslib package, you can use in addition use `Bootswatch 4` themes, like `minty` or `zephyr`.
+All the Bootswatch themes are available through the `bs_theme()`’s bootswatch argument. Note, we have seen `bootswatch` themes earlier in the R shiny series, specifically in this [article](/shiny/ui). Where we used the `Shinythemes` package. This approach allows you to make use of `Bootswatch 3 themes`, but with the `bslib` package, you can use in addition use `Bootswatch 4` themes, like `minty` or `zephyr`.
 
 {{% /tip %}}
 
 ### Customization
 The `bs_theme()` function in Shiny provides customization options for your app's appearance. Allowing you to specify many elements: 
-- Main background (bg) and foreground (fg) colors
+- Main **background** (bg) and **foreground** (fg) **colors**
   - Which affects nearly every single color on your screen
-- Accent colors: primary, secondary, etc.,
+- A**ccent colors**: primary, secondary, etc.,
   -  For elements like hyperlinks and navigation links and elements like action buttons or notifications.
-- Fonts: Three main fonts can be set: base_font, heading_font, and code_font. 
+- **Fonts**: Three main fonts can be set: base_font, heading_font, and code_font. 
   - You can provide a character string of (comma-separated) font families to these arguments 
-    - e.g., *bs_theme(base_font = '"Times New Roman", Times, serif')*
+    - e.g., *`bs_theme(base_font = '"Times New Roman", Times, serif')`*
 
 {{% tip %}}
 
@@ -184,12 +184,14 @@ TSH <- bs_theme(bg = "white", fg = "#f3ad42", primary = "#123261") # Custom them
 ui <- fluidPage(
   theme = dark, # Set the dark theme as base theme 
   checkboxInput("tsh_mode", "TSH mode") # Create a button TSH mode
+  # Other sliders code
 )
 
 server <- function(input, output, session) {
   observe(session$setCurrentTheme( # The observe function, allows for the code to only run if the input button is altered,
     if (isTRUE(input$tsh_mode)) TSH else dark # If the switch is turned on, change the theme 
   ))
+  # Your Server Code
 }
 
 shinyApp(ui, server)
@@ -198,39 +200,19 @@ shinyApp(ui, server)
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/advanced-ui-3.png" width="400">
+<img src = "../images/advanced-ui-3.png" width="600">
+<img src = "../images/advanced-ui-4.png" width="600">
 </p>
 
-<p align = "center">
-<img src = "../images/advanced-ui-4.png" width="900">
-</p>
+{{% tip %}}
 
-### Theming Variables
-The `bs_theme()` function in Shiny offers a range of customization options for your application, allowing you to modify colors, and fonts as explained before. However, it also includes new variables and widgets. This function takes advantage of [Bootstrap Sass variables](https://rstudio.github.io/bslib/articles/bs5-variables/index.html) for detailed theming, providing access to hundreds of specific options. You can tailor the design of particular components, such as progress bars, to fit your desired aesthetic, like using the Tilburg Science Hub color palette. 
+The `bs_theme()` function in Shiny offers a range of customization options for your application, allowing you to modify colors, and fonts as explained before. However, it also includes new variables and widgets. This function takes advantage of [Bootstrap Sass variables](https://rstudio.github.io/bslib/articles/bs5-variables/index.html) for detailed theming, providing access to hundreds of specific options.
 
-{{% codeblock %}}
+{{% /tip %}}
 
-```R
-# A one color progress bar
-bs_theme(
-  bg = "#123261", # TSH dark blue for the background
-  fg = "#ffffff", # white for foreground text
-  primary = "#f3ad42", # TSH orange for primary buttons and widgets
-  "progress-bar-bg" = "#f3ad42" # TSH orange for progress bar backgrounds
-)
-
-# A change of color when over a certain percentage
-bs_theme(
-  bg = "#123261", fg = "#ffffff",
-  primary = "#f3ad42", # TSH orange for primary buttons and widgets
-  "progress-bar-bg" = "mix(#ffffff, #f3ad42, 20%)" # Lighter orange for progress bars
-)
-```
-
-{{% /codeblock %}}
 
 ## The thematic package
-Now that we learned to create unique themes with `bslib` for your Shiny app, you might want to align the plots in your app with your custom theme. This synchronization is achieved using the `thematic` package. `thematic` automatically translates CSS styles into R defaults, ensuring consistency across your app's design. It simplifies theming for `ggplot2`, `lattice`, and `base R` graphics not just in Shiny but also in R Markdown and RStudio. To match your plots with your app's style in Shiny, just use `thematic_shiny() `in your server function. Now it will adapt plot styles to match your app's theme, ensuring a cohesive and professional look.
+Now that we learned to create unique themes with `bslib` for your Shiny app, you might want to align the plots in your app with your custom theme. This synchronization is achieved using the `thematic` package. `thematic` automatically translates CSS styles into R defaults, ensuring consistency across your app's design. It simplifies theming for `ggplot2`, `lattice`, and `base R` graphics not just in Shiny but also in R Markdown and RStudio. To match your plots with your app's style in Shiny, just use `thematic_shiny()` in your server function. Now it will adapt plot styles to match your app's theme, ensuring a cohesive and professional look.
  
 ### Installation
 
@@ -248,7 +230,7 @@ install.packages("ragg")
 {{% /codeblock %}}
 
 ### R shiny 
-Let's dive into a practical example, of how to use the thematic package in your shiny app. As we have discussed the bslib let's combine them!
+Let's dive into a practical example, of how to use the `thematic` package in your shiny app. As we have discussed the `bslib` let's combine them!
 
 {{% codeblock %}}
 ```R
@@ -264,11 +246,12 @@ Let's dive into a practical example, of how to use the thematic package in your 
 
 {{% tip %}} 
 
-**R Studio and R Markdown**
+**R Studio and R Markdown**   
+
 In RStudio, to make your plots reflect the current theme, you can call `thematic_on()` before you start plotting. This makes all the plots you create afterwards match the RStudio theme. If you need to stop this effect at any point, just use `thematic_off()`. For a one-off use of thematic just use `thematic_theme()`.
 
 In R Markdown, call `thematic_rmd()` before generating plots inside R Markdown to have all following plots within the document reflect the relevant theme.
-- In a static, non-shiny, R Markdown context, auto-theming only works with bslib-powered theming
+- In a static, non-shiny, R Markdown context, auto-theming only works with `bslib`-powered theming
 - You can specify colors and fonts explicitly to `thematic_rmd()`.
 
 {{% /tip %}}
@@ -278,11 +261,12 @@ In R Markdown, call `thematic_rmd()` before generating plots inside R Markdown t
 {{% summary %}}
 
 In this advanced article in the R shiny series, we delved into the integration and application of `Bootstrap` using `bslib`, and `thematic`. 
-this article discusses:
+
+This article discusses:
 - An overview of `Bootstrap` and `Bootswatch` for responsive web designs in Shiny, 
-- Exploration of the `bslib` package for easy customization of `Bootstrap CSS` using R functions, facilitating unique app appearances. 
+- The `bslib` package for easy customization of `Bootstrap CSS` using R functions, facilitating unique app appearances. 
 - Introduction of `real-time theming` with bslib, offering hands-on experimentation with themes, colors, and fonts. 
-- The `thematic` package that complements bslib, aligning plot styles with the active Bootstrap theme, ensuring visual consistency in Shiny apps. 
-- Provision of practical code examples and tips for effectively applying these tools to enhance the visual design of Shiny applications.
+- The `thematic` package that complements `bslib`, aligning plot styles with the active `Bootstrap` theme, ensuring visual consistency in Shiny apps. 
+- Practical code examples and tips for  applying these tools to enhance the visual design of Shiny applications.
 
 {{% /summary %}}

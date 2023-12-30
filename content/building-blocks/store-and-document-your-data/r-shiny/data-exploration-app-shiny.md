@@ -352,5 +352,6 @@ Key learning goals of this article include:
 - Visual Data Exploration: The article provided practical examples of data visualization, starting with basic scatter plots using `ggplot2` and advancing to interactive plots with `Plotly`.
 
 You are now equipped with the necessary skills to build comprehensive `Shiny` applications that enable effective data exploration, accommodating diverse data sources, interactive tables, summary statistics, and insightful visualizations.
+The next article of the R shiny series discusses how to use Shiny for [Data Storytelling](/plotly).
 
 {{% /summary %}}

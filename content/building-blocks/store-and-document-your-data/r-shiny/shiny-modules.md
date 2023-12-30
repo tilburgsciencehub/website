@@ -1,6 +1,6 @@
 ---
-title: "Shiny Fundamnetals: Introduction to Shiny Modules"
-description: "Learn to structure Shiny apps using Modules, a key approach for managing complex applications effectively."
+title: "Shiny Fundamentals: Introduction to Shiny Modules"
+description: "Learn to structure Shiny apps using Modules. in this article learn to  understand the creation and utilization of modules, and discover the advantages they bring to app organization and reusability."
 keywords: "R, Shiny, Modules, RStudio, Web Apps, Programming, User Interface, Server Functionality"
 date: YYYY-MM-DD
 weight: 4
@@ -16,21 +16,24 @@ As we progress in this R-Shiny series, our Shiny apps have become more complex a
 
 In R, functions are essential for simplifying and structuring code, and Shiny is designed to be compatible with them. You have the ability to create UI-generating functions and integrate them into your app, as well as develop functions for the server side that are responsible for defining outputs and creating reactive expressions.
 
-While functions are fundamental in R for simplifying code, they don't completely address the organisation and management challenges in more complex apps. This is where Shiny modules come into play. They are specifically designed to handle the complexities of larger applications. By establishing a unique namespace for each module, Shiny modules ensure that input and output IDs remain distinct within each module, thereby preventing potential issues with overlapping IDs.
+While functions are fundamental in R for simplifying code, they don't completely address the organisation and management challenges in more complex apps. This is where `Shiny Modules` come into play. They are specifically designed to handle the complexities of larger applications. By establishing a unique namespace for each module, `Shiny Modules` ensure that input and output IDs remain distinct within each module, thereby preventing potential issues with overlapping IDs.
 
 ## Introducing Shiny Modules
-A Shiny Module is a self-contained, composable component of a Shiny app. Unlike a standalone Shiny app, which can run independently, a Shiny module is designed to be integrated into a more extensive application or even within another Shiny module.
+A `Shiny Module` is a **self-contained**, composable component of a Shiny app. Unlike a standalone Shiny app, which can run independently, a `Shiny Module` is designed to be integrated (**nested**) into a more extensive application or even within another
+`Shiny Module`.
 
-Modules in Shiny can serve various roles: they can handle inputs, outputs, or a combination of both. Their complexity can range from a simple single output to a more elaborate interface featuring multiple tabs, various controls, outputs, and a network of reactive expressions and observers.
+`Modules` in Shiny can serve various roles, they can handle inputs, outputs, or a combination of both. 
+Their complexity can range from a simple single output to a more elaborate interface featuring multiple tabs, various controls, outputs, and a network of reactive expressions and observers.
 
 ### Why to use modules: 
+
 - **Reusability**:
 Reuse the same code in different apps, or several times in the same app. 
 - **Isolate**
-Shiny modules segment complex apps into manageable parts, improving organization and ease of development.
+`Shiny Modules` segment complex apps into manageable parts, improving organization and ease of development.
 
 ## Creating a Shiny Module
-Shiny modules are structured like Shiny apps, consisting of two key functions: one for the User Interface (UI) and another for the server logic. 
+`Shiny Modules` are structured like Shiny apps, consisting of two key functions: one for the User Interface (UI) and another for the server logic. 
 
 {{% codeblock %}}
 
@@ -43,14 +46,14 @@ numericInputServer <- function(){} # Server logic component
 {{% tip %}}
 
 **Naming Conventions**
-- Choose a shared root that describes the module of use, here called "numericInput" 
+- Choose a shared root that describes the module of use, here called "_numericInput_" 
 - End the UI function with a suffix like "UI", "Input", or "Output".
 
 {{% /tip %}}
 
 ### Building the UI Module 
 
-**Task 1** - Return Shiny UI
+**Task 1** - Return Shiny UI   
 Wrap multiple elements in `tagList()`, this is a special type of layout function that allows you to bundle together multiple components without actually implying how they’ll be laid out. 
 
 {{% codeblock %}}
@@ -65,7 +68,7 @@ sliderTextUI <- function(){
 ```
 {{% /codeblock %}}
 
-**Taks 2** - Assign module elements to a unique namespace with `NS()`
+**Taks 2** - Assign module elements to a unique namespace with `NS()` .  
 A namespace is a system for organising objects with identical names. 
 1. Add an `id` argument 
 2. Make a namespace function `NS()`
@@ -84,7 +87,7 @@ ns <- NS(id) # 2. Make a namespace function
 ```
 {{% /codeblock %}}
 
-Now we use our module, into a shiny app
+Now we use our `Module`, into a shiny app
 
 {{% codeblock %}}
 
@@ -104,11 +107,11 @@ shinyApp(ui,server)
 
 Next, we tackle the server function. 
 
-**Grasping the moduleServer() Function**
-The server logic is encapsulated within the `moduleServer()` function. It's advisable to name these functions in correspondence with their module UI functions, but with a twist in the suffix: replace 'Input', 'Output', or 'UI' with 'Server'. 
+**Grasping the moduleServer() Function**  
+The server logic is encapsulated within the `moduleServer()` function. It's advisable to name these functions in correspondence with their module UI functions, but with a twist in the suffix: replace 'Input' with 'Output', or 'UI' with 'Server'. 
 
-**Constructing a Wrapper Function**
-The moduleServer() function is nested within another function that requires an id argument. This id, together with a callback function resembling a standard server function including input, output, and an additional session argument, is passed to moduleServer(). 
+**Constructing a Wrapper Function**  
+The `moduleServer()` function is nested within another function that requires an **id argument**. This id, together with a callback function resembling a standard server function including input, output, and an additional session argument, is passed to `moduleServer()`. 
 
 {{% codeblock %}}
 
@@ -123,17 +126,17 @@ myModuleServer <- function(id) {
 ```
 {{% /codeblock %}}
 
-Note that moduleServer() takes care of the namespacing automatically: Within moduleServer(id), references to input elements,input$"id", are internally mapped to the namespaced versions NS(id,"id"). 
+Note that `moduleServer()` takes care of the namespacing automatically: Within `moduleServer(id)`, references to input elements,**input$"id"**, are internally mapped to the namespaced versions **NS(id,"id")**. 
 
 {{% tip %}}
 
-**Understanding the Dual-Function Framework**
-The two-tier structure, consisting of the wrapper function and the moduleServer() function, is crucial. It distinctly separates the arguments for your module from those for the server function. Although initially complex, this dual-layer approach is a reusable template that simplifies developing new modules.
+**Understanding the Dual-Function Framework**  
+The two-tier structure, consisting of the wrapper function and the `moduleServer()` function, is crucial. It distinctly separates the arguments for your module from those for the server function. Although initially complex, this dual-layer approach is a reusable template that simplifies developing new modules.
 
 {{% /tip %}}
 
 ### Combining the components into a Shiny App 
-We will use an example Shiny module using the mtcars dataset, to show how to integrate both components into your Shiny app. 
+We will use an example Shiny module using the `mtcars` dataset, to show how to integrate both components into your Shiny app. 
 The module will include a UI component to select a column from the dataset and a server component to display summary statistics of the selected column.
 
 {{% codeblock %}}
@@ -179,17 +182,17 @@ shinyApp(ui, server)
 
 {{% tip %}}
 
-**Module reusability**
+**Module reusability** 
 
-In this example, we use two instances of the same module, demonstrating the reusability of Shiny modules. Each instance operates independently, allowing users to select different columns and view their summaries separately.
+In this example, we use two instances of the same module, demonstrating the `reusability` of Shiny modules. Each instance operates **independently**, allowing users to select different columns and view their summaries separately.
 
 {{% /tip %}}
 
 ## Nesting Modules 
-Modules in Shiny can incorporate other modules, we then have an inner module and an outer module. The outer module utilises the UI function of the inner module. It's important to wrap the id argument in the ns() function for namespacing.
+`Modules` in Shiny can incorporate other modules, we then have an **inner module** and an **outer module**. The outer module utilises the UI function of the inner module. It's important to wrap the id argument in the `ns()` function for namespacing.
 
-**Step 1**: Define the Inner Module
-The inner module will allow users to select a variable from the Iris dataset.
+**Step 1**: Define the **Inner Module**  
+The inner module will allow users to select a variable from the `iris` dataset.
 
 {{% codeblock %}}
 
@@ -211,7 +214,7 @@ innerServer <- function(id) {
 
 {{% /codeblock %}}
 
-**Step 2**: Define the Outer Module
+**Step 2**: Define the **Outer Module**    
 The outer module will use the inner module and display the selected variable's values.
 
 {{% codeblock %}}
@@ -263,22 +266,22 @@ shinyApp(ui, server)
 
 {{% example %}}
 
-- The Inner Module lets the user select a variable from the Iris dataset.
+- The Inner Module lets the user select a variable from the `iris` dataset.
 - The Outer Module uses the output from the inner module to create a histogram.
-- The outer module's UI function calls the inner module's UI function with ns("innerModule"), ensuring proper namespacing.
-- The outer module's server function then utilises the selected variable from the inner module to render the histogram.
+- The Outer module's UI function calls the inner module's UI function with `ns("innerModule")`, ensuring proper namespacing.
+- The Outer module's server function then utilises the selected variable from the inner module to render the histogram.
 
 {{% /example %}}
 
 {{% summary %}}
 
 In this article of the R Shiny series, we've focused on enhancing the functionality of Shiny apps through the use of Shiny `Modules`. 
-- *Shiny Modules Introduction*: Shiny Modules are self-contained, composable components of a Shiny app, designed to be integrated into larger applications or other modules.
-- *Module Functionality*: Modules can handle inputs, outputs, or both, ranging from simple to complex interfaces with various controls and reactive elements.
-- *Module Creation*: We detailed the process of creating Shiny modules, emphasizing the importance of namespacing with `NS()` to maintain distinct input and output IDs.
+- *`Shiny Modules` Introduction*: `Shiny Modules` are self-contained, composable components of a Shiny app, designed to be integrated into larger applications or other modules.
+- *Module Functionality*: `Modules` can handle inputs, outputs, or both, ranging from simple to complex interfaces with various controls and reactive elements.
+- *Module Creation*: We detailed the process of creating `Shiny modules`, emphasizing the importance of namespacing with `NS()` to maintain distinct input and output IDs.
 - *UI and Server Module Construction*: The tutorial included examples of building UI and server module components. 
-- *Nesting Modules*: We delved into nesting modules, where an outer module uses an inner module.
+- *`Nesting` Modules*: We delved into nesting modules, where an outer module uses an inner module.
   
-This article is designed to provide a clear pathway for understanding and utilizing Shiny Modules, laying the groundwork for creating more sophisticated and organized web apps with R Shiny.
+The next article in the R Shiny series shows how to build a [Data Exploration App](/data-exploration-shiny-app), showing how to use a Shiny app for pracitcal usage. 
 
 {{% /summary %}}
