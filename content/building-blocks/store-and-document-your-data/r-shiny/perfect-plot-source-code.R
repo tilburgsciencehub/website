@@ -3,6 +3,7 @@ library(ggplot2)
 library(dplyr)
 library(colourpicker)
 library(viridis)  # Ensure this package is installed for additional color palettes
+library(extrafont)
 
 # Define the indicators
 co2_emissions_id <- "EN.ATM.CO2E.PC"  # CO2 Emissions (metric tons per capita)
@@ -29,6 +30,10 @@ ui <- fluidPage(
       selectInput("palette", "Color Palette", choices = c("Viridis", "Inferno", "Topo", "Cividis")),
       selectInput("regions", "Regions", choices = levels(unique(data$region)), multiple = TRUE),
       sliderInput("years", "Years", min = min(data$year), max = max(data$year), value = c(2005)),
+      # New inputs for font size customization
+      numericInput("titleSize", "Title Size", value = 15, min = 8),
+      numericInput("axisTitleSize", "Axis Title Size", value = 15, min = 8),
+      numericInput("axisTextSize", "Axis Text Size", value = 15, min = 8),
       downloadButton("downloadPlot", "Download Plot")  # Download button for the plot
     ),
     mainPanel(
@@ -56,6 +61,10 @@ server <- function(input, output) {
     if (input$fit) {
       plot <- plot + geom_smooth(method = "lm", color = input$smoothColor)  
     }
+    
+    plot <- plot + theme(text = element_text(family = input$plotFont, size = input$axisTextSize),
+                         title = element_text(size = input$titleSize),
+                         axis.title = element_text(size = input$axisTitleSize))
     
     output$downloadPlot <- downloadHandler(
       filename = function() { paste("plot-", Sys.Date(), ".png", sep = "") },
