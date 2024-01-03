@@ -89,7 +89,7 @@ shinyApp(ui, server)
 When you enhance `ggplot2` visualizations with `ggplotly()` in Shiny applications, the resulting `Plotly` object incorporate interactive features. Here is a list of the features: 
 
 ### Interactive Hover Tooltips:
-- W**hat it Adds**: `ggplotly()` transforms `ggplot2`'s static aesthetic mappings into dynamic hover tooltips. These tooltips appear when users hover over plot elements, providing an interactive layer to the visualization.
+- **What it Adds**: `ggplotly()` transforms `ggplot2`'s static aesthetic mappings into dynamic hover tooltips. These tooltips appear when users hover over plot elements, providing an interactive layer to the visualization.
 - **Value Added**: This feature offers immediate, detailed insights at each data point, enhancing user engagement and understanding. It allows for a more intuitive exploration of the data, as additional context and information are revealed interactively.
 
 {{% tip %}}
