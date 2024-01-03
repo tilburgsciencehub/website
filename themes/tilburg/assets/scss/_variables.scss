@@ -44,6 +44,7 @@ $green: #28a745 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
 $yellowbrown:  #976B24 !default;
+$secondarywhite: #F2F2F0 !default;
 
 $colors: () !default;
 $colors: map-merge(
@@ -383,7 +384,7 @@ $table-border-level: -6 !default;
 
 $input-btn-padding-y: 0.45rem !default;
 $input-btn-padding-x: 1.2rem !default;
-$input-btn-font-family: "forma-djr-display" !default;
+$input-btn-font-family: "lato", Arial, sans-serif !default;
 $input-btn-font-size: 1rem !default;
 $input-btn-line-height: $line-height-base !default;
 

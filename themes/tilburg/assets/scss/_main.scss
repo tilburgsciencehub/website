@@ -29,7 +29,6 @@ li {
   justify-content: space-between;
 
   .share-title {
-    font-family: "forma-djr-display", sans-serif;
     line-height: 23px;
     font-size: 16px;
     letter-spacing: 0;
@@ -118,7 +117,6 @@ li {
   }
 
   .pagination-title {
-    font-family: "forma-djr-display", sans-serif;
     line-height: 24px;
     font-size: 16px;
     margin-bottom: 20px;
@@ -152,7 +150,6 @@ li {
       overflow: hidden;
       text-overflow: ellipsis;
       vertical-align: text-bottom;
-      font-family: "acumin-pro", sans-serif !important;
     }
   }
 }
@@ -312,7 +309,6 @@ pre {
 
     li {
       font-size: 16px;
-      font-family: "forma-djr-display", sans-serif;
       line-height: 24px;
       margin-bottom: 10px;
       a {
@@ -324,7 +320,6 @@ pre {
         padding-left: 15px;
 
         li {
-          font-family: "acumin-pro", sans-serif !important;
           margin-bottom: 10px !important;
         }
       }
@@ -346,6 +341,11 @@ pre {
   }
 }
 
+h1, h2 {
+  font-family: "scala-sans","lato",Arial,sans-serif;
+  font-weight: bold;
+}
+
 .screen-2 {
   max-height: 80vh;
   overflow-y: scroll;
@@ -357,7 +357,6 @@ pre {
   }
 
   .nav-link {
-    font-family: "forma-djr-display";
     font-weight: 200 !important;
 
     &:hover {
@@ -401,9 +400,29 @@ pre {
   }
 }
 
+.single-card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: $white;
+}
+
+.secondary-white {
+  background-color: $secondarywhite;
+}
+
+/* .overlap-section {
+  p, h1, h2, h3, .text-secondary, .text-primary{
+    color: $white !important;
+  }
+
+  a {
+    color:$white !important;
+    font-weight: bold;
+  }
+}*/
+
 html,
 body {
-  font-family: "acumin-pro", sans-serif !important;
+  font-family: "lato",Arial,sans-serif;
   scroll-behavior: smooth;
   font-size: 15px;
   font-weight: 300;
@@ -416,7 +435,7 @@ body {
 }
 
 html {
-  background-color: #F8F8F7;
+  background-color: $white;
 
   &:after {
     content: "";
@@ -426,7 +445,7 @@ html {
     height: 700px;
     top: 0px;
     right: 0px;
-    background-image: url("/img/OvalCopy.png");
+    background-image: url("/img/Oval Copy 2@2x.png");
     z-index: -1;
     background-size: cover;
     background-repeat: no-repeat;
@@ -453,12 +472,7 @@ html {
   }
 }
 
-.heading {
-  font-family: "forma-djr-display", sans-serif;
-}
-
 #exampleMenu.heading {
-  font-family: "forma-djr-display", sans-serif;
   font-size: 16px !important;
   color: $secondary !important;
   &:hover {
@@ -479,10 +493,6 @@ html {
   grid-template-columns: 300px 1fr;
 }
 
-h1,
-.h1,
-h2,
-.h2,
 h3,
 .h3,
 h4,
@@ -491,7 +501,6 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-family: "utile-display", sans-serif;
   font-weight: 300;
 }
 
@@ -593,7 +602,6 @@ article {
   h3,
   h4 {
     font-size: 20px;
-    font-family: "forma-djr-display", sans-serif;
   }
 
   h4 {
@@ -665,7 +673,6 @@ article {
   }
 
   th {
-    font-family: "forma-djr-display", sans-serif;
     font-weight: 300;
   }
 
@@ -742,7 +749,6 @@ max-width: 450px;
   }
   a {
     color: #6081a2 !important;
-    font-family: "acumin-pro", sans-serif;
 
     &:hover {
       color: $primary !important;
@@ -898,7 +904,6 @@ footer {
 
     a:not(.pillx) {
       color: #6081a2 !important;
-      font-family: "acumin-pro", sans-serif;
       line-height: 20px;
       padding-bottom: 7px;
       font-size: 15px !important;
@@ -912,7 +917,6 @@ footer {
     .rightMenu {
       a {
         color: #6081a2 !important;
-        font-family: "acumin-pro", sans-serif;
         line-height: 20px;
         padding-bottom: 7px;
 
@@ -1382,7 +1386,6 @@ form {
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
     font-weight: normal;
-    font-family: "acumin-pro", sans-serif;
     font-size: 14px;
 
     a {

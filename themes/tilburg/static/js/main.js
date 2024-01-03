@@ -787,13 +787,13 @@ $(document).ready(function () {
           const titleElement = document.createElement('h3');
           titleElement.classList.add('heading');
           titleElement.style.fontSize = '16px';
+          titleElement.style.fontWeight = 'bold';
           titleElement.style.lineHeight = '1';
           titleElement.textContent = item.title;
 
           const descriptionElement = document.createElement('p');
           descriptionElement.style.fontSize = '16px';
           descriptionElement.style.color = '#6081a2';
-          descriptionElement.style.fontFamily = 'acumin-pro,sans-serif';
           descriptionElement.style.width = '70%';
           descriptionElement.textContent = item.description;
 
@@ -860,7 +860,6 @@ $(document).ready(function () {
             const descriptionElement = document.createElement('p');
             descriptionElement.style.fontSize = '16px';
             descriptionElement.style.color = '#6081a2';
-            descriptionElement.style.fontFamily = 'acumin-pro,sans-serif';
             descriptionElement.textContent = item.description;
 
             // Append title and description to the content element
