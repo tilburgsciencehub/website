@@ -17,7 +17,6 @@ aliases:
 - Practical examples in literature
 - Example in R
 
-
 ## Motivation
 
 Analysis of causal impacts within regional economic studies comes with challenges. It is often difficult to isolate true relationships between variables. Endogeneity issues are likely to arise, where the independent variable is correlated with the error term. This leads to biased coefficients in OLS regression. 
@@ -31,7 +30,7 @@ UR_{i,t} = \beta_0 + \beta_1 IM_{i,t} + \beta_2 X_{i,t} + \epsilon_{i,t}
 <br>
 <br>
 
-where
+Where:
 - $UR_{i,t}$ is the unemployment rate in region $i$, at time $t$
 - $IM_{i,t}$ is the immigration inflow (from a specific origin country, or total immigration depending on your research question) to region $i$ in the destination country, at time $t$
 - $X_{i,t}$ is a vector of controls, like variables for GDP growth or educational level in each region $i$, at time $t$
@@ -55,7 +54,7 @@ Where:
 
 - The share $s_{i,t-1}$: The lagged or "initial" distribution of the share of immigrants in the region $i$ (i.e. past settlement)
 
-- The shift $m_{j,t}$: The national immigration inflow. 
+- The shift $m_{t}$: The national immigration inflow. 
 
 Note that the shifts vary at a national level and the shares at a regional level.
 
@@ -78,8 +77,6 @@ E[\frac{1}{I} \sum_{i} z_{i,t} \epsilon_{i,t}] = 0
 <br>
 <br>
 
-## Identifying assumptions
-
 Two recent perspectives in literature each highlight different assumptions for the shift-share instrumental approach to work: the share- and the shift-view. 
 
 ### Share-view 
@@ -98,7 +95,7 @@ Various strategies help explore the validity of this share exogeneity assumption
 - An overidentification test
 {{% /tip %}}
 
-### Other assumptions
+#### Other assumptions
 
 - **Absence of spatial spillover effects**
 
