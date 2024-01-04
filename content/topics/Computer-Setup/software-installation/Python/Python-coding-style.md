@@ -49,11 +49,14 @@ Use concise and meaningful names for variables, functions, classes, and modules.
 {{% codeblock %}}
 ```python
 # Good
-school_type
-SchoolType
+school_type = "Primary" # variable
+class SchoolType:       # class
+    pass
 
 # Bad
-school.type
+school.type = 3     # variable 
+class school_type:  # class
+  pass
 ```
 {{% /codeblock %}}
 
@@ -119,12 +122,12 @@ foo = long_function_name(var_one, var_two,
 # Both options work.
 my_list = [
     1, 2, 3,
-    4, 5, 6,
+    4, 5, 6
     ]
 
 my_list = [
     1, 2, 3,
-    4, 5, 6,
+    4, 5, 6
 ]
 ```
 {{% /codeblock %}}
@@ -180,7 +183,7 @@ if x == 2 : print(x , y) ; x , y = y , x
 buy(1)
 
 # Bad
-buy(1)
+buy (1)
 ```
 {{% /codeblock %}}
 
@@ -247,14 +250,9 @@ if attr == True:
   print('attr is truthy!')
 ```
 {{% /codeblock %}}
-
-{{% tip %}}
-**Additional notes**
-- When opening text files for writing or appending text, use [`open`](https://docs.python.org/2/library/functions.html)'s option `mode = "wb"` or `mode  =  "ab"` respectively to write in binary mode. This improves portability across operating systems.
--  When opening text files for reading, use [`open`](https://docs.python.org/2/library/functions.html)'s option `mode = "rU"` to enable universal newline support.
-{{% /tip %}}
-
+ 
 #### Supplemental resources:
 
+- Python's style guide [PEP 8](https://www.python.org/dev/peps/pep-0008/#programming-recommendations)
 - [The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest/), especially the sections on [coding style](http://docs.python-guide.org/en/latest/writing/style/) and [packaging conventions](http://docs.python-guide.org/en/latest/writing/structure/).
 - [Google's Python Style Guide](https://google.github.io/styleguide/pyguide.html), especially recommendations concerning [string formatting](https://google.github.io/styleguide/pyguide.html#Strings) and the rule to always explicitly close [files and sockets](https://google.github.io/styleguide/pyguide.html?showone=Files_and_Sockets#Files_and_Sockets).
