@@ -1,5 +1,5 @@
 ---
 draft: false
-title: "Developping Coding Skills"
+title: "Developing Coding Skills"
 weight: 2
 ---
