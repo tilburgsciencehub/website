@@ -23,7 +23,7 @@ aliases:
 Analysis of causal impacts within regional economic studies comes with challenges. It is often difficult to isolate true relationships between variables. Endogeneity issues are likely to arise, where the independent variable is correlated with the error term. This leads to biased coefficients in OLS regression. 
 
 ### Effect of immigration on unemployment
-A typical question asked in economics is the impact of immigration on unemployment. This analysis seems straightforward with national panel data; if immigrants are substitutes to natives, immigration inflow is expected to rise unemployment. You would run the following regression: 
+A typical question asked in economics is the impact of immigration on unemployment. This analysis seems straightforward with national panel data; if immigrants are substitutes for natives, immigration inflow is expected to raise unemployment. You would run the following regression: 
 
 {{<katex>}}
 UR_{i,t} = \beta_0 + \beta_1 IM_{i,t} + \beta_2 X_{i,t} + \epsilon_{i,t}
@@ -39,15 +39,13 @@ where
 
 
 However, there is a concern with this regression design.
-If immigrants, seeking opportunities, are likely to grativate towards regions which lower unemployment rates, immigration itself is driven by regional unemployment rates. This potential reverse causality creates an endogeneity problem. 
+If immigrants, seeking opportunities, are likely to gravitate towards regions with lower unemployment rates, immigration itself is driven by regional unemployment rates. This potential reverse causality creates an endogeneity problem. 
 
 ## The shift-share instrument
 
-A shift-share instrument (also called Bartik instrument) can be used to help solve this endogeneity issue. 
+A shift-share instrument (also called the Bartik instrument) can be used to help solve this endogeneity issue. The shift-share IV decomposes changes in economic variables within regions into two components: the shift and the share. They are both assumed to be **exogenous** and together they can exogenously predict immigration inflows.
 
-The shift-share IV decomposes changes in economic variables within regions into two components: the shift and the share. They are both assumed to be **exogenous** and together they can exogenously predict immigration inflows.
-
-For the migration example, the instrument is a weighted average of predicted national iimmigration inflow rates (*the shifts*), with weights depending on the initial distribution of immigrants(*the shares*). In mathematical terms:
+For the migration example, the instrument is a weighted average of predicted national immigration inflow rates (*the shifts*), with weights depending on the initial distribution of immigrants(*the shares*). In mathematical terms:
 
 {{<katex>}}
 z_{i,t} = \sum_{i=1}^I s_{i,t-1} * m_{t}
@@ -55,11 +53,11 @@ z_{i,t} = \sum_{i=1}^I s_{i,t-1} * m_{t}
 <br>
 Where:
 
-- The share $s_{i,t-1}$: The lagged or "initial" distribution of the share of immigrants in region $i$ (i.e. past settlement)
+- The share $s_{i,t-1}$: The lagged or "initial" distribution of the share of immigrants in the region $i$ (i.e. past settlement)
 
 - The shift $m_{j,t}$: The national immigration inflow. 
 
-Note that the shifts vary at a national level, and the shares at a regional level.
+Note that the shifts vary at a national level and the shares at a regional level.
 
 ### The regression model
 
@@ -82,7 +80,7 @@ E[\frac{1}{I} \sum_{i} z_{i,t} \epsilon_{i,t}] = 0
 
 ## Identifying assumptions
 
-Two recent perspectives in literature each highlight different assumptions  for the shift-share instrumental approach to work: the share- and the shift-view. 
+Two recent perspectives in literature each highlight different assumptions for the shift-share instrumental approach to work: the share- and the shift-view. 
 
 ### Share-view 
 
@@ -104,7 +102,7 @@ Various strategies help explore the validity of this share exogeneity assumption
 
 - **Absence of spatial spillover effects**
 
-Absence of spatial spillovers means that the outcomes in one location are not influenced by the outcomes in neighboring regions, ensuring the independence of observations. This is not straightforward: If for example domestic migration happens as a response to immigration inflow (native workers respond to immigration by moving to other regions), the negative effect of immigration on unemployment rates is likely to be overestimated. 
+The absence of spatial spillovers means that the outcomes in one location are not influenced by the outcomes in neighboring regions, ensuring the independence of observations. This is not straightforward: If for example, domestic migration happens as a response to immigration inflow (native workers respond to immigration by moving to other regions), the negative effect of immigration on unemployment rates is likely to be overestimated. 
 
 
 - **Independent data periods**
@@ -124,7 +122,7 @@ exposure $s_{t}$.
 
 -  **Many uncorrelated shifts**
 
-This condition implies that when there are many regions, the shifts in different regions are becoming increasingly uncorrelated to each others. In other words, the covariance between the shifts in one region and the shifts in another region become close to zero when comparing different regions:
+This condition implies that when there are many regions, the shifts in different regions are becoming increasingly uncorrelated to each other. In other words, the covariance between the shifts in one region and the shifts in another region becomes close to zero when comparing different regions:
 
 $Cov(m_t, m_t' | \bar{\epsilon}, s) = 0$ for all $m' \neq m$
 
@@ -133,7 +131,7 @@ $Cov(m_t, m_t' | \bar{\epsilon}, s) = 0$ for all $m' \neq m$
 
 Several studies demonstrate the application of the shift-share instrument in various economic contexts. 
 
-Note: The instrument is $z_{l} = \sum_{n} s_{l,n} * m_{n}$ where shifts (shocks) vary at another level (`n`) than the shares(`l`), and outcome and treatment are observed at level `l`.
+Note: The instrument is $z_{l} = \sum_{n} s_{l,n} * m_{n}$ where shifts (shocks) vary at another level (`n`) than the shares (`l`), and outcome and treatment are observed at level `l`.
 
 | Context                                        | Shift-Share Instrument                                | Authors                                    |
 |-------------------------------------------|----------------------------------------------------|--------------------------------------------------|
@@ -169,7 +167,7 @@ ivreg_ss(d_sh_empl ~ 1 | shock,
   - `d_sh_empl` is the dependent variable; the change in the share of the working-age population.
   - No controls are added, thus the `controls` term equals `1`.
   - `shock` is the endogenous regressor and represents the local China imports. 
-  - The instrument used to replace *shock* is `IV`. This is the shift-share vector, with length N of sectoral shocks, aggregated to regional level using the share matrix W.
+  - The instrument used to replace *shock* is `IV`. This is the shift-share vector, with length N of sectoral shocks, aggregated to the regional level using the share matrix W.
 - `W` is a matrix of sector shares (the weights).
 - `method` specifies which inference methods to use.
 
@@ -179,9 +177,9 @@ ivreg_ss(d_sh_empl ~ 1 | shock,
 </p>
 
 {{% summary %}}
-The shift-share instrument is a powerful tool in addressing endogeneity issues in regional economic studies. By decomposing the endogenous shift into a weighted average of shifts and shares that vary on other levels, an exogenous instrument can be used.
+The shift-share instrument is a powerful tool for addressing endogeneity issues in regional economic studies. By decomposing the endogenous shift into a weighted average of shifts and shares that vary on other levels, an exogenous instrument can be used.
 
 
-Within the share view, ensure conditions hold related to the exogeneity of shares, absence of spatial spillover effects, and independent data periods. The shift view requires conditions of quasi-random shock assignment, and the presence of uncorrelated shocks.
+Within the share view, ensure conditions hold related to the exogeneity of shares, absence of spatial spillover effects, and independent data periods. The shift view requires conditions of quasi-random shock assignment and the presence of uncorrelated shocks.
 {{% /summary %}}
 
