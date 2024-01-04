@@ -27,11 +27,11 @@ Sometimes, the download defaults to Mac, so if you're on Windows or Linux, make 
 Then, follow the steps provided on the website.
 
 {{% warning %}}
-During the installation you will be asked whether you want Anaconda Python to be added to your PATH. **Click yes!**
+During the installation, you will be asked whether you want Anaconda Python to be added to your PATH. **Click yes!**
 Even if the installation window gives a warning about adding it to your PATH, please still check that box.
 {{% /warning %}}
 
-Note that the installation of Anaconda may take about 5-10 minutes, dependening on how fast your computer is.
+Note that the installation of Anaconda may take about 5-10 minutes, depending on how fast your computer is.
 
 {{% warning %}}
 **For Windows Users**
@@ -44,7 +44,7 @@ Note that the installation of Anaconda may take about 5-10 minutes, dependening 
 {{% warning %}}
 **For Linux Users**
 
-For some users Python was not added to the path. To quickly do this, please open a terminal window, paste ```echo '$HOME/anaconda3/bin:$PATH' >> ~/.bashrc``` and press `Return`.
+For some users, Python was not added to the path. To quickly do this, please open a terminal window, paste ```echo '$HOME/anaconda3/bin:$PATH' >> ~/.bashrc``` and press `Return`.
 {{% /warning %}}
 
 ## Verifying that the installation was successful
@@ -76,7 +76,7 @@ Python 3.x.x :: Anaconda custom (64-bit)
 
 Python 2 and 3 are incompatible in syntax.
 If you had Python 2 previously installed on your machine,
-you might have seen `Python 2.x.x` above. In that case try typing
+you might have seen `Python 2.x.x` above. In that case, try typing
 
 ```python3 --version```
 
