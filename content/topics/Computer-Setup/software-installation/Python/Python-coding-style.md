@@ -12,13 +12,13 @@ aliases:
 
 # Overview
 
-We follow the Python's style guide, [PEP 8](https://www.python.org/dev/peps/pep-0008/#programming-recommendations), emphasizing readability and consistency. In this topic, we highlight some of the best practices with code examples. 
+We follow Python's style guide [PEP 8](https://www.python.org/dev/peps/pep-0008/#programming-recommendations), emphasizing readability and consistency. In this topic, we highlight some of the best practices with code examples. 
 
-Note that sometimes your judgment is required, decide what looks best even though it doesn't always comply with the guidelines!
+Note that sometimes your own judgment is required, and what suits best for your project does not always comply with the guidelines!
 
 ## Straightforward code
 
-Keep the code as explicit and readable as possible. Both examples below return the same thing, while with the good example it is more obvious what is happening.
+Keep the code as explicit and readable as possible. Both examples below return the same thing, while in the good example, it is more obvious what is happening.
 
 {{% codeblock %}}
 ```python
@@ -27,7 +27,7 @@ Keep the code as explicit and readable as possible. Both examples below return t
 def make_complex(x, y):
     return {'x': x, 'y': y}
 
-# Bad: complexer than necessary
+# Bad
 def make_complex(*args):
     x, y = args
     return dict(**locals())
@@ -105,13 +105,13 @@ fun = long_function_name(
     var_one, var_two
     var_three, var_four)
 
-# Bad: arguments on first line
+# Bad
 foo = long_function_name(var_one, var_two,
     var_three, var_four)
 ```
 {{% /codeblock %}}
 
-Closing symbols may align with the first non-whitespace character of the last line or the first character of the line starting the construct.
+- Closing symbols may align with the first non-whitespace character of the last line or the first character of the line starting the construct.
 
 {{% codeblock %}}
 ```python
@@ -172,8 +172,7 @@ if x == 2 : print(x , y) ; x , y = y , x
 ```
 {{% /codeblock %}}
 
-
-- Before the open parenthesis that starts the argument list of function call
+- Before the open parenthesis that starts the argument list of a function call
 
 {{% codeblock %}}
 ```python
@@ -213,8 +212,7 @@ long_variable = 3
 ```
 {{% /codeblock %}}
 
-
-- At the end of a line (known as trailing whitespace). It is usually invisible, but can be confusing. 
+- At the end of a line (known as trailing whitespace). It is usually invisible but can be confusing. 
 
 ## Comments
 
@@ -250,13 +248,9 @@ if attr == True:
 ```
 {{% /codeblock %}}
 
-
-
-
-
 {{% tip %}}
 **Additional notes**
-- When opening text files for writing or appending text, use [`open`](https://docs.python.org/2/library/functions.html)'s option `mode = "wb"` or `mode  =  "ab"` respectively to  write in binary mode. This improves portability across operating systems.
+- When opening text files for writing or appending text, use [`open`](https://docs.python.org/2/library/functions.html)'s option `mode = "wb"` or `mode  =  "ab"` respectively to write in binary mode. This improves portability across operating systems.
 -  When opening text files for reading, use [`open`](https://docs.python.org/2/library/functions.html)'s option `mode = "rU"` to enable universal newline support.
 {{% /tip %}}
 
