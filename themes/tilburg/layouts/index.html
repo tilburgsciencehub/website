@@ -279,24 +279,23 @@
             <ul class="my-2 list-unstyled">
               {{ $s := slice }}
               {{ $displayedTitles := dict }}
-
+            
               {{ range where .Site.Pages.ByLastmod.Reverse "Section" "in" "topics" }}
-              {{ $title := .Title }}
-              {{ if not (index $displayedTitles $title) }}
-              {{ $s = $s | append . }}
-              {{ $displayedTitles = merge $displayedTitles (dict $title true) }}
+                {{ if and (not (eq .File.BaseFileName "_index")) (not (index $displayedTitles .Title)) }}
+                  {{ $s = $s | append . }}
+                  {{ $displayedTitles = merge $displayedTitles (dict .Title true) }}
+                {{ end }}
               {{ end }}
-              {{ end }}
-
+            
               {{ with $s.ByLastmod.Reverse | first 3 }}
-              {{ range . }}
-              <li class="pb-3">
-                <span class="icon link text-primary d-inline-block mr-2"></span>
-                <a href="{{ .Permalink }}">{{ .Title }}<sup style="color: #ffb222;"> new </sup></a>
-              </li>
+                {{ range . }}
+                  <li class="pb-3">
+                    <span class="icon link text-primary d-inline-block mr-2"></span>
+                    <a href="{{ .Permalink }}">{{ .Title }}<sup style="color: #ffb222;"> new </sup></a>
+                  </li>
+                {{ end }}
               {{ end }}
-              {{ end }}
-            </ul>
+            </ul>            
 
 
           </div>
@@ -451,7 +450,7 @@
   <div class="row py-5">
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 text-center">
-      <img src="/img/community-members.png" style="max-width: 100%;height: auto;" alt="Open science community"
+      <img src="/img/community-members.webp" style="max-width: 100%;height: auto;" alt="Open science community"
         loading="lazy" class="community_members">
     </div>
     <div class="col-lg-2 col-0"></div>
@@ -508,7 +507,7 @@
   body::before {
     content: "";
     position: absolute;
-    top: 1400px;
+    top: 1325px;
     width: 100%;
     height: 2400px;
     z-index: -1;
