@@ -88,9 +88,9 @@ We will now use the `compare_means()` function from the `rstatix` package, desig
 {{% tip %}}
 __How does the `compare_means` function work?__
 
-- **Syntax**:
+-**Syntax**:
   - compare_means(formula, data, method, ref.group)
-- **Components:**
+**Components:**
 - formula: This is where you specify the comparison you want to make.
   - Example: height ~ gender implies comparing the average height across different genders.
 - data: This parameter is used to specify the dataset in which the comparison is to be made.
@@ -120,6 +120,10 @@ stat.test
 ```
 
 {{% /codeblock %}}
+
+<p align = "center">
+<img src = "../images/stat-test.png" width="450">
+</p>
 
 ### Step 4: Data Visualization using `ggpubr`
 
@@ -165,6 +169,10 @@ ggbarplot(
 )
 ```
 {{% /codeblock %}}
+
+<p align = "center">
+<img src = "../images/ggpubr-1-test.png" width="450">
+</p>
 
 ### Step 5: Adding Statistical Significance with `stat_p_value()`
 
