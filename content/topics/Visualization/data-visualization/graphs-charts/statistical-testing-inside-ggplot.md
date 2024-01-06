@@ -122,7 +122,7 @@ stat.test
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/stat-test.png" width="450">
+<img src = "../images/stat-test.png" width="600">
 </p>
 
 ### Step 4: Data Visualization using `ggpubr`
@@ -171,7 +171,7 @@ ggbarplot(
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/ggpubr-1-test.png" width="450">
+<img src = "../images/ggpubr-1.png" width="450">
 </p>
 
 ### Step 5: Adding Statistical Significance with `stat_p_value()`
