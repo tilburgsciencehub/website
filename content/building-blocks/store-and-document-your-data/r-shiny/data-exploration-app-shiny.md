@@ -92,7 +92,7 @@ Your `Shiny` app incorporates the following elements:
 
 {{% /example %}}
 
-### Incorporatig Additional File Types 
+### Incorporating Additional File Types 
 To extend the capabilities of your `Shiny` application to handle other file types, such as Excel or JSON, you can incorporate additional logic into the server function. Here are some tips for doing so:
 
 - **Identify File Types**: Determine the additional file types you want your app to support. Common types include Excel (.xlsx), JSON (.json), and text files (.txt).

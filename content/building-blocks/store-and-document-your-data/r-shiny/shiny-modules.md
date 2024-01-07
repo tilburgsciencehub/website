@@ -180,6 +180,10 @@ shinyApp(ui, server)
 
 {{% /codeblock %}}
 
+<p align = "center">
+<img src = "../images/modules-1.png" width="800">
+</p>
+
 {{% tip %}}
 
 **Module reusability** 
@@ -263,6 +267,10 @@ shinyApp(ui, server)
 ```
 
 {{% /codeblock %}}
+
+<p align = "center">
+<img src = "../images/modules-2.png" width="800">
+</p>
 
 {{% example %}}
 
