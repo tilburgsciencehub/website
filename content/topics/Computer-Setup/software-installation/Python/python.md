@@ -51,25 +51,33 @@ For some users Python was not added to the path. To quickly do this, please open
 
 To verify that the correct version of Python has been installed and was made available in your PATH settings, close your terminal and open a **new** terminal interface and enter:
 
-
+{{% codeblock %}}
 ```bash
 python --version
 ```
+{{% /codeblock %}}
+
 followed by hitting the `Return` key.
 
 You should see the following information returned:
 
 ### Windows users
 
+{{% codeblock %}}
 ```bash
 Python 3.x.x :: Anaconda, Inc.
 ```
+{{% /codeblock %}}
+
 
 ### Mac & Linux/Ubuntu users
 
+{{% codeblock %}}
 ```bash
 Python 3.x.x :: Anaconda custom (64-bit)
 ```
+{{% /codeblock %}}
+
 
 {{% tip %}}
 **Python 2 versus Python 3**
