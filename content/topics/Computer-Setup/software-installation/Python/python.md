@@ -63,21 +63,15 @@ You should see the following information returned:
 
 ### Windows users
 
-{{% codeblock %}}
 ```bash
 Python 3.x.x :: Anaconda, Inc.
 ```
-{{% /codeblock %}}
-
 
 ### Mac & Linux/Ubuntu users
 
-{{% codeblock %}}
 ```bash
 Python 3.x.x :: Anaconda custom (64-bit)
 ```
-{{% /codeblock %}}
-
 
 {{% tip %}}
 **Python 2 versus Python 3**
