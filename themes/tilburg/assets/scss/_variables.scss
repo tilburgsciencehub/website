@@ -43,6 +43,8 @@ $yellow: #ff9c00 !default;
 $green: #28a745 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
+$yellowbrown:  #976B24 !default;
+$secondarywhite: #F2F2F0 !default;
 
 $colors: () !default;
 $colors: map-merge(
@@ -64,8 +66,8 @@ $colors: map-merge(
   $colors
 );
 
-$primary: $yellow !default;
-$secondary: #003365 !default;
+$primary: $yellowbrown !default;
+$secondary: #035F94 !default;
 $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
@@ -171,7 +173,7 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg: transparent !default;
-$body-color: #003365 !default;
+$body-color: $secondary !default;
 
 // Links
 //
@@ -237,9 +239,9 @@ $line-height-sm: 1.5 !default;
 $border-width: 1px !default;
 $border-color: $gray-300 !default;
 
-$border-radius: 0.25rem !default;
-$border-radius-lg: 2rem !default;
-$border-radius-sm: 0.2rem !default;
+$border-radius: 0rem !default;
+$border-radius-lg: 0.2rem !default;
+$border-radius-sm: 0rem !default;
 
 $rounded-pill: 50rem !default;
 
@@ -382,7 +384,7 @@ $table-border-level: -6 !default;
 
 $input-btn-padding-y: 0.45rem !default;
 $input-btn-padding-x: 1.2rem !default;
-$input-btn-font-family: "forma-djr-display" !default;
+$input-btn-font-family: "lato", Arial, sans-serif !default;
 $input-btn-font-size: 1rem !default;
 $input-btn-line-height: $line-height-base !default;
 
@@ -407,7 +409,7 @@ $input-btn-border-width: $border-width !default;
 // For each of Bootstrap's buttons, define text, background, and border color.
 
 $btn-padding-y: 0.5rem !default;
-$btn-padding-x: 1.9rem !default;
+$btn-padding-x: 1rem !default;
 $btn-font-family: $input-btn-font-family !default;
 $btn-font-size: $input-btn-font-size !default;
 $btn-line-height: $input-btn-line-height !default;

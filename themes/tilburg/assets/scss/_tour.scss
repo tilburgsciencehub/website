@@ -1897,7 +1897,7 @@
   min-width: 15px;
   border-radius: 100%;
   background-color: #fff;
-  box-shadow: 0 0 0 8px #F0F5F9;
+  box-shadow: 0 0 0 8px #F2F2F0;
 }
 
 .timeline_progress {
@@ -1918,8 +1918,8 @@
   width: 3px;
   height: 50vh;
   background-color: #fff;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4848), color-stop(51%, #ff8200), to(#ff9c00));
-  background-image: linear-gradient(180deg, #ff4848, #ff8200 51%, #ff9c00);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4848), color-stop(51%, #ff8200), to($primary));
+  background-image: linear-gradient(180deg, #ff4848, #ff8200 51%, $primary);
 }
 
 .section-timeline {
@@ -2096,8 +2096,8 @@
   right: 0%;
   bottom: auto;
   height: 80px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f0f5f9), to(rgba(240, 245, 249, 0)));
-  background-image: linear-gradient(180deg, #f0f5f9, rgba(240, 245, 249, 0));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F2F2F0), to(rgba(240, 245, 249, 0)));
+  background-image: linear-gradient(180deg, #F2F2F0, rgba(240, 245, 249, 0));
 }
 
 .overlay-fade-bottom {
@@ -2107,8 +2107,8 @@
   right: 0%;
   bottom: 0%;
   height: 80px;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#f0f5f9), to(rgba(240, 245, 249, 0)));
-  background-image: linear-gradient(0deg, #f0f5f9, rgba(240, 245, 249, 0));
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#F2F2F0), to(rgba(240, 245, 249, 0)));
+  background-image: linear-gradient(0deg, #F2F2F0, rgba(240, 245, 249, 0));
 }
 
 .margin-bottom-small {
