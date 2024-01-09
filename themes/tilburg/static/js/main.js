@@ -590,8 +590,12 @@ for (let i = 0; i < allTooltips.length; i++) {
   div.setAttribute("current", i);
 
   div.innerText = allTooltips[i]?.getAttribute("onBoardTooltip");
-  div.style = `left: ${allTooltips[i].getBoundingClientRect().left - 80
-    }px`;
+
+  if (i == allTooltips.length - 2){
+    div.style = `left: ${allTooltips[i].getBoundingClientRect().left - 20}px`;
+  } else {
+  div.style = `left: ${allTooltips[i].getBoundingClientRect().left - 80}px`;
+  }
 
   // navigation
   const navigationDiv = document.createElement("div");
@@ -800,7 +804,6 @@ $(document).ready(function () {
           const ctaElement = document.createElement('a');
           ctaElement.textContent = 'Read more';
           ctaElement.style.setProperty('color', 'white', 'important');
-          ctaElement.style.setProperty('font-family', 'forma-djr-display', 'important')
           ctaElement.href = item.path;
           ctaElement.classList.add('btn', 'btn-primary', 'my-2', 'my-sm-0');
 

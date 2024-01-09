@@ -30,7 +30,7 @@
 
 
 			</div>
-			
+
 			<!-- Mobile Icons for Nav -->
 			<div class="text-right d-block d-xl-none ">
 				<a href="#0" id="mobileSearchIcon">
@@ -65,13 +65,15 @@
 
 								{{ range .Pages }}
 								<div class="col-6 mb-4 px-3">
-									<a href="{{ .Permalink }}" class="mb-3 mt-0"><span class="heading d-block text-secondary"
-										style="font-size: 16px;">{{.Title}}</span></a>
+									<a href="{{ .Permalink }}" class="mb-3 mt-0"><span
+											class="heading d-block text-secondary"
+											style="font-size: 16px;font-weight:bold;">{{.Title}}</span></a>
 									{{ range .Pages }}
 									{{ if eq .Params.indexexclude "true" }}
 									<!--<a class="d-block mx-0" href="{{.Permalink}}">DONOTSHOW{{.Title}}</a>-->
 									{{ else }}
-									<a class="d-block mx-0" href="{{ .Permalink }}">{{ if .Params.tutorialtitle }}{{ .Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
+									<a class="d-block mx-0" href="{{ .Permalink }}">{{ if .Params.tutorialtitle }}{{
+										.Params.tutorialtitle }}{{ else }}{{ .Title }}{{ end }}</a>
 
 									{{ end }}
 									{{ end }}
@@ -151,7 +153,8 @@
 								{{- range .Pages -}}
 								<div class="col-6 mb-4 px-2">
 									{{ if .Title }}
-									<a id="exampleMenu" class="heading d-block mb-3 text-secondary" href="{{.Permalink}}">{{- .Title -}}</a>
+									<a id="exampleMenu" class="heading d-block mb-3 text-secondary"
+										href="{{.Permalink}}">{{- .Title -}}</a>
 									{{ end }}
 								</div>
 								{{ end }}
@@ -162,7 +165,7 @@
 					</li>
 
 					<li><a href="/about" class="headerLink menuArrow">About</a>
-						<div style="margin-left:63%;" class="bg-white text-left border-top boxShadow subMenu p-4">
+						<div style="margin-left:57%;" class="bg-white text-left border-top boxShadow subMenu p-4">
 							<div class="row">
 								<div class="col-24 h-100">
 									<a class="d-block mx-0" href="/about/">About Tilburg Science Hub</a>
@@ -179,40 +182,50 @@
 			<!-- Search & Contribute -->
 			<div class="text-right">
 				<form class="form-inline text-right float-right d-none d-xl-flex" method="GET" action="/search">
-					<div style="width: 230px" class="form-control mr-sm-2 headerSearch bg-light border-0">
-						<input class="resetInput"
-							onBoardTooltip="Search for topics, tutorials, tips, or tools, and explore our content at a glance."
-							type="search" name="q" placeholder="Search" aria-label="Search" required autocomplete="off">
-						<button style="background-color: transparent; padding: 0;" type="submit"><img
-								src="/img/search.svg" aria-label="search button"/></button>
-					</div>
-					<a href="/contribute/" style="position: inherit;" class="btn btn-primary my-2 py-2 my-sm-0"
-						onBoardTooltip="Tilburg Science Hub is an open-source platform and welcomes new contributors!">Contribute</a>
-						<div style="margin-left:85%" class="bg-white js text-left w-20 boxShadow subMenu">
+					<div>
+						<div style="width: 230px" class="form-control mr-sm-2 headerSearch bg-light border-0">
+							<input class="resetInput"
+								onBoardTooltip="Search for topics, tutorials, tips, or tools, and explore our content at a glance."
+								type="search" name="q" placeholder="Search" aria-label="Search" required
+								autocomplete="off">
+							<button style="background-color: transparent; padding: 0;" type="submit"><img
+									src="/img/search.svg" aria-label="search button" /></button>
+						</div>
+						<a href="/contribute/" class="headerLink btn btn-primary my-2 py-2 my-sm-0"
+							onBoardTooltip="Tilburg Science Hub is an open-source platform and welcomes new contributors!">Contribute</a>
+						<div style="margin-left:85%" class="bg-white text-left border-top boxShadow subMenu">
 							<div class="row">
 								<div class="col-24 pr-0 h-100 p-5 px-3">
-									<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Contribute to Tilburg Science Hub</span>
+									<span class="heading d-block mb-3 text-secondary"
+										style="font-size: 16px;font-weight: bold;">Contribute to Tilburg Science Hub</span>
 									<a class="d-block mx-0" href="/contribute/">What and how to contribute?</a>
-									<a class="d-block mx-0" href="https://github.com/tilburgsciencehub/website/issues/new/choose">Submit a new issue on GitHub</a>
-									<a class="d-block mx-0" href="https://tilburgsciencehub.com/onboarding">View our lab documentation</a>
-									<a class="d-block mx-0" href="https://github.com/orgs/tilburgsciencehub/repositories">Check out our repositories</a>
+									<a class="d-block mx-0"
+										href="https://github.com/tilburgsciencehub/website/issues/new/choose">Submit a
+										new issue on GitHub</a>
+									<a class="d-block mx-0" href="https://tilburgsciencehub.com/onboarding">View our lab
+										documentation</a>
+									<a class="d-block mx-0"
+										href="https://github.com/orgs/tilburgsciencehub/repositories">Check out our
+										repositories</a>
 								</div>
 							</div>
 						</div>
+
+					</div>
 				</form>
 			</div>
-			
+
 		</div>
 
 		<!-- Mobile Search menu -->
-		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileSearchMenu"
-			style="z-index: 10; margin-top: -2px;left: 0">
+		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm"
+			id="mobileSearchMenu" style="z-index: 10; margin-top: -2px;left: 0">
 			<div class="form-control mr-sm-2 headerSearchMobile bg-light border-0">
 				<form method="GET" action="/search">
 					<input class="resetInput" type="search" placeholder="Search" name="q" aria-label="Search" required
 						autocomplete="off">
 					<button style="background-color: transparent; padding: 0; float: right;" type="submit"><img
-							src="/img/search.svg" alt="search"/></button>
+							src="/img/search.svg" alt="search" /></button>
 				</form>
 			</div>
 
@@ -256,7 +269,8 @@
 			<div class="screen-2 d-none">
 				<!-- building blocks -->
 				<div id="mobile-building-blocks" class="d-none">
-					<a href="#0" class="py-3 border-bottom d-block gotoMainMenu"><span class="icon mini-left text-primary"></span>
+					<a href="#0" class="py-3 border-bottom d-block gotoMainMenu"><span
+							class="icon mini-left text-primary"></span>
 						Building Blocks</a>
 					<br>
 					{{- range where .Site.Pages "Section" "topics" -}}
@@ -319,12 +333,12 @@
 					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
 							class="icon mini-left text-primary"></span> About</a>
 					<br>
-					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="/about">About Tilburg Science Hub<span
-						class="icon mini-right float-right"></span> </a>
-					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="/contributors">Meet our contributors<span
-							class="icon mini-right float-right"></span> </a>
+					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="/about">About Tilburg Science
+						Hub<span class="icon mini-right float-right"></span> </a>
+					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="/contributors">Meet our
+						contributors<span class="icon mini-right float-right"></span> </a>
 					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="/blog">Visit our blog<span
-						class="icon mini-right float-right"></span> </a>
+							class="icon mini-right float-right"></span> </a>
 				</div>
 
 				<!-- Examples -->
@@ -337,13 +351,14 @@
 					{{ if ne .Title "Examples" }}
 					<div class="mb-4">
 						<a class=" d-block mb-3 text-secondary heading"
-							style="color: #035F94!important; font-family: forma-djr-display,sans-serif;" href="{{.Permalink}}">{{- .Title -}}</a>
+							style="color: #035F94!important; font-family: forma-djr-display,sans-serif;"
+							href="{{.Permalink}}">{{- .Title -}}</a>
 					</div>
 					{{ end }}
 					{{ end }}
 
 				</div>
-				
+
 				<!-- Tour -->
 				<div class="mobile-tour d-none" id="mobile-tour">
 					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
@@ -352,9 +367,11 @@
 
 					<div class="mb-4">
 						<a class=" d-block mb-3 text-secondary heading"
-							style="color: #035F94!important; font-family: forma-djr-display,sans-serif;" href="/tour">For students</a>
+							style="color: #035F94!important; font-family: forma-djr-display,sans-serif;"
+							href="/tour">For students</a>
 						<a class=" d-block mb-3 text-secondary heading"
-							style="color: #035F94!important; font-family: forma-djr-display,sans-serif;" href="/researcher-tour">For
+							style="color: #035F94!important; font-family: forma-djr-display,sans-serif;"
+							href="/researcher-tour">For
 							researchers</a>
 					</div>
 
