@@ -12,13 +12,11 @@ aliases:
 
 ## Overview
 
-We discuss the fundamental basics of Python programming, preparing you to start using and experimenting with this cool programming yourself! Once you understand the basics, the opportunities of Python are almost infinite. 
+We introduce you to Python, with the fundamental basics which prepare you to start using and experimenting with this cool programming language yourself! Once you understand the basics, the opportunities of Python are almost infinite. 
 
 ## Variables
 
-Variables can only be one word, and can contain letters, numbers, and underscores. They cannot begin with a number but can have numbers elsewhere in the name. Names are case-sensitive (myVar is different from myvar). It's common in Python to use underscores to separate words in variable names, for example: user_name, total_count, my_groceries. Choose meaningful and descriptive names for variables to enhance code readability. 
-
-Some examples are: 
+Variables can only be one word and can contain letters, numbers, and underscores. They cannot begin with a number but can have numbers elsewhere in the name. Names are case-sensitive (`myVar` is different from `myvar`). It's common in Python to use underscores to separate words in variable names, for example: `user_name`, `total_count`, `my_groceries`. Choose meaningful and descriptive names for variables to enhance code readability. Some examples are: 
 
 {{% codeblock %}}
 ```python
@@ -31,9 +29,9 @@ user_name = "Ellis"
 ## Data types
 Python offers several built-in data types. The 4 basic types are **Numeric, String, Boolean, and Sequence data types**
 
-1. Numeric types
+1. **Numeric types**
 
-This type holds numberic values, and has three different classes:
+This type holds numeric values, and has three different classes:
 - Integers (`int`): whole numbers without decimal points
 - Floating-point numbers (`float`): numbers with decimal points
 - Complex numbers  (`complex`): numbers with a real and imaginary part
@@ -50,15 +48,11 @@ print(type(integer_var))
 ```
 {{% /codeblock %}}
 
-The following output is returned, showing the variable is of the integer type, as expected:
+Python returns `int`, as expected.
 
-```python
-<class 'int'>
-```
+2. **String type**
 
-2. String type
-
-Text values composed of a sequence of characters. To convert another data type to a string, use `str()`.
+Text values are composed of a sequence of characters. To convert another data type to a string, use `str()`.
 
 {{% codeblock %}}
 ```python
@@ -77,9 +71,9 @@ Output:
 One apple costs 1 Dollar
 ```
 
-3. Boolean types
+3. **Boolean types**
 
-Boolean types are True or False values (first letter is a capital letter!).
+Boolean types are True or False values (the first letter is a capital letter!).
 
 
 {{% codeblock %}}
@@ -91,15 +85,14 @@ x = False
 ```
 {{% /codeblock %}}
 
-4.  Sequence data types
+4.  **Sequence types**
 
-The sequence data types hold a collection of data types. E.g.
+A sequence data type holds a collection of data types. E.g.
 - string (`str`) for representing text. Either single or double-quotes work.
 - `list` for ordered and *mutable* sequences of elements.
 - `tuple` for ordered and *immutable* sequences of elements.
 
-Note that a list and tuple can hold different types of data!
-Examples of how to create a string, list or tuple:
+Note that a list and tuple can hold different types of data! Examples of how to create a string, list, or tuple:
 
 {{% codeblock %}}
 ```python
@@ -177,7 +170,7 @@ pancakes = {
 ```
 {{% /codeblock %}}
 
-Add ingredient (new `key`: `value` pair) with:
+Add an extra ingredient (new `key`: `value` pair) like this:
 
 {{% codeblock %}}
 ```python
@@ -201,7 +194,7 @@ pancakes['eggs'] #returns 2
 ```
 {{% /codeblock %}}
 
-Get all values with `values()`, get all keys with `keys()`.
+Get all values with `values()`, and get all keys with `keys()`.
 
 {{% codeblock %}}
 ```python
@@ -226,7 +219,9 @@ pancakes
 
 ## Operators
 
-The most basic **math operators**:
+### Math operators
+
+The most basic math operators are:
 
 {{% codeblock %}}
 ```python
@@ -249,7 +244,9 @@ exponentiation = 2**3
 ```
 {{% /codeblock %}}
 
-**Assignment operators** are used to assign values to variables, they combine the assignment of a value with an operation. The most commonly used are:
+### Assignment operators
+
+Assignment operators are used to assign values to variables, they combine the assignment of a value with an operation. The most commonly used are:
 
 {{% codeblock %}}
 ```python
@@ -275,7 +272,9 @@ d **=2    # result is 16
 ```
 {{% /codeblock %}}
 
-**Numerical comparison operators** are used to compare values and return Boolean result (`True`/`False`).
+### Numerical comparison operators
+
+Numerical comparison operators are used to compare values and return a Boolean result (`True`/`False`).
 
 {{% codeblock %}}
 ```python
@@ -317,7 +316,7 @@ print(result) # returns -3
 
 #### Local or global variables
 
-Global variables are defined outside any function and class, and are accessible from any part of the code, useful for data that needs to be accessed from everywhere.
+Global variables are defined outside any function and class and are accessible from any part of the code, useful for data that needs to be accessed from everywhere.
 
 To modify a global variable from within a function, use the `global` keyword before the variable name to tell Python you are not creating a new local variable but are referring to the already existing global variable. Like this:
 
@@ -352,7 +351,7 @@ print(result)
 # returns 4
 
 print(x_local) 
-# Raises error: x_local not possible to access outside the function
+# Raises error: x_local not possible to access outside function
 
 ```
 {{% /codeblock %}}
@@ -360,7 +359,7 @@ print(x_local)
 
 ### Lambda functions
 
-Lambda functions are anonymous functions, meaning they don't have a name, like regular function defined with `def`. They can have any number of arguments, but are limited to a single expression. They are often used for quick one-off functions, where using an anonymous function prevents an overkill of function definition. For example, where a function is required as argument of another function. In the example, the lambda function squares each element in the list.
+Lambda functions are anonymous functions, meaning they don't have a name, like regular functions that are defined with `def`. They can have any number of arguments but are limited to a single expression. They are often used for quick one-off functions, where using an anonymous function prevents an overkill of function definition. For example, where a function is required as an argument of another function. In the example, the lambda function squares each element in the list.
 
 The `map` function is used to apply the lambda function to each item in the `numbers` list.
 
@@ -392,12 +391,12 @@ Python has basic built-in functions, with some of the most commonly used functio
 | `max()`, `min()` | Returns the largest or smallest item in an iterable |
 | `sorted()`  | Returns a new sorted list from an iterable    |
 | `range()`   | Generates a sequence of numbers; range(start, stop, step). <br> By default starts from 0 and increments by 1, <br> and stops before a specified number          |
-| `enumerate()` | Iterates over sequence and returns tuple containing **index and corresponding element** from the iterable                  |
+| `enumerate()` | Iterates over sequence and returns tuple <br> containing **index and corresponding element** from the iterable                  |
 | `map()`     | Applies a function to every item of iterable  |
 | `filter()`  | Selects elements from an iterable for which function returns True |
 | `abs()`     | Returns the absolute value of a number       |
 | `sum()`     | Adds all elements inan iterable and returns total      |
-| `fsolve()`  | Finds the roots of a function numerically, with function and initial guess added |
+| `fsolve()`  | Finds the roots of a function numerically, <br> with function and initial guess added |
 | `help()`    | Provides information about functions, classes etc.            |
 
 Examples of the use of some of these functions:
@@ -465,7 +464,6 @@ Both approaches produce the same result: `[2, 4, 6]`, a list containing the even
 
 For loops are used to iterate over a sequence (such as a list, or range). For example:
 
-
 {{% codeblock %}}
 ```python
 
@@ -523,11 +521,11 @@ Output:
 ```
 
 
-### `break`, `else`,  and `continue` statements
+### break, else,  and continue statements
 
-1. `break`
+1. break
 
-The break statement is used to exit a loop prematurely based on a certain condition. In this example, we search for a specific number in a list, and break out of the loop as soon as it finds the right number.
+The `break` statement is used to exit a loop prematurely based on a certain condition. In this example, we search for a specific number in a list, and break out of the loop as soon as it finds the right number.
 
 {{% codeblock %}}
 ```python
@@ -555,10 +553,9 @@ Found the right number: 18!
 
 ```
 
-
 2. `else`
 
-The else block in a loop is executed when the loop condition becomes False. However, if the loop is terminated by a break statement, the else block is skipped. Here's an example:
+The `else` block in a loop is executed when the loop condition becomes `False`. However, if the loop is terminated by a break statement, the `else` block is skipped. Here's an example:
 
 
 {{% codeblock %}}
@@ -591,9 +588,9 @@ Number 18 is not found in the list.
 
 ```
 
-3. `continue`
+3. continue
 
-The continue statement is used to skip the rest of the code inside a loop for the current iteration and move on to the next iteration. In this example, the continue statement is used to print only the odd numbers in a list. The continue statement skips the `print(number)` for even numbers. As a result, only the odd numbers are printed. 
+The `continue` statement is used to skip the rest of the code inside a loop for the current iteration and move on to the next iteration. In this example, the `continue` statement skips the `print(number)` for even numbers. As a result, only the odd numbers in the list are printed. 
 
 {{% codeblock %}}
 ```python
