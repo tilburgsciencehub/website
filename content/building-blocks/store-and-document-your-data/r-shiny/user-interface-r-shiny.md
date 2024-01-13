@@ -1,6 +1,6 @@
 ---
 title: "Shiny Fundamentals: The User Interface"
-description: "This article ia about how to enhance your R Shiny apps with a clear abd logical User Interface design. Focussing on the layout functions, applying shinythemes, custom CSS, and control widgets for dynamic, user-friendly interfaces. elevating the Shiny app's aesthetics and interactivity."
+description: "This article ia about how to enhance your R Shiny apps with a clear and logical User Interface design. Focussing on the layout functions, applying shinythemes, custom CSS, and control widgets for dynamic, user-friendly interfaces. elevating the Shiny app's aesthetics and interactivity."
 Objective: Build up the the user interface of Shiny apps by learning layout functions, customization, and control widgets ."
 keywords: "R Shiny, User Interface Design, Layout, Custom CSS, shinythemes, Control Widgets, interactivity, shinyWidgets Gallery"
 date: YYYY-MM-DD
@@ -107,7 +107,7 @@ You can adjust the position of columns within a row using the **offset** paramet
 
 {{% /tip %}}
 
-### Multipage layout
+### Multipage Layout
 For complex `Shiny` applications, where fitting all content on a single page is impractical, a multipage layout becomes essential.
 
 The `tabsetPanel()` function, used in combination with `tabPanel()`, effectively provides a way to organize your R `Shiny` application into distinct sections, similar to having multiple pages. This approach organizes content within a single file, simplifying navigation and layout management.
@@ -301,7 +301,8 @@ Writing and maintaining `custom CSS` can be tedious and prone to errors. This pr
 
 {{% /warning %}}
 
-**External CSS File**: Creating a separate CSS file and linking it to your `Shiny` app.
+**External CSS File**:    
+Creating a separate CSS file and linking it to your `Shiny` app.
 This method keeps your UI code concise and makes maintenance easier, as it separates the style from the app's logic.
 
 To include an external CSS file, you will have to use another tag: `tags$link()`. This tag contains three elements which need to be specified: 
@@ -323,7 +324,7 @@ ui <- fluidPage(
 
 {{% tip %}}
 
-**Styling Shiny using bootstrap with bslib & thematic**
+**Styling Shiny using bootstrap with bslib & thematic**   
 For an advanced case of customizing your UI using `Bootstrap` in R Shiny, look at this [article](/shiny/advanced/ui). 
 
 {{% /tip %}}
@@ -332,7 +333,7 @@ For an advanced case of customizing your UI using `Bootstrap` in R Shiny, look a
 In this part, we will dive into `control widgets`. Widgets are interactive web elements that allow your app users to communicate with the `Shiny` application. These widgets are essential in creating dynamic and interactive apps. 
 
 Each widget is created with a transparently named R function in Shiny. For example, the `actionButton` function creates an Action Button, and `sliderInput` creates a slider bar. These widgets are instrumental in collecting values from users and triggering responses in the app.
-We have already considered control widgets in the first article of the series, where we discussed some basic widgets and their arguments. So for the basic instruction check this [article][/Shiny/App].
+We have already considered control widgets in the first article of the series, where we discussed some basic widgets and their arguments. So for the basic instruction check this [article](/Shiny/App).
 
 {{% codeblock %}}
 
@@ -374,7 +375,7 @@ ui <- fluidPage(
 
 {{% tip %}}
 
-**Go Further with the Shiny Widgets Gallery**
+**Go Further with the Shiny Widgets Gallery**  
 For more advanced examples and templates, visit the `shinyWidgets` package. `shinyWidgetsGallery()`  opens a pre-built Shiny app that allows you to explore these pre-built inputs and gives you the code for implementing them. 
 
 Within the gallery, simply choose a widget and click on the “See Code” button located beneath it. You'll be directed to a detailed example app that provides insights into the widget's functionality. To incorporate the widget into your `Shiny` app, just copy the provided code and paste it into your app.R file.

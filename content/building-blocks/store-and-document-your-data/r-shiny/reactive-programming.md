@@ -26,18 +26,18 @@ First, we'll set up a basic Shiny app structure and display the `airquality` dat
 
 ```R
 library(shiny)
-library(DT) # Optional, Here I used the conventional way
+library(DT) 
 library(ggplot2)
 
 # Define UI
 ui <- fluidPage(
   titlePanel("Air Quality Analysis"),
-  DT::DTOutput("table")
+  DTOutput("table")
 )
 
 # Define Server
 server <- function(input, output) {
-  output$table <- DT::renderDT({
+  output$table <- renderDT({
     airquality
   })
 }
@@ -59,7 +59,9 @@ The `DT package`, short for `DataTables`, allows for a better presentation as we
 - *Dynamic Sorting*: Columns can be sorted dynamically by the user.
 - *Responsive Design*: Tables are more responsive and can adjust to different screen sizes.
 
-To use `DT` in Shiny, you replace the standard `tableOutput()` and `renderTable()` functions with `DT::dataTableOutput()` and `DT::renderDataTable()`. To learn how to use `DT` to build an data exploration app check out this [article](/data-exploration-shiny-app).
+To use `DT` in Shiny, you replace the standard `tableOutput()` and `renderTable()` functions with `DT::dataTableOutput()` and `DT::renderDataTable()`. 
+
+To learn how to use `DT` to build an data exploration app check out this [article](/data-exploration-shiny-app).
 
 {{% /tip %}}
 
@@ -77,7 +79,7 @@ To understand reactivity, we need to delve into its key components: `reactive so
 ### Reactive Sources, Endpoints 
 In Shiny, `reactive sources` refer to the inputs that trigger reactivity in the application. These are usually UI elements that allow users to interact with the app, like sliders, text inputs, buttons, checkboxes, etc. When a user interacts with these elements, their values change, which then triggers updates elsewhere in the app, the connected `reactive endpoints`.
 
-`Reactive endpoints` are the elements in a Shin` app that visibly react to changes in their dependencies, such as user inputs. These endpoints are crucial for displaying updated information or results based on user interaction. 
+`Reactive endpoints` are the elements in a Shiny app that visibly react to changes in their dependencies, such as user inputs. These endpoints are crucial for displaying updated information or results based on user interaction. 
 
 ### Reactive conductors
 In Shiny, `reactive conductors`, also known as `reactive expressions`, play a crucial role in optimizing the app's performance and organization. They are used to process or modify reactive inputs before these inputs influence the outputs.    
@@ -170,15 +172,15 @@ You create observers using Shiny's `observe()` function.
 #### Observers versus reactive expressions 
 Understanding the difference between `reactive expressions `(`reactive conductors`) and `observers` is key to effective app development.
 
-**Observers:**
-*Purpose*: Designed for actions and side effects, like updating the UI or writing to files.
-*Behavior*: Eager and forgetful, they execute immediately in response to changes and do not remember past actions.
-*Dependency*: If they rely on a `reactive expression`, it triggers the evaluation of that expression.
+**Observers:**   
+- *Purpose*: Designed for actions and side effects, like updating the UI or writing to files.   
+- *Behavior*: Eager and forgetful, they execute immediately in response to changes and do not remember past actions.    
+- *Dependency*: If they rely on a `reactive expression`, it triggers the evaluation of that expression.
 
-**Reactive Expressions:**
-*Purpose*: Used for computing and transforming data based on reactive inputs.
-*Behavior*: Lazy and cached, they only recompute when their dependencies change and when their results are needed.
-*Dependency*: They do not initiate actions but are often used within observers or outputs to provide dynamic data.
+**Reactive Expressions:**   
+- *Purpose*: Used for computing and transforming data based on reactive inputs.   
+- *Behavior*: Lazy and cached, they only recompute when their dependencies change and when their results are needed.    
+- *Dependency*: They do not initiate actions but are often used within observers or outputs to provide dynamic data.
 
 
 {{% codeblock %}}
@@ -231,7 +233,7 @@ server <- function(input, output) {
 
 {{% example %}}
 
-**Observer Implementation**
+**Observer Implementation**  
 The `observe()` function is employed to create an observer that monitors changes in the `monthInput`. When the user selects a different month, this observer is triggered, leading to the execution of the code block inside it.
 
 {{% /example %}}
@@ -281,9 +283,9 @@ This example contains:
     - Updates `summaryData` with the results.
 - **Reactive Outputs**:
   - Three reactive outputs dynamically update in response to user inputs:
-    - output$summary: Displays the summary.
-    - output$airQualityPlot: Renders a `ggplot` visualization.
-    - output$dataTable: Shows a `DataTable` with filtered data.
+    - `output$summary`: Displays the summary.
+    - `output$airQualityPlot`: Renders a `ggplot` visualization.
+    - `output$dataTable`: Shows a `DataTable` with filtered data.
 
 {{% /example %}}
 

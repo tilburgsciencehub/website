@@ -1,6 +1,6 @@
 ---
 title: "Shiny Fundamentals: Introduction and Building Your First Shiny App"
-description: "Introduce R Shiny and guide learners in building their first basic Shiny app. Introducing concepts as basic app structure (UI & Server), UI elements, server functions."
+description: "This article is an introduction to R Shiny and serves as a guide to create a basic Shiny app. It introduces concepts as basic app structure (UI & Server), UI elements, server functions."
 keywords: "R Shiny, UI, Server, UI elements, server functions"
 date: YYYY-MM-DD
 weight: 1
@@ -38,11 +38,11 @@ The `UI` is what users interact with when they run your `Shiny` application. It'
 - *Displaying information*: Text, tables, charts, images, etc.
 - *Collecting user input*: Through interactive elements like text boxes, sliders, and buttons.
 
-2. The **Server**.
+2. The **Server**
    
 The `Server`, on the other hand, is where the app's logic resides. It processes the input from the `UI`, performs computations, and sends output back to the UI. Key aspects of the `Server` include:
 - *`Reactivity`*: The server responds to changes in user input specified in the `UI`, recalculating outputs as needed.
-- *R code*: All processing is done using R
+- *R code*: All processing is done using R.
 
 {{% tip %}}
 
@@ -58,7 +58,7 @@ Let's create a simple `Shiny` app to understand these concepts better:
 
 ```R
 # Ensure the Shiny package is installed and loaded
-if (!require("shiny")) install.packages("shiny")
+install.packages("shiny")
 library(shiny)
 
 # Define the User Interface (UI)
@@ -90,7 +90,7 @@ Even though this basic app only displays the welcome message: "Welcome to the Ti
 **R Studio Users**
 
 - When creating `Shiny` apps, organize them in dedicated folders separate from other projects for streamlined development. 
-- Use `Cmd/Ctrl + Shift + Enter` instead of clicking "Run App" to run your app efficiently.
+- Use `Cmd/Ctrl + Shift + Enter` instead of clicking "`Run App`" to run your app efficiently.
 - The efficient cycle involves writing code, launching the app with the shortcut, testing it interactively, closing it, and then repeating the process. 
 
 {{% /tip %}}
@@ -113,7 +113,7 @@ Let's begin with the `UI` construction. We will focus on its layout design using
 ```R
 # Define the User Interface (UI)
 ui <- fluidPage(
-    titlePanel("Welcome to the TilbrugScienceHub"),
+    titlePanel("Welcome to the TilburgScienceHub"),
     sidebarLayout(
         sidebarPanel( # This goes into the sidebar on the left
         		 # Input elements will be added here
@@ -168,7 +168,7 @@ All input functions in `Shiny` share common characteristics:
 - *Input ID*: A unique identifier for each input control, crucial for accessing its value in the `server`.
 - *Label*: A descriptive text label for the input, visible to users.
 - *Unique Arguments*: Each input type has specific parameters. 
-For instance, `selectInput` needs a list of choices, while `sliderInput` requires default values, minimum, and maximum limits.
+For instance, `selectInput` needs a list of `choices`, while `sliderInput` requires default `values`, `minimum`, and `maximum` limits.
 
 Let's dive into a more advanced app: 
 
@@ -254,7 +254,7 @@ Outputs are generated within the `server` using `render functions`, each tailore
 
 The process of adding outputs to a `Shiny` app involves several key steps:
 1. *Creating the Output*: Define the type of output (plot, table, text, etc.).
-2. *Render the Output*: Use a suitable `render...` function matching the output type
+2. *Render the Output*: Use a suitable `render...` function matching the output type.
 3. *Assign the Rendered Object*: Connect the output to an identifier (`output$ID`).
 4. *Incorporating the Output in UI*: Place the output in the `UI` using the matching `...Output` function.
 Remember, the content within a `render...` function is enclosed in curly braces **({...})**, ensuring proper execution and display of the output.

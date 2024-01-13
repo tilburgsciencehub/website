@@ -1,6 +1,6 @@
 ---
 title: "Shiny Fundamentals: Introduction to Shiny Modules"
-description: "Learn to structure Shiny apps using Modules. in this article learn to  understand the creation and utilization of modules, and discover the advantages they bring to app organization and reusability."
+description: "In this article you will learn to understand the creation and utilization of modules within R Shiny. The article discusses the advantages of modules in the apps organization and reusability."
 keywords: "R, Shiny, Modules, RStudio, Web Apps, Programming, User Interface, Server Functionality"
 date: YYYY-MM-DD
 weight: 4
@@ -19,21 +19,20 @@ In R, functions are essential for simplifying and structuring code, and Shiny is
 While functions are fundamental in R for simplifying code, they don't completely address the organisation and management challenges in more complex apps. This is where `Shiny Modules` come into play. They are specifically designed to handle the complexities of larger applications. By establishing a unique namespace for each module, `Shiny Modules` ensure that input and output IDs remain distinct within each module, thereby preventing potential issues with overlapping IDs.
 
 ## Introducing Shiny Modules
-A `Shiny Module` is a **self-contained**, composable component of a Shiny app. Unlike a standalone Shiny app, which can run independently, a `Shiny Module` is designed to be integrated (**nested**) into a more extensive application or even within another
-`Shiny Module`.
+A `Shiny Module` is a **self-contained**, composable component of a Shiny app. Unlike a standalone Shiny app, which can run independently, a `Shiny Module` is designed to be integrated (**nested**) into a more extensive application or even within another `Shiny Module`.
 
 `Modules` in Shiny can serve various roles, they can handle inputs, outputs, or a combination of both. 
 Their complexity can range from a simple single output to a more elaborate interface featuring multiple tabs, various controls, outputs, and a network of reactive expressions and observers.
 
-### Why to use modules: 
+### Why use a Module: 
 
 - **Reusability**:
 Reuse the same code in different apps, or several times in the same app. 
-- **Isolate**
+- **Isolate**:
 `Shiny Modules` segment complex apps into manageable parts, improving organization and ease of development.
 
 ## Creating a Shiny Module
-`Shiny Modules` are structured like Shiny apps, consisting of two key functions: one for the User Interface (UI) and another for the server logic. 
+`Shiny Modules` are structured like Shiny apps, consisting of two key functions: one for the `User Interface` (UI) and another for the `server` logic. 
 
 {{% codeblock %}}
 
@@ -46,14 +45,14 @@ numericInputServer <- function(){} # Server logic component
 {{% tip %}}
 
 **Naming Conventions**
-- Choose a shared root that describes the module of use, here called "_numericInput_" 
-- End the UI function with a suffix like "UI", "Input", or "Output".
+- Choose a shared root that describes the module of use, here called "**_numericInput_**" 
+- End the `UI` function with a suffix like "**UI**", "**Input**", or "**Output**".
 
 {{% /tip %}}
 
 ### Building the UI Module 
 
-**Task 1** - Return Shiny UI   
+**Task 1 - Return Shiny UI**   
 Wrap multiple elements in `tagList()`, this is a special type of layout function that allows you to bundle together multiple components without actually implying how they’ll be laid out. 
 
 {{% codeblock %}}
@@ -68,7 +67,7 @@ sliderTextUI <- function(){
 ```
 {{% /codeblock %}}
 
-**Taks 2** - Assign module elements to a unique namespace with `NS()` .  
+**Taks 2 - Assign module elements to a unique namespace with `NS()`.**
 A namespace is a system for organising objects with identical names. 
 1. Add an `id` argument 
 2. Make a namespace function `NS()`
@@ -105,13 +104,13 @@ shinyApp(ui,server)
 
 ### Building the Server Module
 
-Next, we tackle the server function. 
+Next, we tackle the `server` function. 
 
 **Grasping the moduleServer() Function**  
-The server logic is encapsulated within the `moduleServer()` function. It's advisable to name these functions in correspondence with their module UI functions, but with a twist in the suffix: replace 'Input' with 'Output', or 'UI' with 'Server'. 
+The `server` logic is encapsulated within the `moduleServer()` function. It's advisable to name these functions in correspondence with their module `UI` functions, but with a twist in the suffix: replace '_**Input**_' with '_**Output**_', or '**_UI_**' with '_**Server**_'. 
 
 **Constructing a Wrapper Function**  
-The `moduleServer()` function is nested within another function that requires an **id argument**. This id, together with a callback function resembling a standard server function including input, output, and an additional session argument, is passed to `moduleServer()`. 
+The `moduleServer()` function is nested within another function that requires an **id argument**. This id, together with a callback function resembling a standard `server` function including input, output, and an additional session argument, is passed to `moduleServer()`. 
 
 {{% codeblock %}}
 
@@ -193,7 +192,7 @@ In this example, we use two instances of the same module, demonstrating the `reu
 {{% /tip %}}
 
 ## Nesting Modules 
-`Modules` in Shiny can incorporate other modules, we then have an **inner module** and an **outer module**. The outer module utilises the UI function of the inner module. It's important to wrap the id argument in the `ns()` function for namespacing.
+`Modules` in Shiny can incorporate other modules, we then have an **_inner module_** and an **_outer module_**. The outer module utilises the UI function of the inner module. It's important to wrap the id argument in the `ns()` function for namespacing.
 
 **Step 1**: Define the **Inner Module**  
 The inner module will allow users to select a variable from the `iris` dataset.
@@ -274,10 +273,10 @@ shinyApp(ui, server)
 
 {{% example %}}
 
-- The Inner Module lets the user select a variable from the `iris` dataset.
-- The Outer Module uses the output from the inner module to create a histogram.
-- The Outer module's UI function calls the inner module's UI function with `ns("innerModule")`, ensuring proper namespacing.
-- The Outer module's server function then utilises the selected variable from the inner module to render the histogram.
+- The _**Inner Module**_ lets the user select a variable from the `iris` dataset.
+- The _**Outer Module**_ uses the output from the inner module to create a histogram.
+- The _**Outer module's UI**_ function calls the inner module's UI function with `ns("innerModule")`, ensuring proper namespacing.
+- The _**Outer module's server**_ function then utilises the selected variable from the inner module to render the histogram.
 
 {{% /example %}}
 

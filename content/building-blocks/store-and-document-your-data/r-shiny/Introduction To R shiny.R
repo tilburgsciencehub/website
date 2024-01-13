@@ -2,16 +2,6 @@
 library(shiny)
 library(bslib)
 
-# Define a custom theme
-custom_theme <- bs_theme(
-  bg = "#123261", # TSH dark blue for the background
-  fg = "#ffffff", # white for foreground text
-  primary = "#f3ad42", # TSH orange for primary buttons and widgets
-  bs_vars(
-    "progress-bar-bg" = "#f3ad42" # TSH orange for progress bar backgrounds
-  )
-)
-
 # Define UI
 ui <- fluidPage(
   theme = custom_theme, # Apply the custom theme
