@@ -14,13 +14,14 @@ aliases:
 ---
 
 ## Overview
-Welcome to this article where data meets storytelling. this article is inspired by Hans Rosling's innovative approach to data presentation. Rosling, known for his work with the [Gapminder project](https://www.youtube.com/watch?v=hVimVzgtD6w), transformed how we understand complex global data in fields like health, economics, and education. His method of dynamic visual storytelling challenged and changed many entrenched misconceptions.
+Welcome to this article where we explore the fusion of data and storytelling. This integration is based on Hans Rosling's approach to data presentation. Hans Rosling, renowned for his contributions to the [Gapminder project](https://www.youtube.com/watch?v=hVimVzgtD6w), has had a profound impact on how we interpret complex global data in areas such as health, economics, and education. His method of dynamic visual storytelling has challenged and reshaped many long-standing misconceptions.
 
-In this article, we delve into the power of `Plotly` in R, aiming to mirror Rosling's engaging narrative style in our data visualizations. We start with the basics of the `Plotly` package, highlighting its ability to elevate static charts into interactive charts, complete with hover details, zoom capabilities, and adjustable scales. As we delve deeper, we'll showcase how `Plotly`'s synergy with `ggplot2` transforms conventional data visualizations into interactive, dynamic experiences.
+In this article, we delve into the capabilities of `Plotly` package in R, aiming to mirror Rosling's engaging narrative style in our data visualizations. We begin with the basics of the `Plotly` package, highlighting its ability to transform static charts into interactive charts, complete with hover details, zoom capabilities, and adjustable scales. As we delve deeper, we'll showcase how a combination of `Plotly`'and `ggplot2` transforms conventional data visualizations into interactive, dynamic experiences.
 
 ### Setup 
-To begin our exploration of dynamic data storytelling in R, inspired by Hans Rosling's `Gapminder` project, we will set up our environment with `Plotly` and the `Gapminder` dataset. This dataset, the one Rosling used, includes data on GDP, life expectancy, and population across various countries and years, making it well-suited for dynamic storytelling and analysis.
+To begin our exploration of dynamic data storytelling in R, we will set up our environment with `Plotly` and the `Gapminder` dataset. This dataset, the one Rosling used, includes data on GDP, life expectancy, and population across various countries and years, making it well-suited for dynamic storytelling and analysis.
 
+{{% codeblock %}}
 ```R 
 # Install and Load Plotly
 install.packages("plotly")
@@ -32,14 +33,16 @@ library(gapminder)
 gapminder_data <- gapminder::gapminder
 ```
 
+{{% /codeblock %}}
+
 ## The Basics of Plotly
 
 ### Your First Interactive Plot with Plotly
-To create an interactive plot with `Plotly`, it's important to have a solid grasp of its syntax and the role of each component in the final visualization. Let's walk through this process step by step: 
+To create an interactive plot with `Plotly`, it's important to understand the syntax and the role of each component in the final visualization. Let's walk through this process step by step: 
 
 1. **The `Plotly` Function**:    
 
-Begin with` plot_ly()`, the primary function in `Plotly` for R. This function initializes a `Plotly` graph. 
+Start with `plot_ly()`, the primary function in `Plotly` for R. This function initializes a `Plotly` graph. 
 
 2. **Data and Aesthetics**:     
 
@@ -156,7 +159,6 @@ plot <- plot_ly(data = gapminder_data,
 ## Bringing Data to Life with Animations
 With the basics in place, our `Plotly` scatter plot currently showcases the relationship between GDP and life expectancy through interactive, hoverable points. However, the simultaneous display of data across all years can create a visually cluttered experience. The next step is to add: **_Animation_**. `Plotly`'s animation capabilities can transform these static visualizations into dynamic narratives, effectively illustrating changes over time.
 
-
 ### Implementing Animations in Plotly
 To animate data using `Plotly`, there are two main steps to follow:
 
@@ -204,7 +206,6 @@ plot_ly(gapminder_data,
 
 Running this code results in an animated scatter plot that not only shows the relationship between GDP per capita and life expectancy but also illustrates how these variables have changed over time (or your chosen category). The inclusion of animation features significantly enhances the visualization's engagement and insightfulness, effectively narrating the story hidden within the numbers.
 
-
 {{% tip %}}
 **Customizing the Animation**    
 Improve your animated scatter plot in `Plotly` by adding user-friendly interactive elements such as a **play button** and a **slider** for improved navigation and control. 
@@ -237,7 +238,7 @@ Integrating `ggplot2` with `Plotly` in R offers a method to enhance data visuali
 {{% tip %}}
 **Data Visualization With ggplot2**
 
-For a deeper understanding of `ggplot2`'s principles, consider exploring the "`Grammar of Graphics`". This concept, which is foundational to `ggplot2`, offers insights into the structured approach behind creating meaningful and aesthetically pleasing visualizations. You can learn more about this in the following [article](/Grammar/of/Graphics).
+For a deeper understanding of `ggplot2`'s principles, consider exploring the "`Grammar of Graphics`". This concept, which is at the core of `ggplot2` is discussed  in the following [article](/Grammar/of/Graphics).
 
 {{% /tip %}}
 
@@ -285,7 +286,70 @@ To fully leverage the strengths of both `ggplot2` and `Plotly`, the following co
 
 {{% codeblock %}}
 ```R
-# Load necessary librarieslibrary(ggplot2)library(plotly)library(dplyr)library(gapminder)# Load Gapminder datadata(gapminder)# Step 1: Create a Customized ggplot2 Scatter Plotgg_scatter_plot <- ggplot(gapminder,                           aes(x = gdpPercap,                               y = lifeExp,                               color = continent)) +  # Adding points with adjusted sizes based on population  geom_point(aes(size = pop,                  frame = year,                  ids = country,                 text = paste("Country:", country,                               "<br>GDP per Capita:", round(gdpPercap, 2),                               "<br>Life Expectancy:", round(lifeExp,1))),              alpha = 0.7) +  # Adjusting point sizes for better visualization  scale_size(range = c(2, 12)) +  # Using logarithmic scale for x-axis (GDP per Capita)  scale_x_log10(labels = scales::label_number()) +   # Utilizing a minimalist theme for a clean look  theme_minimal(base_size = 12) +  # Applying a distinct color palette  scale_color_brewer(palette = "Set1") +  # Customizing various theme aspects for aesthetics  theme(    text = element_text(family = "Times New Roman"), # Set global font family    legend.title = element_blank(),    legend.position = "top",    plot.title = element_text(face = "bold", size = 14),    plot.subtitle = element_text(face = "italic", size = 12),    plot.caption = element_text(face = "italic", size = 10),    panel.grid.major = element_blank(),    panel.grid.minor = element_blank(),    axis.text.x = element_text(color = "grey24", size = 12),    axis.text.y = element_text(color = "grey24", size = 12),    axis.title = element_text(face = "bold", color = "grey24", size = 14),    axis.ticks = element_blank(),    plot.margin = margin(1, 1, 1, 1, "cm"))# Convert ggplot to an interactive Plotly plotplotly_interactive <- ggplotly(gg_scatter_plot, tooltip = c("text")) %>%  # Setting animation options for smooth transitions  animation_opts(frame = 1000, easing = "elastic", redraw = TRUE) %>%  # Adding a play/pause animation button  animation_button(x = 1, xanchor = "right", y = 0, yanchor = "bottom") %>%  # Adding a slider for navigating through years  animation_slider(currentvalue = list(prefix = "Year: ")) %>%  # Customizing layout and hover label for readability  layout(title = "GDP per Capita vs Life Expectancy",           xaxis = list(title = "GDP per Capita (log scale)", font = list(family = "Times New Roman")),         yaxis = list(title = "Life Expectancy", font = list(family = "Times New Roman")),         legend = list(title = "Continent",font = list(family = "Times New Roman", size = 12)),         hoverlabel = list(bgcolor = "white", font = list(family = "Times New Roman", size = 12)))# Display the interactive plotplotly_interactive```
+# Load necessary libraries
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(gapminder)
+
+# Load Gapminder data
+data(gapminder)
+
+# Step 1: Create a Customized ggplot2 Scatter Plot
+gg_scatter_plot <- ggplot(gapminder, 
+                          aes(x = gdpPercap, 
+                              y = lifeExp, 
+                              color = continent)) +
+  # Adding points with adjusted sizes based on population
+  geom_point(aes(size = pop, 
+                 frame = year, 
+                 ids = country,
+                 text = paste("Country:", country, 
+                              "<br>GDP per Capita:", round(gdpPercap, 2), 
+                              "<br>Life Expectancy:", round(lifeExp,1))), 
+             alpha = 0.7) +
+  # Adjusting point sizes for better visualization
+  scale_size(range = c(2, 12)) +
+  # Using logarithmic scale for x-axis (GDP per Capita)
+  scale_x_log10(labels = scales::label_number()) + 
+  # Utilizing a minimalist theme for a clean look
+  theme_minimal(base_size = 12) +
+  # Applying a distinct color palette
+  scale_color_brewer(palette = "Set1") +
+  # Customizing various theme aspects for aesthetics
+  theme(
+    text = element_text(family = "Times New Roman"), # Set global font family
+    legend.title = element_blank(),
+    legend.position = "top",
+    plot.title = element_text(face = "bold", size = 14),
+    plot.subtitle = element_text(face = "italic", size = 12),
+    plot.caption = element_text(face = "italic", size = 10),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(color = "grey24", size = 12),
+    axis.text.y = element_text(color = "grey24", size = 12),
+    axis.title = element_text(face = "bold", color = "grey24", size = 14),
+    axis.ticks = element_blank(),
+    plot.margin = margin(1, 1, 1, 1, "cm"))
+
+# Convert ggplot to an interactive Plotly plot
+plotly_interactive <- ggplotly(gg_scatter_plot, tooltip = c("text")) %>%
+  # Setting animation options for smooth transitions
+  animation_opts(frame = 1000, easing = "elastic", redraw = TRUE) %>%
+  # Adding a play/pause animation button
+  animation_button(x = 1, xanchor = "right", y = 0, yanchor = "bottom") %>%
+  # Adding a slider for navigating through years
+  animation_slider(currentvalue = list(prefix = "Year: ")) %>%
+  # Customizing layout and hover label for readability
+  layout(title = "GDP per Capita vs Life Expectancy",  
+         xaxis = list(title = "GDP per Capita (log scale)", font = list(family = "Times New Roman")),
+         yaxis = list(title = "Life Expectancy", font = list(family = "Times New Roman")),
+         legend = list(title = "Continent",font = list(family = "Times New Roman", size = 12)),
+         hoverlabel = list(bgcolor = "white", font = list(family = "Times New Roman", size = 12)))
+
+# Display the interactive plot
+plotly_interactive
+```
 {{% /codeblock %}}
 
 <p align = "center">
@@ -311,7 +375,6 @@ Our data visualization, merges the aesthetics of `ggplot2` with the interactivit
 - *Your Exploration, Your Pace*: User-controlled animation, featuring a play option, transforms you from a passive observer to an active explorer, creating a commitment to engaging audiences. 
    
 In essence, this visualization isn't just data; it are data points evolved into narratives.
-
 
 {{% summary %}}
 
