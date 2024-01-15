@@ -59,7 +59,7 @@ Text values are composed of a sequence of characters. To convert another data ty
 
 my_string = "One apple costs "
 my_string_2 = " Dollar"
-x = "1"
+x = 1
 
 print(my_string + str(x) + my_string_2)
 ```
@@ -202,6 +202,11 @@ pancakes.values()
 ```
 {{% /codeblock %}}
 
+*Output:*
+```python
+dict_values(['2 cups', '1 1/2 cups', '2'])
+```
+
 Remove an item with `del()`.
 
 {{% codeblock %}}
@@ -233,7 +238,7 @@ division = 9 / 2
 # return 4.5
 
 floor_division = 9 // 2 
-# return 4; largest integer less than or equal to the result)
+# return 4; largest integer less than or equal to the result
 
 modulus = 10 % 3 
 # return 1; remainder of division
@@ -265,6 +270,9 @@ b //=2    # result is 1
 
 c = 11
 c %= 5    # result is 1
+
+e = 5
+e *= 3    # result is 15
 
 d = 4
 d **=2    # result is 16
@@ -422,13 +430,16 @@ enumerated_list = list(enumerate(fruits))
 
 # map: apply lambda function to all elements in list
 squared = list(map(lambda x: x**2, [1, 2, 3, 4, 5]))
+                # returns [1, 4, 9, 16, 25]
 
 # filter even numbers
 even = list(filter(lambda x: x % 2 == 0, [1, 2, 3, 4, 5]))
+                # returns [2, 4]
 
 # fsolve
 from scipy.optimize import fsolve
 root = fsolve(lambda x: x**2 - 4*x + 4, 2.0)
+                # returns array([2.])
 
 # help
 help(filter)
@@ -571,8 +582,8 @@ for number in numbers_2:
         print(f"Found the right number: {right_number}!")
         break
 
-else:
-    print(f"Number {search_for_number} is not found in the list.")
+    else:
+        print(f"Number {search_for_number} is not found in the list.")
 ```
 {{% /codeblock %}}
 
@@ -602,7 +613,7 @@ for number in numbers:
         # Skip even numbers
         continue
     
-    print(number)
+        print(number)
 
 ```
 {{% /codeblock %}}
