@@ -218,37 +218,45 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 
 ### Model Fitting
 
-**Training the Model**
+**Training** the model:
 
 {{% codeblock %}} 
 ```python
 
-r_forest = RandomForestClassifier(n_estimators = 500, 
-                               random_state = 17,
-                               oob_score = True,
-                               criterion = "gini",
-                               max_depth = 4)
+# Random forest model
+r_forest = RandomForestClassifier(n_estimators = 500, # number of trees in the forest
+                               random_state = 17, # 
+                               criterion = "gini", # splitting criterion
+                               max_depth = 4) # maximum number of end-nodes of the tree
 
+# Fitting the model
 r_forest.fit(X_train, y_train)
-r_forest.score(X_test, y_test)
-```
-{{% /codeblock %}}
-
-
-
-
-
-
-{{% codeblock %}} 
-```python
-
 
 ```
 {{% /codeblock %}}
+
+In the code snippet above, the `random_state` parameter is utilised to consistently produce the same set of random decisions during the training process, ensuring **reproducibility**. In addition, the `max_depth` parameter controls the maximum depth of each individual decision tree. You may want to set a maximum depth to **avoid overfitting** and **enhance interpretability** while being aware that it may come at the expense of predicition accuracy within the training set.
+
+{{% tip %}} 
+
+When implementing the [RandomForestClassifier()](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier), two sources of **randomness** are introduced. **First**, every tree is built from a sample drawn with replacement from the training set. **Second**, each split needed to construct a tree can be made either from all available inputs or from a subset of those inputs (normally, the subset is equal to the square root of the total number of input features). 
+
+**What is the purpose of such randomness?**
+
+As mentioned in the `Theoretical` `Background` section, the objective is to reduce the high variance of decision trees. Introducing randomness allows us to create decision trees with less correlated prediction errors. Consequently, when averaging multiple trees, some of the errors may cancel out, resulting in an overall improved model.
+
+
+{{% /tip %}}
 
 
 ### Model Evaluation
 
+{{% codeblock %}} 
+```python
+
+
+```
+{{% /codeblock %}}
 
 
 
