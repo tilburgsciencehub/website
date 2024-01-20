@@ -361,6 +361,25 @@ with open("15-hits.json", "w") as file:
 To which Copilot adjusts the code in order to save the information in the specified structure!
 
 
+
+{{% tip %}}
+
+You can also right click on certain code you have written and have Copilot either explain it, fix it, generate docs or generate a test. 
+Additionally, you can start an incline chat (ctrl + i on Windows, and command + i on Mac) in order to ask more specific questions about  parts of the code. This allows you to quickly understand, fix en improve yours and others code!
+
+<p align = "center">
+<img src = "../images/Copilot-chat.png" width="400">
+</p>
+
+You can for example tell Copilot that you are only interested in the songs from place 10 up to 20  
+
+
+change this code so that it only retrieves 10 songs from 10 trough 20
+{{% /tip %}}
+
+
+
+
 {{% summary %}}
 This tutorial provides an overview of GitHub Copilot and its application in RStudio and VS Code for research purposes. 
 It comprises four blocks: 
