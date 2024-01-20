@@ -1,9 +1,0 @@
-items:
-  - title: Google Analytics (functional)
-    description: This code gives us insight into the number of people that visit our website, where they are from and what they are clicking on.
-    is_functional: false
-    script_file: ga.js
-  - title: Google Tag Manager (functional)
-    description: This code manages the deployment of various marketing and analytics tags on the website.
-    is_functional: false
-    script_file: gtm.js
