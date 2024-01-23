@@ -608,40 +608,177 @@ df.fillna(method ='ffill')
 
 ## Grouping
 
-It is often useful to split the data set into groups based on specific criteria and apply a function to each group independently. Grouping allows for that.
+It is often useful to split the data set into groups based on specific criteria and apply a function to each group independently. 
 
-### Splitting into groups
+To split your data into groups based on particular criteria or columns, you can use the `groupby()` method. Let's consider the following example DataFrame for student exam scores:
 
-To split your data into gorups based on particular criteria or columns, you can use the `groupby()` method.
+{{% codeblock %}}
+```python
+data = {
+    'name': ['Alice', 'Eva', 'Charlie', 'Jack', 'Zara'],
+    'gender': ['F', 'F', 'M', 'M', 'F'],
+    'age': ['20', '20', '21', '19', '19'],
+    'exam grade': [8.4, 9.6, 9.1, 5.8, 6.3]
+}
 
-First, make an example DataFrame:
+students_df = pd.DataFrame(data)
+print(students_df)
+```
+{{% /codeblock %}}
+
+```python
+
+    name gender age  exam grade
+0    Alice      F  20         8.4
+1      Eva      F  20         9.6
+2  Charlie      M  21         9.1
+3     Jack      M  19         5.8
+4     Zara      F  19         6.3
+
+```
+
+Now, we apply the groupby() function to group the data based on gender:
+
+{{% codeblock %}}
+```python
+
+# Group by gender
+data_gender = students_df.groupby('gender')
+
+# View all entries of group 'F' 
+data_gender.get_group('F')
+```
+{{% /codeblock %}}
+
+```python
+    name gender age  exam grade
+0  Alice      F  20         8.4
+1    Eva      F  20         9.6
+4   Zara      F  19         6.3
+```
+
+You can also group based on more than one category. Grouping data based on gender and age goes like this:
+
+{{% codeblock %}}
+```python
+
+# Group by gender and age
+data_gender_age = students_df.groupby(['gender', 'age'])
+
+# View all entries of group 'F' & age '20'
+data_gender_age.get_group(('F', '20'))
+```
+{{% /codeblock %}}
+
+{{% codeblock %}}
+```python
+
+    name gender age  exam grade
+0  Alice      F  20         8.4
+1    Eva      F  20         9.6
+
+```
+
+Once you have your data grouped, you can perform different operations within each group to extract meaningful information from your dataset. Three common operations are: aggregation, transformation, and filtration.
 
 
-
-
-### GroupBy operations
-
-Once you have your data grouped, you can perform different operations within each group, like aggregation, transformation, and filtration, to extract meaningful information from your dataset.
 - Aggregation
 
-.agg
+Aggregation involves combining data within each group to obtain a single value. For example, calculating the average exam grade for each gender:
+
+{{% codeblock %}}
+```python
+
+avg_grade_by_gender = students_df.groupby("gender")["exam grade"].agg("mean")
+print(avg_grade_by_gender)
+
+```
+{{% /codeblock %}}
+
+```python
+
+gender
+F    8.10
+M    7.45
+
+```
 
 - Transformation
 
-.transform
+Transformation applies a function to each group independently. Let's transform the exam grades to represent the difference from the mean grade within each gender group:
+
+
+{{% codeblock %}}
+```python
+
+grade_difference = students_df.groupby("gender")["exam grade"].transform(lambda x: x - x.mean())
+print(grade_difference)
+
+```
+{{% /codeblock %}}
+
+
+
+```python
+0    0.30
+1    1.50
+2    1.65
+3   -1.65
+4   -1.80
+
+```
 
 
 - Filtration
 
-Filtering groups
+Filtration allows you to filter groups based on some condition. For example, keeping only groups with a mean exam grade greater than a certain threshold:
 
+{{% codeblock %}}
+```python
+
+ages_above8 = students_df.groupby("age").filter(lambda x: x["exam grade"].mean() > 8.0)
+print(ages_above8)
+
+```
+{{% /codeblock %}}
+
+The group based on age that scored a mean exam grade above 8 are age '20' and age '21'.
+
+```python
+      name gender age  exam grade
+0    Alice      F  20         8.4
+1      Eva      F  20         9.6
+2  Charlie      M  21         9.1
+
+```
 
 ## Pivot tables
 
+Pivot tables are a feature in pandas that allows you to reshape and summarize data. They are particularly useful for aggregating and analyzing data based on one or more criteria. The student exam scores DataFrame is used to demonstrate:
+
+{{% codeblock %}}
+```python
+
+pivot_table = students_df.pivot_table(values='exam grade', index=['gender', 'age'], aggfunc='mean')
+print(pivot_table)
+
+```
+{{% /codeblock %}}
+
+```python
+
+            exam grade
+gender age            
+F      19          6.3
+       20          9.0
+M      19          5.8
+       21          9.1
+
+```
+
+This pivot table provides a more detailed view of average exam grades considering both gender and age.
 
 ## Multi-level indexing
-
-
 
 
 ## Descriptive statistics
@@ -652,7 +789,6 @@ Filtering groups
 
 ## Data visualization
 
-
-link to matplotlib topic
+Link to matplotlib topic
 
 
