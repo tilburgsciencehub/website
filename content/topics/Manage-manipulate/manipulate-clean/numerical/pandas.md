@@ -14,6 +14,14 @@ aliases:
 
 Pandas, a Python library built on top of the NumPy library, contains essential tools for anyone working with structured data in Python. In just 10 minutes, get started with pandas basics! 
 
+- Import pandas
+- Data structures
+- Inspect data
+- Sort & subset data
+- Manipulate data
+- Group and reshape data
+
+
 ## Import pandas
 
 First, install pandas and numpy, using the [Install Python Packages](/get/python-packages) topic. Then import it with the following code:
@@ -249,7 +257,7 @@ df.index
 returns `Index(['Student 1', 'Student 2', 'Student 3'], dtype='object')`
 
 
-## Sorting & subsetting data
+## Sort & subset data
 
 Sorting data is the process of arranging it in a specific order. It can be useful for ...
 
@@ -305,11 +313,11 @@ Student 3  Casper            5.3            6
 
 ```
 
-### Subsetting data
+### Subset data
 
 Subsetting data involves selecting specific columns or rows from a DataFrame.
 
-#### Selecting specific columns 
+#### Select specific columns 
 
 To look at just one column, you can use square brackets `[]` and specify the column name. For example, let's say we want to look at the "Final Grade" column:
 
@@ -345,7 +353,7 @@ Student 3            6  Casper
 
 ```
 
-#### Selecting specific rows 
+#### Select specific rows 
 
 To select specific rows, you can use `.loc`, and specify the index label between square brackets:
 
@@ -425,9 +433,9 @@ Student 2   John            8.5            7
 
 ```
 
-## Manipulating data
+## Manipulate data
 
-### Adding and deleting columns
+### Add and delete columns
 
 To add a new column, assign values to a new column name. These values can be new, or calculated from the values of other columns in the DataFrame.For example, you want to have a new column with the age of each student, and one column with the mean of the Midterm and Final grade of each student.
 
@@ -484,7 +492,7 @@ To modify the original DataFrame, you can set `inplace = True`. This directly mo
 {{% /tip %}}
 
 
-### Transposing data
+### Transpose data
 
 With `.T` behind the DataFrame name, you change the axis: the columns and the indices are switched.
 
@@ -507,7 +515,7 @@ Mean Grade          9.3      7.75      5.65
 
 ```
 
-### Handling missing data
+### Handle missing data
 
 Handling missing data is a crucial aspect of data analysis. In any real-world dataset, missing values are common and can impact the accuracy of your analysis. First, we create an example DataFrame with missing values.
 
@@ -640,7 +648,7 @@ df.fillna(method ='ffill')
 
 ```
 
-## Grouping and reshaping data
+## Group and reshape data
 
 ### Grouping
 
@@ -866,7 +874,7 @@ age
 
 This is a simple example, but multi-level indexing becomes extremely useful when dealing with more complex datasets where you want to organize and analyze data hierarchically.
 
-## Combining data
+## Combine data
 
 pandas provides various methods for combining data. 
 
