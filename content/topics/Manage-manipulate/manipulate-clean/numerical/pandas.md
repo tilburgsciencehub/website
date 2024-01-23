@@ -738,6 +738,11 @@ F    8.10
 M    7.45
 
 ```
+{{% tip %}}
+
+Pandas provides various aggregation functions to summarize data within groups. Common aggregation functions are `sum`, `mean`, `min`, `max`, `median`, `count`, `std`, `first`, and `last`.
+
+{{% /tip %}}
 
 - Transformation
 
@@ -862,13 +867,24 @@ age
 
 This is a simple example, but multi-level indexing becomes extremely useful when dealing with more complex datasets where you want to organize and analyze data hierarchically.
 
-
 ## Combining data
 
-### Merging
+### Merge
 
-### Joining
+If you are combining datasets based on a common column, use the `merge()` function. 
 
+
+### Join
+
+Joining is similar to merging but is performed on the index rather than a specific column. With the `join()` function. 
+
+
+### Concatenate
+
+Concatenation is the process of combining two or more DataFrames along a particular axis. The `concat()` function is used for this purpose. Consider the following example:
+
+
+This will result in a DataFrame where df2 is appended below df1.
 
 
 
