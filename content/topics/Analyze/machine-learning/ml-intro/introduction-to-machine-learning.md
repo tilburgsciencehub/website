@@ -4,7 +4,7 @@ description: "Get started with machine learning and R with 15+ hours of expert v
 keywords: "machine learning, classification, unsupervised, resampling, model, linear, tree, vector, r"
 weight: 3
 date: 2020-11-11T22:02:51+05:30
-draft: false
+draft: true
 aliases:
   - /learn/machine-learning
 ---
