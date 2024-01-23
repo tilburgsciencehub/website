@@ -17,12 +17,12 @@ aliases:
 
 When writing a thesis, a paper, or conducting market research, surveys are among the most frequently used and reliable alternatives to pre-existing datasets. [Qualtrics](https://www.qualtrics.com) allows one to create professional surveys to obtain data from respondents. Being able to integrate such results with statistical software is crucial for performing more advanced data analysis and gaining relevant insights.
 
-Among the `advantages` of surveys are the ability to:
+Among the advantages of surveys are the ability to:
 * target a specific population;
 * tailor questions to one's exact research needs;
 * generate data that would not otherwise exist for novel research ideas.
 
-In terms of `drawbacks`, surveys often suffer from the following issues:
+In terms of drawbacks, surveys often suffer from the following issues:
 * limited generalizability to the entire population due to potential biases that can affect the data;
 * difficult to design optimally;
 * despite the substantial amount of work required, lower rigor when compared to pre-existing datasets.
@@ -41,13 +41,13 @@ During the design phase, a general **rule of thumb** is to ask *broad and genera
 {{% tip %}}
 While drafitng the questions, one should consider that:
 
-* the survey must align with the main `research` `question` and `target` `sample`. Always think about your respondents and tailor your questions to them;
+* the survey must align with the main research question and target sample. Always think about your respondents and tailor your questions to them;
 
-* at the outset of the survey, include an `exclusion` `question` to filter out respondents who do not fall within your target audience. For instance, if you are focusing on married couples, the initial question could inquire about the respondent's current relationship status;
+* at the outset of the survey, include an exclusion question to filter out respondents who do not fall within your target audience. For instance, if you are focusing on married couples, the initial question could inquire about the respondent's current relationship status;
 
-* survey `length` is crucial; typically, respondents should be able to complete it within 5 to 10 minutes. Beyond this threshold, an increasing number of respondents are likely to drop out;
+* survey length is crucial; typically, respondents should be able to complete it within 5 to 10 minutes. Beyond this threshold, an increasing number of respondents are likely to drop out;
 
-* `avoid` complex (e.g., technical jargon) and loaded (e.g., unjustified assumptions about the respondent) questions as well as non-specific ones (e.g., asking two or more questions at once).
+* avoid complex (e.g., technical jargon) and loaded (e.g., unjustified assumptions about the respondent) questions as well as non-specific ones (e.g., asking two or more questions at once).
 
 {{% /tip %}}
 
@@ -55,15 +55,15 @@ While drafitng the questions, one should consider that:
 
 This section provides a __step-by-step guide__ to designing a survey in Qualtrics.
 
-1. Sign in/sign up on Qualtrics [here](https://www.qualtrics.com), and you will be directed to your Qualtrics `homepage` which should resemble the image below.
+1. Sign in/sign up on Qualtrics [here](https://www.qualtrics.com), and you will be directed to your Qualtrics homepage which should resemble the image below.
 
 <div style="text-align: center;">
     <img src="../img/qualt1.png" width="700" alt="homepage">
 </div>
 
-2. Click `Create` `a` `survey` to start creating your survey from scratch, or click `Create` `a` `new` `project` to access survey templates and guided projects. Then, click `Survey` to begin.
+2. Click __Create a survey__ to start creating your survey from scratch, or click __Create a New Project__ to access survey templates and guided projects. Then, click __Survey__ to begin.
 
-3. Enter the `name` of your `survey` and then select `Create` `a` `blank` `survey` `project` to access the `survey` `editor`.
+3. Enter the name of your survey and then select __Create a blank survey project__ to access the survey editor.
 
 <div style="text-align: center;">
     <img src="../img/qualt2.png" width="500" alt="create project">
@@ -91,15 +91,17 @@ This section provides a __step-by-step guide__ to designing a survey in Qualtric
 
 ## R 
 
-The [qualtRics](https://cran.r-project.org/web/packages/qualtRics/vignettes/qualtRics.html) R package is designed to facilitate the retrieval of survey data through the Qualtrics API with the goal of streamlining the preprocessing required for the analysis of these surveys. This package offers an alternative to manually downloading surveys from Qualtrics and then importing them into R. Moreover, it allows to update your dataset in real time without having to download an updated version and upload it again into R.
+The [qualtRics](https://cran.r-project.org/web/packages/qualtRics/vignettes/qualtRics.html) R package is designed to facilitate the retrieval of survey data through the Qualtrics API with the goal of streamlining the preprocessing required for the analysis of these surveys. 
+
+This package offers an alternative to manually downloading surveys from Qualtrics and then importing them into R. Moreover, it allows to update your dataset in real time without having to download an updated version and upload it again into R.
 
 The following points will guide you to successfully importing your survey data into R by using the Qualtrics API:
 
-1. Log in to your Qualtrics profile and navigate to `Account` `Settings` > `Qualtrics` `IDs`. Your instituion must support API access, and you should ensure that the API is enabled for your account. 
+1. Log in to your Qualtrics profile and navigate to `Account` `Settings` > `Qualtrics` `IDs`. Your instituion must support API access, and you should ensure that the API is enabled for your account. If you're unsure, get in touch with your research support team. 
 
-2. Within `Qualtrics` `IDs`, you are going to need your `API` `Token` (click `generate` `token` if you don't have one), `Datacenter` `ID`, and `Survey` `ID`. 
+2. Within `Qualtrics IDs`, you are going to need your `API Token` (click geneate token if you don't have one), `Datacenter ID`, and `Survey ID`. 
 
-3. Open/Install [RStudio](https://posit.co/download/rstudio-desktop/) and follow the code snippets below.
+3. Open [RStudio](https://posit.co/download/rstudio-desktop/) and follow the code snippets below.
 
 
 
@@ -181,7 +183,7 @@ pip install QualtricsAPI
 ```
 {{% /codeblock %}}
 
-Import the `Credentials` module to create variables that `store` your `Qualtrics` `API` `credentials`. 
+Import the `Credentials` module to create variables that store your Qualtrics API credentials. 
 
 
 {{% codeblock %}} 
@@ -202,7 +204,7 @@ Credentials().qualtrics_api_credentials(token = "ADD_YOUR_API_Token", data_cente
 ```
 {{% /codeblock %}}
 
-Import the `Responses` module to download your `survey` `questions` and `responses` to your local environment. 
+Import the `Responses` module to download your survey questions and responses to your local environment. 
 
 {{% codeblock %}} 
 
