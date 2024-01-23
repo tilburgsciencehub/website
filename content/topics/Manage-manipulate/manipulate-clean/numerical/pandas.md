@@ -21,7 +21,6 @@ Pandas, a Python library built on top of the NumPy library, contains essential t
 - Manipulate data
 - Group and reshape data
 
-
 ## Import pandas
 
 First, install pandas and numpy, using the [Install Python Packages](/get/python-packages) topic. Then import it with the following code:
@@ -259,16 +258,14 @@ returns `Index(['Student 1', 'Student 2', 'Student 3'], dtype='object')`
 
 ## Sort & subset data
 
-Sorting data is the process of arranging it in a specific order. It can be useful for ...
+Sorting data is the process of arranging it in a specific order.
 
 - `sort_index()`: sort by index values along a specified axis. By default, sort data along the index axis (rows). 
-
 - `sort_values()`: sort by values of the column specified with argument `by =`.
 
 {{% codeblock %}}
 ```python
 
-#### df!
 df.sort_values(by = "Final Grade")
 
 ```
@@ -283,19 +280,7 @@ Student 1   Ellis            9.6            9
 
 ```
 
-The data is now sorted based on the values in the Final Grade column, with the lowest grade at the top and the highest at the bottom.
-
-
-{{% codeblock %}}
-```python
-
-df.sort_values(by = "Final Grade")
-
-```
-{{% /codeblock %}}
-
-
-To sorte in descending order and get the highest grade on top of the DataFrame, set ascending to `False`. 
+The data is now sorted based on the values in the Final Grade column, with the lowest grade at the top and the highest at the bottom. To sorte in descending order and get the highest grade on top of the DataFrame, set ascending to `False`. 
 
 {{% codeblock %}}
 ```python
@@ -323,7 +308,9 @@ To look at just one column, you can use square brackets `[]` and specify the col
 
 {{% codeblock %}}
 ```python
+
 df["Final Grade"]
+
 ```
 {{% /codeblock %}}
 
@@ -461,7 +448,6 @@ Student 3  Casper            5.3            6   21        5.65
 ```
 
 To delete the Age column again, you can use `.drop()`. `axis=1` indicates that it's operating along columns. 
-
 
 
 {{% codeblock %}}
@@ -652,9 +638,7 @@ df.fillna(method ='ffill')
 
 ### Grouping
 
-Grouping data allows you to split your dataset into groups based on specific criteria and perform operations on each group. 
-
-Let's consider the following example DataFrame for student exam scores:
+Grouping data allows you to split your dataset into groups based on specific criteria and perform operations on each group. Let's consider the following example DataFrame for student exam scores:
 
 {{% codeblock %}}
 ```python
@@ -724,7 +708,6 @@ data_gender_age.get_group(('F', '20'))
 
 Once you have your data grouped, you can perform different operations within each group to extract meaningful information from your dataset. Three common operations are aggregation, transformation, and filtration.
 
-
 - Aggregation
 
 Aggregation involves combining data within each group to obtain a single value. For example, calculating the average exam grade for each gender:
@@ -754,7 +737,6 @@ Pandas provides various aggregation functions to summarize data within groups. C
 - Transformation
 
 Transformation applies a function to each group independently. Let's transform the exam grades to represent the difference from the mean grade within each gender group:
-
 
 {{% codeblock %}}
 ```python
@@ -790,6 +772,7 @@ print(ages_above8)
 The group based on age that scored a mean exam grade above 8 are age '20' and age '21'.
 
 ```python
+
       name gender age  exam grade
 0    Alice      F  20         8.4
 1      Eva      F  20         9.6
@@ -806,7 +789,6 @@ Let's create a pivot table for average exam grades considering both gender and a
 ```python
 
 pivot_table = students_df.pivot_table(values='exam grade', index=['gender', 'age'], aggfunc='mean')
-
 pivot_table
 
 ```
@@ -833,7 +815,6 @@ Let's create an example using the student exam scores DataFrame. The df now cont
 ```python
 
 multi_index_df = students_df.set_index(['gender', 'age'])
-
 multi_index_df
 
 ```
@@ -971,7 +952,6 @@ print(joined_df)
 ```
 
 {{% tip %}}
-
 **Data visualization in Python**
 
 Matplotlib and Seaborn are Python library that works seamlessly with pandas for creating various types of plots. Explore [this topic](/python/plotting) to delve deeper into data visualization with Matplotlib and Seaborn! 
