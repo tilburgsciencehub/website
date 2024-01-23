@@ -1,5 +1,5 @@
 ---
-title: "Pandas for data manipulation in Python"
+title: "Pandas for Data Manipulation in Python"
 description: "Master data manipulation and analysis in Python with the pandas library."
 keywords: "python, data science, data, programming, manipulation, analysis, tutorial"
 draft: false
@@ -217,7 +217,7 @@ df2 = pd.read_excel("\\example_path\\file_name.xlsx")
 {{% /codeblock %}}
 
 
-## Inspecting data
+## Inspect data
 
 To inspect your data, you can use the following functions:
 
@@ -250,7 +250,7 @@ df.index
 returns `Index(['Student 1', 'Student 2', 'Student 3'], dtype='object')`
 
 
-## Sorting data
+## Sorting & subsetting data
 
 Sorting data is the process of arranging it in a specific order. It can be useful for ...
 
@@ -306,10 +306,13 @@ Student 3  Casper            5.3            6
 
 ```
 
-## Subsetting data
+### Subsetting data
 
-To look at just one column, specify the column name within square brackets.
-### short introduction missing!!
+Subsetting data involves selecting specific columns or rows from a DataFrame.
+
+#### Selecting specific columns 
+
+To look at just one column, you can use square brackets `[]` and specify the column name. For example, let's say we want to look at the "Final Grade" column:
 
 {{% codeblock %}}
 ```python
@@ -326,7 +329,7 @@ Name: Final Grade, dtype: int64
 
 ```
 
-To subset multiple columns, provide a list of column names within square brackets:
+To select multiple columns by passing a list of column names within square brackets:
 
 {{% codeblock %}}
 ```python
@@ -343,7 +346,9 @@ Student 3            6  Casper
 
 ```
 
-To subset a specific row, you can use the `.loc[]` with the index label in between the square brackets.
+#### Selecting specific rows 
+
+To select specific rows, you can use `.loc`, and specify the index label between square brackets:
 
 {{% codeblock %}}
 ```python
@@ -362,9 +367,30 @@ Name: Student 1, dtype: object
 
 ```
 
-To subset rows/columns based on specific conditions, you can use Boolean indexing. 
-When subsetting based on multiple conditions:
-- `&` (AND): BOTH conditions should hold for a row to be included.
+### Boolean indexing
+
+To subset rows/columns based on specific conditions, you can use Boolean indexing. For example, select only the rows where the final grade is greater than or equal to 7.0:
+
+{{% codeblock %}}
+```python
+
+df_high = df[df['Final Grade'] >= 7.0]
+df_high
+
+```
+{{% /codeblock %}}
+
+```python
+
+            Name  Midterm Grade  Final Grade
+Student 1  Ellis            9.6            9
+Student 2   John            8.5            7
+
+```
+
+When subsetting based on multiple conditions, you can use logical operators to combine conditions:
+
+`&`(AND): Only rows where **both conditions** hold true are included in the result. 
 
 {{% codeblock %}}
 ```python
@@ -382,7 +408,7 @@ Student 1  Ellis            9.6            9
 
 ```
 
-- `|` (OR): One or the other condition should hold for a row to be included.
+`|` (OR): Rows are included in the result if **either one or the other condition** is true.
 
 {{% codeblock %}}
 ```python
@@ -395,12 +421,14 @@ df[(df["Midterm Grade"] > 7) | (df["Final Grade"] == 9)]
 
 ```python
             Name  Midterm Grade  Final Grade
-Student 1  Elli©            9.6            9
+Student 1  Ellis            9.6            9
 Student 2   John            8.5            7
 
 ```
 
-## Adding, deleting, and renaming columns
+## Manipulating data
+
+### Adding and deleting columns
 
 To add a new column, assign values to a new column name. These values can be new, or calculated from the values of other columns in the DataFrame.For example, you want to have a new column with the age of each student, and one column with the mean of the Midterm and Final grade of each student.
 
@@ -425,8 +453,9 @@ Student 3  Casper            5.3            6   21        5.65
 
 ```
 
-To delete the Age column again, you can use `.drop()`. 
-`axis=1` indicates that it's operating along columns. Note that the original DataFrame is not modified in place unless you set the inplace parameter to True:
+To delete the Age column again, you can use `.drop()`. `axis=1` indicates that it's operating along columns. 
+
+
 
 {{% codeblock %}}
 ```python
@@ -447,10 +476,16 @@ Student 3  Casper            5.3            6        5.65
 
 ```
 
-Rename column?
+{{% tip %}}
+__Modifying the original DataFrame__
+
+To modify the original DataFrame, you can set `inplace = True`. This difrectly modifies the original DataFrame. Alternatively, you can assign the modified DataFrame to the same variable with
+`df = df.drop('Age', axis = 1)`. Both approaches achieve the same result.
+
+{{% /tip %}}
 
 
-## Transposing data
+### Transposing data
 
 With `.T` behind the DataFrame name, you change the axis: the columns and the indeces are switched.
 
@@ -473,7 +508,7 @@ Mean Grade          9.3      7.75      5.65
 
 ```
 
-## Handling missing data
+### Handling missing data
 
 Handling missing data is a crucial aspect of data analysis. In any real-world dataset, missing values are common and can impact the accuracy of your analysis. First, we create an example DataFrame with missing values.
 
@@ -606,11 +641,13 @@ df.fillna(method ='ffill')
 
 ```
 
-## Grouping
+## Grouping and reshaping data
 
-It is often useful to split the data set into groups based on specific criteria and apply a function to each group independently. 
+### Grouping
 
-To split your data into groups based on particular criteria or columns, you can use the `groupby()` method. Let's consider the following example DataFrame for student exam scores:
+Grouping data allows you to split your dataset into groups based on specific criteria and perform operations on each group. 
+
+Let's consider the following example DataFrame for student exam scores:
 
 {{% codeblock %}}
 ```python
@@ -637,7 +674,7 @@ print(students_df)
 
 ```
 
-Now, we apply the groupby() function to group the data based on gender:
+To group the data based on gender, use the `groupby()` function. 
 
 {{% codeblock %}}
 ```python
@@ -657,7 +694,7 @@ data_gender.get_group('F')
 4   Zara      F  19         6.3
 ```
 
-You can also group based on more than one category. Grouping data based on gender and age goes like this:
+You can also group based on more than one category, for example, gender and age: 
 
 {{% codeblock %}}
 ```python
@@ -670,7 +707,6 @@ data_gender_age.get_group(('F', '20'))
 ```
 {{% /codeblock %}}
 
-{{% codeblock %}}
 ```python
 
     name gender age  exam grade
@@ -717,8 +753,6 @@ print(grade_difference)
 ```
 {{% /codeblock %}}
 
-
-
 ```python
 0    0.30
 1    1.50
@@ -727,7 +761,6 @@ print(grade_difference)
 4   -1.80
 
 ```
-
 
 - Filtration
 
@@ -752,15 +785,17 @@ The group based on age that scored a mean exam grade above 8 are age '20' and ag
 
 ```
 
-## Pivot tables
+### Pivot tables
 
-Pivot tables are a feature in pandas that allows you to reshape and summarize data. They are particularly useful for aggregating and analyzing data based on one or more criteria. The student exam scores DataFrame is used to demonstrate:
+Pivot tables allow you to reshape and summarize data and are particularly useful for aggregating and analyzing data based on one or more criteria.
+Let's create a pivot table for average exam grades considering both gender and age: 
 
 {{% codeblock %}}
 ```python
 
 pivot_table = students_df.pivot_table(values='exam grade', index=['gender', 'age'], aggfunc='mean')
-print(pivot_table)
+
+pivot_table
 
 ```
 {{% /codeblock %}}
@@ -776,19 +811,71 @@ M      19          5.8
 
 ```
 
-This pivot table provides a more detailed view of average exam grades considering both gender and age.
+### Multi-level indexing
 
-## Multi-level indexing
+Multi-level indexing is a feature in pandas that allows you to have more than one column in your DataFrame's index, allowing you to have multiple columns acting as a row identifier.
+
+Let's create an example using the student exam scores DataFrame. The df now contains multiple levels of indexing: in this case gender and age.
+
+{{% codeblock %}}
+```python
+
+multi_index_df = students_df.set_index(['gender', 'age'])
+
+multi_index_df
+
+```
+{{% /codeblock %}}
+
+```python
+
+             name  exam grade
+gender age                    
+F      20   Alice         8.4
+       20     Eva         9.6
+M      21  Charlie         9.1
+       19    Jack         5.8
+F      19    Zara         6.3
+
+```
+
+You can now perform operations using this multi-level index. For example, let's select data for females:
+
+{{% codeblock %}}
+```python
+
+female_data = multi_index_df.loc['F']
+female_data
+
+```
+{{% /codeblock %}}
+
+```python
+
+      name  exam grade
+age                    
+20   Alice         8.4
+20     Eva         9.6
+19    Zara         6.3
+
+```
+
+This is a simple example, but multi-level indexing becomes extremely useful when dealing with more complex datasets where you want to organize and analyze data hierarchically.
 
 
-## Descriptive statistics
+## Combining data
+
+### Merging
+
+### Joining
 
 
-## Combining dataframes: merging and joining
 
 
-## Data visualization
+{{% tip %}}
 
-Link to matplotlib topic
+__Data visualization in Python__ 
 
+Matplotlib and Seaborn are Python library that works seamlessly with pandas for creating various types of plots. Explore [this topic](/python/plotting) to delve deeper into data visualization with Matplotlib and Seaborn! 
 
+{{% /tip %}}
