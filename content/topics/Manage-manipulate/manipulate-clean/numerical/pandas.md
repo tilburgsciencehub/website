@@ -12,7 +12,7 @@ aliases:
 
 ## Overview
 
-Pandas, a Python library built on top of the NumPy library, contains essential tools for anyone working with structured data in Python. It has numerous options for data manipulation and analysis tasks and this guide will provide you with the basics in 10 minutes! An introduction on the different data structures in pandas will continue into the key data manipulation techniques. 
+Pandas, a Python library built on top of the NumPy library, contains essential tools for anyone working with structured data in Python. In just 10 minutes, get started with pandas basics! 
 
 ## Import pandas
 
@@ -26,7 +26,6 @@ import pandas as pd
 
 ```
 {{% /codeblock %}}
-
 
 ## Data structures in pandas
 
@@ -62,7 +61,7 @@ dtype: float64
 
 - Index
 
-The default index is from 0 to n-1, where n is the length of the data. You can change this: for example if you want the indeces from 1 to n, or want to have different labels. 
+The default index is from 0 to n-1, where n is the length of the data. You can change this: for example, if you want the index from 1 to n, or want to have different labels. 
 
 {{% codeblock %}}
 ```python
@@ -442,7 +441,7 @@ df
 ```
 {{% /codeblock %}}
 
-The two new column are added:
+The two new columns are added:
 
 ```python
 
@@ -477,9 +476,9 @@ Student 3  Casper            5.3            6        5.65
 ```
 
 {{% tip %}}
-__Modifying the original DataFrame__
+**Modifying the original DataFrame**
 
-To modify the original DataFrame, you can set `inplace = True`. This difrectly modifies the original DataFrame. Alternatively, you can assign the modified DataFrame to the same variable with
+To modify the original DataFrame, you can set `inplace = True`. This directly modifies the original DataFrame. Alternatively, you can assign the modified DataFrame to the same variable with
 `df = df.drop('Age', axis = 1)`. Both approaches achieve the same result.
 
 {{% /tip %}}
@@ -487,7 +486,7 @@ To modify the original DataFrame, you can set `inplace = True`. This difrectly m
 
 ### Transposing data
 
-With `.T` behind the DataFrame name, you change the axis: the columns and the indeces are switched.
+With `.T` behind the DataFrame name, you change the axis: the columns and the indices are switched.
 
 {{% codeblock %}}
 ```python
@@ -599,7 +598,7 @@ All columns contained missing values, so none are left.
 
 - Filling missing data
 
-Use `.fillna()` to fill missing values with a specific value that you specify inbetween the brackets. For example, fill the missing values with the mean of each column:
+Use `.fillna()` to fill missing values with a specific value that you specify in between the brackets. For example, fill in the missing values with the mean of each column:
 
 {{% codeblock %}}
 ```python
@@ -715,7 +714,7 @@ data_gender_age.get_group(('F', '20'))
 
 ```
 
-Once you have your data grouped, you can perform different operations within each group to extract meaningful information from your dataset. Three common operations are: aggregation, transformation, and filtration.
+Once you have your data grouped, you can perform different operations within each group to extract meaningful information from your dataset. Three common operations are aggregation, transformation, and filtration.
 
 
 - Aggregation
@@ -869,28 +868,103 @@ This is a simple example, but multi-level indexing becomes extremely useful when
 
 ## Combining data
 
+pandas provides various methods for combining data. 
+
+### Concatenate
+
+The `concat()` function is for combining two or more DataFrames along a particular axis. Consider the following example:
+
+{{% codeblock %}}
+```python
+
+df1 = pd.DataFrame({'Name': ['Ellis', 'Bob'], 'Age': [25, 30]})
+df2 = pd.DataFrame({'Name': ['John', 'Zara'], 'Age': [22, 28]})
+
+# Concatenate along the rows (axis=0)
+total = pd.concat([df1, df2], ignore_index=True)
+total
+
+```
+{{% /codeblock %}}
+
+```python
+
+    Name  Age
+0  Ellis   25
+1    Bob   30
+2   John   22
+3   Zara   28
+
+```
+
+The output is a DataFrame where `df2` is appended below `df1`. With `ignore_index = True` the index is reset to a new continuous range.
+
+
 ### Merge
 
 If you are combining datasets based on a common column, use the `merge()` function. 
 
+{{% codeblock %}}
+```python
+
+df1 = pd.DataFrame({'ID': [1, 2, 3], 'Name': ['Ellis', 'Bob', 'John']})
+df2 = pd.DataFrame({'ID': [1, 2, 4], 'Age': [25, 30, 22]})
+
+# Merge based on the 'ID' column
+merged_df = pd.merge(df1, df2, on='ID', how= 'inner')
+print(merged_df)
+
+```
+{{% /codeblock %}}
+
+```python
+
+   ID   Name  Age
+0   1  Ellis   25
+1   2    Bob   30
+
+```
+
+Information is combined from both `df1` and `df2` based on the common `ID` column. The `on` parameter specifies the column to merge on, and the `how` parameter defines the type of merge (here, `inner`).
+
+{{% tip %}}
+__Different types of merges__
+
+- `inner`: Keeps only the rows where the key(s) are present in both DataFrames.
+- `outer`: Keeps all rows from both DataFrames and fills in missing falues with NaN for columns that don't have a matching key.
+- `left`: Keeps all rows from the left DataFrame (`df1`), and fills in NaN for columns on the right (`df2`) that don't have a matching key.
+- `right`: Keeps all rows from the right DataFrame (`df2`), and fills in NaN for columns on the left (`df1`) that don't have a matching key.
+
+{{% /tip %}}
+
 
 ### Join
 
-Joining is similar to merging but is performed on the index rather than a specific column. With the `join()` function. 
+Joining is similar to merging but is performed on the index rather than a specific column. Here's a simple example using the `join()` function:
 
+{{% codeblock %}}
+```python
 
-### Concatenate
+df1 = pd.DataFrame({'Name': ['Ellis', 'Bob', 'John']}, index=[1, 2, 3])
+df2 = pd.DataFrame({'Age': [25, 30, 22]}, index=[1, 2, 4])
 
-Concatenation is the process of combining two or more DataFrames along a particular axis. The `concat()` function is used for this purpose. Consider the following example:
+joined_df = df1.join(df2, how='inner')
+print(joined_df)
 
+```
+{{% /codeblock %}}
 
-This will result in a DataFrame where df2 is appended below df1.
+```python
 
+    Name  Age
+1  Ellis   25
+2    Bob   30
 
+```
 
 {{% tip %}}
 
-__Data visualization in Python__ 
+**Data visualization in Python**
 
 Matplotlib and Seaborn are Python library that works seamlessly with pandas for creating various types of plots. Explore [this topic](/python/plotting) to delve deeper into data visualization with Matplotlib and Seaborn! 
 
