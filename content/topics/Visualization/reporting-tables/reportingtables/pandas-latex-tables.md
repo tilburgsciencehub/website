@@ -8,8 +8,7 @@ authorlink: "https://www.linkedin.com/in/fernando-iscar/"
 draft: false
 date: 2024-01-28
 aliases:
-
-/python_dataframe/latex_markdown_conversion
+- /python_dataframe/latex_markdown_conversion
 ---
 
 ## Overview
