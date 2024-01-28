@@ -21,7 +21,7 @@ By the end of this block, you'll be able to seamlessly convert your DataFrame re
 
 LaTeX is widely used in academic and scientific documentation for its excellent handling of mathematical and technical typesetting. In Python, converting a DataFrame to a LaTeX table can be achieved using Pandas’ built-in `to_latex()` method.
 
-__Example: ML Models Comparison__
+**Example: ML Models Comparison**
 
 Suppose we have a DataFrame df_models comparing various machine learning models:
 
@@ -77,7 +77,7 @@ The `to_latex()` method, despite being an easy and fast approach to convert your
 
 Markdown tables are essential for documentation on various platforms like GitHub, Bitbucket, or Jupyter Notebooks. For a straightforward conversion of DataFrames to Markdown format, Pandas provides the `to_markdown()` method.
 
-__Example: Using the Same DataFrame__
+**Example: Using the Same DataFrame**
 
 Continuing with the df_models DataFrame, here's how you can convert it to a Markdown table:
 
