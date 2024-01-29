@@ -16,15 +16,14 @@ aliases:
 
 ## Overview
 
-The goal of this article is to provide a theoretical and practical guide to [random forests](https://link.springer.com/article/10.1023/a:1010933404324). The article is divided as follows:
+The goal of this article is to provide a theoretical and practical guide to [Random Forests](https://link.springer.com/article/10.1023/a:1010933404324). The article is divided as follows:
 
 1. Introduction to Random Forests (**Theoretical Background**).
 2. Practical application in Python (**Python Application**).
-<!-- 3. Evaluation of a model's results (**Model Evaluation**). -->
 
-The primary objective of machine learning (ML) is to employ `statistical` `learning` `methods`, such as supervised learning, unsupervised learning, and reinforcement learning, to analyse a dataset of interest. ML is primarily concerned with outcome prediction. Therefore, the emphasis lies in utilising techniques that enable the estimation of a function, denoted as f', which closely approximates the real function f. This approximation ensures that the model, once trained, can accurately predict future and unknown values of f based on the acquired knowledge from the dataset.
+The primary objective of machine learning (ML) is to employ *statistical learning methods*, such as supervised learning, unsupervised learning, and reinforcement learning, to analyse a dataset of interest. ML is primarily concerned with outcome prediction. Therefore, the emphasis lies in utilising techniques that enable the estimation of a function, denoted as f', which closely approximates the real function f. This approximation ensures that the model, once trained, can accurately predict future and unknown values of f based on the acquired knowledge from the dataset.
 
-In the context of supervised learning, where both predictors and responses are known, one of the most widely employed methods is the random forest. This ensemble learning technique leverages the power of multiple [decision trees](https://www.taylorfrancis.com/books/mono/10.1201/9781315139470/classification-regression-trees-leo-breiman), thereby enhancing accuracy and facilitating the generalization of results to previously unseen data. Practically, random forests average many decision trees to reduce their inherent high variance and prevent overfitting.
+In the context of *supervised learning*, where both predictors and responses are known, one of the most widely employed methods is the random forest. This ensemble learning technique leverages the power of multiple [Decision Trees](https://www.taylorfrancis.com/books/mono/10.1201/9781315139470/classification-regression-trees-leo-breiman), thereby enhancing accuracy and facilitating the generalization of results to previously unseen data. Practically, random forests average many decision trees to reduce their inherent high variance and prevent overfitting.
 
 Among the properties that make decision trees, and hence random forests, outperform less flexible methods such as subset selection techniques or OLS are the facts that they are:
 
@@ -35,20 +34,20 @@ Among the properties that make decision trees, and hence random forests, outperf
 - **intuitive and computationally efficient**.
 
 
-In addition, random forests can be used not only for exploratory data anlaysis and predictive modelling, but also for variable selection and dimensionality reduction. Finally, they are used to perform both regression and classification tasks and can handle large datasets with high dimensionality. 
+In addition, random forests can be used not only for exploratory data anlaysis and predictive modelling, but also for variable selection and dimensionality reduction. Finally, they are employed in both regression and classification tasks and can handle large datasets with high dimensionality. 
 
 
 ## Theoretical Background
 
-In order to explain how random forests make predicitions, it is necessary to start from basic decision trees. Decision trees divide the predictor space into R distinct regions. In a regression problem, every training observation that is part of the same region (Rj) is predicted as the mean of the response values that are part of that region. Instead, in a classification problem, the most occurring class within each region is then defined as the class to which each training observation of the region belongs. Therefore, within the same region Rj, we make the same predictions. 
+In order to explain how random forests make predicitions, it is necessary to start from basic decision trees. Decision trees divide the predictor space into R distinct regions. In a **regression problem**, every training observation that is part of the same region (Rj) is predicted as the mean of the response values that are part of that region. Instead, in a **classification problem**, the most occurring class within each region is then defined as the class to which each training observation of the region belongs. Therefore, within the same region Rj, we make the same predictions. 
 
-The predictor space is divided by following a *top-down* and *greedy* approach called `recursive` `binary` `splitting`. It is top-down because it starts from the top of the tree and greedy because each split is chosen based on a criterion that maximises the information gain at that specific point, rather than choosing a split that would lead to an overall greater information gain.
+The predictor space is divided by following a *top-down* and *greedy* approach called *recursive binary splitting*. It is top-down because it starts from the top of the tree and greedy because each split is chosen based on a criterion that maximises the information gain at that specific point, rather than choosing a split that would lead to an overall greater information gain.
 
 {{% warning %}} 
 Decision trees represent a great alternative to other supervised learning methods when it comes to interpretability. However, due to their **high variance**, they tend to perform worse in terms of predictability.
 {{% /warning %}}
 
-The `solution` is to employ tree-based methods (e.g., **random forests**) that rely on multiple decision trees that are combined together to give a single consensus prediction.  
+The solution is to employ tree-based methods (e.g., **random forests**) that rely on multiple decision trees that are combined together to give a single consensus prediction.  
 
 {{% tip %}}
 This is accomplished by exploiting the principle that, in a **sequence** of **n independent observations**, each with its own variance, the **variance of the mean goes to zero** as n becomes sufficiently large. As a result, it becomes possible to decrease the inherent high variance of decision trees and enhance test set accuracy by iteratively sampling from the training set to estimate the sampling distribution of the relevant statistic.
@@ -76,9 +75,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
-
-ADD MORE IF NEEDED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 ```
 {{% /codeblock %}}
 
@@ -109,7 +105,7 @@ iris_df.describe()
 
 ### Exploratory Data Analysis
 
-Exploratory data analysis allows one to identify `patterns` and `relationships` (i.e., missing values, distribution of variables, balanced/imbalanced datsets etc..) within the data. This is relevant to gain insights which can then guide further analysis or hypothesis generation. Three examples of possible ways to proceed are provided below.
+Exploratory data analysis allows one to identify *patterns* and *relationships* (i.e., missing values, distribution of variables, balanced/imbalanced datsets etc..) within the data. This is relevant to gain insights which can then guide further analysis or hypothesis generation. Three examples of possible ways to proceed are provided below.
 
 Checking if the dependent variable is **balanced**:
 {{% codeblock %}} 
@@ -133,22 +129,21 @@ print(missing_values)
 {{% /codeblock %}}
 
 
-**Plotting histograms** with `matplotlib` to gain insights into the distribution of the data:
+**Plotting** a **histogram** for each variable, grouped by the target variable, using `matplotlib` to gain insights into the distribution of the data:
 
 {{% codeblock %}} 
 ```python
+cols = iris.feature_names
 
-# SEPAL LENGTH
-petal_length_counts = iris_df['sepal length (cm)'].value_counts().reset_index()
-petal_length_counts.columns = ['Sepal Length (cm)', 'Count']
-petal_length_counts = petal_length_counts.sort_values(by = 'Sepal Length (cm)')
-
-plt.bar(petal_length_counts['Sepal Length (cm)'], petal_length_counts['Count'], align = 'center', alpha = 0.7)
-plt.xlabel('Sepal Length (cm)')
-plt.ylabel('Number of Instances')
-plt.title('Number of Instances by Sepal Length')
-plt.show()
-
+for label in cols:
+    plt.hist(iris_df[iris_df["target"]==0][label], color='green', label = '0', alpha=0.7)
+    plt.hist(iris_df[iris_df["target"]==1][label], color='blue', label = '1', alpha=0.7)
+    plt.hist(iris_df[iris_df["target"]==2][label], color='red', label = '2', alpha=0.7)
+    plt.title(label)
+    plt.ylabel("Count")
+    plt.xlabel(label)
+    plt.legend()
+    plt.show()
 ```
 {{% /codeblock %}}
 
@@ -156,28 +151,19 @@ plt.show()
 <img src = "../images/sepal_length.png" width="500">
 </p>
 
-{{% codeblock %}} 
-```python
-
-# PETAL LENGTH
-petal_length_counts = iris_df['petal length (cm)'].value_counts().reset_index()
-petal_length_counts.columns = ['Petal Length (cm)', 'Count']
-petal_length_counts = petal_length_counts.sort_values(by = 'Petal Length (cm)')
-
-plt.bar(petal_length_counts['Petal Length (cm)'], petal_length_counts['Count'], align = 'center', alpha = 0.7, color = 'green')
-plt.xlabel('Petal Length (cm)')
-plt.ylabel('Number of Instances')
-plt.title('Number of Instances by Petal Length')
-plt.show()
-
-```
-{{% /codeblock %}}
+<p align = "center">
+<img src = "../images/sepal_width.png" width="500">
+</p>
 
 <p align = "center">
 <img src = "../images/petal_length.png" width="500">
 </p>
 
-From the two graphical representations above, it is clear that **petal length** has a **bimodal distribution**, which suggests that the data can be grouped into two separate clusters.
+<p align = "center">
+<img src = "../images/petal_width.png" width="500">
+</p>
+
+From the four graphical representations above, it is clear that both **petal length** and **petal width** exhibit a **bimodal distribution**, implying that the data can be partitioned into two distinct clusters.
 
 
 ### Data Preprocessing
@@ -191,7 +177,7 @@ Once we have a clearer picture of the dataset we are dealing with, we can procee
 
 # Standardisation
 scaler = StandardScaler()
-iris_df[['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']] = scaler.fit_transform(iris_df[['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']])
+iris_df[iris.feature_names] = scaler.fit_transform(iris_df[iris.feature_names])
 
 # Summary statistics
 iris_df.describe()
@@ -225,7 +211,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 
 # Random forest model
 r_forest = RandomForestClassifier(n_estimators = 500, # number of trees in the forest
-                               random_state = 17, # 
+                               random_state = 17,
                                criterion = "gini", # splitting criterion
                                max_depth = 4) # maximum number of end-nodes of the tree
 
@@ -235,7 +221,7 @@ r_forest.fit(X_train, y_train)
 ```
 {{% /codeblock %}}
 
-In the code snippet above, the `random_state` parameter is utilised to consistently produce the same set of random decisions during the training process, ensuring **reproducibility**. In addition, the `max_depth` parameter controls the maximum depth of each individual decision tree. You may want to set a maximum depth to **avoid overfitting** and **enhance interpretability** while being aware that it may come at the expense of predicition accuracy within the training set.
+In the code snippet above, the *random_state* parameter is utilised to consistently produce the same set of random decisions during the training process, ensuring **reproducibility**. In addition, the *max_depth* parameter controls the maximum depth of each individual decision tree. You may want to set a maximum depth to **avoid overfitting** and **enhance interpretability** while being aware that it may come at the expense of predicition accuracy within the training set.
 
 {{% tip %}} 
 
@@ -243,28 +229,99 @@ When implementing the [RandomForestClassifier()](https://scikit-learn.org/stable
 
 **What is the purpose of such randomness?**
 
-As mentioned in the `Theoretical` `Background` section, the objective is to reduce the high variance of decision trees. Introducing randomness allows us to create decision trees with less correlated prediction errors. Consequently, when averaging multiple trees, some of the errors may cancel out, resulting in an overall improved model.
+As mentioned in the *Theoretical Background* section, the objective is to reduce the high variance of decision trees. Introducing randomness allows us to create decision trees with less correlated prediction errors. Consequently, when averaging multiple trees, some of the errors may cancel out, resulting in an overall improved model.
 
 
 {{% /tip %}}
 
 
 ### Model Evaluation
+Given the prediction-oriented focus of machine learning, the goal is to **minimise the overall prediction error**, which is made up of three components, namely, **bias**, **variance**, and **irreducible error**. The bias decreases with flexibility, the variance increases with flexibility, and the irreducible component is a consequence of data noise and cannot really be dealt with. To determine the model with the optimal variance-bias trade-off, various **evaluation techniques** can be employed.
+
+Use the previously trained model to **make predictions**:
 
 {{% codeblock %}} 
 ```python
+y_pred = r_forest.predict(X_test)
 
+```
+{{% /codeblock %}}
+
+Employ **evaluation techniques** such as accuracy, precision, and recall to **assess model performance**:
+
+<br/>
+
+**Accuracy**
+
+Accuracy measures the overall performance of a model by identifying how many observations, whether positive or negative, are correctly classified. The higher the accuracy, the better the performance.
+
+{{% codeblock %}} 
+```python
+accuracy = metrics.accuracy_score(y_test, y_pred)
+accuracy
+```
+{{% /codeblock %}}
+
+
+{{% warning %}}
+Accuracy is not suitable for imbalanced datasets because it does not account for the class distribution of the data.
+{{% /warning %}}
+
+
+**Precision**
+
+Precision provides the proportion of the truly positive predictions out of all the positive predictions (both true positives and false positives) made by the model. Unlike accuracy, precision can be used with imbalanced datasets and allows to assess the model's ability to minimise false positives. The higher the precision, the better the performance.
+
+{{% codeblock %}} 
+```python
+precision = metrics.precision_score(y_test, y_pred, average = 'micro')
+precision
 
 ```
 {{% /codeblock %}}
 
 
+**Recall**
+
+Recall, also known as sensitivity, indicates the ratio of the model's correctly identified positive predictions to all the actual positive predictions. A higher recall value indicates that the model performs well at identifying positive instances. Hence, recall focuses on minimising false negatives.
+
+{{% codeblock %}} 
+```python
+recall = metrics.recall_score(y_test, y_pred, average = 'micro')
+recall
+
+```
+{{% /codeblock %}}
 
 
+The *average* parameter (see precision and recall code snippets) is used in multiclass classification problems to aggregate the precision/recall score for different classes into a single score. If set to *micro*, precision is calculated globally by counting true positives and false positives and then aggregating these values.
 
 
+{{% tip %}}
+**Faster alternative to calculate all evaluation metrics simultaneously:**
 
+from sklearn.metrics import classification_report
 
+print(classification_report(y_test, y_pred))
+{{% /tip %}}
+
+### Model Tuning
+
+{{% codeblock %}} 
+```python
+from sklearn.model_selection import GridSearchCV
+
+params = {'n_estimators': [100, 200, 300, 400, 500],
+          'max_depth': np.arange(1, 20)}
+
+grid = GridSearchCV(estimator = r_forest,
+                    param_grid = params)
+
+grid.fit(X_train, y_train)
+print(grid.best_score_)
+print(grid.best_params_)
+```
+{{% /codeblock %}}
 
 
 {{% summary %}}
