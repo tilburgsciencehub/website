@@ -320,7 +320,7 @@ params = {'n_estimators': [100, 200, 300, 400, 500],
 # Identifying best parameters
 grid = GridSearchCV(estimator = r_forest,
                     param_grid = params,
-                    scoring='accuracy')
+                    scoring = 'accuracy')
 
 # Fitting the model 
 grid.fit(X_train, y_train)
