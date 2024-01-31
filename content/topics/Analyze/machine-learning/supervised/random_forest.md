@@ -47,7 +47,7 @@ The predictor space is divided by following a *top-down* and *greedy* approach c
 Decision trees represent a great alternative to other supervised learning methods when it comes to interpretability. However, due to their **high variance**, they tend to perform worse in terms of predictability.
 {{% /warning %}}
 
-The solution is to employ tree-based methods (e.g., **random forests**) that rely on multiple decision trees that are combined together to give a single consensus prediction.  
+The solution is to employ tree-based methods (e.g., random forests) that rely on multiple decision trees that are combined together to give a single consensus prediction.  
 
 {{% tip %}}
 This is accomplished by exploiting the principle that, in a **sequence** of **n independent observations**, each with its own variance, the **variance of the mean goes to zero** as n becomes sufficiently large. As a result, it becomes possible to decrease the inherent high variance of decision trees and enhance test set accuracy by iteratively sampling from the training set to estimate the sampling distribution of the relevant statistic.
@@ -55,28 +55,9 @@ This is accomplished by exploiting the principle that, in a **sequence** of **n 
 
 
 
-
-
-
 ## Python Application
 
 The following section provides a step-by-step guide on implementing the [Random Forest](https://scikit-learn.org/stable/modules/ensemble#random-forests-and-other-randomized-tree-ensembles) method in Python using the `scikit-learn` library.
-
-### Importing Libraries
-
-{{% codeblock %}} 
-```python
-
-import pandas as pd
-import matplotlib.pyplot as plt
-import sklearn
-from sklearn import datasets
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn import metrics
-```
-{{% /codeblock %}}
 
 
 ### Loading Dataset
@@ -85,6 +66,10 @@ In this practical application, we will be using the sklearn Iris Dataset.
 
 {{% codeblock %}} 
 ```python
+import pandas as pd
+import numpy as np
+import sklearn
+from sklearn import datasets
 
 # Loading dataset
 iris = datasets.load_iris()
@@ -133,6 +118,8 @@ print(missing_values)
 
 {{% codeblock %}} 
 ```python
+import matplotlib.pyplot as plt
+
 cols = iris.feature_names
 
 for label in cols:
@@ -174,6 +161,7 @@ Once we have a clearer picture of the dataset we are dealing with, we can procee
 
 {{% codeblock %}} 
 ```python
+from sklearn.preprocessing import StandardScaler
 
 # Standardisation
 scaler = StandardScaler()
@@ -190,6 +178,7 @@ Splitting a dataset into **training** and **testing** sets is a fundamental step
 
 {{% codeblock %}} 
 ```python
+from sklearn.model_selection import train_test_split
 
 # Splitting the dataset into two parts to represent dependent and independent variables
 X, y = iris_df.iloc[:, :2], iris_df.target
@@ -208,12 +197,14 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 
 {{% codeblock %}} 
 ```python
+from sklearn.ensemble import RandomForestClassifier
 
 # Random forest model
 r_forest = RandomForestClassifier(n_estimators = 500, # number of trees in the forest
                                random_state = 17,
-                               criterion = "gini", # splitting criterion
-                               max_depth = 4) # maximum number of end-nodes of the tree
+                               criterion = 'gini', # splitting criterion
+                               max_depth = 4,
+                               max_features = 'sqrt') # maximum number of end-nodes of the tree
 
 # Fitting the model
 r_forest.fit(X_train, y_train)
@@ -249,7 +240,12 @@ y_pred = r_forest.predict(X_test)
 
 Employ **evaluation techniques** such as accuracy, precision, and recall to **assess model performance**:
 
-<br/>
+{{% codeblock %}} 
+```python
+from sklearn import metrics
+```
+{{% /codeblock %}}
+
 
 **Accuracy**
 
@@ -307,23 +303,77 @@ print(classification_report(y_test, y_pred))
 
 ### Model Tuning
 
+When employing a model, there can be parameters that are not directly estimated within the model (hyperparameters) and whose values need to be set beforehand. Depending on the parameters chosen, the performance of the model can vary, leading to more or less accurate predictions. Tuning a model (or hyperparameters tuning) requires inputting different combinations of such parameters to identify the combination for which the model's loss is minimised. 
+
+[GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV) allows to search the hyperparameter space to find the optimal combination of hyperparameters.
+
+Using the random forest model employed earlier, the code snippet below shows how to find the best combination of the *n_estimators* and *max_depth* hyperparameters from a pre-set grid.
+
 {{% codeblock %}} 
 ```python
 from sklearn.model_selection import GridSearchCV
 
+# Creating grid with different parameters
 params = {'n_estimators': [100, 200, 300, 400, 500],
           'max_depth': np.arange(1, 20)}
 
+# Identifying best parameters
 grid = GridSearchCV(estimator = r_forest,
-                    param_grid = params)
+                    param_grid = params,
+                    scoring='accuracy')
 
+# Fitting the model 
 grid.fit(X_train, y_train)
+
+# Accuracy
 print(grid.best_score_)
+
+# Parameters combination that minimises loss
 print(grid.best_params_)
 ```
 {{% /codeblock %}}
 
 
-{{% summary %}}
+{{% codeblock %}} 
+```python
+# Extracting best parameters from grid search
+best_max_depth = grid.best_params_['max_depth']
+best_n_estimators = grid.best_params_['n_estimators']
 
+# Random forest model with extracted parameters
+r_forest = RandomForestClassifier(n_estimators = best_n_estimators, 
+                               random_state = 17,
+                               oob_score = True,
+                               criterion = 'gini',
+                               max_depth = best_max_depth,
+                               max_features = 'sqrt')
+
+# Fitting the model
+r_forest.fit(X_train, y_train)
+
+```
+{{% /codeblock %}}
+
+
+{{% codeblock %}} 
+```python
+y_pred = r_forest.predict(X_test)
+```
+{{% /codeblock %}}
+
+
+{{% codeblock %}} 
+```python
+from sklearn.metrics import classification_report
+
+print(classification_report(y_test, y_pred))
+```
+{{% /codeblock %}}
+
+
+{{% summary %}}
+This article introduces Random Forests in Python by providing:
+
+- a simple explanation of the theoretical background behind Random Forests;
+- a practical workflow for implementing Random Forests in Python.
 {{% /summary %}}
