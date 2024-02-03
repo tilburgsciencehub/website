@@ -12,29 +12,29 @@ aliases:
 # Overview
 One of the most tedious tasks (if not the most) when writing a publication (e.g, article, thesis) is dealing with references. A good usage of reference management applications will save you a lot of time, which you can put to better use in your research.
 
-In this building block, we go trough the most widely used reference management applications: Mendeley, Zotero and EndNote.
+Here, we will go through the most widely used reference management applications: Mendeley, Zotero, and EndNote.
 
 
 ## Mendeley
 
- **Mendeley Reference Manager** is a free web and desktop reference management application which can be downloaded for [Windows](https://www.mendeley.com/download-reference-manager/windows), [MacOS](https://www.mendeley.com/download-reference-manager/macOS) and [Linux](https://www.mendeley.com/download-reference-manager/linux). With it, you can:
+ **Mendeley Reference Manager** is a free web and desktop reference management application that can be downloaded for [Windows](https://www.mendeley.com/download-reference-manager/windows), [MacOS](https://www.mendeley.com/download-reference-manager/macOS) and [Linux](https://www.mendeley.com/download-reference-manager/linux). With it, you can:
 
-  - Store, organize and search all your references from just one library.
+  - Store, organize, and search all your references from just one library.
   - Seamlessly insert references and bibliographies into your Microsoft® Word documents using Mendeley Cite.
-  - Read, highlight and annotate PDFs, and keep all your thoughts across multiple documents in one place.
+  - Read, highlight, and annotate PDFs, and keep all your thoughts across multiple documents in one place.
   - Collaborate with others by sharing references and ideas.
 
 ### Build your reference list
 
-From Mendelys's Reference manager there are several ways to add references to your library.
+From Mendeleys's Reference manager there are several ways to add references to your library.
 
-- **Import an existing library.** Do you already have a reference list in other formats such as bibtex, Endnote or RIS? No need to start building it over again, Mendeley Reference Manager allows you to import them easily: Go to "Add new > Import Library" and choose your desired preexisting library.
+- **Import an existing library.** Do you already have a reference list in other formats such as Bibtex, Endnote, or RIS? No need to start building it over again, Mendeley Reference Manager allows you to import them easily: Go to "Add new > Import Library" and choose your desired preexisting library.
   <p align = "center">
   <img src = "../images/import_library.PNG" width="400">
   </p>
 
 
-- **Browse for local files.** Do you have files already downloaded in your computer? Go to "+Add new" and select "File(s) from computer".
+- **Browse for local files.** Do you have files already downloaded to your computer? Go to "+Add new" and select "File(s) from computer".
     <p align = "center">
     <img src = "../images/files_from_computer.PNG" width="200">
     </p>
@@ -44,17 +44,23 @@ From Mendelys's Reference manager there are several ways to add references to yo
   <img src = "../images/drag_drop_pdfs.PNG" width="300">
   </p>
 
-- **Add references manually.** Missing the PDF? Go to "+Add new" and select "Add entry manually" and type in the document's ArXivID, DOI or PMID.
+- **Add references manually.** Missing the PDF? Go to "+Add new" and select "Add entry manually" and type in the document's ArXivID, DOI, or PMID.
   <p align = "center">
   <img src = "../images/add_manually.PNG" width="400">
   </p>
+
+## Integrations
+
+- When working on a paper in [**Overleaf**](/overleaf/), you can import your Mendeley references library into your Overleaf project. Within Overleaf, you can refresh this .bib file after updates are made within Mendeley.
+
+- When using **Word**, you can use Mendeley Cite as a citation add-in for inserting references from your Mendeley library into your Word document.
 
 {{% tip %}}
 Adding references manually is the most reliable way to add a reference because it relies on the metadata of publications. There is a much lower chance that you get incorrect information.
 {{% /tip %}}
 
--  **Search for articles online.** Although the preferred search methods for literature on the web are the ones mentioned in our [building block](https://tilburgsciencehub.com/topics/develop-your-research-skills/tips/search-literature/), Mendeley Reference Manager also has its own search engine. To use it,  go to "Tools" and select "Search for articles online". It will redirect you to the following [page](https://www.mendeley.com/search/?dgcid=refmandesktop).
-    - Having said this, the Mendeley searcher has an "Add to library" button for every search result, which allows to instantly add the reference to your Mendeley Reference Manager's library. However, this is no significant advantage compared to other search engines once the Mendeley Web Importer extension is added (see below)
+-  **Search for articles online.** Although the preferred search methods for literature on the web are the ones mentioned in this [topic](https://tilburgsciencehub.com/topics/develop-your-research-skills/tips/search-literature/), Mendeley Reference Manager also has its own search engine. To use it,  go to "Tools" and select "Search for articles online". It will redirect you to the following [page](https://www.mendeley.com/search/?dgcid=refmandesktop).
+    - Having said this, the Mendeley searcher has an "Add to library" button for every search result, which allows you to instantly add the reference to your Mendeley Reference Manager's library. However, this is no significant advantage compared to other search engines once the Mendeley Web Importer extension is added (see below)
 
 
 ### Mendeley Web Importer
@@ -97,15 +103,15 @@ Mendeley Web Importer is a browser extension that can be downloaded [here](https
 #### Custom Collections.
  Organize your references into the folders of your choosing. For instance, organize by topic (e.g., Economics, Data Modelling)
 
-  - To create a new collection, select the "New Collection" button in the left hand navigation panel.
+  - To create a new collection, select the "New Collection" button in the left-hand navigation panel.
 
-  - To add a reference to a collection, drop it onto a collection in the left hand navigation panel.
+  - To add a reference to a collection, drop it onto a collection in the left-hand navigation panel.
 
 ### Export your references
-You can export references directly into a BibTex, EndNote, Word or RIS file. To do so:
+You can export references directly into a BibTex, EndNote, Word, or RIS file. To do so:
   1. Select the references you want to export by clicking on the squared box next to the "Authors" column.
 
-  2. Click on the export drop down cell, and select the file format of your choosing.
+  2. Click on the export drop-down cell, and select the file format of your choosing.
 
 <p align = "center">
 <img src = "../images/export_refs.PNG" width="600">
