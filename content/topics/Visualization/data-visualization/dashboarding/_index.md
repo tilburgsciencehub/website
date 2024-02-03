@@ -1,6 +1,5 @@
 ---
 draft: false
-title: "Dashboarding"
+title: "R-Shiny"
 weight: 3
-type: subcategory
 ---

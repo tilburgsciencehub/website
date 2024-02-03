@@ -1,0 +1,410 @@
+---
+title: "Source code: How to create a Shiny Dashboard using Shinydashboard: A User Interface Guide"
+output: html_notebook
+---
+
+```{r Empty Shinydashboard}
+# Import Necessary Libraries
+# Install and load the shinydashboard package, which also loads shiny.
+# install.packages("shinydashboard")
+library(shinydashboard)
+library(shiny)
+
+# Set Up UI Components
+# Header: Define the dashboard's header with a title and specified width.
+header <- dashboardHeader(
+  title = "Welcome to the article about shinydashboard", 
+  titleWidth = 600)
+
+# Sidebar: Create a simple sidebar.
+sidebar <- dashboardSidebar()
+
+# Body: Initialize an empty body for content.
+body <- dashboardBody()
+
+# Assemble UI: Combine the header, sidebar, and body.
+ui <- dashboardPage(header, sidebar, body)
+
+# Define the Server Function
+# The server logic is defined here, similar to a standard shiny app.
+server <- function(input, output) {}
+
+# Launch the Shinydashboard
+# Use shinyApp to run the dashboard with the specified UI and server.
+shinyApp(ui, server)
+```
+
+
+```{r Shinydashboard with Header}
+# Define the Dashboard Header
+header <- dashboardHeader(
+  title = "Welcome to the article about shinydashboard",  # Dashboard title
+  titleWidth = 600,  # Adjust the title area width
+  
+  # Message Dropdown Menu
+  dropdownMenu(
+    type = "messages",  # Specify that this is a messages dropdown.
+    messageItem(
+      from = "Tilburg Science Hub", # Sender of the first message.     
+      message = "Check out our Home page!", # Message content.
+      href = "https://tilburgsciencehub.com" # Link associated with the message.
+    ),
+    messageItem(
+      from = "Tilburg.AI",
+      message = "Want to learn more about AI?",
+      href = "https://tilburg.ai",
+      icon = icon("question"),  # Custom icon for the message.
+      time = "5 minutes ago" # Time since the message was sent.
+    )),
+  
+  # Notification Dropdown Menu
+  dropdownMenu(type = "notifications", # Define the menu type as 'notifications'.
+    notificationItem( 
+      text = "5 new learners today", # The content of the notification
+      icon = icon("users") # Custom icon for the notification. 
+    ),
+    notificationItem(
+      text = "2 articles created",
+      icon = icon("truck"),
+      status = "success" # Green icon indicating a positive update
+    ),
+    notificationItem(
+      text = "Server load at 86%",
+      icon = icon("exclamation-triangle"),
+      status = "warning" # Yellow icon indicating caution
+    )
+  ),
+
+  # Tasks Dropdown Menu
+dropdownMenu(type = "tasks", # Indicate that this is a tasks dropdown.
+             badgeStatus = "success", # Overall theme set to green for progress
+  taskItem(value = 90, # Progress of the task in percentage. 
+           color = "green", # Color of the progress bar
+           text = "Article creation" # Description of the task.
+    ),
+  taskItem(value = 17,
+           color = "aqua",
+           text = "Reviewing Articles"
+    ),
+  taskItem(value = 75, 
+           color = "yellow",
+           text =  "Server deployment"
+    ),
+  taskItem(value = 80, 
+           color = "red",
+           text = "Overall project"
+    )
+  )
+)
+
+# Construct the Dashboard Page
+ui <- dashboardPage(
+  header = header,
+  sidebar = dashboardSidebar(),
+  body = dashboardBody()
+)
+
+# Define the Server Logic
+server <- function(input, output) {}
+
+# Launch the Shiny App
+shinyApp(ui, server)
+```
+
+
+```{r Shinydashboard Sidebar}
+# Sidebar with navigation tabs and features
+sidebar <- dashboardSidebar(
+  width = 300,  # Adjust sidebar width
+  sidebarMenu(
+    menuItem("Main Dashboard", 
+             tabName = "dashboard", 
+             icon = icon("dashboard")),
+    menuItem("Widgets", 
+             tabName = "widgets", 
+             icon = icon("th"), 
+             badgeLabel = "Newly added", 
+             badgeColor = "green"),
+    menuItem("Charts", 
+             tabName = "charts", 
+             icon = icon("chart")),
+    menuItem("Tables", 
+             tabName = "tables", 
+             icon = icon("table")),
+    menuItem("External Link", 
+             href = "https://tilburgsciencehub.com", 
+             icon = icon("external-link"))
+  )
+)
+
+# Construct the Dashboard Page
+ui <- dashboardPage(
+  header = header,
+  sidebar = sidebar,
+  body = dashboardBody()
+)
+
+# Define the Server Logic
+server <- function(input, output) {}
+
+# Launch the Shiny App
+shinyApp(ui, server)
+```
+
+
+```{r Shinydashboard sidebar: Advanced}
+# Define the Sidebar with Navigation Tabs and Interactive Features
+sidebar <- dashboardSidebar(
+                            width = 300,  # Set the width of the sidebar
+  sidebarMenu(
+    # Navigation Tabs: Each tab links to different content in the main body
+    menuItem("Main Dashboard", 
+             tabName = "dashboard", 
+             icon = icon("dashboard")),
+    menuItem("Widgets", 
+             tabName = "widgets", 
+             icon = icon("th"), 
+             badgeLabel = "Newly added", 
+             badgeColor = "green"),
+    menuItem("Charts", 
+             tabName = "charts", 
+             icon = icon("chart")),
+    menuItem("Tables", 
+             tabName = "tables", 
+             icon = icon("table")),
+    
+    # External Link: Opens in a new tab or window
+    menuItem("External Link",
+             href = "https://tilburgsciencehub.com", 
+             icon = icon("external-link"), 
+             newtab = TRUE),
+    
+    # Interactive Inputs: Integrated into the sidebar for user interaction
+    sliderInput("slider", "Slider", 
+                min = 1, 
+                max = 100, 
+                value = 50),
+    checkboxInput("checkbox", "Checkbox", 
+                  value = TRUE),
+    radioButtons("radio", "Radio Buttons", 
+                 choices = c("Option 1", "Option 2", "Option 3")),
+    
+    # Search Form: For enhanced user interaction
+    sidebarSearchForm(textId = "search", 
+                      buttonId = "searchButton", 
+                      label = "Search...")
+  )
+)
+
+# Define the Body of the Dashboard
+body <- dashboardBody(
+  tabItems(
+    # Tab Content: Matching the 'tabName' in sidebarMenu items
+    tabItem(tabName = "dashboard", h2("Dashboard Content")),
+    tabItem(tabName = "widgets", h2("Widgets Content")),
+    tabItem(tabName = "charts", h2("Charts Content")),
+    tabItem(tabName = "tables", h2("Tables Content"))
+    # Add more tabItem() for additional content sections
+  )
+)
+
+# Construct the Dashboard Page
+ui <- dashboardPage(
+  header,  # Dashboard header defined elsewhere
+  sidebar,  # Sidebar defined above
+  body     # Body defined above
+)
+
+# Define the Server Logic
+server <- function(input, output) {
+  # Server-side logic for handling inputs and outputs
+}
+
+# Launch the Shiny App
+shinyApp(ui, server)
+```
+
+```{r Shinydashboard Body: Boxes}
+# Sample dashboardBody with various box customizations
+body = dashboardBody(
+  fluidRow(
+    box(title = "Box 1", 
+        status = "primary",
+        "Content", 
+        solidHeader = TRUE),
+    box(title = "Box 2", 
+        plotOutput("plot1", 
+                   height = 250), 
+        solidHeader = TRUE),
+    box(title = "Box 3", 
+        status = "warning", "
+        Content", 
+        solidHeader = TRUE, 
+        collapsible = TRUE),
+    box(title = "Box 4", 
+        background = "black", 
+        "Content")
+  )
+)
+# Construct the Dashboard Page
+ui <- dashboardPage(
+  header,  # Dashboard header defined elsewhere
+  sidebar,  # Sidebar defined above
+  body     # Body defined above
+)
+
+# Define the Server Logic
+server <- function(input, output) {
+ output$plot1 <- renderPlot({
+   ggplot2::qplot(mtcars$wt, mtcars$mpg, 
+                  xlab = "Weight", ylab = "Miles per Gallon", 
+                  main = "Scatterplot of MPG vs. Weight")
+  })
+ }
+
+# Launch the Shiny App
+shinyApp(ui, server)
+```
+
+```{r Shinydashboard Body: TabBox}
+body = dashboardBody(
+  fluidRow(
+    # Standard TabBox
+    tabBox(
+      title = "First TabBox",
+      id = "tabset1", height = "250px",
+      tabPanel("Tab1", "First Tab Content"),
+      tabPanel("Tab2", "Second Tab Content")
+    ),
+    # TabBox with Right-Aligned Tabs
+    tabBox(
+      side = "right", height = "250px",
+      selected = "Tab3",
+      tabPanel("Tab1", "First Tab Content"),
+      tabPanel("Tab2", "Second Tab Content"),
+      tabPanel("Tab3", "Note: Tabs are reversed with side='right'.")
+    )
+  ),
+  fluidRow(
+    # TabBox with an Icon in the Title
+    tabBox(
+      title = tagList(shiny::icon("gear"), "TabBox with Icon"),
+      tabPanel("Tab1",
+        "Selected tab from the first box:",
+        verbatimTextOutput("tabset1Selected")
+      ),
+      tabPanel("Tab2", "Second Tab Content")
+    )
+  )
+)
+
+server <- function(input, output) {
+  # Monitor selected tab in the first TabBox
+  output$tabset1Selected <- renderText({
+    input$tabset1
+  })
+}
+
+# Construct the Dashboard Page
+ui <- dashboardPage(
+  header,  # Dashboard header defined elsewhere
+  sidebar,  # Sidebar defined above
+  body     # Body defined above
+)
+
+# Launch the Shiny App
+shinyApp(ui, server)
+```
+
+
+```{r Shinydashboard Body: infoBox}
+# Dashboard Body with infoBox examples
+body = dashboardBody(
+  fluidRow(
+    infoBox("New Users", 20, 
+            icon = icon("users")),
+    infoBoxOutput("learningBox")
+  ),
+  fluidRow(
+    infoBox("New Users", 
+            20, 
+            icon = icon("users"), 
+            fill = TRUE),
+    infoBoxOutput("learningBox2")
+  ),
+  fluidRow(
+    box(width = 4, 
+        actionButton("count", "Increment progress"))
+  )
+)
+
+# Server logic for dynamic infoBoxes
+server <- function(input, output) {
+  output$learningBox <- renderInfoBox({
+    infoBox("Progress", 
+            paste0(25 + input$count, "%"), 
+            icon = icon("list"), 
+            color = "orange")
+  })
+  output$learningBox2 <- renderInfoBox({
+    infoBox("Progress", 
+            paste0(25 + input$count, "%"), 
+            icon = icon("list"), 
+            color = "orange", 
+            fill = TRUE)
+  })
+}
+
+
+# Complete UI
+ui <- dashboardPage(
+  header,
+  sidebar,
+  body
+)
+# Run the application
+shinyApp(ui, server)
+```
+
+
+```{r Shinydashboard Body: valueBox}
+# Define the sidebar
+sidebar <- dashboardSidebar(
+  sliderInput("number", 
+              "Choose a number:", 
+              min = 1, 
+              max = 100, 
+              value = 50)
+)
+
+# Define the body
+body <- dashboardBody(
+  fluidRow(
+    valueBox(100, 
+             "Static Value", 
+             icon = icon("thumbs-up"), 
+             color = "green"),
+    valueBoxOutput("dynamicValueBox")
+  )
+)
+
+# Define the server logic
+server <- function(input, output) {
+  output$dynamicValueBox <- renderValueBox({
+    valueBox(input$number, 
+             "Dynamic Value", 
+             icon = icon("refresh"), 
+             color = "blue")
+  })
+}
+
+# Complete UI
+ui <- dashboardPage(
+  dashboardHeader(title = "ValueBox Example"),
+  sidebar,
+  body
+)
+
+# Run the application
+shinyApp(ui, server)
+```
