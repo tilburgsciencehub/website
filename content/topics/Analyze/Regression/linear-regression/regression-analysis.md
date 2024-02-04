@@ -23,9 +23,9 @@ In this topic, we illustrate how to estimate a model, identify outliers, plot a 
 
 Linear regression (`lm`) is suitable for a response variable that is numeric. For logical values (e.g., did a customer churn: yes/no), you need to estimate a logistic regression model (`glm`). The code sample below estimates a model, checks the model assumptions, and shows the regression coefficients.
 
-- Model transformations can be incorporated into the formula, for example: `formula = log(y) ~ I(x^2)`.
+- Model transformations can be incorporated into the formula. For example: `formula = log(y) ~ I(x^2)`. 
 - The coefficients (`coefficients(mdl)`), predictions for the original data set (`fitted(mdl)`), and residuals (`residuals(mdl)`) can be directly derived from the model object.
-- A concrete example on how to evaluate model assumptions (mean residuals is 0, residuals are normally distributed, homoscedascticiy) can be found at the building block [Evaluate Model Assumptions](/analyze/regression/model-assumptions).
+- A concrete example of how to evaluate model assumptions (mean of the residuals is 0, residuals are normally distributed, homoscedasticity) can be found in [this topic](/analyze/regression/model-assumptions).
 
 {{% codeblock %}}
 
