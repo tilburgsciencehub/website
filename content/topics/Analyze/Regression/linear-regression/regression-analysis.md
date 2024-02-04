@@ -15,7 +15,7 @@ aliases:
 
 In the social sciences, regression analysis is a popular tool to estimate relationships between a dependent variable and one or more independent variables. It is a way to find trends in data, quantify the impact of input variables, and make predictions for unseen data.
 
-In this building block, we illustrate how to estimate a model, identify outliers, plot a trend line, and make predictions.
+In this topic, we illustrate how to estimate a model, identify outliers, plot a trend line, and make predictions.
 
 ## Code
 
@@ -25,7 +25,7 @@ Linear regression (`lm`) is suitable for a response variable that is numeric. Fo
 
 - Model transformations can be incorporated into the formula, for example: `formula = log(y) ~ I(x^2)`.
 - The coefficients (`coefficients(mdl)`), predictions for the original data set (`fitted(mdl)`), and residuals (`residuals(mdl)`) can be directly derived from the model object.
-- A concrete example on how to evaluate model assumptions (mean residuals is 0, residuals are normally distributed, homoscedascticiy) can be found at the building block [Evaluate Model Assumptions ](/topics/analyze-data/regressions/model-assumptions/).
+- A concrete example on how to evaluate model assumptions (mean residuals is 0, residuals are normally distributed, homoscedascticiy) can be found at the building block [Evaluate Model Assumptions](/analyze/regression/model-assumptions).
 
 {{% codeblock %}}
 
