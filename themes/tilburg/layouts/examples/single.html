@@ -56,10 +56,13 @@
 				{{ if .Params.author }}
 				<div class="admonition author">
 					<div class="admonition-content">Contributed by <b>
-						<a href='/contributors/{{ replace (lower .Params.author) " " "" }}'>{{ .Params.author }}</a></b>
-          </div>
-				</div>				
-				{{ else }}
+							{{ $authors := split .Params.author ", " }}
+							{{ range $index, $author := $authors }}
+							{{ if $index }}, {{ end }}
+							<a href='/contributors/{{ replace (lower $author) " " "" }}'>{{ $author }}</a>
+							{{ end }}
+						</b></div>
+				</div>
 				{{ end }}
 				<div class="d-flex justify-content-between mt-5 align-items-center">
           <!-- <div class="flex-fill">

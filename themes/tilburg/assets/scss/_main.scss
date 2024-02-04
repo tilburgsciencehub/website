@@ -993,6 +993,14 @@ footer {
   }
 }
 
+#TableOfContents > ul > li {
+  font-weight: bold;
+
+  ul li {
+    font-weight: normal;
+  }
+}
+
 .screen-1,
 .screen2 {
   a:not(.btn) {
