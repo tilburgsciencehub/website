@@ -131,7 +131,7 @@ The estimates for the independent variables indicate the predicted effect of eac
 
 The standard error provides an estimate of the uncertainty associated with the coefficient estimates. Put simply, it tells us how much we would expect the coefficient estimate to vary if multiple samples were drawn from the population. 
 
-{{% /tip %}}
+{{% tip %}}
 
 Using the standard error, you can construct create confidence intervals (CI) that provide a range of plausible values for the true population parameter.
 
