@@ -14,11 +14,11 @@ aliases:
 
 Regression analysis is a powerful tool to estimate relationships between variables. It is a way to quantify the impact of one variable on the other and make predictions for unseen data. [Refer to this topic](/analyze/regression) for the basics of regression analysis. 
 
-Here, we focus on the summary of a regression in R, exploring all components of a regression output with step-by-step explanations and suggestions on how to interpret your results.
+Here, we focus on the regression output summary in R, exploring all components with step-by-step explanations and suggestions on how to interpret your results.
 
 ## Load packages and data
 
-Begin by loading our sample dataset. We use the PIAAC survey, measuring adults' proficiency in key information-processing skills: literacy, numeracy and problem-solving.Data adjustments are made beforehand to ensure variables are in the correct format. Load the data set in R yourself by running the following code.
+Begin by loading our sample dataset. We use the PIAAC survey, measuring adults' proficiency in key information-processing skills: literacy, numeracy, and problem-solving. Data adjustments are made beforehand to ensure variables are in the correct format. Load the data set in R yourself by running the following code.
 
 {{% codeblock %}}
 
@@ -89,14 +89,14 @@ The summary output provides:
 - `3Q`: Third quartile, the value below which 75% of the residuals lie.
 - `Max`: Maximum residual value
 
-For a linear regression model to be unbiased, the residuals are assumed be evenly distributed around zero, indicating that the errors are simply random fluctuations around the true line and the model is equally likely to overestimate or underestimate the dependent variable's value.
+For a linear regression model to be unbiased, the residuals are assumed to be evenly distributed around zero, indicating that the errors are simply random fluctuations around the true line and the model is equally likely to overestimate or underestimate the dependent variable's value.
 
 While the summary output can provide an initial insight into the distribution of residuals, it is typically not the primary tool for directly assessing the assumption on residuals. [This topic](/analyze/regression/model-assumptions) elaborates on model assumptions including the one about the model's residuals. 
 
 {{% tip %}}
-A bief overview of the regression output reveals some characteristics about the distribution of the residuals already. 
+A brief overview of the regression output reveals some characteristics about the distribution of the residuals already. 
 
-E.g, the negative median (`-59.00`) tells us that a significant portion of the residuals falls below zero. Moreover, he maximum (`528.45`) is substantially larger than the median, suggesting the presence of outliers in the upper tail of the distribution. The minimum residual (`-124.19`) being closer to the median suggests a more compact distribution towards the lower end of the range. In summary, the distribution appears right-skewed and a residual plot will clarify this.
+E.g, the negative median (`-59.00`) tells us that a significant portion of the residuals falls below zero. Moreover, the maximum (`528.45`) is substantially larger than the median, suggesting the presence of outliers in the upper tail of the distribution. The minimum residual (`-124.19`) being closer to the median suggests a more compact distribution towards the lower end of the range. In summary, the distribution appears right-skewed and a residual plot will clarify this.
 {{% /tip %}}
 
 ## Coefficients
@@ -116,7 +116,7 @@ The estimate column displays the coefficients for each predictor in the model. T
 The first estimate is of the intercept term, which represents the predicted value of the dependent variable when all predictor variables are set to zero. 
 
 {{% tip %}}
-Note that interpretation of the intercept may not be meaningful if the independent variable(s) cannot realistically take on a value of zero in the dataset. Like in our example, where the minimum value of years of education is 5, indicating that all surveyed individuals completed at least 5 years of education. 
+Note that the interpretation of the intercept may not be meaningful if the independent variable(s) cannot realistically take on a value of zero in the dataset. Like in our example, where the minimum value of years of education is 5, indicating that all surveyed individuals completed at least 5 years of education. 
 {{% /tip %}}
 
 - Independent variables
@@ -133,11 +133,9 @@ The standard error provides an estimate of the uncertainty associated with the c
 
 {{% tip %}}
 
-Using the standard error, you can create confidence intervals (CI) that provide a range of plausible values for the true population parameter.
+Using the standard error, you can create confidence intervals (CI) that provide a range of plausible values for the true population parameter.For instance, a 95% CI contains the true population parameter with 95% confidence. When you re-estimate the model, your estimate will fall in this range in 95% of the cases.
 
-For instance, a 95% CI contain the true population parameter with 95% confidence. When you re-estimate the model, your estimate will fall in this range in 95% of the cases.
-
-For large samples: $/beta$ + - 1.96 SE($/beta$) 
+For large samples, the CI holds: $/beta$ + - 1.96 SE($/beta$) 
 
 Reporting the 95% CI around the estimated effect is useful. Even when the estimate is significant, the uncertainty is still there. A CI shows this uncertainty.
 
@@ -189,10 +187,10 @@ If this p-value is small enough, e.g. lower than the commonly used threshold of 
 
 The stars represent significance codes and visually indicate the level of significance determined by the p-value. For instance, the estimate for `yrseduc` is statistically significant at a 0.1% level (`***`). If no stars are present, as with the intercept, it indicates an insignificant estimate. 
 
-These significance codes are displayed below the Coefficients section, with significance at respectively 1%, 5% and 10% level denoted with two stars (`**`), one star (`*`), and a dot (`.`). 
+These significance codes are displayed below the Coefficients section, with significance at respectively 1%, 5%, and 10% levels denoted with two stars (`**`), one star (`*`), and a dot (`.`). 
 
 {{% tip %}}
-- A statistically insignificant coefficient (e.g. p-value > 0.05) does not necessarily imply absence of an effect. Instead, it suggest that the evidence against the null hypothesis (i.e., no effect) is not strong enough to reject it. When reporting non-significant results, it is more accurate to state that you don't find evidence for a relationship between X and Y, rather than concluding there is no relationship. 
+- A statistically insignificant coefficient (e.g. p-value > 0.05) does not necessarily imply the absence of an effect. Instead, it suggests that the evidence against the null hypothesis (i.e., no effect) is not strong enough to reject it. When reporting non-significant results, it is more accurate to state that you don't find evidence for a relationship between X and Y, rather than concluding there is no relationship. 
 
 - When reporting a statistically significant effect, it is crucial to assess its magnitude. For instance, a statistically significant effect can be too small to have a significant impact in economic terms. One approach is to express the effect as a percentage; in linear models, divide the coefficient by the baseline mean of the outcome variable and multiply by 100%.
 {{% /tip %}}
@@ -220,7 +218,7 @@ Therefore, it provides a more accurate reflection of the model's explanatory pow
 
 
 {{% tip %}}
-Note that a low R-squared value does not necessarily indicate a poor model, and a high R-squared value does not necessarily imply a good model. Interpret these values in the context of your specific model. 
+Note that a low R-squared value does not necessarily indicate a poor model and a high R-squared value does not necessarily imply a good model. Interpret these values in the context of your specific model. 
 {{% /tip %}}
 
 
@@ -235,6 +233,6 @@ While the F-statistic assesses the overall fit of the model, it's generally bett
 {{% summary %}}
 
 
-When interpreting a regression summary, it is important to assess the entire output before drawing conclusions about the relationship between variables. Interpret the standard error and significance level alongside the coefficients. Additionally, consider reporting confidence intervals for the coefficients which provides insight into the precision of the estimates. Remember to interpret results considering both statistical significance and practical significance.
+When interpreting a regression summary, it is important to assess the entire output before concluding the relationship between variables. Interpret the standard error and significance level alongside the coefficients. Additionally, consider reporting confidence intervals for the coefficients which provides insight into the precision of the estimates. Remember to interpret results considering both statistical significance and practical significance.
 
 {{% summary %}}
