@@ -1,5 +1,5 @@
 ---
-title: "Understand the Summary Statistics of Regression Output in R"
+title: "How to Read the Summary Output of Linear Regression in R"
 description: "Learn how to interpret the summary output of a linear regression model, e.g. coefficients, standard error, significance, R-squared etcetera."
 keywords: "R, regression, interpretation, output, model, summary, linear, analysis, interpret, analyze"
 draft: false 
@@ -10,68 +10,61 @@ aliases:
   - /summary
 ---
 
-
 # Overview
 
-Regression analysis is a powerful tool to estimate relationships between variables. It is a way to quantify the impact of one variable on the other and make predictions for unseen data. [Check out this topic](/analyze/regression) for the basics of regression output, In this topic, we discuss the summary of a regression in R, i.e. all the components of a regression output. We provide step-by-step explanations with suggestions on how to interpret and present the results.
+Regression analysis is a powerful tool to estimate relationships between variables. It is a way to quantify the impact of one variable on the other and make predictions for unseen data. [Refer to this topic](/analyze/regression) for the basics of regression analysis. 
+
+Here, we focus on the summary of a regression in R, exploring all components of a regression output with step-by-step explanations and suggestions on how to interpret your results.
 
 ## Load packages and data
 
-We will start by loading the necessary packages and our sample dataset. The dataset we'll use is manipulated before and contains data on immigration and unemployment rates in regions in the Netherlands. 
-
-We investigate the relationship between 
+Begin by loading our sample dataset. We use the PIAAC survey, measuring adults' proficiency in key information-processing skills: literacy, numeracy and problem-solving.Data adjustments are made beforehand to ensure variables are in the correct format. Load the data set in R yourself by running the following code.
 
 {{% codeblock %}}
 
 ```R
-library(readr)
-data <- read.csv".csv")
+
+# Load data
+data_url <- "https://raw.githubusercontent.com/tilburgsciencehub/website/master/content/topics/Analyze/Regression/linear-regression/piaac.Rda"
+
+load(url(data_url)) #piaac is the cleaned data set 
+
 ```
 {{% /codeblock %}}
 
-Load the dataset yourself by copying the code into your Rscript. A preview of the dataset given by head() returns the first 5 rows.
+
+As an example, we investigate the relationship between years of education and hourly wage, expressed in the following regression:
+
+{{<katex>}}
+Wage  = \beta_0 + \beta_1 * Education + \epsilon
+ {{</katex>}}
+
+Where:
+- Wage (`earnhr`) is the dependent variable, the hourly wage of survey participants
+- Education (`yrsqual`) is the independent variable, indicating the number of years of education
+- $\epsilon$ denotes the error term
+
+The `lm()` function is used to perform the regression of hourly wage (`earnhr`) on years of education (`yrsqual`), with `summary()` providing an overview of regression output. 
 
 {{% codeblock %}}
 
 ```R
-# Preview the first few rows of the dataset
-head(data)
+reg <-  lm(earnhr ~ yrsqual, data = piaac)
+summary(reg)
 ```
-
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/.png" width="400">
+<img src = "../images/summary.png" width="400">
+<caption = "Summary output of regression>
 </p>
 
-## Simple linear regression output
+{{% tip %}}
 
-The simple linear regression is used to understand the relationship between the linear independent and dependent variable.
+The simple linear regression is used to understand the relationship between a linear independent and dependent variable. For interpretation of different functional forms (e.g. one variable in log) or multivariate regression scenarios with multiple independent variables, refer to [this topic on interpreting regressions of different functional forms](/regressioninterpretation). 
+{{% /tip %}}
 
-For interpreation of other different functional forms (e.g. one of the two variables is in log), or multivariate regression where more than one independent variable is added, check out [this topic on interpreting regressions of different functional forms](/regressioninterpretation). 
- 
-The function `lm()` is used for running a regression of X on Y, of the following model: `Y = a + bX`, where X is the independent and Y is the independent variable. a is the intercept and b is the coefficient that predicts the relationship between X and Y. 
-
-
-{{% codeblock %}}
-
-```R
-
-# simple linear regression
-regression <- lm(Y ~ X, data = data)
-
-# summary of the regression model
-summary(model)
-
-```
-
-{{% /codeblock %}}
-
-<p align = "center">
-<img src = "../images/summary_output.png" width="400">
-</p>
-
-Now we walk through the output step by step:
+We will analyze the output step by step:
 
 ## Call
 
@@ -83,49 +76,52 @@ The call section shows the formula used for the regression analysis, indicating 
 
 ## Residuals
 
-Residuals represent the difference between the observed and the predicted values of the dependent variable. 
+<p align = "center">
+<img src = "../images/residuals.png" width="400">
+</p>
+
+Residuals, or errors, represent the difference between the observed and the predicted values of the dependent variable. 
 
 The summary output provides:
-- `Min`: The minimum residual value
-- `1Q`: The first quartile, the value below which 25% of the residuals lie.
-- `Median`: The median, the midpoint of the residual values, separating the lower 50% from the upper 50%.
-- `3Q`: The third quartile, the value below which 75% of the residuals lie.
-- `Max`: The maximum residual value
+- `Min`: Minimum residual value
+- `1Q`: First quartile, the value below which 25% of the residuals lie.
+- `Median`: Median, the midpoint of the residual values, separating the lower 50% from the upper 50%.
+- `3Q`: Third quartile, the value below which 75% of the residuals lie.
+- `Max`: Maximum residual value
 
-For a linear regression model to be unbiased, the residuals should be evenly distributed around zero, indicating that the model is equally likely to overestimate or underestimate the dependent variable's value.
+For a linear regression model to be unbiased, the residuals are assumed be evenly distributed around zero, indicating that the errors are simply random fluctuations around the true line and the model is equally likely to overestimate or underestimate the dependent variable's value.
 
-While the summary output can provide an initial overview of the residuals, it is typically not the primary tool for directly assessing the assumption on residuals. [This topic](/analyze/regression/model-assumptions) elaborates on model assumptions and shows how you can plot model residuals to evaluate the assumption. 
+While the summary output can provide an initial insight into the distribution of residuals, it is typically not the primary tool for directly assessing the assumption on residuals. [This topic](/analyze/regression/model-assumptions) elaborates on model assumptions including the one about the model's residuals. 
+
+{{% tip %}}
+A bief overview of the regression output reveals some characteristics about the distribution of the residuals already. 
+
+E.g, the negative median (`-59.00`) tells us that a significant portion of the residuals falls below zero. Moreover, he maximum (`528.45`) is substantially larger than the median, suggesting the presence of outliers in the upper tail of the distribution. The minimum residual (`-124.19`) being closer to the median suggests a more compact distribution towards the lower end of the range. In summary, the distribution appears right-skewed and a residual plot will clarify this.
+{{% /tip %}}
 
 ## Coefficients
 
-The coefficients section is probably the most familiar and important part of the summary regression output. It provides information about the estimated relationships between the independent and dependent variables in the model. 
+The coefficients section provides information about the estimated relationships between the independent and dependent variables in the model. 
 
 ### Estimate
-
-
-The estimate column displays the coefficients for each predictor in the model. These coefficients represent the expected change in the dependent variable (Y) for a one-unit change in the predictor variable (X), holding all other variables constant.
-
-- Intercept term
-
-<p align = "center">
-<img src = "../images/intercept.png" width="400">
-</p>
-
-The first estimate is of the intercept term.
-It represents the predicted value of the dependent variable when all predictor variables are set to zero. 
-
-{{% warning %}}
-Note that interpretation of the intercept may not be meaningful if the independent variable(s) cannot realistically take on a value of zero in the dataset.
-{{% /warning %}}
-
-- Independent variables: 
 
 <p align = "center">
 <img src = "../images/estimates.png" width="400">
 </p>
 
-The estimates for the independent variables indicate the predicted effect of each predictor variable on the dependent variable. In our example, a one-unit increase in X is associated with ... increase in Y, all else being equal. For interpretation of this and other functional forms, check [this topic](/regressioninterpretation).
+The estimate column displays the coefficients for each predictor in the model. These coefficients represent the expected change in the dependent variable (Y) for a one-unit change in the predictor variable (X), holding all other variables constant.
 
+- Intercept term
+
+The first estimate is of the intercept term, which represents the predicted value of the dependent variable when all predictor variables are set to zero. 
+
+{{% tip %}}
+Note that interpretation of the intercept may not be meaningful if the independent variable(s) cannot realistically take on a value of zero in the dataset. Like in our example, where the minimum value of years of education is 5, indicating that all surveyed individuals completed at least 5 years of education. 
+{{% /tip %}}
+
+- Independent variables
+
+The estimates for the independent variables indicate the predicted effect of each predictor variable on the dependent variable. In our example, a one-unit increase in the years of education is associated with a 6.30 point increase in hourly wage. 
 
 - The standard error
 
@@ -133,97 +129,108 @@ The estimates for the independent variables indicate the predicted effect of eac
 <img src = "../images/standarderror.png" width="400">
 </p>
 
+The standard error provides an estimate of the uncertainty associated with the coefficient estimates. Put simply, it tells us how much we would expect the coefficient estimate to vary if multiple samples were drawn from the population. 
 
-The standard error provides an estimate of the uncertainty associated with the coefficient estimates. In simple terms, it tells us how much we would expect the coefficient estimate to vary if we were to take multiple samples from the population. 
+{{% /tip %}}
 
+Using the standard error, you can construct create confidence intervals (CI) that provide a range of plausible values for the true population parameter.
 
-You can use the standard error to create confidence intervals, which help to quantify the uncertainty in our estimates and provide a range of plausible vlaues for the true population parameter
-
-
-{{% tip %}}
-
-Confidence intervals (CI) are a range of values constructed around the point estimate (such as the coefficient estimate) that are likely to contain the true population parameter with a certain level of confidence (e.g., 95%). In other words, it gives the range of most likely values of the coefficient. 
-say you re-estimate the model, the range of values of coefficients that you will find in 95% of the cases is the CI. 
-
-
-Reporting the 95% CI around the estimated effect is useful. Even when the estimate is significant, the uncertainty is still there. A CI shows this uncertainty. 
+For instance, a 95% CI contain the true population parameter with 95% confidence. When you re-estimate the model, your estimate will fall in this range in 95% of the cases.
 
 For large samples: β + - 1.96 SE(β) 
+
+Reporting the 95% CI around the estimated effect is useful. Even when the estimate is significant, the uncertainty is still there. A CI shows this uncertainty.
+
+Compute the CI with `confint()`.
 
 {{% /tip %}}
 
 
-- t value
+{{% codeblock %}}
 
-The t-value is the coefficient estimate divided by the standard error.
+```R
+confint(reg, level = 0.95) 
+```
+{{% /codeblock %}}
 
-Essentially, a large t value indicates that our standard error is small relative to the size of the coefficient. The larger the t statistic, the more certain we are that the coefficient is not zero. 
+<p align = "center">
+<img src = "../images/CI.png" width="400">
+</p>
+
+
+- t-value
+
+<p align = "center">
+<img src = "../images/tvalue.png" width="400">
+</p>
+
+The t-value is computed by dividing the coefficient estimate by the standard error.
+
+Essentially, a larger t-value suggests that the standard error is relatively small compared to the size of the coefficient. Consequently, a higher t statistic indicated greater confidence that the coefficient is not zero. 
 
 
 - Pr(>|t|): p-value
 
-The p-value of each estimate indicates the probability of observing a t-value as extreme as, or more extreme than, the one calculated from our sample data, assuming that the null hypothesis is true (i.e., the true population coefficient is zero).
+<p align = "center">
+<img src = "../images/pvalue.png" width="400">
+</p>
 
-In other words, the p-value represents the probability of finding an effect, when there is no effect. 
+The p-value of each estimate indicates the probability of observing a t-value as extreme as, or more extreme than, the one calculated from our sample data, assuming that the null hypothesis is true (i.e., the true population coefficient is zero). 
 
-In practice, a small p-value indicates that the observed relationship between the predictor variable (X) and the dependent variable (Y) is unlikely to be due to random chance alone. Instead, it suggests that there is strong evidence supporting a true association between the predictor and the outcome.
+In other words, the p-value represents **the probability of finding an effect, when there is no effect**. 
 
+If this p-value is small enough, e.g. lower than the commonly used threshold of 5% (0.05), the observed relationship between the predictor variable and outcome variable is unlikely to have occurred by random chance alone. This is evidence supporting a **statistically significant** relationship between the predictor and the outcome variable.
 
-When the p-value is sufficiently small, typically set to be lower than 0.05, the coefficient estimate is statistically significant (at a 5% level).
+- Significance stars
 
+<p align = "center">
+<img src = "../images/stars.png" width="400">
+</p>
 
-#### Two-sided test
+The stars represent significance codes and visually indicate the level of significance determined by the p-value. For instance, the estimate for `yrseduc` is statistically significant at a 0.1% level (`***`). If no stars are present, as with the intercept, it indicates an insignificant estimate. 
 
-Test whether there is a significant positive or negative effect of the predictor value on the outcome varialbe. 
+These significance codes are displayed below the Coefficients section, with significance at respectively 1%, 5% and 10% level denoted with two stars (`**`), one star (`*`), and a dot (`.`). 
 
-For example, our regression coefficient of ... with a p-value of ...:
+{{% tip %}}
+- A statistically insignificant coefficient (e.g. p-value > 0.05) does not necessarily imply absence of an effect. Instead, it suggest that the evidence against the null hypothesis (i.e., no effect) is not strong enough to reject it. When reporting non-significant results, it is more accurate to state that you don't find evidence for a relationship between X and Y, rather than concluding there is no relationship. 
 
-If X has no effect on Y, then there is a .. percent chance of obtaining the result that X leads to a 1.24 higher grade and a 1.24 lower grade. 
-
-
-## significance
-
-Interpretation of a stat. insignificant coefficient (P>0.05)
-
-Non-significance does not imply absence of effect: A p-value greater than 0.05 does not necessarily mean that there is no effect of the predictor variable on the outcome. Instead, it indicates that the evidence against the null hypothesis (i.e., the absence of an effect) is not strong enough to reject it.
-
-Report non-significant results by saying you don't find evidence for a relatipnship fo X and Y, not that there is no relationship. 
-
-
-
-Tip
-
-Also think about the magnitude of estimated effect. say you found a statistically significant effect between X and Y, it is important to think about how large this effect is. This is not just calculation, but requires your own judgement based on literature. 
-
-A way how to do it is to put it in %; in linear models, the coefficient divided by the baseline mean of the outcome variable * 100%. 
-
-
-tip
-
-
+- When reporting a statistically significant effect, it is crucial to assess its magnitude. For instance, a statistically significant effect can be too small to have a significant impact in economic terms. One approach is to express the effect as a percentage; in linear models, divide the coefficient by the baseline mean of the outcome variable and multiply by 100%.
+{{% /tip %}}
 
 
 ## Other information
 
+<p align = "center">
+<img src = "../images/otherinformation.png" width="400">
+</p>
 
 - Residual standard error
 
-How well the model fits the data
-The average amount that the actual values of Y differ from the predictions in units of Y. With a smaller residual standard error, the model's prediction line is very close to the actual values, on average.
+The residual standard error is an overall measure of how well the regression model fits the observed data. It indicates the average amount by which the observed values of the dependent variable (Y) deviate from the predicted values by the regression model, in the units of the dependent variable. 
+
+It provides a summary measure of the overall model fit, and a smaller residual standard error indicates a prediction line of the model closer to the actual values on average.
 
 
 - Multiple and Adjusted R-squared
 
-What percentage of variation is within our dependent variable is explained by the independent variable(s). 
-With a R-squared of ..., ..% is explained.
+The multiple R-squared measures the proportion of variation in the dependent variable that is explained by the independent variable(s). For example in our model with a $R^2$ 0.02464, 2.5% of the variability in the hourly wage is accounted for by the years of education of a survey participant. 
 
-The adjusted R-squared ...
+The adjusted R-squared is a modified version and penalizes the inclusion of unnecessary predictors; this term decreases when additional predictors are added that do not significantly improve the model's fit. 
+Therefore, it provides a more accurate reflection of the model's explanatory power. 
 
-A low R-squared does not necessarily mean that your model is bad and the other way around, so be careful drawing conclusions from this.
+
+{{% tip %}}
+Note that a low R-squared value does not necessarily indicate a poor model, and a high R-squared value does not necessarily imply a good model. Interpret these values in the context of your specific model. 
+{{% /tip %}}
+
 
 - F-statistic and p-value
 
-Null hypothesis: no relationship betewen dependent and independent variable. Alternative hypothesis: there is a relationship. The F-statistic and p-value helps us determine the result of this test. However, better use the p-value to determine this. F-stat can be misleading. 
+The F-statistic and its associated p-value are used to test the overall significance of the regression model. The null hypothesis assumes no relationship between the independent variables and the dependent variable, while the alternative hypothesis suggests otherwise.
+
+While the F-statistic assesses the overall fit of the model, it's generally better to rely on the p-value for determining the significance of the relationship between the variables.
+
+
 
 summary
 
