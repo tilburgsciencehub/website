@@ -1,5 +1,5 @@
 ---
-title: "How to Read the Summary Output of Linear Regression in R"
+title: "Learn to Read the Summary Output of Linear Regression in R"
 description: "Learn how to interpret the summary output of a linear regression model, e.g. coefficients, standard error, significance, R-squared etcetera."
 keywords: "R, regression, interpretation, output, model, summary, linear, analysis, interpret, analyze"
 draft: false 
@@ -55,8 +55,8 @@ summary(reg)
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/summary.png" width="400">
-<caption = "Summary output of regression>
+<img src = "../images/regression_summary.png" width="300">
+ <figcaption> Summary output of regression </figcaption>
 </p>
 
 {{% tip %}}
@@ -69,7 +69,7 @@ We will analyze the output step by step:
 ## Call
 
 <p align = "center">
-<img src = "../images/call.png" width="400">
+<img src = "../images/regression_call.png" width="300">
 </p>
 
 The call section shows the formula used for the regression analysis, indicating the dependent variable, independent variable, and dataset.
@@ -77,7 +77,7 @@ The call section shows the formula used for the regression analysis, indicating 
 ## Residuals
 
 <p align = "center">
-<img src = "../images/residuals.png" width="400">
+<img src = "../images/regression_residuals.png" width="300">
 </p>
 
 Residuals, or errors, represent the difference between the observed and the predicted values of the dependent variable. 
@@ -106,7 +106,7 @@ The coefficients section provides information about the estimated relationships 
 ### Estimate
 
 <p align = "center">
-<img src = "../images/estimates.png" width="400">
+<img src = "../images/regression_estimates.png" width="300">
 </p>
 
 The estimate column displays the coefficients for each predictor in the model. These coefficients represent the expected change in the dependent variable (Y) for a one-unit change in the predictor variable (X), holding all other variables constant.
@@ -126,18 +126,18 @@ The estimates for the independent variables indicate the predicted effect of eac
 - The standard error
 
 <p align = "center">
-<img src = "../images/standarderror.png" width="400">
+<img src = "../images/regression_ se.png" width="300">
 </p>
 
 The standard error provides an estimate of the uncertainty associated with the coefficient estimates. Put simply, it tells us how much we would expect the coefficient estimate to vary if multiple samples were drawn from the population. 
 
 {{% tip %}}
 
-Using the standard error, you can construct create confidence intervals (CI) that provide a range of plausible values for the true population parameter.
+Using the standard error, you can create confidence intervals (CI) that provide a range of plausible values for the true population parameter.
 
 For instance, a 95% CI contain the true population parameter with 95% confidence. When you re-estimate the model, your estimate will fall in this range in 95% of the cases.
 
-For large samples: β + - 1.96 SE(β) 
+For large samples: $/beta$ + - 1.96 SE($/beta$) 
 
 Reporting the 95% CI around the estimated effect is useful. Even when the estimate is significant, the uncertainty is still there. A CI shows this uncertainty.
 
@@ -154,14 +154,14 @@ confint(reg, level = 0.95)
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/CI.png" width="400">
+<img src = "../images/regression_ci.png" width="200">
 </p>
 
 
 - t-value
 
 <p align = "center">
-<img src = "../images/tvalue.png" width="400">
+<img src = "../images/tvalue.png" width="300">
 </p>
 
 The t-value is computed by dividing the coefficient estimate by the standard error.
@@ -172,7 +172,7 @@ Essentially, a larger t-value suggests that the standard error is relatively sma
 - Pr(>|t|): p-value
 
 <p align = "center">
-<img src = "../images/pvalue.png" width="400">
+<img src = "../images/regression_pvalue.png" width="300">
 </p>
 
 The p-value of each estimate indicates the probability of observing a t-value as extreme as, or more extreme than, the one calculated from our sample data, assuming that the null hypothesis is true (i.e., the true population coefficient is zero). 
@@ -184,7 +184,7 @@ If this p-value is small enough, e.g. lower than the commonly used threshold of 
 - Significance stars
 
 <p align = "center">
-<img src = "../images/stars.png" width="400">
+<img src = "../images/regression_stars.png" width="300">
 </p>
 
 The stars represent significance codes and visually indicate the level of significance determined by the p-value. For instance, the estimate for `yrseduc` is statistically significant at a 0.1% level (`***`). If no stars are present, as with the intercept, it indicates an insignificant estimate. 
@@ -201,7 +201,7 @@ These significance codes are displayed below the Coefficients section, with sign
 ## Other information
 
 <p align = "center">
-<img src = "../images/otherinformation.png" width="400">
+<img src = "../images/regression_otherinformation.png" width="300">
 </p>
 
 - Residual standard error
