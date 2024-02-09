@@ -232,10 +232,9 @@ While the F-statistic assesses the overall fit of the model, it's generally bett
 
 
 
-summary
+{{% summary %}}
 
-How to present your result
 
-Don't just say you find a statistically significant effect of the independent on the dependent variable. 
+When interpreting a regression summary, it is important to assess the entire output before drawing conclusions about the relationship between variables. Interpret the standard error and significance level alongside the coefficients. Additionally, consider reporting confidence intervals for the coefficients which provides insight into the precision of the estimates. Remember to interpret results considering both statistical significance and practical significance.
 
-Important to understand your whole output with concluding anything on the relationship between the independent and dependent variable in your estimated model.
+{{% summary %}}
