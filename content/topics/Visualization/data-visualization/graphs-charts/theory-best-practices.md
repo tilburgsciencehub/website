@@ -5,7 +5,7 @@ keywords: "data, visualization, introduction, theory, encoding, chart, types, el
 date: 2023-07-18
 weight: 1
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /visualize/data
   - /data/encoding

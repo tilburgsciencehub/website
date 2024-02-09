@@ -5,7 +5,7 @@ keywords: "regression, discontinuity, continuity, approach, local, polynomial"
 date: 2023-05-25
 weight: 6
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /continuity/approach
   - /regression/discontinuity
