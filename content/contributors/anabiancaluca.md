@@ -1,7 +1,7 @@
 ---
 name: "Ana Bianca Luca"
-description_short: "I'm a former research assistant at Tilburg Science Hub and alumni of Tilburg University, passioned about Data Science and Marketing Research." 
-description_long: "During my time at Tilburg Science Hub I made significant contributions on topics such as Data Visualization, Regression Discontinuity, Github best practices and the use of various Python/R libraries. My background in Data Science and Marketing Analytics has helped me bring value to this community, which in return has taught me how to better collaborate and engage in open science projects."
+description_short: "I'm a former research assistant at Tilburg Science Hub and alumni of Tilburg University, passionate about Data Science and Marketing Research." 
+description_long: "During my time at Tilburg Science Hub I made significant contributions on topics such as Data Visualization, Regression Discontinuity Designs, best practices for using Git and GitHub and the use of various Python/R libraries. My background in Data Science and Marketing Analytics has helped me bring value to this community, which in return has taught me how to better collaborate and engage in open science projects."
 skills: 
   - Data Science
   - Webscraping
