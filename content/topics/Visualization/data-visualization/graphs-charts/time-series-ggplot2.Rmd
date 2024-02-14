@@ -1,0 +1,304 @@
+---
+title: "Time Series ggplot2"
+author: "Matthijs ten Tije"
+date: '2024-02-05'
+output: html_document
+---
+
+### Setup
+```{r setup + data}
+# Install necessary packages for data visualization and financial analysis
+# install.packages("tidyquant") # For fetching financial data
+# install.packages("ggplot2")   # For creating visualizations
+
+# Load the installed packages into the R session
+library(ggplot2)  # Load ggplot2 for visualization functions
+library(tidyquant) # Load tidyquant for financial data manipulation
+
+# Define the stock tickers of interest for six major tech companies
+tickers = c("AAPL", "NFLX", "AMZN", "TSLA", "GOOGL", "MSFT")
+
+# Fetch stock price data for the defined tickers using tidyquant
+# The function tq_get retrieves historical stock prices for each ticker
+prices <- tq_get(tickers, 
+                 get = "stock.prices") # Store the fetched data in 'prices'
+```
+
+## Single Variable Time Series Visualization
+```{r Line Chart}
+# Filter the data for Apple (AAPL) stock prices after January 1, 2014
+AAPL <- prices %>%
+  filter(symbol == "AAPL" & date > as.Date("2014-01-01"))
+
+# Create a line chart using ggplot2
+ggplot(data = AAPL, aes(x = date, y = adjusted)) +
+  geom_line() + 
+  #  Customization 
+    theme_minimal(base_size = 16) +
+  labs(
+    title = "Stock Price Trend (2014-2024)",
+    subtitle = "Stock: Apple (AAPL)",
+    x = "Date",
+    y = "Price"
+  ) +
+  theme(
+    panel.background = element_blank(),
+    legend.position = "none",  # Remove legend
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+    axis.text.y = element_text(size = 12),
+    plot.title = element_text(size = 20, face = "bold", family = "Times New Roman"),
+    plot.subtitle = element_text(size = 14, family = "Times New Roman"),
+    axis.title = element_text(size = 14, family = "Times New Roman"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    strip.text.x = element_text(size = 14, face = "bold", family = "Times New Roman"),
+    strip.text.y = element_text(size = 14, face = "bold", family = "Times New Roman", hjust = 0)
+  ) 
+```
+```{r Line Chart with Points}
+AAPL_point <- prices %>%
+  filter(symbol == "AAPL" & date > as.Date("2014-01-01") & date < as.Date("2014-06-01"))
+
+ggplot(data = AAPL_point, aes(x = date, y = adjusted)) +
+  geom_line() + 
+  geom_point() +  # Add points to the line chart
+  #  Customization 
+  theme_minimal(base_size = 16) +
+  labs(x = 'Date',  # Label x-axis
+       y = "Adjusted Price",  # Label y-axis
+       title = "Apple Price Chart (2014 until June)",
+       subtitle = "Each observation is denoted by a point") + # Add title and subtitle
+  theme(
+    panel.background = element_blank(),
+    legend.position = "none",  # Remove legend
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+    axis.text.y = element_text(size = 12),
+    plot.title = element_text(size = 20, face = "bold", family = "Times New Roman"),
+    plot.subtitle = element_text(size = 14, family = "Times New Roman"),
+    axis.title = element_text(size = 14, family = "Times New Roman"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    strip.text.x = element_text(size = 14, face = "bold", family = "Times New Roman"),
+    strip.text.y = element_text(size = 14, face = "bold", family = "Times New Roman", hjust = 0)
+  ) 
+```
+
+```{r Line Chart with Area}
+# Create a line chart with shaded area using ggplot2
+ggplot(data = AAPL, aes(x = date, y = adjusted)) +
+  geom_line() +  # Add line
+  geom_area(fill = "lightgrey", alpha = 0.5) +  # Add shaded area with transparency
+  #  Customization 
+  theme_minimal(base_size = 16) +
+  labs(x = 'Date',  # Label x-axis
+       y = "Adjusted Price",  # Label y-axis
+       title = "Apple Price Chart (2014 - 2024)",
+       subtitle = "The shaded area adds a visual layer of depth and context to the plot") + 
+  theme(
+    panel.background = element_blank(),
+    legend.position = "none",  # Remove legend
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+    axis.text.y = element_text(size = 12),
+    plot.title = element_text(size = 20, face = "bold", family = "Times New Roman"),
+    plot.subtitle = element_text(size = 14, family = "Times New Roman"),
+    axis.title = element_text(size = 14, family = "Times New Roman"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    strip.text.x = element_text(size = 14, face = "bold", family = "Times New Roman"),
+    strip.text.y = element_text(size = 14, face = "bold", family = "Times New Roman", hjust = 0)
+  ) 
+```
+
+### Adjusting Dates on the Axis with scale_x_date
+```{r Line Chart with Area and Adjusted Dates}
+#  Customizing tick marks at 18-month intervals with month-year labels
+ggplot(data = AAPL, aes(x = date, y = adjusted)) +
+  geom_area(fill = "lightgrey", alpha = 0.5) +
+  geom_line() +
+  scale_x_date(date_labels = "%b-%Y", 
+               limits = c(as.Date("2018-01-01"), as.Date("2024-01-01")), 
+               breaks = seq(as.Date("2018-01-01"), as.Date("2024-01-01"), 
+                            by = "18 months")) +
+  # Customization
+  theme_minimal(base_size = 16) +
+  labs(x = 'Date',  # Label x-axis
+       y = "Adjusted Price",  # Label y-axis
+       title = "Apple Price Chart (2018 - 2024)",
+       subtitle = "Customizing tick marks at 18-month intervals with month-year labels") + 
+  theme(
+    panel.background = element_blank(),
+    legend.position = "none",  # Remove legend
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+    axis.text.y = element_text(size = 12),
+    plot.title = element_text(size = 20, face = "bold", family = "Times New Roman"),
+    plot.subtitle = element_text(size = 14, family = "Times New Roman"),
+    axis.title = element_text(size = 14, family = "Times New Roman"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    strip.text.x = element_text(size = 14, face = "bold", family = "Times New Roman"),
+    strip.text.y = element_text(size = 14, face = "bold", family = "Times New Roman", hjust = 0)
+  ) 
+```
+## Multivariate Time Series Visualization with ggplot2
+```{r Line Chart with Multiple Variables}
+# Line plot with distinct colors for each symbol
+ggplot(prices, aes(x = date, y = adjusted, color = symbol)) +
+  geom_line() +
+  scale_color_manual(values = c("#00AFBB", "#E7B800", "#005F73", "#FFC300", "#BFDBF7", "#6D8000")) +
+  scale_x_date(
+    date_labels = "%Y %b",  # Year Month format
+    limits = c(as.Date("2018-01-01"), as.Date("2024-01-01")),  # Plot's date range
+    breaks = seq(as.Date("2018-01-01"), as.Date("2024-01-01"), by = "6 months")  # Axis ticks every 6 months
+  ) + 
+   # Customization
+  theme_minimal(base_size = 16) +
+  labs(x = 'Date',  # Label x-axis
+       y = " Price",  # Label y-axis
+       title = "Tech Stock Time Series (2018 - 2024)",
+       subtitle = "Time series visualization using distinct colors for each stock") + 
+  theme(
+    panel.background = element_blank(),
+    
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+    axis.text.y = element_text(size = 12),
+    plot.title = element_text(size = 20, face = "bold", family = "Times New Roman"),
+    plot.subtitle = element_text(size = 14, family = "Times New Roman"),
+    axis.title = element_text(size = 14, family = "Times New Roman"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    strip.text.x = element_text(size = 14, face = "bold", family = "Times New Roman"),
+    strip.text.y = element_text(size = 14, face = "bold", family = "Times New Roman", hjust = 0)
+  ) 
+  
+# Area plot with customized colors and fills
+ggplot(data_area, aes(x = date, y = adjusted, color = symbol, fill = symbol)) +
+  geom_area(alpha = 0.5) +
+  scale_color_manual(values = c("AAPL" = "#00AFBB", "MSFT" = "#E7B800")) +
+  scale_fill_manual(values = c("AAPL" = "#00AFBB", "MSFT" = "#E7B800")) +
+  scale_x_date(
+    date_labels = "%Y-%m",  # Year-Month format
+    breaks = seq(as.Date("2020-01-01"), as.Date("2024-01-01"), by = "1 year"),  # Yearly intervals
+    limits = c(as.Date("2020-01-01"), as.Date("2024-01-01"))  # Focus from 2014 to 2024
+  ) + 
+   # Customization
+  theme_minimal(base_size = 16) +
+  labs(x = 'Date',  # Label x-axis
+       y = "Adjusted Price",  # Label y-axis
+       title = "Apple and Microsoft Stock Time Series (2020 - 2024)",
+       subtitle = "Area plot") + 
+  theme(
+    panel.background = element_blank(),
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+    axis.text.y = element_text(size = 12),
+    plot.title = element_text(size = 20, face = "bold", family = "Times New Roman"),
+    plot.subtitle = element_text(size = 14, family = "Times New Roman"),
+    axis.title = element_text(size = 14, family = "Times New Roman"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    strip.text.x = element_text(size = 14, face = "bold", family = "Times New Roman"),
+    strip.text.y = element_text(size = 14, face = "bold", family = "Times New Roman", hjust = 0)
+  ) 
+```
+```{r Line Chart with Facets by stock}
+# Ensure return calculation is accurate. Replace 'Delt' with the appropriate calculation method if necessary.
+prices <- prices %>%
+  mutate(year = year(date),  # Extract the year for faceting
+         Return = Delt(adjusted))
+
+ggplot(prices, aes(x = date, y = Return, group = symbol, color = symbol)) +
+  geom_line() + 
+  facet_wrap(~ symbol , ncol = 3) +  # Use 'facet_wrap' to dynamically organize plots based on stock symbols.
+  scale_x_date(
+    date_labels = "%b",  # Month abbreviations for a cleaner x-axis.
+    limits = c(as.Date("2023-01-01"), as.Date("2023-12-31")),  # Focus solely on the year 2023.
+    breaks = seq(as.Date("2023-01-01"), as.Date("2023-12-31"), by = "1 month")  # Monthly breaks for detailed analysis.
+  ) +
+  scale_color_manual(values = c("#00AFBB", "#E7B800", "#005F73", "#FFC300", "#BFDBF7", "#6D8000")) +
+  ylim(-0.15, 0.15) +  # Standardize y-axis limits across facets for comparability.
+  theme_minimal(base_size = 16) +
+  labs(x = 'Date',  # Label x-axis
+       y = "Return (%)",  # Label y-axis
+       title = "Variation in returns by stock (2023)",
+       subtitle = "Stocks are displayed by a 3-wide column format") + 
+  theme(
+    panel.background = element_blank(),
+    legend.position = "none",  # Remove legend to avoid clutter.
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+    axis.text.y = element_text(size = 12),
+    plot.title = element_text(size = 20, face = "bold", family = "Times New Roman"),
+    plot.subtitle = element_text(size = 14, family = "Times New Roman"),
+    axis.title = element_text(size = 14, family = "Times New Roman"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    strip.text.x = element_text(size = 14, face = "bold", family = "Times New Roman"),
+    strip.text.y = element_text(size = 14, face = "bold", family = "Times New Roman", hjust = 0)
+  ) 
+  
+ggsave(filename = "time-series-7.png", path = "~/Desktop/TSH-Webiste/content/topics/Visualization/data-visualization/graphs-charts/images", width = 10, height = 6, dpi = 300)  
+```
+
+```{r Line Chart with Facets by year}
+filtered_prices <- prices %>%
+  filter(year(date) %in% c(2014, 2015))
+
+base_plot <- ggplot(filtered_prices, aes(x = date, y = adjusted, color = symbol)) +
+  geom_line() +
+  scale_color_manual(values = c("#00AFBB", "#E7B800", "#005F73", "#FFC300", "#BFDBF7", "#6D8000")) +
+  theme_minimal(base_size = 16) +
+  labs(x = 'Date',  # Label x-axis
+       y = "Return (%)",  # Label y-axis
+       title = "Time series of Stock Prices (2014-2015)",
+       subtitle = "Facetted by year, showcasing the argument scales = 'free'") + 
+  theme(
+    panel.background = element_blank(),
+    legend.position = "none",  
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+    axis.text.y = element_text(size = 12),
+    plot.title = element_text(size = 20, face = "bold", family = "Times New Roman"),
+    plot.subtitle = element_text(size = 14, family = "Times New Roman"),
+    axis.title = element_text(size = 14, family = "Times New Roman"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    strip.text.x = element_text(size = 14, face = "bold", family = "Times New Roman"),
+    strip.text.y = element_text(size = 14, face = "bold", family = "Times New Roman", hjust = 0))
+
+# Without 'scales = free'
+plot_without_free_scales <- base_plot + facet_wrap(~year)
+plot_without_free_scales
+
+# With 'scales = free'
+plot_with_free_scales <- base_plot + facet_wrap(~year, scales = "free")
+plot_with_free_scales
+```
+```{r Line Chart with Facets by year and stock}
+ggplot(filtered_prices, aes(x = date, y = adjusted)) +
+  geom_line(aes(color = symbol), size = 2) +  # Enhance visibility with thicker lines
+  geom_smooth(aes(color = symbol), method = "lm", se = FALSE, size = 1)  + # Trend lines without shading
+  facet_grid(symbol ~ year, scales = "free") +  # Separate plots for each symbol and year
+  scale_x_date(
+    date_labels = "%b",  # Month abbreviations for x-axis
+    breaks = "1 month") + # Monthly intervals for x-axis ticks
+  scale_color_manual(values = c("#00AFBB", "#E7B800", "#005F73", "#FFC300", "#BFDBF7", "#6D8000")) +
+  theme_minimal(base_size = 16) +
+  labs(
+    title = "Stock Price Trends by Symbol and Year",
+    subtitle = "Faceted by symbol and year to showcase comparative trends",
+    x = "Date",
+    y = "Price"
+  ) +
+  theme(
+    panel.background = element_blank(),
+    legend.position = "none",  
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12),
+    axis.text.y = element_text(size = 12),
+    plot.title = element_text(size = 20, face = "bold", family = "Times New Roman"),
+    plot.subtitle = element_text(size = 14, family = "Times New Roman"),
+    axis.title = element_text(size = 14, family = "Times New Roman"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    strip.text.x = element_text(size = 14, face = "bold", family = "Times New Roman"),
+    strip.text.y = element_text(size = 14, face = "bold", family = "Times New Roman", hjust = 0))
+```
+
+
+
