@@ -5,7 +5,7 @@ keywords: "regression, discontinuity, fuzzy, designs"
 date: 2023-06-21
 weight: 2
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /fuzzy/designs
   - /regression/discontinuity

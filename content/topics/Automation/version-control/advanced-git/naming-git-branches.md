@@ -5,7 +5,7 @@ keywords: "git, github, branching, naming, practices, conventions, name, branch,
 date: 2023-03-25
 weight: 4
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /naming/branching
   - /best/practices

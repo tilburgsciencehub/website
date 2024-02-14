@@ -5,7 +5,7 @@ keywords: "regression, coefficients, calculations, deltaMethod"
 date: 2023-06-05
 weight: 4
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /calculate/effects
   - /regression/analysis
