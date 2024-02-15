@@ -5,7 +5,7 @@ keywords: "regression, discontinuity, validation, falsification, analysis"
 date: 2023-07-17
 weight: 1
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /validation/analysis
   - /falsification/analysis

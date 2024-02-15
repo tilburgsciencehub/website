@@ -5,7 +5,7 @@ keywords: "venvwrapper, virtual, environment, manage, configure, packages"
 date: 2023-04-20
 weight: 6
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /configure/virtual/environments
   - /create/environment

@@ -5,7 +5,7 @@ keywords: "regression, discontinuity, sharp, designs, foundations, example, loca
 date: 2023-05-12
 weight: 4
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /sharp/designs
   - /regression/discontinuity

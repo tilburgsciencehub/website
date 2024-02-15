@@ -21,7 +21,7 @@ In this example, we will analyze how to interpret `linear regression models in R
 
 For concrete examples in R, we will make use of the PIAAC survey. PIAAC is a programme of assessment and analysis of adult skills. The Survey measures adults’ proficiency in key information-processing skills: literacy, numeracy and problem-solving.
 
-I will report the regression tables using the package `modelsummary`. For an explanation of how to use modelsummary, see this [building block](https://tilburgsciencehub.com/topics/analyze-data/regressions/model-summary/).
+I will report the regression tables using the package `modelsummary`. For an explanation of how to use this package, see this [topic](/modelsummary/).
 
 {{% codeblock %}} 
 

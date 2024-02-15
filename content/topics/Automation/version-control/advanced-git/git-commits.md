@@ -5,7 +5,7 @@ keywords: "git, commits, best, practices, basic, rules, format, messages, commit
 date: 2023-04-23
 weight: 5
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /write/commits
   - /best/practices
