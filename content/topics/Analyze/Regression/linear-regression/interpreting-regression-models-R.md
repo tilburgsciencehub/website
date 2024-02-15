@@ -39,12 +39,9 @@ gm <- list(
 notes <- c('* = .1', '** = 0.05', '*** = .01')
 
 # Downloading the dataset
-piaac <- read_csv("~/Desktop/TSH/Tilburg Science Hub/Content/Development_Calls/Interpreting Linear Regression Models/Dataset/PIAAC.csv")
+data_url <- "https://raw.githubusercontent.com/tilburgsciencehub/website/topic/interpret-summary-regression/content/topics/Analyze/Regression/linear-regression/piaac.Rda"
 
-# Asserting the data is in the correct format
-piaac$experience <- as.numeric(piaac$experience)
-piaac$yrsqual <- as.numeric(piaac$yrsqual)
-piaac$gender <- as.factor(piaac$gender_dummy)
+load(url(data_url))
 ```
 
 {{% /codeblock %}}
