@@ -29,7 +29,7 @@
 							<!-- Get Contributions -->
 							{{ $contributions := slice }}
 
-							{{ range where .Site.Pages "Section" "topics" }}
+					        {{ range where .Site.Pages "Section" "topics" }}
 							{{ if ne .Title "topics" }}
 							{{ if isset .Params "author" }}
 							{{ if eq .Params.Author $.Params.name }}
@@ -37,17 +37,8 @@
 							{{ end }}
 							{{ end }}
 							{{ end }}
-							{{ end }}
+							{{ end }} 
 
-							{{ range where .Site.Pages "Section" "topics" }}
-							{{ if ne .Title "tutorials" }}
-							{{ if isset .Params "author" }}
-							{{ if eq .Params.Author $.Params.name }}
-							{{ $contributions = $contributions | append . }}
-							{{ end }}
-							{{ end }}
-							{{ end }}
-							{{ end }}
 
 							{{ range where .Site.Pages "Section" "examples" }}
 							{{ if ne .Title "examples" }}
@@ -58,9 +49,10 @@
 							{{ end }}
 							{{ end }}
 							{{ end }}
-
+						
 							{{ with $contributions }}
-							<p class="mb-0"><strong style="font-weight: 700;">Contributions:</strong></p>
+							
+							<p class="mb-0"><strong style="font-weight: 700;">Contributions:</strong></p>		
 							<ul style="padding-inline-start: 20px;">
 								{{ range $contributions }}
 								<li style="color: #013365;"><a href="{{ .Permalink }}" style="color:inherit">{{ .Title }}</a></li>
