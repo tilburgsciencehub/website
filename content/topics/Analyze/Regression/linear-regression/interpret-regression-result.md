@@ -12,9 +12,9 @@ aliases:
 
 # Overview
 
-Regression analysis is a powerful tool to estimate relationships between variables. It is a way to quantify the impact of one variable on the other and make predictions for unseen data. [Refer to this topic](/analyze/regression) for the basics of regression analysis. 
+Regression analysis is a powerful tool to estimate relationships between variables. [Refer to this topic](/analyze/regression) for the foundamental basics of regression analysis. 
 
-Here, we focus on the regression output summary in R, exploring all components with step-by-step explanations and suggestions on how to interpret your results.
+In this topic, we explore the regression output summary in R, with step-by-step explanations and suggestions for interpreting your results. Whether you're starting out with linear regression in R or seeking a comprehensive guide to refer back to as experienced user, this topic is meant for you.
 
 ## Load packages and data
 
@@ -123,7 +123,7 @@ Note that the interpretation of the intercept may not be meaningful if the indep
 
 The estimates for the independent variables indicate the predicted effect of each predictor variable on the dependent variable. In our example, a one-unit increase in the years of education is associated with a 6.30 point increase in hourly wage. 
 
-- The standard error
+### The standard error
 
 <p align = "center">
 <img src = "../images/regression_ se.png" width="300">
@@ -133,13 +133,17 @@ The standard error provides an estimate of the uncertainty associated with the c
 
 {{% tip %}}
 
-Using the standard error, you can create confidence intervals (CI) that provide a range of plausible values for the true population parameter.For instance, a 95% CI contains the true population parameter with 95% confidence. When you re-estimate the model, your estimate will fall in this range in 95% of the cases.
+Using the standard error, you can create confidence intervals (CI) that provide a range of plausible values for the true population parameter. For instance, a 95% CI contains the true population parameter with 95% confidence. This means that when you re-estimate the model, your estimate will fall in this range in 95% of the cases.
 
-For large samples, the CI holds: $/beta$ + - 1.96 SE($/beta$) 
+**The formula:**
 
-Reporting the 95% CI around the estimated effect is useful. Even when the estimate is significant, the uncertainty is still there. A CI shows this uncertainty.
+CI = $\hat{\beta}$ ± 1.96 x SE($\hat{\beta}$)
 
-Compute the CI with `confint()`.
+For example, the CI around the coefficient for years of education is calculated as follows:
+
+6.30 ± 1.96 x 0.26 = (5.79, 6.81)
+
+Reporting the 95% CI around the estimated effect is useful. Even when the estimate is significant, uncertainty about the precision persists. The CI illustrates this uncertainty. You can compute the CI with `confint()` in R.
 
 {{% /tip %}}
 
@@ -156,7 +160,7 @@ confint(reg, level = 0.95)
 </p>
 
 
-- t-value
+### t-value
 
 <p align = "center">
 <img src = "../images/tvalue.png" width="300">
@@ -164,10 +168,10 @@ confint(reg, level = 0.95)
 
 The t-value is computed by dividing the coefficient estimate by the standard error.
 
-Essentially, a larger t-value suggests that the standard error is relatively small compared to the size of the coefficient. Consequently, a higher t statistic indicated greater confidence that the coefficient is not zero. 
+Essentially, a larger t-value suggests that the standard error is relatively small compared to the size of the coefficient. **Therefore, a higher t value indicates greater confidence that the coefficient is not zero.**
 
 
-- Pr(>|t|): p-value
+### Pr(>|t|): p-value
 
 <p align = "center">
 <img src = "../images/regression_pvalue.png" width="300">
@@ -179,7 +183,7 @@ In other words, the p-value represents **the probability of finding an effect, w
 
 If this p-value is small enough, e.g. lower than the commonly used threshold of 5% (0.05), the observed relationship between the predictor variable and outcome variable is unlikely to have occurred by random chance alone. This is evidence supporting a **statistically significant** relationship between the predictor and the outcome variable.
 
-- Significance stars
+### Significance stars
 
 <p align = "center">
 <img src = "../images/regression_stars.png" width="300">
@@ -202,14 +206,14 @@ These significance codes are displayed below the Coefficients section, with sign
 <img src = "../images/regression_otherinformation.png" width="300">
 </p>
 
-- Residual standard error
+### Residual standard error
 
 The residual standard error is an overall measure of how well the regression model fits the observed data. It indicates the average amount by which the observed values of the dependent variable (Y) deviate from the predicted values by the regression model, in the units of the dependent variable. 
 
 It provides a summary measure of the overall model fit, and a smaller residual standard error indicates a prediction line of the model closer to the actual values on average.
 
 
-- Multiple and Adjusted R-squared
+### Multiple and Adjusted R-squared
 
 The multiple R-squared measures the proportion of variation in the dependent variable that is explained by the independent variable(s). For example in our model with a $R^2$ 0.02464, 2.5% of the variability in the hourly wage is accounted for by the years of education of a survey participant. 
 
@@ -222,12 +226,11 @@ Note that a low R-squared value does not necessarily indicate a poor model and a
 {{% /tip %}}
 
 
-- F-statistic and p-value
+### F-statistic and p-value
 
 The F-statistic and its associated p-value are used to test the overall significance of the regression model. The null hypothesis assumes no relationship between the independent variables and the dependent variable, while the alternative hypothesis suggests otherwise.
 
 While the F-statistic assesses the overall fit of the model, it's generally better to rely on the p-value for determining the significance of the relationship between the variables.
-
 
 
 {{% summary %}}
