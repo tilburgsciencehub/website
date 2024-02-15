@@ -1,6 +1,6 @@
 ---
-title: "Learn to Read the Summary Output of Linear Regression in R"
-description: "Learn how to interpret the summary output of a linear regression model, e.g. coefficients, standard error, significance, R-squared etcetera."
+title: "Understanding Linear Regression Summary Output in R"
+description: "Learn how to interpret the summary output of a linear regression model, e.g. the coefficients, standard error, statistical significance, R-squared etcetera."
 keywords: "R, regression, interpretation, output, model, summary, linear, analysis, interpret, analyze"
 draft: false 
 weight: 7
@@ -231,7 +231,6 @@ While the F-statistic assesses the overall fit of the model, it's generally bett
 
 
 {{% summary %}}
-
 
 When interpreting a regression summary, it is important to assess the entire output before concluding the relationship between variables. Interpret the standard error and significance level alongside the coefficients. Additionally, consider reporting confidence intervals for the coefficients which provides insight into the precision of the estimates. Remember to interpret results considering both statistical significance and practical significance.
 
