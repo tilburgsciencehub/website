@@ -1,5 +1,5 @@
 ---
-title: "Matching"
+title: "Exact Matching"
 description: "Matching is used to create comparable groups in observational studies, helping to mitigate the effects of confounding variables and estimate causal effects."
 keywords: "matching, causal, inference, effect,regression, R, exact, approximate"
 draft: false
@@ -10,89 +10,103 @@ aliases:
   - /matching
 ---
 
-# Overview
+## Overview
 
-Randomization is a fundamental principle in experimental design, aiming to have a good counterfactual and ensuring treatment and control group are similar except for being treated. However, in certain cases, treatment is not randomly assigned and confounders can bias the estimated causal effect.
+Randomization is a fundamental principle in experimental design, aiming to have a good counterfactual and ensuring treatment and control group are similar except for being treated. However, in cases where treatment is not randomly assigned, confounding varaibles can bias the estimated causal effect.
 
-Matching is an alternative approach, which involves pairing individuals or units based on specific characteristics to create comparable groups. This article provides a comprehensive introduction of matching methods, focusing on both theory and practical applications.
+Matching offers an alternative approach by basically creating an artificial counterfactual. This is done by pairing individuals or units based on specific observable characteristics to create comparable groups. This article provides a comprehensive introduction to matching, focusing on both the theory behind the method and practical applications.
 
 ## Exact and approximate matching
 
-Exact matching involves pairing individuals who share **identical characteristics**. This requires the observable characteristic on which pairing happens to be a binary variable. Also the sample should contain observations in the control group for each binary variable in the treatment group to be able to get matched.
+Exact matching involves pairing individuals who share **identical characteristics**. This requires the observable characteristic on which pairing happens to be a binary variable. Also ideally, the control group has many observations at each distinct value of the binary variable the observations are matched on. 
 
-In contrast, [approximate matching](/approximate-matching) allows for some degree of flexibility and pairs on similar but not identical characteristics. 
+In contrast, [approximate matching, discussed in the next topic](/approximate-matching), allows for some degree of flexibility and pairs on similar but not identical characteristics. 
 
 
 ## Identifying assumptions
 
 {{% summary %}}
-1. Conditional Independence Assumption:
-2. Conditional on X, there are treated and untreated units (common assumption)
+
+There are two identifying assumptions that should hold for exact matching to be valid:
+
+1. *Conditional Independence Assumption:* Given observed covariates *X*, there are no systematic differences between treated and untreated units.
+<br>
+<br>
+
+2. *Overlapping support*: Conditional on *X*, there are treated and untreated units.
 
 {{% /summary %}}
 
 
+### 1. Conditional Independence Assumption (CIA)
 
-### Conditional Independence Assumption (CIA)
+The Conditional Independence Assumption is the primary assumption underlying matching. It states that, given a set of observable characteristics X, the assignment of treatment becomes independent of potential outcomes. 
 
-The most important assumption underlying matching is the Conditional Independence Assumption.
+In other words, **once we account for the observed characteristics of units or individuals, there should be no systematic differences in potential outcomes between the treatment and control groups**.
 
-It states that once observable characteristics (the covariates) are taken into account, the assignment of treatment becomes independent of potential outcomes. 
+Mathematically, this assumption is expressed as follows:
 
-In other words, **given a set of observed characteristics, there should be no systematic differences in potential outcomes between the treatment and control groups** (respectively Y0 and Y1). 
+{{<katex>}}
+(Y_{0}, Y_{1}) \perp T \:|\: X
+{{</katex>}}
 
-This is expressed as follows:
+<br>
+<br>
 
-(Y0, Y1) ⊥ T|X
-
-which states that potential outcomes in the treatment and control group (expected values for Y0 and Y1) are independent of treatment assignment T, for each value of X. The X is the binary variable on which the groups are based.
+Where $Y_{0}$ and $Y_{1}$ are the potential outcomes in respectively the control and treatment groups, which are independent of treatment assignment $T$ for each value of the observed covariates $X$. The $X$ is the binary variable in exact matching on which the groups are based.
 
 {{% warning %}}
-Assumes that there are no unobservable characteristics that differ across these groups and significantly affect treatment probability and effect; this is an assumption that can not be tested and you are willing to make to establish causality.
+Assumes that there are no *unobservable* characteristics that differ across these groups and significantly affect treatment probability and effect; this is an assumption that can not be tested and you are willing to make to establish causality.
 {{% /warning %}}
 
 
+### 2. Overlapping support
 
-### Assumption 2 
-
----
+The assumption of overlapping support states that, conditional on observed covariates $X$, there exist both treated and untreated units across the entire range of 
+$X$. In other words, there should be enough overlap in the distribution between the treatment and control groups to enable meaningful comparisons. This ensures that the treatment and control groups are comparable across all observed covariates, allowing for valid causal inference.
 
 
 ## Exact matching estimator
 
+If the above two assumptions are valid, the following identity follows:
 
-If these two assumptions are true, the following identity follows:
+{{<katex>}}
+E[Y_1 - Y_0 | X] = \\
 
-\begin{align*}
-E[Y_1 - Y_0 | X] &= E[Y_1 - Y_0 | X, D = 1] - E[Y_0 | X, D = 0] \\
-&= E[Y | X, D=1] - E[Y | X, D=0]
-\end{align*}
+E[Y_1 - Y_0 | X, D = 1] - E[Y_0 | X, D = 0] = \\
+
+E[Y | X, D=1] - E[Y | X, D=0]
+{{</katex>}}
+
+<br>
+<br>
 
 The average effect of the treatment on the treated (ATT) is estimated by taking the expected outcome of the treatment group minus the expected outcome of the matched controls, averaged out over the treatment group. 
 
 The expression can be written as follows:
 
+{{<katex>}}
 \hat{d}_{\text{ATT}} = \frac{1}{N_T} \sum_{D = 1} (Y_i - Y_{j(i)})
+{{</katex>}}
 
 where:
-- *\hat{d}_{\text{ATT}}* is the estimated average treatment effect on the treated
-- *N_{T}* is the total number of units in the treatment group
-- *D* is the indicator variable for being treated (1 = treated, 0 = control)
-- *Y_{i}* is the outcome variable of the treated unit i
-- *Y_{j(i)}* is the outcome variable of the control unit matched to unit i
-
+- $\hat{d}_{\text{ATT}}$ is the estimated average treatment effect on the treated
+- $N_{1}$ is the total number of units in the treatment group
+- $D$ is the indicator variable for being treated (1 = treated, 0 = control)
+- $Y_{i}$ is the outcome variable of the treated unit $i$
+- $Y_{j(i)}$ is the outcome variable of the control unit matched to unit $i$
 
 {{% tip %}}
 The counterfactual is the mean outcome in control group for observations with the exact same characteristics. 
 {{% /tip %}}
 
 
-## Practical example exact matching
+## Practical example
 
-A simple practical example of exact matching will be shown with a data set that is generated for the purpose of this example. The goal is to find the effect of a graduate traineeship programme on earnings. The data set contains data of 100 employees, of which 50 completed a traineeship at the start of their career (the treatment group) and 50 did not (the control group).
+A simple practical example of exact matching will be shown with a data set that is generated for this purpose.We are interested in finding the effect of a graduate traineeship programme on earnings. The data set contains data of 100 employees, of which 50 completed a traineeship at the start of their career (the *treatment group*) and 50 did not (the *control group*).
 
 
-First, load packages and data.
+First, load the package `MatchIt` and the dataset:
 
 {{% codeblock %}}
 ```R
@@ -106,7 +120,7 @@ View(jobtraining)
 ```
 {{% /codeblock %}}
 
-However, when observing the data, you notice the treatment and control group are not similar. People who followed the traineeship are on average younger (26 years) than people who did not follow the traineeship (39 years). 
+When observing the data, you notice the treatment and control group are not similar. People who followed the traineeship are on average younger (26 years) than people who did not follow the traineeship (39 years). 
 
 {{% codeblock %}}
 ```R
@@ -168,6 +182,41 @@ print(ATT_matching)
 The ATT is 7968.828, suggesting a positive effect of the traineeship programme.
 
 
+## OLS as a matching estimator
+
+Using Ordinary Least Squares (OLS) regression as a matching estimator involves regressing the outcome variable (Y) on the treatment indicator (D), adnt the covariates (X). This allows us to estimate the treatment effect while controlling for the effects of other variables. 
+
+To understand how the treatment effect depends on observable characteristics X, we can include interaction terms between D and X in the regression model.
+
+{{<katex>}}
+Y = \beta_0 + \beta_1 D + \beta_2 * X + \beta_3 (D * X) + \epsilon_i
+{{</katex>}}
+
+Where
+- *Y* is the outcome variable
+- *D* is the treatment indicator: 1 for treated, 0 for control
+- *X* is a vector of covariates
+- *(D * X)* is the interaction effect between the treatment and covariate(s) *X*.
+
+
+### Effect coding
+
+One approach to include these interaction terms is through effect coding. This involves coding categorical variables such that the coefficients represent deviations from the overall mean, allowing us to interpret them more easily. It can help understand how the treatment effect varies across different levels of X.
+
+Using the data from before as an example, the regression equation with interaction terms included would look like this:
+
+{{<katex>}}
+Y = \beta_0 + \beta_1 D + \beta_2 * X + \beta_3 D * (X_i - \bar{X}) + \epsilon_i
+{{</katex>}}
+
+where D * (X_i - Xbar) is the interaction between the treatment indicator D and the de-meaned covariate X_i - \bar{X}. It captures how the treatment effect varies with deviations of the covariate X from its mean (\bar{X}).
+
+The ATT is now estimated as
+<br>
+{{<katex>}}
+\hat{\beta}_2 + \frac{1}{N_1} \sum_{i=1}^{N} D_i \cdot (X_i - \bar{X})' \hat{\beta}_3
+{{</katex>}}
+
 {{% summary %}}
 
 
@@ -177,4 +226,19 @@ The ATT is 7968.828, suggesting a positive effect of the traineeship programme.
 
 
 
+
+Approximate and propensity score matching
+
+# Overview
+
+
+
+
+
+## Practical example
+
+Imbens (2015) gives three practical examples.
+
+
+table
 
