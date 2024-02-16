@@ -118,7 +118,12 @@ mean(jobtraining$Age[jobtraining$Treatment == 0])
 ```
 {{% /codeblock %}}
 
+Graph comparing age, treatment and control gropu. 
+
+
 If younger people have lower earnings on average, the effect of the traineeship is likely to underestimated. 
+
+Earning per age graph.
 
 
 First, we calculate the treatment effect without taking this age difference into account.
