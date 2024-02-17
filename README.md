@@ -61,6 +61,34 @@ flask run
 ## Features/Issues to Update/Implement
 - [ ] MetaData
 - [ ] Implement New Basic Web Analytics Cookies
+- [ ] Bullet points do not render correctly (e.g., Random Effects Model)
+- [ ] $ formulas do not render correctly (e.g., Random Effects Model)
+- [ ] tables do not display correctly (e.g., Random Effects Model, Configure Python virtual environments)
+- [ ] Reproducible Research (homepage) link does not work
+- [ ] Contributors links of people that do not do have a contributors page result in an error
+- [ ] font size is off (Scrape static websites)
+- [ ] Time of writing does not display nicely (e.g. Use Google Colab to RUn Python in the Cloud (2022-04-08T10:01:14+05:30)
+- [ ] Title does not display properly (e.g., Confgure Python virtual environments)
+- [ ] Codechunks not correctly displayed (No ```) (R Coding Style Guidelines)
+- [ ] \ formulas do not display correctly (XGboost)
+- [ ] {{< katex }} does not display correctly (Calculate Sample Sizes for web scrapers)
+- [ ] PDF-file download button does not render (Bookdown Thesis Template)
+- [ ] code chunk without content (Run RStudio on AWS docker)
+- [ ] Buttons (Twitter, FB etc) are spread out, when there is no date (Download Data Programmatically)
+- [ ] Use 'X' button instead of Twitter?
+- [ ] BASH no correctly specified in chunk (Debugging Makefiles with Remake)
+- [ ] Image does not load (prob mis specified path) (About TSH)
+- [ ] Email does not display properly & multiple "parts" of text (About TSH)
+- [ ] Contibutors are displayed multiple times (Meet our contributors)
+- [ ] Presentation slides are not available (Blog - Introducing TSH at the Open to Complexity Symposium)
+- [ ] Blog posts are displayed 3 times
+- [ ] Link to emperical research projects (Homepage - bottom) does not work
+- [ ] None of the tutorials are accessible from the bottom of the homepage (darkblue)
+- [ ] Building blocks from the bottom to the page link to the "Building Blocks" page instead of to the individual BB themselves
+- [ ] Link (How to install LateX) does not work (set up LaTeX)
+- [ ] Tutorials seem to fall of screen (when opening tutorials from header)
+- [ ] Related posts have the sampe post multiple times (e.g., Exclude files from versioning)
+
  
 ## Issues related to content
 - [ ] The way people use katex is inconsistent which gives problems during rendering. Some people forget to add the $ sign in front and at the end of a variable, which was not really an issue for some reason in Hugo, but in Flask this makes applying these Katex Formulas why harder. We should fix the katex boxes in content and make sure it is used correctly in all content.
@@ -75,4 +103,3 @@ flask run
 
 and also in a codeblock. It would be more efficient to change this since html sees < > as tag elements, which it now tries to autocomplete, instead as interpreting it as a string. The autocomplete process is something outside of my control (happens by browser).
 - [ ] All Codeblock languages should be shown as follows ```Stata, so in the same line straight after the three signs, without any other signs such as - or others.
-
