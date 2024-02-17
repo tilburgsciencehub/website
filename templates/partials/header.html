@@ -38,87 +38,26 @@
 							Tour</a></li>
 
 					<li>
-						<a onBoardTooltip="Our tutorials bundle, simplify and structure valuable information to ensure a smooth learning experience."
-							weight="1" href="{{ url_for('tutorials') }}" class="headerLink menuArrow">Tutorials</a>
+						<a onBoardTooltip="Our Topics bundle, simplify and structure valuable information to ensure a smooth learning experience."
+							weight="1" href="{{ url_for('topics_list') }}" class="headerLink menuArrow">Topics</a>
 						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-5 px-3">
 
 							<div class="row">
 
-								{% for parent_id, parent_data in data_dict['tutorials'].items() %}
-								<div class="col-6 mb-4 px-3">
-									<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{
-										parent_data['category_data'].title }}</span>
-									{% for child_id, child_data in parent_data['children_categories'].items() %}
-									{% if child_data['category_data'].parent == parent_id and
-									child_data['category_data'].draft != 'true' %}
-									<a class="d-block mx-0"
-										href="{{ url_for('tutorials') }}/{{ parent_data['category_data'].path }}/{{ child_data['category_data'].path }}/{{ child_data['category_data'].indexpage }}">{{
-										child_data['category_data'].title }}</a>
-									{% endif %}
-									{% endfor %}
-								</div>
-								{% endfor %}
-							</div>
-						</div>
-					</li>
-					<li>
-						<a onBoardTooltip="Building blocks are the DNA of our platform. They offer specific information on various topics, including code snippets and useful cheat sheets."
-							weight="1" href="{{ url_for('buildingblocks') }}" class="headerLink menuArrow">Building
-							Blocks</a>
-						<div class="bg-white text-left w-100 border-top boxShadow subMenu">
-							<div class="row">
-								<div class="col-6 pr-0 h-100 border-right">
-
-									<div class="my-4 nav flex-column nav-pills" id="v-pills-tab" role="tablist"
-										aria-orientation="vertical">
-										{% for parent_id, parent_data in data_dict['building-blocks'].items() %}
-										{% if parent_data['category_data'].draft != 'true' %}
-										<a class="nav-link mx-0 px-5 py-3 heading pillx {% if loop.first %}active{% endif %}"
-											id="v-pills-home-tab" data-toggle="pill"
-											href="{{ url_for('buildingblocks') }}#{{ parent_data['category_data'].path }}"
-											role="tab" aria-controls="v-pills-home"
-											aria-selected="{% if loop.first %}true{% else %}false{% endif %}">
-											{{ parent_data['category_data'].title }}
-											<span class="icon mini-right float-right"></span>
-										</a>
+								{% for topic in data_dict['topics'] %}
+								{% if topic.draft == 'false' %}
+									<div class="col-6 mb-4 px-3">
+										<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{ topic.title }}</span>
+										{% for subtopic in topic.childtopics %}
+										{% if subtopic.draft == 'false' %}
+										<a class="d-block mx-0"
+										href="{{ url_for('topics_list') }}/{{ topic.path }}/{{ subtopic.path }}">{{ subtopic.title }}</a>
 										{% endif %}
 										{% endfor %}
 									</div>
+								{% endif %}
+								{% endfor %}
 
-
-
-								</div>
-								<div class="p-5 px-3 col">
-									<div class="tab-content rightMenu" id="v-pills-tabContent">
-
-										{% for parent_id, parent_data in data_dict['building-blocks'].items() %}
-										<div class="tab-pane fade {% if loop.first %}active show{% endif %}" id="{{ parent_data['category_data'].path }}"
-											role="tabpanel" aria-labelledby="v-pills-home-tab">
-											<div class="row">
-												{% for child_id, child_data in
-												parent_data['children_categories'].items() %}
-												{% if child_data['category_data'].parent == parent_id %}
-												<div class="col-8 mb-4 px-2">
-													<span class="heading d-block mb-3 text-secondary"
-														style="font-size: 16px;">{{ child_data['category_data'].title
-														}}</span>
-													{% for article in child_data['articles'] %}
-													{% if article.parent == child_data['category_data'].id and
-													article.draft != 'true' %}
-													<a class="d-block mx-0"
-														href="{{ url_for('buildingblocks') }}/{{ parent_data['category_data'].path }}/{{ child_data['category_data'].path }}/{{ article.path }}">{{
-														article.title }}</a>
-													{% endif %}
-													{% endfor %}
-												</div>
-												{% endif %}
-												{% endfor %}
-											</div>
-										</div>
-										{% endfor %}
-
-									</div>
-								</div>
 							</div>
 						</div>
 					</li>
@@ -139,7 +78,7 @@
 						</div>
 					</li>
 					<li><a href="{{ url_for('about') }}" class="headerLink menuArrow">About</a>
-						<div style="margin-left:63%;" class="bg-white text-left border-top boxShadow subMenu p-4">
+						<div style="margin-left:57%;" class="bg-white text-left border-top boxShadow subMenu p-4">
 							<div class="row">
 								<div class="col-24 h-100">
 									<a class="d-block mx-0" href="{{ url_for('about') }}">About Tilburg Science Hub</a>
@@ -155,7 +94,7 @@
 
 			<!-- Search & Contribute -->
 			<div class="text-right">
-				<form class="form-inline text-right float-right d-none d-xl-block" method="GET" action="/search">
+				<form class="form-inline text-right float-right d-none d-xl-flex" method="GET" action="/search">
 					<div style="width: 230px" class="form-control mr-sm-2 headerSearch bg-light border-0">
 						<input class="resetInput"
 							onBoardTooltip="Search for topics, tutorials, tips, or tools, and explore our content at a glance."
@@ -164,10 +103,9 @@
 								src="{{ url_for('static', filename='img/search.svg') }}"
 								aria-label="search button" /></button>
 					</div>
-					<a href="{{ url_for('contribute') }}" style="position: inherit;"
-						class="btn btn-primary my-2 py-2 my-sm-0 px-4 headerLink"
+					<a href="{{ url_for('contribute') }}" class="headerLink btn btn-primary my-2 py-2 my-sm-0"
 						onBoardTooltip="Tilburg Science Hub is an open-source platform and welcomes new contributors!">Contribute</a>
-					<div style="margin-left:85%" class="bg-white js text-left w-20 boxShadow subMenu">
+					<div style="margin-left:85%" class="bg-white text-left border-top boxShadow subMenu">
 						<div class="row">
 							<div class="col-24 pr-0 h-100 p-5 px-3">
 								<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Contribute to

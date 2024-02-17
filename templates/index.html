@@ -16,7 +16,7 @@
       </h1>
 
       <p class="text-secondary mx-4 mx-lg-0 mt-4 mb-4 mr-lg-5 pr-lg-5">
-        We bring the <a class="header takeTour" href="#0">value of open science</a> to Tilburg,
+        We bring the <a class="header takeTour" href="#0" >value of open science</a> to Tilburg,
         and valuable resources of Tilburg to the world.
       </p>
 
@@ -31,82 +31,8 @@
       </div>
     </div>
 
-    <!--<div class="form-inline text-center float-center d-none d-block d-xl-none">
-				<br>space<br></div>
--->
-
-
-
-    <!-- for bigger screens: search -->
-    <!--
-<div class="d-none d-lg-block">
-	<form class="form-inline text-center float-center" method="GET" action="/search">
-		<div style="width: 500px" class="form-control headerSearch2 border-0">
-			<input class="resetInput" type="search" name="q" placeholder="Search for topics, tutorials, tips & tools!" aria-label="Search" required autocomplete="off">
-			<button style="background-color: transparent; padding: 0;" type="submit"><img src="static/img/search.svg" /></button>
-		</div>
-
-	</form>
-  -->
-
-    <!-- search results -->
-    <!--
-	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder2">
-	</div>
-
-</div>
-  -->
-
-    <!-- for smaller screens: search -->
-    <!--
-<div class="d-lg-none">
-
-	<form class="text-center float-center" method="GET" action="/search">
-		<div class="form-control headerSearch2 border-0">
-			<input class="resetInput" type="search" name="q" placeholder="Search for topics, tutorials, tips & tools!" aria-label="Search" required autocomplete="off">
-			<button style="background-color: transparent; padding: 0;" type="submit"><img src="static/img/search.svg" /></button>
-		</div>
-
-	</form>
-    -->
-
-    <!-- search results -->
-    <!--
-	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder2">
-	</div>
-   -->
-
-
-
-
-
-
-
-
-    <!--<span>Take a tour</span>-->
-
-    <!--<p class="text-secondary text-right mx-4 mx-lg-0 mt-4 mb-4 mr-lg-5 pr-lg-5">
-        Take a tour.
-
-      </p>
--->
-    <!--
-			<a href="/tour">
-        <button class="btn  btn-sm mt-2">Take a tour</button>
-      </a>
-			<a href="https://github.com/tilburgsciencehub/website">
-        <button class="btn btn-sm mt-2">Visit us on GitHub</button>
-      </a>
-
-    </div> --->
-
-    <!-- end of search on homepage feature -->
-
-    <div
-      class="col-lg-10 mt-3 col-16 order-1 order-lg-2 d-none d-md-flex d-lg-flex d-xl-flex text-center align-content-center"
-      style="background-image: url('{{ url_for('static', filename='img/hero.png') }}');background-size: contain;background-repeat: no-repeat;background-position: center;">
+    <div class="col-lg-10 mt-3 col-16 order-1 order-lg-2 d-none d-md-flex d-lg-flex d-xl-flex text-center align-content-center" style="background-image: url('/static/img/hero.png');background-size: contain;background-repeat: no-repeat;background-position: center;">
     </div>
-
   </div>
 </div>
 
@@ -119,111 +45,106 @@
       <div class="row justify-content-center mx-0 buildingBlocksRow">
 
         <div class="col-lg-10 col-xl-8 col-22 mb-3">
-          <div class="h-100 p-4 rounded bg-white">
+          <div class="h-100 p-4 rounded single-card">
             <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
               Most read building blocks
             </h2>
-            <ul class="my-2 list-unstyled most-popular-building-blocks" id="most-read-building-blocks-list">
+            <ul class="my-2 list-unstyled most-popular-topics" id="most-read-topics-list">
             </ul>
           </div>
         </div>
         <div class="col-lg-10 col-xl-8 col-22 mb-3">
-          <div id="most-popular-block-single" class="h-100 p-4 rounded bg-white"
-            style="background-image: url('{{ url_for('static', filename='img/card-background.svg') }}');background-size: contain;background-position-y:bottom;background-position-x:right;background-repeat: no-repeat;">
+          <div id="most-popular-block-single" class="h-100 p-4 rounded single-card"
+            style="background-image: url('/static/img/card-background.svg');background-size: contain;background-position-y:bottom;background-position-x:right;background-repeat: no-repeat;">
             <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">Titel</h2>
-            <p style="color: #6081a2!important;
-              font-family: acumin-pro,sans-serif;font-size:16px;width:80%">Description</p>
+            <p style="color: #6081a2!important;font-size:16px;width:80%">Description</p>
             <div class="mt-4 mb-0">
-              <a href="/building-blocks/">
+              <a href="{{ url_for('topics_list') }}">
                 <button class="btn tertiary ">Start Reading</button>
               </a>
             </div>
           </div>
         </div>
         <div class="col-lg-10 col-xl-8 col-22 mb-3">
-          <div class="h-100 p-4 rounded bg-white">
+          <div class="h-100 p-4 rounded single-card">
             <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
               Most read tutorials
             </h2>
-            <ul class="my-2 list-unstyled most-popular-building-blocks" id="most-read-tutorials-list">
+            <ul class="my-2 list-unstyled most-popular-topics" id="most-read-tutorials-list">
             </ul>
           </div>
         </div>
         <div class="col-lg-10 col-xl-14 col-22 mb-3">
-          <div class="h-100 p-4 rounded bg-white d-flex flex-column card-category-carousel"
+          <div class="h-100 p-4 rounded single-card d-flex flex-column card-category-carousel"
             style="position: relative;overflow:hidden">
-            <div class="d-none d-md-block d-lg-block d-xl-block"
-              style="position: absolute;bottom: -50px;right: -25px;width: 200px;height: auto;z-index:2">
+            <div class="d-none d-md-block d-lg-block d-xl-block" style="position: absolute;bottom: -50px;right: -25px;width: 200px;height: auto;z-index:2">
               <img src="{{ url_for('static', filename='img/card-icon.png') }}" alt="Background Image">
             </div>
-
+          
             <div class="background-content">
-              <div class="row mb-4">
-                <div class="col-xl-22 col-lg-20 col-md-22 col-sm-22">
-                  <div style="display: inline-flex;justify-content: space-between;width: 100%;align-items: center;">
-                    <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
-                      Reproducible Research
-                    </h2>
-                    <button style="background-image: none;background-color: transparent;color:#013365;"
-                      class="carousel-control-next-mobile" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                      <span class="fa-solid fa-arrow-right" aria-hidden="true"></span>
-                    </button>
-                  </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-2 col-sm-2 carousel-nav">
-                  <button style="background-image: none;background-color: transparent;color:#013365"
-                    class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="fa-solid fa-arrow-left" aria-hidden="true"></span>
-                  </button>
-                  <button style="background-image: none;background-color: transparent;color:#013365"
-                    class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <div class="row mb-4">
+              <div class="col-xl-22 col-lg-20 col-md-22 col-sm-22">
+                <div style="display: inline-flex;justify-content: space-between;width: 100%;align-items: center;">
+                  <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
+                    Reproducible Research
+                  </h2>
+                  <button style="background-image: none;background-color: transparent;color:#013365;"
+                    class="carousel-control-next-mobile" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
                     <span class="fa-solid fa-arrow-right" aria-hidden="true"></span>
                   </button>
                 </div>
               </div>
-              <div class="row" style="margin-top: auto; margin-bottom: auto;">
-                <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
-                  <div id="carouselExample" class="carousel slide h-100" data-bs-touch="true" data-bs-ride="carousel">
-                    <div class="carousel-inner h-100" style="z-index:1;">
-                    </div>
+              <div class="col-xl-2 col-lg-3 col-md-2 col-sm-2 carousel-nav">
+                <button style="background-image: none;background-color: transparent;color:#013365"
+                  class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="fa-solid fa-arrow-left" aria-hidden="true"></span>
+                </button>
+                <button style="background-image: none;background-color: transparent;color:#013365"
+                  class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="fa-solid fa-arrow-right" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div class="row" style="margin-top: auto; margin-bottom: auto;">
+              <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
+                <div id="carouselExample" class="carousel slide h-100" data-bs-touch="true" data-bs-ride="carousel">
+                  <div class="carousel-inner h-100" style="z-index:1;">
                   </div>
                 </div>
               </div>
             </div>
+            </div>
           </div>
         </div>
         <div class="col-lg-10 col-xl-6 col-22 mb-3">
-          <div class="h-100 p-4 rounded bg-white">
+          <div class="h-100 p-4 rounded single-card">
             <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
               Recently Published
             </h2>
             <ul class="my-2 list-unstyled">
-            </ul>
-
-
+            </ul>         
           </div>
         </div>
         <div class="col-lg-10 col-xl-4 col-22 mb-3">
-          <div class="h-100 p-3 rounded bg-white d-flex justify-content-center align-items-center">
+          <div class="h-100 p-3 rounded single-card d-flex justify-content-center align-items-center">
             <div>
               <h2 class="text-center heading px-3" style="font-size: 20px ; line-height: 1 !important">
-                Use our code snippets in your projects
+                Explore how to use AI tools
               </h2>
               <div class="text-center mt-4 mb-0">
-                <a href="{{ url_for('buildingblocks') }}">
-                  <button class="btn tertiary ">Use a code snippet</button>
+                <a href="https://tilburg.ai">
+                  <button class="btn tertiary ">Visit tilburg.ai</button>
                 </a>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-10 col-xl-12 col-22 mb-3">
-          <div id="most-popular-tutorial-single" class="h-100 p-4 rounded bg-white text-right d-flex align-items-center"
-            style="background-image: url('{{ url_for('static', filename='img/card-background-left.svg') }}');background-size: contain;background-repeat: no-repeat;background-position-y:bottom;background-position-x:left;">
+          <div id="most-popular-tutorial-single" class="h-100 p-4 rounded single-card text-right d-flex align-items-center"
+            style="background-image: url('/static/img/card-background-left.svg');background-size: contain;background-repeat: no-repeat;background-position-y:bottom;background-position-x:left;">
             <div style="width:100%">
               <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">title</h2>
-              <p style="color: #6081a2!important;
-              font-family: acumin-pro,sans-serif;font-size:16px;width:80%;float:right;">description</p>
+              <p style="color: #6081a2!important;font-size:16px;width:80%;float:right;">description</p>
               <div class="mt-4 mb-0">
                 <a href="path">
                   <button class="btn tertiary ">Start Reading</button>
@@ -233,7 +154,7 @@
           </div>
         </div>
         <div class="col-lg-10 col-xl-12 col-22 mb-3">
-          <div class="h-100 p-4 rounded bg-white d-flex flex-column">
+          <div class="h-100 p-4 rounded single-card d-flex flex-column">
             <div class="row mb-4">
               <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
                 <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
@@ -259,20 +180,20 @@
 <!-- spacer -->
 <div style="height: 30px"></div>
 <!-- /spacer -->
-<div class="container my-5 pt-5 px-4 px-lg-0">
+<div class="">
+<div class="container my-5 pt-5 px-4 px-lg-0 overlap-section">
   <!-- - 1 - -->
   <div class="row py-5">
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 text-center">
-      <img src="{{ url_for('static', filename='img/catch-mistakes-1.svg') }}" alt="Code like a pro"
-        style="max-width: 200px" loading="lazy">
+      <img src="{{ url_for('static', filename='img/catch-mistakes-1.svg') }}" alt="Code like a pro" style="max-width: 200px" loading="lazy">
       <!-- <div class="bg-white rounded p-4 boxShadow pseudobox border"></div> -->
     </div>
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 d-flex align-items-center">
       <div class="mt-5 mt-lg-0">
         <h2>
-          <span class="text-primary heading">Code like a pro.</span> <br />Conventions make the difference.
+          <span class="text-primary heading h3">Code like a pro.</span> <br />Conventions make the difference.
         </h2>
 
         <p class="text-secondary mt-4 d-block">
@@ -288,7 +209,7 @@
     <div class="col-lg-8 col-24 d-flex align-items-center px-0 order-2 order-lg-1">
       <div class="mt-5 mt-lg-0 mx-2">
         <h2>
-          New team? No problem. <br /><span class="text-primary heading">Onboarding made easy.</span>
+          New team? No problem. <br /><span class="text-primary heading h3">Onboarding made easy.</span>
         </h2>
 
         <p class="text-secondary mt-4">
@@ -300,21 +221,21 @@
     <div class="col-lg-2 col-0 order-lg-2"></div>
     <div class="col-lg-8 col-24 order-1 order-lg-3 text-center">
       <!-- <div class="bg-white rounded p-4 boxShadow pseudobox border"></div> -->
-      <img src="static/img/collaboration-3.svg" alt="Onboarding made easy" style="max-width: 200px;" loading="lazy">
+      <img src="{{ url_for('static', filename='img/collaboration-3.svg') }}" alt="Onboarding made easy" style="max-width: 200px;" loading="lazy">
     </div>
   </div>
   <!-- 3 -->
   <div class="row py-5">
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 text-center">
-      <img src="static/img/automation-2.svg" alt="automate your project" style="max-width: 300px;" loading="lazy">
+      <img src="{{ url_for('static', filename='img/automation-2.svg') }}" alt="automate your project" style="max-width: 300px;" loading="lazy">
       <!-- <div class="bg-white rounded p-4 boxShadow pseudobox border"></div> -->
     </div>
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 d-flex align-items-center">
       <div class="mt-5 mt-lg-0">
         <h2>
-          <span class="text-primary heading">Automate your project.</span> <br />No more waiting behind a screen.
+          <span class="text-primary heading h3">Automate your project.</span> <br />No more waiting behind a screen.
         </h2>
 
         <p class="text-secondary mt-4">
@@ -331,7 +252,7 @@
     <div class="col-lg-8 col-24 d-flex align-items-center px-0 order-2 order-lg-1">
       <div class="mt-5 mt-lg-0 mx-2 mx-lg-0">
         <h2>
-          Need more power? <br /><span class="text-primary heading">Scale it up.</span>
+          Need more power? <br /><span class="text-primary heading h3">Scale it up.</span>
         </h2>
 
         <p class="text-secondary mt-4">
@@ -343,21 +264,21 @@
     <div class="col-lg-2 col-0 order-lg-2"></div>
     <div class="col-lg-8 col-24 px-0 order-1 order-lg-3 text-center">
       <!-- <div class="bg-white rounded p-4 boxShadow pseudobox border"></div> -->
-      <img src="static/img/audience-4.svg" alt="Scale it up" style="max-width: 200px;" loading="lazy">
+      <img src="{{ url_for('static', filename='img/audience-4.svg') }}" alt="Scale it up" style="max-width: 200px;" loading="lazy">
     </div>
   </div>
   <!-- 5 -->
   <div class="row py-5">
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 text-center">
-      <img src="static/img/community-members.png" style="max-width: 100%;height: auto;" alt="Open science community"
+      <img src="{{ url_for('static', filename='img/community-members.png') }}" style="max-width: 100%;height: auto;" alt="Open science community"
         loading="lazy" class="community_members">
     </div>
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 d-flex align-items-center">
       <div class="mt-5 mt-lg-0">
         <h2>
-          Over 8,000 monthly visitors <br /><span class="text-primary heading">Join the community.</span>
+          Over 20,000 monthly visitors <br /><span class="text-primary heading h3">Join the community.</span>
         </h2>
 
         <p class="text-secondary mt-4">
@@ -365,18 +286,18 @@
             href="https://www.linkedin.com/company/71039687/">LinkedIn</a> page to join the Tilburg Science Hub
           community,
           or visit our <a href="{{ url_for('contributors') }}">contributors' Hall of Fame!</a>
-          Want to change something or add new content? Learn <a href="{{ url_for('contribute') }}">how to contribute</a>
-          now!
+          Want to change something or add new content? Learn <a href="{{ url_for('contribute') }}">how to contribute</a> now!
         </p>
       </div>
     </div>
   </div>
 </div>
+</div>
 
 
 <!-- Who we are div -->
-
-<div class="container py-5 my-5">
+<div class="bg-white">
+<div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-lg-16 col-22 text-center">
       <h4 class="text-primary heading">Who we are</h4>
@@ -399,6 +320,7 @@
   </div>
   <br /><br />
 </div>
+</div>
 
 <style>
   body {
@@ -408,16 +330,11 @@
   body::before {
     content: "";
     position: absolute;
-    top: 1400px;
+    top: 1300px;
     width: 100%;
-    height: 2400px;
+    height: 3300px;
     z-index: -1;
-
-    background: rgb(240, 245, 250);
-    background-color: linear-gradient(0deg,
-        rgba(240, 245, 250, 1) 0%,
-        rgba(255, 255, 255, 1) 85%);
-    background-image: url("/img/rounded-background.svg");
+    background-image: url("/static/img/rounded-background.svg");
     background-position-y: -90px;
     background-size: cover;
     background-position: center top;
@@ -468,6 +385,7 @@
     }
   }
 </style>
+
 
 <script>
   // Controleer of het scherm kleiner is dan 768 pixels (mobiel)

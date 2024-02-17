@@ -28,24 +28,11 @@
 			<div class="col-lg-1 col-0"></div>
 			<div class="col-lg-4 col-21">
 				<div class="footerCollapse">
-					<div class="heading text-white d-block py-2">Tutorials</div>
+					<div class="heading text-white d-block py-2">Topics</div>
 					<div class="d-none d-lg-block links">
-						{% for parent_id, parent_data in data_dict['tutorials'].items() %}
-							{% if parent_data['category_data'].draft != 'true' %}
-						<a href="{{ url_for('tutorials') }}/{{ parent_data['category_data'].path }}">{{ parent_data['category_data'].title}}</a>
-							{% endif %}
-						{% endfor %}
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-1 col-0"></div>
-			<div class="col-lg-4 col-21">
-				<div class="footerCollapse">
-					<div class="heading text-white d-block py-2">Building Blocks</div>
-					<div class="d-none d-lg-block links">
-						{% for parent_id, parent_data in data_dict['building-blocks'].items() %}
-							{% if parent_data['category_data'].draft != 'true' %}
-						<a href="{{ url_for('buildingblocks') }}#{{ parent_data['category_data'].path }}">{{ parent_data['category_data'].title}}</a>
+						{% for topic in data_dict['topics'] %}
+							{% if topic.draft != 'true' %}
+						<a href="{{ url_for('topics_list') }}/{{ topic.path }}">{{ topic.title}}</a>
 							{% endif %}
 						{% endfor %}
 					</div>
@@ -58,7 +45,9 @@
 
 					<div class="d-none d-lg-block links">
 						{% for example in data_dict['examples'] %}
-						<a href="{{ url_for('examples') }}/{{ example.path }}">{{ example.title }}</a>
+							{% if example.draft != 'true' %}
+						<a href="{{ url_for('examples') }}/{{ example.path }}">{{ example.title}}</a>
+							{% endif %}
 						{% endfor %}
 					</div>
 				</div>

@@ -1,0 +1,77 @@
+{% include 'partials/header.html' %}
+{% include 'partials/cookies.html' %}
+
+<span id="scrollTo" class="d-none"><a href="#"></a></span>
+<div class="container content">
+  <br><br><br><br>
+  <div class="row justify-content-center">
+    <div class="col-lg-11 col-22">
+      <h1 class="text-center">Topics</h1>
+      <p class="text-center text-secondary my-5">
+        Tutorials simplify and structure valuable (yet sometimes complex) toolkits, ensuring a smooth learning experience when embracing open science skills.
+      </p>
+    </div>
+  </div>
+  <br><br><br><br>
+  <!-- Loop through first-level categories -->
+  
+  <div class="row justify-content-center buildingBlocksRow">
+    <div class="col-20">
+
+      <!-- 1st level categories-->
+      {% for topic in data_dict['topics'] %}
+	    {% if topic.draft == 'false' %}
+
+      <h3 class="heading font-weight-normal mb-3">{{ topic.title }}</h3>
+
+      <!-- 2nd level categories-->
+      {% for sec_level_topic in topic.childtopics %}
+			{% if sec_level_topic.draft == 'false' %}
+      <div class="p-5 bg-white mb-5 rounded" id="">
+        <div class="row">
+          <div class="col-lg-8 col-24">
+            <h4 class="heading m-0 mb-3 mr-3">{{ sec_level_topic.title }}</h4>
+          </div>
+          <div class="col-lg-16 col-24">
+            <div class="row">
+              
+              <!-- 3rd level categories-->
+              {% for third_level_topic in sec_level_topic.childtopics %}
+			        {% if third_level_topic.draft == 'false' %}
+              <div class="col-24 col-lg-12 mb-4" id="-ezo">
+                <h5 class="heading font-weight-normal" style="font-size: 16px; height: -webkit-fit-content;">{{ third_level_topic.title }}</h5>
+                
+                <!-- 4th level categories & Articles-->
+                {% for article in third_level_topic.articles %}
+                {% if article.draft != 'true' %}
+                <a class="d-block" href="#">{{ article.title }}
+                  <sup style="color: #976B24;"><i class="fa-regular fa-clock mr-2"></i>{{ article.reading_time }} mins</sup>
+                </a>
+                {% endif %}
+                {% endfor %}
+                <!-- End 4th level categories & Articles-->
+
+              </div>
+              {% endif %}
+              {% endfor %}
+              <!-- End 4th level categories -->
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+      <!-- End 2nd level categories-->
+
+      {% endif %}
+      {% endfor %}
+      <!-- End 1st level categories-->
+    </div>
+  </div>
+
+  <!-- End Loop -->
+</div>
+
+{% include 'partials/footer.html' %}

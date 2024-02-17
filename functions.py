@@ -5,6 +5,7 @@ import nltk
 from nltk.corpus import stopwords
 from flask import request
 import math
+from collections import defaultdict
 
 nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
@@ -48,149 +49,52 @@ def urlize(text):
 
     return text
 
-# Create a function to build the data_dict
+def build_data_dict(topics, articles):
+    data_dict = {}
+    topics_data = topics.query.all()
+    topic_dict = defaultdict(lambda: defaultdict(list))
 
+    for topic in topics_data:
+        topic_dict[topic.level][topic.parent].append(topic)
 
-def build_data_dict(categories, articles,):
-    # Fetch categories, subcategories and articles for building blocks
-    building_blocks_categories = categories.query.filter_by(
-        type='building-blocks', weight=0).all()
-    building_blocks_category_ids = [
-        category.id for category in building_blocks_categories]
-    bb_children_categories = categories.query.filter(
-        categories.parent.in_(building_blocks_category_ids)).all()
-    bb_children_category_ids = [
-        sub_category.id for sub_category in bb_children_categories]
-    articles_bb = articles.query.filter(
-        articles.parent.in_(bb_children_category_ids)).all()
+    def serialize_article(article):
+        return {
+            'id': article.id,
+            'title': article.title,
+            'path': article.path,
+            'description': article.description,
+            'reading_time': calculate_reading_time(article.content)
+        }
 
-    # Fetch categories, articles for tutorials
-    tutorials_categories = categories.query.filter_by(
-        type='tutorials', weight=0).all()
-    tutorials_category_ids = [
-        tutorialcategory.id for tutorialcategory in tutorials_categories]
-    tutorials_children_categories = categories.query.filter(
-        categories.parent.in_(tutorials_category_ids)).all()
-    tutorials_children_category_ids = [
-        sub_category.id for sub_category in tutorials_children_categories]
-    articles_tutorials = articles.query.filter(
-        articles.parent.in_(tutorials_children_category_ids)).all()
-
+    def build_structure(level, parent, articles):
+        if level not in topic_dict:
+            return []
+        return [
+            {
+                'id': topic.id,
+                'title': topic.title,
+                'path': topic.path,
+                'parent': topic.parent,
+                'level': topic.level,
+                'draft': topic.draft,
+                'childtopics': build_structure(level + 1, topic.id, articles),
+                'articles': [serialize_article(article) for article in articles.query.filter_by(parent=topic.id).all()]
+            }
+            for topic in topic_dict[level][parent]
+        ]
+    
     # Fetch articles for examples
     articles_examples = articles.query.filter_by(type='examples').all()
-
-    # Create an empty dictionary to store the data
-    data_dict = {}
-    building_blocks = {}
-    tutorials = {}
-
-    # Iterate through building_blocks_categories
-    for parent_category in building_blocks_categories:
-        # Initialize a dictionary for the current parent category
-        parent_category_dict = {
-            'category_data': parent_category,
-            'children_categories': {},
-        }
-
-        # Create a list to store child categories and their article counts
-        child_categories_with_counts = []
-
-        # Iterate through children_categories
-        for child_category in bb_children_categories:
-            if child_category.parent == parent_category.id:
-                # Initialize a dictionary for the current child category
-                child_category_dict = {
-                    'category_data': child_category,
-                    'articles': [],
-                }
-
-                # Iterate through articles_bb
-                for article in articles_bb:
-                    if article.parent == child_category.id:
-                        # Append the article data to the current child category
-                        child_category_dict['articles'].append(article)
-
-                # Add the child category and its article count to the list
-                child_categories_with_counts.append(
-                    (child_category_dict, len(child_category_dict['articles'])))
-
-        # Sort child categories by the number of articles in descending order
-        sorted_child_categories = sorted(
-            child_categories_with_counts, key=lambda x: x[1], reverse=True)
-
-        # Reconstruct the children_categories dictionary with the sorted order
-        parent_category_dict['children_categories'] = {
-            child[0]['category_data'].id: child[0] for child in sorted_child_categories}
-
-        # Add the parent category dictionary to the data_dict
-        building_blocks[parent_category.id] = parent_category_dict
-
-    # Iterate through tutorials
-    for parent_category in tutorials_categories:
-        # Initialize a dictionary for the current parent category
-        parent_category_dict = {
-            'category_data': parent_category,
-            'children_categories': {},
-        }
-
-        # Create a list to store child categories and their article counts
-        child_categories_with_counts = []
-
-        # Iterate through children_categories
-        for child_category in tutorials_children_categories:
-            if child_category.parent == parent_category.id:
-                # Initialize a dictionary for the current child category
-                child_category_dict = {
-                    'category_data': child_category,
-                    'articles': [],
-                }
-
-                # Iterate through articles_bb
-                for article in articles_tutorials:
-                    if article.parent == child_category.id:
-                        # Append the article data to the current child category
-                        child_category_dict['articles'].append(article)
-
-                # Add the child category and its article count to the list
-                child_categories_with_counts.append(
-                    (child_category_dict, len(child_category_dict['articles'])))
-
-        # Sort child categories by the number of articles in descending order
-        sorted_child_categories = sorted(
-            child_categories_with_counts, key=lambda x: x[1], reverse=True)
-
-        # Reconstruct the children_categories dictionary with the sorted order
-        parent_category_dict['children_categories'] = {
-            child[0]['category_data'].id: child[0] for child in sorted_child_categories}
-
-        # Add the parent category dictionary to the data_dict
-        tutorials[parent_category.id] = parent_category_dict
-
-    # Voeg de reading_time toe aan elk artikel in building-blocks
-    for parent_category_id, parent_category_data in building_blocks.items():
-        for child_category_id, child_category_data in parent_category_data['children_categories'].items():
-            for article in child_category_data['articles']:
-                article.reading_time = calculate_reading_time(article.content)
-
-    # Voeg de reading_time toe aan elk artikel in tutorials
-    for parent_category_id, parent_category_data in tutorials.items():
-        for child_category_id, child_category_data in parent_category_data['children_categories'].items():
-            for article in child_category_data['articles']:
-                article.reading_time = calculate_reading_time(article.content)
-
-    # Voeg de reading_time toe aan elk artikel in examples
     for article in articles_examples:
         article.reading_time = calculate_reading_time(article.content)
-
-    # Add to dict
-    data_dict['building-blocks'] = building_blocks
-    data_dict['tutorials'] = tutorials
+    
+    data_dict['topics'] = build_structure(1, 1, articles)
     data_dict['examples'] = articles_examples
+    print(data_dict['topics'])
 
     return data_dict
 
 # Generate table of contents
-
 
 def generate_table_of_contents(content_html):
     # Parse de HTML-content met BeautifulSoup

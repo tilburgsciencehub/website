@@ -7,21 +7,18 @@ import shutil
 conn = sqlite3.connect('tsh.db')
 cursor = conn.cursor()
 
-# Create the categories table
+# Create the categories and articles tables
 cursor.execute('''
-    CREATE TABLE IF NOT EXISTS categories (
+    CREATE TABLE IF NOT EXISTS topics (
         id INTEGER PRIMARY KEY,
-        type TEXT,
         title TEXT,
-        weight INTEGER,
+        level INTEGER,
         parent INTEGER,
-        description TEXT,
         path TEXT,
-        draft TEXT,
-        indexpage TEXT
+        draft TEXT
     )
 ''')
-               
+
 # Create the articles table
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS articles (
@@ -40,7 +37,7 @@ cursor.execute('''
         content TEXT
     )
 ''')
-
+               
 # Create the contributors table
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS contributors (
@@ -73,135 +70,84 @@ cursor.execute('''
         content TEXT
     )
 ''')
-               
-# Create tables commit
+
+# Commit the creation of tables
 conn.commit()
 
-# Bepaal de huidige directory van het script
+# Define the content directory
 script_directory = os.path.dirname(os.path.realpath(__file__))
+content_directory = os.path.join(os.path.dirname(os.path.realpath(__file__)), "content")
+topic_folder = os.path.join(content_directory, 'topics')
 
-# Voeg de map "content" toe aan het pad
-content_directory = os.path.join(script_directory, "content")
+def insert_topic_into_db(title, level, parent, path, draft):
+    cursor.execute("INSERT INTO topics (title, level, parent, path, draft) VALUES (?, ?, ?, ?, ?)", (title, level, parent, path, draft))
+    return cursor.lastrowid
 
-# Fetch Tutorials and Building Blocks
-for type in ['tutorials', 'building-blocks']:
+def insert_article_into_db(type, title, parent, description, path, keywords, date, date_modified, draft, weight, author, content):
+    cursor.execute("INSERT INTO articles (type, title, parent, description, path, keywords, date, date_modified, draft, weight, author, content) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", 
+                   (type, title, parent, description, path, keywords, date, date_modified, draft, weight, author, content))
 
-    root_folder = os.path.join(content_directory, type)
+def parse_md_file(file_path):
+    with open(file_path, 'r') as file:
+        content = file.read()
+        title = re.search(r'title: "(.*?)"', content)
+        description = re.search(r'description: "(.*?)"', content)
+        draft = re.search(r'draft: (.*?)\n', content)
 
-    stack = [(root_folder, None, 0)]
+        # Extract values, return None if not found
+        title_value = title.group(1) if title else None
+        description_value = description.group(1) if description else None
+        draft_value = draft.group(1) if draft else None
 
-    while stack:
-        folder_path, parent_id, weight = stack.pop()
-        
-        for folder_name in os.listdir(folder_path):
-            exclude_folders = ['images', 'img']
-            if folder_name not in exclude_folders:
-                folder_path_full = os.path.join(folder_path, folder_name)
-                description = None
-                title = None
-                keywords = None
-                date = None
-                date_modified = None
-                draft = None
-                author = None
-                content = None 
-                indexpage = None
+        return title_value, description_value, draft_value
 
-                if os.path.isdir(folder_path_full):
-                    # Try to read the _index.md file
-                    index_md_path = os.path.join(folder_path_full, '_index.md')
-                    if os.path.exists(index_md_path):
-                        with open(index_md_path, 'r', encoding='utf-8') as index_file:
-                            for line in index_file:
-                                # Check if the line starts with 'description:'
-                                if line.startswith('description:'):
-                                    description = line.strip().replace('description:', '', 1).replace('"','').strip()
-                                elif line.startswith('title:'):
-                                    title = line.strip().replace('title:', '', 1).replace('"','').strip()
-                                elif line.startswith('keywords:'):
-                                    keywords = line.strip().replace('keywords:', '', 1).replace('"','').strip()
-                                elif line.startswith('date:'):
-                                    date = line.strip().replace('date:', '', 1).strip()
-                                elif line.startswith('date_modified:'):
-                                    date_modified = line.strip().replace('date_modified:', '', 1).strip()
-                                elif line.startswith('draft:'):
-                                    draft = line.strip().replace('draft:', '', 1).strip()
-                                elif line.startswith('author:'):
-                                    author = line.strip().replace('author:', '', 1).replace('"','').strip()
-                                elif line.startswith('indexPage:'):
-                                    indexpage = line.strip().replace('indexPage:', '', 1).replace('"','').strip()
-                    path = folder_name
-                    if (weight < 2):
-                        cursor.execute('''
-                            INSERT INTO categories (type, title, weight, parent, description, path, draft, indexpage)
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                        ''', (type, title, weight, parent_id, description, path, draft, indexpage))
+def process_article(md_file_path, parent_id):
+    with open(md_file_path, 'r', encoding='utf-8') as md_file:
+        content = md_file.read()
+        title = re.search(r'title: "(.*?)"', content)
+        description = re.search(r'description: "(.*?)"', content)
+        draft = re.search(r'draft: (.*?)\n', content)
+        keywords = re.search(r'keywords: "(.*?)"', content)
+        date = re.search(r'date: (\d{4}-\d{2}-\d{2})', content)
+        date_modified = re.search(r'date_modified: (\d{4}-\d{2}-\d{2})', content)
+        weight = re.search(r'weight: (\d+)', content)
+        author = re.search(r'author: "(.*?)"', content)
 
-                        if (weight == 1):
+        # Extract article content
+        match = re.search(r'---(.*?)---(.*)', content, re.DOTALL)
+        if match:
+            file_content = match.group(2).strip()
 
-                            parent_id_article = cursor.lastrowid
-                            
-                            for md_file_name in os.listdir(folder_path_full):
-                                if md_file_name != '_index.md' and md_file_name.endswith('.md'):
-                                    # Construct the full path of the Markdown file
-                                    md_file_path = os.path.join(folder_path_full, md_file_name)
+        # Insert data into articles table
+        insert_article_into_db('topic', title.group(1) if title else None, parent_id,
+                               description.group(1) if description else None, os.path.basename(md_file_path).replace('.md', ''),
+                               keywords.group(1) if keywords else None, date.group(1) if date else None,
+                               date_modified.group(1) if date_modified else None, draft.group(1) if draft else None,
+                               int(weight.group(1)) if weight else None, author.group(1) if author else None, file_content)
 
-                                    path = md_file_name.replace('.md', '').lower()
+def fill_database(root_path):
+    exclude = {'img', 'images', 'data'}
+    path_to_id = {}
 
-                                    #Init Vars
-                                    description = None
-                                    title = None
-                                    keywords = None
-                                    date = None
-                                    date_modified = None
-                                    draft = None
-                                    article_weight = None
-                                    author = None
-                                    content = None 
+    for path, dirs, files in os.walk(root_path):
+        dirs[:] = [d for d in dirs if d not in exclude]
+        level = path.count(os.sep) - root_path.count(os.sep)
+        parent_path = os.path.dirname(path)
+        parent_id = path_to_id.get(parent_path, None)
+        folder_name = os.path.basename(path)
 
-                                    # Read the contents of the Markdown file
-                                    with open(md_file_path, 'r', encoding='utf-8') as md_file:
+        index_file = os.path.join(path, '_index.md')
+        if os.path.exists(index_file):
+            title, description, draft = parse_md_file(index_file)
+            folder_id = insert_topic_into_db(title, level, parent_id, folder_name, draft)
+            path_to_id[path] = folder_id
 
-                                        # YAML
-                                        for line in md_file:
-                                            
-                                            if line.startswith('description:'):
-                                                description = line.strip().replace('description:', '', 1).replace('"','').strip()
-                                            elif line.startswith('title:'):
-                                                title = line.strip().replace('title:', '', 1).replace('"','').strip()
-                                            elif line.startswith('keywords:'):
-                                                keywords = line.strip().replace('keywords:', '', 1).replace('"','').strip()
-                                            elif line.startswith('date:'):
-                                                date = line.strip().replace('date:', '', 1).strip()
-                                            elif line.startswith('date_modified:'):
-                                                date_modified = line.strip().replace('date_modified:', '', 1).strip()
-                                            elif line.startswith('draft:'):
-                                                draft = line.strip().replace('draft:', '', 1).strip()
-                                            elif line.startswith('author:'):
-                                                author = line.strip().replace('author:', '', 1).replace('"','').strip()
-                                            elif line.startswith('weight:'):
-                                                article_weight = line.strip().replace('weight:', '', 1).strip()
-                                    
-                                    with open(md_file_path, 'r', encoding='utf-8') as md_file:
-                                        
-                                        # Fetch Content
-                                        md_file_content = md_file.read()
-                                        match = re.match(r'---(.*?)---(.*)', md_file_content, re.DOTALL)
-                                        if match:
-                                            file_content = match.group(2)
-                                            content = file_content
+            for file in os.listdir(path):  # Veranderd naar os.listdir(path)
+                if file != '_index.md' and file.endswith('.md'):
+                    md_file_path = os.path.join(path, file)
+                    process_article(md_file_path, folder_id)
 
-                                    # Execute an SQL INSERT statement to add data to the 'articles' table
-                                    cursor.execute('''
-                                        INSERT INTO articles (type, title, parent, description, path, keywords, date, date_modified, draft, weight, author, content)
-                                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                                    ''', (type, title, parent_id_article, description, path, keywords, date, date_modified, draft, article_weight, author, content))
-
-                    # Get the ID of the last inserted row
-                    last_row_id = cursor.lastrowid
-
-                    # Add subfolders to the stack
-                    stack.append((folder_path_full, last_row_id, weight + 1))
+fill_database(topic_folder)
 
 # Fetch Examples
 examples_root_folder = os.path.join(content_directory, 'examples')
@@ -409,5 +355,3 @@ for root, _, files in os.walk(content_directory):
             
             # Kopieer het afbeeldingsbestand van de bronmap naar de doelmap en vervang indien nodig
             shutil.copy(src_filepath, dst_filepath)
-
-print("Conversion Of Content Successful.")

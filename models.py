@@ -6,16 +6,13 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 # Define models
-class categories(db.Model):
+class topics(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    type = db.Column(db.Text)
     title = db.Column(db.Text)
-    weight = db.Column(db.Integer)
+    level = db.Column(db.Integer)
     parent = db.Column(db.Integer)
-    description = db.Column(db.Text)
     path = db.Column(db.Text)
     draft = db.Column(db.Text)
-    indexpage = db.Column(db.Text)
 
 class articles(db.Model):
     id = db.Column(db.Integer, primary_key=True)
