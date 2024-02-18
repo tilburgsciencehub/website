@@ -1,0 +1,99 @@
+{% include 'partials/header.html' %}
+{% include 'partials/cookies.html' %}
+
+<span id="scrollTo" class="d-none"><a href="#"></a></span>
+<div class="container content">
+  <br><br><br><br>
+  <div class="row justify-content-center">
+    <div class="col-lg-11 col-22">
+      <h1 class="text-center">{% for topic in data_dict['topics'] %}
+      {% if topic.path|lower == topic_path|lower %}
+      {% if topic.draft != 'true' %}
+      {% for sec_level_topic in topic.childtopics %}
+      {% if sec_level_topic.path|lower == sec_level_topic_path|lower %}
+      {% if sec_level_topic.draft != 'true' %}
+      {% for third_level_topic in sec_level_topic.childtopics %}
+      {% if third_level_topic.path|lower == third_level_topic_path|lower %}
+      {% if third_level_topic.draft != 'true' %}
+      {{ third_level_topic.title }}
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+      {% endif %}
+      {% endfor %}</h1>
+      <p class="text-center text-secondary my-5">
+        Topics simplify and structure valuable (yet sometimes complex) toolkits, ensuring a smooth learning experience
+        when embracing open science skills.
+      </p>
+    </div>
+  </div>
+  <br><br><br><br>
+
+  <div class="row justify-content-center buildingBlocksRow">
+    <div class="col-20">
+
+      <!-- 1st level categories-->
+      {% for topic in data_dict['topics'] %}
+      {% if topic.path|lower == topic_path|lower %}
+      {% if topic.draft != 'true' %}
+
+      <!-- 2nd level categories-->
+      {% for sec_level_topic in topic.childtopics %}
+      {% if sec_level_topic.path|lower == sec_level_topic_path|lower %}
+      {% if sec_level_topic.draft != 'true' %}
+
+      <!-- 3rd level categories-->
+      {% for third_level_topic in sec_level_topic.childtopics %}
+      {% if third_level_topic.path|lower == third_level_topic_path|lower %}
+      {% if third_level_topic.draft != 'true' %}
+
+      <div class="p-5 bg-white mb-5 rounded" id="">
+        <div class="row">
+          <div class="col-lg-8 col-24">
+            <h4 class="heading m-0 mb-3 mr-3">{{ third_level_topic.title }}</h4>
+          </div>
+          <div class="col-lg-16 col-24">
+            <div class="row">
+              <div class="col-24 col-lg-12 mb-4" id="-ezo">
+                <h5 class="heading font-weight-normal" style="font-size: 16px; height: -webkit-fit-content;">{{
+                  third_level_topic.title }}</h5>
+
+                <!-- Articles-->
+                {% for article in third_level_topic.articles %}
+                {% if article.draft != 'true' %}
+                <a class="d-block" href="/topics/{{ topic.path }}/{{ sec_level_topic.path }}/{{ third_level_topic.path}}/{{ article.path }}">{{ article.title }}
+                  <sup style="color: #976B24;"><i class="fa-regular fa-clock mr-2"></i>{{ article.reading_time }}
+                    mins</sup>
+                </a>
+                {% endif %}
+                {% endfor %}
+                <!-- End Articles-->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+      <!-- End 3rd level categories-->
+
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+      <!-- End 2nd level categories-->
+
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+      <!-- End 1st level categories-->
+    </div>
+  </div>
+</div>
+
+{% include 'partials/footer.html' %}

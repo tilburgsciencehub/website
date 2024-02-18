@@ -6,13 +6,19 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 # Define models
-class topics(db.Model):
+class Topics(db.Model):
+    __tablename__ = 'topics'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.Text)
     level = db.Column(db.Integer)
-    parent = db.Column(db.Integer)
+    parent = db.Column(db.Integer, db.ForeignKey('topics.id'))  # Zelf-referentiële ForeignKey
     path = db.Column(db.Text)
     draft = db.Column(db.Text)
+
+    subtopics = db.relationship('Topics', 
+                                backref=db.backref('parent_topic', remote_side=[id]),
+                                lazy='dynamic',
+                                foreign_keys='Topics.parent')
 
 class articles(db.Model):
     id = db.Column(db.Integer, primary_key=True)

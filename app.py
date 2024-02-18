@@ -3,8 +3,9 @@ from flask_assets import Environment, Bundle
 from datetime import datetime
 from functions import build_data_dict, generate_table_of_contents, get_breadcrumbs, find_related_articles
 import os
-from models import db, articles, Contributors, blogs, topics
+from models import db, articles, Contributors, blogs, Topics
 from html_parser import htmlize
+from sqlalchemy import func
 
 # Initialize App
 app = Flask(__name__, static_url_path='/static')
@@ -40,7 +41,7 @@ assets.register('scss_all', scss_bundle)
 
 @app.route('/')
 def home():
-    data_dict = build_data_dict(topics, articles)
+    data_dict = build_data_dict(Topics, articles)
     print(data_dict)
     return render_template('index.html', assets=assets, data_dict=data_dict)
 
@@ -50,7 +51,7 @@ def home():
 # Single Example
 @app.route('/examples/<article_path>')
 def example(article_path):
-    data_dict = build_data_dict(topics, articles)
+    data_dict = build_data_dict(Topics, articles)
     breadcrumbs = get_breadcrumbs()
     current_url = request.url
     article = None
@@ -62,11 +63,10 @@ def example(article_path):
 
     return render_template('examples-single.html', breadcrumbs=breadcrumbs, assets=assets, example=example, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, content=content)
 
-
 # Single Blog
 @app.route('/blog/<blog_path>')
 def blogs_single(blog_path):
-    data_dict = build_data_dict(topics, articles)
+    data_dict = build_data_dict(Topics, articles)
     breadcrumbs = get_breadcrumbs()
     blog_query = None
     blog_data = None
@@ -79,26 +79,42 @@ def blogs_single(blog_path):
     return render_template('blog-single.html', assets=assets, breadcrumbs=breadcrumbs, blog=blog_data, data_dict=data_dict, table_of_contents=table_of_contents, content=content)
 
 # List Topics
-
-
 @app.route('/topics')
 def topics_list():
-    data_dict = build_data_dict(topics, articles)
+    data_dict = build_data_dict(Topics, articles)
     return render_template('topics-list.html', assets=assets, data_dict=data_dict)
 
-# List Examples
+# First Level Topic
+@app.route('/topics/<first_level_topic_path>/')
+def topics_first_level(first_level_topic_path):
+    data_dict = build_data_dict(Topics, articles)
+    
+    return render_template('first-level-topic.html', assets=assets, data_dict=data_dict, topic_path=first_level_topic_path)
 
+# Second Level Topic
+@app.route('/topics/<first_level_topic_path>/<second_level_topic_path>/')
+def topics_second_level(first_level_topic_path,second_level_topic_path):
+    data_dict = build_data_dict(Topics, articles)
+    
+    return render_template('second-level-topic.html', assets=assets, data_dict=data_dict, topic_path=first_level_topic_path, sec_level_topic_path=second_level_topic_path)
+
+# Third Level Topic
+@app.route('/topics/<first_level_topic_path>/<second_level_topic_path>/<third_level_topic_path>/')
+def topics_third_level(first_level_topic_path,second_level_topic_path, third_level_topic_path):
+    data_dict = build_data_dict(Topics, articles)
+    
+    return render_template('third-level-topic.html', assets=assets, data_dict=data_dict, topic_path=first_level_topic_path, sec_level_topic_path=second_level_topic_path, third_level_topic_path=third_level_topic_path)
 
 @app.route('/examples')
 def examples():
-    data_dict = build_data_dict(topics, articles)
+    data_dict = build_data_dict(Topics, articles)
     print(data_dict)
     return render_template('examples-list.html', assets=assets, data_dict=data_dict)
 
 # List Blogs
 @app.route('/blog')
 def blog():
-    data_dict = build_data_dict(topics, articles)
+    data_dict = build_data_dict(Topics, articles)
     blogs_data = blogs.query.all()
 
     # Lus door de lijst en formatteer de datum in elk item
@@ -124,7 +140,7 @@ def blog():
 
 @app.route('/about')
 def about():
-    data_dict = build_data_dict(topics, articles)
+    data_dict = build_data_dict(Topics, articles)
     return render_template('about.html', assets=assets, data_dict=data_dict)
 
 # Contribute
@@ -139,7 +155,7 @@ def contribute():
 
 @app.route('/search')
 def search():
-    data_dict = build_data_dict(topics, articles)
+    data_dict = build_data_dict(Topics, articles)
     return render_template('search.html', assets=assets, data_dict=data_dict)
 
 # Contributors
@@ -147,7 +163,7 @@ def search():
 
 @app.route('/contributors')
 def contributors():
-    data_dict = build_data_dict(topics, articles)
+    data_dict = build_data_dict(Topics, articles)
     contributors_list = Contributors.query.all()
     return render_template('contributors-list.html', assets=assets, data_dict=data_dict, contributors_list=contributors_list)
 
@@ -156,7 +172,7 @@ def contributors():
 
 @app.route('/contributors/<contributor_path>')
 def contributor(contributor_path):
-    data_dict = build_data_dict(topics, articles)
+    data_dict = build_data_dict(Topics, articles)
     contributor_single = Contributors.query.filter_by(
         path=contributor_path).first()
     return render_template('contributors-single.html', assets=assets, data_dict=data_dict, contributor_single=contributor_single)

@@ -90,7 +90,6 @@ def build_data_dict(topics, articles):
     
     data_dict['topics'] = build_structure(1, 1, articles)
     data_dict['examples'] = articles_examples
-    print(data_dict['topics'])
 
     return data_dict
 

@@ -319,9 +319,6 @@ def replace_links(md_content):
     # Vervang de links in de md_content
     md_content_with_new_links = re.sub(link_pattern, replace_link, md_content)
 
-    if md_content_with_new_links != md_content:
-        print('Links vervangen')
-
     return md_content_with_new_links
 
 # Html Parse Function
