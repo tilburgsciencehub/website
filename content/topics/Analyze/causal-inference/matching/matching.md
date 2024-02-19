@@ -106,17 +106,20 @@ The counterfactual is the mean outcome in control group for observations with th
 A simple practical example of exact matching will be shown with a data set that is generated for this purpose.We are interested in finding the effect of a graduate traineeship programme on earnings. The data set contains data of 100 employees, of which 50 completed a traineeship at the start of their career (the *treatment group*) and 50 did not (the *control group*).
 
 
-First, load the package `MatchIt` and the dataset:
+First, load the packages we need, and the dataset:
 
 {{% codeblock %}}
 ```R
 library(MatchIt)
+library(ggplot2)
+library(dplyr)
 
 # Load data
-data_url <- "https://raw.githubusercontent.com/tilburgsciencehub/website/master/content/topics/Analyze/causal-inference/matching/jobtraining.Rda"
-load(url(data_url))
+data_url <- "https://raw.githubusercontent.com/tilburgsciencehub/website/master/content/topics/Analyze/causal-inference/matching/jobtraining_data.Rda"
 
-View(jobtraining)
+data <- load(url(data_url))
+
+View(data)
 ```
 {{% /codeblock %}}
 
@@ -125,54 +128,66 @@ When observing the data, you notice the treatment and control group are not simi
 {{% codeblock %}}
 ```R
 # Average age for the treatment group
-mean(jobtraining$Age[jobtraining$Treatment == 1])
+mean(data$Age[data$Treatment == 1])
 
 # Average age for the control group
-mean(jobtraining$Age[jobtraining$Treatment == 0])
+mean(data$Age[data$Treatment == 0])
 ```
 {{% /codeblock %}}
 
-Graph comparing age, treatment and control gropu. 
-
-
-If younger people have lower earnings on average, the effect of the traineeship is likely to underestimated. 
-
-Earning per age graph.
-
-
-First, we calculate the treatment effect without taking this age difference into account.
+The following histogram confirms this unequal distribution:
 
 {{% codeblock %}}
 ```R
-ATT_original <-  mean(jobtraining$Earnings[jobtraining$Treatment == 1] - mean(jobtraining$Earnings[jobtraining$Treatment == 0]))
+# Create a combined data frame for treatment and control groups
+data$Group <- ifelse(data$Treatment == 1, "Treatment", "Control")
+
+# Create the histogram
+ggplot(data, aes(x = Age, fill = Group)) +
+  geom_histogram(position = "identity", 
+                 alpha = 0.5, 
+                 bin_width = 1) +
+  labs(title = "Age Distribution: Treatment vs. Control Group",
+       x = "Age",
+       y = "Frequency") +
+  scale_fill_manual(values = c("blue", "red")
+  )
+
+```
+{{% /codeblock %}}
+
+<p align = "center">
+<img src = "../images/histogram_age.png" width="400">
+</p>
+
+If younger people have lower earnings on average (which is likely to be the case), the effect of the traineeship is underestimated due to this unequal distribution of treatment assignment. First, we calculate the treatment effect without taking this unequal distribution of age into account.
+
+{{% codeblock %}}
+```R
+ATT_original <-  mean(data$Earnings[data$Treatment == 1] - mean(data$Earnings[data$Treatment == 0]))
 
 print(ATT_original)
 
 ```
 {{% /codeblock %}}
 
-The ATT is -998.26. If you don't take the age difference into account, you find a negative effect of the traineeship programme on earnings...
-
-The solution is to match a treated employee to an untreated employee on age, and compare their earnings instead!
-
-You can do this with the matchit() function, to match observations, specifying Treatment and Age. 
+The ATT is -998.26. If you don't take the age difference into account, you find a negative effect of the traineeship programme on earnings. To overcome the bias, the solution is to match a treated employee to an untreated employee on age, and compare their earnings instead! You can do this with the `matchit` function from the `MatchIt` in R, to match observations, specifying `Treatment` and `Age`. 
 
 {{% codeblock %}}
 ```R
-matched_jobtraining <- matchit(Treatment ~ Age, data = jobtraining, method = "exact")
+matched_data <- matchit(Treatment ~ Age, data = data, method = "exact")
 
 # Extract the matched dataset
-matched_jobtraining <- match.data(matched_jobtraining)
+matched_data <- match.data(matched_data)
 
 ```
 {{% /codeblock %}}
 
-
-Calculate the ATT, but now on the matched sample.
+Calculate the ATT, but now on the matched sample:
 
 {{% codeblock %}}
 ```R
-ATT_matching <- mean(matched_jobtraining$Earnings[matched_jobtraining$Treatment == 1] - matched_jobtraining$Earnings[matched_jobtraining$Treatment == 0])
+ATT_matching <- mean(matched_data$Earnings[matched_data$Treatment == 1] - matched_data$Earnings[matched_data$Treatment == 0])
 
 print(ATT_matching)
 
@@ -180,7 +195,6 @@ print(ATT_matching)
 {{% /codeblock %}}
 
 The ATT is 7968.828, suggesting a positive effect of the traineeship programme.
-
 
 ## OLS as a matching estimator
 
@@ -193,11 +207,10 @@ Y = \beta_0 + \beta_1 D + \beta_2 * X + \beta_3 (D * X) + \epsilon_i
 {{</katex>}}
 
 Where
-- *Y* is the outcome variable
-- *D* is the treatment indicator: 1 for treated, 0 for control
-- *X* is a vector of covariates
-- *(D * X)* is the interaction effect between the treatment and covariate(s) *X*.
-
+- $Y$ is the outcome variable
+- $D$ is the treatment indicator: 1 for treated, 0 for control
+- $X$ is a vector of covariates
+- $(D * X)$ is the interaction effect between the treatment and covariate(s) *X*.
 
 ### Effect coding
 
@@ -221,10 +234,6 @@ The ATT is now estimated as
 
 
 {{% /summary %}}
-
-
-
-
 
 
 Approximate and propensity score matching
