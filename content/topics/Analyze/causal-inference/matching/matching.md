@@ -12,7 +12,7 @@ aliases:
 
 ## Overview
 
-Randomization is a fundamental principle in experimental design, aiming to have a good counterfactual and ensuring treatment and control group are similar except for being treated. However, in cases where treatment is not randomly assigned, confounding varaibles can bias the estimated causal effect.
+Randomization is a fundamental principle in experimental design, aiming to have a good counterfactual and ensuring treatment and control group are similar except for being treated. However, in cases where treatment is not randomly assigned, confounding variables can bias the estimated causal effect.
 
 Matching offers an alternative approach by basically creating an artificial counterfactual. This is done by pairing individuals or units based on specific observable characteristics to create comparable groups. This article provides a comprehensive introduction to matching, focusing on both the theory behind the method and practical applications.
 
@@ -40,9 +40,7 @@ There are two identifying assumptions that should hold for exact matching to be 
 
 ### 1. Conditional Independence Assumption (CIA)
 
-The Conditional Independence Assumption is the primary assumption underlying matching. It states that, given a set of observable characteristics X, the assignment of treatment becomes independent of potential outcomes. 
-
-In other words, **once we account for the observed characteristics of units or individuals, there should be no systematic differences in potential outcomes between the treatment and control groups**.
+The Conditional Independence Assumption is the primary assumption underlying matching. It state that **once we account for the observed characteristics of units or individuals, there should be no systematic differences in potential outcomes between the treatment and control groups**. 
 
 Mathematically, this assumption is expressed as follows:
 
@@ -53,10 +51,10 @@ Mathematically, this assumption is expressed as follows:
 <br>
 <br>
 
-Where $Y_{0}$ and $Y_{1}$ are the potential outcomes in respectively the control and treatment groups, which are independent of treatment assignment $T$ for each value of the observed covariates $X$. The $X$ is the binary variable in exact matching on which the groups are based.
+Where $Y_{0}$ and $Y_{1}$ are the potential outcomes in respectively the control and treatment group, which are independent of treatment assignment $T$ for each value of the observed covariates $X$. The $X$ is the binary variable(s) which the observations are matched.
 
 {{% warning %}}
-Assumes that there are no *unobservable* characteristics that differ across these groups and significantly affect treatment probability and effect; this is an assumption that can not be tested and you are willing to make to establish causality.
+You are also assuming that there are no *unobservable* characteristics that may differ between these groups and could influence both the likelihood of receiving treatment and its effects. This assumption cannot be tested empirically, but is a logical premise you are willing to accept in order to establish causality.
 {{% /warning %}}
 
 
@@ -198,9 +196,9 @@ The ATT is 7968.828, suggesting a positive effect of the traineeship programme.
 
 ## OLS as a matching estimator
 
-Using Ordinary Least Squares (OLS) regression as a matching estimator involves regressing the outcome variable (Y) on the treatment indicator (D), adnt the covariates (X). This allows us to estimate the treatment effect while controlling for the effects of other variables. 
+Using Ordinary Least Squares (OLS) regression as a matching estimator involves regressing the outcome variable ($Y$) on the treatment indicator ($D$), and the covariates ($X$). This allows us to estimate the treatment effect while controlling for the effects of other variables. 
 
-To understand how the treatment effect depends on observable characteristics X, we can include interaction terms between D and X in the regression model.
+To understand how the treatment effect depends on observable characteristics $X$, we can include interaction terms between $D$ and $X$ in the regression model.
 
 {{<katex>}}
 Y = \beta_0 + \beta_1 D + \beta_2 * X + \beta_3 (D * X) + \epsilon_i
@@ -222,18 +220,54 @@ Using the data from before as an example, the regression equation with interacti
 Y = \beta_0 + \beta_1 D + \beta_2 * X + \beta_3 D * (X_i - \bar{X}) + \epsilon_i
 {{</katex>}}
 
-where D * (X_i - Xbar) is the interaction between the treatment indicator D and the de-meaned covariate X_i - \bar{X}. It captures how the treatment effect varies with deviations of the covariate X from its mean (\bar{X}).
+where D * ($X_i - \bar{X}$) is the interaction between the treatment indicator D and the de-meaned covariate $X_{i} - \bar{X}$. It captures how the treatment effect varies with deviations of the covariate $X$ from its mean value ($\bar{X}$). 
+
+Specifically, \beta_3 measures the dependence of the treatment effect on $X_i$; it indicates the additional effect of the treatment for each unit change in the covariate(s), compared to the average treatment effect. 
 
 The ATT is now estimated as
 <br>
 {{<katex>}}
-\hat{\beta}_2 + \frac{1}{N_1} \sum_{i=1}^{N} D_i \cdot (X_i - \bar{X})' \hat{\beta}_3
+\hat{\beta}_2 + \frac{1}{N_1} \sum_{i=1}^{N_1} D_i \cdot (X_i - \bar{X})' \hat{\beta}_3
 {{</katex>}}
+
+
+In R, the following code creates a de-meaned variable for `Age` and runs the OLS regression with an interaction term between `Treatment` and `Age_demeaned`. 
+
+{{% codeblock %}}
+```R
+# Create a de-meaned covariate
+data$Age_demeaned = data$Age - mean(data$Age)
+
+# OLS regression with interaction term
+ols_model <- lm(Earnings ~ Treatment * Age_demeaned, data = data)
+
+summary(ols_model)
+
+```
+{{% /codeblock %}}
+
+<p align = "center">
+<img src = "../images/summary_matching.png" width="400">
+</p>
+
+The coefficient for treatment is 351.4, indicating a positive but statistically insignificant effect of the programme on earnings. 
+
+The estimate for the interaction term measures the dependence of the treatment effect on covariate `Age`. While insignificant, the negative sign of indicates the effect of the programme on earnings is reduced for individuals with an age that is further away from the mean. 
+
+{{% tip %}}
+
+For full interpretation of the summary output of the regression model, refer to [this topic](/regressionoutput). 
+
+{{% /tip %}}
+
 
 {{% summary %}}
 
-
 {{% /summary %}}
+
+
+
+
 
 
 Approximate and propensity score matching
