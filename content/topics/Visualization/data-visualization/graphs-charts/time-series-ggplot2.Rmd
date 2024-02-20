@@ -1,7 +1,5 @@
 ---
-title: "Time Series ggplot2"
-author: "Matthijs ten Tije"
-date: '2024-02-05'
+title: "Time Series Analysis with ggplot2"
 output: html_document
 ---
 
@@ -28,7 +26,7 @@ prices <- tq_get(tickers,
 ```{r Line Chart}
 # Filter the data for Apple (AAPL) stock prices after January 1, 2014
 AAPL <- prices %>%
-  filter(symbol == "AAPL" & date > as.Date("2014-01-01"))
+  dplyr::filter(symbol == "AAPL" & date > as.Date("2014-01-01"))
 
 # Create a line chart using ggplot2
 ggplot(data = AAPL, aes(x = date, y = adjusted)) +
@@ -55,6 +53,7 @@ ggplot(data = AAPL, aes(x = date, y = adjusted)) +
     strip.text.y = element_text(size = 14, face = "bold", family = "Times New Roman", hjust = 0)
   ) 
 ```
+
 ```{r Line Chart with Points}
 AAPL_point <- prices %>%
   filter(symbol == "AAPL" & date > as.Date("2014-01-01") & date < as.Date("2014-06-01"))
@@ -199,6 +198,7 @@ ggplot(data_area, aes(x = date, y = adjusted, color = symbol, fill = symbol)) +
     strip.text.y = element_text(size = 14, face = "bold", family = "Times New Roman", hjust = 0)
   ) 
 ```
+
 ```{r Line Chart with Facets by stock}
 # Ensure return calculation is accurate. Replace 'Delt' with the appropriate calculation method if necessary.
 prices <- prices %>%
@@ -234,7 +234,6 @@ ggplot(prices, aes(x = date, y = Return, group = symbol, color = symbol)) +
     strip.text.y = element_text(size = 14, face = "bold", family = "Times New Roman", hjust = 0)
   ) 
   
-ggsave(filename = "time-series-7.png", path = "~/Desktop/TSH-Webiste/content/topics/Visualization/data-visualization/graphs-charts/images", width = 10, height = 6, dpi = 300)  
 ```
 
 ```{r Line Chart with Facets by year}
@@ -300,5 +299,12 @@ ggplot(filtered_prices, aes(x = date, y = adjusted)) +
     strip.text.y = element_text(size = 14, face = "bold", family = "Times New Roman", hjust = 0))
 ```
 
+```{r save_tip_example, eval=FALSE}
+# Example: Saving a plot to the current working directory with specified dimensions and DPI
+ggsave(filename = "Your-Figure-Title.png", width = 10, height = 6, dpi = 300)
 
-
+# Example: Saving multiple plots using automatic file naming 
+timestamp <- format(Sys.time(), "%Y-%m-%d_%H-%M-%S")
+filename <- paste0("plot_", timestamp, ".png")
+ggsave(filename, width = 8, height = 5, dpi = 300)
+```

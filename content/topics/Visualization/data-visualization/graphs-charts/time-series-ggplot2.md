@@ -20,7 +20,7 @@ This article outlines the use of `ggplot2` in R for visualizing time series data
 The dataset featured includes six US tech stocks, which are accessed through the `tidyquant` library in R.
 
 ### Why Use ggplot2 for Time Series Visualization?
-`ggplot2` stands out for its ability to handle  date variables in time series visualization. It simplifies the process by automatically recognizing date formats, which means there's no need for manual conversions or specifications of date data. This feature is part of what makes `ggplot2`'s syntax and functions user-friendly, especially when it comes to adjusting the axes and the time periods that are displayed within the visualizations. As a result, you can work with the intitial dataset as is, without having to create a custom manipulated dataset beforehand.
+`ggplot2` stands out for its ability to handle date variables in time series visualization. It simplifies the process by automatically recognizing date formats, which means there's no need for manual conversions or specifications of date data. This feature is part of what makes `ggplot2`'s syntax and functions user-friendly, especially when it comes to adjusting the axes and the time periods that are displayed within the visualizations. As a result, you can work with the initial dataset as is, without having to create a custom manipulated dataset beforehand.
 
 ### Setup
 {{% codeblock %}}
@@ -54,9 +54,14 @@ To create a single variable time series visualization with `ggplot2`, your datas
 To create a time series plot in `ggplot2`, you'll use the `ggplot()` function to specify the data and aesthetics mappings, followed by one or more `geom_*()` functions to add layers to the plot. 
 
 Here's a basic syntax outline:  
+
+{{% codeblock %}}
+```R
 ggplot(data = your_data_frame, aes(x = date_column, y = values_column)) +
   geom_line()
-  
+```
+{{% /codeblock %}}
+ 
 In this structure:
 - your_data_frame is your dataset.
 - date_column and values_column denote the columns of your dates and your variable of interest, respectively.
@@ -132,12 +137,19 @@ ggplot(data = AAPL, aes(x = date, y = adjusted)) +
 Building on `ggplot2`'s capability to automatically recognize date formats, adjusting dates on the X-axis becomes valuable when the default settings do not convey the most valuable or easy-to-interpret information. The `scale_x_date()` function in `ggplot2` provides control over how date scales appear on the X-axis of time series plots. It enables customization of the date format displayed, in addition to defining intervals and setting specific limits within your data.
 
 **Syntax Overview:**  
-*scale_x_date(date_breaks = "interval", date_labels = "strftime_format", limits = NULL)*
+{{% codeblock %}}
+```R
+scale_x_date(date_breaks = "interval", date_labels = "strftime_format", limits = NULL)
+```
+{{% /codeblock %}}
+
 
 ### date_labels
 The date_labels parameter specifies the format for date labels on the X-axis, utilizing formatting strings to tailor the appearance of dates. This flexibility allows for precise representation of time in the visualization.
 
 Here is a reference table for commonly used formatting symbols:
+
+
 | Symbol | Meaning                | Example |
 | ------ | ---------------------- | ------- |
 | `%d`   | day as a number (0-31) | 01-31   |
@@ -166,9 +178,17 @@ The `date_breaks` argument controls the interval between ticks on the axis. It a
 ### limits
 By setting `limits`, you can define the start and end dates for the plot, streamlining the visualization process without manually filtering the dataset.
 
-For example these syntax are equivalent:
-- _scale_x_date(limits = c(as.Date("2018-01-01"), as.Date("2024-01-01")))_
-- _filter(date > as.Date("2018-01-01") & date < as.Date("2024-01-01"))_
+{{% codeblock %}}
+```R
+# Adjusting dates on the X-axis using scale_x_date()
+# This approach is useful for directly controlling the plot's date range appearance.
+scale_x_date(limits = c(as.Date("2018-01-01"), as.Date("2024-01-01")))
+
+# Filtering data based on a date range with filter()
+# This method is applied to the dataset to restrict the data before plotting.
+filter(date > as.Date("2018-01-01") & date < as.Date("2024-01-01"))
+```
+{{% /codeblock %}}
 
 Combining these features, you can visualize a more tailored time series plot in `ggplot2` that precisely fits your analytical needs:
 
@@ -194,9 +214,14 @@ ggplot(data = AAPL, aes(x = date, y = adjusted)) +
 Multivariate time series visualization enables the comparison of multiple time-dependent variables within a single plot, offering a broad view of how different categories interact and evolve over time.
 
 **General Syntax:**  
-_ggplot(data, aes(x = timeVariable, y = valueVariable, color = categoryVariable)) +_
+
+{{% codeblock %}}
+```R
+ggplot(data, aes(x = timeVariable, y = valueVariable, color = categoryVariable)) +
   geom_line()
-  
+```
+{{% /codeblock %}}
+
 **Arguments:**
 - _data_: Your dataframe containing the time series data.
 - _timeVariable_: The column representing time, formatted as dates.
@@ -263,7 +288,7 @@ Faceting divides data into individual panels, each showcasing a segment of the d
 
 {{% example %}}
 **Example: Faceted Wrap Chart by Stock Symbol**  
-This examples illustrates the monthly returns of various stocks throughout 2023. Using facet_wrap(), we can create individual plots for each stock symbol, allowing for an immediate visual comparison of their performance within the same timeframe.
+This examples illustrate the monthly returns of various stocks throughout 2023. Using facet_wrap(), we can create individual plots for each stock symbol, allowing for an immediate visual comparison of their performance within the same timeframe.
 
 {{% /example %}}
 
@@ -376,6 +401,33 @@ This article demonstrate how to use `ggplot2` for time series data visualization
 - Highlighting the `grouping` argument, e.g. `(aes(color = variable))` and faceting (`facet_wrap()` and `facet_grid()`) to understand trends across categorical variables.
 - `ggplot2` plot customization techniques,  functions like `scale_color_manual()` for color theming and `scale_x_date(date_breaks = "1 month", date_labels = "%b")` for detailed x-axis control.
 
-Interested in the source code used in this analysis? Download it [here](time-series-ggplot2.Rmd).
+Interested in the source code used in this analysis? Download it [R-link](perfect-plot-source-code.R)](time-series-ggplot2.Rmd).
 
 {{% /summary %}}
+
+{{% codeblock %}}
+
+```R 
+# Interested in the source code used in this analysis? Download it here
+```
+[R-link](time-series-ggplot2.Rmd)
+
+{{% /codeblock %}}
+
+{{% tip %}}
+
+#### Tips for Saving Plots Efficiently in R
+
+- **Path Verification**: Confirm the save path exists to avoid errors. 
+- **Streamlined Saving**: For quick saves, use the current working directory by omitting the path, only specifying the file name. Check your directory with getwd().
+- **Format Specification**: Although ggsave() guesses the format from the file extension, explicitly define the file type with the type parameter for precision.
+- **Dimension Control**: Adjust width, height, and dpi for optimal clarity, especially critical for high-stakes presentations or publications. Units default to inches but can be set to centimeters.
+- **Automated Naming**: Employ dynamic naming for your files, like incorporating timestamps, to enhance file management and prevent overwrites, fostering a more organized workflow.
+
+{{% /tip %}}
+
+{{% codeblock %}}
+```R
+# Example: Saving a plot to the current working directory with specified dimensions and DPIggsave(filename = "Your-Figure-Title.png", width = 10, height = 6, dpi = 300)# Example: Saving multiple plots using automatic file naming timestamp <- format(Sys.time(), "%Y-%m-%d_%H-%M-%S")filename <- paste0("plot_", timestamp, ".png")ggsave(filename, width = 8, height = 5, dpi = 300)
+```
+{{% /codeblock %}}
