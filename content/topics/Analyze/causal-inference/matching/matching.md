@@ -54,7 +54,11 @@ Mathematically, this assumption is expressed as follows:
 Where $Y_{0}$ and $Y_{1}$ are the potential outcomes in respectively the control and treatment group, which are independent of treatment assignment $T$ for each value of the observed covariates $X$. The $X$ is the binary variable(s) which the observations are matched.
 
 {{% warning %}}
-You are also assuming that there are no *unobservable* characteristics that may differ between these groups and could influence both the likelihood of receiving treatment and its effects. This assumption cannot be tested empirically, but is a logical premise you are willing to accept in order to establish causality.
+
+This assumption cannot be tested, since also means no *unobservable* characteristics that differ between treatment and control group and could influence both the likelihood of receiving treatment and its effects.
+
+It cannot be tested, although there are some methods to measure the plausibility of this assumption. Detailed information about the units on background characteristics helps assess it. (discussion Imbens, 2015 p. 5).
+
 {{% /warning %}}
 
 
@@ -220,16 +224,20 @@ Using the data from before as an example, the regression equation with interacti
 Y = \beta_0 + \beta_1 D + \beta_2 * X + \beta_3 D * (X_i - \bar{X}) + \epsilon_i
 {{</katex>}}
 
-where D * ($X_i - \bar{X}$) is the interaction between the treatment indicator D and the de-meaned covariate $X_{i} - \bar{X}$. It captures how the treatment effect varies with deviations of the covariate $X$ from its mean value ($\bar{X}$). 
+where $D * (X_i - \bar{X})$ is the interaction between the treatment and the de-meaned covariate $X_{i} - \bar{X}$. It captures how the treatment effect varies with deviations of the covariate $X$ from its mean value ($\bar{X}$). 
 
-Specifically, \beta_3 measures the dependence of the treatment effect on $X_i$; it indicates the additional effect of the treatment for each unit change in the covariate(s), compared to the average treatment effect. 
+Specifically, $\beta_3$ measures the dependence of the treatment effect on $X_i$; it indicates the additional effect of the treatment for each unit change in the covariate(s), compared to the average treatment effect. 
 
-The ATT is now estimated as
+When  $X_i = \bar{X}$, the expected differences in outcomes is $\beta_2$. This is the ATE under conditional independence. 
+
+The ATT can be estimated as:
+<br>
 <br>
 {{<katex>}}
 \hat{\beta}_2 + \frac{1}{N_1} \sum_{i=1}^{N_1} D_i \cdot (X_i - \bar{X})' \hat{\beta}_3
 {{</katex>}}
 
+#### Code 
 
 In R, the following code creates a de-meaned variable for `Age` and runs the OLS regression with an interaction term between `Treatment` and `Age_demeaned`. 
 
@@ -263,25 +271,16 @@ For full interpretation of the summary output of the regression model, refer to 
 
 {{% summary %}}
 
+Identifying assumptions are the Conditional Independence Assumption and Overlapping Support, are crucial for matching to yield valid causal effects. When these assumptions hold, matching provides a framework for establishing causal relationships in observational studies. An example of exact matching is given, where individuals were paired based on the identical values of their age. 
+
+In OLS regression, incorporating an interaction term between the treatment indicator and the (de-meaned) covariate allows for assessing how the treatment effect varies across different levels of the covariate. 
+
+You can continue the content of matching by reading the [next topic on Approximate Matching](\approximate-matching).
+
 {{% /summary %}}
 
 
 
 
 
-
-Approximate and propensity score matching
-
-# Overview
-
-
-
-
-
-## Practical example
-
-Imbens (2015) gives three practical examples.
-
-
-table
 
