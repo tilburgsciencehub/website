@@ -115,14 +115,15 @@ $$ a(z) = max(0,z)
 The output layer is the final layer in the neural network where desired predictions are obtained. There is one output layer in a neural network that produces the desired final prediction.
 
 
-###  A little bit of math to understand what is happening behind the scences
+### A little bit of math to understand what is happening behind the scences
 After introducing all necessary concepts, lets take a look at the math:
 input layer:
+
 set of x's
-$x_{0}
+{{<katex>}} x_{0} = {x_{0}, x_{1},... x_{i}} {{</katex>}}
 
 1st hidden layer:
-$h_{0} = a[$\beta_{0}$ + $\omega_{0}$]$
+{{<katex>}} h_{0} = a[beta_{0} + omega_{0}] {{</katex>}} 
 
 2nd hidden layer:
 $h_{1} = a[$\beta_{1}$ + $\omega_{1}$]$
@@ -132,7 +133,7 @@ $y =  $\beta_{2}$ + $\omega_{2}h_{2}
 
 $h_{k} = a[$\beta_{k-1}$ + $\omega_{k-1}h_{k-1}$]$
 $y =  $\beta_{k}$ + $\omega_{k}h_{k}&
-
+% {{<katex>}} \hat{\mu_{+}} = \mathbb{E}[Y_{i}(1)|X_{i} = c] {{</katex>}}
 where: 
 - a is an activation function
 - $\beta is bias vector (biases: Additional parameters added to the weighted sum before applying the activation function)
@@ -142,12 +143,52 @@ Finally the output of the deep neural network could be annotated as following:
 $y = $\beta_{k}$ + $\omega_{k}a[$\beta_{k-1}$ + $\omega_{k-1}a[...$\beta_{2} + $\gamma_{2}a[...$\beta_{1} + $\gamma_{1}]]...]]
 
 
+
+### General graphical represantion of a deep neural network:
 So putting it all together on the graph:
-### General represantion of a deep network:
 
-## Code example
+## Coding deep neural network
+
+The go-to tools for building deep neural networks are TensorFlow, Keras, and PyTorch. Since TensorFlow 2.0, Keras has merged with TensorFlow, which means you can now use Keras to build complex networks directly within TensorFlow. It's a powerful combo that simplifies the process of creating sophisticated models.
 
 
+```
+# Importing necessary libraries
+import numpy as np
+from keras.datasets import mnist
+from keras.models import Sequential
+from keras.layers import Dense, Flatten
+from keras.utils import to_categorical
+
+# Load the MNIST dataset
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+
+# Preprocess the data
+X_train = X_train.reshape((X_train.shape[0], -1)).astype('float32') / 255
+X_test = X_test.reshape((X_test.shape[0], -1)).astype('float32') / 255
+y_train = to_categorical(y_train)
+y_test = to_categorical(y_test)
+
+# Creating a Sequential model
+model = Sequential()
+
+# Adding layers to the model
+model.add(Dense(units=64, activation='relu', input_shape=(X_train.shape[1],)))
+model.add(Dense(units=64, activation='relu'))
+model.add(Dense(units=10, activation='softmax'))
+
+# Compiling the model
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Training the model
+model.fit(X_train, y_train, epochs=10, batch_size=128, verbose=1, validation_split=0.2)
+
+# Evaluating the model
+loss, accuracy = model.evaluate(X_test, y_test, verbose=0)
+print("Test Loss:", loss)
+print("Test Accuracy:", accuracy)
+
+```
 
 ### References:
 Prof. Matteo Bustreo, 2023 “Lesson2-Foundations of Deep Learning" https://tilburguniversity.instructure.com/courses/14887/files/2934299?module_item_id=669643.
