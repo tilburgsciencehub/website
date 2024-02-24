@@ -8,8 +8,8 @@
     <div class="row justify-content-center mx-0">
         <div class="col-lg-8 col-22 pr-lg-5">
             <div class="sticky-top pr-lg-3 mb-lg-5 pb-lg-5 d-flex flex-column tableOfContentParent">
-                <h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ buildingblock.title }}</h1>
-                <sup class="mt-2" style="color: #ffb222;font-size: 14px;"><i class="fa-regular fa-clock mr-2"></i>{{ buildingblock.reading_time }} mins </sup>
+                <h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ article.title }}</h1>
+                <sup class="mt-2" style="color: #ffb222;font-size: 14px;"><i class="fa-regular fa-clock mr-2"></i>{{ reading_time }} mins </sup>
                 <div class="TableOfContents">
                     <span class="arrow-icon"></span>
                     <div class="pseudo-btn"></div>
@@ -37,20 +37,20 @@
                     <div class="flex-fill">
                         {% include 'partials/sharelinks.html' %}
                     </div>
-                    {% if buildingblock.date_modified %}
-					<p class="mb-0 article-date">{{ buildingblock.date_modified }}</p>
+                    {% if article.date_modified %}
+					<p class="mb-0 article-date">{{ article.date_modified }}</p>
 					{% else %}
-                        {% if buildingblock.date %}
-                        <p class="mb-0 article-date">{{ buildingblock.date }}</p>
+                        {% if article.date %}
+                        <p class="mb-0 article-date">{{ article.date }}</p>
                         {% endif %}
 					{% endif %}
                 </div>
 
                 {% include 'partials/announcement.html' %}
                 {{ content|safe }}
-                {% if buildingblock.author %}
+                {% if article.author %}
                 <div class="admonition author">
-                    <div class="admonition-content">Contributed by <b><a href="/contributors/{{ buildingblock.author|lower|replace(' ', '-') }}">{{ buildingblock.author }}</a></b></div>
+                    <div class="admonition-content">Contributed by <b><a href="/contributors/{{ article.author|lower|replace(' ', '-') }}">{{ article.author }}</a></b></div>
                 </div>
                 {% endif %}
 
