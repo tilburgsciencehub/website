@@ -54,14 +54,20 @@ flask run
 - [x] About menu in header -> Added al necessary pages
 - [x] add reading time estimate -> implemented
 - [x] Cookies -> Fixed, we only need a basic analytics script.
-- [x] Code Block 
-- [x] Dual Code Blocks 
-- [x] Copy Button in Codeblock
+- [x] Code Block -> Added
 - [x] Apply Restructuring
 - [x] Added first, second and third level category structure
 - [x] Applied new Layout to website
+- [x] Link (How to install LateX) does not work (set up LaTeX)
+- [x] Create route for single article -> Route Created
+- [x] Fix Hashtags when browsing via header bar -> Checked, is not necessary anymore
+- [x] Email does not display properly & multiple "parts" of text (About TSH) -> Fixed the mail
+- [x] Use 'X' button instead of Twitter? -> Updated
+- [x] Buttons (Twitter, FB etc) are spread out, when there is no date (Download Data Programmatically) -> Checked and fixed
     
 ## Features/Issues to Update/Implement
+- [ ] Copy Button in Codeblock
+- [ ] Dual Code Blocks -> Added, but having problems (displays language twice and switching does not work)
 - [ ] MetaData
 - [ ] Implement New Basic Web Analytics Cookies
 - [ ] Bullet points do not render correctly (e.g., Random Effects Model)
@@ -74,15 +80,8 @@ flask run
 - [ ] {{< katex }} does not display correctly (Calculate Sample Sizes for web scrapers)
 - [ ] PDF-file download button does not render (Bookdown Thesis Template)
 - [ ] code chunk without content (Run RStudio on AWS docker)
-- [ ] Buttons (Twitter, FB etc) are spread out, when there is no date (Download Data Programmatically)
-- [ ] Use 'X' button instead of Twitter?
 - [ ] BASH not correctly specified in chunk (Debugging Makefiles with Remake)
-- [ ] Email does not display properly & multiple "parts" of text (About TSH)
 - [ ] Presentation slides are not available (Blog - Introducing TSH at the Open to Complexity Symposium)
-- [ ] Link to emperical research projects (Homepage - bottom) does not work
-- [ ] Link (How to install LateX) does not work (set up LaTeX)
-- [ ] Fix Hashtags when browsing via header bar
-- [ ] Create route for single article
  
 ## Issues related to content
 - [ ] The way people use katex is inconsistent which gives problems during rendering. Some people forget to add the $ sign in front and at the end of a variable, which was not really an issue for some reason in Hugo, but in Flask this makes applying these Katex Formulas why harder. We should fix the katex boxes in content and make sure it is used correctly in all content.

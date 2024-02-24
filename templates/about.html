@@ -42,7 +42,7 @@
 				<ul>
 					<li>information on state-of-the-art tooling, all in one place,</li>
 					<li><a href ='/tutorials'>tutorials</a> that get you started on larger projects,</li>
-					<li><a href="{{ url_for('buildingblocks') }}">code snippets</a> to use in your work ("building blocks"), and</li>
+					<li><a href="{{ url_for('topics_list') }}">code snippets</a> to use in your work ("building blocks"), and</li>
 					<li>many inspiring use-cases and <a href="{{ url_for('examples') }}">examples</a>.</li>
 				</ul>
 
@@ -58,7 +58,7 @@
 				<p><b>Companies</b> and <b>data science enthusiasts</b> can get efficient training into state-of-the-art tooling, and access to code to their own situation.</p>
 
 				<h3 id="who-maintains-tsh">Who maintains Tilburg Science Hub?</h3>
-				<img src="/img/tsh-organization.png">
+				<img src="{{ url_for('static', filename='img/tsh-organization.png') }}">
 				<p>Tilburg Science Hub is an open-source project. Its development has been financially supported by <a href="https://www.tilburguniversity.edu/about/schools/economics-and-management">Tilburg School of Economics and Management (2019-...).</a></p>
 
 				<p>The project consists of:
@@ -72,7 +72,7 @@
 				<p>Want to contribute to this open-source initiative - as a researcher, student, research assistant or volunteer? Visit our <b><a href="https://github.com/tilburgsciencehub/website">GitHub repository</a></b> to see how. Or read the <b><a href="https://tilburgsciencehub.com/onboarding">Tilburg Science Lab Onboarding Guide</a></b> to become part of Lab.</p>
 
 				<h3 id="who-maintains-tsh">Any questions?</h3>
-				<p>Feel free to reach out to us at <b><a href="mailto:tsh@tilburguniversity.edu">tsh [at] tilburguniversity [dot] edu</a></b>.</p>
+				<p>Feel free to reach out to us at <b><a href="mailto:tsh@tilburguniversity.edu">tsh@tilburguniversity.edu</a></b>.</p>
 			</div>
 
 			<div class="p-5 bg-white rounded mb-5" id="acknowledgements">
