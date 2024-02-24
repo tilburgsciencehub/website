@@ -75,7 +75,6 @@ flask run
 - [ ] tables do not display correctly (e.g., Random Effects Model, Configure Python virtual environments)
 - [ ] Reproducible Research (homepage) link does not work
 - [ ] Contributors links of people that do not do have a contributors page result in an error
-- [ ] Title does not display properly (e.g., Confgure Python virtual environments)
 - [ ] Codechunks not correctly displayed (No ```) (R Coding Style Guidelines)
 - [ ] {{< katex }} does not display correctly (Calculate Sample Sizes for web scrapers)
 - [ ] PDF-file download button does not render (Bookdown Thesis Template)
@@ -96,3 +95,4 @@ flask run
 
 and also in a codeblock. It would be more efficient to change this since html sees < > as tag elements, which it now tries to autocomplete, instead as interpreting it as a string. The autocomplete process is something outside of my control (happens by browser).
 - [ ] All Codeblock languages should be shown as follows ```Stata, so in the same line straight after the three signs, without any other signs such as - or others.
+- [ ] Title does not display properly (e.g., Confgure Python virtual environments) -> checked, it is a content error in the specific article that needs to be fixed)
