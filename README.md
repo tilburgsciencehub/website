@@ -64,17 +64,16 @@ flask run
 - [x] Email does not display properly & multiple "parts" of text (About TSH) -> Fixed the mail
 - [x] Use 'X' button instead of Twitter? -> Updated
 - [x] Buttons (Twitter, FB etc) are spread out, when there is no date (Download Data Programmatically) -> Checked and fixed
-    
+- [x] Bullet points do not render correctly (e.g., Random Effects Model) -> fixed, issue with markdown library. standard set to 4 spaces for list levels, adjusted this to 2 (= tab, just like Github).
+- [x] Contributors links of people that do not do have a contributors page result in an error -> Added 404 page to display when errors happen or certain pages do not exist yet.
+
 ## Features/Issues to Update/Implement
 - [ ] Copy Button in Codeblock
 - [ ] Dual Code Blocks -> Added, but having problems (displays language twice and switching does not work)
 - [ ] MetaData
 - [ ] Implement New Basic Web Analytics Cookies
-- [ ] Bullet points do not render correctly (e.g., Random Effects Model)
-- [ ] $ formulas do not render correctly (e.g., Random Effects Model)
 - [ ] tables do not display correctly (e.g., Random Effects Model, Configure Python virtual environments)
 - [ ] Reproducible Research (homepage) link does not work
-- [ ] Contributors links of people that do not do have a contributors page result in an error
 - [ ] Codechunks not correctly displayed (No ```) (R Coding Style Guidelines)
 - [ ] {{< katex }} does not display correctly (Calculate Sample Sizes for web scrapers)
 - [ ] PDF-file download button does not render (Bookdown Thesis Template)
@@ -96,3 +95,4 @@ flask run
 and also in a codeblock. It would be more efficient to change this since html sees < > as tag elements, which it now tries to autocomplete, instead as interpreting it as a string. The autocomplete process is something outside of my control (happens by browser).
 - [ ] All Codeblock languages should be shown as follows ```Stata, so in the same line straight after the three signs, without any other signs such as - or others.
 - [ ] Title does not display properly (e.g., Confgure Python virtual environments) -> checked, it is a content error in the specific article that needs to be fixed)
+- [ ] $ formulas do not render correctly (e.g., Random Effects Model) -> checked, refers to point 1 in content list. The formula used in the context does not use the $ signs at variables, which leads to flask not recognizing the item as a variable.

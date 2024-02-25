@@ -15,11 +15,12 @@ Sampling from websites and APIs can be tricky: limits to server load (e.g., retr
 
 
 ## Formula
-{{< katex display  >}}
-N = \frac{req \times S}{r \times freq}
-{{< / katex >}}
+{{<katex>}}
+$N$ = \frac {$req$ \times $S$} {$r$ \times $freq$}
+{{</katex>}}
 
-whereby
+Whereby:
+
 - $N$ = sample size (i.e., number of instances of an entity to extract data from),
 - $req$ = retrieval limit (maximum number of requests per time unit, allowed for each scraper or authenticated API user),
 - $S$ = number of scrapers used (e.g., computers with separate IP addresses, or authenticated users of an API),

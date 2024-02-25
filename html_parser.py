@@ -4,7 +4,7 @@ import markdown
 
 # Markdown Basic Conversion
 def convert_md_to_html(md_content):
-    html_content = markdown.markdown(md_content)
+    html_content = markdown.markdown(md_content, tab_length=2)
     return html_content
 
 # Shortcodes

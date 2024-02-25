@@ -17,6 +17,7 @@ aliases:
 The **Random Effects (RE) model** is the last method for panel data analysis discussed in this series of building blocks. Unlike the Fixed Effects (FE) model, which focuses on within-group variations, the RE model treats the unobserved entity-specific effects as random and uncorrelated with the explanatory variables. After delving into the RE model first, we address probably the most critical choice to make when working with panel data: deciding between an FE or RE model. 
 
 This is an overview of the content:
+
 - The RE model
   - Error term structure
   - Estimation in R
@@ -29,10 +30,12 @@ Let's continue with the model where we estimate the relationship of market and s
 <br/>
 <br/>
 {{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}
+$invest_{it}$ = $\beta_0$ + $\beta_1 value_{it}$ + $\beta_2 capital_{it}$ + $\alpha_i$ + $\epsilon_{it}
 {{</katex>}}
 <br/>
+<br/>
 where,
+
 - $invest_{it}$ is the gross investment of firm `i` in year `t`
 - $value_{it}$ is the market value of assets of firm `i` in year `t`
 - $capital_{it}$ is the stock value of plant and equipment of firm `i` in year `t`

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, abort
 from flask_assets import Environment, Bundle
 from datetime import datetime
 from functions import build_data_dict, generate_table_of_contents, get_breadcrumbs, find_related_articles, calculate_reading_time
@@ -192,8 +192,17 @@ def contributor(contributor_path):
     data_dict = build_data_dict(Topics, articles)
     contributor_single = Contributors.query.filter_by(
         path=contributor_path).first()
+    
+    if contributor_single is None:
+        abort(404)
+
     return render_template('contributors-single.html', assets=assets, data_dict=data_dict, contributor_single=contributor_single)
 
+# Error Handler 404
+@app.errorhandler(404)
+def page_not_found(e):
+    data_dict = build_data_dict(Topics, articles)
+    return render_template('404.html', assets=assets, data_dict=data_dict), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
