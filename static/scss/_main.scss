@@ -6,6 +6,15 @@
   opacity: 1; /* Firefox */
 }
 
+/* Display/Hide Tabs in Dual Codeblock */
+.highlight-inactive {
+  display: none;
+}
+
+.highlight-active {
+  display:flex;
+}
+
 /* No margin for sub-lists */
 li {
   p {
@@ -192,7 +201,6 @@ li {
   pre,
   .highlight {
     margin: 20px 0 0 0;
-    display: flex;
     width: 100%;
   }
 

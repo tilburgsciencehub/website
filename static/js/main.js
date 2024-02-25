@@ -23,6 +23,7 @@ $(".headerLink").hover(function () {
   }
 });
 
+
 $(document).ready(function () {
   $(".pseudo-btn").on("click", function () {
     $(this).addClass("active");
@@ -53,77 +54,6 @@ $(document).ready(function () {
     var height = $(".sticky-top").height();
   }
 
-  // working on codeblock
-  let codeblocks = $(".codeblock");
-  $(`.codeblock .downloadCodeBtn`).hide();
-  for (x = 0; x < codeblocks.length; x++) {
-    let blocks = $(`.codeblock:eq(${x}) .inner .highlight`);
-    let d = 0;
-    blocks.map((block) => {
-      let title = "";
-      let desc = blocks[block];
-      if (
-        blocks[block].children[0].children[0].className.replace(
-          "language-",
-          ""
-        ) == "fallback"
-      ) {
-        title =
-          blocks[block].children[0].children[0].innerHTML.match(/\-(.*?)\-/)[1];
-
-        if (title) {
-          desc = blocks[block].children[0].children[0].innerHTML.replace(
-            /\-(.*?)\-/g,
-            ""
-          );
-          blocks[block].children[0].children[0].innerHTML = desc;
-        }
-      } else {
-        title = blocks[block].children[0].children[0].className.replace(
-          "language-",
-          ""
-        );
-      }
-
-      $(`.codeblock:eq(${x}) .nav`).append(`
-        <li class="nav-item" role="presentation">
-          <a class="nav-link ${block == 0 ? "active" : ""}" id="pills-${blocks[block].children[0].children[0].className
-        }-tab-${x}-${d}" data-toggle="tab" href="#${blocks[block].children[0].children[0].className
-        }-${x}-${d}" role="tab" aria-controls="pills-${blocks[block].children[0].children[0].className
-        }" aria-selected="true">${title}</a>
-        </li>
-      `);
-
-      $(`.codeblock:eq(${x}) .tab-content`).append(`
-        <div class="tab-pane ${block == 0 ? "fade show active" : ""}" id="${blocks[block].children[0].children[0].className
-        }-${x}-${d}" role="tabpanel" aria-labelledby="pills-${blocks[block].children[0].children[0].className
-        }-tab">
-        </div>
-      `);
-
-      $(
-        `.codeblock:eq(${x}) #${blocks[block].children[0].children[0].className}-${x}-${d}`
-      ).append(blocks[block]);
-
-      d++;
-
-      var el = $(
-        `.codeblock:eq(${x}) a:contains('${blocks[
-          block
-        ].children[0].children[0].className.replace("language-", "")}-link')`
-      );
-
-      if (el.length) {
-        if ($(`.codeblock:eq(${x}) .downloadCodeBtn`).is(":hidden")) {
-          $(`.codeblock:eq(${x}) .downloadCodeBtn`).show();
-        }
-      }
-
-      $(`.codeblock:eq(${x}) .copyCodeBtn`).attr("data-index", x);
-      $(`.codeblock:eq(${x}) .downloadCodeBtn`).attr("data-index", x);
-    });
-  }
-
   $(".share-button.copyURL").on("click", function () {
     let url = $(this).attr("data-url");
     var $temp = $('<textarea id="toCopy"></textarea>');
@@ -134,46 +64,28 @@ $(document).ready(function () {
     $temp.remove();
   });
 
+  // codeblocks
+  $('.codeblock .nav-link').click(function (e) {
+    e.preventDefault(); // Voorkomt de standaard actie van de link
+
+    // Verwijder de 'active' class van alle links en zet deze op de geklikte link
+    $('.codeblock .nav-link').removeClass('active');
+    $(this).addClass('active');
+
+    // Zet alle codeblokken op 'inactive'
+    $('.codeblock .highlight').addClass('highlight-inactive').removeClass('highlight-active');
+
+    // Zet het overeenkomstige codeblok op 'active' op basis van de data-language attribuut
+    var language = $(this).data('language'); // Haal de taal van de geklikte link op
+    $('.codeblock .highlight[data-language="' + language + '"]').removeClass('highlight-inactive').addClass('highlight-active');
+  });
+
   // make code copy-able
   $(".copyCodeBtn").on("click", function () {
-    var $temp = $('<textarea id="toCopy"></textarea>');
-    $("body").append($temp);
-    $temp
-      .val(
-        $(
-          `.codeblock:eq(${$(this).attr("data-index")}) .tab-pane.active code`
-        ).text()
-      )
-      .select();
 
-    document.execCommand("copy");
-    $temp.remove();
   });
 
-  $(".downloadCodeBtn").on("click", function () {
-    var $currentlanguage = $(
-      `.codeblock:eq(${$(this).attr("data-index")}) .nav-link.active`
-    ).html();
-    var el = $(
-      `.codeblock:eq(${$(this).attr(
-        "data-index"
-      )}) a:contains('${$currentlanguage}-link')`
-    );
-    var link = el.attr("href");
 
-    window.location.href = "../" + link;
-  });
-
-  $(".codeblock .nav-link").on("click", function () {
-    var $currentlanguage = $(this).html();
-    var el = $(`.codeblock a:contains('${$currentlanguage}-link')`);
-
-    if (!el.length) {
-      $(".downloadCodeBtn").hide();
-    } else {
-      $(".downloadCodeBtn").show();
-    }
-  });
 });
 
 $(document).mouseup(function (e) {
@@ -570,12 +482,12 @@ widetables.forEach((element) => {
 function animateButton(button) {
   // Reset animation
   button.classList.remove('animate');
-  
+
   // Add animation class
   button.classList.add('animate');
-  
+
   // Remove animation class after a delay
-  setTimeout(function() {
+  setTimeout(function () {
     button.classList.remove('animate');
   }, 700);
 }
@@ -591,10 +503,10 @@ for (let i = 0; i < allTooltips.length; i++) {
 
   div.innerText = allTooltips[i]?.getAttribute("onBoardTooltip");
 
-  if (i == allTooltips.length - 2){
+  if (i == allTooltips.length - 2) {
     div.style = `left: ${allTooltips[i].getBoundingClientRect().left - 20}px`;
   } else {
-  div.style = `left: ${allTooltips[i].getBoundingClientRect().left - 80}px`;
+    div.style = `left: ${allTooltips[i].getBoundingClientRect().left - 80}px`;
   }
 
   // navigation
@@ -603,16 +515,16 @@ for (let i = 0; i < allTooltips.length; i++) {
   navigationDiv.innerHTML = `
     <span>
       ${i == allTooltips.length - 1
-        ? "&nbsp;"
-        : `<a href="#0" class="skipOnboarding">Skip</a>`
-      }
+      ? "&nbsp;"
+      : `<a href="#0" class="skipOnboarding">Skip</a>`
+    }
     </span>
     <span>
       <button type="button" class="nextButton btn btn-primary btn-sm ${i == allTooltips.length - 1 ? "confetti-button" : ""}" style="font-size: 14px; padding:  4px 12px !important;" current="${i}">
         ${i == allTooltips.length - 1
-          ? "Finish"
-          : "Next"
-        } ${i + 1}/${allTooltips.length}</button>
+      ? "Finish"
+      : "Next"
+    } ${i + 1}/${allTooltips.length}</button>
     </span>
   `;
 
@@ -634,7 +546,7 @@ $("body").on("click", ".nextButton", () => {
     allTooltipContents[Number(currentActive) + 1].classList.add("active");
   } else {
     animateButton(confettiButton);
-    setTimeout(function() {
+    setTimeout(function () {
       allTooltipContents[Number(currentActive)].classList.remove("active");
       localStorage.setItem("demoCompleted", "true");
       $(".pulse").remove();
@@ -654,8 +566,8 @@ $(".takeTour").on("click", (event) => {
 });
 
 $(".takeTourFooter").on("click", (event) => {
-  $("html, body").animate({ scrollTop: 0 }, "fast", function() {
-    setTimeout(function() {
+  $("html, body").animate({ scrollTop: 0 }, "fast", function () {
+    setTimeout(function () {
       $(".onBoardTooltipContent:first").addClass("active");
     }, 500);
   });
@@ -683,7 +595,7 @@ $(document).ready(function () {
 
         if (randomBuildingBlock) {
           titleElementBlock.textContent = randomBuildingBlock.title;
-          if (randomBuildingBlock.description === ""){
+          if (randomBuildingBlock.description === "") {
             descriptionElementBlock.textContent = "Start reading this article";
           }
           else {
@@ -732,7 +644,7 @@ $(document).ready(function () {
 
         if (randomTutorial) {
           titleElement.textContent = randomTutorial.title;
-          if (randomTutorial.description === ""){
+          if (randomTutorial.description === "") {
             descriptionElement.textContent = "Start reading this article."
           }
           else {

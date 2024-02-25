@@ -17,10 +17,11 @@ def convert_code_blocks_to_html(md_content):
         code_content = match.group(1).strip()
         language_matches = re.finditer(r'```(\w+)(.*?)```', code_content, re.DOTALL)
         code_blocks = []
-
         tab_nav = []  # Lijst om tabbladnavigatie bij te houden
+        languages_processed = []
+        idx = 0
 
-        for idx, language_match in enumerate(language_matches):
+        for language_match in language_matches:
             language = language_match.group(1)
             code = language_match.group(2).strip()
             code = re.sub(r'```', '', code)
@@ -29,16 +30,24 @@ def convert_code_blocks_to_html(md_content):
             is_first_codeblock = idx == 0
             
             active_class = ' active' if is_first_codeblock else ''
-            highlight_class = 'highlight active' if is_first_codeblock else 'highlight inactive'
+            highlight_class = 'highlight hightlight-active' if is_first_codeblock else 'highlight highlight-inactive'
             
             code_blocks.append(f'<div class="{highlight_class}" data-language="{language}">\n'
                             f'<pre><code class="language-{language}">\n{code}\n</code></pre>\n'
                             f'</div>\n')
 
             # Voeg een tabblad toe voor elke taal
-            tab_nav.append(f'<li class="nav-item" role="presentation">'
-                        f'<a class="nav-link nav-language{active_class}" aria-selected="true" data-language="{language}">{language}</a>'
-                        f'</li>')
+            if language not in languages_processed:
+                print(f"Adding language to tabs: {language}")  # Debugging print
+                tab_nav.append(f'<li class="nav-item" role="presentation">'
+                            f'<a class="nav-link nav-language{active_class}" aria-selected="true" data-language="{language}">{language}</a>'
+                            f'</li>')
+                languages_processed.append(language)
+            else:
+                print(f"Language already processed: {language}")  # Debugging print
+
+
+            idx = idx + 1
 
         code_content = ''.join(code_blocks)
 

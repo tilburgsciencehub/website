@@ -68,12 +68,13 @@ flask run
 - [x] Contributors links of people that do not do have a contributors page result in an error -> Added 404 page to display when errors happen or certain pages do not exist yet.
 - [x] PDF-file download button does not render (Bookdown Thesis Template) -> added a new function for cta secondary center
 - [x] MetaData -> Fixed for most pages. Topic lists still need to get meta data.
+- [x] Dual Code Blocks -> Added and fixed, removed most js and turned it into the html parser
+- [x] Codeblocks showing languages twice -> fixed by fix above
 
 ## Features/Issues to Update/Implement
 - [ ] Copy Button in Codeblock
-- [ ] Dual Code Blocks -> Added, but having problems (displays language twice and switching does not work)
 - [ ] Implement New Basic Web Analytics Cookies
-- [ ] Reproducible Research (homepage) link does not work
+- [ ] Fix Cards on Home Page
 - [ ] {{< katex }} does not display correctly (Calculate Sample Sizes for web scrapers)
 - [ ] Presentation slides are not available (Blog - Introducing TSH at the Open to Complexity Symposium)
  

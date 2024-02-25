@@ -10804,6 +10804,15 @@ a.text-dark:hover, a.text-dark:focus {
   /* Firefox */
 }
 
+/* Display/Hide Tabs in Dual Codeblock */
+.highlight-inactive {
+  display: none;
+}
+
+.highlight-active {
+  display: flex;
+}
+
 /* No margin for sub-lists */
 li p {
   margin-bottom: 0 !important;
@@ -10963,7 +10972,6 @@ li ul {
 .codeblock pre,
 .codeblock .highlight {
   margin: 20px 0 0 0;
-  display: flex;
   width: 100%;
 }
 .codeblock ul {
@@ -11186,7 +11194,7 @@ html:after {
   height: 700px;
   top: 0px;
   right: 0px;
-  background-image: url("/static/img/Oval Copy 2@2x.png");
+  background-image: url("/img/Oval Copy 2@2x.png");
   z-index: -1;
   background-size: cover;
   background-repeat: no-repeat;
