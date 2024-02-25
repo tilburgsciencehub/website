@@ -14,6 +14,7 @@ aliases:
 ### Object names
 - Variable and function names should use only letters, numbers, and underscores `(_)` and not include dots (mainly to avoid confusion with base R function names).  `CamelCases` are also fine.
 
+ {{% codeblock %}}
  ```R
  #Good
  school_type
@@ -22,8 +23,11 @@ aliases:
  #Bad
  school.type
  ```
+ {{% /codeblock %}}
+
 - Variable names should be as concise and meaningful as possible:
 
+{{% codeblock %}}
 ```R
 #Good
 day_one
@@ -32,6 +36,7 @@ day_one
 first_day_of_the_month
 d1mth
 ```
+{{% /codeblock %}}
 
 ### Spacing
 
@@ -39,9 +44,11 @@ Make code easier to read, place a space:
 
   - After a comma.
 
+  {{% codeblock %}}
   ```R
   x[, 1]
   ```
+  {{% /codeblock %}}
 
   - After function arguments.
 

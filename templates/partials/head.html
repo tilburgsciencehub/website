@@ -37,28 +37,33 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='katex/katex.min.css') }}" />
     <script defer src="{{ url_for('static', filename='katex/katex.min.js') }}"></script>
     <script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}"></script>
-    <script defer>
-        document.addEventListener("DOMContentLoaded", function () {
-            renderMathInElement(
-                document.body,
-                {
-                    delimiters: [
-                        { left: '$$', right: '$$', display: true },
-                        { left: '\\[', right: '\\]', display: true },
-                        { left: '$', right: '$', display: false },
-                        { left: '\\(', right: '\\)', display: false }
-                    ]
-                }
-            );
-        });
-    </script>
+
+	<!-- Common Meta Data -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="{{ assets['scss_all'].urls()[0] }}">
 	<link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon">
+	
+	<!-- Page Meta Data -->
+	{% if meta_data %}
+		{% if meta_data.title %}
+			<title>{{ meta_data.title }} - Tilburg Science Hub</title>
+			<meta property="og:title" content="{{ meta_data.title }}" />
+		{% endif %}
+
+		{% if meta_data.keywords %}
+			<meta name="keywords" content="{{ meta_data.keywords }}">
+		{% endif %}
+
+		{% if meta_data.description %}
+			<meta property="og:description" content="{{ meta_data.description }}" />
+			<meta name="description" content="{{ meta_data.description }}" />
+		{% endif %}
+	{% endif %}
+
+	<!-- Styling and scripts-->
+	<link rel="stylesheet" href="{{ assets['scss_all'].urls()[0] }}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
-	
 	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
 
 	<!-- Place this tag in your head or just before your close body tag. -->

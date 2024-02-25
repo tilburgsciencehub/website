@@ -66,24 +66,21 @@ flask run
 - [x] Buttons (Twitter, FB etc) are spread out, when there is no date (Download Data Programmatically) -> Checked and fixed
 - [x] Bullet points do not render correctly (e.g., Random Effects Model) -> fixed, issue with markdown library. standard set to 4 spaces for list levels, adjusted this to 2 (= tab, just like Github).
 - [x] Contributors links of people that do not do have a contributors page result in an error -> Added 404 page to display when errors happen or certain pages do not exist yet.
+- [x] PDF-file download button does not render (Bookdown Thesis Template) -> added a new function for cta secondary center
+- [x] MetaData -> Fixed for most pages. Topic lists still need to get meta data.
 
 ## Features/Issues to Update/Implement
 - [ ] Copy Button in Codeblock
 - [ ] Dual Code Blocks -> Added, but having problems (displays language twice and switching does not work)
-- [ ] MetaData
 - [ ] Implement New Basic Web Analytics Cookies
-- [ ] tables do not display correctly (e.g., Random Effects Model, Configure Python virtual environments)
 - [ ] Reproducible Research (homepage) link does not work
-- [ ] Codechunks not correctly displayed (No ```) (R Coding Style Guidelines)
 - [ ] {{< katex }} does not display correctly (Calculate Sample Sizes for web scrapers)
-- [ ] PDF-file download button does not render (Bookdown Thesis Template)
-- [ ] code chunk without content (Run RStudio on AWS docker)
-- [ ] BASH not correctly specified in chunk (Debugging Makefiles with Remake)
 - [ ] Presentation slides are not available (Blog - Introducing TSH at the Open to Complexity Symposium)
  
 ## Issues related to content
 - [ ] The way people use katex is inconsistent which gives problems during rendering. Some people forget to add the $ sign in front and at the end of a variable, which was not really an issue for some reason in Hugo, but in Flask this makes applying these Katex Formulas why harder. We should fix the katex boxes in content and make sure it is used correctly in all content.
 - [ ] Tables currently to complex to parse to html by hardcoding. The most effective way would be to convert them all to html with ChatGPT (tried it, is very easy and quickly done) and add context to the styleguide on how people can add a html table (very easy and logical). Another option would to self design a new structure for a table. We should discuss this with Hannes.
+    - [ ] tables do not display correctly (e.g., Random Effects Model, Configure Python virtual environments)
 - [] Some articles have lists without an enter (break) in front of it. The markdown package then cannot convert them to html lists.
 - [ ] In Task Scheduling BB: someone wrote the following:
 
@@ -94,5 +91,9 @@ flask run
 
 and also in a codeblock. It would be more efficient to change this since html sees < > as tag elements, which it now tries to autocomplete, instead as interpreting it as a string. The autocomplete process is something outside of my control (happens by browser).
 - [ ] All Codeblock languages should be shown as follows ```Stata, so in the same line straight after the three signs, without any other signs such as - or others.
+- [ ] Codeblock structure needs to be consistent, quite some people do not use the {{% codeblock %}} signs which makes rendering structurized hard.
+    - [ ] Codechunks not correctly displayed (No ```) (R Coding Style Guidelines)
+    - [ ] code chunk without content (Run RStudio on AWS docker)
+    - [ ] BASH not correctly specified in chunk (Debugging Makefiles with Remake)
 - [ ] Title does not display properly (e.g., Confgure Python virtual environments) -> checked, it is a content error in the specific article that needs to be fixed)
 - [ ] $ formulas do not render correctly (e.g., Random Effects Model) -> checked, refers to point 1 in content list. The formula used in the context does not use the $ signs at variables, which leads to flask not recognizing the item as a variable.

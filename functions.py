@@ -185,3 +185,32 @@ def find_related_articles(keywords, articles, categories, id):
 
     return top_related_articles
 
+def fetch_meta_data(data_object):
+    meta_data = {}
+
+    # Controleer of data_object een dictionary is
+    if isinstance(data_object, dict):
+        # Gebruik de get methode voor dictionaries
+        title = data_object.get('title')
+        description = data_object.get('description')
+        keywords = data_object.get('keywords')
+    else:
+        # Gebruik getattr voor objectattributen, met een standaardwaarde van None als het attribuut niet bestaat
+        title = getattr(data_object, 'title', None)
+        description = getattr(data_object, 'description', None)
+        keywords = getattr(data_object, 'keywords', None)
+
+    # Voeg de waarden toe aan meta_data als ze bestaan (niet None en niet leeg)
+    if title:
+        meta_data['title'] = title
+    if description:
+        meta_data['description'] = description
+    if keywords:
+        meta_data['keywords'] = keywords
+
+    return meta_data
+    
+
+    
+
+

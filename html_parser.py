@@ -183,6 +183,26 @@ def convert_cta_center_shortcode_to_html(md_content):
 
     return html_output
 
+def convert_cta_secondary_center_shortcode_to_html(md_content):
+    # Definieer een reguliere expressie om de shortcode te matchen
+    cta_shortcode_pattern = re.compile(r'{{%\s+cta-secondary-center\s+"([^"]+)"\s+"([^"]+)"\s+%}}')
+
+    # Vervang de shortcode door de juiste HTML-opmaak
+    def replace_cta_secondary_shortcode(match):
+        button_text = match.group(1).strip()
+        button_url = match.group(2).strip()
+
+        return f'<div class="cta-secondary" style="text-align:center;">' \
+               f'    <a href="{button_url}">' \
+               f'        <button class="btn btn-secondary btn-md mt-2">{button_text}</button>' \
+               f'    </a>' \
+               f'</div><br>'
+
+    # Gebruik de reguliere expressie om de shortcode te vervangen
+    html_output = cta_shortcode_pattern.sub(replace_cta_secondary_shortcode, md_content)
+
+    return html_output
+
 def convert_cta_shortcode_to_html(md_content):
     # Definieer een reguliere expressie om de shortcode te matchen
     cta_shortcode_pattern = re.compile(r'{{%\s+cta-primary\s+"([^"]+)"\s+"([^"]+)"\s+%}}')
@@ -330,6 +350,7 @@ def htmlize(md_file_content):
         convert_warning_to_html,
         convert_cta_shortcode_to_html,
         convert_cta_center_shortcode_to_html,
+        convert_cta_secondary_center_shortcode_to_html,
         convert_example_shortcode_to_html,
         convert_youtube_shortcode_to_html,
         convert_fallback_block_to_html,
