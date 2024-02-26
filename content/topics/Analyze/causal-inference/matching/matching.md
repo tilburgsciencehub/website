@@ -20,7 +20,7 @@ Matching offers an alternative approach by basically creating an artificial coun
 
 Exact matching involves pairing individuals who share **identical characteristics**. This requires the observable characteristic on which pairing happens to be a binary variable. Also ideally, the control group has many observations at each distinct value of the binary variable the observations are matched on. 
 
-In contrast, [approximate matching, discussed in the next topic](/approximate-matching), allows for some degree of flexibility and pairs on similar but not identical characteristics. 
+In contrast, [approximate matching](/approximate-matching), allows for some degree of flexibility and pairs on similar but not identical characteristics. 
 
 
 ## Identifying assumptions
@@ -267,6 +267,17 @@ The estimate for the interaction term measures the dependence of the treatment e
 For full interpretation of the summary output of the regression model, refer to [this topic](/regressionoutput). 
 
 {{% /tip %}}
+
+## OLS versus Matching method
+
+While using OLS regression and adding covariates for each observable characteristic, and the Matching method both rely on the Conditional Independence Assumption to facilitate causal inference, opting for matching has its advantages. Reasons to consider matching instead of the OLs method are outlined in the table below:
+
+
+|           | Matching Method         | OLS Method                  |
+|-------------------------------------|-------------------------|-----------------------------|
+| Functional <br> form                     | Linear functional <br> form not required           | Assumes linear <br> functional form         |
+| Comparable <br> untreated units          | Identifies whether there <br> are comparable untreated <br> units available for each treated <br> unit. | Does not identify <br> whether there is a lack of <br> comparable untreated <br> units for each treated <br> unit.      |
+| Counterfactual <br> weighting   | Expected counterfactual <br> for each treated unit <br> weighted based on <br> observable characteristics <br> of the untreated units. | Uses whole control <br> group for determining the <br> expected counterfactual. |
 
 
 {{% summary %}}
