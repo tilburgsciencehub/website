@@ -29,18 +29,16 @@ This arises from the nature of neurons, which operate by transmitting signals. S
 
 ### How neurons forward the information?
 An actual neuron fires an output signal only when the total strength of the input signals exceed a certain threshold. This
-phenomenon is modeled in the perceptron by calculating the weighted sum of the inputs and applying a step or activation [YET TO BE CHECKED HERE]} function.
+phenomenon is modeled in the perceptron by calculating the weighted sum of the inputs and applying a step or activation function (which are going to be explained later in this article).
 
-Now, how can we convert it to the computers?
-
-Let's consider the architecture below:
+How can the aforementioned structure of neurons be mimicked by computers? Let's consider the architecture below:
 
 <p align = "center">
 <img src ="../images/neuron-functionality-in-code.png" width="400">
 </p> 
 Picture source: McCullum, N. (2021, 28 april). Deep Learning Neural networks explained in Plain English
 
-Weights play a crucial role in deep learning as they are pivotal in training models. The adjustment of weights constitutes the primary method of training deep learning models, a concept that will become evident as we proceed to construct our initial neural networks.
+Weights play a crucial role in deep learning as they are pivotal in training models. The adjustment of weights constitutes the primary method of training deep learning models, a concept that will become evident as we proceed to construct to the architecture of deep neural networks.
 
 After a neuron gathers inputs from preceding layer neurons, it computes the sum of each signal multiplied by its respective weight. Subsequently, these computed values are transmitted to an activation function, as demonstrated below:
 
@@ -51,25 +49,20 @@ Picture source: McCullum, N. (2021, 28 april). Deep Learning Neural networks exp
 
 # Shallow and deep neural networks
 
-When it comes to neural networks we could distinguish shallow and deep neural networks. What is the difference?
+Neural networks could be distinguished between shallow and deep neural networks. What is the difference?
 
-Single-layer neural networks, also referred to as shallow neural networks, comprise a solitary hidden layer positioned between the input and output layers. This hidden layer conducts computations, orchestrating the transformation of input data to yield the intended output. Shallow neural networks, though straightforward, possess restricted capacity for learning intricate patterns and representations.
+Single-layer neural networks, also referred to as shallow neural networks, comprise a single hidden layer positioned between the input and output layers. This hidden layer conducts computations, orchestrating the transformation of input data to yield the intended output. Shallow neural networks, though straightforward, possess restricted capacity for learning intricate patterns and representations.
 
 In contrast, deep neural networks boast multiple hidden layers interspersed between the input and output layers. These networks can be profoundly deep, incorporating tens or even hundreds of layers. Each layer undertakes computations, forwarding the modified data to the subsequent layer in succession.
 
 # Components of deep learning network
-In the sections above we introduced concept of deep learning and we talked a little bit about biology behind it. Let's move now to the core concept in deep learning from the machine learning point of view.
+In the sections above we introduced concept of deep learning and we talked a little bit about biology behind it. Let's move now to explaining separate components of deep learning architecture.
 
-### Input layer
-Input layer refers to the first layer of nodes in an artificial neural network. This layer receives input data from the outside world.
+- **Input layer** refers to the first layer of nodes in an artificial neural network. This layer receives input data from the outside world.
 
-###  Hidden layer
+- **Hidden layers** are what make neural networks "deep" and enable them to learn complex data representations.
 
-Hidden layers are what make neural networks "deep" and enable them to learn complex data representations. 
-
-### Output layer
-
-The output layer is the final layer in the neural network where desired predictions are obtained. There is one output layer in a neural network that produces the desired final prediction.
+- **Output layer** is the final layer in the neural network where desired predictions are obtained. There is one output layer in a neural network that produces the desired final prediction.
 
 ## How information is transferred between the layers?
 
@@ -86,22 +79,20 @@ where:
 - $ f[x, \theta] $ is a deep learning model
 - $ \{ [x_{i}, y_{i}] \}^{I}_{i=1} \$ is a training data
 
-## Training
-Training dataset of I pairs of input/output examples:
-YET TO BE CORRECTED
-$ \{ [x_{i}, y_{i} ]\}^{I}_{i=1} \$
+## Training process
+Let us denote our training dataset of I pairs of input/output examples:
+
+$ \text{Training Data: } [x_{i}, y_{i}]^{I}_{i=1} $
 
 Training consists in finding the model's parameters to minimize the loss function, i.e:
 
 $\hat{\theta} = argmin[L[\theta, f[x, \theta], \{ [x_{i}, y_{i}] \}^{I}_{i=1}]]$
 
-Let us denote a single prediction $\hat{y}$ in the following way:
+A single prediction $\hat{y}$ can be denoted in the following way:
 
 $\hat{y} = f[x, \hat{\theta}]$
 
 ## Activation function
-The composition of linear functions is still a linear function: without non-linearity, Deep neural networks would still behave like a single-layer network.
-
 Activation functions are essential components of neural networks as they introduce nonlinearity, a crucial element for enabling the development of intricate representations and functions. This nonlinearity expands the network's capacity to capture complex relationships and patterns from the inputs, surpassing the capabilities of a basic linear regression model.
 
 Multiple options are available for the choice of the activation function:
@@ -115,26 +106,25 @@ $ a(z) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}} $
 - ReLU function:
 $ a(z) = \max\(0,z)$
 
-## Putting the layers mathematically together
-After introducing all necessary concepts, lets take a look at the math:
+## Mathematical representation
+After introducing all necessary concepts, lets take a look how layers are represented mathematically:
+First consider very small neural network which has only 2 hidden layers:
 
-input layer:
-$ x_{0} = {x_{0}, x_{1},... x_{i}} $
+$ \small \text{Input layer: }x_{0} = {x_{0}, x_{1},... x_{i}} $
 
-$1st$ hidden layer:
-$ h_{0} = a[\beta_{0} + \omega_{0}] $ 
+$ \small \text{$1st$ hidden layer: } h_{0} = a[\beta_{0} + \omega_{0}] $ 
 
-$2nd$ hidden layer:
-$ h_{1} = a[\beta_{1} + \omega_{1}]$
+$ \small \text{$2nd$ hidden layer: } h_{1} = a[\beta_{1} + \omega_{1}]$
 
-output:
-$ y =  \beta_{2} + \omega_{2}h_{2} $
+$ \small \text{Output layer: } y =  \beta_{2} + \omega_{2}h_{2} $
 
-$kth$ hidden layer:
-$ h_{k} = a[\beta_{k-1} + \omega_{k-1}h_{k-1}] $
+Moving now to more general formula with k number of hidden layers.
 
-output:
-$y =  \beta_{k} + \omega_{k}h_{k} $
+$ \small \text{Input layer: }x_{0} = {x_{0}, x_{1},... x_{i}} $
+
+$ \small \text{$kth$ hidden layer: } h_{k} = a[\beta_{k-1} + \omega_{k-1}h_{k-1}] $
+
+$ \small \text{Output layer: } y =  \beta_{k} + \omega_{k}h_{k} $
 
 {{<katex>}}  {{</katex>}} 
 
@@ -146,18 +136,17 @@ where:
 
 Finally the general equation of the deep neural network could be annotated as following:
 
-$y = \beta_{k} + \omega_{k}a[\beta_{k-1} + \omega_{k-1}a[...\beta_{2} + \gamma_{2}a[...\beta_{1} + \gamma_{1}]]...]]$
+<center> $y = \beta_{k} th+ \omega_{k}a[\beta_{k-1} + \omega_{k-1}a[...\beta_{2} + \gamma_{2}a[...\beta_{1} + \gamma_{1}]]...]]$ </center>
 
 ### General graphical represantion of a deep neural network:
-So putting it all together on the graph:
+Deep neural netwotk presented in the graph:
 <p align = "center">
 <img src ="../images/deep-neural-network-graphics.png" width="400">
 </p> 
 
 ## Coding deep neural network
 
-The go-to tools for building deep neural networks are TensorFlow, Keras, and PyTorch. Since TensorFlow 2.0, Keras has merged with TensorFlow, which means we can now use Keras to build complex networks directly within TensorFlow. It's a powerful combination that simplifies the process of creating sophisticated models.
-
+Coding deep neural networks involves using programming languages such as Python, which is highly popular due to its simplicity and extensive libraries for machine learning and neural networks. Libraries like TensorFlow and PyTorch are widely used for building and training deep neural networks, providing high-level APIs for constructing complex architectures with ease. 
 
 ```
 # Importing necessary libraries
@@ -197,6 +186,22 @@ print("Test Accuracy:", accuracy)
 
 ```
 
+{{% summary %}}
+### What is Deep Learning?
+Deep learning is a branch of machine learning inspired by the structure and function of the human brain. It involves the use of neural networks with multiple layers to process and learn from data. The term "deep" refers to the depth of these networks, which enable them to extract complex patterns and representations from the data.
+
+### Mimicking the Behavior of Neurons in Computer Algorithms**
+Deep learning aims to mimic the behavior of neurons in the human brain through computer algorithms. Researchers study the collaborative nature of neurons and replicate it in artificial neural networks. This involves computing the weighted sum of inputs, applying activation functions, and transmitting signals between layers to process information.
+
+### Architecture of Deep Neural Networks
+Deep neural networks consist of multiple layers, including input, hidden, and output layers. Information flows through the network via weighted connections between neurons in adjacent layers. The architecture allows for the hierarchical extraction of features from raw data, with each layer learning increasingly abstract representations.
+
+### Components of deep neural networks 
+The training process involves optimizing the model's parameters to minimize a loss function, which measures the disparity between predicted and actual values. Activation functions introduce nonlinearity to the network, enabling it to capture complex patterns. Practical implementation also includes data preprocessing, model compilation, and evaluation using libraries like TensorFlow and Keras in Python.
+
+### Practical Implementation in Python
+Python is a popular choice for practical implementation of deep learning models due to its simplicity and extensive libraries. TensorFlow and Keras are commonly used libraries for building and training deep neural networks. Practical implementation involves data preprocessing, defining the model architecture, compiling the model, training it on the data, and evaluating its performance.
+{{% /summary %}}
 ### References:
 Prof. Matteo Bustreo, 2023 “Lesson2-Foundations of Deep Learning" https://tilburguniversity.instructure.com/courses/14887/files/2934299?module_item_id=669643.
 
