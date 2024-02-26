@@ -38,20 +38,24 @@
         </a>
       </div>
       {{ end }}
-
     </div>
+
     <h3 class="text-center-mobile" style="font-weight: 700;">Alumni</h3>
     <div class="row justify-content-center justify-content-lg-start">
       {{ range where .Pages "Params.status" "==" "alumni" }}
-      <div class="col-lg-6 col-22 mb-4 d-flex flex-wrap">
+      <div class="col-xl-6 col-lg-6 col-md-12 col-22 mb-4 d-flex flex-wrap">
         <a style="color:inherit" href="{{ .Permalink }}">
-          <div class="bg-white p-5 text-center w-100 rounded d-flex flex-column">
+          <div class="p-5 text-center w-100 rounded d-flex flex-column">
             <span class="flex-fill">
-              {{ if .Params.image }}
-              <img src="/img/contributors/{{ .Params.image }}">
-              {{ else }}
-              <img src="/img/no-image.png">
-              {{ end }}
+              <div class="image-circle-overview">
+                {{ if .Params.image }}
+                <div class="img-container-overview" style="background-image: url('{{ if .Params.image }}/contributors/{{ .Params.image }}{{ else }}static/contributors/no-image.png{{ end }}');">
+                </div>
+                {{ else }}
+                <img src="/contributors/no-image.png">
+                {{ end }}
+
+              </div>
               <h4 class="heading mt-3">{{ .Params.name }}</h4>
               <p>{{ .Params.description_short }}</p>
 
