@@ -288,7 +288,7 @@ Faceting divides data into individual panels, each showcasing a segment of the d
 
 {{% example %}}
 **Example: Faceted Wrap Chart by Stock Symbol**  
-This examples illustrate the monthly returns of various stocks throughout 2023. Using facet_wrap(), we can create individual plots for each stock symbol, allowing for an immediate visual comparison of their performance within the same timeframe.
+This examples illustrate the monthly returns of various stocks throughout 2023. Using `facet_wrap()`, we can create individual plots for each stock symbol, allowing for an immediate visual comparison of their performance within the same timeframe.
 
 {{% /example %}}
 
@@ -401,8 +401,6 @@ This article demonstrate how to use `ggplot2` for time series data visualization
 - Highlighting the `grouping` argument, e.g. `(aes(color = variable))` and faceting (`facet_wrap()` and `facet_grid()`) to understand trends across categorical variables.
 - `ggplot2` plot customization techniques,  functions like `scale_color_manual()` for color theming and `scale_x_date(date_breaks = "1 month", date_labels = "%b")` for detailed x-axis control.
 
-Interested in the source code used in this analysis? Download it [R-link](perfect-plot-source-code.R)](time-series-ggplot2.Rmd).
-
 {{% /summary %}}
 
 {{% codeblock %}}
@@ -428,6 +426,12 @@ Interested in the source code used in this analysis? Download it [R-link](perfec
 
 {{% codeblock %}}
 ```R
-# Example: Saving a plot to the current working directory with specified dimensions and DPIggsave(filename = "Your-Figure-Title.png", width = 10, height = 6, dpi = 300)# Example: Saving multiple plots using automatic file naming timestamp <- format(Sys.time(), "%Y-%m-%d_%H-%M-%S")filename <- paste0("plot_", timestamp, ".png")ggsave(filename, width = 8, height = 5, dpi = 300)
+# Example: Saving a plot to the current working directory with specified dimensions and DPI
+ggsave(filename = "Your-Figure-Title.png", width = 10, height = 6, dpi = 300)
+
+# Example: Saving multiple plots using automatic file naming 
+timestamp <- format(Sys.time(), "%Y-%m-%d_%H-%M-%S")
+filename <- paste0("plot_", timestamp, ".png")
+ggsave(filename, width = 8, height = 5, dpi = 300)
 ```
 {{% /codeblock %}}
