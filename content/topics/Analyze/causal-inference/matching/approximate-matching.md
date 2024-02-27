@@ -12,9 +12,10 @@ aliases:
 
 # Overview
 
-[The previous topic](/matching) introduced matching and specifically focused on exact matching, where individuals are paired on an identical characteristic. Here, we will go further with approximate matching, where pairs are made on similar but not identical characteristics. Then we will continue with an example on Propensity score matching.
+[The first topic on matching](/matching) introduced the method and specifically talked about exact matching, where individuals are paired on one or more identical characteristics. 
 
-It is again a way to adjust for differences when treatment is non-random. Important is that this method is only relevant for selection on observables, which means you should be able to identify the confounders (and have data on them!) that are biasing the causal effect you are trying to find. 
+Here, we will continue with approximate matching, where pairs are made on similar but not identical characteristics.
+It is again a way to adjust for differences when treatment is non-random. Important is that this method is only relevant for selection on observables, which means you should be able to identify the confounders (and have data on them!) that are biasing the causal effect you are trying to find. At last, a practical example on Propensity Score Matching is given with code in R.
 
 
 ## Curse of dimensionality
@@ -86,17 +87,16 @@ warning
 Tradeoff of which matching method to choose depends on your own data.
 
 
+## Practical example
 
-# Practical example
-
-## setting
+### Setting
 We will give an example of matching using the second example of [Imbens (2015)](). Context on our example can be found in part B section 6.2. The authors examine the effect of participation in a job training program on earnings. specifically, it is the Nsw program, which is in place to help disadvantaged workers.
 
 studying this question isn't straightforward, because individuals who enroll in the training program can differ from those who don't. To tackle this challenge, they conduct a field experiment where qualified participants are randomly assigned to training positions. The Lalonde dataset is collected from this field experiment.
 
 However, Imbens (2015) finds evidence of selective attrition in this dataset: individuals are more likely to drop out of the experiment in a manner where the likelihood of dropping out depends on treatment assignment. Hence, we cannot assume treatment holds in our dataset. Nonetheless, we can still utilize the matching estimator instead of the difference-in-means estimator if the rate of attrition remains the same when we control for the observed covariates.
 
-## Load packages and data
+### Load packages and data
 
 You can load the data by copying the following code into R.
 
@@ -120,7 +120,7 @@ library(MatchIt)
 {{% /codeblock %}}
 
 
-## Difference-in-means estimate
+### Difference-in-means estimate
 
 The outcome variable is the income of participant $i$ in 1978 (`re78`). The treatment variable is a binary variable that denotes 1 if the participant took part in the training program and 0 if not (`treat`).
 
@@ -151,7 +151,7 @@ t.test(data$re78[data$treat==1],
 
 A p-value lower than 0.05 indicates the means are statistically signicant different from eachother. Thus, interpreting the p-value of `0.007`, individuals who received the treatment have higher average earnings than individuals who did not. The difference-in-means suggest an ATT (*Average Treatment Effect on the Treated)* of approximately `1800`. 
 
-## Balance test
+### Balance test
 
 To check whether randomization went right and the treatment and control group are balanced, we compare the observed covariates with a summary statistics table. The covariates of interest which are defined by the `columns_of_interest` list. Then, the mean and standard deviation of each variable are calculated for both treatment and control group, and t-test are conducted to compare these means. The results are extracted and stored in vectors. 
 
@@ -205,7 +205,7 @@ Significant differences in some characteristics (p-values lower than 0.05) sugge
 
 Matching comes into play now, where we can control for covariates like `nodegree`.
 
-## Calculate the propensity score
+### Calculate the propensity score
 
 To avoid the curse of dimensionality, since we have multiple observed covariates and relatively few observations, propensity score matching is done. 
 
@@ -229,7 +229,7 @@ summary(propreg)
 
 This logistic regression model estimates the propensity score, the probability of receiving the treatment given on the observed covariates ($\hat{P}_{\text{X_i}}$).
 
-## Nearest neighbor propensity score matching
+### Nearest neighbor propensity score matching
 
 We now use the propensity scores to conduct nearest neighbor matching, ensuring balance between treatment and control groups. This helps ensure that the difference in outcomes is due to the treatment rather than pre-existing differences in characteristics.
 
@@ -238,10 +238,9 @@ The `matchit()` function is used, in which the formula for the logistic regressi
 {{% codeblock %}}
 ```R
 # Generate the matched data
-match_prop <- matchit(treat ~ re74 +u74 + re75 +u75  + nodegree + hispanic + education + nodegreeeducation + re74nodegree + u75education,  method = "nearest",  distance = "glm", link = "logit", data=data )
+match_prop <- matchit(treat ~ re74 +u74 + re75 + u75 + nodegree + hispanic + education + nodegreeeducation + re74nodegree + u75education, method = "nearest", distance = "glm", link = "logit", data=data )
 
 # Data containing treated observations and their matched equivalence in the control group
-
 data_match_prop <- match.data(match_prop)
 ```
 {{% /codeblock %}}
