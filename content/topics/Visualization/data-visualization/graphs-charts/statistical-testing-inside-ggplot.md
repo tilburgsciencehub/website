@@ -37,7 +37,7 @@ library(rstatix)
 {{% /codeblock %}}
 
 ### Step 2: Data Cleaning and Preparation
-Next in important step is data cleaning and preparation. 
+Next an important step is data cleaning and preparation. 
 
 {{% codeblock %}}
 
@@ -88,9 +88,9 @@ We will now use the `compare_means()` function from the `rstatix` package, desig
 {{% tip %}}
 __How does the `compare_means` function work?__
 
-- **Syntax**:
+-**Syntax**:
   - compare_means(formula, data, method, ref.group)
-- **Components:**
+**Components:**
 - formula: This is where you specify the comparison you want to make.
   - Example: height ~ gender implies comparing the average height across different genders.
 - data: This parameter is used to specify the dataset in which the comparison is to be made.
@@ -121,6 +121,10 @@ stat.test
 
 {{% /codeblock %}}
 
+<p align = "center">
+<img src = "../images/stat-test.png" width="600">
+</p>
+
 ### Step 4: Data Visualization using `ggpubr`
 
 `ggbarplot()` is a function from the `ggpubr` package, which is used to create bar plots. 
@@ -130,7 +134,6 @@ stat.test
 
 *Simplicity:*  
 One of the main advantages of ggbarplot() is its simplicity. It allows you to create bar plots with minimal coding, making it user-friendly, especially for those new to data visualization in R.
-
 
 *Customization:*   
 Despite its simplicity, ggbarplot() offers a wide range of customization options. You can change colors, add labels, adjust the width of the bars, and much more.
@@ -165,6 +168,10 @@ ggbarplot(
 )
 ```
 {{% /codeblock %}}
+
+<p align = "center">
+<img src = "../images/ggpubr-1.png" width="450">
+</p>
 
 ### Step 5: Adding Statistical Significance with `stat_p_value()`
 
@@ -202,7 +209,7 @@ stat_pvalue_manual(
 </p>
 
 {{% tip %}}
-For a step-by-step guide on creating professional bar charts and saving them, refer to this [building block](//bar/chart). It provides a detailed walkthrough of the process to help you create publishable bar charts with ease.
+For a step-by-step guide on creating professional bar charts and saving them, refer to this [article](//bar/chart). It provides a detailed walkthrough of the process to help you create publishable bar charts with ease.
 
 {{% /tip %}}
 

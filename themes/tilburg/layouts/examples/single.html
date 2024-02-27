@@ -17,7 +17,7 @@
 		<div class="col-lg-8 col-22 pr-lg-5">
 			<div class="sticky-top mb-lg-5 pb-lg-5 d-flex flex-column tableOfContentParent">
 				<h1 style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
-				<sup class="mt-2" style="color: #ffb222;font-size: 14px;"><i class="fa-regular fa-clock mr-2"></i>{{ $readingTimeMinutes }} mins </sup>
+				<sup class="mt-2" style="color: #976B24;font-size: 14px;"><i class="fa-regular fa-clock mr-2"></i>{{ $readingTimeMinutes }} mins </sup>
 				{{ if .TableOfContents }}
 				<div class="TableOfContents">
 					<span class="arrow-icon"></span>
@@ -56,10 +56,13 @@
 				{{ if .Params.author }}
 				<div class="admonition author">
 					<div class="admonition-content">Contributed by <b>
-						<a href='/contributors/{{ replace (lower .Params.author) " " "" }}'>{{ .Params.author }}</a></b>
-          </div>
-				</div>				
-				{{ else }}
+							{{ $authors := split .Params.author ", " }}
+							{{ range $index, $author := $authors }}
+							{{ if $index }}, {{ end }}
+							<a href='/contributors/{{ replace (lower $author) " " "" }}'>{{ $author }}</a>
+							{{ end }}
+						</b></div>
+				</div>
 				{{ end }}
 				<div class="d-flex justify-content-between mt-5 align-items-center">
           <!-- <div class="flex-fill">

@@ -12,9 +12,9 @@ aliases:
 ---
 
 ## Overview
-This article is designed to guide you to the process of creating `bar charts` using `ggplot2`. Starting with the basics, we'll guide you through each step to evolve a simple bar chart into one that meets academic standards. You'll learn techniques to enhance information delivery and ensure compliance with scholarly presentation norms. By the end of the building block, you'll have the skills to represent statistical data in a clear, academically rigorous format.
+This article is designed to guide you in the process of creating `bar charts` using `ggplot2`. Starting with the basics, we'll guide you through each step to evolve a simple bar chart into one that meets academic standards. You'll learn techniques to enhance information delivery and ensure compliance with scholarly presentation norms. By the end of the building block, you'll have the skills to represent statistical data in a clear, academically rigorous format.
 
-Effective data visualization requires both accuracy and aesthetics, a balance that can be challenging to achieve. Therefore, we will use the R package: `ggplot2`, a versitale tool for custom styling of your visualizations. We'll explore customizing colors, themes, and labels, and provide practical tips for academic presentations. This includes handling standard errors, black-and-white formatting, and effective data grouping. Additionally, we'll cover saving charts in high-quality PNG or PDF formats, ensuring they're ready for academic publication.
+Effective data visualization requires both accuracy and aesthetics, a balance that can be challenging to achieve. Therefore, we will use the R package: `ggplot2`, a versatile tool for custom styling of your visualizations. We'll explore customizing colors, themes, and labels, and provide practical tips for academic presentations. This includes handling standard errors, black-and-white formatting, and effective data grouping. Additionally, we'll cover saving charts in high-quality PNG or PDF formats, ensuring they're ready for academic publication.
 
 {{% tip %}}
 **Data Visualization Best Practices**
@@ -29,7 +29,7 @@ Let's use the exemplary PIAAC dataset to examine the wage premium of obtaining a
 {{% codeblock %}}
 
 ```R
-# Install the tidyverse package, which inlcudes dplyr and ggplot2
+# Install the tidyverse package, which includes dplyr and ggplot2
 install.packages("tidyverse")
 
 # Load the tidyverse package into the R session
@@ -115,7 +115,7 @@ data_barplot %>%
 
 {{% /example %}}
 
-### Step 3: Enhancing Aesthatics 
+### Step 3: Enhancing Aesthetics 
 
 The initial visualization is a solid starting point, but to meet publication standards, we need to refine it further. The primary issues are:
 
@@ -294,6 +294,7 @@ This command saves the plotExample as a PNG file named "my_plot.png", with speci
 When working with `ggplot2` to visualize complex datasets with multiple categorical variables, creating faceted plots can pose unique challenges. This section focuses on the effective use of p-value annotations in such scenarios. 
 
 **Visualizing Wage Differences by Education and Gender**
+
 Imagine plotting the mean hourly wage by education level, segmented by gender. Our goal is to highlight significant differences between education levels using p-values.
 
 *Step 1: Grouping the Data*   

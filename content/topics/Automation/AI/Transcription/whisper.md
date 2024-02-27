@@ -5,7 +5,7 @@ keywords: "openai, whisper, translations, transcriptions"
 date: 2023-06-06
 weight: 2
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /learn/whisper
   - /ai/transcriptions

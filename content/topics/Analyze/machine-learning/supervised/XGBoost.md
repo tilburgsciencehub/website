@@ -23,23 +23,23 @@ Step into the world of XGBoost, where you'll learn to build, fine-tune, and inte
 
 ## What is XGBoost?
 
-Extreme gradient boosting is an highly effective and widely used machine learning algorithm developed by [Chen and Guestrin 2016](https://dl.acm.org/doi/10.1145/2939672.2939785). The algorithm works by iteratively building a collection of decision trees, where newer trees are used to correct the errors made by previous trees (think of it as taking small steps in order to come closer to the "ultimate truth"). Additionally, the algorithm also makes use of regularization (penalizing complexity of individual trees, and the total number of trees in the collection) to prevent overfitting. 
+Extreme gradient boosting is an highly effective and widely used machine learning algorithm developed by [Chen and Guestrin 2016](https://dl.acm.org/doi/10.1145/2939672.2939785). The algorithm works by iteratively building a collection of decision trees, where newer trees are used to correct the errors made by previous trees (think of it as taking small steps in order to come closer to the "ultimate truth"). Additionally, the algorithm use L1 (Lasso regression) and L2 (Ridge regression) regularization terms in its cost function, and a penalizing term to prevent overfitting and complexity of the model.
 
-This method has proven to be effective in working with large and complex datasets, and is used to address a wide range of problems (both classification and regression) (for example, at the KDDCup in 2015, XGBoost was used by every team ranked in the top 10!).
+This method has proven to be effective in working with large and complex datasets. Also it is famous to handle sparse datasets. XGBoost provides a parallel tree boosting that solve many data science problems such as classification, regression, and recommendation in a fast and accurate way (for example, at the KDDCup in 2015, XGBoost was used by every team ranked in the top 10!).
 
 ### How does XGBoost work?
 
-The algorithm starts by calculating the residual values for each data point based on an initial estimate. For instance, given the variables `age` and `degree`, we compute the residual values relative to `salary`, for which the value `49` will serve as our initial estimation:
+The algorithm starts by calculating the residual values for each data point based on an initial estimate. For instance, given the variables `age` and `degree`, we compute the residual values relative to `salary`(target variable), for which the value `49` will serve as our initial estimation:
 
 
   
-  | **Salary** | **age** | **degree** | **Residual** |
-  | ---------- | ------- | --------- | -----------   |
-  |     40    |     20   |    yes    |     -9      | 
-  |     46     |    28   |    yes    |    -3       |
-  |     50     |    31   |    no     |     1       | 
-  |     54     |   34    |    yes    |     5       |
-  |     61     |   38    |    no     |     12      |
+  | **age** | **degree** |**Salary** | **Residual** |
+ | ------- | --------- | -----------| ------------
+ |     20  |    yes    |    40      |  -9          |
+ |    28   |    yes    |    46      |  -3          |
+ |    31   |    no     |    50      |   1          | 
+ |   34    |    yes    |    54      |  5           |
+ |   38    |    no     |    61      |  12          |
   
 
 Next, the algorithm calculates the similarity score for the entire tree and the individual splits, especially focusing on an arbitrarily chosen mean value of 24 (the mean between the first two age values) using the following formula:  
@@ -138,7 +138,7 @@ Which is a higher value than that of the split based on our initial values, and 
 <img src = "../images/tree_structure.png" width="400">
 </p>
 
-The ouput value for each datapoint is then calculated via the following formula: 
+The ouput value for each data point is then calculated via the following formula: 
 
 <div style="text-align: center;">
 {{<katex>}}
@@ -221,7 +221,7 @@ data <- data %>%
 {{% /codeblock %}}
 
 {{% warning %}}
-Because XGBoost only works with numeric vectors, so you need to one-hot encode you data.
+Because XGBoost only works with numeric vectors, so you need to convert the categorical values into numerical ones using one-hot encoding or any other approaches.
 {{%/ warning %}}
 
 Luckily, this is straightforward to do using the `dplyr` package. One-hot encoding is a process that transforms categorical data into a format that machine learning algorithms can understand. In the code below each category value in a column is transformed into its own column where the presence of the category is marked with a 1, and its absence is marked with a 0.

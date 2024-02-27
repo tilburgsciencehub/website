@@ -213,7 +213,7 @@ $(".headerSearch > .resetInput").on("click", function (e) {
           align-items: center;
           justify-content: center;
           border-radius: 40px;
-          background-color: #003365;
+          background-color: #035F94;
           margin-right: 8px;
         "><img src="/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
         <span>${result.title}</span></a>`);
@@ -242,7 +242,7 @@ $(".headerSearchMobile .resetInput").on("click", function (e) {
           align-items: center;
           justify-content: center;
           border-radius: 40px;
-          background-color: #003365;
+          background-color: #035F94;
           margin-right: 8px;
         "><img src="/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
         <span>${result.title}</span></a>`);
@@ -590,8 +590,12 @@ for (let i = 0; i < allTooltips.length; i++) {
   div.setAttribute("current", i);
 
   div.innerText = allTooltips[i]?.getAttribute("onBoardTooltip");
-  div.style = `left: ${allTooltips[i].getBoundingClientRect().left - 80
-    }px`;
+
+  if (i == allTooltips.length - 2){
+    div.style = `left: ${allTooltips[i].getBoundingClientRect().left - 20}px`;
+  } else {
+  div.style = `left: ${allTooltips[i].getBoundingClientRect().left - 80}px`;
+  }
 
   // navigation
   const navigationDiv = document.createElement("div");
@@ -787,22 +791,21 @@ $(document).ready(function () {
           const titleElement = document.createElement('h3');
           titleElement.classList.add('heading');
           titleElement.style.fontSize = '16px';
+          titleElement.style.fontWeight = 'bold';
           titleElement.style.lineHeight = '1';
           titleElement.textContent = item.title;
 
           const descriptionElement = document.createElement('p');
           descriptionElement.style.fontSize = '16px';
           descriptionElement.style.color = '#6081a2';
-          descriptionElement.style.fontFamily = 'acumin-pro,sans-serif';
           descriptionElement.style.width = '70%';
           descriptionElement.textContent = item.description;
 
           const ctaElement = document.createElement('a');
           ctaElement.textContent = 'Read more';
           ctaElement.style.setProperty('color', 'white', 'important');
-          ctaElement.style.setProperty('font-family', 'forma-djr-display', 'important')
           ctaElement.href = item.path;
-          ctaElement.classList.add('btn', 'btn-primary', 'my-2', 'my-sm-0', 'px-4');
+          ctaElement.classList.add('btn', 'btn-primary', 'my-2', 'my-sm-0');
 
 
           innerContent.appendChild(titleElement);
@@ -860,7 +863,6 @@ $(document).ready(function () {
             const descriptionElement = document.createElement('p');
             descriptionElement.style.fontSize = '16px';
             descriptionElement.style.color = '#6081a2';
-            descriptionElement.style.fontFamily = 'acumin-pro,sans-serif';
             descriptionElement.textContent = item.description;
 
             // Append title and description to the content element

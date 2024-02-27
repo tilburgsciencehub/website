@@ -3,7 +3,7 @@ title: "Intro to IV Estimation"
 description: "A short introduction to estimation voa instrumental variables"
 keywords: "iv, causal inference, difference-in-difference, DID, R, regression, model, iv, instrumental variable "
 draft: false
-weight: 5
+weight: 1
 author: "Aakriti Gupta"
 authorlink: ""
 aliases:
