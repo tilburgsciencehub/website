@@ -14,7 +14,7 @@ aliases:
 
 ## Overview 
 
-Welcome to our tutorial, "GitHub Copilot in RStudio." This guide will walk you through the integration of GitHub Copilot, a powerful code completion tool, within RStudio.
+This guide will walk you through the integration of GitHub Copilot, a powerful code completion tool, within RStudio.
 
 This tutorial is designed for both beginners and experienced R programmers, providing setup guidance and hands-on examples. By the end, you'll be equipped to leverage GitHub Copilot within RStudio for increased productivity and collaborative coding.
 
@@ -502,7 +502,6 @@ for hit in weekly_hits[9:19]:
 {{% /codeblock %}}
 
 {{% /tip %}}
-
 
 {{% summary %}}
 This tutorial provides an overview of GitHub Copilot and its application in RStudio and VS Code for research purposes. 
