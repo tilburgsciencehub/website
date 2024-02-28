@@ -5,7 +5,7 @@ keywords: "renv, package, environment, dependencies, management, R, Packrat, alt
 date: 2023-04-29 #updated 2023-08-23
 weight: 1
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /manage/R-packages
   - /use/renv

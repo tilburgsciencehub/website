@@ -37,7 +37,7 @@ library(rstatix)
 {{% /codeblock %}}
 
 ### Step 2: Data Cleaning and Preparation
-Next in important step is data cleaning and preparation. 
+Next an important step is data cleaning and preparation. 
 
 {{% codeblock %}}
 
@@ -135,7 +135,6 @@ stat.test
 *Simplicity:*  
 One of the main advantages of ggbarplot() is its simplicity. It allows you to create bar plots with minimal coding, making it user-friendly, especially for those new to data visualization in R.
 
-
 *Customization:*   
 Despite its simplicity, ggbarplot() offers a wide range of customization options. You can change colors, add labels, adjust the width of the bars, and much more.
   
@@ -210,7 +209,7 @@ stat_pvalue_manual(
 </p>
 
 {{% tip %}}
-For a step-by-step guide on creating professional bar charts and saving them, refer to this [building block](//bar/chart). It provides a detailed walkthrough of the process to help you create publishable bar charts with ease.
+For a step-by-step guide on creating professional bar charts and saving them, refer to this [article](//bar/chart). It provides a detailed walkthrough of the process to help you create publishable bar charts with ease.
 
 {{% /tip %}}
 

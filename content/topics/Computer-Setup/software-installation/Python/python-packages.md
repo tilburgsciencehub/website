@@ -28,42 +28,55 @@ If your python 3 was found via `python3 --version` on the previous page, then ty
 
 First let us update pip by typing the following into the terminal
 
+{{% codeblock %}}
 ```bash
 pip install --upgrade pip
 ```
+{{% /codeblock %}}
+
 
 If you get an error, try typing instead:
+{{% codeblock %}}
 ```bash
 python -m pip install --upgrade pip
 ```
+{{% /codeblock %}}
+
 
 You also need the package `Selenium` as part of the web scraping tool kit we will build up. First let us install a depency for it via
 
+{{% codeblock %}}
 ```bash
 pip install msgpack
 ```
+{{% /codeblock %}}
+
 
 We then install `selenium` by entering the following into a terminal:
-
+{{% codeblock %}}
 ```bash
 pip install selenium
 ```
+{{% /codeblock %}}
+
 
 `pip` will then go through and install the package we asked for, and any other dependencies.
 If this succeeded, the last line it printed out should be:
 
-```
+```bash
 Successfully installed selenium-4.x.0
 ```
 
-{{% tip %}}
+
+## Updating packages
 
 In order to update already installed packages on your system use the following command in your terminal: 
 
-```
+{{% codeblock %}}
+```bash
 pip install --upgrade selenium
 ```
-{{% /tip %}}
+{{% /codeblock %}}
 
 ### Common problems
 

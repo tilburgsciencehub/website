@@ -278,15 +278,17 @@
             <ul class="my-2 list-unstyled">
               {{ $s := slice }}
               {{ $displayedTitles := dict }}
-
+            
               {{ range where .Site.Pages.ByLastmod.Reverse "Section" "in" "topics" }}
+              {{ if ne (trim .Content " \n\r") "" }}  <!-- Controleer of de inhoud niet leeg is -->
               {{ $title := .Title }}
               {{ if not (index $displayedTitles $title) }}
               {{ $s = $s | append . }}
               {{ $displayedTitles = merge $displayedTitles (dict $title true) }}
               {{ end }}
               {{ end }}
-
+              {{ end }}
+            
               {{ with $s.ByLastmod.Reverse | first 3 }}
               {{ range . }}
               <li class="pb-3">
@@ -295,8 +297,7 @@
               </li>
               {{ end }}
               {{ end }}
-            </ul>
-
+            </ul>            
 
           </div>
         </div>

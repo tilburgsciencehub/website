@@ -8,7 +8,6 @@ authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
 - /regression/analysis
 - /mediation/analysis
-- /iv
 - /modelsummary
 ---
 

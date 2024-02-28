@@ -10,5 +10,5 @@ social:
     link: https://www.linkedin.com/in/nielsrahder
 email: n.j.rahder@tilburguniversity.edu
 image: NielsRahder.webp
-status: "active"
+status: "alumni"
 ---
