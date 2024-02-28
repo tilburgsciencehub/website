@@ -57,11 +57,16 @@
 				<script>window.location = "/{{.Section}}"</script>
 				{{ else }}
 				{{ .Content }}
-				{{ if (and (.Params.author) (.Params.authorlink)) }}
+				{{ if .Params.author }}
 				<div class="admonition author">
-					<div class="admonition-content">Contributed by <b><a href="{{ .Params.authorlink }}">{{ .Params.author }}</a></b></div>
+					<div class="admonition-content">Contributed by <b>
+							{{ $authors := split .Params.author ", " }}
+							{{ range $index, $author := $authors }}
+							{{ if $index }}, {{ end }}
+							<a href='/contributors/{{ replace (lower $author) " " "" }}'>{{ $author }}</a>
+							{{ end }}
+						</b></div>
 				</div>
-				{{ else }}
 				{{ end }}
 				{{ end }}
 
