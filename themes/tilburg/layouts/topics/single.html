@@ -5,9 +5,9 @@
 {{ $wordCount := .Content | countwords }}
 {{ $readingTimeMinutes := div $wordCount 200 }}
 {{ if eq $readingTimeMinutes 0 }}
-	{{ $readingTimeMinutes = 1 }}
+{{ $readingTimeMinutes = 1 }}
 {{ end }}
-<!-- End Count words-->	
+<!-- End Count words-->
 
 <br><br>
 <div class="container mt-4">
@@ -20,7 +20,6 @@
 			<div class="sticky-top pr-lg-3 mb-lg-5 pb-lg-5 d-flex flex-column tableOfContentParent">
 				<h1 class="text-center text-lg-left" style="font-size: 38px; line-height: 48px;">{{ .Title }}</h1>
 				<sup class="mt-2" style="color: #976B24;font-size: 14px;"><i class="fa-regular fa-clock mr-2"></i>{{ $readingTimeMinutes }} mins </sup>
-				
 				{{ if gt (len .TableOfContents) 32 }}
 				<div class="TableOfContents">
 					<span class="arrow-icon"></span>
@@ -55,7 +54,7 @@
 					{{ end }}
 				</div>
 
-<!--				{{ partial "announcement.html" . }}
+				<!--				{{ partial "announcement.html" . }}
 -->
 
 				{{ if eq (len .Content) 0 }}
@@ -65,23 +64,17 @@
 				{{ if .Params.author }}
 				<div class="admonition author">
 					<div class="admonition-content">Contributed by <b>
-						<a href='/contributors/{{ replace (lower .Params.author) " " "" }}'>{{ .Params.author }}</a></b>
-          			</div>
-				</div>	
-				{{ else }}
+							{{ $authors := split .Params.author ", " }}
+							{{ range $index, $author := $authors }}
+							{{ if $index }}, {{ end }}
+							<a href='/contributors/{{ replace (lower $author) " " "" }}'>{{ $author }}</a>
+							{{ end }}
+						</b></div>
+				</div>
 				{{ end }}
 
+
 				<div class="d-flex justify-content-between mt-5 align-items-center">
-					<!-- <div class="flex-fill">
-            {{ if eq .Params.share false }}
-            {{ else }}
-              {{ with .Params.aliases }}
-                {{ range first 1 . }}
-                  {{ partial "shareLinks.html" (dict "context" . "siteURL" $siteURL) }}
-                {{ end }}
-              {{ end }}
-            {{ end }}
-          </div> -->
 					<div class="d-none d-lg-block">
 						<!--<a href="{{ .Site.Params.repo_url }}/edit/master/content/{{ .File }}" class="btn btn-secondary">Edit this page</a>-->
 						<a href="https://github.com/tilburgsciencehub/website/issues/new/?template=edit-content-request.yml&title=Suggest+change+to:+{{ .File }}&labels=edit+content+request"
