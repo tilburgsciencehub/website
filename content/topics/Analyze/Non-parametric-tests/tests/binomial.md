@@ -176,5 +176,4 @@ The exact [multinomial test](https://rinterested.github.io/statistics/multinomia
 
 - The exact multinomial test which is a generalisation for the binomial test when there are more than two categories, can be performed on R using `multinom_test{rstatix}` and `multinomial.test{EMT}`.
 
-
 {{% /summary %}}
