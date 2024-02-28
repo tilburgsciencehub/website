@@ -11,11 +11,11 @@ aliases:
 ---
 
 ## Overview
-This article is created to guide you through the process of developing a `Shiny` application tailored for `Exploratory Data Analysis` (`EDA`). `Shiny`'s framework transforms data management, enabling the creation of web applications that not only display statistical results but also serve as dynamic platforms for interactive data exploration.
+This article is aimed at assisting you in the development of a `Shiny` application focused on `Exploratory Data Analysis` (EDA). The Shiny framework enhances data management capabilities, facilitating the creation of web applications. These applications can provide dynamic environments for interactive data exploration.
 
 In `EDA`, the ability to interact with data is crucial. `Shiny` applications allows users to filter, sort, and visualize data in various ways, fostering a deeper and more intuitive understanding of the underlying trends and patterns.
 
-As you progress through this article, you'll acquire the skills to use `Shiny` for various `EDA` tasks. This includes uploading and processing data, creating visual representations, and building interactive features that enhance data exploration. By the end, you'll be equipped with the skillsto develop `Shiny` applications that enable comprehensive and insightful data analyses.
+As you progress through this article, you'll acquire the skills to use `Shiny` for various `EDA` tasks. This includes uploading and processing data, creating visual representations, and building interactive features that enhance data exploration. By the end, you'll be equipped with the skills to develop `Shiny` applications that enable comprehensive and insightful data analyses.
 
 ## Data Management in Shiny
 
@@ -93,7 +93,7 @@ Your `Shiny` app incorporates the following elements:
 {{% /example %}}
 
 ### Incorporating Additional File Types 
-To extend the capabilities of your `Shiny` application to handle other file types, such as Excel or JSON, you can incorporate additional logic into the server function. Here are some tips for doing so:
+To extend the capabilities of the `Shiny` application to handle other file types, such as Excel or JSON, you can incorporate additional logic into the server function. Here are some tips for doing so:
 
 - **Identify File Types**: Determine the additional file types you want your app to support. Common types include Excel (.xlsx), JSON (.json), and text files (.txt).
 - **Install Necessary Packages**: Ensure you have the required R packages installed. For example, `readxl` for Excel files, `jsonlite` for JSON, and `readr` for more flexible text file reading.
@@ -128,7 +128,7 @@ While we use the `iris` dataset for demonstration in the rest of this article, y
 {{% /tip %}}
 
 ## Interactive Tables in Shiny with DT
-This section will guide you in transforming static tables, like in our previous example, into dynamic elements within your `Shiny` app. Interactive tables allow users to sort, filter, and paginate data, which are useful features for managing extensive datasets and complex information. To turn static tables into interactive tables we will use the `DT` package, a powerful tool within `Shiny`.
+This section will guide you in transforming static tables, like in the previous example, into dynamic elements within your `Shiny` app. Interactive tables allow users to sort, filter, and paginate data, which are useful features for managing extensive datasets and complex information. To turn static tables into interactive tables we will use the `DT` package, a powerful tool within `Shiny`.
 
 ### User Interface
 The first step in adding interactivity is to modify the `UI` to accommodate interactive tables. 
