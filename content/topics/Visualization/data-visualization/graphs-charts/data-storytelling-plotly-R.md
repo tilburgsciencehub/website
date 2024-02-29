@@ -17,7 +17,7 @@ aliases:
 
 In this article, you learn how to fuse data visualization with storytelling. This integration is based on Hans Rosling's approach to data presentation. Hans Rosling, renowned for his contributions to the [Gapminder project](https://www.youtube.com/watch?v=hVimVzgtD6w), has had a profound impact on how we interpret complex global data in areas such as health, economics, and education. His method of dynamic visual storytelling has challenged and reshaped many long-standing misconceptions.
 
-We delve into the capabilities of the `plotly` package in R, aiming to mirror Rosling's engaging narrative style in our data visualizations. We begin with the basics of the `plotly` package, highlighting its ability to transform static charts into interactive charts, complete with hover details, zoom capabilities, and adjustable scales. As we delve deeper, we'll showcase how a combination of `plotly`'and `ggplot2` transforms conventional data visualizations into interactive, dynamic experiences.
+We delve into the capabilities of the `plotly` package in R, aiming to mirror Rosling's engaging narrative style into data visualizations. We start with the basics of the `plotly` package, highlighting its ability to transform static charts into interactive charts, complete with hover details, zoom capabilities, and adjustable scales. As we delve deeper, we'll showcase how a combination of `plotly`'and `ggplot2` transforms conventional data visualizations into interactive, dynamic experiences.
 
 ### Setup 
 
@@ -164,7 +164,7 @@ plot <- plot_ly(data = gapminder_data,
 With the basics in place, our `plotly` scatter plot currently showcases the relationship between GDP and life expectancy through interactive, hoverable points. However, the simultaneous display of data across all years can create a visually cluttered experience. The next step is to add: **_Animation_**. `plotly`'s animation capabilities can transform these static visualizations into dynamic narratives, effectively illustrating changes over time.
 
 ### Implementing Animations in Plotly
-To animate data using `plotly`, there are two main steps to follow:
+To animate data using `plotly`, there are two steps to follow:
 
 **Step 1: Organizing Data with the Frame Argument**
 
@@ -208,11 +208,11 @@ plot_ly(gapminder_data,
 <img src = "../images/plotly-5.png" width="450">
 </p>
 
-Running this code results in an animated scatter plot that not only shows the relationship between GDP per capita and life expectancy but also illustrates how these variables have changed over time (or your chosen category). The inclusion of animation features significantly enhances the visualization's engagement and insightfulness, effectively narrating the story hidden within the numbers.
+Running this code results in an animated scatter plot that not only shows the relationship between GDP per capita and life expectancy but also illustrates how these variables have changed over time (or your chosen category). The inclusion of animation features can significantly influence the visualization's engagement and insightfulness, _narrating the story hidden within the numbers_.
 
 {{% tip %}}
 **Customizing the Animation**    
-Improve your animated scatter plot in `plotly` by adding user-friendly interactive elements such as a **play button** and a **slider** for improved navigation and control. 
+Improve the animated scatter plot in `plotly` by adding user-friendly interactive elements such as a **play button** and a **slider** for improved navigation and control. 
 
 {{% /tip %}}
 
@@ -237,7 +237,7 @@ Improve your animated scatter plot in `plotly` by adding user-friendly interacti
 </p>
 
 ## ggplot2 Integration with Plotly
-Integrating `ggplot2` with `plotly` in R offers a method to enhance data visualizations by combining the strong aesthetic capabilities of `ggplot2` with the dynamic interactivity of `plotly`. This synergy is especially advantageous for those familiar with `ggplot2`, as it allows for the use of its syntax for initial plot customization, followed by the addition of interactive features through `plotly`.
+Integrating `ggplot2` with `plotly` in R offers a method to combine the aesthetic capabilities of `ggplot2` with the dynamic interactivity of `plotly`. This synergy is especially beneficial for those familiar with `ggplot2`, as it allows for the use of its syntax for initial plot customization, followed by the addition of interactive features through `plotly`.
 
 {{% tip %}}
 **Data Visualization With ggplot2**
@@ -260,7 +260,7 @@ By integrating `ggplot2` plots with `plotly`, you add an interactive dimension t
 
 For those proficient in `ggplot2`, combining it with `plotly` means you can start with the familiar `ggplot2` syntax for initial customization and then bring in `plotly`'s interactivity.
 
-The merger of `ggplot2` and `plotly` effectively brings together the best of both worlds, providing a comprehensive toolkit for compelling data storytelling. 
+The merger of `ggplot2` and `plotly` effectively brings together the best of both worlds, providing a comprehensive toolkit for  data storytelling. 
 
 ### Implementing ggplot2 and Plotly Integration
 The process of integrating `ggplot2`'s design elements with `plotly`'s interactive capabilities involves creating a plot with `ggplot2` and then transforming it into an interactive `plotly` chart. Such an approach ensures that your final visualization not only retains the aesthetic appeal of `ggplot2` but also benefits from the dynamic interactivity of `plotly`.
@@ -384,10 +384,10 @@ In essence, this visualization isn't just data; it are data points evolved into 
 
 This article explores combining `plotly` and `ggplot2` in R for dynamic data storytelling, inspired by Hans Rosling's approach. Key elements include:
 
-- **Plotly Basics**: Setting the function `plot_ly()`, by specifience the data and aesthetics, customizing plot type, mode, and interactive elements.
+- **Plotly Basics**: Setting the function `plot_ly()`, by specifying the dataset and aesthetics, customizing plot type, mode, and interactive elements.
 - **Interactivity Features**: Explanation of `plotly`'s interactive features like *hover tooltips* and *zoom capabilities*, along with customization tips for *hover text boxes.*
 - **Animating Plots**: Steps for animating plots in `plotly`, using `frame` for data categorization and `animation_opts` for detailed control, including frame duration, transition time, and easing functions.
-- **ggplot2 Integration**: Detailed guide on integrating `ggplot2`'s design elements with `plotly`'s interactivity, starting from creating a `ggplot2` plot and then transforming it into an interactive `plotly` chart.
+- **ggplot2 Integration**: How to integrate `ggplot2`'s design elements with `plotly`'s interactivity, starting from creating a `ggplot2` plot and then transforming it into an interactive `plotly` chart.
 - **Essential Components for Animation:** Importance of specifying `frame = year` and `ids = country `for temporal sequencing and data point tracking in animations.
   
 The article provides a step by step guide for creating engaging and informative visualizations by merging the aesthetic appeal of `ggplot2` with the dynamic interactivity of `plotly`.
