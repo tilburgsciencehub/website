@@ -233,6 +233,14 @@ The F-statistic and its associated p-value are used to test the overall signific
 While the F-statistic assesses the overall fit of the model, it's generally better to rely on the p-value for determining the significance of the relationship between the variables.
 
 
+{{% tip %}}
+
+Now that you've mastered the interpretation of your findings, it is time to transform your summary output into polished regression tables to present you findings. Head over to [this topic on the `modelsummary` package](/modelsummary) for a detailed guide and a code example on how to make regression tables.
+
+{{% /tip %}}
+
+
+
 {{% summary %}}
 
 When interpreting a regression summary, it is important to assess the entire output before concluding the relationship between variables. Interpret the standard error and significance level alongside the coefficients. Additionally, consider reporting confidence intervals for the coefficients which provides insight into the precision of the estimates. Remember to interpret results considering both statistical significance and practical significance.
