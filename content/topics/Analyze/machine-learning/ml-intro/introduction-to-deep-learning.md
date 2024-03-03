@@ -45,7 +45,7 @@ Weights play a crucial role in deep learning as they are pivotal in training mod
 After a neuron gathers inputs from preceding layer neurons, it computes the sum of each signal multiplied by its respective weight. Subsequently, these computed values are transmitted to an activation function, as demonstrated below:
 
 <p align = "center">
-<img src ="../images/artificial-neuron-representation-math" width="400">
+<img src ="../images/artificial-neuron-representation-math.png" width="400">
 </p> 
 Picture source: McCullum, N. (2021, 28 april). Deep Learning Neural networks explained in Plain English
 
