@@ -1,6 +1,6 @@
 ---
-title: "Propensity Score Matching"
-description: "Matching is used to create comparable groups in observational studies, helping to mitigate the effects of confounding variables and estimate causal effects."
+title: "Propensity Score Matching: A Method for Approximate Matching"
+description: "Explore Approximate and especially Propensity Score Matching, where units are paired based on similar (but not identical) characteristics to create comparable groups in observational studies."
 keywords: "matching, propensity, score, causal, inference, effect,regression, R, exact, approximate"
 draft: false
 weight: 2
@@ -12,87 +12,51 @@ aliases:
 
 # Overview
 
-[The first topic on matching](/matching) introduced the method and specifically talked about exact matching, where individuals are paired on one or more identical characteristics. 
+[The first topic on matching](/matching) introduced the method and specifically talked about exact matching, where individuals are paired on one or more *identical* characteristics. 
 
-Here, we will continue with approximate matching, where pairs are made on similar but not identical characteristics.
-It is again a way to adjust for differences when treatment is non-random. Important is that this method is only relevant for selection on observables, which means you should be able to identify the confounders (and have data on them!) that are biasing the causal effect you are trying to find. At last, a practical example on Propensity Score Matching is given with code in R.
-
+Here, we will discuss approximate matching, where pairs are made on similar but not identical characteristics. It is again a way to adjust for differences when treatment is non-random. Important is that this method is only relevant for selection on observables, which means you should be able to identify the confounders (and have data on them!) that are biasing the effect. We focus on Propensity Score Matching specifically and provide a code example in R. 
 
 ## Curse of dimensionality
 
-[Exact matching](/matching) requires an untreated unit with the precise similar value on each the observed characteristics to be a good counterfactual for the treated units. This is only possible with lots of data and few covariates to match on. 
+[Exact matching](/matching) requires an untreated unit with the precise similar value on each the observed characteristics to be a good counterfactual for the treated units. The curse of dimensionality means that, when there is a large number of variables you are matching treated and untreated units, or when some variables are continuous, there might be no appropriate counterfactual left (that has all the same values on all these covariates). This can be an issue in finite samples, where you have too many covariates to match on and not enough data.
 
-The curse of dimensionality means that, when there is a large number of variables you are matching treated and untreated units, or when some variables are continuous, there might be no appropriate counterfactual left (that has all the same values on all these covariates). This can be an issue in finite samples. 
+Approximate matching offers a solution; it reduces the dimensionality by defining a distance metric on characteristic X and pair units based on this distance rather than the value of X. As the sample get larger, approximate matching method results will all tend towards exact matching. 
 
-Approximate matching offers a solution; it reduces the dimensionality by defining a distance metric on characteristic X an then matching using the distance rather than the value of X. As the sample get larger, approximate matching method results will all tend towards exact matching. 
 
 ## Methods
 
-Other methods; sources 
+{{% summary %}}
 
-- Nearest-neighbour matching: Each treated units is matched next to the "nearest" untreated unit. 
+Common methods of inapproximate matching include: 
 
-- Kernel matching: counterfactual calculated by taking the local averages of the control group unit near each treated unit. 
+- *Nearest-neighbour matching*: Pairs each treated unit with the "nearest" untreated unit based on defined characteristics. 
+
+- *Kernel matching*: Estimates the counterfactual outcome of the treated unit by averaging outcomes of nearby control units. 
+
+- *Propensity score matching*: Uses the propensity score, representing the probability of treatment assignment given observed covariates.
+{{% /summary %}}
+
+
+As the sample size increases, different matching estimators will yield similar results. However, their performance varies in finite samples. The choice depends on your data. [Glen Waddel](https://pages.uoregon.edu/waddell/metrics/matching.html) gives a broader discussion on this and some points to consider when choosing the method. 
+
 
 ## Propensity score matching
 
-Propensity score matching is one of the methods to generate inexact matches, and deal with the curse of dimensionality. 
+Propensity score matching addresses the curse of dimensionality by matching on the "propensity score", representing the probability of being assigned to the treatment group, conditional on the particular covariates $X$:
 
-It generates a "propensity score", which is the probability of being assigned to the treament group, conditional  on the particular covariates $X$: $P(X_i)$. 
+{{<katex>}}
+P(X_{i}) ≡ Pr(D_i = 1 | X_i)
+{{</katex>}}
 
-
-By controlling for the propensity score, the selection bias is then eliminated. You compare units who, based solely on their observables, had similar probabilities of getting the treatment. 
-
-
-This makes it possible to compare them, and the remaining variation in the outcome variable can then be assigned as being due to the treatment only.
-
-### Propensity score calculation
-
-Parametric model, such as logit or probit. Important to adopt a flexible specification for the parametric propensity score in practice and select that specification via balancing tests. 
-
-
-1. Estimate propensity score
-
-Prob(D=1 | X) = gamma*X + w
-
-
-Using estimated coefficients, calculate;
-
-rho bar _ i = gamma * X_bar_i
-
-Propensity score is just the predicted conditional probability of treatment for each units. 
-
-
-Then sort your data by the propensity score and divide into blocks (groups) of observations with similar propensity scores.
-
-Within each block, test (using a t-test), whether the means of the covariates are equal in the treatment and control group. Good if yes!
-
-If a particular block has one or more unbalanced covariates, divide into finer blocks and test again. If a particular covariate is unbalanced for multiple blocks, modify initial equation by including higher order terms and/or interaction with that covariate and test again.
-
-
-2. Effect of treatment on outcome
-
-- stratifying on the propenvity score: regression within each block. Calculate weighted mean of the within-block estimates to get the average treatment effect.
-
-- Matching on propensity score: match each treatment observation with one or more control observations, based on similar propensity scores. Include dummy for each matched group which controls for everything that is common within that group.
-
-warning
-The	propensity	score	approac h doesn’t correct	for	
-unobservable	variables	that	affect	whether	observations
-receive	treatment.
-warning
-
-
-
-Tradeoff of which matching method to choose depends on your own data.
+By controlling for these propensity scores, you compare units who, based solely on their observable characteristics, had similar probabilities of getting the treatment. This mitigates the selection bias; the remaining variation in the outcome variable can then be assigned as being due to the treatment only.
 
 
 ## Practical example
 
 ### Setting
-We will give an example of matching using the second example of [Imbens (2015)](). Context on our example can be found in part B section 6.2. The authors examine the effect of participation in a job training program on earnings. specifically, it is the Nsw program, which is in place to help disadvantaged workers.
+We will use the second example of [Imbens (2015)](https://jhr.uwpress.org/content/50/2/373.short) to show matching in practice. Find context on the example in part B section 6.2. The authors examine the effect of participation in a job training program on earnings. specifically, it is the Nsw program, which is in place to help disadvantaged workers.
 
-studying this question isn't straightforward, because individuals who enroll in the training program can differ from those who don't. To tackle this challenge, they conduct a field experiment where qualified participants are randomly assigned to training positions. The Lalonde dataset is collected from this field experiment.
+Studying this question isn't straightforward, because individuals who enroll in the training program can differ from those who don't. To tackle this challenge, they conduct a field experiment where qualified participants are randomly assigned to training positions. The Lalonde dataset is collected from this field experiment.
 
 However, Imbens (2015) finds evidence of selective attrition in this dataset: individuals are more likely to drop out of the experiment in a manner where the likelihood of dropping out depends on treatment assignment. Hence, we cannot assume treatment holds in our dataset. Nonetheless, we can still utilize the matching estimator instead of the difference-in-means estimator if the rate of attrition remains the same when we control for the observed covariates.
 
@@ -205,9 +169,11 @@ Significant differences in some characteristics (p-values lower than 0.05) sugge
 
 Matching comes into play now, where we can control for covariates like `nodegree`.
 
-### Calculate the propensity score
+### Propensity score matching
 
-To avoid the curse of dimensionality, since we have multiple observed covariates and relatively few observations, propensity score matching is done. 
+To avoid the curse of dimensionality, since we have multiple observed covariates and relatively few observations, we use propensity score matching. 
+
+1. Calculate the propensity score
 
 Calculate the propensity score by estimating a logistic regression with the `glm()` function. The dependent variable is the treatment indicator, the independent variables include the covariates and interaction terms. 
 
@@ -231,9 +197,7 @@ This logistic regression model estimates the propensity score, the probability o
 
 ### Nearest neighbor propensity score matching
 
-We now use the propensity scores to conduct nearest neighbor matching, ensuring balance between treatment and control groups. This helps ensure that the difference in outcomes is due to the treatment rather than pre-existing differences in characteristics.
-
-The `matchit()` function is used, in which the formula for the logistic regression model used to estimate the propensity scores is specified. The method argument specifies the matching method (here, `nearest`). The distance metric used to measure the similarity between individual; the distance is calculated as the log odds ratio of the propensity score. 
+We now use the propensity scores to conduct nearest neighbor matching, ensuring balance between treatment and control groups. The `matchit()` function is used, in which the formula, the method (here, `nearest`) and the distance metric are specified. The distance metric is used to measure the similarity between individuals; it is calculated as the log odds ratio of the propensity score. 
 
 {{% codeblock %}}
 ```R
@@ -245,12 +209,15 @@ data_match_prop <- match.data(match_prop)
 ```
 {{% /codeblock %}}
 
+Estimate the ATT by comparing the means of the outcome variable (re78) between the treated and control groups in the matched data. 
 
 {{% codeblock %}}
 ```R
 # Estimate the ATT
 mean_re78_match_prop <- aggregate(re78~treat,   data=data_match_prop,    FUN=mean)
+
 estimate_matching <- mean_re78_match_prop$re78[2]    -  mean_re78_match_prop$re78[1]
+
 estimate_matching
 
 ```
@@ -260,6 +227,6 @@ estimate_matching
 
 The difference between income is 1500, which is lower than the estimated ATT before matching. This is in line with our reasoning of underestimating the treatment effect if the treatment group is on average higher educated due to selective attrition. 
 
+{{% summary %}}
 
-## Flexible ols? for exact matching bb?
-
+{{% /summary %}}

@@ -1,5 +1,5 @@
 ---
-title: "Exact Matching"
+title: "An Introduction to (Exact) Matching"
 description: "Matching is used to create comparable groups in observational studies, helping to mitigate the effects of confounding variables and estimate causal effects."
 keywords: "matching, causal, inference, effect,regression, R, exact, approximate"
 draft: false
@@ -20,7 +20,7 @@ Matching offers an alternative approach by basically creating an artificial coun
 
 Exact matching involves pairing individuals who share **identical characteristics**. This requires the observable characteristic on which pairing happens to be a binary variable. Also ideally, the control group has many observations at each distinct value of the binary variable the observations are matched on. 
 
-In contrast, [approximate matching](/approximate-matching), allows for some degree of flexibility and pairs on similar but not identical characteristics. 
+In contrast, [approximate matching](/approximate-matching) allows for some degree of flexibility and pairs on similar but not identical characteristics. 
 
 
 ## Identifying assumptions
@@ -40,7 +40,7 @@ There are two identifying assumptions that should hold for exact matching to be 
 
 ### 1. Conditional Independence Assumption (CIA)
 
-The Conditional Independence Assumption is the primary assumption underlying matching. It state that **once we account for the observed characteristics of units or individuals, there should be no systematic differences in potential outcomes between the treatment and control groups**. 
+The Conditional Independence Assumption is the primary assumption underlying matching. It states that **once we account for the observed characteristics of units or individuals, there should be no systematic differences in potential outcomes between the treatment and control groups**. 
 
 Mathematically, this assumption is expressed as follows:
 
@@ -51,13 +51,13 @@ Mathematically, this assumption is expressed as follows:
 <br>
 <br>
 
-Where $Y_{0}$ and $Y_{1}$ are the potential outcomes in respectively the control and treatment group, which are independent of treatment assignment $T$ for each value of the observed covariates $X$. The $X$ is the binary variable(s) which the observations are matched.
+Where $Y_{0}$ and $Y_{1}$ are the potential outcomes in respectively the control and treatment group, which are independent of treatment assignment $T$ for each value of the observed covariates $X$. The $X$ is/are the binary variable(s) on which the observations are matched.
 
 {{% warning %}}
 
-This assumption cannot be tested, since also means no *unobservable* characteristics that differ between treatment and control group and could influence both the likelihood of receiving treatment and its effects.
+This assumption also means there are no *unobservable* characteristics differing between the groups, affecting treatment likelihood or effects. This cannot be directly tested. However, there are some methods to assess the plausibility of the assumption. 
 
-It cannot be tested, although there are some methods to measure the plausibility of this assumption. Detailed information about the units on background characteristics helps assess it. (discussion Imbens, 2015 p. 5).
+Discussed in [Imbens (2015)](https://jhr.uwpress.org/content/50/2/373.short), one method is to calculate the causal effect of treatment on a pseudo-outcome that you know is unaffected by it, for example a lagged outcome. If the treatment effect on the pseudo-outcome is close to zero, it strengthens the assumption's plausibility. [Section VG (page 395)](https://jhr.uwpress.org/content/50/2/373.short) discusses this method in more detail. 
 
 {{% /warning %}}
 
