@@ -36,7 +36,7 @@ phenomenon is modeled in the perceptron by calculating the weighted sum of the i
 How can the aforementioned structure of neurons be mimicked by computers? Let's consider the architecture below:
 
 <p align = "center">
-<img src ="../images/neuron-functionality-in-code.png" width="400">
+<img src ="../images/neuron-representation-graph.png" width="400">
 </p> 
 Picture source: McCullum, N. (2021, 28 april). Deep Learning Neural networks explained in Plain English 
 
@@ -45,7 +45,7 @@ Weights play a crucial role in deep learning as they are pivotal in training mod
 After a neuron gathers inputs from preceding layer neurons, it computes the sum of each signal multiplied by its respective weight. Subsequently, these computed values are transmitted to an activation function, as demonstrated below:
 
 <p align = "center">
-<img src ="../images/artificial-neuron.png" width="400">
+<img src ="../images/artificial-neuron-representation-math" width="400">
 </p> 
 Picture source: McCullum, N. (2021, 28 april). Deep Learning Neural networks explained in Plain English
 
@@ -122,7 +122,7 @@ $ a(z) = \max\(0,z)$
 After introducing all necessary concepts, lets take a look how layers are represented mathematically:
 First let's consider very small neural network which has only 2 hidden layers:
 
- $\small \text{Inputs }$ {{<katex>}}\{ x_{i} \}^{I}_{i=1}{{</katex>}}
+ $\small \text{Inputs: }$ {{<katex>}}\{ x_{i} \}^{I}_{i=1}{{</katex>}}
 
 $ \small \text{$1st$ hidden layer: } h_{0} = a[\beta_{0} + \omega_{0}] $ 
 
@@ -136,7 +136,7 @@ This small neural network, mathematically would be denoted in the following way:
 
 Moving now to more general formula with k number of hidden layers.
 
-$ \small \text{Inputs }$ {{<katex>}}\{ x_{i} \}^{I}_{i=1}{{</katex>}}
+$ \small \text{Inputs: }$ {{<katex>}}\{ x_{i} \}^{I}_{i=1}{{</katex>}}
 
 $ \small \text{$kth$ hidden layer: } h_{k} = a[\beta_{k-1} + \omega_{k-1}h_{k-1}] $
 
@@ -154,7 +154,7 @@ Finally the general equation of the deep neural network could be annotated as fo
 <center> $y = \beta_{k} th+ \omega_{k}a[\beta_{k-1} + \omega_{k-1}a[...\beta_{2} + \gamma_{2}a[...\beta_{1} + \gamma_{1}]]...]]$ </center>
 
 ### Graphical represantion of a deep neural network:
-This is how deep neural network coulb be presented in the graph:
+This is how deep neural network could be presented in the graph:
 <p align = "center">
 <img src ="../images/deep-neural-network-graphics.png" width="400">
 </p> 
