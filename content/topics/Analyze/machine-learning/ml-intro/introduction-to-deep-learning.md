@@ -12,6 +12,8 @@ aliases:
 
 Deep learning is a type of machine learning that's inspired by the structure and function of the human brain, particularly in how it processes information and learns from it. It's called "deep" learning because it involves neural networks with many layers—these are the "deep" part. Each layer of these networks learns to transform the data in a way that makes it more useful for achieving the network's overall goal.
 
+Deep learning is commonly used in image recognition, natural language processing, and speech recognition tasks. It finds applications in industries such as healthcare, finance, and autonomous vehicles, where it enables tasks like medical diagnosis, fraud detection, and autonomous driving.
+
 ## Inspiration from the human brain
 
 As has been described in the section above, the inspiration actually comes from the human brain structure. Let's take a look at the human brain neuron anatomy.
@@ -25,7 +27,7 @@ During his groundbreaking research on neural networks, Geoffrey Hinton posed a c
 
 In pursuit of this goal, researchers examined the behavior of neurons within the brain. A key insight emerged: a single neuron lacks utility on its own; rather, functional significance arises from networks of neurons working together.
 
-This arises from the nature of neurons, which operate by transmitting signals. Specifically, dendrites of neurons receive signals and transmit them along the axon.
+This results from the nature of neurons, which operate by transmitting signals. Specifically, dendrites of neurons receive signals and transmit them along the axon.
 
 ### How neurons forward the information?
 An actual neuron fires an output signal only when the total strength of the input signals exceed a certain threshold. This
@@ -36,7 +38,7 @@ How can the aforementioned structure of neurons be mimicked by computers? Let's 
 <p align = "center">
 <img src ="../images/neuron-functionality-in-code.png" width="400">
 </p> 
-Picture source: McCullum, N. (2021, 28 april). Deep Learning Neural networks explained in Plain English
+Picture source: McCullum, N. (2021, 28 april). Deep Learning Neural networks explained in Plain English 
 
 Weights play a crucial role in deep learning as they are pivotal in training models. The adjustment of weights constitutes the primary method of training deep learning models, a concept that will become evident as we proceed to construct to the architecture of deep neural networks.
 
@@ -53,7 +55,7 @@ Neural networks could be distinguished between shallow and deep neural networks.
 
 Single-layer neural networks, also referred to as shallow neural networks, comprise a single hidden layer positioned between the input and output layers. This hidden layer conducts computations, orchestrating the transformation of input data to yield the intended output. Shallow neural networks, though straightforward, possess restricted capacity for learning intricate patterns and representations.
 
-In contrast, deep neural networks boast multiple hidden layers interspersed between the input and output layers. These networks can be profoundly deep, incorporating tens or even hundreds of layers. Each layer undertakes computations, forwarding the modified data to the subsequent layer in succession.
+In contrast, deep neural networks boast multiple hidden layers distributed between the input and output layers. These networks can be profoundly deep, incorporating tens or even hundreds of layers. Each layer undertakes computations, forwarding the modified data to the subsequent layer in succession.
 
 # Components of deep learning network
 In the sections above we introduced concept of deep learning and we talked a little bit about biology behind it. Let's move now to explaining separate components of deep learning architecture.
@@ -71,18 +73,28 @@ In neural networks, information is transferred between layers through weighted c
 ## Loss function
 The loss function in deep learning measures how well the model's predictions match the actual targets in the training data. It quantifies the difference between predicted and true values, providing feedback for adjusting the model's parameters during training. The goal is to minimize the loss function, indicating better alignment between predictions and actual outcomes, ultimately improving the model's performance. 
 
-Mathematically speaking it is the chosen family of mathematical equations which returns a scalar that is smaller when the model maps inputs to outputs better.
+Mathematically speaking the loss function is the chosen family of mathematical equations which returns a scalar that is smaller when the model maps inputs to outputs better. 
 
-$L[\theta, f[x, \theta], \{ [x_{i}, y_{i}] \}^{I}_{i=1}]$
+$L[\theta, f[x, \theta],$
+{{<katex>}}  
+\{ x_{i}, y_{i} \}^{I}_{i=1}
+{{</katex>}}
+$]$
 
-where: 
-- $ f[x, \theta] $ is a deep learning model
-- $ \{ [x_{i}, y_{i}] \}^{I}_{i=1} \$ is a training data
+
+where:
+
+$ f[x, \theta] $ is a deep learning model
+
+{{<katex>}}  
+\{ x_{i}, y_{i} \}^{I}_{i=1}
+{{</katex>}} is a training data
 
 ## Training process
 Let us denote our training dataset of I pairs of input/output examples:
 
-$ \text{Training Data: } [x_{i}, y_{i}]^{I}_{i=1} $
+
+$\text{Training Data: }$ {{<katex>}}\{ x_{i}, y_{i} \}^{I}_{i=1}{{</katex>}}
 
 Training consists in finding the model's parameters to minimize the loss function, i.e:
 
@@ -97,7 +109,7 @@ Activation functions are essential components of neural networks as they introdu
 
 Multiple options are available for the choice of the activation function:
 
-- Sigmoid function (Only used in the output layer of the logistic regression):
+- Sigmoid function (only used in the output layer of the logistic regression):
 $ a(z) =  \frac{\mathrm{1} }{\mathrm{1} + e^-{z} }  $ 
 
 - Tanh function:
@@ -108,9 +120,9 @@ $ a(z) = \max\(0,z)$
 
 ## Mathematical representation
 After introducing all necessary concepts, lets take a look how layers are represented mathematically:
-First consider very small neural network which has only 2 hidden layers:
+First let's consider very small neural network which has only 2 hidden layers:
 
-$ \small \text{Input layer: }x_{0} = {x_{0}, x_{1},... x_{i}} $
+ $\small \text{Inputs }$ {{<katex>}}\{ x_{i} \}^{I}_{i=1}{{</katex>}}
 
 $ \small \text{$1st$ hidden layer: } h_{0} = a[\beta_{0} + \omega_{0}] $ 
 
@@ -118,28 +130,31 @@ $ \small \text{$2nd$ hidden layer: } h_{1} = a[\beta_{1} + \omega_{1}]$
 
 $ \small \text{Output layer: } y =  \beta_{2} + \omega_{2}h_{2} $
 
+This small neural network, mathematically would be denoted in the following way:
+
+<center> $y = \beta_{2} + \omega_{2}a[\beta_{2} + \gamma_{2}a[\beta_{1} + \gamma_{1}]]$ </center> <br/>
+
 Moving now to more general formula with k number of hidden layers.
 
-$ \small \text{Input layer: }x_{0} = {x_{0}, x_{1},... x_{i}} $
+$ \small \text{Inputs }$ {{<katex>}}\{ x_{i} \}^{I}_{i=1}{{</katex>}}
 
 $ \small \text{$kth$ hidden layer: } h_{k} = a[\beta_{k-1} + \omega_{k-1}h_{k-1}] $
 
 $ \small \text{Output layer: } y =  \beta_{k} + \omega_{k}h_{k} $
 
-{{<katex>}}  {{</katex>}} 
+<!-- {{<katex>}}  {{</katex>}}  -->
 
 where: 
-
 - $a$ is an activation function
-- $\beta$ is bias vector (biases: Additional parameters added to the weighted sum before applying the activation function)
+- $\beta$ is bias vector (biases: additional parameters added to the weighted sum before applying the activation function)
 - $\omega$ is a weight matrix (grid-like structure containing numerical values. Each value in the matrix represents the strength of a connection between neurons in one layer and neurons in the next layer of a neural network.)
 
 Finally the general equation of the deep neural network could be annotated as following:
 
 <center> $y = \beta_{k} th+ \omega_{k}a[\beta_{k-1} + \omega_{k-1}a[...\beta_{2} + \gamma_{2}a[...\beta_{1} + \gamma_{1}]]...]]$ </center>
 
-### General graphical represantion of a deep neural network:
-Deep neural netwotk presented in the graph:
+### Graphical represantion of a deep neural network:
+This is how deep neural network coulb be presented in the graph:
 <p align = "center">
 <img src ="../images/deep-neural-network-graphics.png" width="400">
 </p> 
@@ -147,6 +162,8 @@ Deep neural netwotk presented in the graph:
 ## Coding deep neural network
 
 Coding deep neural networks involves using programming languages such as Python, which is highly popular due to its simplicity and extensive libraries for machine learning and neural networks. Libraries like TensorFlow and PyTorch are widely used for building and training deep neural networks, providing high-level APIs for constructing complex architectures with ease. 
+
+The code snippet below imports necessary libraries for building and training a neural network using Keras with the MNIST dataset. It preprocesses the data, constructs a sequential model with dense layers, compiles the model, trains it on the training data, and evaluates its performance on the test data, printing out the test loss and accuracy.
 
 ```
 # Importing necessary libraries
