@@ -12,9 +12,9 @@ aliases:
 ---
 
 ## Overview
-This article is designed to guide you in the process of creating `bar charts` using `ggplot2`. Starting with the basics, we'll guide you through each step to evolve a simple bar chart into one that meets academic standards. You'll learn techniques to enhance information delivery and ensure compliance with scholarly presentation norms. By the end of the building block, you'll have the skills to represent statistical data in a clear, academically rigorous format.
+This article is designed to guide you in the process of creating `bar charts` using `ggplot2`. Starting with the basics, we'll guide you through each step to evolve a simple bar chart into one that meets academic standards. 
 
-Effective data visualization requires both accuracy and aesthetics, a balance that can be challenging to achieve. Therefore, we will use the R package: `ggplot2`, a versatile tool for custom styling of your visualizations. We'll explore customizing colors, themes, and labels, and provide practical tips for academic presentations. This includes handling standard errors, black-and-white formatting, and effective data grouping. Additionally, we'll cover saving charts in high-quality PNG or PDF formats, ensuring they're ready for academic publication.
+Effective data visualization requires both accuracy and aesthetics, a balance that can be achieved with the use of the R package: `ggplot2`. This package is the best practice and a versatile tool for custom styling of your visualizations. We'll explore customizing colors, themes, and labels, and provide practical tips for academic presentations. This includes handling standard errors, black-and-white formatting, and effective data grouping. Additionally, we'll cover saving charts in high-quality PNG or PDF formats, ensuring they're ready for academic publication.
 
 {{% tip %}}
 **Data Visualization Best Practices**
@@ -24,7 +24,7 @@ Explore, our [article](/visualize/data) on Data Visualization, here we describe 
 {{% /tip %}}
 
 ## Data Retrieval
-Let's use the exemplary PIAAC dataset to examine the wage premium of obtaining a higher education level. We will illustrate the variance in wage across different education levels and later on between genders in the Netherlands. Let's first load the required packages and download the data.
+In this article we will use the  PIAAC dataset to examine the wage premium of obtaining a higher education level. We will illustrate the variance in wage across different education levels and later on between genders in the Netherlands. Let's first load the required packages and download the data.
 
 {{% codeblock %}}
 
@@ -81,7 +81,7 @@ The code above transforms a specified categorical variable into a categorical da
 {{% tip %}}
 
 **Refactoring Categorical Variables**
-Refactoring categorical variables is essential for bar plot visualizations, as it allows you to decide in which order particular labels appear.
+Refactoring categorical variables is important for bar plot visualizations, as it allows you to decide in which order particular labels appear.
 
 - Using the `fct_relevel()` function. This function allows for reordering factor levels using character strings, ensuring the categorical data is displayed in a preferred sequence.
 - Utilizing Base R's `factor()` Function: Our approach involves `factor()`, where the levels argument sets the desired order
@@ -110,7 +110,8 @@ data_barplot %>%
 
 **Key Points**:
 - `geom_col()` vs. `geom_bar()`: We use `geom_col()` here, as it's suitable when bar heights need to directly represent data values. In contrast, `geom_bar()` is used when you want to count cases at each x position, as it employs `stat_count()` by default.
-- Adding Error Bars: `geom_errorbar()` is utilized to add error bars to the bar chart. This function takes ymin and ymax aesthetics, calculated here as mean - se and mean + se, respectively. The width parameter controls the width of the error bars. Error bars are essential in reporting the "confidence" of particular estimates (e.g., whether they are closer or further away from zero).
+- Adding Error Bars: `geom_errorbar()` is utilized to add error bars to the bar chart. This function takes ymin and ymax aesthetics, calculated here as mean - se and mean + se, respectively. The width parameter controls the width of the error bars.
+	- Error bars are essential in reporting the "confidence" of particular estimates (e.g., whether they are closer or further away from zero).
 - Aesthetics: The fill aesthetic within `aes()` is set to Categorical Variable to color the bars based on the categorical groups.
 
 {{% /example %}}
@@ -119,10 +120,10 @@ data_barplot %>%
 
 The initial visualization is a solid starting point, but to meet publication standards, we need to refine it further. The primary issues are:
 
-- Redundant x-axis text: The legend duplicates information already conveyed by the x-axis labels.
-- Non-Descriptive Axis Titles: Axis titles need to be more informative for clarity.
-- Lack of Contextual Information: The plot lacks a title.
-- Color Scheme: The default color palette does not meet the academic rigor.
+- **Redundant x-axis text**: The legend duplicates information already conveyed by the x-axis labels.
+- **Non-Descriptive Axis Titles**: Axis titles need to be more informative for clarity.
+- **Lack of Contextual Information**: The plot lacks a title.
+- **Color Scheme**: The default color palette does not meet the academic rigor.
   
 Let's address these issues with the following enhanced visualization:
 
@@ -195,7 +196,7 @@ theme(
 <img src = "../images/basicplot3.png" width="450">
 </p>
 
-Now the barchart looks much better. We used the function theme to adjust:
+Now the barchart is closer to the academic standards. In the code the function `theme()` allows to adjust:
 - Plot Title: Enhanced with a larger font size, boldface, and added bottom margin for clarity and spacing.
 - Plot Margins: Uniform margins added around the plot to create balanced spacing.
 - Axis Text and Titles: Changed text size and color for better readability; additional margins for x-axis text and removal of the y-axis title to simplify the plot.

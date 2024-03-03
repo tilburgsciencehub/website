@@ -16,7 +16,7 @@ aliases:
 ---
 
 ## Overview
-Welcome to this article focused on one of the main concepts in Shiny: `reactive programming`. This feature stands at the core of Shiny’s dynamic capabilities. `Reactive programming` in Shiny is essentially about creating a dynamic link between inputs and outputs, ensuring that outputs refresh automatically when there's a change in inputs. 
+This article focusses on one of the main concepts in Shiny: `reactive programming`. This feature stands at the core of Shiny’s dynamic capabilities. `Reactive programming` in Shiny is essentially about creating a dynamic link between inputs and outputs, ensuring that outputs refresh automatically when there's a change in inputs. 
 
 The Shiny app we will use is the `airquality` dataset, which is available in `R` by default. This dataset contains daily air quality measurements in New York, May to September 1973. We will progressively build a Shiny app that demonstrates various aspects of reactivity in Shiny using `ggplot2` for visualization. The app will allow users to interact with the `airquality` data, filtering and visualizing it based on their inputs.
 
@@ -52,7 +52,7 @@ shinyApp(ui, server)
 
 **DT package**
 
-The `DT package`, short for `DataTables`, allows for a better presentation as well as it adds interactivity within tables in Shiny apps. It provides features that are not available with standard Shiny tables: 
+The `DT package`, short for `DataTables`, allows for a improved presentation as well as it adds interactivity within tables in Shiny apps. It provides features that are not available with standard Shiny tables: 
 
 - *Pagination*: Allows users to navigate through large datasets easily.
 - *Search Functionality*: Users can quickly search and filter data in the table.
@@ -71,18 +71,19 @@ To learn how to use `DT` to build an data exploration app check out this [articl
 `Reactivity` establishes connections between user inputs and specific elements in the `user interface` (UI). When user inputs change, associated `UI` components update dynamically. Additionally, `reactivity` enables efficient data handling through selective updates, conserving server resources and enhancing performance. This "**lazy**" evaluation minimizes unnecessary computational load, boosting server efficiency.
 
 In summary, `reactivity` offers benefits, including:
-- **Engagement through Dynamic Interaction**: Users actively shape the application by interacting with input elements, witnessing real-time updates in the output, ensuring a engaging user experience.
+- **Engagement through Dynamic Interaction**: Users interactively shape the application by interacting with input elements, providing real-time updates in the output, ensuring a engaging user experience.
 - **Efficient Data Handling**: By selectively updating only relevant portions of the application, `reactivity` conserves resources, enhances server performance, and ensures responsiveness.
 
 To understand reactivity, we need to delve into its key components: `reactive sources`, `reactive endpoints`, and `reactive conductors`.
 
-### Reactive Sources, Endpoints 
+### Reactive Sources & Endpoints 
 In Shiny, `reactive sources` refer to the inputs that trigger reactivity in the application. These are usually UI elements that allow users to interact with the app, like sliders, text inputs, buttons, checkboxes, etc. When a user interacts with these elements, their values change, which then triggers updates elsewhere in the app, the connected `reactive endpoints`.
 
 `Reactive endpoints` are the elements in a Shiny app that visibly react to changes in their dependencies, such as user inputs. These endpoints are crucial for displaying updated information or results based on user interaction. 
 
 ### Reactive conductors
 In Shiny, `reactive conductors`, also known as `reactive expressions`, play a crucial role in optimizing the app's performance and organization. They are used to process or modify reactive inputs before these inputs influence the outputs.    
+
 They are '**lazy**', activating only upon an endpoint's request, and '**cached**', meaning they recompute only when there's a change in their input sources. This lazy and cached nature of r`eactive expressions` optimizes the workflow of reactivity in `Shiny`.
 
 `Reactive conductors` offer several key benefits:
@@ -93,9 +94,9 @@ They are '**lazy**', activating only upon an endpoint's request, and '**cached**
 As a fundamental aspect of `reactivity`, `reactive conductors` act as intermediaries between reactive sources (like user inputs) and endpoints (such as UI outputs). 
 
 In essence, the reactivity in Shiny apps comprises:
-`Reactive Sources`: These are user inputs that initiate changes within the app.
-`Reactive Endpoints`: Elements in the UI, like plots or tables, that reactively update in response to changes.
-`Reactive Expressions`: These process and prepare inputs before they affect the outputs.
+- `Reactive Sources`: These are user inputs that initiate changes within the app.
+- `Reactive Endpoints`: Elements in the UI, like plots or tables, that reactively update in response to changes.
+- `Reactive Expressions`: These process and prepare inputs before they affect the outputs.
 
 {{% codeblock %}}
 
@@ -242,7 +243,7 @@ The `observe()` function is employed to create an observer that monitors changes
 
 **Utilizing reactlog for understanding reactivity**
 
-By integrating `reactlog` into your Shiny app, you can visually trace how reactivity is activated. it allows you to visualize and better understand the interactions between `observers`, `reactive expressions`, and inputs in your Shiny app, therefore the `reactlog` package can be invaluable.
+By integrating the package `reactlog` into your Shiny app, you can visually trace how reactivity is activated. it allows you to visualize and better understand the interactions between `observers`, `reactive expressions`, and inputs in your Shiny app. 
 
 Install and Enable: 
 - Install the reactlog package

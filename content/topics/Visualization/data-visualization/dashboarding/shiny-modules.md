@@ -12,7 +12,7 @@ aliases:
 
 
 ## Overview
-As we progress in this R-Shiny series, our Shiny apps have become more complex and larger. To address these challenges, we focus in this article of the use of `Shiny Modules`.
+As we progress in this R-Shiny series, the Shiny apps have become more complex and larger. To address these challenges, we focus in this article of the use of `Shiny Modules`.
 
 In R, functions are essential for simplifying and structuring code, and Shiny is designed to be compatible with them. You have the ability to create UI-generating functions and integrate them into your app, as well as develop functions for the server side that are responsible for defining outputs and creating reactive expressions.
 
@@ -44,7 +44,7 @@ numericInputServer <- function(){} # Server logic component
 
 {{% tip %}}
 
-**Naming Conventions**
+**Best Practice Naming Conventions**
 - Choose a shared root that describes the module of use, here called "**_numericInput_**" 
 - End the `UI` function with a suffix like "**UI**", "**Input**", or "**Output**".
 
@@ -107,9 +107,11 @@ shinyApp(ui,server)
 Next, we tackle the `server` function. 
 
 **Grasping the moduleServer() Function**  
+
 The `server` logic is encapsulated within the `moduleServer()` function. It's advisable to name these functions in correspondence with their module `UI` functions, but with a twist in the suffix: replace '_**Input**_' with '_**Output**_', or '**_UI_**' with '_**Server**_'. 
 
 **Constructing a Wrapper Function**  
+
 The `moduleServer()` function is nested within another function that requires an **id argument**. This id, together with a callback function resembling a standard `server` function including input, output, and an additional session argument, is passed to `moduleServer()`. 
 
 {{% codeblock %}}
@@ -191,7 +193,7 @@ In this example, we use two instances of the same module, demonstrating the `reu
 
 {{% /tip %}}
 
-## Nesting Modules 
+## Advanced Case: Nesting Modules 
 `Modules` in Shiny can incorporate other modules, we then have an **_inner module_** and an **_outer module_**. The outer module utilises the UI function of the inner module. It's important to wrap the id argument in the `ns()` function for namespacing.
 
 **Step 1**: Define the **Inner Module**  

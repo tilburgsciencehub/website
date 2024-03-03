@@ -14,14 +14,14 @@ aliases:
 ---
 
 ## Overview
-This article is designed to take you through the essentials of creating dynamic data visualizations with `R Shiny` and `Plotly`. If you're familiar with `ggplot2`, prepare to take your visualizations to the next level by adding a layer of interactivity that transforms your plots into compelling, story-driven experiences. It aims to demonstrate the distinct advantages of integrating these tools to produce interactive, story-driven visual data presentations. 
+This guide is designed to walk you through the fundamentals of crafting dynamic data visualizations utilizing `R Shiny` and `Plotly`. For those with a foundation in ggplot2, `Plotly` offers the opportunity to enhance your visualizations by integrating a layer of interactivity, thereby transforming your static plots into interactive, narrative-driven experiences. This article aims to demonstrate the distinct advantages of integrating these tools to produce interactive, story-driven visual data presentations. 
 
 We will focus on enhancing the interactivity of your visualizations and ensuring they effectively respond to user inputs, a feature that elevates both the analytical and narrative aspects of data storytelling. By the end of this article, you will possess a clear and precise understanding of how to build visualizations that are not only displaying data but also engage users in a meaningful dialogue with the information.
 
 ### Practical Application: World Bank Data 
 In this article, we'll apply for our examples real-world data, focusing on World Bank statistics. By working with this real-world data, you will develop the ability to create interactive plots that not only showcase information but also tell a story. Beginning with a static `ggplot` from the year 2000, we will guide you through a transformation into dynamic, multi-year visualizations using `R Shiny` and `Plotly`. 
 
-The visualizations will illustrate trends in indicators such as female school enrollment, GDP, and fertility rates, offering insights into their development over time. Through this process, you'll gain practical skills in data storytelling that goes beyond static charts, engaging users with interactive and informative narratives.
+The visualizations will illustrate trends in indicators such as female school enrollment, GDP, and fertility rates, offering insights into their development over time. 
 
 
 {{% codeblock %}}
@@ -43,14 +43,16 @@ For a more effective learning experience, actively copy and explore the code. Wh
 - Observe the impact of interactivity on data interpretation.
 - Explore new insights revealed through manipulating the visualizations.
 - Identify trends in the multi-year data that become evident with interaction.
+
 Engaging directly with the code will not only help you understand what each line does but also reveal the full capabilities of Plotly in enhancing data storytelling.
 
 {{% /tip %}}
 
 ## Basic Plotly Graphs in Shiny
 
-### Utilizing ggplotly() for Interactive Plots
+### Utilize ggplotly() for Interactive Plots
 The integration of `Plotly` into Shiny applications is done by the `ggplotly()` function. This function transforms `ggplot2` objects into interactive `Plotly` plots. It leverages the familiar syntax and powerful visualization capabilities of `ggplot2` while bringing them into `Plotly`'s interactive framework.   
+
 In the Shiny UI, `plotlyOutput()` is used to allocate space for these dynamic visualizations, analogous to `plotOutput()` for static plots. The server function utilizes `renderPlotly()` to ensure these interactive visualizations are correctly rendered in the allocated UI space.
 
 {{% codeblock %}}
@@ -85,8 +87,8 @@ shinyApp(ui, server)
 </p>
 
 
-## Key Features of ggplotly() Integration
-When you enhance `ggplot2` visualizations with `ggplotly()` in Shiny applications, the resulting `Plotly` object incorporate interactive features. Here is a list of the features: 
+## Key Features of ggplotly() 
+When you enhance `ggplot2` visualizations with `ggplotly()` in Shiny applications, the resulting `Plotly` object incorporate interactive features. Here is a list of the features and their syntax: 
 
 ### Interactive Hover Tooltips:
 - **What it Adds**: `ggplotly()` transforms `ggplot2`'s static aesthetic mappings into dynamic hover tooltips. These tooltips appear when users hover over plot elements, providing an interactive layer to the visualization.
@@ -190,7 +192,7 @@ server <- function(input, output) {
 ## Advanced User Case: Interactive Data Exploration with R Shiny and Plotly
 In this section of the article, we merge the interactive strengths of `R Shiny` with `Plotly`'s dynamic visualization capabilities. 
 
-You'll learn how to combine `Plotly`'s features with `R Shiny`'s interactivity to create dashboards that allow users to explore data in an immersive way. For example, selecting different regions or time periods will dynamically update the visualization to reflect current economic and social trends. This integration not only enhances user interaction with hover tooltips and responsive filtering but also elevates the aesthetic appeal of your visualizations.
+You'll learn how to combine `Plotly`'s features with `R Shiny`'s interactivity to create dashboards that allow users to explore data in an straight forward way. For example, selecting different regions or time periods will dynamically update the visualization to reflect current economic and social trends. This integration not only enhances user interaction with hover tooltips and responsive filtering but also elevates the aesthetic appeal of your visualizations.
 
 {{% example %}}
 
@@ -201,6 +203,7 @@ The provided code guides you through building an interactive dashboard focused o
 
 {{% codeblock %}}
 ```R
+# Packages needed
 library(shiny)
 library(plotly)
 library(WDI)

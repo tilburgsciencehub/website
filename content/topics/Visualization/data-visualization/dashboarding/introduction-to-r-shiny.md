@@ -14,15 +14,15 @@ aliases:
 ---
 
 ## Overview 
-This article is designed for beginners who are stepping into the world of interactive web application development using `R Shiny`. Our aim is to streamline the learning process, offering a clear and organized approach for those new to Shiny. Whether you're a student, a professional, or a hobbyist interested in expanding your skill set, this article will provide you with the foundational knowledge and step-by-step instructions to get started with creating dynamic, user-interactive web applications using the powerful features of `R Shiny`
+This article is designed for beginners who are stepping into the world of interactive web application development using `R Shiny`. Our aim is to streamline the learning process, offering a clear and organized approach for those new to Shiny. This article aims to provide the foundational knowledge and step-by-step instructions to get started with creating dynamic, user-interactive web applications using `R Shiny`.
 
 By the end of this article, you'll grasp the fundamental concepts of Shiny app architecture, including the interplay between UI (`User Interface`) and `server` components. Additionally, you'll learn to implement basic `interactivity` and customization features. We'll apply these concepts to develop an interactive web application using the `Gapminder` dataset, providing a practical, hands-on experience.
 
 ## Introduction to R Shiny 
 
 ### What is R Shiny?
-`R Shiny` is a powerful tool developed to build web applications easily with the programming language `R`.
-It eliminates the need for traditional web development skills like JavaScript, HTML, or CSS.
+`R Shiny` is a tool developed to build web applications with the programming language `R`.
+Therefore, it eliminates the need for traditional web development skills like JavaScript, HTML, or CSS.
 It's designed specifically for data scientists, statisticians, and researchers, allowing them to build client-side and server-side components within a familiar coding environment.
 
 ### Why use R Shiny?
@@ -41,7 +41,7 @@ The `UI` is what users interact with when they run your `Shiny` application. It'
 2. The **Server**
    
 The `Server`, on the other hand, is where the app's logic resides. It processes the input from the `UI`, performs computations, and sends output back to the UI. Key aspects of the `Server` include:
-- *`Reactivity`*: The server responds to changes in user input specified in the `UI`, recalculating outputs as needed.
+- `Reactivity`: The server responds to changes in user input specified in the `UI`, recalculating outputs as needed.
 - *R code*: All processing is done using R.
 
 {{% tip %}}
@@ -52,7 +52,7 @@ One of the most powerful features of `Shiny` is `reactivity`. `Reactivity` in a 
 
 {{% /tip %}}
 
-Let's create a simple `Shiny` app to understand these concepts better:
+Let's create a simple `Shiny` app:
 
 {{% codeblock %}} 
 
@@ -83,28 +83,31 @@ shinyApp(ui = ui, server = server)
 <img src = "../images/introduction-1.png" width="500">
 </p>
 
-Even though this basic app only displays the welcome message: "Welcome to the TilburgScienceHub", you are now familiar with and using the appropriate functions to create the `UI`, `server`, and run an `R Shiny` app.
-
+This basic app displays the welcome message: "Welcome to the TilburgScienceHub". 
 {{% tip %}}
 
 **R Studio Users**
 
 - When creating `Shiny` apps, organize them in dedicated folders separate from other projects for streamlined development. 
 - Use `Cmd/Ctrl + Shift + Enter` instead of clicking "`Run App`" to run your app efficiently.
-- The efficient cycle involves writing code, launching the app with the shortcut, testing it interactively, closing it, and then repeating the process. 
+The efficient cycle involves writing code, launching the app with the shortcut, testing it interactively, closing it, and then repeating the process. 
 
 {{% /tip %}}
 
 ### Building The User Interface 
 
 #### Formatting
-Let's begin with the `UI` construction. We will focus on its layout design using the `fluidPage()` function. This function helps create a fluid and responsive web page layout. Here's how to structure it:
+When creating a `Shiny` app start with constructing the `User Interface`. In this section the focus is on its layout design using the `fluidPage()` function. This function helps create a fluid and responsive web page layout. Here's how to structure it:
 
 - **Create a Header**: Utilize `titlePanel()` to add a header to your app.
-- **Layout Organization**: Use `sidebarLayout()` to arrange your app's inputs and outputs. This layout divides the page into a sidebar and a main panel.
-- **Inputs Section**: Place input controls in the `sidebarPanel()`. This section typically appears on the left side of your app.
-- **Outputs Section**: The `mainPanel()` is used for displaying outputs like plots, tables, or text outputs. It usually occupies the central or right portion of the layout.
-- **Tabbed Interface**: Integrate `tabsetPanel()` for adding tabs to your app. It enhances navigation and organization, especially for apps with multiple data views or functionalities.
+- **Layout Organization**: Use `sidebarLayout()` to arrange your app's inputs and outputs. 
+	- This layout divides the page into a sidebar and a main panel.
+- **Inputs Section**: Place input controls in the `sidebarPanel()`. 
+	- This section typically appears on the left side of your app.
+- **Outputs Section**: The `mainPanel()` is used for displaying outputs like plots, tables, or text outputs. 
+	- It usually occupies the central or right portion of the layout.
+- **Tabbed Interface**: Integrate `tabsetPanel()` for adding tabs to your app. 
+	- It enhances navigation and organization, especially for apps with multiple data views or functionalities.
 	- Within `tabsetPanel()`, use `tabPanel()` to create individual tabs and define their content.
 
 
@@ -139,7 +142,7 @@ ui <- fluidPage(
 
 **Important Coding Practices**
 
-When writing Shiny code, it's crucial to ensure that all `UI` elements within functions like `fluidPage`, `sidebarLayout`, and `tabsetPanel`are separated by commas. Missing commas can cause the app to crash, so it's a good habit to double-check your code for these small but significant details.
+When writing Shiny code, ensure that all `UI` elements within functions like `fluidPage`, `sidebarLayout`, and `tabsetPanel` are separated by commas. Missing commas can cause the app to crash, so it's a good habit to double-check your code for these small but significant details.
 
 {{% /tip %}}
 
@@ -148,8 +151,10 @@ When writing Shiny code, it's crucial to ensure that all `UI` elements within fu
 So far, we've established the basic structure of our `Shiny` app with a header. In `Shiny`, creating interactive input controls is the key aspect of engaging user interfaces. The variety of input types within `Shiny` available allows for a highly interactive and customizable user experience.  
 
 Incorporating an input control in Shiny is a straightforward two-step process:
-- *Add an Input Function in the UI*: This is done by using a specific `...Input("id", ...)` function, where "`id`" is a unique identifier for the input control.
-- *Access the Input Value in the `Server`*: Retrieve the input's value in the `server` logic using `input$id`, where id is the identifier assigned in the first step.
+- *Add an Input Function in the UI*: 
+	- This is done by using a specific `...Input("id", ...)` function, where "`id`" is a unique identifier for the input control.
+- *Access the Input Value in the `Server`*: 
+	- Retrieve the input's value in the `server` logic using `input$id`, where id is the identifier assigned in the first step.
 
 {{% example %}}
 
@@ -168,9 +173,10 @@ All input functions in `Shiny` share common characteristics:
 - *Input ID*: A unique identifier for each input control, crucial for accessing its value in the `server`.
 - *Label*: A descriptive text label for the input, visible to users.
 - *Unique Arguments*: Each input type has specific parameters. 
+
 For instance, `selectInput` needs a list of `choices`, while `sliderInput` requires default `values`, `minimum`, and `maximum` limits.
 
-Let's dive into a more advanced app: 
+Here is an example app: 
 
 {{% codeblock %}} 
 
@@ -213,12 +219,12 @@ With the inputs configured, we've laid the groundwork for interactive user exper
 #### Output Placeholders
 When developing a `Shiny` app, one of the initial steps is to define the output objects and their placement within the user interface (`UI`). This is achieved using `output placeholders`.
 
-Shiny provides a variety of output functions, each tailored to different output types. To use these functions:
+Shiny provides a several output functions, each tailored to different output types. To use these functions:
 1. **Assign a Unique Name or ID**: Each output function requires a unique name or ID. This identifier should be a character string enclosed in double quotes.
 2. **Place Output Placeholders in the UI**: These `placeholders` specify the locations and types of outputs that will appear in the app. They are not the actual outputs but markers for where the outputs will be displayed.
 3. **Creation of Outputs in the Server Function**: While `placeholders` are set in the `UI`, the actual outputs are generated in the se`rver function.
 
-Our `user interface` is ready: we have created both input controls and `output placeholders`. In the following sections, we’ll move our focus to the `server` function, because it’s the `server` side of our app that builds the output objects.
+The `user interface` is ready. It contains both input controls and `output placeholders`. In the following sections, we’ll move our focus to the `server` function, because it’s the `server` side of our app that builds the output objects.
 
 {{% codeblock %}} 
 

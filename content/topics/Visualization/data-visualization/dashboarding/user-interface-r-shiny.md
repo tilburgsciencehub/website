@@ -20,7 +20,7 @@ aliases:
 
 In this second article in the R `Shiny` series, we delve into the `Shiny` app’s user interface. We will be focusing on aesthetics and user experience. You'll learn how to effectively arrange inputs and outputs using layout functions and customize the app's visual appeal. We’ll also explore interactive control widgets to create responsive interfaces.
 
-By the end of this article, you'll be equipped with skills to design dynamic, engaging, and user-centred `Shiny` applications. Let's dive in!
+By the end of this article, you'll be equipped with skills to design dynamic, engaging, and user-centred `Shiny` applications. 
 
 ## Layout Functions
 Let's first discuss layout functions, these function allow inputs and outputs to be visually arranged (or "laid" out) in the `UI`. A well-chosen layout makes a `Shiny` app aesthetically more appealing, easier to navigate, and more user-friendly. Layout functions establish the high-level visual structure of an app and work through a structured hierarchy of function calls in R. 
@@ -43,7 +43,9 @@ Fills the entire height of the browser window and is useful for designs where a 
 ### Page with Sidebar
 For creating more complex layouts in R `Shiny`, you need to specify layout functions within `fluidPage()`.
 A common and practical design is the **sidebar layout**, which provides a sidebar for inputs and a main area for outputs. 
-For instance, to design a two-column layout where inputs are on the left and outputs on the right, you can employ `sidebarLayout()`. Within this function, you can use functions like `titlePanel()`, `sidebarPanel()`, and `mainPanel()` to structure your app effectively. The code below exemplifies the basic framework for such a layout:
+For instance, to design a two-column layout where inputs are on the left and outputs on the right, you can employ `sidebarLayout()`. Within this function, you can use functions like `titlePanel()`, `sidebarPanel()`, and `mainPanel()` to structure your app effectively. 
+
+The code below exemplifies the basic framework for such a layout:
 
 {{% codeblock %}} 
 
@@ -108,9 +110,9 @@ You can adjust the position of columns within a row using the **offset** paramet
 {{% /tip %}}
 
 ### Multipage Layout
-For complex `Shiny` applications, where fitting all content on a single page is impractical, a multipage layout becomes essential.
+For complex `Shiny` applications, where fitting all content on a single page is impractical, a multipage layout becomes the best practice.
 
-The `tabsetPanel()` function, used in combination with `tabPanel()`, effectively provides a way to organize your R `Shiny` application into distinct sections, similar to having multiple pages. This approach organizes content within a single file, simplifying navigation and layout management.
+The `tabsetPanel()` function, used in combination with `tabPanel()`,  provides a way to organize your R `Shiny` application into distinct sections, similar to having multiple pages. This approach organizes content within a single file, simplifying navigation and layout management.
 
 - `tabsetPanel()`: Acts as a container for multiple `tabPanel()` elements.
 - `tabPanel()`: Each panel can house various UI components, providing a user experience of navigating through different pages.
@@ -234,6 +236,7 @@ shinyApp(ui = ui, server = server)
 {{% tip %}}
 
 **Live Theme Selector**
+
 An interesting feature of the `shinythemes` package is the `themeSelector()` widget. This widget allows you to dynamically test different themes directly in your app without needing to reload or restart your app. It adds a dropdown box to the UI, letting you switch themes on the fly.
 
 It's a flexible widget that can be inserted anywhere within your application, though placing it right under the `fluidPage()` definition is a common practice. The `themeSelector()` is only for development purposes. Once you settle on a theme, you should define it using the `shinytheme()` function in your final app.
@@ -402,6 +405,6 @@ In this article of the R `shiny` series we have discussed `User Interace`:
 - Discusses various customization approaches, from using default `Shiny` styles to applying `shinythemes` and integrating `custom CSS`.
 - Covers `control widgets`, teaches how to create responsive interfaces, and highlights the `shinyWidgets` gallery for advanced examples.
 
-This article is aimed to learn the techniques for building user-oriented Shiny applications, making them not only functional but also visually attractive and intuitive. In the next article we will dive into the concept of [reactivity](/shiny/reactivity)
+This article is aimed to learn the techniques for building user-oriented Shiny applications, making them not only functional but also visually attractive and intuitive. In the next article we will dive into the concept of [reactivity](/shiny/reactivity).
 
 {{% /summary %}}
