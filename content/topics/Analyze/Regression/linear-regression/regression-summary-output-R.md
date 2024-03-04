@@ -155,9 +155,12 @@ confint(reg, level = 0.95)
 ```
 {{% /codeblock %}}
 
-<p align = "center">
-<img src = "../images/regression_ci.png" width="200">
-</p>
+The following output is returned:
+
+|           | 2.5%     | 97.5%    |
+|-----------|----------|----------|
+| (Intercept)| -6.372143| 8.160895|
+| yrsequal  | 5.792316 | 6.816283 |
 
 
 ### t-value
