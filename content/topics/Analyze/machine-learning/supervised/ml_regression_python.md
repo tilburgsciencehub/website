@@ -1,6 +1,6 @@
 ---
-title: "Linear Regression in Python"
-description: "An introduction to regression pipeline in Python"
+title: "Linear Regression for Prediction in Python"
+description: "An introduction to linear regression based prediction in Python"
 keywords: "regression, machine learning, ML, Linear, Regression, Python"
 draft: false
 weight: 10
@@ -9,7 +9,7 @@ authorlink: "https://tilburgsciencehub.com/contributors/kheirysohooli/"
 ---
 
 ## Overview
-The goal of this article is to introduce the regression and steps to implement it in python. 
+This article introduces how to use linear regression to predict a continuous outcome variable and the steps to implement it in Python. 
 
 Regression is a technique used in supervised machine learning when the goal is to predict a **continuous dependent variable** (target) based on one or more independent variables (predictors). Think of it as trying to fit a line (or a curve in some cases) through data points to establish a relationship between the independent and dependent variables. By understanding this relationship, we can make predictions about the target variable for new data points.
 
@@ -20,8 +20,6 @@ There are several regression techniques, such as linear regression, Lasso, and R
 For this tutorial the [dataset]( https://www.kaggle.com/datasets/anthonypino/melbourne-housing-market) on housing prices from kaggle will be used. 
 
 ## Machine learning Linear Regression Pipeline 
-In regression, we have a set of steps to follow, but not all of them are needed for every project. It depends on the data, the type of regression used, and the specific problem. However, there are some steps that are vital for every regression project like the train-test split.
-
 ### Get the Data
 To import CSV data into Pandas, use the read_csv function, accepting file paths or URLs. This method offers customization options via various parameters. Explore reading data from Kaggle click [here](https://ravi-chan.medium.com/how-to-download-any-data-set-from-kaggle-7e2adc152d7f) .
 
@@ -69,7 +67,7 @@ df.head()
 {{% /codeblock %}}
 
 
-Additionally, the `info()` functions shows useful informations about the total number of samples(rows), and type of each feature(float64, object, etc.) and number of non-null values in each column.
+Additionally, the `info()` functions shows useful information about the total number of samples(rows), and type of each feature(float64, object, etc.) and number of non-null values in each column.
 
 {{% codeblock %}}
 
@@ -88,21 +86,6 @@ Another helpful method is `describe()`, and it provides a summary of numerical f
 df.describe()
 ```
 {{% /codeblock %}}
-
-You can understand your data better by looking at it visually. The code below helps you create a histogram, which shows the distribution of variables in your dataset. While there are various ways to visualize data, this is a good starting point.
-
-{{% codeblock %}}
-
-```Python
-# import matplotlib.pyplot. Note that if you haven't install it yet, you need install it before importing. 
-import matplotlib.pyplot as plt 
-
-# histogram of all variables in dataframe
-df.hist(bins=50, figsize=(20,15))
-plt.show()
-```
-{{% /codeblock %}}
-
 
 ### Preprocessing the Data for Machine Learning Algorithms
 
@@ -155,7 +138,7 @@ df_cat_encoded
 
 
 #### Splitting data into train and test sets
-Before you start training your model on the data, set aside a part of it to test and evaluate the model afterward. This process is known as train-test-split. The easiest way to do this is by using the train_test_split function from the sklearn library.
+Before you start training your model on the data, set aside a part of it to test and evaluate the model afterwards. This process is known as train-test-split. The easiest way to do this is by using the `train_test_split()` function from the `sklearn` library.
 
 {{% codeblock %}}
 
@@ -172,7 +155,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0, train_
 ```
 {{% /codeblock %}}
 
-In the code above, pay attention to the "test_size" parameter. It decides how much of the dataset is kept for testing. In our case, we've reserved 20% of the dataset for testing. Also, we set a random seed to make sure the dataset doesn't change every time we run the code.
+In the code above, pay attention to the "test_size" parameter. It decides how much of the dataset is kept for testing. In our case, we've reserved 25% of the dataset for testing. 
+Also, we set a random seed to make sure the split dataset doesn't change every time we run the code.
 
 #### Feature Scaling
 This transformation is important when variables have different ranges. For instance, if you compare "rooms" (ranging from 1 to 7) with "yearbuilt" (ranging from 1196 to 2106), you'll notice a big difference. Many machine learning algorithms don't work well when features are in different scales.
@@ -231,7 +215,7 @@ predictions = lin_reg.predict(X_test)
 ```
 {{% /codeblock %}}
 
-Note that you can train your data using any other regressors but here we just work with one. Feel free to explore other regressors and compare the results with one another. 
+Note that you can train your data using any other regressors but here we just work with one. Feel free to explore other regressors and compare the results. 
 
 ### Evaluate the model 
 
@@ -249,6 +233,7 @@ print("root_squared error", np.sqrt(metrics.mean_squared_error(y_test, predictio
 ```
 {{% /codeblock %}}
 
+<!---
 ### Fine-Tune Your Model
 
 Imagine you have a list of models that seem promising. Now, it's time to make them even better and select the best among them. Let's explore some ways you can do that. You can try adjusting the hyperparameters by hand, but it can be a lot of work and take up too much time. There are two practical ways do it; **Grid search** and **Random search**. 
@@ -256,7 +241,7 @@ In a simple way, you just have to let it know which settings you want it to test
 While the Randomized search checks various combinations by picking random values for different settings, and it does this a certain number of times during each trial.
 
 For more details on regresion in ML refer to the second chapter from book [Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/). You can also find the relevant codes on its [GitHub repository](https://github.com/ageron/handson-ml2).
-
+--->
 
 
 {{% summary %}} 
@@ -265,7 +250,7 @@ In this article, you have explored the fundamentals of regression in Python. Aft
 
 - **Reading Data in Python**: Understanding how to import and access data within Python.
 
-- **Exploring Dataset**: Visualizing data and obtaining summary statistics to gain insights.
+- **Exploring Dataset**: Describing the data via summary statistics to understand its structure.
 
 - **Data Preprocessing**: Tasks include handling duplicates, addressing missing values, managing categorical variables, splitting data into training and testing sets, and feature scaling.
 
@@ -273,12 +258,4 @@ In this article, you have explored the fundamentals of regression in Python. Aft
 
 - **Evaluating the Model**: Assessing the performance of the trained model using suitable evaluation metrics.
 
-- **Fine-Tuning the Model**: using grid search and random search to enhance predictive accuracy and generalization.
-
 {{% /summary %}} 
-
-
-
-
-
-
