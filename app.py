@@ -29,7 +29,7 @@ db.init_app(app)
 
 
 ## Data necessary for cookies analytics
-VIEW_ID = "ID_REQUIRED"
+VIEW_ID = "265450145"
 MAX_PAGES = 10
 SCOPES = ["https://www.googleapis.com/auth/analytics.readonly"]
 SCRIPT_DIR = os.path.dirname(__file__)
