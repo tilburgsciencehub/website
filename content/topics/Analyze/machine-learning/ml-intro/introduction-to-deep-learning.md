@@ -124,23 +124,23 @@ First let's consider very small neural network which has only 2 hidden layers:
 
  $\small \text{Inputs: }$ {{<katex>}}\{ x_{i} \}^{I}_{i=1}{{</katex>}}
 
-$ \small \text{$1st$ hidden layer: } h_{0} = a[\beta_{0} + \omega_{0}] $ 
+$ \small \text{$1st$ hidden layer: } h_{0} = a[\beta_{0} + \Omega_{0}x] $ 
 
-$ \small \text{$2nd$ hidden layer: } h_{1} = a[\beta_{1} + \omega_{1}]$
+$ \small \text{$2nd$ hidden layer: } h_{1} = a[\beta_{1} + \Omega_{1}h1]$
 
 $ \small \text{Output layer: } y =  \beta_{2} + \omega_{2}h_{2} $
 
 This small neural network, mathematically would be denoted in the following way:
 
-<center> $y = \beta_{2} + \omega_{2}a[\beta_{2} + \gamma_{2}a[\beta_{1} + \gamma_{1}]]$ </center> <br/>
+<center> $y = \beta_{2} + \Omega_{2}a[\beta_{1} + \Omega_{1}a[\beta_{0} + \Omega_{0}x]]$ </center> <br/>
 
 Moving now to more general formula with k number of hidden layers.
 
 $ \small \text{Inputs: }$ {{<katex>}}\{ x_{i} \}^{I}_{i=1}{{</katex>}}
 
-$ \small \text{$kth$ hidden layer: } h_{k} = a[\beta_{k-1} + \omega_{k-1}h_{k-1}] $
+$ \small \text{$kth$ hidden layer: } h_{k} = a[\beta_{k-1} + \Omega_{k-1}h_{k-1}] $
 
-$ \small \text{Output layer: } y =  \beta_{k} + \omega_{k}h_{k} $
+$ \small \text{Output layer: } y =  \beta_{k} + \Omega_{k}h_{k} $
 
 <!-- {{<katex>}}  {{</katex>}}  -->
 
@@ -151,7 +151,7 @@ where:
 
 Finally the general equation of the deep neural network could be annotated as following:
 
-<center> $y = \beta_{k} th+ \omega_{k}a[\beta_{k-1} + \omega_{k-1}a[...\beta_{2} + \gamma_{2}a[...\beta_{1} + \gamma_{1}]]...]]$ </center>
+<center> $y = \beta_{k} th+ \Omega_{k}a[\beta_{k-1} + \Omega_{k-1}a[...\beta_{2} + \Omega_{2}a[...\beta_{1} + \Omega_{1}]]...]]$ </center>
 
 ### Graphical represantion of a deep neural network:
 This is how deep neural network could be presented in the graph:
