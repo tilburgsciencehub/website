@@ -9,6 +9,7 @@ pip install beautifulsoup4
 pip install nltk
 pip install markdown
 pip install Flask-Assets
+pip install google-api-python-client
 ```
 
 ## Content To Database
