@@ -145,7 +145,7 @@ $ \small \text{Output layer: } y =  \beta_{k} + \Omega_{k}h_{k} $
 where: 
 - $a$ is an activation function
 - $\beta$ is bias vector (biases: additional parameters added to the weighted sum before applying the activation function)
-- $\omega$ is a weight matrix (grid-like structure containing numerical values. Each value in the matrix represents the strength of a connection between neurons in one layer and neurons in the next layer of a neural network.)
+- $\Omega$ is a weight matrix (grid-like structure containing numerical values. Each value in the matrix represents the strength of a connection between neurons in one layer and neurons in the next layer of a neural network.)
 
 Finally the general equation of the deep neural network could be annotated as following:
 
