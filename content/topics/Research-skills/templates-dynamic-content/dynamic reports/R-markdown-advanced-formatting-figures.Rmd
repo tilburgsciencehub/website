@@ -1,0 +1,152 @@
+---
+title: "Advanced Markdown: Formating Figures and Subfigure Integration"
+author: "Tilburg Science Hub"
+
+
+# The next lines allow you to change the spacing in your document You can 
+# switch out \onehalfspacing with \singlespacing or \doublespacing, if desired.
+header-includes:
+    - \linespread{1.25}
+    - \usepackage[tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in]{geometry}
+    - \usepackage{titlesec}
+    - \titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Large}
+    - \titlespacing*{\chapter}{0pt}{-20pt}{40pt}
+    
+# Remove the hashtag to specify which version of output you would like.
+# Can only choose one at a time.
+output: 
+  # bookdown::pdf_document2
+  bookdown::html_document2
+  # bookdown::word_document2
+  # bookdown::gitbook
+
+# Specify the location of the bibliography below
+bibliography: references.bib
+link-citations: yes
+
+# Incorporate a list of figures or/and tables by setting the value to TRUE.
+lof: false
+---
+
+# Overview {-} 
+<!-- The {.unnumbered} option here means that the overview will be 
+"Chapter 0." You can also use {-} for no numbers on chapters.
+-->
+
+[`Rmarkdown`](https://rmarkdown.rstudio.com/) is a format designed for crafting reproducible and dynamic reports using R. It's a useful tool for creating a wide range of academic documents, including journal articles, books, and technical reports. 
+
+Our website offers the `tisemdown` thesis [template](https://tilburgsciencehub.com/topics/research-skills/templates-dynamic-content/templates/bookdown-theses/), which provides a read-to-go thesis template using `Rmarkdown`. This template pre-configures all the formatting requirements of your study programs, kickstarting the initial setup process. 
+
+This article builds upon the thesis template article by exploring more sophisticated `Rmarkdown` syntax. While the initial guide covers basic syntax, here we further your understanding by covering:
+
+- Academic formatting tips: 
+  - igure customization,
+  - subfigure integration, 
+
+
+# Formatting through Chunk Options
+
+`RMarkdown` enables figures to be formatted through chunk options, enabling full control over their presentation within your report. 
+
+Here is a list of important figure formatting options: 
+
+-   `fig.align`: Adjust the alignment of your figure. 
+	- Options include "default", "center", "left", or "right".
+-   `fig.cap`: Allows you to provide a caption for your figure, input as a character vector:
+	- For instance, "A detailed caption here".
+-   `fig.height` & `fig.width`: Specify the dimensions of your figure in inches.
+	- each argument takes one number (e.g., 7, or 9).
+-   `out.height` & `out.width`: Adjust the size of the figure in the output document, useful for scaling figures. 
+	- For `LaTeX` outputs, use dimensions like `".12\linewidth"` or "`10cm`"; 
+	- For `HTML`, use "`300px`".
+
+Here's an example of how to use these options in a code chunk:
+
+```{r example-figure, echo=FALSE, warning=F, message=F, eval = F, fig.cap="GDP per capita growth in the Netherlands, 1952-2007", fig.width=7, fig.height=5, fig.align="left", out.width="50%"}
+
+library(ggplot2)
+library(dplyr)
+library(gapminder)
+gapminder %>%
+  filter(country == "Netherlands") %>%
+  ggplot(aes(x = year, y = gdpPercap)) + 
+  geom_point()
+```
+
+And it will look like this:
+
+```{r formatting-figures, echo = FALSE, warning= FALSE, message = FALSE, fig.cap="GDP per capita growth in the Netherlands, 1952-2007", fig.width = 7, fig.height = 5, fig.align='left', out.width = "50%"}
+
+library(ggplot2)
+library(dplyr)
+library(gapminder)
+gapminder %>%
+  filter(country == "Netherlands") %>%
+  ggplot(aes(x = year,
+             y = gdpPercap)) + 
+  geom_point()
+```
+
+### Formatting through Setting Global Figure Options {-}
+
+To avoid setting the same chunk options for each figure and to ensure uniform formatting across figures, set global options at the start of the document. This approach applies specified settings to all figures, saving time and ensuring consistency. You can do this with the following code:
+
+```{r, eval=FALSE}
+knitr::opts_chunk$set(fig.width = 10, fig.height = 10, fig.align='center', out.width = "80%")
+```
+
+
+### Saving Figures as Separate Files {-}
+
+Adjusting the display properties of figures can alter their presentation within the document, but it doesn't automatically save them as separate files. To ensure figures are saved, you must modify the YAML header to include `keep_md: true`, as shown below:
+
+```         
+---
+output:
+  html_document:
+    keep_md: true
+---
+```
+
+This setup generates folders like "YOURFILENAME_files" to store figures. To directly control where your figures are saved, use the `fig.path` option in a setup chunk at the start of your document. Setting `fig.path` tells `RMarkdown` the exact folder to store your figures. For example, to save all figures in a folder named "figs", add this to a code chunk within your document:
+
+
+```{r, eval=FALSE}
+knitr::opts_chunk$set(fig.path = "figs")
+```
+
+
+# Using Latex for Formatting of Figures 
+
+### LaTeX sub-figures {-}
+
+Display sub-figures inside into a single space, using the `LaTeX`'s `subfig` package. This package enables the use of sub-figures, each with its own caption, within a single-figure environment. This feature can be useful for comparative analyses or grouped visual data presentations. To use sub-figures, include the `subfig` package in your document's YAML via the `extra_dependencies` option as shown below:
+
+
+```         
+---
+output:
+  pdf_document:
+    extra_dependencies: "subfig"
+---
+```
+
+To create a single figure with sub-figures, place all related plots within a single R code chunk. Specify the following arguments:
+
+- Use the `fig.cap` option for the main caption and 
+-  Use `fig.subcap` for individual sub-figure captions. 
+   -  This is a character vector for sub-figures, for example, `c('(1)', '(2)', '(3)')`.
+- Use `fig.ncol` for figures arrangement by column 
+  - By default, all plots are arranged in a single row. You can break them into multiple rows.
+- Use `out.width` for controlling plot size 
+  - Standard practice is to divide 100% by the number of columns to ensure equal width for all plots. Otherwise, the plots may exceed the page margin.
+
+Example syntax for arranging three sub-figures into two columns with centred alignment:
+
+```{r, fig.cap='Figure about LaTeX sub-figures', fig.subcap=c('(1)', '(2)', '(3)'), fig.ncol=2, out.width="50%", fig.align="center"}
+plot(1:10)
+boxplot(Sepal.Width ~ Species, data = iris)
+hist(rnorm(100))
+```
+
+This setup ensures that each sub-figure is properly captioned and aligned, facilitating a coherent and visually appealing presentation in your document.

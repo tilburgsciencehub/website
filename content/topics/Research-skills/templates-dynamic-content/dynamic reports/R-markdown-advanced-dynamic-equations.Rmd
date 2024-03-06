@@ -1,0 +1,100 @@
+---
+title: "Advanced Markdown: Dynamic Equations"
+author: "Tilburg Science Hub"
+
+
+# The next lines allow you to change the spacing in your document You can 
+# switch out \onehalfspacing with \singlespacing or \doublespacing, if desired.
+header-includes:
+    - \linespread{1.25}
+    - \usepackage[tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in]{geometry}
+    - \usepackage{titlesec}
+    - \titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{16pt}{\Large}
+    - \titlespacing*{\chapter}{0pt}{-20pt}{40pt}
+    
+# Remove the hashtag to specify which version of output you would like.
+# Can only choose one at a time.
+output: 
+  # bookdown::pdf_document2
+  bookdown::html_document2
+  # bookdown::word_document2
+  # bookdown::gitbook
+
+# Specify the location of the bibliography below
+bibliography: references.bib
+link-citations: yes
+
+# Incorporate a list of figures or/and tables by setting the value to TRUE.
+lof: false
+---
+
+# Overview {-} 
+<!-- The {.unnumbered} option here means that the overview will be 
+"Chapter 0." You can also use {-} for no numbers on chapters.
+-->
+
+[`Rmarkdown`](https://rmarkdown.rstudio.com/) is a format designed for crafting reproducible and dynamic reports using R. It's a useful tool for creating a wide range of academic documents, including journal articles, books, and technical reports. 
+
+Our website offers the `tisemdown` thesis [template](https://tilburgsciencehub.com/topics/research-skills/templates-dynamic-content/templates/bookdown-theses/), which provides a read-to-go thesis template using `Rmarkdown`. This template pre-configures all the formatting requirements of your study programs, kickstarting the initial setup process. 
+
+This article builds upon the thesis template article by exploring more sophisticated `Rmarkdown` syntax. While the initial guide covers basic syntax, here we further your understanding by covering:
+
+- embedding regression results directly into `LaTeX`-formatted equations.
+
+# Convert Regression Models Directly into Latex Equations
+
+The `equatiomatic` package provides an elegant solution for displaying `LaTeX`-formatted equations derived from models specified in the report's R code. Let's delve into its capabilities with practical examples:
+
+### A Simple Regression Model {-}
+Transform a model into `LaTeX`, by passing your model inside `extract_eq()`:
+
+```{r}
+# To install equatiomatic, you can use: 
+## remotes::install_github("datalorax/equatiomatic")
+## install.packages("equatiomatic")
+
+library(equatiomatic)
+
+# For a basic model:
+fit <- lm(mpg ~ cyl + disp, mtcars)
+# Display the theoretical model as an equation
+equatiomatic::extract_eq(fit)
+
+# For the model with actual coefficients:
+equatiomatic::extract_eq(fit, use_coefs = TRUE)
+```
+
+### Categorical Variables {-}
+
+The `equatiomatic` package supports the automatic conversion of categorical variables to `LaTeX` formatted equations. When using categorical variables, it will recognize and automatically include the levels of these variables as subscripted variables in the equation.
+
+```{r}
+fit_cat <- lm(Sepal.Length ~ Species, iris)
+equatiomatic::extract_eq(fit_cat)
+```
+
+### Interaction terms {-}
+
+The package also supports the conversion of interaction terms to `LaTeX` formatted equations.
+
+```{r}
+fit_int <- lm(data = iris, Sepal.Length ~ Species * Petal.Length)
+equatiomatic::extract_eq(fit_int)
+```
+
+### Customizing the Output {-}
+
+Adjust the equation output using the following options: 
+- `use_coefs`: This option reveals the actual coefficients within the model. 
+  - Default = FALSE
+- `terms_per_line`: Organizes the equation to display a specific number of terms on the equation's right-hand side. 
+- `wrap`: Ensures the equation fits within a predetermined width.
+
+```{r, warning= FALSE, message = FALSE}
+library(palmerpenguins)
+fit_glm <- glm(species ~ bill_length_mm + bill_depth_mm + flipper_length_mm, data = penguins, family = binomial)
+equatiomatic::extract_eq(fit_glm, use_coefs = TRUE, terms_per_line = 3, wrap = 80)
+
+fit_probit <- glm(species ~ bill_length_mm + bill_depth_mm + flipper_length_mm, data = penguins, family = binomial(link = "probit"))
+equatiomatic::extract_eq(fit_probit, use_coefs = FALSE, terms_per_line = 2, wrap = 40)
+```
