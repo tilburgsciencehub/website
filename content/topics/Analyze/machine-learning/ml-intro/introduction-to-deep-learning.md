@@ -128,7 +128,7 @@ $ \small \text{$1st$ hidden layer: } h_{0} = a[\beta_{0} + \Omega_{0}x] $
 
 $ \small \text{$2nd$ hidden layer: } h_{1} = a[\beta_{1} + \Omega_{1}h1]$
 
-$ \small \text{Output layer: } y =  \beta_{2} + \omega_{2}h_{2} $
+$ \small \text{Output layer: } y =  \beta_{2} + \Omega_{2}h_{2} $
 
 This small neural network, mathematically would be denoted in the following way:
 
@@ -141,8 +141,6 @@ $ \small \text{Inputs: }$ {{<katex>}}\{ x_{i} \}^{I}_{i=1}{{</katex>}}
 $ \small \text{$kth$ hidden layer: } h_{k} = a[\beta_{k-1} + \Omega_{k-1}h_{k-1}] $
 
 $ \small \text{Output layer: } y =  \beta_{k} + \Omega_{k}h_{k} $
-
-<!-- {{<katex>}}  {{</katex>}}  -->
 
 where: 
 - $a$ is an activation function
