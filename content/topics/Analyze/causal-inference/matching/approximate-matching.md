@@ -10,51 +10,56 @@ aliases:
   - /propensity-score-matching
 ---
 
-# Overview
+## Overview
 
-[The first topic on matching](/matching) introduced the method and specifically talked about exact matching, where individuals are paired on one or more *identical* characteristics. 
+[Here](/matching) we introduced matching where we specifically discussed exact matching, the method in which individuals are paired on one or more *identical* characteristics. 
 
-Here, we will discuss approximate matching, where pairs are made on similar but not identical characteristics. It is again a way to adjust for differences when treatment is non-random. Important is that this method is only relevant for selection on observables, which means you should be able to identify the confounders (and have data on them!) that are biasing the effect. We focus on Propensity Score Matching specifically and provide a code example in R. 
+Now we will continue with approximate matching, where pairs are made on *similar but not identical* characteristics. It is again a way to adjust for differences when treatment is non-random. Important to mention is that this method is only relevant for selection on observables, which means you should be able to identify the confounders (and have data on them!) that are biasing the effect. We focus on Propensity Score Matching specifically and provide a code example in R. 
 
 ## Curse of dimensionality
 
-[Exact matching](/matching) requires an untreated unit with the precise similar value on each the observed characteristics to be a good counterfactual for the treated units. The curse of dimensionality means that, when there is a large number of variables you are matching treated and untreated units, or when some variables are continuous, there might be no appropriate counterfactual left (that has all the same values on all these covariates). This can be an issue in finite samples, where you have too many covariates to match on and not enough data.
+[Exact matching](/matching) requires an untreated unit with the precise similar value on each of the observed characteristics to be a good counterfactual for the treated units. The curse of dimensionality means that when there is a large number of variables you are matching treated and untreated units, or when some variables are continuous, there might be no appropriate counterfactual left (that has all the same values on all these covariates). This can be an issue in finite samples, where you have too many covariates to match and not enough data.
 
-Approximate matching offers a solution; it reduces the dimensionality by defining a distance metric on characteristic X and pair units based on this distance rather than the value of X. As the sample get larger, approximate matching method results will all tend towards exact matching. 
+Approximate matching offers a solution; it reduces the dimensionality by defining a distance metric on characteristic X and pair units based on this distance rather than the value of X. As the sample gets larger, approximate matching method results will all tend towards exact matching. 
 
 
-## Methods
+## Approximate matching methods
 
 {{% summary %}}
 
-Common methods of inapproximate matching include: 
+Common methods of approximate matching include: 
 
 - *Nearest-neighbour matching*: Pairs each treated unit with the "nearest" untreated unit based on defined characteristics. 
 
 - *Kernel matching*: Estimates the counterfactual outcome of the treated unit by averaging outcomes of nearby control units. 
 
 - *Propensity score matching*: Uses the propensity score, representing the probability of treatment assignment given observed covariates.
+
+The guide of [Glen Waddel](https://pages.uoregon.edu/waddell/metrics/matching.html) is a good resource that discusses these types in more detail.
+
 {{% /summary %}}
 
-
-As the sample size increases, different matching estimators will yield similar results. However, their performance varies in finite samples. The choice depends on your data. [Glen Waddel](https://pages.uoregon.edu/waddell/metrics/matching.html) gives a broader discussion on this and some points to consider when choosing the method. 
+As the sample size increases, different matching estimators will yield similar results. However, their performance varies in finite samples. The choice depends on your data. [Glen Waddel](https://pages.uoregon.edu/waddell/metrics/matching.html) also gives a broader discussion on this and some points to consider when choosing the method. 
 
 
 ## Propensity score matching
 
 Propensity score matching addresses the curse of dimensionality by matching on the "propensity score", representing the probability of being assigned to the treatment group, conditional on the particular covariates $X$:
-
+<br>
+<br>
 {{<katex>}}
 P(X_{i}) ≡ Pr(D_i = 1 | X_i)
 {{</katex>}}
 
-By controlling for these propensity scores, you compare units who, based solely on their observable characteristics, had similar probabilities of getting the treatment. This mitigates the selection bias; the remaining variation in the outcome variable can then be assigned as being due to the treatment only.
+<br>
+
+By controlling for these propensity scores, you compare units that, based solely on their observable characteristics, had similar probabilities of getting the treatment. This mitigates the selection bias; the remaining variation in the outcome variable can then be assigned as being due to the treatment only.
 
 
-## Practical example
+## Practical example of PSM
 
 ### Setting
-We will use the second example of [Imbens (2015)](https://jhr.uwpress.org/content/50/2/373.short) to show matching in practice. Find context on the example in part B section 6.2. The authors examine the effect of participation in a job training program on earnings. specifically, it is the Nsw program, which is in place to help disadvantaged workers.
+We will use the second example of [Imbens (2015)](https://jhr.uwpress.org/content/50/2/373.short) to show matching in practice. Find context on the example in part B section 6.2. The authors examine the effect of participation in a job training program on earnings. Specifically, it is the NSW program that has the goal to help disadvantaged workers.
 
 Studying this question isn't straightforward, because individuals who enroll in the training program can differ from those who don't. To tackle this challenge, they conduct a field experiment where qualified participants are randomly assigned to training positions. The Lalonde dataset is collected from this field experiment.
 
@@ -73,7 +78,7 @@ load(url(data_url)) # is the cleaned data set
 ```
 {{% /codeblock %}}
 
-Load the following packages, and install them first using `install.packages()` if you don't have them yet:
+Load the following packages:
 
 {{% codeblock %}}
 ```R
@@ -90,7 +95,7 @@ The outcome variable is the income of participant $i$ in 1978 (`re78`). The trea
 
 First, we calculate the ATT by using the difference-in-means estimate, without solving the potential bias coming from selective attrition. 
 
-The following R code calculates the mean of `re78` for each treatment group, storing it in a new data frame called `meanre78`. Then, the difference-in-means estimate is calculated by subtracting the mean of the control group of the mean of the treatment group.
+The following R code calculates the mean of `re78` for each treatment group, storing it in a new data frame called `meanre78`. Then, the difference-in-means estimate is calculated by subtracting the mean of the control group from the mean of the treatment group.
 
 {{% codeblock %}}
 ```R
@@ -98,26 +103,25 @@ meanre78 <- aggregate(re78~treat, data=data, FUN=mean)
 estimate_diffmean <- meanre78[2,2] - meanre78[1,2]
 estimate_diffmean 
 
-```
-{{% /codeblock %}}
-
-`1794.342` is returned. Additionally, a two sample t-test compares the `re78` values between the treatment and control group and tests the null hypothesis that the means of the two groups are equal.
-
-{{% codeblock %}}
-```R
 t.test(data$re78[data$treat==1],
        data$re78[data$treat==0]
        )
+
 ```
 {{% /codeblock %}}
 
-- screenshot
 
-A p-value lower than 0.05 indicates the means are statistically signicant different from eachother. Thus, interpreting the p-value of `0.007`, individuals who received the treatment have higher average earnings than individuals who did not. The difference-in-means suggest an ATT (*Average Treatment Effect on the Treated)* of approximately `1800`. 
+<p align = "center">
+<img src = "../images/psm_ttest.png" width="400">
+</p>
+
+
+The difference-in-means estimate `1794.342` is returned. Additionally, a two-sample t-test compares the `re78` values between the treatment and control group and tests the null hypothesis that the means of the two groups are equal. The p-value lower than 0.05 (here, `0.007`) indicates the means are statistically significant different from each other. 
+
 
 ### Balance test
 
-To check whether randomization went right and the treatment and control group are balanced, we compare the observed covariates with a summary statistics table. The covariates of interest which are defined by the `columns_of_interest` list. Then, the mean and standard deviation of each variable are calculated for both treatment and control group, and t-test are conducted to compare these means. The results are extracted and stored in vectors. 
+To check whether randomization went right and whether the treatment and control groups are balanced, we compare the observed covariates with a summary statistics table. The covariates of interest are defined by the `columns_of_interest` list. Then, the mean and standard deviation of each variable is calculated for both the treatment and control group, and t-tests are conducted to compare these means. The results are extracted and stored in vectors. 
 
 {{% codeblock %}}
 ```R
@@ -159,15 +163,12 @@ kable(df)
 ```
 {{% /codeblock %}}
 
+<p align = "center">
+<img src = "../images/psm_balancetest.png" width="500">
+</p>
 
-- screenshot
-
-The summary table above compares the observed characteristics between the treatment and control group. 
-The first two columns present results of the control group, the third and fourth the results of the treatment group. 
-
-Significant differences in some characteristics (p-values lower than 0.05) suggest imbalance between the two groups. For example, since people with no degree are more likely to drop out of the treatment group, the amount of people with nodegree differs between treatment and control group. If people with no degree have lower earnings independent of whether they received a program, the treatment effect is likely to be overestimated. 
-
-Matching comes into play now, where we can control for covariates like `nodegree`.
+The first two columns present the results of the control group, and the third and fourth are the results of the treatment group. 
+Significant differences in some characteristics (p-value < `0.05`) suggest an imbalance between the two groups. For example, since people with no degree are more likely to drop out of the treatment group, the amount of people with `nodegree` is significantly higher in the control group. If people with `nodegree` have lower earnings independent of whether they received a program, the treatment effect is likely to be overestimated. Matching offers a solution, where we can control for this kind of covariates.
 
 ### Propensity score matching
 
@@ -191,9 +192,12 @@ summary(propreg)
 ```
 {{% /codeblock %}}
 
-- screenshot
+<p align = "center">
+<img src = "../images/summary_propreg.png" width="500">
+</p>
 
-This logistic regression model estimates the propensity score, the probability of receiving the treatment given on the observed covariates ($\hat{P}_{\text{X_i}}$).
+This logistic regression model estimates the propensity score, which is the probability of receiving the treatment given the observed covariates $\hat{P}(X_i)$.
+
 
 ### Nearest neighbor propensity score matching
 
@@ -209,24 +213,34 @@ data_match_prop <- match.data(match_prop)
 ```
 {{% /codeblock %}}
 
-Estimate the ATT by comparing the means of the outcome variable (re78) between the treated and control groups in the matched data. 
+Estimate the ATT by comparing the means of the outcome variable (`re78`) between the treated and control groups in the matched data. 
 
 {{% codeblock %}}
 ```R
 # Estimate the ATT
-mean_re78_match_prop <- aggregate(re78~treat,   data=data_match_prop,    FUN=mean)
+mean_re78_match_prop <- aggregate(re78~treat,   data=data_match_prop, FUN=mean)
 
 estimate_matching <- mean_re78_match_prop$re78[2]    -  mean_re78_match_prop$re78[1]
 
 estimate_matching
 
+# Another t-test to check if means are statistically different
+t.test(data_match_prop$re78[data_match_prop$treat==1],data_match_prop$re78[data_match_prop$treat==0])
+
 ```
 {{% /codeblock %}}
 
-- screenshot 
+<p align = "center">
+<img src = "../images/psm_ttest2.png" width="500">
+</p>
 
-The difference between income is 1500, which is lower than the estimated ATT before matching. This is in line with our reasoning of underestimating the treatment effect if the treatment group is on average higher educated due to selective attrition. 
+The difference between income is `1504`, which is lower than the estimated ATT before matching. The p-value of `0.03` confirms the means are statistically different from each other.
+This is in line with our reasoning: the treatment effect was underestimated when ignoring that on average the control group contained more people with `nodegree`, as a consequence of selective attrition. 
 
 {{% summary %}}
+
+Approximate matching, specifically Propensity Score Matching (PSM), addresses selection bias by matching individuals based on their propensity scores, representing the probability of receiving the treatment given observed covariates. This method helps mitigate the curse of dimensionality, where exact matching becomes impractical due to a large number of variables or continuous covariates.
+
+Using a practical example from Imbens (2015) on the effect of job training programs on earnings, we demonstrated the application of PSM in R. By estimating propensity scores and conducting nearest-neighbor matching, we were able to assess the Average Treatment Effect on the Treated (ATT) and address potential bias from selective attrition, where people with no degree where more likely to drop out of the treatment group. 
 
 {{% /summary %}}
