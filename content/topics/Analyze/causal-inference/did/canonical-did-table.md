@@ -9,46 +9,22 @@ authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:
   - /canonical-DiD
 ---
-# Overview
-Having the ability to establish causality provides a strong foundation for using the term "because" when making claims about the relationship between certain variables. We are then able to say for instance, that the popularity of a song increased *because* it was featured in a movie or that the customer bought a given product *because* they saw an ad and so on. These relationships are not inherently causal, as the direction of cause and effect may be ambiguous, other variables can influence the relationship, or the observed outcome may be due to chance. While regression analysis provides some insight into the significance of associations, interpreting the results as causal relationships requires additional assumptions and thoughtful study designs.
 
-<p align = "center">
-<img src = "../images/corr_cause.png" width="700">
-<figcaption> Source: xkcd (https://xkcd.com/552/) </figcaption>
-</p>
+## Overview
 
-While randomized controlled experiments are widely regarded as the gold standard for establishing causality, they may not always be practical, feasible, or ethically permissible. In such circumstances, quasi-experimental methods offer a valuable alternative by leveraging naturally occurring variations in treatment or exposure to approximate controlled experimental conditions. One such prominent quasi-experimental method is known as **Difference-in-Differences** (DiD). This robust statistical approach is extensively used to evaluate the causal impact of a treatment or intervention. It allows estimation of the treatment effect by comparing changes in outcomes between a treatment group and a control group before and after the implementation of the treatment.
+While randomized controlled experiments are widely regarded as the gold standard for establishing causality, they may not always be practical, feasible, or ethically permissible. In such circumstances, quasi-experimental methods offer a valuable alternative by leveraging naturally occurring variations in treatment or exposure to approximate controlled experimental conditions. 
 
-## DiD: Theoretical Background
+One such quasi-experimental method is known as **Difference-in-Differences** (DiD). This robust statistical approach is extensively used to evaluate the causal impact of a treatment or intervention. It allows estimation of the treatment effect by comparing changes in outcomes between a treatment group and a control group before and after the implementation of the treatment, in other words studying the *difference in the difference*.
 
-### Potential Outcomes Framework
+For a theoretical background, refer to the [Introduction to causal inference topic](/causal-inference-intro). 
 
-{{<katex>}}
-{{</katex>}}
 
-Before delving into the Difference-in-Differences design, it is essential to grasp the significance of the **potential outcomes** framework, which serves as the lingua franca of causal inference. In this framework, each unit has two potential outcomes: $Y_i^1$ if the unit receives treatment and $Y_i^0$ if not. However, we can only observe one of these potential outcomes. The observable outcome, denoted by $Y_i$ is determined by a *switching equation*:
 
-$$
-Y_i = D_iY_i^1+(1-D_i)Y_i^0
-$$
+##  
 
-where $D_i = 1$ if the unit is treated and $0$ if not. When $D_i = 1$, $Y_i = Y_i^1$, likewise when $D_i = 0$, $Y_i = Y_i^0$.
+## ATT
 
-### Average Treatment Effect
-
-While we have previously defined *individual* treatment effect, researchers are often interested in the *average treatment effect:*
-
-<div style="text-align: center;">
-{{<katex>}}
-ATE = E[\delta_i] \\
-= E[Y_i^1- Y_i^0]\\
-= E[Y_i^1]-E[Y_i^0]\\
-{{</katex>}}
-</div>
-
-Here, we compare potential outcomes when *all* units receive treatment with the potential outcomes when no units receive treatment.
-
-Again, since ATE requires one to know BOTH potential outcomes but we observe only one it is unobserved but can be *estimated*. Now, let’s consider the event that individuals might self-select into the treatment which allows us to estimate the *Average Treatment effect on the Treated* units (ATT):
+Now, let's consider the event that individuals might self-select into the treatment which allows us to estimate the *Average Treatment effect on the Treated* units (ATT):
 
 <div style="text-align: center;">
 {{<katex>}}
@@ -59,10 +35,11 @@ ATT = E[\delta_i|D_i=1] \\
 
 Similarly, the average treatment effect for the untreated/control group is called *Average Treatment for the Untreated* (ATU):
 
-
 $$
 ATU = E[\delta_i|D_i=0]
 $$
+
+
 In the DiD setup, we are mainly interested in comparing the outcomes before and after the treatment for the treated and control groups:
 
 
@@ -71,14 +48,19 @@ In the DiD setup, we are mainly interested in comparing the outcomes before and 
 | Control (\$D_i = 0\$)    | \$E(Y_i^0\|D_i = 0)\$   | \$E(Y_i^1\|D_i = 0)\$   |
 | Treatment (\$D_i=1\$)    | \$E(Y_i^0\|D_i = 1)\$   | \$E(Y_i^1\|D_i = 1)\$   |
 
-Part of the outcomes presented above are *counterfactual*. These outcomes represent what would have happened to the treated and control groups if their treatment statuses were reversed. Naturally, a single person cannot be both treated and not treated, that’s why we only observe one of the two values.
+Part of the outcomes presented above are *counterfactual*. These outcomes represent what would have happened to the treated and control groups if their treatment statuses were reversed. Naturally, a single person cannot be both treated and not treated, that's why we only observe one of the two values.
 
-For more intuition, suppose we are studying the effectiveness of a new educational program (treatment) on students’ test scores. We have a control group of students who did not receive the program (when $D_i = 0$) and a treatment group of students who did receive the program (when $D_i = 1$).
+For more intuition, suppose we are studying the effectiveness of a new educational program (treatment) on students'' test scores. We have a control group of students who did not receive the program (when $D_i = 0$) and a treatment group of students who did receive the program (when $D_i = 1$).
 
 The counterfactual outcomes help us understand what would have happened if the treatment status were reversed for each group:
 
 - For the *control* group (when $D_i = 0$): The counterfactual outcome represents the expected test scores for the control group if they had received the treatment. This is denoted as $E(Y_i^1|D_i = 0)$. It provides an estimate of what their test scores would have been if they had been part of the treatment group.
 - For the *treatment* group (when $D_i = 1$): The counterfactual outcome represents the expected test scores for the treatment group if they had not received the treatment. This is denoted as $E(Y_i^0|D_i = 1)$. It gives us an estimate of what their test scores would have been if they had been part of the control group instead.
+
+
+
+
+
 
 Now imagine for a while we can move between alternative realities and can observe the same person’s outcome in both scenarios: when they are treated and when they are not.
 
@@ -95,6 +77,8 @@ To address these issues, we combine both ideas and perform **double differencing
 | **Treatment** - **Control**  | $\gamma$ | $\gamma+\delta$ | $\delta$ |
 
 By taking the difference between the treatment and control groups’ outcomes before treatment ($\gamma$) and the difference between their outcomes after treatment ($\gamma + \delta$), we can obtain the final treatment effect ($\delta$).
+
+
 ## Assumptions for Causality
 
 To establish causality using the DiD design, two key assumptions are necessary:
