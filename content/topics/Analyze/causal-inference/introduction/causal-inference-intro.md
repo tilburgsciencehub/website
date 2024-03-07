@@ -4,7 +4,7 @@ description: "This building block motivates causal inference and provides theore
 keywords: "causal, inference, econometrics, regression, model, potential, outcomes, framework, treatment, effect, control, ATE, ATT"
 draft: false
 weight: 1
-author: "Roshini Sudhaharan, Valerie Vossen"
+author: "Valerie Vossen"
 aliases:
   - /causal-inference
   - /causal-inference-introduction
@@ -13,13 +13,9 @@ aliases:
 
 ## Overview
 
+Causal inference is an important topic in quantitative social sciences, e.g. economics and data science, and refers to the practice of a causal question. Establishing causality, which refers to a cause-and-effect relationship between variables, where changes in one variable cause changes in another variable, requires more than just observing a correlation between two variables. 
 
 
-
-## Correlation ≠ causality
-Correlation refers to a relationship between two variables where changes in one variable are associated with changes in another variable. It does not necessarily imply causation. 
-
-Establishing causality, which refers to a cause-and-effect relationship between variables, where changes in one variable cause changes in another variable, requires more than just observing a correlation between two variables. Having the ability to establish causality provides a strong foundation for using the term "because" when making claims about the relationship between certain variables. We are then able to say for instance, that the popularity of a song increased *because* it was featured in a movie or that the customer bought a given product *because* they saw an ad and so on. 
 
 However, these relationships are not inherently causal, as the direction of cause and effect may be ambiguous, other variables can influence the relationship, or the observed outcome may be due to chance. While regression analysis provides some insight into the significance of associations, interpreting the results as causal relationships requires additional assumptions and thoughtful study designs.
 
