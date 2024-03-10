@@ -28,6 +28,13 @@ link-citations: yes
 lof: false
 ---
 
+\begin{equation} 
+\operatorname{Sepal.Length} = \alpha + \beta_{1}(\operatorname{Species}_{\operatorname{versicolor}}) + \beta_{2}(\operatorname{Species}_{\operatorname{virginica}}) + \epsilon
+  (\#eq:regression-1)
+\end{equation} 
+
+
+
 # Overview {-} 
 <!-- The {.unnumbered} option here means that the overview will be 
 "Chapter 0." You can also use {-} for no numbers on chapters.
@@ -68,7 +75,7 @@ equatiomatic::extract_eq(fit, use_coefs = TRUE)
 
 The `equatiomatic` package supports the automatic conversion of categorical variables to `LaTeX` formatted equations. When using categorical variables, it will recognize and automatically include the levels of these variables as subscripted variables in the equation.
 
-```{r}
+```{r, echo=FALSE}
 fit_cat <- lm(Sepal.Length ~ Species, iris)
 equatiomatic::extract_eq(fit_cat)
 ```
