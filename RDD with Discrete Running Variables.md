@@ -127,3 +127,8 @@ The tools used to estimate treatment effects in RDDs with discrete running varia
 | Conventional continuity  | Many and close | Narrow | At cutoff |
 | Continuity with honest confidence intervals | Many and sparse | Wide | At cutoff |
 
+## See Also
+
+[Inference in Regression Discontinuity Designs with a Discrete Running Variable - Kolesár and Rothe (2018)](https://pubs.aeaweb.org/doi/pdfplus/10.1257/aer.20160945)
+
+[A Practical Introduction to Regression Discontinuity Designs: Extensions - Cattaneo, Idrobo, and Titiunik (2023)](https://mdcattaneo.github.io/books/Cattaneo-Idrobo-Titiunik_2023_CUP.pdf)
