@@ -17,21 +17,18 @@ aliases:
 
 ## Overview
 
-[SVC](https://scikit-learn.org/stable/modules/svm.html#svc)
-
-https://www.youtube.com/watch?v=XU5pw3QRYjQ&t=5095s
-
+The objective of this article is to provide a practical guide to [Support Vector Machines](https://scikit-learn.org/stable/modules/svm.html#svm) (SVM) in Python. SVMs are supervised machine learning models that can handle both linear and non-linear class boundaries by selecting the best line (or plane, if not two-diensional) that divides the prediction space to maximize the margin between the classes we are trying to classify.
 
 
 ## Python Application
 
+### Loading Dataset
 
-
-
-### Importing Packages
+In this application, we will be using the sklearn Iris dataset. The dataset contains three different target variables corresponding to three different species of iris: *setosa* (0), *versicolor* (1), and *virginica* (2). The goal is to use the sepal length and width of each iris to predict its species.
 
 {{% codeblock %}} 
 ```python
+# Importing libraries
 import numpy as np
 import pandas as pd 
 import matplotlib.pyplot as plt
@@ -40,11 +37,14 @@ from sklearn import datasets
 {{% /codeblock %}}
 
 
-### Loading Dataset
 {{% codeblock %}} 
 ```python
 iris = datasets.load_iris()
+
+# Transforming 'iris' from an array to a dataframe
 iris_df = pd.DataFrame(iris.data, columns = iris.feature_names)
+
+# Adding a target variable (dependent variable of our model) to the dataframe
 iris_df['target'] = iris.target
 ```
 {{% /codeblock %}}
@@ -52,26 +52,30 @@ iris_df['target'] = iris.target
 
 {{% codeblock %}} 
 ```python
+# Creation of dataset with only sepal features as dependent variables
 iris_df = iris_df.drop(['petal length (cm)', 'petal width (cm)'], axis=1)
 iris_df.sample(10)
 ```
 {{% /codeblock %}}
 
+Creation of a scatter plot to compare the sepal length and width of different species.
 
 {{% codeblock %}} 
 ```python
-# Scatter plot for each class
+# Creation of dataframes by species
 setosa = iris_df[iris_df['target'] == 0]
 versicolor = iris_df[iris_df['target'] == 1]
 virginica = iris_df[iris_df['target'] == 2]
 
+# Setting figure size
 plt.rcParams['figure.figsize'] = (6, 4)
 
+# Plotting each dataframe
 plt.scatter(setosa['sepal length (cm)'], setosa['sepal width (cm)'], color='#003f5c', label='Setosa')
 plt.scatter(versicolor['sepal length (cm)'], versicolor['sepal width (cm)'], color='#ffa600', label='Versicolor')
 plt.scatter(virginica['sepal length (cm)'], virginica['sepal width (cm)'], color='green', label='Virginica')
 
-# Add labels, title, and legend
+# Scatter plot settings
 plt.xlabel('Sepal Length (cm)')
 plt.ylabel('Sepal Width (cm)')
 plt.title('Sepal Length vs Sepal Width (by species)')
@@ -80,11 +84,12 @@ plt.legend()
 ```
 {{% /codeblock %}}
 
-**ADD GRAPH HERE!!!!!!**
-
 <p align = "center">
-<img src = "../images/....png" width="500">
+<img src = "../images/scatter_iris.png" width="500">
 </p>
+
+
+From the graph above, it's evident that iris setosa can be easily distinguished based on its sepal length and width. However, for the other two species, the division boundary appears to be far from linear, indicating the need for further analysis.
 
 
 ### Training and Test Data
@@ -258,7 +263,57 @@ print(f'Test Accuracy: {round(test_accuracy, 3)}')
 {{% /codeblock %}}
 
 
+{{% codeblock %}} 
+```python
 
+from matplotlib.colors import ListedColormap
+
+# Settings
+x_min, x_max = X.iloc[:, 0].min() - 1, X.iloc[:, 0].max() + 1
+y_min, y_max = X.iloc[:, 1].min() - 1, X.iloc[:, 1].max() + 1
+
+xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.02),
+                     np.arange(y_min, y_max, 0.02))
+Z = optimal_svm_model.predict(np.c_[xx.ravel(), yy.ravel()])
+Z = Z.reshape(xx.shape)
+
+plt.figure(figsize=(6, 4))
+
+# Define colours for each class
+setosa_color = '#003f5c'  # Light blue for Setosa
+versicolor_color = '#ffa600'  # Light yellow for Versicolor
+virginica_color = 'green'  # Light green for Virginica
+
+colors = [setosa_color, versicolor_color, virginica_color]
+cmap = ListedColormap(colors)
+
+# Plot decision boundary and color zones using custom colormap
+plt.contourf(xx, yy, Z, alpha=0.2, cmap=cmap)
+
+# Scatter plot for each class
+setosa = iris_df[iris_df['target'] == 0]
+versicolor = iris_df[iris_df['target'] == 1]
+virginica = iris_df[iris_df['target'] == 2]
+
+plt.scatter(setosa['sepal length (cm)'], setosa['sepal width (cm)'], color='#003f5c', label='Setosa')
+plt.scatter(versicolor['sepal length (cm)'], versicolor['sepal width (cm)'], color='#ffa600', label='Versicolor')
+plt.scatter(virginica['sepal length (cm)'], virginica['sepal width (cm)'], color='green', label='Virginica')
+
+# Plot decision boundary lines
+plt.contour(xx, yy, Z, colors='k', linewidths=1, alpha=0.5)
+
+# Add labels, title, and legend
+plt.xlabel('Sepal Length (cm)')
+plt.ylabel('Sepal Width (cm)')
+plt.suptitle('Decision boundary of poly kernel')
+plt.title('degree = 2, C = 0.03', fontsize=8)
+plt.legend()
+
+# Show the plot
+plt.show()
+
+```
+{{% /codeblock %}}
 
 
 
