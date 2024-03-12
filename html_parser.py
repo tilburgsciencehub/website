@@ -30,7 +30,7 @@ def convert_code_blocks_to_html(md_content):
             is_first_codeblock = idx == 0
             
             active_class = ' active' if is_first_codeblock else ''
-            highlight_class = 'highlight hightlight-active' if is_first_codeblock else 'highlight highlight-inactive'
+            highlight_class = 'highlight highlight-active' if is_first_codeblock else 'highlight highlight-inactive'
             
             code_blocks.append(f'<div class="{highlight_class}" data-language="{language}">\n'
                             f'<pre><code class="language-{language}">\n{code}\n</code></pre>\n'
