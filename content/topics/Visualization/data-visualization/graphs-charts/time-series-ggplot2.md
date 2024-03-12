@@ -3,7 +3,7 @@ title: "Visualizing Time Series Data with ggplot2"
 description: "Explore the use of ggplot2 in visualizing time series data, from basic plotting techniques to advanced customization, using the tidyquant package for financial data analysis."
 keywords: "ggplot2, time series visualization, R, tidyquant, data visualization, scale formatting, grouping, faceting"
 date: 2024-02-14
-weight: 
+weight: 6 
 author: "Matthijs ten Tije"
 authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
