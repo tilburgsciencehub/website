@@ -258,37 +258,13 @@ In this code:
 
 Remember, the positions and labels are adjustable based on your specific data and results. Experiment with the x and y values in the annotate function to achieve the best placement in your bar chart. This approach provides a clear, customized way to denote significant findings in your visualization.
 
-## Saving Your Plots
-`ggsave()` is an essential function in R, primarily used in conjunction with the ggplot2 package. The key role of ggsave() is to facilitate the saving of these ggplot2-generated plots into various file formats such as JPEG, PNG, PDF, and SVG, making it a versatile tool in data visualization.
+{{% tip %}}
 
-The main purpose of ggsave is to provide a straightforward method for saving ggplot2-generated plots.
+_Saving Your Plots_
 
-The function follows the following syntax:
+Transferring plots via copy-paste can degrade their quality, but our article on about saving plots in R provides a solution. It discusses how to use use `ggsave()` from the `ggplot2` package to save your visuals in high-quality formats. [Discover](/ggplot2/ggsave) how to maintain clarity in presentations and publications by customizing plot dimensions and resolutions.
 
-{{% codeblock %}}
-```R
-ggsave(filename, plot = last_plot(), device = NULL, path = NULL, scale = 1, width = NA, height = NA, dpi = 300, limitsize = TRUE, ...).
-```
-{{% /codeblock %}}
-
-**Key Parameters:**
-- filename: Specifies the desired name for the saved file.
-- plot: Indicates the ggplot object to be saved. If omitted, the function saves the last displayed plot.
-- device: Determines the output file format (e.g., PNG, PDF).
-- width, height, dpi: These parameters control the dimensions and resolution of the saved plot, allowing for customization of the output size and quality.
-
-### Practical example
-
-{{% codeblock %}}
-```R
-plotExample <- ggplot(mpg, aes(displ, hwy)) + geom_point()
-plotExample # This command displays the plot.
-Using ggsave to Save the Plot:
-ggsave("my_plot.png", plotExample, width = 10, height = 8, dpi = 300)
-```
-{{% /codeblock %}}
-
-This command saves the plotExample as a PNG file named "my_plot.png", with specified dimensions of 10 inches in width and 8 inches in height, and a resolution of 300 dpi.
+{{% /tip %}}
 
 ## Advanced Techniques for Multi-Group Bar Charts in `ggplot2`
 
@@ -367,8 +343,8 @@ This article uses `ggplot2` for effective bar chart styling, crucial in academic
 - Bar charts in `ggplot2` are ideal for categorical data, showcasing groups and their quantitative measures.
 - Key functions covered include `ggplot()` for initial plot creation and `geom_col()` for constructing bar charts.
 - Advanced customization is achieved using `geom_errorbar() `for error bars and `scale_fill_manual()` for color themes.
-- Showcases how to add p-values inside your ggplot.
-- Uses `ggsave()`, demonstrating how to save the final plots in publication-ready formats like PNG or PDF.
+- Showcases how to add p-values inside your `ggplot`.
+
 
 Interested in the source code used in this analysis? Download it [here](source-code-barchart-visualization.R).
 

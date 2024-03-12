@@ -12,10 +12,10 @@ aliases:
 ---
 
 ## Overview
-When using RStudio for data analysis, you often need to save your visualizations for further use, sharing, or assignments. Although copying figures to the clipboard offers a quick solution, for more durable and shareable options, saving figures in formats like PNG, JPG, or PDF is preferable.  
+Saving your visualizations is essential for further analysis, sharing, or completing assignments. While copying figures to the clipboard offers a quick solution, saving figures in formats like PNG, JPG, or PDF is a preferable strategy. Transitioning from temporary to permanent storage methods ensures your work remains accessible and intact over time.
 
-This article focuses on techniques for saving R plots. Especially zooming in on the `ggsave()` function from the `ggplot2` package, the best practice tool for saving your figures.   
-`ggsave()` simplifies the process by allowing direct specification of file names, dimensions, and resolution. Beyond the basic syntax for general use, we'll delve into figure file management through automatic naming and organized file management strategies.
+This article focusses on how to efficiently save visualizations in R using just one function. We'll explore the `ggsave()` function from the `ggplot2` package, which is the best practice tool for saving your figures. The `ggsave()` function introduces easy-to-use and customizable saving capabilities by allowing users to directly specify file names, dimensions, and resolution. Beyond the basic syntax for general use, we will delve into figure file management, including automatic naming and organized file management strategies within the function.
+
 
 ## Saving Plots with Base R
 Base `R` provides a simple, device-based approach for saving plots. This method involves three main steps: 
@@ -50,7 +50,7 @@ plot(x = mtcars$mpg, y = mtcars$wt, main = "Miles Per Gallon vs. Weight")
 {{% /codeblock %}}
 
 ### Step 3: Close the Graphics Device
-Finalize your file by closing the graphics device. This stepsaves and closes the file, ensuring your plot is stored as intended:
+Finalize your file by closing the graphics device. This step saves and closes the file, ensuring your plot is stored as intended:
 
 {{% codeblock %}}
 ```R
@@ -101,12 +101,14 @@ dev.off()
 _Quick Tip: Why Save Plots as PDFs?_
 
 - **Scalability**: PDFs are vector-based, meaning that you can resize plots without losing clarity.
-- **Quality Preservation**: PDFs maintain sharpness, avoiding the pixelation common in raster formats like PNG or JPG, ideal for presentations and detailed analysis.
+- **Quality Preservation**: PDFs maintain sharpness, avoiding the pixelation common in raster formats like PNG or JPG, making the the preffered option for presentations and detailed analysis.
 
 {{% /tip %}}
 
 ## Saving Plots with ggsave()
-The `ggsave()` function from the `ggplot2` package is the best practice for saving your R plots. For small projects or instances where only a single or a few visualizations is needed, the basic syntax provided by `ggsave()` is sufficient. This simplicity allows for the quick saving of plots without the need for extensive customization, making it an ideal choice for straightforward tasks.
+While base `R` allows you to save your plots in 3 steps. The `ggsave()` function from the `ggplot2` package is the best practice for saving your R plots. `ggsave()` allows you to save your plots with just one function. 
+
+For small projects or instances where only a single or a few visualizations is needed, the basic syntax provided by `ggsave()` is sufficient. This simplicity allows for the quick saving of plots without the need for extensive customization, making it an ideal choice for straightforward tasks.
 
 ### Syntax and Argument Overview
 `ggsave()` automatically picks the file format from the extension of the provided filename. It defaults to saving the last displayed plot, but you have the flexibility to specify which plot to save:
@@ -125,8 +127,9 @@ ggsave(filename, # use .extension such as .png, .pdf, .jpeg
 ```
 {{% /codeblock %}}
 
-Important arguments are: 
+Important arguments within the function are: 
 - _filename_: Name and extension of the output file, dictating the format.
+  - examples: .png, .pdf, etc. 
 - _plot_: The ggplot or base R object to save, defaulting to the last plot shown.
 - _path_: The directory for saving the file, using the current directory if not specified.
 - _width, height_: Dimensions of the output file, with an option to specify units.
@@ -137,14 +140,14 @@ Important arguments are:
 
 ```R
 # Generate a ggplot
-plot <- ggplot(mtcars, 
+mtcars_scatterplot <- ggplot(mtcars, 
                aes(x = wt, y = mpg)) + 
                geom_point() + 
                ggtitle("Fuel Efficiency of Cars")
 
 # Save the plot as a PNG with custom dimensions, resolution, and background color
-ggsave("fuel_efficiency.png", 
-       plot = plot, 
+ggsave("mtcars_fuel_efficiency.png", 
+       plot = mtcars_scatterplot, 
        width = 10, 
        height = 6, 
        dpi = 300, 
@@ -167,13 +170,17 @@ Using a structured naming convention as a habit will be helpful in both project 
 In practice, applying these principles in `ggsave()` might look like this:
 {{% codeblock %}}
 ```R
-ggsave("scatterplot_gdp_vs_life_expectancy.pdf", plot = "your_plot_object", width = 8, height = 6)
+ggsave(
+       filename = "scatterplot_gdp_vs_life_expectancy.pdf", 
+       plot = "your_plot_object", 
+       width = 8, 
+       height = 6)
 ```
 {{% /codeblock %}}
 
 
 {{% tip %}}
-Adopting `snake_case` for Naming
+Adopting `snake_case` for File Naming
 
 For R projects, particularly when working with `SQL` databases or using the `tidyverse` package, it is recommended to adopt `snake_case` for naming variables, functions, and files (e.g., scatterplot_gdp_vs_life_expectancy). This practice not only ensures readability and database compatibility but also aligns with the naming conventions of the `tidyverse` package. More general avoid using dots in names to prevent confusion in non-R environments. 
 
@@ -207,7 +214,7 @@ While the visualizations are now clear, version controlled and therefore unique,
 
 
 #### Path Specification
-Properly structuring your directories to mirror the content or analysis phase improves your workflow. Therefore, it's a good practice to organize your files into direcotires that reflect the content or the stage of yoru analysis. In `ggsave()` you can specify the `path` to the directory where you want your plot saved, categorizing your files:
+Properly structuring your directories to mirror the content or analysis phase improves your workflow. Therefore, it's a good practice to organize your files into directories that reflect the content or the stage of your analysis. In `ggsave()` you can specify the `path` to the directory where you want your plot saved, categorizing your files:
 
 For example: 
 
