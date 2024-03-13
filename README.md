@@ -71,16 +71,16 @@ flask run
 - [x] MetaData -> Fixed for most pages. Topic lists still need to get meta data.
 - [x] Dual Code Blocks -> Added and fixed, removed most js and turned it into the html parser
 - [x] Codeblocks showing languages twice -> fixed by fix above
+- [x] Copy Button in Codeblock
 
 ## Features/Issues to Update/Implement
-- [ ] Copy Button in Codeblock
 - [ ] Implement New Basic Web Analytics Cookies
 - [ ] Fix Cards on Home Page
 - [ ] {{< katex }} does not display correctly (Calculate Sample Sizes for web scrapers)
 - [ ] Presentation slides are not available (Blog - Introducing TSH at the Open to Complexity Symposium)
  
 ## Issues related to content
-- [ ] The way people use katex is inconsistent which gives problems during rendering. Some people forget to add the $ sign in front and at the end of a variable, which was not really an issue for some reason in Hugo, but in Flask this makes applying these Katex Formulas why harder. We should fix the katex boxes in content and make sure it is used correctly in all content.
+- [ ] The way people use katex is inconsistent which gives problems during rendering. Some people forget to add the $ sign in front and at the end of a variable, which was not really an issue for some reason in Hugo, but in Flask this makes applying these Katex Formulas way harder. We should fix the katex boxes in content and make sure it is used correctly applied in all content.
 - [ ] Tables currently to complex to parse to html by hardcoding. The most effective way would be to convert them all to html with ChatGPT (tried it, is very easy and quickly done) and add context to the styleguide on how people can add a html table (very easy and logical). Another option would to self design a new structure for a table. We should discuss this with Hannes.
     - [ ] tables do not display correctly (e.g., Random Effects Model, Configure Python virtual environments)
 - [] Some articles have lists without an enter (break) in front of it. The markdown package then cannot convert them to html lists.

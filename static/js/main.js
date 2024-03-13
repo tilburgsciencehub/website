@@ -66,26 +66,32 @@ $(document).ready(function () {
 
   // codeblocks
   $('.codeblock .nav-link').click(function (e) {
-    e.preventDefault(); // Voorkomt de standaard actie van de link
+    e.preventDefault(); 
 
-    // Verwijder de 'active' class van alle links en zet deze op de geklikte link
     $('.codeblock .nav-link').removeClass('active');
     $(this).addClass('active');
 
-    // Zet alle codeblokken op 'inactive'
     $('.codeblock .highlight').addClass('highlight-inactive').removeClass('highlight-active');
-
-    // Zet het overeenkomstige codeblok op 'active' op basis van de data-language attribuut
-    var language = $(this).data('language'); // Haal de taal van de geklikte link op
+    var language = $(this).data('language'); 
     $('.codeblock .highlight[data-language="' + language + '"]').removeClass('highlight-inactive').addClass('highlight-active');
   });
 
   // make code copy-able
-  $(".copyCodeBtn").on("click", function () {
-
+  document.querySelectorAll('.copyCodeBtn').forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      let codeBlock = this.closest('.codeblock');
+      let codeContainer = codeBlock.querySelector('.highlight:not(.highlight-inactive)');
+      let code = codeContainer ? codeContainer.querySelector('code') : null;
+      if (code) {
+        navigator.clipboard.writeText(code.textContent).then(() => {
+          console.log('Code gekopieerd naar klembord!');
+        }).catch(err => {
+          console.error('Fout bij het kopiëren van de code: ', err);
+        });
+      }
+    });
   });
-
-
 });
 
 $(document).mouseup(function (e) {

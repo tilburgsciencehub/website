@@ -349,9 +349,39 @@ for root, _, files in os.walk(content_directory):
     for filename in files:
         src_filepath = os.path.join(root, filename)
         
-        # Controleer of het bestand een afbeelding is op basis van de extensie
         if is_image(filename):
             dst_filepath = os.path.join(img_directory, filename)
-            
-            # Kopieer het afbeeldingsbestand van de bronmap naar de doelmap en vervang indien nodig
             shutil.copy(src_filepath, dst_filepath)
+
+# Copy other files (non image or .md)
+files_directory = os.path.join(script_directory, "static/files")
+
+if not os.path.exists(files_directory):
+    os.makedirs(files_directory)
+
+unique_extensions = set()
+
+def is_not_image_or_md(filename):
+    _, ext = os.path.splitext(filename)
+    return not (ext.lower() in image_extensions or ext.lower() == '.md')
+
+for root, _, files in os.walk(content_directory):
+    for filename in files:
+        if is_not_image_or_md(filename):
+            src_filepath = os.path.join(root, filename)
+            dst_filepath = os.path.join(files_directory, filename)
+            
+            os.makedirs(os.path.dirname(dst_filepath), exist_ok=True)
+            
+            # Controleer of het doelbestand al bestaat
+            if os.path.exists(dst_filepath):
+                print(f"Bestand bestaat al: {dst_filepath}")
+            else:
+                shutil.copy(src_filepath, dst_filepath)
+                print(f"Bestand gekopieerd: {dst_filepath}")
+                # Voeg de extensie toe aan de set van unieke extensies
+                unique_extensions.add(os.path.splitext(filename)[1].lower())
+
+# Aan het einde, converteer de set naar een lijst voor de output
+unique_extensions_list = list(unique_extensions)
+print(f"Unieke bestandsextensies van gekopieerde bestanden: {unique_extensions_list}")
