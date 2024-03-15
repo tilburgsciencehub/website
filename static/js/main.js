@@ -585,14 +585,7 @@ $(document).ready(function () {
     fetch('static/json/cards.json')
       .then(response => response.json())
       .then(data => {
-        if(data){
-          console.log("Data!!!!", data)
-          console.log("Tutorials ? -> ", data.tutorials)
-        } else {
-          console.log('Data is empty', data)
-        }
-        console.log("Current URL -> ", document.URL)
-        console.log("Yeah I think error is here")
+
         // Building Blocks
         const building_blocks = data.building_blocks || [];
         const ulElementBlock = document.getElementById('most-read-topics-list');
