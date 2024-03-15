@@ -71,10 +71,10 @@ flask run
 - [x] Dual Code Blocks -> Added and fixed, removed most js and turned it into the html parser
 - [x] Codeblocks showing languages twice -> fixed by fix above
 - [x] Copy Button in Codeblock
+- [x] Fix Cards on Home Page
 
 ## Features/Issues to Update/Implement
 - [ ] Implement New Basic Web Analytics Cookies
-- [ ] Fix Cards on Home Page
 - [ ] {{< katex }} does not display correctly (Calculate Sample Sizes for web scrapers)
 - [ ] Presentation slides are not available (Blog - Introducing TSH at the Open to Complexity Symposium)
  
