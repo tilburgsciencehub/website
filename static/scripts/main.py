@@ -276,7 +276,7 @@ def create_popular_cards_json(input_categories):
 
     # Create Dictionary
     data_dict = {
-        "tutorials": tutorials,
+        "topics": tutorials,
         "building_blocks": building_blocks,
         "categories": categories_output
     }

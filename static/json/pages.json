@@ -1,1 +1,12 @@
-[{"path": "/tutorials/more-tutorials/chatgpt-article/chat-gpt-research/", "title": "Use ChatGPT for your research!"}, {"path": "/building-blocks/configure-your-computer/automation-and-workflows/make/", "title": "Set up Make"}, {"path": "/building-blocks/configure-your-computer/statistics-and-computation/git/", "title": "Set up Git and GitHub"}, {"path": "/building-blocks/configure-your-computer/statistics-and-computation/python/", "title": "Set up Python"}, {"path": "/building-blocks/configure-your-computer/statistics-and-computation/r/", "title": "Set up R and RStudio"}, {"path": "/tutorials/reproducible-research-and-automation/principles-of-project-setup-and-workflow-management/project-setup-overview/", "title": "Principles of Project Setup and Workflow Management"}, {"path": "/about/", "title": "About"}, {"path": "/building-blocks/", "title": "Building Blocks"}, {"path": "/building-blocks/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/", "title": "Cheatsheet for LaTeX Math Commands"}, {"path": "/tutorials/", "title": "Tutorials"}]
+[
+    {"path": "/topics/Automation/AI/Gpt-models/chat-gpt-research/", "title": "Use ChatGPT for your research!"},
+    {"path": "/topics/automation/automation-tools/makefiles/make/", "title": "Set up Make"},
+    {"path": "/topics/Automation/version-control/start-git/git/", "title": "Set up Git and GitHub"},
+    {"path": "/topics/Computer-Setup/software-installation/Python/python/", "title": "Set up Python"},
+    {"path": "/topics/Computer-Setup/software-installation/RStudio/r/", "title": "Set up R and RStudio"},
+    {"path": "/topics/Manage-manipulate/Loading/getting-started/data-preparation-workflow-management/", "title": "Data Preparation and Workflow Management"},
+    {"path": "/about/", "title": "About"},
+    {"path": "/building-blocks/", "title": "Building Blocks"},
+    {"path": "/topics/Research-skills/templates-dynamic-content/templates/amsmath-latex-cheatsheet/", "title": "Cheatsheet for LaTeX Math Commands"},
+    {"path": "/topics/", "title": "Topics"}
+]
