@@ -180,21 +180,26 @@ with open("<FILE_NAME.extension>", 'wb') as f:
     f.close()
 ```
 ```R
+# install `googledrive` library if it is not installed already
+install.packages("googledrive")
+
+#load `googledrive` library
 library(googledrive)
-data_id <-"12rVWmiA6r8A1ggyP_T3jM7hONUkXoL3h"
-drive_download(as_id(data_id), path = “out_file.csv”, overwrite = TRUE)
-df <- read.csv(“out_file.csv”)
+
+data_id <-"<data_id>"
+drive_download(as_id(data_id), path = “<FILE_NAME.extension>”, overwrite = TRUE)
+df <- read.extension(“<FILE_NAME.extension>”)
 ```
 {{% /codeblock %}}
 
-* You can find the `<FILE_ID>`/`data_id` by navigating towards the file in your browser and clicking on "share", then "Get link". The URL contains the file ID you need. For example, the file ID of `https://drive.google.com/file/d/XXXXXX/view` is `XXXXXX`.  
+* You can find the `<FILE_ID>`/`<data_id>` by navigating towards the file in your browser and clicking on "share", then "Get link". The URL contains the file ID(data_id) you need. For example, the file ID of `https://drive.google.com/file/d/XXXXXX/view` is `XXXXXX`.  
 ![Share](../images/share_link.png)
 
 * R may ask *"Is it OK to cache OAuth access credentials in the folder `path/gargle/gargle/Cache between R sessions?`"*.
 
-  <img src="../images/R_OAuth_access.PNG" width="600"/>
+  <img src="../images/R_OAuth_access.PNG" width="300"/>
 
-  * Type in 1 in the R console to accept. A new window may pop up that asks you to authenticate yourself with your Google account. Click on “Allow”.
+  * Type in 1 in the R console to accept. A new window will pop up that asks you to authenticate yourself with your Google account. Click on “Allow” and then "continue".
 
   <img src="../images/tidyverseAPI_login.PNG" width="300"/>
 
@@ -236,6 +241,6 @@ service.files().create(
 - **Opening files**: Learn how to access data directly via URL using `R` and `Python`
 - **Downloading and uploading data from google drive**
     - using google drive API to handle downloads and uploads data.
-    - Implementing `Python` and `R` scripts to download data from Google Drive and upload it back to Google Drive on a local machine.
+    - Implementing `Python` and `R` scripts to download data from Google Drive and upload it back to Google Drive from a local machine.
 {{% /summary %}} 
 
