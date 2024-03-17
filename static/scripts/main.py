@@ -76,7 +76,7 @@ def fetch_og_description(page_path):
 
 # Collect Top 5 From BB or Tutorials
 # response: result from get_report()
-# path_prefix: "building_blocks" or "tutorials"
+# path_prefix: "building_blocks" or "topics"
 
 
 def fetch_cards_popular_pages(response, path_prefix):
@@ -271,7 +271,7 @@ def create_popular_cards_json(input_categories):
 
     # Get Analytics, Populate popular tutorials and building blocks
     response = get_report()
-    tutorials = fetch_cards_popular_pages(response, "/tutorials/")
+    tutorials = fetch_cards_popular_pages(response, "/topics/")
     building_blocks = fetch_cards_popular_pages(response, "/building-blocks/")
 
     # Create Dictionary
