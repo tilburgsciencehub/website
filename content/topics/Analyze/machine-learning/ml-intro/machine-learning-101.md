@@ -1,16 +1,13 @@
 ---
 title: "Get Introduced to Machine Learning"
 description: "Are you intrigued by the concept of machine learning but find yourself daunted by complex theories and techniques?  No need to worry - this article has got you covered. It explains the basics of machine learning and guides you in setting up your own machine modeling project."
-keywords: "machine learning, R, Python"
+keywords: "machine learning, Supervised, Unsupervised, Reinforcement"
 date: 26/02/2024
 weight: #1
 author: "Lisa Holling"
 authorlink: "https://tilburgsciencehub.com/contributors/lisaholling/"
 aliases:
-  - /machinelearning
-  - /supervised
-  - /unsupervised
-  - /reinforcement
+  - /introduction
 
 ---
 
@@ -122,7 +119,7 @@ Starting a machine learning project can seem intimidating, but the right approac
   - Use techniques like regularization to prevent overfitting by penalizing complex models. Also implement cross-validation to make sure your model performs well on unseen data and isn't just memorizing the training data.
 
 - Evaluate, iterate and refine 
-  - Depending on your problem, choose appropriate metrics (accuracy, precision, recall, F1-score, RMSE, etc.) to evaluate your model. Model Development is an iterative process. Don't hesitate to refine your models and try different techniques based on performance and insights.
+  - Depending on your problem, choose appropriate metrics (accuracy, precision, recall, F1-score, RMSE, etc.) to evaluate your model. Model development is an iterative process. Don't hesitate to refine your models and try different techniques based on performance and insights.
 
 - Track your process
   - Document everything from your data sources, assumptions, model development steps, to performance metrics.
