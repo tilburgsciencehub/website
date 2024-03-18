@@ -1,6 +1,6 @@
 ---
-title: "Machine Learning 101"
-description: "nog invullen"
+title: "Get Introduced to Machine Learning"
+description: "Are you intrigued by the concept of machine learning but find yourself daunted by complex theories and techniques?  No need to worry - this article has got you covered. It explains the basics of machine learning and guides you in setting up your own machine modeling project."
 keywords: "machine learning, R, Python"
 date: 26/02/2024
 weight: #1
@@ -20,8 +20,8 @@ Are you intrigued by the concept of machine learning but find yourself daunted b
 The article covers several topics:
 1. What is Machine Learning?
 2. Types of Machine Learning
-4. Machine Learning Algorithm examples 
-5. Tips for Setting Up Your Machine Learning Project
+3. Machine Learning Algorithm examples 
+4. Tips for Setting Up Your Machine Learning Project
 
 
 
@@ -42,10 +42,7 @@ Traditional machine learning (including supervised and unsupervised learning) sp
 
 
 
-### 1. **Supervised Learning** 
-<!-- link to supervised ml bb -->
-
-Supervised learning trains an algorithm on a labeled dataset, where both the input data and the desired output are provided. The model learns to map inputs to outputs, ideal for making predictions on unseen data.
+### 1. Supervised Learning 
 
 Supervised learning uses information from a training set to predict a given outcome variable. An algorithm is trained on a labeled dataset, which means that both the input data and the desired output are given. The model learns to map inputs to outputs, ideal for making predictions on unseen data. 
 
@@ -53,10 +50,8 @@ Different approaches are **classification** and **regression**:
 * Classification predicts categorical outcomes, such as labeling students' course feedback as positive or negative. 
 * Regression predicts continuous outcomes, like forecasting sales of a newly launched product.
 
-Popular supervised learning algorithms include linear regression, logistic regression, and decision trees.
+### 2. Unsupervised Learning 
 
-### 2. **Unsupervised Learning** 
-<!-- link to unsupervised ml bb -->
 Unsupervised learning finds patterns in data without predefined labels or outcomes. If you want to identify relationships in your data, without a given outcome variable, this is the right approach since it deals with unlabeled data. It explores the data's inherent structure to identify patterns and relationships without explicit guidance or output. Unsupervised learning is often used to group and cluster different objects based on various attributes, such as segmentating customers based on demographics and purchase history.
 
 Different approaches are clustering, generalization and association: 
@@ -64,18 +59,18 @@ Different approaches are clustering, generalization and association:
 * Generalization is used for finding general patterns, like identifying the typical purchasing behavior of different customer segments.
 * Association finds rules that represent large parts of the data, for example, discovering that customers who buy bread often also buy cheese.
 
-Common unsupervised learning techniques include K-means clustering, Principal Component Analysis (PCA), and the Apriori algorithm.
+{{% tip %}}
+### Labeled vs. unlabeled data in Machine Learning
+Supervised learning makes use of labeled data with predefined tags that direct the model to learn from specified outcomes. Unsupervised learning, on the other hand, uses unlabeled data that does not have these identifiers. Unlabeled data enables the model to find patterns and connections on its own, whereas labeled data simplifies the learning process toward predictable outcomes.
+{{% /tip %}}
 
-### 3. **Reinforcement Learning** 
-<!-- link to reinforcement ml bb -->
+### 3. Reinforcement Learning 
 
 Reinforcement learning teaches a model to make decisions by interacting with its environment. The algorithm receives feedback in the form of rewards or penalties, refining its actions to achieve a specific goal. It is a behavioral modeling technique where the model learns through a trial and error mechanism as it keeps interacting with the environment.
 
 Different approaches are model-based and model-free reinforcement learning:
 * Model-based reinforcement learning predicts the outcomes of actions, such as a navigation system learning the fastest route by simulating different paths based on traffic patterns.
 * Model-free reinforcement learning learns policies directly from experience without prior knowledge of the model of the environment, such as teaching a computer program to play a video game. 
-
-Common reinforcement learning methods are Q-learning and policy gradients.
 
 <!-- If you'd like to learn more about each of these machine learning types, you can check out their corresponding articles, which cover more in-depth theory and examples:
 - Supervised Learning
@@ -132,10 +127,13 @@ Starting a machine learning project can seem intimidating, but the right approac
 - Track your process
   - Document everything from your data sources, assumptions, model development steps, to performance metrics.
 
-After reading this article, you're good to go to start your own first machine learning project. You learned the basics of machine learning, from different concepts to practical implementation and project management. Good luck!
+{{% summary %}}
+After reading this article, you're good to go to start your own first machine learning project.   
+You got familiar with:
+* Some theory behind machine learning
+* The differences between the three types of machine learning
+* Some of the most used algorithms and their implementation 
+* Project management for your own machine learning project
 
-<!-- References:
-https://vas3k.com/blog/machine_learning/?ref=hn
-https://www.linkedin.com/pulse/machine-learning-101-understanding-fundamentals-ai-technology-batra/
-https://medium.com/onfido-tech/machine-learning-101-be2e0a86c96a
-https://www.datacamp.com/blog/top-machine-learning-use-cases-and-algorithms -->
+Good luck!
+{{% /summary %}}
