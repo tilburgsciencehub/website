@@ -224,7 +224,7 @@ def contribute():
     data_object = {'title' : 'Contribute to TSH'}
     meta_data = fetch_meta_data(data_object)
 
-    return redirect('/tutorials/more-tutorials/contribute-to-tilburg-science-hub/contribute')
+    return redirect('topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/contribute/')
 
 # Contribute
 @app.route('/search')

@@ -637,7 +637,7 @@ $(document).ready(function () {
         });
 
         // Tutorials
-        const tutorials = data.tutorials || [];
+        const tutorials = data.topics || [];
         const ulElementTutorial = document.getElementById('most-read-tutorials-list');
 
         // Select a random tutorial
