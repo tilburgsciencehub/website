@@ -3,6 +3,9 @@ from flask_assets import Environment, Bundle
 from datetime import datetime
 from functions import build_data_dict, generate_table_of_contents, get_breadcrumbs, find_related_articles, calculate_reading_time, fetch_meta_data
 import os
+import googleapiclient.discovery
+import json
+from google.oauth2 import service_account
 from models import db, articles, Contributors, blogs, Topics
 from html_parser import htmlize
 from sqlalchemy import func
@@ -24,6 +27,14 @@ app.config['ASSETS_DEBUG'] = True
 # Initialize SQLAlchemy with the app
 db.init_app(app)
 
+
+## Data necessary for cookies analytics
+VIEW_ID = "265450145"
+MAX_PAGES = 10
+SCOPES = ["https://www.googleapis.com/auth/analytics.readonly"]
+SCRIPT_DIR = os.path.dirname(__file__)
+SERVICE_ACCOUNT_FILE = "service_account.json"
+JSON_FILE = os.path.join(SCRIPT_DIR, SERVICE_ACCOUNT_FILE)
 # Assets
 assets = Environment(app)
 
@@ -35,6 +46,31 @@ scss_bundle = Bundle(
 )
 
 assets.register('scss_all', scss_bundle)
+
+credentials = service_account.Credentials.from_service_account_file(
+    JSON_FILE, scopes=SCOPES
+)
+
+analytics = googleapiclient.discovery.build(
+    serviceName="analyticsreporting", version="v4", credentials=credentials,
+)
+
+def get_report():
+    body = {
+        "reportRequests": [
+            {
+                "viewId": VIEW_ID,
+                "dateRanges": [{"startDate": "14daysAgo", "endDate": "today"}],
+                "metrics": [{"expression": "ga:users"}],
+                "dimensions": [
+                    {"name": "ga:pagePath"},
+                    {"name": "ga:pageTitle"}
+                ],
+                "orderBys": [{"fieldName": "ga:users", "sortOrder": "DESCENDING"}],
+            }
+        ]
+    }
+    return analytics.reports().batchGet(body=body).execute()
 
 # Home Page
 @app.route('/')
