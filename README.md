@@ -12,6 +12,12 @@ pip install Flask-Assets
 pip install google-api-python-client
 ```
 
+If problems arrive with scss, please install sass:
+
+```
+npm install sass
+```
+
 ## Content To Database
 To create the database with all necessary data, simply go to the root folder and run the following command:
 
@@ -73,29 +79,5 @@ flask run
 - [x] Codeblocks showing languages twice -> fixed by fix above
 - [x] Copy Button in Codeblock
 - [x] Fix Cards on Home Page
-
-## Features/Issues to Update/Implement
-- [ ] Implement New Basic Web Analytics Cookies
-- [ ] {{< katex }} does not display correctly (Calculate Sample Sizes for web scrapers)
-- [ ] Presentation slides are not available (Blog - Introducing TSH at the Open to Complexity Symposium)
+- [x] Implement New Basic Web Analytics Cookies
  
-## Issues related to content
-- [ ] The way people use katex is inconsistent which gives problems during rendering. Some people forget to add the $ sign in front and at the end of a variable, which was not really an issue for some reason in Hugo, but in Flask this makes applying these Katex Formulas way harder. We should fix the katex boxes in content and make sure it is used correctly applied in all content.
-- [ ] Tables currently to complex to parse to html by hardcoding. The most effective way would be to convert them all to html with ChatGPT (tried it, is very easy and quickly done) and add context to the styleguide on how people can add a html table (very easy and logical). Another option would to self design a new structure for a table. We should discuss this with Hannes.
-    - [ ] tables do not display correctly (e.g., Random Effects Model, Configure Python virtual environments)
-- [] Some articles have lists without an enter (break) in front of it. The markdown package then cannot convert them to html lists.
-- [ ] In Task Scheduling BB: someone wrote the following:
-
-```
-# e.g., * * * * * /usr/bin/python3 /script.py
-<CRON CODE> <PATH OF YOUR PYTHON INSTALLATION> <PATH TO PYTHON FILE>
-```
-
-and also in a codeblock. It would be more efficient to change this since html sees < > as tag elements, which it now tries to autocomplete, instead as interpreting it as a string. The autocomplete process is something outside of my control (happens by browser).
-- [ ] All Codeblock languages should be shown as follows ```Stata, so in the same line straight after the three signs, without any other signs such as - or others.
-- [ ] Codeblock structure needs to be consistent, quite some people do not use the {{% codeblock %}} signs which makes rendering structurized hard.
-    - [ ] Codechunks not correctly displayed (No ```) (R Coding Style Guidelines)
-    - [ ] code chunk without content (Run RStudio on AWS docker)
-    - [ ] BASH not correctly specified in chunk (Debugging Makefiles with Remake)
-- [ ] Title does not display properly (e.g., Confgure Python virtual environments) -> checked, it is a content error in the specific article that needs to be fixed)
-- [ ] $ formulas do not render correctly (e.g., Random Effects Model) -> checked, refers to point 1 in content list. The formula used in the context does not use the $ signs at variables, which leads to flask not recognizing the item as a variable.
