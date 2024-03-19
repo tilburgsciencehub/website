@@ -2,4 +2,3 @@
 __pycache__/
 .webassets-cache
 .sass-cache
-service_account.json
