@@ -123,7 +123,8 @@ Causal inference methods are essential for understanding the impact of variables
 
 {{% /summary %}}
 
-
+# Reference
+- [Cunningham, S. (2021). Causal inference: The mixtape. Yale university press.](https://mixtape.scunning.com/)
 
 
 
