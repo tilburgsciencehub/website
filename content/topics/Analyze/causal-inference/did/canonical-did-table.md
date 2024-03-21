@@ -1,6 +1,6 @@
 ---
 title: "An Introduction to Difference-in-Difference Analysis"
-description: "This topic provides background and motivation for the difference-in-difference method and an example that walks you through how to set up the data to compute difference in means table for the 2 x 2 case. "
+description: "This topic provides background and motivation for the difference-in-difference method and an example that walks you through how to set up the data to compute difference-in-means table for the 2 x 2 case."
 keywords: "causal inference, difference-in-difference, DID, R, regression, model, canonical DiD, difference in means table, potential outcomes framework, average treatment effect, ATE, ATT, ATU, treatment effects"
 draft: false
 weight: 1
@@ -171,7 +171,7 @@ To obtain more accurate and reliable estimates, it is essential to conduct a reg
 
 **Difference-in-Difference** (DiD) is a powerful statistical method for evaluating the causal impact of a treatment or intervention. It compares changes in outcomes between a treatment group and a control group before and after the treatment is implemented. Assumptions crucial for a causal interpretation of the estimates are the *parallel trends* assumption and the *conditional independence* assumption.
 
-An example is given to illustrate how to obtain the difference-in-means table for a 2x2 DiD design. To learn how to estimate the effect with regression analysis, refer to [the next topic](//canonical-DiD/run)
+An example is given to illustrate how to obtain the difference-in-means table for a 2x2 DiD design. To learn how to estimate the effect with regression analysis, refer to [the next topic](/canonical-DiD/run).
 
 {{% /summary %}}
 
