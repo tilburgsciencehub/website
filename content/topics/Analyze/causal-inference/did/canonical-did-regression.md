@@ -47,9 +47,11 @@ rating_{ijt} = \alpha+ \lambda POST_{ijt}+\gamma Goodreads + \\
 {{</katex>}}
 </div>
 
+<br>
+
 where,
-- $POST$: A dummy equal to 1 if the observation is after Q&A launch
-- $Goodreads$: A dummy equal to 1 if the observation is from the Goodreads platform and 0 if from Amazon
+- $POST$ is a dummy equal to 1 if the observation is after Q&A launch
+- $Goodreads$ is a dummy equal to 1 if the observation is from the Goodreads platform and 0 if from Amazon
 - $\eta$: Book fixed effects
 - $\tau$: Time fixed effects
 
