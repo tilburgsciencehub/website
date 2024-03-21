@@ -1,6 +1,6 @@
 ---
 title: "Canonical Difference-in-Difference as a Regression"
-description: "This building block walks you through DiD as a regression, motivates the use of Two-Way Fixed Effects (TWFE) and clustered standard errors  "
+description: "This topic walks you through DiD as a regression, motivates the use of Two-Way Fixed Effects (TWFE) and clustered standard errors  "
 keywords: "causal inference, difference-in-difference, DID, R, regression, model, canonical DiD, difference in means table, potential outcomes framework, average treatment effect, ATE, ATT, ATU, treatment effects, regression, TWFE, clustered standard errors"
 draft: false
 weight: 12
@@ -10,7 +10,9 @@ aliases:
   - /canonical-DiD
   - /canonical-DiD/run
 ---
-# Overview
+
+
+## Overview
 
 In the context of non-feasible randomized controlled experiments, we [previously](/canonical-DiD) discussed the importance of the difference-in-difference (DiD) approach for causal inference. While calculating treatment effects using the difference-in-means method is a starting point, it lacks sufficient grounds for reliable inference. To obtain more robust results, it is crucial to estimate treatment effects through regression analysis with the appropriate model specification. Regression models allow for controlling confounding variables, accounting for unobserved heterogeneity, and incorporating fixed effects, leading to more accurate and meaningful interpretations of treatment effects. Next, we’ll dig a little deeper into the merits of the regression approach and how to carry out the estimation in R using an illustrative example.
 
@@ -33,20 +35,22 @@ In the [previous building block](/canonical-DiD), we introduced an example to il
 Since we have 2 groups (Amazon vs Goodreads) and 2 time periods (pre Q&A and post Q&A), we use the canonical 2 x 2 DiD design. This can be estimated with the following regression equation. You can find all the analysis code in this [Gist](https://gist.github.com/srosh2000/f52600b76999e88f0fe316e8f23b419e).
 {{<katex>}}
 {{</katex>}}
-$$
-rating_{ijt} = \alpha+ \lambda POST_{ijt}+\gamma Goodreads+\delta (POST_{ijt}* Goodreads_{ij})+\eta_j +\tau_t+\epsilon_{ijt}
-$$
+
+
+<div style="text-align: center;">
+{{<katex>}}
+
+rating_{ijt} = \alpha+ \lambda POST_{ijt}+\gamma Goodreads + \\
+\delta (POST_{ijt}* Goodreads_{ij})+\eta_j +\tau_t+\epsilon_{ijt}
+
+{{</katex>}}
+</div>
+
 where,
-
-$POST$: is a dummy that equals 1 if the observation is after Q&A launch
-
-$Goodreads$: is a dummy equal to 1 if the observation is from the Goodreads platform and 0 if from Amazon
-
-$\eta$: book fixed effects
-
-$\tau$: time fixed effects
-
-
+- $POST$: A dummy equal to 1 if the observation is after Q&A launch
+- $Goodreads$: A dummy equal to 1 if the observation is from the Goodreads platform and 0 if from Amazon
+- $\eta$: Book fixed effects
+- $\tau$: Time fixed effects
 
 
 Before estimating the regression, it is crucial to check whether the **parallel trends assumption** holds which suggests that , in the absence of the treatment, both the treatment and control groups would have experienced the same outcome evolution. We also implicitly assume that the **treatment effect is constant** between the groups over time. Only then can we interpret the DiD estimator (treatment effect) as unbiased.

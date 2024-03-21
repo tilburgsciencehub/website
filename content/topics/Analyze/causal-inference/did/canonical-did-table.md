@@ -1,6 +1,6 @@
 ---
 title: "An Introduction to Difference-in-Difference Analysis"
-description: "This building block motivates causal inference, provides theoretical background for the difference-in-difference method and an example that walks you through how to set up the data to compute difference in means table for the 2 x 2 case.  "
+description: "This topic provides background and motivation for the difference-in-difference method and an example that walks you through how to set up the data to compute difference in means table for the 2 x 2 case. "
 keywords: "causal inference, difference-in-difference, DID, R, regression, model, canonical DiD, difference in means table, potential outcomes framework, average treatment effect, ATE, ATT, ATU, treatment effects"
 draft: false
 weight: 9
@@ -12,63 +12,41 @@ aliases:
 
 ## Overview
 
-While randomized controlled experiments are widely regarded as the gold standard for establishing causality, they may not always be practical, feasible, or ethically permissible. In such circumstances, quasi-experimental methods offer a valuable alternative by leveraging naturally occurring variations in treatment or exposure to approximate controlled experimental conditions. 
+While randomized controlled experiments are considered the gold standard for establishing causality, they aren't always practical, feasible, or ethically permissible. In such cases, quasi-experimental methods offer a valuable alternative, using natural variations in treatment or exposure to approximate controlled experimental conditions. 
 
-One such quasi-experimental method is known as **Difference-in-Differences** (DiD). This robust statistical approach is extensively used to evaluate the causal impact of a treatment or intervention. It allows estimation of the treatment effect by comparing changes in outcomes between a treatment group and a control group before and after the implementation of the treatment, in other words studying the *difference in the difference*.
+{{% tip %}}
+You can find an introduction to causal inference [here](/causal-inference-intro). 
+{{% /tip %}}
 
-For a theoretical background, refer to the [Introduction to causal inference topic](/causal-inference-intro). 
 
+*Difference-in-Differences (DiD)* is one such quasi-experimental method commonly used to evaluate the causal impact of a treatment or intervention. 
 
+The DiD framework is used in a wide range of settings, from evaluating the impact of a rise in the [minimum wage](https://econpapers.repec.org/article/aeaaecrev/v_3a84_3ay_3a1994_3ai_3a4_3ap_3a772-93.htm) to [assessing how the adoption of online streaming affects music consumption and discovery](https://pubsonline.informs.org/doi/pdf/10.1287/mksc.2017.1051).
 
-##  
+{{% summary %}}
 
-## ATT
+DiD estimates the treatment effect by comparing changes in outcomes between a treatment and control group before and after the treatment is implemented. In other words, it examines the *difference in the difference* between these groups.
 
-Now, let's consider the event that individuals might self-select into the treatment which allows us to estimate the *Average Treatment effect on the Treated* units (ATT):
+{{% /summary %}}
 
-<div style="text-align: center;">
+## Setup
+
+Suppose we are studying the effectiveness of a new educational program (the *treatment*) on students' test scores. The treatment group consists of students who received the program ($D_i = 1$), and the control group of students who did not receive the program ($D_i = 0$). The setup table for DiD is:
+
 {{<katex>}}
-ATT = E[\delta_i|D_i=1] \\
-= E[Y_i^1|D_i=1] - E[Y_i^0|D_i=1]
 {{</katex>}}
-</div>
-
-Similarly, the average treatment effect for the untreated/control group is called *Average Treatment for the Untreated* (ATU):
-
-$$
-ATU = E[\delta_i|D_i=0]
-$$
-
-
-In the DiD setup, we are mainly interested in comparing the outcomes before and after the treatment for the treated and control groups:
-
 
 |                 | Before (\$Y_i^0\$)     | After (\$Y_i^1\$)     |
 | --------------- | ---------------------- | ---------------------- |
 | Control (\$D_i = 0\$)    | \$E(Y_i^0\|D_i = 0)\$   | \$E(Y_i^1\|D_i = 0)\$   |
 | Treatment (\$D_i=1\$)    | \$E(Y_i^0\|D_i = 1)\$   | \$E(Y_i^1\|D_i = 1)\$   |
 
-Part of the outcomes presented above are *counterfactual*. These outcomes represent what would have happened to the treated and control groups if their treatment statuses were reversed. Naturally, a single person cannot be both treated and not treated, that's why we only observe one of the two values.
 
-For more intuition, suppose we are studying the effectiveness of a new educational program (treatment) on students'' test scores. We have a control group of students who did not receive the program (when $D_i = 0$) and a treatment group of students who did receive the program (when $D_i = 1$).
+Some outcomes are *counterfactual*, representing what would have happened if treatment statuses were reversed. Naturally, an individual cannot simultaneously be treated and not treated. Therefore, we only observe one of the two potential outcomes for each person after treatment implementation: the treated outcome for those who received treatment and the untreated outcome for those who did not.
 
-The counterfactual outcomes help us understand what would have happened if the treatment status were reversed for each group:
+One might think of simply taking the difference in the average outcome before and after for the treatment group ($Y_1^0-Y_1^1$). However, this approach fails because the treatment occurrence and time are perfectly correlated, making it impossible to isolate the treatment effect from the temporal effects. Similarly, comparing the average outcomes of the treated and control groups in the after period ($Y_1^1-Y_0^1$) is problematic because natural differences between the groups may confound results. The group receiving the program is for example on average more motivated independent of receiving the treatment.
 
-- For the *control* group (when $D_i = 0$): The counterfactual outcome represents the expected test scores for the control group if they had received the treatment. This is denoted as $E(Y_i^1|D_i = 0)$. It provides an estimate of what their test scores would have been if they had been part of the treatment group.
-- For the *treatment* group (when $D_i = 1$): The counterfactual outcome represents the expected test scores for the treatment group if they had not received the treatment. This is denoted as $E(Y_i^0|D_i = 1)$. It gives us an estimate of what their test scores would have been if they had been part of the control group instead.
-
-
-
-
-
-
-Now imagine for a while we can move between alternative realities and can observe the same person’s outcome in both scenarios: when they are treated and when they are not.
-
-At a first glance, one might think of simply taking the difference in the average outcome before and after for the treatment group ($Y_1^0-Y_1^1$). However, this approach fails because the occurrence of treatment and time are perfectly correlated, making it impossible to isolate the treatment effect from the temporal effects.
-
-Similarly, taking the difference between the average outcomes of the treated and control groups in the after period ($Y_1^1-Y_0^1$) won’t work either. This is because the treatment group might naturally differ from the control group, leading to differences in outcomes that are not solely due to the treatment effect.
-
-To address these issues, we combine both ideas and perform **double differencing**, which is why it is called *difference-in-difference.*
+To address these issues, double differencing (*difference-in-difference*) is done, which involves taking differences between the outcomes of the control group from those of the treatment group before and after treatment to estimate the treatment effect.
 
 |  | Before | After | After - Before |
 | --- | --- | --- | --- |
@@ -76,14 +54,21 @@ To address these issues, we combine both ideas and perform **double differencing
 | **Treatment** | $\alpha + \gamma$ | $\alpha+\gamma+\lambda+\delta$ |  |
 | **Treatment** - **Control**  | $\gamma$ | $\gamma+\delta$ | $\delta$ |
 
-By taking the difference between the treatment and control groups’ outcomes before treatment ($\gamma$) and the difference between their outcomes after treatment ($\gamma + \delta$), we can obtain the final treatment effect ($\delta$).
+By taking the difference between the treatment and control groups’ outcomes before treatment ($\gamma$) and the difference between their outcomes after treatment ($\gamma + \delta$), we can obtain the final treatment effect ($\delta$), which is the additional change in outcome for the treatment group compared to the control group after the treatment is implemented.
+
+{{% tip %}}
+$\gamma$ represents any differences in outcomes between the treatment and control groups, that exist before the treatment is implemented. $\lambda$ represents the common change in outcomes over time that affects both the treatment and control groups equally.
+{{% /tip %}}
 
 
-## Assumptions for Causality
+## Identifying assumptions
 
 To establish causality using the DiD design, two key assumptions are necessary:
 
-1. **Parallel Trends Assumption**: The parallel trends assumption states that, in the absence of treatment, the treated and control groups would have followed similar trends over time. This assumption implies that any differences in outcomes between the two groups before treatment can be attributed to pre-existing differences, as the trends are assumed to be parallel. It ensures the existence of a valid counterfactual outcome to compare the treated group.
+1. **Parallel Trends Assumption**
+
+In the absence of treatment, the treatment and control groups would have followed similar trends over time. It ensures that any differences in outcomes observed before the treatment between the two groups are due to pre-existing differences, as the trends are assumed to be parallel.
+
 More formally, it assumes that the difference between the control group's counterfactual outcome ($E(Y_i^1|D_i = 0)$) and its observed outcome before treatment ($E(Y_i^0|D_i = 0)$) would remain constant over time. Similarly, it assumes that the difference between the treatment group's observed outcome after treatment ($E(Y_i^1|D_i = 1)$) and its counterfactual outcome ($E(Y_i^0|D_i = 1)$) would also remain constant over time.
 
 <p align = "center">
@@ -91,16 +76,37 @@ More formally, it assumes that the difference between the control group's counte
 <figcaption> Parallel trends visualisation, image by the author </figcaption>
 </p>
 
-2. **Conditional Independence (Unconfoundedness) Assumption**: The conditional independence assumption states that, conditional on observed variables, the treatment assignment is independent of potential outcomes. This assumption ensures that there are no confounding factors that simultaneously affect both the treatment assignment and the potential outcomes. It implies that, after controlling for observable covariates, the treatment assignment is random with respect to potential outcomes. Controlling for observable covariates helps reduce the potential for bias due to omitted variables confounding.
+2. **Conditional Independence (Unconfoundedness) Assumption**
 
-Now that we have covered all the basics, let's jump to an example to put all this theory to practice!
+Conditional on observed variables, the treatment assignment is independent of potential outcomes. 
 
-## An Illustrative Example: The Canonical 2x2 DiD Table
+This ensures that there are no confounding factors that simultaneously affect both the treatment assignment and the potential outcomes. After controlling for observable covariates, the treatment assignment is then random with respect to potential outcomes. 
+
+
+{{% tip %}}
+
+DiD works well whenever:
+
+- There is a sudden specific intervention, treatment or even a date that clearly defines a before and an after. For instance, a passing of a law (e.g. lockdown).
+
+- There are well defined treatment and control groups.
+
+- The outcome of interest was measured before and after the treatment or intervention. That is, there is a baseline outcome to which to compare with the outcomes posterior to the intervention.
+
+- The intervention is unrelated to the outcome at baseline.
+
+{{% /tip %}}
+
+Now that we have covered all the basics, let's jump to an example to put all this theory into practice!
+
+
+## Example: The Canonical 2x2 DiD Table
+
 On May 21, 2014, Goodreads, a social cataloging website for books, introduced the Q&A feature, enabling users to post questions to authors and fellow readers. It is intriguing to explore the potential impact of this feature on subsequent book ratings. For example, users now have the opportunity to proactively inquire about a book before making a purchase. This interaction may help alleviate uncertainties regarding the book's suitability, potentially reducing customer dissatisfaction and mitigating the likelihood of negative reviews.
 
 The dataset used in this example includes information on book ratings and their corresponding dates from both Goodreads and Amazon. In this analysis, we will treat the implementation date of the Q&A policy as the treatment and assess its impact on subsequent book ratings through the employment of the DiD approach. As Amazon lacks the Q&A feature specifically for the book category but still permits consumers to rate and review books akin to Goodreads, it serves as a suitable control group for comparison. You can find the complete data preparation and analysis code in this [Gist](https://gist.github.com/srosh2000/f52600b76999e88f0fe316e8f23b419e) to follow along.
 
-Since we have 2 groups (Amazon Vs Goodreads) and 2 time periods (pre Q&A and post Q&A), we use the canonical 2 x 2 DiD design.
+Since we have 2 groups (Amazon Vs Goodreads) and 2 time periods (pre-Q&A and post-Q&A), we use the canonical 2 x 2 DiD design.
 
 {{% codeblock %}}
 ```R
@@ -126,7 +132,7 @@ print(means_modified)
 ```
 {{% /codeblock %}}
 
-Here, we compute the average rating for the treatment and control group both before and after the Q&A launch based on the `GoodAma` dataframe. The treatment dummy, `goodr = 1` indicates the *treatment* group (Goodreads), and otherwise the *control* group (Amazon). The time dummy, `qa = 1` indicates the *after* period and `0` for *before* period.
+Here, we compute the average rating for the treatment and control group both before and after the Q&A launch based on the `GoodAma` dataframe. The treatment dummy, `goodr = 1` indicates the *treatment* group (Goodreads), and otherwise the *control* group (Amazon). The time dummy, `qa = 1` indicates the *after* period and `0` for the *before* period.
 
 <p align = "center">
 <img src = "../images/did-table.png" width="500">
@@ -158,23 +164,16 @@ print(paste("Diff in Diff Estimate: " , did))
 <figcaption> Treatment effect value </figcaption>
 </p>
 
-The obtained results indicate that the presence of the Q&A feature is associated with lower ratings. However, it is crucial to acknowledge that the differences in means table presented above is merely suggestive and should be interpreted with caution. To obtain more accurate and reliable estimates, it is essential to conduct a regression analysis that allows us to control for other variables that may be related to the outcome and treatment, thereby providing a more comprehensive understanding of the relationship.
-
-Utilising regression analysis not only enhances the precision of the estimates but also allows us to examine the statistical significance of the results. This helps determine the strength and reliability of the observed relationship between the Q&A feature and ratings. Additionally, regression analysis enables the exploration of potential interactions or nonlinear effects, providing further insights into the complex dynamics at play.
+The obtained results indicate that the presence of the Q&A feature is associated with lower ratings.
+Note that the differences-in-means table is merely suggestive and should be interpreted with caution. 
+To obtain more accurate and reliable estimates, it is essential to conduct a regression analysis, which allows to control for variables and examine the statistical significance of the results. Refer to the [next topic](/canonical-DiD/run) to continue with this example as a DiD regression!
 
 
 {{% summary %}}
 
-- **Difference-in-Difference** (DiD) is a powerful statistical method for evaluating the causal impact of a treatment or intervention.
+**Difference-in-Difference** (DiD) is a powerful statistical method for evaluating the causal impact of a treatment or intervention. It compares changes in outcomes between a treatment group and a control group before and after the treatment is implemented. Assumptions crucial for a causal interpretation of the estimates are the *parallel trends* assumption and the *conditional independence* assumption.
 
-- DiD compares changes in outcomes between a treatment group and a control group before and after the treatment is implemented.
-
-- **Average Treatment Effect** (ATE) represents the average effect of treatment on all units.
-
-- **Average Treatment Effect on the Treated** (ATT) focuses on the treated units, while **Average Treatment Effect for the Untreated** (ATU) focuses on the control group.
-
-- The **parallel trends** assumption and **conditional independence** assumption are crucial for a causal interpretation of the estimates.
-
+An example is given to illustrate how to obtain the difference-in-means table for a 2x2 DiD design. To learn how to estimate the effect with regression analysis, refer to [the next topic](//canonical-DiD/run)
 
 {{% /summary %}}
 
