@@ -53,13 +53,13 @@ Mathematically, this assumption is expressed as follows:
 
 Where $Y_{0}$ and $Y_{1}$ are the potential outcomes in respectively the control and treatment group, which are independent of treatment assignment $T$ for each value of the observed covariates $X$. The $X$ is/are the binary variable(s) on which the observations are matched.
 
-{{% warning %}}
+Important to note is that this assumption also implies no *unobservable* characteristics differing between the groups, impacting treatment likelihood or effects. When dividing the sample by $X$, for each value of $X$, the variation in $D$ is akin to random. In some cases, this condition is know to hold. A notable example is "Project STAR", where treatment was randoml assigned within schools but with varying likelihoods across different schools. Hence, school identity is included in $X$.
 
-This assumption also means there are no *unobservable* characteristics differing between the groups, affecting treatment likelihood or effects. This cannot be directly tested. However, there are some methods to assess the plausibility of the assumption. 
+{{% tip %}}
+While the absence of no unobservable characteristics cannot be directly tested, there are some methods to assess the plausibility of the assumption.  
 
 As discussed in [Imbens (2015)](https://jhr.uwpress.org/content/50/2/373.short), one method is to calculate the causal effect of treatment on a pseudo-outcome that you know is unaffected by it, for example, a lagged outcome. If the treatment effect on the pseudo-outcome is close to zero, it strengthens the assumption's plausibility. [Section VG (page 395)](https://jhr.uwpress.org/content/50/2/373.short) discusses this method in more detail. 
-
-{{% /warning %}}
+{{% /tip %}}
 
 
 ### 2. Overlapping support
@@ -110,7 +110,7 @@ The counterfactual is the mean outcome in the control group for observations wit
 
 ## Practical example
 
-The most simple practical example of exact matching is given, with unreal data generated for this purpose. Say we are interested in finding the effect of a graduate traineeship program on earnings. We have data of 100 employees, of which 50 completed a traineeship at the start of their career (the *treatment group*) and 50 did not (the *control group*).
+The most simple practical example of exact matching is given, with data simulated for this purpose. Say we are interested in finding the effect of a graduate traineeship program on earnings. We have data of 100 employees, of which 50 completed a traineeship at the start of their career (the *treatment group*) and 50 did not (the *control group*).
 
 
 First, load the necessary packages, and the data set:

@@ -55,6 +55,10 @@ P(X_{i}) ≡ Pr(D_i = 1 | X_i)
 
 By controlling for these propensity scores, you compare units that, based solely on their observable characteristics, had similar probabilities of getting the treatment. This mitigates the selection bias; the remaining variation in the outcome variable can then be assigned as being due to the treatment only.
 
+{{% tip %}}
+When conditional independence holds true given $X$, it also holds true when conditioned on the propensity score. This famous result by [Rosenbaum and Robin (1983)] is useful because while $X$ may be high-dimensional, the propensity score is one-dimensional. Consequently, matching on the propensity score increases the likelihood of finding common support between treatment and control groups, facilitating better and closer matches.
+{{% /tip %}}
+
 
 ## Practical example of PSM
 
