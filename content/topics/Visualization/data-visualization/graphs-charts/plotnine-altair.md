@@ -3,7 +3,7 @@ title: "Visualizing data with Plotnine and Altair"
 description: "Plotting in Python - comparison between plotnine and altair"
 keywords: "data, visualization, python, plotting, plotnine, altair"
 date: 2023-07-25
-weight: 2
+weight: 3
 author: "Ana Bianca Luca"
 authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:

@@ -2,7 +2,7 @@
 title: "Styling Bar Charts in ggplot2"
 description: "Effective data visualization balances accuracy and aesthetics. The R package `ggplot2`, while versatile, can be challenging for custom styling. This guide covers color, theme, and label customization, with styles for various data scenarios, especially academic papers. It includes using standard errors/error bars, black-and-white formatting, data grouping, and saving visuals as high-quality PNG or PDF for publication."
 date: 11-12-2023
-weight: 4
+weight: 7
 author: "Matthijs ten Tije"
 authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
