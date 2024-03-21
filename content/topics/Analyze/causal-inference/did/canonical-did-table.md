@@ -80,21 +80,6 @@ Conditional on observed variables, the treatment assignment is independent of po
 
 This ensures that there are no confounding factors that simultaneously affect both the treatment assignment and the potential outcomes. After controlling for observable covariates, the treatment assignment is then random with respect to potential outcomes. 
 
-
-{{% tip %}}
-
-DiD works well whenever:
-
-- There is a sudden specific intervention, treatment or even a date that clearly defines a before and an after. For instance, a passing of a law (e.g. lockdown).
-
-- There are well defined treatment and control groups.
-
-- The outcome of interest was measured before and after the treatment or intervention. That is, there is a baseline outcome to which to compare with the outcomes posterior to the intervention.
-
-- The intervention is unrelated to the outcome at baseline.
-
-{{% /tip %}}
-
 Now that we have covered all the basics, let's jump to an example to put all this theory into practice!
 
 
