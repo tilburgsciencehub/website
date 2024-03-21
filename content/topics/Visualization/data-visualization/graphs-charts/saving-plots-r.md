@@ -242,7 +242,7 @@ This function is especially useful for ensuring that your desired file structure
 ggsave(
   filename = paste0("scatterplot_gdp_vs_life_expectancy", format(Sys.Date(), "%Y-%m-%d"), ".pdf"), 
   plot = "your_plot_object",
-  path = path = "my_project/analysis/figures/scatterplots" 
+  path = "my_project/analysis/figures/scatterplots" 
   width = 11, 
   height = 8,
   create.dir = TRUE)
