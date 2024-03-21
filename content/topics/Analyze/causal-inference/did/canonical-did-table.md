@@ -100,7 +100,7 @@ DiD works well whenever:
 Now that we have covered all the basics, let's jump to an example to put all this theory into practice!
 
 
-## Example: The Canonical 2x2 DiD Table
+## Example: The 2x2 DiD Table
 
 On May 21, 2014, Goodreads, a social cataloging website for books, introduced the Q&A feature, enabling users to post questions to authors and fellow readers. It is intriguing to explore the potential impact of this feature on subsequent book ratings. For example, users now have the opportunity to proactively inquire about a book before making a purchase. This interaction may help alleviate uncertainties regarding the book's suitability, potentially reducing customer dissatisfaction and mitigating the likelihood of negative reviews.
 
