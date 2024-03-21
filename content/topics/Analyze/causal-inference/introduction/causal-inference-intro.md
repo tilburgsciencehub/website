@@ -13,8 +13,8 @@ aliases:
 
 ## Overview
 
-Causal inference nowadays plays a very important role in quantitative social sciences. It is about estimating the impact of variables on specific outcomes, by understanding the causal relationship. 
-Unlike correlation, which only indicates a statistical relationship between variables, causal inference aims to determine if one variable directly influences another. It's essential to recognize that correlation does not imply causation; just because two variables are correlated does not mean that one causes the other. Additionally, causal relationships may exist without observable correlations. 
+Having the ability to establish causality provides a strong foundation for using the term "because" when making claims about the relationship between certain variables. We are then able to say for instance, that the popularity of a song increased *because* it was featured in a movie or that the customer bought a given product *because* they saw an ad and so on. These relationships are not inherently causal, as the direction of cause and effect may be ambiguous, other variables can influence the relationship, or the observed outcome may be due to chance. While regression analysis provides some insight into the significance of associations, interpreting the results as causal relationships requires additional assumptions and thoughtful study designs.
+
 
 <p align = "center">
 <img src = "../images/corr_cause.png" width="700">
