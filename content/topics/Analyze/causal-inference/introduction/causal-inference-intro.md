@@ -108,8 +108,8 @@ E[Y_i^1|D_i=1] - E[Y_i^0|D_i=1]
 
 <div style="text-align: center;">
 {{<katex>}}
-ATU = E[\delta_i|D_i=0] \\
-= E[Y_i^1|D_i=0] - E[Y_i^0|D_i=0]
+ATU = E[\delta_i|D_i=0] = \\
+E[Y_i^1|D_i=0] - E[Y_i^0|D_i=0]
 {{</katex>}}
 </div>
 

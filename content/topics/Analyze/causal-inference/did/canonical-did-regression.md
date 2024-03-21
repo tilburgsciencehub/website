@@ -3,7 +3,7 @@ title: "Difference-in-Difference as a Regression"
 description: "This topic walks you through DiD as a regression, motivates the use of Two-Way Fixed Effects (TWFE) and clustered standard errors  "
 keywords: "causal inference, difference-in-difference, DID, R, regression, model, canonical DiD, difference in means table, potential outcomes framework, average treatment effect, ATE, ATT, ATU, treatment effects, regression, TWFE, clustered standard errors"
 draft: false
-weight: 12
+weight: 2
 author: "Roshini Sudhaharan"
 authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:

@@ -3,7 +3,7 @@ title: "An Introduction to Difference-in-Difference Analysis"
 description: "This topic provides background and motivation for the difference-in-difference method and an example that walks you through how to set up the data to compute difference in means table for the 2 x 2 case. "
 keywords: "causal inference, difference-in-difference, DID, R, regression, model, canonical DiD, difference in means table, potential outcomes framework, average treatment effect, ATE, ATT, ATU, treatment effects"
 draft: false
-weight: 9
+weight: 1
 author: "Roshini Sudhaharan"
 authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:
@@ -19,9 +19,7 @@ You can find an introduction to causal inference [here](/causal-inference-intro)
 {{% /tip %}}
 
 
-*Difference-in-Differences (DiD)* is one such quasi-experimental method commonly used to evaluate the causal impact of a treatment or intervention. 
-
-The DiD framework is used in a wide range of settings, from evaluating the impact of a rise in the [minimum wage](https://econpapers.repec.org/article/aeaaecrev/v_3a84_3ay_3a1994_3ai_3a4_3ap_3a772-93.htm) to [assessing how the adoption of online streaming affects music consumption and discovery](https://pubsonline.informs.org/doi/pdf/10.1287/mksc.2017.1051).
+*Difference-in-Differences (DiD)* is one such quasi-experimental method commonly used to evaluate the causal impact of a treatment or intervention. The DiD framework is used in a wide range of settings, from evaluating the impact of a rise in the [minimum wage](https://econpapers.repec.org/article/aeaaecrev/v_3a84_3ay_3a1994_3ai_3a4_3ap_3a772-93.htm) to [assessing how the adoption of online streaming affects music consumption and discovery](https://pubsonline.informs.org/doi/pdf/10.1287/mksc.2017.1051).
 
 {{% summary %}}
 
