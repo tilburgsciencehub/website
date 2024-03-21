@@ -186,17 +186,16 @@ For R projects, particularly when working with `SQL` databases or using the `tid
 
 {{% /tip %}}
 
-### Integrating Version Control with ggsave()
-`ggsave()` allows for version control, while saving the plots. This creates the ability to monitor changes and progress across different stage of your visualizations. Which could be beneficial when an older visualization needs to be referred back to. By adding dates, times, or version numbers within your file names. Each plot is distinctly marked, creating a proccess of version tracking of your visualizations. 
+### Time Stamping your output with ggsave()
+We can use `ggsave()` together with a timestamp in the filename to give each iteration of a graph a unique name. This creates the ability to monitor changes and progress across as a visualization gets updated over time. This can be be beneficial when an older version of a visualization needs to be referred back to.
 
-#### Version Control:
-To safeguard against the accidental overwriting of your plots, it's advisable to create a new file for each version of your graph. This strategy not only helps in maintaining a chronological record of your visualization's development but also simplifies the process of comparing different iterations or reverting to previous versions if needed.
+#### Adding a Timestamp to the File Name:
 
-For precise tracking of changes, incorporating timestamps in your filenames can be useful. `R` offers built-in functions for this purpose: `Sys.Date()` for adding a simple date stamp for daily versioning, and `format(Sys.time(), "%Y%m%d_%H%M%S")` for a more granular timestamp that includes the exact time of creation. 
+`R` offers built-in functionality that returns the current date and time: `Sys.Date()` for adding a date stamp for daily versioning, and `format(Sys.time(), "%Y%m%d_%H%M%S")` for a more granular timestamp that includes the exact time of creation. 
 
-Automating the naming process can streamline your workflow. By using `paste0()` in conjunction with `ggsave()`, you can dynamically generate filenames that include versioning information, thereby enhancing the clarity and uniqueness of each saved file. This method not only reduces manual effort but also ensures consistency in how your files are named and organized.
+Automating the naming process to include the timestamp can streamline your workflow. By using `paste0()` in conjunction with `ggsave()` and the `Sys.Date()` or `Sys.time()` syntax you can generate output files that include the time the file was written in their file name.
 
-Example of implementing version control with `ggsave()`:
+Example of implementing a timestamp in a file name with `ggsave()`:
 
 {{% codeblock %}}
 ```R
