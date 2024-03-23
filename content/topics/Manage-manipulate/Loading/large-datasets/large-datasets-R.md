@@ -43,12 +43,12 @@ system.time(vroom_data <- vroom("GB_full.txt", col_names = FALSE))
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/table1-import-large-dataset-r.png" width="200">
+<img src = "../images/table-1-import-large-dataset-r.png" width="400">
 <figcaption> Downloading time using different packages </figcaption>
 </p>
 
 <p align = "center">
-<img src = "../images/figure1-import-large-dataset-r.png" width="400">
+<img src = "../images/figure1-import-large-dataset-r.png" width="600">
 </p>
 
 
@@ -83,12 +83,12 @@ Using the following methodology:
 The table below represents the running times observed for different data manipulation packages:
 
 <p align = "center">
-<img src = "../images/table2-import-large-dataset-r.png" width="200">
+<img src = "../images/table2-import-large-dataset-r.png" width="400">
 <figcaption> Running time using different packages for data manipulation </figcaption>
 </p>
 
 <p align = "center">
-<img src = "../images/figure2-import-large-dataset-r.png" width="400">
+<img src = "../images/figure2-import-large-dataset-r.png" width="600">
 </p>
 
 ### 3. Increases File Writing Performance
@@ -109,13 +109,13 @@ system.time({vroom_write(df, "vroom.csv")}) # vroom
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/table2-import-large-dataset-r.png" width="200">
+<img src = "../images/table2-import-large-dataset-r.png" width="400">
 <figcaption> Writing files running time using different packages </figcaption>
 </p>
 
 Below is a visual representation of the file writing times across different packages:
 <p align = "center">
-<img src = "../images/figure3-writing-large-dataset-r.png" width="400">
+<img src = "../images/figure3-writing-large-dataset-r.png" width="600">
 </p>
 <br>
 
