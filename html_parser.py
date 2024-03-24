@@ -25,6 +25,9 @@ def convert_code_blocks_to_html(md_content):
             language = language_match.group(1)
             code = language_match.group(2).strip()
             code = re.sub(r'```', '', code)
+
+            # Vervang < en > tekens door html (voorkom post render)
+            code = code.replace('<', '&lt;').replace('>', '&gt;')
             
             # Bepaal of dit het eerste codeblok is
             is_first_codeblock = idx == 0
