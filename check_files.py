@@ -27,4 +27,29 @@ def check_md_files_for_list_spacing(directory):
                     if line_errors:
                         print(f'List without preceding break found in {file_path} at lines {line_errors}')
 
-check_md_files_for_list_spacing('content')
+def check_codeblocks(directory):
+    codeblock_pattern = re.compile(r'^(```\w*[\s\S]+?```)', re.MULTILINE)
+
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            if file.endswith('.md'):
+                file_path = os.path.join(root, file)
+                with open(file_path, 'r', encoding='utf-8') as md_file:
+                    content = md_file.read()
+                    errors = []
+                    for match in codeblock_pattern.finditer(content):
+                        start = match.start()
+                        line_number = content.count("\n", 0, start) + 1
+                        codeblock_content = match.group(0)
+                        if '```text' in codeblock_content or re.search(r'\[\^(\d+)\]', codeblock_content):
+                            continue
+                        if not re.search(r'{{%\s*codeblock\s*%}}[\s\S]*{{%\s*/codeblock\s*%}}', content, re.DOTALL):
+                            errors.append(line_number)
+                    if errors:
+                        print(f'{file_path} has untagged codeblocks at lines: {errors}')
+
+# Check Spacing: check_md_files_for_list_spacing('content')
+# Check Codeblocks: 
+check_codeblocks('content')
+
+
