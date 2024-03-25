@@ -49,6 +49,7 @@ Despite CSV and other simple file formats, databases offer built-in user authent
 It is fairly simple to assign groups of users with certain access privileges in a database. In addition, databases enable encryption of data at rest and in transit.
 
 ## Do you need to archive data for a long time?
+
 One perceived barrier to use databases is the cost it incurs. However, it is useful to know that there are multiple open source databases 
 such as SQLite that can be locally hosted as well (of course for free). 
 
@@ -65,13 +66,13 @@ Failure to do so could lead to confusion where commas are mistaken for column se
   Want to explore long-term data archiving solutions? Check out this [page](http://localhost:62095/topics/collect-store/data-storage/long-term-archiving/choose-a-data-repository/) to learn about various options.
 {{% /tip %}}
 
-## Final Note
 
 
+{{% summary %}}
 In this article, we've explored several scenarios where utilizing a database proves advantageous. Nevertheless, 
 it's important to note that CSVs are lightweight file formats widely embraced by individuals with varying levels of technical proficiency. 
 And sometimes the data requirements are not heavy that justifies that extra mile. 
-
+{{% /summary %}}
 
 
 
