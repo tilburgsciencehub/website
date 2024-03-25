@@ -1,5 +1,5 @@
 ---
-title: "The Concept and Motivation of Causal Inference"
+title: "Introduction to Causal Inference"
 description: "This topic motivates causal inference and provides theoretical background for all the practical methods you can find in this section."
 keywords: "causal, inference, econometrics, regression, model, potential, outcomes, framework, treatment, effect, control, ATE, ATT"
 draft: false
