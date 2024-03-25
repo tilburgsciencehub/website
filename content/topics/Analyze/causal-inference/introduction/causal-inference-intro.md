@@ -4,7 +4,7 @@ description: "This topic provides an introduction to causal inference, serving a
 keywords: "causal, inference, econometrics, regression, model, potential, outcomes, framework, treatment, effect, control, ATE, ATT"
 draft: false
 weight: 1
-author: "Valerie Vossen"
+author: "Roshini Sudhaharan, Valerie Vossen"
 aliases:
   - /causal-inference
   - /causal-inference-introduction

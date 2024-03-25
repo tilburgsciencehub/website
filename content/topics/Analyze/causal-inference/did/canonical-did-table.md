@@ -4,8 +4,7 @@ description: "This topic provides background and motivation for the difference-i
 keywords: "causal inference, difference-in-difference, DID, R, regression, model, canonical DiD, difference in means table, potential outcomes framework, average treatment effect, ATE, ATT, ATU, treatment effects"
 draft: false
 weight: 1
-author: "Roshini Sudhaharan"
-authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
+author: "Roshini Sudhaharan, Valerie Vossen"
 aliases:
   - /canonical-DiD
 ---
