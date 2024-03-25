@@ -338,12 +338,19 @@ def replace_video_src(html_content):
     return html_content_with_new_video_src
 
 def replace_links(md_content):
+    root_url = 'http://127.0.0.1:5000'
+    # Lijst van bestandsextensies die op TSH zijn geüpload
+    file_extensions = ['.xlsx', '.sh', '.zip', '.bib', '.tex', '.docx', '.bat', '.csv', '.txt', '.rda', '.rdata', '.pptx', '.rmd', '.py', '.r', '.history', '.pdf', '.dta']
+
     # Regelmatige expressie om links te vinden
     link_pattern = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 
     def replace_link(match):
         link_text = match.group(1)
         link_url = match.group(2)
+        # Controleer of de link naar een bestand verwijst dat begint met 'files/'
+        if link_url.startswith('files/'):
+            link_url = f'{root_url}/static/{link_url}'  # Pas het pad aan naar root/files/
         # Vervang de link door de gewenste HTML-opmaak
         new_link = f'<a href="{link_url}" alt="{link_text}">{link_text}</a>'
         return new_link
@@ -352,7 +359,6 @@ def replace_links(md_content):
     md_content_with_new_links = re.sub(link_pattern, replace_link, md_content)
 
     return md_content_with_new_links
-
 # Html Parse Function
 def htmlize(md_file_content):
     transformations = [
@@ -366,8 +372,8 @@ def htmlize(md_file_content):
         convert_example_shortcode_to_html,
         convert_youtube_shortcode_to_html,
         convert_fallback_block_to_html,
-        convert_md_to_html,
         replace_links,
+        convert_md_to_html,
         convert_katex_shortcode_to_html,
         convert_md_titles_to_html,
         replace_img_src,
