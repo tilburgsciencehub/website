@@ -28,4 +28,4 @@ Our presentation didn't end at Docker. We also introduced a new concept to the a
 To conclude our presentation, we emphasized that Tilburg Science Hub extends beyond Docker. We offer a comprehensive toolkit that covers everything from data collection and analysis to version control. Our platform fosters simplicity, clarity, and transparency in research.
 
 ### **Explore Our Presentation Slides**
-To delve deeper into the tools and concepts we presented, we invite you to explore our [presentation slides](TOSS_presentation_slides.pptx). 
+To delve deeper into the tools and concepts we presented, we invite you to explore our [presentation slides](files/TOSS_presentation_slides.pptx). 
