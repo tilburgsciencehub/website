@@ -28,6 +28,23 @@ After successfully creating the database, you are ready to start up the flask ap
 
 flask run
 
+## Running flask using Docker
+
+First, create the image for the Docker Container:
+
+```
+docker build -t <image-name> .
+```
+
+Next, create and run the container:
+
+```
+docker run -d -p 5000:5000 --name flaskcon flasksite
+```
+
+The website should now be live at http://127.0.0.1:5000/ (localhost port 5000).
+If port 5000 is not available, change '5000:5000' to '5001:5000' in the container command. 
+
 ## Updated & Implemented
 - [x] Fix Authors
 - [x] Related Articles
