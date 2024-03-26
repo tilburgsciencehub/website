@@ -1,5 +1,5 @@
 ---
-title: "Leveraging GitHub and Google Colab for Collaborative Development" 
+title: "Combine GitHub and Google Colab for Collaborative Development" 
 description: "Explore how integrating GitHub with Google Colab can streamline your development workflow, enabling more efficient project management and collaboration."
 keywords: "GitHub, Google Colab, Collaboration, Project Management, Development Workflow, Git Commands, Persistent Storage, Project Visibility"
 weight: 3
@@ -16,17 +16,15 @@ aliases:
 This building block aims to enhance your development process by illustrating the synergistic relationship between GitHub and Google Colab. It's designed for students and researchers looking to optimize their workflow for more efficient and collaborative project management.
 
 {{% tip %}}
-**For Google Colab newcomers**
-Worth to give a read to [this short introduction](https://tilburgsciencehub.com/topics/automation/replicability/cloud-computing/google-colab/) before diving into its integration with GitHub.
+If you're a newcomer to Google Colab, might be worth to give a read to [this short introduction](https://tilburgsciencehub.com/topics/automation/replicability/cloud-computing/google-colab/) before diving into its integration with GitHub.
 
 {{% /tip %}}
 
 By the end of this guide, you will:
 
 - Understand how to import GitHub repositories into Google Colab.
-- Know how to mount Google Drive in Colab for persistent storage.
 - Be familiar with executing Git commands and pushing changes directly from Colab.
-- Learn strategies to enhance project visibility and collaboration using both platforms.
+- Learn strategies to handle large files.
 
 ## Setting Up the Workspace
 
@@ -36,8 +34,10 @@ Colab offers a seamless method to clone your GitHub repository into the environm
 
 To set up the workspace, you'll first need a GitHub repository to work from, which can be either public or private. Also, make sure you are logged in into your Google Account. Then, do the following:
 
-**1.** Go to [Google Colab](https://colab.google/) and click on *'Open Colab'*
+**1.** Go to [Google Colab](https://colab.google/) and click on *'Open Colab'*.
+
 **2.** In the *'File'* menu, select *'Open notebook'*, then go to the *'GitHub'* tab. You can enter the URL of your repository or search for it using your GitHub username. Include private repositories if necessary by clicking on the respective option.
+
 **3.** After finding your repository, click on the notebook you want to open. 
 
 <p align = "center">
@@ -82,6 +82,8 @@ Some of the basic Git commands you can execute in Colab include:
 - `!git commit -m "Your commit message"` to commit the staged changes.
 - `!git push` to push committed changes to the remote repository.
 
+Using commands within the Colab interface can often be the most straightforward method for certain tasks, such as cloning a repository. However, depending on the situation, utilizing the features of either GitHub or Colab may offer the most convenience and efficiency. For detailed guidance on employing git commands within Colab, please refer to [this article](https://medium.com/analytics-vidhya/how-to-use-google-colab-with-github-via-google-drive-68efb23a42d).
+
 ### Pushing Changes Using the Colab Interface
 
 In addition to executing Git commands directly in Colab, you can also use the Colab interface to push changes to your GitHub repository. This provides a more user-friendly and visual way to manage your commits and push them to the remote repository.
@@ -109,9 +111,11 @@ To make it easier for you and your collaborators to access the notebook directly
 
 4. Colab will create a new commit with your changes and push it to the specified repository and branch.
 
-## Good Practices for storage management
+## Other relevant information
 
-### Mounting Google Drive for Persistent Storage
+### Integrating with Other Google Services
+
+#### Mounting Google Drive for Persistent Storage
 
 As mentioned in [this building block](https://tilburgsciencehub.com/topics/automation/replicability/cloud-computing/google-colab/), mounting your Google Drive in Google Colab is a good practice when working with large files. It provides convenient access to files, datasets, and resources stored in your Google Drive within the Colab environment.
 
@@ -120,18 +124,33 @@ Benefits of using Google Drive in Colab include:
 - Easy collaboration and sharing with team members or collaborators.
 - Persistent storage, ensuring accessibility across Colab sessions.
 
-### Use Google Cloud Buckets
+#### Use Google Cloud Buckets
 
 Another option for storage management in Google Colab is to use Google Cloud Storage Buckets. These are a scalable and durable object storage service provided by Google Cloud Platform. You can find more information in [this building block](https://tilburgsciencehub.com/topics/collect-store/data-storage/commercial-cloud/mem-storage-gcp/).
 
+### Consider sharing with GitHub Gists
+
+Colab also offers the option to save a copy as a GitHub Gist. Gists are ideal for quick sharing, when code is too small for creating a repository, and can be embedded in blogs or documents. Keep in mind:
+
+- Gists are public by default. Use private repositories or Google Drive for sensitive content.
+- For creating and managing gists, consult the [GitHub Gist documentation](https://docs.github.com/en/github/writing-on-github/creating-gists).
+
+### Leveraging Colab's GPUs
+
+Colab offers free limited access to powerful GPUs, enhancing computational capabilities for data processing and machine learning tasks. To enable a GPU:
+
+1. Go to *'Runtime' > 'Change runtime type'* in the Colab menu.
+2. Select *'T4 GPU'* as the hardware accelerator and save.
+3. Verify GPU activation by executing: `!nvidia-smi` in a new cell. This command will output details about the GPU assigned to your session, including its type, memory usage, and the processes running on it. If a GPU is available, you will see its specifications. If not, you might receive an error message indicating no NVIDIA GPU is detected.
+
 {{% summary %}}
 
-This topic covers the steps to clone a repository, work with GitHub in Colab, execute basic Git commands, and push changes using the Colab interface. Additionally, it suggests good practices for storage management, such as mounting Google Drive for persistent storage and using Google Cloud Storage Buckets.
+This topic covers the steps to clone a repository, work with GitHub in Colab, execute basic Git commands, and push changes using the Colab interface. Additionally, it suggests other resources to enhance the collaboration experience.
 
 {{% /summary %}}
 
-### Additional Resources
+## Additional Resources
 
 - [Google Cloud Storage Documentation](https://cloud.google.com/storage/docs)
 - [Google Colab Documentation](https://colab.research.google.com/notebooks/intro.ipynb)
-- [GitHub Guides](https://guides.github.com/)
+- [GitHub and Colab Demo](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
