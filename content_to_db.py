@@ -197,6 +197,8 @@ def process_article(md_file_path, parent_id):
         match = re.search(r'---(.*?)---(.*)', content, re.DOTALL)
         if match:
             file_content = match.group(2).strip()
+        else:
+            file_content = None
 
         # Insert data into articles table
         insert_article_into_db(cursor, 'topic', title.group(1) if title else None, parent_id,
@@ -291,6 +293,8 @@ for md_file_name in os.listdir(examples_root_folder):
             if match:
                 file_content = match.group(2)
                 content = file_content
+            else:
+                content = None
 
         # Insert data into articles table
         insert_article_into_db(cursor, 'examples', title if title else None, None,
@@ -366,6 +370,8 @@ for md_file_name in os.listdir(contributors_root_folder):
             match = re.match(r'---(.*?)---(.*)', md_file_content, re.DOTALL)
             if match:
                 content = match.group(2)
+            else:
+                content = None
 
         # Execute an SQL INSERT statement to add data to the 'articles' table
         insert_or_update_contributor(cursor, name, description_short, description_long, skills, linkedin, facebook, twitter, email, image, status, path, content)
@@ -412,6 +418,8 @@ for md_file_name in os.listdir(blog_root_folder):
             if match:
                 file_content = match.group(2)
                 content = file_content
+            else:
+                content = None
 
         # Execute an SQL INSERT statement to add data to the 'articles' table
         insert_or_update_blog(cursor, title, description, path, date, date_modified, draft, content)
