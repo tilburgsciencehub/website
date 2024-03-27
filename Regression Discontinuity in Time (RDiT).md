@@ -51,7 +51,13 @@ Given this susceptibility of RDiT designs to bias, Hausman and Rapson (2018) pro
 
 4. Plot the relationship between time and any potential confounders to demonstrate continuity at the cutoff. Additionally, regress each potential confounder on the treatment to provide more formal proof of continuity. If there are discontinuities, include covariates capturing these time-varying confounders in your regression. 
 
-5. Estimate a ‘donut’ RD, removing observations just before and after the treatment date, to minimise the threat to inference from any sorting, anticipation, or avoidance effects, which are likely to be concentrated in the period right around the treatment date. This will help to allay doubts about the possibility of manipulation/selection into treatment in biasing our estimates.  
+5. Estimate a ‘donut’ RD, removing observations just before and after the treatment date, to minimise the threat to inference from any sorting, anticipation, or avoidance effects, which are likely to be concentrated in the period right around the treatment date. This will help to allay doubts about the possibility of manipulation/selection into treatment in biasing our estimates.
+
+{{% tip}}
+
+'Donut' regression discontinuity designs are frequently used when there is non-random 'heaping' in the data. Heaping refers to cases where certain values of the running variable have much higher densities than adjacent values. This is often the case when there is some type of manipulation of the running variable: think of the pollution example - if polluters realise that a new regulation will be enforced on day $x$ (they _anticipate_ the policy), they might want to install their polluting facilities on day $x-1$. If many of them do so simultaneously, we will observe much higher values of installations on day $x-1$ than on nearby dates. [Barreca et al. (2011)](https://www.nber.org/papers/w17408) show that estimating regular RD regressions when there is such non-random heaping yields biased estimates. Intuitively, the presence of such 'heaps' violates the smoothness assumptions which are essential for RDDs to give unbiased treatment effect estimates. Donut RDDs solve this problem by simply dropping all observations at the 'heaps' and re-estimating the regressions without these observations. Barreca et al. (2011) show that this is the most robust way of estimating unbiased treatment effects in RD settings with manipulation/heaping. Therefore, it is good practice to use the donut RDD approach, i.e., dropping observations around the cutoff, where heaping is most likely to occur in RDiT settings, as a robustness check in RDiT designs where we suspect (remember that we cannot explicitly _test_ for manipulation when time is the running variable) manipulation/heaping is present.   
+
+{{% /tip}}
 
 6. Test for serial correlation in residuals, for instance using a Durbin-Watson test. If serial correlation is present, compute heteroskedasticity and autocorrelation consistent (HAC) standard errors, also known as Newey-West standard errors. In some applications it may also be relevant to test for autoregression in the outcome variable and include lagged values of the outcome variable if autoregression is indeed present.  
 
@@ -85,7 +91,7 @@ fertility <- fertility[order(fertility$date),]
 ```
 {{% /codeblock}}
 
-First, we can make a plot to visualise the data and the potential discontinuity at the treatment date. We focus on the abortions outcome variable. Note that the treatment (the child benefit) was introduced in July 2007 (this is coded as date=570 in the dataset) and that time is measured at the monthly level. Therefore, the time variable is centred on July 2007. In this case, we use a second-order polynomial (a quadratic), but you could also experiment with other polynomials by changing _p_ in the function below. We also select a 36-month (3-year) bandwidth, and you could also try experimenting with that (in the paper, effect estimates are robust to bandwidth choice). 
+Before running our RDiT regressions, we can make a plot to visualise the data and the potential discontinuity at the treatment date. We focus on the abortions outcome variable. Note that the treatment (the child benefit) was introduced in July 2007 (this is coded as date=570 in the dataset) and that time is measured at the monthly level. Therefore, the time variable is centred on July 2007. In this case, we use a second-order polynomial (a quadratic), but you could also experiment with other polynomials by changing _p_ in the function below. We also select a 36-month (3-year) bandwidth, and you could also try experimenting with that (in the paper, effect estimates are robust to bandwidth choice). 
 
 {{% codeblock}}
 ```R
