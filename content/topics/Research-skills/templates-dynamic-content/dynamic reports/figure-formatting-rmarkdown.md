@@ -1,6 +1,6 @@
 ---
-title: "Figure Formatting in Rmarkdown Reports"
-description: "This article discusses R markdown usage for academic documents. Covering figure formatting through code chunks and global environment options. How to save figures using the YAML in a organized manner. At last, how to integrate LaTeX for advanced layout options."
+title: "Handling Figures in Rmarkdown"
+description: "This article discusses R markdown usage for academic documents. It covers concepts of figure formatting directly through code chunks and the global environment options. Futher it shows how to save figures using the YAML in a organized manner. At last, it discusses how to integrate LaTeX for more advacned layout options."
 keywords: "Rmarkdown, LaTeX, Code Chunks, subfig"
 draft: false
 weight: 3
@@ -9,7 +9,6 @@ authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
   - /Rmarkdown/Figures
   - /LaTeX/subfix
-  - /
 ---
 
 ## Overview
@@ -27,10 +26,8 @@ For practical application of these techniques, a downloadable `Rmarkdown` file i
 [R-link](equatiomatic-rmarkdown.Rmd).
 {{% /codeblock %}}
 
-
-
 ## Formatting through Chunk Options
-`RMarkdown` enables figures to be directly formatted via chunk options. This enables full control over their presentation within your report. 
+`RMarkdown` enables figures to be directly formatted via chunk options. This allows for full control over the presentation of figures within your report. 
 
 Here is a list of figure formatting options: 
 
@@ -77,7 +74,7 @@ And it will look like this:
 </p>
 
 ### Global Settings for Figure Formatting
-To maintain consistency across all figures and streamline the formatting process, global figure settings can be specified at the start of the document. This strategy apllies uniform appearance for all figures, saving time and ensuring aesthetic coherence.
+To maintain consistency across all figures within your figure and avoid specifying the formatting process each code chunk seperately, global figure settings can be specified at the start of the document. This strategy apllies uniform appearance for all figures, saving time and ensuring aesthetic coherence.
 
 You can do this with the following code:
 
@@ -89,8 +86,7 @@ knitr::opts_chunk$set(fig.width = "Your Settings", fig.height = "Your Settings",
 
 {{% /codeblock %}}
 
-### Saving Figures
-
+## Saving Figures
 Adjusting the display properties of figures can alter their presentation within the document, but it doesn't automatically save them as separate files. To ensure figures are saved, you must modify the YAML header to include `keep_md: true`, as shown below:
 
 {{% codeblock %}}
@@ -120,10 +116,10 @@ This approach will save your figures directly to the current working directory. 
 
 {{% /tip %}}
 
-## Using Latex for Formatting of Figures
+## Using Latex for Formatting
 
-### Step 1: Specify extra_dependencies: "subfig" in your YAML
-For a more coherent organization and presentation in your document, consider using the `subfig` package in `LaTeX`. This package enables arrangement of multiple sub-figures within a singular figure environment. In addition, it allows for each sub-figure to have its own individual caption. This capability is particularly beneficial for comparative analyses or presenting grouped data in a cohesive manner. 
+#### Step 1: Specify extra_dependencies: "subfig" in your YAML
+For a more coherent organization and presentation in your document, consider using the `subfig` package in `LaTeX`. This package can be used to arrange multiple sub-figures within a singular figure environment. In addition, it allows for each sub-figure to have its own individual caption. This capability is particularly beneficial for comparative analyses or presenting grouped data in a cohesive manner. 
 
 To incorporate sub-figures into your `Rmarkdown` document include the `subfig` package in your document's YAML via the `extra_dependencies` option as shown below:
 
@@ -145,7 +141,7 @@ Use tabs, not spaces, for indentation in `Rmarkdown` to avoid rendering issues.
 {{% /warning %}}
 
 
-### Step 2: Adjust Code Chunk Options
+#### Step 2: Adjust Code Chunk Options
 To construct a single figure with multiple sub-figures, _place all related plots within a single R code chunk_. Thereafter, you can adjust the code chunk options, as discussed earlier in the article, to control the layout and captioning.
 
 Here are some specific commands to use with the `subfig` package:
@@ -178,7 +174,7 @@ hist(rnorm(100))
 <img src = "../images/subfigures-rmarkdown.PNG" width="400">
 </p>
 
-This setup ensures that your sub-figures are neatly organized, each with its own caption, within a single, well-captioned figure, enhancing both the readability and aesthetic appeal of your document.
+This setup sets the basis for your sub-figures to be neatly organized, each with its own caption, within a single, well-captioned figure, beneficical to both the readability and aesthetic appeal of your document.
 
 {{% tip %}}
 

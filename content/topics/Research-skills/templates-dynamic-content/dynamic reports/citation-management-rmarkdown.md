@@ -1,6 +1,6 @@
 ---
 title: "Citation Management within Rmarkdown"
-description: "This article discusses Rmarkdown usage for academic writing, focussing on citation management within an Rmarkdown document. It provides an in-depth look at the integration of bibliographic references, streamlining the process for creating scholarly articles, books, and technical reports."
+description: "This article discusses Rmarkdown usage for academic writing, focussing on citation management within an Rmarkdown document. It provides a step by step procedure of the integration of bibliographic references, starting the process for creating scholarly articles, books, and technical reports."
 keywords: "Rmarkdown, R, bookdown, LaTeX, BibTeX"
 draft: false
 weight: 1
@@ -13,7 +13,7 @@ aliases:
 
 ## Overview
 
-[`Rmarkdown`](https://rmarkdown.rstudio.com/) is a format designed for crafting reproducible and dynamic reports using R. It's a useful tool for creating a wide range of academic documents, including journal articles, books, and technical reports. 
+[`Rmarkdown`](https://rmarkdown.rstudio.com/) is a format designed for building reproducible and dynamic reports using R. It's a useful tool for creating a wide range of academic documents, including journal articles, books, technical reports or assignments. 
 
 This article includes a step by step procedure for citation management in Rmarkdown documents. This topic is intended to increase your capabilities to produce well-organized and professionally formatted Rmarkdown documents, further supporting your academic writing process.
 
@@ -21,9 +21,8 @@ Download the article's accompanying files [here](citation-management-rmarkdown.z
 
 {{% tip %}}
 
-For students working on their thesis, consider using the tisemdown thesis [template](https://tilburgsciencehub.com/topics/research-skills/templates-dynamic-content/templates/bookdown-theses/) available on our website. It's a pre-configured Rmarkdown template designed to meet the formatting standards of different study programs, simplifying the initial setup of your thesis work.
+For students working on their thesis, consider using the tisemdown thesis [template](/get/latex-templates) available on our website. It's a pre-configured Rmarkdown template designed to meet the formatting standards of different study programs, simplifying the initial setup of your thesis work.
 
-This article further elaborates on the thesis template, providing additional information to assist in your thesis project.
 {{% /tip %}}
 
 ## Citations 
@@ -135,7 +134,7 @@ csl: apa.csl
 
 It's important to note that the CSL file, such as `apa.csl` for the APA style, needs to be downloaded and be referenced by the correct pathway to its current directory. To procure a CSL file aligned with your preferred citation style, the [Zotero Style Repository](https://www.zotero.org/styles) is an helpful source. This website allows users to easily find and download the necessary CSL file.
 
-### Incorporating Unreferenced Items and Displaying All Bibliography Entries
+### Biblography Management
 
 `Rmarkdown` only adds mentioned references in the bibliography. For some articlces, it is needed to include certain references in your bibliography without citing them directly in your text, or it is necesary to display every item in your bibliography regardless of citation. This can be achieved using the `nocite` metadata field in your document's YAML header.
 
@@ -162,7 +161,7 @@ nocite: '@*'
 
 These configurations allow you to manually include specific references or automatically list all entries in the bibliography.
 
-### Changing the Bibliography Location
+#### Changing the Bibliography Location
 
 By default, bibliographies appear at the document's end. To relocate the bibliography, set the output format to `bookdown::html_document2` (or equivalent for other formats) in the YAML and use the `<div id="refs"></div>` tag to specify the new location. 
 
