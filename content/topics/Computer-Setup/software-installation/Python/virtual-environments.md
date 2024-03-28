@@ -12,7 +12,7 @@ aliases:
   - /use/venvwrapper
 ---
 
-## Setting up virtual environments for Python with ```venvwrapper```
+## Setting up virtual environments for Python with `venvwrapper`
 
 When working on multiple Python projects that require different packages and libraries, we may run into the issue of needing different versions of packages for each project. To avoid upgrading or downgrading versions each time we work on a different project, we can make use of virtual environments. 
 The core idea of a virtual environment is to create an isolated environment that has the packages a project needs contained within it, that can be easily "turned on" and "turned off" as needed. 
@@ -119,6 +119,7 @@ To **create the _requirements.txt_ file**, **switch environments**, **deactivate
 
 Commands overview:
 
+{{% table %}}
 |   | Windows | Mac | Linux |
 | --- | --- | --- | --- |
 |Install `virtualenvwrapper` | pip install virtualenvwrapper-win | pip install virtualenvwrapper | pip install virtualenvwrapper |
@@ -131,7 +132,7 @@ Commands overview:
 |See created environments | lsvirtualenv | ls $WORKON_HOME | ls $WORKON_HOME | 
 |Deactivate environment | deactivate | deactivate | deactivate |
 |Delete environment | rmvirtualenv name_of_env | rmvirtualenv name_of_env | rmvirtualenv name_of_env |
-
+{{% /table %}}
 {{% /summary %}}
 
 ## Other virtual environment packages

@@ -75,7 +75,6 @@ def convert_code_blocks_to_html(md_content):
 
     return md_content
 
-
 def convert_tips_to_html(md_content):
     # Definieer een reguliere expressie om de Markdown voorbeeldblokken te matchen
     tipblock_shortcode_pattern = re.compile(r'{{%\s+tip\s+%}}(.*?){{%\s+/tip\s+%}}', re.DOTALL)
@@ -265,6 +264,25 @@ def convert_fallback_block_to_html(md_content):
     return html_output
 
 # Extra HTML Functions
+def convert_md_table_to_html(table_md):
+    rows = table_md.strip().split('\n')
+    html_table = '<table>\n'
+    headers = rows[0].split('|')[1:-1]  # Skip de eerste en laatste lege cellen
+    html_table += '<tr>' + ''.join(f'<th>{header.strip()}</th>' for header in headers) + '</tr>\n'
+    
+    for row in rows[2:]:  # Skip de header-scheidingslijn
+        columns = row.split('|')[1:-1]  # Skip de eerste en laatste lege cellen
+        html_table += '<tr>' + ''.join(f'<td>{column.strip()}</td>' for column in columns) + '</tr>\n'
+    html_table += '</table>'
+    
+    return html_table
+
+def convert_tables_to_html(md_content):
+    table_pattern = re.compile(r'{{%\s*table\s*%}}(.*?){{%\s*/table\s*%}}', re.DOTALL)
+    html_content = re.sub(table_pattern, lambda match: convert_md_table_to_html(match.group(1)), md_content)
+    
+    return html_content
+
 def convert_md_titles_to_html(md_content):
     def replace_title_h1(match):
         title = match.group(1)
@@ -359,6 +377,14 @@ def replace_links(md_content):
     md_content_with_new_links = re.sub(link_pattern, replace_link, md_content)
 
     return md_content_with_new_links
+
+def remove_empty_pre_code_tags(html_content):
+    empty_pre_code_pattern = re.compile(r'<pre><code>\s*</code></pre>')
+
+    cleaned_content = re.sub(empty_pre_code_pattern, '', html_content)
+    
+    return cleaned_content
+
 # Html Parse Function
 def htmlize(md_file_content):
     transformations = [
@@ -374,10 +400,12 @@ def htmlize(md_file_content):
         convert_fallback_block_to_html,
         replace_links,
         convert_md_to_html,
+        convert_tables_to_html,
         convert_katex_shortcode_to_html,
         convert_md_titles_to_html,
         replace_img_src,
-        replace_video_src
+        replace_video_src,
+        remove_empty_pre_code_tags
     ]
 
     html_content = md_file_content

@@ -40,11 +40,11 @@
 								{% include 'partials/sharelinks.html' %}
 							</div>
 							{% if example.date_modified %}
-							<p class="mb-0 article-date">{{ example.date_modified }}</p>
+								<p class="mb-0 article-date">{{ example.date_modified|formatdate }}</p>
 							{% else %}
-							{% if example.date %}
-							<p class="mb-0 article-date">{{ example.date }}</p>
-							{% endif %}
+								{% if example.date %}
+									<p class="mb-0 article-date">{{ example.date|formatdate }}</p>
+								{% endif %}
 							{% endif %}
 						</div>
 

@@ -29,12 +29,20 @@ assets = Environment(app)
 
 # Build & Register SCSS Bundle
 scss_bundle = Bundle(
-    'scss/bootstrap.scss',  # Change this to your main SCSS file
-    output='css/main.css',   # Change this to your desired output CSS file
+    'scss/bootstrap.scss',  
+    output='css/main.css',
     filters='scss',
 )
 
 assets.register('scss_all', scss_bundle)
+
+# custom filter for dates
+@app.template_filter('formatdate')
+def formatdate(value, format="%Y-%m-%d"):
+    if value is None:
+        return ""
+    date = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S%z")
+    return date.strftime(format)
 
 # Home Page
 @app.route('/')
