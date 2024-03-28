@@ -130,10 +130,12 @@ Imagine you want to understand if the availability of research grants at univers
 
 - For example, grant decisions are made by an external committee and largely independent of university-specific characteristics. Moreover, you want to control for both university-level and student-level variations.
 
+{{% table %}}
 |           | **FE Model**                                     | **RE Model**                                          |
 |-----------------|--------------------------------------------------|--------------------------------------------------------|
 | **When <br/> to <br/> Use** | Unobserved university-<br/> specific effects are <br/> **correlated** with <br/>  research grants and <br/> student performance. | Unobserved effects are <br/> random and not directly <br/> tied to grant availability.<br/><br/> Allows multi-level fixed <br/> effects (on university <br/> and student-level) in <br/> the same model. |
-| **Example** | You believe universities <br/> with stronger reputations <br/> are more likely to <br/> secure research grants.| You believe grant decisions <br/>  are made by external <br/> committees and are  <br/>  independent  of university- <br/> specific characteristics.
+| **Example** | You believe universities <br/> with stronger reputations <br/> are more likely to <br/> secure research grants.| You believe grant decisions <br/>  are made by external <br/> committees and are  <br/>  independent  of university- <br/> specific characteristics.|
+{{% /table %}}
 {{% /example %}}
 
 
