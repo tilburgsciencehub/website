@@ -1,5 +1,6 @@
 import os
 import re
+import pandas as pd
 
 # Break above ul/ol
 def check_md_files_for_list_spacing(directory):
@@ -27,8 +28,11 @@ def check_md_files_for_list_spacing(directory):
                     if line_errors:
                         print(f'List without preceding break found in {file_path} at lines {line_errors}')
 
+# Remove Comments
 def check_codeblocks(directory):
     codeblock_pattern = re.compile(r'^(```\w*[\s\S]+?```)', re.MULTILINE)
+    comment_pattern = re.compile(r'<!--.*?-->', re.DOTALL)
+    errors = []
 
     for root, dirs, files in os.walk(directory):
         for file in files:
@@ -36,17 +40,35 @@ def check_codeblocks(directory):
                 file_path = os.path.join(root, file)
                 with open(file_path, 'r', encoding='utf-8') as md_file:
                     content = md_file.read()
-                    errors = []
+                    # Verwijder HTML comments
+                    content = re.sub(comment_pattern, '', content)
+                    
                     for match in codeblock_pattern.finditer(content):
                         start = match.start()
                         line_number = content.count("\n", 0, start) + 1
                         codeblock_content = match.group(0)
-                        if '```text' in codeblock_content or re.search(r'\[\^(\d+)\]', codeblock_content):
-                            continue
-                        if not re.search(r'{{%\s*codeblock\s*%}}[\s\S]*{{%\s*/codeblock\s*%}}', content, re.DOTALL):
-                            errors.append(line_number)
-                    if errors:
-                        print(f'{file_path} has untagged codeblocks at lines: {errors}')
+                        has_language = re.match(r'^```(\w+)', codeblock_content)
+                        is_tagged = re.search(r'{{%\s*codeblock\s*%}}[\s\S]*{{%\s*/codeblock\s*%}}', content, re.DOTALL)
+                        
+                        error_type = None
+                        if not is_tagged and not has_language:
+                            error_type = 'beide'
+                        elif not is_tagged:
+                            error_type = 'structuur'
+                        elif not has_language:
+                            error_type = 'taal'
+                        
+                        if error_type:
+                            errors.append({'Bestandspad': file_path, 'Fouttype': error_type})
+
+    # Maak een DataFrame van de foutenlijst
+    if errors:
+        df_errors = pd.DataFrame(errors)
+        print(df_errors.to_string(index=False))
+    else:
+        print("Geen fouten gevonden.")
+
+# check_codeblocks('content')
 
 # Check Spacing: check_md_files_for_list_spacing('content')
 # Check Codeblocks: 
