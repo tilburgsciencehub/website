@@ -1,5 +1,5 @@
 ---
-title: "Parallel computing in R to improve time efficiency"
+title: "Parallel Computing in R"
 description: "Discover the potential of parallel computing for reducing execution times in R, by distributing tasks across multiple CRU cores."
 keywords: "parallelization, parallel, time, efficiency, R, coding, code, data, open, science, package"
 draft: false
@@ -21,9 +21,11 @@ We discuss two approaches: multicore and socket approaching (The first one is no
 
 The Central Processing Unit (CPU) of your computer contains small units called "cores". The number of cores available determines how many different tasks you can execute at the same time. Then, creating clusters are like forming teams of these "cores". You send data and functions to each cluster, where each core works on a different part of the task. In theory, the computation can be executed as many times faster as cores you have available. However, this is only in theory due to overhead, and this maximum time-saving is likely not possible. We will get back to this later.
 
-## Overhead
+{{% tip %}}
 
 There is benefit of parallelization especially in substantial computations. If the computation is already fast, the overhead involved with parallelization tasks, such as starting the sub-processes and copying the data over to those processes, and communicating back and collecting the results, might take more time than it saves.
+
+{{% /tip %}}
 
 ## Multicore approach
 
@@ -84,12 +86,12 @@ time_multi <- end_time_multi - start_time_multi
 
 Comparing execution times:
 
-{{% codeblock }}
+{{% codeblock %}}
 ```R
 time_normal
 time_multi
 ```
-{{% /codeblock}}
+{{% /codeblock %}}
 
 The multicore computation is 0.17, and the normal time computation is 0.45 seconds!
 
@@ -103,9 +105,10 @@ When forking is not available??
 
 You make a socket cluster first, and manually copy the data and code to each cluster member (the cores). This is a key difference between "multicore" and "socket approach", as exporting is not necessary for the multicore approach.
 
-tip
+{{% tip %}}
 parLapply() is a function do to an lapply() function over a socket cluster
-tip
+{{% /tip %}}
+
 
 ### Example
 
@@ -174,11 +177,13 @@ time_socket
 Time difference of 0.08 seconds for socket (compared to 0.45 for normal)
 
 
-warning
+{{% warning %}}
+
 Generating random numbers be careful; not possible to generate the exact same random numbers in each of the cores. Not possible to set.seed(). Way todo it in parallel package
+{{% /warning %}}
 
-tip 
-BLAS https://bookdown.org/rdpeng/rprogdatascience/parallel-computation.html
+{{% summary %}}
 
-summary
+overhead time
 difference multicore or socket approach, when to use which one?
+{{% /summary %}}
