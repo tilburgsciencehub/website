@@ -43,7 +43,7 @@ Classification, on the other hand, is used for categorical output variables. It 
 - **Labeled Data**: in supervised learning, the model is trained with labeled data. This means that the target for this data is already known. These predefined tags help the model to develop and learn on its own, so that it is able to predict targets more accurately when given new unseen and unlabeled data.
 - **Features**: input variables are called features. These are independent variables that describe your data, and are used to predict or explain the target variable.
 - **Target**: output variables are called targets. This is the dependent variable that the machine is trying to predict or understand.
-- **Data split**: to train the model, data is usually splitted into a training and testing sample. As an example, we can use 80% of the data as input to the model to learn from, and use the other 20% to validate how well the model works.
+- **Data split**: to train the model, data is usually splitted into a training and testing sample. As an example, we can use 80% of the data as input to the model to learn from, and use the other 20% to validate how well the model works. 
 
 ## Supervised Learning Algorithms
 
@@ -97,16 +97,15 @@ SVM is a powerful algorithm for classification problems. It identifies a line ca
 
 - **Neural Networks**
 
-Neural Networks are inspired by the structure and function of the brain's neural networks. They consist of layers of nodes, or "neurons," that make simple calculations from their input. The data goes through an input layer, then through one or more "hidden" layers, and finally through an output layer. Neural networks are particularly effective for complex problems. An example is image recognition, where a neural network can identify and classify objects within images.
+Neural Networks are inspired by the structure and function of the brain's neural networks and are powerful in modeling complex patterns. They consist of layers of nodes, or "neurons," that make simple calculations from their input. The data goes through an input layer, then through one or more "hidden" layers, and finally through an output layer. Neural networks are particularly effective for complex problems. An example is image recognition, where a neural network can identify and classify objects within images.
 
 {{% warning %}}
-Neural networks can model complex patterns, but they require large amounts of data and computational power. 
-Moreover, they act as "black boxes," making it difficult to understand the exact nature of the decision-making processes.
+Neural networks act as "black boxes," making it difficult to understand the exact nature of the decision-making processes. Furthermore, it can be very computationally intensive to train a neural network. Other algorithms might achieve similar results with greater efficiency.
 {{% /warning %}}
 
 ## A Regression Example: Linear Regression
 
-In this example of supervised regression in R we will predict someone's weight based on their height, using a dataset provided by the `datasets` package.
+In this example of supervised regression in R we will predict someone's weight based on their height, using a dataset provided by the [datasets](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html) package.
 We will use a simple linear regression model.
 
 ### Loading and Inspecting the Data
@@ -123,6 +122,7 @@ df <- women # call the dataframe `df`
 # Inspect the data
 summary(df)
 plot(df)
+```
 {{% /codeblock %}}
 
 This data contains two columns. One for the height and one for the weight. There are 15 observations.
@@ -144,6 +144,7 @@ df_test <- df[-training_rows, ] # Testing data
 # Verify the number of rows
 nrow(df_train)
 nrow(df_test)
+```
 {{% /codeblock %}}
 
 {{% tip %}}
@@ -157,6 +158,7 @@ We will use a simple linear regression to predict weight based on height. `weigh
 ```R
 # Train the model
 model <- lm(weight ~ height, data = df_train)
+```
 {{% /codeblock %}}
 
 {{% tip %}}
@@ -186,8 +188,9 @@ ggplot(data = df_test) +
   geom_point(aes(x = height, y = weight, colour = "Actual")) + 
   geom_point(aes(x = height, y = weight_pred, colour = "Predicted")) + 
   labs(title = "Actual vs Predicted", x = "Height", y = "Weight", colour = "Legend") 
-
+```
 {{% /codeblock %}}
+
 <p align = "center">
 <img src = "../images/regression_example_plot.png" width="500">
 </p>
@@ -203,6 +206,7 @@ library(Metrics)
 
 r_squared <- summary(model)$r.squared
 rmse_value <- rmse(df_test$weight, df_test$weight_pred)
+```
 {{% /codeblock %}}
 
 {{% tip %}}
@@ -227,7 +231,7 @@ df <- iris # call the dataframe `df`
 # Inspect the data
 summary(df)
 plot(df)
-
+```
 {{% /codeblock %}}
 
 This data contains five columns with flower measurements. There are observations of 150 flowers. 
@@ -248,6 +252,7 @@ df_test <- df[-training_rows, ] # Testing data
 # Verify the number of rows
 nrow(df_train)
 nrow(df_test)  
+```
 {{% /codeblock %}}
 
 ### Training the Model
@@ -266,7 +271,7 @@ model <- rpart(Species ~ ., data = df_train, method = "class")
 # install.packages("rpart.plot") # Uncomment if 'rpart.plot' is not installed
 library(rpart.plot)
 rpart.plot(model)
-
+```
 {{% /codeblock %}}
 
 <p align = "center">
@@ -289,11 +294,12 @@ df_test$Species_pred <- predict(model, newdata = df_test, type = "class")
 
 # Print the results
 df_test[c("Species", "Species_pred")]
+```
 {{% /codeblock %}}
 
 ### Evaluating the Model
 Now that we have trained and tested the model, we want to know how well it performs. 
-We look at the confusion matrix, which shows how many observations of each category are correctly classified:
+We look at the [confusion matrix](https://towardsdatascience.com/understanding-confusion-matrix-a9ad42dcfd62), which shows how many observations of each category are correctly classified:
 
 {{% codeblock %}}
 ```R
@@ -302,7 +308,7 @@ We look at the confusion matrix, which shows how many observations of each categ
 library(caret) 
 
 confusionMatrix(df_test$Species_pred, df_test$Species)
-
+```
 {{% /codeblock %}}
 
 <p align = "center">
