@@ -1,7 +1,20 @@
-# Tilburg Science Hub To Flask
-This is the repository thats hosts the news flask application for Tilburg Science Hub
+# Tilburg Science Hub (Flask)
 
-## Install Packages
+This is the repository thats hosts the flask application for Tilburg Science Hub.
+
+## Automatically Running the Website
+
+The easiest way to run Tilburg Science Hub is using Docker.
+
+- Install Docker and clone this repository.
+- Open the terminal at the repository's root directory and run the following commands: `docker compose build` and `docker compose up`. Use the flag `-d` to run `docker compose up -d` in detached state (so you can do something else after it has started)
+- Wait a bit for the website to be launched. If the process breaks, you likely dont' have sufficient memory.
+- Once docker has been launched, you can access the website locally at `http://localhost:8000`.
+- Press Ctrl + C in the terminal to quit.
+
+## Manually Running the Website
+
+### Install Packages
 ```
 pip install Flask-SQLAlchemy
 pip install SQLAlchemy
@@ -18,34 +31,20 @@ If problems arrive with scss, please install sass:
 npm install sass
 ```
 
-## Content To Database
+### Content To Database
+
 To create the database with all necessary data, simply go to the root folder and run the following command:
 
 ```python3 content_to_db.py```
 
-## Start Up Flask Application
+### Start Up Flask Application
 After successfully creating the database, you are ready to start up the flask application. To do so run the following command in the root folder:
 
-flask run
+`flask run`
 
-## Running flask using Docker
+## Checklist
 
-First, create the image for the Docker Container:
-
-```
-docker build -t <image-name> .
-```
-
-Next, create and run the container:
-
-```
-docker run -d -p 5000:5000 --name flaskcon flasksite
-```
-
-The website should now be live at http://127.0.0.1:5000/ (localhost port 5000).
-If port 5000 is not available, change '5000:5000' to '5001:5000' in the container command. 
-
-## Updated & Implemented
+### Updated & Implemented
 - [x] Fix Authors
 - [x] Related Articles
 - [x] Blogs
