@@ -35,7 +35,7 @@ In order to effectively preprocess text data, it is important to understand key 
 
 Tokenization is the process of breaking down a text into smaller units called tokens. These tokens can be words, sentences, or even characters, depending on the level of granularity required. Tokenization is an essential step in text preprocessing as it forms the basis for further analysis and manipulation of text data.
 
-{{% example %}}
+- **Example:**
 
 {{% codeblock %}}
 ```python
@@ -59,13 +59,12 @@ print(tokens)
 
 The `output` will be a list of tokens: `["Here", "'s", "an", "example", "of", "tokenization", ":", "breaking", "down", "text", "into", "individual", "words", "!"]`. Notice how punctuation and spaces are treated as separate tokens, which is typical in word tokenization.
 
-{{% /example %}}
 
 ### Stemming
 
 Stemming is a technique used to reduce words to their base or root form, known as the stem. It involves removing suffixes and prefixes from words to obtain the core meaning. Stemming helps in reducing the dimensionality of text data and can be useful in tasks such as information retrieval and text classification.
 
-{{% example %}}
+- **Example:**
 
 {{% codeblock %}}
 ```python
@@ -91,13 +90,12 @@ print(stemmed_tokens)
 
 The `output` might look like `['The', 'boy', 'are', 'play', 'footbal', '.', 'One', 'boy', 'is', 'injur', '.']`, demonstrating how stemming simplifies words to their roots, albeit not always in a grammatically correct form.
 
-{{% /example %}}
 
 ### Lemmatization
 
 Lemmatization, unlike stemming, reduces words to their base or dictionary form, known as the lemma. It involves a more sophisticated analysis of a word's morphology to arrive at its simplest form, which ensures that the result is a valid word.
 
-{{% example %}}
+- **Example:**
 
 {{% codeblock %}}
 ```python
@@ -121,7 +119,5 @@ print(lemmatized_tokens)
 {{% /codeblock %}}
 
 The `output` will be: `['the', 'boy', 'be', 'play', 'football', '.', 'one', 'boy', 'be', 'injure', '.']`. Here, verbs like "are" and "is" are lemmatized to "be", and "injured" to "injure", ensuring the result is grammatically viable.
-
-{{% /example %}}
 
 
