@@ -16,6 +16,9 @@ The ability to process and analyze text data is increasingly important in the er
 
 This tutorial introduces the fundamental techniques of text preprocessing in Python, utilizing the [pandas](https://pandas.pydata.org/) library for data manipulation, [spaCy](https://spacy.io/) for tokenization and lemmatization, and [matplotlib](https://matplotlib.org/) for data visualization. By the end of this guide, you'll be equipped with some fundamental skills to prepare text data for a Natural Language Processing (NLP) project.
 
+{{% tip %}}
+Are you an R user? Then check out our [Text Pre-processing in R](https://tilburgsciencehub.com/topics/manage-manipulate/manipulate-clean/textual/text-preprocessing/) topic!
+{{% /tip %}}
 
 ## Introduction to text preprocessing
 
@@ -23,7 +26,7 @@ When building machine learning models, we typically work with numeric features a
 
 The main challenge arises when our entire feature set is in text format, such as product reviews, tweets, or comments. How do we train our machine learning model with text data? As we know, machine learning algorithms only work with numeric inputs.
 
-### Natural Language Processing (NLP)
+### Natural Language Processing
 
 NLP is a branch of Artificial Intelligence (AI) that enables computers to understand, interpret, manipulate, and respond to human language. In simple terms, NLP allows computers to comprehend human language.
 
@@ -37,7 +40,7 @@ Python provides several libraries for Natural Language Processing (NLP), includi
 
 Let's dive deeper into these NLP concepts.
 
-#### Tokenization
+### Tokenization
 
 Tokenization is the process of breaking down a text into smaller units called tokens. These tokens can be words, sentences, or even characters, depending on the level of granularity required. Tokenization is an essential step in text preprocessing as it forms the basis for further analysis and manipulation of text data.
 
@@ -65,8 +68,7 @@ print(tokens)
 
 The `output` will be a list of tokens: `["Here", "'s", "an", "example", "of", "tokenization", ":", "breaking", "down", "text", "into", "individual", "words", "!"]`. Notice how punctuation and spaces are treated as separate tokens, which is typical in word tokenization.
 
-
-#### Stemming
+### Stemming
 
 Stemming is a technique used to reduce words to their base or root form, known as the stem. It involves removing suffixes and prefixes from words to obtain the core meaning. Stemming helps in reducing the dimensionality of text data and can be useful in tasks such as information retrieval and text classification.
 
@@ -96,8 +98,7 @@ print(stemmed_tokens)
 
 The `output` might look like `['The', 'boy', 'are', 'play', 'footbal', '.', 'One', 'boy', 'is', 'injur', '.']`, demonstrating how stemming simplifies words to their roots, albeit not always in a grammatically correct form.
 
-
-#### Lemmatization
+### Lemmatization
 
 Lemmatization, unlike stemming, reduces words to their base or dictionary form, known as the lemma. It involves a more sophisticated analysis of a word's morphology to arrive at its simplest form, which ensures that the result is a valid word.
 
@@ -176,7 +177,7 @@ print(df.head())
 
 ### Visualizing Data Before Preprocessing
 
-With the data loaded and cleaned, it's crucial to get a visual sense of the text we're working with. This initial look will help identify common terms that could skew our analysis if left unchecked.
+With the data loaded and cleaned, we can get a visual sense of the text we're working with. This initial look will help identify common terms that could skew our analysis if left unchecked.
 
 #### Word Cloud
 
@@ -201,13 +202,13 @@ plt.show()
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/bef-wordcloud.png" width="700" style="border:1px solid black;">
-<figcaption> Word cloud before text pre-processing</figcaption>
+<img src = "../images/bef-wordcloud.png" width="800" style="border:1px solid black;">
+<figcaption> Word cloud before text preprocessing</figcaption>
 </p>
 
 #### Top Terms
 
-The bar plot provides a straightforward representation of the most frequent terms in our dataset. It's immediately apparent that certain terms like "subreddit" and "community" are highly prevalent.
+The bar plot provides a clear visualization of the most frequent terms in our dataset. It is evident that terms like "subreddit" and "community" are highly prevalent, along with common stopwords such as *"and"* or *"the"*:
 
 {{% codeblock %}}
 ```python
@@ -237,80 +238,70 @@ plt.show()
 <figcaption> Top 50 most frequent terms before text pre-processing</figcaption>
 </p>
 
-The visuals underscore the necessity of preprocessing: we need to filter out the noise to uncover the true signal in our text data. By removing Reddit-specific jargon and ubiquitous stopwords, tokenizing, and lemmatizing the text, we can focus our analysis on words that carry the most meaning.
+The visuals underscore the necessity of preprocessing: we need to filter out the noise to uncover the true signal in our text data. By removing some Reddit-specific jargon (*subreddit*, *community*, etc.) and stopwords (*and*, *the*, *for*, etc.), tokenizing, and lemmatizing the text, we can focus our analysis on words that carry the most meaning.
 
 ### Text Preprocessing
 
-The preprocessing function we'll define takes several actions:
+The preprocessing function defined below performs the following actions to clean and standardize the text data:
 
-- Converts text to lowercase to standardize capitalization.
-- Removes URLs and special characters to maintain only textually significant characters.
-- Reduces character repetitions for a cleaner text.
-- Tokenizes and lemmatizes the text using `spaCy`, which also filters out stopwords and punctuation.
-- Corrects spelling for words with repeated characters.
+- Standardizes Capitalization: Converts all text to lowercase to ensure uniformity.
+- Removes Noise: Strips out URLs and special characters, retaining only significant textual elements.
+- Simplifies Text: Reduces repetition of characters to prevent distortion of word frequency and meaning.
+- Processes Text: Utilizes `spaCy` to tokenize and lemmatize the text, filtering out stopwords and punctuation for cleaner tokens.
+- Corrects Spelling: Applies a spell-checking process to tokens that appear misspelled due to character repetition.
 
 
 {{% codeblock %}}
 ```python
 import spacy
-from spellchecker import SpellChecker
 import re
+from spellchecker import SpellChecker
 
 # Load the spaCy model
 nlp = spacy.load('en_core_web_sm')
 
-# Define the preprocessing function
-def preprocess_text(text):
-    # Convert text to lowercase, remove URLs, special characters, and reduce character repetitions
-    text = text.lower()
-    text = re.sub(r'https?://\S+|www\.\S+', '', text)
-    text = re.sub(r'[^a-zA-Z0-9\s,.?!]', '', text)
-    text = re.sub(r'(.)\1{2,}', r'\1\1', text)
+# Define the set of custom stop words specific to Reddit
+reddit_stop_words = {'subreddit', 'community', 'discussion', 'share', 'welcome'}
+for word in reddit_stop_words:
+    # Add each custom stop word to spaCy's vocabulary so they will be recognized as stop words
+    nlp.vocab[word].is_stop = True
 
-    # Tokenize and lemmatize the text, and remove stopwords, punctuation, and short words
+# Define the text preprocessing function
+def preprocess_text(text):
+    # Convert to lowercase to normalize the case
+    text = text.lower()
+    
+    # Remove URLs
+    text = re.sub(r'https?://\S+|www\.\S+', '', text)
+    
+    # Remove special characters, keeping only words and basic punctuation
+    text = re.sub(r'[^a-zA-Z0-9\s,.?!]', '', text)
+    
+    # Reduce excessive character repetition to a maximum of two occurrences
+    text = re.sub(r'(.)\1{2,}', r'\1\1', text)
+    
+    # Tokenize and lemmatize the text, removing stop words, punctuation, and short words
     doc = nlp(text)
     tokens = [token.lemma_ for token in doc if not token.is_stop and not token.is_punct and len(token.text) > 2]
-
-    # Correct spelling for tokens with repeated characters
+    
+    # Correct tokens with repeated characters using a spell checker
     spell = SpellChecker()
     corrected_tokens = [spell.correction(token) if re.search(r'(.)\1', token) else token for token in tokens]
+    
+    # Join the tokens back into a single string, removing any potential None values
+    return " ".join(token for token in corrected_tokens if token is not None and token != '')
 
-    # Return the preprocessed text
-    return " ".join(corrected_tokens)
-
-# Apply the preprocessing to each description
+# Apply the preprocessing function to the 'description' column
 df['processed_description'] = df['description'].apply(preprocess_text)
 
 ```
 {{% /codeblock %}}
 
+With this code, each description in the DataFrame will be processed and stored in a new column `processed_description`, which will contain the cleaned and standardized text ready for further NLP tasks or machine learning modeling.
+
 ### Visualize Data After Preprocessing
 
-After applying our preprocessing steps, we visualize the text data again using a word cloud. This time, we expect to see a shift in focus toward more relevant and insightful terms.
-
-{{% codeblock %}}
-```python
-# Combine all preprocessed descriptions into a single string
-preprocessed_text_combined = ' '.join(df['processed_description'])
-
-# Generate and display the word cloud for preprocessed text
-wordcloud = WordCloud(max_words=1000, background_color='white').generate(preprocessed_text_combined)
-plt.figure(figsize=(8, 6))
-plt.imshow(wordcloud, interpolation='bilinear')
-plt.axis('off')
-plt.show()
-
-```
-{{% /codeblock %}}
-
-<p align = "center">
-<img src = "../images/after-wordcloud.png" width="700" style="border:1px solid black;">
-<figcaption> Word cloud before text pre-processing</figcaption>
-</p>
-
-This post-preprocessing word cloud should now reflect the true essence of the subReddit descriptions, with less noise and more meaningful content. It's a testament to the power and necessity of text preprocessing in NLP.
-
-Finally, to illustrate the impact of our preprocessing, let's look at some challenging comment examples before and after processing:
+Let's test our preprocessing function with few comment examples before and after applying the preprocessing steps:
 
 {{% codeblock %}}
 ```python
@@ -332,18 +323,40 @@ for sample_text in sample_texts:
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/results-text-preprocessing.png" width="600" style="border:1px solid black;">
+<img src = "../images/results-text-preprocessing.png" width="800" style="border:1px solid black;">
 <figcaption> Comparison of Reddit-like comments before and after text preprocessing</figcaption>
 </p>
 
-We can confirm the preprocessed text is now succinct, focused, and free from irrelevant characters and words that do not contribute to the overall meaning.
+We can appreciate our function is doing a good job at cleaning up the sample comments, retaining the most relevant and insightful terms. But let's look at the results on our whole dataset using a word cloud once again:
 
-The next steps could include feature extraction, such as using techniques like TF-IDF or word embeddings, to represent the text in a numerical format suitable for machine learning algorithms. Additionally, one could explore various NLP techniques like sentiment analysis, topic modeling, or text classification to gain deeper insights from the processed text.
+{{% codeblock %}}
+```python
+# Combine all preprocessed descriptions into a single string
+preprocessed_text_combined = ' '.join(df['processed_description'])
 
-Text preprocessing is a critical step in any NLP pipeline, as it improves the quality of the data and enhances the performance of downstream tasks. It enables better understanding, analysis, and modeling of textual data, making it an essential component in text-based applications and research.
+# Generate and display the word cloud for preprocessed text
+wordcloud = WordCloud(max_words=1000, background_color='white').generate(preprocessed_text_combined)
+plt.figure(figsize=(8, 6))
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis('off')
+plt.show()
+
+```
+{{% /codeblock %}}
+
+<p align = "center">
+<img src = "../images/aft-wordcloud.png" width="800" style="border:1px solid black;">
+<figcaption> Word cloud after text preprocessing</figcaption>
+</p>
+
+After applying text preprocessing techniques, we can observe a shift in the most common terms. Instead of generic words, we now see more specific terms related to entertainment (e.g., *game*, *meme*), personal discussions (e.g., *relate*, *people*), and group identity (e.g., *fan*, *sub*), among others. This refined set of words provides valuable insights for various NLP tasks, such as sentiment analysis, topic modeling, and community analysis.
+
+By cleaning and standardizing the text, we create a foundation for advanced algorithms like [BERT](https://www.techtarget.com/searchenterpriseai/definition/BERT-language-model#:~:text=BERT%2C%20which%20stands%20for%20Bidirectional,calculated%20based%20upon%20their%20connection.), which can understand the context of these terms, or methods like [TF-IDF](https://www.capitalone.com/tech/machine-learning/understanding-tf-idf/), which can highlight the importance of each term in the corpus. 
+
+These techniques enable us to gain meaningful insights and interpretations from the data. If you're interested in learning more about it, stay tuned for our Machine Learning section!
 
 ## Additional Resources
 
-- [Text Pre-processing in R](https://tilburgsciencehub.com/topics/manage-manipulate/manipulate-clean/textual/text-preprocessing/)
+- [NLP complete guide](https://www.deeplearning.ai/resources/natural-language-processing)
 - [SpellChecker Documentation](https://pypi.org/project/pyspellchecker/)
 - [Nine Python NLP libraries](https://sunscrapers.com/blog/9-best-python-natural-language-processing-nlp/)
