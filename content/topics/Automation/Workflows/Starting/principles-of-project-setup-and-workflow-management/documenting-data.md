@@ -34,4 +34,4 @@ names and associated labels (e.g., as in the case of countries --> GDP per capit
 
 {{% /tip %}}
 
-Check out [our building block for documenting data](/topics/store-and-document-your-data/document-data/documenting-new-data/)!
+Check out [our topic for documenting data](/document/new-data)!
