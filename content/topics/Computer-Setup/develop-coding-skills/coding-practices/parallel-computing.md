@@ -19,18 +19,18 @@ While some libraries, such as `data.table` or `dplyr` come with built-in paralle
 
 {{% warning %}}
 
-The multicore approach is not available on all systems, as it requires support for forking. Generally, Unix-like systems as Mac and Linux allow for this and Window does not. The socket approach works on all systems.
+The multicore approach is not available on all systems, as it requires support for forking. Generally, Unix-like systems such as Mac and Linux allow for this and Windows does not. The socket approach works on all systems.
 
 {{% /warning %}}
 
 
 ## The method behind parallelization
 
-The Central Processing Unit (CPU) of your computer contains small units called "cores". The number of cores available determines how many different tasks you can execute at the same time. Then, creating clusters is like forming teams of these "cores". You send data and functions to each cluster, where each core works on a different part of the task. In theory, the computation can be executed as many times faster as cores you have available, e.g. 4 available cores speeds up your computation to 1/4 of the time. 
+The Central Processing Unit (CPU) of your computer contains small units called "cores". The number of cores available determines how many different tasks you can execute at the same time. Then, creating clusters is like forming teams of these "cores". You send data and functions to each cluster, where each core works on a different part of the task. In theory, the computation can be executed as many times faster as the cores you have available, e.g. 4 available cores speed up your computation to 1/4 of the time. 
 
-However, overhead makes this less in practice. Overhead involves things as starting the sub-processes and copying the data over to those processes, and communicating back and collecting the results. Therefore, in reality, this maximum time-saving is not likely to reach.
+However, overhead makes this less in practice. Overhead involves things such as starting the sub-processes and copying the data over to those processes, and communicating back and collecting the results. Therefore, in reality, this maximum time-saving is not likely to be reached.
 
-You can determine the number of cores that are available, i.e. the number of computations that can be executed at the same time, with the `detectCores()` function. 
+You can determine the number of available corese, i.e. the number of computations that can be executed at the same time, with the `detectCores()` function. 
 
 {{% codeblock %}}
 ```R
@@ -44,11 +44,11 @@ detectCores()
 
 ## Multicore approach
 
-The easiest application of the multicore approach is the `mclapply()` function of the `parallel` package in R. As `apply()` iterates over a data-structure while applying a function to each subset, `lapply()` is used to iterate over a list, `mcapply` applies parellization by iterating into multiple processes (the cores). The multicore approach copies the entire current version of R and moves it to a new core, so exporting variables and loading already loaded packages again is not necessary.
+The easiest application of the multicore approach is the `mclapply()` function of the `parallel` package in R. As `apply()` iterates over a data structure while applying a function to each subset, `lapply()` is used to iterate over a list, `mcapply` applies parallelization by iterating into multiple processes (the cores). The multicore approach copies the entire current version of R and moves it to a new core, so exporting variables and loading already loaded packages again is not necessary.
 
 ### Example 
 
-This simple example calculates the mean sepal length for each species in the `iris` dataset available within R. If you want to know more about the data beforehand, you can check the summary statistic of the dataset yourself with running `summary(iris)`. 
+This simple example calculates the mean sepal length for each species in the `iris` dataset available within R. If you want to know more about the data beforehand, you can check the summary statistic of the dataset yourself by running `summary(iris)`. 
 
 {{% codeblock %}}
 ```R
@@ -119,7 +119,7 @@ time_multi
 ```
 {{% /codeblock %}}
 
-The multicore computation appears to be slower than than the normal computation for this very small task, with `0.04` seconds against `0.02` seconds. These times likely differ for you. 
+The multicore computation appears to be slower than the normal computation for this very small task, with `0.04` seconds against `0.02` seconds. These times likely differ for you. 
 
 <!-- system.time() user and elapsed are roughly the same; normal with no parallelization (what does elapsed mean). Now using mclapply(), elapsed < user time (although not 1/4 when we use 4 cores)
 User time = CPU time spent executing your R code (adding all tasks together, whether it is executed sequentially or in parallel)
@@ -127,11 +127,11 @@ Elapsed time = total real-world time that has elapsed from start of computation 
 
 ## Socket approach
 
-The socket approach slightly differs from the multicore approach. Here, you have to make a socket cluster first, and manually copy the data and code to each cluster member (the cores). This is the key difference with multicore approach, in which exporting was not necessary.
+The socket approach slightly differs from the multicore approach. Here, you have to make a socket cluster first, and manually copy the data and code to each cluster member (the cores). This is the key difference with the multicore approach, in which exporting was not necessary.
 
 ### Example
 
-The following example provides the basic steps how to make a cluster and let make it execute your task. To test its efficiency, we will compare the time needed to execute code being executed with and without parallelization.
+The following example provides the basic steps to make a cluster and let it execute your task. To test its efficiency, we will compare the time needed to execute code being executed with and without parallelization.
 
 {{% warning %}}
 
