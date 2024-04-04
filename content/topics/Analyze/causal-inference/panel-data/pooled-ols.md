@@ -34,7 +34,7 @@ By assuming no dependence across individual groups, Assumption 1 of the [Fixed E
 The model can be represented as follows:
 
 {{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \epsilon_{it}
+$invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \epsilon_{it}$
 {{</katex>}}
 
 where,

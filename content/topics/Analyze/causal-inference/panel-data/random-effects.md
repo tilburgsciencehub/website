@@ -29,9 +29,11 @@ This is an overview of the content:
 Let's continue with the model where we estimate the relationship of market and stock value on the gross investment of firms, using `Grunfeld` data. This is the regression equation:
 <br/>
 <br/>
+
 {{<katex>}}
-$invest_{it}$ = $\beta_0$ + $\beta_1 value_{it}$ + $\beta_2 capital_{it}$ + $\alpha_i$ + $\epsilon_{it}
+$invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}$
 {{</katex>}}
+
 <br/>
 <br/>
 where,
