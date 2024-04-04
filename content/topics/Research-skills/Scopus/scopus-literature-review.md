@@ -25,7 +25,7 @@ The structure of this tutorial is as follows:
 - Introduction & access 
 - Searching for documents 
 - Adavanced search options 
-- Conclusions 
+- Summary 
 
 Let's embark on this journey together and unlock what Scopus has to offer!
 
@@ -51,11 +51,9 @@ There is also an option to use Scopus for free, by scrolling down on the [Elsevi
 
 The most common option to access Scopus is through a university and/or library, either by means of an authentication or just by simply being connected to the Wifi. 
 
-Here I am going to show you how to access from a Tilburg University's student perspective, however, it is important to note that this process is generalizable to all students. 
-
 Follow these steps for a smooth start to the Scopus experience: 
 
-1.  Make sure you are connected to the university Wifi or the VPN. For the latter, a useful guide [here](https://www.tilburguniversity.edu/students/it/vpn). 
+1.  Make sure you are connected to the university Wifi or the VPN. 
 
 2. Navigate to the [Scopus landing page](https://www.elsevier.com/products/scopus), it should look as follows:
 
@@ -71,18 +69,13 @@ Click on the button "Sign in".
 <img src = "../images/uniaccess.png" width="500">
 </p>
 
-4. Type in the box the name of your university, in this case Tilburg University. Click on the result. 
+4. Type in the box the name of your university, click on the result. 
 
 5. You will be now asked to authenticate your university account. Once verified, you should have full access to the Scopus Database. 
 
-For your reference, the Scopus homepage should look like this: 
 
-<p align = "center">
-<img src = "../images/scopushome.png" width="500">
-</p>
-
-- On the top left corner you can verify your institutional access as "Brought to you by Tilburg University" suggests. 
-- On the top right corner you can also check you personal account, where you can explore personalized features that we will dive into later in the tutorial. 
+On the top left corner of the home page you can verify your institutional access. 
+On the top right corner you can also check your personal account, where you can explore personalized features that we will dive into later in the tutorial. 
 
 Now that you are set up, we can get into exploring what Scopus has to offer. 
 
@@ -114,7 +107,7 @@ Enter **unemployment** in the search box as follows:
 
 - To expand the search to additional fields, click the "+ Add search field". A new search bar will appear, let's use **long term** for this search. 
 
-Notice that the two searches will be connected by the logical operator AND, meaning that the search aims to include both search terms. 
+Notice that the two searches will be connected by the logical operator AND, meaning that the search aims to include both terms. 
 Alternatively, you can opt for OR and AND NOT operators, depending on your purpose, but don't worry about this as the topic of logical operators will be covered later in this tutorial.
 
 - You can also set a specific date range for search results in the following way: 
@@ -175,12 +168,7 @@ You can click on individual cards to expand and view additional data.
 In the above image you can see the amount of documents published on our topic through time, it depicts a clear increase in research especially in the last decade. 
 This can be very useful for your research as it points out which years were more prolific for researchers. 
 
-By scrolling down you can inspect additonal data, as you can see in the image below: 
-
-<p align = "center">
-<img src = "../images/analyzeother.png" width="500">
-</p>
-
+By scrolling down you can inspect additonal data. 
 Authors with the most documents, countries, affiliations and subject areas can be inspected in more detail. 
 
 ### Working with a document
@@ -271,13 +259,28 @@ To view the search string more clearly as you modify it click on 'Outline query'
 <img src = "../images/modifyquery.png" width="500">
 </p>
 
-## Conclusions 
+## Summary 
 
-In conclusion, this guide is really helpful for people who are new to using Scopus. It shows you how to get into the platform, move around it, and do your research effectively. It breaks down the steps for accessing Scopus, using its search features, and refining your results. This is especially useful for students working on their theses or research projects, giving them the tools to make the most out of Scopus.
+{{% summary %}}
 
-Additionally, the guide encourages users to check out Scopus's personalized features, like saved lists, saved searches, alerts, and export preferences. It helps you understand how to keep everything organized and keep track of the literature that matters to you.
+1. **Accessing Scopus**: Check institutional access or use the free preview option on the Elsevier Scopus landing page.
 
-In a nutshell, this guide doesn't just make it easy to start using Scopus; it also makes sure you learn the skills you need to do detailed and well-informed literature reviews. This will definitely make your research better and more impactful.
+2. **Utilizing Personalized Features**: Use 'Saved lists', 'Saved searches', and set up 'Alerts' to organize and track research.
+
+3. **Basic Search Techniques**: Enter keywords and refine search results using filters.
+
+4. **Analyzing Search Results**: Use 'Analyze results' to gain insights on research trends and evaluate citation impact.
+
+5. **Saving Relevant Documents**: Use 'Save to list' to save articles and queries for future reference.
+
+6. **Advanced Search Techniques**: Utilize Boolean operators and field codes to create complex search queries and refine results.
+
+{{% /summary %}}
+
+By following these key steps, you can effectively utilize Scopus for comprehensive literature research, making your academic journey smoother and more productive!
+
+
+
 
 
 
