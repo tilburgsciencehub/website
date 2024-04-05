@@ -131,7 +131,7 @@ The socket approach slightly differs from the multicore approach. Here, you have
 
 ### Example
 
-The following example provides the basic steps to make a cluster and let it execute your task. To test its efficiency, we will compare the time needed to execute code being executed with and without parallelization.
+The following example provides the basic steps on how to make a cluster and let it execute your task. To test its efficiency, we will compare the time needed to execute code being executed with and without parallelization.
 
 {{% warning %}}
 
@@ -157,7 +157,7 @@ ncpu <- floor(detectCores(all.tests = FALSE, logical = TRUE) * perc_use)
 ```
 {{% /codeblock %}}
 
-The number of cores is determined by your computer's hardware configuration, and is `4` in my case. The `perc_use` represents the percentage of CPU cores you want to use for parallel computing, set to `0.8`. The rationale behind using a percentage instead of all cores could be to leave some CPU capacity for other system tasks.The number of cores multiplied with the percentage you want to use determines the value for `ncpu`, i.e. the number of CPU cores to be used for parallel processing. 
+The number of cores is determined by your computer's hardware configuration and is `4` in my case. The `perc_use` represents the percentage of CPU cores you want to use for parallel computing, set to `0.8`. The rationale behind using a percentage instead of all cores could be to leave some CPU capacity for other system tasks. The number of cores multiplied witbyh the percentage you want to use determines the value for `ncpu`, i.e. the number of CPU cores to be used for parallel processing. 
 
 2. Create cluster
    
@@ -171,7 +171,7 @@ cl <- makePSOCKcluster(ncpu)
 
 3. Execute code in parallel
 
-The socket approach doesn't have anything loaded in yet, so any loaded packages, variables, data, functions etc. that the cluster needs to execute the code needs to be moved into each process. This can be done with the `clusterExport()` function. Below, a function is exported to the cluster as an example.
+The socket approach doesn't have anything loaded in yet, so any loaded packages, variables, data, functions, etc. that the cluster needs to execute the code needs to be moved into each process. This can be done with the `clusterExport()` function. Below, a function is exported to the cluster as an example.
 
 {{% codeblock %}}
 ```R
@@ -200,12 +200,12 @@ time_socket <- end_time_socket - start_time_socket
 
 {{% tip %}}
 
-You can use the `parLapply()` function to perform an `lapply()` function across multiple nodes in a socket cluster.
+You can use the `parLapply()` function to perform a `lapply()` function across multiple nodes in a socket cluster.
 
 {{% /tip %}}
 
 
-4. Compare time to same task without parallelization
+4. Compare time to that of the same task without parallelization
 
 {{% codeblock %}}
 ```R
@@ -214,7 +214,7 @@ time_socket
 ```
 {{% /codeblock %}}
 
-Again, for this small computation, overhead seems to be larger than the time parallelization has saved, with time for execution with the socket approach is `0.11`, compared to `0.02` for the normal computation.
+Again, for this small computation, the overhead seems to be larger than the time parallelization has saved, with time for execution with the socket approach is `0.11`, compared to `0.02` for the normal computation.
 
 
 ## Multicore versus socket approach
@@ -231,7 +231,7 @@ Based on [Josh Errickson](https://dept.stat.lsa.umich.edu/~jerrick/courses/stat7
 
 {{% warning %}}
 
-When generating random numbers in parallel, be careful. This might give issues as is not possible to generate the exact same numbers in each of the cores. Also, reproducing the same random numbers with `set.seed()` will not work the same. The `parallel` package offers a way to overcome this issue. Check [Chapter 20.4 of this guide](https://bookdown.org/rdpeng/rprogdatascience/) for an example.
+When generating random numbers in parallel, be careful. This might cause issues as is not possible to generate the exact same numbers in each of the cores. Also, reproducing the same random numbers with `set.seed()` will not work the same. The `parallel` package offers a way to overcome this issue. Check [Chapter 20.4 of this guide](https://bookdown.org/rdpeng/rprogdatascience/) for an example.
 
 {{% /warning %}}
 
