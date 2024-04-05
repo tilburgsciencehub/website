@@ -21,18 +21,6 @@ Having the ability to establish causality provides a strong foundation for using
 <figcaption> Source: xkcd (https://xkcd.com/552/) </figcaption>
 </p>
 
-{{% summary %}}
-Causal inference methods are crucial for identifying and understanding causal effects in data. While this topic introduces causal inference, navigate to the ["Causal Inference" section](https://tilburgsciencehub.com/topics/analyze/causal-inference/#causal-inference-ezo) for explanations and practical applications on the following methods:
-
-- [Regression Discontinuity Designs (RDD)](https://tilburgsciencehub.com/topics/analyze/causal-inference/rdd)
-- [Difference in Difference](https://tilburgsciencehub.com/topics/analyze/causal-inference/did)
-- [Panel Data](https://tilburgsciencehub.com/topics/analyze/causal-inference/panel-data)
-- [Instrumental Variables](https://tilburgsciencehub.com/topics/analyze/causal-inference/instrumental-variables)
-- [Matching](https://tilburgsciencehub.com/topics/analyze/causal-inference/matching)
-
-{{% /summary %}}
-
-
 ## Potential outcomes framework
 
 {{<katex>}}
@@ -121,7 +109,16 @@ Causal inference methods are essential for understanding the impact of variables
 
 - The *Average Treatment Effect on the Treated* (ATT) focuses on the treated units, while the *Average Treatment Effect for the Untreated* (ATU) focuses on the control group.
 
+Navigate to the ["Causal Inference" section](https://tilburgsciencehub.com/topics/analyze/causal-inference/#causal-inference-ezo) for applications on the following causal inference methods:
+
+- [Regression Discontinuity Designs (RDD)](https://tilburgsciencehub.com/topics/analyze/causal-inference/rdd)
+- [Difference in Difference](https://tilburgsciencehub.com/topics/analyze/causal-inference/did)
+- [Panel Data](https://tilburgsciencehub.com/topics/analyze/causal-inference/panel-data)
+- [Instrumental Variables](https://tilburgsciencehub.com/topics/analyze/causal-inference/instrumental-variables)
+- [Matching](https://tilburgsciencehub.com/topics/analyze/causal-inference/matching)
+
 {{% /summary %}}
+
 
 # Reference
 - [Cunningham, S. (2021). Causal inference: The mixtape. Yale university press.](https://mixtape.scunning.com/)
