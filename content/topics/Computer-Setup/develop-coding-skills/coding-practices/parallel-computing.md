@@ -121,10 +121,6 @@ time_multi
 
 The multicore computation appears to be slower than the normal computation for this very small task, with `0.04` seconds against `0.02` seconds. These times likely differ for you. 
 
-<!-- system.time() user and elapsed are roughly the same; normal with no parallelization (what does elapsed mean). Now using mclapply(), elapsed < user time (although not 1/4 when we use 4 cores)
-User time = CPU time spent executing your R code (adding all tasks together, whether it is executed sequentially or in parallel)
-Elapsed time = total real-world time that has elapsed from start of computation until it is completed. -->
-
 ## Socket approach
 
 The socket approach slightly differs from the multicore approach. Here, you have to make a socket cluster first, and manually copy the data and code to each cluster member (the cores). This is the key difference with the multicore approach, in which exporting was not necessary.
