@@ -1,7 +1,7 @@
 ---
 tutorialtitle: "Navigating Scopus for Effective Literature Research"
 title: "Navigating Scopus for Effective Literature Research"
-description: "Beginner's guide to effectively using Scopus for comprehensive literature reviews, beneficiaries include students writing their thesis"
+description: "Beginner's guide to effectively using Scopus for comprehensive literature reviews, benefiting students writing their thesis"
 keywords: "Scopus, literature review, thesis, beginner, papers"
 weight: 2
 draft: false
@@ -24,7 +24,7 @@ The structure of this tutorial is as follows:
 
 - Introduction & access 
 - Searching for documents 
-- Adavanced search options 
+- Advanced search options 
 - Summary 
 
 Let's embark on this journey together and unlock what Scopus has to offer!
@@ -39,7 +39,7 @@ You might be asking yourself: why Scopus? Well, as you will see during the cours
 
 Scopus Database use typically requires a subscription or to be granted access through a research institution, university or library.
 
-Subscription access to Scopus is only available for organizations and entreprises, hence check if that may be the case for your organization. 
+Subscription access to Scopus is only available for organizations and enterprises, hence check if that may be the case for your organization. 
 
 There is also an option to use Scopus for free, by scrolling down on the [Elsevier Scopus landing page](https://www.elsevier.com/products/scopus), find the button that says "View Scopus Preview"
 
@@ -49,11 +49,11 @@ There is also an option to use Scopus for free, by scrolling down on the [Elsevi
 
 ### Institutional access 
 
-The most common option to access Scopus is through a university and/or library, either by means of an authentication or just by simply being connected to the Wifi. 
+The most common option to access Scopus is through a university and/or library, either by means of an authentication or just by simply being connected to the Wi-Fi. 
 
 Follow these steps for a smooth start to the Scopus experience: 
 
-1.  Make sure you are connected to the university Wifi or the VPN. 
+1.  Make sure you are connected to the university Wi-Fi or the VPN. 
 
 2. Navigate to the [Scopus landing page](https://www.elsevier.com/products/scopus), it should look as follows:
 
@@ -89,7 +89,7 @@ By clicking on your account icon on the top right corner, a menu opens with the 
 - Saved searches: allows you to rename, edit, delete, combine or set an alert for saved searches. You can also run a saved search to view the results since the search was last run.
 - Alerts: allows you to edit, delete or change the status of your alerts. You can also check for new results based upon the date that the alert was created. Alerts are personalized notifications that you can set up to be updated when new research comes out on a topic of your interest. 
 - Export preferences: allows you to choose a preferred file type or reference management tool when exporting documents. This can be very useful when exporting references or citations of the literature you plan to use. 
-In this section you can select the export settings of your preference, which will the in be applied to your search sessions. 
+In this section you can select the export settings of your preference, which will then be applied to your search sessions. 
 
 ## How to search & analyze results 
 
@@ -141,7 +141,7 @@ On the left side of the page, the column "refine search" has a few filters, we w
 - Funding sponsor
 - Country
 - Source type 
-- Language: Select your language of interest, it is a sometimes overlooked way to reduce the number of documents you will have to look through! 
+- Language: Select your language of interest, it is sometimes overlooked as a way to reduce the number of documents you will have to look through! 
 - Open access 
 
 Once you are done with your selection, don't forget to click **Limit to**. 
@@ -168,7 +168,7 @@ You can click on individual cards to expand and view additional data.
 In the above image you can see the amount of documents published on our topic through time, it depicts a clear increase in research especially in the last decade. 
 This can be very useful for your research as it points out which years were more prolific for researchers. 
 
-By scrolling down you can inspect additonal data. 
+By scrolling down you can inspect additional data. 
 Authors with the most documents, countries, affiliations and subject areas can be inspected in more detail. 
 
 ### Working with a document
@@ -198,7 +198,7 @@ By clicking that, a box will appear asking you to save the document in either a 
 <img src = "../images/saveoption.png" width="500">
 </p>
 
-The files will then be stored in the personalized area 'Saved lists' in 'My Scopus' which you can access by cliking on your personal profile: 
+The files will then be stored in the personalized area 'Saved lists' in 'My Scopus' which you can access by clicking on your personal profile: 
 
 <p align = "center">
 <img src = "../images/personalprofile.png" width="500">
@@ -216,7 +216,7 @@ Click on save search and choose a name to easily identify your query. It will be
 
 The advanced search feature allows you to create a more complex search using field codes, proximity operators or Boolean operators. 
 
-For this part of the tutorial let's change our research topic to how does climate change affect coffe production. 
+For this part of the tutorial let's change our research topic to how does climate change affect coffee production. 
 
 Type in the search bar **coffee** and then click on 'Advanced document search' as you can see below: 
 
@@ -247,7 +247,7 @@ Now that the keywords are defined let's scroll down and explore the filters, whi
 Let's select: 
 
 - Under document filter, only open access files. 
-- Subject areas: agricultural and biolgical sciences (under life sciences) and economics, econometrics and finance (under social sciences). 
+- Subject areas: agricultural and biological sciences (under life sciences) and economics, econometrics and finance (under social sciences). 
 
 Click on 'search', you will be directed to the search results page we are already familiar with. 
 
