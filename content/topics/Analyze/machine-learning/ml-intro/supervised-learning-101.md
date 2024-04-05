@@ -43,7 +43,7 @@ Classification, on the other hand, is used for categorical output variables. It 
 - **Labeled Data**: in supervised learning, the model is trained with labeled data. This means that the target for this data is already known. These predefined tags help the model to develop and learn on its own, so that it is able to predict targets more accurately when given new unseen and unlabeled data.
 - **Features**: input variables are called features. These are independent variables that describe your data, and are used to predict or explain the target variable.
 - **Target**: output variables are called targets. This is the dependent variable that the machine is trying to predict or understand.
-- **Data split**: to train the model, data is usually splitted into a training and testing sample. As an example, we can use 80% of the data as input to the model to learn from, and use the other 20% to validate how well the model works. 
+- **Data split**: to train the model, data is usually splitted into a training and testing sample. This is done to prevent overfitting, meaning that the model works very well on the training data, but cannot be generalized to new unseen data. As an example, we can use 80% of the data as input to the model to learn from, and use the other 20% to validate how well the model works on new input. Keep in mind that even though in most cases you should use a train-test split, it is not always necessary or suitable for your model.
 
 ## Supervised Learning Algorithms
 
@@ -337,3 +337,8 @@ The key takeaways from this article include:
 
 * Model Evaluation: Learned about evaluation metrics such as the R-squared, RMSE, confusion matrices, accuracy, precision, and recall to understand model performance.
 {{% /summary %}}
+
+## Additional Resources
+
+* Want to learn more on how to implement these methods and others? Check out [this](https://www.datacamp.com/blog/supervised-machine-learning) article and [this](https://app.datacamp.com/learn/skill-tracks/supervised-machine-learning-in-r) track on Datacamp if you are using R.
+* Do you prefer learning how to do supervised learning in Python? Check out [this](https://app.datacamp.com/learn/skill-tracks/supervised-machine-learning-in-python) skill track on Datacamp.

@@ -47,6 +47,8 @@ Different approaches are **classification** and **regression**:
 * Classification predicts categorical outcomes, such as labeling students' course feedback as positive or negative. 
 * Regression predicts continuous outcomes, like forecasting sales of a newly launched product.
 
+If you would like to learn more about supervised learning, you can check out this follow-up article, covering more in-depth theory and (coding) examples: [In-depth Introduction to Supervised Machine Learning](/supervised)
+
 ### 2. Unsupervised Learning 
 
 Unsupervised learning finds patterns in data without predefined labels or outcomes. If you want to identify relationships in your data, without a given outcome variable, this is the right approach since it deals with unlabeled data. It explores the data's inherent structure to identify patterns and relationships without explicit guidance or output. Unsupervised learning is often used to group and cluster different objects based on various attributes, such as segmentating customers based on demographics and purchase history.
