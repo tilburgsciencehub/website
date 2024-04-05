@@ -216,7 +216,7 @@ Two evaluation metrics for regression are R-squared and RMSE. This is what they 
 {{% /tip %}}
 
 ## A Classification Example: Decision Trees
-In this example of supervised classification in R we will use the `iris` dataset. This dataset consists of measurements for iris flowers from three different species. We will train a model that can classify the irises into one of the three speciess. We will do this by making a decision tree.
+In this example of supervised classification in R we will use the `iris` dataset. This dataset consists of measurements for iris flowers from three different species. We will train a model that can classify the irises into one of the three species. We will do this by making a decision tree.
 
 ### Loading and Inspecting the Data
 First, load the iris dataset and inspect what it looks like:
