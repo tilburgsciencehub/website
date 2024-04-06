@@ -45,7 +45,7 @@ We can estimate a fixed-effects model using the `feols()` function, which can be
 
 
 {{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \delta_t + \epsilon_{it}
+$invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \delta_t + \epsilon_{it}$
 {{</katex>}}
 
 where,

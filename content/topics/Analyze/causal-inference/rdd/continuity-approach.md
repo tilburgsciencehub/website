@@ -26,8 +26,8 @@ The observations near the cutoff can be seen as a neighborhood, defined as $c-h$
 There are five steps in the local polynomial estimation:
 1. Select a polynomial order $p$ and a kernel function $K(.)$
 2. Select a bandwidth $h$
-3. For observations above the cutoff, fit a weighted least squares regression, where the estimated intercept from the regression, $\hat{\mu_{+}}$, is an estimate of the point {{<katex>}} \hat{\mu_{+}} = \mathbb{E}[Y_{i}(1)|X_{i} = c] {{</katex>}}
-4.  For observations below the cutoff, fit a weighted least squares regression, where the estimated intercept from the regression, $\hat{\mu_{-}}$, is an estimate of the point {{<katex>}} \hat{\mu_{-}} = \mathbb{E}[Y_{i}(0)|X_{i} = c] {{</katex>}}
+3. For observations above the cutoff, fit a weighted least squares regression, where the estimated intercept from the regression, $\hat{\mu_{+}}$, is an estimate of the point $\hat{\mu_{+}} = \mathbb{E}[Y_{i}(1)|X_{i} = c]$ 
+4.  For observations below the cutoff, fit a weighted least squares regression, where the estimated intercept from the regression, $\hat{\mu_{-}}$, is an estimate of the point  $\hat{\mu_{-}} = \mathbb{E}[Y_{i}(0)|X_{i} = c]$
 5. Calculate the point estimate $\tau_{SRD} = \hat{\mu_{+}}-\hat{\mu_{-}}$
 
 Therefore, we need to choose the kernel function $K(.)$, the order of the polynomial $p$ and the bandwidth $h$.
