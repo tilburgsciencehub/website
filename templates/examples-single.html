@@ -9,7 +9,7 @@
 		<div class="col-lg-8 col-22 pr-lg-5">
 			<div class="sticky-top mb-lg-5 pb-lg-5 d-flex flex-column tableOfContentParent">
 				<h1 style="font-size: 38px; line-height: 48px;">{{ example.title }}</h1>
-				<sup class="mt-2" style="color: #ffb222;font-size: 14px;"><i class="fa-regular fa-clock mr-2"></i>{{ example.reading_time }} mins </sup>
+				<sup class="mt-2" style="color: #976B24;font-size: 14px;"><i class="fa-regular fa-clock mr-2"></i>{{ example.reading_time }} mins </sup>
 				<div class="TableOfContents">
 					<span class="arrow-icon"></span>
 					<div class="pseudo-btn"></div>
@@ -39,6 +39,7 @@
 							<div class="flex-fill">
 								{% include 'partials/sharelinks.html' %}
 							</div>
+							<!-- Example Date
 							{% if example.date_modified %}
 								<p class="mb-0 article-date">{{ example.date_modified|formatdate }}</p>
 							{% else %}
@@ -46,6 +47,7 @@
 									<p class="mb-0 article-date">{{ example.date|formatdate }}</p>
 								{% endif %}
 							{% endif %}
+							-->
 						</div>
 
 						{% include 'partials/announcement.html' %}

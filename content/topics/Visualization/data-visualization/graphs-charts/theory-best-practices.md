@@ -5,7 +5,7 @@ keywords: "data, visualization, introduction, theory, encoding, chart, types, el
 date: 2023-07-18
 weight: 1
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /visualize/data
   - /data/encoding
@@ -362,6 +362,11 @@ ggsave("my_box_plot.png", plot = box_plot, width = 8, height = 6, dpi = 600)
 ```
 {{% /codeblock %}}
 
+{{% tip %}}
+
+For a more in-depth exploration of the syntax and capabilities of `ggsave()`, check out this [article](/ggplot2/ggsave).
+
+{{% /tip %}}
 ## Summary 
 
 Data visualization is essential for understanding data. It uses marks (like points and lines) and channels (such as color and size) to create charts. A complete chart includes axes, legends, titles, and labels for clarity.

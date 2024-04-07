@@ -12,6 +12,7 @@
 			<!-- Logo -->
 			<div><a class="navbar-brand" href="/">
 					<img src="{{ url_for('static', filename='img/logo.svg') }}" alt="tilburg science hub logo">
+					<div style="text-align: center; font-size:10px;color:	#035f94">supported by Tilburg University</div>
 				</a></div>
 
 			<!-- Mobile Icons for Nav -->
@@ -47,7 +48,7 @@
 								{% for topic in data_dict['topics'] %}
 								{% if topic.draft == 'false' %}
 									<div class="col-6 mb-4 px-3">
-										<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{ topic.title }}</span>
+										<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;font-weight: bold;">{{ topic.title }}</span>
 										{% for subtopic in topic.childtopics %}
 										{% if subtopic.draft == 'false' %}
 										<a class="d-block mx-0"

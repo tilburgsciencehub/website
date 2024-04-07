@@ -1,7 +1,7 @@
 ---
 name: "Fernando Iscar"
 description_short: "Engaging at Tilburg Science Hub is a true win-win: While deepening my Data Science background, I'm also paving the way for the community's enrichment."
-description_long: "I've always been deeply passionate about statistics, predictions, and the art of data visualization. This guided me to explore the fields of machine learning and deep learning, establishing a robust background in data science. My ambition for knowledge drew me to Tilburg Science Hub, where I further refined my expertise with research in cloud computing and reproducible environments, making these skills also available for the broader open science community."
+description_long: "I've always been interested in the potential of data analysis to sharpen business strategy. This guided me to explore the fields of data analytics and machine learning, establishing a solid foundation in data science. At Tilburg Science Hub, I get the chance to further refine my knowledge with research in cloud computing and reproducible environments, making these skills also available for the broader open science community."
 skills: 
   - Python 
   - R
@@ -17,6 +17,3 @@ email: f.iscar@tilburguniversity.edu
 image: fernandoiscar.webp
 status: "active"
 ---
-
-
-*" To write it, it took me three months; to conceive it, three minutes; to collect the data in it, all my life - F. Scott Fitzgerald "*
