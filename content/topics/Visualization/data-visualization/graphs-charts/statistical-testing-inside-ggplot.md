@@ -3,7 +3,7 @@ title: "Combining Statistical Testing and Visualization, directly in R using ggp
 description: "Researchers often report the outcome of analyses (e.g., a statistical test) in visualizations (e.g., a figure in a paper). We show you how to automate this using `ggpubr`'s visualization tools and `rstatix`'s features in R."
 keywords: "ggplot2, bar chart, `ggpubr`, categorical variable, dplyr, `rstatix`, data visualization"
 date: 11-12-2023
-weight: 5
+weight: 8
 author: "Matthijs ten Tije"
 authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:

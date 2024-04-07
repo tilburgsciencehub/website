@@ -126,7 +126,7 @@ The estimates for the independent variables indicate the predicted effect of eac
 ### The standard error
 
 <p align = "center">
-<img src = "../images/regression_ se.png" width="300">
+<img src = "../images/regression_se.png" width="300">
 </p>
 
 The standard error provides an estimate of the uncertainty associated with the coefficient estimates. Put simply, it tells us how much we would expect the coefficient estimate to vary if multiple samples were drawn from the population. 
@@ -166,7 +166,7 @@ The following output is returned:
 ### t-value
 
 <p align = "center">
-<img src = "../images/tvalue.png" width="300">
+<img src = "../images/regression_tvalue.png" width="300">
 </p>
 
 The t-value is computed by dividing the coefficient estimate by the standard error.

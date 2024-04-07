@@ -3,7 +3,7 @@ title: "Visualizing Time Series Data with ggplot2"
 description: "Explore the use of ggplot2 in visualizing time series data, from basic plotting techniques to advanced customization, using the tidyquant package for financial data analysis."
 keywords: "ggplot2, time series visualization, R, tidyquant, data visualization, scale formatting, grouping, faceting"
 date: 2024-02-14
-weight: 
+weight: 6 
 author: "Matthijs ten Tije"
 authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
@@ -410,28 +410,4 @@ This article demonstrate how to use `ggplot2` for time series data visualization
 ```
 [R-link](time-series-ggplot2.Rmd)
 
-{{% /codeblock %}}
-
-{{% tip %}}
-
-#### Tips for Saving Plots Efficiently in R
-
-- **Path Verification**: Confirm the save path exists to avoid errors. 
-- **Streamlined Saving**: For quick saves, use the current working directory by omitting the path, only specifying the file name. Check your directory with getwd().
-- **Format Specification**: Although ggsave() guesses the format from the file extension, explicitly define the file type with the type parameter for precision.
-- **Dimension Control**: Adjust width, height, and dpi for optimal clarity, especially critical for high-stakes presentations or publications. Units default to inches but can be set to centimeters.
-- **Automated Naming**: Employ dynamic naming for your files, like incorporating timestamps, to enhance file management and prevent overwrites, fostering a more organized workflow.
-
-{{% /tip %}}
-
-{{% codeblock %}}
-```R
-# Example: Saving a plot to the current working directory with specified dimensions and DPI
-ggsave(filename = "Your-Figure-Title.png", width = 10, height = 6, dpi = 300)
-
-# Example: Saving multiple plots using automatic file naming 
-timestamp <- format(Sys.time(), "%Y-%m-%d_%H-%M-%S")
-filename <- paste0("plot_", timestamp, ".png")
-ggsave(filename, width = 8, height = 5, dpi = 300)
-```
 {{% /codeblock %}}

@@ -13,7 +13,7 @@ aliases:
 
 ## Let's verify whether everything is properly installed
 
-Before we're getting started, let's verify whether you have properly followed our [setup guide](/topics/configure-your-computer/) for R, Python and `make` in order to be able to run our workflow.
+Before we're getting started, let's verify whether you have properly followed our [setup guide](topics/computer-setup/software-installation/#software-installation-ezo/) for R, Python and `make` in order to be able to run our workflow.
 
 Our tutorial clips are recorded on Windows, but have been tested on a Mac, too.
 

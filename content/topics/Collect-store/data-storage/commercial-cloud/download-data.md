@@ -1,10 +1,12 @@
 ---
 title: "Download Data Programmatically"
-description: "Learn how to download data right from its (online) source and store it locally with code."
+description: "Learn how to download data directly from its online source and save it locally using code. Also, explore how to download and upload data from your local machine to Google Drive"
 keywords: "download, import data, store, collect, terminal, workflow, programatical download"
-#date: 2021-02-08
+#date: 2024-03-09
 draft: false
 weight: 3
+author: "Kheiry Sohooli"
+authorlink: "https://tilburgsciencehub.com/contributors/kheirysohooli/"
 aliases:
   - /store/data
   - /store/data-programmatically
@@ -91,15 +93,9 @@ data = pandas.read_csv("DOWNLOAD_URL")
 ```
 {{% /codeblock %}}
 
-### Downloading data from Google Drive
+### Downloading and uploading data from Google Drive
 
 The Google Drive API offers a way to programmatically download and upload files through, for example, a Python script. Keep in mind that this only works for files stored in your own Google Drive account (i.e., your own files and those shared with you).
-
-
-{{% warning %}}
-Unfortunately, the procedure described in the first code snippet does not work for Google Drive sharing links. The steps below may require some set-up time and technical know-how, but they can be re-used for a variety of cloud services.
-{{% /warning %}}
-
 
 #### Google Cloud Platform
 Like Amazon and Microsoft, Google offers cloud services (e.g., databases and compute resources) that you can configure through an [online console](https://console.cloud.google.com/home). In Google Cloud Platform you can also enable services like the Google Drive API, which we'll make use of here. Follow the steps below to get started.
@@ -112,29 +108,29 @@ Google offers a 90-day trial with a €300 credit to use, but you can keep on us
 
 2. Click on "Create New Project", give it a project name (e.g., `GoogleDriveFiles`), and click on "Create".
 
-![new-project](../images/new_project.png)
+![new-project]("../images/new_project.png")
 
 
 3. Next, we need to set up a so-called OAuth2 client account which is a widely used protocol for authentication and authorization of API services.
-   * In the left-side bar click on "APIs & Services" > "OAuth consent screen".
+   * From the navigation menu in the left top click on "APIs & Services" > "OAuth consent screen".
    * Set the user type to "External" and click on "Create".
-   * Give your app a name (can be anything) and fill out a support and developer email address. Click "Save and continue" (it may sometimes throw an app error, then just try again!).
+   * Give your app a name (can be anything) and fill out a support and developer email addresses. Click "Save and continue" (it may sometimes throw an app error, then just try again!).
    * Click "Save and continue" twice and then "Back to dashboard".
    * Click on "Publish app" and "Confirm".
-   * In the left sidebar, click on "Credentials" and then "Create Credentials" > "OAuth client ID" > "Desktop app" and click on "Create". It will show you your client ID and client secret in a pop-up screen. Rather than copying them from here, we will download a JSON file that contains our credentials. Click on "OK" and then on the download symbol:
+   * In the left sidebar, click on "Credentials" and then "Create Credentials" > "OAuth client ID". Then, from "application type" menu "Desktop app" and click on "Create". It will show you your client ID and client secret in a pop-up screen. Rather than copying them from here, we will download a JSON file that contains our credentials. Click on "OK" and then on the download symbol:
 ![download-credentials](../images/download_credentials.png)
 
    * Rename the file to `client_secret.json` and store it in the same folder as the scripts you'll use to download and upload the files.
 
 4.  By default, the Google Drive API is not activated, look for it in search bar and click on "Enable".  
 
-5. Download the following [Python script](https://github.com/RoyKlaasseBos/tsh-website/blob/master/content/topics/store-and-document-your-data/store-data/google_drive.py) ("Raw" > "Save as") and put it in the same directory as the client secret.
+5. Download google_drive.py from [this link](https://github.com/tilburgsciencehub/website/tree/master/content/topics/Collect-store/data-storage/commercial-cloud). Then click on "Raw" > "Save as" and store it in the same directory as the client secret.
 
 6. Run the following command to install the Google Client library:  
 
 {{% codeblock %}}
 ```bash
-pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib
 ```
 {{% /codeblock %}}
 
@@ -158,10 +154,10 @@ service = create_service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 ```
 {{% /codeblock %}}
 
-The first time a new window may pop up that asks you to authenticate yourself with your Google account. Click on "Allow".  
+The first time a new window may pop up that asks you to authenticate yourself with your Google account. Select the same account that you used to sign in to the Google Cloud platform. Click on "Allow".  
 ![authenticate](../images/authenticate_Drive.png)
 
-Depending on whether you'd like to download or upload a file, follow one of both approaches:
+Depending on whether you'd like to download or upload a file, follow one of two approaches:
 
 #### Download a file
 {{% codeblock %}}
@@ -184,21 +180,26 @@ with open("<FILE_NAME.extension>", 'wb') as f:
     f.close()
 ```
 ```R
+# install `googledrive` library if it is not installed already
+install.packages("googledrive")
+
+#load `googledrive` library
 library(googledrive)
-data_id <-"12rVWmiA6r8A1ggyP_T3jM7hONUkXoL3h"
-drive_download(as_id(data_id), path = “out_file.csv”, overwrite = TRUE)
-df <- read.csv(“out_file.csv”)
+
+data_id <-"<data_id>"
+drive_download(as_id(data_id), path = “<FILE_NAME.extension>”, overwrite = TRUE)
+df <- read.extension(“<FILE_NAME.extension>”)
 ```
 {{% /codeblock %}}
 
-* You can find the `<FILE_ID>`/`data_id` by navigating towards the file in your browser and clicking on "Open in new window". The URL then contains the file ID you need. For example, the file ID of `https://drive.google.com/file/d/XXXXXX/view` is `XXXXXX`.  
-![open_new_window](../images/open_new_window.png)
+* You can find the `<FILE_ID>`/`<data_id>` by navigating towards the file in your browser and clicking on "share", then "Get link". The URL contains the file ID(data_id) you need. For example, the file ID of `https://drive.google.com/file/d/XXXXXX/view` is `XXXXXX`.  
+![Share](../images/share_link.png)
 
 * R may ask *"Is it OK to cache OAuth access credentials in the folder `path/gargle/gargle/Cache between R sessions?`"*.
 
-  <img src="../images/R_OAuth_access.PNG" width="600"/>
+  <img src="../images/R_OAuth_access.PNG" width="300"/>
 
-  * Type in 1 in the R console to accept. A new window may pop up that asks you to authenticate yourself with your Google account. Click on “Allow”.
+  * Type in 1 in the R console to accept. A new window will pop up that asks you to authenticate yourself with your Google account. Click on “Allow” and then "continue".
 
   <img src="../images/tidyverseAPI_login.PNG" width="300"/>
 
@@ -211,7 +212,9 @@ df <- read.csv(“out_file.csv”)
 {{% codeblock %}}
 ```python
 file_metadata = {
+    ## provide the file name on your local machine
     "name": "<FILE_NAME.extension>",
+    ## folder Id on your google drive
     "parents": ["<FOLDER_ID>"]
 }
 
@@ -225,8 +228,19 @@ service.files().create(
 ```
 {{% /codeblock %}}
 
-* The `<FOLDER_ID>` can be obtained in a similar way as the `<FILE_ID`>: navigate towards the folder where you'd like to save the file and look for the identifier within the URL.
+* You can get the <FOLDER_ID> in a similar way to how you obtain the <FILE_ID>. Navigate towards the folder where you'd like to save the file and look for the identifier within the "Shared link". For example, the folder id of `https://drive.google.com/drive/folders/XXXXXXXXX?usp=share_link` is `XXXXXXXXX`.
 
 * The `MediaFileUpload()` function assumes that the file supposed to be uploaded is stored in the current directory. If not, add the subdirectory in which the file is stored to the path.
 
-* `<MIME_TYPE>` informs Google Drive about the type of file to be uploaded (e.g., `csv`, `jpg`, `txt`). You can find a list of common MIME types over [here](https://learndataanalysis.org/commonly-used-mime-types/). For example, for a csv file it is: `text/csv`.
+* `<MIME_TYPE>` informs Google Drive about the type of file to be uploaded (e.g., `csv`, `jpg`, `txt`). You can find a list of common MIME types over [here](https://learndataanalysis.org/commonly-used-mime-types/). For example, the MIME type for a CSV file is `text/csv`, and for a PDF file, it is `application/pdf`.
+
+
+{{% summary %}} 
+
+- **Downloading files**: we explored how to download files from URLs and store them locally using both `R` and `Python`, as well as how to download files directly from the terminal.
+- **Opening files**: Learn how to access data directly via URL using `R` and `Python`
+- **Downloading and uploading data from google drive**
+    - using google drive API to handle downloads and uploads data.
+    - Implementing `Python` and `R` scripts to download data from Google Drive and upload it back to Google Drive from a local machine.
+{{% /summary %}} 
+
