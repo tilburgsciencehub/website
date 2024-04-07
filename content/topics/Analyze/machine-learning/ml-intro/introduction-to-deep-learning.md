@@ -14,40 +14,27 @@ Deep learning is a type of machine learning that's inspired by the structure and
 
 Deep learning is commonly used in image recognition, natural language processing, and speech recognition tasks. It finds applications in industries such as healthcare, finance, and autonomous vehicles, where it enables tasks like medical diagnosis, fraud detection, and autonomous driving.
 
-## Inspiration from the human brain
+## Neural Networks: Inspired by the Brain
 
-As has been described in the section above, the inspiration actually comes from the human brain structure. Let's take a look at the human brain neuron anatomy.
+Deep learning draws inspiration from the human brain's complex structure. Geoffrey Hinton's pioneering research asked: Can computer algorithms mimic brain neurons? This exploration aimed to harness the brain's power by mirroring its architecture. The anatomy of a single neuron is presented below.
 
 <p align = "center">
 <img src ="../images/neuron-anatomy.png" width="400">
 </p>
 Picture source: McCullum, N. (2021, 28 april). Deep Learning Neural networks explained in Plain English
 
-During his groundbreaking research on neural networks, Geoffrey Hinton posed a crucial question: could we develop computer algorithms that emulate the behavior of neurons in the brain? The aspiration was to replicate the brain's structure in order to harness some of its capabilities. 
+<br>
 
-In pursuit of this goal, researchers examined the behavior of neurons within the brain. A key insight emerged: a single neuron lacks utility on its own; rather, functional significance arises from networks of neurons working together.
+Neurons, the brain's building blocks, work in networks, where their combined activity creates meaning. Neurons receive and send signals through dendrites and axons. In computer models, this is replicated through weighted inputs and activation functions.
 
-This results from the nature of neurons, which operate by transmitting signals. Specifically, dendrites of neurons receive signals and transmit them along the axon.
+### Mimicking Neurons in Computers
 
-### How neurons forward the information?
-An actual neuron fires an output signal only when the total strength of the input signals exceed a certain threshold. This
-phenomenon is modeled in the perceptron by calculating the weighted sum of the inputs and applying a step or activation function (which are going to be explained later in this article).
-
-How can the aforementioned structure of neurons be mimicked by computers? Let's consider the architecture below:
-
-<p align = "center">
-<img src ="../images/neuron-representation-graph.png" width="400">
-</p> 
-Picture source: McCullum, N. (2021, 28 april). Deep Learning Neural networks explained in Plain English 
-
-Weights play a crucial role in deep learning as they are pivotal in training models. The adjustment of weights constitutes the primary method of training deep learning models, a concept that will become evident as we proceed to construct to the architecture of deep neural networks.
-
-After a neuron gathers inputs from preceding layer neurons, it computes the sum of each signal multiplied by its respective weight. Subsequently, these computed values are transmitted to an activation function, as demonstrated below:
+In deep learning, neurons gather inputs, compute weighted sums, and pass them through activation functions. Weights, vital for model training, adjust to optimize performance, forming the core of deep neural network training.
 
 <p align = "center">
 <img src ="../images/artificial-neuron-representation-math.png" width="400">
 </p> 
-Picture source: McCullum, N. (2021, 28 april). Deep Learning Neural networks explained in Plain English
+Picture source: McCullum, N. (2021, 28 April). Deep Learning Neural Networks Explained in Plain English.
 
 # Shallow and deep neural networks
 
@@ -57,7 +44,7 @@ Single-layer neural networks, also referred to as shallow neural networks, compr
 
 In contrast, deep neural networks boast multiple hidden layers distributed between the input and output layers. These networks can be profoundly deep, incorporating tens or even hundreds of layers. Each layer undertakes computations, forwarding the modified data to the subsequent layer in succession.
 
-# Components of deep learning network
+## Components of deep learning network
 In the sections above we introduced concept of deep learning and we talked a little bit about biology behind it. Let's move now to explaining separate components of deep learning architecture.
 
 - **Input layer** refers to the first layer of nodes in an artificial neural network. This layer receives input data from the outside world.
@@ -84,15 +71,12 @@ $]$
 
 where:
 
-$ f[x, \theta] $ is a deep learning model
+- $ f[x, \theta] $ is a deep learning model
 
-{{<katex>}}  
-\{ x_{i}, y_{i} \}^{I}_{i=1}
-{{</katex>}} is a training data
+- {{<katex>}} \{ x_{i}, y_{i} \}^{I}_{i=1} {{</katex>}} is a training data
 
 ## Training process
 Let us denote our training dataset of I pairs of input/output examples:
-
 
 $\text{Training Data: }$ {{<katex>}}\{ x_{i}, y_{i} \}^{I}_{i=1}{{</katex>}}
 
@@ -117,6 +101,9 @@ $ a(z) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}} $
 
 - ReLU function:
 $ a(z) = \max\(0,z)$
+
+## Optimizer
+An optimizer in the training process of a neural network is like a guide that helps the network learn from the data more effectively. Its main job is to adjust the model’s parameters (like weights and biases) so that the predictions get closer to the actual targets over time. This adjustment is informed by the gradients of the loss function, which indicate the direction of steepest ascent or descent in the parameter space. By iteratively updating the parameters based on these gradients, the optimizer guides the network towards minimizing the loss and improving its predictive accuracy.
 
 ## Mathematical representation
 After introducing all necessary concepts, lets take a look how layers are represented mathematically:
@@ -161,14 +148,17 @@ This is how deep neural network could be presented in the graph:
 
 Coding deep neural networks involves using programming languages such as Python, which is highly popular due to its simplicity and extensive libraries for machine learning and neural networks. Libraries like TensorFlow and PyTorch are widely used for building and training deep neural networks, providing high-level APIs for constructing complex architectures with ease. 
 
-The code snippet below imports necessary libraries for building and training a neural network using Keras with the MNIST dataset. It preprocesses the data, constructs a sequential model with dense layers, compiles the model, trains it on the training data, and evaluates its performance on the test data, printing out the test loss and accuracy.
+Building and training deep neural networks involves several steps, including loading and preparing the data, constructing the model architecture, and compiling, fitting, and evaluating the model. In this section, we will break down each of these steps in detail.
 
-```
-# Importing necessary libraries
+### Loading and Preparing the Data
+
+In this section, we load the MNIST dataset and preprocess it for training and testing.
+
+We begin by importing necessary libraries for data manipulation and preprocessing. Then, we load the MNIST dataset using Keras' built-in function `mnist.load_data()`. The dataset consists of 60,000 training images and 10,000 test images, each with their corresponding labels. Next, we preprocess the data by reshaping the input images and normalizing pixel values to a range between 0 and 1. Additionally, we convert the class labels to categorical format using one-hot encoding.
+
+```python
 import numpy as np
 from keras.datasets import mnist
-from keras.models import Sequential
-from keras.layers import Dense, Flatten
 from keras.utils import to_categorical
 
 # Load the MNIST dataset
@@ -180,6 +170,16 @@ X_test = X_test.reshape((X_test.shape[0], -1)).astype('float32') / 255
 y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
 
+```
+### Building the model
+In this section, we construct the neural network model using Keras' Sequential API.
+
+We create a Sequential model, which allows us to build a linear stack of layers. The model consists of dense (fully connected) layers, which are interconnected neurons. Each dense layer performs a linear operation on the input data followed by a non-linear activation function. In our model, we use ReLU (Rectified Linear Activation) as the activation function for hidden layers and softmax for the output layer. The `units` parameter specifies the number of neurons in each layer, and `input_shape` defines the shape of the input data for the first layer.
+
+```
+from keras.models import Sequential
+from keras.layers import Dense
+
 # Creating a Sequential model
 model = Sequential()
 
@@ -187,7 +187,14 @@ model = Sequential()
 model.add(Dense(units=64, activation='relu', input_shape=(X_train.shape[1],)))
 model.add(Dense(units=64, activation='relu'))
 model.add(Dense(units=10, activation='softmax'))
+```
 
+### Compiling, fitting and evaluating the model
+In this section, we compile the model with an optimizer, loss function, and evaluation metric, train the model on the training data, and evaluate its performance on the test data.
+
+After building the model, we compile it using the `compile()` method. Here, we specify the optimizer (Adam), loss function (categorical cross-entropy), and evaluation metric (accuracy). Then, we train the model on the training data using the `fit()` method, specifying the number of epochs (iterations over the entire dataset) and batch size (number of samples per gradient update). Finally, we evaluate the trained model on the test data to measure its performance in terms of loss and accuracy.
+
+```
 # Compiling the model
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
@@ -217,6 +224,7 @@ The training process involves optimizing the model's parameters to minimize a lo
 ### Practical Implementation in Python
 Python is a popular choice for practical implementation of deep learning models due to its simplicity and extensive libraries. TensorFlow and Keras are commonly used libraries for building and training deep neural networks. Practical implementation involves data preprocessing, defining the model architecture, compiling the model, training it on the data, and evaluating its performance.
 {{% /summary %}}
+
 ### References:
 Prof. Matteo Bustreo, 2023 “Lesson2-Foundations of Deep Learning" https://tilburguniversity.instructure.com/courses/14887/files/2934299?module_item_id=669643.
 
