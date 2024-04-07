@@ -23,23 +23,23 @@ Step into the world of XGBoost, where you'll learn to build, fine-tune, and inte
 
 ## What is XGBoost?
 
-Extreme gradient boosting is an highly effective and widely used machine learning algorithm developed by [Chen and Guestrin 2016](https://dl.acm.org/doi/10.1145/2939672.2939785). The algorithm works by iteratively building a collection of decision trees, where newer trees are used to correct the errors made by previous trees (think of it as taking small steps in order to come closer to the "ultimate truth"). Additionally, the algorithm also makes use of regularization (penalizing complexity of individual trees, and the total number of trees in the collection) to prevent overfitting. 
+Extreme gradient boosting is an highly effective and widely used machine learning algorithm developed by [Chen and Guestrin 2016](https://dl.acm.org/doi/10.1145/2939672.2939785). The algorithm works by iteratively building a collection of decision trees, where newer trees are used to correct the errors made by previous trees (think of it as taking small steps in order to come closer to the "ultimate truth"). Additionally, the algorithm use L1 (Lasso regression) and L2 (Ridge regression) regularization terms in its cost function, and a penalizing term to prevent overfitting and complexity of the model.
 
-This method has proven to be effective in working with large and complex datasets, and is used to address a wide range of problems (both classification and regression) (for example, at the KDDCup in 2015, XGBoost was used by every team ranked in the top 10!).
+This method has proven to be effective in working with large and complex datasets. Also it is famous to handle sparse datasets. XGBoost provides a parallel tree boosting that solve many data science problems such as classification, regression, and recommendation in a fast and accurate way (for example, at the KDDCup in 2015, XGBoost was used by every team ranked in the top 10!).
 
 ### How does XGBoost work?
 
-The algorithm starts by calculating the residual values for each data point based on an initial estimate. For instance, given the variables `age` and `degree`, we compute the residual values relative to `salary`, for which the value `49` will serve as our initial estimation:
+The algorithm starts by calculating the residual values for each data point based on an initial estimate. For instance, given the variables `age` and `degree`, we compute the residual values relative to `salary`(target variable), for which the value `49` will serve as our initial estimation:
 
 
   
-  | **Salary** | **age** | **degree** | **Residual** |
-  | ---------- | ------- | --------- | -----------   |
-  |     40    |     20   |    yes    |     -9      | 
-  |     46     |    28   |    yes    |    -3       |
-  |     50     |    31   |    no     |     1       | 
-  |     54     |   34    |    yes    |     5       |
-  |     61     |   38    |    no     |     12      |
+  | **age** | **degree** |**Salary** | **Residual** |
+ | ------- | --------- | -----------| ------------
+ |     20  |    yes    |    40      |  -9          |
+ |    28   |    yes    |    46      |  -3          |
+ |    31   |    no     |    50      |   1          | 
+ |   34    |    yes    |    54      |  5           |
+ |   38    |    no     |    61      |  12          |
   
 
 Next, the algorithm calculates the similarity score for the entire tree and the individual splits, especially focusing on an arbitrarily chosen mean value of 24 (the mean between the first two age values) using the following formula:  
@@ -138,7 +138,7 @@ Which is a higher value than that of the split based on our initial values, and 
 <img src = "../images/tree_structure.png" width="400">
 </p>
 
-The ouput value for each datapoint is then calculated via the following formula: 
+The ouput value for each data point is then calculated via the following formula: 
 
 <div style="text-align: center;">
 {{<katex>}}
@@ -221,7 +221,7 @@ data <- data %>%
 {{% /codeblock %}}
 
 {{% warning %}}
-Because XGBoost only works with numeric vectors, so you need to one-hot encode you data.
+Because XGBoost only works with numeric vectors, so you need to convert the categorical values into numerical ones using one-hot encoding or any other approaches.
 {{%/ warning %}}
 
 Luckily, this is straightforward to do using the `dplyr` package. One-hot encoding is a process that transforms categorical data into a format that machine learning algorithms can understand. In the code below each category value in a column is transformed into its own column where the presence of the category is marked with a 1, and its absence is marked with a 0.
@@ -327,12 +327,12 @@ results <- data.frame(
 )
 
 mae <- mean(abs(predictions - y_test))
-mea
+mae 
 
 ```
 {{% /codeblock %}}
 
-As can be seen the predictions of the algorithm and the original prices still differ significantly (MEA is almost 2 million). A possible reason for this could be that the hyperparameters were arbitrarily chosen. In order to perform a more structured way to choose our hyperparameter we can perform a grid search. 
+As can be seen the predictions of the algorithm and the original prices still differ significantly (MAE is almost 2 million). A possible reason for this could be that the hyperparameters were arbitrarily chosen. In order to perform a more structured way to choose our hyperparameter we can perform a grid search. 
 
 ### Hyperparameter optimization using grid search 
 Selecting the correct hyperparameters can prove to be quite a time-consuming task. Fortunately, there exists a technique in the form of grid search that can help alleviate this burden. 
@@ -431,7 +431,7 @@ Which results in the following graph, from which it can be see that `kitchen_are
 
 ## Visualization
 
-In order to visualize the created tree (using the hyperparameters found in the grid search), let's run the next line of code:
+In order to visualize the ensemble of created trees (using the hyperparameters found in the grid search), let's run the next line of code:
 {{% codeblock %}}
 
 ```R
@@ -440,9 +440,43 @@ xgb.plot.multi.trees(feature_names = names(data),
 ```
 {{% /codeblock %}}
 
+This code will return the entire ensemble of trees in the model, and is intended to improve the interpretability of the model. The numbers between the brackets are the splits where the tree changes its value (so the first tree has its split for the feature hotwaterheating at 3.76e+14).
+
 <p align = "center">
 <img src = "../images/tree_plot.png" width="400">
 </p>
+
+To better understand the model's inner workings, the `xgb.plot.tree` function can be useful. It allows plotting individual trees rather than the entire ensemble, and allows you to look trough the different trees generated by the algorithm. 
+
+
+{{% codeblock %}}
+```R
+xgb.plot.tree(model = xgb_model, 
+              trees = 0, #you can iterate trough the different trees by adjusting this value
+              show_node_id = TRUE)
+```
+{{%/ codeblock %}}
+
+
+
+From the graph that follows we can see that `kitchen_area` is used to make the first split in the first tree. The values `0` or `0-2` are the `node_id` of the leaves themselves. Furthermore the ovals indicate terminal nodes, while the square boxes are internal nodes. 
+
+<p align = "center">
+<img src = "../images/tree_individual.png" width="400">
+</p>
+
+Additionally: 
+- Cover indicates the number of instances in a given branch, when this is low it indicates that decisions are made on few data points (which could lead to overfitting). 
+- Gain is a measure of the improvement in accuracy, a higher gain value thus indicates a more important feature.
+- Value is the predicted score or output value that is used to make the final prediction. 
+
+{{% tip %}}
+This article is only a small introduction on XGBoost, and there are many more resources available on the internet such as: 
+- [The Github repository of XGBoost](https://github.com/dmlc/xgboost)
+- [A list of examples, tutorials, and blogs about XGBoost usecases](https://github.com/dmlc/xgboost/tree/master/demo)
+- [Additional info on the parameters](https://xgboost.readthedocs.io/en/latest/parameter.html)
+
+{{% /tip %}}
 
 {{% summary %}}
 

@@ -3,7 +3,7 @@ title: "Grammar of Graphics of ggplot2"
 description: "Understand the core concepts of zggplot2 - a powerful plotting library for R. Improve your visualizations now."
 keywords: "ggplot2, Grammar of Graphics, Layering, Data Visualization"
 date: 11-12-23
-weight: 3
+weight: 2
 author: "Matthijs ten Tije"
 authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:

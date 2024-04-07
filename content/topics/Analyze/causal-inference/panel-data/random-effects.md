@@ -17,7 +17,6 @@ aliases:
 The **Random Effects (RE) model** is the last method for panel data analysis discussed in this series of building blocks. Unlike the Fixed Effects (FE) model, which focuses on within-group variations, the RE model treats the unobserved entity-specific effects as random and uncorrelated with the explanatory variables. After delving into the RE model first, we address probably the most critical choice to make when working with panel data: deciding between an FE or RE model. 
 
 This is an overview of the content:
-
 - The RE model
   - Error term structure
   - Estimation in R
@@ -30,12 +29,10 @@ Let's continue with the model where we estimate the relationship of market and s
 <br/>
 <br/>
 {{<katex>}}
-$invest_{it}$ = $\beta_0$ + $\beta_1 value_{it}$ + $\beta_2 capital_{it}$ + $\alpha_i$ + $\epsilon_{it}
+invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}
 {{</katex>}}
 <br/>
-<br/>
 where,
-
 - $invest_{it}$ is the gross investment of firm `i` in year `t`
 - $value_{it}$ is the market value of assets of firm `i` in year `t`
 - $capital_{it}$ is the stock value of plant and equipment of firm `i` in year `t`
@@ -130,12 +127,10 @@ Imagine you want to understand if the availability of research grants at univers
 
 - For example, grant decisions are made by an external committee and largely independent of university-specific characteristics. Moreover, you want to control for both university-level and student-level variations.
 
-{{% table %}}
 |           | **FE Model**                                     | **RE Model**                                          |
 |-----------------|--------------------------------------------------|--------------------------------------------------------|
 | **When <br/> to <br/> Use** | Unobserved university-<br/> specific effects are <br/> **correlated** with <br/>  research grants and <br/> student performance. | Unobserved effects are <br/> random and not directly <br/> tied to grant availability.<br/><br/> Allows multi-level fixed <br/> effects (on university <br/> and student-level) in <br/> the same model. |
-| **Example** | You believe universities <br/> with stronger reputations <br/> are more likely to <br/> secure research grants.| You believe grant decisions <br/>  are made by external <br/> committees and are  <br/>  independent  of university- <br/> specific characteristics.|
-{{% /table %}}
+| **Example** | You believe universities <br/> with stronger reputations <br/> are more likely to <br/> secure research grants.| You believe grant decisions <br/>  are made by external <br/> committees and are  <br/>  independent  of university- <br/> specific characteristics.
 {{% /example %}}
 
 
