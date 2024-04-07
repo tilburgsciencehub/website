@@ -102,7 +102,6 @@ This algorithm presents a hybrid approach, blending aspects of both BGD and SGD.
 The image below shows the distinctions among three variants of Gradient Descent.
 <div align="center">
   <img src="../images/GD_variants.png" width="400">
-  <p><a href="https://sweta-nit.medium.com/batch-mini-batch-and-stochastic-gradient-descent-e9bc4cacd461">Source</a></p>
 </div>
 
 
