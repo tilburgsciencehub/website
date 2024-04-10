@@ -10920,7 +10920,7 @@ li ul {
   width: 38px;
   height: 38px;
   border-radius: 50px;
-  background-color: #ffb222;
+  background-color: #976B24;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -11194,7 +11194,7 @@ html:after {
   height: 700px;
   top: 0px;
   right: 0px;
-  background-image: url("/img/Oval Copy 2@2x.png");
+  background-image: url("/static/img/Oval Copy 2@2x.png");
   z-index: -1;
   background-size: cover;
   background-repeat: no-repeat;

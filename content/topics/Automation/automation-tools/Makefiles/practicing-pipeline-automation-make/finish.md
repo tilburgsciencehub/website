@@ -30,8 +30,7 @@ Oh, and to be complete, here's a summary of what you've learnt.
 
 Can you believe you all did this? See below for the (long list)
 
-- You've cloned our GitHub template for a reproducible textmining
-workflow ([https://github.com/hannesdatta/textmining-workflow](https://github.com/hannesdatta/textmining-workflow))
+- You've cloned [our GitHub template for a reproducible textmining workflow](https://github.com/hannesdatta/textmining-workflow)
 - You've verified your software setup (and probably spent a lot of
   time fixing it!)
 - You've downloaded our template and ran your first workflow,

@@ -12,6 +12,7 @@
 			<!-- Logo -->
 			<div><a class="navbar-brand" href="/">
 					<img src="{{ url_for('static', filename='img/logo.svg') }}" alt="tilburg science hub logo">
+					<div style="text-align: center; font-size:10px;color:	#035f94">supported by Tilburg University</div>
 				</a></div>
 
 			<!-- Mobile Icons for Nav -->
@@ -47,7 +48,7 @@
 								{% for topic in data_dict['topics'] %}
 								{% if topic.draft == 'false' %}
 									<div class="col-6 mb-4 px-3">
-										<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">{{ topic.title }}</span>
+										<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;font-weight: bold;">{{ topic.title }}</span>
 										{% for subtopic in topic.childtopics %}
 										{% if subtopic.draft == 'false' %}
 										<a class="d-block mx-0"
@@ -95,33 +96,35 @@
 			<!-- Search & Contribute -->
 			<div class="text-right">
 				<form class="form-inline text-right float-right d-none d-xl-flex" method="GET" action="/search">
-					<div style="width: 230px" class="form-control mr-sm-2 headerSearch bg-light border-0">
-						<input class="resetInput"
-							onBoardTooltip="Search for topics, tutorials, tips, or tools, and explore our content at a glance."
-							type="search" name="q" placeholder="Search" aria-label="Search" required autocomplete="off">
-						<button style="background-color: transparent; padding: 0;" type="submit"><img
-								src="{{ url_for('static', filename='img/search.svg') }}"
-								aria-label="search button" /></button>
-					</div>
-					<a href="{{ url_for('contribute') }}" class="headerLink btn btn-primary my-2 py-2 my-sm-0"
-						onBoardTooltip="Tilburg Science Hub is an open-source platform and welcomes new contributors!">Contribute</a>
-					<div style="margin-left:85%" class="bg-white text-left border-top boxShadow subMenu">
-						<div class="row">
-							<div class="col-24 pr-0 h-100 p-5 px-3">
-								<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;">Contribute to
-									Tilburg Science Hub</span>
-								<a class="d-block mx-0" href="{{ url_for('contribute') }}">What and how to
-									contribute?</a>
-								<a class="d-block mx-0"
-									href="https://github.com/tilburgsciencehub/website/issues/new/choose">Submit a new
-									issue on GitHub</a>
-								<a class="d-block mx-0" href="https://tilburgsciencehub.com/onboarding">View our lab
-									documentation</a>
-								<a class="d-block mx-0"
-									href="https://github.com/orgs/tilburgsciencehub/repositories">Check out our
-									repositories</a>
+					<div>
+						<div style="width: 230px" class="form-control mr-sm-2 headerSearch bg-light border-0">
+							<input class="resetInput"
+								onBoardTooltip="Search for topics, tutorials, tips, or tools, and explore our content at a glance."
+								type="search" name="q" placeholder="Search" aria-label="Search" required
+								autocomplete="off">
+							<button style="background-color: transparent; padding: 0;" type="submit"><img
+									src="{{ url_for('static', filename='img/search.svg') }}" aria-label="search button" /></button>
+						</div>
+						<a href="{{ url_for('contribute') }}" class="headerLink btn btn-primary my-2 py-2 my-sm-0"
+							onBoardTooltip="Tilburg Science Hub is an open-source platform and welcomes new contributors!">Contribute</a>
+						<div style="margin-left:85%" class="bg-white text-left border-top boxShadow subMenu">
+							<div class="row">
+								<div class="col-24 pr-0 h-100 p-5 px-3">
+									<span class="heading d-block mb-3 text-secondary"
+										style="font-size: 16px;font-weight: bold;">Contribute to Tilburg Science Hub</span>
+									<a class="d-block mx-0" href="{{ url_for('contribute') }}">What and how to contribute?</a>
+									<a class="d-block mx-0"
+										href="https://github.com/tilburgsciencehub/website/issues/new/choose">Submit a
+										new issue on GitHub</a>
+									<a class="d-block mx-0" href="https://tilburgsciencehub.com/onboarding">View our lab
+										documentation</a>
+									<a class="d-block mx-0"
+										href="https://github.com/orgs/tilburgsciencehub/repositories">Check out our
+										repositories</a>
+								</div>
 							</div>
 						</div>
+
 					</div>
 				</form>
 			</div>

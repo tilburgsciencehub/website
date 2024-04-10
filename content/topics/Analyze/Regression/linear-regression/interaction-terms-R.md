@@ -20,7 +20,7 @@ aliases:
 
 ### What are Interaction Terms
 
-Let's consider an example from economics. specifically, the determinants of income. We are interested in understanding how years of education and living in an urban or rural area affect a person's income. You could start by looking at these variables individually:
+Let's consider an example from economics: _the determinants of income_. We are interested in understanding how years of education and living in an urban or rural area affect a person's income. You could start by looking at these variables individually:
 - Education: Generally, more education leads to higher income.
 - Urban vs. Rural: Living in an urban area might also be associated with higher income due to more job opportunities.
 
@@ -31,7 +31,7 @@ In a standard regression analysis, you use an explanatory variable (X) to unders
 However, when you introduce an `interaction term`  into the regression, you are adding an extra layer to this relationship. 
 <br>
 
-The main idea is that the relationship between X and Y is not solely determined by X; it also varies with another variable, which we'll call Z. Combing back to our example: the relationship between education and income is not solely determined by education; it also varies whether a person lives in a rural or urban area. 
+The main idea is that the relationship between X and Y is not solely determined by X; it also varies with another variable, which we'll call Z. Combing back to our example: the relationship between education and income is not solely determined by education; it also depends on whether a person lives in a rural or urban area. 
  
 An interaction term is included in the regression when you multiply two different variables and include their product in the regression. The model is now called a `fully interacted model`.
 
@@ -55,7 +55,7 @@ Or as in our example:
  
 ### How to Interpret Interaction Terms?
 
-The concept of `interaction terms` can be best explained with calculus. It answers the question: "What is the impact of X when it interacts with another variable, Z?"  
+The concept of `interaction terms` can be best explained with calculus. It answers the question: _"What is the impact of X when it interacts with another variable, Z?"_  
 The answer can be found by taking the `derivative` of the main formula. We take out of the regression equation, the derivative with respect to X. That's it!  
 
 So, The `fully interacted model`:

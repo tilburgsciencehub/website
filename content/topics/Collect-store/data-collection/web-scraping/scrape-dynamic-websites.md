@@ -18,9 +18,9 @@ While it's easy to get started with Beautifulsoup, it has limitations when it co
 ### Install Selenium and make it work for Chromedriver
 {{% warning %}}
 The first time you will need to:
-  1. Install the Python package for **Selenium** by typing in the command `pip install Selenium`. Alternatively, open Anaconda Prompt (Windows) or the Terminal (Mac), type the command `conda install Selenium`, and agree to whatever the package manager wants to install or update (usually by pressing `y` to confirm your choice).
+  1. Install the Python package for **selenium** by typing in the command `pip install selenium`. Alternatively, open Anaconda Prompt (Windows) or the Terminal (Mac), type the command `conda install selenium`, and agree to whatever the package manager wants to install or update (usually by pressing `y` to confirm your choice).
 
- 2. Download a web driver to interface with a web browser, we recommend the **Webdriver Manager for Python**. Install it by typing in the command `pip install webdriver_manager`
+ 2. Download a web driver to interface with a web browser, we recommend the **Webdriver Manager for Python**. Install it by typing in the command `pip install webdriver-manager`
 
  {{% /warning %}}
 
@@ -28,15 +28,12 @@ Once Selenium and webdriver manager are installed, you can now install ChromeDri
 
    {{% codeblock %}}
    ```Python
-   # Make Selenium and chromedriver work for Untappd.com
-
-   from Selenium import webdriver
-   from Selenium.webdriver.chrome.options import Options
-   from Selenium.webdriver.common.by import By
+   # Make Selenium and chromedriver work for a dynamic website (here: untappd.com)
+   from selenium import webdriver
+   from selenium.webdriver.chrome.service import Service as ChromeService
    from webdriver_manager.chrome import ChromeDriverManager
-
-   #driver = webdriver.Chrome()
-   driver = webdriver.Chrome(ChromeDriverManager().install())
+  
+   driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
    url = "https://untappd.com/"
    driver.get(url)
@@ -49,19 +46,19 @@ If you want to block all pop-ups automatically (e.g. cookie pop-ups), you can us
   {{% codeblock %}}
    ```Python
    # Make Selenium and chromedriver work for Untappd.com
-
-   from Selenium import webdriver
-   from Selenium.webdriver.chrome.options import Options
-   from Selenium.webdriver.common.by import By
+  
+   from selenium import webdriver
+   from selenium.webdriver.chrome.service import Service
+   from selenium.webdriver.chrome.options import Options
    from webdriver_manager.chrome import ChromeDriverManager
-   
+  
    # Set Chrome Options
-   chrome_options = webdriver.ChromeOptions()
-   chrome_options.add_experimental_option("excludeSwitches", ["disable-popup-blocking"])
-   
-   #driver = webdriver.Chrome()
-   driver = webdriver.Chrome(chrome_options=chrome_options)
-   
+   options = Options()
+   options.add_experimental_option("excludeSwitches", ["disable-popup-blocking"])
+  
+   # Initialize the Chrome driver
+   driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+  
    ```
    {{% /codeblock %}}
 
@@ -71,18 +68,26 @@ Want to run Chromedriver manually? Check our [page](https://tilburgsciencehub.co
 
 
 ### Finding content in a website's source code
-Running the code snippet below starts a new Google Chrome browser (`driver`) and then navigates to the specified URL. In other words, you can follow along with what the computer does behind the screens. Next, you can obtain specific website elements by tag name (e.g., `h1` is a header) similar to BeautifulSoup.
+Running the code snippet below starts a new Google Chrome browser (`driver`) and then navigates to the specified URL. In other words, you can follow along with what the computer does behind the screens. Next, you can obtain specific website elements by tag name (e.g., `h1` is a header), similar to BeautifulSoup.
 
 {{% codeblock %}}
 ```Python
-import Selenium.webdriver
-from Selenium.webdriver.common.by import By
+import selenium.webdriver
+from selenium.webdriver.common.by import By
 
-driver = Selenium.webdriver.Chrome()
+driver = selenium.webdriver.Chrome()
 driver.get("https://www.google.com")
 
+# Manually click on cookie accept before continuing
+
 # retrieve first H1 header
-driver.find_element(By.TAG_NAME,"h1").text
+print(driver.find_element(By.TAG_NAME,"h1").text)
+
+# Alternatively, use BeautifulSoup to extract elements from the website's source code
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(driver.page_source) # ensure that the site has fully been loaded
+soup.find('h1').get_text()
+
 ```
 {{% /codeblock %}}
 

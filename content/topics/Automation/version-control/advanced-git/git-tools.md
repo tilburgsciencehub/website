@@ -5,7 +5,7 @@ keywords: "git, tools, restore, timestamps, repository, repo, github, clone, tut
 date: 2023-04-30
 weight: 1
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /restore/time
   - /git/tools

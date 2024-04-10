@@ -30,23 +30,23 @@ Longing to put your knowledge from our [workflow guide](/topics/reproducible-res
 
 ## Prerequisites
 
--	Computer setup following our [setup instructions](/topics/configure-your-computer/).
-    - [Python](/topics/configure-your-computer/statistics-and-computation/python/) and the `textblob` package
+-	Computer setup following our [setup instructions](/topics/computer-setup/software-installation/#software-installation-ezo/).
+    - [Python](/install/python) and the `textblob` package
 
         ```
         pip install -U textblob
         ```
 
-        Then, open Python (`python`) and type
+        Then, open Python in the terminal by typing `python`, and type
 
         ```
         import nltk
         nltk.download('punkt')
         ```
 
-        If you receive an error message, please verify you are typing this command in python (opened on the terminal by typing `python`), and not *directly* in the terminal/Anaconda prompt.
+        If you receive an error message, please verify you are typing this command in python, and not *directly* in the terminal/Anaconda prompt.
 
-    -	[R, RStudio](/topics/configure-your-computer/statistics-and-computation/r/) and the following packages:
+    -	[R, RStudio](/install/r) and the following packages:
 
         ```
         install.packages(c("data.table", "knitr", "Rcpp", "ggplot2", "rmarkdown"))
@@ -67,7 +67,7 @@ Longing to put your knowledge from our [workflow guide](/topics/reproducible-res
   - If you're being asked to install RTools, please do follow these installation instructions.
 {{% /warning %}}
 
-  -	[GNU Make](/topics/configure-your-computer/automation-and-workflows/make/)
+  -	[GNU Make](/install/make)
 
 - Familiarity with our [workflows](/topics/reproducible-research-and-automation/principles-of-project-setup-and-workflow-management/project-setup-overview/), in particular on [pipelines and project components](/topics/project-management/principles-of-project-setup-and-workflow-management/pipeline/), [directory structure](/topics/project-management/principles-of-project-setup-and-workflow-management/directories/) and [pipeline automation](/topics/project-management/principles-of-project-setup-and-workflow-management/automation/).
 
@@ -76,7 +76,7 @@ Longing to put your knowledge from our [workflow guide](/topics/reproducible-res
     -	Familiarity with common data operations using `data.table` in R
     -	Familiarity with text mining using Python and TextBlob
     - If you want to learn Git on the way...
-        - Have Git installed on your computer (see here)
+        - Have Git installed on your computer (see [here](/install/git))
     	  - Have GitHub login credentials
 
 ## Disclaimer

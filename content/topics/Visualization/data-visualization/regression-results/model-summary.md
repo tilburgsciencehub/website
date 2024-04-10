@@ -49,7 +49,8 @@ library(stringr)
 
 
 # Load data
-data_url <- "https://github.com/tilburgsciencehub/website/blob/master/content/topics/Visualization/Data_visualization/Regression_results/data_rent.Rda?raw=true"
+data_url <- "https://raw.githubusercontent.com/tilburgsciencehub/website/master/content/topics/Visualization/data-visualization/regression-results/data_rent.Rda"
+
 load(url(data_url)) #data_rent is the cleaned data set
 ```
 {{% /codeblock %}}

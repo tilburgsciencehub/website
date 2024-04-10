@@ -5,7 +5,7 @@ keywords: "regression, discontinuity, plots, bins"
 date: 2023-05-17
 weight: 7
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /plot/designs
   - /regression/discontinuity

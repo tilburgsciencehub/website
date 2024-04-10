@@ -14,14 +14,15 @@ aliases:
 
 # Overview 
 
-In this example, we will analyze how to interpret `linear regression models in R`. 
-- Firstly, we will discuss single-variable regression models and show how the interpretation changes when we perform a logarithmic transformation. 
-- Secondly, we will do the same for multivariable models. 
-- Finally, we will explain the differences between the interpretation of `single-variable` regression models and `multivariable` regression models.
+In this example, we will analyze how to interpret `linear regression models in R`. This artice will discuss:
+- The interpretation of single-variable regression models.
+	- Changes in the interpretation when a logarithmic transformation is performed. 
+- Similarly the interpretation of multi-variable regression models are discussed.
+- An explanation of the differences in interpretation of `single-variable` regression models and `multivariable` regression models is given.
 
 For concrete examples in R, we will make use of the PIAAC survey. PIAAC is a programme of assessment and analysis of adult skills. The Survey measures adults’ proficiency in key information-processing skills: literacy, numeracy and problem-solving.
 
-I will report the regression tables using the package `modelsummary`. For an explanation of how to use modelsummary, see this [building block](https://tilburgsciencehub.com/topics/analyze-data/regressions/model-summary/).
+The regression tables are displayed using the package `modelsummary`. For an explanation of how to use this package, see this [topic](/modelsummary/).
 
 {{% codeblock %}} 
 
@@ -39,12 +40,9 @@ gm <- list(
 notes <- c('* = .1', '** = 0.05', '*** = .01')
 
 # Downloading the dataset
-piaac <- read_csv("~/Desktop/TSH/Tilburg Science Hub/Content/Development_Calls/Interpreting Linear Regression Models/Dataset/PIAAC.csv")
+data_url <- "https://raw.githubusercontent.com/tilburgsciencehub/website/topic/interpret-summary-regression/content/topics/Analyze/Regression/linear-regression/piaac.Rda"
 
-# Asserting the data is in the correct format
-piaac$experience <- as.numeric(piaac$experience)
-piaac$yrsqual <- as.numeric(piaac$yrsqual)
-piaac$gender <- as.factor(piaac$gender_dummy)
+load(url(data_url))
 ```
 
 {{% /codeblock %}}
@@ -74,7 +72,7 @@ In words, if we change X by 1 unit (i.e. $△X = 1$) then we can expect Y to cha
 If the dependent variable (Y) would be dichotomous, meaning either a 0 or 1. Then a change in X would mean that Y changes by $\beta_1 * 100$ and would state the change in percentage **points** of Y.  
 {{% /tip %}}
 
-Here I run a regression, that tries to explain the hourly wage given the years of education.
+Here is a regression, that tries to explain the hourly wage given the years of education.
 
 {{% codeblock %}}
 
@@ -109,7 +107,7 @@ The linear-linear regression above can be interpreted as follows: For each addit
 
 {{% tip %}}
 
-Avoid language stating a **causal** effect. Instead, we are stating the **correlation** between the dependent variable and an explanatory variable based on predictor variables. Therefore, be cautious with your interpretation statement. I am careful to avoid saying "a one-unit increase in education raises the hourly wage by 6.30". This would imply that I've estimated a causal effect. The correct phrasing reflects that we're discussing correlations, not causation.
+Avoid language stating a **causal** effect. Instead, we are stating the **correlation** between the dependent variable and an explanatory variable based on predictor variables. Therefore, be cautious with your interpretation statement. As here we are careful to avoid saying "a one-unit increase in education raises the hourly wage by 6.30". This would imply that we have estimated a causal effect. The correct phrasing reflects that we're discussing correlations, not causation.
 
 {{% /tip %}}
 
@@ -281,11 +279,11 @@ For the model where both the dependent variable and independent variable are tra
 
 
 ## Multivariable Regression Models Interpretation 
-Now, let's delve into the interpretation of models with multiple independent variables. To be precise, the interpretation of a coefficient is denoted as $\beta_1$ for variable X in a regression with more control variables. It will require a concept called `Ceteris Paribus`, which is Latin for "holding other things constant." I will limit the explanation to the linear-linear model, as the interpretation differences only differ in the concept of `Ceteris Paribus`.
+Now, let's delve into the interpretation of models with multiple independent variables. To be precise, the interpretation of a coefficient is denoted as $\beta_1$ for variable X in a regression with more control variables. It will require a concept called `Ceteris Paribus`, which is Latin for "holding other things constant." In this section we will limit the explanation to the linear-linear model, as the interpretation differences only differ in the concept of `Ceteris Paribus`.
 
-For a concrete example, we will once again turn our attention to the PIAAC survey. Specifically, we will examine the Mincer equation and the impact of variable transformations within the formula. 
+For a concrete example, we will once again turn our attention to the PIAAC survey. Specifically, the regression runs the so-called Mincer equation and includes variable transformations within the formula. 
 
-## The Linear-Linear model
+### The Linear-Linear model
 With the introduction of additional variables into the formula, our mathematical model undergoes a transformation. Mathematically, these models can be represented as follows:
 
  {{<katex>}}
@@ -298,7 +296,7 @@ or more general,
 Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ... + \beta_k X_k + \epsilon
  {{</katex>}}
 
-Nevertheless, the interpretation of changes in the variable X remains consistent as in the case with a single explanatory variable. I will show this by taking the partial derivative: 
+Nevertheless, the interpretation of changes in the variable X remains consistent as in the case with a single explanatory variable. This can be higlighted by taking the partial derivative: 
 
  {{<katex>}}
  \frac{dY}{dX_1} = \beta_1
@@ -306,8 +304,6 @@ Nevertheless, the interpretation of changes in the variable X remains consistent
  
 This can be interpreted as the rate of change in Y associated with a change in X1 and requires the concept that all the other variables are not changing. 
 Thus the interpretation remains: When X increases by 1 unit, Y  increases by $\beta_1$ units. However, we added a line stating that this happens in `Ceteris Paribus`.
-
-
 
 {{% codeblock %}}
 

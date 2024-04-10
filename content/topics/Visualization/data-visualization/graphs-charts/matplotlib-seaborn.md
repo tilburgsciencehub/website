@@ -3,9 +3,9 @@ title: "Plotting with Matplotlib and Seaborn in Python"
 description: "Plotting in Python - comparison between matplotlib and seaborn"
 keywords: "data, visualization, python, plotting, seaborn, matplotlib"
 date: 2023-07-19
-weight: 3
+weight: 4
 author: "Ana Bianca Luca"
-authorlink: "https://www.linkedin.com/in/ana-bianca-luca-b555561b2/"
+authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
   - /visualize/data
   - /python/plotting
