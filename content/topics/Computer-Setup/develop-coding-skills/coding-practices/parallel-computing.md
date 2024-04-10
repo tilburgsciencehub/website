@@ -26,9 +26,7 @@ The multicore approach is not available on all systems, as it requires support f
 
 ## The method behind parallelization
 
-The Central Processing Unit (CPU) of your computer contains small units called "cores". The number of cores available determines how many different tasks you can execute at the same time. Then, creating clusters is like forming teams of these "cores". You send data and functions to each cluster, where each core works on a different part of the task. In theory, the computation can be executed as many times faster as the cores you have available, e.g. 4 available cores speed up your computation to 1/4 of the time. 
-
-However, overhead makes this less in practice. Overhead involves things such as starting the sub-processes and copying the data over to those processes, and communicating back and collecting the results. Therefore, in reality, this maximum time-saving is not likely to be reached.
+The Central Processing Unit (CPU) of your computer contains small units called "cores". The number of cores available determines how many different tasks you can execute at the same time. Then, creating clusters is like forming teams of these "cores". You send data and functions to each cluster, where each core works on a different part of the task. In theory, the computation can be executed as many times faster as the cores you have available, e.g. 4 available cores speed up your computation to 1/4 of the time. However, overhead with starting sub-processes, copying the data over to those processes etc. makes this less in practice and therefore, the maximum time-saving is not likely to be reached in parallelization. More on this will be discussed in the end of this article.
 
 You can determine the number of available cores, i.e. the number of computations that can be executed at the same time, with the `detectCores()` function. 
 
@@ -216,8 +214,12 @@ Again, parallelization has saved time, comparing `4.035` seconds for executing t
 
 ## When to parallelize
 
-As already mentioned in the beginning, the theoretical time saving is not the same as the realistic increased efficiency, due to the overhead that is involved with copying data and function to each processor. The potential speedup may follow Amdahl's Law, a principle in computer science that tells us the overall speedup you can achieve is limited by the proportion of the computation that can be parallelized, as well as the number of cores. For example, if only 60% of your task can be parallelized, the overall task can only be twice as fast since the other 40% is still limited by other processes that have not been parallelized. As the examples in this article pointed out, the repetitive task with the loop intuitively has the highest potenital for being parallelized and indeed showed time saving when parallelizing.
+As shortly mentioned before, the theoretical time-saving is not likely to be reached due to overhead. The potential speedup may follow Amdahl's Law, a principle in computer science that tells us the achievable overall speedup (*on the y-axis*) is limited by the number of cores (*on the x-axis*), as well as the proportion of the computation that can be parallelized (`the different lines, *the parallel portion*). This idea is shown by the graph below, taken from [Wikipedia](https://en.wikipedia.org/wiki/Amdahl%27s_law).
 
+<p align = "center">
+<img src = "../images/amdahls_law.png" width="300">
+<figcaption> Amdahl's Law, image downloaded from Wikipedia </figcaption>
+</p>
 
 
 ### Multicore versus socket approach
