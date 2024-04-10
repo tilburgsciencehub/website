@@ -19,7 +19,7 @@ While some libraries, such as `data.table` or `dplyr` come with built-in paralle
 
 {{% warning %}}
 
-The multicore approach is not available on all systems, as it requires support for forking. Generally, Unix-like systems such as Mac and Linux allow for this and Windows does not. The socket approach works on all systems.
+The multicore approach is not available on all systems, as it requires support for forking. Generally, Unix-like systems such as Mac and Linux allow for this and Windows does not. As Google Colab operates on Linux, you can use this on all systems for multicore parallelization! The socket approach works on all systems.
 
 {{% /warning %}}
 
@@ -30,7 +30,7 @@ The Central Processing Unit (CPU) of your computer contains small units called "
 
 However, overhead makes this less in practice. Overhead involves things such as starting the sub-processes and copying the data over to those processes, and communicating back and collecting the results. Therefore, in reality, this maximum time-saving is not likely to be reached.
 
-You can determine the number of available corese, i.e. the number of computations that can be executed at the same time, with the `detectCores()` function. 
+You can determine the number of available cores, i.e. the number of computations that can be executed at the same time, with the `detectCores()` function. 
 
 {{% codeblock %}}
 ```R
@@ -48,7 +48,12 @@ The easiest application of the multicore approach is the `mclapply()` function o
 
 ### Example 
 
-This simple example calculates the mean sepal length for each species in the `iris` dataset available within R. If you want to know more about the data beforehand, you can check the summary statistic of the dataset yourself by running `summary(iris)`. 
+This simple example calculates the mean sepal length for each species in the `iris` dataset available within R. Check the summary statistic of the dataset yourself by running `summary(iris)`, if you want to know more about this data set.
+
+{{% tip %}}
+
+[This Google Colab file](https://colab.research.google.com/drive/1viBfVPepuSukf8jndaII9pPN2nznVybD?usp=sharing) contains all the code examples of parallelization used in this article!
+{{% /tip %}}
 
 {{% codeblock %}}
 ```R
@@ -62,6 +67,7 @@ calculate_mean_sepal_length <- function(df) {
   species <- unique(df$Species)
   means <- vector("numeric", length = length(species))
   for (i in 1:length(species)) {
+    Sys.sleep(2) # Simulating a 2-second computation
     means[i] <- mean(df[df$Species == species[i], "Sepal.Length"])
   }
   return(data.frame(Species = species, Mean_Sepal_Length = means))
@@ -69,7 +75,7 @@ calculate_mean_sepal_length <- function(df) {
 ```
 {{% /codeblock %}}
 
-Now the function is defined, the code will be executed, first as a normal computation and then with parallelization. The `system.time()` function is used to measure the execution times such that we can compare them. 
+The function simulates a computionationally intensive task by pausing the execution of the code for 2 seconds in each iteration with adding `Sys.sleep(2)`. The code will be executed, first as a normal computation and then with parallelization. The `system.time()` function is used to measure the execution times such that we can compare them and show the benefits of parallelization. 
 
 {{% codeblock %}}
 ```R
@@ -119,7 +125,7 @@ time_multi
 ```
 {{% /codeblock %}}
 
-The multicore computation appears to be slower than the normal computation for this very small task, with `0.04` seconds against `0.02` seconds. These times likely differ for you. 
+The multicore computation is faster than the normal computation, with `4.035` seconds against `6.018` seconds. These times likely differ for you. 
 
 ## Socket approach
 
@@ -140,20 +146,16 @@ With the socket approach, a new version of R is launched on each core. Therefore
 
 Before you create a cluster, you can determine the number of cores that are available on your system.
 
-<!-- floor() rounds down the result to the nearest integer
-logical = T returns a logical value indicating whether the detected number of cores is reliable
-all.tests = F means it won't run additional tests to determine the number of cores, making it faster -->
-
 {{% codeblock %}}
 ```R
 # Determine number of cores available
-perc_use <- 0.8
-ncpu <- floor(detectCores(all.tests = FALSE, logical = TRUE) * perc_use)
-
+ncpu <- detectCores()
 ```
 {{% /codeblock %}}
 
-The number of cores is determined by your computer's hardware configuration and is `4` in my case. The `perc_use` represents the percentage of CPU cores you want to use for parallel computing, set to `0.8`. The rationale behind using a percentage instead of all cores could be to leave some CPU capacity for other system tasks. The number of cores multiplied witbyh the percentage you want to use determines the value for `ncpu`, i.e. the number of CPU cores to be used for parallel processing. 
+The number of cores is determined by your computer's hardware configuration and is `2` in my Google Colab. This can differ for you, and therefore might lead to different results in computation speed. 
+
+Sometimes you might want to use only a percentage of the available CPU cores instead of all cores, to leave some CPU capacity for other system tasks. In that case, you can multiply the `detectCores()` value by the percentage you want to use (e.g. `0.8`) and set that as a value for `ncpu` (i.e. the number of CPU cores to be used for parallel processing).
 
 2. Create cluster
    
@@ -210,10 +212,15 @@ time_socket
 ```
 {{% /codeblock %}}
 
-Again, for this small computation, the overhead seems to be larger than the time parallelization has saved, with time for execution with the socket approach is `0.11`, compared to `0.02` for the normal computation.
+Again, parallelization has saved time, comparing `4.035` seconds for executing the task with the socket approach to `6.018` seconds for the normal computation. 
+
+## When to parallelize
+
+As already mentioned in the beginning, the theoretical time saving is not the same as the realistic increased efficiency, due to the overhead that is involved with copying data and function to each processor. The potential speedup may follow Amdahl's Law, a principle in computer science that tells us the overall speedup you can achieve is limited by the proportion of the computation that can be parallelized, as well as the number of cores. For example, if only 60% of your task can be parallelized, the overall task can only be twice as fast since the other 40% is still limited by other processes that have not been parallelized. As the examples in this article pointed out, the repetitive task with the loop intuitively has the highest potenital for being parallelized and indeed showed time saving when parallelizing.
 
 
-## Multicore versus socket approach
+
+### Multicore versus socket approach
 
 Based on [Josh Errickson](https://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/parallel.html), this table summarizes the key differences between the multicore and socket approach.
 
@@ -234,6 +241,6 @@ When generating random numbers in parallel, be careful. This might cause issues 
 
 {{% summary %}}
 
-There is benefit of parallelization especially in substantial computations. If the computation is already fast, the overhead involved with parallelization tasks might take more time than it saves.Discover the use of it yourself, and find out how it can offer advantages for you!
+There is benefit of parallelization especially in substantial computations. If the computation is already fast, the overhead involved with parallelization tasks might take more time than it saves. After reading this topic, you have a comprehensive understanding of parallel computing and you can discover the use of it yourself, and find out how it can offer advantages for you!
 
 {{% /summary %}}
