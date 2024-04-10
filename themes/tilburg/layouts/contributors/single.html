@@ -36,8 +36,8 @@
 							{{ $match := false }}
 							{{ range $names }}
 								{{ if eq . $.Params.name }}
-										{{ $match = true }}
-									{{ end }}
+									{{ $match = true }}
+								{{ end }}
 								{{ end }}
 								{{ if $match }}
 									{{ $contributions = $contributions | append . }}
@@ -54,8 +54,8 @@
 							{{ $match := false }}
 							{{ range $names }}
 								{{ if eq . $.Params.name }}
-										{{ $match = true }}
-									{{ end }}
+									{{ $match = true }}
+								{{ end }}
 								{{ end }}
 								{{ if $match }}
 									{{ $contributions = $contributions | append . }}
