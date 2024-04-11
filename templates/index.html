@@ -122,7 +122,15 @@
               Recently Published
             </h2>
             <ul class="my-2 list-unstyled">
-            </ul>         
+              {% for article in recent_articles %}
+              <li class="pb-3">
+                <span class="icon link text-primary d-inline-block mr-2"></span>
+                <a href="{{ article['path'] }}">{{ article['title'] }}</a>
+              </li>
+              {% endfor %}
+            </ul>       
+              
+            
           </div>
         </div>
         <div class="col-lg-10 col-xl-4 col-22 mb-3">
