@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, abort
 from flask_assets import Environment, Bundle
 from datetime import datetime
-from functions import build_data_dict, generate_table_of_contents, get_breadcrumbs, find_related_articles, calculate_reading_time, fetch_meta_data
+from functions import build_data_dict, generate_table_of_contents, get_breadcrumbs, find_related_articles, calculate_reading_time, fetch_meta_data, recently_published
 import os
 from models import db, articles, Contributors, blogs, Topics
 from html_parser import htmlize
@@ -53,7 +53,9 @@ def home():
     meta_data = fetch_meta_data(data_object)
 
     data_dict = build_data_dict(Topics, articles)
-    return render_template('index.html', assets=assets, data_dict=data_dict, meta_data=meta_data)
+    recent_articles = recently_published(articles, Topics)
+
+    return render_template('index.html', assets=assets, data_dict=data_dict, meta_data=meta_data, recent_articles=recent_articles)
 
 # Single Example
 @app.route('/examples/<article_path>')
@@ -118,7 +120,6 @@ def topics_third_level(first_level_topic_path,second_level_topic_path, third_lev
     
     return render_template('third-level-topic.html', assets=assets, data_dict=data_dict, topic_path=first_level_topic_path, sec_level_topic_path=second_level_topic_path, third_level_topic_path=third_level_topic_path)
 
-# Still needs metadata!
 # Single Article (Topic)
 @app.route('/topics/<first_level_topic_path>/<second_level_topic_path>/<third_level_topic_path>/<article_path>/')
 def topic_single(first_level_topic_path, second_level_topic_path, third_level_topic_path, article_path):
@@ -128,13 +129,15 @@ def topic_single(first_level_topic_path, second_level_topic_path, third_level_to
     article = None
     article = articles.query.filter_by(path=article_path).first()
     meta_data = fetch_meta_data(article)
+    related_articles = None
     if article:
+        related_articles = find_related_articles(article_path, articles, Topics)
         content = htmlize(article.content)
         table_of_contents = generate_table_of_contents(content)
         if (len(content) > 0):
             reading_time = calculate_reading_time(article.content)
 
-    return render_template('topic-single.html', breadcrumbs=breadcrumbs, assets=assets, article=article, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, content=content, reading_time=reading_time, meta_data=meta_data)
+    return render_template('topic-single.html', breadcrumbs=breadcrumbs, assets=assets, article=article, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, content=content, reading_time=reading_time, meta_data=meta_data, related_articles=related_articles)
 
 # List Examples
 @app.route('/examples')

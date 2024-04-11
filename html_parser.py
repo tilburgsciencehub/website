@@ -1,6 +1,7 @@
 import re
 from bs4 import BeautifulSoup
 import markdown
+from flask import request
 
 # Markdown Basic Conversion
 def convert_md_to_html(md_content):
@@ -356,7 +357,9 @@ def replace_video_src(html_content):
     return html_content_with_new_video_src
 
 def replace_links(md_content):
-    root_url = 'http://127.0.0.1:5000'
+    # Gebruik dynamisch de huidige host URL
+    root_url = request.host_url.rstrip('/')
+
     # Lijst van bestandsextensies die op TSH zijn geüpload
     file_extensions = ['.xlsx', '.sh', '.zip', '.bib', '.tex', '.docx', '.bat', '.csv', '.txt', '.rda', '.rdata', '.pptx', '.rmd', '.py', '.r', '.history', '.pdf', '.dta']
 
