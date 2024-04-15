@@ -9,7 +9,7 @@ aliases:
 ---
 
 ## Overview
-When it comes to scientific document creation, [**Overleaf**](https://www.overleaf.com/) stands out as an online {{< katex >}}\LaTeX{{< /katex >}} editor. With a very user-friendly interface and structure, Overleaf facilitates seamless collaboration in the cloud. By enabling real-time creation, editing, and sharing of documents, it empowers multiple collaborators to contribute effectively, fostering efficient teamwork. 
+When it comes to scientific document creation, [**Overleaf**](https://www.overleaf.com/) stands out as an online $\LaTeX$ editor. With a very user-friendly interface and structure, Overleaf facilitates seamless collaboration in the cloud. By enabling real-time creation, editing, and sharing of documents, it empowers multiple collaborators to contribute effectively, fostering efficient teamwork. 
 
 ## Setting up your Overleaf account
 Simply use your email address to set up an account.

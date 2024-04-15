@@ -65,7 +65,7 @@ Other great resources are:
 ## Typesetting
 
 ### Latex
-**[{{< katex >}}\LaTeX{{< /katex >}}](https://www.latex-project.org)** is a typesetting system ideal for a thesis or academic paper. Although it has a bit of a learning curve, it offers substantial advantages like:
+**[$\LaTeX$](https://www.latex-project.org)** is a typesetting system ideal for a thesis or academic paper. Although it has a bit of a learning curve, it offers substantial advantages like:
 
 - It enables more precise formatting, especially in typesetting mathematical symbols and formulas.
 - It is easy to stay consistent with the formatting throughout the whole document. 

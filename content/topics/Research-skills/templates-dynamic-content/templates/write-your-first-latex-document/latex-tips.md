@@ -11,7 +11,7 @@ aliases:
   - /tips/latex
 ---
 
-Congratulations! You've completed this tutorial. Here are some useful tips when writing with {{< katex >}}\LaTeX{{< /katex >}}.
+Congratulations! You've completed this tutorial. Here are some useful tips when writing with $\LaTeX$.
 
 ## Specify The Encoding
 

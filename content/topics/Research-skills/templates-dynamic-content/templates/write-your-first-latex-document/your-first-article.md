@@ -15,7 +15,7 @@ aliases:
 
 The preamble is the first section of your `.tex` file. It comes before the the text of the document itself.
 
-The preamble always **starts with the definition of a "document class"**. This is where you tell {{< katex >}}\LaTeX{{< /katex >}} what kind of document you're writing: an article, a book, a letter... More on that later.
+The preamble always **starts with the definition of a "document class"**. This is where you tell $\LaTeX$ what kind of document you're writing: an article, a book, a letter... More on that later.
 
 You can then continue **specifying additional information and packages** in the preamble.
 

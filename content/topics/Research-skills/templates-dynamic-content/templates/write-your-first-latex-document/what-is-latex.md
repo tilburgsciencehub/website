@@ -14,7 +14,7 @@ aliases:
 
 ## The Design Philosophy
 
-In this tutorial, you'll learn to write your very first document using {{< katex >}}\LaTeX{{< /katex >}} within 15 minutes.
+In this tutorial, you'll learn to write your very first document using $\LaTeX$ within 15 minutes.
 
 [$\LaTeX$](https://www.latex-project.org) is a professional typesetting system widely used in academia because of its high-quality output and the relatively ease of use in setting up complex documents, like journal articles, books, technical reports, and similar.
 

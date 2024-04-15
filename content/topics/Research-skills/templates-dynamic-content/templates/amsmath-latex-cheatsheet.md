@@ -14,9 +14,9 @@ aliases:
 
 ## Overview
 
-{{< katex >}}\LaTeX{{< /katex >}}, a powerful typesetting system, is widely used for creating professional documents with complex formatting, especially in academic domains. It empowers you to convey complex mathematical ideas with precision.
+$\LaTeX$, a powerful typesetting system, is widely used for creating professional documents with complex formatting, especially in academic domains. It empowers you to convey complex mathematical ideas with precision.
 
-This cheat sheet serves as your guide to mastering the main {{< katex >}}\LaTeX{{< /katex >}} commands that allow you to render mathematical expressions in your documents. 
+This cheat sheet serves as your guide to mastering the main $\LaTeX$ commands that allow you to render mathematical expressions in your documents. 
 
 We also provide a compiled PDF version of this cheat sheet. Print it out or save it on your computer ensuring that you have easy access whenever you require it!
 
@@ -305,7 +305,7 @@ Best practice to easily switch between types:
 ### Arrays
 Use the `array` environment. Use `\\` to separate rows, and `&` to separate elements of each row. To produce large delimiters around the array, use `\left` and `\right` followed by the desired delimiter.
 
-{{< katex display >}}
+$
 \left(
 \begin{array}{lcr}
   a & b & c \\
@@ -313,7 +313,7 @@ Use the `array` environment. Use `\\` to separate rows, and `&` to separate elem
   g & h & i
 \end{array}
 \right)
-{{< /katex >}}
+$ 
 
 ```latex
 \left(
@@ -333,12 +333,12 @@ Each letter in the argument of the array represents a column.
 ### Cases
 Use the `cases` environment. Use `\\` to separate different cases, and `&` for correct alignment.
 
-{{< katex display >}}
+$
 \begin{cases}
   x & \text{if } x > 0 \\
   0 & \text{if } x \le 0
 \end{cases}
-{{< /katex >}}
+$
 
 ```latex
 \begin{cases}
@@ -358,12 +358,12 @@ Use one of the following environments.
 
 Use `\\` to separate different rows, and `&` to separate elements of each row.
 
-{{< katex display >}}
+$
 \begin{bmatrix}
       1 & 2 & 3 \\
       4 & 5 & 6 \\
 \end{bmatrix}
-{{< /katex >}}
+$
 
 ```latex
 \begin{bmatrix}

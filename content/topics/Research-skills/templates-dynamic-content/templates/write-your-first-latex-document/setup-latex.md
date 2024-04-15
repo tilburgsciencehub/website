@@ -13,7 +13,7 @@ aliases:
 
 ## Installation
 
-The first step is to setup a {{< katex >}}\TeX{{< /katex >}} distribution on your machine.
+The first step is to setup a $\TeX$ distribution on your machine.
 
 1. If you haven't done it yet, you can read **[our guide](/get/latex)** on how to install $\LaTeX$:
 
