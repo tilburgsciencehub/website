@@ -1,25 +1,32 @@
-{% set related = top_related_articles %}
-{% set len = related|length %}
-
-{% if len > 0 %}
+{% if related_articles|length > 0 %}
 <div class="row bg-white rounded p-5 mb-5" style="margin: 0px;">
-    <div class="col-lg-8 col-24 mb-4">
-        <h1 style="line-height: 42px; font-size: 38px;">Related <br>
-            <span class="heading text-primary">Posts</span></h1>
-    </div>
-    <div class="col-lg-16 col-24">
-        <ul class="my-4 list-unstyled relatedPosts">
-        
-        {% for related_article in related %}
-          <li class="pb-2">
-            <a href="{{ url_for('home') }}{{ related_article.url }}">
-              <span class="icon link text-primary d-inline-block mr-2"></span>
-              {{ related_article.title }}
-            </a>
-          </li>
-        {% endfor %}
-        
-    </ul>
-    </div>
+	<div class="col-lg-24 col-24 mb-4">
+		<h1 style="line-height: 42px; font-size: 38px;">Related <span class="heading text-primary">Posts</span>
+		</h1>
+	</div>
+	<div class="col-lg-24 col-24">
+		<div class="row px-0 my-4 relatedPosts justify-content-between">
+
+			{% for related_article in related_articles %}
+			<div class="col-xl-8 col-lg-8 col-md-24 col-sm-24 pr-5 mb-5 mb-xl-0 mb-lg-0">
+
+				<a href="{{ related_article.path }}">
+					<h4 style="font-weight:bold">{{ related_article.title }}</h4>
+					<p>{{ related_article.description }}</p>
+          <div class="row">
+            {% for keyword in related_article.keywords.split(',') %}
+            <div class="col-auto"><i>{{ keyword.strip() }}</i></div>
+            {% endfor %}
+        </div>
+				</a>
+			</div>
+			{% endfor %}
+
+			</ul>
+		</div>
+	</div>
 </div>
 {% endif %}
+
+
+

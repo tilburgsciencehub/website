@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql.expression import func
 from sqlalchemy import text, or_, not_
 from bs4 import BeautifulSoup
 import nltk
@@ -93,8 +94,62 @@ def build_data_dict(topics, articles):
 
     return data_dict
 
-# Generate table of contents
+# Recursive loop to find full path
+def get_full_topic_path(parent_topic_id, Topics):
+    topic = Topics.query \
+        .with_entities(Topics.id, Topics.title, Topics.path, Topics.parent) \
+        .filter_by(id=parent_topic_id) \
+        .first()
 
+    if not topic:
+        return None
+    
+    if not topic.parent:
+        return {
+            "title": topic.title,
+            "path": topic.path
+        }
+
+    parent_topic = get_full_topic_path(topic.parent, Topics)
+    if parent_topic:
+        full_path = f"{parent_topic['path']}/{topic.path}"
+        return {
+            "title": topic.title, 
+            "path": full_path
+        }
+    return {
+        "title": topic.title,
+        "path": topic.path
+    }
+
+def recently_published(articles, Topics):
+    base_url = request.host_url.rstrip("/")
+    recent_articles_query = articles.query \
+        .with_entities(articles.title, articles.path, articles.parent) \
+        .order_by(func.coalesce(articles.date_modified, articles.date).desc()) \
+        .limit(5) \
+        .all()
+
+    recent_articles_dict = []
+
+    for article in recent_articles_query:
+        title = article.title
+        article_path = article.path
+        article_parent = article.parent
+
+        parent_topic_path = get_full_topic_path(article_parent, Topics)
+
+        if parent_topic_path:
+            full_path = f"{base_url}/{parent_topic_path['path']}/{article_path}"
+            full_dict = {"title": title, "path": full_path}
+            recent_articles_dict.append(full_dict)
+        else:
+            full_path = f"{base_url}/{article_path}"
+            recent_articles_dict.append({"title": title, "path": full_path})
+
+    return recent_articles_dict
+
+# Generate table of contents
 def generate_table_of_contents(content_html):
     # Parse de HTML-content met BeautifulSoup
     soup = BeautifulSoup(content_html, 'html.parser')
@@ -124,64 +179,54 @@ def generate_table_of_contents(content_html):
 
     return table_of_contents
 
-# Functie om breadcrumbs op te halen
-
-
+# Function for breadcrumbs
 def get_breadcrumbs():
-    base_url = "http://127.0.0.1:5000"
+    base_url = request.host_url.rstrip("/")  # Haalt het domein en schema dynamisch op en verwijdert de trailing slash
     current_url = request.url
     path = current_url.replace(base_url, "")
-    url_parts = path.split("/")
+    url_parts = path.strip("/").split("/")  # Verwijder leading/trailing slashes voor correct splitsen
     breadcrumbs = [{"name": "Home", "url": base_url}]
 
     # Bouw de breadcrumb-items op basis van de delen van de URL
     for i in range(1, len(url_parts)):
         breadcrumb = {
             "name": url_parts[i].replace("-", " ").title(),
-            "url": base_url + "/".join(url_parts[:i + 1]) + "/"
+            "url": f"{base_url}/{'/'.join(url_parts[:i + 1])}/"  # Gebruik f-string voor duidelijkheid
         }
         breadcrumbs.append(breadcrumb)
 
     return breadcrumbs
 
+
 # Generate related articles
+def find_related_articles(article_path, articles, Topics):
+    # Stap 1: Vind het huidige artikel
+    current_article = articles.query.filter_by(path=article_path).first()
 
+    if not current_article:
+        return []  
+    
+    related_articles_query = articles.query \
+        .filter(articles.parent == current_article.parent, articles.id != current_article.id) \
+        .limit(3) \
+        .all()
 
-def find_related_articles(keywords, articles, categories, id):
-    keyword_list = keywords.split()
+    base_url = request.host_url.rstrip("/")
+    top_related_articles = []
 
-    # Find keywords in the 'keywords' or 'content' columns of the articles
-    related_articles = articles.query.filter(
-        or_(
-            articles.keywords.ilike('%{}%'.format(keyword)) for keyword in keyword_list
-        ),
-        or_(
-            articles.content.ilike('%{}%'.format(keyword)) for keyword in keyword_list
-        ),
-        not_(articles.id == id)
-    ).all()
+    for article in related_articles_query:
+        parent_topic_path = get_full_topic_path(article.parent, Topics)
+        if parent_topic_path:
+            full_path = f"{base_url}/{parent_topic_path['path']}/{article.path}"
+        else:
+            full_path = f"{base_url}/{article.path}"
 
-    # Order Based on Appearances
-    related_articles.sort(key=lambda article: sum(keyword_list.count(
-        keyword) for keyword in article.keywords.split() + article.content.split()), reverse=True)
-
-    # Top 5
-    top_related_articles = related_articles[:5]
-
-    for top_article in top_related_articles:
-        url = None
-        if (top_article.type == 'building-blocks') or (top_article.type == 'tutorials'):
-            child_category = categories.query.filter_by(id=top_article.parent).first()
-            if child_category:
-                category = categories.query.filter_by(id=child_category.parent).first()
-                if category:
-                    child_category_path = child_category.path
-                    category_path = category.path
-                    url = top_article.type + '/' + category_path + '/' + \
-                        child_category_path + '/' + top_article.path
-
-            # Add Url to Article
-            top_article.url = url
+        top_related_articles.append({
+            "title": article.title,
+            "path": full_path,
+            "keywords": article.keywords,
+            "description": article.description
+        })
 
     return top_related_articles
 
