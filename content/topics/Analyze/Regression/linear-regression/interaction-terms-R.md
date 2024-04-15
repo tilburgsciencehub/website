@@ -36,9 +36,7 @@ The main idea is that the relationship between X and Y is not solely determined 
 An interaction term is included in the regression when you multiply two different variables and include their product in the regression. The model is now called a `fully interacted model`.
 
 
-{{<katex>}}
- Y = \beta_0 + \beta_1 X + \beta_2 Z + \beta_3 X Z + \epsilon
- {{</katex>}}
+$Y = \beta_0 + \beta_1 X + \beta_2 Z + \beta_3 X Z + \epsilon$
  
 <br> 
 <br>
@@ -46,9 +44,7 @@ An interaction term is included in the regression when you multiply two differen
 Or as in our example: 
 
 
-{{<katex>}}
- Income = \beta_0 + \beta_1 Education + \beta_2 Area + \beta_3 Education * Area  + \epsilon
- {{</katex>}}
+$Income = \beta_0 + \beta_1 Education + \beta_2 Area + \beta_3 Education * Area  + \epsilon$
  
  <br>
  <br>
@@ -60,10 +56,7 @@ The answer can be found by taking the `derivative` of the main formula. We take 
 
 So, The `fully interacted model`:
 
-{{<katex>}}
- Y = \beta_0 + \beta_1 X + \beta_2 Z + \beta_3 X Z + \epsilon
- 
-{{</katex>}} 
+$Y = \beta_0 + \beta_1 X + \beta_2 Z + \beta_3 X Z + \epsilon$
 
 <br>
 <br> 
@@ -72,10 +65,9 @@ and its derivative:
 <br>
 
  
-{{<katex>}}
- \frac{\partial Y}{\partial X} = \beta_1 + \beta_3 Z 
-{{</katex>}}
- <br>
+$\frac{\partial Y}{\partial X} = \beta_1 + \beta_3 Z$
+ 
+<br>
   
 This represents the effect of X on Y, which is now conditional on Z! For those unfamiliar with calculus, look how we just took the terms with an X including $\beta_1 X$ and $\beta_3 X Z$ and took out the X, leaving us with the expression above. 
 

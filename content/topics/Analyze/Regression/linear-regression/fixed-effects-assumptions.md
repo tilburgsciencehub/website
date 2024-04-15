@@ -24,9 +24,9 @@ The assumptions are taken from the online course [Introduction to Econometrics w
 {{% summary %}}
 In the fixed effects model
 <br/>
-{{<katex>}}
-Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}, i = 1,...,n, t = 1,...,T,
-{{</katex>}}
+
+$Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}, i = 1,...,n, t = 1,...,T,$
+
 <br/>
 we assume the following: 
 
@@ -52,9 +52,7 @@ Violating this assumption introduces an **Omitted Variable Bias**.
 {{% example %}}
 This is the Fixed Effects model with `Grunfeld` data in which $\alpha_i$ denotes the firm fixed effects.
 
-{{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}
-{{</katex>}}  
+$invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}$
 
 For assumption 1 to hold, the error term $\epsilon_{it}$ should be uncorrelated with each observation of the independent variables. This implies that all factors impacting `invest` that are not included in the model are uncorrelated with all the observations of `value` and `capital` over time. 
 {{% /example %}}

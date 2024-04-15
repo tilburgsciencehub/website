@@ -35,10 +35,9 @@ load(url(data_url)) #piaac is the cleaned data set
 
 As an example, we investigate the relationship between years of education and hourly wage, expressed in the following regression:
 
-{{<katex>}}
-Wage  = \beta_0 + \beta_1 * Education + \epsilon
- {{</katex>}}
 
+$Wage  = \beta_0 + \beta_1 * Education + \epsilon$
+ 
 Where:
 - Wage (`earnhr`) is the dependent variable, the hourly wage of survey participants
 - Education (`yrsqual`) is the independent variable, indicating the number of years of education
@@ -155,13 +154,14 @@ confint(reg, level = 0.95)
 ```
 {{% /codeblock %}}
 
+{{ %table% }}
 The following output is returned:
 
 |           | 2.5%     | 97.5%    |
 |-----------|----------|----------|
 | (Intercept)| -6.372143| 8.160895|
 | yrsequal  | 5.792316 | 6.816283 |
-
+{{% /table %}}
 
 ### t-value
 

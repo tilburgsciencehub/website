@@ -96,12 +96,14 @@ The three examples we discussed earlier involve small samples where it is easy t
 ### Assessing election results using binom.test()
 Suppose you are interested in finding the results of an election in a hypothetical land with two political parties: Party A and Party B. You survey the population of the land and create a data set called 'Election_data' with 100 observations. It looks like this:
 
+{{%table %}}
 | **Voter Id** | **Party** |
 | :-----      | :-----        |
 | 001    |   Party A     |
 | 002    |   Party B     |
 | 003    |   Party B     |
 | 004    |   Party A     |
+{{%/table %}}
 
 Let's say a political party considers a win if it receives more than 50% of the votes. To check if they indeed achieved this, you can use a right-tailed binomial test with a probability (p) set to 1/2. Here's how you can implement the code for Party A:
 
