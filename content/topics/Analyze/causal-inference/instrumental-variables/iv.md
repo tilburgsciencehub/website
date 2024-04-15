@@ -27,7 +27,7 @@ In this building block we will walk you through the process of using instrumenta
 We analyse data from the `mroz` data set which is an in-built data set in R, provided by the `wooldridge` package. We are interested in examining how the education level of employees relates to their wages. Our simple regression model will be as follows:
 
 {{<katex>}}
-wage_{i}  =  \beta_{0} + \beta_{1} educ_{i} + \mu
+$wage_{i}  =  \beta_{0} + \beta_{1} educ_{i} + \mu$
 {{</katex>}}
 
 <br>
@@ -104,10 +104,9 @@ The 2SLS proceeds in the following way:
 
 In the first stage, the variation in the endogenous independent variable, X is decomposed into a problem-free component that is explained by the instrument, Z and a problematic component that is correlated with the error,$\mu_{i}$
 
-{{<katex>}}
 
-educ_{i} = \gamma_{0} + \gamma_{1} fatheduc_{i} + \epsilon_{i}
-{{</katex>}}
+
+$educ_{i} = \gamma_{0} + \gamma_{1} fatheduc_{i} + \epsilon_{i}$
 
 <br>
 <br>
@@ -118,11 +117,12 @@ where $\gamma_{0}$ + $ \gamma_{1}fatheduc_{i} $ is the component of $educ_{i}$ t
 
 In the second stage, the problem-free component of the variation in X is used to estimate $\beta_{1}$
 
-{{<katex>}}
+<!-- {{<katex>}} -->
 
-wage_{i} = \beta_{0} + \beta_{1} \hat{educ_{i}} + \mu
+$wage_{i} = \beta_{0} + \beta_{1} \hat{educ_{i}} + \mu$
 
-{{</katex>}}  
+<!-- {{</katex>}}   -->
+
 <br>
 
 ## Estimating the regression using ivreg()
