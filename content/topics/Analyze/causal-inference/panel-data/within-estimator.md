@@ -28,17 +28,17 @@ Additionally, a FE model may encounter issues of collinearity when dealing with 
 
 Continuing with the same example as the previous building block, the FE model is estimated by removing the fixed effects from the original equation. The original model with fixed effects $\alpha_i$ is represented as:
 <br/>
-{{<katex>}}
-Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}
-{{</katex>}}
+
+$Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}$
+
 <br/>
 
 To remove the fixed effects from the model, the time-specific means are subtracted from each variable, enabling estimation of changes **within firms** over time.
 
 <br/>
-{{<katex>}}
-Y_{i,t} - \bar{Y}_{i,t-1} = \beta_1 (X_{i,t} - \bar{X}_{i, t-1}) + (\alpha_i - \bar{\alpha_i}) + (u_{i,t} - \bar{u}_{i,t-1})
-{{</katex>}}  
+
+$Y_{i,t} - \bar{Y}_{i,t-1} = \beta_1 (X_{i,t} - \bar{X}_{i, t-1}) + (\alpha_i - \bar{\alpha_i}) + (u_{i,t} - \bar{u}_{i,t-1})$
+
 <br/>
 
 Since we assume the unobserved fixed effects $\alpha_{i}$ to be constant, subtracting its mean results in a term of zero. As a result, the fixed effects are eliminated through this transformation, while the time-varying component of the error term $u_{it}$ remains.

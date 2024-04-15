@@ -16,7 +16,7 @@ aliases:
 The `fixest` package is a powerful and versatile tool for analysing panel data in R. It is fast, memory-efficient, and offers a wide range of options for controlling the estimation process. Its main strength is the ability to estimate fixed effects models, which are commonly used in panel data analysis to control for unobserved heterogeneity at the individual or group level. Compared to others, the main advantage of the `fixest` package is computational prowess, which lets it estimate models in a fraction of the time compared to many other packages. This is especially consequential when your model entails highly dimensional fixed effects, i.e., fixed effects with many different levels, such as a fixed effect for several thousand stores in your sample. The “trick” `fixest` uses to do this is described in great detail in [Bergné (2018)](https://ideas.repec.org/p/luc/wpaper/18-13.html). In addition to fixed effects models, the `fixest` package includes functions for estimating other (non-)linear models such as Poisson models, and negative binomial models. 
 
 Using a stylised example, we illustrate how you can use various functions in the `fixest` package for fixed-effect estimation. For illustration purposes, we will use the [Grunfeld dataset](https://www.statsmodels.org/dev/datasets/generated/grunfeld.html) which contains investment data for 11 U.S. Firms. It contains information on the following variables:
-
+{{%table%}}
 | **Variables** 	| **Description** 	|
 |---	|---	|
 | `invest` 	| Gross investment in 1947 dollars 	|
@@ -25,6 +25,7 @@ Using a stylised example, we illustrate how you can use various functions in the
 | `firm` 	| - General Motors <br>- US Steel <br>- General Electric <br>- Chrysler <br>- Atlantic Refining <br>- IBM <br>- Union Oil  <br>- Westinghouse <br>- Goodyear <br>- Diamond Match <br>- American Steel  	|
 | `year`  	| 1935-1954 	|      
 
+{{%/table%}}
 ## Load packages  
 
 
@@ -44,9 +45,7 @@ data(Grunfeld)
 We can estimate a fixed-effects model using the `feols()` function, which can be used to estimate linear fixed-effects models. The estimation equation in this example is as follows:
 
 
-{{<katex>}}
 $invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \delta_t + \epsilon_{it}$
-{{</katex>}}
 
 where,
 
@@ -165,7 +164,7 @@ plot(fixedEffects)
 ## Other Estimation Methods in fixest
 
 Aside from `feols()`, here are additional functions useful for estimation based on the model requirements:
-
+{{%table%}}
 | **Function** 	| **Description** 	| **Use** 	|
 |---	|---	|---	|
 | `feglm` 	| Generalized linear models 	| This function estimates fixed-effects generalized linear models, <br> which can handle non-linear outcome <br> variables and non-normal error distributions.  	|
@@ -173,6 +172,8 @@ Aside from `feols()`, here are additional functions useful for estimation based 
 | `feNmlm` 	| Non-linear in RHS parameters 	| This function estimates fixed-effects <br> non-linear models where the <br> non-linearity is in the <br> right-hand side parameters.  	|
 | `fepois` 	| Poisson fixed-effect 	| This function estimates fixed-effects <br> Poisson models, which are commonly <br> used for count data that <br> follow a Poisson distribution. 	|
 | `fenegbin` 	| Negative binomial fixed-effect 	| This function estimates fixed-effects <br> negative binomial models, which are <br> commonly used for count data that <br> exhibit over dispersion relative <br> to the Poisson distribution.  	|
+
+{{%/table%}}
 
 {{% summary %}}
 Here are the key takeaways from this building block:

@@ -163,11 +163,11 @@ _Output_:
 In the evenly-spaced plot there are 3 bins in the interval [0.5, 1], whereas in the quantile-spaced plot the interval is entirely contained by one bin. 
 
 ## Number of bins
-There are two methods for choosing the number of bins on both sides of the cutoff, which are noted with {{<katex>}}J_{-}{{</katex>}} and {{<katex>}}J_{+}{{</katex>}}.
+There are two methods for choosing the number of bins on both sides of the cutoff, which are noted with $J_{-}$ and $J_{+}$.
 
 ### Integrated Mean Squared Error (IMSE)
 
-The IMSE method selects the {{<katex>}}J_{-}{{</katex>}} and $J_{+}$ values such that it minimizes an asymptotic approximation to the integrated mean-squared error of the local means estimator. The local means estimator is the sum of the expansions of the variance and squared bias. A large number of bins leads to small bias, because the bins are smaller and the local constant fit is better. However, the small bias leads to more variability within the bin, as an increased number of bins would have fewer observations per bin. 
+The IMSE method selects the $J_{-}$ and $J_{+}$ values such that it minimizes an asymptotic approximation to the integrated mean-squared error of the local means estimator. The local means estimator is the sum of the expansions of the variance and squared bias. A large number of bins leads to small bias, because the bins are smaller and the local constant fit is better. However, the small bias leads to more variability within the bin, as an increased number of bins would have fewer observations per bin. 
 
 We can use the IMSE method with either evenly-spaced or quantile-spaced bins. We use the same `rdplot` command, but this time there's no need to specify the number of bins with `nbins = c(20, 20)` option. As long as we set the `binselect` argument to either `es` for evenly-spaced or `qs` for quantile-spaced, `rdplot` automatically chooses the number of bins according to it. 
 
@@ -225,7 +225,7 @@ With the quantile-spaced method the resulting number of bins is larger: 21 bins 
 
 ### Mimicking Variance Method (MV)
 
-The second method chooses the {{<katex>}}J_{-}{{</katex>}} and $J_{+}$ values such that the binned means have an asymptotic variability that is approximately equal to the variability of the raw data. This means that the number of bins is chosen in a way that the overall variability of the binned means "mimics" the overall variability in the raw scatter plot. 
+The second method chooses the $J_{-}$ and $J_{+}$ values such that the binned means have an asymptotic variability that is approximately equal to the variability of the raw data. This means that the number of bins is chosen in a way that the overall variability of the binned means "mimics" the overall variability in the raw scatter plot. 
 
 Again, this method can be used with either method for choosing the bins location. The mimicking variance method results in a larger number of bins than the IMSE method, meaning that we will have a plot with more dots that represent the local means and gives a better sense of the variability in the data.
 

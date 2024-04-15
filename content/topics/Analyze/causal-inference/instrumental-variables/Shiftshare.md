@@ -24,9 +24,8 @@ Analysis of causal impacts within regional economic studies comes with challenge
 ### Effect of immigration on unemployment
 A typical question asked in economics is the impact of immigration on unemployment. This analysis seems straightforward with national panel data; if immigrants are substitutes for natives, immigration inflow is expected to raise unemployment. You would run the following regression: 
 
-{{<katex>}}
-UR_{i,t} = \beta_0 + \beta_1 IM_{i,t} + \beta_2 X_{i,t} + \epsilon_{i,t}
-{{</katex>}}
+
+$UR_{i,t} = \beta_0 + \beta_1 IM_{i,t} + \beta_2 X_{i,t} + \epsilon_{i,t}$
 <br>
 <br>
 
@@ -46,9 +45,7 @@ A shift-share instrument (also called the Bartik instrument) can be used to help
 
 For the migration example, the instrument is a weighted average of predicted national immigration inflow rates (*the shifts*), with weights depending on the initial distribution of immigrants(*the shares*). In mathematical terms:
 
-{{<katex>}}
-z_{i,t} = \sum_{i=1}^I s_{i,t-1} * m_{t}
-{{</katex>}}  
+$z_{i,t} = \sum_{i=1}^I s_{i,t-1} * m_{t}$
 <br>
 Where:
 
@@ -63,18 +60,16 @@ Note that the shifts vary at a national level and the shares at a regional level
 The shift-share instrument $z_{i,t}$ is used to exogenously predict the endogenous shift (the immigration inflow into each region) in the following regression model:
 <br>
 <br>
-{{<katex>}}
-UR_{i,t} = \beta_0 + \beta_1 z_{i,t} + \beta_2 X_{i,t} + \epsilon_{i,t}
-{{</katex>}}
+
+$UR_{i,t} = \beta_0 + \beta_1 z_{i,t} + \beta_2 X_{i,t} + \epsilon_{i,t}$
+
 <br>
 
 ## Instrument validity
 A crucial condition for the shift-share approach to work is instrument exogeneity. On average, the product of the instrument, $z_{i,t}$, and the error term $\epsilon_{i,t}$ should balance out to zero. In mathematical terms:
 
-{{<katex>}}
-E[\frac{1}{I} \sum_{i} z_{i,t} \epsilon_{i,t}] = 0
-{{</katex>}}
-<br>
+$E[\frac{1}{I} \sum_{i} z_{i,t} \epsilon_{i,t}] = 0$
+
 <br>
 
 Two recent perspectives in literature each highlight different assumptions for the shift-share instrumental approach to work: the share- and the shift-view. 
@@ -129,13 +124,14 @@ $Cov(m_t, m_t' | \bar{\epsilon}, s) = 0$ for all $m' \neq m$
 Several studies demonstrate the application of the shift-share instrument in various economic contexts. 
 
 Note: The instrument is $z_{l} = \sum_{n} s_{l,n} * m_{n}$ where shifts (shocks) vary at another level (`n`) than the shares (`l`), and outcome and treatment are observed at level `l`.
-
+{{%table%}}
 | Context                                        | Shift-Share Instrument                                | Authors                                    |
 |-------------------------------------------|----------------------------------------------------|--------------------------------------------------|
 | Employment impact <br> on wage growth <br> in region `l` | *Predicted employment due to <br> national industry trends* <br><br> **Shifts:** National growth of industry `n` <br> **Shares:** Lagged employment <br> shares of industry in region `l` | [Bartik (1991)](https://research.upjohn.org/up_press/77/); <br> [Blanchard & <br> Katz (1992)](https://www.aeaweb.org/articles?id=10.1257/aer.89.2.69)  |
 | Local labor market effects <br> of rising Chinese import <br> competition in the US | *Predicted growth of <br> import competition* <br><br> **Shifts:** Growth of China exports <br> in manufacturing industry `n` <br> **Shares:** 10-year lagged <br> employment shares over total <br> employment in region `l` | [Autor, Dorn, <br> and Hanson <br> (2013)](https://www.aeaweb.org/articles?id=10.1257/aer.103.6.2121)  |
 | Import impact by <br> Danish firm on wages  | *Predicted change in firm inputs <br> via transport costs*<br><br> **Shifts:** Changes in transport <br> costs by `n` = (product, country) <br> **Shares:** Lagged import shares  | [Hummels <br> et al. (2014)](https://www.aeaweb.org/articles?id=10.1257/aer.104.6.1597)  |
 
+{{%/table%}}
 
 ## Example in R
 

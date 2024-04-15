@@ -75,6 +75,7 @@ The observed outcome is defined as follows $Y_{i} = (1-T_{i})*Y_{i}(0) + T_{i}*Y
 - $Y_{i}(1)$, if $X_{i} >= c$, because $T\_{i} = 1$
 
 Additionally, the average potential outcomes given the score are given by the conditional expectation function, also called regression function, denoted by $\mathbb{E}[Y_{i}|X_{i}]$ and can take two values:
+
 - $\mathbb{E}[Y_{i}(0)|X_{i}]$, if $X_{i} < c$
 - $\mathbb{E}[Y_{i}(1)|X_{i}]$, if $X_{i} >= c$
 
@@ -90,9 +91,8 @@ The plot below shows us that the function $\mathbb{E}[Y_{i}(0)|X_{i}]$ is observ
 
 Remember that sharp RDD implies that units from treatment and control groups can't have the same score $X_{i}$. The graph above shows that we can't observe both red and blue lines for the same value of the score, except for the cutoff, where we almost see both curves. 
 
-Suppose we have a unit with the score equal to $c$ and one unit with a score just below $c$. Even if the the units would be very similar, the difference is given by their treatment condition and we could calculate the vertical distance at $c$. As shown in the above graph, the vertical distance between the two points is the sharp RD treatment effect, which is defined as: {{<katex>}}
-\tau_{SRD} = \mathbb{E}[Y_{i}(1) - Y_{i}(0)|X_{i} = c]
-{{</katex>}}
+Suppose we have a unit with the score equal to $c$ and one unit with a score just below $c$. Even if the the units would be very similar, the difference is given by their treatment condition and we could calculate the vertical distance at $c$. As shown in the above graph, the vertical distance between the two points is the sharp RD treatment effect, which is defined as: 
+$\tau_{SRD} = \mathbb{E}[Y_{i}(1) - Y_{i}(0)|X_{i} = c]$
 
 
 This parameter can be interpreted as the average treatment effect on the treated and can answer the question: what would be the average outcome change for units with a score level $X_{i}=c$ if we switched their status from control to treated?

@@ -30,16 +30,16 @@ The objective of the FD estimator is to eliminate firm-specific effects that do 
 
 The original model with fixed effects $\alpha_i$ is represented as: 
 <br/>
-{{<katex>}}
+
 $Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}, i = 1,...,n, t = 1,...,T,$
-{{</katex>}}
+
 <br/>
 
 The first-difference transformation is applied as follows:
 <br/>
-{{<katex>}}
+
 $Y_{i,t} - Y_{i,t-1} = \beta_1 (X_{i,t} - X_{i, t-1}) + (\alpha_i - \alpha_i) + (u_{i,t} - u{i,t-1})$
-{{</katex>}}  
+
 <br/>
 
 Since $\alpha_{i}$ is constant over time, taking the difference between consecutive years eliminates the fixed effects. This difference is represented as $\alpha_{i}$ - $\alpha_{i}$, resulting in zero. 

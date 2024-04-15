@@ -78,13 +78,14 @@ There are two strategies using these parameters:
 ### Intention-to-treat Effects
 
 The focus of the first strategy is to learn about the effects of **the treatment assignment**. The effects of assigning the treatment on any outcome are called *intention-to-treat effects* (ITT). There are two assumptions/approaches that can help obtain the ITT parameters: the continuity-based approach and the local randomization approach. After applying the two, the ITT parameters become:
+
 - $\tau_{Y} = \mathbb{E}[Y_{i}(1) - Y_{i}(0) | X_{i} = c]$ 
-- {{<katex>}}\theta_{Y} = \mathbb{E}_{W}[Y_{i}(1) - Y_{i}(0) | X_{i} \in W]{{</katex>}} 
+- $$\theta_{Y} = \mathbb{E}_{W}[Y_{i}(1) - Y_{i}(0) | X_{i} \in W]$$
 
 As for the second strategy, the focus is on studying the effects of **receiving the treatment**. The same two parameters are defined, but the outcome variable is now $D$ instead of $Y$. Therefore, the parameters become:
 
 - $\tau_{D} = \mathbb{E}[D_{i}(1) - D_{i}(0) | X_{i} = c]$ 
-- {{<katex>}}\theta_{D} = \mathbb{E}_{W}[D_{i}(1) - D_{i}(0) | X_{i} \in W]{{</katex>}} 
+- $\theta_{D} = \mathbb{E}_{W}[D_{i}(1) - D_{i}(0) | X_{i} \in W]$
 
 ### Treatment Effects for Subpopulations
 
