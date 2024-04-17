@@ -14,5 +14,5 @@ social:
     link: https://www.linkedin.com/in/fleurlemire/
 email: f.m.d.lemire@tilburguniversity.edu
 image: fleur.webp
-status: "active"
+status: "alumni"
 ---
