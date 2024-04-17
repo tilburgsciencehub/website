@@ -2,6 +2,7 @@ import sqlite3
 import os
 import re
 import shutil
+import logging
 
 # Create the database and table
 conn = sqlite3.connect('tsh.db')
@@ -81,17 +82,28 @@ topic_folder = os.path.join(content_directory, 'topics')
 
 # Insert/update topic 
 def insert_topic_into_db(cursor, title, level, parent, path, draft):
-    cursor.execute("SELECT 1 FROM topics WHERE path = ?", (path,))
-    exists = cursor.fetchone()
-    
-    if exists:
-        cursor.execute("UPDATE topics SET title = ?, level = ?, parent = ?, draft = ? WHERE path = ?", 
-                       (title, level, parent, draft, path))
-    else:
-        cursor.execute("INSERT INTO topics (title, level, parent, path, draft) VALUES (?, ?, ?, ?, ?)", 
-                       (title, level, parent, path, draft))
-    
-    return cursor.lastrowid
+    try:
+        cursor.execute("SELECT 1 FROM topics WHERE path = ?", (path,))
+        exists = cursor.fetchone()
+
+        if exists:
+            cursor.execute("UPDATE topics SET title = ?, level = ?, parent = ?, draft = ? WHERE path = ?", 
+                           (title, level, parent, draft, path))
+        else:
+            cursor.execute("INSERT INTO topics (title, level, parent, path, draft) VALUES (?, ?, ?, ?, ?)", 
+                           (title, level, parent, path, draft))
+            
+        conn.commit()
+
+        cursor.execute("SELECT id FROM topics WHERE path = ?", (path,))
+        topic_id = cursor.fetchone()[0]
+
+        logging.info(f"Inserted/Updated topic, ID: {topic_id}")
+    except Exception as e:
+        logging.error(f"Database error: {e}")
+        raise
+
+    return topic_id
 
 # Insert/update article 
 def insert_article_into_db(cursor, type, title, parent, description, path, keywords, date, date_modified, draft, weight, author, content):
