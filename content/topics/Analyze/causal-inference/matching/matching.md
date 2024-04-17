@@ -238,9 +238,7 @@ The ATT can be estimated as:
 <br>
 <br>
 
-<!-- $\hat{\beta}_2 + \frac{1}{N_1} \sum_{i=1}^{N_1} D_i \cdot (X_i - \bar{X})' \hat{\beta}_3$ -->
-
-$\` \hat{\beta}_2 + \\frac{1}{N_1} \\sum_{i=1}^{N_1} D_i \\cdot (X_i - \\bar{X})' \hat{\beta}_3 \`$
+$\hat{\beta_2} + \frac{1}{N_1} \sum_{i=1}^{N_1} \cdot D_i \cdot (X_i - \bar{X}) \hat{\beta_3}$
 
 The following R code creates a de-meaned variable for `Age` and runs the OLS regression with an interaction term between `Treatment` and `Age_demeaned`. 
 
