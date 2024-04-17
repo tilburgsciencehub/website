@@ -38,8 +38,8 @@ While we have previously defined *individual* treatment effect, researchers are 
 <div style="text-align: center;">
 $$
 ATE = E[\delta_i] \\
-= E[Y_i^1- Y_i^0]\\
-= E[Y_i^1]-E[Y_i^0]\\
+= E[Y_i^1 - Y_i^0]\\
+= E[Y_i^1] - E[Y_i^0]\\
 $$
 </div>
 
