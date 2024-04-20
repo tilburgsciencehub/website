@@ -98,11 +98,3 @@ Using cross-validation during model training improves our chances of creating a 
 - Overfitting: Overfitting definition is provided and we discuss what are causes and how to address it.
 - K-fold cross-validation: We explore the advantages of K-fold cross-validation compared to the traditional train-test-split method. We also provide an example of its implementation in Python.
  {{% /summary %}}
-
-
-
-
-
-
-
-resource: Hands on machine learning with scikit-learn-keras
