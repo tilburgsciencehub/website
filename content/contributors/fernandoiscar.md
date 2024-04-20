@@ -15,5 +15,5 @@ social:
 
 email: f.iscar@tilburguniversity.edu
 image: fernandoiscar.webp
-status: "active"
+status: "alumni"
 ---
