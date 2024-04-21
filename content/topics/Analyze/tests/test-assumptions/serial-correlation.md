@@ -88,7 +88,9 @@ acf_residuals <- acf(e,
 ```
 {{% /codeblock %}}
 
-screenshot 
+<p align = "center">
+<img src = "../images/autocorrelation-plot.png" width="400">
+</p> 
 
 The x-axis represents the lag, i.e. the time interval between each observation and its correlated observations. Lag 1 represents the first-order correlation with the previous observation, and so on. The y-axis shows the autocorrelation coeffcients, which measure the strength and direction fo the linear relationship between observations at different lags. It ranges from -1 to 1, where 0 indicates no correlation. The blue dashed lines are the lower and upper bound of the 95% confidence interval around the zero line. Interpreting our plot, significant positive autocorrelation is found at lag-1, 2 and 3 as these spikes reach above the confidence interval,
 As the spikes become smaller as lag increases, it suggests observations become less correlated as they become further apart in time. 
