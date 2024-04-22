@@ -1,7 +1,7 @@
 ---
-title: "SQLite: a Database for Your Research Data"
+title: "SQLite in R for Research Data Storage"
 description: ""
-keywords: "research data storage, efficiency, SQL database"
+keywords: "research data storage, efficiency, SQL database, SQLite"
 #date: 2021-02-08
 draft: false
 weight: 2
@@ -11,7 +11,7 @@ aliases:
 
 ## Overview
 
-In this article, we will introduce SQLite, an easy-to-use database for research data storage.
+In this article, we will introduce SQLite in R, an easy-to-use database for research data storage.
 If you are not yet sure whether you need a database for your research data, 
 you can read our article on [data storage options](https://tilburgsciencehub.com/topics/collect-store/data-storage/databases/csv-vs-database/).
 
