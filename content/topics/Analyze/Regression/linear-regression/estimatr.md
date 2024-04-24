@@ -15,12 +15,12 @@ We are interested in examining how the education level of employees relates to t
 
 $Wage_{i}  =  \beta_{0} + \beta_{1} Educ_{i} + \mu$
 
-{{$ table %}}
+{{% table %}}
 | **Variable** | **Description**            |
 | :------  | :---------             |
 | `wage`     | monthly earnings       |
 | `educ`     | years of education     |
-{{$ /table %}}
+{{% /table %}}
 
 ## Load packages
 
