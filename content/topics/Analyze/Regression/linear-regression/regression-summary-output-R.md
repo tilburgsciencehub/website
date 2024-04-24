@@ -154,7 +154,7 @@ confint(reg, level = 0.95)
 ```
 {{% /codeblock %}}
 
-{{ %table% }}
+{{% table %}}
 The following output is returned:
 
 |           | 2.5%     | 97.5%    |
