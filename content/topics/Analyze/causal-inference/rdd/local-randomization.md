@@ -62,12 +62,12 @@ To clarify the conditions of the local randomization approach discussed above, t
 
 - Condition 1
 
-The probability is defined as $\mathbb{P}_{W}[.]$ for those units with $X_{i}\in W$. 
-As such, the first condition requires that $\mathbb{P}_{W}[X_{W} \leq x] = F(x)$ for some known joint cumulative distribution function $F(x)$.
+The probability is defined as $\mathbb{P_W}[.]$ for those units with $X_{i}\in W$. 
+As such, the first condition requires that $\mathbb{P_W}[X_{W} \leq x]=F(x)$ for some known joint cumulative distribution function $F(x)$.
 
 - Condition 2
 
-Let $Y_{i}(0,x)$ and $Y_{i}(1,x)$ be the potential outcomes with explicit dependence on the score variable, so that $Y_{i}(0) = Y_{i}(0, X_{i})$ and $Y_{i}(1) = Y_{i}(1, X_{i})$. As such, if the potential outcomes are non-random, the second condition means that $Y_{i}(0,x') = Y_{i}(0, X_{i})$ and $Y_{i}(1,x') = Y_{i}(1, X_{i})$ for all $x$, $x' \in W$ and all units such that $X_{i} \in W$. If the potential outcomes are non-random, the condition becomes $\mathbb{P}_{W}[Y_{i}(0,x') = Y_{i}(0,x)]$ = 1 and $\mathbb{P}_{W}[Y_{i}(1,x') = Y_{i}(1,x)]$ = 1 for all $x$, $x' \in W$. 
+Let $Y_{i}(0,x)$ and $Y_{i}(1,x)$ be the potential outcomes with explicit dependence on the score variable, so that $Y_{i}(0) = Y_{i}(0, X_{i})$ and $Y_{i}(1) = Y_{i}(1, X_{i})$. As such, if the potential outcomes are non-random, the second condition means that $Y_{i}(0,x') = Y_{i}(0, X_{i})$ and $Y_{i}(1,x') = Y_{i}(1, X_{i})$ for all $x$, $x' \in W$ and all units such that $X_{i} \in W$. If the potential outcomes are non-random, the condition becomes $\mathbb{P_W}[Y_{i}(0,x') = Y_{i}(0,x)]=1$ and $\mathbb{P_W}[Y_{i}(1,x') = Y_{i}(1,x)]$ = 1 for all $x$, $x' \in W$. 
 
 
 ## Estimation and Inference
@@ -119,7 +119,7 @@ The table below provides an overview of the statistical methods discussed in thi
 
 {{%/table%}}
 
-For all three methods, the parameter of interest is  $\mathbb{E}_{W}[.]$, denoting the expectation computed with respect to the probability $\mathbb{P}_{W}$. 
+For all three methods, the parameter of interest is  $\mathbb{E_W}[.]$, denoting the expectation computed with respect to the probability $\mathbb{P_W}$. 
 
 
 ## Practical Example: US Senate Elections
