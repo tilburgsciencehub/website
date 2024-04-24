@@ -90,9 +90,12 @@ The average effect of the treatment on the treated (ATT) is estimated by taking 
 
 The estimated average treatment effect on the treated ($\hat{d}_{\text{ATT}}$) is expressed as follows:
 
-<!-- $\hat{d}_{\text{ATT}} = \frac{1}{N_1} \sum_{D = 1} (Y_i - Y_{j(i)})$ -->
-
-$\` \hat{d}_{\\text{ATT}} = \\frac{1}{N_1} \\sum_{D = 1} (Y_i - Y_{j(i)}) \`$
+<div style="text-align: center; font-size: 1.2em;">
+$$
+\hat{d}_{\text{ATT}} = \\
+\frac{1}{N_1} \sum_{D=1} (Y_i - Y_{j(i)})
+$$
+</div>
 
 <br>
 
