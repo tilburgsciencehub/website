@@ -37,7 +37,10 @@ To remove the fixed effects from the model, the time-specific means are subtract
 
 <br/>
 
-$Y_{i,t} - \bar{Y}_{i,t-1} = \beta_1 (X_{i,t} - \bar{X}_{i, t-1}) + (\alpha_i - \bar{\alpha_i}) + (u_{i,t} - \bar{u}_{i,t-1})$
+<div style="text-align: center; font-size: 1.2em;">
+$Y_{i,t} - \bar{Y}_{i,t-1} = \\
+\beta_1 (X_{i,t} - \bar{X}_{i, t-1}) + (\alpha_i - \bar{\alpha_i}) + (u_{i,t} - \bar{u}_{i,t-1})$
+</div>
 
 <br/>
 
