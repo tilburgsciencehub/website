@@ -1,9 +1,9 @@
 ---
 title: "Grammar of Graphics of ggplot2"
-description: "Understand the core concepts of zggplot2 - a powerful plotting library for R. Improve your visualizations now."
+description: "Understand the inner workings of ggplot2 - a powerful plotting library for R."
 keywords: "ggplot2, Grammar of Graphics, Layering, Data Visualization"
 date: 11-12-23
-weight: 2
+weight: 3
 author: "Matthijs ten Tije"
 authorlink: "https://tilburgsciencehub.com/contributors/matthijstentije/"
 aliases:
@@ -14,29 +14,36 @@ aliases:
 ---
 
 ## Overview
+In this article, we will explore the inner workings of `ggplot2`, which is widely considered the best R package for plotting. We will zoom in on the core principle of `ggplot2`, known as the "**Grammar of Graphics**". This concept views a plot as a composition of distinct, independent layers.
 
-In this article, we will explore the inner workings of `ggplot2`, a powerful package for creating data visualisations in R. We will zoom in on the core principle of `ggplot2`, known as the "Grammar of Graphics".  This concept views a plot as a composition of distinct, independent layers. 
+We will provide practical examples to illustrate these concepts, starting with creating a basic plot and gradually introducing color, size, layering geoms, refining aesthetics, incorporating facets for multi-dimensional analysis, and adding labels and annotations.
 
-We will provide practical examples to illustrate these concepts, starting with creating a basic plot and gradually introducing colour, size, layering geoms, refining aesthetics, incorporating facets for multi-dimensional analysis, and adding labels and annotations.
-
-By the end of this building block, you'll have a solid understanding of `ggplot2`'s modularity, layering, and best practices, empowering you to craft compelling data visualizations and stories.
+By the end of this article, you'll have a solid understanding of `ggplot2`'s framework, layering, and best practices. Setting you up to create all kinds of visualizations: scatterplots, barplots, boxplots, and line graphs, and how to adapt them as required.
 
 ## Grammar of Graphics
+The term "gg" in `ggplot2` stands for "**Grammar of Graphics**", reflecting its core philosophy. The main idea behind the Grammar of Graphics is that a plot is made up of several layers and that each layer consists of at least:
 
-Creating a graph in R using `ggplot2` can be thought of as building a sentence. Just as words form clear sentences, `ggplot2` combines graphical elements guided by the "Grammar of Graphics". Like using basic parts of speech to build sentences, `ggplot2` employs points, lines, and colors as fundamental components for flexible and meaningful data visualization.  
+1. A dataset
+2. A geometric object
+3. A mapping of variables to aesthetics
 
-The term "`gg`" in `ggplot2` stands for "Grammar of Graphics", reflecting its core philosophy. Plots are constructed through a series of layers, each appended with the `+` operator. While initially, this approach may seem less intuitive than generating a plot with a single function call, it's precisely this layer-by-layer construction that grants `ggplot2` its versatility. This methodology enables you to build a wide range of plots, from simple bar charts to complex multi-layered visualizations.
+Here, a *geometric object* is a shape that you can use to represent data on a plot, like a point, a line, or a bar, while an *aesthetic* is some aspect of that shape, like its position, its thickness, or its color.
+
+Plots are thus constructed through a series of layers, which are appended with the `+` operator. While initially, this approach may seem less intuitive than generating a plot with a single function call, it's precisely this _layer-by-layer construction_ that grants `ggplot2` its versatility. This kind of methodology allows you to build a wide range of plots, from simple bar charts to complex multi-layered visualizations.
 
 {{% example %}}
-Imagine you're painting a picture; you start with a sketch (your dataset) and then add layers of paint (aesthetics and geoms). Each stroke of the brush (layer) enriches your painting (plot), making it more detailed and colorful. This is the essence of `ggplot2`'s layering. You build plots layer by layer, each adding new dimensions to your data story.
+
+Analogy Example:
+The Grammar of Graphics intuition extends to the procedure of painting. First, you will start with making a sketch (*your dataset*). Then you will add layers of paint to your canvas (*aesthetics* and *geoms*). Therefore, each stroke of the brush (*layer*) adds a layer to your painting (*plot*), making it more detailed and colorful. This is, in short, the essence of `ggplot2`'s grammar of graphics. You build plots layer by layer, each adding new dimensions to your data visualization.
 
 {{% /example %}}
 
 ## Basic Ingredients of a `ggplot`:
 
 ### The `ggplot()` function  
-   
-Every visualization with the `ggplot2` package starts with the `ggplot()` function, where you specify the dataset and set up aesthetics (aes) that map data variables to visual properties. These mappings variables define how data variables are represented in terms of visual properties such as axes, colors, shapes, and sizes.
+The foundation of any `ggplot` visualization is the `ggplot()` function. This function sets the base for defining a default dataset and default aesthetics, which are inherited by all subsequent layers unless explicitly overridden.
+
+These default aesthetics, or in simpler terms, mapping variables, define how data variables are represented in terms of visual properties such as axes, colors, shapes, and sizes.
 
 {{% codeblock %}}
 
@@ -56,14 +63,18 @@ ggplot(data = mpg, aes(x = displ, y = hwy))
 </p>
 
 {{% example %}}
+The code above uses the `ggplot()` function to create an initial plot framework. In this visualization, the *dataset* `mpg` is used, and the *aesthetic* arguments map the mpg's `displ` variable to the x axis and the `hwy` variable to the y axis.
 
-This code initializes a ggplot object for a plot, using the `mpg` dataset with engine displacement (displ) and highway miles per gallon (hwy). In our analogy to constructing sentences, we've set the stage, but the plot remains empty, much like a sentence without verbs or adjectives. To bring it to life, we need to call upon a `geom()` function to specify the type of plot we want to create.
+To animate the visualization, we need to employ a `geom_()` function to specify the type of plot we wish to create.
 
 {{% /example %}}
 
 ### Geometric Objects (`geoms`): 
+A *geometric object* is a visual representation used to display data on a plot, such as a point, line, or bar. Thus, geoms determine the specific type of plot being created.
 
-The next step involves adding one or more geometric objects, or `geoms`. Geoms determine the type of plot you're creating. Whether it's a bar plot (`geom_bar`), a line plot (`geom_line`), a scatter plot (`geom_point`), or any other graphical representation, each geom layer takes the foundational setup from the ggplot call and visually interprets the data according to its type.
+Adding one or more geometric objects is achieved through the `geom_` functions. This could be a bar plot (`geom_bar`), a line plot (`geom_line`), a scatter plot (`geom_point`), or any other graphical representation.
+
+Each geom layer refers back to the initial `ggplot()` setup and visually interprets the data according to its specific `geom_` type.
 
 {{% codeblock %}}
 
@@ -80,21 +91,27 @@ ggplot(data = mpg, aes(x = displ, y = hwy)) +
 </p>
 
 {{% tip %}}
-**Data Visualization Best Practices**
 
-In this [post](/visualize/data), we go through the theory of data visualisation, describe the most common chart types and conclude with best practices for plotting.
+**Data Visualization Best Practices**   
+Explore the theory of data visualization in this [post](/visualize/data), where we describe the most common chart types and conclude with best practices for plotting.
 
 {{% /tip %}}
 
 ### Aesthetic Layering in `ggplot2`
-In `ggplot2`, layering aesthetics, like color and fill, is crucial for creating a detailed and visually appealing visualization. However, to make the most of this capability, it's essential to grasp two fundamental aspects of the `ggplot2` language:
+Besides setting the x and y variables within the `aes()` function, you can also define attributes like color, shape, and size. Each of these aesthetic properties can be mapped onto different variables in the dataset, enabling multidimensional plotting.
 
-**Aesthetic Inheritance**: In `ggplot2`, aesthetics applied in the `ggplot()` fucntion initially flow through all layers, ensuring consistency, but be cautious to avoid unintended changes in later layers. 
+Understanding how the `aes()` function works is important. It includes two key concepts:
 
-**Overwriting Aesthetics**: Adding new layers to your plot introduces the potential for overwriting the aesthetic settings of previous layers. Therefore, be mindful of how each layer affects the overall aesthetics of the visualization to achieve your intended design.
+- **Aesthetic Inheritance**: The aesthetics defined in the initial `ggplot()` function are inherited by all subsequent layers, making it practical to define a default dataset and the aesthetics if they are consistently used across most layers.
+- **Overwriting Aesthetics**: New layers can overwrite aesthetic settings from earlier ones. By specifying `aes()` in a new layer, you override the default aesthetic settings established in the `ggplot()` function.
+
+{{% tip %}}
+A key point about the *aesthetics* of *geometric objects*: defining them *inside* an `aes()` function means they should map to a variable, while defining them *outside* an `aes()` function sets the appearance for an entire layer.
+
+{{% /tip %}}
 
 #### Aesthetic Inheritance in Layering
-Aesthetics defined in the initial `ggplot()` function serve as a base layer and are inherited by subsequent layers. This feature enables a consistent application of aesthetics like color or fill across the entire plot unless specifically overridden in subsequent layers. For instance:
+Aesthetics set in the initial `ggplot()` function act as a base layer and are inherited by subsequent layers. This sets a consistent application of aesthetics like color or fill across the entire plot unless specifically overridden in later layers. For example:
 
 {{% codeblock %}}
 ```R
@@ -110,15 +127,16 @@ ggplot(data = mpg, aes(x = displ, y = hwy)) +
 
 {{% example %}}
 
-Here, the color aesthetic applied to the geom_smooth layer does not affect the geom_point layer, illustrating how layer-specific aesthetic settings can override the base layer settings.
+Here, we use the `ggplot()` function with the `mpg` dataset. We set the default **aesthetics** to map engine displacement (`displ`) to the x-axis and highway mileage (`hwy`) to the y-axis. Our **geometric object** is a cloud of points (`geom_point()`).
+
+The subsequent `geom_smooth()` layer, which includes a color mapping to the class variable, demonstrates that aesthetic settings can be specific to each layer and do not affect the `geom_point()` layer.
 
 {{% /example %}}
 
 #### Overwriting Aesthetics with New Layers
-In `ggplot2`, aesthetics set in the ggplot() function serve as global settings for the entire plot, while aesthetics set in a `geom_()` function apply only to that specific layer. This can lead to unexpected results if not handled carefully.
+As we have discussed above in `ggplot2`, aesthetics set in the `ggplot()` function serve as global settings for the entire plot, while aesthetics specified in a `geom_()` function apply only to that specific layer. This can lead to unexpected results if not managed carefully.
 
-Therefore, when adding new layers, be cautious as they can overwrite the aesthetic settings from earlier layers. This is particularly relevant when you’re incrementally building a plot and want to maintain certain aesthetic features throughout. For example:
-
+When adding new layers, be mindful as they can overwrite the aesthetic settings from earlier layers. This is especially relevant when incrementally building a plot and aiming to maintain certain aesthetic features throughout. For instance:
 
 {{% codeblock %}}
 
@@ -135,7 +153,7 @@ ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
 
 {{% example %}}
 
-In this example, the first `geom_point() ` layer uses the global aesthetic defined in ggplot(), coloring points by the class variable. However, when the second geom_point() layer is added with color = "red", it overwrites the color for all points, making them red, regardless of their class.
+In this example, initially, a geometric object layer uses the global aesthetic defined in `ggplot()`, coloring points by the class variable. However, when the `geom_point()` layer is added with the color set to "red" in the `aes()` function, it overwrites the color for all points, rendering them red regardless of their class.
 
 {{% /example %}}
 
@@ -150,9 +168,9 @@ To effectively use layering in `ggplot2`:
 {{% /tip %}}
 
 ## Practical Example
-Every `ggplot2` visualization starts with a foundational layer. This initial step involves defining the dataset and basic aesthetics.
+Every `ggplot2` visualization begins with a basis layer: the `ggplot()` function. This initial step involves defining the **dataset** and optional **aesthetics**,  it always serves as the starting point from which you add additional layers.
 
-#### Step 1: Creating a Basic Plot
+### Step 1: Creating a Basic Plot
 
 {{% codeblock %}}
 
@@ -167,10 +185,11 @@ ggplot(data = mpg, aes(x = displ, y = hwy)) +
 <img src = "../images/ggplotexample1.png" width="450">
 </p>
 
-*Description*: Starting with a basic scatter plot using the 'mpg' dataset. This foundational plot maps engine displacement (displ) to the x-axis and highway miles per gallon (hwy) to the y-axis. It's a simple yet effective way to visualize the relationship between these two variables.
+Here, we use the `ggplot()` function with the mpg dataset. We set the default aesthetics to map engine displacement (displ) to the x-axis and highway mileage (hwy) to the y-axis. Our geometric object is a cloud of points (`geom_point()`).
 
-#### Step 2: Introducing Color and Size
-Adding color and size to a plot can significantly enhance its interpretability and appeal.
+
+### Step 2: Introducing Color and Size
+Having set up the basis of your visualization, you may wish to include multiple variables. In this context, the aesthetics arguments in `ggplot2` are useful for mapping additional variables. 
 
 {{% codeblock %}}
 
@@ -185,10 +204,10 @@ ggplot(data = mpg, aes(x = displ, y = hwy, color = manufacturer, size = cyl)) +
 <img src = "../images/ggplotexample2.png" width="450">
 </p>
 
-*Insight*: By introducing color and size, we differentiate data points by manufacturer and cylinder count. This addition turns a simple scatter plot into a more detailed and informative visualization, highlighting multiple variables at once.
+By adjusting the `aes()` function to include `color = manufacturer` and `size = cyl`, we differentiate the data points by manufacturer and cylinder count. This transforms a basic scatter plot into a multifaceted visualization, highlighting the interactions between multiple variables.
 
-#### Step 3: Layering Geoms
-Different geometrical shapes, or 'geoms', can be layered to present data in various formats, such as lines, bars, or points.
+### Step 3: Layering Geoms
+Having specified the base layer and mapped the necessary aesthetics, it is now time to layer different geometric objects, or 'geoms.' By integrating various formats such as lines, bars, or points, layer by layer, you can add more depth to your data visualization, emphasizing relationships and patterns within the data
 
 {{% codeblock %}}
 
@@ -204,11 +223,16 @@ ggplot(data = mpg, aes(x = displ, y = hwy)) +
 <img src = "../images/ggplotexample3.png" width="450">
 </p>
 
-*Analysis*: Adding a smooth line (geom_smooth) to our scatter plot provides an overview of the general trend. This layer helps in visualizing the relationship between displacement and highway MPG across different vehicle segments.
+Adding a smooth line (`geom_smooth()`) to the scatter plot offers an overview of the general trend. This layer aids in visualizing the relationship between displacement and highway miles per gallon (MPG) across various vehicle segments.
 
+### Step 4: Controlling Plot Appearance 
+Having specified the geometric objects, let's zoom in how to refine the visual aesthetics of plots. Inside `ggplot2` there are two primary tools for this purpose: `scales` and `themes`.
 
-#### Step 4: Refining Aesthetics, Adjusting Scales and Themes
-Fine-tuning scales and applying themes can transform the appearance and readability of a plot.
+**Using Scales to Change Axes and Legends**     
+In `ggplot`, each aesthetic is connected to a scale that defines its appearance. By default, `ggplot` selects appropriate scales based on the aesthetic and the data type. However, you have the option to override these defaults to customize aspects such as axis limits, legend label names, and the colors used in the color aesthetic. This customization is achieved by adding specific `scale_..._...()` functions to your plot.
+
+**Themes: Built-in Packages and Manual Customization**   
+`ggplot2` offers built-in themes that changes the appearance of plots without manual adjustments to each element. For more specific needs, you can manually customize the plot, from text size and font to background color and grid lines, using the `theme()` function.
 
 {{% codeblock %}}
 
@@ -224,17 +248,21 @@ ggplot(data = mpg, aes(x = displ, y = hwy, color = manufacturer, size = cyl)) +
 <img src = "../images/ggplotexample4.png" width="450">
 </p>
 
-*Explanation*: The use of `scale_color_brewer(type = "qual")` adds a qualitative palette from Color Brewer, ideal for differentiating categories like manufacturers. Following this, `theme_minimal()` creates a cleaner, less cluttered look, highlighting the data. These enhancements improve the plot's visual appeal and clarity, making it more engaging and easier to interpret.
+By using `scale_color_brewer(type = "qual")`, we introduce a qualitative color palette from Color Brewer, ideal for differentiating categories like manufacturers. Following this, `theme_minimal()` creates a cleaner, less cluttered look, highlighting the data. 
 
-#### Step 5: Incorporating Facets for Multi-Dimensional Analysis
-Faceting in `ggplot2` creates a grid of related plots, each representing a different slice of the data, allowing for an effective comparison across categorical variables.
+### Step 5: Incorporating Facets for Multi-Dimensional Analysis
+So far, we've covered how to create different types of plots, and how to customize their appearance. let's look how to incorporate multiple plots within a single figure through the use of *facets* in `ggplot`.
+
+A plot's ***facet specification*** splits it up into multiple plots based on a specific (categorical) variable, or combination of two variables. Essentially, it repeatedly creates the same plot for a different subset of the data.
+
+The `facet_grid()` function accomplishes this; its input is a formula, like `x ~ y`, where `x` is the variable that will vary across rows, and `y` the one that will vary across columns; a `.` leaves an empty dimension. While The `facet_wrap() `function, another facetting option in ggplot2, wraps the facets into a single row or column, providing a compact grid of related plots.
 
 {{% codeblock %}}
 
 ```R
 ggplot(data = mpg, aes(x = displ, y = hwy, color = manufacturer)) + 
     geom_point() + 
-    facet_wrap(~class)
+    facet_wrap(. ~ class)
 ```
 
 {{% /codeblock %}}
@@ -243,10 +271,10 @@ ggplot(data = mpg, aes(x = displ, y = hwy, color = manufacturer)) +
 <img src = "../images/ggplotexample5.png" width="450">
 </p>
 
-*Context*: Faceting based on vehicle class creates a grid of plots, each focusing on a different class. This approach allows for a more granular analysis, enabling comparisons across different vehicle categories.
+Faceting based on vehicle class creates a grid of plots, each focusing on a different class.
 
-#### Step 6: Final Touches, Adding Labels and Annotations
-Labels and annotations bring clarity and context to a plot, making it more informative and reader-friendly.
+### Step 6: Final Touches, Adding Labels and Annotations
+The last step, is to apply the final touches to your plot. Labels and annotations bring clarity and context to a plot, making it more informative and reader-friendly.
 
 {{% codeblock %}}
 
@@ -266,17 +294,14 @@ ggplot(data = mpg, aes(x = displ, y = hwy, color = manufacturer)) +
 <img src = "../images/ggplotexample6.png" width="450">
 </p>
 
-*Detailing*: The final step involves adding informative labels and annotations. A clear title, axis labels, and a legend make the plot self-explanatory. These finishing touches ensure the plot communicates effectively with its audience.
+The final step involves adding informative labels and annotations. A clear title, axis labels, and a legend make the plot self-explanatory.
 
 {{% summary %}}
+Wrapping up our exploration of the inner workings, "Grammer of Graphics" of `ggplot2`, let's take a moment to recap the key principles we've uncovered:
 
-Wrapping up our exploration of the inner workings, "Grammer of Graphics" of `ggplot2`, let's reflect on the fundamental concepts learned:
-
-- **Modularity and Layering**: The `modularity` of `ggplot2` enables the creation of a wide range of plots through layering, from simple bar charts to intricate multi-layered visualizations.
-- **Aesthetic Layering**: We've delved into the nuances of `aesthetic inheritance` and the potential for overwriting aesthetics, vital for creating detailed and visually appealing visualizations.
-- **Best Practices**: We've discussed best practices for effective layering, emphasizing consistency, planning, simplicity, commenting, and visualizing progress.
-- **Practical Examples**: Through practical examples, we've seen how to create basic plots, introduce color and size, layer geoms, refine aesthetics, incorporate facets, and add labels and annotations.
-
-By grasping these concepts, you are well-equipped to leverage `ggplot2`'s power and flexibility for crafting compelling data visualizations and stories.
+- **Layering Principle**: The layering principle in ggplot2 allows the construction of a diverse array of plots, ranging from simple bar charts to complex multi-layered visualizations.
+- **Aesthetic Layering**: We've look at concepts as aesthetic inheritance and the potential for overwriting aesthetics. 
+- **Best Practices**: We've discussed effective strategies for layering, emphasizing the importance of consistency, planning, simplicity, commenting, and visualizing progress.
+- **Practical Example**: Through a hands-on example, we've demonstrated how to create basic plots, introduce color and size, layer geometric objects (geoms), refine aesthetics, incorporate facets, and add labels and annotations.
 
 {{% /summary %}}
