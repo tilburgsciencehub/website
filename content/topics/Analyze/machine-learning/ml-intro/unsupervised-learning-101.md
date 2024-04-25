@@ -1,5 +1,5 @@
 ---
-title: "In-depth Introduction to Supervised Machine Learning"
+title: "In-depth Introduction to Unsupervised Machine Learning"
 description: "Get introduced to Unsupervised Learning, a core branch of machine learning where the model learns \\\ to make predictions or decisions. This article explores unsupervised learning, its algorithms, and walks you through a simple example in R."
 keywords: "machine learning, unsupervised learning, algorithms, regression, classification, R"
 date: 05/04/2024
@@ -26,7 +26,7 @@ The article covers several topics:
 
 This type of machine learning learns from data without human supervision. These models can detect patterns in data without specified labels or outcomes. It uses self-learning algorithms to structure information based on similarities, differences, and patterns in data. Unsupervised learning approaches are often used to find structure in large datasets, and create a more compact representation of data.
 
-Different approaches are clustering, generalization and association: 
+Different approaches are clustering, association, and dimensionality reduction: 
 * Clustering 
 * Association 
 * Dimensionality Reduction
