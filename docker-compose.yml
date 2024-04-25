@@ -2,15 +2,9 @@ version: "3.8"
 services:
   frontend:
     build: .
-    command: sh -exc "exec env gunicorn app:app --bind 0.0.0.0:8000 --workers 4"
     ports:
-      - 8000:8000
+      - 8070:80
     tty: true
     restart: always
-    logging:
-      driver: json-file
-      options:
-        max-size: "10m"
-        max-file: "3"
     labels:
-      - "traefik.http.routers.frontend.rule=Host(`tilburgsciencehub.com`)"
+      - "traefik.http.routers.frontend.rule=Host(`flask.tilburgsciencehub.com`)"
