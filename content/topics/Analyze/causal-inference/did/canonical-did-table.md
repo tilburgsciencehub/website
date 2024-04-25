@@ -63,14 +63,11 @@ $$
 In the DiD setup, we are mainly interested in comparing the outcomes before and after the treatment for the treated and control groups:
 
  {{% table %}}
-
 |                 | Before ($Y_i^0$)     | After ($Y_i^1$)     |
 | --------------- | ---------------------- | ---------------------- |
-| Control ($D_i = 0$)    | $E(Y_i^0\|D_i = 0)$   | $E(Y_i^1\|D_i = 0)$   |
-| Treatment ($D_i=1$)    | $E(Y_i^0\|D_i = 0)$   | $E(Y_i^1\|D_i = 1)$    |
- 
+| Control ($D_i = 0$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \mid D_i = 0)$   |
+| Treatment ($D_i=1$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \ mid D_i = 1)$    |
  {{% /table %}}
-
 
 Part of the outcomes presented above are *counterfactual*. These outcomes represent what would have happened to the treated and control groups if their treatment statuses were reversed. Naturally, a single person cannot be both treated and not treated, that’s why we only observe one of the two values.
 
