@@ -25,8 +25,7 @@ The article covers several topics:
 
 ## What is Supervised Learning?
 
-Supervised Learning involves training a model on a labeled dataset, which means that each input variable in the training sample is paired with an answer key. 
-The model learns by comparing its own predicted output with the true answers that are given, and adjusts itself to minimize errors. 
+Supervised Learning involves training a model on a labeled dataset, which means that each observation (e.g., customer) in the training sample is "tagged" with a particular outcome (e.g., "buy"). The model learns by comparing its own predicted output with the true labels that are given, and adjusts itself to minimize errors. 
 By doing this, it improves its prediction abilities over time, with the goal of accurately generalizing previously unknown data.
 
 There are two types of algorithms:
@@ -36,7 +35,7 @@ There are two types of algorithms:
 With regression, the model predicts continuous or numerical values such as the weather, housing prices, or profit. 
 The goal is to estimate the relationship between independent variables (features) and the dependent variable (target).
 
-Classification, on the other hand, is used for categorical output variables. It assigns data into two or more classes, such as customer churn, identifying emails as spam or not, or recognizing handwritten text. The goal is to correctly classify new input data in their corresponding categories.
+Classification, on the other hand, is used for categorical output variables. It assigns data into two or more classes, such as customer retention or churn, identifying emails as spam or not, or recognizing handwritten text. The goal is to correctly classify new input data in their corresponding categories.
 
 ### Key Concepts
 
