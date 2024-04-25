@@ -54,17 +54,14 @@ In this section, we will discuss single-variable regression models and how to in
 ### The Linear-Linear Model
 The `Linear-Linear model` is a type of model where the dependent variable, Y, and the independent variable, X, are not transformed in any way. This means that they are both in their original form or levels. Mathematically, such models can be expressed as follows:
 
-{{<katex>}}
- Y = \beta_0 + \beta_1 X + \epsilon
- {{</katex>}}
+
+$Y = \beta_0 + \beta_1 X + \epsilon$
  
 In the simplest form, the explanation goes as follows: If X goes up by 1, then Y goes up by $\beta_1$.
 
 In symbols this would mean: 
 
-{{<katex>}}
- △Y = \beta_1 · △X
-{{</katex>}}
+$△Y = \beta_1 · △X$
 
 In words, if we change X by 1 unit (i.e. $△X = 1$) then we can expect Y to change by $\beta_1$ units. 
 
@@ -114,10 +111,8 @@ Avoid language stating a **causal** effect. Instead, we are stating the **correl
 ### The Linear-Log Model
 The `Linear-Log  model` is a model where the dependent variable (Y) has not been transformed, while the independent variable (X) has been transformed to a logarithmic scale. These types of models can be mathematically expressed as follows:
 
- {{<katex>}}
-Y = \beta_0 + \beta_1 · ln X + ε 
-
- {{</katex>}}
+ 
+$Y = \beta_0 + \beta_1 · ln X + ε$ 
 
 
 We can interpret $\beta_1$ as follows: "A one-unit change in ln(X) corresponds to a change of $\beta_1$ units in Y."
@@ -131,9 +126,8 @@ For example, say c = 0.05. This is approximately the same as multiplying X by 1.
 
 In symbols, this will look as follows:
 
- {{<katex>}}
-△Y = \beta_1 ·△ \% X
- {{</katex>}}
+
+$△Y = \beta_1 ·△ \% X$
  
 Therefore, in a linear-log model, the interpretation is that a 100\% increase in X is associated with
 a $\beta_1$ unit change in Y.
@@ -178,17 +172,15 @@ Note that this trick works best for small percentage changes, which is usually w
 
 When using a `Log-Linear model`, the dependent variable (Y) is expressed on a logarithmic scale, while the independent variables (X's) remain on their original scale. This means that the model is represented mathematically as follows:
 
- {{<katex>}}
-ln Y = \beta_0 + \beta_1 X + ε
- {{</katex>}}
-
+ 
+$ln Y = \beta_0 + \beta_1 X + ε$
+ 
 We can apply the same logic from the `Linear-Log model`, but now a 1-unit change in X is associated with a $\beta_1$-unit change in ln(Y), which then means a $\beta_1$ · 100\%  change in Y. 
 
 In symbols, this would mean 
 
- {{<katex>}}
-△ \% Y = 100· \beta_1 · △X
- {{</katex>}}
+ 
+$△ \% Y = 100· \beta_1 · △X$
  
 So the interpretation is that a 1 unit change in X is associated with a 100 · $\beta_1$ \%  change in Y. Note again this rule applies only for small changes.
 
@@ -227,10 +219,9 @@ The logarithmic-linear regression above can be interpreted as follows: For each 
 ### The Log-Log Model
 The `Log-Log Model` is one in which both the dependent variable (Y) and independent variable (X) have been transformed to a logarithmic scale. These types of models can be mathematically expressed as follows: 
 
- {{<katex>}}
-ln Y = \beta_0 + \beta_1 ln X + ε
+ 
+$ln Y = \beta_0 + \beta_1 ln X + ε$
 
- {{</katex>}}
 
 
 A 10\% change in X leads to a corresponding change of 10\% · $\beta_1$ in ln(Y). This translates to a 0.1 · $\beta_1$ · 100\% or 10 · $\beta_1$\% change in Y. It's important to note that, regardless of the initial percentage increase in X, it results in the same percentage change in Y. This relationship is described by $\beta_1$ as the 'elasticity.'
@@ -286,22 +277,18 @@ For a concrete example, we will once again turn our attention to the PIAAC surve
 ### The Linear-Linear model
 With the introduction of additional variables into the formula, our mathematical model undergoes a transformation. Mathematically, these models can be represented as follows:
 
- {{<katex>}}
-Y = \beta_0 + \beta_1 X + \beta_2 X_2 +  \epsilon
- {{</katex>}}
+ 
+$Y = \beta_0 + \beta_1 X + \beta_2 X_2 +  \epsilon$
  
 or more general, 
 
- {{<katex>}}
-Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ... + \beta_k X_k + \epsilon
- {{</katex>}}
-
+ 
+$Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ... + \beta_k X_k + \epsilon$
+ 
 Nevertheless, the interpretation of changes in the variable X remains consistent as in the case with a single explanatory variable. This can be higlighted by taking the partial derivative: 
 
- {{<katex>}}
- \frac{dY}{dX_1} = \beta_1
- {{</katex>}}
- 
+$\frac{dY}{dX_1} = \beta_1$
+
 This can be interpreted as the rate of change in Y associated with a change in X1 and requires the concept that all the other variables are not changing. 
 Thus the interpretation remains: When X increases by 1 unit, Y  increases by $\beta_1$ units. However, we added a line stating that this happens in `Ceteris Paribus`.
 

@@ -23,9 +23,6 @@ While randomized controlled experiments are widely regarded as the gold standard
 
 ### Potential Outcomes Framework
 
-{{<katex>}}
-{{</katex>}}
-
 Before delving into the Difference-in-Differences design, it is essential to grasp the significance of the **potential outcomes** framework, which serves as the lingua franca of causal inference. In this framework, each unit has two potential outcomes: $Y_i^1$ if the unit receives treatment and $Y_i^0$ if not. However, we can only observe one of these potential outcomes. The observable outcome, denoted by $Y_i$ is determined by a *switching equation*:
 
 $$
@@ -39,11 +36,11 @@ where $D_i = 1$ if the unit is treated and $0$ if not. When $D_i = 1$, $Y_i = Y_
 While we have previously defined *individual* treatment effect, researchers are often interested in the *average treatment effect:*
 
 <div style="text-align: center;">
-{{<katex>}}
+$$
 ATE = E[\delta_i] \\
-= E[Y_i^1- Y_i^0]\\
-= E[Y_i^1]-E[Y_i^0]\\
-{{</katex>}}
+= E[Y_i^1 - Y_i^0]\\
+= E[Y_i^1] - E[Y_i^0]\\
+$$
 </div>
 
 Here, we compare potential outcomes when *all* units receive treatment with the potential outcomes when no units receive treatment.
@@ -51,10 +48,10 @@ Here, we compare potential outcomes when *all* units receive treatment with the 
 Again, since ATE requires one to know BOTH potential outcomes but we observe only one it is unobserved but can be *estimated*. Now, let’s consider the event that individuals might self-select into the treatment which allows us to estimate the *Average Treatment effect on the Treated* units (ATT):
 
 <div style="text-align: center;">
-{{<katex>}}
+$$
 ATT = E[\delta_i|D_i=1] \\
 = E[Y_i^1|D_i=1] - E[Y_i^0|D_i=1]
-{{</katex>}}
+$$
 </div>
 
 Similarly, the average treatment effect for the untreated/control group is called *Average Treatment for the Untreated* (ATU):
@@ -65,11 +62,12 @@ ATU = E[\delta_i|D_i=0]
 $$
 In the DiD setup, we are mainly interested in comparing the outcomes before and after the treatment for the treated and control groups:
 
-
-|                 | Before (\$Y_i^0\$)     | After (\$Y_i^1\$)     |
+ {{% table %}}
+|                 | Before ($Y_i^0$)     | After ($Y_i^1$)     |
 | --------------- | ---------------------- | ---------------------- |
-| Control (\$D_i = 0\$)    | \$E(Y_i^0\|D_i = 0)\$   | \$E(Y_i^1\|D_i = 0)\$   |
-| Treatment (\$D_i=1\$)    | \$E(Y_i^0\|D_i = 1)\$   | \$E(Y_i^1\|D_i = 1)\$   |
+| Control ($D_i = 0$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \mid D_i = 0)$   |
+| Treatment ($D_i=1$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \ mid D_i = 1)$    |
+ {{% /table %}}
 
 Part of the outcomes presented above are *counterfactual*. These outcomes represent what would have happened to the treated and control groups if their treatment statuses were reversed. Naturally, a single person cannot be both treated and not treated, that’s why we only observe one of the two values.
 
@@ -87,12 +85,15 @@ At a first glance, one might think of simply taking the difference in the averag
 Similarly, taking the difference between the average outcomes of the treated and control groups in the after period ($Y_1^1-Y_0^1$) won’t work either. This is because the treatment group might naturally differ from the control group, leading to differences in outcomes that are not solely due to the treatment effect.
 
 To address these issues, we combine both ideas and perform **double differencing**, which is why it is called *difference-in-difference.*
+{{%table%}}
 
 |  | Before | After | After - Before |
 | --- | --- | --- | --- |
 | **Control** | $\alpha$ | $\alpha + \lambda$ |  |
 | **Treatment** | $\alpha + \gamma$ | $\alpha+\gamma+\lambda+\delta$ |  |
 | **Treatment** - **Control**  | $\gamma$ | $\gamma+\delta$ | $\delta$ |
+{{%/table%}}
+
 
 By taking the difference between the treatment and control groups’ outcomes before treatment ($\gamma$) and the difference between their outcomes after treatment ($\gamma + \delta$), we can obtain the final treatment effect ($\delta$).
 ## Assumptions for Causality

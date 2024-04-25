@@ -14,7 +14,7 @@ aliases:
 
 ## Overview 
 `deltaMethod` is a R function that approximates the standard error of a transformation $g(X)$ of a random variable $X = (x_{1}, x_{2},..)$, given estimates of the mean and the covariance matrix of $X$. The approximation is given by the formula:
-{{<katex>}} Cov(g(X)) = g'(\mu)Cov(X)[g'(\mu)]^T {{</katex>}}, where $\mu$ is an estimate of the mean of $X$.
+$Cov(g(X)) = g'(\mu)Cov(X)[g'(\mu)]^T$, where $\mu$ is an estimate of the mean of $X$.
 
 Having the regression coefficients might not be enough if we want to interpret some combined effects between them. Merely summing the coefficients does not ensure that the resulting effect is significant and it also does not offer any information on the resulting standard error. 
 

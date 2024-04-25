@@ -94,11 +94,7 @@ The process involves three key regression equations:
 Regression equation (1):
  
 
-{{<katex>}}
-
-Y = \beta_0 + \beta_1 X + \epsilon
-
-{{</katex>}}
+$Y = \beta_0 + \beta_1 X + \epsilon$
 
 <br>
 <br>
@@ -115,11 +111,7 @@ The significance of this relationship ($\beta_1$) indicates if X affects Y. if i
 
 Regression equation (2):
 
-{{<katex>}}
-
-M = \beta_0 + \beta_2 X + \epsilon
-
-{{</katex>}}
+$M = \beta_0 + \beta_2 X + \epsilon$
 
 <br>
 <br>
@@ -134,11 +126,7 @@ This equation examines the first part of the indirect effect, establishing wheth
 
 Regression equation:
 
-{{<katex>}}
-
-Y = \beta_0 + \beta_4 X + \beta_3 M + \epsilon
-
-{{</katex>}}
+$Y = \beta_0 + \beta_4 X + \beta_3 M + \epsilon$
 
 <br>
 <br>
@@ -225,11 +213,9 @@ In our example, the total effect is calculated using the following formula:
 
 <br>
 
-{{<katex>}}
 
-\small \text{Refrigerator Ownership} = \beta_0 + \beta_1 \text{Women Labour Force Participation} + \epsilon
+$\small \text{Refrigerator Ownership} = \beta_0 + \beta_1 \text{Women Labour Force Participation} + \epsilon$
 
-{{</katex>}}
 <br>
 <br>
 
@@ -246,11 +232,8 @@ Our chosen instrumental variable for women's labor force participation is the pr
 
 <br>
 
-{{<katex>}}
+$\small \text{Women Labour Force Participation} = \alpha_0 + \alpha_1 \text{Wartime Casualties} + \epsilon$
 
-\small \text{Women Labour Force Participation} = \alpha_0 + \alpha_1 \text{Wartime Casualties} + \epsilon
-
-{{</katex>}}
 <br>
 <br>
 
@@ -312,11 +295,7 @@ The second step in a mediation analysis is centered on quantifying the effect of
 
 <br>
 
-{{<katex>}}
-
- \small \text{Household Income} = \beta_0 + \beta_2 \text{Women Labour Force Participation} +\epsilon
-
-{{</katex>}}
+$\small \text{Household Income} = \beta_0 + \beta_2 \text{Women Labour Force Participation} +\epsilon$
 
 <br>
 <br>
@@ -324,11 +303,10 @@ The second step in a mediation analysis is centered on quantifying the effect of
 To implement the IV approach, we first run again the same "first-stage" regression, represented by the following formula:
 
 
-{{<katex>}}
 
- \small \text{Women Labour Force Participation} = \alpha_0 + \alpha_1 \text{Wartime Casualties} + \epsilon
 
-{{</katex>}}
+$\small \text{Women Labour Force Participation} = \alpha_0 + \alpha_1 \text{Wartime Casualties} + \epsilon$
+
 
 <br>
 <br>
@@ -386,11 +364,8 @@ The third step in a mediation analysis is designed to quantify both the impact o
 In our example, this is represented by the following formula:
 <br>
 
-{{<katex>}}
+$\small \text{Refrigerator Ownership} = \beta_0 + \beta_4 \text{Women Labour Force Participation} + \beta_3 \text{Household Income} +\epsilon$
 
- \small \text{Refrigerator Ownership} = \beta_0 + \beta_4 \text{Women Labour Force Participation} + \beta_3 \text{Household Income} +\epsilon
-
-{{</katex>}}
 
 <br>
 <br> 
@@ -398,11 +373,9 @@ In our example, this is represented by the following formula:
 To implement the IV approach, we again perform a "first-stage" regression. However, this time the formula is slightly adjusted to account for both the instrumental variable and the treatment variable.
 <br>
 
-{{<katex>}}
 
- \small \text{Household income} = \gamma_0 + \gamma_1 \text{Wartime Casualties} + \gamma_2 \text{Women Labour Force Participation} + \epsilon
+$\small \text{Household income} = \gamma_0 + \gamma_1 \text{Wartime Casualties} + \gamma_2 \text{Women Labour Force Participation} + \epsilon$
 
-{{</katex>}}
 
 <br>
 <br> 
@@ -453,11 +426,9 @@ Note: Total effect = Direct effect + Indirect effect = $\beta_1 = \beta_2 * \bet
 In summary, when conducting a mediation analysis, calculating the proportion of the total treatment effect that is mediated can provide valuable insights. In our example, the 81.90\% mediated effect underscores the importance of Household Income in linking Women Labour Force Participation to Refrigerator Ownership. Understanding this percentage helps to quantify the role of the mediator. The following formula can be used: 
 <br>
 
-{{<katex>}}
 
- \small \frac{\text{Indirect effect}}{\text{Total effect}} * 100 = \frac{\beta_2 * \beta_3}{\beta_1} * 100 = 81.90
+$\small \frac{\text{Indirect effect}}{\text{Total effect}} * 100 = \frac{\beta_2 * \beta_3}{\beta_1} * 100 = 81.90$
 
-{{</katex>}}
 <br>
 <br>
 

@@ -43,14 +43,12 @@ The sharp RDD is defined by these features:
 - There is a unique cutoff.
 - There is perfect compliance with the treatment assignment: all units with score below the cutoff receive the control condition, all units with score equal or greater than the cutoff receive the treatment.
 
-Suppose we have $n$ units, indexed *i = 1, 2, ..., n*, and each unit has
-a score $X_{i}$ and $c$ is the known cutoff. 
+Suppose we have $n$ units, indexed *i = 1, 2, ..., n*, and each unit has a score $X_{i}$ and $c$ is the known cutoff. 
 
 - All units with $X_{i} >= c$ are assigned to the treatment condition
 - All units with $X_{i} < c$ are assigned to the control condition. 
 
-The treatment assignment is
-denoted with $T_{i}$ and is defined as $T\_{i} = \mathbb{1}(X_{i} >= c)$, where $\mathbb{1}(.)$ is the indicator function which is equal to 1 if the condition in the brackets is satisfied, and equal to 0 otherwise. 
+The treatment assignment is denoted with $T_{i}$ and is defined as $T\_{i} = \mathbb{1}(X_{i} >= c)$, where $\mathbb{1}(.)$ is the indicator function which is equal to 1 if the condition in the brackets is satisfied, and equal to 0 otherwise. 
 
 We need to make a distinction between being *assigned* to the treatment and *receiving* or *complying with* the treatment. In the sharp RD design, the treatment condition assigned is the same with the treatment actually received by the units. 
 
@@ -70,11 +68,14 @@ The probability of receiving treatment given a score is denoted with $P(T_{i} = 
 
 Every unit is assumed to have two potential outcomes, one for treatment $Y_{i}(1)$ and one for control $Y_{i}(0)$. However, only one of them can be observed, so if unit $i$ receives treatment we observe $Y_{i}(1)$, while if unit $i$ receives the control condition we only observe $Y_{i}(0)$. This leads to the **fundamental problem of causal inference**: the treatment effect at the individual level is fundamentally not knowable.
 
-The observed outcome is defined as follows $Y_{i} = (1-T_{i})*Y_{i}(0) + T_{i}*Y_{i}(1)$ and can take two values:
+The observed outcome is defined as follows $Y_{i}$ = <span style="font-size: 1em;">$(1-T_{i})$</span> * $Y_{i}(0)$ + $T_{i}*Y_{i}(1)$ and can take two values:
+
 - $Y_{i}(0)$, if $X_{i} < c$, because $T\_{i} = 0$
 - $Y_{i}(1)$, if $X_{i} >= c$, because $T\_{i} = 1$
 
+
 Additionally, the average potential outcomes given the score are given by the conditional expectation function, also called regression function, denoted by $\mathbb{E}[Y_{i}|X_{i}]$ and can take two values:
+
 - $\mathbb{E}[Y_{i}(0)|X_{i}]$, if $X_{i} < c$
 - $\mathbb{E}[Y_{i}(1)|X_{i}]$, if $X_{i} >= c$
 
@@ -90,9 +91,8 @@ The plot below shows us that the function $\mathbb{E}[Y_{i}(0)|X_{i}]$ is observ
 
 Remember that sharp RDD implies that units from treatment and control groups can't have the same score $X_{i}$. The graph above shows that we can't observe both red and blue lines for the same value of the score, except for the cutoff, where we almost see both curves. 
 
-Suppose we have a unit with the score equal to $c$ and one unit with a score just below $c$. Even if the the units would be very similar, the difference is given by their treatment condition and we could calculate the vertical distance at $c$. As shown in the above graph, the vertical distance between the two points is the sharp RD treatment effect, which is defined as: {{<katex>}}
-\tau_{SRD} = \mathbb{E}[Y_{i}(1) - Y_{i}(0)|X_{i} = c]
-{{</katex>}}
+Suppose we have a unit with the score equal to $c$ and one unit with a score just below $c$. Even if the the units would be very similar, the difference is given by their treatment condition and we could calculate the vertical distance at $c$. As shown in the above graph, the vertical distance between the two points is the sharp RD treatment effect, which is defined as: 
+$\tau_{SRD} = \mathbb{E}[Y_{i}(1) - Y_{i}(0)|X_{i} = c]$
 
 
 This parameter can be interpreted as the average treatment effect on the treated and can answer the question: what would be the average outcome change for units with a score level $X_{i}=c$ if we switched their status from control to treated?

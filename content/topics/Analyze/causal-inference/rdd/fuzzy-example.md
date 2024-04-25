@@ -79,7 +79,7 @@ _Output_:
 
 The output shows that around 27\% (0.269) of students whose scores are above the cutoff are more likely to enroll in post-secondary education, jumping from around 50\% enrollment below the cutoff to around 77\% above the cutoff, as visible in the graph. 
 
-In [Fuzzy RDD](/fuzzy/designs), we defined the formula for the Fuzzy RD parameter: {{<katex>}}\tau_{FRD} = \tau_{Y}/\tau_{D}{{</katex>}}
+In [Fuzzy RDD](/fuzzy/designs), we defined the formula for the Fuzzy RD parameter: $\tau_{FRD} = \tau_{Y}/\tau_{D}$
 
 Thus, we can calculate $\tau_{FRD}$ by taking the ratio $0.269/0.625 = 0.4304$. This means that receiving the subsidy results in a 43\% increase in the probability of enrolling in post-secondary education for students who are compliers.
 

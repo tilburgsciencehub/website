@@ -20,12 +20,13 @@ In this building block, we will describe how this code works for both these test
 ## Understanding chisq.test ()
 In R, `chisq.test()` performs the chi-squared test of goodness of fit and chi-squared test of independence. The syntax of the test is as follows:
 
-{{% codeblock %}}
+{{ %codeblock% }}
 ```r
 chisq.test( x, y = NULL,
             correct = TRUE,
             p = rep(1/length(x), length(x)),
             rescale.p = FALSE)
+```
 {{% /codeblock %}}
 
 Where:
@@ -53,7 +54,7 @@ tulip <- c(20,15,5)
 
 # Run the test
 chisq.test(tulip, p = c(1/3, 1/3, 1/3))
-
+```
 {{% /codeblock %}}
 
 
@@ -69,11 +70,13 @@ The R output also gives the p-value which you can compare with alpha to make the
 ## Test of independence
 The chi-squared test of independence is used to determine if two categorical variables have a significant correlation between them. A common example is checking the effectiveness of a new drug. Suppose you have 105 patients in a study out of which 50 were treated with the new drug and 55 were not. You record if these patients observed an improvement and obtain the following contingency table, let us call it 'drug_effectiveness':
 
+{{%table%}}
 |         |           | **Improvement** |     |
 |:-----| :------  | :---------  |  :---------|
 |      |           | **Yes** | **No** |
 |Treatment|  **No**   |  26 | 29      |
 |          |  **Yes**   |  35 | 15    |
+{{%/table%}}
 
 You can read the dataset yourself by running the following code:
 
@@ -81,7 +84,7 @@ You can read the dataset yourself by running the following code:
 ```R
 data_frame <- read.csv("https://goo.gl/j6lRXD") #Reading CSV
 drug_effectiveness <- table(data_frame$treatment, data_frame$improvement)
-
+```
 {{% /codeblock %}}
 
 
@@ -95,7 +98,7 @@ To run this test on R, you additionally need two other arguments: *y* and *corre
 {{% codeblock %}}
 ```R
 chisq.test(data_frame$treatment, data_frame$improvement, correct=FALSE)
-
+```
 {{% /codeblock %}}
 
 Another way of running this test is to assign the contingency table matrix, 'drug_effectiveness' to *x*, as follows:
@@ -103,7 +106,7 @@ Another way of running this test is to assign the contingency table matrix, 'dru
 {{% codeblock %}}
 ```R
 chisq.test(drug_effectiveness, correct=FALSE)
-
+```
 {{% /codeblock %}}
 
 The output of these codes gives the value of the chi-square statistic which is equal to **5.56** and the df equal to **1**. The critical chi-square value at alpha equal to 0.05 is **0.02**.

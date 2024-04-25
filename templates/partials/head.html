@@ -37,7 +37,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='katex/katex.min.css') }}" />
     <script defer src="{{ url_for('static', filename='katex/katex.min.js') }}"></script>
     <script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}"></script>
-
+	<script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}" onload="renderMathInElement(
+			  document.body,
+			  {
+				  delimiters: [
+					  {left: '$$', right: '$$', display: true},
+					  {left: '\\[', right: '\\]', display: true},
+					  {left: '$', right: '$', display: false},
+					  {left: '\\(', right: '\\)', display: false}
+				  ]
+			  }
+		  );"></script>
+	
 	<!-- Common Meta Data -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

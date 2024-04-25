@@ -13,16 +13,14 @@ The `estimatr` package provides a range of commonly-used linear estimators that 
 In this building block we will walk you through the process of estimating regression coefficients using the most commonly used functions in `estimatr`: `lm_robust()` and `iv_robust()`. We analyse data from the `wage2` [data set](https://rdrr.io/cran/wooldridge/man/wage2.html) which is an in-built data set in R, provided by the `wooldridge` package.
 We are interested in examining how the education level of employees relates to their wages and to do so we use the following regression model:
 
-{{<katex>}}
-Wage_{i}  =  \beta_{0} + \beta_{1} Educ_{i} + \mu
-{{</katex>}}
+$Wage_{i}  =  \beta_{0} + \beta_{1} Educ_{i} + \mu$
 
-
+{{% table %}}
 | **Variable** | **Description**            |
 | :------  | :---------             |
 | `wage`     | monthly earnings       |
 | `educ`     | years of education     |
-
+{{% /table %}}
 
 ## Load packages
 
@@ -44,9 +42,7 @@ data(wage2)
 
 Before diving into the `estimatr` package, let's first use the built-in `lm()` function to estimate our linear model,
 
-{{<katex>}}
-Wage_{i}  =  \beta_{0} + \beta_{1} Educ_{i} + \mu
-{{</katex>}}
+$Wage_{i}  =  \beta_{0} + \beta_{1} Educ_{i} + \mu$
 
 
 {{% codeblock %}}

@@ -211,6 +211,8 @@ Given that the statistic test of this function is the difference in means, a p-v
 
 This table gives an overview of all the tests for validation of the RDD discussed in this building block, including which function in R to use in the context of a continuity-based or local randomization approach.
 
+{{%table%}}
+
 | Test | Description | Continuity-<BR> based <BR> Approach | Local <BR> Randomization <BR> Approach |
 | --- | --- | --- | --- |
 | 1. Predetermined <BR> covariates and <BR> placebo outcomes | Checks for <BR>  similar observable <BR> characteristics <BR> near the cutoff | `rdrobust` | `rdrandinf` |
@@ -219,6 +221,9 @@ This table gives an overview of all the tests for validation of the RDD discusse
 | 4. Sensitivity of <BR> observations around <BR> the cutoff | Investigates the effect <BR> of excluding units near <BR> the cutoff | `rdrobust` | - |
 | 5. Sensitivity to <BR> Bandwidth Choice | Analyzes the impact <BR> of bandwidth changes <BR> on the results | `rdrobust` | - |
 | 6. Sensitivity to <BR> Window Choice | Examines the effect of <BR> changes in window size <BR> on the results | - | `rdrandinf` |
+
+{{%/table%}}
+
 
 {{% summary %}}
 

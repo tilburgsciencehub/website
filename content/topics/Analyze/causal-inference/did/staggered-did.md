@@ -51,8 +51,6 @@ To ensure the validity of staggered DiD estimation, we rely on several key assum
 - **Parallel Trends Assumption with Never-Treated Units:** When we examine groups and periods where treatment isn't applied $(C=1)$, we assume the average potential outcomes for the group initially treated at time $g$. The group that never received treatment would have followed similar trends in all post-treatment periods $t\geq g$.
 
 Formally, for all $g=2,…, \mathcal{T}, t = 2,...,\mathcal{T} $ such that $t \geq g$,
-{{<katex>}}
-{{</katex>}}
 
 $$\mathbb{E}[Y_t(0) - Y_{t-1}|G_g=g] = \mathbb{E}[Y_t(0)-Y_{t-1}(0)|C=1]$$
 

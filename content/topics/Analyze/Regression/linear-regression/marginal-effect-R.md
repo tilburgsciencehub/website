@@ -59,9 +59,8 @@ estimates store logit_model
 
 Consider an outcome $a$, the marginal effect is the change of $a$ when $x$ changes: $\dfrac{\partial a}{\partial x}$. In the context of a binary model, we are generally interested in how the probability of $y$ being equal to 1 changes when a regressor $x_j$ changes:
 
-{{< katex >}}
-\dfrac{\partial P(y=1|x_1,\dots,x_j,\dots,x_k)}{\partial x_j}
-{{< /katex >}}
+
+$\dfrac{\partial P(y=1|x_1,\dots,x_j,\dots,x_k)}{\partial x_j}$
 
 In the case of a logit model, this can be obtained as:
 
@@ -106,6 +105,7 @@ margins, dydx(*)
 ```
 {{% /codeblock %}}
 
+{{% table %}}
 | Variable  | Probit AME | Logit AME |
 | --------- | ---------- | --------- |
 |     age   | -0.0169    | -0.0165   |
@@ -114,6 +114,7 @@ margins, dydx(*)
 | kidsge6   |  0.0105    |  0.0105   |
 | kidslt6   | -0.2670    | -0.2608   |
 |nwifeinc   | -0.0035    | -0.0036   |
+{{% /table %}}
 
 ## Marginal Effect at different values of the regressors
 

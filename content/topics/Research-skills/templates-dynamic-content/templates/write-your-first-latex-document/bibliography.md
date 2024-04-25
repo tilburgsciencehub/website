@@ -11,7 +11,7 @@ aliases:
   - /cite/latex
 ---
 
-Please notice that there are different ways to include a bibliography in {{< katex >}}\LaTeX{{< /katex >}}, namely `bibtex`, `natbib`, and `biblatex`.
+Please notice that there are different ways to include a bibliography in $\LaTeX$, namely `bibtex`, `natbib`, and `biblatex`.
 In this tutorial, we will deal with `bibtex` only. For more advanced uses, consider researching which system works best for you.
 
 ## Create a .bib File

@@ -135,16 +135,21 @@ wilcox.test(mice2$before, mice2$after,
 The output of this test gives a p-value equal to **0.002** which is less than 0.01. This suggests that at a 1% significance level, the difference in the weights of the mice before and after the treatment is highly significant.
 
 {{% tip %}}
+{{%table%}}
 If your dataset does not have the 'Before' and 'After' values in separate columns like so:  
 | **id** | **before**  | **after**
 | :------  | :---------             | :----- |
 | 1     |  187.2      | 429.5 |
+{{%/table%}}
 
+{{%table%}}
 but instead in the form of, say
 | **id** | **group**  | **weight**
 | :------  | :---------             | :----- |
 | 1     |  before     | 187.2 |
 |  1  | after   | 429.5  |
+{{%/table%}}
+
 
 you can specify your data values as
 

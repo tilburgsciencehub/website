@@ -45,7 +45,7 @@ The building block will contain the following content:
 ## Introduction to `Grunfeld` data  
 
 The [Grunfeld data set](https://www.statsmodels.org/dev/datasets/generated/grunfeld.html) will be used for an example in this building block. It contains investment data for 11 U.S. Firms over a time period of 1935 until 1954. Thus, the data set contains 220 observations (11 firms * 20 years). The following variables are included:
-
+{{%table%}}
 | **Variables** 	| **Description** 	|
 |---	|---	|
 | `invest` 	| Gross investment in 1947 dollars 	|
@@ -53,6 +53,7 @@ The [Grunfeld data set](https://www.statsmodels.org/dev/datasets/generated/grunf
 | `capital` 	| Stock of plant and equipment in 1947 dollars  	|
 | `firm` 	| - General Motors <br>- US Steel <br>- General Electric <br>- Chrysler <br>- Atlantic Refining <br>- IBM <br>- Union Oil  <br>- Westinghouse <br>- Goodyear <br>- Diamond Match <br>- American Steel  	|
 | `year`  	| 1935-1954 	|      
+{{%/table%}}
 
 ### Load packages and data
 
@@ -137,9 +138,7 @@ An application of panel data will be done with the `Grunfeld` data set. Our anal
 ### Cross-sectional data
 We start with only cross-sectional data from the year 1935. The variable `capital` is added as a control variable, and thus the multiple regression model is as follows:
 
-{{<katex>}}
-invest_{i} = \beta_0 + \beta_1 value_{i} + \beta_2 capital_{i} + \epsilon_{i}
-{{</katex>}}
+$invest_{i} = \beta_0 + \beta_1 value_{i} + \beta_2 capital_{i} + \epsilon_{i}$
 
 where,
 - $invest_{i}$ is the gross investment of firm `i` 
@@ -211,9 +210,7 @@ Let's first consider a data set with 2 time periods, specifically the years 1935
 
 The multiple regression model is as follows:
 
-{{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \beta_3 \alpha_{i} + u_{it}
-{{</katex>}}
+$invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \beta_3 \alpha_{i} + u_{it}$
 
 where:
 - $invest_{it}$ is the gross investment of firm `i` in year `t`
@@ -226,21 +223,21 @@ Now, let's focus on the specific equations for `t = 1935` and `t = 1940`.
 <br/>
 The regression equation for the year `t = 1935` is  
 <br/>
-{{<katex>}}
-invest_{i1935} = \beta_0 + \beta_1 value_{i1935} + \beta_2 capital_{i1935} + \beta_3 \alpha_{i} + u_{i1935}
-{{</katex>}}  
+
+$invest_{i1935} = \beta_0 + \beta_1 value_{i1935} + \beta_2 capital_{i1935} + \beta_3 \alpha_{i} + u_{i1935}$
+
 <br/>
 The regression equation for the year `t = 1940` is  
 <br/>
-{{<katex>}}
-invest_{i1940} = \beta_0 + \beta_1 value_{i1940} + \beta_2 capital_{i1940} + \beta_3 \alpha_{i} + u_{i1940}
-{{</katex>}}  
+
+$invest_{i1940} = \beta_0 + \beta_1 value_{i1940} + \beta_2 capital_{i1940} + \beta_3 \alpha_{i} + u_{i1940}$
+
 <br/>
 To eliminate the firm-specific characteristics $\alpha_{i}$, we can use a differencing approach. By regressing the difference in the Investment variable between 1940 and 1935 on the difference in the independent variables during that period, we arrive at the differenced regression equation:  
 <br/>
-{{<katex>}}
-invest_{i1940} - invest_{i1935} = \beta_1 (value_{i1940} - value_{i1935}) + \beta_2 (capital_{i1940} - capital_{i1935}) + (u_{i1940} - u_{i1935})
-{{</katex>}}  
+
+$invest_{i1940} - invest_{i1935} = \beta_1 (value_{i1940} - value_{i1935}) + \beta_2 (capital_{i1940} - capital_{i1935}) + (u_{i1940} - u_{i1935})$
+
 <br/>
 By taking differences between the years, we remove any unobserved variable that is constant over time: $\alpha_{i}$ is removed from the equation!
 
@@ -271,9 +268,7 @@ summary(reg2)
 Now, we will consider a fixed effects regression, by using the full `Grunfeld` data set ($T = 20$). 
 With only entity fixed effects, this is the model:
 
-{{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}
-{{</katex>}}
+$invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}$
 
 where,
 - $invest_{it}$ is the gross investment of firm `i` in year `t`
@@ -285,9 +280,8 @@ where,
 ### Entity & Time fixed effects
 In this step, time fixed effects are added to the model. Time fixed effects capture the unobserved year-specific factors that are common to all firms in that year. With both time and entity fixed effects, this is the model:
 
-{{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i +  \delta_t + \epsilon_{it}
-{{</katex>}}  
+$invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i +  \delta_t + \epsilon_{it}$
+
 
 where, 
 - $\alpha_i$ is the fixed effect for firm `i`

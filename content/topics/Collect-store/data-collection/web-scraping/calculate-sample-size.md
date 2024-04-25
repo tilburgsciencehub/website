@@ -15,9 +15,8 @@ Sampling from websites and APIs can be tricky: limits to server load (e.g., retr
 
 
 ## Formula
-{{< katex display  >}}
-N = \frac{req \times S}{r \times freq}
-{{< / katex >}}
+
+$N = \frac{req \times S}{r \times freq}$
 
 whereby
 - $N$ = sample size (i.e., number of instances of an entity to extract data from),
@@ -41,7 +40,4 @@ The input parameters are:
 - $r$ = 2 (the scraper needs to visit two URLs: one to obtain users' meta data, and one to obtain users' usage history)
 - $freq$ = Each user should be visited at least once every fifteen minutes (once every 15 minutes = 4 times per hour).
 
-{{< katex display  >}}
-N = \frac{req \times S}{r \times freq} = \frac{18,000 \times 1}{2 \times 4} = 2,250
-
-{{< / katex >}}
+$N = \frac{req \times S}{r \times freq} = \frac{18,000 \times 1}{2 \times 4} = 2,250$

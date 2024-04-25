@@ -77,7 +77,7 @@ You can include mathematical notation via our KaTeX integration. You can learn m
 
 If you use KaTeX more than once within the same Markdown file, there's no need to write the shortcode again. Simply place your math formulas:
 - within single dollar signs for inline math: `$f(x)=x^2$` yields:
-{{< katex >}}f(x)=x^2{{< /katex >}}
+$f(x)=x^2$
 - within double dollar signs for display: `$$f(x)=x^2$$` yields: $$f(x)=x^2$$
 
 #### Highlighting Boxes

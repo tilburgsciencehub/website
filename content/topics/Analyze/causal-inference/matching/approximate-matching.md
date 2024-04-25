@@ -47,9 +47,8 @@ As the sample size increases, different matching estimators will yield similar r
 Propensity score matching addresses the curse of dimensionality by matching on the "propensity score", representing the probability of being assigned to the treatment group, conditional on the particular covariates $X$:
 <br>
 <br>
-{{<katex>}}
-P(X_{i}) ≡ Pr(D_i = 1 | X_i)
-{{</katex>}}
+
+$P(X_{i}) ≡ Pr(D_i = 1 | X_i)$
 
 <br>
 

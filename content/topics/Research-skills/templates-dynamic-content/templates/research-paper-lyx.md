@@ -17,7 +17,7 @@ Welcome to this building block dedicated to LaTeX and Lyx, where we equip you wi
 
 ## LaTeX
 
-[{{< katex >}}\LaTeX{{< /katex >}}](https://www.latex-project.org) is a professional typesetting system widely used in academia. It produces great-looking journal articles, technical reports, books, and even slide presentations.
+[$\LaTeX$](https://www.latex-project.org) is a professional typesetting system widely used in academia. It produces great-looking journal articles, technical reports, books, and even slide presentations.
 
 One of its main features is that **it separates the writing and the formatting stages**. The writer can focus solely on writing the content in plain text, and then use some markup tags and commands to stylize the text and define the document structure.
 

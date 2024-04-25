@@ -16,7 +16,7 @@ aliases:
 
 ## Overview
 
-[{{< katex >}}\LaTeX{{< /katex >}}](https://www.latex-project.org) is a professional typesetting system widely used in academia because it can produce complex documents - like journal articles, books, technical reports, and similar - with unparalleled output quality.
+[$\LaTeX$](https://www.latex-project.org) is a professional typesetting system widely used in academia because it can produce complex documents - like journal articles, books, technical reports, and similar - with unparalleled output quality.
 
 However, setting up new documents can be time-consuming and a bit daunting, especially at the beginning. To help you get started writing your $\LaTeX$ document more quickly, we provide you with our custom-made thesis template in this building block. 
 

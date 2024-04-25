@@ -28,10 +28,11 @@ This is an overview of the content:
 Let's continue with the model where we estimate the relationship of market and stock value on the gross investment of firms, using `Grunfeld` data. This is the regression equation:
 <br/>
 <br/>
-{{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}
-{{</katex>}}
+
+$invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}$
+
 <br/>
+
 where,
 - $invest_{it}$ is the gross investment of firm `i` in year `t`
 - $value_{it}$ is the market value of assets of firm `i` in year `t`
@@ -127,10 +128,13 @@ Imagine you want to understand if the availability of research grants at univers
 
 - For example, grant decisions are made by an external committee and largely independent of university-specific characteristics. Moreover, you want to control for both university-level and student-level variations.
 
+{{%table%}}
 |           | **FE Model**                                     | **RE Model**                                          |
 |-----------------|--------------------------------------------------|--------------------------------------------------------|
 | **When <br/> to <br/> Use** | Unobserved university-<br/> specific effects are <br/> **correlated** with <br/>  research grants and <br/> student performance. | Unobserved effects are <br/> random and not directly <br/> tied to grant availability.<br/><br/> Allows multi-level fixed <br/> effects (on university <br/> and student-level) in <br/> the same model. |
 | **Example** | You believe universities <br/> with stronger reputations <br/> are more likely to <br/> secure research grants.| You believe grant decisions <br/>  are made by external <br/> committees and are  <br/>  independent  of university- <br/> specific characteristics.
+{{%/table%}}
+
 {{% /example %}}
 
 
