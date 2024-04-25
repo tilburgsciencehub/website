@@ -228,11 +228,21 @@ Adding a smooth line (`geom_smooth()`) to the scatter plot offers an overview of
 ### Step 4: Controlling Plot Appearance 
 Having specified the geometric objects, let's zoom in how to refine the visual aesthetics of plots. Inside `ggplot2` there are two primary tools for this purpose: `scales` and `themes`.
 
-**Using Scales to Change Axes and Legends**     
-In `ggplot`, each aesthetic is connected to a scale that defines its appearance. By default, `ggplot` selects appropriate scales based on the aesthetic and the data type. However, you have the option to override these defaults to customize aspects such as axis limits, legend label names, and the colors used in the color aesthetic. This customization is achieved by adding specific `scale_..._...()` functions to your plot.
+**Scales**     
+In `ggplot`, each aesthetic is connected to a scale that defines its appearance. Scales control how your data are mapped to the graph. By default, `ggplot` selects appropriate scales based on the aesthetic and the data type. However, you have the option to override these defaults to customize aspects such as axis limits, legend label names, and the colors used in the color aesthetic. This customization is achieved by adding specific `scale_..._...()` functions to your plot. The first word after the scale_ gives you the name of the aesthetic which is then followed by the name of the scale.
 
-**Themes: Built-in Packages and Manual Customization**   
-`ggplot2` offers built-in themes that changes the appearance of plots without manual adjustments to each element. For more specific needs, you can manually customize the plot, from text size and font to background color and grid lines, using the `theme()` function.
+**Themes**   
+You can also change the complete non-data elements of your graph by applying the theme function. You have the following themes available:
+
+- `theme_bw`: white background with grid lines
+- `theme_classic`: classic theme; axes but not grid lines
+- `theme_dark`: dark background for contrast
+- `theme_gray`: default theme with grey background
+- `theme_light`: light axes and grid lines
+- `theme_linedraw`: only black lines
+- `theme_minimal`: minimal theme, no background
+- `theme_void`: empty theme, only geoms are visible
+
 
 {{% codeblock %}}
 
