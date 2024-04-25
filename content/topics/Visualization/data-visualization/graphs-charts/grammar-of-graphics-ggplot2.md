@@ -41,7 +41,7 @@ The Grammar of Graphics intuition extends to the procedure of painting. First, y
 ## Basic Ingredients of a `ggplot`:
 
 ### The `ggplot()` function  
-The foundation of any `ggplot` visualization is the `ggplot()` function. This function sets the base for defining a default dataset and default aesthetics, which are inherited by all subsequent layers unless explicitly overridden.
+The basis of any `ggplot` visualization is the `ggplot()` function. This function sets the base for defining a default dataset and default aesthetics, which are inherited by all subsequent layers unless explicitly overridden. 
 
 These default aesthetics, or in simpler terms, mapping variables, define how data variables are represented in terms of visual properties such as axes, colors, shapes, and sizes.
 
@@ -98,7 +98,7 @@ Explore the theory of data visualization in this [post](/visualize/data), where 
 {{% /tip %}}
 
 ### Aesthetic Layering in `ggplot2`
-Besides setting the x and y variables within the `aes()` function, you can also define attributes like color, shape, and size. Each of these aesthetic properties can be mapped onto different variables in the dataset, enabling multidimensional plotting.
+Besides setting the _x_ and _y_ variables within the `aes()` function, you can also define arguments like _color_, _shape_, and _size_. Each of these aesthetic properties can be mapped onto different variables in the dataset, enabling multivariable plotting.
 
 Understanding how the `aes()` function works is important. It includes two key concepts:
 
@@ -153,7 +153,7 @@ ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
 
 {{% example %}}
 
-In this example, initially, a geometric object layer uses the global aesthetic defined in `ggplot()`, coloring points by the class variable. However, when the `geom_point()` layer is added with the color set to "red" in the `aes()` function, it overwrites the color for all points, rendering them red regardless of their class.
+In this example, initially, a geometric object layer uses the global aesthetic defined in `ggplot()`, coloring points by the _class_ variable. However, when the `geom_point()` layer is added with the color set to "red" in the `aes()` function, it overwrites the color for all points, rendering them red regardless of their class.
 
 {{% /example %}}
 
@@ -207,7 +207,7 @@ ggplot(data = mpg, aes(x = displ, y = hwy, color = manufacturer, size = cyl)) +
 By adjusting the `aes()` function to include `color = manufacturer` and `size = cyl`, we differentiate the data points by manufacturer and cylinder count. This transforms a basic scatter plot into a multifaceted visualization, highlighting the interactions between multiple variables.
 
 ### Step 3: Layering Geoms
-Having specified the base layer and mapped the necessary aesthetics, it is now time to layer different geometric objects, or 'geoms.' By integrating various formats such as lines, bars, or points, layer by layer, you can add more depth to your data visualization, emphasizing relationships and patterns within the data
+Having specified the base layer and mapped the necessary aesthetics, it is now time to layer different geometric objects, or 'geoms.' By integrating various formats such as lines, bars, or points, layer by layer, you can add more depth to your data visualization, emphasizing relationships and patterns within the data.
 
 {{% codeblock %}}
 
@@ -262,7 +262,7 @@ The `facet_grid()` function accomplishes this; its input is a formula, like `x ~
 ```R
 ggplot(data = mpg, aes(x = displ, y = hwy, color = manufacturer)) + 
     geom_point() + 
-    facet_wrap(. ~ class)
+    facet_wrap( ~ class)
 ```
 
 {{% /codeblock %}}
