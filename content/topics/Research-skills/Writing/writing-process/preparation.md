@@ -133,6 +133,7 @@ The following resources on the Tilburg Science Hub website and beyond can help y
 
 #### Learn LaTeX
 - [Tutorial on LaTeX](/learn/latex/): LaTex is a typesetting system ideal for academic documents, like your thesis, enabling precise formatting and presentation.
+- [LaTeX Thesis Template](/get/latex-templates): Get started with our ready-to-use LaTeX Thesis Template.
 
 #### Other skills
 - [Use ChatGPT for your research](/tutorials/more-tutorials/chat-gpt-research/chat-gpt-research)
