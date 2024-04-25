@@ -11,61 +11,61 @@ aliases:
   - /parallel-coding
 ---
 
+
 ## Overview
 
-Parallel computing entails executing a computation in smaller tasks by breaking it down into smaller pieces and dividing them among the cores. Instead of letting a single processor handle everything, multiple cores work together on different parts of the problem at the same time which speeds up the task! Parallelization can also help avoid memory runtime errors by distributing the workload and therefore reducing the memory usage per process.
+Parallel computing significantly accelerates computations by dividing tasks into smaller segments, which are then processed concurrently across your computer's cores. While certain libraries in R, like `data.table` and `dplyr`, already support parallel processing, researchers can also adapt non-parallel code for concurrent execution. 
 
-While some libraries, such as `data.table` or `dplyr` come with built-in parallelization, researchers can also parallelize code that was not meant to be run in parallel in the first place! Here, we show the basic principles of parallel computing using simple code examples in R. Two approaches are covered: the *multicore* and *socket approach*. 
+This article introduces the fundamentals of parallel computing through straightforward R code examples, focusing on two methods: the *multicore* and *socket approaches*.
 
 {{% warning %}}
 
-The multicore approach is not available on all systems. Generally, Unix-like systems such as Mac and Linux allow for this and Windows does not. As [Google Colab](/use/colab) operates on Linux, you can use this browser-based platform on all systems for multicore parallelization in R! The socket approach works on all systems.
+The multicore method is not compatible with all operating systems. It works on Unix-like systems such as macOS and Linux, but not on Windows. However, since [Google Colab](/use/colab) operates on Linux, it can facilitate multicore parallelization on any system. The socket approach is universally compatible.
 
 {{% /warning %}}
 
+## How Does Parallelization Work?
 
-## The method behind parallelization
+The Central Processing Unit (CPU) contains units called "cores," which determine the number of tasks your computer can perform simultaneously. Creating clusters of cores allows you to assign different parts of a task to each cluster. In theory, the more cores you have, the faster you can process computations—potentially reducing the time by the number of available cores. However, overhead costs such as subprocess initiation and data duplication generally limit these theoretical time savings. We will explore this further in the concluding section of this article.
 
-The Central Processing Unit (CPU) of your computer contains small units called "cores". The number of cores available determines how many different tasks you can execute at the same time. Then, creating clusters is like forming teams of these "cores". You send data and functions to each cluster, where each core works on a different part of the task. In theory, the computation can be executed as many times faster as the cores you have available, e.g. 4 available cores speed up your computation to 1/4 of the time. However, overhead with starting sub-processes, copying the data over to those processes etc. makes this less in practice, and therefore, the maximum time-saving is not likely to be reached in parallelization. More on this will be discussed towards the end of this article.
-
-You can determine the number of available cores, i.e. the number of computations that can be executed at the same time, with the `detectCores()` function. 
+To find out how many cores you can utilize simultaneously, use the `detectCores()` function in R.
 
 {{% codeblock %}}
 ```R
-#load package
+# Load the 'parallel' package
 library(parallel)
 
 detectCores()
 ```
 {{% /codeblock %}}
 
+## The Multicore Approach
 
-## Multicore approach
+A straightforward implementation of the multicore approach is the `mclapply()` function from R's `parallel` package. While `apply()` iterates over data structures, applying a function to each element, `mclapply()` enhances this by executing the iterations across multiple processes (i.e., cores). This method replicates the entire current R session onto each core, making it unnecessary to re-export variables or reload packages.
 
-The easiest application of the multicore approach is the `mclapply()` function of the `parallel` package in R. As `apply()` iterates over a data structure while applying a function to each subset, `lapply()` is used to iterate over a list, `mcapply` applies parallelization by iterating into multiple processes (the cores). The multicore approach copies the entire current version of R and moves it to a new core, so exporting variables and loading already loaded packages again is not necessary.
+### Example
 
-### Example 
-
-This simple example calculates the mean sepal length for each species in the `iris` dataset available within R. Check the summary statistic of the dataset yourself by running `summary(iris)`, if you want to know more about this data set.
+Consider calculating the average sepal length for each species in the `iris` dataset within R. To get familiar with the dataset, you might start by running `summary(iris)`.
 
 {{% tip %}}
 
-[This Google Colab file](https://colab.research.google.com/drive/1viBfVPepuSukf8jndaII9pPN2nznVybD?usp=sharing) contains all the code examples of parallelization used in this article!
+This [Google Colab file](https://colab.research.google.com/drive/1viBfVPepuSukf8jndaII9pPN2nznVybD?usp=sharing) includes all the code examples from this article!
+
 {{% /tip %}}
 
 {{% codeblock %}}
 ```R
-# Load packages and Iris dataset
+# Load necessary packages and the Iris dataset
 library(dplyr)
 library(datasets)
 data(iris)
 
-# Define function
+# Define the function
 calculate_mean_sepal_length <- function(df) {
   species <- unique(df$Species)
-  means <- vector("numeric", length = length(species))
+  means <- vector("numeric", length(species))
   for (i in 1:length(species)) {
-    Sys.sleep(2) # Simulating a 2-second computation
+    Sys.sleep(2)  # Simulates a 2-second computation delay
     means[i] <- mean(df[df$Species == species[i], "Sepal.Length"])
   }
   return(data.frame(Species = species, Mean_Sepal_Length = means))
@@ -73,11 +73,11 @@ calculate_mean_sepal_length <- function(df) {
 ```
 {{% /codeblock %}}
 
-The function simulates a computationally intensive task by pausing the execution of the code for 2 seconds in each iteration by adding `Sys.sleep(2)`. The code will be executed, first as a normal computation and then with parallelization. The `system.time()` function is used to measure the execution times such that we can compare them and show the benefits of parallelization. 
+The function introduces a computational delay of 2 seconds per iteration to simulate an intensive task. We will compare the execution times between standard and parallel processing using the `system.time()` function.
 
 {{% codeblock %}}
 ```R
-# Without parallelization (sequential computation)
+# Normal execution (sequential)
 start_time_normal <- Sys.time()
 result_normal <- calculate_mean_sepal_length(iris)
 end_time_normal <- Sys.time()
@@ -86,7 +86,7 @@ time_normal <- end_time_normal - start_time_normal
 ```
 {{% /codeblock %}}
 
-The following data frame is returned as a result (in `result_normal`):
+The result (`result_normal`) is as follows:
 
 |   | Species     | Mean_Sepal_Length |
 |---|-------------|-------------------|
@@ -94,27 +94,25 @@ The following data frame is returned as a result (in `result_normal`):
 | 2 | versicolor  | 5.936             |
 | 3 | virginica   | 6.588             |
 
-
-Now, the same code is executed with parallelization using `mclapply()`, which returns the same data frame within `result_multi`:
+Now, let's apply parallel processing using `mclapply()`:
 
 {{% codeblock %}}
 ```R
-# With parallelization using mclapply
+# Parallel execution using mclapply
 start_time_multi <- Sys.time()
 
 result_multi <- bind_rows(
   mclapply(
     split(iris, iris$Species), calculate_mean_sepal_length
-    )
+  )
 )
 end_time_multi <- Sys.time()
 
 time_multi <- end_time_multi - start_time_multi
-
 ```
 {{% /codeblock %}}
 
-Comparing execution times:
+Compare the execution times:
 
 {{% codeblock %}}
 ```R
@@ -123,42 +121,39 @@ time_multi
 ```
 {{% /codeblock %}}
 
-The multicore computation is faster than the normal computation, with `4.035` seconds against `6.018` seconds. These times can differ for you, depending on the number of cores available and other hardware differences.
+Parallel processing shows a marked improvement, reducing the execution time from `6.018` seconds to `4.035` seconds. Note that these times may vary based on your system's hardware.
 
-## Socket approach
+## The Socket Approach
 
-The socket approach slightly differs from the multicore approach. Here, you have to make a socket cluster first, and manually copy the data and code to each cluster member (the cores). This is the key difference with the multicore approach, in which exporting was not necessary.
+The socket approach differs from the multicore method by requiring you to manually create a cluster and distribute the code and data across its nodes. This results in additional overhead compared to the multicore method, where such exports are unnecessary. However, this way of parallelization gives you more control over what data and code your cores will be exposed to.
 
 ### Example
 
-The following example provides the basic steps on how to make a cluster and let it execute your task. To test its efficiency, we will compare the time needed to execute code being executed with and without parallelization.
+To illustrate, we'll detail how to establish a cluster and execute tasks in parallel.
 
 {{% warning %}}
 
-With the socket approach, a new version of R is launched on each core. Therefore, any message from your computer requesting permission for R to accept incoming connections you should accept.
+Each core will run a separate instance of R in the socket approach. If your system prompts you to allow R to accept incoming connections, you should approve it.
 
 {{% /warning %}}
 
+1. **Identify Available Cores**
 
-1. Determine the number of cores available
-
-Before you create a cluster, you can determine the number of cores that are available on your system.
+Start by determining the number of cores your system can utilize.
 
 {{% codeblock %}}
 ```R
-# Determine number of cores available
+# Determine the available number of cores
 ncpu <- detectCores()
 ```
 {{% /codeblock %}}
 
-The number of cores is determined by your computer's hardware configuration and is `2` in my Google Colab. This number can differ for you, resulting in different computation times as well. 
+The number of cores varies by system; in this example, it is `2` on the Google Colab Notebook that we used to develop this article. You might want to use less than 100% of your cores to save some CPU capacity for other tasks.
 
-Sometimes you might want to use only a percentage of the available CPU cores instead of all cores, to leave some CPU capacity for other system tasks. In that case, you can multiply the `detectCores()` value by the percentage you want to use (e.g. `0.8`) and set that as a value for `ncpu` (i.e. the number of CPU cores to be used for parallel processing).
+2. **Create a Cluster**
 
-2. Create cluster
+Next, use the `makePSOCKcluster()` function to specify the number of cores for your cluster based on the previously determined value.
 
-Within the `makePSOCKcluster()` function, we specify the number of cores we want to use which is stored in `ncpu` in the previous step.
-   
 {{% codeblock %}}
 ```R
 # Create a parallel cluster
@@ -166,46 +161,45 @@ cl <- makePSOCKcluster(ncpu)
 ```
 {{% /codeblock %}}
 
+3. **Parallel Execution**
 
-3. Execute code in parallel
-
-The socket approach doesn't have anything loaded in yet, so any loaded packages, variables, data, functions, etc. that the cluster needs to execute the code needs to be moved into each process. This can be done with the `clusterExport()` function. Below, a function is exported to the cluster as an example.
+Since the socket approach starts with a clean slate, you must explicitly transfer any required packages, variables, or functions to each cluster node using the `clusterExport()` function.
 
 {{% codeblock %}}
 ```R
-# Load packages if not done before
+# Ensure necessary packages are loaded
 library(parallel)
 library(dplyr)
 
-# Export function to cluster
+# Export the required function to the cluster
 clusterExport(cl, 'calculate_mean_sepal_length')
 
-# Parallel computation function
+# Define the parallel computation function
 calculate_mean_sepal_length_parallel <- function(df) {
   clusterApplyLB(cl, split(df, df$Species), calculate_mean_sepal_length)
 }
 
-# Run parallel computation
+# Execute the parallel computation
 start_time_socket <- Sys.time()
 result_socket <- bind_rows(
   calculate_mean_sepal_length_parallel(iris)
-  )
+)
 end_time_socket <- Sys.time()
 time_socket <- end_time_socket - start_time_socket
-
 ```
 {{% /codeblock %}}
 
-`result_socket` returns the same data frame showing the mean sepal length for each species, as in `result_normal`.
+The `result_socket` dataset will display the mean sepal length for each species, similar to `result_normal`.
 
 {{% tip %}}
 
-You can use the `parLapply()` function to perform a `lapply()` function across multiple cores in a socket cluster.
+Consider using the `parLapply()` function to leverage the `lapply()` functionality across multiple cores in a socket cluster.
 
 {{% /tip %}}
 
+4. **Time Comparison**
 
-4. Compare time to that of the same task without parallelization
+Finally, compare the execution times to assess the efficiency of parallel processing.
 
 {{% codeblock %}}
 ```R
@@ -214,37 +208,37 @@ time_socket
 ```
 {{% /codeblock %}}
 
-Again, parallelization has saved time, comparing `4.035` seconds for executing the task with the socket approach to `6.018` seconds for the normal computation. 
+Again, the parallelized task was quicker, taking `4.035` seconds with the socket approach versus `6.018` seconds for the standard method.
 
-## When to parallelize
+## When to Parallelize?
 
-As briefly mentioned before, the maximum theoretical time-saving is not likely to be reached due to overhead. The potential speedup may follow Amdahl's Law, a principle in computer science that tells us the achievable overall speedup (*on the y-axis*) is limited by the number of cores (*on the x-axis*), as well as the proportion of the computation that can be parallelized (`the different lines, *the parallel portion*). This idea is shown by the graph below, taken from [Wikipedia](https://en.wikipedia.org/wiki/Amdahl%27s_law).
+As mentioned earlier, achieving the ideal theoretical time savings is rare due to the overhead associated with executing code and combining results from multiple cores. Additionally, parallel processing often requires duplicating large datasets across all cores, which can lead to capacity issues. Moreover, there are development costs involved in adapting code for parallel execution, and some researchers may find it cumbersome to manage complex parallel code.
+
+Despite these challenges, it is often worthwhile to consider parallelization, especially when code needs to be executed repeatedly, such as in reproducible research pipelines. A key concept to understand in this context is **Amdahl's Law**, which posits that the potential speedup of a task is limited by the number of cores available and the proportion of the task that can be parallelized. This principle is depicted in the following graph from [Wikipedia](https://en.wikipedia.org/wiki/Amdahl%27s_law):
+
 
 <p align = "center">
 <img src = "../images/amdahls_law.png" width="300">
-<figcaption> Amdahl's Law, image downloaded from Wikipedia </figcaption>
+<figcaption> Amdahl's Law, image courtesy of Wikipedia</figcaption>
 </p>
 
+The table below, based on [Josh Errickson's article](https://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/parallel.html), summarizes the key differences between the multicore and socket approaches.
 
-### Multicore versus socket approach
-
-Based on [Josh Errickson's article](https://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/parallel.html), this table summarizes the key differences between the multicore and socket approaches.
-
-|                   *Multicore*                  | *Socket*                                         |
-|-----------------------------------------------|--------------------------------------------------|
-| Available on Unix-like systems, <br> e.g. Mac and Linux <br> Or use Google Colab! | Works on all systems, <br> also Windows                           |
-| Generally faster    | Slower due to extra overhead <br> time; launching new versions <br> of R on each core      |
-| Workspace exists in each <br> process,   since it copies the <br> existing version of R  | Export variables, loaded <br> packages, etc. in each <br> process separately     |
-|   Easier to implement   | A bit more complicated                          |
+|      *Multicore*        | *Socket*                 |
+|----------------------|------------|
+| Available on Unix-like systems, e.g., macOS and Linux. Can also use Google Colab. | Compatible with all systems, including Windows. |
+| Generally faster due to less overhead. | Slower because it requires launching new R instances on each core. |
+| Does not require re-exporting variables or reloading packages. | Requires separate exports of variables, packages, etc., to each process. |
+| Simpler to implement. | More complex due to additional setup requirements. |
 
 {{% warning %}}
 
-When generating random numbers in parallel, be careful. This might cause issues as is not possible to generate the exact same numbers in each of the cores. Also, reproducing the same random numbers with `set.seed()` will not work the same. The `parallel` package offers a way to overcome this issue. Check [Chapter 20.4 of this guide](https://bookdown.org/rdpeng/rprogdatascience/) for an example.
+As each core essentially starts a "new" R session, generating *random numbers* in parallel may be problematic. The `parallel` package, however, offers solutions to ensure reproducibility across cores (see [Chapter 20.4 of this guide](https://bookdown.org/rdpeng/rprogdatascience/) for details).
 
 {{% /warning %}}
 
 {{% summary %}}
 
-There is benefit of parallelization especially in substantial computations. By distributing the workload across multiple cores, it speeds up the computation time and helps avoid memory runtime errors. However, not all tasks can be parallelized, and in some cases, the overhead involved with parallelization tasks might take more time than it saves. After reading this topic, you have a good understanding of the basics and can discover the potential of parallelization computation for yourself!
+Parallelization offers significant advantages, particularly for extensive computations. By distributing work across multiple cores, it not only speeds up processing times but also helps to prevent memory runtime errors. However, not all tasks are suited for parallel processing, and sometimes, the overhead can outweigh the benefits. With this foundation, you can now explore the potential of parallel computing in your own projects!
 
 {{% /summary %}}
