@@ -51,9 +51,14 @@
                 {% include 'partials/announcement.html' %}
                 {{ content|safe }}
                 {% if article.author %}
-                <div class="admonition author">
-                    <div class="admonition-content">Contributed by <b><a href="/contributors/{{ article.author|lower|replace(' ', '-') }}">{{ article.author }}</a></b></div>
-                </div>
+                    {% set authors = article.author.split(',') %}
+                    <div class="admonition author">
+                        <div class="admonition-content">Contributed by
+                            {% for author in authors %}
+                                <b><a href="/contributors/{{ author|lower|replace(' ', '-') }}">{{ author }}</a></b>{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
                 {% endif %}
 
                 <div class="d-flex justify-content-between mt-5 align-items-center">
