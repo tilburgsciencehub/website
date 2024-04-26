@@ -11,7 +11,7 @@ aliases:
 
 ## Overview
 
-In this article, we will introduce SQLite in R, an easy-to-use database for research data storage.
+In this article, we will introduce how to access data stored in SQLite in an R session.
 If you are not yet sure whether you need a database for your research data, 
 you can read our article on [data storage options](https://tilburgsciencehub.com/topics/collect-store/data-storage/databases/csv-vs-database/).
 
