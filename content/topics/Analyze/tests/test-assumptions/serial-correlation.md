@@ -12,42 +12,41 @@ aliases:
 
 ## Overview
 
-In analysis using time series or panel data, the errors included in the regression model are quite likely to suffer from serial correlation, also known as autocorrelation. This means the errors from subsequent time periods depend on each other. It can be either positive or negative. E.g. positive correlation would mean that when the dependent variable is unexpectedly high for one period, they are likely to also be above average (given the covariates) for the next period. Negative correlation is when the investment rate fell in this period, it is likely to rise in the next period.
+In time series or panel data analysis, the errors included in the regression model are often subject to serial correlation, meaning that errors from subsequent time periods depend on each other.
 
-It is important to address serial correlation as it has consequences for the outcomes of the model, as one of the model assumptions about independence among observations is violated. Since the OLS standard errors are based on this assumption, the resulting ones can be misleading when this correlation is ignored. The uncertainty around the estimates are is larger than is estimated by OLS. In some cases, estimates can also be biased. In this topic, we will dive into different ways to test for serial correlation with practical code examples, and then discuss solutions for when serial correlation is present in your data. 
+{{% example %}}
 
-## Serial correlation 
-
-As a benchmark for time series or panel data analysis, there are five Gauss Markove assumptions that should hold for the OLS estimates to be BLUE (*best linear unbiased estimate*). The fifth one is about the error terms and :  
+Consider a regression model equation with $\epsilon_{it}$ representing the error term for each observation (entity `i` in time period `t`):
 
 {{<katex>}}
-Corr(u_t, u_s | X) = 0 for all t =/ s
+Y_{it} = \beta_0 + \beta_1 X_{it} + \epsilon_{it}
 {{</katex>}}
 
-Conditional on the covariates `X`, the errors in two different time periods are uncorrelated. Or to put it even more simply: 
+{{% /example %}}
 
-Corr(u_t, u_s) = 0 for all t =/ s
+Adressing serial correlation is crucial due to its implications for the model outcomes, as it can lead to misleading standard errors, resulting in larger estimated uncertainties around the coefficients. In some cases, estimates may also be biased. In this topic, we will explore various methods to test for serial correlation through straighforward R code examples. Also, potential solutions will be discussed when serial correlation is present in your data. 
 
-When this assumption doesn't hold, error terms are correlated across time, i.e. they suffer from serial correlation. Order 1 (AR(1)) means each error term is linearly related to the error term in the previous period. And higher orders, .... 
+
+## How does serial correlation arise? 
+
+One of the Gauss-Markov assumptions for the OLS estimates to be BLUE (*best linear unbiased estimate*) concerns the error terms. It is expressed as follows:   
+
+$Corr(u_t, u_s | X) = 0 $  for all $t ≠ s$
+
+In words; given the covariates `X`, errors in different time periods should be uncorrelated. When errors exhibit serial correlation, this assumption is violated.
+
+{{% tip %}}
+
+Serial correlation can be either positive or negativ. Positive correlation could for example imply that when the dependent variable unexpectedly rises in one period (above-average errors), errors are likely to be above average in the subsequent period, given the covariates. Conversely, negative correlation occurs when above-average errors are followed by below-average errors in the next time period. 
+
+{{% /tip %}}
 
 
 ## Example with `Grunfeld` data
 
-Let's take a simple example analysis with the `Grunfeld` dataset, which has a panel data structure consisting of 11 firms over 20 years. We are interested in the relationship between market value and gross investment of firms, which we can estimate with the following regression equation:
+Let's consider a regression analysis using the `Grunfeld` dataset in R. Our objective is to examine the impact of market value on firm gross investment. You can find an introduction to the `Grunfeld` data and the regression equation in the [Panel data topic](/paneldata). 
 
-{{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i +  \delta_t + \epsilon_{it}
-{{</katex>}}  
-
-where:
-- $invest_{it}$ is the gross investment of firm `i` in year `t`
-- $value_{it}$ is the market value of assets of firm `i` in year `t`
-- $capital_{it}$ is the stock value of plant and equipment of firm `i` in year `t`
-- $\alpha_i$ is the fixed effect for firm `i`
-- $\delta_t$ is the fixed effect for year `t`
-- $u_{it}$ is the error term, which includes all other unobserved factors that affect investment but are not accounted for by the independent variables or the fixed effects.
-
-The regression model is estimated in R with `plm()` function the `plm` package. 
+The regression model is estimated in R using the `plm()` function from the `plm` package. 
 
 {{% codeblock %}}
 ```R
@@ -67,20 +66,19 @@ summary(reg)
 ```
 {{% /codeblock %}}
 
-Serial correlation in the error terms would be present if the investment rates (the dependent variable in the model) are unexpectedly high for one period, they are likely to be above average (for the given levels of c)
-E.g. if interest rates (dependent var) are unexpectedly high for this period, they are likely to be above average (for the given levels of market value `market` and stock value `capital`) for the next period. This is reasonable to expect. 
+Positive serial correlation is indeed a reasonable expectation here. This implies that when the interest rate (the dependent variable, `invest`) unexpectedly increases in one period, it is likely to remain above average in the subsequent period, given the levels of market value `market` and stock value `capital`.
 
-## Autocorrelation plot
 
-Before checking quantitatively, we can visually inspect the potential serial correlation between the error terms. To do this, you can easily make an autocorrelation plot with `acf()` (the *autocorrelation function*) . This function calculates the autocorrelation and plots it automatically when you set the argument `plot` to `TRUE`. The argument `main` sets the main title of the plot. 
+## Visual inspection: autocorrelation plot
 
+We start by visually examining the serial correlation through an autocorrelation plot. This is very straightforward using the `acf()` function. This *autocorrelation function* automatically calculates the serial correlation and generates a plot when you include `plot = TRUE`. Additionally, the `main` argument allows you to specify the title of the plot. 
 
 {{% codeblock %}}
 ```R
 # Obtain error terms from regression model
 e <- reg$residuals
 
-# Calculate autocorrelation + make plot
+# Calculate autocorrelation and generate plot
 acf_residuals <- acf(e, 
                     plot = TRUE, 
                     main = "Autocorrelation plot")
@@ -92,24 +90,43 @@ acf_residuals <- acf(e,
 <img src = "../images/autocorrelation-plot.png" width="400">
 </p> 
 
-The x-axis represents the lag, i.e. the time interval between each observation and its correlated observations. Lag 1 represents the first-order correlation with the previous observation, and so on. The y-axis shows the autocorrelation coeffcients, which measure the strength and direction fo the linear relationship between observations at different lags. It ranges from -1 to 1, where 0 indicates no correlation. The blue dashed lines are the lower and upper bound of the 95% confidence interval around the zero line. Interpreting our plot, significant positive autocorrelation is found at lag-1, 2 and 3 as these spikes reach above the confidence interval,
-As the spikes become smaller as lag increases, it suggests observations become less correlated as they become further apart in time. 
+The x-axis depicts the lag, indicating the time interval between each observation and its correlated observations. For instance, Lag 1 represents the first-order correlation with the previous observation, and so forth. Meanwhile, the y-axis shows the autocorrelation coefficients, reflecting the linear observations at different lags.
+
+
+Ranging from -1 to 1, where 0 indicates no correlation, the coefficients show both the direction and strength of the autocorrelation. The blue dashed lines denote the lower and upper bound of the 95% confidence interval around the zero line. 
+
+In our plot, significant positive autocorrelation is found at lag-1, 2 and 3 as indicated by spikes exceeding the confidence interval. Furthermore, as the spikes become smaller as the lag increases, it suggests observations become less correlated as they are further apart in time. 
 
 {{% tip %}}
-With the `lag.max` argument you can set the maximum lag at which to calculate the acf, e.g set to 3 as a max with `lag.max = 3`. Default when not included is a limited to one less than the number of observations in the series.
+You can specify the maximum lag for calculating the autocorrelation using the `lag.max` argument, e.g. setting it to 3 with `lag.max = 3`. By default, when not included, it is limited to one less than the number of observations in the series.
 {{% /tip %}}
 
+## Tests for serial correlation 
 
-## Durbin Watson test
+Serial correlation in the error term can be assessed using various tests. 
+
+
+{{% warning %}}
+The three tests discussed here are only applicable to regressions using `plm`, as this function is part of the `lm` baseline. Regressions using the `fixest` package are not supported for these tests. 
+
+An alternative approach for `fixest` analysis involves regressing OLS residuals on lagged residuals and then conducting a t-test on the coefficient of the lagged residual. A statistically significant coefficient suggests the presence of first-order serial correlation. 
+{{% /warning %}}
+
+
+The null hypothesis, $H_0$, that will be tested is: Serial correlation does not exist. If $H_0$ can be rejected, serial correlation is present. The test statistic ranges from 0 to 4, with value close to 2 indicating no serial correlation, less than 2: positive serial correlation, more than 2: negative serial correlation. 
+
+### 1. Durbin Watson test
 
 (Chapter 12 Wooldridge) 
 
 The first way to check for first order serial correlation in the error term is the Durbin Watson test. Note that this test is specifically for 
 - first order correlation only (from one period to the other)
+
+Order 1 (AR(1)) means each error term is linearly related to the error term in the previous period. And higher orders, .... 
+
 - assuming strictly exogenous regressors. 
 
 
-The null hypothesis, $H_0$, that will be tested is: Serial correlation does not exist. If $H_0$ can be rejected, serial correlation is present. The test statistic ranges from 0 to 4, with value close to 2 indicating no serial correlation, less than 2: positive serial correlation, more than 2: negative serial correlation. 
 
 
 {{% codeblock %}}
@@ -140,12 +157,9 @@ This test statistic (`0.98848`) close to 1, with the low p-value (lower than `0.
 {{% /tip %}}
 
 
-Alternative approach: regress OLS residual on lagged residual and then conduct t test on the coefficient of the lagged residual. If coefficient is statistically significant it suggests presence of serial correlation first order.
+### 2. Breusch-Godfrey test
 
-
-## Breusch-Godfrey test
-
-To test for serial correlation at higher orders, you can use the Breusch-Godfrey test. With the argument `order`, you can set the maximal order of serial correlation to be tested.
+For assessing serial correlation at higher orders, the Breusch-Godfrey test is a suitable option. By specifying the `order` argument `order`, you can set the maximal order of serial correlation to be tested.
 
 {{% codeblock %}}
 ```R
@@ -164,10 +178,14 @@ LM test = 149.3, df = 4, p-value < 2.2e-16
 
 ```
 
-The LM (*Lagrange Multiplier*) test statistitc of `149.3` and a very small p-value, the null hypothesis that there is no serial correlation is rejected. 
+The output includes the LM (*Lagrange Multiplier*) test statistitc of `149.3` and a very small p-value, indicating the presence of serial correlation.
 
 
-## Wooldridge test 
+### 3. Wooldridge test 
+
+The Wooldridge test regresses the residuals from a regression in first-differences (ref) on its lags, and then tests that the coefficient on the lagged residuals equals -0.5 (H0: no serial correlation). To account for within-panel correlation, the variance-covariance matrix adjusted for clustering at the panel level. (Stata article). Since it is based on relatively few assumptions, the Wooldridge test exhibits good size and power properties.
+
+To conduct the Wooldridge test in R, you can use the following command:
 
 {{% codeblock %}}
 ```R
@@ -184,29 +202,24 @@ F = 162.2, df1 = 1, df2 = 207, p-value < 2.2e-16
 alternative hypothesis: serial correlation
 
 ```
-The test statistic (F) of `162.2`, and a very small p-value indicate again evidence against the null hypothesis of no serial correlation. In other words, evidence for serial correlation formulated as the alternative hypothesis is found.
+The output provides the test statistic (F) of `162.2`, along with a very small p-value. Thus, evidence supporting serial correlation is found again.
+
+{{% tip %}}
+For Stata users, the `xtserial` function can be used. Refer to this [article] for a nice example. 
+{{% /tip %}}
+
 
 https://www.princeton.edu/~otorres/Panel101R.pdf
 
 
-(Stata article)
-based on few assumptions only
-good size and power properties under these weaker assumptions
-uses the residuals from a regression in first-differences
-
-regress residuals from regression with first-differenced variables on their lags and tests that the coefficient on the lagged residuals is equal to -0.5
-to account for within-panel correlation, VCE adjusted for clustering at panel level
-
-Stata xtserial function
-example: NLS, log wages as function of age etc.
-null hypothesis: no serial correlation
 
 ## Potential solution 
 
-adjust standard errors to account for correlation structure in the errors. Robust standard error - pag 401 pdf file Wooldridge.
+Now, after testing, we want to address it.One potential solution to account for serial correlation is to adjust standard errors to account for this.
+(Robust standard error - pag 401 pdf file Wooldridge).
+- test this
 
-Find other estimation method that does not rely on independent observations, and doesn't require this assumption?
-
+Alternatively, explore other estimation methods that do not rely on the assumption of independent observations and allow for temporal dependencies within the data. For example, dynamic panel models allow for the incorporation of the lagged dependent variables, thus capturing the dynamic nature of the data and potentially mitigating the impact of serial correlation. 
 
 ## Comparing the tests
 
@@ -214,3 +227,7 @@ table
 - first column: which function to use
 - orders
 - tests possible with plm not with fixest (find way to do it with fixest estimated model)
+
+
+summary
+- first visually inspect is important
