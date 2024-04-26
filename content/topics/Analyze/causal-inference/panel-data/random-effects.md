@@ -1,6 +1,6 @@
 ---
 title: "The Random Effects Model"
-description: "A building block about the Random Effects model and on the decision between an Fixed or Random Effects model"
+description: "A topic about the Random Effects model and on the choice between a Fixed or Random Effects model"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
 weight: 7
@@ -14,7 +14,7 @@ aliases:
 
 # Overview
 
-The **Random Effects (RE) model** is the last method for panel data analysis discussed in this series of building blocks. Unlike the Fixed Effects (FE) model, which focuses on within-group variations, the RE model treats the unobserved entity-specific effects as random and uncorrelated with the explanatory variables. After delving into the RE model first, we address probably the most critical choice to make when working with panel data: deciding between an FE or RE model. 
+The **Random Effects (RE) model** is the last method for panel data analysis discussed in this series of topics. Unlike the Fixed Effects (FE) model, which focuses on within-group variations, the RE model treats the unobserved entity-specific effects as random and uncorrelated with the explanatory variables. After delving into the RE model first, we address probably the most critical choice to make when working with panel data: deciding between an FE or RE model. 
 
 This is an overview of the content:
 - The RE model
@@ -139,7 +139,7 @@ To determine the appropriate model, a Hausman test can be conducted to test the 
 - The null hypothesis states no correlation between the independent variables and the entity-specific effects $\alpha_i$. If $H_{0}$ is true, the RE model is preferred.
 - The alternative hypothesis states a correlation between the independent variables and the entity-specific effects($\alpha_i$). If $H_{0}$ is rejected, the FE model is preferred.
 
-The Hausman test can be performed in R with the `phtest()` function from the package `plm`. Specify the FE and RE model as arguments in this function. Note that the models included as arguments should be estimated with `plm`. Therefore, the Within model is also estimated with `plm()` first (instead of with `feols()`from the `fixest` package like in the [Fixed Effects model building block](/withinestimator)). 
+The Hausman test can be performed in R with the `phtest()` function from the package `plm`. Specify the FE and RE model as arguments in this function. Note that the models included as arguments should be estimated with `plm`. Therefore, the Within model is also estimated with `plm()` first (instead of with `feols()`from the `fixest` package like in the [Fixed Effects model article](/withinestimator)). 
 
 {{% codeblock %}}
 ```R
