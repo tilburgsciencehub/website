@@ -255,6 +255,24 @@ def fetch_meta_data(data_object):
 
     return meta_data
     
+def fetch_contributions_for_the_single_contributor(Contributor, Articles, Topics):
+    base_url = request.host_url.rstrip("/")
+    contributions = Articles.query.filter_by(author=Contributor.name).with_entities(Articles.id, Articles.title, Articles.path, Articles.parent).all()
+    contributions_with_full_path = []
+
+    for contribution in contributions:
+        parent_topic_path = get_full_topic_path(contribution.parent, Topics)
+        if parent_topic_path:
+            full_path = f"{base_url}/{parent_topic_path['path']}/{contribution.path}"
+        else:
+            full_path = f"{base_url}/{contribution.path}"
+        
+        contributions_with_full_path.append({
+            "id": contribution.id,
+            "title":contribution.title,
+            "path": full_path
+        })
+    return contributions_with_full_path
 
     
 
