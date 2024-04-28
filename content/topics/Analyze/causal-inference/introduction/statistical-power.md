@@ -3,7 +3,7 @@ title: "Statistical Power"
 description: "What is statistical power, why is it important, how to increase it, and how to use power analysis in experimental designs."
 keywords: "statistical power, causal, inference, effect, power analysis, R, sample size, experiments, type II error, type I error"
 draft: false
-weight: 1
+weight: 2
 author: "Victor Arutyunov"
 ---
 
