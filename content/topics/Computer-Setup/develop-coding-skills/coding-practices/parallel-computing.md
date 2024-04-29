@@ -226,10 +226,10 @@ The table below, based on [Josh Errickson's article](https://dept.stat.lsa.umich
 
 |      *Multicore*        | *Socket*                 |
 |----------------------|------------|
-| Available on Unix-like systems, e.g., macOS and Linux. Can also use Google Colab. | Compatible with all systems, including Windows. |
-| Generally faster due to less overhead. | Slower because it requires launching new R instances on each core. |
-| Does not require re-exporting variables or reloading packages. | Requires separate exports of variables, packages, etc., to each process. |
-| Simpler to implement. | More complex due to additional setup requirements. |
+| Available on Unix-like systems, <br> e.g., macOS and Linux. <br> Can also use Google Colab. | Compatible with all systems, <br> including Windows. |
+| Generally faster due to <br> less overhead. | Slower because it requires launching <br> new R instances on each core. |
+| Does not require re-exporting <br> variables or reloading packages. | Requires separate exports of variables, <br> packages, etc., to each process. |
+| Simpler to implement. | More complex due to additional <br> setup requirements. |
 
 {{% warning %}}
 
