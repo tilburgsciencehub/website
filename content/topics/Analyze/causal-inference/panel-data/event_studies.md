@@ -37,7 +37,7 @@ Estimation of the treatment effect can be done by means of **event study analysi
 
 ## Context and background 
 
-Throughout this example we will be using panel data from a field experiment conducted in Tilburg between 2014 and 2015, with the objective of encouraging households to separate their waste effectively. For more details, refer to the related paper by Ben Vollaard and Daan van Soest, 2023 titled ["Punishment to promote prosocial behavior: a field experiment"](https://www.sciencedirect.com/science/article/pii/S0095069623001171?dgcid=SSRN_redirect_SD&ssrnid=4569587). 
+Throughout this example we will be using panel data from a field experiment conducted in Tilburg between 2014-2015, with the objective of encouraging households to separate their waste effectively. For more details, refer to the related paper by Ben Vollaard and Daan van Soest, 2023 titled ["Punishment to promote prosocial behavior: a field experiment"](https://www.sciencedirect.com/science/article/pii/S0095069623001171?dgcid=SSRN_redirect_SD&ssrnid=4569587). 
 
 In this experiment, households used a dual-compartment garbage container, and the treatment involved a one-month crackdown by inspectors. Prior to the crackdown, a letter was sent to all households on a designated route announcing the enforcement action. During this period, inspectors checked the contents of each garbage container. If violations were detected, warnings were issued, and fines were imposed. 
 
@@ -79,6 +79,7 @@ library(tidyverse)
 library(dplyr)
 library(ggplot2) 
 library(fixest)
+library(foreign)
 ```
 {{% /codeblock %}}
 
@@ -86,11 +87,12 @@ If not previously downloaded, perform the command install.packages("") on the ab
 
 ### Data 
 
-The dataset is available for download in STATA 11/12 format, follow the command below: **wait for permission of professor**
+The dataset is available for download in STATA 11/12 format, follow the command below:
 
 {{% codeblock %}}
 ```R
-
+theUrl_event_studies <- "https://surfdrive.surf.nl/files/index.php/s/ZphgKxImtwFawv9/download"
+waste <- read.dta (file = theUrl_event_studies)
 ```
 {{% /codeblock %}}
 
@@ -129,7 +131,7 @@ Let's do the first three steps with the mutate command:
 
 {{% codeblock %}}
 ```R
-waste2a <- waste2a %>% 
+waste <- waste %>% 
 
   # Group the data by 'route'
   group_by(route) %>%
@@ -158,7 +160,7 @@ To see how event time is distributed, make a histogram:
 
 {{% codeblock %}}
 ```R
-ggplot(waste2a, aes(x=eventtime, fill = "blue")) + 
+ggplot(waste, aes(x=eventtime, fill = "blue")) + 
   geom_bar(stat="count") + 
   labs(x='event time', y='count', title='Time since start of treatment') +
   scale_fill_identity()
@@ -177,8 +179,8 @@ The solution is creating bins with multiple event times at the tails. In this ca
 
 {{% codeblock %}}
 ```R
-# Update the 'waste2a' dataframe by adding a new column 'eventtime_bin'
-waste2a <- waste2a %>%
+# Update the 'waste' dataframe by adding a new column 'eventtime_bin'
+waste <- waste %>%
   
   # Create a new column 'eventtime_bin':
   # If 'eventtime' is less than or equal to -37, set 'eventtime_bin' to -37.
@@ -201,7 +203,7 @@ The term i() interacts the variable factor_var, which is going to be the event-t
 
 {{% codeblock %}}
 ```R
-waste2a$allones <- 1
+waste$allones <- 1
 ```
 {{% /codeblock %}}
 
@@ -209,7 +211,7 @@ Let's now estimate the model.
 
 {{% codeblock %}}
 ```R
-mod_twfe = feols(residual_weight ~ i(eventtime_bin, allones, ref=0) | route + calendar_week, data=waste2a)
+mod_twfe = feols(residual_weight ~ i(eventtime_bin, allones, ref=0) | route + calendar_week, data=waste)
 etable(mod_twfe)
 ```
 {{% /codeblock %}}
@@ -256,3 +258,6 @@ iplot(mod_twfe,
 Ben Vollaard, Daan van Soest,Punishment to promote prosocial behavior: a field experiment, Journal of Environmental Economics and Management, Volume 124, 2024, 102899, ISSN 0095-0696,
 https://doi.org/10.1016/j.jeem.2023.102899.
 (https://www.sciencedirect.com/science/article/pii/S0095069623001171)
+
+Vollaard, Ben; Soest, Daan van, 2024, "Replication Data for: Collected household waste 2014-2015 – Tilburg’; ‘Household survey waste separation and warnings issued 2014-2015 – Tilburg", https://doi.org/10.34894/R7TRVB, DataverseNL, V1
+
