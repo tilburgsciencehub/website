@@ -114,24 +114,22 @@ The Durbin-Watson test is a commonly used method to check for first-order serial
 
 {{% codeblock %}}
 ```R
-# Perform the Durbin-Watson test
-pdwtest(model_plm)         
+# Perform the Durbin-Watson test for panel models
+pbnftest(model_plm)         
 ```
 {{% /codeblock %}}
 
 *Output:*
 
 ```R
-
-Durbin-Watson test for serial correlation in panel models
+Bhargava/Franzini/Narendranathan Panel Durbin-Watson Test
 
 data:  invest ~ value + capital
-DW = 0.98848, p-value = 2.547e-14
+DW = 0.68497
 alternative hypothesis: serial correlation in idiosyncratic errors
-
 ```
 
-Interpreting the output, a test statistic (`DW`) close to 1 and a low p-value indicate a strong positive serial correlation in the error terms.
+Interpreting the output, a test statistic (`DW`) close to 1 and a low p-value indicate a positive serial correlation in the error terms.
 
 {{% tip %}}
 
