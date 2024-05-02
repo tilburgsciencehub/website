@@ -19,12 +19,13 @@ This in-depth introduction to unsupervised learning will cover its key concepts,
 The article covers several topics:
 1. What is Unsupervised Learning?
 2. Unsupervised Learning Algorithms
-3. A Regression Example
-4. A Classification Example
+3. A Clustering Example
+4. An Association Example
+5. A Dimensionality Reduction Example
 
 ## What is Unsupervised Learning?
 
-This type of machine learning learns from data without human supervision. These models can detect patterns in data without specified labels or outcomes. It uses self-learning algorithms to structure information based on similarities, differences, and patterns in data. Unsupervised learning approaches are often used to find structure in large datasets, and create a more compact representation of data.
+This type of machine learning learns from data without human supervision. These models can detect previously unknown patterns in datasets without specified labels or outcomes. It uses self-learning algorithms to structure information based on similarities, differences, and patterns in data. Unsupervised learning approaches are often used to find structure in large datasets, and create a more compact representation of the data that is easier to understand.
 
 Different approaches are clustering, association, and dimensionality reduction: 
 * Clustering 
@@ -32,41 +33,55 @@ Different approaches are clustering, association, and dimensionality reduction:
 * Dimensionality Reduction
 
 **Clustering**
-Clustering involves grouping similar data points together. Because members of the same group tend to have similar characteristics, clustering algorithms can group unlabeled data based on their similarities and differences. The goal is to have data points in the same cluster to be similar to each other. It is widely used in market research, customer segmentation, fraud detection, and image analysis.
+Clustering organizes data by grouping similar data points together. Because members of the same group tend to have similar characteristics, clustering algorithms can group unlabeled data based on their similarities and differences. The goal is to have data points in the same cluster to be similar to each other. It is widely used in market research, customer segmentation, fraud detection, and image analysis. For example, on LinkedIn, clustering can be used to discover professional communities based on shared interests, job roles, or industry sectors, such as "technology innovators" or "digitial marketing professionals". 
 
 **Association**
-Association rule mining can be used to identify patterns and discover relationships between features in the dataset. It finds rules that represent large parts of the data, to discover correlations, connections, and co-occurences within the data. It is often used to track purchases that are frequently bought together.
+Association rule mining is used to uncover patterns and relationships in the data, by finding rules that represent large parts of the data. It discovers correlations, connections, and co-occurences, and is often used to track purchases or make recommendations to customers. For example, Netflix uses association algorithms to discover that people who watch certain genres like science fiction often also enjoy fantasy series, and they can recommend new shows based on viewing habits.
+
+{{% tip %}}
+In association rule mining, two important metrics to evaluate the strength and relevance of discovered rules are confidence and lift. Confidence measures how often items in a rule appear together, indicating the strength of the association. Lift compares this frequence of co-occurence to individual occurrences.
+{{% /tip %}}
 
 **Dimensionality Reduction**
-Dimensionality reduction techniques are used to reduce the number of input variables in a dataset. It reduces the number of irrelevant or random features while maintaining as much of the important information of the original data as possible. This can help to increase the efficiency of future analyses, reduce computational costs, and help with the visualization and interpretability of the data. In other words, it is a process of transforming high-dimensional data into a lower-dimensional space that still preserves the essence of the original data. Dimensionality reduction algorithms are usually used as a pre-processing step in modeling, before the actual model training. 
+Dimensionality reduction techniques are used to reduce the number of input variables in a dataset. It removes irrelevant or random features while maintaining as much of the important information of the original data as possible. This can help increasing the efficiency of future analyses, reduce computational costs, and help with the visualization and interpretability of the data. In other words, it is a process of transforming high-dimensional data into a lower-dimensional dataset that still captures the essence of the original data. Dimensionality reduction algorithms are usually used as a pre-processing step in modeling, before the actual model training. 
+
+{{% warning %}}
+Reducing dimensionality may lead to the loss of important information, which could have a negative impact on how well later algorithms perform. Critically ask yourself why you want to decrease the size and dimensionality of your data.
+{{% /warning %}}
 
 ### Key Concepts
 
 ## Unsupervised Learning Algorithms
 <!-- clustering -->
 - K-Means Clustering
-  - This algorithm segments data into clusters based on similarity, a common approach for market segmentation by grouping customers according to purchasing habits.
+  - This algorithm segments data into groups based on similarity and common attributes. The dataset is divided into K clusters by minimizing the distance between each data point and the cluster centroid. An example is segmenting customers into distinct groups based on their purchasing behavior.
+  
+{{% tip %}}
+The Elbow Method is a technique used to choose the optimal number of clusters. It plots the sum of squared distances of samples to their nearest cluster center across different values of K. Look for the point where the rate of decrease sharply changes — this point, resembling an "elbow", typically shows the most suitable number of clusters.
+{{% /tip %}}
 
 - Hierarchical Clustering
+  - Hierarchical clustering does not require the number of clusters to be specified in advance. It builds a hierarchy either by starting with all data points as one group and splitting them (divisive method), or by starting each data point as its own group and combining them (agglomerative method). 
 
 - Anomaly Detection
+  - This method finds data points that differ significantly from the rest of the data. In fields like fraud detection, anomaly detection helps in spotting unusual transactions that could be fraud.
 
 <!-- association -->
 - Apriori Algorithm
-  - This association rule algorithm is great for discovering relationships between variables in large databases. It identifies frequent individual items in the database and larger item sets that often appear together, such as identifying products that frequently get bought together. 
+  - This association rule algorithm is great for discovering relationships between variables in large databases. It can find frequent itemsets in transactional data, such as identifying products that frequently get bought together. 
+
 
 - Eclat Algorithm
+  - Eclat locates frequently occurring itemsets in transactional databases by performing a depth-first search. It speeds up the process and reduces computational costs by using a vertical data forma that lists each item along with its transaction ID.
 
-- Frequent Pattern Growth (FP-Growth)
 
 <!-- Dimensionality -->
 <!-- https://www.geeksforgeeks.org/dimensionality-reduction/ -->
 - Principal Component Analysis (PCA)
-  - PCA is a technique for dimensionality reduction, helping to simplify data without losing its core information, useful in visualizing high-dimensional data.
+  - PCA reduces the dimensionality of data by transforming the original variables into a new set of variables, which are linear combinations of the original variables. It simplifies data without losing its core information, and is useful in visualizing high-dimensional data.
 
 - Linear Discriminant Analysis (LDA)
-
-- Generalized Discriminant Analysis (GDA)
+  - LDA separates multiple classes with multiple features. It identifies a linear combination of features that separates two or more classes. It does this by projecting data with two or more dimensions into one dimension, so that it can be more easily classified. It is often used as a pre-processing step of classification algorithms like decision trees. 
 
 ## A Clustering Example: K-Means Clustering
 
@@ -80,3 +95,5 @@ Media platforms use clustering to categorize articles on the same topics
 Defining customer personas
 Recommendation engines; discover data trends to develop more effective cross-selling strategies
 -->
+
+<!-- https://medium.com/data-science-vibes/association-rule-part-1-f37e3cc545a0 on Association algorithms and Netflix/Supermarket example-->
