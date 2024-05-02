@@ -12,7 +12,7 @@ aliases:
 
 ## Overview
 
-In time series or [panel data analysis](/paneldata), data covers various time periods, typically years, providing vakyabke insights into changing trends and patterns. However, a common challenge within this framework is serial correlation, also known as autocorrelation. This occurs when the error terms in a regression model are correlated across consecutive time periods in the data. 
+In time series or [panel data analysis](/paneldata), data covers various periods, typically years, providing valuable insights into changing trends and patterns. However, a common challenge within this framework is serial correlation, also known as autocorrelation. This occurs when the error terms in a regression model are correlated across consecutive periods in the data. 
 
 {{% example %}}
 
@@ -24,7 +24,7 @@ Y_{it} = \beta_0 + \beta_1 X_{it} + \epsilon_{it}
 
 {{% /example %}}
 
-Adressing serial correlation is crucial as it can affect model outcomes, potentially resulting in misleading standard errors estimated for the OLS coefficients. In this article, we will explore various methods for testing serial correlation in your data using simple R code examples. Additionally, we will discuss potential solutions to mitigate the impact of serial correlation.
+Addressing serial correlation is crucial as it can affect model outcomes, potentially resulting in misleading standard errors estimated for the OLS coefficients. In this article, we will explore various methods for testing serial correlation in your data using simple R code examples. Additionally, we will discuss potential solutions to mitigate the impact of serial correlation.
 
 
 ## What is serial correlation? 
@@ -33,7 +33,7 @@ One of the fundamental Gauss-Markov assumptions for achieving the Best Linear Un
 
 $Corr(u_t, u_s | X) = 0 $  for all $t ≠ s$
 
-This assumption states that, given the covariates X, errors in different time periods should be uncorrelated. When errors exhibit serial correlation, this assumption is violated.
+This assumption states that, given the covariates X, errors in different periods should be uncorrelated. When errors exhibit serial correlation, this assumption is violated.
 
 {{% tip %}}
 
@@ -73,7 +73,7 @@ summary(model_plm)
 <img src = "../images/summary-plm.png" width="400">
 </p> 
 
-In this data, positive serial correlation would be present if, following an unexpected increase in the interest rate (the dependent variable, `invest`) in one period, it remains above average in the year after, given the levels of market value (`market`) and stock value (`capital`).
+In this data, a positive serial correlation would be present if, following an unexpected increase in the interest rate (the dependent variable, `invest`) in one period, it remains above average in the year after, given the levels of market value (`market`) and stock value (`capital`).
 
 
 ## Visually inspecting serial correlation
@@ -85,7 +85,7 @@ First, we create an autocorrelation plot to visually inspect whether the data sh
 # Extract error terms from the regression model
 e <- model_plm$residuals
 
-# Calculate autocorrelation and generate plot
+# Calculate autocorrelation and generate a plot
 acf_residuals <- acf(e, 
                     plot = TRUE,
                     main = "Autocorrelation plot" # Set title
@@ -98,7 +98,7 @@ acf_residuals <- acf(e,
 <img src = "../images/autocorrelation-plot.png" width="400">
 </p> 
 
-The x-axis represents the *Lag* , indicating the time interval between each observation and its correlated observations. On the y-axis, the autocorrelation coefficients range from -1 to 1, where 0 indicates no correlation. The blue dashed lines around the zero line represent the 95% confidence interval. The plot displays significant positive autocorrelation at lag-1, 2, and 3, with spikes exceeding the 95% confidence interval. Additionally, the decreasing spikes as the lag increases tell us that the observations become less correlated as they are further apart in time. 
+The x-axis represents the *Lag*, indicating the time interval between each observation and its correlated observations. On the y-axis, the autocorrelation coefficients range from -1 to 1, where 0 indicates no correlation. The blue dashed lines around the zero line represent the 95% confidence interval. The plot displays significant positive autocorrelation at lag-1, 2, and 3, with spikes exceeding the 95% confidence interval. Additionally, the decreasing spikes as the lag increases tell us that the observations become less correlated as they are further apart in time. 
 
 {{% tip %}}
 You can set the maximum lag for calculating autocorrelation with the `lag.max` argument in the `acf()` function. By default, it is set to one less than the number of observations in the series.
@@ -110,7 +110,7 @@ Various tests are available for quantitatively evaluating serial correlation in 
 
 ### 1. Durbin-Watson test
 
-The Durbin Watson test is a commonly used method to check for first-order serial correlation (correlation from one period to the other). This test assumes strictly exogenous regressors. 
+The Durbin-Watson test is a commonly used method to check for first-order serial correlation (correlation from one period to the other). This test assumes strictly exogenous regressors. 
 
 {{% codeblock %}}
 ```R
@@ -131,7 +131,7 @@ alternative hypothesis: serial correlation in idiosyncratic errors
 
 ```
 
-Interpreting the output, a test statistic (`DW`) close to 1 and a low p-value indicate strong positive serial correlation in the error terms.
+Interpreting the output, a test statistic (`DW`) close to 1 and a low p-value indicate a strong positive serial correlation in the error terms.
 
 {{% tip %}}
 
@@ -171,7 +171,7 @@ The output includes the LM (Lagrange Multiplier) test statistic of `149.3` and a
 
 ### 3. Wooldridge test 
 
-The Wooldridge test examines serial correlation by regressing the residuals in first-differences on their lags. It then tests whether the coefficient on the lagged residuals equals -0.5. 
+The Wooldridge test examines serial correlation by regressing the residuals in first differences on their lags. It then tests whether the coefficient on the lagged residuals equals -0.5. 
 
 {{% codeblock %}}
 ```R
@@ -194,7 +194,7 @@ alternative hypothesis: serial correlation
 The output provides the test statistic (F) of `162.2` and a very small p-value, which confirms the presence of serial correlation again.
 
 {{% tip %}}
-For Stata users, the `xtserial` function can be used. Refer to [this article of Drukker (2003)](https://journals.sagepub.com/doi/pdf/10.1177/1536867X0300300206) for an example.
+For Stata users, the `xtserial` function can be used. Refer to [this article by Drukker (2003)](https://journals.sagepub.com/doi/pdf/10.1177/1536867X0300300206) for an example.
 
 {{% /tip %}}
 
@@ -223,7 +223,7 @@ summary(model_feols)
 <img src = "../images/summary-feols.png" width="400">
 </p> 
 
-Note that without specifiying `vcov`, the standard errors are clustered at `firm` level. Next, compute the residuals and their lagged values:
+Note that without specifying `vcov`, the standard errors are clustered at the `firm` level. Next, compute the residuals and their lagged values:
 
 {{% codeblock %}}
 ```R
@@ -252,7 +252,7 @@ When serial correlation is present, standard errors estimated by OLS may be misl
 
 {{% codeblock %}}
 ```R
-# Include Newey-West standard errors in plm model
+# Include Newey-West standard errors in the plm model
 summary(model_plm, vcov = vcovNW)
 ```
 {{% /codeblock %}}
@@ -262,11 +262,11 @@ summary(model_plm, vcov = vcovNW)
 <img src = "../images/summary-plm-neweywest.png" width="400">
 </p> 
 
-To implement Newey-West standard errors in the `fixest` model, specify the panel identifier like shown in the code snippet below. 
+To implement Newey-West standard errors in the `fixest` model, specify the panel identifier as shown in the code snippet below. 
 
 {{% codeblock %}}
 ```R
-# Include Newey-West standard errors in fixest model
+# Include Newey-West standard errors in the fixest model
 summary(reg_feols, newey ~ firm + year)
 ```
 {{% /codeblock %}}
@@ -282,12 +282,12 @@ Alternatively, consider exploring other estimation methods that do not assume in
 
 {{% summary %}}
 
-Serial correlation poses a challenge in panel data analysis, and can result in misleading standard errors. To identify whether serial correlation is present in your data, visual inspection with the `acf()` function and statistical tests can be used. For `plm` models, the following methods were discussed with each having their own advantages:
+Serial correlation poses a challenge in panel data analysis and can result in misleading standard errors. To identify whether serial correlation is present in your data, visual inspection with the `acf()` function and statistical tests can be used. For `plm` models, the following methods were discussed with each its advantages:
 
-1. *The Durbin-Watson test:* Assumes strictly exogenous regrssors, and is designed for detecting first-order correlation. Alternative functions are provided for pooling, random effects, or unbalanced models.
+1. *The Durbin-Watson test:* Assumes strictly exogenous regressors, and is designed for detecting first-order correlation. Alternative functions are provided for pooling, random effects, or unbalanced models.
 2. *The Breusch-Godfrey test:* Particularly useful for identifying higher-order correlation
 3. *The Wooldridge test*: Relies on fewer assumptions, and therefore has good size and power properties
 
-For `fixest` models, an alternative approach is given that involves regresing model residuals on their lags. To address serial correlation, you can adjust standard errors with the Newey-West method or explore alternative models beyond OLS that allow for temporal dependencies in your data.
+For `fixest` models, an alternative approach is given that involves regressing model residuals on their lags. To address serial correlation, you can adjust standard errors with the Newey-West method or explore alternative models beyond OLS that allow for temporal dependencies in your data.
 
 {{% /summary %}}
