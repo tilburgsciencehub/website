@@ -12,7 +12,7 @@ aliases:
 
 ## Overview
 
-In time series or [panel data analysis](/paneldata), data covers various periods, typically years, providing valuable insights into changing trends and patterns. However, a common challenge within this framework is serial correlation, also known as autocorrelation. This occurs when the error terms in a regression model are correlated across consecutive periods in the data. 
+In [panel data analysis](/paneldata), data comprises observations on individuals across multiple time periods, offering valuable insights into changing trends and patterns. However, a common challenge within this framework is serial correlation, also known as autocorrelation, wherin the error terms in a regression model are correlated across consecutive periods in the dataset. 
 
 {{% example %}}
 
