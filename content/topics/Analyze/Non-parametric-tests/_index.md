@@ -1,5 +1,5 @@
 ---
 draft: false
-title: "Non Parametric Tests"
+title: "Tests"
 weight: 1
 ---

@@ -43,12 +43,12 @@ system.time(vroom_data <- vroom("GB_full.txt", col_names = FALSE))
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/table1-import-large-dataset-r.png" width="200">
+<img src = "../images/table-1-import-large-dataset-r.png" width="400">
 <figcaption> Downloading time using different packages </figcaption>
 </p>
 
 <p align = "center">
-<img src = "../images/figure1-import-large-dataset-r.png" width="400">
+<img src = "../images/figure1-import-large-dataset-r.png" width="600">
 </p>
 
 
@@ -83,12 +83,12 @@ Using the following methodology:
 The table below represents the running times observed for different data manipulation packages:
 
 <p align = "center">
-<img src = "../images/table2-import-large-dataset-r.png" width="200">
+<img src = "../images/table2-import-large-dataset-r.png" width="400">
 <figcaption> Running time using different packages for data manipulation </figcaption>
 </p>
 
 <p align = "center">
-<img src = "../images/figure2-import-large-dataset-r.png" width="400">
+<img src = "../images/figure2-import-large-dataset-r.png" width="600">
 </p>
 
 ### 3. Increases File Writing Performance
@@ -109,13 +109,13 @@ system.time({vroom_write(df, "vroom.csv")}) # vroom
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/table2-import-large-dataset-r.png" width="200">
+<img src = "../images/table2-import-large-dataset-r.png" width="400">
 <figcaption> Writing files running time using different packages </figcaption>
 </p>
 
 Below is a visual representation of the file writing times across different packages:
 <p align = "center">
-<img src = "../images/figure3-writing-large-dataset-r.png" width="400">
+<img src = "../images/figure3-writing-large-dataset-r.png" width="600">
 </p>
 <br>
 
@@ -200,7 +200,7 @@ When starting your analysis with large datasets, start with loading a representa
 
 The efficiency of `vroom` is attributed to its method of reading in files. Initially, it only marks the location of each data point, deferring from actual reading of values. Thereafter, it uses, the so-called `Altrep` framework, which creates vectors that reference these marked locations. This two-step procedure makes data acces fast and memory efficient.
 
-Therefore the main reason `vroom` is faster is because character data is read from the file lazily; it does not read the entire dataset unless required. One major benefit is taht it requires no adjustments to your data-manipulation code. However, one disadvantage to `vroom`'s lazy reading method is that it may delay the identification of potential data issues until the point of access.
+Therefore the main reason `vroom` is faster is because character data is read from the file lazily; it does not read the entire dataset unless required. One major benefit is that it requires no adjustments to your data-manipulation code. However, one disadvantage to `vroom`'s lazy reading method is that it may delay the identification of potential data issues until the point of access.
 
 Observations from benchmark results show that `vroom`'s initial read is significantly quicker than alternative methods. Routine operations such as `print()`, `head()`, and random sampling execute equally fast as the other packages. However because the character data is read lazily, operations such as filter and summarise, which need character values, require additional time. However, this cost will only occur once. After the values have been read, they will be stored in memory, and subsequent accesses will be as quick as the other packages.
 
@@ -243,7 +243,7 @@ Oftentimes, datasets you previously worked with remain stored in memory, even if
 This article discusses efficient strategies for handling large datasets in R using the `readr`, `data.table`, and `vroom` packages. Key takeaways are: 
 - `readr`, `data.table`, and `vroom` are faster for data importation, data manipulation and writing files compared to base R functions. 
 - `readr` offers advantages like selective loading and automatic typing, improving the speed of data manipulation.
-- `data.table`s `fread()` has the  ability to automatically detect parameters like **sep**, **colClasses**, and **nrows**, making the data import process straightforward. 
+- `data.table`s `fread()` has the ability to automatically detect parameters like **sep**, **colClasses**, and **nrows**, making the data import process straightforward. 
 - `vroom` accelerates initial loads through quick scans and lazy loading, supporting efficient querying and subsetting of large datasets.
 - Benchmark comparisons demonstrate the largely improved performance of these packages in both data import and manipulation tasks.
 - Practical examples guide you through using each package for importing, exploring, and manipulating large datasets.

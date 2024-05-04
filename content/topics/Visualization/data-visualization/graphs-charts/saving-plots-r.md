@@ -14,7 +14,7 @@ aliases:
 ## Overview
 Saving your visualizations is essential for further analysis, sharing, or completing assignments. While copying figures to the clipboard offers a quick solution, saving figures in formats like PNG, JPG, or PDF is a preferable strategy. Transitioning from temporary to permanent storage methods ensures your work remains accessible and intact over time.
 
-This article focusses on how to efficiently save visualizations in R using just one function. We'll explore the `ggsave()` function from the `ggplot2` package, which is the best practice tool for saving your figures. The `ggsave()` function introduces easy-to-use and customizable saving capabilities by allowing users to directly specify file names, dimensions, and resolution. Beyond the basic syntax for general use, we will delve into figure file management, including automatic naming and organized file management strategies within the function.
+This article focusses on how to efficiently save visualizations in R using just one function. We'll explore the `ggsave()` function from the `ggplot2` package, which is the best practice tool for saving your figures. The `ggsave()` function introduces easy-to-use and customizable saving capabilities by allowing users to directly specify file names, dimensions, and resolution. Beyond the basic syntax for general use, we will delve into figure file management, including time stamping and organized file management strategies within the function.
 
 
 ## Saving Plots with Base R
@@ -158,7 +158,7 @@ ggsave("mtcars_fuel_efficiency.png",
 {{% /codeblock %}}
 
 ## Expanding ggsave() Functionality Beyond Basics
-The usage of `ggsave()` can be extended to the integration of more sophisticated techniques for file management. For example, by nesting other `R` functions. In this section, we will discuss some practicalities involving naming conventions, dynamic file naming using version control, and directory management. The example cases are building on top of each other, to create a structured `ggsave()` approach for your project's visual outputs.
+The usage of `ggsave()` can be extended to the integration of more sophisticated techniques for file management. For example, by nesting other `R` functions. In this section, we will discuss some practicalities involving naming conventions, dynamic file naming using time stamping, and directory management. The example cases are building on top of each other, to create a structured `ggsave()` approach for your project's visual outputs.
 
 ### File Naming and Organization
 Using a structured naming convention as a habit will be helpful in both project organization and ensuring your work is easily accessible in the future. By adhering to clear naming conventions, you make your files both informative and easy to find.

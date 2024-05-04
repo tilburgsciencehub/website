@@ -29,23 +29,37 @@
 							<!-- Get Contributions -->
 							{{ $contributions := slice }}
 
-					        {{ range where .Site.Pages "Section" "topics" }}
+							{{ range where .Site.Pages "Section" "topics" }}	
 							{{ if ne .Title "topics" }}
 							{{ if isset .Params "author" }}
-							{{ if eq .Params.Author $.Params.name }}
-							{{ $contributions = $contributions | append . }}
+							{{ $names := split .Params.Author ", " }}
+							{{ $match := false }}
+							{{ range $names }}
+								{{ if eq . $.Params.name }}
+									{{ $match = true }}
+								{{ end }}
+							{{ end }}
+								{{ if $match }}
+									{{ $contributions = $contributions | append . }}
+								{{ end }}
 							{{ end }}
 							{{ end }}
 							{{ end }}
-							{{ end }} 
 
-
-							{{ range where .Site.Pages "Section" "examples" }}
+							
+							{{ range where .Site.Pages "Section" "examples" }}	
 							{{ if ne .Title "examples" }}
 							{{ if isset .Params "author" }}
-							{{ if eq .Params.Author $.Params.name }}
-							{{ $contributions = $contributions | append . }}
+							{{ $names := split .Params.Author ", " }}
+							{{ $match := false }}
+							{{ range $names }}
+								{{ if eq . $.Params.name }}
+									{{ $match = true }}
+								{{ end }}
 							{{ end }}
+								{{ if $match }}
+									{{ $contributions = $contributions | append . }}
+								{{ end }}
 							{{ end }}
 							{{ end }}
 							{{ end }}
