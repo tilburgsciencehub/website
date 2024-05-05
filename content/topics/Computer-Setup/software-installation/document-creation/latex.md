@@ -27,7 +27,7 @@ Download the file `install-tl-windows.exe` from **[here](https://www.tug.org/tex
 You can install MacTeX from the **[official website](https://www.tug.org/mactex/)** or using [`Homebrew`](/configure/cli):
 
 ```bash
-brew cask install mactex
+brew install mactex --cask
 ```
 
 ### Linux (Ubuntu-based)

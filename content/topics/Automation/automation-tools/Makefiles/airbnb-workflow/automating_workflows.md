@@ -16,11 +16,11 @@ Up to this point, you should have created the following five R scripts:
 
 | File | Description | Phase |
 | ---- | ---------- | ------ |
-| `download.R` | Downloads the data from Inside Airbnb and stores as csv format | Input |
-| `clean.R` | Preprocesses the raw data into an aggregated format ready for analysis and visualisation  | Transformation |
-| `pivot_table.R` | Create a pivot table for the number of reviews by region across time | Transformation |
-| `plot_all.R` | Create a line chart for the total number of reviews in a city across time | Output |
-| `plot_Amsterdam.R` | Create a line chart for the number of reviews for the top 3 neighborhoods in Amsterdam | Output |
+| `download.R` | Downloads the data from <br> Inside Airbnb and <br> stores as csv format | Input |
+| `clean.R` | Preprocesses the raw data <br> into an aggregated format <br> ready for analysis and <br> visualisation  | Transformation |
+| `pivot_table.R` | Create a pivot table for <br> the number of reviews by <br> region across time | Transformation |
+| `plot_all.R` | Create a line chart for <br>  the total number of reviews <br> in a city across time | Output |
+| `plot_Amsterdam.R` | Create a line chart for <br> the number of reviews for <br> the top 3 neighborhoods <br> in Amsterdam | Output |
 
 {{% /summary %}}
 

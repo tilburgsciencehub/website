@@ -14,6 +14,6 @@ social:
     link: https://www.linkedin.com/in/matteozicari/
 email: m.zicari@tilburguniversity.edu
 image: matteozicari.webp
-status: "active"
+status: "alumni"
 ---
 
