@@ -184,12 +184,106 @@ The results show that:
 - Cluster 3 mostly contains Virginica, with 36 out of 50, but includes 2 Versicolor.
 
 
-## An Association Example
+## An Association Example: Apriori Algorithm
 
-<!-- 
-Media platforms use clustering to categorize articles on the same topics 
-Defining customer personas
-Recommendation engines; discover data trends to develop more effective cross-selling strategies
--->
+In this example of association rule mining, we will use the `Groceries` dataset from the `arules` package in R. This dataset contains transactions from a grocery store, where each transaction lists the items purchased together by a customer.
+
+### Loading the Data
+First, we load and inspect the data from the `arules` package. In this example, no preprocessing is needed, because the `Groceries` dataset is already in the right format for association rule mining.
+
+{{% codeblock %}}
+```R
+library(arules)
+
+# Load the Groceries dataset
+data("Groceries")
+
+# Inspect the data
+summary(Groceries)
+itemFrequencyPlot(Groceries, topN = 10, type = "absolute", main = "Top 10 items")
+
+```
+{{% /codeblock %}}
+
+
+### Mining Frequent Itemsets
+Using the Apriori algorithm, we identify the most commonly purchased itemsets. We need to specify the minimum support - we choose a support of 1% with `supp = 0.01`:
+
+{{% codeblock %}}
+```R
+# Mining frequent itemsets with a minimum support of 0.01 (1%)
+frequent_itemsets <- apriori(Groceries, parameter = list(supp = 0.01, target = "frequent itemsets"))
+
+top_itemsets <- sort(frequent_itemsets, by = "support", decreasing = TRUE)
+inspect(top_itemsets[1:5])
+
+```
+{{% /codeblock %}}
+
+Here we see the top 5 items based on their support in the dataset. For example, whole milk is bought in a quarter of all transactions.
+
+| Rank | Item              | Support   | Transaction Count |
+|------|-------------------|-----------|-------------------|
+| 1    | Whole Milk        | 25.55%    | 2513             |
+| 2    | Other Vegetables  | 19.35%    | 1903             |
+| 3    | Rolls/Buns        | 18.39%    | 1809             |
+| 4    | Soda              | 17.44%    | 1715             |
+| 5    | Yogurt            | 13.95%    | 1372             |
+
+
+### Creating Association Rules
+Next, we generate association rules from these frequent itemsets. We need to specify the minimum confidence - we choose a confidence of 50% with  `conf = 0.5`:
+
+{{% codeblock %}}
+```R
+# Generating rules with a minimum confidence of 0.5 (50%)
+rules <- apriori(Groceries, parameter = list(supp = 0.01, conf = 0.5, target = "rules"))
+sorted_rules <- sort(rules, by = "confidence", decreasing = TRUE)
+inspect(sorted_rules[1:5])
+```
+{{% /codeblock %}}
+
+Here are the top 5 rules with our chosed support and confidence levels:
+| #   | Antecedent (LHS)                    | Consequent (RHS)     | Support    | Confidence | Coverage   | Lift   | Count |
+|-----|-------------------------------------|----------------------|------------|------------|------------|--------|-------|
+| 1   | {Citrus Fruit, Root Vegetables}     | {Other Vegetables}   | 1.037%     | 58.62%     | 1.769%     | 3.030  | 102   |
+| 2   | {Tropical Fruit, Root Vegetables}   | {Other Vegetables}   | 1.230%     | 58.45%     | 2.105%     | 3.021  | 121   |
+| 3   | {Curd, Yogurt}                      | {Whole Milk}         | 1.007%     | 58.24%     | 1.729%     | 2.279  | 99    |
+| 4   | {Other Vegetables, Butter}          | {Whole Milk}         | 1.149%     | 57.36%     | 2.003%     | 2.245  | 113   |
+| 5   | {Tropical Fruit, Root Vegetables}   | {Whole Milk}         | 1.200%     | 57.00%     | 2.105%     | 2.231  | 118   |
+
+- Antecedent (LHS): Items that customers often buy together. For example, in the first row, we see that "Citrus Fruit and Root Vegetables" are often bought together
+- Consequent (RHS): An additional item that is frequently purchased with the itemset in the Antecedent column. For instance, when customers bought "Citrus Fruit and Root Vegetables", they also often bought "Other Vegetables".
+- Support: How often the rule applies to the total number of transactions. For example, the first support of 1.037% means that in just over 1% of all transactions, customers bought citrus fruit, root vegetables, and other vegetables together.
+- Confidence: How often the rule has been found to be true. For the first rule, 58.62% of the time when both citrus fruit and root vegetables were bought, other vegetables were also purchased. This shows how reliable the rule is.
+- Coverage: The percentage of all transactions that include the Antecedent (the initial set of items). So, 1.769% of all transactions at the store included both citrus fruit and root vegetables.
+- Lift: How much more likely the Consequent is bought with the Antecedent compared to its normal sale rate. A lift greater than 1, like 3.030 in the first rule, means that buying the Antecedent significantly increases the likelihood of also buying the Consequent. 
+- Count: The number of transactions where the rule applies. For instance, the first rule was observed in 102 transactions.
+
+{{% tip %}}
+By adjusting the support (`supp`) and confidence (`conf`) thresholds, you control how often items must appear together in the data (support) and how reliable these groupings need to be (confidence) to be considered significant.
+{{% /tip %}}
+
+### Analyzing the Results
+We now analyze the top association rules to understand customer buying patterns:
+
+{{% codeblock %}}
+```R
+# Visualize the rules
+plot(sorted_rules[1:5], method = "graph", control = list(type = "items"))
+
+```
+{{% /codeblock %}}
+
+This visualization helps illustrate the strongest associations between items, highlighting potential cross-selling opportunities or insights into customer behavior.
+
+<p align = "center">
+<img src = "/images/association-plot.png" width="700">
+</p>
+
+Each circle (node) represents a different item, and the lines (edges) between them show which items are frequently bought together. The size of each node is the item's 'support', indicating how often the item appears in transactions. The color intensity is the 'lift', showing how much more likely items are to be bought together than both individually by chance. 
+
+For example, there is a connection between 'root vegetables' and 'other vegetables'. The strong color intensity indicates a high lift between these items. This shows that customers who buy 'root vegetables' are very likely to buy 'other vegetables' in the same shopping trip.
+
 
 <!-- https://medium.com/data-science-vibes/association-rule-part-1-f37e3cc545a0 on Association algorithms and Netflix/Supermarket example-->
