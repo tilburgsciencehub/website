@@ -12,34 +12,17 @@ aliases:
 
 ## Overview
 
-In [panel data analysis](/paneldata), data comprises observations on individuals across multiple time periods, offering valuable insights into changing trends and patterns. However, a common challenge within this framework is serial correlation, also known as autocorrelation, wherin the error terms in a regression model are correlated across consecutive periods in the dataset. 
-
-{{% example %}}
-
-Consider a regression model equation where $\epsilon_{it}$ represents the error term for each observation (entity `i` in time period `t`):
-
-{{<katex>}}
-Y_{it} = \beta_0 + \beta_1 X_{it} + \epsilon_{it}
-{{</katex>}}
-
-{{% /example %}}
-
-Addressing serial correlation is crucial as it can affect model outcomes, potentially resulting in misleading standard errors estimated for the OLS coefficients. In this article, we will explore various methods for testing serial correlation in your data using simple R code examples. Additionally, we will discuss potential solutions to mitigate the impact of serial correlation.
-
+[Panel data analysis](/paneldata) involves studying observations on individuals over multiple time periods, offering valuable insights into changing trends and patterns. However, a common challenge in panel data analysis is serial correlation, also known as autocorrelation, where the error terms in regression models are correlated across different periods. Addressing serial correlation is crucial as it bias the standard estimated for the OLS coefficients. In this article, we will explore methods for testing serial correlation in panel data using R code examples. Additionally, we will discuss how to address serial correlation.
 
 ## What is serial correlation? 
 
-One of the fundamental Gauss-Markov assumptions for achieving the Best Linear Unbiased Estimators (BLUE) the OLS estimates to be BLUE (*best linear unbiased estimate*) pertains to the error terms. In mathematical terms, it is expressed as:
+The Gauss-Markov assumption for OLS estimators states that error terms should be uncorrelated across different time periods given the covariates X. This is expressed as follows:
 
 $Corr(u_t, u_s | X) = 0 $  for all $t ≠ s$
 
-This assumption states that, given the covariates X, errors in different periods should be uncorrelated. When errors exhibit serial correlation, this assumption is violated.
+This assumption is violated when the errors exhibit serial correlation. 
 
-{{% tip %}}
-
-Serial correlation can appear in either *positive* or *negative* patterns. 
-
-*Positive serial correlation* occurs when an unexpected high (low) value in the dependent variable is followed by similar high (low) values in subsequent periods. Above-average errors in one period are mirrored in the next period, leading to an underestimation of the true uncertainty around the OLS estimates.
+Serial correlation can appear in either *positive* or *negative* patterns. *Positive serial correlation* occurs when an unexpected high (low) value in the dependent variable is followed by similar high (low) values in subsequent periods. Above-average errors in one period are mirrored in the next period, leading to an underestimation of the true uncertainty around the OLS estimates. 
 
 Conversely, *negative serial correlation* happens when deviations from the mean in one period are followed by opposite deviations in subsequent periods. This leads to an overestimation of the true uncertainty around the estimates.
 
@@ -48,7 +31,7 @@ Conversely, *negative serial correlation* happens when deviations from the mean 
 
 ## Example with `Grunfeld` data
 
-Let's explore a regression analysis using the `Grunfeld` dataset in R. Our goal is to evaluate how market value influences firm gross investment. For an introduction to this analysis and the `Grunfeld` data, please refer to the [Panel data topic](/paneldata). The regression model is estimated in R using the `plm()` function from the `plm` package:
+Using the `Grunfeld` dataset in R, we will examine how market value influences firm gross investment. For an introduction to this analysis and the `Grunfeld` data, please refer to the [Panel data topic](/paneldata). The regression model is estimated in R using the `plm()` function from the `plm` package, including standard errors robust to heteroskedasticity using the White method. 
 
 {{% codeblock %}}
 ```R
@@ -64,7 +47,9 @@ model_plm <- plm(invest ~ value + capital,
            model = "within", 
            effect = "twoways")
 
-summary(model_plm)
+coeftest(model_plm, 
+         vcov. = vcovHC(model_plm, method = "white1",type = "HC3"))
+
 ```
 {{% /codeblock %}}
 
@@ -73,12 +58,11 @@ summary(model_plm)
 <img src = "../images/summary-plm.png" width="400">
 </p> 
 
-In this data, a positive serial correlation would be present if, following an unexpected increase in the interest rate (the dependent variable, `invest`) in one period, it remains above average in the year after, given the levels of market value (`market`) and stock value (`capital`).
-
+The `firm` fixed effects are assumed to remain constant over time. However, if this assumption is too strong and the `firm` fixed effects vary substantially over time, they do not sufficiently capture the within-cluster dependence. Consequently, serial correlation becomes a concern in the data.  
 
 ## Visually inspecting serial correlation
 
-First, we create an autocorrelation plot to visually inspect whether the data shows serial correlation. The `acf()` function in R automatically computes the serial correlation and produces a plot when `plot = TRUE` is specified. 
+We will start by creating an autocorrelation plot using the `acf()` function in R.
 
 {{% codeblock %}}
 ```R
@@ -106,7 +90,7 @@ You can set the maximum lag for calculating autocorrelation with the `lag.max` a
 
 ## Testing for serial correlation in `plm` models
 
-Various tests are available for quantitatively evaluating serial correlation in the error term. However, a drawback of these functions is that they only accept `plm` models as arguments. Consequently, you cannot directly apply them to a model estimated with the `fixest` package. If you are using `fixest` and would rather not re-estimate your model with `plm` first, the next section offers an alternative test approach that doesn't depend on these functions.
+Various tests are available for detecting serial correlation in panel data. A drawback of these functions is that they only accept `plm` models as arguments. Consequently, you cannot directly apply them to a model estimated with the `fixest` package. If you are using `fixest` and would rather not re-estimate your model with `plm` first, the next section offers an alternative test approach that doesn't depend on these functions.
 
 ### 1. Durbin-Watson test
 
@@ -189,18 +173,16 @@ F = 162.2, df1 = 1, df2 = 207, p-value < 2.2e-16
 alternative hypothesis: serial correlation
 
 ```
-The output provides the test statistic (F) of `162.2` and a very small p-value, which confirms the presence of serial correlation again.
+The output provides the test statistic (F) of `162.2` and a very small p-value, which suggests the presence of serial correlation again.
 
 {{% tip %}}
 For Stata users, the `xtserial` function can be used. Refer to [this article by Drukker (2003)](https://journals.sagepub.com/doi/pdf/10.1177/1536867X0300300206) for an example.
 
 {{% /tip %}}
 
-
-
 ## Alternative test approach for `fixest` users
 
-An alternative approach that does not rely on a test function involves regressing the OLS residuals on lagged residuals. A statistically significant coefficient suggests the presence of first-order serial correlation. 
+For `fixest` models, an alternative approach that does not rely on a test function involves regressing the OLS residuals on lagged residuals. 
 
 First, estimate the regression model using `feols()` from the `fixest` package. 
 
@@ -212,16 +194,15 @@ library(fixest)
 # Estimate the regression model
 model_feols <- feols(invest ~ value + capital | firm + year , data = Grunfeld)
 
-summary(model_feols) 
+summary(model_feols, vcov = "hetero") 
 ```
 {{% /codeblock %}}
-
 
 <p align = "center">
 <img src = "../images/summary-feols.png" width="400">
 </p> 
 
-Note that without specifying `vcov`, the standard errors are clustered at the `firm` level. Next, compute the residuals and their lagged values:
+Note that the standard errors are clustered at the individual (`firm`) level by default. To calculate heteroskedasticity-robust standard errors, specify this with the `vcov` argument. Next, compute the residuals and their lagged values:
 
 {{% codeblock %}}
 ```R
@@ -242,16 +223,22 @@ summary(residual_model)
 <img src = "../images/summary-residuals.png" width="400">
 </p> 
 
-The estimate of `0.50` is statistically significant, suggesting a moderate positive correlation between the residuals and their lagged values.
+A statistically significant coefficient suggests a moderate positive correlation between the residuals and their lagged values.
 
 ## How to address serial correlation?
 
-When serial correlation is present, standard errors estimated by OLS may be misleading. You can adjust the standard errors to account for this. We can apply the Newey-West method to adjust the standard errors by including `vcov = vcovNW` in the summary of the `plm` model.
+When serial correlation is present, standard errors estimated by OLS may be biased. To mitigate this bias, you can cluster the standard errors at the individual level. 
+
+{{% tip %}}
+Clustered standard errors can also be beneficial when you want to include two levels of fixed effects. Including both types as dummies simultaneously is not feasible, as one would absorb the other. For instance, `firm` fixed effects absorb the specific `industry` this firm belongs to. Instead, you can include `firm` fixed effects while clustering the standard errors at the `industry` level.
+{{% /tip %}}
+
+For the `plm` model, you can calculate the clustered standard erors by including `cluster = "group"`.
 
 {{% codeblock %}}
 ```R
-# Include Newey-West standard errors in the plm model
-summary(model_plm, vcov = vcovNW)
+# Include clustered standard errors in the plm model
+coeftest(plm_model, vcov. = vcovHC(plm_model, cluster = "group"))
 ```
 {{% /codeblock %}}
 
@@ -260,32 +247,33 @@ summary(model_plm, vcov = vcovNW)
 <img src = "../images/summary-plm-neweywest.png" width="400">
 </p> 
 
-To implement Newey-West standard errors in the `fixest` model, specify the panel identifier as shown in the code snippet below. 
+In `fixest` regressions, you can specify `vcov = "cluster"`, but note that the default will already calculate standard errors at the group level.
 
 {{% codeblock %}}
 ```R
-# Include Newey-West standard errors in the fixest model
-summary(reg_feols, newey ~ firm + year)
+# Include clustered standard errors in the fixest model
+summary(reg_feols, vcov = "cluster")
 ```
 {{% /codeblock %}}
-
 
 <p align = "center">
 <img src = "../images/summary-feols-neweywest.png" width="400">
 </p> 
 
-When comparing the adjusted standard errors with the unadjusted ones, you'll notice that they are larger after the correction for serial correlation!
+If clustered standard errors are much larger than White standard errors, it suggests the presence of autocorrelation. [Petersen (2008)](https://www.nber.org/papers/w11280) recommends considering clusterd standard errors that are 3-5 times larger than heteroskedasticity-robust ones as indicative of serial correlation. 
+
+In our case, clustering standard errors at the individual `firm` level has not increased them. This suggests serial correlation likely did not impact the standard errors in our model. This underscores the nuance of test outcomes, as they may offer conflicting suggestions. It is crucial to critically think about your data structure, avoiding to rely solely on the statistical tests. Despite standard errors have not changed much, clustering them is still a good idea. 
 
 Alternatively, consider exploring other estimation methods that do not assume independent observations and allow for temporal dependencies within the data. For instance, dynamic panel models incorporate lagged dependent variables, capturing the dynamic nature of the data and potentially mitigating the impact of serial correlation. 
 
 {{% summary %}}
 
-Serial correlation poses a challenge in panel data analysis and can result in misleading standard errors. To identify whether serial correlation is present in your data, visual inspection with the `acf()` function and statistical tests can be used. For `plm` models, the following methods were discussed with each its advantages:
+Serial correlation poses a challenge in panel data analysis and can result in misleading standard errors. To identify whether serial correlation is present in your data, you can visually inspect your data with the `acf()` function or use the following statistical tests for `plm` models:
 
 1. *The Durbin-Watson test:* Assumes strictly exogenous regressors, and is designed for detecting first-order correlation. Alternative functions are provided for pooling, random effects, or unbalanced models.
 2. *The Breusch-Godfrey test:* Particularly useful for identifying higher-order correlation
 3. *The Wooldridge test*: Relies on fewer assumptions, and therefore has good size and power properties
 
-For `fixest` models, an alternative approach is given that involves regressing model residuals on their lags. To address serial correlation, you can adjust standard errors with the Newey-West method or explore alternative models beyond OLS that allow for temporal dependencies in your data.
+For `fixest` models, an alternative test approach is given that involves regressing model residuals on their lags. It is important to consider your data structure, instead of solely relying on statistical test outcomes. Clustered standard errors are a solution serial correlation, as they ... Additionally, you can explore alternative models beyond OLS that allow for temporal dependencies in your data.
 
 {{% /summary %}}
