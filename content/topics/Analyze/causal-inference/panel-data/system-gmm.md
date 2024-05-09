@@ -1,7 +1,7 @@
 ---
 title: "Dynamic Panel Data Estimation with System-GMM"
 description: " "
-keywords: "generalized", "moments"
+keywords: "dynamic, panel, data, estimation, system, GMM, generalized, method, moments"
 draft: false
 weight: 1
 author: "Valerie Vossen"
@@ -14,15 +14,9 @@ aliases:
 
 ## Overview
 
-- Introduce topic
-- Motivation why dynamic panel models are relevant; e.g. many economic relationships are dynamic in nature
-- include how they differ from "traditional" panel models and why that difference matters.
-
-
 [Panel data](\paneldata) follows observations of individuals over multiple time period, enabling researchers to uncover dynamic patterns that cannot be observed in cross-sectional or time-series data alone. 
 
-
-[Traditional static panel data models](\paneldata-assumptions) rely on the assumption that observations are independently .. over time. On the other hand, dynamic panel models are crucial in analyzing economic relationships that exhibit adjusment dynamics and persistence. Unlike traditional static panel models, dynamic panel analysis recognizes and incorporates the temporal interdepencies of variables by including the lagged dependent variable as a regressor. This often provides a more accurate representation. 
+Traditional static panel data models rely on the assumption that observations are independently .. over time. On the other hand, dynamic panel models are crucial in analyzing economic relationships that exhibit adjusment dynamics and persistence. Unlike traditional static panel models, dynamic panel analysis recognizes and incorporates the temporal interdepencies of variables by including the lagged dependent variable as a regressor. This often provides a more accurate representation. 
 
 A new estimation method is suggested, as the OLS, FE and, RE method give bias. .. An R code example is given.
 
@@ -37,8 +31,10 @@ Example of relationship that is dynamic, e.g. inequality level.
 A general form of the dynamic panel data model is expressed as follows: 
 
 
+$Y_{it} = \beta_1 Y_{i,t-1} + \beta_2 x_{it} + u_{it}$
+
+
 {{<katex>}}
-Y_{it} = \beta_1 Y_{i,t-1} + \beta_2 * x_{it} + \u_{it}
 {{</katex>}}
 
 where
@@ -46,7 +42,7 @@ where
 - $Y_{it}$: Dependent variable for individual $i$ at time $t$
 - $Y_{i,t-1}$: Lagged dependent variable
 - $x_{it}$: Vector of independent variables
-- $u_{it}$: Error term consisting of the unobserved individual specific effect ($\mu_{i}$) and the idiosyncratic error ($v_{i,t}$)
+- $u_{it}$: Error term consisting of the unobserved individual specific effect ($\mu_{i}$) and the idiosyncratic error ($v_{it}$)
 
 Dynamic panel models exhibit two primary sources of persistence over time:
 
@@ -56,7 +52,7 @@ Dynamic panel models exhibit two primary sources of persistence over time:
 
 ## Nickell bias
 
-Including the lagged dependent variable as a regressor introduces a problem of endogeneity due to correlation with the error term, i.e. $E(v_{it} | Y_{i,t-1}) ≠ 0$. This leads to the Nickell bias, which makes standard panel data estimators ([Fixed Effects](\within), [Random Effects](\random), [First-Difference](\firstdifference)) biased and inconsistent.  Both coefficients of the lagged dependent variable ($\beta_1$) and coefficients of interest will exhibit some bias ($beta_2$). 
+Including the lagged dependent variable as a regressor introduces a problem of endogeneity due to correlation with the error term, i.e. $E(v_{it} | Y_{i,t-1}) ≠ 0$. This makes standard panel data estimators ([FE](\within), [RE](\random), [FD](\firstdifference)) biased and inconsistent. Both coefficients of the lagged dependent variable ($\beta_1$) and coefficients of interest ($\beta_2$)will exhibit some bias. 
 
 The size of the bias depends on the length of the time period (T), as well as the correlation persistence, and this bias is thus particularly significant in panels with a short T and a large number of individuals (N).
 
@@ -64,24 +60,25 @@ Specifically it causes:
 
 - *Overestimation with OLS*
 
-Since the dependent varaible $y_{it}$ is a function of the unobserved individual effects $\mu_{i}$, it follows that the lagged dependent variable $y_{i,t-1}$ is also a function of $\mu_{i}$. Therefore, the lagged dependent variable is positively correlated with the error, which biases the OLS estimator, even if the idiosyncratic error terms $v_{it}$ are not serially correlated.
+Since the dependent varaible $Y_{it}$ is a function of the unobserved individual effects $\mu_{i}$, it follows that the lagged dependent variable $Y_{i,t-1}$ is also a function of $\mu_{i}$. Therefore, the lagged dependent variable is positively correlated with the error, which biases the OLS estimator, even if the idiosyncratic error terms $v_{it}$ are not serially correlated.
 
 - *Underestimation with Fixed Effects (FE)*
 
-The [FE estimator](\within), also known as the within estimator, eliminates individual effects ($\mu_{i}$) through demeaning (within transformation). However, the transformation introduces a negative correlation between the transformed lagged dependent variable and the error term, resulting in downward bias. The coefficient $\beta_1$, measuring the persistence of the dependent variable, will be underestimated, and if other regressors are correlated with lagged dependent variable, their coefficients may be biased as well.
+The [FE estimator](\within) eliminates individual effects ($\mu_{i}$) through demeaning (within transformation). However, the transformation introduces a negative correlation between the transformed lagged dependent variable and the error term, resulting in downward bias. The coefficient $\beta_1$, measuring the persistence of the dependent variable, will be underestimated, and if other regressors are correlated with lagged dependent variable, their coefficients may be biased as well.
 
 {{% tip %}}
 *How does this bias exactly occur?*
 
 The within transformation subtracts the individual mean from each observation:
 
-$\tilde{Y_{it}} = Y_{it} - \bar{Y_{it}}
+$\tilde{Y_{it}} = Y_{it} - \bar{Y_{it}}$
 
-where $\bar{Y_it} is the mean of the dependent variable. The same transformation is applied to the lagged dependent variable and the error term. 
 
-The transformed lagged dependent variable. $\tilde{Y_{i,t-1}}$, is still correlated with the transformed error term ($\tilde{v_{it}}$ because the mean ($\bar{v_i}$ contains a lagged error ($v_{i,t-1}$) that correlates with $Y_{i,t-1}$ by construction. 
+where $\bar{Y_{it}}$ is the mean of the dependent variable. The same transformation is applied to the lagged dependent variable and the error term. 
 
-And. the transformed error term $\tilde{v_i,t-1}$ is also correlated with the mean of the lagged dependent variable ($\bar{Y_{i,t-1}}) due to the inclusion of $v_{i,t}$ in the mean ($\bar{v_i$})
+The transformed lagged dependent variable. $\tilde{Y_{i,t-1}}$, is still correlated with the transformed error term ($\tilde{v_{it}}$) because the mean ($\bar{v_i}$) contains a lagged error ($v_{i,t-1}$) that correlates with $Y_{i,t-1}$ by construction. 
+
+And, the transformed error term $\tilde{v_{i,t-1}}$ is also correlated with the mean of the lagged dependent variable ($\bar{Y_{i,t-1}}$) due to the inclusion of $v_{i,t}$ in the mean ($\bar{v_i}$)
  
 {{% /tip %}}
 
@@ -142,12 +139,13 @@ https://www.sciencedirect.com/science/article/abs/pii/S1048984322000765
 
 Inequality
 
+tip
 OLS: lagged dep. var positively correlated with the error, biasing its coefficient upward
 FE: coefficient biased downward due to negative sign on v_t-1 in the transformed error.
 
 Consistent estimates should lie between these two values, which might be a useful check.
 Check whether coefficient of lag dependent variable is sensitive to lag length.
-
+tip
 
 ## Tests or diagnostics
 - Sargan-Hansen test
@@ -167,12 +165,5 @@ http://fmwww.bc.edu/EC-C/S2013/823/EC823.S2013.nn05.slides.pdf
 {{% summary %}}
 
 A Nickell bias arises as a consequence of correlation of the lagged dependent varible with the error term by construction. Standard panel data estimators (FE, RE, FD) will be inconsistent, especially in analysis with short time series (T) and large number of individuals (N). 
-
-
-
-
-
-
-
 
 {{% /summary %}}
