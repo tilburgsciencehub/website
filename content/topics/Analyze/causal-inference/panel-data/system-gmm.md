@@ -3,7 +3,7 @@ title: "Dynamic Panel Data Estimation with System-GMM"
 description: " "
 keywords: "dynamic, panel, data, estimation, system, GMM, generalized, method, moments"
 draft: false
-weight: 1
+weight: 8
 author: "Valerie Vossen"
 aliases:
   - /system-gmm
@@ -14,26 +14,20 @@ aliases:
 
 ## Overview
 
-[Panel data](\paneldata) follows observations of individuals over multiple time period, enabling researchers to uncover dynamic patterns that cannot be observed in cross-sectional or time-series data alone. 
+[Panel data](\paneldata) tracks observations of individuals over multiple time periods, enabling researchers to uncover dynamic patterns that can't be observed in cross-sectional or time-series data alone. While traditional static panel data models assume that idiosyncratic errors are uncorrelated across time periods, dynamic panel models account for temporal depencies in the data, often providing a more accurate representation of economic relationships. By including the lagged dependent variable as a regressor, dynamic panel models account for adjustment dynamics and persistence in the data. 
 
-Traditional static panel data models rely on the assumption that observations are independently .. over time. On the other hand, dynamic panel models are crucial in analyzing economic relationships that exhibit adjusment dynamics and persistence. Unlike traditional static panel models, dynamic panel analysis recognizes and incorporates the temporal interdepencies of variables by including the lagged dependent variable as a regressor. This often provides a more accurate representation. 
+This topic introduces the dynamic panel model and demonstrates how to estimate it, given that the estimation methods for panel data (e.g. Fixed Effects) are likely to produce biased results. Furthermore, an example with R code is provided.
 
-A new estimation method is suggested, as the OLS, FE and, RE method give bias. .. An R code example is given.
 
 {{% example %}}
-Example of relationship that is dynamic, e.g. inequality level. 
+
 {{% /example %}}
-
-
 
 ## Dynamic panel data model
 
 A general form of the dynamic panel data model is expressed as follows: 
 
-
 $Y_{it} = \beta_1 Y_{i,t-1} + \beta_2 x_{it} + u_{it}$
-
-
 {{<katex>}}
 {{</katex>}}
 
@@ -44,94 +38,84 @@ where
 - $x_{it}$: Vector of independent variables
 - $u_{it}$: Error term consisting of the unobserved individual specific effect ($\mu_{i}$) and the idiosyncratic error ($v_{it}$)
 
-Dynamic panel models exhibit two primary sources of persistence over time:
+{{% summary %}}
+Key characteristics of the dynamic panel model: 
 
-1. Autocorrelation: Presence of a lagged dependent variable among the regressors
-2. Individual effects: Unobserved heterogeneity among individuals 
+- *A linear functional relationship*
+- *Dynamic dependent (left-hand) variable:* A lagged dependent variable is included among the regressors
+- *Endogenous explanatory (right-hand) variables* that are correlated with past and possible current error terms
+- *Fixed individual effects:* Unobserved heterogeneity among individuals, which is another source of persistence over time
+- *Heteroskedasticity and autocorrelation* within individual units, but not across them
+{{% /summary %}}
 
+While including the lagged dependent variable provides a more accurate representation of the dynamic nature of the data, endogeneity arises which is known as the Nickell bias.
 
 ## Nickell bias
 
-Including the lagged dependent variable as a regressor introduces a problem of endogeneity due to correlation with the error term, i.e. $E(v_{it} | Y_{i,t-1}) ≠ 0$. This makes standard panel data estimators ([FE](\within), [RE](\random), [FD](\firstdifference)) biased and inconsistent. Both coefficients of the lagged dependent variable ($\beta_1$) and coefficients of interest ($\beta_2$)will exhibit some bias. 
+The lagged dependent variable is correlated with the error term, introducing endogeneity in the model which can be expressed as:
 
-The size of the bias depends on the length of the time period (T), as well as the correlation persistence, and this bias is thus particularly significant in panels with a short T and a large number of individuals (N).
+$E(v_{it} | Y_{i,t-1}) ≠ 0$. 
 
-Specifically it causes: 
+As a result, standard panel data estimators like [Fixed Effects](\within), [Random Effects](\random), and [First-Difference](\firstdifference) become biased and inconsistent. Both the coefficients of the lagged dependent variable ($\beta_1$) and coefficients of interest ($\beta_2$) are potentially biased.
+
+The size of the bias depends on the length of the time period (T), as well as the persistence of the correlation, making the bias particularly significant in panels with a short T and a large number of individuals (N).
+
+Specifically, it leads to: 
 
 - *Overestimation with OLS*
 
-Since the dependent varaible $Y_{it}$ is a function of the unobserved individual effects $\mu_{i}$, it follows that the lagged dependent variable $Y_{i,t-1}$ is also a function of $\mu_{i}$. Therefore, the lagged dependent variable is positively correlated with the error, which biases the OLS estimator, even if the idiosyncratic error terms $v_{it}$ are not serially correlated.
+Since the dependent varaible ($Y_{it}$) is a function of the unobserved individual effects ($\mu_{i}$), the lagged dependent variable ($Y_{i,t-1}$) is also a function of $\mu_{i}$. Therefore, $Y_{i,t-1}$ is positively correlated with the error, which biases the OLS estimator, even if the idiosyncratic error terms $v_{it}$ are not serially correlated.
 
 - *Underestimation with Fixed Effects (FE)*
 
-The [FE estimator](\within) eliminates individual effects ($\mu_{i}$) through demeaning (within transformation). However, the transformation introduces a negative correlation between the transformed lagged dependent variable and the error term, resulting in downward bias. The coefficient $\beta_1$, measuring the persistence of the dependent variable, will be underestimated, and if other regressors are correlated with lagged dependent variable, their coefficients may be biased as well.
+The [FE estimator](\within) eliminates $\mu_{i}$ through demeaning (within transformation). However, this transformation introduces a negative correlation between the transformed lagged dependent variable and the error term, resulting in downward bias. The coefficient $\beta_1$, measuring the persistence of the dependent variable, will be underestimated, and if other regressors are correlated with lagged dependent variable, their coefficients may also be biased.
 
 {{% tip %}}
 *How does this bias exactly occur?*
 
 The within transformation subtracts the individual mean from each observation:
 
-$\tilde{Y_{it}} = Y_{it} - \bar{Y_{it}}$
+$\tilde{Y_{it}} = Y_{it} - \bar{Y_{i}}$
 
 
-where $\bar{Y_{it}}$ is the mean of the dependent variable. The same transformation is applied to the lagged dependent variable and the error term. 
+where $\bar{Y_{it}}$ is the mean of the dependent variable for individual $i$. The same transformation is applied to the lagged dependent variable and the error term. 
 
-The transformed lagged dependent variable. $\tilde{Y_{i,t-1}}$, is still correlated with the transformed error term ($\tilde{v_{it}}$) because the mean ($\bar{v_i}$) contains a lagged error ($v_{i,t-1}$) that correlates with $Y_{i,t-1}$ by construction. 
+The transformed lagged dependent variable. $\tilde{Y_{i,t-1}}$, is still correlated with the transformed error term ($\tilde{v_{it}}$), because the mean ($\bar{v_i}$) contains a lagged error ($v_{i,t-1}$) that correlates with $Y_{i,t-1}$ by construction. 
 
-And, the transformed error term $\tilde{v_{i,t-1}}$ is also correlated with the mean of the lagged dependent variable ($\bar{Y_{i,t-1}}$) due to the inclusion of $v_{i,t}$ in the mean ($\bar{v_i}$)
+Also, the transformed error term $\tilde{v_{it}}$ is correlated with the transformed lagged dependent variable, as its mean ($\bar{Y_{i,t-1}}$) includes $Y_{it}$.
  
 {{% /tip %}}
 
-The Nickell bias does not diminish with an increase in the number of individuals (N), and only decreases with longer time series (T) increases. Therefore, as T gets large enough, the FE estimator becomes consistent. Even with T = 30, the bias may still be up to 20% of the true coefficient value (cite)
 
+## Estimation with System GMM
 
-## How to correct for this bias?
+System GMM, introduced by [Blundell and Bond (1998)](https://www.sciencedirect.com/science/article/pii/S0304407698000098?casa_token=dYWIhT8f8OMAAAAA:ABPXjapGCr7BAZKtJVamMFPhU2yvYbgDcnAd7Usvp6H2QqyxhJftVQQ9i-KXcfAg_qH8BbAs), is a Generalized Method of Moments (GMM) approach that corrects for the Nickell bias by using lagged variables as instruments. 
 
-Several suggestions to correct for the bias in the FE estimator have been proposed.
-
-For first differencing; with individual FE swept out, a straightforward instrumental variable estimator is available. We may construct instruments for the lagged dependent variable from the second and third lags of y, either in the form of differences or lagged levels. If error term is i.i.d., those lags of y will be highly correlated with the lagged dependent variable (and its difference) but uncorrrelated with the composite error process.
-
-A linear functional relationship
-Dynamic left-hand variable
-Right-hand variables that are not strictly exogenous: correlated with past and possibly current realisations of the error
-Fixed individual effects, implying unobserved heterogeneity
-heteroskedasticity and autocorrelation within individual units but not across them
-
-## Estimation with System GMM 
-
-System GMM, introduced by ...., is a GMM approach that estimates a system of equations, one for each time periods. Instruments used for the lagged dependent variable. 
-
-Blundell and Bond (1998)
-
-- Generalized method of moments in which the model is specified as a system of equations, one per time period, where the instruments applicable to each equation differ (for instance, in later time periods, additional lagged values of the instruments are available)
-
-Simultaneously estimating the system of equations using both levels and differences of the variables. It utilizes moment conditions derived from the system of equations to construct efficient instruments and estimate the parameters consistently.
-
-Lagged levels as well as lagged differences (= System GMM). Difference GMM is original estimator with only lagged levels. 
+It exploits the so-called orthogonality conditions (where instruments are uncorrelated with the error terms) to construct valid instruments from both lagged levels and lagged differences of the endogenous variables. A system of equations is estimated, one for each time period, and the instruments vary across equations. For instance, in later time periods, additional lags of the instruments are available and can be used. 
 
 {{% tip %}}
-GMM = 
-Difference GMM uses lagged levels of the dependent variable as instruments, while System GMM combines lagged levels and differences as instruments
-tip
-{{% /tip %}}
+*Difference GMM vs. System GMM* 
 
+Difference GMM is the original estimator which uses only lagged levels of the dependent variable as instruments, while System GMM combines lagged levels and differences as instruments.
+
+{{% /tip %}}
 
 ### Two-step System GMM
 
-The two-step system GMM estimation process involves first-differencing the variables to eliminate individual fixed effects and then instrumenting the differenced equations using lagged levels and differences of the variables. This approach addresses endogeneity concerns by using lagged variables as instruments, exploiting the orthogonality conditions provided by the system of equations. 
+The two-step system GMM estimation process involves:
+1. *First-differencing* the variables to eliminate individual fixed effects
+2. *Instrumenting* the differenced equations using lagged levels and differences of the variables. 
 
 ## Instrument validity
-
-
 Instrument validity is crucial in System GMM estimation. Instruments must be:
 - Relevant: Highly correlated with the endogenous variables they instrument. 
 - Exogenous: Uncorrelated with the composite error term. 
 
-https://www.sciencedirect.com/science/article/abs/pii/S1048984322000765
+If error term is i.i.d., those lags of y will be highly correlated with the lagged dependent variable (and its difference) but uncorrelated with the composite error process, which is required for an instrument to be valid!
 
+[Bastardoz et al. (2023)](https://www.sciencedirect.com/science/article/abs/pii/S1048984322000765)
 
 ## Example in R
-
 
 - Adapt example from here: https://rdrr.io/cran/plm/man/pgmm.html
 - Interpretation of output
@@ -159,11 +143,18 @@ Only use 2-5 lags in constructing the GMM instruments, otherwise possible loss o
 - While DPD estimator are linear estimators, highly sensitive to the particular specification of the model and its instruments. 
 
 
-Link : 
-http://fmwww.bc.edu/EC-C/S2013/823/EC823.S2013.nn05.slides.pdf
 
 {{% summary %}}
 
-A Nickell bias arises as a consequence of correlation of the lagged dependent varible with the error term by construction. Standard panel data estimators (FE, RE, FD) will be inconsistent, especially in analysis with short time series (T) and large number of individuals (N). 
+A Nickell bias arises as a consequence of correlation of the lagged dependent variable with the error term by construction. Standard panel data estimators (FE, RE, FD) will be inconsistent, especially in analysis with short time series (T) and large number of individuals (N). 
 
 {{% /summary %}}
+
+References
+- Econometric analysis of panel data - Baltagi fourth edition.
+
+- https://web.sgh.waw.pl/~jmuck/EoPD/Meeting8.pdf
+- http://fmwww.bc.edu/EC-C/S2013/823/EC823.S2013.nn05.slides.pdf
+
+cannot open, so not sure : https://www.sciencedirect.com/science/article/abs/pii/S0169716119300021
+
