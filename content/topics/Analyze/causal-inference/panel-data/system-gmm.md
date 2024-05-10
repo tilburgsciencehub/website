@@ -1,6 +1,6 @@
 ---
 title: "Dynamic Panel Data Estimation with System-GMM"
-description: " "
+description: "An introduction to dynamic panel models, and how to estimate them correctly using GMM."
 keywords: "dynamic, panel, data, estimation, system, GMM, generalized, method, moments"
 draft: false
 weight: 8
@@ -89,9 +89,7 @@ Also, the transformed error term $\tilde{v_{it}}$ is correlated with the transfo
 
 ## Estimation with System GMM
 
-System GMM, introduced by [Blundell and Bond (1998)](https://www.sciencedirect.com/science/article/pii/S0304407698000098?casa_token=dYWIhT8f8OMAAAAA:ABPXjapGCr7BAZKtJVamMFPhU2yvYbgDcnAd7Usvp6H2QqyxhJftVQQ9i-KXcfAg_qH8BbAs), is a Generalized Method of Moments (GMM) approach that corrects for the Nickell bias by using lagged variables as instruments. 
-
-It exploits the so-called orthogonality conditions (where instruments are uncorrelated with the error terms) to construct valid instruments from both lagged levels and lagged differences of the endogenous variables. A system of equations is estimated, one for each time period, and the instruments vary across equations. For instance, in later time periods, additional lags of the instruments are available and can be used. 
+System Generalized Method of Moments (GMM), introduced by [Blundell and Bond (1998)](https://www.sciencedirect.com/science/article/pii/S0304407698000098?casa_token=dYWIhT8f8OMAAAAA:ABPXjapGCr7BAZKtJVamMFPhU2yvYbgDcnAd7Usvp6H2QqyxhJftVQQ9i-KXcfAg_qH8BbAs), addresses endogeneity by using lagged variables as instruments. Specifically, it uses the so-called orthogonality conditions (where instruments are uncorrelated with the error terms) to construct valid instruments from both lagged levels and lagged differences of the endogenous variables. A system of equations is estimated, one for each time period, and the instruments vary across equations. For instance, in later time periods, additional lags of the instruments are available and can be used. 
 
 {{% tip %}}
 *Difference GMM vs. System GMM* 
@@ -106,20 +104,55 @@ The two-step system GMM estimation process involves:
 1. *First-differencing* the variables to eliminate individual fixed effects
 2. *Instrumenting* the differenced equations using lagged levels and differences of the variables. 
 
+
 ## Instrument validity
-Instrument validity is crucial in System GMM estimation. Instruments must be:
-- Relevant: Highly correlated with the endogenous variables they instrument. 
-- Exogenous: Uncorrelated with the composite error term. 
 
-If error term is i.i.d., those lags of y will be highly correlated with the lagged dependent variable (and its difference) but uncorrelated with the composite error process, which is required for an instrument to be valid!
+Instrument validity is crucial. The conditions a valid instruments must satisfy, applied specifically to System GMM, are: 
 
-[Bastardoz et al. (2023)](https://www.sciencedirect.com/science/article/abs/pii/S1048984322000765)
+1. *Relevance condition:* Instruments must be highly correlated with the endogenous variables they instrument. Using sufficient lags helps to maintain instrument relevance.
+
+2. *(As if) random condition*: The lagged instruments must be exogenous, meaning uncorrelated with the error term. This condition requires theoretical justification. In System GMM, lagged levels and differences of the endogenous variables should be uncorrelated with future errors. Limit lag length to avoid correlation with residuals (trade-off with the first condition?)
+
+3. *Exclusion restriction:* Instruments should only affect the dependent variable through the instrumented predictor. You can use Hansen-Sargan over-identification test to validate this condition. And, you can ensure that the differenced residuals are not autocorrelated at order 2 with the AR test outcome.
+
+{{% tip %}}
+For more background on Instrumental Variable Estimation: 
+- [Intro to IV Estimation](\iv)
+- [Bastardoz et al. (2023)](https://www.sciencedirect.com/science/article/abs/pii/S1048984322000765): A comprehensive review of IV Estimation discussing valid instruments. 
+{{% /tip %}}
+
 
 ## Example in R
 
-- Adapt example from here: https://rdrr.io/cran/plm/man/pgmm.html
-- Interpretation of output
-- Tests and diagnostics: Sargan test, AR test for autocorrelation of residuals
+An application adjusted from [Blundell & Bond (1998)](https://www.sciencedirect.com/science/article/pii/S0304407698000098?casa_token=dYWIhT8f8OMAAAAA:ABPXjapGCr7BAZKtJVamMFPhU2yvYbgDcnAd7Usvp6H2QqyxhJftVQQ9i-KXcfAg_qH8BbAs), with unbalanced panel data of 140 UK manufacturing companies over the years 1976-1984, available in R. 
+
+- dep. var: log of employment in firm i and year t
+- indep. var: log of wage rate
+- capital: log of the capital stock
+
+log-linear model
+
+precise set of moment conditions available will depend on assumptions made about the correlation between x_it and u_it. 
+
+We do not expect wages and capital to be strictly exogenous in our employment application. 
+
+The data starts in 1976 only because Datastream did not report employment in earlier years. Hence, there is nothing special about the first observation on the firms in this sample, and we might expect the initial conditions restriction (4.4) to be valid here.
+
+https://rdrr.io/cran/plm/man/pgmm.html
+
+
+{{% codeblock %}}
+
+{{% /codeblock %}}
+
+
+
+- Tests and diagnostics: 
+
+Sargan is a test of the over-identifying restrictions.
+AR test for first-order and second-order autocorrelation of first-differenced residuals. 
+
+
 
 Inequality
 
