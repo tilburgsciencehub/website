@@ -1,6 +1,6 @@
 ---
 title: "Heteroskedasticity"
-description: "Full tutorial on Heteroskedasticity in R"
+description: "Tutorial on how to identify and how to perform heteroskedasticity tests in R"
 keywords: "Heteroskedasticity, R, Breusch-Pagan, White, Arrellano, Grunfeld, Goldfeld-Quandt, Robust Standard Errors"
 weight: 2
 draft: false
@@ -11,9 +11,9 @@ aliases:
 ---
 
 ## Overview
-`Heteroskedasticity` is a common issue in time series and panel data analysis, and refers to the failure of the homoskedasticity assumption when the variance of the error terms varies across observations in a regression model. This inconsistency can skew the standard errors, thereby undermining the validity of statistical inferences derived from Ordinary Least Squares (OLS) regressions.
+`Heteroskedasticity` is a common issue in time series and panel data analysis, and refers to the failure of the homoskedasticity assumption when the variance of the error terms varies across observations in a regression model. This inconsistency can skew the standard errors, undermining the validity of statistical inferences derived from Ordinary Least Squares (OLS) regressions.
 
-This article, explores methods for detecting and correcting heteroskedasticity using `R`, including both graphical and statistical tests, and discusses methods to correct for heteroskedasticity.
+This article explores methods for detecting and correcting heteroskedasticity using `R`, including both graphical and statistical tests, and discusses approaches to correct for heteroskedasticity.
 
 {{% example %}}
 Consider the regression equation, that models the relationship between income and expenditure on meals:
@@ -22,16 +22,15 @@ Consider the regression equation, that models the relationship between income an
  Y_i = \beta_0 + \beta_1 X_i + \epsilon_i
 {{</katex>}}
 
-Where: $Y_i$ representes the expenditure on meals for the i-th individual, $X_i$ is the income and ​$\epsilon_{i}$ is the error term associated with each observation. 	
+Where: $Y_i$ represents the expenditure on meals for the i-th individual, $X_i$ is the income and ​$\epsilon_{i}$ is the error term associated with each observation. 	
 
-_Economic Interpretation_   
-As an individual's income increases, the variability in their meal expenditures also increases. The individuals with lower incomes tend to consistently spend less on food options, whereas those with higher incomes fluctuate between modest and expensive dining. This introduces more spread (or scatter) in the expenditure data at higher income levels, indicating that the variance of these error terms is not constant.
-
+_Heteroskedasticity Interpretation_   
+As an individual's income increases, the variability in their meal expenditures also increases. Individuals with lower incomes tend to consistently spend less on food options, whereas those with higher incomes fluctuate between modest and expensive dining. This introduces more spread (or scatter) in the expenditure data at higher income levels, indicating that the variance of these error terms is not constant.
 
 {{% /example %}}
 
 ### Implications on Regression Analysis
-The presence of heteroskedasticity introduces **bias in the estimation of variance (standard errors)**, leading to **inefficient** estimators. This inefficiency is problematic for the following reasons:
+The presence of heteroskedasticity introduces **bias in estimating variance (standard errors)**, leading to **inefficient** estimators. This inefficiency is problematic for the following reasons:
 
 - **Biased standard errors**: Affect the reliability of hypothesis tests, confidence intervals, and p-values.
 - **Loss of BLUE (Best Linear Unbiased Estimator) properties**: The regression no longer provides the most reliable estimates, as it does not minimize variance among all estimators.
@@ -57,9 +56,9 @@ grunfeld_model <- plm(invest ~ value + capital,
 {{% /codeblock %}}
 
 ## Visual Inspection of Heteroskedasticity 
-A first step in identifying heteroskedasticity is to visually inspect your data points around a regression line. This allows you to spot patterns of variance that might not be constant, such as fan-shaped or nonlinear distributions. Such patterns suggest that the variability of the `residuals` changes with the level of the indepedent variable. 
+The first step in identifying heteroskedasticity is to visually inspect your data points around a regression line. This allows you to spot patterns of variance that might not be constant, such as fan-shaped or nonlinear distributions. Such patterns suggest that the variability of the `residuals` changes with the level of the independent variable. 
 
-By plotting the relationship between firm size (`value`) and gross investment (`invest`), we can examine the hypothesis that   larger firms have more variance in their investment compared to smaller firms.
+By plotting the relationship between firm size (`value`) and gross investment (`invest`), we can examine whether the hypothesis that larger firms have more variance in their investment compared to smaller firms holds.
 
 {{% codeblock %}}
 ```R
@@ -80,7 +79,7 @@ ggplot(Grunfeld, aes(x = value, y = invest)) +
 <img src = "../images/heteroskedasticity_scatterplot.png" width="400">
 </p>
 
-A direct method to investigate heteroskedasticity involves plotting your regression's `residuals`. This can be done against either the independent variables suspected of causing heteroskedasticity or against the regression's `fitted values`. 
+A direct method to investigate the presence of heteroskedasticity involves plotting your regression's `residuals`. This can be done against either the independent variables suspected of causing heteroskedasticity or against the regression's `fitted values`. 
 
 Here, both options, the residuals against the dependent variable and the residuals against the fitted value, are shown for the `Grunfeld` regression model: 
 
@@ -112,11 +111,11 @@ ggplot(dataframe, aes(x = Fitted, y = Residuals)) +
 </p>
 
 ## Tests For Heteroskedasticity
-Common used tests for detecting heteroskedasticity are the `Breusch-Pagan` (BP) and the `White` test. A third test that will be discussed is the `Goldfeld-Quandt` test, which is suitable for regressions where indicator (categorical) variables are suspected to cause heteroskedasticity. 
+Common tests for detecting heteroskedasticity are the `Breusch-Pagan` (BP) and the `White` test. A third test that will be discussed is the `Goldfeld-Quandt` test, which is suitable for regressions where indicator (categorical) variables are suspected to cause heteroskedasticity. 
 
 {{% tip %}}
 
-Before conducting these tests, it's advisable to check for and address any serial correlation in the data, as the presence of serial correlation can invalidate the tests for heteroskedasticity. How to check for serial correlation is discussed in this [article.](/)
+Before conducting these tests, it's advisable to check for and address any `serial correlation` in the data. The presence of serial correlation can invalidate the tests for heteroskedasticity. How to check for serial correlation is discussed in this [article.](/)
 
 {{% /tip %}}
 
@@ -132,7 +131,7 @@ Y_i = \beta_0 + \beta_1 X_i + ... + \beta_k X_k + \epsilon_i
 
 2. _Optional_: Perform the **Auxiliary Regression**
    1. Square the residuals from Step 1 and regress these squared residuals on the original independent variables.
-   2. The benefit of taken this step is identification of the variable(s) causing heteroskedasticity.
+   2. The benefit of taking this step is the identification of the variable(s) causing heteroskedasticity.
    
 {{<katex>}}
 \hat{u}{^2} = c_0 +c_1 x_1 +... + c_k x_k + \epsilon_i 
@@ -186,12 +185,12 @@ When your argumentation suggests that heteroskedasticity is only linked to certa
 {{% /tip %}}
 
 ### The White Test
-The White test is similar to the `Breusch-Pagan` test, but extends to test for nonlinear forms of heteroskedasticity.
+The White test is similar to the `Breusch-Pagan` test but extends to test for nonlinear forms of heteroskedasticity.
 
 Characteristics are: 
-- **No Pre-defined Variance Form**: Unlike the `Breusch-Pagan` test, which requires a predefined functional form for the variance 
-- **Variable Handling**: Uses both the squares and cross-products of explanatory variables in the auxiliary regression
-  - Able to detect more complex forms of heteroskedasticity, for example that may not be linearly related to the to the explanatory variables. 
+- **No Pre-defined Variance Form**: Unlike the `Breusch-Pagan` test, which requires a predefined functional form for the variance.
+- **Variable Handling**: Uses both the squares and cross-products of explanatory variables in the auxiliary regression.
+	- Able to detect more complex forms of heteroskedasticity, for example, that may not be linearly related to the explanatory variables. 
 - **Robustness vs. Sample Size**: While the `White` test is robust against various heteroskedastic structures, it suffers from _reduced power in smaller sample sizes_, limiting its effectiveness in detecting heteroskedasticity under those conditions.
 
 #### Steps to Perform the White Test:
@@ -255,7 +254,7 @@ The Goldfeld-Quandt test is useful for models that include categorical variables
 
 #### Test Setup:
 - **Data Segmentation**: Data are divided into two groups based on a predetermined criterion.
-  - For example, you might split firms into 'small' and 'large' based on the 85th percentile of firm size, or use a categorical factor such as industry type.
+  - For example, you might split firms into 'small' and 'large' based on the 85th percentile of firm size or use a categorical factor such as industry type.
 - **Hypotheses Formulation**:
 {{<katex>}}
 H_0: \sigma^2_1 = \sigma^2_0, \quad H_A: \sigma^2_1 \neq \sigma^2_0
@@ -292,22 +291,22 @@ The outcome of the `Goldfeld-Quandt` test conducted on _the 'Grunfeld' data indi
 
 {{% warning %}}
 
-So far we have interpreted a rejection of the null hypothesis, homoskedasticity, by the tests, as evidence for heteroskedasticity. However, with an incorrect form of the model. For example, ommitting a quadratic terms or use the level model when a log is appropriate, a test for heteroskedasticity could be wrongly significant. 
+So far we have interpreted a rejection of the null hypothesis, homoskedasticity, by the tests, as evidence for heteroskedasticity. However, with an incorrect form of the model. For example, by omitting quadratic terms or using the level model when a log is appropriate, a test for heteroskedasticity could be wrongly significant. 
 
 {{% /warning %}}
 
 ## Corrections for Heteroskedasticity
 The _presence of heteroskedasticity in a regression model makes the standard errors estimated incorrect_ and therefore needs to be corrected. One way to do this is to use `heteroskedasticity-consistent standard error` (`HCSE`) estimators, often referred to as `robust standard errors`.
 
-Robust standard errors are often seen as the safe and preferred choice because they correct for heteroskedasticity if it is present. If your the data turns out to be homoskedastic, the robust standard errors will be equivalent to those estimated by conventional OLS. 
+Robust standard errors are often seen as the safe and preferred choice because they correct for heteroskedasticity if it is present. If you're the data turns out to be homoskedastic, the robust standard errors will be equivalent to those estimated by conventional OLS. 
 
 ### Robust Standard Errors in R
 The `vcovHC` function from the `sandwich` package is commonly used to compute heteroskedasticity-consistent covariance matrices of coefficient estimates, known as `White`'s correction. This method adjusts the covariance matrix of the estimated coefficients to reflect the impact of heteroskedasticity, thus providing more accurate standard errors.
 
 The `vcovHC` function in `R` provides different versions of heteroskedasticity-consistent standard errors: 
 - `HC0` is the basic form without small sample adjustments 
-- `HC1` adds a degrees of freedom adjustment. 
-  - This adjustment makes `HC1` a more reliable choice in practice, particularly in small sized samples.
+- `HC1` adds a degree of freedom adjustment. 
+  - This adjustment makes `HC1` a more reliable choice in practice, particularly in small-sized samples.
 
 {{% codeblock %}}
 ```R
@@ -336,7 +335,7 @@ corrected_reg <- coeftest(grunfeld_model, vcov = robust_variance)
 | capital  | 0.351436 |  0.043610  | 8.0586  | 8.712e-14 *** |
 
 #### Dealing with Serial Correlation and Heteroskedasticity
-If your data consists both **serial correlation** and **heteroskedasticity**, it's necessary to adopt robust standard errors that correct for both. The `vcovHC` function allows for various types of robust covariance estimators. For models with time series data, consider using `Arellano` robust standard errors, which provides consistent standard errors in the presence of both heteroskedasticity and serial correlated errors:
+If your data consists of both **serial correlation** and **heteroskedasticity**, it's necessary to adopt robust standard errors that correct for both. The `vcovHC` function allows for various types of robust covariance estimators. For models with time series data, consider using `Arellano` robust standard errors, which provide consistent standard errors in the presence of both heteroskedasticity and serial correlated errors:
 
 {{% codeblock %}}
 ```R
@@ -357,12 +356,12 @@ print(summary_arellano)
 | **capital** | 0.351436 |  0.059327  | 5.9237  | 1.473e-08 *** |
 
 ### Change of Functional Form
-Heteroskedasticity often points to potential misspecifications in the `functional form` of the regression model. Although on it's own it is a small problem, the OLS estimates for coefficients are still **unbiased**, and it is easy to correct standard errors and p-values to allow for the possibility of heteroskedasticity. Addressing the root cause by altering the model's functional form can provide a more robust solution.
+Heteroskedasticity often points to potential misspecifications in the `functional form` of the regression model. Although on its own it is a small problem, the OLS estimates for coefficients are still **unbiased**, and it is easy to correct standard errors and p-values to allow for the possibility of heteroskedasticity. Addressing the root cause by altering the model's functional form can provide a more robust solution.
 
 #### Functional Form Misspecifications
 1. **Exponential Growth**:
-   - _Why It Causes Heteroskedasticity_: Exponential increases in any model variable can lead to the spread of the residuals to increase. This variance inflation occurs because larger values of the variable lead to proportionally larger errors, violating the constant variance assumption of linear regression.
-   - Solution: Applying a logarithmic transformation to any exponentially growing variable (dependent or indepedent) can normalize these effects, converting multiplicative relationships into additive ones.
+   - _Why It Causes Heteroskedasticity_: Exponential increases in any model variable can lead to the spread of the residuals increase. This variance inflation occurs because larger values of the variable lead to proportionally larger errors, violating the constant variance assumption of linear regression.
+   - Solution: Applying a logarithmic transformation to any exponentially growing variable (dependent or independent) can normalize these effects, converting multiplicative relationships into additive ones.
 
 2. **Non-linear Relationships**:
    1. _Why It Causes Heteroskedasticity_: When the true relationship between variables is non-linear, a linear model's attempt to fit a straight line through curved data produces residuals that systematically vary with the level of the independent variable. This causes the spread of residuals to increase or decrease along the range of the independent variable.
@@ -376,7 +375,7 @@ Heteroskedasticity often points to potential misspecifications in the `functiona
 
 This article explains how to detect and correct for `heteroskedasticity` in regressions using `R`. Explained using a practical example of the `Grunfeld` dataset.
 - Start, with a visual inspection of the residuals using `ggplot2::ggplot()` to identify variance patterns.
-- Therafter, use statistical tests such as `Breusch-Pagan` (`lmtest::bptest()`) and White test (`whitestrap::white_test()`).
-- At last, if the tests indicate heteroskedasticity, corrections need to be applied, use `robust standard errors` through `sandwich::vcovHC()` or a new `functional form` of the model.
+- Thereafter, use statistical tests such as `Breusch-Pagan` (`lmtest::bptest()`) and White test (`whitestrap::white_test()`).
+- At last, if the tests indicate heteroskedasticity, corrections need to be applied, using `robust standard errors` through `sandwich::vcovHC()` or a new `functional form` of the model.
 
 {{% /summary %}}
