@@ -14,12 +14,13 @@ aliases:
 
 ## Overview
 
-[Panel data](\paneldata) tracks observations of individuals over multiple time periods, enabling researchers to uncover dynamic patterns that can't be observed in cross-sectional or time-series data alone. While traditional static panel data models assume that idiosyncratic errors are uncorrelated across time periods, dynamic panel models account for temporal depencies in the data, often providing a more accurate representation of economic relationships. By including the lagged dependent variable as a regressor, dynamic panel models account for adjustment dynamics and persistence in the data. 
+[Panel data](\paneldata) tracks observations of individuals over multiple time periods, enabling researchers to uncover dynamic patterns that can't be observed in cross-sectional or time-series data alone. While traditional static panel data models assume that idiosyncratic errors are uncorrelated across time periods, dynamic panel models account for temporal depencies in the data by including the lagged dependent variable as a regressor, often providing a more accurate representation of economic relationships, by including the lagged dependent variable as a regressor.
 
-This topic introduces the dynamic panel model and demonstrates how to estimate it, given that the estimation methods for panel data (e.g. Fixed Effects) are likely to produce biased results. Furthermore, an example with R code is provided.
-
+This topic introduces the dynamic panel model and demonstrates how to estimate it, given that the estimation methods for panel data (e.g. Fixed Effects) are likely to produce biased results. After introducing the dynamic panel data model and System-GMM estimation, a simple example of estimation in R is provided.
 
 {{% example %}}
+
+Dynamic panel data models account for persistence or adjustment dynamics in the data. Think of ... 
 
 {{% /example %}}
 
@@ -48,17 +49,15 @@ Key characteristics of the dynamic panel model:
 - *Heteroskedasticity and autocorrelation* within individual units, but not across them
 {{% /summary %}}
 
-While including the lagged dependent variable provides a more accurate representation of the dynamic nature of the data, endogeneity arises which is known as the Nickell bias.
+While including the lagged dependent variable provides a more accurate representation of the dynamic nature of the data, endogeneity is likely to arise in standard panel data estimation. This is known as the Nickell bias.
 
 ## Nickell bias
 
-The lagged dependent variable is correlated with the error term, introducing endogeneity in the model which can be expressed as:
+Discovered by [Nickell (1981)](https://www.jstor.org/stable/1911408), including the lagged dependent variable introducing endogeneity in the model due to its correlation with the error term in the model. This can be expressed as:
 
 $E(v_{it} | Y_{i,t-1}) ≠ 0$. 
 
-As a result, standard panel data estimators like [Fixed Effects](\within), [Random Effects](\random), and [First-Difference](\firstdifference) become biased and inconsistent. Both the coefficients of the lagged dependent variable ($\beta_1$) and coefficients of interest ($\beta_2$) are potentially biased.
-
-The size of the bias depends on the length of the time period (T), as well as the persistence of the correlation, making the bias particularly significant in panels with a short T and a large number of individuals (N).
+As a result, standard panel data estimators like [Fixed Effects](\within), [Random Effects](\random), and [First-Difference](\firstdifference) become biased and inconsistent. Both the coefficients of the lagged dependent variable ($\beta_1$) and coefficients of interest ($\beta_2$) are potentially biased. The size of the bias depends on the length of the time period (T), as well as the persistence of the correlation, making the bias particularly significant in data with a short T and a large number of individuals (N). Increasing N will not decrease the bias. 
 
 Specifically, it leads to: 
 
@@ -98,22 +97,24 @@ Difference GMM is the original estimator which uses only lagged levels of the de
 
 {{% /tip %}}
 
-### Two-step System GMM
-
-The two-step system GMM estimation process involves:
+The *two-step system GMM* estimation process involves:
 1. *First-differencing* the variables to eliminate individual fixed effects
 2. *Instrumenting* the differenced equations using lagged levels and differences of the variables. 
 
 
 ## Instrument validity
 
-Instrument validity is crucial. The conditions a valid instruments must satisfy, applied specifically to System GMM, are: 
+Instrument validity is crucial. The conditions for a valid instruments to satisfy are: 
 
-1. *Relevance condition:* Instruments must be highly correlated with the endogenous variables they instrument. Using sufficient lags helps to maintain instrument relevance.
+1. *Relevance:* Instruments must be highly correlated with the endogenous variables they instrument. Using sufficient lags can help to maintain this condition. 
 
-2. *(As if) random condition*: The lagged instruments must be exogenous, meaning uncorrelated with the error term. This condition requires theoretical justification. In System GMM, lagged levels and differences of the endogenous variables should be uncorrelated with future errors. Limit lag length to avoid correlation with residuals (trade-off with the first condition?)
+2. *Exclusion restriction:* The lagged instruments must be exogenous, meaning they are uncorrelated with the error term. The instruments should only affect the dependent variable through the endogenous predictor. This assumption generally requires theoretical justification, and if instruments are found to be endogenous, thye cannot simply be fixed.
 
-3. *Exclusion restriction:* Instruments should only affect the dependent variable through the instrumented predictor. You can use Hansen-Sargan over-identification test to validate this condition. And, you can ensure that the differenced residuals are not autocorrelated at order 2 with the AR test outcome.
+3. *Independence assumption*: The instruments are independent of the error term. In System GMM, lagged levels and differences of the endogenous variables should be uncorrelated with future errors. Limiting the lag length can help avoid correlation with present errors to maintain this condition. 
+
+In practice, it is important to balance the number of lags to ensure sufficient relevance without introducing bias or violating the exclusion and independence assumptions. 
+
+To ensure instrument validity, the Sargan test (of overidentifying restrictions) can be used, when there are more instruments than the number of endogenous variables (i.e. the model is overidentified). It tests whether all the instruments used in the model are uncorrelated with the error term, i.e. whether they are exogenous. Furthermore, the Arrellano-Bond test for autocorrelation of order 2 can help to ensure whether the differenced residuals are not serially correlated at order 2. An interpretation of these test outcomes can be found in the R code example.
 
 {{% tip %}}
 For more background on Instrumental Variable Estimation: 
