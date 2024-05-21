@@ -114,7 +114,7 @@ Instrument validity is crucial. The conditions for a valid instruments to satisf
 
 In practice, it is important to balance the number of lags to ensure sufficient relevance without introducing bias or violating the exclusion and independence assumptions. 
 
-To ensure instrument validity, the Sargan test (of overidentifying restrictions) can be used, when there are more instruments than the number of endogenous variables (i.e. the model is overidentified). It tests whether all the instruments used in the model are uncorrelated with the error term, i.e. whether they are exogenous. Furthermore, the Arrellano-Bond test for autocorrelation of order 2 can help to ensure whether the differenced residuals are not serially correlated at order 2. An interpretation of these test outcomes can be found in the R code example.
+To ensure instrument validity, the Sargan test (of overidentifying restrictions) can be used, when there are more instruments than the number of endogenous variables (i.e. the model is overidentified). It tests whether all the instruments used in the model are uncorrelated with the error term, i.e. whether they are exogenous. Furthermore, the Arrellano-Bond test for autocorrelation of order 2 can help to ensure whether the differenced residuals are not serially correlated at order 2. More on this in the R code example!
 
 {{% tip %}}
 For more background on Instrumental Variable Estimation: 
@@ -141,14 +141,11 @@ The data starts in 1976 only because Datastream did not report employment in ear
 
 https://rdrr.io/cran/plm/man/pgmm.html
 
-
 {{% codeblock %}}
 
 {{% /codeblock %}}
 
-
-
-- Tests and diagnostics: 
+Tests and diagnostics: 
 
 Sargan is a test of the over-identifying restrictions.
 AR test for first-order and second-order autocorrelation of first-differenced residuals. 
