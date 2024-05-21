@@ -57,7 +57,7 @@ grunfeld_model <- plm(invest ~ value + capital,
 ```
 {{% /codeblock %}}
 
-### Causes of heteroskedasticity: 
+### Causes of Heteroskedasticity 
 Heteroskedasticity often points to potential misspecifications in the `functional form` of the regression model. 
 
 #### Common Functional Form Misspecifications
@@ -130,7 +130,7 @@ ggplot(dataframe, aes(x = Fitted, y = Residuals)) +
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/res_fitted_plots.png" width="400">
+<img src = "../images/heteroskedasticity_res_fitted.png" width="400">
 </p>
 
 ## Tests For Heteroskedasticity
@@ -333,7 +333,7 @@ The `vcovHC` function in `R` provides different versions of heteroskedasticity-c
 - `HC2`: Adjusts the errors based on the leverage values (how much influence each data point has on the regression). 
   - Suited for regressions with influential data points.
 - `HC3`: Squares the adjustment factor used by `HC2`, making it  more robustness against influential points.
-  - recommended when sample sizes are small or the data contains outliers.
+  - Recommended when sample sizes are small or the data contains outliers.
   
 {{% codeblock %}}
 ```R
@@ -362,6 +362,7 @@ corrected_reg <- coeftest(grunfeld_model, vcov = robust_variance)
 | capital  | 0.351436 |  0.043610  | 8.0586  | 8.712e-14 *** |
 
 #### Dealing with Serial Correlation and Heteroskedasticity
+
 If your data consists of both **serial correlation** and **heteroskedasticity**, it;s necessary to use robust standard errors that correct for both. Again the `vcovHC` function allows for various types of robust covariance estimators. For models with time series data, consider using `Arellano` robust standard errors, which provide consistent standard errors in the presence of both heteroskedasticity and serial correlated errors:
 
 {{% codeblock %}}
