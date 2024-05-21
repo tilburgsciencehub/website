@@ -195,15 +195,15 @@ library(fixest)
 # Estimate the regression model
 model_feols <- feols(invest ~ value + capital | firm + year , data = Grunfeld)
 
-summary(model_feols, vcov = "hetero") 
+summary(model_feols) 
 ```
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/summary-feols-white.png" width="400">
+<img src = "../images/coeftest-plm-cluster.png" width="400">
 </p> 
 
-Note that the standard errors are clustered at the individual (`firm`) level by default. To calculate heteroskedasticity-robust standard errors, specify this with the `vcov` argument. Next, compute the residuals and their lagged values:
+Note that the standard errors are clustered at the individual (`firm`) level by default. Next, compute the residuals and their lagged values:
 
 {{% codeblock %}}
 ```R
@@ -238,11 +238,7 @@ coeftest(plm_model, vcov. = vcovHC(plm_model, cluster = "group"))
 {{% /codeblock %}}
 
 
-<p align = "center">
-<img src = "../images/coeftest-plm-cluster.png" width="400">
-</p> 
-
-For `fixest` regressions, clustered standard errors are the default. However, you can explicitly include them by specifying the `vcov` argument:  
+For `fixest` regressions, clustered standard errors are the default. However, you can explicitly include them by specifying the `vcov` argument.
 
 
 {{% codeblock %}}
@@ -252,9 +248,7 @@ summary(model_feols, vcov = "cluster")
 ```
 {{% /codeblock %}}
 
-<p align = "center">
-<img src = "../images/summary-feols-cluster.png" width="400">
-</p> 
+This will produce the same output as running `summary(model_feols)`, as shown earlier in the article.
 
 {{% tip %}}
 If clustered standard errors are much larger than White standard errors, it suggests that serial correlation is affecting the standard errors, as they are inflated when adjusting for this. According to [Petersen (2008)](https://www.nber.org/papers/w11280), clustered standard errors that are 3-5 times larger than heteroskedasticity-robust (White) ones can be indicative of serial correlation, serving as a rule of thumb.
