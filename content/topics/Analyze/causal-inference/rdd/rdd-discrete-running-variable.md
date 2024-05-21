@@ -61,7 +61,7 @@ We’ve already seen why we cannot apply the conventional continuity-based appro
 
 In settings where the running variable only takes on a few distinct values, we usually cannot use very narrow bandwidths because this leads to an excessively small sample size. As we expand the bandwidth to gain enough observations for our estimation, specification bias increases. As we consider values further and further away from the cutoff, we are more likely to mis-specify the functional form at the cutoff, biasing our treatment estimates (which in the continuity-based approach are effects at the cutoff). The bias of our treatment estimator becomes larger and non-negligible with respect to its standard error. In this case, we cannot use conventional EHW confidence intervals, because they fail to account for this bias and are therefore too narrow, exacerbating the false positive rate (type I error). 
 
-Kolesár and Rothe (2018) show that this issue cannot be solved by clustering standard errors at each value of the discrete running variable, as was previously thought. Instead, they propose two alternative methods for constructing confidence intervals for causal inference in the case of RDDs with few distinct values of the assignment variable.  In this building block, I mainly discuss the first approach, which is based on bounding the second derivative of the CEF. This is because it holds more generally than the second approach, based on bounding the misspecification error at the cutoff, which requires stronger conditions to work as an honest confidence interval.  
+Kolesár and Rothe (2018) show that this issue cannot be solved by clustering standard errors at each value of the discrete running variable, as was previously thought. Instead, they propose two alternative methods for constructing confidence intervals for causal inference in the case of RDDs with few distinct values of the assignment variable.  In this building block, we mainly discuss the first approach, which is based on bounding the second derivative of the CEF. This is because it holds more generally than the second approach, based on bounding the misspecification error at the cutoff, which requires stronger conditions to work as an honest confidence interval.  
  
 # Bounding the second derivative (BSD) confidence intervals 
 
@@ -96,7 +96,7 @@ Fortunately, we can derive a lower bound for $K$ based on our data using [Armstr
 
 ## Implementing Honest BSD confidence intervals in R
 
-In this section, I demonstrate a simple implementation of BSD confidence intervals in R using the [RDHonest](https://github.com/kolesarm/RDHonest/blob/master/doc/RDHonest.pdf) package. The package includes some datasets, such as _cghs_, which relates to [Oreopoulos's (2006)](https://www.aeaweb.org/articles?id=10.1257/000282806776157641) study of the effects of a change in the minimum school leaving age in Britain on earnings. Oreopoulos uses age as the discrete running variable of his study. 
+In this section, we demonstrate a simple implementation of BSD confidence intervals in R using the [RDHonest](https://github.com/kolesarm/RDHonest/blob/master/doc/RDHonest.pdf) package. The package includes some datasets, such as _cghs_, which relates to [Oreopoulos's (2006)](https://www.aeaweb.org/articles?id=10.1257/000282806776157641) study of the effects of a change in the minimum school leaving age in Britain on earnings. Oreopoulos uses age as the discrete running variable of his study. 
 
 {{% codeblock %}}
 ```R
