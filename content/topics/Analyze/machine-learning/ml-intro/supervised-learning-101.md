@@ -76,7 +76,7 @@ It builds a tree where each so-called "node" splits the data based on a simple d
 The deeper the tree, the more complex these decision rules get. Below is an example of a decision tree that classifies flowers in one of three species with four input features.
 
 <p align = "center">
-<img src = "/images/decision_tree_iris.png" width="700">
+<img src = "../images/decision_tree_iris.png" width="700">
 <figcaption> Visualization of a decision tree, image by the author </figcaption>
 </p>
 
