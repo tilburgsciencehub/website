@@ -69,7 +69,7 @@ citation("ggplot2")
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/citation-rmarkdown.PNG" width="300">
+<img src = "../images/citation-rmarkdown.png" width="300">
 </p>
 
 **Step 2: Link A `BibTeX` File in the YAML Header**
@@ -136,7 +136,7 @@ It's important to note that the CSL file, such as `apa.csl` for the APA style, n
 
 ### Biblography Management
 
-`Rmarkdown` only adds mentioned references in the bibliography. For some articlces, it is needed to include certain references in your bibliography without citing them directly in your text, or it is necesary to display every item in your bibliography regardless of citation. This can be achieved using the `nocite` metadata field in your document's YAML header.
+`Rmarkdown` only adds mentioned references in the bibliography. For some articles, it is needed to include certain references in your bibliography without citing them directly in your text, or it is necesary to display every item in your bibliography regardless of citation. This can be achieved using the `nocite` metadata field in your document's YAML header.
 
 To add specific items without in-text citations:
 
@@ -149,7 +149,7 @@ nocite: |
 ```
 {{% /codeblock %}}
 
-And to ensure all items from your bibliography are displayed:
+And to make sure all items from your bibliography are displayed:
 
 {{% codeblock %}}
 ```plaintext
@@ -184,10 +184,10 @@ This will be Appendix B.
 
 {{% summary %}}
 
-This article discusses the process of citation management within `Rmarkdown` for academic writing, Specifically, it guides through:
+This article walks you through the process of citation management within `Rmarkdown` for academic writing, Specifically, it is a guide for:
 
-- Creating and linking a `BibTeX` file to streamline reference management, including manual entry examples and using the `citation()` function for R packages.
-- Dynamically inserting citations into the text, with tips on using multiple citations and excluding author names.
+- Creating and linking a `BibTeX` file, including manual entry examples and using the `citation()` function for R packages.
+- Dynamically inserting citations into the text, with tips on how to use multiple citations or exclude author names.
 - Customizing the bibliography section's location and including unreferenced items or displaying all bibliography entries.
 - Adjusting citation styles by specifying a CSL file, with an example of adopting APA style.
 
