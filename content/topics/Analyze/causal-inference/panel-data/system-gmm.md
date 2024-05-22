@@ -125,54 +125,92 @@ For more background on Instrumental Variable Estimation:
 
 ## Example in R
 
-An application adjusted from [Blundell & Bond (1998)](https://www.sciencedirect.com/science/article/pii/S0304407698000098?casa_token=dYWIhT8f8OMAAAAA:ABPXjapGCr7BAZKtJVamMFPhU2yvYbgDcnAd7Usvp6H2QqyxhJftVQQ9i-KXcfAg_qH8BbAs), with unbalanced panel data of 140 UK manufacturing companies over the years 1976-1984, available in R. 
+An example adjusted from [Blundell & Bond (1998)](https://www.sciencedirect.com/science/article/pii/S0304407698000098?casa_token=dYWIhT8f8OMAAAAA:ABPXjapGCr7BAZKtJVamMFPhU2yvYbgDcnAd7Usvp6H2QqyxhJftVQQ9i-KXcfAg_qH8BbAs), with unbalanced panel data of 140 firms in the UK over the years 1976-1984. The following model is estimated:
 
-- dep. var: log of employment in firm i and year t
-- indep. var: log of wage rate
-- capital: log of the capital stock
 
-log-linear model
+$Log(Empl)_{it} = \beta_1 Log(Empl)_{i,t-1} + \beta_2 Log(Wage)_{it} + \beta_3 Log(Wage)_{i,t-1} + \beta_4 Log(Cap)_{it} + \beta_5 Log(Cap)_{i,t-1} + \mu_{i} + v_{it}$
 
-precise set of moment conditions available will depend on assumptions made about the correlation between x_it and u_it. 
+{{<katex>}}
+{{</katex>}}
 
-We do not expect wages and capital to be strictly exogenous in our employment application. 
+Where:
+- $Log(Empl)_{it}$ is the log of employment in firm $i$ in year $t$, and its lag is included on the right-hand side
+- The independent variables include both current and lag values of log wages and log capital
+- $\mu_{i}$: The fixed effects per firm
+- $v_{it}$: The idiosyncratic error term
 
-The data starts in 1976 only because Datastream did not report employment in earlier years. Hence, there is nothing special about the first observation on the firms in this sample, and we might expect the initial conditions restriction (4.4) to be valid here.
+The instruments used for the GMM estimation depend on the assumptions regarding the correlation between the independent variables and the erorr term. Here, we do not assume wages and capital to be strictly exogenous, so they are also instrumented. 
 
-https://rdrr.io/cran/plm/man/pgmm.html
+The dataset starts in 1976 because the data provider did not report employment data for earlier years. Consequently, the first observation for each firm in this sample is not special, supporting the validity of the initial conditions restriction. Outlined in Blundell and Bond (1998), this restriction assumes that the initial observations of the dependent variable are not correlated with the individual-specific effects and is crucial for the System-GMM estimation to be valid. 
+
+
 
 {{% codeblock %}}
+```R
+# Load the package and data
+library(plm)
+data("EmplUK")
 
+# Estimate the dynamic model with Two-step System GMM
+dyn_model <- pgmm(log(emp) ~ lag(log(emp), 1) + 
+                  lag(log(wage), 0:1) + lag(log(capital), 0:1) | 
+                    lag(log(emp), 2:99) + lag(log(wage), 2:99) + 
+                    lag(log(capital), 2:99),
+                  data = EmplUK, 
+                  effect = "twoways", 
+                  model = "twosteps", 
+                  transformation = "ld", 
+                  collapse = TRUE
+)
+```
 {{% /codeblock %}}
 
-Tests and diagnostics: 
 
-Sargan is a test of the over-identifying restrictions.
-AR test for first-order and second-order autocorrelation of first-differenced residuals. 
+- Deeper lags of the endogenous variables are used as instruments, specified behind the `|`. Here, all lags from 2 of the endogenous varibles are used as GMM instruments. As wages and capital are expected to be endogenous in this model, they are instrumented as well.
+- `effect = twoways` introduces both firm and time fixed effects. To only include firm fixed effects,  use `effect = individual`.
+- `model = "twosteps"` uses the two-step GMM estimator
+- `transformation = "ld"` applies the first-difference transformation and thus the use of a System GMM model instead of a Difference GMM.
+- `collapse = TRUE` reduces the number of instruments to avoid overfitting the model
+
+{{% tip %}}
+- For further details, refer to the [pgmm documentation](https://rdrr.io/cran/plm/man/pgmm.html).
+{{% /tip %}}
+
+## Interpreting the output
+
+{{% codeblock %}}
+```R
+# Print summary of the model with robust standard errors
+summary(dyn_model, robust = TRUE)
+```
+{{% /codeblock %}}
+
+<p align = "center">
+<img src = "../images/summary-gmm.png" width="700">
+</p>
 
 
+Refer to this [topic] for full interpretation of a summary output in R. 
 
-Inequality
+Employment persistence is found to be very strong, indicated by the positive coefficient of past employment levels that is statistically significant at a 1% level. Furthermore, higher current wages seem to decrease employment, while higher past wages increase employment. And, current investment has a positive impact, whereas past capital investments appear to have a negative effect on employment. 
 
-tip
-OLS: lagged dep. var positively correlated with the error, biasing its coefficient upward
-FE: coefficient biased downward due to negative sign on v_t-1 in the transformed error.
 
-Consistent estimates should lie between these two values, which might be a useful check.
-Check whether coefficient of lag dependent variable is sensitive to lag length.
-tip
+## Tests 
+- The Sargan test of the over-identifying restrictions tests the validity of the instruments. A p-value of 0.449 is high enough to indicate that the instruments are valid. 
 
-## Tests or diagnostics
-- Sargan-Hansen test
-- Sargan; instrument validity
-- AR test for autocorrelation of the residuals. 
+- Autocorrelation Tests: First-order serial correlation (1) is present indicated with a p-value < 0.05, which happens by construction and is as expected. There is no second-order serial correlation (2), indicated with a p-value > 0.05, which is consistent with the assumptions. If AR(@) was present, the second lags of the endogenous variables will not be appropriate instruments for their current values. 
 
-By construction, the residuals of the differenced equation should possess serial correlation, but if the assumption of serial independence in the original errors is warranted, the differenced residuals should not exhibit significant AR(2) behavior. If a significant AR(2) statistic is encountered, the second lags of the endogenous varialbes will not be appropriate instruments for their current values. 
+- The Wald Tests assesses the joint significance of all the coefficients or time dummies in the model. The low p-value indicates that we reject the null hypothesis, suggesting the coefficients and time dummies have an effect on the dependent variable. 
+ 
 
-Only use 2-5 lags in constructing the GMM instruments, otherwise possible loss of efficiency
+All the test outcomes confirm the validity of the model. 
 
-- While DPD estimator are linear estimators, highly sensitive to the particular specification of the model and its instruments. 
+These dynamic panel data estimators are highly sensitive to the particular specification of the model and its instruments. Therefore, it is good practice to do several robustness checks and experiment with different model specifications the inclusion of different lag lenghts.
 
+
+{{% tip %}}
+As a useful check, consistent estimates should lie inbetween the OLS and the FE estimates. This is because the OLS coefficient is biased upwards and the FE biased downwards. 
+{{% /tip %}}
 
 
 {{% summary %}}
