@@ -1,5 +1,5 @@
 ---
-title: "Automating Conversion from Regression Models to LaTeX Equations in Rmarkdown"
+title: "Automate Converting Regression Results to LaTeX Equations in Rmarkdown"
 description: "This article highlights the use of equationmatic for embedding regression models into Latex equations directly within Rmarkdown. It oulines equationmatic key features: Regression model to equation conversion, customization for readability, and practical implementation steps for application within Rmarkdown"
 keywords: "Rmarkdown, LaTeX equations, regression models, equatiomatic, academic reporting"
 draft: false
@@ -13,9 +13,11 @@ aliases:
 ---
 
 ## Overview
-[`Rmarkdown`](https://rmarkdown.rstudio.com/) is a format designed for crafting reproducible and dynamic reports using R.  
+[`Rmarkdown`](https://rmarkdown.rstudio.com/) is a format designed for creating reproducible and dynamic reports using R.  
 
-In this article, we explore how to convert regression models into `LaTeX`-formatted equations using the [equatiomatic](https://github.com/datalorax/equatiomatic/blob/master/README.md) package, a time-saving approach compared to the error-prone task of manually typing equations. This article covers practical examples, including handling categorical variables, interaction terms, and customizing the `LaTeX` equation outputs. This approach eases and automates the process of adding equations into `Rmarkdown` reports. 
+In this article, we explore how to convert regression models into `LaTeX`-formatted equations using the [equatiomatic](https://github.com/datalorax/equatiomatic/blob/master/README.md) package, a time-saving approach compared to the error-prone task of manually typing equations. 
+
+This article covers practical examples, including handling categorical variables, interaction terms, and customizing the `LaTeX` equation outputs. This approach eases and automates the process of adding equations into `Rmarkdown` reports. 
 
 {{% codeblock %}}
 ```R
@@ -88,8 +90,8 @@ equatiomatic::extract_eq(fit)
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/equatiomatic-1.PNG" width="300">
-<img src = "../images/equatiomatic-2.PNG" width="300">
+<img src = "../images/equatiomatic-1.png" width="300">
+<img src = "../images/equatiomatic-2.png" width="300">
 </p>
 
 {{% tip %}}
@@ -98,7 +100,7 @@ To display only your equation without showing the code, set `echo = FALSE` in th
 
 {{% /tip %}}
 
-### Advanced Model Considerations
+### Complex Model Considerations
 While the basic model described above might be quickly typed out by those familiar with `LaTeX` syntax, the real strength of the outlined process becomes evident when dealing with models that include categorical variables with multiple levels and interactions. These elements introduce complexity not only to the model's output but also to the manual transcription of the equation.
 
 #### Categorical Variables
@@ -114,7 +116,7 @@ extract_eq(fit_cat)
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/equatiomatic-3.PNG" width="400">
+<img src = "../images/equatiomatic-3.png" width="400">
 </p>
 
 #### Interaction terms
@@ -130,10 +132,10 @@ extract_eq(fit_int)
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/equatiomatic-4.PNG" width="400">
+<img src = "../images/equatiomatic-4.png" width="400">
 </p>
 
-### Equation Customization
+### Customize Equation Ouput
 The automation provided by the method above greatly simplifies equation generation. However, tailoring these equations to meet specific documentation requirements often necessitates further adjustments. The `equatiomatic` package offers a set of options for customizing equations.
 
 #### Syntax 
@@ -180,8 +182,8 @@ extract_eq(fit_probit, use_coefs = FALSE, terms_per_line = 2, wrap = 40)
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/equatiomatic-5.PNG" width="300">
-<img src = "../images/equatiomatic-6.PNG" width="300">
+<img src = "../images/equatiomatic-5.png" width="300">
+<img src = "../images/equatiomatic-6.png" width="300">
 </p>
 
 {{% warning %}}
