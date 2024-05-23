@@ -125,16 +125,15 @@ For more background on Instrumental Variable Estimation:
 
 ## Example in R
 
-An example adjusted from [Blundell & Bond (1998)](https://www.sciencedirect.com/science/article/pii/S0304407698000098?casa_token=dYWIhT8f8OMAAAAA:ABPXjapGCr7BAZKtJVamMFPhU2yvYbgDcnAd7Usvp6H2QqyxhJftVQQ9i-KXcfAg_qH8BbAs), with unbalanced panel data of 140 firms in the UK over the years 1976-1984. The following model is estimated:
+To illustrate the estimation of a dynamic panel data model, we use an example adjusted from [Blundell & Bond (1998)](https://www.sciencedirect.com/science/article/pii/S0304407698000098?casa_token=dYWIhT8f8OMAAAAA:ABPXjapGCr7BAZKtJVamMFPhU2yvYbgDcnAd7Usvp6H2QqyxhJftVQQ9i-KXcfAg_qH8BbAs). We are interested in the impact of wages and capital stock on employment rates. As current employment rates are expected to depend on their values of the previous year, a dynamic model is more suitable. The dataset consists of unbalanced panel data of 140 firms in the UK over the years 1976-1984. Specifically, the following model is estimated:
 
-
-$Log(Empl)_{it} = \beta_1 Log(Empl)_{i,t-1} + \beta_2 Log(Wage)_{it} + \beta_3 Log(Wage)_{i,t-1} + \beta_4 Log(Cap)_{it} + \beta_5 Log(Cap)_{i,t-1} + \mu_{i} + v_{it}$
+$Emp_{it} = \beta_1 Emp_{i,t-1} + \beta_2 Wage_{it} + \beta_3 Wage_{i,t-1} + \beta_4 Cap_{it} + \beta_5 Cap_{i,t-1} + \mu_{i} + v_{it}$
 
 {{<katex>}}
 {{</katex>}}
 
 Where:
-- $Log(Empl)_{it}$ is the log of employment in firm $i$ in year $t$, and its lag is included on the right-hand side
+- $Emp_{it}$ is the log of employment in firm $i$ in year $t$, and its lag is included on the right-hand side
 - The independent variables include both current and lag values of log wages and log capital
 - $\mu_{i}$: The fixed effects per firm
 - $v_{it}$: The idiosyncratic error term
@@ -173,7 +172,7 @@ dyn_model <- pgmm(log(emp) ~ lag(log(emp), 1) +
 - `collapse = TRUE` reduces the number of instruments to avoid overfitting the model
 
 {{% tip %}}
-- For further details, refer to the [pgmm documentation](https://rdrr.io/cran/plm/man/pgmm.html).
+For further details on arguments you can use within the function, refer to the [pgmm documentation](https://rdrr.io/cran/plm/man/pgmm.html).
 {{% /tip %}}
 
 ## Interpreting the output
@@ -190,27 +189,24 @@ summary(dyn_model, robust = TRUE)
 </p>
 
 
-Refer to this [topic] for full interpretation of a summary output in R. 
+Refer to this [topic](/regressionoutput) for full interpretation of a summary output in R. 
 
 Employment persistence is found to be very strong, indicated by the positive coefficient of past employment levels that is statistically significant at a 1% level. Furthermore, higher current wages seem to decrease employment, while higher past wages increase employment. And, current investment has a positive impact, whereas past capital investments appear to have a negative effect on employment. 
 
+{{% tip %}}
+As a useful check, consistent estimates for the endogenous dependent variable in the dynamic model should lie inbetween the OLS and the FE estimates. This is because the OLS coefficient is biased upwards and the FE biased downwards. 
+{{% /tip %}}
 
-## Tests 
-- The Sargan test of the over-identifying restrictions tests the validity of the instruments. A p-value of 0.449 is high enough to indicate that the instruments are valid. 
 
-- Autocorrelation Tests: First-order serial correlation (1) is present indicated with a p-value < 0.05, which happens by construction and is as expected. There is no second-order serial correlation (2), indicated with a p-value > 0.05, which is consistent with the assumptions. If AR(@) was present, the second lags of the endogenous variables will not be appropriate instruments for their current values. 
+Furthermore, the output gives some test diagnostics that can help to assess the validity of the model. In our output:
+
+- The *Sargan test* assesses the validity of the instruments, and a p-value of 0.449 is high enough to not reject the null hypothesis, which means the instruments are valid. 
+
+- *Autocorrelation test (1)* tests for serial correlation at the first order, which is as expected present in the model, indicated with a p-value < 0.05. On the other hand, second-order serial correlation (2) is not present, indicated with a p-value > 0.05, which is consistent with the assumptions. If serial correlation at the second-order was present, the second lags of the endogenous variables will not be appropriate instruments for their current values. 
 
 - The Wald Tests assesses the joint significance of all the coefficients or time dummies in the model. The low p-value indicates that we reject the null hypothesis, suggesting the coefficients and time dummies have an effect on the dependent variable. 
- 
 
-All the test outcomes confirm the validity of the model. 
-
-These dynamic panel data estimators are highly sensitive to the particular specification of the model and its instruments. Therefore, it is good practice to do several robustness checks and experiment with different model specifications the inclusion of different lag lenghts.
-
-
-{{% tip %}}
-As a useful check, consistent estimates should lie inbetween the OLS and the FE estimates. This is because the OLS coefficient is biased upwards and the FE biased downwards. 
-{{% /tip %}}
+All the test outcomes confirm the validity of the model. However, these dynamic panel data estimators are highly sensitive to the particular specification of the model and its instruments. Therefore, it is good practice to do several robustness checks and experiment with different model specifications the inclusion of different lag lenghts.
 
 
 {{% summary %}}
