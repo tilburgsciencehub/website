@@ -1,5 +1,5 @@
 ---
 draft: false
-title: "Assumption Tests"
+title: "Tests"
 weight: 1
 ---
