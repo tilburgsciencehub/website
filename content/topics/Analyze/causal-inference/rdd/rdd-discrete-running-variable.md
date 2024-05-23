@@ -7,7 +7,7 @@ weight: 8
 author: "Victor Arutyunov"
 ---
 
-# Introduction
+## Introduction
 
 This building block discusses causal inference from regression discontinuity designs (RDDs) where the running variable determining treatment assignment is discrete. This is a practically relevant application of RDDs, given that treatments are often assigned based on discrete variables such as age, date of birth, or calendar time. 
 
@@ -15,7 +15,7 @@ RDDs are applied in settings where treatment probability changes discontinuously
 
 This building block explains the issues associated with discrete as opposed to continuous running variables and discusses the different approaches used to deal with them. 
 
-# Approaches to RDD: continuity-based vs local randomisation
+## Approaches to RDD: continuity-based vs local randomisation
 
 Causal inference in RDDs can be based on either the continuity-based or the local randomisation approach. The fundamental assumption of the continuity-based approach is that the observable and unobservable characteristics of subjects change smoothly and continuously around the cutoff point, allowing us to infer that any _discontinuous_ differences in the outcome of interest at the cutoff are the result of differences in treatment assignment. The treatment effect given by such methods is the treatment effect _at the cutoff_, equivalent to the ‘jump’ or discontinuity observed graphically.  
 
@@ -29,11 +29,14 @@ The local randomisation approach rests on the assumption that, for observations 
 Read more about the local randomisation approach [here](https://tilburgsciencehub.com/topics/analyze/causal-inference/rdd/local-randomization/).
 {{% /tip %}}
 
-## The problem of discrete running variables
+### The problem of discrete running variables
 
 If the running variable is discrete, however, this need not be the case. Local polynomial methods process each distinct value of the discrete running variable (also called a support point or a mass point) as a single observation. If there are many support points which are sufficiently close to each other, the continuity assumption is still plausible and estimation as in continuous running variable RD designs is valid. However, if support points are few and sparse, it is much less likely to be the case that the relevant observable and unobservable characteristics change continuously with the running variable. RDD applications with discrete running variables and few values of these variables are therefore often better suited to the local randomisation approach.  
 
-# Using local randomisation with few distinct mass points  
+## Using local randomisation with few distinct mass points  
+
+{{<katex>}}
+{{</katex>}}
 
 Identification in the local randomisation approach rests on the formal assumption that, within a certain sufficiently narrow bandwidth bounded by $c-h$ and $c+h$, where $c$ is the cutoff value, units just above and just below the cutoff are fundamentally similar and comparable to each other, and that therefore treatment assignment based on the cutoff value is as if random. This implies that the running variable is random and orthogonal to the values of the outcome variable.  
 
@@ -55,7 +58,7 @@ The main disadvantage of the local randomisation approach is that the assumption
 
 In cases where the local randomisation approach cannot be applied because of the restrictions it places on bandwidth size, we can use an amended version of the continuity-based approach described by [Kolesár and Rothe (2018)](https://www.aeaweb.org/articles?id=10.1257/aer.20160945). 
 
-# Using the continuity-based approach with ‘honest’ confidence intervals 
+## Using the continuity-based approach with ‘honest’ confidence intervals 
 
 We’ve already seen why we cannot apply the conventional continuity-based approach to settings where the running variable takes on only a few distinct values. Essentially, it is difficult to credibly ascertain the functional form of our regression equation, leading to specification bias. Of course, some degree of specification bias is always present, because the true form of the CEF is almost never exactly linear or quadratic. However, when the CEF is estimated over a sufficiently narrow bandwidth, the size of this specification bias relative to the standard error of the treatment estimator is negligible and approaches zero. This allows us to use conventional confidence intervals based on (heteroskedasticity-robust) Eicker-Huber-White standard errors (EHW) for causal inference without correcting for specification bias. 
 
@@ -63,7 +66,7 @@ In settings where the running variable only takes on a few distinct values, we u
 
 Kolesár and Rothe (2018) show that this issue cannot be solved by clustering standard errors at each value of the discrete running variable, as was previously thought. Instead, they propose two alternative methods for constructing confidence intervals for causal inference in the case of RDDs with few distinct values of the assignment variable.  In this building block, we mainly discuss the first approach, which is based on bounding the second derivative of the CEF. This is because it holds more generally than the second approach, based on bounding the misspecification error at the cutoff, which requires stronger conditions to work as an honest confidence interval.  
  
-# Bounding the second derivative (BSD) confidence intervals 
+## Bounding the second derivative (BSD) confidence intervals 
 
 Kolesár and Rothe (2018) use the BSD method to estimate the maximum bias the treatment estimator can suffer from and include this bias in the confidence interval as follows: 
 
@@ -94,7 +97,7 @@ Fortunately, we can derive a lower bound for $K$ based on our data using [Armstr
 
 {{% /warning %}}
 
-## Implementing Honest BSD confidence intervals in R
+### Implementing Honest BSD confidence intervals in R
 
 In this section, we demonstrate a simple implementation of BSD confidence intervals in R using the [RDHonest](https://github.com/kolesarm/RDHonest/blob/master/doc/RDHonest.pdf) package. The package includes some datasets, such as _cghs_, which relates to [Oreopoulos's (2006)](https://www.aeaweb.org/articles?id=10.1257/000282806776157641) study of the effects of a change in the minimum school leaving age in Britain on earnings. Oreopoulos uses age as the discrete running variable of his study. 
 
@@ -151,7 +154,7 @@ _Output_
 
 In the regression output we can see the treatment estimate, the maximum bias, and the confidence intervals and p-value computed accounting for this bias. 
 
-# Summary 
+## Summary 
 
 {{% summary %}}
 
