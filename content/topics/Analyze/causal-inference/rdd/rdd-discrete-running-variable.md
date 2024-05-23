@@ -1,10 +1,13 @@
 ---
 title: "RDD with Discrete Running Variables"
 description: "Estimating treatment effects in regression discontinuity designs (RDDs) when the running variable is discrete and not continuous."
-keywords: "RDD, causal, inference, effect, regression, R, RDHonest, bias"
+keywords: "RDD, causal, inference, effect, regression, discontinuity, R, RDHonest, bias"
 draft: false
 weight: 8
 author: "Victor Arutyunov"
+aliases:
+ - /regression/discontinuity
+ - /discrete/designs
 ---
 
 ## Introduction
