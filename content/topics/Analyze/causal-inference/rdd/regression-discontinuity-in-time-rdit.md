@@ -56,21 +56,21 @@ Given this susceptibility of RDiT designs to bias, Hausman and Rapson (2018) pro
 
 5. Estimate a ‘donut’ RD, removing observations just before and after the treatment date, to minimise the threat to inference from any sorting, anticipation, or avoidance effects, which are likely to be concentrated in the period right around the treatment date. This will help to allay doubts about the possibility of manipulation/selection into treatment in biasing our estimates.
 
-{{% tip}}
+{{% tip %}}
 
 'Donut' regression discontinuity designs are frequently used when there is non-random 'heaping' in the data. Heaping refers to cases where certain values of the running variable have much higher densities than adjacent values. This is often the case when there is some type of manipulation of the running variable: think of the pollution example - if polluters realise that a new regulation will be enforced on day $x$ (they _anticipate_ the policy), they might want to install their polluting facilities on day $x-1$. If many of them do so simultaneously, we will observe much higher values of installations on day $x-1$ than on nearby dates. [Barreca et al. (2011)](https://www.nber.org/papers/w17408) show that estimating regular RD regressions when there is such non-random heaping yields biased estimates. Intuitively, the presence of such 'heaps' violates the smoothness assumptions which are essential for RDDs to give unbiased treatment effect estimates. Donut RDDs solve this problem by simply dropping all observations at the 'heaps' and re-estimating the regressions without these observations. Barreca et al. (2011) show that this is the most robust way of estimating unbiased treatment effects in RD settings with manipulation/heaping. Therefore, it is good practice to use the donut RDD approach, i.e., dropping observations around the cutoff, where heaping is most likely to occur in RDiT settings, as a robustness check in RDiT designs where we suspect (remember that we cannot explicitly _test_ for manipulation when time is the running variable) manipulation/heaping is present.   
 
-{{% /tip}}
+{{% /tip %}}
 
 6. Test for serial correlation in residuals, for instance using a Durbin-Watson test. If serial correlation is present, compute heteroskedasticity and autocorrelation consistent (HAC) standard errors, also known as Newey-West standard errors. In some applications it may also be relevant to test for autoregression in the outcome variable and include lagged values of the outcome variable if autoregression is indeed present.  
 
 7. To avoid using an excessively wide bandwidth, estimate treatment effects using Hausman and Rapson’s (2018) ‘augmented local linear’ methodology. In the first stage, use the full data sample to regress the outcome on covariates/potential confounders only, excluding the treatment variable. In the second stage, regress the residuals of the first stage on the treatment, using an appropriate narrow bandwidth. See section 3 of [Hausman & Rapson (2018)](https://doi.org/10.1146/annurev-resource-121517-033306) for further reference.  
 
-{{% tip}}
+{{% tip %}}
 
 For more information on sensitivity and placebo tests (points 2, 3, and 4), as well as validation and falsification analysis for RDD more generally, see [this building block](https://tilburgsciencehub.com/topics/analyze/causal-inference/rdd/validation-falsification/).
 
-{{% /tip}}
+{{% /tip %}}
 
 ## Estimating RDiT in R 
 
@@ -78,7 +78,7 @@ Now we apply some of the recommendations described above to a dataset used in Go
 
 First, we load the necessary packages and the data, which is available on surfdrive in STATA 11/12 format. 
 
-{{% codeblock}}
+{{% codeblock %}}
 ```R
 #load packages
 library(foreign) #to read data in STATA format
@@ -92,11 +92,11 @@ fertility <- read.dta(file = theUrl_ca4b)
 #sort the data by date
 fertility <- fertility[order(fertility$date),]
 ```
-{{% /codeblock}}
+{{% /codeblock %}}
 
 Before running our RDiT regressions, we can make a plot to visualise the data and the potential discontinuity at the treatment date. We focus on the abortions outcome variable. Note that the treatment (the child benefit) was introduced in July 2007 (this is coded as date=570 in the dataset) and that time is measured at the monthly level. Therefore, the time variable is centred on July 2007. In this case, we use a second-order polynomial (a quadratic), but you could also experiment with other polynomials by changing _p_ in the function below. We also select a 36-month (3-year) bandwidth, and you could also try experimenting with that (in the paper, effect estimates are robust to bandwidth choice). 
 
-{{% codeblock}}
+{{% codeblock %}}
 ```R
 #use the with function to select a bandwidth
 #set polynomial order with p=...
@@ -104,7 +104,7 @@ Before running our RDiT regressions, we can make a plot to visualise the data an
 #y.lim is used to define the height of the y-axis
 with(subset(fertility, date >= 540 & date <=599), rdplot(y = abortions, p=2, x = month_of_conception, nbins=30, y.lim = c(0, 10000), title="Discontinuity in abortions after the introduction of the benefit", x.label="Month (centered on policy introduction date)", y.label="Abortions"))
 ```
-{{% /codeblock}}
+{{% /codeblock %}}
 
 _Output_
 
@@ -114,7 +114,7 @@ _Output_
 
 We see a clear discontinuity at the treatment date. Now, we can test for this formally by running a standard RDiT regression:
 
-{{% codeblock}}
+{{% codeblock %}}
 ```R
 #estimation of treatment effect with a second-order polynomial
 #use natural log of abortions as in the paper
@@ -123,7 +123,7 @@ fertility$month_qdr <- fertility$month_of_birth^2 #create quadratic of the time 
 rdit <- lm(ln_abortions ~ month_of_birth + month_qdr + treatment_dummy + month_of_birth*treatment_dummy + month_qdr*treatment_dummy, subset(fertility, date <= 599 & date >= 540)) 
 summary(rdit)
 ```
-{{% /codeblock}}
+{{% /codeblock %}}
 
 _Output_
 
@@ -133,11 +133,12 @@ _Output_
 
 We see a statistically significant negative effect of the treatment on abortions, which is also what Gonzalez (2013) finds in her paper. Now, let's run some of the robustness checks mentioned above. We start by testing for serial correlation in the residuals using the Durbin-Watson test.
 
-{{% codeblock}}
+{{% codeblock %}}
 ```R
 #Durbin-Watson test for serial correlation in the residuals
 dwtest(rdit, alternative = "two.sided")
 ```
+{{% /codeblock %}}
 
 _Output_
 
@@ -145,16 +146,14 @@ _Output_
 <img src = "../images/RDiT-DWTest.png" width=400">
 </p>
 
-{{% /codeblock}}
-
 We see that the p-value is well below 0.05, meaning we can reject the null hypothesis of no serial correlation. Given that residuals exhibit this serial correlation, we compute HAC standard errors:
 
-{{% codeblock}}
+{{% codeblock %}}
 ```R
 #use vcovHAC in coeftest to re-estimate the model with HAC standard errors
 coeftest(rdit, vcovHAC(rdit))
 ```
-{{% /codeblock}}
+{{% /codeblock %}}
 
 _Output_
 
@@ -166,13 +165,13 @@ The HAC standard errors do differ from the conventional ones, but do not change 
 
 Now, we estimate a donut RDD, allowing for the possibility that individuals anticipate the policy and change their behaviour accordingly. We assume that they can do so within 1 month of the treatment date (before and after).
 
-{{% codeblock}}
+{{% codeblock %}}
 ```R
 #donut RDD removing 1 month before and 1 month after the treatment date
 rdit_donut <- lm(ln_abortions ~ month_of_birth + month_qdr + treatment_dummy + month_of_birth*treatment_dummy + month_qdr*treatment_dummy, subset(fertility, date <= 599 & date >= 571 | date <= 568 & date >= 540))
 summary(rdit_donut)
 ```
-{{% /codeblock}}
+{{% /codeblock %}}
 
 _Output_
 
@@ -182,7 +181,7 @@ _Output_
 
 Again, the coefficient estimates remain significant after we remove observations just below and after the cutoff. The model is robust to potential manipulation effects. Finally, we perform a placebo test, running the same RDiT regression on a fake treatment date, which I choose to be July 2004 (coded as 534 in the dataset). We uses the same bandwidth (36 months to either side). We can first plot this placebo discontinuity to visualise it:
 
-{{% codeblock}}
+{{% codeblock %}}
 ```R
 #create variables to estimate placebo RDiT
 fertility$fake <- ifelse(fertility$date >= 534, 1, 0) #dummy for fake treatment
@@ -191,7 +190,7 @@ fertility$fake_qdr <- fertility$fake_month^2 #quadratic of time centred on the f
 #plot the placebo discontinuity
 with(subset(fertility, date >= 497 & date <=569), rdplot(y = abortions, p=2, x = fake_month, nbins=30, y.lim = c(0, 10000), title="Discontinuity in abortions at the fake treatment date", x.label="Month (centered on fake policy introduction date)", y.label="Abortions"))
 ```
-{{% /codeblock}}
+{{% /codeblock %}}
 
 _Output_
 
@@ -201,12 +200,12 @@ _Output_
 
 We can already see that there is not much of a discontinuity at the fake treatment date. We now test this formally:
 
-{{% codeblock}}
+{{% codeblock %}}
 ```R
 placebo <- lm(ln_abortions ~ fake_month + fake_qdr + fake + fake*fake_month + fake*fake_qdr, subset(fertility, date <= 569 & date >= 497))
 summary(placebo)
 ```
-{{% /codeblock}}
+{{% /codeblock %}}
 
 _Output_
 
