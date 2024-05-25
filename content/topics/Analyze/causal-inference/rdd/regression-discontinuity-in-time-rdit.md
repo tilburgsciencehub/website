@@ -8,7 +8,6 @@ author: "Victor Arutyunov"
 aliases:
   - /regression/discontinuity
   - /time/designs
-  - /rdd/time
 ---
 
 ## Introduction 
