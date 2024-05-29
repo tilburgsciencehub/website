@@ -75,23 +75,18 @@ You can load the data by copying the following code into R.
 
 {{% codeblock %}}
 ```R
-data_url <- "https://raw.githubusercontent.com/tilburgsciencehub/website/topic/interpret-summary-regression/content/topics/Analyze/causal-inference/matching/nsw_dw.dta"
-
-load(url(data_url)) # is the cleaned data set
-
-```
-{{% /codeblock %}}
-
-Load the following packages:
-
-{{% codeblock %}}
-```R
-library(knitr)
+# Load the following packages
 library(haven)
+library(knitr)
 library(MatchIt)
+
+# Load the data into a data frame
+url <- "https://raw.githubusercontent.com/tilburgsciencehub/website/master/content/topics/Analyze/causal-inference/matching/nsw_dw.dta"
+
+data <- read_dta(url)
+
 ```
 {{% /codeblock %}}
-
 
 ### Difference-in-means estimate
 
