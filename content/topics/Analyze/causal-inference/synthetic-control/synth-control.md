@@ -79,7 +79,8 @@ The code uses data from [Abadie, Diamond and Hainmueller](https://www.nber.org/p
 library(Synth)
 	
 # Open the dataset
-url_synth=url("https://github.com/tilburgsciencehub/website/blob/9a0409c87948eb2cc523f9233b8e622574f55cac/content/topics/analyze-data/regressions-paneldata/synth_smoking.Rdata?raw=true")
+
+url_synth <- "https://raw.githubusercontent.com/tilburgsciencehub/website/master/content/topics/Analyze/causal-inference/synthetic-control/synth_smoking.Rdata"
 load(url_synth)
 
 # Data Preparation to pass the dataset to the correct format
