@@ -34,7 +34,7 @@ The three elements of RD designs (RDD) are:
 - **Cutoff** 
 - **Treatment**: a treatment is only assigned to units that have a score above the cutoff (dependent on the specific case, the treatment can be assigned to units below the cutoff)
 
-There are two types of RD designs, **sharp** and **fuzzy** RDD. In this topic we cover the sharp design. We start by discussing the setup of a Sharp RDD, followed by a practical example. The fuzzy RDD is covered in this [buiding block](/fuzzy/designs) of the series about RDD.
+There are two types of RD designs, **sharp** and **fuzzy** RDD. In this topic we cover the sharp design. We start by discussing the setup of a Sharp RDD, followed by a practical example. The fuzzy RDD is covered in this [topic](/fuzzy/designs) of the series about RDD.
 
 ## Sharp RDD setup
 

@@ -14,7 +14,7 @@ aliases:
 
 ## What is Synthetic Control
 
-Synthetic Control is a tool developed by Abadie and Gardeazabal (2003) used widely in applied econometrics and particularly in impact evaluation. Synthetic control is best used in a framework in which we are interested in measuring effects to some outcome in units at an aggregate level, for example countries or states. As opposed to other techniques like [Difference in Difference](/impact/evaluation) that give clear-cut definition of what is a control unit, Synthetic Control uses a data-driven approach to construct a control measure.
+Synthetic Control is a tool developed by Abadie and Gardeazabal (2003) used widely in applied econometrics and particularly in impact evaluation. Synthetic control is best used in a framework in which we are interested in measuring effects to some outcome in units at an aggregate level, for example countries or states. As opposed to other techniques like [Difference in Difference](/canonical-DiD) that give clear-cut definition of what is a control unit, Synthetic Control uses a data-driven approach to construct a control measure.
 
 {{% tip %}}
 Some useful vocabulary:
