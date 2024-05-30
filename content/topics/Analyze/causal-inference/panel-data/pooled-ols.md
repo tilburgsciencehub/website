@@ -1,6 +1,6 @@
 ---
 title: "The Pooled OLS Model"
-description: "A building block about the pooled OLS model, a model used to analyze panel data"
+description: "A topic about the pooled OLS model, a model used to analyze panel data"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
 weight: 4
@@ -13,7 +13,7 @@ aliases:
 
 # Overview
 
-The next building blocks will explain various models commonly used to analyze panel data. Each of these models have their own strengths and assumptions and the choice of an appropriate model depends on the specific research question and the underlying assumptions that hold for the panel data set at hand. This series of building blocks aims to provide guidance in choosing the most suitable model for your analysis!
+The next topics will explain various models commonly used to analyze panel data. Each of these models have their own strengths and assumptions and the choice of an appropriate model depends on the specific research question and the underlying assumptions that hold for the panel data set at hand. This series of articles aims to provide guidance in choosing the most suitable model for your analysis!
 
 The following models will be discussed: 
 - Pooled OLS
@@ -22,7 +22,7 @@ The following models will be discussed:
 - Between estimator
 - Random effects
 
-In this building block, we start with the Pooled OLS model.
+We start with the Pooled OLS model in this topic!
 
 ## Pooled OLS Model
 

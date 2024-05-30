@@ -1,6 +1,6 @@
 ---
 title: "An Introduction to Panel Data"
-description: "A building block about the basics of panel data"
+description: "A topic about the basics of panel data"
 keywords: "paneldata, panel, data, R, regression, model, fixed, effects"
 draft: false
 weight: 1
@@ -14,7 +14,7 @@ aliases:
 
 # Overview
 
-This building block will provide an introduction to panel data and how it can be helpful in causal inference analysis. Panel data refers to a specific type of dataset that includes observations on multiple entities over multiple time periods. Unlike pooled cross-sectional data, which can have different cross-sectional units in each time period, panel data follows the same cross-sectional units throughout a given time period.
+This topic will provide an introduction to panel data and how it can be helpful in causal inference analysis. Panel data refers to a specific type of dataset that includes observations on multiple entities over multiple time periods. Unlike pooled cross-sectional data, which can have different cross-sectional units in each time period, panel data follows the same cross-sectional units throughout a given time period.
 
 The growing use of panel data in policy analysis, economics and social sciences can be attributed to its advantageous features. The structure of panel data, analyzing the same cross-sectional units over time, offers several benefits over cross-sectional and pooled cross-sectional data, like:
 
@@ -30,7 +30,7 @@ The availability of multiple observations in panel data enhances the ability to 
 
  Panel data enables us to examine dynamic processes, such as lagged behavior or the outcomes of decision-making. By observing units over time, changes in variables over different time periods can be understood. 
 
-The building block will contain the following content: 
+The structure of the article is as follows:
 - Introduction to `Grunfeld` data 
 - Organising panel data
 - Exploring panel data
@@ -44,7 +44,7 @@ The building block will contain the following content:
 
 ## Introduction to `Grunfeld` data  
 
-The [Grunfeld data set](https://www.statsmodels.org/dev/datasets/generated/grunfeld.html) will be used for an example in this building block. It contains investment data for 11 U.S. Firms over a time period of 1935 until 1954. Thus, the data set contains 220 observations (11 firms * 20 years). The following variables are included:
+The [Grunfeld data set](https://www.statsmodels.org/dev/datasets/generated/grunfeld.html) will be used for an example. It contains investment data for 11 U.S. Firms over a time period of 1935 until 1954. Thus, the data set contains 220 observations (11 firms * 20 years). The following variables are included:
 
 | **Variables** 	| **Description** 	|
 |---	|---	|
@@ -305,7 +305,7 @@ For example, the observation $Y_{56}$ (firm 5 in year 6) has the intercept $\bet
 - $\delta_6$ represents the year-specific effect for year 6 (value of 1 for year 6, and 0 otherwise)
 {{% /tip %}}
 
-The following code estimates this fixed effects equation in R. Please refer to the [`fixest` building block](https://tilburgsciencehub.com/topics/analyze-data/regressions/fixest/) for a thorough explanation on this fixed effects regression in R and the package `fixest` in general.
+The following code estimates this fixed effects equation in R. Please refer to the [`fixest` article](https://tilburgsciencehub.com/topics/analyze-data/regressions/fixest/) for a thorough explanation on this fixed effects regression in R and the package `fixest` in general.
 
 {{% codeblock %}}
 ```R
@@ -321,11 +321,11 @@ summary(reg3)
 </p>
 
 {{% summary %}}
-This building block serves as an introductory guide to panel data analysis. It covers the fundamentals of panel data, like how to organise a panel data set, explore panel data through visualization and the notation. 
+This article serves as an introductory guide to panel data analysis. It covers the fundamentals of panel data, like how to organise a panel data set, explore panel data through visualization and the notation. 
 
 Furthermore, an example analysis is conducted. This analysis starts with a regression using cross-sectional data. Then, panel data techniques are gradually introduced to address the potential bias of unobserved heterogeneity. Two types of fixed effects are explained and included in the model:
 - Entity fixed effects that are constant over time (and vary across entities)
 - Time fixed effects that are constant across entities (and vary over time)
 
-In the next building blocks, the assumptions of fixed effects regressions and the most popular models to analyse panel data are discussed.
+In the next topics, [the assumptions of fixed effects regressions](/fixedeffectsassumptions) and the most popular models to analyse panel data are discussed.
 {{% /summary %}}

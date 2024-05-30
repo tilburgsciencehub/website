@@ -41,24 +41,29 @@ Say goodbye to "*but it works on my computer*", embrace the power of containeris
 ## Installing Docker
 
 ### Windows Users
-Download docker from [Docker's official website](https://docs.docker.com/desktop/windows/install/), and follow the following steps to **install docker on windows**.
+Download Docker from [Docker's official website](https://docs.docker.com/desktop/windows/install/), and follow the steps listed below to **install  and set up Docker on windows**. In order to use the installation process below, you will need to have Windows Subsystem for Linux (WSL) of version 1.1.3.0 or later installed. Using WSL is advantageous because it will allow us to use both Linux and Windows. 
+
+See [this building block](https://tilburgsciencehub.com/topics/computer-setup/develop-coding-skills/bash/commandline/) for instructions on how to install and set up WSL. 
+
 {{% summary %}}
 Follow these steps:
 
 1. Click on **Download Docker Desktop for Windows**
-
-2. Double-click **Docker Desktop Installer.exe** to run the installer
-
-3. When prompted, ensure that the **Enable Hyper-V Windows Features** or the Install required Windows components for WSL 2 option is selected on the Configuration page.
-
+2. Double-click **Docker Desktop Installer.exe** to run the installer.
+3. If prompted, ensure the **Use WSL 2** instead of Hyper-V option on the Configuration page is selected.
 4. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
-
-5. When the installation is successful, click "Close" to complete the installation process.
+5. Once the installation is finished, the installer will ask you to restart. Accept the option to restart - Docker will open automatically once your computer restarts.
+6. When Docker opens, you will have to create a username and a password and verify your email to activate your Docker account.
+7. Docker will automatically integrate with your default WSL distribution. If you want to enable integration with additional distributions, open Docker, go to Settings > Resources > WSL integration, tick the option "Enable integration with additional distros" and click on "Apply & restart". 
 {{% /summary %}}
 
 {{% warning %}}
 If your admin account is different to your user account, you must add the user to the docker-users group. Run Computer Management as an administrator and navigate to Local Users and Groups > Groups > docker-users. Right-click to add the user to the group. Log out and log back in for the changes to take effect.
 {{% /warning %}}
+
+{{% tip %}}
+You can read more about installing Docker on Windows [here](https://docs.docker.com/desktop/install/windows-install/).
+{{% /tip %}}
 
 ### Mac Users
 **Download Docker Desktop on Mac** from [Docker's official website](https://docs.docker.com/desktop/mac/install/), where you will also find detailed instructions.
