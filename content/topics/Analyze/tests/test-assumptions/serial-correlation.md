@@ -3,7 +3,7 @@ title: "Testing for Serial Correlation"
 description: "Learn how to identify and address serial correlation through visual inspection, statistical tests, and adjustments to standard errors."
 keywords: "serial correlation, serial, correlation, autocorrelation, statistical, test, testing, R, OLS, assumptions, standard, error, errors, Durbin-Watson, Breusch-Godfrey, Wooldridge"
 draft: false
-weight: 1
+weight: 2
 author: "Valerie Vossen"
 aliases:
   - /serial-correlation
