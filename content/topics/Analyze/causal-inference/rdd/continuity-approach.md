@@ -3,7 +3,7 @@ title: "Continuity-Based Approach"
 description: "Continuity based approach - a framework for regression discontinuity analysis. Theory of local polynomial point estimation, local polynomial inference."
 keywords: "regression, discontinuity, continuity, approach, local, polynomial"
 date: 2023-05-25
-weight: 6
+weight: 3
 author: "Ana Bianca Luca"
 authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
@@ -13,9 +13,9 @@ aliases:
 
 # Introduction
 
-In this building block, we discuss the local polynomial approach in the context of the [Sharp RD Design](/sharp/designs) for estimating the parameter of interest, $\tau_{SRD}$. 
+In this topic, we discuss the local polynomial approach in the context of the [Sharp RD Design](/sharp/designs) for estimating the parameter of interest, $\tau_{SRD}$. 
 
-To approximate the regression function $\mathbb{E}[Y_{i}|X_{i} = x]$, defined in the building block about [Sharp RD Designs](/sharp/designs), least-squares method is used to fit a polynomial of the observed outcome on the score. If all observations are used for the estimation, the polynomial fits are **global** or **parametric**, however, if only the observations with scores around the cutoff are used, the polynomial fits are **local** or **non-parametric**.  In this building block we discuss the local polynomial approach.
+To approximate the regression function $\mathbb{E}[Y_{i}|X_{i} = x]$, defined in the topic about [Sharp RD Designs](/sharp/designs), least-squares method is used to fit a polynomial of the observed outcome on the score. If all observations are used for the estimation, the polynomial fits are **global** or **parametric**, however, if only the observations with scores around the cutoff are used, the polynomial fits are **local** or **non-parametric**.  In this topic we discuss the local polynomial approach.
 
 ## Local Polynomial Point Estimation
 
@@ -103,7 +103,7 @@ Additionally, we can opt to report all the bandwidth choices. To do this, we rep
 {{% summary %}}
 The local polynomial approach in sharp regression discontinuity design (SRD) offers a robust estimation method by focusing on observations around the cutoff, minimizing overfitting issues. The careful selection of the kernel function, polynomial order, and bandwidth is crucial for accurate estimation and reliable results.
 
-The local randomization approach can be seen as an extension of this contuinity-based approach and is discussed in [this building block](/local/randomization).
+The local randomization approach can be seen as an extension of this contuinity-based approach and is discussed in [this topic](/local/randomization).
 
 {{% /summary %}}
 

@@ -3,7 +3,7 @@ title: "Sharp RD Designs"
 description: "Foundations of regression discontinuity - the sharp design; a practical example and theory on the local nature of regression discontinuity effects"
 keywords: "regression, discontinuity, sharp, designs, foundations, example, local, nature, effects"
 date: 2023-05-12
-weight: 4
+weight: 1
 author: "Ana Bianca Luca"
 authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
@@ -34,7 +34,7 @@ The three elements of RD designs (RDD) are:
 - **Cutoff** 
 - **Treatment**: a treatment is only assigned to units that have a score above the cutoff (dependent on the specific case, the treatment can be assigned to units below the cutoff)
 
-There are two types of RD designs, **sharp** and **fuzzy** RDD. In this building block we cover the sharp design. We start by discussing the setup of a Sharp RDD, followed by a practical example. The fuzzy RDD is covered in this [buiding block](/fuzzy/designs) of the series about RDD.
+There are two types of RD designs, **sharp** and **fuzzy** RDD. In this topic we cover the sharp design. We start by discussing the setup of a Sharp RDD, followed by a practical example. The fuzzy RDD is covered in this [buiding block](/fuzzy/designs) of the series about RDD.
 
 ## Sharp RDD setup
 
@@ -119,9 +119,9 @@ To extrapolate the RD treatment effect, certain assumptions should be imposed ab
 - the presence of multiple cutoffs
 
 {{% summary %}}
-RDD is a non-experimental research design used to analyze causal effects. In this first building block of a series on Regression Discontuinity Design, we discussed the sharp RDD. The sharp RD relies on a few important features, like a continuous distribution of the score that has only one dimension, existence of a unique cutoff and perfect compliance with treatment assignment. The sharp RD treatment effect is the average difference in potential outcomes between treatment and control at the cutoff.
+RDD is a non-experimental research design used to analyze causal effects. In this first topic of a series on Regression Discontuinity Design, we discussed the sharp RDD. The sharp RD relies on a few important features, like a continuous distribution of the score that has only one dimension, existence of a unique cutoff and perfect compliance with treatment assignment. The sharp RD treatment effect is the average difference in potential outcomes between treatment and control at the cutoff.
 
-In the [next building block](/plot/designs), we will dive deeper into the RDD subject by discussing Regression Discontuinity plots. 
+In the [next topic](/plot/designs), we will dive deeper into the RDD subject by discussing Regression Discontuinity plots. 
 {{% /summary %}}
 
 

@@ -3,7 +3,7 @@ title: "Validation and Falsification Analysis for RDD"
 description: "Validation and falsification analysis methods for the RD designs. Explanation of methods, how to implement them for both continuity and local randomization approaches, how to interpret results"
 keywords: "regression, discontinuity, validation, falsification, analysis"
 date: 2023-07-17
-weight: 1
+weight: 7
 author: "Ana Bianca Luca"
 authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
@@ -13,11 +13,11 @@ aliases:
 
 ## Introduction
 
-This building block provides a comprehensive overview of several tests used to verify the assumptions of the RDD design that ensure robustness of the analysis. 
+This topic provides a comprehensive overview of several tests used to verify the assumptions of the RDD design that ensure robustness of the analysis. 
 
 The Regression Discontuinity Design (RDD) assumes **no precise manipulation** at the cutoff. Precise manipulation happens if subjects know the cutoff and manipulate accordingly whether they end up below or above the cutoff, which determines whether they belong to the treatment or control group. As a result, treatment assignment is not as good as random anymore at the cutoff value of the running variable. An example of precise manipulation would be if in a targeted aid program for lower-income groups, some subject position themselves just below the cutoff of income level to qualify for this aid. 
 
-In this building block we discuss 6 validation methods, based on various empirical implications of the unobservable RD assumptions that are expected to hold in most cases. These methods are explored within both the standard [continuity-based approach](/continuity/approach) and the extended [local randomization approach](/local/randomization).
+In this topic we discuss 6 validation methods, based on various empirical implications of the unobservable RD assumptions that are expected to hold in most cases. These methods are explored within both the standard [continuity-based approach](/continuity/approach) and the extended [local randomization approach](/local/randomization).
 
 {{% tip %}}
 __Falsification Test__
@@ -39,7 +39,7 @@ If the p-value is lower than 0.05, the null hypothesis can be rejected and other
 
 #### The continuity-based approach
 
-For each predetermined covariate or placebo outcome, an optimal bandwidth should be chosen first, and then the local polynomial estimation techniques within that bandwidth can be used to estimate the treatment effect. In the [continuity-based approach building block](/continuity/approach), this estimation method is explaiend in more detail. 
+For each predetermined covariate or placebo outcome, an optimal bandwidth should be chosen first, and then the local polynomial estimation techniques within that bandwidth can be used to estimate the treatment effect. In the [continuity-based approach topic](/continuity/approach), this estimation method is explained in more detail. 
 
 Specifically, `rdrobust` function should be run using each covariate of interest as the outcome variable (`Y` in the code). The running variable is specified by `R` and bandwidth (`bw`) is set to 0.2 here. The kernel used is the triangular kernel. 
 
@@ -186,7 +186,7 @@ An increase in the bandwidth leads to:
 - An increased bias of the local polynomial estimator: data points that are more distant from the cutoff are included now.
 - A lower variance ("noise") in the estimator: more observations are considered, so the treatment effect becomes less noisy.
 
-For more details on bandwidth selection, see the [Continuity-based approach](/continuity/approach) building block.
+For more details on bandwidth selection, see the [Continuity-based approach](/continuity/approach) topic.
 {{% /tip %}}
 
 ### 6. Sensitivity to Window Choice
@@ -209,7 +209,7 @@ Given that the statistic test of this function is the difference in means, a p-v
 
 ## Overview
 
-This table gives an overview of all the tests for validation of the RDD discussed in this building block, including which function in R to use in the context of a continuity-based or local randomization approach.
+This table gives an overview of all the tests for validation of the RDD discussed in this topic, including which function in R to use in the context of a continuity-based or local randomization approach.
 
 | Test | Description | Continuity-<BR> based <BR> Approach | Local <BR> Randomization <BR> Approach |
 | --- | --- | --- | --- |
@@ -222,7 +222,7 @@ This table gives an overview of all the tests for validation of the RDD discusse
 
 {{% summary %}}
 
-In this building block we have discussed 6 validation methods, based on various empirical implications of the unobservable RD assumptions that are expected to hold in most cases. These methods were explored within both the standard [continuity-based approach](/continuity/approach) and the extended [local randomization approach](/local/randomization).
+In this topic we have discussed 6 validation methods, based on various empirical implications of the unobservable RD assumptions that are expected to hold in most cases. These methods were explored within both the standard [continuity-based approach](/continuity/approach) and the extended [local randomization approach](/local/randomization).
 
 {{% /summary %}}
 

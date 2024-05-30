@@ -1,5 +1,5 @@
 ---
-title: "Regression discontinuity in time (RDiT)"
+title: "Regression Discontinuity in Time (RDiT)"
 description: "Causal inference in regression discontinuity designs where the running variable is time."
 keywords: "RDD, causal, inference, effect, regression, R, RDiT, bias, time series, serial correlation, donut RDD"
 draft: false
@@ -14,7 +14,7 @@ aliases:
 
 Regression discontinuity (RD) designs are a popular method for causal inference in non-experimental contexts in economics and other fields, such as political science and healthcare. They rely on the existence of a threshold defined as a value of some running variable, to one side of which subjects are treated, and to the other not. Regression discontinuity in time (RDiT) designs are those RD applications where time is the running variable. The cutoff consequently is the treatment date: after it, subjects are treated, and before it, they are not.  
 
-The RDiT design is thus useful in cases where there is no cross-sectional variation in treatment status; that is, on a certain date, treatment is applied to all subjects, meaning designs such as [difference-in-differences (DiD)](https://tilburgsciencehub.com/topics/analyze/causal-inference/did/canonical-did-table/) are not applicable. Like in canonical ([continuity-based](https://tilburgsciencehub.com/topics/analyze/causal-inference/rdd/continuity-approach/)) RD designs, in RDiT we identify the treatment effect as a discontinuity in the outcome variable at the cutoff, assuming that any potential time-varying confounders change smoothly around the threshold. However, there are also important differences between standard RD and RDiT designs which have implications for causal inference.  
+The RDiT design is thus useful in cases where there is no cross-sectional variation in treatment status; that is, on a certain date, treatment is applied to all subjects, meaning designs such as [difference-in-differences (DiD)](/canonical-DiD) are not applicable. Like in canonical ([continuity-based](/continuity/approach)) RD designs, in RDiT we identify the treatment effect as a discontinuity in the outcome variable at the cutoff, assuming that any potential time-varying confounders change smoothly around the threshold. However, there are also important differences between standard RD and RDiT designs which have implications for causal inference.  
 
 ## Differences between standard RDD and RDiT 
 
@@ -24,7 +24,7 @@ In addition, if our time variable is measured sparsely, i.e. at low-frequency un
 
 Secondly, as time is the running variable, the data will have time series properties. This can translate into two issues: autoregression in the outcome variable (i.e. the outcome depends on its previous values) and serial correlation in the residuals of our fitted RD models (i.e. residuals from observations next to each other are not independent of each other, violating the Gauss-Markov assumptions).  
 
-The third difference is that we cannot interpret an RDiT design with the [local randomisation approach](https://tilburgsciencehub.com/topics/analyze/causal-inference/rdd/local-randomization/), because we cannot perceive time as being assigned randomly in a bandwidth around a threshold. Instead, we can only use the [continuity-based approach](https://tilburgsciencehub.com/topics/analyze/causal-inference/rdd/continuity-approach/) to RD designs in an RDiT setting, using discontinuities in the outcome at the cutoff to identify causal treatment effects.  
+The third difference is that we cannot interpret an RDiT design with the [local randomisation approach](/local/randomization), because we cannot perceive time as being assigned randomly in a bandwidth around a threshold. Instead, we can only use the [continuity-based approach](/continuity/approach) to RD designs in an RDiT setting, using discontinuities in the outcome at the cutoff to identify causal treatment effects.  
 
 Finally, as time has a uniform density, it is impossible to conduct standard density tests (such as the McCrary test) for manipulation of the running variable in RDiT designs. This makes it impossible to test for selection into treatment in the form of anticipation, sorting, or avoidance, all of which could bias the treatment estimates.  
 
@@ -68,7 +68,7 @@ Given this susceptibility of RDiT designs to bias, Hausman and Rapson (2018) pro
 
 {{% tip %}}
 
-For more information on sensitivity and placebo tests (points 2, 3, and 4), as well as validation and falsification analysis for RDD more generally, see [this building block](https://tilburgsciencehub.com/topics/analyze/causal-inference/rdd/validation-falsification/).
+For more information on sensitivity and placebo tests (points 2, 3, and 4), as well as validation and falsification analysis for RDD more generally, see [this topic](/validation/analysis).
 
 {{% /tip %}}
 
