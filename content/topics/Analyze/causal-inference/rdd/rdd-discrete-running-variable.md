@@ -12,24 +12,24 @@ aliases:
 
 ## Introduction
 
-This building block discusses causal inference from regression discontinuity designs (RDDs) where the running variable determining treatment assignment is discrete. This is a practically relevant application of RDDs, given that treatments are often assigned based on discrete variables such as age, date of birth, or calendar time. 
+This topic discusses causal inference from regression discontinuity designs (RDDs) where the running variable determining treatment assignment is discrete. This is a practically relevant application of RDDs, given that treatments are often assigned based on discrete variables such as age, date of birth, or calendar time. 
 
-RDDs are applied in settings where treatment probability changes discontinuously around a certain cutoff or threshold. This cutoff refers to a value of the running variable (also known as the assignment variable or the score) based on which a certain policy or treatment is applied or assigned. For example, in the case of the legal drinking age, age is the running variable, and the minimum legal drinking age is the cutoff. RD designs can be [sharp](https://tilburgsciencehub.com/topics/analyze/causal-inference/rdd/sharp-rdd/), if treatment probability changes from 0% to 100% at the cutoff, or [fuzzy](https://tilburgsciencehub.com/topics/analyze/causal-inference/rdd/fuzzy-rdd/), if treatment probability changes less drastically (but still discontinuously) at the cutoff, such as in the case of the legal drinking age.  
+RDDs are applied in settings where treatment probability changes discontinuously around a certain cutoff or threshold. This cutoff refers to a value of the running variable (also known as the assignment variable or the score) based on which a certain policy or treatment is applied or assigned. For example, in the case of the legal drinking age, age is the running variable, and the minimum legal drinking age is the cutoff. RD designs can be [sharp](/sharp/designs), if treatment probability changes from 0% to 100% at the cutoff, or [fuzzy](/fuzzy/designs), if treatment probability changes less drastically (but still discontinuously) at the cutoff, such as in the case of the legal drinking age.  
 
-This building block explains the issues associated with discrete as opposed to continuous running variables and discusses the different approaches used to deal with them. 
+This topic explains the issues associated with discrete as opposed to continuous running variables and discusses the different approaches used to deal with them. 
 
 ## Approaches to RDD: continuity-based vs local randomisation
 
 Causal inference in RDDs can be based on either the continuity-based or the local randomisation approach. The fundamental assumption of the continuity-based approach is that the observable and unobservable characteristics of subjects change smoothly and continuously around the cutoff point, allowing us to infer that any _discontinuous_ differences in the outcome of interest at the cutoff are the result of differences in treatment assignment. The treatment effect given by such methods is the treatment effect _at the cutoff_, equivalent to the ‘jump’ or discontinuity observed graphically.  
 
 {{% tip %}}
-Read more about the continuity-based approach [here](https://tilburgsciencehub.com/topics/analyze/causal-inference/rdd/continuity-approach/ ).
+Read more about the continuity-based approach [here](/continuity/approach).
 {{% /tip %}}
 
 The local randomisation approach rests on the assumption that, for observations sufficiently close to the cutoff, treatment is as good as randomly assigned, akin to a randomised experiment. This implicitly relies on the idea that subjects just below and just above the cutoff have roughly equal chances of being in the treatment and control groups. For canonical RDD applications with continuous running variables, the assumptions of local randomisation are stronger than those for the continuity-based approach and, as such, the latter is commonly preferred in such cases.  
 
 {{% tip %}}
-Read more about the local randomisation approach [here](https://tilburgsciencehub.com/topics/analyze/causal-inference/rdd/local-randomization/).
+Read more about the local randomisation approach [here](/local/randomization).
 {{% /tip %}}
 
 ### The problem of discrete running variables
@@ -67,7 +67,7 @@ We’ve already seen why we cannot apply the conventional continuity-based appro
 
 In settings where the running variable only takes on a few distinct values, we usually cannot use very narrow bandwidths because this leads to an excessively small sample size. As we expand the bandwidth to gain enough observations for our estimation, specification bias increases. As we consider values further and further away from the cutoff, we are more likely to mis-specify the functional form at the cutoff, biasing our treatment estimates (which in the continuity-based approach are effects at the cutoff). The bias of our treatment estimator becomes larger and non-negligible with respect to its standard error. In this case, we cannot use conventional EHW confidence intervals, because they fail to account for this bias and are therefore too narrow, exacerbating the false positive rate (type I error). 
 
-Kolesár and Rothe (2018) show that this issue cannot be solved by clustering standard errors at each value of the discrete running variable, as was previously thought. Instead, they propose two alternative methods for constructing confidence intervals for causal inference in the case of RDDs with few distinct values of the assignment variable.  In this building block, we mainly discuss the first approach, which is based on bounding the second derivative of the CEF. This is because it holds more generally than the second approach, based on bounding the misspecification error at the cutoff, which requires stronger conditions to work as an honest confidence interval.  
+Kolesár and Rothe (2018) show that this issue cannot be solved by clustering standard errors at each value of the discrete running variable, as was previously thought. Instead, they propose two alternative methods for constructing confidence intervals for causal inference in the case of RDDs with few distinct values of the assignment variable.  In this topic, we mainly discuss the first approach, which is based on bounding the second derivative of the CEF. This is because it holds more generally than the second approach, based on bounding the misspecification error at the cutoff, which requires stronger conditions to work as an honest confidence interval.  
  
 ## Bounding the second derivative (BSD) confidence intervals 
 

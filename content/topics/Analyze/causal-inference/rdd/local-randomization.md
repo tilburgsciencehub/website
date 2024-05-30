@@ -3,7 +3,7 @@ title: "Local Randomization Approach"
 description: "The local randomization approach to regression discontinuity analysis: an introduction, example, estimation and inference"
 keywords: "regression, discontinuity, local, randomization, approach, example, estimation, inference"
 date: 2023-07-10
-weight: 5
+weight: 6
 author: "Ana Bianca Luca"
 authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
@@ -14,7 +14,7 @@ aliases:
 
 ## Introduction
 
-This building block introduces the local randomization approach, which can be considered as an extension to the standard [Contuinity-Based Approach to RD Analysis](/continuity/approach). It is recommended to read this continuity-based approach building block before delving into this one.
+This topic introduces the local randomization approach, which can be considered as an extension to the standard [Continuity-Based Approach to RD Analysis](/continuity/approach). It is recommended to read this continuity-based approach topic before delving into this one.
 
 In a sharp RDD, the assignment mechanism is determined by the running variable being above or below a prespecified cutoff. The local randomized approach views the running variable as random, allowing to interpret the RDD as a randomized experiment near the cutoff. 
 
@@ -32,7 +32,7 @@ If the variable is discrete, the local randomization approach does not impose st
 
 As mentioned in the introduction, certain conditions are imposed to make sure that units in a small window are treated as if they were randomly assigned to treatment. We make the following assumptions:
 
-- The RDD is sharp, indicating an abrupt change in treatment assignment around the cutoff. Check the [Sharp RDD building block](//sharp/designs) for more context on this. 
+- The RDD is sharp, indicating an abrupt change in treatment assignment around the cutoff. Check the [Sharp RDD topic](//sharp/designs) for more context on this. 
 
 - There is perfect compliance. Each subject assigned to the treatment actually received the treatment. 
 
@@ -184,7 +184,7 @@ The function only shows the first 20 windows, but we can increase it by using th
 {{% summary %}}
 The Local randomization approach extends the standard continuity-based RD Design by treating the running variable as if it were randomized within a defined window around the cutoff. Three methods are discussed for estimation and inference, each suitable depending on the size of the sample within this window. 
 
-The next and last [building block](/validation/analysis) in this series about Regression Discontuinity describes several tests that can be used to validate the robustness of your RDD. 
+The next [topic](/validation/analysis) in this series about Regression Discontuinity describes several tests that can be used to validate the robustness of your RDD. 
 {{% /summary %}}
 
 

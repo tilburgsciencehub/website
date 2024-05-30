@@ -14,7 +14,7 @@ aliases:
 
 ## What is Synthetic Control
 
-Synthetic Control is a tool developed by Abadie and Gardeazabal (2003) used widely in applied econometrics and particularly in impact evaluation. Synthetic control is best used in a framework in which we are interested in measuring effects to some outcome in units at an aggregate level, for example countries or states. As opposed to other techniques like [Difference in Difference](/impact/evaluation) that give clear-cut definition of what is a control unit, Synthetic Control uses a data-driven approach to construct a control measure.
+Synthetic Control is a tool developed by Abadie and Gardeazabal (2003) used widely in applied econometrics and particularly in impact evaluation. Synthetic control is best used in a framework in which we are interested in measuring effects to some outcome in units at an aggregate level, for example countries or states. As opposed to other techniques like [Difference in Difference](/canonical-DiD) that give clear-cut definition of what is a control unit, Synthetic Control uses a data-driven approach to construct a control measure.
 
 {{% tip %}}
 Some useful vocabulary:
@@ -79,7 +79,8 @@ The code uses data from [Abadie, Diamond and Hainmueller](https://www.nber.org/p
 library(Synth)
 	
 # Open the dataset
-url_synth=url("https://github.com/tilburgsciencehub/website/blob/9a0409c87948eb2cc523f9233b8e622574f55cac/content/topics/analyze-data/regressions-paneldata/synth_smoking.Rdata?raw=true")
+
+url_synth <- "https://raw.githubusercontent.com/tilburgsciencehub/website/master/content/topics/Analyze/causal-inference/synthetic-control/synth_smoking.Rdata"
 load(url_synth)
 
 # Data Preparation to pass the dataset to the correct format

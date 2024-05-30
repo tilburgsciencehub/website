@@ -3,7 +3,7 @@ title: "Fuzzy RDD in Practice"
 description: "Foundations of regression discontinuity - the fuzzy design in practice. Example of financial aid effect on post-secondary education attainment"
 keywords: "regression, discontinuity, fuzzy, designs, practical, example, coding"
 date: 2023-06-26
-weight: 3
+weight: 5
 author: "Ana Bianca Luca"
 authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
@@ -84,9 +84,9 @@ In [Fuzzy RDD](/fuzzy/designs), we defined the formula for the Fuzzy RD paramete
 Thus, we can calculate $\tau_{FRD}$ by taking the ratio $0.269/0.625 = 0.4304$. This means that receiving the subsidy results in a 43\% increase in the probability of enrolling in post-secondary education for students who are compliers.
 
 {{% summary %}}
-In this building block, a practical, hands-on example of the Fuzzy RDD methodology is explored. 
+In this topic, a practical, hands-on example of the Fuzzy RDD methodology is explored. 
 
-In the next [building block](/local/randomization) in the series on regression discontinuity, the local randomization approach is explained, that augments the traditional continuity-based RD design by considering the running variable as quasi-randomized within a specific bandwidth surrounding the cutoff.
+In the next [topic](/local/randomization) in the series on regression discontinuity, the local randomization approach is explained, that augments the traditional continuity-based RD design by considering the running variable as quasi-randomized within a specific bandwidth surrounding the cutoff.
 
 {{% /summary %}}
 

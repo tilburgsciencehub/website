@@ -222,7 +222,7 @@ Standard errors are in parentheses.
 '*' Significant at the 10 percent level.</strong></caption>
 
 {{% tip %}}
-Use the `modelsummary` package to summarise and export the regression results neatly and hassle-free. Check out this [topic](https://tilburgsciencehub.com/topics/analyze-data/regressions/model-summary/) to help you get started!
+Use the `modelsummary` package to summarise and export the regression results neatly and hassle-free. Check out this [topic](/modelsummary) to help you get started!
 {{% /tip %}}
 
 

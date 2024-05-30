@@ -1,6 +1,6 @@
 ---
 draft: false
 title: "Panel Data"
-weight: 2
+weight: 6
 type: subcategory
 ---
