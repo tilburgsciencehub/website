@@ -74,7 +74,7 @@ GDP per capita in the Netherlands is higher than in the last 50 years!
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/cross-referencing-figures-rmarkdown.png" width="400">
+<img src = "../images/cross-referencing-figures-rmarkdown.png" width="500">
 </p>
 
 {{% tip %}}
@@ -109,7 +109,7 @@ We can see above in Table \@ref(tab:table-netherlands) the raw data used to crea
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/cross-referecing-tables-rmarkdown.png" width="400">
+<img src = "../images/cross-referencing-tables-rmarkdown.png" width="400">
 </p>
 
 ## Cross-Referencing Sections
@@ -148,7 +148,7 @@ Here is an example considering a regression equation:
 This equation can be referred to elsewhere in your document as Equation `@ref(eq:regression-1)`.
 
 <p align = "center">
-<img src = "../images/cross-referencing-equations.png" width="400">
+<img src = "../images/cross-referencing-equations.png" width="500">
 </p>
 
 {{% tip %}}
@@ -180,7 +180,7 @@ As demonstrated in Equation \@ref(eq:area-circle), the derivation of the area of
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/cross-referencing-equations-advanced.png" width="400">
+<img src = "../images/cross-referencing-equations-advanced.png" width="500">
 </p>
 
 {{% tip %}}
