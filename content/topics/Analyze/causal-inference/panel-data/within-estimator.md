@@ -1,6 +1,6 @@
 ---
 title: "The Fixed Effects Model (Within Estimator)"
-description: "A building block about the FE model (Within estimator)"
+description: "A topic about the FE model (Within estimator)"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
 weight: 2
@@ -26,7 +26,7 @@ Additionally, a FE model may encounter issues of collinearity when dealing with 
 
 ## Estimation of FE model
 
-Continuing with the same example as the previous building block, the FE model is estimated by removing the fixed effects from the original equation. The original model with fixed effects $\alpha_i$ is represented as:
+Continuing with the same example as the previous topic, the FE model is estimated by removing the fixed effects from the original equation. The original model with fixed effects $\alpha_i$ is represented as:
 <br/>
 {{<katex>}}
 Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}
@@ -45,7 +45,7 @@ Since we assume the unobserved fixed effects $\alpha_{i}$ to be constant, subtra
 
 ## Estimation in R
 
-While the `plm()` function can also be used to estimate a FE model, we recommend using the `fixest` package. Refer to the [`fixest` building block](https://tilburgsciencehub.com/fixest/?utm_campaign=referral-short) for a comprehensive explanation of this package and its functions. 
+While the `plm()` function can also be used to estimate a FE model, we recommend using the `fixest` package. Refer to the [`fixest` article](https://tilburgsciencehub.com/fixest/?utm_campaign=referral-short) for a comprehensive explanation of this package and its functions. 
 
 To estimate a FE model using `fixest`, use the `feols()` function and specify the fixed effects variable (`firm`) within the model formula.
 

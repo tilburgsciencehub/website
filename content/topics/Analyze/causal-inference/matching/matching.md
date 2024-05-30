@@ -117,6 +117,7 @@ First, load the necessary packages, and the data set:
 
 {{% codeblock %}}
 ```R
+# Load packages
 library(MatchIt)
 library(ggplot2)
 library(dplyr)
@@ -125,7 +126,6 @@ library(dplyr)
 data_url <- "https://raw.githubusercontent.com/tilburgsciencehub/website/master/content/topics/Analyze/causal-inference/matching/jobtraining_data.Rda"
 
 data <- load(url(data_url))
-
 View(data)
 ```
 {{% /codeblock %}}
@@ -296,7 +296,7 @@ The identifying assumptions *Conditional Independence* and *Overlapping Support*
 
 In OLS regression, incorporating an interaction term between the treatment indicator and the (de-meaned) covariate allows for assessing how the treatment effect varies across different levels of the covariate. 
 
-You can continue the content of matching by reading the [next topic on Approximate Matching](\approximate-matching).
+You can continue the content of matching by reading the [next topic on Approximate Matching](/approximate-matching).
 
 {{% /summary %}}
 

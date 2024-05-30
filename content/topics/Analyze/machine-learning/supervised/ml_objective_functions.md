@@ -77,7 +77,7 @@ The contour plot below illustrates the two-dimensional cost function, representi
 <img src = "../img/countourmap_2d.jpeg" width="400">
 
 Contour map on cost function for two dimentional problem.   
-<sup> (Andrew Ng)</sup>
+<sup> </sup>
 </p>
 </div>
 

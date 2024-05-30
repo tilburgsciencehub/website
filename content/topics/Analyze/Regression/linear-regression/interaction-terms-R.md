@@ -105,7 +105,7 @@ It contains the following variables:
 
 **Short remark**: CPS data lacks direct work experience information, so a common workaround is to estimate potential experience as age minus education minus 6. This method can result in negative experience values for some respondents.
 
-I will use the `modelsummary` package, to present the regression output. For a guide, about the package and how it works look at the following [building block](https://tilburgsciencehub.com/topics/analyze-data/regressions/model-summary/).
+I will use the `modelsummary` package, to present the regression output. For a guide, about the package and how it works look at the following [topic](/modelsummary).
 
 {{% codeblock %}} 
 ```R 
@@ -176,7 +176,7 @@ However, it's important to note that this relationship is influenced by a person
 {{% tip %}} 
 
 
-It's always beneficial to plot interaction terms for a clearer understanding of their impact. This `marginal effect plot` is a useful way to visualize how one variable modifies the effect of another on the outcome. For a quick guide on marginal effects in R, you can refer to this [building block](https://tilburgsciencehub.com/topics/analyze-data/regressions/marginal-effect-r/). In this discussion, I will utilize the R package called "`ggpredict`,"  which enables us to generate marginal effect plots by combining the function with `ggplot`.
+It's always beneficial to plot interaction terms for a clearer understanding of their impact. This `marginal effect plot` is a useful way to visualize how one variable modifies the effect of another on the outcome. For a quick guide on marginal effects in R, you can refer to this [topic](/run/margR). In this discussion, I will utilize the R package called "`ggpredict`,"  which enables us to generate marginal effect plots by combining the function with `ggplot`.
 
 {{% /tip %}} 
 
@@ -247,7 +247,7 @@ msummary(reg2,
 <img src = "../images/regression-2-intr.png" width="200">
 </p>
 
-The interpretation of the regression output is as follows, notice that we transformed the wage into a logarithmic scale. For how to interpret a Log-Linear model, see this building block: **LINK**.  
+The interpretation of the regression output is as follows, notice that we transformed the wage into a logarithmic scale. For how to interpret a Log-Linear model, see this [topic](/regressioninterpretation).  
 Based on this specific dataset and model, we observe that a one-year increase in education is associated with an expected wage increase of 7.98\% ($\beta_1$ * 100\%), at a 1 per cent significance level. 
 
 However, it's important to note that this relationship is influenced by a person's region, look at the significance level of the interaction term of the north-east and mid-west. We observe different conditional average treatment effects for each region:
@@ -422,7 +422,7 @@ When examining the variance explained by R-squared, the model without the intera
 ## Summary
 
 {{% summary %}}
-This building block explains `interaction terms` in regression analysis, their mathematical interpretation, and their practical applications in various scenarios. The key points covered include:
+This topic explains `interaction terms` in regression analysis, their mathematical interpretation, and their practical applications in various scenarios. The key points covered include:
 
 1. **Interaction Term Introduction**: Interaction terms add complexity to the relationship between an `independent variable` (X) and a `dependent variable` (Y) by considering how this relationship changes based on the value of another variable (Z).
 

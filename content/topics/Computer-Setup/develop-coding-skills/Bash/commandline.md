@@ -19,41 +19,38 @@ Throughout the course, we will emphasize the use of the terminal and executing c
 
 ### Windows Users
 
-So that we can work as closely as possible to the Mac and Linux users we will install [Cygwin](https://www.cygwin.com/).
+We will use the recently-launched Windows Subsytem for Linux (WSL) because it enables us to use Bash on Windows and to run Windows and Linux commands at the same time within a single, unified command prompt. WSL is useful as a command line tool because it offers greater functionality than the standard Windows command prompt and facilitates the use of Linux and its distributions (e.g., Ubuntu) on a Windows machine. 
 
-*   Download Cygwin [here](https://cygwin.com/install.html) and use the graphical installer. Accept all the default options.
-*   Choose any server from which to download cygwin and packages when prompted.
-*   Verify your installation by opening Cygwin. When it opens you should see a black box with some text that looks like:
+We can install the features necessary to run WSL by running the following command in the Windows command prompt or PowerShell. Make sure to run the Windows command prompt or PowerShell **as administrator**. 
 
-```bash
-userName@computerName: ~$
+{{% codeblock %}}
+```powershell
+wsl --install
 ```
-<!--i.e. for Uli he sees:
-```bash
-ubergmann@dhcp-wlan-uzh-10-12-130-xxx: ~$
+{{% /codeblock %}}
+
+After running this command, we have to wait until the Linux distribution is fully installed. By default, running the above command installs the Ubuntu distribution. We can install additional distributions by running the following command:
+
+{{% codeblock %}}
+```powershell
+wsl --install <Distribution Name>
 ```
-
-We will explain what all this means in the first day or so of the course.
--->
-
-
-{{% tip %}}
-
-Why Cygwin?
-* We will use Cygwin as our command line tool, and unlike other Windows shells such as PowerShell it uses Unix syntax.
-*  Anywhere throughout the remainder of the installation guide where we suggest you to enter a command into a terminal, enter the text-based command into your Cygwin terminal followed by pressing `Return`, for example:
-
-        userName@computerName: ~$ whoami
-
-Should return your username.
-
-{{% /tip %}}
+{{% /codeblock %}}
 
 {{% warning %}}
-
-**Do not delete the setup-x86_64.exe file.** It needs to be kept so that we can add on some additional packages to use in the course.
-
+If the command prompt returns an error stating that the syntax of the command is incorrect, try using "wsl --install Distribution Name" instead, without the <> operators. 
 {{% /warning %}}
+
+{{% tip %}}
+In order to check which Linux distributions are available, we can run the following command:
+{{% codeblock %}}
+```powershell
+wsl --list --online
+```
+{{% /codeblock %}}
+{{% /tip %}}
+
+After installation is complete, we will have to create a Linux username and password. Once we have done that, we can restart our machine and start using WSL as our unified command line tool. Note that, by default, this procedure installs WSL 2, the most recent version of WSL. 
 
 ### Mac Users
 
