@@ -1,6 +1,6 @@
 ---
 draft: false
 title: "Regression Discontinuity Designs (RDD)"
-weight: 1
+weight: 5
 type: subcategory
 ---

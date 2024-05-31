@@ -1,8 +1,8 @@
 ---
-title: "Impact evaluation with Difference-in-Differences and Regression Discontinuity"
+title: "Impact evaluation: RD vs DID"
 description: "Use Difference-in-Differences and Regression Discontinuity Design to evaluate impacts of quasi-experiments"
 keywords: "regression, model, DiD, RD, impact evaluation, inference, quasi-experiment"
-weight: 1
+weight: 5
 date: 2023-10-01T01:00:00+01:00
 draft: false
 aliases:
@@ -11,19 +11,14 @@ aliases:
   - /run/RD
   - /regression/discontinuity
 ---
-# Impact Evaluation
 
-## Why?
+# Overview
 
 Many programs are designed to improve outcomes such as learning, health or productivity. Have resources been spent wisely on the program? Did the program/policy work? These are the questions that impact evaluation answers, based on evidence.
 
-In this building block we discuss two of the most commonly used impact evaluation methods, Difference-in-Differences (DiD) and Regression Discontinuity (RD).
+In this topic we discuss two of the most commonly used impact evaluation methods, [Difference-in-Differences (DiD)](/canonical-DiD) and [Regression Discontinuity (RD)](/sharp/designs).
 
 ## Difference-in-Differences
-
-{{% summary %}}
-DiD **compares the changes in outcomes** (e.g. productivity) **over time** between a population that is enrolled in a program (the **treatment group**, e.g. employees who take an IT training) and a population that is not (the **comparison group**, e.g. employees who do not take the IT training).
-{{% /summary %}}
 
 ### When should I apply DiD?
 
@@ -81,15 +76,11 @@ The following example comes from [Gertler, Martinez, Premand, Rawlings, and Verm
 ```
 {{% /codeblock %}}
 
-
-## Regression Discontinuity
-
 {{% summary %}}
-RD is used to estimate the effect of a program or treatment in which candidates are selected for treatment based on whether their value for a numeric index is above or below a certain cutoff point.
-
-  - This method is broadly used in social programs. For instance, antipoverty programs where individuals under a certain poverty index receive help from the government or for scholarships targeted at students that obtain at least a certain grade.
+DiD **compares the changes in outcomes** (e.g. productivity) **over time** between a population that is enrolled in a program (the **treatment group**, e.g. employees who take an IT training) and a population that is not (the **comparison group**, e.g. employees who do not take the IT training).
 {{% /summary %}}
 
+## Regression Discontinuity
 
 ### When should I apply RD?
 
@@ -194,7 +185,11 @@ We use the same example as before but we now assess whether the program has mana
 ```
 {{% /codeblock %}}
 
+{{% summary %}}
+RD is used to estimate the effect of a program or treatment in which candidates are selected for treatment based on whether their value for a numeric index is above or below a certain cutoff point.
 
+  - This method is broadly used in social programs. For instance, antipoverty programs where individuals under a certain poverty index receive help from the government or for scholarships targeted at students that obtain at least a certain grade.
+{{% /summary %}}
 
 ## Additional resources
 
@@ -202,4 +197,5 @@ We use the same example as before but we now assess whether the program has mana
 
 - Want to learn more on how to implement these methods and others in R? Check out this [website](https://bookdown.org/aschmi11/causal_inf/regression-discontinuity.html) or [this one](https://bookdown.org/ccolonescu/RPoE4/).
 
+# Reference
 *Gertler, Paul J., Sebastian Martinez, Patrick Premand, Laura B. Rawlings, and Christel M. J. Vermeersch. 2016. Impact Evaluation in Practice, second edition. Washington, DC: Inter-American Development Bank and World Bank. doi:10.1596/978-1-4648-0779-4.*

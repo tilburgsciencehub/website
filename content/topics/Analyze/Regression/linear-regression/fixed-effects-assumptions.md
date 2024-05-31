@@ -1,6 +1,6 @@
 ---
 title: "Fixed Effects Regression Assumptions"
-description: "A building block that covers the Fixed Effects Regression Assumptions"
+description: "A topic that covers the Fixed Effects Regression Assumptions"
 keywords: "paneldata, panel, data, R, regression, model, assumptions, fixed, effects"
 draft: false
 weight: 5
@@ -14,9 +14,9 @@ aliases:
 
 # Overview
 
-This building block covers the fixed effects regression assumptions for Ordinary Least Squares (OLS) models. These 4 assumptions should hold in a Fixed Effects regression model to establish the unbiasedness of OLS.
+This topic covers the fixed effects regression assumptions for Ordinary Least Squares (OLS) models. These 4 assumptions should hold in a Fixed Effects regression model to establish the unbiasedness of OLS.
 
-To refresh your understanding of panel data and fixed effects, you can refer to the [panel data building block](/paneldata). For a comprehensive explanation of fixed effects regressions in R, check the [`fixest` building block](https://tilburgsciencehub.com/topics/analyze-data/regressions/fixest/). 
+To refresh your understanding of panel data and fixed effects, you can refer to the [panel data article](/paneldata). For a comprehensive explanation of fixed effects regressions in R, check the [`fixest` article](https://tilburgsciencehub.com/topics/analyze-data/regressions/fixest/). 
 
 The assumptions are taken from the online course [Introduction to Econometrics with R](https://www.econometrics-with-r.org/10.5-tferaaseffer.html). 
 
@@ -40,7 +40,7 @@ When there are multiple regressors, $X_{it}$ is replaced by $X_{1,it}, X_{2,it},
 
 Now, the assumptions are explained in greater detail. 
 
-Examples are given to clarify the assumptions. This is done with the panel data set called `Grunfeld`, which is already used in the [panel data building block](/paneldata) and [`fixest` building block](https://tilburgsciencehub.com/topics/analyze-data/regressions/fixest/). Please refer to these building blocks for further context on the `Grunfeld` data and the regression model. 
+Examples are given to clarify the assumptions. This is done with the panel data set called `Grunfeld`, which is already used in the [panel data](/paneldata) and [`fixest` topic](https://tilburgsciencehub.com/topics/analyze-data/regressions/fixest/). Please refer to these for further context on the `Grunfeld` data and the regression model. 
 
 ## Assumption 1: Zero Conditional Mean
 This assumption is also called **Strict Exogeneity**. The error term $u_{it}$ has an expected value of zero given any values of the independent variables. In other words, $E(u_{it}|X_{i1},...,X_{it}) = 0$. 
@@ -86,13 +86,13 @@ Assumption 4 holds when there are no exact linear relationships among the indepe
 Note that the assumption does allow the independent variables to be correlated. They just cannot be perfectly correlated. 
 
 {{% summary %}}
-The Fixed Effects (FE) regression model relies on 4 key assumptions, which are discussed in this building block. These assumptions form the foundation for various models that account for different forms of error correlation over time. 
+The Fixed Effects (FE) regression model relies on 4 key assumptions. These assumptions form the foundation for various models that account for different forms of error correlation over time. 
 
-Subsequent building blocks will explore these models commonly used to analyze panel data: 
-- Pooled OLS
-- First-difference estimator
-- Within estimator (Fixed effects)
-- Between estimator
-- Random effects
+In the following topics, we will explore these models that are commonly used to analyze panel data: 
+- [Pooled OLS](/pooledOLS)
+- [First-difference estimator](/firstdifference)
+- [Within estimator (Fixed effects)](/withinestimator)
+- [Between estimator](/betweenestimator)
+- [Random effects](/randomeffects)
 
 {{% /summary %}}

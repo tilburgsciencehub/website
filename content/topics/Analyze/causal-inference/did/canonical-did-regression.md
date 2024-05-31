@@ -1,16 +1,18 @@
 ---
-title: "Canonical Difference-in-Difference as a Regression"
-description: "This building block walks you through DiD as a regression, motivates the use of Two-Way Fixed Effects (TWFE) and clustered standard errors  "
+title: "Difference-in-Difference as a Regression"
+description: "This topic walks you through DiD as a regression, motivates the use of Two-Way Fixed Effects (TWFE) and clustered standard errors  "
 keywords: "causal inference, difference-in-difference, DID, R, regression, model, canonical DiD, difference in means table, potential outcomes framework, average treatment effect, ATE, ATT, ATU, treatment effects, regression, TWFE, clustered standard errors"
 draft: false
-weight: 12
+weight: 2
 author: "Roshini Sudhaharan"
 authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:
   - /canonical-DiD
   - /canonical-DiD/run
 ---
-# Overview
+
+
+## Overview
 
 In the context of non-feasible randomized controlled experiments, we [previously](/canonical-DiD) discussed the importance of the difference-in-difference (DiD) approach for causal inference. While calculating treatment effects using the difference-in-means method is a starting point, it lacks sufficient grounds for reliable inference. To obtain more robust results, it is crucial to estimate treatment effects through regression analysis with the appropriate model specification. Regression models allow for controlling confounding variables, accounting for unobserved heterogeneity, and incorporating fixed effects, leading to more accurate and meaningful interpretations of treatment effects. Next, we’ll dig a little deeper into the merits of the regression approach and how to carry out the estimation in R using an illustrative example.
 
@@ -29,27 +31,31 @@ In the context of non-feasible randomized controlled experiments, we [previously
 By considering the context and benefits outlined above, the regression approach proves to be advantageous for assessing causal relationships. It enables us to obtain standard errors, account for additional control variables, and interpret treatment effects in a meaningful way, contributing to a more comprehensive and robust analysis of the treatment's impact.
 
 ### An illustrative example (Continued)
-In the [previous building block](/canonical-DiD), we introduced an example to illustrate how to obtain the difference-in-means table for a 2 x 2 DiD design. This example looks into  the effect of the Q&A on subsequent ratings using a cross-platform identification strategy with Goodreads as the treatment and Amazon as the control group.
-Since we have 2 groups (Amazon vs Goodreads) and 2 time periods (pre Q&A and post Q&A), we use the canonical 2 x 2 DiD design. This can be estimated with the following regression equation. You can find all the analysis code in this [Gist](https://gist.github.com/srosh2000/f52600b76999e88f0fe316e8f23b419e).
+In the [previous topic](/canonical-DiD), we introduced an example to illustrate how to obtain the difference-in-means table for a 2 x 2 DiD design. This example looks into the effect of the Q&A on subsequent ratings using a cross-platform identification strategy with Goodreads as the treatment and Amazon as the control group. We have 2 groups (Amazon vs Goodreads) and 2 time periods (pre Q&A and post Q&A).
+
+The effect can be estimated with the following regression equation. You can find all the analysis code in this [Gist](https://gist.github.com/srosh2000/f52600b76999e88f0fe316e8f23b419e).
 {{<katex>}}
 {{</katex>}}
-$$
-rating_{ijt} = \alpha+ \lambda POST_{ijt}+\gamma Goodreads+\delta (POST_{ijt}* Goodreads_{ij})+\eta_j +\tau_t+\epsilon_{ijt}
-$$
+
+
+<div style="text-align: center;">
+{{<katex>}}
+
+rating_{ijt} = \alpha+ \lambda POST_{ijt}+\gamma Goodreads + \\
+\delta (POST_{ijt}* Goodreads_{ij})+\eta_j +\tau_t+\epsilon_{ijt}
+
+{{</katex>}}
+</div>
+
+<br>
+
 where,
+- $POST$ is a dummy equal to 1 if the observation is after Q&A launch
+- $Goodreads$ is a dummy equal to 1 if the observation is from the Goodreads platform and 0 if from Amazon
+- $\eta$: Book fixed effects
+- $\tau$: Time fixed effects
 
-$POST$: is a dummy that equals 1 if the observation is after Q&A launch
-
-$Goodreads$: is a dummy equal to 1 if the observation is from the Goodreads platform and 0 if from Amazon
-
-$\eta$: book fixed effects
-
-$\tau$: time fixed effects
-
-
-
-
-Before estimating the regression, it is crucial to check whether the **parallel trends assumption** holds which suggests that , in the absence of the treatment, both the treatment and control groups would have experienced the same outcome evolution. We also implicitly assume that the **treatment effect is constant** between the groups over time. Only then can we interpret the DiD estimator (treatment effect) as unbiased.
+Before estimating the regression, it is crucial to check whether the **parallel trends assumption** holds which suggests that, in the absence of the treatment, both the treatment and control groups would have experienced the same outcome evolution. We also implicitly assume that the **treatment effect is constant** between the groups over time. Only then can we interpret the DiD estimator (treatment effect) as unbiased.
 
 To check for parallel trends, we can visualise the average outcome for both groups over time before and after the treatment.
 
@@ -70,9 +76,7 @@ tidy(model_1, conf.int = TRUE)
 ```
 {{% /codeblock %}}
 
-
-However, there might be time-varying and group-specific factors that may affect the outcome variable which requires us to estimate a two-way fixed effects (TWFE) regression. Check out [this building block](/withinestimator) to learn more about the TWFE model.
-
+However, there might be time-varying and group-specific factors that may affect the outcome variable which requires us to estimate a two-way fixed effects (TWFE) regression. Check out [this topic](/withinestimator) to learn more about the TWFE model, and [this topic](/fixest) to learn more about the `fixest` package.
 
 {{% codeblock %}}
 ```R
@@ -112,7 +116,6 @@ model_4<- feols(rating ~ goodr*qa
 tidy(model_4, conf.int = TRUE)
 ```
 {{% /codeblock %}}
-
 
 Clustering standard errors recognizes that observations within a cluster, such as products or books, may be more similar to each other than to observations in other clusters. This correlation arises due to *unobserved* factors specific to each cluster that can affect the outcome variable. Failure to account for this correlation by clustering standard errors may result in incorrect standard errors, leading to invalid hypothesis tests and confidence intervals.
 
@@ -219,15 +222,13 @@ Standard errors are in parentheses.
 '*' Significant at the 10 percent level.</strong></caption>
 
 {{% tip %}}
-Use the `modelsummary` package to summarise and export the regression results neatly and hassle-free. Check out this [building block](https://tilburgsciencehub.com/topics/analyze-data/regressions/model-summary/) to help you get started!
+Use the `modelsummary` package to summarise and export the regression results neatly and hassle-free. Check out this [topic](/modelsummary) to help you get started!
 {{% /tip %}}
 
 
 In model 4, the estimated treatment effect is substantially larger compared to the previous models, emphasizing the significance of selecting an appropriate model specification. By incorporating fixed effects and clustering standard errors, we effectively control for potential unobserved heterogeneity, ensuring more reliable and valid inference. The inclusion of fixed effects allows us to account for time-invariant factors that may confound the treatment effect, while clustering standard errors addresses the within-cluster dependence commonly encountered in Difference-in-Differences (DiD) designs. This improved model specification enhances the robustness of the estimated treatment effect and strengthens the validity of our conclusions, emphasizing the importance of these methodological considerations in conducting rigorous empirical analyses.
 
 {{% summary %}}
-
-
 - The regression approach in the difference-in-difference (DiD) analysis offers several **advantages**: obtain standard errors, include control variables and perform log transformation on the dependent variable.
 - Time and group fixed effects can be incorporated in the regression analysis to account for time-varying and group-specific factors that may affect the outcome variable. We carry out this **two-way fixed effects (TWFE)** estimation using the `feols()` function from the `fixest` package.
 - Clustering standard errors is important in DiD designs to address potential correlation or dependence within clusters of data. This can be done using the `cluster` argument.

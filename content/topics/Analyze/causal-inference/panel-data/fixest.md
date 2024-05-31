@@ -175,7 +175,7 @@ Aside from `feols()`, here are additional functions useful for estimation based 
 | `fenegbin` 	| Negative binomial fixed-effect 	| This function estimates fixed-effects <br> negative binomial models, which are <br> commonly used for count data that <br> exhibit over dispersion relative <br> to the Poisson distribution.  	|
 
 {{% summary %}}
-Here are the key takeaways from this building block:
+Here are the key takeaways from this topic:
 
 - Use the `feols()` function to estimate linear fixed-effect models with clustered standard errors using the `cluster` option.
 - Use the `vcov()` function to easily adjust and compute robust standard errors.
