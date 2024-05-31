@@ -9,9 +9,9 @@ author: "Victor Arutyunov"
 
 ## Introduction 
 
-Statistical power is an important but often overlooked concept in statistical and econometric analysis. Broadly, it refers to how likely we are to detect an effect if there is one. Imagine that you are looking for certain information in a document written in a foreign language. The better your understanding of that foreign language (higher statistical power), the more likely you'll be to find the information that you need. 
+Statistical power is an important but often overlooked concept in statistical and econometric analysis. Broadly, it refers to how likely we are to detect an effect if there is one. Imagine that you are looking for certain information in a document written in a foreign language. The better your understanding of that foreign language (higher statistical power), the more likely you'll be to find the information that you need. Conversely, if your understanding of the language is poor (low statistical power), you'll be less likely to find the information even though it is in the document. 
 
-More formally, statistical power can be defined as the probability of rejecting the null hypothesis when the alternative hypothesis is true. In this sense, it is closely related to the concept of type II error, i.e., failing to reject a false null hypothesis (also known as a false negative or error of omission). Indeed, statistical power $= 1 – prob(type II error)$.  
+More formally, statistical power can be defined as the probability of rejecting the null hypothesis when the alternative hypothesis is true. In this sense, it is closely related to the concept of type II error, i.e., failing to reject a false null hypothesis (also known as a false negative or error of omission). Indeed, statistical power = 1 – prob(type II error).  
 
 What does this mean in practice? Let’s say we are studying the relationship between enrolling in a skill training programme and future earnings. We assume that there is an effect of the programme on earnings: therefore, our null hypothesis of no effect is false, and the alternative hypothesis is true. Statistical power gives us the probability that we do in fact find an effect of the programme on earnings. For example, if our power is 0.6, there is a 60% chance that we find a statistically significant treatment effect. Similarly, there is a 40% chance of incurring in type II error, that is, not finding a statistically significant effect even though there is one. So, if we ran this estimation 100 times, without changing any of its properties (e.g., sample size or the hypothesised effect size), we would expect to obtain a statistically significant effect 60 times.  
 
@@ -59,6 +59,9 @@ The advantage of experimental studies is that we can to some extent control the 
 
 Power analysis can be done analytically or by simulation. The latter case is more relevant for observational studies, whereas the analytical approach is convenient for experiments. The formula for minimum sample size for a given level of power is the following: 
 
+{{<katex>}}
+{{</katex<}}
+
 $n = 2(z(\alpha) + z(1-\beta))^2\frac{s^2}{d^2}$
 
 Where $z(x)$ is the z-score of $x$, $\alpha$ is the significance level, $\beta$ is the type II error rate (so $1-\beta$ is power), $s$ is the standard deviation of the outcome variable and $d$ is the minimum detectable effect size. If we are interested in computing $d$ given $n$ instead, we can easily rearrange for $d$. 
@@ -81,7 +84,7 @@ Using this formula, we could calculate the sample size manually. However, it is 
 There are other packages that also calculate power in R, for example 'pwr' or 'retrodesign', which is also used to compute size and magnitude errors. 
 {{% /tip %}}
 
-First, we use power analysis to calculate the minimum sample size. We use 0.05 as our $\alpha$ and 0.8 as our desired power, and we are looking for a standardised (i.e., relative to the standard deviation of the outcome variable; also known as Cohen's d) minimum effect size of 0.1. 
+First, we use power analysis to calculate the minimum sample size. We use 0.05 as our $\alpha$ and 0.8 as our desired power, and we are looking for a standardised (i.e., relative to the standard deviation of the outcome variable; also known as Cohen's d) minimum effect size of 0.25 (a quarter of a standard deviation). 
 
 
 {{% codeblock %}}
@@ -90,32 +93,32 @@ library(pwrss)
 #kappa is a parameter measuring differences in size between the treatment and control groups: if kappa=1, the size of the two groups is equal
 #mu1 is the standardised effect size (Cohen's d)
 #alternative = "not equal" implies that we are using a two-sided test for differences in means between the treatment and control groups, as is standard practice
-pwrss.t.2means(mu1=0.1, kappa=1, alternative = "not equal", alpha=0.05, power=0.8)
+pwrss.t.2means(mu1=0.25, kappa=1, alternative = "not equal", alpha=0.05, power=0.8)
 ``` 
 {{% /codeblock %}}
 
 _Output_:
 
 <p align = "center">
-<img src = "../images/Sample-Size-Calculation.png" width=400">
+<img src = "../images/sample-size-calc.png" width=600">
 </p>
 
-We see that to obtain a power of 0.8 and detect an effect of at least 0.1, we need 1571 subjects in the treatment and control groups _each_. Now, suppose that we already have a certain sample size and want to find out what the power of our study would be if we used that sample size. Assume we have a sample size of 1000 in each group and aim to detect an effect of 0.1, as previously. 
+We see that to obtain a power of 0.8 and detect an effect of at least 0.25, we need 253 subjects in the treatment and control groups _each_. Now, suppose that we already have a certain sample size and want to find out what the power of our study would be if we used that sample size. Assume we have a sample size of 150 in each group and aim to detect an effect of 0.25, as previously. 
 
 {{% codeblock %}}
 ``` R
 #n allows us to set the sample size in each group
-pwrss.t.2means(mu1=0.1, kappa=1, alternative = "not equal", alpha=0.05, n=1000)
+pwrss.t.2means(mu1=0.25, kappa=1, alternative = "not equal", alpha=0.05, n=150)
 ```
 {{% /codeblock %}}
 
 _Output_:
 
 <p align = "center">
-<img src = "../images/Power-Calculation.png" width=400">
+<img src = "../images/power-calc.png" width=600">
 </p>
 
-As can be seen in the output, if we use a sample size of 1000 in each group and want to identify an effect of at least 0.1, our study has a power of around 0.61. This means that the false negative rate is 39%, i.e., assuming there is an effect, we will not be able to detect it 39% of the time. 
+As can be seen in the output, if we use a sample size of 150 in each group and want to identify an effect of at least 0.25, our study has a power of around 0.58. This means that the false negative rate is 42%, i.e., assuming there is an effect, we will _not_ be able to detect it 42% of the time. 
 
 ## Summary
 
