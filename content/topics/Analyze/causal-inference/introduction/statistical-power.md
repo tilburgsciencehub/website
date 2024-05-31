@@ -60,7 +60,7 @@ The advantage of experimental studies is that we can to some extent control the 
 Power analysis can be done analytically or by simulation. The latter case is more relevant for observational studies, whereas the analytical approach is convenient for experiments. The formula for minimum sample size for a given level of power is the following: 
 
 {{<katex>}}
-{{</katex<}}
+{{</katex>}}
 
 $n = 2(z(\alpha) + z(1-\beta))^2\frac{s^2}{d^2}$
 
