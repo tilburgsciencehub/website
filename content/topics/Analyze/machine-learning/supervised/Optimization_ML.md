@@ -1,7 +1,7 @@
 ---
 title: "Optimization in Machine Learning"  
 description: "Essentials of gradient descent as an optimization technique for regression and classification tasks."  
-keywords: "optimization, cost function, Machine learning,learning rate, gradient descent"  
+keywords: "optimization, cost function, Machine learning,learning rate, gradient descent, Batch Gradient Descent, Stochastic Gradient Descent, Mini Batch Gradient Descen, Coordinate Descent"  
 date:  
 weight: 6 
 author: "Kheiry Sohooli"  
@@ -12,16 +12,16 @@ authorlink: "https://tilburgsciencehub.com/contributors/kheirysohooli"
  
 When training a machine learning model, we use an optimization approach to minimize a cost function. Gradient descent serves as a crucial optimization method for optimizing weights in cost functions during regression and classification tasks. This article aims to provide insights into selecting the best optimization algorithm and pairing it with the appropriate loss function when training a machine learning model.
 
-It is highly recommended to review the `Cost and Loss Functions` article before reading this article.
+It is highly recommended to review the [Cost and Loss Functions article](https://tilburgsciencehub.com/topics/analyze/machine-learning/supervised/ml_objective_functions/) before reading this article.
 
 ## Optimization 
 In the context of machine learning and mathematics, optimization involves finding the best possible solution or configuration for a given problem. This often includes minimizing or maximizing an objective function by adjusting the parameters or variables of a model or system. Feel free to explore more by reading [this paper](https://coral.ise.lehigh.edu/frankecurtis/files/papers/BottCurtNoce18.pdf). In mathematics, various optimization algorithms exist. One of the most common methods, particularly in machine learning, is known as `Gradient Descent`(GD).
 
 ## Gradient descent algorithm in simple language
 
-Let's consider Equation 1 as our objective function we want to optimize to match a dataset comprising a single predictor (denoted as $x(i)$) and its corresponding target ($y(i)$). We want to determine the parameters that minimize the difference between the estimated values obtained from this function ($h_\theta(x)$) and the actual target values ($y(i)$). This optimization process involves minimizing the cost function, denoted as $J(\theta_0, \theta_1)$ in Equation 2, through the use of gradient descent.
+Imagine you're trying to predict house prices based on their sizes. You have a dataset with the sizes of houses $x(i)$ and their corresponding prices $y(i)$. You want to build a model that can accurately predict house prices based on their sizes.
 
-The GD algorithm begins by initializing $\theta_0$  and $\theta_1$ with random values. Subsequently, it iteratively takes small steps, adjusting these parameters until $J(\theta_0, \theta_1)$ converges to a minimum, which might be a local or global minimum. For a more comprehensive understanding, refer to the visual representation below.
+Equation 1 represents the hypothesis function $h_\theta(x)$, which predicts the house price ($y$) based on its size ($x$). In this case, $\theta_0$ is the intercept term (representing the base price of a house) and $\theta_1$ is the coefficient that represents how much the price of a house increases per unit increase in size.
 
 <div style="text-align: center;">
 {{<katex>}}
@@ -29,20 +29,22 @@ h_\theta(x) = \theta_1x + \theta_0
 {{</katex>}}
  :Equation1
 </div>
--
+
+Now, let's consider Equation 2, which represents the cost function $J(\theta_0, \theta_1)$. This function calculates the difference between the predicted house prices ($h_\theta(x)$) and the actual prices ($y$), squared and averaged over all the data points. The goal of gradient descent is to minimize this cost function by adjusting the parameters $\theta_0$ and $\theta_1$.
+
 <div style="text-align: center;">
 {{<katex>}}
 J(\theta_1, \theta_0) = \left[ \frac{1}{2m} \sum_{i=1}^{m} (y(i) - h_\theta(x(i)))^2 \right]
 {{</katex>}}
     :Equation 2
 </div>  
--
+
 <div align="center">
   <img src="../images/gradientDecent.png" width="400">
 </div>
--
 
-The main part of GD algorithm is iteration of the following steps until convergence is achieved:
+To do this, the gradient descent algorithm starts by initializing $\theta_0$ and $\theta_1$ with random values. Then, it iteratively updates these parameters using the formula:
+
 <div style="text-align: center;">
 {{<katex>}}
 
@@ -51,18 +53,25 @@ The main part of GD algorithm is iteration of the following steps until converge
 {{</katex>}}
 </div>
 
-In each iteration, the partial derivative of the cost function $J$ with respect to $\theta$ is computed. This derivative is then scaled by the learning rate ($\alpha$) and subtracted from the current $\theta$. This process is repeated until $\theta$ shows negligible changes or until a predefined number of iterations is reached. This iterative approach allows the parameters $\theta$ to gradually adjust, guiding the model toward convergence.
+When optimizing your machine learning algorithm, it's crucial to consider the learning rate, denoted here as $\alpha$. It controls the size of the steps taken during optimization. Let's say we start with $\alpha = 0.01$. 
 
+In each iteration, the algorithm computes the partial derivatives of the cost function with respect to $\theta_0$ and $\theta_1$, scales them by $\alpha$, and updates the parameters accordingly. This process continues until the cost function converges to a minimum.
 
-When optimizing your machine learning algorithm, it's crucial to consider the learning rate, denoted here as $\alpha$. This hyperparameter determines the size of the steps taken during optimization. A larger $\alpha$ corresponds to more significant parameter changes in each step, while a smaller $\alpha$ results in more gradual adjustments. It's essential to fine-tune $\alpha$ based on the specific characteristics of your problem. For example, an excessively large $\alpha$ may lead to overshooting, hindering convergence to the minimum. Conversely, an excessively small $\alpha$ may slow down progress. 
+However, choosing the right learning rate is crucial. If the learning rate is too large, the algorithm may overshoot the minimum and fail to converge. Conversely, if it's too small, the algorithm may take too long to converge.
+
+Let's say we experiment with different learning rates: $\alpha = 0.1$, $\alpha = 0.01$, and $\alpha = 0.001$. We visualize their effects on the convergence of the cost function in the graph.
 
 <div align="center">
   <img src="../images/Alpha_effect.png" width="400">
 </div>
 
+By fine-tuning the learning rate and monitoring the convergence of the cost function, we can optimize our machine learning algorithm to make accurate predictions of house prices based on their sizes.
+
 {{% tip %}}
 The key hyperparameters in GD are learning rate, maximum number of iteration, and learning rate decay with decay rate. 
 {{% /tip %}}
+
+
 ## Gradient Descent Variants
 Various variants of Gradient Descent exist, such as `batch gradient descent`, `stochastic gradient descent`. While the fundamental concepts remain consistent across these variants, the approach each algorithm adopts to solve the optimization problem differs.
 
@@ -130,3 +139,5 @@ CD optimizes one variable at a time while cycling through the entire set of vari
 - Selection of the appropriate cost function corresponding to each gradient descent variant
 - Introduction of coordinate descent as an optimization algorithm
 {{% /summary %}}
+
+
