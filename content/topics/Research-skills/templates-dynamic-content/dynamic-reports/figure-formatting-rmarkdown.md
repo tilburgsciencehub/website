@@ -70,7 +70,7 @@ gapminder %>%
 And it will look like this:
 
 <p align = "center">
-<img src = "../images/formatting-chunk-figures.png" width="300">
+<img src = "../images/formatting-chunk-figures.png" width="500">
 </p>
 
 ### Global Settings for Figure Formatting
@@ -171,7 +171,7 @@ hist(rnorm(100))
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/subfigures-rmarkdown.png" width="400">
+<img src = "../images/subfigures-rmarkdown.png" width="500">
 </p>
 
 This setup sets the basis for your sub-figures to be neatly organized, each with its own caption, within a single, well-captioned figure.

@@ -132,7 +132,7 @@ extract_eq(fit_int)
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/equatiomatic-4.png" width="400">
+<img src = "../images/equatiomatic-4.png" width="600">
 </p>
 
 ### Customize Equation Ouput
@@ -182,8 +182,8 @@ extract_eq(fit_probit, use_coefs = FALSE, terms_per_line = 2, wrap = 40)
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/equatiomatic-5.png" width="300">
-<img src = "../images/equatiomatic-6.png" width="300">
+<img src = "../images/equatiomatic-5.png" width="450">
+<img src = "../images/equatiomatic-6.png" width="450">
 </p>
 
 {{% warning %}}

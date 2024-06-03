@@ -69,7 +69,7 @@ citation("ggplot2")
 {{% /codeblock %}}
 
 <p align = "center">
-<img src = "../images/citation-rmarkdown.png" width="300">
+<img src = "../images/citation-rmarkdown.png" width="500">
 </p>
 
 **Step 2: Link A `BibTeX` File in the YAML Header**
