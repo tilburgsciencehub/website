@@ -24,8 +24,14 @@
 					<span class="flex-fill">
 						<h2 class="heading mt-3">{{ contributor_single.name }}</h4>
 							<p>{{ contributor_single.description_long }}</p>
-
+							
 							<!-- Get Contributions -->
+							<p class="mb-0"><strong style="font-weight: 700;">Contributions:</strong></p>		
+							<ul style="padding-inline-start: 20px;">
+								{% for contribution in contributions %}
+								<li style="color: #013365;"><a href="{{contribution.path}}" style="color: inherit;">{{contribution.title}}</a></li>
+								{% endfor %}
+							</ul>
 
 							<!-- Get Email -->
 							{% if contributor_single.email %}
