@@ -202,21 +202,41 @@ def get_breadcrumbs():
 
 
 # Generate related articles
+import random
+
 def find_related_articles(article_path, articles, Topics):
-    # Stap 1: Vind het huidige artikel
     current_article = articles.query.filter_by(path=article_path).first()
 
     if not current_article:
-        return []  
-    
+        return []
+
+    # related articles in same category
     related_articles_query = articles.query \
         .filter(articles.parent == current_article.parent, articles.id != current_article.id) \
         .limit(3) \
         .all()
 
+    # Find articles in sibling categories in case no other articles in category available
+    if len(related_articles_query) < 1:
+        parent_topic = Topics.query.filter_by(id=current_article.parent).first()
+
+        if parent_topic:
+            sibling_categories = Topics.query \
+                .filter(Topics.parent == parent_topic.parent, Topics.id != current_article.parent) \
+                .all()
+
+            sibling_articles = []
+            for sibling in sibling_categories:
+                sibling_articles.extend(
+                    articles.query.filter_by(parent=sibling.id).all()
+                )
+
+            related_articles_query.extend(random.sample(sibling_articles, min(3 - len(related_articles_query), len(sibling_articles))))
+
     base_url = request.host_url.rstrip("/")
     top_related_articles = []
 
+    # create list with related articles dictionaries
     for article in related_articles_query:
         parent_topic_path = get_full_topic_path(article.parent, Topics)
         if parent_topic_path:
@@ -276,7 +296,3 @@ def fetch_contributions_for_the_single_contributor(Contributor, Articles, Topics
             "path": full_path
         })
     return contributions_with_full_path
-
-    
-
-
