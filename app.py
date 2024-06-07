@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, abort
+from flask import Flask, render_template, request, redirect, abort
 from flask_assets import Environment, Bundle
 from datetime import datetime
 from functions import build_data_dict, fetch_contributions_for_the_single_contributor, generate_table_of_contents, get_breadcrumbs, find_related_articles, calculate_reading_time, fetch_meta_data, recently_published
@@ -6,6 +6,7 @@ import os
 from models import db, articles, Contributors, blogs, Topics
 from html_parser import htmlize
 from sqlalchemy import func
+from redirectstsh import setup_redirects
 
 # Initialize App
 app = Flask(__name__, static_url_path='/static')
@@ -238,6 +239,9 @@ def contributor(contributor_path):
     contributions = fetch_contributions_for_the_single_contributor(contributor_single, articles, Topics)
 
     return render_template('contributors-single.html', assets=assets, data_dict=data_dict, contributor_single=contributor_single, contributions=contributions)
+
+# Redirects
+setup_redirects(app)
 
 # Still needs metadata!
 # Error Handler 404

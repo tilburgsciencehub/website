@@ -127,7 +127,7 @@ def recently_published(articles, Topics):
     recent_articles_query = articles.query \
         .with_entities(articles.title, articles.path, articles.parent) \
         .order_by(func.coalesce(articles.date_modified, articles.date).desc()) \
-        .limit(5) \
+        .limit(4) \
         .all()
 
     recent_articles_dict = []

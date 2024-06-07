@@ -21,8 +21,8 @@
                 <span class="flex-fill">
                     <div class="image-circle-overview">
                     {% if contributor.image %}
-                    <div class="img-container-overview" style="background-image: url({% if contributor.image %}{{ url_for('static', filename='img/contributors/' + contributor.image) }}{% else %}{{ url_for('static', filename='img/no-image.png') }}{% endif %});">
-                    </div>                    
+                    <div class="img-container-overview" style="background-image: url({% if contributor.image and contributor.image != '' %}{{ url_for('static', filename='img/contributors/' + contributor.image) }}{% else %}{{ url_for('static', filename='img/no-image.png') }}{% endif %});">
+                    </div>                                      
                     {% endif %}
     
                     </div>
