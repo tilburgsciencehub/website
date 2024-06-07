@@ -193,7 +193,10 @@ def get_breadcrumbs():
             "name": url_parts[i].replace("-", " ").title(),
             "url": f"{base_url}/{'/'.join(url_parts[:i + 1])}/"  # Gebruik f-string voor duidelijkheid
         }
-        breadcrumbs.append(breadcrumb)
+        if("?utm_" in url_parts[i]):
+            continue
+        else:
+            breadcrumbs.append(breadcrumb)
 
     return breadcrumbs
 
