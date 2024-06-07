@@ -73,6 +73,6 @@ Even experts find it hard to predict performance bottlenecks.
 ## Language-specific style guides
 Want to learn language-specific coding guidelines? See the following building blocks for:
 
-  - [Python](/python/style-guides)
-  - [R/R Studio](/r/style-guides)
-  - [Stata](/stata/style-guides)
+- [Python](/python/style-guides)
+- [R/R Studio](/r/style-guides)
+- [Stata](/stata/style-guides)
