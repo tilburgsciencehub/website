@@ -103,7 +103,7 @@ Make sure you have at least version 3.2 installed.
 If so, you're all set!
 
 
-## Other installations
+## Other installation methods
 
 For instructions on running Pandoc in a Docker container or with GitHub Actions, visit the [Pandoc installing page](https://www.pandoc.org/installing.html).
 
