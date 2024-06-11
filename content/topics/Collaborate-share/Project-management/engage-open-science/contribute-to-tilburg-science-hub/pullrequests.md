@@ -144,9 +144,9 @@ First, make sure to read our [code of conduct](../code-of-conduct) as well as ou
 
 {{% /warning %}}
 
-{{% cta-primary "Start with our Building Block Markdown template" "https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/topics/more-tutorials/contribute-to-tilburg-science-hub/building-block-shell.md" %}}
+{{% cta-primary "Start with our Building Block Markdown template" "https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/topics/Collaborate-share/Project-management/engage-open-science/contribute-to-tilburg-science-hub/building-block-shell.md" %}}
 
-{{% cta-primary "Start with our Tutorial Markdown template" "https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/topics/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell.md" %}}
+{{% cta-primary "Start with our Tutorial Markdown template" "https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/topics/Collaborate-share/Project-management/engage-open-science/contribute-to-tilburg-science-hub/tutorial-shell.md" %}}
 
 
 <!--
