@@ -22,6 +22,7 @@ aliases:
 - Highly customizable with extensions
 - Allows for custom templates for consistent templates
 - Supports citations and bibliographies
+- Creating slide slows with LaTeX Beamer or PowerPoint
 
 The [Pandoc User guide](https://pandoc.org/MANUAL#), on which this article is based, is very extensive but provides information on everything. Use the Search (Ctrl+F) function to find something specifically easier.
 
@@ -30,7 +31,7 @@ The [Pandoc User guide](https://pandoc.org/MANUAL#), on which this article is ba
 
 ## How to install Pandoc
 
-Refer to [this guide](/install/pandoc) for instructions on setting up Pandoc.
+Refer to [this TSH guide](/install/pandoc) for instructions on setting up Pandoc.
 
 ## How to use it
 
@@ -247,21 +248,84 @@ pandoc example-maths.md -s -o output-maths.html --katex
 
 ### Code blocks and syntax highlighting
 
-Pandoc supports syntax highlighting for code blocks. You can specify the language for each code block and Pandoc will highlight it accordingly. 
+Pandoc supports syntax highlighting for code blocks. You can specify the language for each code block and Pandoc will highlight it accordingly. Below is a Markdown file with code blocks for R and Python. Let's see how this file converts to PDF!
 
 
-For example. 
+{{% codeblock %}}
+```markdown
+---
+title: "Code examples"
+author: "Author name"
+---
 
-### Extensions
+This document contains some code blocks for R and Python.
 
-Pandoc has a variety of useful extensions. For example, add support for footnotes with `footnotes`, `task_lists` allows for task lists, `table_captions` enables table captions. Refer to the [Extensions section of the User guide]() for a full list., 
+## Python code example
+~~~python
+# A simple Python function
+def greet(name):
+    return f"Hello, {name}!"
 
-You can add an extension with a + after the code. 
+print(greet("World"))
+~~~
+
+## R code example
+
+~~~R
+outcome <- 1 + 1
+print(outcome)
+~~~
+
+```
+{{% /codeblock %}}
+
+Now we are converting the markdown file to PDF with the following command in the terminal:
+
+{{% codeblock %}}
+```bash
+pandoc example-code.md -s -o output-code.pdf
+```
+{{% /codeblock %}}
+
+This is the output PDF file:
+
+<p align = "center">
+<img src = "../images/output-code.png" width="400">
+</p>
 
 
-### Creating slide shows
+## Extensions
 
-Pandoc can create slide shows from Markdown files, supporting formats like LaTeX Beamer and Powerpoint (`.pptx`). 
+Pandoc has a variety of useful extensions. This makes you able to really adjust it to any of your liking and customize the tools to your needs! Below is a table of some of the most useful extensions for Pandoc, along with a short descriptions. Refer to the [Extensions section of the User guide](https://pandoc.org/MANUAL.html#extensions) and the [specific Markdown Extensions section](https://pandoc.org/MANUAL.html#pandocs-markdown) for all the options.
 
-Example for LaTex Beamer:
+| **Extension**        | **Description**                                                | **Formats**                  |
+|----------------------|----------------------------------------------------------------|------------------------------|
+| `smart`              | Improves readability by enabling smart typography. Converts straight quotes (") to curly quotes (“), -- to en dashes (–), --- to em dashes (—), and three dots to ellipses (…) 
+| All formats                  |
+| `autolink_bare_uris` | Automatically turns bare URIs into clickable links.                      | Markdown, CommonMark, GFM    |
+| `footnotes`          | Adds support for footnotes.                                    | Markdown, CommonMark, GFM    |
+| `grid_tables`        | Adds support for grid tables in Markdown.                      | Markdown                     |
+| `task_lists`         | Adds support for creating task lists with interactive checkboxes                          | Markdown, GFM                |
+| `table_captions`     | Enables table captions, making it easier to add descriptive titles to tables       | Markdown                     |
+| `tex_math_dollars`   | Allows LaTeX math between dollar signs, simplifing the inclusion of math formulas in documents.                        | Markdown                     |
+| `pipe_tables`        | Adds support for pipe tables, providing an easy way to create simple tables in Markdown. | Markdown                     |
+| `implicit_figures`   | Treats images as figures when they are the only element in a paragraph, adding `<figure>` and `<figcaption>` tags for better display. | Markdown                     |
+
+### How to add an extension? 
+
+To enable an extension in Pandoc, specify it after the format name with a `+`. For instance, to use the `footnotes` extension with the Markdown format, include it after the `-f` or `-from` flag:
+
+{{% codeblock %}}
+```bash
+pandoc input.md -s -o output.pdf -f markdown+footnotes
+```
+{{% /codeblock %}}
+
+
+{{% summary %}}
+
+Pandoc is a free document converter, which is highly customizable and can make anything happen. It is easy and quick to use, directly from the command line. The [Pandoc User guide](https://pandoc.org/MANUAL#) provides information on all the options and extensions.
+
+{{% /summary %}}
+
 
