@@ -1,7 +1,7 @@
 ---
 title: "Pandoc: An Easy Document Converter"
-description: "Convert documents of all types, e.g. PDF, Markdown etc., from your command line with Pandoc"
-keywords: "pandoc, documents, convert, converting, pdf, markdown"
+description: "Convert document formats directly from the command line with Pandoc"
+keywords: "pandoc, documents, convert, converting, pdf, markdown, latex, HTML, command, command line, open-source"
 weight: 1
 draft: false
 aliases:
@@ -10,32 +10,35 @@ aliases:
 
 ## Overview
 
-[Pandoc](https://www.pandoc.org/) is a powerful command-line tool for converting documents between various formats. It supports a wide range of formats, including Markdown, HTML, LaTex, Word, Jupyter notebooks (.ipynb), PowerPoint, and many others. Pandoc can convert complex syntaxes, such as LaTeX math, document metadata, and tables, and more. 
+[Pandoc](https://www.pandoc.org/) is a powerful command-line tool designed for converting documents between a wide range of formats, including Markdown, HTML, LaTeX (PDF), Word, Jupyter notebooks (.ipynb), and PowerPoint. It can handle complex syntaxes, such as LaTeX math, document metadata, and tables, making it an incredibly versatile choice for various document conversion needs.
 
 
 {{% summary %}}
-*Some of its useful features*:
+
+*Key features are*:
 
 - Easy and quick to use, directly from the command line
-- Converts between numerous documents formats
+- Converts numerous document formats
 - Free and open-source
 - Highly customizable with extensions
-- Allows for custom templates for consistent templates
+- Allows custom templates for consistent formatting
 - Supports citations and bibliographies
-- Creating slide slows with LaTeX Beamer or PowerPoint
+- Create slideshows with LaTeX Beamer or PowerPoint
 
-The [Pandoc User guide](https://pandoc.org/MANUAL#), on which this article is based, is very extensive but provides information on everything. Use the Search (Ctrl+F) function to find something specifically easier.
+For detailed information on all available options, refer to the [Pandoc User Guide](https://pandoc.org/MANUAL#). To quickly find specific topics in this extensive document, use the Search (`Ctrl+F`) function!
 
 {{% /summary %}}
 
 
 ## How to install Pandoc
 
-Refer to [this TSH guide](/install/pandoc) for instructions on setting up Pandoc.
+Refer to [this TSH Guide](/install/pandoc) for instructions on setting up Pandoc.
 
 ## How to use it
 
-To demonstrate how Pandoc can handle formatting and produce a polished outputs, let's convert a basic Markdown file to a PDF. First, save the following content in a file named `example.md`:
+To demonstrate how to use Pandoc, we'll convert a basic Markdown file to a PDF. 
+
+1. Save the following content in a file named `example.md`:
 
 
 {{% codeblock %}}
@@ -57,11 +60,13 @@ Here is some text in section 2.
 
 {{% warning %}}
 
-By default, Pandoc uses LaTeX to create PDFs, so you need to have a LaTeX engine installed. Refer to the [LaTeX Set up Guide](/get/latex) for setup instructions. If you prefer not to use LaTex, alternative tools are available. Find instructions in the [Pandoc User guide, Creating a PDF section](https://pandoc.org/MANUAL#creating-a-pdf)
+Pandoc uses LaTeX to create PDFs by default, so you need to have a LaTeX engine installed. Refer to our [LaTeX Set up Guide](/get/latex) for setup instructions. 
+
+If you prefer not to use LaTeX, alternative tools are available. For more information, refer to the [Pandoc User Guide, Creating a PDF section](https://pandoc.org/MANUAL#creating-a-pdf)
 {{% /warning %}}
 
 
-Open a terminal and run the following command:
+2. Open a terminal in the directory where you saved the file and run the following command:
 
 {{% codeblock %}}
 ```bash
@@ -69,12 +74,13 @@ pandoc example.md -s -o output.pdf
 ```
 {{% /codeblock %}}
 
-In this command:
-- the first file (`example.md`) is the input file
-- - `-o` specifies the output file, which is named `output.pdf`
-- `-s` (or `-standalone`) tells Pandoc to create a self-standing document, using a template depending on the file format.
+- `example.md` is the input file
+- `-o` specifies the output file (named `output.pdf`)
+- `-s` (or `-standalone`) tells Pandoc to create a self-contained document. It follows the default format template and adds the necessary header and footer material. 
 
-Now, check the directory where you ran the command to find the newly created `example.pdf` file. The Markdown content is now beautifully formatted in a PDF document!
+3. Check your directory to find the newly created PDF document `example.pdf`. 
+
+The Markdown content is now beautifully formatted into a PDF!
 
 <p align = "center">
 <img src = "../images/output-pdf.png" width="400">
@@ -82,18 +88,21 @@ Now, check the directory where you ran the command to find the newly created `ex
 
 {{% tip %}}
 
-You can provide multiple files as input. As a default, Pandoc will combine them into one document with blank lines in between. Use `--file-scope` to process them individually.
+You can provide multiple input files. By default, Pandoc combines them into one document with blank lines in between. Use `--file-scope` to process them individually.
 
 {{% /tip %}}
 
 
 ## Useful functions and use cases
 
-While the functions of Pandoc are almost endless, and you can refer to the [User Guide](https://pandoc.org/MANUAL#) for the full options, a few are given here that we think are the most important / useful.
- 
+Pandoc offers a wide range of options, which you can find in the [Options sections of the User Guide](https://pandoc.org/MANUAL.html#options). Here are a few of the most useful features:
+
+
 ### Customized templates
 
-Pandoc allows you to use custom templates to control the look of your documents. Use the `--template` option to specify a custom template. For the default template of a format, you can use `-s` or `-standalone` template to add header and footer material that is needed for a self-standing document. Run `pandoc -D` followed by a format to find the default template used to create. For example, find the default PDF format like this:
+Pandoc allows custom templates to control the look of your documents. 
+
+Run `pandoc -D` followed by a format to find the default template used to create the document. For example, find the default PDF format like this:
 
 {{% codeblock %}}
 ```bash
@@ -101,7 +110,7 @@ pandoc -D latex
 ```
 {{% /codeblock %}}
 
-Or, specify a custom template with `--template`. First make `mytemplate.pdf` yourself (for example, adjust it from the default template). Then, the following command:
+To use a custom template,  create `mytemplate.tex` yourself (you can adjust the default template file, for example). Then, run the following command, specifying the template with `--template=`: 
 
 {{% codeblock %}}
 ```bash
@@ -113,7 +122,7 @@ pandoc -s --template=mytemplate.pdf -o example.pdf example.md
 
 ### Citations and bibliographies
 
-Pandoc supports citations and bibliographies, which are essential in academic writing. You can use `--citeproc` to process citations. For example, the following markdown document includes citations, which you can save as `example-citations.md` to follow the example. 
+Pandoc supports citations and bibliographies, which are essential in academic writing. You can use `--citeproc` to process citations. For example, save the following markdown content as `example-citations.md`. 
 
 {{% codeblock %}}
 ```markdown
@@ -142,7 +151,7 @@ The results were consistent with those found in earlier studies [@johnson2018stu
 ```
 {{% /codeblock %}}
 
-And the bibliography file (`references.bib`) that is specified in the metadata at the start of the markdown file is:
+And, save the following content in a bibliography file called `references.bib`: 
 
 {{% codeblock %}}
 ```
@@ -177,26 +186,31 @@ And the bibliography file (`references.bib`) that is specified in the metadata a
 ```
 {{% /codeblock %}}
 
-The following code with `--citeproc` includes the references taken from the `.bib` file that was specified in the metadata of the markdown file.
+Run this command to include the references:
 
 {{% codeblock %}}
 ```bash
-pandoc --citeproc -o output-citations.pdf example-citations.md
+pandoc --citeproc example-citations.md -o output-citations.pdf 
 ```
 {{% /codeblock %}}
 
-This is a screenshot of the output PDF file:
+A PDF document is created with the bibliography specified at the start of the markdown file!
+
 
 <p align = "center">
 <img src = "../images/output-citations.png" width="400">
 </p>
 
-Alternatively, for generating LaTex output that can be processed with `bibtex` (not directly PDF, but a `.tex` file), you can use `--natbib` instead. 
+{{% tip %}}
+
+To generate LaTeX output with `bibtex` (when converting to a `.tex` file instead of a PDF directly), replace `--citeproc` with `--natbib`. 
+
+{{% /tip %}}
 
 
 ### Math rendering
 
-Pandoc can render mathematical expressions using LaTex, MathML, or other methods. For example, to use KaTeX for fast math rendering in HTML, add `--katex` to your command. Like this markdown file, save it in a file named example-maths.md
+Pandoc can render mathematical expressions using LaTeX, MathML, or other methods. To use KaTeX for rendering math expressions, you can add `--katex` after the command when converting a markdown file to HTML. For example, save the following content in a file named `example-maths.md`.
 
 
 {{% codeblock %}}
@@ -233,7 +247,7 @@ $$
 ```
 {{% /codeblock %}}
 
-The following command with --katex behind it will render the maths (otherwise you will get an error).
+The following command will convert the markdown file to HTML: 
 
 {{% codeblock %}}
 ```bash
@@ -248,8 +262,9 @@ pandoc example-maths.md -s -o output-maths.html --katex
 
 ### Code blocks and syntax highlighting
 
-Pandoc supports syntax highlighting for code blocks. You can specify the language for each code block and Pandoc will highlight it accordingly. Below is a Markdown file with code blocks for R and Python. Let's see how this file converts to PDF!
+Pandoc supports syntax highlighting for various programming languages. You can specify the language for each code block to ensure proper highlighting. Below is a Markdown file with code blocks for R and Python. Let's see how this file converts to PDF!
 
+Save the following content in a file named `example-code.md`:
 
 {{% codeblock %}}
 ```markdown
@@ -279,7 +294,7 @@ print(outcome)
 ```
 {{% /codeblock %}}
 
-Now we are converting the markdown file to PDF with the following command in the terminal:
+Use the following command to convert the Markdown file to a PDF:
 
 {{% codeblock %}}
 ```bash
@@ -287,7 +302,7 @@ pandoc example-code.md -s -o output-code.pdf
 ```
 {{% /codeblock %}}
 
-This is the output PDF file:
+This command produces a PDF in your directory with syntax-highlighted code blocks for both R and Python:
 
 <p align = "center">
 <img src = "../images/output-code.png" width="400">
@@ -296,24 +311,23 @@ This is the output PDF file:
 
 ## Extensions
 
-Pandoc has a variety of useful extensions. This makes you able to really adjust it to any of your liking and customize the tools to your needs! Below is a table of some of the most useful extensions for Pandoc, along with a short descriptions. Refer to the [Extensions section of the User guide](https://pandoc.org/MANUAL.html#extensions) and the [specific Markdown Extensions section](https://pandoc.org/MANUAL.html#pandocs-markdown) for all the options.
+Pandoc offers a variety of useful extensions that allow you to tailor and customize its features to suit your needs. Below is a list of some of the most useful extensions for Pandoc, along with brief descriptions. For a complete list of options, refer to the [Extensions section of the User Guide](https://pandoc.org/MANUAL.html#extensions) and the [specific Markdown Extensions section](https://pandoc.org/MANUAL.html#pandocs-markdown).
 
 | **Extension**        | **Description**                                                | **Formats**                  |
 |----------------------|----------------------------------------------------------------|------------------------------|
-| `smart`              | Improves readability by enabling smart typography. Converts straight quotes (") to curly quotes (“), -- to en dashes (–), --- to em dashes (—), and three dots to ellipses (…) 
-| All formats                  |
-| `autolink_bare_uris` | Automatically turns bare URIs into clickable links.                      | Markdown, CommonMark, GFM    |
-| `footnotes`          | Adds support for footnotes.                                    | Markdown, CommonMark, GFM    |
-| `grid_tables`        | Adds support for grid tables in Markdown.                      | Markdown                     |
-| `task_lists`         | Adds support for creating task lists with interactive checkboxes                          | Markdown, GFM                |
-| `table_captions`     | Enables table captions, making it easier to add descriptive titles to tables       | Markdown                     |
-| `tex_math_dollars`   | Allows LaTeX math between dollar signs, simplifing the inclusion of math formulas in documents.                        | Markdown                     |
-| `pipe_tables`        | Adds support for pipe tables, providing an easy way to create simple tables in Markdown. | Markdown                     |
-| `implicit_figures`   | Treats images as figures when they are the only element in a paragraph, adding `<figure>` and `<figcaption>` tags for better display. | Markdown                     |
+| `smart`              | Improves readability by  <br> enabling smart typography. Converts  <br> straight quotes (") to curly quotes (“),  <br> -- to en dashes (–), --- to em dashes (—),  <br> and three dots to ellipses (…) | All formats                  |
+| `autolink_bare_uris` | Automatically turns bare URIs  <br> into clickable links.                      | Markdown  <br> CommonMark  <br> GFM    |
+| `footnotes`          | Adds support for footnotes.                                    | Markdown  <br> CommonMark  <br> GFM    |
+| `grid_tables`        | Adds support for grid tables                     | Markdown                     |
+| `task_lists`         | Adds support for creating task lists  <br> with interactive checkboxes                          | Markdown  <br> GFM                |
+| `table_captions`     | Enables table captions,  <br> making it easy to add  <br> descriptive titles to tables       | Markdown                     |
+| `tex_math_dollars`   | Allows LaTeX math  <br> between dollar signs,  <br> simplifying the inclusion of  <br> math formulas in documents.                        | Markdown                     |
+| `pipe_tables`        | Adds support for pipe  <br> tables, providing an  <br>  easy way to create  <br> simple tables. | Markdown                     |
+| `implicit_figures`   | Treats images as figures  <br> when  they are the only  <br> element in  a paragraph,  <br> adding `<figure>` and `<figcaption>`  <br> tags for better display. | Markdown                     |
 
-### How to add an extension? 
+### How to add an extension
 
-To enable an extension in Pandoc, specify it after the format name with a `+`. For instance, to use the `footnotes` extension with the Markdown format, include it after the `-f` or `-from` flag:
+To add an extension, specify it after the format name with a `+`. For instance, to use the `footnotes` extension with the Markdown format, include it after the `-f` or `-from` flag:
 
 {{% codeblock %}}
 ```bash
@@ -324,7 +338,7 @@ pandoc input.md -s -o output.pdf -f markdown+footnotes
 
 {{% summary %}}
 
-Pandoc is a free document converter, which is highly customizable and can make anything happen. It is easy and quick to use, directly from the command line. The [Pandoc User guide](https://pandoc.org/MANUAL#) provides information on all the options and extensions.
+Pandoc is a free, open-source tool for converting documents across a wide range of formats. It is easy and quick to use directly from the command line, and it is higly customizable. This article highlights some use cases and provides interesting examples, so you are ready to start experimenting yourself!
 
 {{% /summary %}}
 
