@@ -2,7 +2,7 @@
 title: "Pandoc: An Easy Document Converter"
 description: "Convert document formats directly from the command line with Pandoc"
 keywords: "pandoc, documents, convert, converting, pdf, markdown, latex, HTML, command, command line, open-source"
-weight: 1
+weight: 3
 draft: false
 aliases:
   - /pandoc
