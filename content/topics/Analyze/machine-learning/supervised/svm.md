@@ -4,8 +4,7 @@ description: "Support Vector Machines (SVM) stand out as one of the most popular
 keywords: "SVM, machine learning, Python, Large-margin"
 date: 
 weight: #1
-author: "Kheiry Sohooli"
-authorlink: "https://tilburgsciencehub.com/contributors/kheirysohooli/"
+author: "Matteo Zicari, Kheiry Sohooli"
 aliases:
   - /supportvectormachine
   - /machinelearning
