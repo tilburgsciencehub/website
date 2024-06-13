@@ -1,7 +1,7 @@
 ---
 title: "Support Vector Machines in Python"
 description: "Support Vector Machines (SVM) stand out as one of the most popular and effective machine learning classifiers which allow to accomodate for non-linear class boundaries."
-keywords: "SVM, machine learning, Python, Large-margine"
+keywords: "SVM, machine learning, Python, Large-margin"
 date: 
 weight: #1
 author: "Kheiry Sohooli"
