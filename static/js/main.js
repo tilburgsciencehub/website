@@ -168,10 +168,7 @@ $(".headerSearchMobile .resetInput").on("click", function (e) {
   })
 })
 
-$(".headerSearch").on("keyup", function (e) {
-  const resultsHolder = $(".headerSearchResultsHolder");
-  const val = e.target.value;
-
+function performSearch(val, resultsHolder) {
   index
     .search(val, {
       hitsPerPage: 10,
@@ -197,12 +194,36 @@ $(".headerSearch").on("keyup", function (e) {
         );
       }
     });
-});
+}
+
+function handleEventMobile(e) {
+  const resultsHolder = $(".mobileResults");
+  const val = e.target.value;
+  performSearch(val, resultsHolder);
+}
+
+function handleEvent(e) {
+  const resultsHolder = $(".headerSearchResultsHolder");
+  const val = e.target.value;
+  performSearch(val, resultsHolder);
+}
+
+// Event listener for keyup event
+$(".headerSearchMobile").on("keyup", handleEventMobile);
+
+// Event listener for click event
+$(".headerSearchMobile").on("click", handleEventMobile);
+
+// Event listener for keyup event
+$(".headerSearch").on("keyup", handleEvent);
+
+// Event listener for click event
+$(".headerSearch").on("click", handleEvent);
 
 $(".headerSearch2").on("keyup", function (e) {
   const resultsHolder = $(".headerSearchResultsHolder2");
   const val = e.target.value;
-
+  
   index
     .search(val, {
       hitsPerPage: 10,
@@ -213,7 +234,6 @@ $(".headerSearch2").on("keyup", function (e) {
       hits.map((hit) => {
         let url = hit.objectID.replace("./", "");
         url = url.replace(".md", "");
-
         resultsHolder.append(`<a href="/${url}">${hit.title}</a>`);
       });
 
@@ -230,36 +250,6 @@ $(".headerSearch2").on("keyup", function (e) {
     });
 });
 
-$(".headerSearchMobile").on("keyup", function (e) {
-  const resultsHolder = $(".mobileResults");
-  const val = e.target.value;
-
-  index
-    .search(val, {
-      hitsPerPage: 10,
-    })
-    .then(({ hits }) => {
-      resultsHolder.html(" ");
-      resultsHolder.addClass("active");
-      hits.map((hit) => {
-        let url = hit.objectID.replace("./", "");
-        url = url.replace(".md", "");
-
-        resultsHolder.append(`<a href="/${url}">${hit.title}</a>`);
-      });
-
-      if (hits.length == 0) {
-        resultsHolder.append(`<span>No result found!</span>`);
-      }
-
-      // also add see more link
-      if (hits.length == 10) {
-        resultsHolder.append(
-          `<a class="view-more-search" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`
-        );
-      }
-    });
-});
 
 /*
  *
