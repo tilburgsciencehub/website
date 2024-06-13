@@ -9,8 +9,9 @@ authorlink: "https://tilburgsciencehub.com/contributors/kheirysohooli/"
 ---
 
 ## Overview
-In the realm of Machine learnin, model evaluation is an crucial for assessing their reliability. It helps in detecting overfitting and underfitting after training algorithms on datasets. Cross-validation stands out as the best approach to pinpoint overfitting.
+In the realm of Machine learning, model evaluation is an crucial for assessing their reliability. It helps in detecting overfitting and underfitting after training algorithms on datasets. Cross-validation stands out as the best approach to pinpoint overfitting.
 In this short article, you'll become familiar with the primary causes of overfitting and briefly introduce solutions to address it. Additionally, we'll explore K-fold cross-validation, the main method for detecting overfitting.
+
 ## Overfitting 
 Overfitting occurs when a model performs well on the training data but poorly on the test data. For example, in the image below, the training accuracy is close to 1, while the test accuracy is much lower, less than 0.7. In this case, the model fails to generalize to new samples.
 <div align="center">
@@ -25,6 +26,7 @@ Overfitting generally happens when the model is too complex relative to the amou
 2- Small test dataset: If the test dataset is small and doesn't adequately represent all possible input data, it may not provide a reliable measure of the model's performance.
 
 3- Training Data Errors and Outliers: Errors and outliers in the training data introduce noise. If the algorithm interprets this noise as meaningful patterns, it can negatively impact the model's ability to generalize to new data.
+
 ### Solutions for overfitting
 Several solutions can mitigate  overfitting:
 
@@ -37,13 +39,14 @@ Several solutions can mitigate  overfitting:
 4- Regularization: Regularization in linear regression is a technique used to prevent overfitting. When a linear model has large coefficients for its features, it tends to overfit the training data. Regularization terms like L1 and L2 works by penalizing large coefficients, which can decrease them or even set them to zero. This process makes the model smoother and helps prevent overfitting.
 
 5- Hyperparameter tuning: By finding the best combination of hyperparameters, the model's complexity can be managed. Examples of hyperparameters include the learning rate in gradient descent and the depth of a decision tree. Overall, hyperparameter tuning helps a balance between model complexity and generalization performance, ultimately reducing the risk of overfitting.
+
 ## K-Fold Cross-Validation
 One method to check how well a model works on new data is using train-test-split. Here, we set aside some data to test the model after training it. But a better method is K-fold cross-validation. In this technique, we split the dataset into k subsets or folds. The model is trained k times, each time using a different fold for testing and the rest for training. This gives us k evaluation scores. Finally, we average these scores to get the overall performance. This approach provides a more reliable evaluation compared to just using train-test-split.
-Using K-fold cross-validation doesn't directly prevent overfitting, but it aids in detecting and addressing it. Let's explore it further.
+Using K-fold cross-validation doesn't directly prevent overfitting, but it aids in detecting and addressing it. Let's explore it further by means of an example.
 
-In this article, we'll use the diabetes dataset from Sklearn and train a DecisionTreeRegressor to predict diabetes progression.
+We'll use the diabetes dataset from Sklearn and train a DecisionTreeRegressor to predict diabetes progression.
 {{% tip %}}
-Tree-based algorithms are vulnerable to overfitting. 
+Tree-based algorithms are particularly vulnerable to overfitting. 
 {{% /tip %}}
 
 Running the next code block allows you to split the dataset into training and testing sets. You then train the model using the training set and assess its performance by calculating the Mean Squared Error (MSE) for both the training and testing datasets.
@@ -79,7 +82,7 @@ print("MSE for Test Data:", mse_test)
 ```
 {{% /codeblock %}}
 
-The result shows that the training MSE is zero, whereas the test MSE is 4933, indicating a severe case of overfitting. However, upon implementing K-fold cross-validation in next codeblock, it becomes evident that the model is more overfitted. K-fold cross-validation provides a more robust and reliable performance measure. 
+The result shows that the training MSE is zero, whereas the test MSE is 4933, indicating a severe case of overfitting. We can see this because the MSE in test set is **much** larger than in the training set. When we  implement K-fold cross-validation in next codeblock, it becomes even evident that the model is overfits the training data.
 
 {{% codeblock %}}
 ```Python
