@@ -114,7 +114,7 @@ To use a custom template,  create `mytemplate.tex` yourself (you can adjust the 
 
 {{% codeblock %}}
 ```bash
-pandoc -s --template=mytemplate.pdf -o example.pdf example.md
+pandoc -s --template=mytemplate.tex -o example.pdf example.md
 
 ```
 {{% /codeblock %}}
