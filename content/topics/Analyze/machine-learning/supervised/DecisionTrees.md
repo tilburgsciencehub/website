@@ -9,15 +9,15 @@ authorlink: "https://tilburgsciencehub.com/contributors/kheirysohooli/"
 ---
 
 ## Overview
-In this article, our focus is on understanding and tackling overfitting issues that may emerge during the `Decision Trees` training process. We will delve into various techniques that can be employed to mitigate overfitting and enhance the model's generalization ability, equipping you with the tools to address this challenge effectively.
+In this article, our focus is on understanding and tackling overfitting issues that may emerge during the training of `Decision Trees`. We will delve into various techniques that can be employed to mitigate overfitting and enhance the model's generalization ability, equipping you with the tools to address this challenge effectively.
 
-Please think of the training tree as a map explaining to us how the model predicts. Looking at the following image, in depth1, left node, 50 samples with a petal width less than 0.8 cm are all setosa, showing petal width is excellent for identifying setosa. In other leaf nodes (depth2), petal width is used again; however, the Gini value is not zero this time, and some flower types are mixed. If we keep dividing, we might make purer groups, but there's a risk of **overfitting**. Overfitting is like trying too hard to fit everything perfectly, making the model less useful for new samples it has yet to see. In decision trees, overfitting occurs when leaf nodes have high purity, indicated by Gini values close to zero or zero in classification problems, and very low MSE in regression problems during training.
+Think of the Decision tree as a map explaining to us how the model makes predictions. Looking at the following image, in depth1, left node, 50 samples with a petal width less than 0.8 cm are all setosa, showing petal width is excellent for identifying setosa. In other leaf nodes (depth2), petal width is used again; however, the Gini value is not zero this time, and some flower types are mixed. If we keep dividing, we might make purer groups, but there's a risk of **overfitting**. Overfitting is like trying too hard to fit everything perfectly, making the model less useful for new data that the algorithm has yet to see. In decision trees, overfitting occurs when leaf nodes have high purity, indicated by Gini values close to zero or zero in classification problems, and very low MSE in regression problems during training.
 <div align="center">
   <img src="../images/DecisionTree.png" width="400" alt="Figure1 -Decision Tree">
 </div> 
 
 ### Overfitting 
-The decision tree algorithm is prone to overfitting because it has unlimmited freedom. To prevent overfitting, we can limit this freedom through hyperparameter tuning. 
+The decision tree algorithm is prone to overfitting because it has unlimited freedom. To prevent overfitting, we can limit this freedom through hyperparameter tuning. 
 
 The code block trains a decision trees classifier with no restrictions. The resulting tree will have all leaf nodes with Gini impurity equal to 0, indicating a perfect fit to the data. However, this may lead to overfitting and poor performance on new data. It's worth noting that some leaf nodes may only have one or two samples, making the tree less generalizable.
 
@@ -41,7 +41,7 @@ DT_clf.fit(X,y)
   <img src="../images/DT_overfitted.png" width="500" alt="Figure2. Decision Tree: Overfitted Model">
 </p>
 
-You can observe the effects of overfitting when comparing the decision boundaries in the two next images. In the model with no constraint, you'll notice how the decision boundary perfectly splits the data. This is a clear sign of overfitting, and to address this issue, we need smoother boundaries.
+You can observe the effects of overfitting when comparing the decision boundaries in the two next images. In the model with no constraints, you'll notice how the decision boundary perfectly splits the data. This is a clear sign of overfitting, and to address this issue, we need smoother boundaries.
 
 <div style="display: flex; justify-content: center;">
   <img src="../images/Decision_boundary.png" width="300" alt="Decision boundary in overfited model" style="margin-right: 10px;">
@@ -119,7 +119,7 @@ print("Accuracy for test set:", test_accuracy)
 ```
 {{% /codeblock %}}
 
-After running the above code, you get a training accuracy of 1 and a test accuracy of 0.88. This indicates an overfitted model. To address this, we'll introduce the powerful Cost Complexity Pruning algorithm. 
+After running the above code, you get a training accuracy of 1 and a test accuracy of 0.88. This indicates an overfitted model. To address this, we'll introduce the Cost Complexity Pruning algorithm. 
 
 The **Cost Complex Proning** algorithm, also called **Weakest Link Proning**, determines how many branches of the tree to prune. The first step is to find each tree's error rate (the Gini value in classification and the Sum of Squared Residuals in regression). It starts with a full-size tree, calculates the error, and continues by calculating the subtrees' error each time by removing one node leaf. It will continue until only one node remains. 
 
@@ -156,7 +156,7 @@ for ccp_alpha in ccp_alphas:
 Don't forget to use all samples, including train and test data in the step of finding alpha's
 {{% /tip %}}
 
-Now, you have a list of classifiers with different alpha and accuracy. Try the following code block to visualize the training and testing accuracies of different models versus alpha. 
+Now, you have a list of classifiers with different alpha and accuracy. The following code block to visualize the training and testing accuracies of different models versus alpha. 
 
 {{% codeblock %}}
 ```Python
