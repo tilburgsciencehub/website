@@ -5,30 +5,37 @@ from functions import build_data_dict, fetch_contributions_for_the_single_contri
 import os
 from models import db, articles, Contributors, blogs, Topics
 from html_parser import htmlize
-from sqlalchemy import func
 from redirectstsh import setup_redirects
 
 # Initialize App
 app = Flask(__name__, static_url_path='/static')
 
 # DB
-db_filename = 'tsh.db'  # Adjust the filename if needed
+db_filename = 'tsh.db'
 db_path = os.path.abspath(os.path.join(os.path.dirname(__file__), db_filename))
-db_uri = f'sqlite:///{db_path}'  # Construct the URI
+db_uri = f'sqlite:///{db_path}'  
 
 # Database configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
-app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.config['CACHE'] = False
-app.config['ASSETS_DEBUG'] = True
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# Templates and assets
+app.config['TEMPLATES_AUTO_RELOAD'] = False # Only true when Debugging
+app.config['CACHE'] = True  # Only false when Debugging
+app.config['ASSETS_DEBUG'] = False  # Only true for Debugging
+
+# Security settings
+app.config['SESSION_COOKIE_SECURE'] = True  # Only false when Debugging
+app.config['REMEMBER_COOKIE_SECURE'] = True  # Only false when Debugging
+app.config['SESSION_COOKIE_HTTPONLY'] = True  # Only false when Debugging
+app.config['REMEMBER_COOKIE_HTTPONLY'] = True  # Only false when Debugging
 
 # Initialize SQLAlchemy with the app
 db.init_app(app)
 
-# Assets
+# Build & Register SCSS Bundle
 assets = Environment(app)
 
-# Build & Register SCSS Bundle
 scss_bundle = Bundle(
     'scss/bootstrap.scss',  
     output='css/main.css',
@@ -37,7 +44,7 @@ scss_bundle = Bundle(
 
 assets.register('scss_all', scss_bundle)
 
-# custom filter for dates
+# Custom filter for dates
 @app.template_filter('formatdate')
 def formatdate(value, format="%Y-%m-%d"):
     if value is None:
@@ -202,7 +209,7 @@ def contribute():
 
     return redirect('topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/contribute/')
 
-# Contribute
+# Search Page
 @app.route('/search')
 def search():
 

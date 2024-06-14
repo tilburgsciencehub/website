@@ -1,6 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql.expression import func
-from sqlalchemy import text, or_, not_
 from bs4 import BeautifulSoup
 import nltk
 from nltk.corpus import stopwords
@@ -11,45 +10,40 @@ from collections import defaultdict
 nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 
-# Get reading time estimate
+# Calculate the estimated reading time for the content
+# Parameters:
+# - content: String containing the content to calculate reading time for
+# Returns:
+# - Integer representing the estimated reading time in minutes
 def calculate_reading_time(content):
-    
-    if (content != None):
+    if content is not None:
         words = content.split()
-
-        # Calculate the reading time (in minutes) assuming 200 words per minute
-        reading_time = len(words) / 200
-
-        # Round up the reading time to the nearest whole minute
-        reading_time = math.ceil(reading_time)
-
+        reading_time = len(words) / 200  # Assume 200 words per minute
+        reading_time = math.ceil(reading_time)  # Round up to the nearest minute
         return reading_time
-    
     else:
-
         return 0
 
+# Convert a given text to a URL-friendly format
+# Parameters:
+# - text: String to be converted to a URL-friendly format
+# Returns:
+# - String with hyphens instead of spaces and capitalized words
 def urlize(text):
-    # Remove leading and trailing whitespace
     text = text.strip()
-
-    # Replace hyphens and underscores with spaces
     text = text.replace('-', ' ').replace('_', ' ')
-
-    # Split the text into words
     words = text.split()
-
-    # Capitalize the first letter of each word, excluding common stop words
-    words = [word.capitalize() if word.lower(
-    ) not in stop_words else word for word in words]
-
-    # Join the words back together with hyphens
+    words = [word.capitalize() if word.lower() not in stop_words else word for word in words]
     text = ' '.join(words)
-
     text = text[0].capitalize() + text[1:]
-
     return text
 
+# Build a data dictionary from topics and articles
+# Parameters:
+# - topics: SQLAlchemy query object for topics
+# - articles: SQLAlchemy query object for articles
+# Returns:
+# - Dictionary containing structured data of topics and articles
 def build_data_dict(topics, articles):
     data_dict = {}
     topics_data = topics.query.all()
@@ -84,7 +78,6 @@ def build_data_dict(topics, articles):
             for topic in topic_dict[level][parent]
         ]
     
-    # Fetch articles for examples
     articles_examples = articles.query.filter_by(type='examples').all()
     for article in articles_examples:
         article.reading_time = calculate_reading_time(article.content)
@@ -94,7 +87,12 @@ def build_data_dict(topics, articles):
 
     return data_dict
 
-# Recursive loop to find full path
+# Recursively find the full path of a topic by its parent ID
+# Parameters:
+# - parent_topic_id: Integer ID of the parent topic
+# - Topics: SQLAlchemy model for topics
+# Returns:
+# - Dictionary containing the title and full path of the topic
 def get_full_topic_path(parent_topic_id, Topics):
     topic = Topics.query \
         .with_entities(Topics.id, Topics.title, Topics.path, Topics.parent) \
@@ -122,6 +120,12 @@ def get_full_topic_path(parent_topic_id, Topics):
         "path": topic.path
     }
 
+# Fetch the most recently published articles
+# Parameters:
+# - articles: SQLAlchemy query object for articles
+# - Topics: SQLAlchemy model for topics
+# Returns:
+# - List of dictionaries containing the title and path of recent articles
 def recently_published(articles, Topics):
     base_url = request.host_url.rstrip("/")
     recent_articles_query = articles.query \
@@ -149,26 +153,20 @@ def recently_published(articles, Topics):
 
     return recent_articles_dict
 
-# Generate table of contents
+# Generate a table of contents from HTML content
+# Parameters:
+# - content_html: String containing the HTML content
+# Returns:
+# - List of dictionaries representing the table of contents
 def generate_table_of_contents(content_html):
-    # Parse de HTML-content met BeautifulSoup
     soup = BeautifulSoup(content_html, 'html.parser')
-
-    # Zoek naar alle h2 en h3 elementen in de content
     headings = soup.find_all(['h2', 'h3'])
-
-    # Bouw de inhoudsopgave op basis van de gevonden headings
     table_of_contents = []
-
     current_h2 = None
+
     for heading in headings:
-        # Bepaal het niveau van de heading (h2 of h3)
         level = heading.name
-
-        # Haal de tekst van de heading op
         text = heading.text.strip()
-
-        # Genereer een anchor (id) op basis van de tekst van de heading
         anchor = text.lower().replace(' ', '-')
 
         if level == 'h2':
@@ -179,44 +177,48 @@ def generate_table_of_contents(content_html):
 
     return table_of_contents
 
-# Function for breadcrumbs
+# Generate breadcrumbs for the current page
+# Parameters:
+# - None
+# Returns:
+# - List of dictionaries representing breadcrumb items
 def get_breadcrumbs():
-    base_url = request.host_url.rstrip("/")  # Haalt het domein en schema dynamisch op en verwijdert de trailing slash
+    base_url = request.host_url.rstrip("/")
     current_url = request.url
     path = current_url.replace(base_url, "")
-    url_parts = path.strip("/").split("/")  # Verwijder leading/trailing slashes voor correct splitsen
+    url_parts = path.strip("/").split("/")
     breadcrumbs = [{"name": "Home", "url": base_url}]
 
-    # Bouw de breadcrumb-items op basis van de delen van de URL
     for i in range(1, len(url_parts)):
         breadcrumb = {
             "name": url_parts[i].replace("-", " ").title(),
-            "url": f"{base_url}/{'/'.join(url_parts[:i + 1])}/"  # Gebruik f-string voor duidelijkheid
+            "url": f"{base_url}/{'/'.join(url_parts[:i + 1])}/"
         }
-        if("?utm_" in url_parts[i]):
+        if "?utm_" in url_parts[i]:
             continue
         else:
             breadcrumbs.append(breadcrumb)
 
     return breadcrumbs
 
-
-# Generate related articles
-import random
-
+# Find related articles for a given article path
+# Parameters:
+# - article_path: String representing the path of the current article
+# - articles: SQLAlchemy query object for articles
+# - Topics: SQLAlchemy model for topics
+# Returns:
+# - List of dictionaries containing related articles' title, path, keywords, and description
 def find_related_articles(article_path, articles, Topics):
     current_article = articles.query.filter_by(path=article_path).first()
 
     if not current_article:
         return []
 
-    # related articles in same category
     related_articles_query = articles.query \
         .filter(articles.parent == current_article.parent, articles.id != current_article.id) \
         .limit(3) \
         .all()
 
-    # Find articles in sibling categories in case no other articles in category available
     if len(related_articles_query) < 1:
         parent_topic = Topics.query.filter_by(id=current_article.parent).first()
 
@@ -236,7 +238,6 @@ def find_related_articles(article_path, articles, Topics):
     base_url = request.host_url.rstrip("/")
     top_related_articles = []
 
-    # create list with related articles dictionaries
     for article in related_articles_query:
         parent_topic_path = get_full_topic_path(article.parent, Topics)
         if parent_topic_path:
@@ -253,22 +254,23 @@ def find_related_articles(article_path, articles, Topics):
 
     return top_related_articles
 
+# Fetch meta data from a data object
+# Parameters:
+# - data_object: Object or dictionary containing meta data attributes
+# Returns:
+# - Dictionary containing the meta data
 def fetch_meta_data(data_object):
     meta_data = {}
 
-    # Controleer of data_object een dictionary is
     if isinstance(data_object, dict):
-        # Gebruik de get methode voor dictionaries
         title = data_object.get('title')
         description = data_object.get('description')
         keywords = data_object.get('keywords')
     else:
-        # Gebruik getattr voor objectattributen, met een standaardwaarde van None als het attribuut niet bestaat
         title = getattr(data_object, 'title', None)
         description = getattr(data_object, 'description', None)
         keywords = getattr(data_object, 'keywords', None)
 
-    # Voeg de waarden toe aan meta_data als ze bestaan (niet None en niet leeg)
     if title:
         meta_data['title'] = title
     if description:
@@ -277,7 +279,14 @@ def fetch_meta_data(data_object):
         meta_data['keywords'] = keywords
 
     return meta_data
-    
+
+# Fetch contributions for a single contributor
+# Parameters:
+# - Contributor: SQLAlchemy model for contributors
+# - Articles: SQLAlchemy query object for articles
+# - Topics: SQLAlchemy model for topics
+# Returns:
+# - List of dictionaries containing contributions with their full paths
 def fetch_contributions_for_the_single_contributor(Contributor, Articles, Topics):
     base_url = request.host_url.rstrip("/")
     contributions = Articles.query.filter_by(author=Contributor.name).with_entities(Articles.id, Articles.title, Articles.path, Articles.parent).all()
@@ -292,7 +301,7 @@ def fetch_contributions_for_the_single_contributor(Contributor, Articles, Topics
         
         contributions_with_full_path.append({
             "id": contribution.id,
-            "title":contribution.title,
+            "title": contribution.title,
             "path": full_path
         })
     return contributions_with_full_path

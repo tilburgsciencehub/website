@@ -8,7 +8,7 @@ import logging
 conn = sqlite3.connect('tsh.db')
 cursor = conn.cursor()
 
-# Create the categories and articles tables
+# Create the topics table
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS topics (
         id INTEGER PRIMARY KEY,
@@ -38,7 +38,7 @@ cursor.execute('''
         content TEXT
     )
 ''')
-               
+
 # Create the contributors table
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS contributors (
@@ -57,7 +57,7 @@ cursor.execute('''
         content TEXT
     )
 ''')
-               
+
 # Create the blogs table
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS blogs (
@@ -80,7 +80,16 @@ script_directory = os.path.dirname(os.path.realpath(__file__))
 content_directory = os.path.join(os.path.dirname(os.path.realpath(__file__)), "content")
 topic_folder = os.path.join(content_directory, 'topics')
 
-# Insert/update topic 
+# Insert or update a topic in the database
+# Parameters:
+# - cursor: SQLite cursor object
+# - title (str): The title of the topic
+# - level (int): The level of the topic in the hierarchy
+# - parent (int): The parent ID of the topic
+# - path (str): The path of the topic
+# - draft (str): The draft status of the topic
+# Returns:
+# - int: The ID of the inserted or updated topic
 def insert_topic_into_db(cursor, title, level, parent, path, draft):
     try:
         cursor.execute("SELECT 1 FROM topics WHERE path = ?", (path,))
@@ -105,7 +114,23 @@ def insert_topic_into_db(cursor, title, level, parent, path, draft):
 
     return topic_id
 
-# Insert/update article 
+# Insert or update an article in the database
+# Parameters:
+# - cursor: SQLite cursor object
+# - type (str): The type of the article
+# - title (str): The title of the article
+# - parent (int): The parent ID of the article
+# - description (str): The description of the article
+# - path (str): The path of the article
+# - keywords (str): The keywords associated with the article
+# - date (str): The publication date of the article
+# - date_modified (str): The modification date of the article
+# - draft (str): The draft status of the article
+# - weight (int): The weight of the article for ordering
+# - author (str): The author of the article
+# - content (str): The content of the article
+# Returns:
+# - None -> Insert/update article into db
 def insert_article_into_db(cursor, type, title, parent, description, path, keywords, date, date_modified, draft, weight, author, content):
     cursor.execute("SELECT 1 FROM articles WHERE path = ?", (path,))
     exists = cursor.fetchone()
@@ -124,7 +149,23 @@ def insert_article_into_db(cursor, type, title, parent, description, path, keywo
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (type, title, parent, description, path, keywords, date, date_modified, draft, weight, author, content))
 
-# Insert/update contributor 
+# Insert or update a contributor in the database
+# Parameters:
+# - cursor: SQLite cursor object
+# - name (str): The name of the contributor
+# - description_short (str): Short description of the contributor
+# - description_long (str): Long description of the contributor
+# - skills (str): Skills of the contributor
+# - linkedin (str): LinkedIn profile URL of the contributor
+# - facebook (str): Facebook profile URL of the contributor
+# - twitter (str): Twitter profile URL of the contributor
+# - email (str): Email of the contributor
+# - image (str): Image URL of the contributor
+# - status (str): Status of the contributor
+# - path (str): Path of the contributor
+# - content (str): Content of the contributor
+# Returns:
+# - None -> Insert/update contributor in db
 def insert_or_update_contributor(cursor, name, description_short, description_long, skills, linkedin, facebook, twitter, email, image, status, path, content):
     name = name if name else None
     description_short = description_short if description_short else None
@@ -153,7 +194,18 @@ def insert_or_update_contributor(cursor, name, description_short, description_lo
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (name, description_short, description_long, skills, linkedin, facebook, twitter, email, image, status, path, content))
 
-# Insert/update blog 
+# Insert or update a blog in the database
+# Parameters:
+# - cursor: SQLite cursor object
+# - title (str): The title of the blog
+# - description (str): The description of the blog
+# - path (str): The path of the blog
+# - date (str): The publication date of the blog
+# - date_modified (str): The modification date of the blog
+# - draft (str): The draft status of the blog
+# - content (str): The content of the blog
+# Returns:
+# - None -> Insert/update blog into db
 def insert_or_update_blog(cursor, title, description, path, date, date_modified, draft, content):
     title = title if title else None
     description = description if description else None
@@ -177,7 +229,11 @@ def insert_or_update_blog(cursor, title, description, path, date, date_modified,
             VALUES (?, ?, ?, ?, ?, ?, ?)
         ''', (title, description, path, date, date_modified, draft, content))
 
-# Parse MD
+# Parse a Markdown file to extract metadata
+# Parameters:
+# - file_path (str): The path to the Markdown file
+# Returns:
+# - tuple: A tuple containing the title, description, and draft status
 def parse_md_file(file_path):
     with open(file_path, 'r') as file:
         content = file.read()
@@ -192,7 +248,12 @@ def parse_md_file(file_path):
 
         return title_value, description_value, draft_value
 
-# Process article
+# Process an article from a Markdown file and insert it into the database
+# Parameters:
+# - md_file_path (str): The path to the Markdown file
+# - parent_id (int): The parent ID of the article
+# Returns:
+# - None -> Insert article into db
 def process_article(md_file_path, parent_id):
     with open(md_file_path, 'r', encoding='utf-8') as md_file:
         content = md_file.read()
@@ -219,7 +280,17 @@ def process_article(md_file_path, parent_id):
                                date_modified.group(1) if date_modified else None, draft.group(1) if draft else None,
                                int(weight.group(1)) if weight else None, author.group(1) if author else None, file_content)
 
-# Loop through topics and fill database
+import sqlite3
+import os
+import re
+import shutil
+import logging
+
+# Loop through topics and fill the database
+# Parameters:
+# - root_path (str): The root directory path to start the traversal
+# Returns:
+# - None
 def fill_database(root_path):
     exclude = {'img', 'images', 'data'}
     path_to_id = {}
@@ -242,20 +313,28 @@ def fill_database(root_path):
                     md_file_path = os.path.join(path, file)
                     process_article(md_file_path, folder_id)
 
-# Check if file is image
+# Check if the file is an image
+# Parameters:
+# - filename (str): The name of the file to check
+# Returns:
+# - bool: True if the file is an image, False otherwise
 def is_image(filename):
     _, ext = os.path.splitext(filename)
     return ext.lower() in image_extensions
 
-# Check if file is not image or MD
+# Check if the file is not an image or Markdown
+# Parameters:
+# - filename (str): The name of the file to check
+# Returns:
+# - bool: True if the file is not an image or Markdown, False otherwise
 def is_not_image_or_md(filename):
     _, ext = os.path.splitext(filename)
     return not (ext.lower() in image_extensions or ext.lower() == '.md')
 
-# Execute loop through topics and fill database
+# Execute loop through topics and fill the database
 fill_database(topic_folder)
 
-# Fetch Examples
+# Fetch and process examples
 examples_root_folder = os.path.join(content_directory, 'examples')
 for md_file_name in os.listdir(examples_root_folder):
     if md_file_name != '_index.md' and md_file_name.endswith('.md'):
@@ -264,7 +343,7 @@ for md_file_name in os.listdir(examples_root_folder):
 
         path = md_file_name.replace('.md', '').lower()
 
-        #Init Vars
+        # Initialize variables
         description = None
         title = None
         keywords = None
@@ -276,10 +355,8 @@ for md_file_name in os.listdir(examples_root_folder):
 
         # Read the contents of the Markdown file
         with open(md_file_path, 'r', encoding='utf-8') as md_file:
-
             # YAML
             for line in md_file:
-                
                 if line.startswith('description:'):
                     description = line.strip().replace('description:', '', 1).replace('"','').strip()
                 elif line.startswith('title:'):
@@ -298,8 +375,7 @@ for md_file_name in os.listdir(examples_root_folder):
                     weight = line.strip().replace('weight:', '', 1).replace('"','').strip()
         
         with open(md_file_path, 'r', encoding='utf-8') as md_file:
-            
-            # Fetch Content
+            # Fetch content
             md_file_content = md_file.read()
             match = re.match(r'---(.*?)---(.*)', md_file_content, re.DOTALL)
             if match:
@@ -308,28 +384,27 @@ for md_file_name in os.listdir(examples_root_folder):
             else:
                 content = None
 
-        # Insert data into articles table
+        # Insert data into the articles table
         insert_article_into_db(cursor, 'examples', title if title else None, None,
                                description if description else None, os.path.basename(md_file_path).replace('.md', ''),
                                keywords if keywords else None, date if date else None,
                                date_modified if date_modified else None, draft if draft else None,
                                int(weight) if weight else None, author if author else None, content if content else None)
 
-# Fetch Contributors
+# Fetch and process contributors
 contributors_root_folder = os.path.join(content_directory, 'contributors')
 for md_file_name in os.listdir(contributors_root_folder):
     if md_file_name != '_index.md' and md_file_name.endswith('.md'):
         # Construct the full path of the Markdown file
         md_file_path = os.path.join(contributors_root_folder, md_file_name)
 
-        #Init Vars
+        # Initialize variables
         name = None
         description_short = None
         description_long = None
         skills_list = []
         skills = None
         skills_started = False
-        skills_ended = False
         linkedin = None
         facebook = None
         twitter = None
@@ -339,13 +414,10 @@ for md_file_name in os.listdir(contributors_root_folder):
         content = None
         path = None
         
-
         # Read the contents of the Markdown file
         with open(md_file_path, 'r', encoding='utf-8') as md_file:
-
             # YAML
             for line in md_file:
-                
                 if line.startswith('name:'):
                     name = line.strip().replace('name:', '', 1).replace('"','').strip()
                     path = name.replace(' ','-').lower()
@@ -376,8 +448,7 @@ for md_file_name in os.listdir(contributors_root_folder):
         skills = ', '.join(skills_list)
         
         with open(md_file_path, 'r', encoding='utf-8') as md_file:
-            
-            # Fetch Content
+            # Fetch content
             md_file_content = md_file.read()
             match = re.match(r'---(.*?)---(.*)', md_file_content, re.DOTALL)
             if match:
@@ -385,10 +456,10 @@ for md_file_name in os.listdir(contributors_root_folder):
             else:
                 content = None
 
-        # Execute an SQL INSERT statement to add data to the 'articles' table
+        # Insert or update contributor data in the contributors table
         insert_or_update_contributor(cursor, name, description_short, description_long, skills, linkedin, facebook, twitter, email, image, status, path, content)
 
-# Fetch Blogs
+# Fetch and process blogs
 blog_root_folder = os.path.join(content_directory, 'blog')
 for md_file_name in os.listdir(blog_root_folder):
     if md_file_name != '_index.md' and md_file_name.endswith('.md'):
@@ -397,7 +468,7 @@ for md_file_name in os.listdir(blog_root_folder):
 
         path = md_file_name.replace('.md', '').lower()
 
-        #Init Vars
+        # Initialize variables
         description = None
         title = None
         date = None
@@ -407,10 +478,8 @@ for md_file_name in os.listdir(blog_root_folder):
 
         # Read the contents of the Markdown file
         with open(md_file_path, 'r', encoding='utf-8') as md_file:
-
             # YAML
             for line in md_file:
-                
                 if line.startswith('description:'):
                     description = line.strip().replace('description:', '', 1).replace('"','').strip()
                 elif line.startswith('title:'):
@@ -423,8 +492,7 @@ for md_file_name in os.listdir(blog_root_folder):
                     draft = line.strip().replace('draft:', '', 1).strip()
         
         with open(md_file_path, 'r', encoding='utf-8') as md_file:
-            
-            # Fetch Content
+            # Fetch content
             md_file_content = md_file.read()
             match = re.match(r'---(.*?)---(.*)', md_file_content, re.DOTALL)
             if match:
@@ -433,24 +501,24 @@ for md_file_name in os.listdir(blog_root_folder):
             else:
                 content = None
 
-        # Execute an SQL INSERT statement to add data to the 'articles' table
+        # Insert or update blog data in the blogs table
         insert_or_update_blog(cursor, title, description, path, date, date_modified, draft, content)
 
-# Submit to Database
+# Commit the changes to the database and close the connection
 conn.commit()
 conn.close()
 
-# Image directory
+# Define the image directory
 img_directory = os.path.join(script_directory, "static/img")
 
-# Create image directory if necessary
+# Create image directory if it does not exist
 if not os.path.exists(img_directory):
     os.makedirs(img_directory)
 
-# Image Extensions
+# Define valid image extensions
 image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.mov']
 
-# Loop through map for files
+# Loop through the content directory and copy images to the image directory
 for root, _, files in os.walk(content_directory):
     for filename in files:
         src_filepath = os.path.join(root, filename)
@@ -459,14 +527,17 @@ for root, _, files in os.walk(content_directory):
             dst_filepath = os.path.join(img_directory, filename)
             shutil.copy(src_filepath, dst_filepath)
 
-# Copy other files (non image or .md)
+# Define the directory for other files
 files_directory = os.path.join(script_directory, "static/files")
 
+# Create files directory if it does not exist
 if not os.path.exists(files_directory):
     os.makedirs(files_directory)
 
+# Initialize a set to keep track of unique file extensions
 unique_extensions = set()
 
+# Loop through the content directory and copy non-image, non-Markdown files
 for root, _, files in os.walk(content_directory):
     for filename in files:
         if is_not_image_or_md(filename):
@@ -475,15 +546,15 @@ for root, _, files in os.walk(content_directory):
             
             os.makedirs(os.path.dirname(dst_filepath), exist_ok=True)
             
-            # Controleer of het doelbestand al bestaat
+            # Check if the destination file already exists
             if os.path.exists(dst_filepath):
                 continue
             else:
                 shutil.copy(src_filepath, dst_filepath)
                 print(f"Bestand gekopieerd: {dst_filepath}")
-                # Voeg de extensie toe aan de set van unieke extensies
+                # Add the file extension to the set of unique extensions
                 unique_extensions.add(os.path.splitext(filename)[1].lower())
 
-# Aan het einde, converteer de set naar een lijst voor de output
+# Convert the set of unique extensions to a list for output
 unique_extensions_list = list(unique_extensions)
 print(f"Unieke bestandsextensies van gekopieerde bestanden: {unique_extensions_list}")
