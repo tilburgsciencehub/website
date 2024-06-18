@@ -1,5 +1,5 @@
 ---
-title: "Linux files permission"
+title: "Linux file permissions"
 description: "Learn how to change file permissions in linux using command line"
 keywords: "file, research cloud, linux, ubuntu, directory, data mangement"
 weight: 2
@@ -9,11 +9,11 @@ aliases:
 authorlink: "https://tilburgsciencehub.com/contributors/krzysztofwiesniakowski/"
 
 ---
-# Changing File Permissions in Linux
+## Changing File Permissions in Linux
 
-When working in a Linux environment, it's common to encounter situations where you need to change file permissions. This guide will help you understand how to modify file permissions using the `chmod` command.
+When working in a Linux environment, it is common to encounter situations where you need to change file permissions. This guide will help you understand how to modify file permissions using the `chmod` command.
 
-### Understanding File Permissions
+## Understanding File Permissions
 
 Linux file permissions are broken down into three types:
 
@@ -47,7 +47,20 @@ The output will look something like this
 
 Here’s what each part means:
 
-- `rwxr-xr-x`: The permissions for the file.
+- `rwxr-xr-x`: The permissions for the file, broken down as follows:
+    - `rwx`: The permissions for the user (owner) of the file.
+      - `r` (read): The user can read the file.
+      - `w` (write): The user can write to (modify) the file.
+      - `x` (execute): The user can execute the file.
+    - `r-x`: The permissions for the group that owns the file.
+      - `r` (read): The group members can read the file.
+      - `-` (no write permission): The group members cannot write to (modify) the file.
+      - `x` (execute): The group members can execute the file.
+    - `r-x`: The permissions for others (everyone else).
+      - `r` (read): Others can read the file.
+      - `-` (no write permission): Others cannot write to (modify) the file.
+      - `x` (execute): Others can execute the file.
+
 - `1`: Number of hard links.
 - `user`: The owner of the file.
 - `group`: The group that owns the file.
@@ -55,11 +68,10 @@ Here’s what each part means:
 - `Jun 17 12:34`: The last modification date and time.
 - `filename`: The name of the file.
 
-
-### Changing Permissions
+## Changing Permissions
 The `chmod` command is used to change the permissions of a file or directory.
 
-### Using Symbolic Mode
+## Using Symbolic Mode
 Symbolic mode uses letters to represent the permissions. Here are some examples:
 
 Add read permission for the user:
@@ -93,7 +105,7 @@ chmod u+rwx,g+rx,o+rx filename
 ```
 {{% /codeblock %}}
 
-### Using Numeric Mode
+## Using Numeric Mode
 Numeric mode uses numbers to represent permissions. Each type of permission is assigned a value:
 
 - Read (r) = 4
@@ -118,9 +130,9 @@ chmod 644 filename
 ```
 {{% /codeblock %}}
 
-### Recursively Changing Permissions
+## Recursively Changing Permissions
 To change permissions for a directory and all its contents, use the -R option:
-
+755 grants all permissions (read, write, execute) to the user (owner) but only read and execute permissions to the group and others.
 {{% codeblock %}}
 ```bash
 chmod -R 755 directory
