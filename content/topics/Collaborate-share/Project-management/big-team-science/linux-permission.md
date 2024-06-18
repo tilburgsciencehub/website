@@ -105,12 +105,35 @@ chmod u+rwx,g+rx,o+rx filename
 ```
 {{% /codeblock %}}
 
-## Using Numeric Mode
-Numeric mode uses numbers to represent permissions. Each type of permission is assigned a value:
+## Understanding Numerical Values for Permissions
 
-- Read (r) = 4
-- Write (w) = 2
-- Execute (x) = 1
+File permissions in Linux can also be represented using numerical (octal) values. Each permission type is assigned a specific value:
+
+- `4` (read)
+- `2` (write)
+- `1` (execute)
+
+These values are combined to form the total permission for the user, group, and others. The permissions are specified in the order: owner, group, and others.
+
+Here is a detailed breakdown of the numerical values:
+
+- `400`: Read by owner
+- `040`: Read by group
+- `004`: Read by anybody
+- `200`: Write by owner
+- `020`: Write by group
+- `002`: Write by anybody
+- `100`: Execute by owner
+- `010`: Execute by group
+- `001`: Execute by anybody
+
+### Example Calculation
+
+Summing up all the values above gives us `775`. Therefore, it grants:
+- Read, write, and execute permissions to the owner (4+2+1=7)
+- Read and execute permissions to the group (4+1=5)
+- Read and execute permissions to others (4+1=5)
+
 
 To set permissions, add the values together. For example, to set read, write, and execute permissions, use 7 (4+2+1). Here are some examples:
 
