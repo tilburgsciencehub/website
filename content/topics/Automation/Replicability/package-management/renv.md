@@ -141,7 +141,7 @@ The R community offers multiple tools to manage dependencies and reproducibility
 
 ### Packrat
 
-[Packrat](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/packrat/) is an earlier solution for managing project-specific R libraries. It helps isolate projects and make them more reproducible by ensuring that each project's library is separate. 
+[Packrat](/reproduce/packrat) is an earlier solution for managing project-specific R libraries. It helps isolate projects and make them more reproducible by ensuring that each project's library is separate. 
 
 Nonetheless, while `packrat` was widely used, it has some limitations which `renv` has aimed to address. Furthermore, while it is still maintained, there will be no new development for it. This presents `renv` as a better alternative.
 

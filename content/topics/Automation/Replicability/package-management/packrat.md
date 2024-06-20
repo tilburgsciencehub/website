@@ -14,7 +14,7 @@ aliases:
 **`Packrat` is now soft-deprecated** 
 
 It is still maintained, but there will be no new development for it. An updated alternative would be `renv`. 
-Do you want to learn about it? Visit [this building block](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/renv/)!
+Do you want to learn about it? Visit [this topic](/use/renv)!
 {{% /warning %}}
 
 ## Overview
