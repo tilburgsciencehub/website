@@ -21,6 +21,7 @@ aliases:
 - **Security**: Benefit from built-in security features such as vulnerability management and dependency scanning to ensure your projects remain secure.
 - **Collaboration**: Work seamlessly with team members through features like wikis, snippets, and shared repositories.
 
+{MAYBE REPHRASE THE SENTENCE BELOW}
 Tilburg University's GitLab is an essential tool for students, researchers, and developers, providing a robust environment for managing and collaborating on software projects.
 
 ## Distinguishing GitLab and GitHub
@@ -62,23 +63,88 @@ While GitHub also supports and recommends using SSH keys for secure access, it p
 In summary, SSH keys provide a secure and convenient way to authenticate with GitLab, ensuring safe and efficient interactions with your repositories. While GitHub also supports SSH keys, it offers alternative methods that can be more accessible for some users.
 
 ### Set up SSH key in Gitlab
-Explain what is rsa
+There are multiple ways to set up an SSH key in Gitlab. Please [Check Gitlab' docs](https://docs.gitlab.com/ee/user/ssh.html).
 
 Please stay up to date with the current technologies for generating ssh keys as every week new vulnerabilities are discovered
 
+In this building block we will explain how to set up ssh key using RSA SSH key. You could also check this Youtube tutorial (https://www.youtube.com/watch?v=GhEVOeqz9fk)
+
+
 ```bash
-ssh-keygen -t rsa
+ssh-keygen -t rsa -b 2048
 ```
 
-## Connect with VScode, Rstudio and operate through command line
+Press Enter. Output similar to the following is displayed:
+```bash
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/user/.ssh/id_rsa):
+```
+Later you will be asked to enter passphrase that can be any string.
+
+```bash
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+```
+
+After entering passphrase you will see the following in your terminal:
+
+```bash
+You identification has been saved in :
+Your public key has been saved in 
+They key fingerprint is: 
+```
+
+Copy the directory of where the public key has been saved. Open the file (for example using Notepad), copy the content of the file (including ssh-rsa part that stands in the beginning).
+User settings -> ssh keys -> add new key
+You need to copy the key fingerprint your GitLab environment. Go to User settings -> ssh keys -> add new key. You could specify the title and expiry date.
+
+## Connect with VScode, Rstudio 
+Similarly as GitHub, Gitlab can be integrated into Integrated Development Environments (IDEs). In this building block we will not go over all of them but please follow the tutorials below:
 
 ### GitLab and RStudio
 
-tutorial is here: https://handbook.gitlab.com/handbook/business-technology/data-team/platform/rstudio/
+[Integrate GitLab and Rstudio](https://handbook.gitlab.com/handbook/business-technology/data-team/platform/rstudio/)
 
 ### Gitlab and VScode
 
-Download an extension: https://docs.gitlab.com/ee/editor_extensions/visual_studio_code/
+[Integrate Gitlab into VScode by downloading an extension](https://docs.gitlab.com/ee/editor_extensions/visual_studio_code/)
 
-## Through command line
-Ask Hannes what he means with command line cause I think it is exactly the same as with Github
+## Using GitLab and GitHub Through the Command Line
+
+### Common Git Commands
+
+The fundamental Git commands are the same for both platforms:
+- `git clone <repository_url>`
+- `git add <file>`
+- `git commit -m "message"`
+- `git push`
+- `git pull`
+
+### Differences in Usage
+
+1. **Repository URLs**:
+   - **GitHub**: `https://github.com/username/repository.git` or `git@github.com:username/repository.git`
+   - **GitLab**: `https://gitlab.example.com/username/repository.git` or `git@gitlab.example.com:username/repository.git`
+
+2. **Authentication**:
+   - **GitHub**: Supports HTTPS with personal access tokens or SSH keys.
+     ```bash
+     git clone https://github.com/username/repository.git
+     # or using SSH
+     git clone git@github.com:username/repository.git
+     ```
+   - **GitLab**: Often requires SSH keys for secure access.
+     ```bash
+     git clone https://gitlab.example.com/username/repository.git
+     # or using SSH
+     git clone git@gitlab.example.com:username/repository.git
+     ```
+
+### CI/CD Integration
+
+- **GitHub**: Uses GitHub Actions, configured via `.github/workflows`.
+- **GitLab**: Uses GitLab CI/CD, configured via `.gitlab-ci.yml`.
+
+### Summary
+
+While the core Git commands are identical, the main differences lie in repository URLs and authentication methods.
