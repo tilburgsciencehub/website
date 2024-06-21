@@ -36,7 +36,7 @@ GitLab and GitHub are both popular platforms for version control and collaborati
 2. Use your Tilburg University credentials to log in.
 
 ### Importing a Project from GitHub into GitLab
-
+[GitLab docs on how to import GitHub project](https://docs.gitlab.com/ee/user/project/import/github.html)
 1. Click on the `+` button in the top navigation bar.
 2. Select `New project/repository`.
 3. Choose `Import project`.
