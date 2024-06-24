@@ -1,1 +1,43 @@
-[{"path": "/topics/more-tutorials/chatgpt-article/chat-gpt-research/", "title": "Use ChatGPT for your research!"}, {"path": "/topics/collaborate-and-share-your-work/use-github/git-branching-strategies/", "title": "Git Branching Strategies"}, {"path": "/topics/configure-your-computer/statistics-and-computation/r/", "title": "Set up R and RStudio"}, {"path": "/contributors/", "title": "Examples"}, {"path": "/topics/collaborate-and-share-your-work/write-your-paper/amsmath-latex-cheatsheet/", "title": "Cheatsheet for LaTeX Math Commands"}, {"path": "/topics/configure-your-computer/automation-and-workflows/make/", "title": "Set up Make"}, {"path": "/topics/configure-your-computer/task-specific-configurations/configuring-python-for-webscraping/", "title": "Configuring Python for Web Scraping"}, {"path": "/topics/more-tutorials/contribute-to-tilburg-science-hub/contribute/", "title": "Contribute to Tilburg Science Hub"}, {"path": "/about/", "title": "About"}, {"path": "/blog/", "title": "Blog"}]
+[
+    {
+      "path": "topics/more-tutorials/chat-gpt-research/chat-gpt-research",
+      "title": "Use ChatGPT for your research!"
+    },
+    {
+      "path": "/git/branching/strategies",
+      "title": "Git Branching Strategies"
+    },
+    {
+      "path": "/install/r",
+      "title": "Set up R and RStudio"
+    },
+    {
+      "path": "/examples/",
+      "title": "Examples"
+    },
+    {
+      "path": "/topics/share-your-results-and-project/write-your-paper/amsmath-latex-cheatsheet/",
+      "title": "Cheatsheet for LaTeX Math Commands"
+    },
+    {
+      "path": "/install/make/",
+      "title": "Set up Make"
+    },
+    {
+      "path": "/configure/python-for-scraping/",
+      "title": "Configuring Python for Web Scraping"
+    },
+    {
+      "path": "/contribute/how-to-contribute/",
+      "title": "Contribute to Tilburg Science Hub"
+    },
+    {
+      "path": "/about/",
+      "title": "About"
+    },
+    {
+      "path": "/blog/",
+      "title": "Blog"
+    }
+  ]
+  
