@@ -7,13 +7,14 @@ draft: false
 aliases:
   - /permission-linux
 authorlink: "https://tilburgsciencehub.com/contributors/krzysztofwiesniakowski/"
+author: Krzysztof Wiesniakowski
 
 ---
-## Changing File Permissions in Linux
+## Changing file permissions in Linux
 
 When working in a Linux environment, it is common to encounter situations where you need to change file permissions. This guide will help you understand how to modify file permissions using the `chmod` command.
 
-## Understanding File Permissions
+## Understanding file permissions
 
 Linux file permissions are broken down into three types:
 
@@ -27,7 +28,7 @@ Permissions are also divided into three categories:
 - **Write (w)**: Permission to modify the file.
 - **Execute (x)**: Permission to execute the file.
 
-## Viewing Current Permissions
+## Viewing current permissions
 
 To view the current permissions of a file, use the `ls -l` command:
 
@@ -68,10 +69,10 @@ Here’s what each part means:
 - `Jun 17 12:34`: The last modification date and time.
 - `filename`: The name of the file.
 
-## Changing Permissions
+## Changing permissions
 The `chmod` command is used to change the permissions of a file or directory.
 
-## Using Symbolic Mode
+## Using symbolic mode
 Symbolic mode uses letters to represent the permissions. Here are some examples:
 
 Add read permission for the user:
@@ -105,7 +106,7 @@ chmod u+rwx,g+rx,o+rx filename
 ```
 {{% /codeblock %}}
 
-## Understanding Numerical Values for Permissions
+## Understanding numerical values for permissions
 
 File permissions in Linux can also be represented using numerical (octal) values. Each permission type is assigned a specific value:
 
@@ -127,7 +128,7 @@ Here is a detailed breakdown of the numerical values:
 - `010`: Execute by group
 - `001`: Execute by anybody
 
-### Example Calculation
+### Example calculation
 
 Summing up all the values above gives us `775`. Therefore, it grants:
 - Read, write, and execute permissions to the owner (4+2+1=7)
@@ -153,7 +154,7 @@ chmod 644 filename
 ```
 {{% /codeblock %}}
 
-## Recursively Changing Permissions
+## Recursively changing permissions
 To change permissions for a directory and all its contents, use the -R option:
 755 grants all permissions (read, write, execute) to the user (owner) but only read and execute permissions to the group and others.
 {{% codeblock %}}
