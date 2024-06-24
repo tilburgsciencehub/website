@@ -27,14 +27,14 @@ Tilburg University's GitLab is an useful tool for students, researchers, and dev
 
 GitLab and GitHub are both popular platforms for version control and collaborative software development, but they have distinct features and focuses. GitHub is widely known for its strong community and extensive integrations with other tools, making it a go-to choice for open-source projects. It provides a user-friendly interface and extensive documentation, catering to a broad range of developers. On the other hand, GitLab offers a more comprehensive suite of DevOps tools, including built-in Continuous Integration/Continuous Deployment (CI/CD) pipelines, issue tracking, and project management features. GitLab's self-hosting capabilities allow organizations to run GitLab on their own servers, providing greater control over their data and workflows. Additionally, GitLab emphasizes an all-in-one platform approach, aiming to support the entire software development lifecycle within a single application. While both platforms support Git for version control, GitLab's extensive built-in features and flexibility for self-hosting distinguish it from GitHub's community-centric and integration-focused model.
 
-## How to Log in to GitLab and Import a Project from GitHub
+## How to Log in to GitLab and import a project from GitHub
 
 ### Logging in to GitLab
 
 1. Go to [GitLab at Tilburg University](https://gitlab.uvt.nl/).
 2. Use your Tilburg University credentials to log in.
 
-### Importing a Project from GitHub into GitLab
+### Importing a project from GitHub into GitLab
 [GitLab docs on how to import GitHub project](https://docs.gitlab.com/ee/user/project/import/github.html)
 1. Click on the `+` button in the top navigation bar.
 2. Select `New project/repository`.
@@ -100,7 +100,7 @@ Locate and copy the directory where your public key has been saved. Use File Exp
 </p>
 
 ## Connect with VScode, Rstudio 
-Similarly as GitHub, Gitlab can be integrated into Integrated Development Environments (IDEs). In this building block we will not go over all of them but please follow the tutorials below:
+Similarly as GitHub, Gitlab can be integrated into Integrated Development Environments (IDEs). In this building block we will not go over all of them because the building block would become too long but please follow the tutorials below in case you would like to integrate GitLab into your IDE:
 
 ### GitLab and RStudio
 
@@ -110,9 +110,9 @@ Similarly as GitHub, Gitlab can be integrated into Integrated Development Enviro
 
 [Integrate Gitlab into VScode by downloading an extension](https://docs.gitlab.com/ee/editor_extensions/visual_studio_code/)
 
-## Using GitLab and GitHub Through the Command Line
+## Using GitLab and GitHub through the command line
 
-### Common Git Commands
+### Common Git commands
 
 The fundamental Git commands are the same for both platforms:
 - `git clone <repository_url>`
@@ -121,7 +121,7 @@ The fundamental Git commands are the same for both platforms:
 - `git push`
 - `git pull`
 
-### Differences in Usage
+### Differences in usage
 
 1. **Repository URLs**:
    - **GitHub**: `https://github.com/username/repository.git` or `git@github.com:username/repository.git`
