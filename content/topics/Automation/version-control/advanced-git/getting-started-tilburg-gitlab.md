@@ -21,8 +21,7 @@ aliases:
 - **Security**: Benefit from built-in security features such as vulnerability management and dependency scanning to ensure your projects remain secure.
 - **Collaboration**: Work seamlessly with team members through features like wikis, snippets, and shared repositories.
 
-{MAYBE REPHRASE THE SENTENCE BELOW}
-Tilburg University's GitLab is an essential tool for students, researchers, and developers, providing a robust environment for managing and collaborating on software projects.
+Tilburg University's GitLab is an useful tool for students, researchers, and developers, providing a robust environment for managing and collaborating on software projects.
 
 ## Distinguishing GitLab and GitHub
 
@@ -52,29 +51,29 @@ By following these steps, you can easily log in to GitLab and import a project f
 
 An SSH key is a secure way of connecting to a remote server or service, such as GitLab, without needing to enter a password every time. It involves creating a pair of cryptographic keys: a private key that you keep secure on your local machine and a public key that you add to your GitLab account. This setup enhances security and convenience for operations like cloning repositories, pushing code, and pulling updates.
 
-### Why Do We Need SSH Keys in GitLab?
+### Why do we need SSH Keys in GitLab?
 
 GitLab often requires SSH keys for authentication to ensure secure communication between your local machine and the GitLab server. Using SSH keys is particularly important when working with private repositories or when higher security is needed for sensitive projects. It allows for secure, password-less access, which is both more secure and convenient than traditional username/password authentication.
 
-### Why Don’t We Need SSH Keys in GitHub?
+### Why don’t we need SSH keys in GitHub?
 
 While GitHub also supports and recommends using SSH keys for secure access, it provides additional authentication methods, such as HTTPS and GitHub CLI, which can be simpler for some users to set up. For example, you can clone repositories over HTTPS and authenticate using your GitHub username and personal access token, which is often perceived as easier for beginners. GitHub's emphasis on ease of use and flexibility in authentication methods makes it possible to use the platform effectively without SSH keys, although using them is still recommended for enhanced security.
 
 In summary, SSH keys provide a secure and convenient way to authenticate with GitLab, ensuring safe and efficient interactions with your repositories. While GitHub also supports SSH keys, it offers alternative methods that can be more accessible for some users.
 
 ### Set up SSH key in Gitlab
-There are multiple ways to set up an SSH key in Gitlab. Please [Check Gitlab' docs](https://docs.gitlab.com/ee/user/ssh.html).
+There are multiple ways to set up an SSH key in Gitlab. Please check [Gitlab' docs](https://docs.gitlab.com/ee/user/ssh.html).Please stay up to date with the current technologies for generating ssh keys as potentially new vulnerabilities could be discovered.
 
-Please stay up to date with the current technologies for generating ssh keys as every week new vulnerabilities are discovered
+In this building block we will explain how to set up ssh key using RSA algorithm. You can also check out this [YouTube tutorial](https://www.youtube.com/watch?v=GhEVOeqz9fk) if you prefer a visual guide that walks you through everything step by step.
 
-In this building block we will explain how to set up ssh key using RSA SSH key. You could also check this Youtube tutorial (https://www.youtube.com/watch?v=GhEVOeqz9fk)
-
+Please start by opening terminal and typing:
 
 ```bash
 ssh-keygen -t rsa -b 2048
 ```
 
 Press Enter. Output similar to the following is displayed:
+
 ```bash
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (/home/user/.ssh/id_rsa):
@@ -89,14 +88,16 @@ Enter same passphrase again:
 After entering passphrase you will see the following in your terminal:
 
 ```bash
-You identification has been saved in :
-Your public key has been saved in 
-They key fingerprint is: 
+You identification has been saved in : (/home/user/.ssh/id_rsa)
+Your public key has been saved in (/home/user/.ssh/id_rsa.pub)
+They key fingerprint is: SHA256 xxx ...
 ```
 
-Copy the directory of where the public key has been saved. Open the file (for example using Notepad), copy the content of the file (including ssh-rsa part that stands in the beginning).
-User settings -> ssh keys -> add new key
-You need to copy the key fingerprint your GitLab environment. Go to User settings -> ssh keys -> add new key. You could specify the title and expiry date.
+Locate and copy the directory where your public key has been saved. Use File Explorer to find the file. Open it with a text editor (such as Notepad) and copy its contents, including the `ssh-rsa` part at the beginning. Next, log in to your GitLab account and navigate to `User settings -> SSH Keys -> Add new key`. Paste the copied key into the provided field. Optionally, you can specify a title and an expiry date for the key. Refer to the image below for guidance.
+
+<p align = "center">
+<img src ="../images/ssh-key-gitlab.png" width="400">
+</p>
 
 ## Connect with VScode, Rstudio 
 Similarly as GitHub, Gitlab can be integrated into Integrated Development Environments (IDEs). In this building block we will not go over all of them but please follow the tutorials below:
