@@ -156,6 +156,7 @@ In this section, we load the MNIST dataset and preprocess it for training and te
 
 We begin by importing necessary libraries for data manipulation and preprocessing. Then, we load the MNIST dataset using Keras' built-in function `mnist.load_data()`. The dataset consists of 60,000 training images and 10,000 test images, each with their corresponding labels. Next, we preprocess the data by reshaping the input images and normalizing pixel values to a range between 0 and 1. Additionally, we convert the class labels to categorical format using one-hot encoding.
 
+{{% codeblock %}}
 ```python
 import numpy as np
 from keras.datasets import mnist
@@ -169,14 +170,17 @@ X_train = X_train.reshape((X_train.shape[0], -1)).astype('float32') / 255
 X_test = X_test.reshape((X_test.shape[0], -1)).astype('float32') / 255
 y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
-
 ```
+{{% /codeblock %}}
+
+
 ### Building the model
 In this section, we construct the neural network model using Keras' Sequential API.
 
 We create a Sequential model, which allows us to build a linear stack of layers. The model consists of dense (fully connected) layers, which are interconnected neurons. Each dense layer performs a linear operation on the input data followed by a non-linear activation function. In our model, we use ReLU (Rectified Linear Activation) as the activation function for hidden layers and softmax for the output layer. The `units` parameter specifies the number of neurons in each layer, and `input_shape` defines the shape of the input data for the first layer.
 
-```
+{{% codeblock %}}
+```python
 from keras.models import Sequential
 from keras.layers import Dense
 
@@ -188,13 +192,16 @@ model.add(Dense(units=64, activation='relu', input_shape=(X_train.shape[1],)))
 model.add(Dense(units=64, activation='relu'))
 model.add(Dense(units=10, activation='softmax'))
 ```
+{{% /codeblock %}}
+
 
 ### Compiling, fitting and evaluating the model
 In this section, we compile the model with an optimizer, loss function, and evaluation metric, train the model on the training data, and evaluate its performance on the test data.
 
 After building the model, we compile it using the `compile()` method. Here, we specify the optimizer (Adam), loss function (categorical cross-entropy), and evaluation metric (accuracy). Then, we train the model on the training data using the `fit()` method, specifying the number of epochs (iterations over the entire dataset) and batch size (number of samples per gradient update). Finally, we evaluate the trained model on the test data to measure its performance in terms of loss and accuracy.
 
-```
+{{% codeblock %}}
+```python
 # Compiling the model
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
@@ -207,6 +214,7 @@ print("Test Loss:", loss)
 print("Test Accuracy:", accuracy)
 
 ```
+{{% /codeblock %}}
 
 {{% summary %}}
 ### What is Deep Learning?

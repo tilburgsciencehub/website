@@ -3,6 +3,7 @@ title: "Pandoc: An Easy Document Converter"
 description: "Convert document formats directly from the command line with Pandoc"
 keywords: "pandoc, documents, convert, converting, pdf, markdown, latex, HTML, command, command line, open-source"
 weight: 3
+author: "Valerie Vossen"
 draft: false
 aliases:
   - /pandoc
@@ -338,7 +339,7 @@ pandoc input.md -s -o output.pdf -f markdown+footnotes
 
 {{% summary %}}
 
-Pandoc is a free, open-source tool for converting documents across a wide range of formats. It is easy and quick to use directly from the command line, and it is higly customizable. This article highlights some use cases and provides interesting examples, so you are ready to start experimenting yourself!
+Pandoc is a free, open-source tool for converting documents across a wide range of formats. It is easy and quick to use directly from the command line, and it is highly customizable. This article highlights some use cases and provides interesting examples, so you are ready to start experimenting yourself!
 
 {{% /summary %}}
 
