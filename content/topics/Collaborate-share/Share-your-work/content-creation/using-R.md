@@ -18,6 +18,7 @@ Sometimes, writing a paper is simply not enough: provide readers with an interac
 
 **Distill, Bookdown** and **Quarto** are some of the state-of-the-art tools to check out and get started.
 
+{{%table%}}
 {{% wide-table %}}
 
 | 	| **Possible input  <br> languages** 	| **Purpose**  	| **Output <br> formats** 	|  	
@@ -27,6 +28,7 @@ Sometimes, writing a paper is simply not enough: provide readers with an interac
 | **Quarto** | Python, R, <br> Julia and <br> Observable 	|  Used to publish articles,<br> reports, presentation, <br> websites,  blogs, and books	| HTML, PDF, <br> WORD, ePub etc. 	|  	
 
 {{% /wide-table %}}
+{{%/table%}}
 
 ## Get Started
 

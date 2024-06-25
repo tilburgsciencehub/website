@@ -114,7 +114,7 @@ This is an example
 If you're using wide tables, they may appear broken on smaller screens like mobile phones. Therefore, you should always wrap your tables within the `wide-table` shortcode.
 
 This will make sure that the right edge of the table fades out on small screens and they become scrollable on the horizontal axis. The following is an example of a wide table:
-
+{{%table%}}
 {{% wide-table %}}
 |  |  |  |  |  |  |  
 |-------------|-------------|------------|------------|---------------|---------------|
@@ -129,7 +129,7 @@ This will make sure that the right edge of the table fades out on small screens 
 | $\varphi$   | `\varphi`   | $\chi$     | `\chi`     | $\psi$        | `\psi`        |
 | $\omega$    | `\omega`    |
 {{% /wide-table %}}
-
+{{%/table%}}
 {{% tip %}}
 
 Click **[here](https://github.com/tilburgsciencehub/website/blob/master/content/topics/more-tutorials/contribute-to-tilburg-science-hub/style-guide.md)** to check out the Markdown file of this page to learn how these shortcodes are used in the text.

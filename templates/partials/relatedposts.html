@@ -9,15 +9,16 @@
 
 			{% for related_article in related_articles %}
 			<div class="col-xl-8 col-lg-8 col-md-24 col-sm-24 pr-5 mb-5 mb-xl-0 mb-lg-0">
-
 				<a href="{{ related_article.path }}">
 					<h4 style="font-weight:bold">{{ related_article.title }}</h4>
 					<p>{{ related_article.description }}</p>
+		{% if related_article.keywords %}		
           <div class="row">
             {% for keyword in related_article.keywords.split(',') %}
             <div class="col-auto"><i>{{ keyword.strip() }}</i></div>
             {% endfor %}
         </div>
+		{% endif %}
 				</a>
 			</div>
 			{% endfor %}
