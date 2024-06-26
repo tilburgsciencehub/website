@@ -22,3 +22,5 @@ docker compose build
 # Start the Docker containers
 docker compose up -d
 
+# Clean unused docker images
+docker system prune -a -f
