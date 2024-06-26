@@ -26,7 +26,7 @@ For this workflow, we'll need two packages: the ubiquitous `tidyverse` as well a
 
 {{% codeblock %}}
 
-``` r
+```R
 library(tidyverse)
 library(sjlabelled)
 ```
@@ -41,7 +41,7 @@ To read a `.sav` file, we can use `read_spss()` from the `sjlabelled` package. C
 
 {{% codeblock %}}
 
-``` r
+```R
 sjlabelled::read_spss("path_to_your_data.sav") |> as_tibble()
 ```
 
@@ -69,7 +69,7 @@ If we `View()` the dataframe, we do at least see the *variable labels* in the co
 
 You can inspect the data labels with dedicated `sjlabelled` functions, though. `get_label()` returns a named vector of the variable labels, while `get_labels()` returns a named list of named vectors containing the value labels.
 
-``` r
+```R
 # vector of VARIABLE labels
 get_label(df)
 
@@ -85,7 +85,7 @@ Unlike SPSS, R does not gain any performance by storing categorical data as numb
 
 {{% codeblock %}}
 
-``` r
+```R
 df_factor <- as_label(df)
 df_factor
 ```
@@ -96,7 +96,7 @@ If we want to be safe, we can also smush together the value ID and the value of 
 
 {{% codeblock %}}
 
-``` r
+```R
 df_id_factor <- as_label(df, prefix = TRUE)
 df_id_factor
 ```
@@ -119,7 +119,7 @@ The most common types of data frames, such as tibbles and data.tables should all
 
 {{% codeblock %}}
 
-``` r
+```R
 # Store the labels
 variable_labels <- get_label(df) # returns a named vector
 value_labels <- get_labels(df) # retuns a named list of named vectors
@@ -134,7 +134,7 @@ This data frame does not carry any labels anymore, just like a "normal" R datafr
 
 {{% codeblock %}}
 
-``` r
+```R
 df_processed |> 
   var_labels(!!!variable_labels) |> 
   get_label()
@@ -146,7 +146,7 @@ Analogously, we can re-assign the value labels:
 
 {{% codeblock %}}
 
-``` r
+```R
 df_processed |> 
   val_labels(!!!value_labels) |> 
   get_labels()
@@ -158,7 +158,7 @@ Now let's fully re-label the "processed" dataframe. As you saw before, both `var
 
 {{% codeblock %}}
 
-``` r
+```R
 df_proc_relabelled <- df_processed |> 
   select(order(colnames(df_processed))) |> # order the columns alphabetically
   var_labels(!!!variable_labels) |>
@@ -171,7 +171,7 @@ Both `var_labels()` and `val_labels()` automatically skip variables that are giv
 
 {{% codeblock %}}
 
-``` r
+```R
 df_processed |> 
   select(!e15relat) |> # removes the `e15relat` variable
   var_labels(!!!(variable_labels)) |> 
@@ -186,7 +186,7 @@ If you don't want the warning, you can create a makeshift version of `any_of()` 
 
 {{% codeblock %}}
 
-``` r
+```R
 df_processed |> 
   select(!e15relat) |> 
   var_labels(!!!(variable_labels[names(variable_labels) %in% colnames(.data)]))
@@ -198,7 +198,7 @@ To make things more concise, we can use a convenience function:
 
 {{% codeblock %}}
 
-``` r
+```R
 which_exist <- function(variable_labels) {
   variable_labels[names(variable_labels) %in% colnames(.data)]
 }
@@ -218,7 +218,7 @@ Another operation you might want to do is to label previously unlabeled data. Le
 
 {{% codeblock %}}
 
-``` r
+```R
 # verify that this dataset does not have labels
 get_label(mtcars) |> head()
 ```
@@ -229,7 +229,7 @@ Let's assign the variable labels that are given in the documentation in `?mtcars
 
 {{% codeblock %}}
 
-``` r
+```R
 mtcars_var_labels <- c(
   mpg = "Miles/(US) gallon",
   cyl = "Number of cylinders",
@@ -259,7 +259,7 @@ SPSS knows two types of categorical measures, nominal and ordinal. In R, this di
 
 {{% codeblock %}}
 
-``` r
+```R
 df$c82cop1 <- as.ordered(df$e42dep)
 ```
 
@@ -269,7 +269,7 @@ df$c82cop1 <- as.ordered(df$e42dep)
 
 {{% codeblock %}}
 
-``` r
+```R
 as_ordered_cols <- function(df, cols) {
   df |> mutate(across({{ cols }}, as.ordered))
 }
@@ -281,7 +281,7 @@ We can then perform conditional operations based on the `ordered` flag:
 
 {{% codeblock %}}
 
-``` r
+```R
 # flag all variables related to coping ("cop") are ordinal data
 df_processed_ordered <- df_processed |> 
   as_ordered_cols(contains("cop")) 
@@ -308,7 +308,7 @@ Sometimes ordinal data is interpreted as numerical data. One example for this is
 
 {{% codeblock %}}
 
-``` r
+```R
 df_processed |> print() # text levels
 df_processed_numeric <- df_processed |> 
   as_numeric() |> 
@@ -323,7 +323,7 @@ We can now perform statistical operations. By calling `rowwise()`, we can ensure
 
 {{% codeblock %}}
 
-``` r
+```R
 df_processed_numeric |> 
   select(c(c82cop1, c89cop8, c90cop9)) |> # positive measures
   rowwise() |> 
@@ -340,7 +340,7 @@ After we imported the SPSS file, we can clean and analyze the data as we normall
 
 {{% codeblock %}}
 
-``` r
+```R
 df_factor |> 
   as_ordered_cols(contains("cop")) |> 
   haven::write_sav("data/df_processed.sav")
@@ -354,7 +354,7 @@ If you want to export the numeric version of the dataframe, make sure to convert
 
 {{% codeblock %}}
 
-``` r
+```R
 df_processed_numeric |>
   as_ordered_cols(contains("cop")) |> 
   as_label() |> 

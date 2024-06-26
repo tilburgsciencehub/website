@@ -1,10 +1,11 @@
+import random
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql.expression import func
 from bs4 import BeautifulSoup
 import nltk
 from nltk.corpus import stopwords
 from flask import request
-import math
+import math 
 from collections import defaultdict
 
 nltk.download('stopwords')
