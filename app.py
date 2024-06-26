@@ -6,9 +6,14 @@ import os
 from models import db, articles, Contributors, blogs, Topics
 from html_parser import htmlize
 from redirectstsh import setup_redirects
+from utils import get_git_commit_hash
 
 # Initialize App
 app = Flask(__name__, static_url_path='/static')
+
+@app.context_processor
+def inject_git_commit_hash():
+    return {'git_commit_hash': get_git_commit_hash()}
 
 # DB
 db_filename = 'tsh.db'

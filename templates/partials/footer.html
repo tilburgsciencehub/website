@@ -80,9 +80,11 @@
 				<div class="d-flex flex-column flex-lg-row justify-content-md-between">
 					<div class="order-2 order-lg-1">© 2020-2024 Tilburg Science Hub. All rights reserved. |
 						<a class="d-inline-block text-white" href="/disclaimer">Disclaimer</a>
-						<a class="d-inline-block" href="https://www.netlify.com"> | <img
+						<div class="order-2 order-lg-1">Latest deploy hash: {{ git_commit_hash }}</div>
+						<!--<a class="d-inline-block" href="https://www.netlify.com"> | <img
 								src="https://www.netlify.com/v3/img/components/netlify-color-accent.svg"
 								alt="Deploys by Netlify" width="70" height="auto" /> </a>
+						-->
 					</div>
 					<div class="order-1 order-lg-2 mb-4 mb-lg-0">
 						<a class="d-inline-block mx-2" style="font-size: 17px;"

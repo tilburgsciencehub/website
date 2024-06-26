@@ -7,6 +7,7 @@ FROM python:3.8-slim as base
     # Install dependencies
 RUN apt-get update && \
     apt-get install -y libcurl4-openssl-dev curl && \
+    apt-get install -y git && \
     curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh && \
     bash nodesource_setup.sh && \
     apt-get install -y nodejs && \ 
