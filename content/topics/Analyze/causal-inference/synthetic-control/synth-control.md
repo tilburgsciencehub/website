@@ -112,8 +112,7 @@ time.plot=c(1970:2000))
 
 ```
 
-```
--Stata-
+```Stata
 * install necessary packages
 	ssc install synth
 
@@ -155,8 +154,7 @@ abline(v=1988.5,col=2,lty=2)
 
 ```
 
-```
--Stata-
+```Stata
 
 * Run command and obtain graphical output
 * Results show the weights of donor units
