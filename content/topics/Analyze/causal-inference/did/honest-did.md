@@ -113,34 +113,14 @@ We continue with the example that is introduced in the [DiD regression topic](/c
 
 The baseline analysis relies on the parallel trend assumption. Suppose we are worried about the validity of this assumption, we can conduct a sensitivity analysis with the [`HonestDiD` package](https://github.com/asheshrambachan/HonestDiD). 
 
+The full code of the example is in this [Gist](https://gist.github.com/valerievossen/3d2da7ad280f4b148d9223b33fa33545). 
 
-1. Load packages and data
+First, the required packages are loaded and the data is cleaned.
+
+1. Load packages and clean data
 
 
-{{% codeblock %}}
-```R
 
-# Load packages
-
-library(here)
-library(dplyr)
-library(did)
-library(haven)
-library(ggplot2)
-library(fixest)
-library(HonestDiD)
-library(readr)
-library(tidyverse)
-library(readxl)
-library(stringr)
-
-# Import data
-data_url <- "https://raw.githubusercontent.com/tilburgsciencehub/website/master/content/topics/analyze/causal-inference/did/GoodAma.Rda"
-
-load(url(data_url)) #GoodAma is the final data set
-
-```
-{{% /codeblock %}}
 
 2. Install the `HonestDiD` package
 
