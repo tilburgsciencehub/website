@@ -203,6 +203,8 @@ plot_rm
 
 2. The smoothness approach 
 
+-> take out?
+
 The smoothness approach as a sensitivity analysis, if we assume that the confounding trends are smoothly evolving over time, i.e. the slope of the parallel trend violation does not deviate more than M between periods.
 
 {{% codeblock %}}
@@ -218,7 +220,101 @@ delta_sd_results
 ```
 {{% /codeblock %}}
 
-Let's plot the results.
+
+## Staggered DiD example
+
+The following example shows how to a sensitivity analysis using the `HonestDiD` package with a staggered DiD framework, continuing the example of the [staggered DiD topic](\staggered-did). The full R code for this example is shared in this [GitHub Gist](https://gist.github.com/valerievossen/7eb07cadac731cfa14ce5cc44a353d4c). 
+
+
+
+1. Specify function
+
+To combine the staggered DiD approach of Callaway and Sant'Anna (with the package `did`) and the `HonestDiD` package, a function is created by Sant'Anna as the packages are now not fully integrated yet. 
+
+
+Extract the function from the codeblock in the [Callaway and Sant'Anna section of the HonestDiD page](https://github.com/asheshrambachan/HonestDiD), or from the [Gist specifically created for this example](https://gist.github.com/valerievossen/7eb07cadac731cfa14ce5cc44a353d4c).
+
+2. Load data
+
+Run the code in the [Gist](https://gist.github.com/valerievossen/7eb07cadac731cfa14ce5cc44a353d4c) to get the dataset ready-to-use. Or, run the following code to load the final dataset right away:
+
+{{% codeblock %}}
+```R
+# Load data
+data_url <- "https://raw.githubusercontent.com/tilburgsciencehub/website/master/content/topics/analyze/causal-inference/did/goodreads_df.Rda"
+
+load(url(data_url)) #goodreads_df is the final data set
+
+```
+{{% /codeblock %}}
+
+3. Analysis
+
+Note that the function `honest_did` is specified in Step 1, and the dataset `goodreads_df` is loaded in Step 2. If you did this, the following code gives you the results for the sensitivity analyses including plots.
+
+{{% codeblock %}}
+```R
+
+# 3.1. Staggered DiD analysis 
+
+staggered_results <- did::att_gt(yname = "rating", # outcome var
+                          tname = "period_review", # time var
+                          idname = "asin", # individual var
+                          gname = "period_question", # treated
+                          control_group = "notyettreated", #control
+                          data = goodreads_df, # final dataset
+                          allow_unbalanced_panel = TRUE,
+                          base_period = "universal")
+
+# Aggregate results 
+
+es <- did::aggte(cs_results, type = "dynamic", na.rm = TRUE)
+
+
+# 3.2 SENSITIVITY ANALYSIS: RELATIVE MAGNITUDES 
+
+sensitivity_results_rm <-
+  honest_did(es,
+             e=0,
+             type="relative_magnitude",
+             Mbarvec=seq(from = 0.5, to = 2, by = 0.5))
+
+HonestDiD::createSensitivityPlot_relativeMagnitudes(sensitivity_results_rm$robust_ci,
+                                                    sensitivity_results_rm$orig_ci)
+
+
+# 3.3 SENSITIVITY ANALYSIS: SMOOTHNESS RESTRICTIONS
+
+sensitivity_results_sd <-
+  honest_did(es = es,
+             e = 0,
+             type="smoothness")
+
+
+HonestDiD::createSensitivityPlot(sensitivity_results_sd$robust_ci,
+                                sensitivity_results_sd$orig_ci)
+
+```
+{{% /codeblock %}}
+
+The following plots are output:
+
+1. *Relative magnitudes*
+
+<p align = "center">
+<img src = "../images/staggered-rm-plot.png" width="500">
+</p>
+
+
+2. *Smoothness restriction*
+
+<p align = "center">
+<img src = "../images/staggered-sd-plot.png" width="500">
+</p>
+
+
+
+
 
 
 
@@ -226,11 +322,11 @@ Let's plot the results.
 
 ## Implications 
 
+
 - Comparing the approaches -> depends on number of pre-periods which is best to use
 - Make table to summarize the three approaches and compare on important things:
   - not too different from pre-trend: RM
   - smoothly evolving trends: smoothness
-
 
 good summary of choice
 - Additional restrictions; if researcher knows of a confounding policy that would have a positive effect on post-treatment difference -> make additional restriction that bias is positive in post-trend. 
