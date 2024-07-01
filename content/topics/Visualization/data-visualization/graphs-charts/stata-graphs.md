@@ -31,8 +31,8 @@ For more information about sample datasets in Stata, refer to this [link](https:
 ### Various types of plots
 Let's start with a basic example of using the `twoway` command to create various types of plots: 
 {{% codeblock %}}
-```
--Stata-
+
+```Stata
 
 * Load the dataset
 sysuse "auto.dta", clear
@@ -50,8 +50,7 @@ twoway spike price mpg  // spike plot
 You can further customize these plots with additional features such as axis titles, color schemes, and more. 
 
 {{% codeblock %}}
-```
--Stata-
+```Stata
 * Add y-axis title, x-axis title and graph title
 twoway line price mpg, ytitle("Price") xtitle("Mileage")
 
@@ -76,8 +75,7 @@ Stata offers a range of style schemes for you to experiment with. Discover more 
 You can also create graphs based on different grouping or conditions. Here's how to do it:
 
 {{% codeblock %}}
-```
--Stata-
+```Stata
 * Creating different lines for different groups
 tab foreign // foreign variable equals to 1 if the observation is foreing, zero otherwise
 

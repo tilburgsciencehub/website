@@ -41,8 +41,7 @@ logit_model = glm(inlf ~ nwifeinc + educ + exper + age + kidslt6 + kidsge6,data=
 ols_model = lm(inlf ~ nwifeinc + educ + exper + age + kidslt6 + kidsge6,data=datab)
 ```
 
-```
--Stata-
+```Stata
 * Open the dataset
 use http://fmwww.bc.edu/ec-p/data/wooldridge/mroz, clear
 
@@ -89,8 +88,7 @@ margins_summary(probit_model)
 
 ```
 
-```
--Stata-
+```Stata
 * To refer to the models above use estimates restore
 * alternatively, you could run the probit or logit models again
 * and then the margins postestimation command
@@ -147,8 +145,7 @@ cplot(object=probit_model,x="age",what="effect",main = "AME")
 
 ```
 
-```
--Stata-
+```Stata
 
 * To obtain the marginal effects at 12 years of education and one children under age 6
 
@@ -211,8 +208,7 @@ cplot(object=probit_model_exp_1,x="exper",what="prediction",main = "Prediction: 
 
 ```
 
-```
--Stata-
+```Stata
 
 * One way to add experience squared to the model could be to include the variable expersq:
 
