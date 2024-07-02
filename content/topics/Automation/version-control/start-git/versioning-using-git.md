@@ -15,9 +15,9 @@ aliases:
 
 ## Overview
 
-Welcome to this introductory guide for Git and GitHub. In this building block, we'll help you with the essential skills to start using Git for version control and start collaborating effectively on coding projects. 
+Welcome to this introductory guide for Git and GitHub. In this topic, we'll help you with the essential skills to start using Git for version control and start collaborating effectively on coding projects. 
 
-The building block consists of the following sections:
+The topic consists of the following sections:
 - What is Git?
 - What is GitHub? 
 - Configuring Git on a new computer
@@ -25,11 +25,11 @@ The building block consists of the following sections:
 - "Workcycles" to track your changes
 - Branching
 
-By the end of this building block, you'll have a solid grasp of Git and GitHub, empowering you to manage code versions and collaborate confidently with fellow developers.
+By the end of this topic, you'll have a solid grasp of Git and GitHub, empowering you to manage code versions and collaborate confidently with fellow developers.
 
 ### What is Git?
 
-**Git** is an open-source version control system that allows you to keep track of your source files, and the changes you make to them. Using Git you can roll back to any previous version of a file, and easily collaborate with team members. Git runs on your computer and allows you to configure so-called repositories that track files and directories. Use our building block [Set up Git and Github](/topics/configure-your-computer/statistics-and-computation/git/) to install Git and Github!
+**Git** is an open-source version control system that allows you to keep track of your source files, and the changes you make to them. Using Git you can roll back to any previous version of a file, and easily collaborate with team members. Git runs on your computer and allows you to configure so-called repositories that track files and directories. Use our topic [Set up Git and Github](/install/git) to install Git and Github!
 
 ### What is GitHub?
 
@@ -187,9 +187,9 @@ git log
 **Exclude or remove files from tracking**
 
 Want to avoid tracking specific files and folders from versioning? For example, there is no point in tracking *generated files* in `/gen`, as these files are purely created based on source code in `/src` (which, in
-turn, you *do* would like to track). Also, large data sets shouldn't be versioning, given the upload limit at GitHub. Learn how to exclude files and directories from tracking in this [building block](../git-ignore).
+turn, you *do* would like to track). Also, large data sets shouldn't be versioning, given the upload limit at GitHub. Learn how to exclude files and directories from tracking in this [topic](/learn/gitignore).
 
-Similarly, you should not store any sensitive information (such as passwords or API keys) in your code. Similarly, you may have accidentally committed a large data set and would like to take it out of the repository entirely. This [building block](../remove-files.md) teaches you how to remove sensitive or large files from your repository. 
+Similarly, you should not store any sensitive information (such as passwords or API keys) in your code. Similarly, you may have accidentally committed a large data set and would like to take it out of the repository entirely. This [topic](/remove/commited-files) teaches you how to remove sensitive or large files from your repository. 
 
 {{% /tip %}}
 
@@ -219,10 +219,10 @@ git push
 
 Branches separate the main version of your project (the "main" branch) from any experimental code in which you develop new features. Branches allow team members to make changes to the project without immediately affecting the main version of the project. 
 
-We provide an introduction to branching and branch naming strategies in additional building blocks:
+We provide an introduction to branching and branch naming strategies in additional topics:
 
-*  [Git Branching Strategies](https://tilburgsciencehub.com/topics/collaborate-and-share-your-work/use-github/git-branching-strategies/). This building block explains several Git Branching Strategies and its own set of advantages and disadvantages.
-*  [Best Practices for Naming Git Branches](https://tilburgsciencehub.com/topics/collaborate-and-share-your-work/use-github/naming-git-branches/). This building block covers useful practices for naming branches to ensure a clear and structured repository.
+*  [Git Branching Strategies](/git/branching/strategies). This topic explains several Git Branching Strategies and its own set of advantages and disadvantages.
+*  [Best Practices for Naming Git Branches](/naming/branching). This topic covers useful practices for naming branches to ensure a clear and structured repository.
 
 ### Valuable links
 Continue expanding your Git and GitHub knowledge with these valuable links:
@@ -235,9 +235,9 @@ Continue expanding your Git and GitHub knowledge with these valuable links:
 - [GitHub Concepts](https://www.datacamp.com/courses/github-concepts): A DataCamp course that can help you enhance your understanding of GitHub's core concepts and functionalities, and provides insights into collaborative coding, project management, and more.
 
 {{% summary %}}
-In this building block, you've gained essential skills to use Git and GitHub for efficient version control and collaboration on coding projects.
+In this topic, you've gained essential skills to use Git and GitHub for efficient version control and collaboration on coding projects.
 
-The following points summarize this building block:
+The following points summarize this topic:
 - **Git** is an open-source version control system that enables tracking of source files and changes. It allows you to revert to previous file versions and collaborate seamlessly with team members.
 - **GitHub** is an online hosting service that complements Git, providing features like code backup, synchronization across devices, and collaborative project work. GitHub offers additional tools such as issues for task management, and projects for organized project management.
 - You can set up Git on your local machine by configuring your name and email address. 
