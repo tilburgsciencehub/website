@@ -4,7 +4,7 @@ This is the repository thats hosts the flask application for Tilburg Science Hub
 
 ## Automatically Running the Website
 
-The easiest way to run Tilburg Science Hub is by using Docker.
+The easiest and recommended way to run Tilburg Science Hub is by using Docker.
 
 - Install Docker and clone this repository.
 - Open the terminal at the repository's root directory and run the following commands: `docker compose build` and `docker compose up`. Use the flag `-d` to run `docker compose up -d` in a detached state (so you can do something else after it has started)
@@ -76,6 +76,6 @@ To create the database with all necessary data, simply go to the root folder and
 ```python3 content_to_db.py```
 
 ### Start Up Flask Application
-After successfully creating the database, you are ready to start up the flask application. To do so run the following command in the root folder:
+After successfully creating the database, you are ready to start up the flask application. You can dockerize the application as shown in the beginning of this README.md file or run the following command in the root folder:
 
 `flask run`
