@@ -12,7 +12,7 @@ aliases:
 
 ## Overview
 
-The parallel trends assumption, introduced in the [Intro to Difference-in-Difference topic](/canonical-DiD), is crucial for establishing causality in a DiD design. However, this assumption may not always hold true. This topic covers how to handle violations of the parallel trends assumption, focusing on the approach of [Rambachan & Roth (2019)](https://www.jonathandroth.com/assets/files/HonestParallelTrends_Main.pdf) and introducing the `HonestDiD` package in R. 
+The parallel trends assumption, introduced in the [Intro to Difference-in-Difference topic](/canonical-DiD), is crucial for establishing causality in a DiD design. However, this assumption may not always hold. This topic covers how to handle violations of the parallel trends assumption, focusing on the approach of [Rambachan & Roth (2019)](https://www.jonathandroth.com/assets/files/HonestParallelTrends_Main.pdf) and introducing the `HonestDiD` package in R. 
 
 
 {{% tip %}}
@@ -21,7 +21,7 @@ The parallel trends assumption, introduced in the [Intro to Difference-in-Differ
 
 The parallel trends assumption can be violated in various scenarios. For example: 
 
-1. *Different pre-treatment trends*: Pre-treatment trends are different for treatment and control groups.
+1. *Different pre-treatment trends*: Pre-treatment trends differ for treatment and control groups.
 
 2. *Hidden trends*: Non-parallel trends can exist even with similar pre-trends. Non-linear trends may hide an underlying difference, especially with a short pre-treatment period. 
 
@@ -39,10 +39,10 @@ Rejecting the hypothesis of pre-trends does not confirm that the trends are simi
 
 ### The framework
 
-Instead of relying on zero pre-treatment differences in trends, an alternative is to *extrapolate the existing difference to the post-treatment period*. This approach identifies the causal effect by assuming that the post-treatment difference in trends is precisely similar to the pre-treatment difference. This strong assumption is often unrealistic. 
+Instead of relying on zero pre-treatment differences in trends, an alternative is to *extrapolate the existing difference to the post-treatment period*. This approach identifies the causal effect by assuming the post-treatment difference in trends is precisely similar to the pre-treatment difference. This strong assumption is often unrealistic. 
 
 Rambachan & Roth's framework modifies this idea by allowing for an *interval of differences in trends*, based on the pre-existing difference. 
-They recognize that while the post-treatment difference in trends between the treated and control groups is often may not be exactly the same as the pre-treatment difference, it is similar *to some degree*.
+They recognize that while the post-treatment difference in trends between the treated and control groups often may not be exactly the same as the pre-treatment difference, it is similar *to some degree*.
 
 {{% summary %}}
 The key idea is to restrict the possible values of the post-treatment difference to a certain interval based on the known pre-trend difference.
@@ -53,24 +53,24 @@ This method results in *partial identification*, estimating an interval rather t
 
 ### How to choose these restrictions?
 
-Selecting the right restrictions on how much the pre- and post-treatment trends can differ depends on your study's specifics, including the economic context and potential confounding factors. Here are two approaches to guide these choices and to formalize the restrictions:
+Selecting the right restrictions on how much the pre and post-treatment trends can differ depends on your study's specifics, including the economic context and potential confounding factors. Here are two approaches to guide these choices and to formalize the restrictions:
 
 {{<katex>}}
 {{</katex>}}
 
 1. *Relative magnitude bounds*
 
-If you believe that the confounding factors causing deviations from parallel trends after treatment are similar in size to those before treatment, the *Relative magnitude bounds* is suitable. This method uses the pre-treatment to set limits on the post-treatment trend differences, helping us account for any violations. Specifically, parameter $\bar{M}$ sets bounds on the size of the post-treatment violations based on observed pre-treatment violations. For example, setting $\bar{M}$ to 1 assumes post-treatment violations are, at most, the same size as pre-treatment violations, while $\bar{M}$ = 2 allows the post-treatment violations to be up to twice the size of the pre-treatment violations. 
+If you believe the confounding factors causing deviations from parallel trends after treatment are similar in size to those before treatment, the *Relative magnitude bounds* approach is suitable. This method uses the pre-treatment to set limits on the post-treatment trend differences, helping us account for any violations. Specifically, parameter $\bar{M}$ sets bounds on the size of the post-treatment violations based on observed pre-treatment violations. For example, setting $\bar{M}$ to 1 assumes post-treatment violations are, at most, the same size as pre-treatment violations, while $\bar{M}$ = 2 allows the post-treatment violations to be up to twice the size of the pre-treatment violations. 
 
 {{% example %}}
 
-Benzarti and Carloni (2019) estimated the effect of a value-added tax decrease on restaurant profits in France and were concerned about unobserved macroeconomic shocks affecting restaurants (treatment group) differently than other service sectors (control group), leading to a violation of the parallel trends assumption. However, it is reasonable to assume that the trend differences after the tax change are not much larger than those before the tax change, motivating the use of the Relative Magnitude bounds approach in this context. 
+Benzarti and Carloni (2019) estimated the effect of a value-added tax decrease on restaurant profits in France. They were concerned about unobserved macroeconomic shocks affecting restaurants (treatment group) differently than other service sectors (control group), leading to a violation of the parallel trends assumption. However, it is reasonable to assume that the trend differences after the tax change are not much larger than those before the tax change, motivating the use of the Relative Magnitude bounds approach in this context. 
 
 {{% /example %}}
 
 2. *Smoothness restriction*
 
-When you expect the differences in trends between the treatment and control group to evolve smoothly over time without sharp changes, the *Smoothness restriction approach* is appropriate. This method assumes that the post-treatment violations will not deviate much from a linear extrapolation of the pre-trend violations, while allowing for some flexibility (M > 0) to account for deviations from a perfect linear trend. 
+When you expect the differences in trends between the treatment and control group to evolve smoothly over time without sharp changes, the *Smoothness restriction approach* is appropriate. This method assumes that the post-treatment violations will not deviate much from a linear extrapolation of the pre-trend violations while allowing for some flexibility (M > 0) to account for deviations from a perfect linear trend. 
 
 <p align = "center">
 <img src = "../images/smoothness-restriction.png" width="500">
@@ -81,7 +81,7 @@ When you expect the differences in trends between the treatment and control grou
 
 {{% example %}}
 
-Lovenheim and Willén (2019) studied the impact of a specific law on adult labor market outcomes of the the affected students. They compared people across states and birth cohorts, leveraging the different timings of the law's implementation. Their main concern was the presence of long-term trends that might differ systematically with treatment, such as changes in labor supply or educational attainment. These trends likely evolve smoothly over time, making the smoothness restriction approach suitable.
+Lovenheim and Willén (2019) studied the impact of a specific law on adult labor market outcomes of the affected students. They compared people across states and birth cohorts, leveraging the different timings of the law's implementation. Their main concern was the presence of long-term trends that might differ systematically with treatment, such as changes in labor supply or educational attainment. These trends likely evolve smoothly over time, making the smoothness restriction approach suitable.
 
 {{% /example %}}
 
@@ -103,13 +103,13 @@ If you expect the bias to consistently go in a particular direction (either alwa
 
 ## Non-staggered DiD example
 
-We continue with the Goodreads example introduced in the [DiD regression topic](/canonical-DiD). Here, we examine the effect of a newly introduced Q&A feature on subsequent book ratings, using Goodreads as the treatment group and Amazon as the control group. We have 2 groups (Amazon vs Goodreads) and 2 time periods (pre Q&A and post Q&A). 
+We continue with the Goodreads example introduced in the [DiD regression topic](/canonical-DiD). Here, we examine the effect of a newly introduced Q&A feature on subsequent book ratings, using Goodreads as the treatment group and Amazon as the control group. We have 2 groups (Amazon vs Goodreads) and 2 time periods (pre and post-Q&A). 
 
-The baseline analysis relies on the parallel trend assumption. If we are concerned about the validity of this assumption, we can conduct a sensitivity analysis using the [`HonestDiD` package](https://github.com/asheshrambachan/HonestDiD). This packages incorporates the approach introduced earlier, allowing for a more flexible examination of the parallel trends assumption.
+The baseline analysis relies on the parallel trend assumption. If we are concerned about the validity of this assumption, we can conduct a sensitivity analysis using the [`HonestDiD` package](https://github.com/asheshrambachan/HonestDiD). This package incorporates the approach introduced earlier, allowing for a more flexible examination of the parallel trends assumption.
 
 {{% tip %}}
 
-The full code for this example is availabe in this [Gist](https://gist.github.com/valerievossen/3d2da7ad280f4b148d9223b33fa33545). 
+The full code for this example is available in this [Gist](https://gist.github.com/valerievossen/3d2da7ad280f4b148d9223b33fa33545). 
 
 {{% /tip %}}
 
@@ -190,7 +190,7 @@ delta_rm_results
 4 -6.74  5.18  C-LF   DeltaRM   2  
 ```
 
-The results show that if `Mbar` is set at 0.5 or 1 (assuming the post-Q&A trend violation is at most as large as the pre-Q&A trend violation), a negative effect of the Q&A feature on book ratings is found, as the confidence interval (from lower bound `lb` to upperbound `ub`) includes only negative values. However, when `Mbar` is set larger than 1, the interval includes zero, indicating no evidence of a causal impact. 
+The results show that if `Mbar` is set at 0.5 or 1 (assuming the post-Q&A trend violation is at most as large as the pre-Q&A trend violation), a negative effect of the Q&A feature on book ratings is found, as the confidence interval (from lower bound `lb` to upper bound `ub`) includes only negative values. However, when `Mbar` is set larger than 1, the interval includes zero, indicating no evidence of a causal impact. 
 
 5. Create a plot
 
