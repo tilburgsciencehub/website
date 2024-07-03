@@ -17,7 +17,7 @@ aliases:
 ---
 
 ## Overview
-A **Git branching strategy** allows developers to collaborate on a project while also tracking changes and maintaining multiple versions of the codebase. There are several Git branching strategies available, each with its own set of advantages and disadvantages. The best strategy is determined by the project's and team's unique requirements. In this building block, we'll go over three popular Git branching strategies: 
+A **Git branching strategy** allows developers to collaborate on a project while also tracking changes and maintaining multiple versions of the codebase. There are several Git branching strategies available, each with its own set of advantages and disadvantages. The best strategy is determined by the project's and team's unique requirements. In this topic, we'll go over three popular Git branching strategies: 
 1. **Trunk-Based Development**
 2. **Feature Branching**
 3. **Git Flow**

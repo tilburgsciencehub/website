@@ -18,7 +18,7 @@ Versioning is a powerful and good tool to use, unless...
 - you accidentally stored sensitive information in your source code that you do not want to be out in the public (e.g., API credentials, passwords),
 - you accidentally stored files (e.g., large data sets, images) in your repository, that you cannot upload to GitHub (and hence can't synchronize your repository anymore)
 
-In such situations, the good news is that solutions exist! These solutions will be discussed in this building block: 
+In such situations, the good news is that solutions exist! These solutions will be discussed in this topic: 
 - Undo your last commit
 - Entirely remove files
 
@@ -52,7 +52,7 @@ Replace `file_to_remove` with the path and file name of the file that you want t
 Check out the GitHub manuals for a [step-by-step guide](https://docs.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository)! Alternatively, use [BFG Repo Cleaner](https://rtyley.github.io/bfg-repo-cleaner/), a convenient tool to remove unwanted files from your project.
 
 {{% tip %}}
-Avoid future mishaps by learning to [exclude files from versioning](../git-ignore).
+Avoid future mishaps by learning to [exclude files from versioning](/learn/gitignore).
 {{% /tip %}}
 
 {{% summary %}}
