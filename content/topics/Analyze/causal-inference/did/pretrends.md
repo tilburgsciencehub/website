@@ -23,7 +23,7 @@ The trends prior to the treatment introduction are often referred to as ‘pre-t
 
 In practice, in a DiD or event study setting, we will often have multiple pre- and post-treatment periods. For example, we might measure the outcome 4 years before and 4 years after the treatment is implemented. A test for pre-trends would then imply testing for differences between the treatment and control groups in each of the 4 years before the treatment. We could then use two criteria for assessing the validity of the parallel trends assumption: individual or joint significance of the coefficients. The former would imply that we consider the assumption valid if and only if none of the 4 differences is statistically significant. The latter would mean that we consider the assumption valid if the 4 differences are not jointly statistically significant. 
 
-He and Wang (2017) study the effect of the allocation of so-called college graduate village officials (CGVOs) to rural communities in China on poverty alleviation. CGVOs are assigned bureaucratic roles in villages to help local governments successfully implement the central government’s anti-poverty policies. The idea behind the policy is that college graduates should be more able and efficient administrators than rural government leaders. They use a staggered difference-in-differences design, exploiting the fact that CGVOs were allocated to villages in a [staggered](/staggered-did) (gradual) fashion. For example, village A might have been assigned a CGVO in 2001, village B in 2004, and village C in 2005. They test for the parallel trends assumption by testing for the statistical significance of between-group differences in their four outcomes of interest for each of the pre-treatment periods they have in their sample: 
+[He and Wang (2017)](https://www.aeaweb.org/articles?id=10.1257/app.20160079) study the effect of the allocation of so-called college graduate village officials (CGVOs) to rural communities in China on poverty alleviation. CGVOs are assigned bureaucratic roles in villages to help local governments successfully implement the central government’s anti-poverty policies. The idea behind the policy is that college graduates should be more able and efficient administrators than rural government leaders. They use a staggered difference-in-differences design, exploiting the fact that CGVOs were allocated to villages in a [staggered](/staggered-did) (gradual) fashion. For example, village A might have been assigned a CGVO in 2001, village B in 2004, and village C in 2005. They test for the parallel trends assumption by testing for the statistical significance of between-group differences in their four outcomes of interest for each of the pre-treatment periods they have in their sample: 
 
 <p align = "center">
 <img src = "../images/pretest.png" width=600">
@@ -37,7 +37,7 @@ They also present graphical evidence of the validity of their common trends assu
 
 ## Problems with common tests for pre-trends
 
-Significance tests and event study plots are straightforward and intuitive ways of testing for the validity of the parallel trends assumption. However, they are subject to some notable shortcomings, which are discussed in detail by Roth (2022). We look at the most important insights from this paper below. 
+Significance tests and event study plots are straightforward and intuitive ways of testing for the validity of the parallel trends assumption. However, they are subject to some notable shortcomings, which are discussed in detail by [Roth (2022)](https://www.aeaweb.org/articles?id=10.1257/aeri.20210236). We look at the most important insights from this paper below. 
 
 ### Low statistical power
 
@@ -122,12 +122,12 @@ Another problem with testing for pre-trends by evaluating the significance of pr
 
 Let’s assume that, in our setting, the parallel trends assumption is violated, that is, there is a significant difference in pre-trends between the treatment and control groups. We run a pre-trend test before proceeding to estimating the treatment effect. Say that our test has 60% power, then we will detect the difference in pre-trends 60% of the time. We can condition our estimation of the treatment effect on the pre-trend test being passed (i.e., no difference being observed) – in that case, we only estimate the treatment effect in the 40% of cases where we do not detect a discrepancy in pre-trends. This 40% of cases will inevitably contain smaller pre-trend differences, as these are more difficult to detect. We can see how this leads to greater bias with a very simplified stylised model of bias in a DiD/event study setting:
 
-We define $\hat(\beta)$ as our estimate of the treatment effect, which is composed of the estimated difference between the treatment and control groups after treatment implementation, $\hat(\beta_{post})$, and the corresponding difference before treatment implementation, $\hat(\beta_{pre})$. 
+We define $\hat{\beta}$ as our estimate of the treatment effect, which is composed of the estimated difference between the treatment and control groups after treatment implementation, $\hat{\beta_{post}}$, and the corresponding difference before treatment implementation, $\hat{\beta_{pre}}$. 
 
 {{<katex>}}
 {{</katex>}}
 
-$\hat(\beta) = \hat(\beta_{post}) – \hat(\beta_{pre})$
+$\hat{\beta} = \hat{\beta_{post}} – \hat{\beta_{pre}}$
 
 Analogously, we define $\beta$ as the _true_ treatment effect. 
 
@@ -135,7 +135,7 @@ $\beta = \beta_{post} – \beta_{pre}$
 
 Finally, we define bias, $\delta$, as the difference between the estimator and the true effect. 
 
-$\delta = \hat(\beta) - \beta$
+$\delta = \hat{\beta} - \beta$
 
 Let's suppose that the true differences before and after treatment are 5 and 10, respectively; hence, the true effect is 10. 
 
@@ -143,19 +143,19 @@ $\beta = 10 - 5 = 5$
 
 Now let's suppose that the parallel trends assumption is violated in the true model. We conduct a test for pre-trends and only proceed to estimate treatment effects if the test is passed. With our power of 0.6, we only detect the violation 60% of the time; let's assume that in the 40% of cases where we do not detect the difference (i.e., the 40% of cases with the smallest difference) the pre-treatment difference is 2. Therefore, our estimated effect is:
 
-$\hat(\beta_{1}) = 10 - 2 = 8$ 
+$\hat{\beta_{1}} = 10 - 2 = 8$ 
 
 Consequently, the conditional bias with respect to the true effect is:
 
-$\delta_{1} = \hat(\beta_{1}) - \beta = 8 - 5 = 3$
+$\delta_{1} = \hat{\beta_{1}} - \beta = 8 - 5 = 3$
 
 Now, let's suppose that we estimate treatment effects unconditionally, that is, regardless of whether we detect a difference in pre-trends or not using our test. The pre-trends difference that we will find in this case will certainly be higher than if we had estimated treatment effects conditionally as above; for example, 4. Our treatment effect estimate will therefore be:
 
-$\hat(\beta_{2}) = 10 - 4 = 6$
+$\hat{\beta_{2}} = 10 - 4 = 6$
 
 Accordingly, the conditional bias will be:
 
-$\delta_{2} = \hat(\beta_{2}) - \beta = 6 - 5 = 1$
+$\delta_{2} = \hat{\beta_{2}} - \beta = 6 - 5 = 1$
 
 This example shows that, in a context where the parallel trends assumption is likely to be violated, _conditioning_ our analysis on passing a pre-trend can result in greater bias in our estimators. 
 
@@ -171,4 +171,8 @@ Finally, recent econometric literature on DiD and event studies has proposed a n
 
 Conventional tests for pre-trends in DiD or event study settings are easy to apply and appear to directly address the fundamental identification challenge in such designs: establishing the credibility of the parallel trends assumption. However, such tests can be problematic for two reasons. Firstly, they often have low statistical power, making them relatively unlikely to detect violations of the assumption even when it is actually violated. Secondly, even when the tests are high-powered, conditioning the estimation of the treatment effect on a successful pre-trend test can result in exacerbated bias in our treatment effect estimator when there is a true violation of parallel trends. To avoid these issues, we can apply one of the newly proposed approaches to causal inference in DiD and event study settings which do not rely on the parallel trends assumptions, such as the honest DiD approach (Rambachan & Roth, 2022) or the covariate-instrument approach (Freyaldenhoven et al., 2019). 
 
+## See Also
 
+[Pretest with Caution: Event-Study Estimates after Testing for Parallel Trends - Roth (2022)](https://www.aeaweb.org/articles?id=10.1257/aeri.20210236)
+
+[pretrends R package](https://github.com/jonathandroth/pretrends)
