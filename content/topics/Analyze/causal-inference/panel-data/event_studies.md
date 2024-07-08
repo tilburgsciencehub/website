@@ -10,7 +10,7 @@ author: "Virginia Mirabile"
 
 # Overview 
 
-Event studies are a powerful tool in the field of causal inference, allowing researchers to examine the impact of specific events on outcomes of interest. These studies provide a quasi-experimental setting to evaluate causal relationships. This building block will delve into the concept of event studies, explore why they are essential for causal inference, and provide examples of how they have been employed in the context of staggered treatment designs.
+Event studies are a powerful tool in the field of causal inference, allowing researchers to examine the impact of specific events on outcomes of interest and providing a quasi-experimental setting to evaluate causal relationships. This building block will delve into the concept of event studies, explore why they are essential for causal inference, and provide examples of how they have been employed in the context of staggered treatment designs.
 
 
 ## Why event study? 
@@ -83,7 +83,9 @@ library(foreign)
 ```
 {{% /codeblock %}}
 
+{{% tip %}}
 If not previously downloaded, perform the command install.packages("") on the above libraries. 
+{{% /tip %}}
 
 ### Data 
 
@@ -108,26 +110,16 @@ $$Y_{it} = \beta_0 + \sum_{\tau = -T}^{-1} \alpha_\tau W_{i\tau} + \sum_{\tau = 
 
 Let's break down the equation and give some interpretation: 
 
-- $Y_{it}$ is the outcome variable, weight of residual waste per household $i$ in calendar week $t$.
-- $\tau$ is the variable event time, indicating time relative to the start of the treatment. We will indicate $\tau$ = 1 as time treatment starts. 
-- $\sum_{\tau = -T}^{-1} \alpha_\tau W_{i\tau}$ is the sum of the pre-event window effects. This captures how the outcome is affected by the pre-event values of a set of event time dummy variables $W_{i\tau}$. This part of the equation helps to control for any existing trends or patterns in the outcome variable before the event occurs.
-- $\sum_{\tau = 1}^{T} \alpha_\tau W_{i\tau}$ is the sum of the post-event window effects. This captures how the outcome 
-is affected by the post-event values of the same set of dummy variables. This part of the equation helps to capture the impact of the event on the outcome variable over a window of time after the event occurs. 
+- $Y_{it}$: Outcome variable, weight of residual waste per household $i$ in week $t$.
+- $\tau$: Event time, indicating time relative to the start of the treatment ($\tau$ = 1 treatment starts).
+- $\sum_{\tau = -T}^{-1} \alpha_\tau W_{i\tau}$: Sum of the pre-event window effects. It helps to control for any existing trends in the outcome variable before the event occurs.
+- $\sum_{\tau = 1}^{T} \alpha_\tau W_{i\tau}$: Sum of the post-event window effects. It helps to capture the impact of the event on the outcome variable over a window of time after the event occurs. 
 - $ W_{i\tau}$ is 1 for event time $\tau$ = 1 and 0 otherwise. 
-- $\lambda_i + \mu_t$ are respectively individual and time fixed-effects. The former capture unobserved heterogeneity across households that are constant over time. The latter captures unobserved common shocks that affect all households at a given time $t$. 
-- $\alpha_\tau$ are the event-time coefficients, which estimate the effect of treatment based on change in outcome for units that changed treatment status relative to a change in outcome for control units that didn’t change treatment status for all periods after treatment is administered. 
+- $\lambda_i + \mu_t$: Individual and time fixed-effects.
 
 Once the theory is clear, let's move on to estimating this equation in R. 
 
-Define the variable 'eventtime', with event time 0 being the last week before the start of the treatment. This is an intuitive definition of event time: event time 1 is the first week of the treatment, event time 2 the second week, etc.
-One way of doing this is as follows:
-
-1. For every route, find out in which calendar week the treatment started 
-2. Subtract that calendar week + 1 from the actual calendar week
-3. Drop variables you no longer need
-4. Tell R to no longer do everything by route (the ungroup command)
-
-Let's do the first three steps with the mutate command: 
+The following code shows how to find out, for every route, in which calendar week the treatment started and defines the variable *event time*, indicating the treatment time span. 
 
 {{% codeblock %}}
 ```R
@@ -143,14 +135,14 @@ waste <- waste %>%
   # Create a new column 'weekstart2' to store the minimum value of 'weekstart' for each group
   weekstart2 = min(weekstart),
   
-  # Create a new column 'eventtime':
+  # Create a new column 'eventtime': with event time 0 being the last week before the start of the treatment, 1 in the first week of the treatment etc.
   # Calculate the difference between 'calendar_week' and 'weekstart2' plus 1
   eventtime = calendar_week - weekstart2 + 1) %>% 
   
   # Remove the temporary columns 'weekstart' and 'weekstart2'
   select(-weekstart, -weekstart2) %>%
   
-  # Ungroup the data
+  # Ungroup the data: tell R to no longer do everything by route
   ungroup()
 
 ```
@@ -193,24 +185,18 @@ waste <- waste %>%
 {{% /codeblock %}}
 
 
-To estimate the event-time model, we use the function feols from fixest. The full syntax is: modelname = feols(outcome ~ i(factor_var, f, ref, drop, keep) | groupFE + weekFE, data=namedataset). Thanks to the i() we can easily include interaction terms. 
-
-{{% tip %}}
-When running fixed-effects models, it is handier to use the command feols, part of the package fixest. Feols allows for very easy estimation of event time models.
-{{% /tip %}}
-
-The term i() interacts the variable factor_var, which is going to be the event-time variable eventtime_bin, with a dummy variable for each value in f. The term f stands for all groups that are (eventually) treated. That holds for all groups (i.e. routes) in our data, thus we simply define a variable that contains only ones:
+Let's now estimate the model using the function *feols* from the *fixest* package. 
 
 {{% codeblock %}}
 ```R
+#first, define a variable named "allones" that contains only ones. This indicates that all routes in the data are eventually treated. 
 waste$allones <- 1
 ```
 {{% /codeblock %}}
 
-Let's now estimate the model. 
-
 {{% codeblock %}}
 ```R
+#Include residual_weight as outcome variable, the i() allows for interaction terms between event time and treated groups, include route and time fixed effects
 mod_twfe = feols(residual_weight ~ i(eventtime_bin, allones, ref=0) | route + calendar_week, data=waste)
 etable(mod_twfe)
 ```
@@ -241,6 +227,7 @@ iplot(mod_twfe,
 <img src = "../images/event_timeplot.png" width="500">
 </p>
 
+In this specific case, we assume that treatment effects are homogeneous across both time and groups. The estimated event time coefficients are derived from comparing newly treated groups (routes) to those that have not yet been treated, as well as to those that have already been treated. If treatment effects are, in fact, heterogeneous, comparing newly treated groups with already treated ones (known as "forbidden comparisons") can introduce bias into the estimated treatment effect.
 
 # Summary 
 
@@ -253,7 +240,7 @@ iplot(mod_twfe,
 {{% /summary %}}
 
 
-### References 
+## References 
 
 Ben Vollaard, Daan van Soest,Punishment to promote prosocial behavior: a field experiment, Journal of Environmental Economics and Management, Volume 124, 2024, 102899, ISSN 0095-0696,
 https://doi.org/10.1016/j.jeem.2023.102899.
