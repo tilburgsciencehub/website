@@ -134,8 +134,7 @@ Alternatively, you can do your regression analysis on Stata. First, you should c
 
 {{% codeblock %}}
 
-```
--Stata-
+```Stata
 
 clear all
 

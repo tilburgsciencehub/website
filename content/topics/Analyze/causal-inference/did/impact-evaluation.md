@@ -58,8 +58,7 @@ The following example comes from [Gertler, Martinez, Premand, Rawlings, and Verm
 
 ```
 
-```
--Stata-
+```Stata
 * Data available at https://www.worldbank.org/en/programs/sief-trust-fund/publication/impact-evaluation-in-practice
 
 * Open the data
@@ -71,7 +70,6 @@ The following example comes from [Gertler, Martinez, Premand, Rawlings, and Verm
 * (The double # tells Stata to include both binary variables and the interaction term)
 
   reg health_expenditures enrolled##round
-
 
 ```
 {{% /codeblock %}}
@@ -129,8 +127,7 @@ We use the same example as before but we now assess whether the program has mana
 
 ```
 
-```
--Stata-
+```Stata
 * install necessary packages
   net install st0366.pkg, all replace force from(http://www.stata-journal.com/software/sj14-4/)
   net install sg65.pkg, all replace force from(http://www.stata.com/stb/stb35)
@@ -172,8 +169,7 @@ We use the same example as before but we now assess whether the program has mana
   rdplot(impact$enrolled, impact$poverty_index, p = 1, c = 58, nbins = c(58, 42))
 ```
 
-```
--Stata-
+```Stata
 * Check whether the poverty index is continuous at the cutoff point
   kdensity poverty_index, xline(58)
 
