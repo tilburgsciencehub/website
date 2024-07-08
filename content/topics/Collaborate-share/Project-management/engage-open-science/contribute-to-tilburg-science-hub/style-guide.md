@@ -31,6 +31,104 @@ Please use our [building block templates](https://raw.githubusercontent.com/tilb
 
 Please fork our site, and develop your content in a new branch. When you're done, make a pull request, explain briefly what you've done (and why), and we're going to review your code and add it to the site. -->
 
+### Adding images 
+You can add an image into your building block using html tags, please see an example below
+
+<p align = "center">
+<img src ="../images/<name-of-your-image>.png" width="400">
+</p> 
+
+### Bear in mind breaks in front of lists
+
+- correct 👍 (additional break before a list) : 
+
+```
+DiD works well whenever:
+
+ - There is a sudden specific intervention, treatment, or even a date that clearly defines a before and an after. For instance, a passing of a law (e.g. lockdown).
+ - There are well-defined treatment and control groups.
+ - The outcome of interest was measured before and after the treatment or intervention. That is, there is a baseline outcome to which to compare with the outcomes posterior to the intervention.
+ - The intervention is unrelated to the outcome at baseline.
+```
+
+- incorrect 👎 (NO additional break before a list):
+
+```
+DiD works well whenever:
+ - There is a sudden specific intervention, treatment or even a date that clearly defines a before and an after. For instance, a passing of a law (e.g. lockdown).
+ - There are well defined treatment and control groups.
+ - The outcome of interest was measured before and after the treatment or intervention. That is, there is a baseline outcome to which to compare with the outcomes posterior to the intervention.
+ - The intervention is unrelated to the outcome at baseline.
+```
+
+### Do not insert breaks in front of second-level in lists.
+
+- correct 👍 (NO additional break in front of second-level in lists) :
+
+```
+1. **Get standard error of the estimate**
+    - In order to **assess the statistical significance** of the effect, it is crucial to obtain the standard error of the estimate. This measure quantifies the variability in the observed treatment effect and provides a range within which the true treatment effect is likely to fall. By calculating the standard error, we can determine whether the observed effect is statistically significant or if it could have occurred by chance alone. This information is essential in drawing reliable conclusions from our analysis.
+    - Additionally, it is important to **cluster standard errors** when dealing with data that might exhibit clustering or dependence. Clustering occurs when observations within a particular group or cluster are more similar to each other than to observations in other clusters. By clustering standard errors, we appropriately account for this correlation structure, ensuring that our statistical tests and confidence intervals are valid. Failing to cluster standard errors can lead to inaccurate inference and potentially erroneous conclusions.
+```
+
+- incorrect 👎 (break in front of second-level in lists) :
+
+```
+1. **Get standard error of the estimate**
+
+    - In order to **assess the statistical significance** of the effect, it is crucial to obtain the standard error of the estimate. This measure quantifies the variability in the observed treatment effect and provides a range within which the true treatment effect is likely to fall. By calculating the standard error, we can determine whether the observed effect is statistically significant or if it could have occurred by chance alone. This information is essential in drawing reliable conclusions from our analysis.
+    - Additionally, it is important to **cluster standard errors** when dealing with data that might exhibit clustering or dependence. Clustering occurs when observations within a particular group or cluster are more similar to each other than to observations in other clusters. By clustering standard errors, we appropriately account for this correlation structure, ensuring that our statistical tests and confidence intervals are valid. Failing to cluster standard errors can lead to inaccurate inference and potentially erroneous conclusions.
+```
+
+### Use tables notations
+
+- correct 👍 (using {{%table%}} notation, moreover, no space should be in between the table tags and the start and end of the table word and percentage sign): 
+
+` {{%table%}}
+|                 | Before ($Y_i^0$)     | After ($Y_i^1$)     |
+| --------------- | ---------------------- | ---------------------- |
+| Control ($D_i = 0$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \mid D_i = 0)$   |
+| Treatment ($D_i=1$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \ mid D_i = 1)$    |
+ {{%/table%}}
+`
+    
+- incorrect 👎 (NOT using {{%table%}} notation):  
+
+`|                 | Before ($Y_i^0$)     | After ($Y_i^1$)     |
+| --------------- | ---------------------- | ---------------------- |
+| Control ($D_i = 0$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \mid D_i = 0)$   |
+| Treatment ($D_i=1$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \ mid D_i = 1)$    |`
+ 
+### Each article should have at least a title, description, keywords, weight, date and some content (so files are parsed correctly when inserting to the database)
+
+- correct 👍  (all fields are present):
+
+  `---
+                      title: "Software Setup Overview"
+                      description: "Here is a guide to help you start setting up the computing environment on your machine ready."
+                      keywords: software, setup, guide, configure, configuration"
+                      weight: 4
+                      date: 2021-01-06T22:01:14+05:30
+                      draft: false
+                      ---
+                      Some content below....`
+
+- incorrect 👎 (missing some fields):
+
+ `---
+                      title: "Software Setup Overview"
+                      description: "Here is a guide to help you start setting up the computing environment on your machine ready."
+                      keywords: software, setup, guide, configure, configuration"
+                      ---
+                      Some content below....`
+
+### Multiple authors 
+When you cooperate with someone on an article, in the author field please insert authors' names separated by coma but **without space** in between 
+
+- correct 👍  (no space in between): `Author: Krzysztof Wiesniakowski,Thierry Lahaije`
+
+- incorrect 👎 (there is space in between): `Author: Krzysztof Wiesniakowski, Thierry Lahaije`
+
 ### Style Your Content
 
 Your content is written in [Markdown](https://guides.github.com/features/mastering-markdown/), and is automatically rendered in our house style.
@@ -71,14 +169,33 @@ In that case, you need to omit the language right after the three back ticks. Th
 
 {{% /warning %}}
 
+### Use correctly language & structure of code blocks
+
+- correct 👍 (NO space between apostrophes and the language sign):
+
+<img width="288" alt="image" src="https://github.com/tilburgsciencehub/website-flask/assets/65568251/61bf090f-3756-4bd4-9536-13cda2c0f6b1">
+
+- incorrect 👎 (space between apostrophes and the language sign):
+
+<img width="288" alt="image" src="https://github.com/tilburgsciencehub/website-flask/assets/65568251/b162f4e8-e8c2-4f08-bfba-ebde1d52cba2">
+
+- incorrect 👎 (language sign between stripes or brackets:):
+
+<img width="288" alt="image" src="https://github.com/tilburgsciencehub/website-flask/assets/65568251/1bda8ca8-6abc-49c2-9e87-ae715f99be02">
+
+
 #### LaTeX Integration & Math Formulas
 
-You can include mathematical notation via our KaTeX integration. You can learn more on how to use it [here](https://themes.gohugo.io/theme/hugo-book/docs/shortcodes/katex/).
-
-If you use KaTeX more than once within the same Markdown file, there's no need to write the shortcode again. Simply place your math formulas:
+Simply place your math formulas:
 - within single dollar signs for inline math: `$f(x)=x^2$` yields:
 $f(x)=x^2$
 - within double dollar signs for display: `$$f(x)=x^2$$` yields: $$f(x)=x^2$$
+
+Our webiste currently does not support </katex> notation so please stick to using dollar signs.
+
+- correct 👍 (using dollar signs): $P(X_{i}) ≡ Pr(D_i = 1 | X_i)$
+
+- incorrect 👎  (using {{katex}} notation): {{</katex>}} P(X_{i}) ≡ Pr(D_i = 1 | X_i) {{</katex>}}
 
 #### Highlighting Boxes
 
@@ -183,7 +300,7 @@ Generally speaking, it's a good idea to name your file exactly like your main ti
     Filename: automation-with-gnu-make.md
 {{% /warning %}}
 
-### Add the correct tags
+### Add the correct tags 
 Every page has at the top of the code tags which, among others, help index the page. 
 ```
 ---
