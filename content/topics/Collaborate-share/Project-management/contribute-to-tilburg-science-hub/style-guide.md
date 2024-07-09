@@ -188,7 +188,7 @@ In that case, you need to omit the language right after the three back ticks. Th
 <img src ="../images/incorrect-stripe-codeblock.png" width="400">
 </p>
 
-#### LaTeX Integration & Math Formulas
+### LaTeX Integration & Math Formulas
 
 Simply place your math formulas:
 - within single dollar signs for inline math: `$f(x)=x^2$` yields:
@@ -201,7 +201,7 @@ Our webiste currently does not support </katex> notation so please stick to usin
 
 - incorrect 👎  (using {{katex}} notation): {{</katex>}} P(X_{i}) ≡ Pr(D_i = 1 | X_i) {{</katex>}}
 
-#### Highlighting Boxes
+### Highlighting Boxes
 
 We support four kind of highlighting boxes.
 
@@ -230,7 +230,7 @@ This is an example
 
 {{% /example %}}
 
-#### How to handle wide tables
+### How to handle wide tables
 
 If you're using wide tables, they may appear broken on smaller screens like mobile phones. Therefore, you should always wrap your tables within the `wide-table` shortcode.
 
@@ -257,7 +257,7 @@ Click **[here](https://github.com/tilburgsciencehub/website/blob/master/content/
 
 {{% /tip %}}
 
-#### Adding Footnotes
+### Adding Footnotes
 Footnotes [^1] let you reference relevant information without disrupting the flow of what you're trying to say. Need to make use of footnotes? Here is how to add them in Markdown:
 ```
 Footnotes[^1] let you (...)
