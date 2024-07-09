@@ -1,11 +1,9 @@
 ---
-tutorialtitle: "Contribute to Tilburg Science Hub"
-type: "contribute-to-tsh"
-indexexclude: "true"
 title: "Style and Writing Guide"
 description: "When contributing content to our platform, please follow our style and writing guidelines."
 keywords: "style, styling, guideline, contribute, writing"
-weight: 1005
+weight: 5
+date: 2024-07-09T22:02:51+05:30
 draft: false
 aliases:
   - /contribute/style-guidelines
@@ -34,9 +32,9 @@ Please fork our site, and develop your content in a new branch. When you're done
 ### Adding images 
 You can add an image into your building block using html tags, please see an example below
 
-<p align = "center">
+`<p align = "center">
 <img src ="../images/<name-of-your-image>.png" width="400">
-</p> 
+</p> `
 
 ### Bear in mind breaks in front of lists
 
@@ -82,26 +80,25 @@ DiD works well whenever:
 
 ### Use tables notations
 
-- correct 👍 (using {{%table%}} notation, moreover, no space should be in between the table tags and the start and end of the table word and percentage sign): 
+- Correct 👍 (using $\texttt{table}$ notation, moreover, no space should be in between the table tags and the start and end of the table word and percentage sign): 
 
-` {{%table%}}
+{{%table%}}
 |                 | Before ($Y_i^0$)     | After ($Y_i^1$)     |
 | --------------- | ---------------------- | ---------------------- |
 | Control ($D_i = 0$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \mid D_i = 0)$   |
 | Treatment ($D_i=1$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \ mid D_i = 1)$    |
- {{%/table%}}
-`
+{{%/table%}}
     
-- incorrect 👎 (NOT using {{%table%}} notation):  
+- Incorrect 👎 (NOT using $\texttt{table}$ notation):  
 
-`|                 | Before ($Y_i^0$)     | After ($Y_i^1$)     |
+|                 | Before ($Y_i^0$)     | After ($Y_i^1$)     |
 | --------------- | ---------------------- | ---------------------- |
 | Control ($D_i = 0$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \mid D_i = 0)$   |
-| Treatment ($D_i=1$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \ mid D_i = 1)$    |`
+| Treatment ($D_i=1$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \ mid D_i = 1)$    |
  
-### Each article should have at least a title, description, keywords, weight, date and some content (so files are parsed correctly when inserting to the database)
+### Each article should have at least a title, description, keywords, weight, date and content
 
-- correct 👍  (all fields are present):
+- correct 👍 (all fields are present):
 
   `---
                       title: "Software Setup Overview"
@@ -113,14 +110,16 @@ DiD works well whenever:
                       ---
                       Some content below....`
 
+
 - incorrect 👎 (missing some fields):
 
- `---
+  `---
                       title: "Software Setup Overview"
                       description: "Here is a guide to help you start setting up the computing environment on your machine ready."
                       keywords: software, setup, guide, configure, configuration"
                       ---
                       Some content below....`
+
 
 ### Multiple authors 
 When you cooperate with someone on an article, in the author field please insert authors' names separated by coma but **without space** in between 
@@ -135,7 +134,7 @@ Your content is written in [Markdown](https://guides.github.com/features/masteri
 
 You can also make use of code highlighting and admonitions.
 
-#### Code Highlighting
+### Code Highlighting
 
 In addition to the standard way of formatting code in Markdown, code snippets can be displayed in special boxes that highlight the code based on the programming language.
 
