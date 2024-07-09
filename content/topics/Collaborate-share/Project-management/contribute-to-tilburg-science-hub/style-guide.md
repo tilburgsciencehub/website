@@ -172,16 +172,21 @@ In that case, you need to omit the language right after the three back ticks. Th
 
 - correct 👍 (NO space between apostrophes and the language sign):
 
-<img width="288" alt="image" src="https://github.com/tilburgsciencehub/website-flask/assets/65568251/61bf090f-3756-4bd4-9536-13cda2c0f6b1">
+<p align = "center">
+<img src ="../images/correct-language-blocks.png" width="400">
+</p>
 
 - incorrect 👎 (space between apostrophes and the language sign):
 
-<img width="288" alt="image" src="https://github.com/tilburgsciencehub/website-flask/assets/65568251/b162f4e8-e8c2-4f08-bfba-ebde1d52cba2">
+<p align = "center">
+<img src ="../images/incorrect-space-codeblock.png" width="400">
+</p>
 
 - incorrect 👎 (language sign between stripes or brackets:):
 
-<img width="288" alt="image" src="https://github.com/tilburgsciencehub/website-flask/assets/65568251/1bda8ca8-6abc-49c2-9e87-ae715f99be02">
-
+<p align = "center">
+<img src ="../images/incorrect-stripe-codeblock.png" width="400">
+</p>
 
 #### LaTeX Integration & Math Formulas
 
