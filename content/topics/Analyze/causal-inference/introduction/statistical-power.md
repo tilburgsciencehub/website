@@ -5,6 +5,9 @@ keywords: "statistical power, causal, inference, effect, power analysis, R, samp
 draft: false
 weight: 2
 author: "Victor Arutyunov"
+aliases:
+  - /statistical-power
+  - /power
 ---
 
 ## Introduction 
