@@ -12,7 +12,9 @@ aliases:
 
 ## Overview
 
-The parallel trends assumption, introduced in the [Intro to Difference-in-Difference topic](/canonical-DiD), is crucial for establishing causality in a DiD design. However, this assumption may not always hold. This topic covers how to handle violations of the parallel trends assumption, focusing on the approach of [Rambachan & Roth (2019)](https://www.jonathandroth.com/assets/files/HonestParallelTrends_Main.pdf) and introducing the `HonestDiD` package in R. 
+The parallel trends assumption, introduced in the [Intro to Difference-in-Difference topic](/canonical-DiD), is crucial for establishing causality in a DiD design. However, this assumption may not always hold. 
+
+A common approach to test whether this assumption holds is [testing the difference in pre-treatment trends](/did-pretrends). However, this method knows some limitations. Here, we cover an alternative approach of [Rambachan & Roth (2019)](https://www.jonathandroth.com/assets/files/HonestParallelTrends_Main.pdf), which handles violations of the parallel trends assumption, introducing the `HonestDiD` package in R. 
 
 
 {{% tip %}}
@@ -21,11 +23,11 @@ The parallel trends assumption, introduced in the [Intro to Difference-in-Differ
 
 The parallel trends assumption can be violated in various scenarios. For example: 
 
-1. *Different pre-treatment trends*: Pre-treatment trends differ for treatment and control groups.
+1. *Different [pre-treatment trends](/did-pretrends)*: Pre-treatment trends differ for treatment and control groups.
 
 2. *Hidden trends*: Non-parallel trends can exist even with similar pre-trends. Non-linear trends may hide an underlying difference, especially with a short pre-treatment period. 
 
-3. *Low power*: The statistical power is too low to detect violations of parallel trends, even if they are present. 
+3. *Low power*: The [statistical power](/statistical-power) is too low to detect violations of parallel trends, even if they are present. 
 
 4. *Economic shock*: A shock occurs around the treatment period, causing differences in post-treatment trends, even if the pre-treatment trends were similar. 
 
