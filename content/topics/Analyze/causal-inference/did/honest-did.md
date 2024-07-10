@@ -301,8 +301,8 @@ The `HonestDiD` approach by Rambachan & Roth (2019) addresses violations of the 
 
 While the assumptions about the relationship between post- and pre-trend differences are very context-specific, there are two main approaches to setting restrictions and specifying your framework (with possible combinations of these approaches):
 
-1. Relative magnitude bounds: Sets limits based on pre-treatment differences. 
-2. Smoothness restriction: Assumes trends evolve smoothly over time. 
+1. *Relative magnitude bounds*: Sets limits based on pre-treatment differences. 
+2. *Smoothness restriction*: Assumes trends evolve smoothly over time. 
 
 {{% /summary %}}
 
