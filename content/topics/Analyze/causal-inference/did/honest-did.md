@@ -27,7 +27,7 @@ The parallel trends assumption can be violated in various scenarios. For example
 
 2. *Hidden trends*: Non-parallel trends can exist even with similar pre-trends. Non-linear trends may hide an underlying difference, especially with a short pre-treatment period. 
 
-3. *Low power*: The [statistical power](/statistical-power) is too low to detect violations of parallel trends, even if they are present. 
+3. *Low [statistical power](/statistical-power)*: The statistical power is too low to detect violations of parallel trends, even if they are present. 
 
 4. *Economic shock*: A shock occurs around the treatment period, causing differences in post-treatment trends, even if the pre-treatment trends were similar. 
 
