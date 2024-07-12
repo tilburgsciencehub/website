@@ -41,7 +41,7 @@ Clustering organizes data by grouping similar data points together. Because memb
 Association rule mining is used to uncover patterns and relationships in the data. It does so by finding rules that represent large parts of the data. It discovers correlations, connections, and co-occurences, and is often used to track purchases or make recommendations to customers. For example, Netflix uses association algorithms to discover that people who watch certain genres like science fiction often also enjoy fantasy series, and they can recommend new shows based on viewing habits.
 
 {{% tip %}}
-In association rule mining, two important metrics to evaluate the strength and relevance of discovered rules are confidence and lift. Confidence measures how often items in a rule appear together, indicating the strength of the association. Lift compares this frequence of co-occurence to individual occurrences.
+In association rule mining, two important metrics to evaluate the strength and relevance of discovered rules are confidence and lift. Confidence measures how often items in a rule appear together, indicating the strength of the association. Lift compares the frequency of co-occurence to individual occurrences.
 {{% /tip %}}
 
 **Dimensionality Reduction**
@@ -49,7 +49,7 @@ In association rule mining, two important metrics to evaluate the strength and r
 Dimensionality reduction techniques are used to reduce the number of input variables in a dataset. It removes irrelevant or random features while maintaining as much important information as possible. This can help increasing the efficiency of future analyses, reduce computational costs, and help with the visualization and interpretability of the data. In other words, it is a process of transforming high-dimensional data into a lower-dimensional dataset that still captures the essence of the original data. Dimensionality reduction algorithms are usually used as a pre-processing step in modeling, before the actual model training. 
 
 {{% warning %}}
-Reducing dimensionality may lead to the loss of important information, which could have a negative impact on how well later algorithms perform. Critically ask yourself why you want to decrease the size and dimensionality of your data.
+Reducing dimensionality may lead to the loss of important information, which could have a negative impact on how well later algorithms perform. Ask yourself why you want to decrease the size and dimensionality of your data before pursuing this route.
 {{% /warning %}}
 
 
