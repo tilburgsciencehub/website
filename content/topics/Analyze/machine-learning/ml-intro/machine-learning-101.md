@@ -55,13 +55,15 @@ Unsupervised learning finds patterns in data without predefined labels or outcom
 
 Different approaches are clustering, generalization and association: 
 * Clustering can group similar instances together, such as organizing articles into topics based on their content.
-* Generalization is used for finding general patterns, like identifying the typical purchasing behavior of different customer segments.
 * Association finds rules that represent large parts of the data, for example, discovering that customers who buy bread often also buy cheese.
+* Dimensionality Reduction can reduce the number of input variables in a dataset. This makes the data easier to interpret and improves the efficiency of further analyses.
 
 {{% tip %}}
 ### Labeled vs. unlabeled data in Machine Learning
 Supervised learning makes use of labeled data with predefined tags that direct the model to learn from specified outcomes. Unsupervised learning, on the other hand, uses unlabeled data that does not have these identifiers. Unlabeled data enables the model to find patterns and connections on its own, whereas labeled data simplifies the learning process toward predictable outcomes.
 {{% /tip %}}
+
+If you would like to learn more about unsupervised learning, you can check out this follow-up article, covering more in-depth theory and (coding) examples: [In-depth Introduction to Unsupervised Machine Learning](/unsupervised)
 
 ### 3. Reinforcement Learning 
 
