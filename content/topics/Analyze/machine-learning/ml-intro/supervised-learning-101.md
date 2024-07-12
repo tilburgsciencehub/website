@@ -25,8 +25,7 @@ The article covers several topics:
 
 ## What is Supervised Learning?
 
-Supervised Learning involves training a model on a labeled dataset, which means that each input variable in the training sample is paired with an answer key. 
-The model learns by comparing its own predicted output with the true answers that are given, and adjusts itself to minimize errors. 
+Supervised Learning involves training a model on a labeled dataset, which means that each observation (e.g., customer) in the training sample is "tagged" with a particular outcome (e.g., "buy"). The model learns by comparing its own predicted output with the true labels that are given, and adjusts itself to minimize errors. 
 By doing this, it improves its prediction abilities over time, with the goal of accurately generalizing previously unknown data.
 
 There are two types of algorithms:
@@ -36,14 +35,14 @@ There are two types of algorithms:
 With regression, the model predicts continuous or numerical values such as the weather, housing prices, or profit. 
 The goal is to estimate the relationship between independent variables (features) and the dependent variable (target).
 
-Classification, on the other hand, is used for categorical output variables. It assigns data into two or more classes, such as customer churn, identifying emails as spam or not, or recognizing handwritten text. The goal is to correctly classify new input data in their corresponding categories.
+Classification, on the other hand, is used for categorical output variables. It assigns data into two or more classes, such as customer retention or churn, identifying emails as spam or not, or recognizing handwritten text. The goal is to correctly classify new input data in their corresponding categories.
 
 ### Key Concepts
 
 - **Labeled Data**: in supervised learning, the model is trained with labeled data. This means that the target for this data is already known. These predefined tags help the model to develop and learn on its own, so that it is able to predict targets more accurately when given new unseen and unlabeled data.
 - **Features**: input variables are called features. These are independent variables that describe your data, and are used to predict or explain the target variable.
 - **Target**: output variables are called targets. This is the dependent variable that the machine is trying to predict or understand.
-- **Data split**: to train the model, data is usually splitted into a training and testing sample. This is done to prevent overfitting, meaning that the model works very well on the training data, but cannot be generalized to new unseen data. As an example, we can use 80% of the data as input to the model to learn from, and use the other 20% to validate how well the model works on new input. Keep in mind that even though in most cases you should use a train-test split, it is not always necessary or suitable for your model.
+- **Data split**: to train the model, data is usually splitted into a training and testing sample. This is done to prevent overfitting, meaning that the model works very well on the training data, but could possibly not generalize to new unseen data. As an example, we can use 80% of the data as input to the model to learn from, and use the other 20% to validate how well the model works on new input. Keep in mind that even though in most cases it is good practice to use a train-test split, it is not always necessary or suitable for your model.
 
 ## Supervised Learning Algorithms
 
@@ -77,7 +76,7 @@ It builds a tree where each so-called "node" splits the data based on a simple d
 The deeper the tree, the more complex these decision rules get. Below is an example of a decision tree that classifies flowers in one of three species with four input features.
 
 <p align = "center">
-<img src = "/images/decision-tree-iris.png" width="700">
+<img src = "../images/decision_tree_iris.png" width="700">
 <figcaption> Visualization of a decision tree, image by the author </figcaption>
 </p>
 
@@ -216,7 +215,7 @@ Two evaluation metrics for regression are R-squared and RMSE. This is what they 
 {{% /tip %}}
 
 ## A Classification Example: Decision Trees
-In this example of supervised classification in R we will use the `iris` dataset. This dataset consists of measurements for iris flowers from three different species. We will train a model that can classify the irises into one of the three speciess. We will do this by making a decision tree.
+In this example of supervised classification in R we will use the `iris` dataset. This dataset consists of measurements for iris flowers from three different species. We will train a model that can classify the irises into one of the three species. We will do this by making a decision tree.
 
 ### Loading and Inspecting the Data
 First, load the iris dataset and inspect what it looks like:
