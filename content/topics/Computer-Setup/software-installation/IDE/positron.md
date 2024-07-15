@@ -35,121 +35,16 @@ Positron stands out with several unique features, including:
 To find the added value of Positron compared to other popular IDE (e.g. Jupyter, Rstudio)
 
 
-| Feature                           | Positron                                              | VSCode                              | Rstudio                                                            | JupyterLab                     |
+|                            | Positron                                              | VSCode                              | Rstudio                                                            | JupyterLab                     |
 |-----------------------------------|-------------------------------------------------------|-------------------------------------|-------------------------------------------------------------------|--------------------------------|
-| **Main goal of use**              | Data-science specific tools <br> (IDE for R, Python)  | General-purpose code editor         | IDE for R and Python                                              | Web-based IDE                  |
-| **Supported programming languages**| R and Python as first-class supported languages. <br> Through extensions: Rust, Javascript, C/C++, or Lua | Almost every major programming language, <br> such as R, Python, and SQL. | Core language is R, but also supports <br> Python, SQL, Stan, C++, HTML/CSS, Markdown, Bash etc. | Python as the most widely used language, <br> but R, Julia, SQL, etc. are also supported. |
-| **Customization and extensibility**| High: support for popular VSCode extensions <br> (possible to use without interfering <br> with your original VSCode extensions) | Rich library of extensions          | Yes, but limited compared to Positron                              | Limited                        |
-| **Open source**                   | Yes                                                   | Mostly yes                          | Yes                                                               | Yes                            |
-| **Development stability**         | Still under development, so some features <br> might be unstable or unfinished. | Stable                               | Stable                                                             | Stable                         |
-| **Remote development (e.g., over SSH or dev containers)**| Not supported yet <br> (it is on the roadmap for development) | Yes                                  | Yes                                                               | Yes                            |
-| **Added value compared to Positron (other features)**| -                                                     | More extensions <br> (not all available in Positron) | Inline output for Quarto and R Markdown, <br> profiling, Sweave, Add-In support. | -                              |
-| **Desktop or in browser**         | Runs on desktop                                       | Desktop or in browser               | Desktop or in browser                                              | Only web-based                 |
-| **Dedicated pane for data explorer and plots** | Yes                                                   | No                                   | Yes                                                               | No                             |
-
-
-
-
-
-
-table
-- first column: Positron
-- second column: VSCode
-- third: Rstudio
-- fourth: JupyterLab
-
-one row per feature
-
-- Main goal of use:
-
-Positron: Data-science specific tools (IDE for R, Python)
-
-VSCode: General-purpose code editor
-Rstudio: IDE for R and Python
-Jupyter: Web-based IDE 
-
-
-- Supported programming languages
-
-1. R and Python as first-class supported languages. Through extensions: Rust, Javascript, C/C++, or Lua
-
-2. Almost every major programming language, such as R, Python, and SQL.
-
-3. Core language is R, but also supports Python, SQL, Stan, C++, HTML/CSS, Markdown, Bash etc. 
-
-4. Python as the most widely used langauge, but R, Julia, SQL, etc. are also supported.
-
-
-
-- Customization and extensibility
-
-1. High: support for popular VSCode extensions (possible to use without interfering with your original VSCode extensions)
-2. Vscode: Rich library of extensions
-3. Rstudio: Yes, but limited compared to Positron
-4. Jupyter: Limited 
-
-
-- Open source
-Positron: yes
-Vscode: mostly yes
-Rstudio: yes
-Jupyter: yes
-
-- Development stabilility
-
-1. still under development, so some features might be unstable or unfinished. 
-2. stable
-3. stable
-4. stable
-
-
-- Remote development (e.g. over SSH or dev containers)
-
-1. Positron: Not supported yet (it is on the roadmap for development)
-2. Yes
-3. Yes
-4. Yes
-
-- Added value compared to Positron (other features)
-
-
-1. Positron: -
-
-
-2. VSCode: More extensions (not all available in Positron)
-
-3. Rstudio: 
-Inline output for Quarto and R Markdown, profiling, Sweave, Add-In support.
-
-4. Jupyterlab:
-
-
-- Desktop or in browser
-
-1. Runs on desktop
-2. Desktop or in browser
-3. Desktop or in broswer
-4. Only web-based
-
-
-- Dedicated pane for data explorer and plots. 
-
-1. Yes
-2. No
-3. Yes
-4. No
-
-
-
-
-- 
-
-Positron fully featured, more powerful compared to jupyter. 
-
-Additional advantages of Positron
-- Public API's; allows for addition of support of more languages that data scientists might use in the future. 
-
-
+| **Main goal <br> of use**              | Data-science <br> specific tools <br> (IDE for R, Python)  | General-purpose <br> code editor         | IDE for <br> R and Python                                              | Web-based IDE                  |
+| **Supported <br> programming <br> languages**| R and Python. <br> Through <br> extensions: <br> Rust, Javascript, <br> C/C++, or Lua | Almost every <br> major <br> programming <br> language, <br> such as R,  <br> Python, and SQL. | Core language <br> is R, <br> also supports <br> Python, SQL, <br> Markdown etc. | Python is  <br> the most <br> widely used <br>, but R, Julia, SQL, <br> etc. also supported. |
+| **Customization <br> and <br> extensibility**| High: support  <br> for popular <br> VSCode extensions | Rich library <br> of extensions          | More limited                             | Limited                        |
+| **Development <br> stability**         | Still under <br> development; <br> some features <br> might be unstable <br> or unfinished. | Stable                               | Stable                                                             | Stable                         |
+| **Remote <br> development <br> (e.g., over SSH or <br> dev containers)**| Not supported <br> (yet) | Yes                                  | Yes                                                               | Yes                            |
+| **Added value <br> compared <br> to Positron**|        | More extensions <br> (not all available <br> in Positron) | Inline output <br> for Quarto and <br> R Markdown, <br> profiling, Sweave, <br> Add-In support. | -                              |
+| **Desktop or <br> in browser**         | Desktop                                       | Desktop or <br> in browser               | Desktop or <br> in browser                                              | Web-based                 |
+| **Pane for <br> data explorer <br> and plots** | Yes                                                   | No                                   | Yes                                                               | No                             |
 
 
 ## How to install Positron 
