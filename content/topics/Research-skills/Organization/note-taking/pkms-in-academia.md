@@ -109,6 +109,7 @@ Obsidian is only a short 4 years old but has already transformed the world of no
 becomes
 # Heading 1
 ## Heading 1.1
+## Heading 1.1
 ### Heading 1.1.1
 
 With Markdown you can express basically any formatting you would want in your notes, including lists, tables and callouts. Markdown is a widely used standard, so while it will require a bit of a learning curve, it is a useful skill to have in general. By the way, this article is written in Markdown, too.
@@ -117,11 +118,11 @@ With Markdown you can express basically any formatting you would want in your no
 <img src = "../images/obsidian-example.png" width="1000">
 </p>
 
-You can back up your vault with any third party cloud storage that allows file system integration. These include OneDrive or SURFdrive, both of which should be trustworthy enough for your notes (as long as you are using OneDrive via the [SURF agreements](https://www.surf.nl/en/management-of-office-365-controlled-and-secure-in-the-cloud) with Microsoft. If you don’t have access. If you don’t have access to either, you can consider getting a [Sync license](https://obsidian.md/pricing) for 4 USD/month. Obsidian claims that your data is [end-to-end encrypted](https://help.obsidian.md/Obsidian+Sync/Security+and+privacy) and while you can’t really confirm this yourself, it is a strong promise.
+You can back up your vault with any third party cloud storage that allows file system integration. These include OneDrive or SURFdrive, both of which should be trustworthy enough for your notes (as long as you are using OneDrive via the [SURF agreements](https://www.surf.nl/en/management-of-office-365-controlled-and-secure-in-the-cloud) with Microsoft. If you don’t have access. If you don’t have access to either, you can consider getting an [Obsidian Sync license](https://obsidian.md/pricing) for 4 USD/month. Obsidian claims that your data is [end-to-end encrypted](https://help.obsidian.md/Obsidian+Sync/Security+and+privacy) and while you can’t really confirm this yourself, it is a strong promise.
 
 Since notes in Obsidian are plain text, you can do a lot of automated processing on them. This could include reformatting your notes with a script, so everything is nice and uniform.
 
-The main reason why Obsidian is so popular is probably because it’s incredibly customizable. This goes from ultra-lightweight and simplistic to as complex as you want it. While Obsidian offers some built-in handy tools like [Notes Canvases](https://obsidian.md/canvas) and [Graphs](https://www.reddit.com/r/ObsidianMD/comments/xw5qgm/a_year_of_using_obsidian_heres_my_graph_view/) of connected Notes, the true power lies in the plugins built by the community. You can find the most popular ones [here](https://obsidian-plugin-stats.vercel.app/most-downloaded).
+The main reason why Obsidian is so popular is probably because it’s incredibly customizable. This goes from ultra-lightweight and simplistic to as complex as you want it. While Obsidian offers some built-in handy tools like [Canvases](https://obsidian.md/canvas) and [Graphs](https://www.reddit.com/r/ObsidianMD/comments/xw5qgm/a_year_of_using_obsidian_heres_my_graph_view/) of connected Notes, the true power lies in the plugins built by the community. You can find the most popular ones [here](https://obsidian-plugin-stats.vercel.app/most-downloaded).
 ### Benefits
 - Free for personal and educational use
 - Lots of plugin to expand capabilities, e.g.
