@@ -2,13 +2,15 @@
 title: "Software Setup Overview"
 description: "Here is a guide to help you get started setting up the computing environment on your machine ready."
 keywords: software, setup, guide, configure, configuratio"
-weight: 4
+weight: 1
 date: 2021-01-06T22:01:14+05:30
 draft: false
 ---
+
+## Overview
 These pages should help you to get started setting up the computing environment on your machine ready.
 
-Think your machine is already configured well? Then [directly proceed to our tutorial on setting up efficient workflows to manage data- and computation-intensive projects](/topics/reproducible-research/implement-an-efficient-and-reproducible-workflow/implement-an-efficient-and-reproducible-workflow-overview/). If necessary, you can come back to this section to make changes to your computer's configuration.
+Think your machine is already configured well? Then [directly proceed to our tutorial on setting up efficient workflows to manage data- and computation-intensive projects](/topics/project-management/principles-of-project-setup-and-workflow-management/project-setup-overview). If necessary, you can come back to this section to make changes to your computer's configuration.
 
 ## Configure your computer
 Of course, there are many ways to set up a machine, and we do not mean to consider our way of doing to be perfect. In fact, the setup instructions sometimes resemble a compromise, so that later instructions - given to both Windows, Mac and Linux users - can be followed as closely as possible.
