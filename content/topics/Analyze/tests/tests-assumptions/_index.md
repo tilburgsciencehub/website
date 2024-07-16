@@ -1,5 +1,5 @@
 ---
 draft: false
-title: "Assumption Tests"
+title: "Testing OLS Assumptions"
 weight: 1
 ---

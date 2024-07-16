@@ -1,5 +1,5 @@
 ---
-title: "Heteroskedasticity"
+title: "Testing and Correcting for Heteroskedasticity"
 description: "Tutorial on how to identify and how to perform heteroskedasticity tests in R"
 keywords: "Heteroskedasticity, R, Breusch-Pagan, White, Arrellano, Grunfeld, Goldfeld-Quandt, Robust Standard Errors"
 weight: 2
