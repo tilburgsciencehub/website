@@ -66,13 +66,15 @@ The objectives of this tutorial are:
 - But then again, we want you to get started with managing your workflows right away, and adhering to the directory structure outlined above already increases your efficiency.
 - So, before you proceed to the future chapters of this guide, sit back, and relax, and keep on using good old email.
 {{% /warning %}}
+
+
 ## Configure your Computer
 
-Think your machine is already configured well? Then proceed directly to the next page.
+Think your machine is already configured well? Then proceed directly to [the next page](/pipelines/project-setup).
 
 {{% tip %}}
 **Configure your computer**.
-- Note that to implement our workflow suggestions, your computer needs to be configured properly - so we [suggest you to do that first](/topics/configure-your-computer).
+- Note that to implement our workflow suggestions, your computer needs to be configured properly - so we [suggest you to do that first](/topics/computer-setup).
 - Of course, you need not to install all software tools - but pick *at least* your statistical software package (e.g., [we use R](/get/r/), but others prefer [Stata](/get/stata/)), [Python](/get/python/), and [`make`](/get/make/).
 {{% /tip %}}
 
