@@ -1,5 +1,5 @@
 ---
-title: "Positron, A Promising Early-Stage IDE"
+title: "Introducing Positron, A Promising IDE"
 description: "Positron is an exciting new data-science working environment, offering powerful features, support for multiple languages, and customization options."
 keywords: "positron, data, science, development, integrated, environment, IDE, posit, R, Python, guide"
 draft: false
@@ -18,21 +18,23 @@ While still under development and having some limitations, Positron already offe
 
 {{% summary %}}
 
-Positron stands out with several unique features, including:
+Positron stands out with several (unique) features, including:
 
-- *Multi-language support*: Use Python and R, and additional languages like Rust, C++, Javascript and Lua. 
+- *Multi-language support*: Supports both Python and R, with plans to add Rust, C++, Javascript and Lua in the future.
 
-- *Dedicated console and variables pane*: Keep track of your variables without cluttering the main workspace. 
+- *Easy language and version swapping*: Seamlessly switch between different languages and versions (e.g., use `Python`, `R version 4.4.1` and the older `R version 4.3.0`) without changing environments. 
 
-- *An integrated data explorer*: Easy to visualize and manipulate data within the IDE.
+- *Dedicated console and variables pane*: Better coding support than for example VSCode with an integrated console and a variables pane to keep track of your variables without cluttering your main workspace. 
 
-- *Access to a wide range of extensions*: As Positron is a fork of Code OSS, users have access to [VS Code](/VSCode) extensions.
+- *Integrated data explorer*: Easy visualize and manipulate data within the IDE. Positron offers more features than for example JupyterLab.
+
+- *Access to a wide range of extensions*: As a fork of Code OSS, Positron provides access to [VS Code](/VSCode) extensions, offering great customization options compared to RStudio.
 
 {{% /summary %}}
 
 ## Comparing Positron to other popular IDE's 
 
-To understand Positron's added value compared to other popular IDEs, this table compares Positron with [VSCode](/VSCode), [RStudio](/get/r) and [JupyterLab](https://jupyter.org/).
+To understand Positron's added value compared to other popular IDEs, the table below compares Positron with [VSCode](/VSCode), [RStudio](/get/r) and [JupyterLab](https://jupyter.org/):
 
 
 |                            | *Positron*                                              | *VSCode*                              | *RStudio*                                                            | *JupyterLab*                     |
@@ -42,9 +44,9 @@ To understand Positron's added value compared to other popular IDEs, this table 
 | *Customization <br> and <br> extensibility*| High: support  <br> for popular <br> VSCode extensions | Rich library <br> of extensions          | Limited                             | Limited                        |
 | *Development <br> stability*         | Still under <br> development; <br> some features <br> might be unstable <br> or unfinished. | Stable                               | Stable                                                             | Stable                         |
 | *Remote <br> development <br> (e.g., over SSH or <br> dev containers)*| Not supported <br> (yet) | Yes                                  | Yes                                                               | Yes                            |
-| *Added value <br> compared <br> to Positron*|        | More extensions <br> (not all available <br> in Positron) | Inline output <br> for Quarto and <br> R Markdown, <br> profiling, Sweave, <br> Add-In support. | -                              |
 | *Desktop or <br> in browser*         | Desktop                                       | Desktop or <br> in browser               | Desktop or <br> in browser                                              | Web-based                 |
 | *Pane for <br> data explorer <br> and plots* | Yes                                                   | No                                   | Yes                                                               | No                             |
+| *Added value <br> compared <br> to Positron*|        | More extensions <br> (not all available <br> in Positron, <br> for example Copilot). | Inline output <br> for Quarto and <br> R Markdown, <br> profiling, Sweave, <br> Add-In support. | Desktop installation <br> is not required, <br> interactive notebooks, <br> supports a wider range <br> of languages.                             |
 
 
 ## How to install Positron 
@@ -81,23 +83,24 @@ brew install --cask positron
 - In the Assets section of the [Releases Page](https://github.com/posit-dev/positron/releases), select the `.deb` file appropriate for Debian-based Linux distributions (such as Ubuntu).
 - Download the `.deb` file. 
 - Open a terminal and navigate to the directory where the file was downloaded. 
-- Install the package using the following command:
+- Install the package using the following command.
 
 {{% codeblock %}}
 ```bash
-sudo dpkg -i positron-<version>.deb
+sudo dpkg -i example.deb
 ```
 {{% /codeblock %}}
 
-Replace <version> with the version number of the downloaded file.
+Replace `example.deb` with the actual name of the downloaded file.
 
 - If there are any dependency issues, resolve them by running:
 
 {{% codeblock %}}
 ```bash
-sudo apt-get install -f
+sudo apt --fix-broken install
 ```
 {{% /codeblock %}}
+
 
 Now that Positron is installed, you can start using it! The next section will help you get started.
 
