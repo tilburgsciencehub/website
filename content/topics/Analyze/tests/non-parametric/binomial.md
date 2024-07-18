@@ -1,5 +1,5 @@
 ---
-title: "Understanding the binomial test"
+title: "Understanding the Binomial Test"
 description: "Short guide to understanding the workings of the binomial test and how to use it in R"
 keywords: "bin, nominal, sample, one, test, hypothesis, trial, success, "
 weight: 1
