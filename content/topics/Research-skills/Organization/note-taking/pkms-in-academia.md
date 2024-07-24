@@ -26,7 +26,7 @@ And forgetting some crucial details is just the tip of the iceberg. Trying to ke
 
 So it seems like preaching to the choir that note-taking is the way to solve this. But is it really?
 
-The fallacy here is probably that taking notes just seems like such a straightforward idea. “If I keep it in my head, I might forget it, so I just need write it down somewhere, right?”. This simplistic view might have worked 100 years ago, where information was still scarce enough to be manageable. And if it wasn’t it was at least still possible to remember **where** you wrote down what (if probably would fit in a single notebook or two). But in today’s information economy, there is so much more information, that even remembering your notes’ “metadata” (where did I write that down that again?) is a veritable challenge in and of itself. 
+The fallacy here is probably that taking notes just seems like such a straightforward idea. “If I keep it in my head, I might forget it, so I just need write it down somewhere, right?” This simplistic view might have worked 100 years ago, where information was still scarce enough to be manageable. And if it wasn’t it was at least still possible to remember **where** you wrote down what (if probably would fit in a single notebook or two). But in today’s information economy, there is so much more information, that even remembering your notes’ “metadata” (where did I write that down that again?) is a veritable challenge in and of itself. 
 
 Like many of you, we have also resorted to some sort of scattered note-taking, using a mix of handwritten notes, basic text files, and various apps without a coherent system. This often leads to some or all of the following problems:
 1. Forgetting where the information is
@@ -73,7 +73,7 @@ OneNote has been around for over 20 years and while it was originally only avail
 <img src = "../images/one-note-example.png" width="2000">
 </p>
 
-You can set up OneNote to back up (Synchronize) your notebooks via you Microsoft account, which is essential to fulfil criteria 3 and 4 (Cross-device access and backup). What you should keep in mind though is that uploading information to the cloud and sharing it with another (commercial) party is always a potential privacy concern. This fact is amplified by the fact that you will potentially have a lot of sensitive information in your notes, which can be of tremendous value for state actors, advertisers and potentially even criminals. So we highly recommend to not take this aspect of your PKMS lighly. This should not only involve checking the Privacy Statements but also choose a party that you trust (or mistrust the least.)
+You can set up OneNote to back up (Synchronize) your notebooks via your Microsoft account, which is essential to fulfil criteria 3 and 4 (Cross-device access and backup). What you should keep in mind though is that uploading information to the cloud and sharing it with another (commercial) party is always a potential privacy concern. This fact is amplified by the fact that you will potentially have a lot of sensitive information in your notes, which can be of tremendous value for state actors, advertisers and potentially even criminals. So we highly recommend to not take this aspect of your PKMS lighly. This should not only involve checking the Privacy Statements but also choose a party that you trust (or mistrust the least.)
 
 {{% tip %}}
   Backing up your PKMS is a potential privacy nightmare. Choose your provider carefully.
@@ -108,7 +108,6 @@ Obsidian is only a short 4 years old but has already transformed the world of no
 
 becomes
 # Heading 1
-## Heading 1.1
 ## Heading 1.1
 ### Heading 1.1.1
 
