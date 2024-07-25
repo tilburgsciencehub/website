@@ -52,7 +52,8 @@ The first major problem with the conventional tests for pre-trends is that they 
 Low statistical power essentially means that we will not detect statistically significant differences in pre-trends unless they are very large. This is problematic because small or medium differences can also pose a threat to the parallel trends assumption and thus to reliable causal inference in DiD and event study settings. 
 
 {{% tip %}}
-Read more about statistical power and the problems associated with low statistical power [here](https://tilburgsciencehub.com/topics/analyze/causal-inference/introduction/statistical-power/). 
+Read more about statistical power and the problems associated with low statistical power [here](/statistical-power). 
+
 {{% /tip %}}
 
 Going back to the He and Wang (2017) paper, let’s imagine that there are differences in trends between the treated and untreated villages before the treatment is introduced. For example, the trend in poor housing is already decreasing in the treated villages, while in untreated ones it is not. However, the test we use to check for parallel trends has lower power and we are unable to detect this difference, so we assume that the parallel trends assumption holds and proceed to estimate the treatment effect. We find that the difference in differences is negative, that is, the treatment has apparently decreased the share of poor housing. Since the trend before the treatment was introduced was already like this, we cannot attribute this observed difference to the treatment, but we do not know this because low statistical power impedes the detection of the pre-treatment difference in trends. In this way, using low-powered pre-trend tests to verify the parallel trends assumption can lead to mistaken causal inference. 
