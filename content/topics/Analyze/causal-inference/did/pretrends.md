@@ -1,5 +1,6 @@
 ---
-title: "Testing for pre-trends in DiD and event studies"
+title: "Testing for Pre-trends in DiD and Event Studies"
+
 description: "How to test for the parallel trends assumption in DiD and event study designs and the challenges with these tests"
 keywords: "DiD, event study, causal, inference, parallel trends, regression, R, pre-trends, bias, testing"
 draft: false
