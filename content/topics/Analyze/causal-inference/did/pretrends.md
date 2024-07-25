@@ -46,7 +46,8 @@ Significance tests and event study plots are straightforward and intuitive ways 
 
 ### Low statistical power
 
-The first major problem with the conventional tests for pre-trends is that they often have low [statistical power](https://tilburgsciencehub.com/topics/analyze/causal-inference/introduction/statistical-power/). Statistical power is a measure of how likely we are to find a statistically significant effect (or difference) if there is one, given the characteristics of our design, such as sample size, the significance level, and the minimum effect size we want to be able to detect. 
+The first major problem with the conventional tests for pre-trends is that they often have low [statistical power](/statistical-power). Statistical power is a measure of how likely we are to find a statistically significant effect (or difference) if there is one, given the characteristics of our design, such as sample size, the significance level, and the minimum effect size we want to be able to detect. 
+
 
 Low statistical power essentially means that we will not detect statistically significant differences in pre-trends unless they are very large. This is problematic because small or medium differences can also pose a threat to the parallel trends assumption and thus to reliable causal inference in DiD and event study settings. 
 
