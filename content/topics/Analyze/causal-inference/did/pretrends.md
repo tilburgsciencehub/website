@@ -14,9 +14,7 @@ aliases:
 
 ## Introduction
 
-[Difference-in-differences (DiD)](/canonical-DiD) and event study designs are among the most popular quasi-experimental approaches used in empirical research in economics and the social sciences. They rely on the comparison of two groups – one exposed to treatment (the treatment group) and one not (the control group) – before and after the treatment is implemented. 
-
-The fundamental identification assumption behind these methods is the parallel trends assumption (also referred to as the common trends assumption). This assumption entails that, in the absence of treatment, the two groups would have followed similar (i.e., parallel) trends in the outcome. Of course, we do not observe what would have happened had treatment not been implemented, so this assumption is not fully empirically verifiable. However, researchers often present evidence that the groups followed parallel trends _before_ the treatment was introduced to lend credibility to the DiD or event study design they are using.
+[Difference-in-differences (DiD)](/canonical-DiD) and event study designs are among the most popular quasi-experimental approaches used in empirical research in economics and the social sciences. The fundamental identification assumption behind these methods is the parallel trends assumption (also referred to as the common trends assumption). This assumption entails that, in the absence of treatment, the two groups would have followed similar (i.e., parallel) trends in the outcome. Of course, we do not observe what would have happened had treatment not been implemented, so this assumption is not fully empirically verifiable. However, researchers often present evidence that the groups followed parallel trends _before_ the treatment was introduced to lend credibility to the DiD or event study design they are using.
 
 ## Testing for pre-trends
 
@@ -42,7 +40,7 @@ They also present graphical evidence of the validity of their common trends assu
 
 ## Problems with common tests for pre-trends
 
-Significance tests and event study plots are straightforward and intuitive ways of testing for the validity of the parallel trends assumption. However, they are subject to some notable shortcomings, which are discussed in detail by [Roth (2022)](https://www.aeaweb.org/articles?id=10.1257/aeri.20210236). We look at the most important insights from this paper below. 
+Significance tests and event study plots are straightforward and intuitive ways of testing for the validity of the parallel trends assumption. However, they are subject to some notable shortcomings, which are discussed in detail by [Roth (2022)](https://www.aeaweb.org/articles?id=10.1257/aeri.20210236). We look at the two main shortcomings below: low statistical power and exacerbation of bias. 
 
 ### Low statistical power
 
@@ -65,37 +63,45 @@ We can do this using the `pretrends` package in R.
 
 We first install and load the package into R using the code below.
 
+{{% codeblock %}}
 ```R
 #install and load the pretrends package
 install.packages("remotes")
 remotes::install_github("jonathandroth/pretrends")
 library(pretrends)
 ```
+{{% /codeblock %}}
 
-The package contains some data from He and Wang's (2017) paper, which we discussed above. In this example, we will work with these data, but the functions of the _pretrends_ package can be easily applied to any other DiD or event study estimation.
+The package contains some data from He and Wang's (2017) paper, which we discussed above. In this example, we will work with these data, but the functions of the `pretrends` package can be easily applied to any other DiD or event study estimation.
 
+{{% codeblock %}}
 ```R
-#define the variables by loading them from the pretrends package; these are based on the paper by He and Wang (2017)
+#define the variables by loading them from the pretrends package;
+#these are based on the paper by He and Wang (2017)
 beta <- pretrends::HeAndWangResults$beta #vector of He and Wang's treatment coefficient estimates for each time period
 sigma <- pretrends::HeAndWangResults$sigma #variance-covariance matrix of the main regression of He and Wang's study
 tVec <- pretrends::HeAndWangResults$tVec #vector of time periods
 referencePeriod <- -1 #define the last period before treatment
 ```
+{{% /codeblock %}}
 
 {{% tip %}}
-In order to get the variance-covariance matrix of your regression, use the vcov() function in R, or the vcovHC() or vcovHAC() functions from the _sandwich_ package for heteroskedasticity- and heteroskedasticity and autocorrelation-consistent standard errors, respectively. Supply the variable name of your model as the argument. 
+In order to get the variance-covariance matrix of your regression, use the vcov() function in R, or the vcovHC() or vcovHAC() functions from the `sandwich` package for heteroskedasticity- and heteroskedasticity and autocorrelation-consistent standard errors, respectively. Supply the variable name of your model as the argument. 
 {{% /tip %}}
 
 The package allows us to determine the minimum size of the difference in pre-trends that we would be able to detect given a certain level of power. We use 80% power - the gold standard in the social sciences. 
 
+{{% codeblock %}}
 ```R
-#this function gives us the minimum size of the violation of the parallel trends assumption we could detect given a certain level of power (80% in this example)
+#this function gives us the minimum size of the violation of the parallel trends assumption
+#we could detect given a certain level of power (80% in this example)
 trend80 <- slope_for_power(sigma = sigma, #define the variance-covariance matrix
                 targetPower = 0.8, #choose our target power
                 tVec = tVec, #define the vector of time periods
                 referencePeriod = referencePeriod) # define the reference period 
 trend80
 ```
+{{% /codeblock %}}
 
 _Output_
 
@@ -103,10 +109,12 @@ _Output_
 <img src = "../images/pretrends2.png" width=600">
 </p>
 
-This result means that we can detect a difference in pre-trends of 0.079 (3dp) 80% of the time. We will be able to detect larger differences more frequently and smaller differences less frequently. This result also clearly illustrates the problem with low-powered pre-trends tests - if we had a difference in pre-trends of 0.05, for example, which is still sizeable, we would detect it less than 80% of the time with our test. We can compute the exact power we would have for a difference of 0.05 using the pretrends function of the _pretrends_ package:
+This result means that we can detect a difference in pre-trends of 0.079 (3 decimal points; dp) 80% of the time. We will be able to detect larger differences more frequently and smaller differences less frequently. This result also clearly illustrates the problem with low-powered pre-trends tests - if we had a difference in pre-trends of 0.05, for example, which is still sizeable, we would detect it less than 80% of the time with our test. We can compute the exact power we would have for a difference of 0.05 using the pretrends function of the `pretrends` package:
 
+{{% codeblock %}}
 ```R
-#this function allows us to calculate the power to detect a violation of parallel trends of a given size (0.05 in this example)
+#this function allows us to calculate the power to detect
+#a violation of parallel trends of a given size (0.05 in this example)
 pretrendsResults <- 
   pretrends(betahat = beta, #define variables as previously
             sigma = sigma, 
@@ -115,6 +123,7 @@ pretrendsResults <-
             deltatrue = 0.05 * (tVec - referencePeriod)) #define the size of the violation of the parallel trends assumption (0.05 in our example)
 pretrendsResults$df_power #compute power
 ```
+{{% /codeblock %}}
 
 _Output_
 
@@ -130,6 +139,7 @@ Another problem with testing for pre-trends by evaluating the significance of pr
 
 Let’s assume that, in our setting, the parallel trends assumption is violated, that is, there is a significant difference in pre-trends between the treatment and control groups. We run a pre-trend test before proceeding to estimating the treatment effect. Say that our test has 60% power, then we will detect the difference in pre-trends 60% of the time. We can condition our estimation of the treatment effect on the pre-trend test being passed (i.e., no difference being observed) – in that case, we only estimate the treatment effect in the 40% of cases where we do not detect a discrepancy in pre-trends. This 40% of cases will inevitably contain smaller pre-trend differences, as these are more difficult to detect. We can see how this leads to greater bias with a very simplified stylised model of bias in a DiD/event study setting:
 
+{{% example %}}
 We define $\hat{\beta}$ as our estimate of the treatment effect, which is composed of the estimated difference between the treatment and control groups after treatment implementation, $\hat{\beta_{post}}$, and the corresponding difference before treatment implementation, $\hat{\beta_{pre}}$. 
 
 {{<katex>}}
@@ -164,20 +174,28 @@ $\hat{\beta_{2}} = 10 - 4 = 6$
 Accordingly, the conditional bias will be:
 
 $\delta_{2} = \hat{\beta_{2}} - \beta = 6 - 5 = 1$
+{{% /example %}}
 
 This example shows that, in a context where the parallel trends assumption is likely to be violated, _conditioning_ our analysis on passing a pre-trend can result in greater bias in our estimators. 
 
 ## Recommendations
 
-Firstly, it is always useful to understand what level of statistical power the test that we are using has to be able to gauge its ability to detect actual violations of the parallel trends assumption and to judge whether conditioning our estimation of the treatment effect on the design passing a pre-trends test is likely to lead to higher bias in the estimated treatment effect. The _pretrends_ R package, an example of the use of which is included above, is a handy tool for this purpose. 
+Below are some best practices to apply to deal with the limitations of pre-trend tests:
 
-Secondly, applying economic theory and intuition to our particular context is essential to assessing the likelihood of a violation of the common trends assumption. This also helps us understand to what extent the use of high-power pre-trends tests together with conditional treatment effect estimation can result in exacerbated bias. If the assumption is very likely to be contravened in our setting, conditioning our analysis on the assumption being passed will imply that we only look at extreme cases where the margin of the violation is very small, leading to large biases in the estimation of the treatment effect. 
+1. It is always useful to *understand what level of statistical power* the test that we are using has to be able to gauge its ability to detect actual violations of the parallel trends assumption and to judge whether conditioning our estimation of the treatment effect on the design passing a pre-trends test is likely to lead to higher bias in the estimated treatment effect. The `pretrends` R package, an example of the use of which is included above, is a handy tool for this purpose. 
 
-Finally, recent econometric literature on DiD and event studies has proposed a number of solutions that circumvent the parallel trends assumption altogether. One such method is the so-called [honest DiD](honest-did) approach developed by Rambachan and Roth (2022), where identification is valid as long as we can credibly established a set of restrictions Delta on the size of the difference in pre-trends between the treatment and control groups. Another is the method proposed by Freyaldenhoven et al. (2019), which uses a covariate affected by potential relevant confounders but not the treatment itself coupled with two-stage least squares (2SLS) to estimate treatment effects in an event study/DiD setting without regard for the validity of the parallel trends assumption. 
+2. Applying *economic theory and intuition* to our particular context is essential to assessing the likelihood of a violation of the common trends assumption. This also helps us understand to what extent the use of high-power pre-trends tests together with conditional treatment effect estimation can result in exacerbated bias. If the assumption is very likely to be contravened in our setting, conditioning our analysis on the assumption being passed will imply that we only look at extreme cases where the margin of the violation is very small, leading to large biases in the estimation of the treatment effect. 
+
+3. Recent econometric literature on DiD and event studies has proposed a number of solutions that *circumvent the parallel trends assumption* altogether. One such method is the so-called [honest DiD](honest-did) approach developed by Rambachan and Roth (2022), where identification is valid as long as we can credibly established a set of restrictions $\Delta$ on the size of the difference in pre-trends between the treatment and control groups. Another is the method proposed by Freyaldenhoven et al. (2019), which uses a covariate affected by potential relevant confounders but not the treatment itself coupled with two-stage least squares (2SLS) to estimate treatment effects in an event study/DiD setting without regard for the validity of the parallel trends assumption. 
 
 ## Summary
 
-Conventional tests for pre-trends in DiD or event study settings are easy to apply and appear to directly address the fundamental identification challenge in such designs: establishing the credibility of the parallel trends assumption. However, such tests can be problematic for two reasons. Firstly, they often have low statistical power, making them relatively unlikely to detect violations of the assumption even when it is actually violated. Secondly, even when the tests are high-powered, conditioning the estimation of the treatment effect on a successful pre-trend test can result in exacerbated bias in our treatment effect estimator when there is a true violation of parallel trends. To avoid these issues, we can apply one of the newly proposed approaches to causal inference in DiD and event study settings which do not rely on the parallel trends assumptions, such as the honest DiD approach (Rambachan & Roth, 2022) or the covariate-instrument approach (Freyaldenhoven et al., 2019). 
+{{% summary %}}
+- Conventional tests for pre-trends in DiD or event study settings are easy to apply and appear to directly address the fundamental identification challenge in such designs: establishing the credibility of the parallel trends assumption. However, such tests can be problematic for two reasons. 
+- Firstly, they often have low statistical power, making them relatively unlikely to detect violations of the assumption even when it is actually violated. 
+- Secondly, even when the tests are high-powered, conditioning the estimation of the treatment effect on a successful pre-trend test can result in exacerbated bias in our treatment effect estimator when there is a true violation of parallel trends. 
+- To avoid these issues, we can apply one of the newly proposed approaches to causal inference in DiD and event study settings which do not rely on the parallel trends assumptions, such as the honest DiD approach (Rambachan & Roth, 2022) or the covariate-instrument approach (Freyaldenhoven et al., 2019). 
+{{% /summary %}}
 
 ## See Also
 
