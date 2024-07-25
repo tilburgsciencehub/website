@@ -60,7 +60,8 @@ Going back to the He and Wang (2017) paper, let’s imagine that there are diffe
 
 Low statistical power is not a problem exclusive to tests for pre-trends: it also often occurs with the estimation of the treatment effects of interest. However, it can occur more frequently with pre-trend tests due to lower sample sizes (if we are looking at each pre-treatment period separately) and higher levels of noise in the outcome before treatment is implemented. In any case, it is always useful to assess the power our pre-trends test has to evaluate its capacity to detect significant differences in pre-trends and establish the credibility of the parallel trends assumption. 
 
-We can do this using the _pretrends_ package in R. 
+We can do this using the `pretrends` package in R. 
+
 
 We first install and load the package into R using the code below.
 
