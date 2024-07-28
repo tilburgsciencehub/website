@@ -5,7 +5,9 @@ keywords: "event studies, causal inference, panel data, staggered treatment, tim
 draft: false
 weight: 1
 author: "Virginia Mirabile"
-
+aliases:
+- /event-studies
+- /event-study
 ---
 
 # Overview 
