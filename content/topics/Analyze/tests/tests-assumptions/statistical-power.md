@@ -51,7 +51,7 @@ Thus, we can increase power by increasing sample size, increasing the significan
 2. Increasing the expected effect size. This can be done by intensifying the treatment intensity or ‘dose’ and maximising treatment take-up in the treatment group. This way, we attempt to widen the difference in outcome means between the treatment and control groups. And if we expect this difference to be larger, it is also reasonable to aim for a larger minimum detectable effect. 
 
 {{% tip %}}
-Ensuring that treatment is delivered in sufficient doses and to as many subjects as possible in the treatment group is part of improving treatment fidlity. Treatment fidelity refers to the extent to which the treatment is delivered competently and as intended by the researcher. 
+Ensuring that treatment is delivered in sufficient doses and to as many subjects as possible in the treatment group is part of improving treatment fidelity. Treatment fidelity refers to the extent to which the treatment is delivered competently and as intended by the researcher. 
 {{% /tip %}}
 
 3. Reducing variation/noise in the outcome. We can reduce noise by improving the quality of our outcome measures (minimising measurement error) and minimising heterogeneity in the characteristics of the subjects in our study. Additionally, we can measure the outcome at multiple points in time in the post-treatment period and compute an average. This can allow us to remove noise originating from seasonality, measurement error, and time-specific idiosyncratic shocks.  
