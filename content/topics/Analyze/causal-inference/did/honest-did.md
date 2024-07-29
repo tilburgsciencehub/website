@@ -31,7 +31,7 @@ The parallel trends assumption can be violated in various scenarios. For example
 
 4. *Economic shock*: A shock occurs around the treatment period, causing differences in post-treatment trends, even if the pre-treatment trends were similar. 
 
-Rejecting the hypothesis of pre-trends does not confirm that the trends are similar. Always justify the parallel trends assumption within your research context, rather than relying solely on test outcomes suggesting similar pre-trends!
+Rejecting [the hypothesis of pre-trends](/did-pretrends) does not confirm that the trends are similar. Always justify the parallel trends assumption within your research context, rather than relying solely on test outcomes suggesting similar pre-trends!
 
 {{% /tip %}}
 
