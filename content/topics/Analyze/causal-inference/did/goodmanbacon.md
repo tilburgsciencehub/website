@@ -98,7 +98,7 @@ First, we install and load the package:
 install.packages("bacondecomp") #install the package
 library(bacondecomp) #load the package
 ```
-{{% codeblock %}}
+{{% /codeblock %}}
 
 Next, we load the data and prepare it for our analysis:
 
