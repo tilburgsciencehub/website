@@ -175,7 +175,7 @@ Now, let's suppose that we estimate treatment effects unconditionally, that is, 
 
 $\hat{\beta_{2}} = 10 - 4 = 6$
 
-Accordingly, the conditional bias will be:
+Accordingly, the unconditional bias will be:
 
 $\delta_{2} = \hat{\beta_{2}} - \beta = 6 - 5 = 1$
 {{% /example %}}
