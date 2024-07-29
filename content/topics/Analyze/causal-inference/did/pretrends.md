@@ -2,7 +2,7 @@
 title: "Testing for Pre-trends in DiD and Event Studies"
 
 description: "How to test for the parallel trends assumption in DiD and event study designs and the challenges with these tests"
-keywords: "DiD, event study, causal, inference, parallel trends, regression, R, pre-trends, bias, testing"
+keywords: "DiD, event study, causal, inference, parallel trends, regression, R, pre-trends, bias, testing, pre-test, pre-trend, pretrends, pretrend, pretest, causal inference, difference-in-differences"
 draft: false
 weight: 5
 author: "Victor Arutyunov"
