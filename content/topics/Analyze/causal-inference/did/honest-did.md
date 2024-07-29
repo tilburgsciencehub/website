@@ -2,7 +2,7 @@
 title: "Handling Parallel Trends Violations with `HonestDiD` in R"
 description: "The HonestDiD package in R offers a solution or sensitivity analysis when the parallel trends assumption in DiD analysis seems invalid."
 keywords: "honestdid, package, R, did, difference-in-difference, analysis, causal inference, did, staggered, non-staggered"
-weight: 5
+weight: 6
 author: "Valerie Vossen"
 draft: false
 aliases:
@@ -294,6 +294,8 @@ The following plots are generated:
 <p align = "center">
 <img src = "../images/staggered-sd-plot.png" width="500">
 </p>
+
+The Relative Magnitudes and Smoothness Restrictions graphs show confidence intervals that include zero for each value of M. Thus, no evidence of a causal effect is found in the staggered case under the assumptions made.
 
 {{% summary %}}
  
