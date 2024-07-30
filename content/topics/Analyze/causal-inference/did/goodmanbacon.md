@@ -1,9 +1,9 @@
 ---
-title: "The Goodman-Bacon Decomposition"
+title: "Detecting TWFE Bias in Staggered DiD: the Goodman-Bacon Decomposition"
 description: "The limitations of the TWFE estimator in staggered DiD settings and the use of the Goodman-Bacon decomposition as a diagnostic"
 keywords: "difference-in-difference, causal inference, did, DID, staggered treatment, regression, model, DiD, R, event study, Goodman-Bacon decomposition, Bacon decomposition, TWFE, two-way fixed effects"
 draft: false
-weight: 6
+weight: 7
 author: "Victor Arutyunov"
 aliases:
 - /goodman-bacon
@@ -18,7 +18,7 @@ The Goodman-Bacon decomposition is a descriptive tool which allows us to see how
 
 {{% tip %}} 
 
-This topic deals with the reasons behind the shortcomings of TWFE in staggered DiD designs and how the Goodman-Bacon decomposition allows us to observe them. For ways to address the limitations of TWFE, see [this topic](/staggered-did), which introduces Callaway and Sant’Anna’s (2021) robust method.  
+This topic deals with the _reasons_ behind the shortcomings of TWFE in staggered DiD designs and how the Goodman-Bacon decomposition allows us to _detect_ them. For ways to _address_ the limitations of TWFE, see [this topic](/staggered-did), which introduces Callaway and Sant’Anna’s (2021) robust method.  
 
 {{% /tip %}} 
 
