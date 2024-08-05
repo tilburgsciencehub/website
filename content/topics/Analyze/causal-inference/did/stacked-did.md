@@ -40,6 +40,7 @@ Imagine measuring the treatment effect over four time periods, from 2020 to 2024
 
 To find the overall treatment effect, these effects are aggregated. The effect seems to fade out over time. However, this is due to the compositional imbalance: The aggregate treatment effect three years after the treatment only includes on the early-treated group, as the effect on the late-treated group is not observed yet! The year 2026 did not take place yet and is outside of the current data range.
 
+- real practical example (maybe already introduce code example)
 
 {{% /example %}}
 
@@ -54,9 +55,9 @@ This compositional imbalance is addressed in [the working paper of Wing et al. (
 The weighted stacked DiD estimate by [Wing et al. (2024)](https://www.nber.org/papers/w32054) corrects for this imbalance, using sample weights. The framework ...
 
 
-It trims the subexperiments to make them balanced over a fixed event time window. 
-
 ### Trimming the dataset
+
+It trims the subexperiments to make them balanced over a fixed event time window. In other words, you take out the subexperiments that do not have enough follow-up years. 
 
 Essentially, two inclusion criteria are used to trim the sample and correct for this imbalance:
 
@@ -70,13 +71,38 @@ For this treatment, adoption event a ...
 
 ### Aggregation 
 
-To reach a summary average of estimates, aggregate the subexperiments. 
+To reach a summary average of estimates, aggregate the subexperiments.
 
 ### Estimation 
 
-The last step in the framework is about estimation. 
+The last step is estimation. 
 
-## Code example in R
+## Example in R
+
+Following [Wing et al. (2021)](), a function is available in R to implement their framework of stacked DiD regression. Use [their tutorial]() as a guided implementation of these functions. 
+
+We are interested in the impact of the expansion of ACA (*Affordable Care Act*) Medicaid, a health insurance coverage for low-income groups, on uninsurance rates.
+
+- Dependent variable: `unins`
+- Treatment variable: `adopt_year`: first year ACA Medicaid expansion was adopted in this state (`NA` if state never adopted)
+
+1. Load the packages and data
+
+{{% codeblock %}}
+```R
+
+```
+{{% /codeblock %}}
+
+
+1. Make a stacked dataset
+
+2. Make the weights
+
+3. Estimate the regression
+
+
+
 
 
 
@@ -88,9 +114,7 @@ The last step in the framework is about estimation.
 ## See also
 
 
-- Background article that uses this method: Cengiz, D., Dube, A., Lindner, A., & Zipperer, B. (2019). The effect of minimum wages on low-wage jobs. The Quarterly Journal of Economics, 134(3), 1405-1454.
 
 
-
-- Example code: https://rawcdn.githack.com/hollina/stacked-did-weights/18a5e1155506cbd754b78f9cef549ac96aef888b/stacked-example-r-and-stata.html
+- [Example code](https://rawcdn.githack.com/hollina/stacked-did-weights/18a5e1155506cbd754b78f9cef549ac96aef888b/stacked-example-r-and-stata.html)
 
