@@ -120,18 +120,7 @@ In this section, we will guide you through the key steps of the analysis, replic
 
 1. Load the data
 
-First, download the CSV dataset from [Alex Hollingworth's GitHub page](https://github.com/hollina/stacked-did-weights/tree/main/data) and save it to your computer. You can then load the data locally as shown in the [tutorial code](https://rawcdn.githack.com/hollina/stacked-did-weights/18a5e1155506cbd754b78f9cef549ac96aef888b/stacked-example-r-and-stata.html#load-the-data). Alternatively, use the following code snippet to load the data directly:
-
-{{% codeblock %}}
-```R
-
-# specify URL to CSV file on the GitHub page
-data_url <- "https://raw.githubusercontent.com/hollina/stacked-did-weights/main/data/acs1860_unins_2008_2021.csv"
-
-# load CSV file from URL
-dtc <- read.csv(url(data_url))
-```
-{{% /codeblock %}}
+First, download the CSV dataset from [Alex Hollingworth's GitHub page](https://github.com/hollina/stacked-did-weights/tree/main/data) and save it to your computer. You can then load the data locally as shown in the [tutorial code](https://rawcdn.githack.com/hollina/stacked-did-weights/18a5e1155506cbd754b78f9cef549ac96aef888b/stacked-example-r-and-stata.html#load-the-data), adjusting the code to your local path.
 
 Here are the first 5 rows of the `dtc` dataset:
 
