@@ -14,15 +14,15 @@ aliases:
 
 ## Installing Anaconda Python
 
-Anaconda is a pre-packaged Python distribution for scientific users. To customize Python with packages and properly use it in combination with [automation tools](/topics/configure-your-computer/automation-and-workflows/make/), we prefer a *locally installed Anaconda distribution* over cloud-based alternatives.
+Anaconda is a pre-packaged [Python](https://www.python.org/) distribution for scientific users. To customize Python with packages and properly use it in combination with [automation tools](/practice/pipeline-automation), we prefer a *locally installed Anaconda distribution* over cloud-based alternatives.
 
 Watch our YouTube video, in which we walk you through the setup on Windows.
 
 {{< youtube hGZSAuDcmQc iframe-video-margins >}}
 
 ### Instructions
-Direct your browser to [Anaconda download page](https://www.anaconda.com/download/) and download the Python 3.x Graphical Installer for your machine.
-Sometimes, the download defaults to Mac, so if you're on Windows or Linux, make sure to select the right version.
+
+Direct your browser to [Anaconda download page](https://www.anaconda.com/download/). You don't need to provide your email address; simply click "Skip registration" below the green "Submit" button to go directly to the [downloads page](https://www.anaconda.com/download/success). Download the Python 3.x Graphical Installer for your machine. Note that the download may default to Mac, so if you're using Windows or Linux, be sure to select the right version.
 
 Then, follow the steps provided on the website.
 
@@ -85,3 +85,15 @@ you might have seen `Python 2.x.x` above. In that case, try typing
 instead. Now you should see a message like the one above and are good to go.
 
 {{% /tip %}}
+
+
+{{% summary %}}
+
+With Python set up, you can start using it. Explore these resources to get started: 
+
+- [Install Python Packages](/install/python-packages): Discover what packages are, and how to install them.
+- [Learn Python: An Introduction to Basic Concepts](/learn/python): Get started with coding through simple examples of variables and data types, functions, etcetera.
+- [Python Coding Style Guidelines](python/style-guides): Understand the importance of coding style with these essential guidelines.
+
+{{% /summary %}}
+
