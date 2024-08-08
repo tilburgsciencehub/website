@@ -12,15 +12,19 @@ aliases:
   - /topics/other-category/implement-an-efficient-and-reproducible-workflow/setup/python.md
 ---
 
-## Installing Anaconda Python
+## Overview
 
-Anaconda is a pre-packaged [Python](https://www.python.org/) distribution for scientific users. To customize Python with packages and properly use it in combination with [automation tools](/practice/pipeline-automation), we prefer a *locally installed Anaconda distribution* over cloud-based alternatives.
+Anaconda is a pre-packaged [Python](https://www.python.org/) distribution designed for scientific and data-intensive computing, ideal for tasks such as data analysis and machine learning.
 
-Watch our YouTube video, in which we walk you through the setup on Windows.
+We recommend using a *locally installed Anaconda distribution* over cloud-based alternatives, as this allows you to customize Python with [packages](/install/python-packages) and effectively integrate it with [automation tools](/practice/pipeline-automation).
+
+## Installing Python via Anaconda
+
+Watch our YouTube video, where we guide you through the installation and setup process on Windows. 
 
 {{< youtube hGZSAuDcmQc iframe-video-margins >}}
 
-### Instructions
+## Set-up instructions
 
 Direct your browser to [Anaconda download page](https://www.anaconda.com/download/). You don't need to provide your email address; simply click "Skip registration" below the green "Submit" button to go directly to the [downloads page](https://www.anaconda.com/download/success). Download the Python 3.x Graphical Installer for your machine. Note that the download may default to Mac, so if you're using Windows or Linux, be sure to select the right version.
 
@@ -47,9 +51,9 @@ Note that the installation of Anaconda may take about 5-10 minutes, depending on
 For some users, Python was not added to the path. To quickly do this, please open a terminal window, paste ```echo '$HOME/anaconda3/bin:$PATH' >> ~/.bashrc``` and press `Return`.
 {{% /warning %}}
 
-## Verifying that the installation was successful
+## Verifying the installation 
 
-To verify that the correct version of Python has been installed and was made available in your PATH settings, close your terminal and open a **new** terminal interface and enter:
+To verify that the installation was succesful and the correct version of Python has been installed and was made available in your PATH settings, close your terminal and open a **new** terminal interface and enter:
 
 {{% codeblock %}}
 ```bash
