@@ -96,7 +96,7 @@ instead. Now you should see a message like the one above and are good to go.
 With Python set up, you can start using it. Explore these resources to get started: 
 
 - [Install Python Packages](/install/python-packages): Discover what packages are, and how to install them.
-- [Learn Python: An Introduction to Basic Concepts](/learn/python): Get started with coding through simple examples of variables and data types, functions, etcetera.
+- [Get Started With Python](/learn/python) through simple examples of the fundamental basics, such as variables and data types, functions, etcetera.
 - [Python Coding Style Guidelines](python/style-guides): Understand the importance of coding style with these essential guidelines.
 
 {{% /summary %}}
