@@ -4,10 +4,11 @@ date: 2021-01-06T22:01:14+05:30
 weight: 2
 draft: false
 aliases:
-  - get/julia
-  - other-languages
-  - julia
-  - julia-matlab
+  - /get/julia
+  - /install/julia
+  - /other-languages
+  - /julia
+  - /julia-matlab
 ---
 
 ## Overview
