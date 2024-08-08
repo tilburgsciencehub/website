@@ -1,5 +1,5 @@
 ---
-title: "Get Started With Python"
+title: "Introduction to Coding With Python"
 description: "Learn how to program in Python."
 keywords: "python, data science, data, programming, manipulation, analysis, tutorial"
 draft: false
