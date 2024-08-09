@@ -17,9 +17,15 @@ Think of the Decision tree as a map explaining to us how the model makes predict
 </div> 
 
 ### Overfitting 
-The decision tree algorithm is prone to overfitting because it has unlimited freedom. To prevent overfitting, we can limit this freedom through hyperparameter tuning. 
+The decision tree algorithm is prone to overfitting because it has unlimited freedom. This means that the splitting of the tree continues until the classes are distinguished with zero impurity. To prevent overfitting, we can limit this freedom through hyperparameter tuning. 
 
 The code block trains a decision trees classifier with no restrictions. The resulting tree will have all leaf nodes with Gini impurity equal to 0, indicating a perfect fit to the data. However, this may lead to overfitting and poor performance on new data. It's worth noting that some leaf nodes may only have one or two samples, making the tree less generalizable.
+
+{{% tip %}}
+
+`Gini impurity` is used to identify the ideal attribute to split on. Gini impurity measures how often a randomly chosen attribute is misclassified. When evaluating using Gini impurity, a lower value is more ideal. Gini impurity is zero when a node is included only one class.
+
+{{% /tip %}}
 
 {{% codeblock %}}
 ```Python
@@ -41,7 +47,9 @@ DT_clf.fit(X,y)
   <img src="../images/DT_overfitted.png" width="500" alt="Figure2. Decision Tree: Overfitted Model">
 </p>
 
-You can observe the effects of overfitting when comparing the decision boundaries in the two next images. In the model with no constraints, you'll notice how the decision boundary perfectly splits the data. This is a clear sign of overfitting, and to address this issue, we need smoother boundaries.
+Take note of the following text: 
+
+When you compare the decision boundaries in the two images below, you'll notice the impact of overfitting. In the unconstrained model, the decision boundary is positioned to perfectly separate the classes, indicating overfitting. To tackle this issue, smoother boundaries are needed, allowing for imperfect separation of the training data and not requiring every single sample to be correctly classified.
 
 <div style="display: flex; justify-content: center;">
   <img src="../images/Decision_boundary.png" width="300" alt="Decision boundary in overfited model" style="margin-right: 10px;">
@@ -51,7 +59,11 @@ You can observe the effects of overfitting when comparing the decision boundarie
 
 ## Mitigating Overfitting in Decision Trees Classifier
 
-A standard method for addressing overfitting in decision trees is pruning. Pruning cuts portions of the tree, preventing it from expanding to its maximum depth. For example, compare Figure 1 and Figure 2. In Figure 1, pruning restricts the tree's growth, preventing it from reaching its maximum possible depth and leaf nodes. 
+A standard method for addressing overfitting in decision trees is pruning. Pruning cuts portions of the tree, preventing it from expanding to its maximum depth. For example, consider separating the flower classes based on petal width and petal length using a decision tree algorithm. 
+
+In Figure 1, pruning restricts the tree's growth, preventing it from reaching its maximum possible depth, leaf, and nodes. So, the splitting of the classes continues until the restriction on the tree growth, like the maximum depth of growth, is reached. 
+
+Conversely, in Figure 2, the splitting of the flower classes continues until all flowers are assigned to the correct class. This is because there is no restriction on the splitting and tree growth, leading to an unrestricted expansion of the tree. 
 
 There are generally two types of pruning: pre-pruning and post-pruning. Pre-pruning involves adjusting hyperparameters in the model. In this approach, pruning occurs during the training phase by setting conditions for the training to stop. This method allows you to control the model's complexity. The second method is post-pruning, which we will explore further. 
 
@@ -69,9 +81,19 @@ The hyperparameters that can be adjusted in a Decision Tree classifier to combat
 
 - **Maximum number of features for splitting a node**: This parameter refers to the maximum number of features the algorithm considers when looking for the best split at each node. The model becomes too complex when the number of features is high and the number of samples is low. In the context of decision trees, allowing the algorithm to consider too many features for splitting can lead to overly complex trees that capture noise in the data.
 
-All the abovementioned strategies are called pre-pruning techniques, in which the trees don't grow more when they reach a pre-defined threshold. These methods are simple and easy to implement, and computationally efficient. However, it needs tuning to balance accuracy and simplicity.
+All the abovementioned strategies are called pre-pruning techniques, in which the trees don’t grow more when they reach a pre-defined threshold. These methods are simple, easy to implement, and computationally efficient. 
 
-Visualizing the decision tree can help identify which hyperparameters can reduce overfitting. However, setting the maximum depth of a decision tree can often effectively control the model and remove the need for additional thresholds.
+By constraining the model, you are making a conscious trade-off: the training accuracy decreases, but the model becomes simpler and can fit better on the test data. This awareness of the trade-off and the need to tune the parameters to balance these two aspects is crucial in achieving a model with acceptable accuracy and simplicity. 
+
+By setting the maximum depth of a decision tree, you can effectively manage the model and eliminate the requirement for additional thresholds. When we restrict the maximum depth of the decision tree, other parameters, like the Maximum number of leaf nodes, also go under limitation. 
+
+Here are some guidelines that can help you to set the maximum depth effectively:
+
+1- Start with a low maximum depth, such as 3 to 5 levels, to keep the model simple and prevent it from capturing noise in the training data. Then, gradually increase the depth to observe how the model's performance changes on the validation set.
+
+2- Visualizing the decision tree can help identify complex branches that might contribute to overfitting. Simplify the tree by reducing the depth or pruning branches that do not significantly improve performance.
+
+3—Shallower trees are generally preferred for smaller datasets to avoid overfitting. Deeper trees can be explored for larger datasets with more variability, but still with caution.
 
 ### Post-pruning
 
@@ -133,7 +155,7 @@ We repeat calculating $Tree Score$ for different $\alpha$. Note that different $
 {{</katex>}}
 </div>
 {{% tip %}}
-Tree Complexity Penalty for trees with more leaf nodes is larger. 
+Tree Complexity Penalty for trees with more leaf nodes is larger. 
 {{% /tip %}}
 
 {{% codeblock %}}
