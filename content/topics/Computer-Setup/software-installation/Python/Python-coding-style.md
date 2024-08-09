@@ -2,7 +2,7 @@
 title: "Python Coding Style Guidelines"
 description: "Follow nice language-specific coding styles to make your code easier to understand and easier to the eye."
 keywords: "style, code, python, best practices, guidelines"
-weight: 2
+weight: 4
 date: 2020-11-11T22:01:14+05:30
 draft: false
 aliases:
@@ -12,9 +12,15 @@ aliases:
 
 # Overview
 
-We follow Python's style guide [PEP 8](https://www.python.org/dev/peps/pep-0008/#programming-recommendations), emphasizing readability and consistency. In this topic, we highlight some of the best practices with code examples. 
+We follow Python's style guide [PEP 8](https://www.python.org/dev/peps/pep-0008/#programming-recommendations), emphasizing readability and consistency. In this topic, we highlight some of the best practices with code examples. Note that sometimes your own judgment is required, and what suits best for your project does not always comply with the guidelines!
 
-Note that sometimes your own judgment is required, and what suits best for your project does not always comply with the guidelines!
+
+{{% tip %}}
+- If you haven't installed Python yet, refer to our [Set up Guide](/install/python)
+- [Get Started With Python](/learn/python) through simple examples of the fundamental basics, such as variables and data types, functions, etcetera.
+
+{{% /tip %}}
+
 
 ## Straightforward code
 

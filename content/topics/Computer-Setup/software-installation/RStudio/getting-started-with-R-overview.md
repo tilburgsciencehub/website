@@ -33,27 +33,27 @@ Whether you’re looking to start coding for a new career or just as a hobby, pi
 
 ## Learn to code
 
-As a first step, [learn how to set up R and RStudio on your local machine](https://tilburgsciencehub.com/topics/configure-your-computer/statistics-and-computation/r/). Next, we have compiled a [comprehensive guide](https://tilburgsciencehub.com/topics/configure-your-computer/statistics-and-computation/r/) with links to useful sources to help you structure your coding learning journey for, it can be daunting to figure out the right resources among tons out there!
+As a first step, [learn how to set up R and RStudio on your local machine](/install/r). Next, we have compiled a [comprehensive guide](/learn/r) with links to useful sources to help you structure your coding learning journey for, it can be daunting to figure out the right resources among tons out there!
 
-Furthermore, to polish your coding skills we have put together a succinct coding style [guideline](https://tilburgsciencehub.com/topics/configure-your-computer/statistics-and-computation/r/) to follow.
+Furthermore, to polish your coding skills we have put together a succinct coding style [guideline](/write/good-code/r) to follow.
 
 
 ## More on R Packages
 
-Packages are a set of R functions, data and compiled code bundled together and these are stored in a ‘library’. While R comes with a standard set of packages, one may install additional ones whenever required. As your project grows, the variety of packages used also broadens and it's easy to lose track of them. Here’s a brief [code snippet](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/automate-your-workflow/auto-install-r-packages/) to automatically install packages that may not yet be installed on your machine.
+Packages are a set of R functions, data and compiled code bundled together and these are stored in a ‘library’. While R comes with a standard set of packages, one may install additional ones whenever required. As your project grows, the variety of packages used also broadens and it's easy to lose track of them. Here’s a brief [code snippet](/install/r-packages) to automatically install packages that may not yet be installed on your machine.
 
 In a similar vein, Packrat is an excellent tool to manage your R package library. It is the go-to solution to potential dependency issues between packages when working on multiple projects or when working on the same project using different machines which may have different versions of the packages installed. This helps make R packages isolated, portable and reproducible.
 
-Check out our comprehensive guide to get you started with [Packrat](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/packrat/)
+Check out our comprehensive guide to get you started with [Packrat](/reproduce/packrat)
 
 
 ## Analysis with R: Examples
 
 Got a hang of the R syntax and are looking to put your R coding skills to practice with some empirical project? Here are some starter guides and codes of commonly used techniques for descriptive and causal analysis.
 
-- [Run a regression analysis](https://tilburgsciencehub.com/topics/analyze-data/regressions/regression-analysis/)
-- [Impact evaluation with DID and RD](https://tilburgsciencehub.com/topics/analyze-data/regressions/impact-evaluation/)
-- [Synthetic control analysis](https://tilburgsciencehub.com/topics/analyze-data/regressions/synth-control/)
+- [Run a regression analysis](/analyze/regression/)
+- [Impact evaluation with DID and RD](/impact/evaluation)
+- [Synthetic control analysis](/impact/syntCont)
 
 
 ## Communicate your insights with R
@@ -62,5 +62,5 @@ One of the most important and challenging job of a researcher is communicating o
 
 Wanna try them out for yourself? Here are some useful resources to help you get started.
 
-- [Build Interactive dashboards with R shiny](https://tilburgsciencehub.com/topics/collaborate-and-share-your-work/publish-on-the-web/shiny-apps/)
-- [Publish e-books and interactive articles directly from R](https://tilburgsciencehub.com/topics/collaborate-and-share-your-work/publish-on-the-web/using-r/)
+- [Build Interactive dashboards with R shiny](/Shiny/App)
+- [Publish e-books and interactive articles directly from R](/make/ebooks)

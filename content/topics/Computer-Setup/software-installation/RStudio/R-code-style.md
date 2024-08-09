@@ -166,7 +166,7 @@ In general, we follow [Google's R Style Guide](https://google.github.io/stylegui
   * Do not use dots
   * Underscores or camel-case are fine.
 
-* See [our conventions for line length](https://tilburgsciencehub.com/topics/develop-your-research-skills/tips/principles-good-coding/)
+* See [our conventions for line length](/write/good-code)
 
 * We do not require that all functions have a comment block describing their uses. We encourage to do so when the purpose of a function would not be clear or whenever the function will be used outside of the file in which it is defined.
 

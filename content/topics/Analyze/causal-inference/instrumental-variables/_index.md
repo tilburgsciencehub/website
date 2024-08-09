@@ -1,6 +1,6 @@
 ---
 draft: false
 title: "Instrumental Variables"
-weight: 4
+weight: 3
 type: subcategory
 ---

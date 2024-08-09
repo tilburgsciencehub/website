@@ -2,7 +2,7 @@
 title: "Impact evaluation: RD vs DID"
 description: "Use Difference-in-Differences and Regression Discontinuity Design to evaluate impacts of quasi-experiments"
 keywords: "regression, model, DiD, RD, impact evaluation, inference, quasi-experiment"
-weight: 3
+weight: 5
 date: 2023-10-01T01:00:00+01:00
 draft: false
 aliases:
@@ -16,7 +16,7 @@ aliases:
 
 Many programs are designed to improve outcomes such as learning, health or productivity. Have resources been spent wisely on the program? Did the program/policy work? These are the questions that impact evaluation answers, based on evidence.
 
-In this building block we discuss two of the most commonly used impact evaluation methods, Difference-in-Differences (DiD) and Regression Discontinuity (RD).
+In this topic we discuss two of the most commonly used impact evaluation methods, [Difference-in-Differences (DiD)](/canonical-DiD) and [Regression Discontinuity (RD)](/sharp/designs).
 
 ## Difference-in-Differences
 
