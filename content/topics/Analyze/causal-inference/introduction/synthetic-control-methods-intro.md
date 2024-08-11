@@ -9,10 +9,27 @@ author: "Virginia Mirabile"
 
 ## Overview 
 
-Synthetic control methods are statistical techniques used in econometrics and causal inference to estimate the effect of an intervention or treatment in comparative case studies (a research approach that involves the systematic comparison of two or more subjects). The method creates a synthetic version of the treatment group from a weighted combination of units in a control group, aiming to mimic what would have happened to the treated unit if the intervention had not occurred. 
-This empirical method has gained popularity and is widely applied in empirical research in economics and the social sciences due to its transparency and flexibility. Specifically, synthetic control methods are particularly applicable when estimating the effects of aggregate interventions, which occur at an aggregate level and affect a few large units, such as cities or countries. In these scenarios, a combination of comparison units, or a synthetic control, more effectively replicates a treated unit's characteristics than any single control unit alone. The synthetic control is constructed as a weighted average of all potential comparison units most similar in characteristics to the treated unit(s). This straightforward construction process enhances the interpretability of the results and enables the handling of complex scenarios where traditional methods may fail.
+Synthetic control methods are statistical tools used in econometrics to estimate the effect of an intervention in comparative case studies (a research approach that involves the systematic comparison of two or more subjects). By creating a synthetic version of the treatment group from a weighted combination of control units, the method simulates what would have happened without the intervention. These methods are popular in economics and social sciences for their transparency and flexibility, particularly when assessing the impact of interventions on large units like cities or countries. The synthetic control, a weighted average of similar comparison units, provides clear, interpretable results, especially in complex scenarios where traditional methods may be inadequate.
 
 In this article we will delve into the fundamental concepts, implementation steps, and applications of synthetic control methods.
+
+### Introduction to `smoking` dataset
+
+The dataset we are going to use in this tutorial is the `smoking` dataset, based on the paper by [Abadie et al. (2010)](https://www.tandfonline.com/doi/abs/10.1198/jasa.2009.ap08746), which evaluates the impact of tobacco control program on cigarette consumption in California.
+
+The study focuses on California's Tobacco Control Program, which was implemented in 1988 as a comprehensive effort to reduce smoking through public education, policy changes, and increased taxation on tobacco products. 
+
+We have annual state-level panel data, including data for 38 U.S. states over a time period from 1970 until 2000. The dataset contains 1,209 observations. The following variables are included:
+
+| **Variables** 	| **Description** 	|
+|---	|---	|
+| `state` 	| Name of the respective U.S. state	|
+| `year` 	| 1970-2000 	|
+| `cigsale` 	| Annual per capita cigarette consumption at the state level, measured as per-capita cigarette sales in packs |
+| `Lnincome` 	| Per-capita state personal income (logged)	|
+| `beer`  	| Per-capita beer consumption |      
+| `age15to24`  	| The percentage of the population age 15-24 |  
+| `retprice`  	| Average retail price of cigarettes |  
 
 ## Theoretical Foundations
 
@@ -20,8 +37,6 @@ This section will cover the explanation of the basic econometric principles behi
 
 {{<katex>}}
 {{</katex>}}
-
-Setting: (notation follows professor [Alberto Abadie](https://conference.nber.org/confer/2021/SI2021/ML/AbadieSlides.pdf))
 
 In the synthetic control method, the comparison unit is chosen as the weighted average of all potential control units to most closely match the characteristics of the treated unit(s).
 
@@ -69,9 +84,9 @@ Now that we have set a basis for the theoretical aspect of synthetic control met
 
 The implementation steps follow [this example](https://github.com/edunford/tidysynth/blob/master/README.md). 
 
-The package we are going to be using is called *tidysynth*, with functionalities specific for the implementation of this method. 
+The package we are going to be using is called `tidysynth`, with functionalities specific for the implementation of this method. 
 
-Let's start with installing and loading the package. 
+### Step 1: Installing the package and loading the dataset. 
 
 {{% codeblock %}}
 ```R
@@ -80,7 +95,7 @@ library(tidysynth)
 ```
 {{% /codeblock %}}
 
-The dataset we are going to use in this tutorial is the *smoking* dataset, based on the paper by [Abadie et al. (2010)](https://www.tandfonline.com/doi/abs/10.1198/jasa.2009.ap08746), which evaluates the impact of tobacco control program on cigarette consumption in California.
+Let's load the dataset and get an overview of it's structure: 
 
 {{% codeblock %}}
 ```R
@@ -95,9 +110,9 @@ View(smoking)
 </p>
 
 
-The method aims to generate a synthetic California using information from a subset of control states (the “donor pool”) where a similar law was not implemented. The donor pool is the subset of case comparisons from which information is borrowed to generate a synthetic version of the treated unit (“California”). 
+The method aims to generate a synthetic California using information from a subset of control states (the `donor pool`) where a similar law was not implemented. The donor pool is the subset of case comparisons from which information is borrowed to generate a synthetic version of the treated unit (`California`). 
 
-First, we initiate the synthetic control object:
+### Step 2: Initiate the synthetic control object
 
 {{% codeblock %}}
 ```R
@@ -113,9 +128,11 @@ smoking_out <-
 ``` 
 {{% /codeblock %}}
 
-In this step, we create the synthetic control object using the synthetic_control function. We specify the outcome variable (cigsale), the unit index (state), and the time index (year). We also identify the intervention unit (California) and the intervention time (1988). The *generate_placebos* option is set to TRUE to allow for placebo controls.
+In this step, we create the synthetic control object using the `synthetic_control` function. We specify the outcome variable (`cigsale`), the unit index (`state`), and the time index (`year`). We also identify the intervention unit (`California`) and the intervention time (1988). The `generate_placebos` option is set to TRUE to allow for placebo controls.
 
-Next, we generate predictors for the model. Predictors are the variables used to characterize each unit in the dataset before the intervention, they are the features or attributes based on which the similarity between the treated unit and control units is assessed. The synthetic control method uses these predictors to ensure that the synthetic control unit closely matches the treated unit in the pre-intervention period.
+### Step 3: Generate `predictors` for the model. 
+
+Predictors are the variables used to characterize each unit in the dataset before the intervention, they are the features or attributes based on which the similarity between the treated unit and control units is assessed. The synthetic control method uses these predictors to ensure that the synthetic control unit closely matches the treated unit in the pre-intervention period.
 
 {{% codeblock %}}
 ```R
@@ -127,7 +144,7 @@ youth = mean(age15to24, na.rm = T))
 ```
 {{% /codeblock %}}
 
-Here, we create the first set of predictors for the model. These predictors are the average log income, retail price of cigarettes, and the proportion of the population between 15 and 24 years of age over the period 1980-1988.
+Here, we create the first set of predictors for the model using the `generate_predictor` function. These predictors are the average log income, retail price of cigarettes, and the proportion of the population between 15 and 24 years of age over the period 1980-1988.
 
 We then add another predictor for beer consumption:
 
@@ -165,6 +182,8 @@ smoking_out <- smoking_out %>%
 
 We include the lagged values of cigarette sales for the years 1975, 1980, and 1988.
 
+### Step 4: Fitting the weights 
+
 After generating the predictors, we fit the weights for the synthetic control. Weights are basically coefficients assigned to each control unit to construct the synthetic control.
 
 {{% codeblock %}}
@@ -179,9 +198,9 @@ smoking_out <- smoking_out %>%
 ```
 {{% /codeblock %}}
 
-In this step, we generate the weights for the synthetic control using the specified optimization window (1970-1988). This involves optimizing the combination of control units to best match the treated unit (California) based on the pre-intervention characteristics. The parameters *margin_ipo*p*, *sigf_ipop*, and *bound_ipop* fine-tune this process, ensuring that the resulting synthetic control is both accurate and practical.
+In this step, we generate the weights for the synthetic control using the specified optimization window (1970-1988). This involves optimizing the combination of control units to best match the treated unit (`California`) based on the pre-intervention characteristics. The parameters `margin_ipop`, `sigf_ipop`, and `bound_ipop` fine-tune this process, ensuring that the resulting synthetic control is both accurate and practical.
 
-Finally, we generate the synthetic control:
+### Step 5: Generate the synthetic control
 
 {{% codeblock %}}
 ```R
@@ -206,7 +225,7 @@ smoking_out %>% plot_trends()
 
 As you can see, the pre-intervention trend between synthetic and observed cigarette sales is the same. 
 
-To capture the causal quantity (i.e. the difference between the observed and counterfactual), one can plot the differences using plot_differences(): 
+To capture the causal quantity (i.e. the difference between the observed and counterfactual), one can plot the differences using `plot_differences`: 
 
 {{% codeblock %}}
 ```R
@@ -228,28 +247,29 @@ smoking_out %>% grab_balance_table()
  
 ## Advantages and limitations 
 
-According to Abadie (2021), the advantages of synthetic control methods are: 
+### Advantages
 
-- Replicability: SCMs offer a transparent and data-driven method to construct the control group, which is based on observable characteristics and pre-treatment outcomes.
-- Sparsity: Because only a limited number of control units receive non-zero weights, the synthetic control is constructed from a small subset of the entire pool of potential control units. This approach helps prevent overfitting the pre-intervention data, resulting in more reliable post-intervention inferences.
-- No Extrapolation: In contrast to some regression-based methods that might predict beyond the range of observed data, SCM guarantees that the constructed synthetic control remains within the actual observed outcomes of the control units.
-- Safeguard against specification searches and p-hacking: The weights for synthetic controls can be determined and pre-registered before the post-treatment outcomes are known or before the intervention occurs.
+- *Replicability*: SCMs offer a transparent and data-driven method to construct the control group, which is based on observable characteristics and pre-treatment outcomes.
+- *Sparsity*: Because only a limited number of control units receive non-zero weights, the synthetic control is constructed from a small subset of the entire pool of potential control units. This approach helps prevent overfitting the pre-intervention data, resulting in more reliable post-intervention inferences.
+- *No Extrapolation*: In contrast to some regression-based methods that might predict beyond the range of observed data, SCM guarantees that the constructed synthetic control remains within the actual observed outcomes of the control units.
+- *Safeguard against specification searches and p-hacking*: The weights for synthetic controls can be determined and pre-registered before the post-treatment outcomes are known or before the intervention occurs.
 
 
-Possible disadvantages include: 
+### Disadvantages
 
-- SCMs require extensive data on pre-treatment characteristics and outcomes for both treated and potential control units. 
-- The results of SCMs can be sensitive to the choice of predictor variables and the weighting scheme.
+- *Data availability*: SCMs require extensive data on pre-treatment characteristics and outcomes for both treated and potential control units. 
+- *Sensitivity*: The results of SCMs can be sensitive to the choice of predictor variables and the weighting scheme.
 There can be considerable variability in estimates depending on the specification of the synthetic control model.
-- Constructing synthetic controls can be computationally intensive, especially with large datasets or complex models.
-- Bias in small samples: When there are short pre-treatment periods, large donor pools, and significant noise, there is an increased risk of interpolation bias. This means the synthetic control may be overly tailored to the specific characteristics of the pre-treatment period, leading to overfitting.
-- Inference: Traditional methods like t-tests and p-values are not well-suited for SCM. Instead, permutation tests are used, which have their own limitations, especially with small donor pools and the assumption that any control unit could have been treated. This assumption is problematic if control units differ significantly from each other or from the treated unit. Additionally, this type of inference is computationally intensive.
+- *Computational intensity*: Constructing synthetic controls can be cumberstone, especially with large datasets or complex models.
+- *Bias in small samples*: When there are short pre-treatment periods, large donor pools, and significant noise, there is an increased risk of interpolation bias. This means the synthetic control may be overly tailored to the specific characteristics of the pre-treatment period, leading to overfitting.
+- *Inference*: Traditional methods like t-tests and p-values are not well-suited for SCM. Instead, permutation tests are used, which have their own limitations, especially with small donor pools and the assumption that any control unit could have been treated. This assumption is problematic if control units differ significantly from each other or from the treated unit. Additionally, this type of inference is computationally intensive.
 
 ## Summary 
 
 {{% summary %}}
 
 - Synthetic control methods (SCMs) are statistical techniques used to estimate the effect of interventions by creating a synthetic version of the treatment group from a weighted combination of control units.
+- Use the `synthetic_control` function to create the synthetic object, followed by `generate_predictor` to create the necessary predictors, lastly generate the syntehtic control using `generate_control` function. 
 - SCMs provide a transparent, data-driven approach for constructing control groups, making them suitable for contexts where randomized controlled trials are not feasible.
 - While SCMs offer flexibility and systematic estimation, they require extensive pre-treatment data and can be sensitive to model specifications and computationally intensive.
 
@@ -265,4 +285,4 @@ There can be considerable variability in estimates depending on the specificatio
 Control Program](https://www.tandfonline.com/doi/abs/10.1198/jasa.2009.ap08746), Journal of the American Statistical Association, 105:490, 493-505, DOI:
 10.1198/jasa.2009.ap08746
 
-- [Code snippets](https://github.com/edunford/tidysynth/blob/master/README.md)
+- [Tidysynth: A Tidy Implementation of Synthetic Control Methods](https://github.com/edunford/tidysynth/blob/master/README.md)
