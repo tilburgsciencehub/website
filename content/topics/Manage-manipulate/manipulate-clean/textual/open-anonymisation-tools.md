@@ -170,3 +170,5 @@ replacement_file = 'C:\\Users\\osulliva\\Documents\\interview_files\\inteviewees
 anon.substitute(input_file, replacement_file)
 ```
 {{% /codeblock %}}
+
+More examples of functions written for AnonymoUUs can be found on the GitHub page.
