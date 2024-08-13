@@ -14,7 +14,7 @@ aliases:
 
 Anonymisation of qualitative data is an important step in making data reusable and abiding by commitments to research participants.
 
-In this article we explain how to install and use three open source tools for manipulating qualitative data, which you may find useful when creating an anonymized or pseudonymized version of your research data. 
+In this article we explain how to install and use open source tools for manipulating qualitative data, which you may find useful when creating an anonymized or pseudonymized version of your research data. 
 
 
 ## AnonymoUUs
