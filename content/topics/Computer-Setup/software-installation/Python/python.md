@@ -12,6 +12,7 @@ aliases:
   - /topics/other-category/implement-an-efficient-and-reproducible-workflow/setup/python.md
 ---
 
+<<<<<<< HEAD
 ## Installing Anaconda Python
 
 Anaconda is a pre-packaged Python distribution for scientific users. To customize Python with packages and properly use it in combination with [automation tools](/topics/configure-your-computer/automation-and-workflows/make/), we prefer a *locally installed Anaconda distribution* over cloud-based alternatives.
@@ -23,6 +24,23 @@ Watch our YouTube video, in which we walk you through the setup on Windows.
 ### Instructions
 Direct your browser to [Anaconda download page](https://www.anaconda.com/download/) and download the Python 3.x Graphical Installer for your machine.
 Sometimes, the download defaults to Mac, so if you're on Windows or Linux, make sure to select the right version.
+=======
+## Overview
+
+Anaconda is a pre-packaged [Python](https://www.python.org/) distribution designed for scientific and data-intensive computing, ideal for tasks such as data analysis and machine learning.
+
+We recommend using a *locally installed Anaconda distribution* over cloud-based alternatives, as this allows you to customize Python with [packages](/install/python-packages) and effectively integrate it with [automation tools](/practice/pipeline-automation).
+
+## Installing Python via Anaconda
+
+Watch our YouTube video, where we guide you through the installation and setup process on Windows. 
+
+{{< youtube hGZSAuDcmQc iframe-video-margins >}}
+
+## Set-up instructions
+
+Direct your browser to [Anaconda download page](https://www.anaconda.com/download/). You don't need to provide your email address; simply click "Skip registration" below the green "Submit" button to go directly to the [downloads page](https://www.anaconda.com/download/success). Download the Python 3.x Graphical Installer for your machine. Note that the download may default to Mac, so if you're using Windows or Linux, be sure to select the right version.
+>>>>>>> master
 
 Then, follow the steps provided on the website.
 
@@ -47,9 +65,15 @@ Note that the installation of Anaconda may take about 5-10 minutes, depending on
 For some users, Python was not added to the path. To quickly do this, please open a terminal window, paste ```echo '$HOME/anaconda3/bin:$PATH' >> ~/.bashrc``` and press `Return`.
 {{% /warning %}}
 
+<<<<<<< HEAD
 ## Verifying that the installation was successful
 
 To verify that the correct version of Python has been installed and was made available in your PATH settings, close your terminal and open a **new** terminal interface and enter:
+=======
+## Verifying the installation 
+
+To verify that the installation was succesful and the correct version of Python has been installed and was made available in your PATH settings, close your terminal and open a **new** terminal interface and enter:
+>>>>>>> master
 
 {{% codeblock %}}
 ```bash
@@ -85,3 +109,18 @@ you might have seen `Python 2.x.x` above. In that case, try typing
 instead. Now you should see a message like the one above and are good to go.
 
 {{% /tip %}}
+<<<<<<< HEAD
+=======
+
+
+{{% summary %}}
+
+With Python set up, you can start using it. Explore these resources to get started: 
+
+- [Install Python Packages](/install/python-packages): Discover what packages are, and how to install them.
+- [Get Started With Python](/learn/python) through simple examples of the fundamental basics, such as variables and data types, functions, etcetera.
+- [Python Coding Style Guidelines](python/style-guides): Understand the importance of coding style with these essential guidelines.
+
+{{% /summary %}}
+
+>>>>>>> master

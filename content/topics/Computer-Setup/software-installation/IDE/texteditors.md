@@ -1,5 +1,5 @@
 ---
-title: "Comparing text editors"
+title: "Comparing Text Editors"
 description: "Learn the differences between text editors Visual Studio Code, Sublime Text, Emacs and Vim"
 keywords: "VSCode, Sublime, Emacs, Vim, text, editor"
 draft: false
@@ -12,12 +12,12 @@ aliases:
 
 A good text editor lies at the heart of any serious programmer's toolkit: It can do almost anything and makes you much more productive. The text editors bundled with programming languages, like Python's IDLE, are often not the best option (although there may be certain cases where you may want to use them).
 
-In this building block, we will compare some widely used text editors: **Visual Studio Code (VS Code), Sublime Text, Emacs and Vim**.
+In this article, we will compare some widely used text editors: **Visual Studio Code (VS Code), Sublime Text, Emacs and Vim**.
 
 Please download and install the text editor of your choice, along with any necessary packages, and stick with it for a while to get a feel for how it works. Despite a slight learning curve, you'll quickly find yourself wondering why you didn't start using it sooner!
 
 ## VS Code & Sublime Text
-Both *VS Code* and *Sublime Text* are highly capable editors with their own strengths and weaknesses. Choosing between the two depends on your preferences and the features that are most important to you. For setting up these text editors, check our building blocks [Set up VS Code](/get/VSCode) and [Set up Sublime Text](/get/sublime).
+Both *VS Code* and *Sublime Text* are highly capable editors with their own strengths and weaknesses. Choosing between the two depends on your preferences and the features that are most important to you. For setting up these text editors, check the guides for [setting up VS Code](/get/VSCode) and [setting up Sublime Text](/get/sublime).
 
 Let's compare them in various aspects:
 
@@ -91,15 +91,16 @@ Vim has two different editing modes:
 {{% /tip %}}
 
 ## Overview of the key comparing features
-The following table provides the most important differences between the 4 text editors discussed in this building block:
+The following table provides the most important differences between the 4 text editors discussed in this article:
 
+{{%table%}}
 |      | **VS Code** 	| **Sublime Text** 	| **Emacs** and **Vim** |
 |---	|---	|--- | ---|
 | *Goal of use* |   General-purpose <BR> editor |  General-purpose <BR> editor  |  Command line <BR>power editors    |
 | *Ease of use*	| Beginner-friendly | Some learning, but <BR> user-friendly | Steep learning <BR> curve |
 | *Interface* | Feature-rich GUI | Distraction-free GUI | Text-based <BR> interface within <BR> command line <BR> interface |
 | *Customization* | Extension <BR> marketplace | Variety of <BR> packages | Almost infinite <BR> customization <BR> options <BR> (particularly <BR> Emacs) |
-
+{{%/table%}}
 
 {{% summary %}}
 The best choice ultimately depends on your personal preferences and requirements since all 4 text editors are available cross-platform (on Windows, macOS or Linux). So, give them a try and see which one is the perfect fit for your programming journey!

@@ -16,7 +16,12 @@ We use two coding styles in Stata: a linear format for very short or simple scri
 
 {{% codeblock %}}
 
+<<<<<<< HEAD
 ```Stata
+=======
+```
+-Stata-
+>>>>>>> master
 
 *****************************
 * Prepare data
@@ -47,7 +52,12 @@ If you include a comment as a header like this for one major block of code, you 
 In the functional style in Stata, we enclose code within program... end blocks. **The first program is always called “main,” and the .do file always ends with an “Execute” step.**
 
 {{% codeblock %}}
+<<<<<<< HEAD
 ```Stata
+=======
+```
+-Stata-
+>>>>>>> master
 
 * PROGRAMS
 
@@ -109,7 +119,12 @@ Functions should be **shy** (see [Code and Data for the Social Sciences](http://
 
  From the following code:
    {{% codeblock %}}
+<<<<<<< HEAD
    ```Stata
+=======
+   ```
+   -Stata-
+>>>>>>> master
 
    use x y z using autodata.xls, clear
    prepare_data

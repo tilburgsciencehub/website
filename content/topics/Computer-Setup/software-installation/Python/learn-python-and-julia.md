@@ -1,5 +1,5 @@
 ---
-title: "Learn Python"
+title: "Introduction to Coding With Python"
 description: "Learn how to program in Python."
 keywords: "python, data science, data, programming, manipulation, analysis, tutorial"
 draft: false
@@ -12,7 +12,18 @@ aliases:
 
 ## Overview
 
-We introduce you to Python, with the fundamental basics which prepare you to start using and experimenting with this cool programming language yourself! Once you understand the basics, the opportunities of Python are almost infinite. 
+We introduce you to [Python]((https://www.python.org/)), starting with the fundamental basics to help you begin experimenting with this cool programming language yourself! Once you understand these essentials, the opportunities of Python are almost infinite. This guide covers: 
+
+- Variables
+- Data types
+- Operators
+- Functions
+- Loops
+
+{{% tip %}}
+
+If you haven't installed Python yet, refer to our [Set up Guide](/install/python)
+{{% /tip %}}
 
 ## Variables
 
@@ -390,6 +401,8 @@ Output:
 
 Python has basic built-in functions, with some of the most commonly used functions:
 
+
+{{%table%}}
 | Function    | Description                                  |
 |-------------|----------------------------------------------|
 | `print()`   | Prints objects to the text stream            |
@@ -406,6 +419,7 @@ Python has basic built-in functions, with some of the most commonly used functio
 | `sum()`     | Adds all elements inan iterable and returns total      |
 | `fsolve()`  | Finds the roots of a function numerically, <br> with function and initial guess added |
 | `help()`    | Provides information about functions, classes etc.            |
+{{%/table%}}
 
 Examples of the use of some of these functions:
 
@@ -625,10 +639,15 @@ Output:
 5
 ```
 
-## See more 
+{{% summary %}}
 
+With the basics of Python under your belt, you're ready to start experimenting and expanding your skills. Check out these resources to further your learning:
+
+- [Python Coding Style Guidelines](python/style-guides): Discover the importance of coding style with these essential guidelines.
 - Learn Python with these great step-by-step tutorials from [Real Python](https://realpython.com).
 - [QuantEcon.org](https://quantecon.org/) offers fantastic resources for you to
-get started using Python
+get started using Python.
 
 In particular, we would like to refer you to their [open-source lectures](https://quantecon.org/lectures/), covering: [Quantitative Economics with Python](https://python.quantecon.org/), including a fantastic, open-source book companion, and [QuantEcon Data Science](https://datascience.quantecon.org/).
+
+{{% /summary %}}

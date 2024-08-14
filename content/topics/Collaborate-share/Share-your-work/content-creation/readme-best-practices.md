@@ -4,7 +4,7 @@ description: "Learn how to write a convincing and effective README file. Get to 
 keywords: "git, commands, important, essential, cheat, template, readme, examples, project, github, documentation, repository"
 #date: 2021-02-08
 draft: false
-#weight: 4
+weight: 2
 aliases:
   - /write/readme
   - /learn/readme-best-practices
@@ -59,6 +59,7 @@ Second, summarize your results concisely. Make use of subheaders where appropria
 
 Provide an overview of the directory structure and files, for example:
 
+```
 ├── README.md
 ├── data
 ├── gen
@@ -69,7 +70,7 @@ Provide an overview of the directory structure and files, for example:
     ├── analysis
     ├── data-preparation
     └── paper
-
+```
 
 ## Running instructions
 

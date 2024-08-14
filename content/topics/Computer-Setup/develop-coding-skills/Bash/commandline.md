@@ -19,6 +19,7 @@ Throughout the course, we will emphasize the use of the terminal and executing c
 
 ### Windows Users
 
+<<<<<<< HEAD
 So that we can work as closely as possible to the Mac and Linux users we will install [Cygwin](https://www.cygwin.com/).
 
 *   Download Cygwin [here](https://cygwin.com/install.html) and use the graphical installer. Accept all the default options.
@@ -55,6 +56,41 @@ Should return your username.
 
 {{% /warning %}}
 
+=======
+We will use the recently-launched Windows Subsytem for Linux (WSL) because it enables us to use Bash on Windows and to run Windows and Linux commands at the same time within a single, unified command prompt. WSL is useful as a command line tool because it offers greater functionality than the standard Windows command prompt and facilitates the use of Linux and its distributions (e.g., Ubuntu) on a Windows machine. 
+
+We can install the features necessary to run WSL by running the following command in the Windows command prompt or PowerShell. Make sure to run the Windows command prompt or PowerShell **as administrator**. 
+
+{{% codeblock %}}
+```powershell
+wsl --install
+```
+{{% /codeblock %}}
+
+After running this command, we have to wait until the Linux distribution is fully installed. By default, running the above command installs the Ubuntu distribution. We can install additional distributions by running the following command:
+
+{{% codeblock %}}
+```powershell
+wsl --install <Distribution Name>
+```
+{{% /codeblock %}}
+
+{{% warning %}}
+If the command prompt returns an error stating that the syntax of the command is incorrect, try using "wsl --install Distribution Name" instead, without the <> operators. 
+{{% /warning %}}
+
+{{% tip %}}
+In order to check which Linux distributions are available, we can run the following command:
+{{% codeblock %}}
+```powershell
+wsl --list --online
+```
+{{% /codeblock %}}
+{{% /tip %}}
+
+After installation is complete, we will have to create a Linux username and password. Once we have done that, we can restart our machine and start using WSL as our unified command line tool. Note that, by default, this procedure installs WSL 2, the most recent version of WSL. 
+
+>>>>>>> master
 ### Mac Users
 
 A command line interface comes already installed with MacOS.
