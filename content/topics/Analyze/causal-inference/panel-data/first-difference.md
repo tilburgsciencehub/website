@@ -1,6 +1,6 @@
 ---
 title: "The First-Difference Estimator"
-description: "A building block about the First-difference estimator"
+description: "A topic about the First-difference estimator"
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between, first-difference"
 draft: false
 weight: 5
@@ -21,7 +21,7 @@ The first-difference (FD) estimator is the first method we discuss to control fo
 {{% tip %}}
 __Practical application of FD estimator__
 
-The Fixed Effects (FE) model discussed in the next [building block](/within) is often the preferred choice in practice to address the problem of omitted variables. The FD estimator can be seen as a technical intermediary step between the Pooled OLS and the FE model.
+The Fixed Effects (FE) model discussed in the next [topic](/within) is often the preferred choice in practice to address the problem of omitted variables. The FD estimator can be seen as a technical intermediary step between the Pooled OLS and the FE model.
 {{% /tip %}}
 
 ## First-difference estimator
@@ -79,5 +79,5 @@ summary(model_fd)
 {{% summary %}}
 The first-difference (FD) estimator is a useful approach to address the issue of omitted variable bias in the presence of unobserved entity-specific effects. By taking the first difference within each cross-section, the FD estimator eliminates the fixed effects. 
 
-It relies on the assumption of no correlation between the difference in the error term and the difference in the independent variables over time. This is a weaker assumption than the general Fixed Effects Assumption 1. This can be seen as an advantage of the FD estimator over a Fixed Effects model. The next building block will discuss this Fixed Effects model (the Within Estimator).
+It relies on the assumption of no correlation between the difference in the error term and the difference in the independent variables over time. This is a weaker assumption than the general Fixed Effects Assumption 1. This can be seen as an advantage of the FD estimator over a Fixed Effects model. The next topic will discuss this [Fixed Effects model (the Within Estimator)](\within).
 {{% /summary %}}
