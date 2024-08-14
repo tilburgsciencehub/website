@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, abort
+from flask import Flask, render_template, request, redirect, abort, render_template_string
 from flask_assets import Environment, Bundle
 from datetime import datetime
 from functions import build_data_dict, fetch_contributions_for_the_single_contributor, generate_table_of_contents, get_breadcrumbs, find_related_articles, calculate_reading_time, fetch_meta_data, recently_published
@@ -7,6 +7,7 @@ from models import db, articles, Contributors, blogs, Topics
 from html_parser import htmlize
 from redirectstsh import setup_redirects
 from utils import get_git_commit_hash
+import redirects_config
 
 # Initialize App
 app = Flask(__name__, static_url_path='/static')
@@ -212,7 +213,7 @@ def contribute():
     data_object = {'title' : 'Contribute to TSH'}
     meta_data = fetch_meta_data(data_object)
 
-    return redirect('topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/contribute/')
+    return redirect('topics/Collaborate-share/Project-management/contribute-to-tilburg-science-hub/contribute/')
 
 # Search Page
 @app.route('/search')
@@ -254,6 +255,24 @@ def contributor(contributor_path):
 
 # Redirects
 setup_redirects(app)
+
+# Custom redirects
+@app.route('/<path:path>', methods=['GET'])
+def handle_redirect(path):
+    data_dict = build_data_dict(Topics, articles)
+    redirect_info = redirects_config.REDIRECTS.get(f"/{path}")
+    if redirect_info:
+        new_url = redirect_info["url"]
+        title = redirect_info.get("title")  # Gebruik .get() om None te krijgen als er geen titel is
+
+        if title:
+            # Render de redirect template met een titel
+            return render_template('redirect.html', new_url=new_url, title=title, assets=assets, data_dict=data_dict)
+        else:
+            # Direct redirecten als er geen titel is
+            return redirect(new_url, code=302)
+    else:
+        return render_template('404.html', assets=assets, data_dict=data_dict), 404
 
 # Still needs metadata!
 # Error Handler 404
