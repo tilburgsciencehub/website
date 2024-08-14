@@ -34,7 +34,7 @@ The easiest method to make straightforward updates to Markdown files is to use [
 
 1. Click on the "**Edit this page**" button at the bottom of the page you want to edit on our website.
 
-![Edit this page button](../tsh-edit-this-page-button.png)
+![Edit this page button](./images/tsh-edit-this-page-button.png)
 
 2. You will be redirected to our GitHub repository where that file is hosted. You will need to **fork** our repository in order to propose changes.
 
@@ -80,7 +80,7 @@ on GitHub, which creates a copy of this project in your own GitHub account).
 
 6. In the Command Prompt type ``hugo server`` to make the website run local. A local host link will be given (http://localhost:xxxx). 
 
-![open Command Prompt and type hugo server](../open-cmd-and-hugo-server.jpg)
+![open Command Prompt and type hugo server](./images/open-cmd-and-hugo-server.jpg)
 
 7. Past the localhost link in your browser and the website will be shown with the changes you made.
 
@@ -116,7 +116,7 @@ If you have written a new section which you wish to add to the website, make sur
 {{% example %}}
   You wish to add a Building Block on "Advanced Git Commands". Now, imagine that once your page is completed, you notice that your new section appears in the first position:
 
-  ![](../advanced-git-misplaced.PNG)
+  ![](./images/advanced-git-misplaced.PNG)
 
   Does it make sense to have the "Advanced Git Commands" section before the "Get Started with Git and Github"? It does not.
 

@@ -1,11 +1,9 @@
 ---
-tutorialtitle: "Contribute to Tilburg Science Hub"
-type: "contribute-to-tsh"
-indexexclude: "true"
 title: "Style and Writing Guide"
 description: "When contributing content to our platform, please follow our style and writing guidelines."
 keywords: "style, styling, guideline, contribute, writing"
-weight: 1005
+weight: 5
+date: 2024-07-09T22:02:51+05:30
 draft: false
 aliases:
   - /contribute/style-guidelines
@@ -31,13 +29,112 @@ Please use our [building block templates](https://raw.githubusercontent.com/tilb
 
 Please fork our site, and develop your content in a new branch. When you're done, make a pull request, explain briefly what you've done (and why), and we're going to review your code and add it to the site. -->
 
+### Adding images 
+You can add an image into your building block using html tags, please see an example below
+
+`<p align = "center">
+<img src ="../images/<name-of-your-image>.png" width="400">
+</p> `
+
+### Bear in mind breaks in front of lists
+
+- correct 👍 (additional break before a list) : 
+
+```
+DiD works well whenever:
+
+ - There is a sudden specific intervention, treatment, or even a date that clearly defines a before and an after. For instance, a passing of a law (e.g. lockdown).
+ - There are well-defined treatment and control groups.
+ - The outcome of interest was measured before and after the treatment or intervention. That is, there is a baseline outcome to which to compare with the outcomes posterior to the intervention.
+ - The intervention is unrelated to the outcome at baseline.
+```
+
+- incorrect 👎 (NO additional break before a list):
+
+```
+DiD works well whenever:
+ - There is a sudden specific intervention, treatment or even a date that clearly defines a before and an after. For instance, a passing of a law (e.g. lockdown).
+ - There are well defined treatment and control groups.
+ - The outcome of interest was measured before and after the treatment or intervention. That is, there is a baseline outcome to which to compare with the outcomes posterior to the intervention.
+ - The intervention is unrelated to the outcome at baseline.
+```
+
+### Do not insert breaks in front of second-level in lists.
+
+- correct 👍 (NO additional break in front of second-level in lists) :
+
+```
+1. **Get standard error of the estimate**
+    - In order to **assess the statistical significance** of the effect, it is crucial to obtain the standard error of the estimate. This measure quantifies the variability in the observed treatment effect and provides a range within which the true treatment effect is likely to fall. By calculating the standard error, we can determine whether the observed effect is statistically significant or if it could have occurred by chance alone. This information is essential in drawing reliable conclusions from our analysis.
+    - Additionally, it is important to **cluster standard errors** when dealing with data that might exhibit clustering or dependence. Clustering occurs when observations within a particular group or cluster are more similar to each other than to observations in other clusters. By clustering standard errors, we appropriately account for this correlation structure, ensuring that our statistical tests and confidence intervals are valid. Failing to cluster standard errors can lead to inaccurate inference and potentially erroneous conclusions.
+```
+
+- incorrect 👎 (break in front of second-level in lists) :
+
+```
+1. **Get standard error of the estimate**
+
+    - In order to **assess the statistical significance** of the effect, it is crucial to obtain the standard error of the estimate. This measure quantifies the variability in the observed treatment effect and provides a range within which the true treatment effect is likely to fall. By calculating the standard error, we can determine whether the observed effect is statistically significant or if it could have occurred by chance alone. This information is essential in drawing reliable conclusions from our analysis.
+    - Additionally, it is important to **cluster standard errors** when dealing with data that might exhibit clustering or dependence. Clustering occurs when observations within a particular group or cluster are more similar to each other than to observations in other clusters. By clustering standard errors, we appropriately account for this correlation structure, ensuring that our statistical tests and confidence intervals are valid. Failing to cluster standard errors can lead to inaccurate inference and potentially erroneous conclusions.
+```
+
+### Use tables notations
+
+- Correct 👍 (using $\texttt{table}$ notation, moreover, no space should be in between the table tags and the start and end of the table word and percentage sign): 
+
+{{%table%}}
+|                 | Before ($Y_i^0$)     | After ($Y_i^1$)     |
+| --------------- | ---------------------- | ---------------------- |
+| Control ($D_i = 0$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \mid D_i = 0)$   |
+| Treatment ($D_i=1$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \ mid D_i = 1)$    |
+{{%/table%}}
+    
+- Incorrect 👎 (NOT using $\texttt{table}$ notation):  
+
+|                 | Before ($Y_i^0$)     | After ($Y_i^1$)     |
+| --------------- | ---------------------- | ---------------------- |
+| Control ($D_i = 0$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \mid D_i = 0)$   |
+| Treatment ($D_i=1$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \ mid D_i = 1)$    |
+ 
+### Each article should have at least a title, description, keywords, weight, date and content
+
+- correct 👍 (all fields are present):
+
+  `---
+                      title: "Software Setup Overview"
+                      description: "Here is a guide to help you start setting up the computing environment on your machine ready."
+                      keywords: software, setup, guide, configure, configuration"
+                      weight: 4
+                      date: 2021-01-06T22:01:14+05:30
+                      draft: false
+                      ---
+                      Some content below....`
+
+
+- incorrect 👎 (missing some fields):
+
+  `---
+                      title: "Software Setup Overview"
+                      description: "Here is a guide to help you start setting up the computing environment on your machine ready."
+                      keywords: software, setup, guide, configure, configuration"
+                      ---
+                      Some content below....`
+
+
+### Multiple authors 
+When you cooperate with someone on an article, in the author field please insert authors' names separated by coma but **without space** in between 
+
+- correct 👍  (no space in between): `Author: Krzysztof Wiesniakowski,Thierry Lahaije`
+
+- incorrect 👎 (there is space in between): `Author: Krzysztof Wiesniakowski, Thierry Lahaije`
+
 ### Style Your Content
 
 Your content is written in [Markdown](https://guides.github.com/features/mastering-markdown/), and is automatically rendered in our house style.
 
 You can also make use of code highlighting and admonitions.
 
-#### Code Highlighting
+### Code Highlighting
 
 In addition to the standard way of formatting code in Markdown, code snippets can be displayed in special boxes that highlight the code based on the programming language.
 
@@ -71,16 +168,40 @@ In that case, you need to omit the language right after the three back ticks. Th
 
 {{% /warning %}}
 
-#### LaTeX Integration & Math Formulas
+### Use correctly language & structure of code blocks
 
-You can include mathematical notation via our KaTeX integration. You can learn more on how to use it [here](https://themes.gohugo.io/theme/hugo-book/docs/shortcodes/katex/).
+- correct 👍 (NO space between apostrophes and the language sign):
 
-If you use KaTeX more than once within the same Markdown file, there's no need to write the shortcode again. Simply place your math formulas:
+<p align = "center">
+<img src ="../images/correct-language-blocks.png" width="400">
+</p>
+
+- incorrect 👎 (space between apostrophes and the language sign):
+
+<p align = "center">
+<img src ="../images/incorrect-space-codeblock.png" width="400">
+</p>
+
+- incorrect 👎 (language sign between stripes or brackets:):
+
+<p align = "center">
+<img src ="../images/incorrect-stripe-codeblock.png" width="400">
+</p>
+
+### LaTeX Integration & Math Formulas
+
+Simply place your math formulas:
 - within single dollar signs for inline math: `$f(x)=x^2$` yields:
 $f(x)=x^2$
 - within double dollar signs for display: `$$f(x)=x^2$$` yields: $$f(x)=x^2$$
 
-#### Highlighting Boxes
+Our webiste currently does not support </katex> notation so please stick to using dollar signs.
+
+- correct 👍 (using dollar signs): $P(X_{i}) ≡ Pr(D_i = 1 | X_i)$
+
+- incorrect 👎  (using {{katex}} notation): {{</katex>}} P(X_{i}) ≡ Pr(D_i = 1 | X_i) {{</katex>}}
+
+### Highlighting Boxes
 
 We support four kind of highlighting boxes.
 
@@ -109,7 +230,7 @@ This is an example
 
 {{% /example %}}
 
-#### How to handle wide tables
+### How to handle wide tables
 
 If you're using wide tables, they may appear broken on smaller screens like mobile phones. Therefore, you should always wrap your tables within the `wide-table` shortcode.
 
@@ -136,7 +257,7 @@ Click **[here](https://github.com/tilburgsciencehub/website/blob/master/content/
 
 {{% /tip %}}
 
-#### Adding Footnotes
+### Adding Footnotes
 Footnotes [^1] let you reference relevant information without disrupting the flow of what you're trying to say. Need to make use of footnotes? Here is how to add them in Markdown:
 ```
 Footnotes[^1] let you (...)
@@ -183,7 +304,7 @@ Generally speaking, it's a good idea to name your file exactly like your main ti
     Filename: automation-with-gnu-make.md
 {{% /warning %}}
 
-### Add the correct tags
+### Add the correct tags 
 Every page has at the top of the code tags which, among others, help index the page. 
 ```
 ---
