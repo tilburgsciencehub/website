@@ -16,5 +16,5 @@ social:
     
 email: d.sanchezperez@tilburguniversity.edu
 image: diegosanchez.webp
-status: "active"
+status: "alumni"
 ---

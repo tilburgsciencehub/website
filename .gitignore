@@ -4,3 +4,8 @@ __pycache__/
 .sass-cache
 static/files
 .DS_Store
+**/resources/_gen
+public/
+.vscode
+search-index.json
+.Rproj.user
