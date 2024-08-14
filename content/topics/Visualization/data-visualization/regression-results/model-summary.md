@@ -22,8 +22,14 @@ Eichholtz et al. (2010) investigate the relationship between investments in ener
 
 Their empirical approach boils down to regressing the logarithm of rent per square foot in commercial office buildings on a dummy variable (1 if rated as green) and other characteristics of the buildings. The regression equation is:
 
+<<<<<<< HEAD
 
 $log R_{in} = \alpha + \beta_i X_i + \sum\limits_{n=1}^{N}\gamma_n c_n  + \delta g_i + \epsilon_{in}$
+=======
+{{<katex>}}
+log R_{in} = \alpha + \beta_i X_i + \sum\limits_{n=1}^{N}\gamma_n c_n  + \delta g_i + \epsilon_{in}
+{{</katex>}}
+>>>>>>> master
 
 where
 - $R_{in}$ is the rent per square foot  in commercial office building `i` in cluster `n`
