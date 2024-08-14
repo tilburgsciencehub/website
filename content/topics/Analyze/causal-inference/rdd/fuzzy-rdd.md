@@ -3,7 +3,11 @@ title: "Fuzzy RD Designs"
 description: "Foundations of regression discontinuity - the fuzzy design"
 keywords: "regression, discontinuity, fuzzy, designs"
 date: 2023-06-21
+<<<<<<< HEAD
 weight: 2
+=======
+weight: 4
+>>>>>>> master
 author: "Ana Bianca Luca"
 authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
@@ -39,7 +43,11 @@ This is essential to eliminate local selection bias, ensuring that units near th
 
 {{% tip %}}
 
+<<<<<<< HEAD
 Want to learn more about local randomization? Check this [building block](/local/randomization).
+=======
+Want to learn more about local randomization? Check this [topic](/local/randomization).
+>>>>>>> master
 
 {{% /tip %}}
 
@@ -78,14 +86,23 @@ There are two strategies using these parameters:
 ### Intention-to-treat Effects
 
 The focus of the first strategy is to learn about the effects of **the treatment assignment**. The effects of assigning the treatment on any outcome are called *intention-to-treat effects* (ITT). There are two assumptions/approaches that can help obtain the ITT parameters: the continuity-based approach and the local randomization approach. After applying the two, the ITT parameters become:
+<<<<<<< HEAD
 
 - $\tau_{Y} = \mathbb{E}[Y_{i}(1) - Y_{i}(0) | X_{i} = c]$ 
 - $\theta_{Y} = \mathbb{E_W}[Y_{i}(1) - Y_{i}(0) | X_{i} \in W]$
+=======
+- $\tau_{Y} = \mathbb{E}[Y_{i}(1) - Y_{i}(0) | X_{i} = c]$ 
+- {{<katex>}}\theta_{Y} = \mathbb{E}_{W}[Y_{i}(1) - Y_{i}(0) | X_{i} \in W]{{</katex>}} 
+>>>>>>> master
 
 As for the second strategy, the focus is on studying the effects of **receiving the treatment**. The same two parameters are defined, but the outcome variable is now $D$ instead of $Y$. Therefore, the parameters become:
 
 - $\tau_{D} = \mathbb{E}[D_{i}(1) - D_{i}(0) | X_{i} = c]$ 
+<<<<<<< HEAD
 - $\theta_{D} = \mathbb{E_W}[D_{i}(1) - D_{i}(0) | X_{i} \in W]$
+=======
+- {{<katex>}}\theta_{D} = \mathbb{E}_{W}[D_{i}(1) - D_{i}(0) | X_{i} \in W]{{</katex>}} 
+>>>>>>> master
 
 ### Treatment Effects for Subpopulations
 
@@ -103,12 +120,21 @@ In a Sharp RDD, the average treatment effect can be estimated for a subpopulatio
  
 ### Bandwidth and Window Selection
 
+<<<<<<< HEAD
 The procedure for selecting bandwidth and window selection for the ITT parameters aligns with what is outlined in the [Sharp RDD building block](/sharp/designs). However, when calculating $\tau_{FRD}$, which is a ratio, the question arises whether to use the same bandwidth for both the numerator and the denominator. If the focus is on the ITT effects ($\tau_{Y}$), then it is advisable to have different bandwidths for the denominator and numerator. On the other hand, if the focus is on the ratio $\tau_{FRD}$, then maintaining identical bandwidths enhances the transparency of the analysis. 
 
 {{% summary %}}
  in a Fuzzy RDD, the treatment's probability changes discontinuously at the cutoff but does not jump immediately from zero to one. Therefore in a Fuzzy RDD, the treatment estimated can either be focused on the intention-to-treat (ITT) or on the Local Average Treatment Effect (LATE) requiring the concept of Monotonicity.  
  
  The next [builing block](/practical/example) in the series about Regression Discontuitnity implements the fuzzy design in practice. The fuzzy RDD is used to evaluate the effect of financial aid on post-secondary education attainment.
+=======
+The procedure for selecting bandwidth and window selection for the ITT parameters aligns with what is outlined in the [Sharp RDD topic](/sharp/designs). However, when calculating $\tau_{FRD}$, which is a ratio, the question arises whether to use the same bandwidth for both the numerator and the denominator. If the focus is on the ITT effects ($\tau_{Y}$), then it is advisable to have different bandwidths for the denominator and numerator. On the other hand, if the focus is on the ratio $\tau_{FRD}$, then maintaining identical bandwidths enhances the transparency of the analysis. 
+
+{{% summary %}}
+In a Fuzzy RDD, the treatment's probability changes discontinuously at the cutoff but does not jump immediately from zero to one. Therefore in a Fuzzy RDD, the treatment estimated can either be focused on the intention-to-treat (ITT) or on the Local Average Treatment Effect (LATE) requiring the concept of Monotonicity.  
+ 
+ The next [topic](/practical/example) in the series about Regression Discontuitnity implements the fuzzy design in practice. The fuzzy RDD is used to evaluate the effect of financial aid on post-secondary education attainment.
+>>>>>>> master
  {{% /summary %}} 
  
  ## See also

@@ -3,7 +3,11 @@ title: "Fuzzy RDD in Practice"
 description: "Foundations of regression discontinuity - the fuzzy design in practice. Example of financial aid effect on post-secondary education attainment"
 keywords: "regression, discontinuity, fuzzy, designs, practical, example, coding"
 date: 2023-06-26
+<<<<<<< HEAD
 weight: 3
+=======
+weight: 5
+>>>>>>> master
 author: "Ana Bianca Luca"
 authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
@@ -79,14 +83,24 @@ _Output_:
 
 The output shows that around 27\% (0.269) of students whose scores are above the cutoff are more likely to enroll in post-secondary education, jumping from around 50\% enrollment below the cutoff to around 77\% above the cutoff, as visible in the graph. 
 
+<<<<<<< HEAD
 In [Fuzzy RDD](/fuzzy/designs), we defined the formula for the Fuzzy RD parameter: $\tau_{FRD} = \tau_{Y}/\tau_{D}$
+=======
+In [Fuzzy RDD](/fuzzy/designs), we defined the formula for the Fuzzy RD parameter: {{<katex>}}\tau_{FRD} = \tau_{Y}/\tau_{D}{{</katex>}}
+>>>>>>> master
 
 Thus, we can calculate $\tau_{FRD}$ by taking the ratio $0.269/0.625 = 0.4304$. This means that receiving the subsidy results in a 43\% increase in the probability of enrolling in post-secondary education for students who are compliers.
 
 {{% summary %}}
+<<<<<<< HEAD
 In this building block, a practical, hands-on example of the Fuzzy RDD methodology is explored. 
 
 In the next [building block](/local/randomization) in the series on regression discontinuity, the local randomization approach is explained, that augments the traditional continuity-based RD design by considering the running variable as quasi-randomized within a specific bandwidth surrounding the cutoff.
+=======
+In this topic, a practical, hands-on example of the Fuzzy RDD methodology is explored. 
+
+In the next [topic](/local/randomization) in the series on regression discontinuity, the local randomization approach is explained, that augments the traditional continuity-based RD design by considering the running variable as quasi-randomized within a specific bandwidth surrounding the cutoff.
+>>>>>>> master
 
 {{% /summary %}}
 

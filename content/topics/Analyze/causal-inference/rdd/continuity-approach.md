@@ -3,7 +3,11 @@ title: "Continuity-Based Approach"
 description: "Continuity based approach - a framework for regression discontinuity analysis. Theory of local polynomial point estimation, local polynomial inference."
 keywords: "regression, discontinuity, continuity, approach, local, polynomial"
 date: 2023-05-25
+<<<<<<< HEAD
 weight: 6
+=======
+weight: 3
+>>>>>>> master
 author: "Ana Bianca Luca"
 authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
@@ -13,9 +17,15 @@ aliases:
 
 # Introduction
 
+<<<<<<< HEAD
 In this building block, we discuss the local polynomial approach in the context of the [Sharp RD Design](/sharp/designs) for estimating the parameter of interest, $\tau_{SRD}$. 
 
 To approximate the regression function $\mathbb{E}[Y_{i}|X_{i} = x]$, defined in the building block about [Sharp RD Designs](/sharp/designs), least-squares method is used to fit a polynomial of the observed outcome on the score. If all observations are used for the estimation, the polynomial fits are **global** or **parametric**, however, if only the observations with scores around the cutoff are used, the polynomial fits are **local** or **non-parametric**.  In this building block we discuss the local polynomial approach.
+=======
+In this topic, we discuss the local polynomial approach in the context of the [Sharp RD Design](/sharp/designs) for estimating the parameter of interest, $\tau_{SRD}$. 
+
+To approximate the regression function $\mathbb{E}[Y_{i}|X_{i} = x]$, defined in the topic about [Sharp RD Designs](/sharp/designs), least-squares method is used to fit a polynomial of the observed outcome on the score. If all observations are used for the estimation, the polynomial fits are **global** or **parametric**, however, if only the observations with scores around the cutoff are used, the polynomial fits are **local** or **non-parametric**.  In this topic we discuss the local polynomial approach.
+>>>>>>> master
 
 ## Local Polynomial Point Estimation
 
@@ -26,8 +36,13 @@ The observations near the cutoff can be seen as a neighborhood, defined as $c-h$
 There are five steps in the local polynomial estimation:
 1. Select a polynomial order $p$ and a kernel function $K(.)$
 2. Select a bandwidth $h$
+<<<<<<< HEAD
 3. For observations above the cutoff, fit a weighted least squares regression, where the estimated intercept from the regression, $\hat{\mu_{+}}$, is an estimate of the point $\hat{\mu_{+}} = \mathbb{E}[Y_{i}(1)|X_{i} = c]$ 
 4.  For observations below the cutoff, fit a weighted least squares regression, where the estimated intercept from the regression, $\hat{\mu_{-}}$, is an estimate of the point  $\hat{\mu_{-}} = \mathbb{E}[Y_{i}(0)|X_{i} = c]$
+=======
+3. For observations above the cutoff, fit a weighted least squares regression, where the estimated intercept from the regression, $\hat{\mu_{+}}$, is an estimate of the point {{<katex>}} \hat{\mu_{+}} = \mathbb{E}[Y_{i}(1)|X_{i} = c] {{</katex>}}
+4.  For observations below the cutoff, fit a weighted least squares regression, where the estimated intercept from the regression, $\hat{\mu_{-}}$, is an estimate of the point {{<katex>}} \hat{\mu_{-}} = \mathbb{E}[Y_{i}(0)|X_{i} = c] {{</katex>}}
+>>>>>>> master
 5. Calculate the point estimate $\tau_{SRD} = \hat{\mu_{+}}-\hat{\mu_{-}}$
 
 Therefore, we need to choose the kernel function $K(.)$, the order of the polynomial $p$ and the bandwidth $h$.
@@ -103,7 +118,11 @@ Additionally, we can opt to report all the bandwidth choices. To do this, we rep
 {{% summary %}}
 The local polynomial approach in sharp regression discontinuity design (SRD) offers a robust estimation method by focusing on observations around the cutoff, minimizing overfitting issues. The careful selection of the kernel function, polynomial order, and bandwidth is crucial for accurate estimation and reliable results.
 
+<<<<<<< HEAD
 The local randomization approach can be seen as an extension of this contuinity-based approach and is discussed in [this building block](/local/randomization).
+=======
+The local randomization approach can be seen as an extension of this contuinity-based approach and is discussed in [this topic](/local/randomization).
+>>>>>>> master
 
 {{% /summary %}}
 
