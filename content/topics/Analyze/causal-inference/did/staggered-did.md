@@ -3,7 +3,7 @@ title: "Staggered Difference-in-Difference Estimation"
 description: "Staggered difference-in-difference estimation in R using the `did` package"
 keywords: "difference-in-difference, causal inference, did, DID, staggered treatment, regression, model "
 draft: false
-weight: 12
+weight: 3
 author: "Roshini Sudhaharan"
 authorlink: "https://nl.linkedin.com/in/roshinisudhaharan"
 aliases:
@@ -16,7 +16,7 @@ aliases:
 
 [Recent studies](https://www.sciencedirect.com/science/article/pii/S0304407621001445) have highlighted that the conventional approach might be inadequate for staggered treatments and can produce misleading results. Sometimes, these estimates suggest the opposite of what's happening!
 
-In this building block, we delve into situations where the traditional DiD setup falls short --- precisely, those involving staggered treatment timing and many periods. You will gain insights into:
+In this topic, we delve into situations where the traditional DiD setup falls short --- precisely, those involving staggered treatment timing and many periods. You will gain insights into:
 
 - Understanding staggered treatments in the context of difference-in-difference (DiD) analysis
 - The pitfalls of applying classic DiD in these scenarios
@@ -30,7 +30,7 @@ Why is applying the standard DiD setup in staggered treatment scenarios problema
 
 Several factors contribute to this limitation, including the potential for the treatment effect to fluctuate over time or among different groups due to learning curves, adaptation, or changing external conditions. Additionally, some units may exhibit immediate responses to treatment, while others might require more time to react. The conventional approach's one-size-fits-all methodology may need to be revised to account for these variations effectively.
 
-More specifically, the treatment effect estimate in the traditional DiD approach is a weighted average of treatment effects. These weights can sometimes be negative, even if the overall treatment effect is positive. Consequently, this can lead to misleading estimates of the treatment effect, where the average effect appears negative despite the actual positive impact of the intervention. Check out the resources in the **See Also** section at the end of this building block for more details.
+More specifically, the treatment effect estimate in the traditional DiD approach is a weighted average of treatment effects. These weights can sometimes be negative, even if the overall treatment effect is positive. Consequently, this can lead to misleading estimates of the treatment effect, where the average effect appears negative despite the actual positive impact of the intervention. Check out the resources in the **See Also** section at the end of this topic for more details.
 
 ## An Illustrative Example: Steps for Staggered DiD Estimation
 
