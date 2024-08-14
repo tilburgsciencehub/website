@@ -153,7 +153,6 @@ In this section, we load the MNIST dataset and preprocess it for training and te
 We begin by importing necessary libraries for data manipulation and preprocessing. Then, we load the MNIST dataset using Keras' built-in function `mnist.load_data()`. The dataset consists of 60,000 training images and 10,000 test images, each with their corresponding labels. Next, we preprocess the data by reshaping the input images and normalizing pixel values to a range between 0 and 1. Additionally, we convert the class labels to categorical format using one-hot encoding.
 
 {{% codeblock %}}
-
 ```python
 import numpy as np
 from keras.datasets import mnist
@@ -199,7 +198,6 @@ In this section, we compile the model with an optimizer, loss function, and eval
 After building the model, we compile it using the `compile()` method. Here, we specify the optimizer (Adam), loss function (categorical cross-entropy), and evaluation metric (accuracy). Then, we train the model on the training data using the `fit()` method, specifying the number of epochs (iterations over the entire dataset) and batch size (number of samples per gradient update). Finally, we evaluate the trained model on the test data to measure its performance in terms of loss and accuracy.
 
 {{% codeblock %}}
-
 ```python
 # Compiling the model
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
@@ -214,7 +212,6 @@ print("Test Accuracy:", accuracy)
 
 ```
 {{% /codeblock %}}
-
 
 {{% summary %}}
 ### What is Deep Learning?

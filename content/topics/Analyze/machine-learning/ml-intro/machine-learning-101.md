@@ -47,19 +47,23 @@ Different approaches are **classification** and **regression**:
 * Classification predicts categorical outcomes, such as labeling students' course feedback as positive or negative. 
 * Regression predicts continuous outcomes, like forecasting sales of a newly launched product.
 
+If you would like to learn more about supervised learning, you can check out this follow-up article, covering more in-depth theory and (coding) examples: [In-depth Introduction to Supervised Machine Learning](/supervised)
+
 ### 2. Unsupervised Learning 
 
 Unsupervised learning finds patterns in data without predefined labels or outcomes. If you want to identify relationships in your data, without a given outcome variable, this is the right approach since it deals with unlabeled data. It explores the data's inherent structure to identify patterns and relationships without explicit guidance or output. Unsupervised learning is often used to group and cluster different objects based on various attributes, such as segmentating customers based on demographics and purchase history.
 
 Different approaches are clustering, generalization and association: 
 * Clustering can group similar instances together, such as organizing articles into topics based on their content.
-* Generalization is used for finding general patterns, like identifying the typical purchasing behavior of different customer segments.
 * Association finds rules that represent large parts of the data, for example, discovering that customers who buy bread often also buy cheese.
+* Dimensionality Reduction can reduce the number of input variables in a dataset. This makes the data easier to interpret and improves the efficiency of further analyses.
 
 {{% tip %}}
 ### Labeled vs. unlabeled data in Machine Learning
 Supervised learning makes use of labeled data with predefined tags that direct the model to learn from specified outcomes. Unsupervised learning, on the other hand, uses unlabeled data that does not have these identifiers. Unlabeled data enables the model to find patterns and connections on its own, whereas labeled data simplifies the learning process toward predictable outcomes.
 {{% /tip %}}
+
+If you would like to learn more about unsupervised learning, you can check out this follow-up article, covering more in-depth theory and (coding) examples: [In-depth Introduction to Unsupervised Machine Learning](/unsupervised)
 
 ### 3. Reinforcement Learning 
 
