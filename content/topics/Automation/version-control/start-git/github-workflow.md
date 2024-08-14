@@ -14,7 +14,7 @@ aliases:
 
 As a project grows, managing the numerous code changes can become unwieldy. This is where **version control** comes into play as a fundamental aspect of a streamlined workflow. 
 
-This building block aims to make you familiar with the GitHub workflow by covering the following key areas:
+This topic aims to make you familiar with the GitHub workflow by covering the following key areas:
 - Introduction to Git and GitHub
 - The GitHub workflow
   - Branching
@@ -38,7 +38,7 @@ This table provides a quick comparison of Git and GitHub:
 | Functionality | Exclusively Source Code <br> Management (SCM) tasks, <br> like push, pull, commit, <br> fetch and merge | Serves as a centralised <br> location for uploading copies <br>  of a Git repository. The GitHub <br> GUI also offers one access <br>  control, collaboration <br> features, and other  <br> project-management tools. |
 | Ownership  | Linux  | Microsoft  |
 
-Use this [building block](/versioning-using-git) to get started with Git and GitHub.
+Use this [topic](/learn/github) to get started with Git and GitHub.
 
 ## The GitHub workflow
 
@@ -48,7 +48,7 @@ In a nutshell, a standard GitHub workflow follows the **Branch-Commit-Push-Pull 
  - The assignee creates a *pull request*, often involving peer review.
  - Once review (if any) is complete, the changes are *merged* into the main branch. 
 
-The default approach we follow is the [GitHub Flow](https://guides.github.com/introduction/flow/). This workflow model is explained in the rest of this building block. 
+The default approach we follow is the [GitHub Flow](https://guides.github.com/introduction/flow/). This workflow model is explained in the rest of this topic. 
 
 {{% tip %}}
 The [GitHub Cheatsheet](../images/github_cheatsheet_tsh.pdf) also summarizes this approach, so you can easily follow along or refresh your memory in case you ever forget a step in the workflow!

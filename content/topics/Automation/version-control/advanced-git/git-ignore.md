@@ -12,7 +12,11 @@ aliases:
 
 # Overview
 
+<<<<<<< HEAD
 In this building block, you will learn how to exclude files and directories from versioning, optimizing your Git/GitHub workflow.
+=======
+In this topic, you will learn how to exclude files and directories from versioning, optimizing your Git/GitHub workflow.
+>>>>>>> master
 
 By default, Git/GitHub tracks *all* files you create. However, there are instances where you want to exclude specific files, such as:
 - Large data files unfit for GitHub uploads
