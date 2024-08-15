@@ -179,8 +179,8 @@ function performSearch(val, resultsHolder) {
       hits.map((hit) => {
         let url = hit.objectID.replace("./", "");
         url = url.replace(".md", "");
-
-        resultsHolder.append(`<a href="/${url}">${hit.title}</a>`);
+        const cleanTitle = hit.title.replace(/"/g, '');
+        resultsHolder.append(`<a href="/${url}">${cleanTitle}</a>`);
       });
 
       if (hits.length == 0) {
@@ -234,7 +234,8 @@ $(".headerSearch2").on("keyup", function (e) {
       hits.map((hit) => {
         let url = hit.objectID.replace("./", "");
         url = url.replace(".md", "");
-        resultsHolder.append(`<a href="/${url}">${hit.title}</a>`);
+        const cleanTitle = hit.title.replace(/"/g, '');
+        resultsHolder.append(`<a href="/${url}">${cleanTitle}</a>`);
       });
 
       if (hits.length == 0) {

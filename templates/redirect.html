@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--- Add structured data, search engine--->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org/",
+			"@type": "WebSite",
+			"name": "Tilburg Science Hub",
+			"url": "https://www.tilburgsciencehub.com",
+			"potentialAction": {
+			  "@type": "SearchAction",
+			  "target": "https://tilburgsciencehub.com/search?q={search_term_string}",
+			  "query-input": "required name=search_term_string"
+			}
+		  }
+	</script>
+	<script type="application/ld+json">
+		  {
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Tilburg Science Hub",
+			"alternateName": "tilburgsciencehub",
+			"url": "https://tilburgsciencehub.com",
+			"logo": "https://tilburgsciencehub.com/img/logo.svg",
+			"sameAs": [
+			  "https://www.linkedin.com/company/tilburgsciencehub",
+			  "https://github.com/tilburgsciencehub",
+			  "https://twitter.com/tilburgscience"
+			]
+		  }
+	</script>
+	<!--snippet for google optimize (A/B tests) put back on when needed 
+	<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-N42NQJS"></script>-->
+
+	<!-- Katex -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='katex/katex.min.css') }}" />
+    <script defer src="{{ url_for('static', filename='katex/katex.min.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}"></script>
+	<script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}" onload="renderMathInElement(
+			  document.body,
+			  {
+				  delimiters: [
+					  {left: '$$', right: '$$', display: true},
+					  {left: '\\[', right: '\\]', display: true},
+					  {left: '$', right: '$', display: false},
+					  {left: '\\(', right: '\\)', display: false}
+				  ]
+			  }
+		  );"></script>
+	
+	<!-- Common Meta Data -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon">
+	
+	<!-- Page Meta Data -->
+	<meta http-equiv="refresh" content="3;url={{ new_url }}" />
+    <title>Redirecting...</title>
+
+	<!-- Styling and scripts-->
+	<link rel="stylesheet" href="{{ assets['scss_all'].urls()[0] }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
+	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
+
+	<!-- Place this tag in your head or just before your close body tag. -->
+	<script async src="https://buttons.github.io/buttons.js"></script>
+
+	<!-- FontAwesome -->
+	<script src="https://kit.fontawesome.com/4e7776d591.js" crossorigin="anonymous"></script>
+
+	<!-- Fonts -->
+	<link rel="stylesheet" href=https://use.typekit.net/cnk2ccl.css>
+</head>
+
+
+<body>
+    <div class="backdrop d-none"></div>
+
+<div class=" container mt-lg-5 mt-3 px-0 fixed-top" style="z-index: 10000;">
+	<div class="bg-white rounded boxShadow navMenu d-relative px-1 mx-3 mx-lg-0" style="position: relative;">
+
+		<!-- Main nav -->
+
+		<div class="customNavbar px-4 py-3">
+
+			<!-- Logo -->
+			<div><a class="navbar-brand" href="/">
+					<img src="{{ url_for('static', filename='img/logo.svg') }}" alt="tilburg science hub logo">
+					<div style="text-align: center; font-size:10px;color:	#035f94">supported by Tilburg University</div>
+				</a></div>
+
+			<!-- Mobile Icons for Nav -->
+			<div class="text-right d-block d-xl-none ">
+				<a href="#0" id="mobileSearchIcon">
+					<img src="{{ url_for('static', filename='img/search.svg') }}" alt="search">
+				</a>
+				<a href="#0" class="d-none" id="mobileSearchCloseMenuIcon">
+					<img src="{{ url_for('static', filename='img/close.svg') }}" alt="close">
+				</a>
+				<a href="#0" style="width: 42px" class="d-inline-block" id="mobileBurgerIcon">
+					<img src="{{ url_for('static', filename='img/burger.svg') }}" alt="burger">
+				</a>
+				<a href="#0" style="width: 42px" class="d-none" id="mobileCloseMenuIcon">
+					<img src="{{ url_for('static', filename='img/close.svg') }}" alt="close">
+				</a>
+			</div>
+
+			<!-- Main Nav -->
+			<div class="menu d-none d-xl-flex align-items-center justify-content-center">
+				<ul class="list-unstyled font-weight-normal">
+
+					<li><a style="position: relative;" href="#0" class="headerLink takeTour"><span class="pulse"></span>
+							Tour</a></li>
+
+					<li>
+						<a onBoardTooltip="Our Topics bundle, simplify and structure valuable information to ensure a smooth learning experience."
+							weight="1" href="{{ url_for('topics_list') }}" class="headerLink menuArrow">Topics</a>
+						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-5 px-3">
+
+							<div class="row">
+
+								{% for topic in data_dict['topics'] %}
+								{% if topic.draft == 'false' %}
+									<div class="col-6 mb-4 px-3">
+										<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;font-weight: bold;">{{ topic.title }}</span>
+										{% for subtopic in topic.childtopics %}
+										{% if subtopic.draft == 'false' %}
+										<a class="d-block mx-0"
+										href="{{ url_for('topics_list') }}/{{ topic.path }}/{{ subtopic.path }}">{{ subtopic.title }}</a>
+										{% endif %}
+										{% endfor %}
+									</div>
+								{% endif %}
+								{% endfor %}
+
+							</div>
+						</div>
+					</li>
+					<li>
+						<a onBoardTooltip="Examples are real-life cases, publications, templates, or research projects that put into practice the concepts explained on Tilburg Science Hub."
+							href="{{ url_for('examples') }}" class="headerLink menuArrow">Examples</a>
+						<div class="bg-white text-left w-100 border-top boxShadow subMenu p-5 px-3">
+							<div class="row">
+								{% for example in data_dict['examples'] %}
+								<div class="col-6 mb-4 px-2">
+									{% if example.title %}
+									<a id="exampleMenu" class="heading d-block mb-3 text-secondary"
+										href="{{ url_for('examples') }}/{{ example.path }}">{{ example.title }}</a>
+									{% endif %}
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+					</li>
+					<li><a href="{{ url_for('about') }}" class="headerLink menuArrow">About</a>
+						<div style="margin-left:57%;" class="bg-white text-left border-top boxShadow subMenu p-4">
+							<div class="row">
+								<div class="col-24 h-100">
+									<a class="d-block mx-0" href="{{ url_for('about') }}">About Tilburg Science Hub</a>
+									<a class="d-block mx-0" href="{{ url_for('contributors') }}">Meet our contributors</a>
+									<a class="d-block mx-0" href="{{ url_for('blog') }}">Visit our blog</a>
+								</div>
+							</div>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+
+			<!-- Search & Contribute -->
+			<div class="text-right">
+				<form class="form-inline text-right float-right d-none d-xl-flex" method="GET" action="/search">
+					<div>
+						<div style="width: 230px" class="form-control mr-sm-2 headerSearch bg-light border-0">
+							<input class="resetInput"
+								onBoardTooltip="Search for topics, tutorials, tips, or tools, and explore our content at a glance."
+								type="search" name="q" placeholder="Search" aria-label="Search" required
+								autocomplete="off">
+							<button style="background-color: transparent; padding: 0;" type="submit"><img
+									src="{{ url_for('static', filename='img/search.svg') }}" aria-label="search button" /></button>
+						</div>
+						<a href="{{ url_for('contribute') }}" class="headerLink btn btn-primary my-2 py-2 my-sm-0"
+							onBoardTooltip="Tilburg Science Hub is an open-source platform and welcomes new contributors!">Contribute</a>
+						<div style="margin-left:85%" class="bg-white text-left border-top boxShadow subMenu">
+							<div class="row">
+								<div class="col-24 pr-0 h-100 p-5 px-3">
+									<span class="heading d-block mb-3 text-secondary"
+										style="font-size: 16px;font-weight: bold;">Contribute to Tilburg Science Hub</span>
+									<a class="d-block mx-0" href="{{ url_for('contribute') }}">What and how to contribute?</a>
+									<a class="d-block mx-0"
+										href="https://github.com/tilburgsciencehub/website/issues/new/choose">Submit a
+										new issue on GitHub</a>
+									<a class="d-block mx-0" href="https://tilburgsciencehub.com/onboarding">View our lab
+										documentation</a>
+									<a class="d-block mx-0"
+										href="https://github.com/orgs/tilburgsciencehub/repositories">Check out our
+										repositories</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Mobile Search menu -->
+		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm"
+			id="mobileSearchMenu" style="z-index: 10; margin-top: -2px;left: 0">
+			<div class="form-control mr-sm-2 headerSearchMobile bg-light border-0">
+				<form method="GET" action="/search">
+					<input class="resetInput" type="search" placeholder="Search" name="q" aria-label="Search" required
+						autocomplete="off">
+					<button style="background-color: transparent; padding: 0; float: right;" type="submit"><img
+							src="{{ url_for('static', filename='img/search.svg') }}" alt="search" /></button>
+				</form>
+			</div>
+
+			<!-- Mobile Search Results-->
+			<div class="mobileResults"></div>
+		</div>
+
+		<!-- Mobile Menu -->
+		<div class="position-absolute bg-white border-top p-3 w-100 d-none rounded-bottom shadow-sm" id="mobileMenu"
+			style="z-index: 10; margin-top: -2px;left: 0">
+
+			<!-- Main Screen -->
+			<div class="screen-1 d-none">
+				<!--<a href="/tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour for students</a>
+			<a href="/researcher-tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour for researchers</a>-->
+
+				<!--<a href="#0" data-screen-two="mobile-tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour<span
+					class="icon mini-right float-right text-primary"></span> </a>
+-->
+				<a href="/tour" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Tour</a>
+
+				<a href="#0" data-screen-two="mobile-tutorials"
+					class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Topics<span
+						class="icon mini-right float-right text-primary"></span> </a>
+				<!--<a href="#0" data-screen-two="mobile-examples" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples<span
+					class="icon mini-right float-right text-primary"></span> </a>-->
+				<a href="{{ url_for('examples') }}" class="nav-link mx-0 px-3 py-3 text-dark border-bottom">Examples</a>
+				<a href="#0" data-screen-two="mobile-about"
+					class="nav-link mx-0 px-3 py-3 text-dark border-bottom">About<span
+						class="icon mini-right float-right text-primary"></span> </a>
+
+				<div>
+					<a href="/contribute/" class="btn btn-primary my-2 px-4 btn-block mt-5">Contribute</a>
+				</div>
+			</div>
+
+			<!-- Screen 2 If (applicable) -->
+			<div class="screen-2 d-none">
+
+				<!-- Topics -->
+				<div class="mobile-tutorials d-none" id="mobile-tutorials">
+					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
+							class="icon mini-left text-primary"></span> Topics</a>
+
+					{% for topic in data_dict['topics'] %}
+					{% if topic.draft == 'false' %}
+					<a class="nav-link mx-0 py-2 text-dark font-weight-bold"
+						href="{{ url_for('topics_list') }}/{{ topic.path }}">{{ topic.title }}<span
+							class="icon mini-right float-right"></span> </a>
+
+					{% endif %}
+					{% endfor %}
+
+				</div>
+
+				<!-- About -->
+				<div class="mobile-about d-none" id="mobile-about">
+					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
+							class="icon mini-left text-primary"></span> About</a>
+					<br>
+					<a class="nav-link mx-0 py-2 text-dark font-weight-bold" href="{{ url_for('about') }}">About Tilburg
+						Science Hub<span class="icon mini-right float-right"></span> </a>
+					<a class="nav-link mx-0 py-2 text-dark font-weight-bold"
+						href="{{ url_for('contributors') }}">Contributors<span
+							class="icon mini-right float-right"></span> </a>
+				</div>
+
+				<!-- Examples -->
+				<div class="mobile-examples d-none" id="mobile-examples">
+					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
+							class="icon mini-left text-primary"></span> Examples</a>
+					<br>
+				</div>
+
+				<!-- Tour -->
+				<div class="mobile-tour d-none" id="mobile-tour">
+					<a href="#0" class="py-3 border-bottom text-dark d-block gotoMainMenu"><span
+							class="icon mini-left text-primary"></span> Take a tour!</a>
+					<br>
+
+					<div class="mb-4">
+						<a class=" d-block mb-3 text-secondary heading"
+							style="color: #003365!important; font-family: forma-djr-display,sans-serif;"
+							href="/tour">For students</a>
+						<a class=" d-block mb-3 text-secondary heading"
+							style="color: #003365!important; font-family: forma-djr-display,sans-serif;"
+							href="/researcher-tour">For
+							researchers</a>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Search results -->
+	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder">
+	</div>
+
+</div>
+<div style="height: 90px"></div>
+{% include 'partials/cookies.html' %}
+<div class="container py-3 mt-5">
+    <h3 class="text-center">We are redirecting you to {{ title }}.</h3>
+    <p class="text-center">Click <a href="{{ new_url }}">here</a> to go to the new page if you do not get redirected.</p>
+</div>
+{% include 'partials/footer.html' %}
