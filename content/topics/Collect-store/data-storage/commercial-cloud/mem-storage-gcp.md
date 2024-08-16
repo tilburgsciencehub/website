@@ -13,7 +13,7 @@ aliases:
 
 ## Overview
 
-This building block builds upon the foundational steps outlined in [Configure a VM with GPUs in Google Cloud](https://tilburgsciencehub.com/topics/automate-and-execute-your-work/reproducible-work/config-vm-gcp/).
+In this article, we build upon the foundational steps outlined in [Configure a VM with GPUs in Google Cloud](/topics/automation/replicability/cloud-computing/config-vm-gcp/).
 
 After configuring our instance, we may find the necessity to manage large files proficiently.
 

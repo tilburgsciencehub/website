@@ -14,7 +14,7 @@ aliases:
 While randomized controlled experiments are considered the gold standard for establishing causality, they aren't always practical, feasible, or ethically permissible. In such cases, quasi-experimental methods offer a valuable alternative, using natural variations in treatment or exposure to approximate controlled experimental conditions. 
 
 {{% tip %}}
-You can find an introduction to causal inference [here](/causal-inference-intro). 
+You can find an introduction to causal inference [here](/topics/Analyze/causal-inference/introduction/causal-inference-intro/). 
 {{% /tip %}}
 
 
