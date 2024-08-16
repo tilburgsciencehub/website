@@ -44,7 +44,7 @@ fixes to the existing material, bug reports,
 and reviews of proposed changes are all welcome.
 
 * See the contributing guide [here](https://tilburgsciencehub.com/contribute/).
-* Check out our [styling and writing guidelines](https://tilburgsciencehub.com/topics/more-tutorials/contribute-to-tilburg-science-hub/style-guide/).
+* Check out our [styling and writing guidelines](https://tilburgsciencehub.com/topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/style-guide/).
 * By contributing you agree to abide by the [Code of Conduct](https://tilburgsciencehub.com/topics/more-tutorials/contribute-to-tilburg-science-hub/code-of-conduct/).
 
 ### Automatically Running the Website
