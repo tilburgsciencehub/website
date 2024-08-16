@@ -94,6 +94,19 @@ $(document).ready(function () {
   });
 });
 
+// make code download-able
+document.querySelectorAll('.downloadCodeBtn').forEach(button => {
+  button.addEventListener('click', function (e) {
+    e.preventDefault();
+    let codeBlock = this.closest('.codeblock');
+    let codeContainer = codeBlock.querySelector('.highlight:not(.highlight-inactive)');
+    let code = codeContainer ? codeContainer.querySelector('code') : null;
+    if (code) {
+      console.log("Code inside ", code)
+    }
+  });
+});
+
 $(document).mouseup(function (e) {
   const container = $(
     ".subMenu, .headerSearchResultsHolder, .buildingBlocksSuggestions, .headerSearchResultsHolder2"

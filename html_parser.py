@@ -24,6 +24,19 @@ def convert_code_blocks_to_html(md_content):
     # Function to replace code block shortcodes with HTML
     def replace_codeblock(match):
         code_content = match.group(1).strip()
+        print("what is code_content? ", code_content)
+        # Regular expression to match '[R-link]' followed directly by content within parentheses
+        pattern = r'\[R-link\]\(([^)]+)\)'
+
+        # Search for the pattern in the text
+        link_match = re.search(pattern, code_content)
+
+        if link_match:
+            # Extract the content inside the parentheses
+            code_content_to_open = link_match.group(1).strip()
+            print("Extracted content:", code_content_to_open)
+        else:
+            print("Pattern not found")
         language_matches = re.finditer(r'```(\w+)(.*?)```', code_content, re.DOTALL)
         code_blocks = []
         tab_nav = []
@@ -48,7 +61,7 @@ def convert_code_blocks_to_html(md_content):
                 languages_processed.append(language)
 
             idx += 1
-
+            
         code_content = ''.join(code_blocks)
         tab_nav_html = f'<ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">\n' \
                        f'    {" ".join(tab_nav)}\n' \
@@ -57,8 +70,9 @@ def convert_code_blocks_to_html(md_content):
         return f'<div class="codeblock">\n' \
                f'<div class="d-flex justify-content-between">\n' \
                f'    {tab_nav_html}\n' \
-               f'    <div class="float-right d-flex align-items-center">\n' \
+               f'    <div class="float-right d-flex">\n' \
                f'        <a class="copyCodeBtn" href="#0"><img src="/img/copy-code.svg"></a>\n' \
+               f'        <a class="downloadCodeBtn" href="#0"><img src="/img/download.svg"></a>\n' \
                f'    </div>\n' \
                f'</div>\n' \
                f'    <div class="inner">\n' \
