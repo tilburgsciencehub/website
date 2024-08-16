@@ -102,6 +102,8 @@ document.querySelectorAll('.downloadCodeBtn').forEach(button => {
     let codeContainer = codeBlock.querySelector('.highlight:not(.highlight-inactive)');
     let code = codeContainer ? codeContainer.querySelector('code') : null;
     if (code) {
+      // Need to find a way to open the file, something like that I think 
+      // window.location.href = "../" + link;
       console.log("Code inside ", code)
     }
   });
