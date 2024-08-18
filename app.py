@@ -137,19 +137,26 @@ def topics_third_level(first_level_topic_path,second_level_topic_path, third_lev
 # Single Article (Topic)
 @app.route('/topics/<first_level_topic_path>/<second_level_topic_path>/<third_level_topic_path>/<article_path>/')
 def topic_single(first_level_topic_path, second_level_topic_path, third_level_topic_path, article_path):
+    print("Entering single topic")
     data_dict = build_data_dict(Topics, articles)
     breadcrumbs = get_breadcrumbs()
     current_url = request.url
     article = None
     article = articles.query.filter_by(path=article_path).first()
+    print("article path ", article_path)
     meta_data = fetch_meta_data(article)
     related_articles = None
+    table_of_contents = None
+    content = None
+    reading_time = 0
     if article:
         related_articles = find_related_articles(article_path, articles, Topics)
         content = htmlize(article.content)
+        print("What is content? -> ", content)
         table_of_contents = generate_table_of_contents(content)
         if (len(content) > 0):
             reading_time = calculate_reading_time(article.content)
+    else: return
 
     return render_template('topic-single.html', breadcrumbs=breadcrumbs, assets=assets, article=article, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, content=content, reading_time=reading_time, meta_data=meta_data, related_articles=related_articles)
 

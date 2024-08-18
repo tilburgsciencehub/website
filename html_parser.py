@@ -1,3 +1,4 @@
+import html
 import re
 from bs4 import BeautifulSoup
 import markdown
@@ -398,6 +399,14 @@ def remove_empty_pre_code_tags(html_content):
     cleaned_content = re.sub(empty_pre_code_pattern, '', html_content)
     return cleaned_content
 
+def r_to_html_plaintext(r_content):
+    # Escape HTML special characters to display as plain text
+    escaped_content = html.escape(r_content)
+    
+    # Wrap the content in <pre> and <code> tags for HTML
+    html_content = f"<pre><code>{escaped_content}</code></pre>"
+    
+    return html_content
 # Main function to convert Markdown file content to HTML
 # Parameters:
 # - md_file_content: String containing Markdown file content
@@ -422,7 +431,8 @@ def htmlize(md_file_content):
         convert_md_titles_to_html,
         replace_img_src,
         replace_video_src,
-        remove_empty_pre_code_tags
+        remove_empty_pre_code_tags,
+        r_to_html_plaintext
     ]
 
     html_content = md_file_content
