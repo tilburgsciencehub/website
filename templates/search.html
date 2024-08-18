@@ -44,10 +44,10 @@
     index.search(params.get("q"))
       .then(({hits}) => {
         hits.map((hit, index) => {
+          console.log("what is a hit? -> ", hit)
 
           let url = hit.objectID.replace("./", "");
           url = url.replace(".md", "");
-
           let last = hits.length - 1 == index;
 
           let keys = hit.keywords.split(", ");
