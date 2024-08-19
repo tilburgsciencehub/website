@@ -48,7 +48,7 @@ Our TWFE estimate in this case would be a weighted average of all possible 2x2 c
 
 The weighted average of all 2x2 comparisons is problematic for two reasons: 
 
-1. Forbidden comparisons/contrasts: in our example, one of the 2x2 comparisons that form part of the final TWFE estimate is as follows: 
+1. **Forbidden comparisons/contrasts**: in our example, one of the 2x2 comparisons that form part of the final TWFE estimate is as follows: 
 
 | State/Year | 1 | 2 |
 | -------- | ------- | ------- |
@@ -61,7 +61,7 @@ This would not be a problem if the treatment effect were completely constant ove
 
 The implication of these forbidden comparisons is that our supposedly causal TWFE estimates are partly composed of non-causal, biased coefficients, which actually compare treatment to treatment, as opposed to treatment to control.  
 
-2. Negative weights: each comparison is assigned a weight which is proportional to group size (the number of observations within the group) and variation in treatment exposure. The larger the group size and the smaller the variation in treatment exposure, the higher the attached weight. All weights sum to one, but they can also be negative – sometimes, the comparisons at the tails of the time period distribution (in very early or very late periods) can carry negative weights, as treatment variation is typically smaller there (as most groups are not yet treated in early stages or already treated in late stages).  
+2. **Negative weights**: each comparison is assigned a weight which is proportional to group size (the number of observations within the group) and variation in treatment exposure. The larger the group size and the smaller the variation in treatment exposure, the higher the attached weight. All weights sum to one, but they can also be negative – sometimes, the comparisons at the tails of the time period distribution (in very early or very late periods) can carry negative weights, as treatment variation is typically smaller there (as most groups are not yet treated in early stages or already treated in late stages).  
 
 {{<katex>}}
 {{</katex>}}
