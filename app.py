@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, abort, render_template_string
+from flask import Flask, render_template, request, redirect, abort, render_template_string, send_from_directory
 from flask_assets import Environment, Bundle
 from datetime import datetime
 from functions import build_data_dict, fetch_contributions_for_the_single_contributor, generate_table_of_contents, get_breadcrumbs, find_related_articles, calculate_reading_time, fetch_meta_data, recently_published
@@ -8,6 +8,7 @@ from html_parser import htmlize
 from redirectstsh import setup_redirects
 from utils import get_git_commit_hash
 import redirects_config
+ 
 
 # Initialize App
 app = Flask(__name__, static_url_path='/static')
@@ -273,6 +274,11 @@ def handle_redirect(path):
             return redirect(new_url, code=302)
     else:
         return render_template('404.html', assets=assets, data_dict=data_dict), 404
+
+# Robots.txt
+@app.route('/robots.txt')
+def robots_txt():
+    return send_from_directory(app.static_folder, "robots.txt")
 
 # Still needs metadata!
 # Error Handler 404
