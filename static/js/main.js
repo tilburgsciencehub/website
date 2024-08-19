@@ -182,11 +182,21 @@ function performSearch(val, resultsHolder) {
     .then(({ hits }) => {
       resultsHolder.html(" ");
       resultsHolder.addClass("active");
-      hits.map((hit) => {
-        let url = hit.objectID.replace("./", "");
-        url = url.replace(".md", "");
+
+      const seenTitles = new Set(); // Set om unieke titels bij te houden
+
+      hits.forEach((hit) => {
         const cleanTitle = hit.title.replace(/"/g, "");
-        resultsHolder.append(`<a href="/${url}">${cleanTitle}</a>`);
+
+        // Controleer of de titel al in de set zit
+        if (!seenTitles.has(cleanTitle)) {
+          seenTitles.add(cleanTitle); // Voeg de titel toe aan de set
+
+          let url = hit.objectID.replace("./", "");
+          url = url.replace(".md", "");
+          
+          resultsHolder.append(`<a href="/${url}">${cleanTitle}</a>`);
+        }
       });
 
       if (hits.length == 0) {
