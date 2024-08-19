@@ -12,7 +12,7 @@ aliases:
 
 ## Overview 
 
-[Staggered difference-in-differences (DiD)](/staggered-did) and [event study designs](/event-studies) allow for causal inference in settings where units are treated at different times – for example, Covid-19 restrictions that were introduced on different days in different countries or states. In such cases, the conventional two-way fixed effects (TWFE) method designed for [classic DiD studies](/canonical-DiD) with just 2 groups and 2 periods may yield incorrect and biased results.  
+[Staggered difference-in-differences (DiD)](/staggered-did) and [event study designs](/event-studies) allow for causal inference in settings where units are treated at different times – for example, government laws or policies that were introduced at different times in different countries or states. In such cases, the conventional two-way fixed effects (TWFE) method designed for [classic DiD studies](/canonical-DiD) with just 2 groups and 2 periods may yield incorrect and biased results.  
 
 The Goodman-Bacon decomposition is a descriptive tool which allows us to see how the staggered DiD estimator is actually constructed and to assess how likely it is to give biased results in our context. In this topic, we will discuss why TWFE may fail in staggered treatment settings, what the Goodman-Bacon decomposition is and why it’s useful, and explore an applied example in R.  
 
@@ -26,19 +26,19 @@ This topic deals with the _reasons_ behind the shortcomings of TWFE in staggered
 
 The [TWFE model](/within) is widely used for causal inference with [panel data](/paneldata) – that is, data which includes observations across both different cross-sectional groups and different time periods. It is estimated with two types of fixed effects:  
 
-1. Group fixed effects: these capture group-specific unobservable characteristics that are constant across time.  
+1. **Group fixed effects**: these capture group-specific unobservable characteristics that are constant across time.  
 
-2. Time fixed effects: these capture time trends, or differences between time periods, that are common to all groups.  
+2. **Time fixed effects**: these capture time trends, or differences between time periods, that are common to all groups.  
 
 This model works well when we only have two groups and two time periods (one before and one after treatment). When we have more than two groups or more than two time periods, our treatment estimate becomes a weighted average of all 2x2 TWFE comparisons – all instances where one group changes its treatment status while another’s treatment status remains unaltered.  
 
 {{% example %}} 
 
-Suppose that we are studying the effects of Covid-19 lockdowns on Covid-19 infections. Our unit of observation are wards across three cities – A, B, and C. City A introduces a Covid-19 lockdown in week 1, city B introduces a lockdown in week 2, and city C does not introduce any restrictions. This is a typical case of staggered treatment timing: city A is treated earlier, city B is treated later, and city C is never treated.  
+Suppose that we are studying the effects of unilateral (no-fault) divorce laws on socioeconomic outcomes for women, which different states implement in different years. Our unit of observation are counties across three states – A, B, and C. State A introduces a no-fault divorce law in year 1, state B introduces one in year 2, and state C does not pass any unilateral divorce legislation. This is a typical case of staggered treatment timing: state A is treated earlier, state B is treated later, and state C is never treated.  
 
-Our TWFE estimate in this case would be a weighted average of all possible 2x2 comparisons between the cities. That is, city A vs city B for weeks 0 and 1, city A vs city B for weeks 1 and 2, city B vs city C for weeks 1 and 2, etc. The weights attached to each comparison would depend on the number of observations in the compared groups (in our case, the number of wards in the compared cities) and how much the treatment indicator varies within each comparison. 
+Our TWFE estimate in this case would be a weighted average of all possible 2x2 comparisons between the states. That is, state A vs state B for years 0 and 1, state A vs state B for years 1 and 2, state B vs state C for years 1 and 2, etc. The weights attached to each comparison would depend on the number of observations in the compared groups (in our case, the number of counties in the compared states) and how much the treatment indicator varies within each comparison. 
 
-| City/Week | 0 | 1 | 2 |
+| State/Year | 0 | 1 | 2 |
 | -------- | ------- | ------- | ------- |
 | A | Not Treated | Treated | Treated |
 | B | Not Treated | Not Treated | Treated |
@@ -50,14 +50,14 @@ The weighted average of all 2x2 comparisons is problematic for two reasons:
 
 1. Forbidden comparisons/contrasts: in our example, one of the 2x2 comparisons that form part of the final TWFE estimate is as follows: 
 
-| City/Week | 1 | 2 |
+| State/Year | 1 | 2 |
 | -------- | ------- | ------- |
 | A | Treated | Treated |
 | B | Not Treated | Treated |
 
-The group that changes its treatment status here (i.e., the treatment group) is city B, as it goes from being untreated in week 1 to being treated in week 2. City A therefore serves as the control group, even though it is actually treated in both weeks!  
+The group that changes its treatment status here (i.e., the treatment group) is state B, as it goes from being untreated in year 1 to being treated in year 2. State A therefore serves as the control group, even though it is actually treated in both weeks!  
 
-This would not be a problem if the treatment effect were completely constant over time, as city A would not see any changes in the outcome from week 1 to week 2 _due to the treatment_. However, this is very rarely the case: treatment effects are often dynamic – they can vary over time due to adaptation or learning effects, for example. 
+This would not be a problem if the treatment effect were completely constant over time, as state A would not see any changes in the outcome from week 1 to week 2 _due to the treatment_. However, this is very rarely the case: treatment effects are often dynamic – they can vary over time due to adaptation or learning effects, for example. 
 
 The implication of these forbidden comparisons is that our supposedly causal TWFE estimates are partly composed of non-causal, biased coefficients, which actually compare treatment to treatment, as opposed to treatment to control.  
 
@@ -72,15 +72,15 @@ The problem with negative weights is that they can bias our final estimate by al
 
 The Goodman-Bacon decomposition is a diagnostic tool which allows us to see whether our TWFE estimator is reliant on forbidden comparisons or negative weights. The decomposition breaks down the estimator into three types of comparisons: 
 
-1. Treated vs. never treated: this is equivalent to the classic 2x2 DiD comparison. We are only comparing treated to untreated units. 
+1. **Treated vs. never treated**: this is equivalent to the classic 2x2 DiD comparison. We are only comparing treated to untreated units. 
 
-2. Early treated vs. late control: we are comparing units that are treated early to units that will be treated later, but have not been treated yet. 
+2. **Early treated vs. late control**: we are comparing units that are treated early to units that will be treated later, but have not been treated yet. 
 
-3. Late treated vs. early control: we are comparing units that are treated later to units that have _already been treated_ – this is a forbidden comparison! 
+3. **Late treated vs. early control**: we are comparing units that are treated later to units that have _already been treated_ – this is a forbidden comparison! 
 
 {{% tip %}} 
 
-‘Early’ refers to the group that is treated earlier, ‘late’ refers to the group treated later. Therefore, a comparison called ‘early treated’ vs. ‘late control’ simply means that the comparison uses the early group as the treated group and the late group as the control group. In our example, an early treated vs. late control comparison would be city A vs. city B, with city A as the treatment group and city B as the control group. 
+‘Early’ refers to the group that is treated earlier, ‘late’ refers to the group treated later. Therefore, a comparison called ‘early treated’ vs. ‘late control’ simply means that the comparison uses the early group as the treated group and the late group as the control group. In our example, an early treated vs. late control comparison would be state A vs. state B, with state A as the treatment group and state B as the control group. 
 
 {{% /tip %}} 
 
@@ -88,10 +88,9 @@ The decomposition also allows us to see the weight attached to each type of comp
 
 ## An example in R 
 
-The `bacondecomp` package contains datasets from three papers using DiD/event study designs with staggered treatment timing. We will use the dataset from [Stevenson and Wolfers (2006)](https://academic.oup.com/qje/article/121/1/267/1849020), who study the effects of unilateral divorce laws on female suicide rates in the US, exploiting variation in the timing of the introduction of these laws across states.
+The `bacondecomp` package contains datasets from three papers using DiD/event study designs with staggered treatment timing. We will use the dataset from [Stevenson and Wolfers (2006)](https://academic.oup.com/qje/article/121/1/267/1849020), who, similarly to our example, study the effects of unilateral divorce laws on female suicide rates in the US, exploiting variation in the timing of the introduction of these laws across states. The dataset includes data on female suicide rates for all 50 US states and the District of Columbia for the years 1964 to 1996, dummy variables indicating when no-fault divorce legislation was passed, and a range of covariates, such as the state population and its demographic characteristics. 
 
 First, we install and load the package:
-
 
 {{% codeblock %}}
 ```R
