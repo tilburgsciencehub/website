@@ -82,8 +82,9 @@ You can add text using Markdown syntax, which is perfect for introducing your co
 {{% tip %}}
 
 Common Markdown features:
-- **Bold text**: Use double asterisks (**)
-- *Italic text*: Use single asterisks (*)
+
+- **Bold text**: Use double asterisks (`**`)
+- *Italic text*: Use single asterisks (`*`)
 - Create headers with `##`
 - Create lists by using `-` or `*`
 
@@ -107,7 +108,7 @@ To create a Quarto document that demonstrates how to create a Python plot, follo
 - Insert the following content into your document:
 
 {{% codeblock %}}
-````markdown
+````
 
 ## Creating a line plot in Python
 

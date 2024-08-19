@@ -15,7 +15,7 @@ aliases:
 [Quarto](https://quarto.org/) is an open-source scientific and technical publishing system that allows you to create and share interactive documents, presentations, dashboards and reports. It does not provide a standalone graphical user interace, but is built to integrate with tools like [Visual Studio Code](/install/VSCode), [Jupyter](https://jupyter.org/), [RStudio](/install/r), etc. It supports Markdown and executable code blocks in multiple programming languages, such as [R](/learn/r), [Python](/learn/python), and [Julia](/julia).
 
 <p align = "center">
-<img src = "../images/quarto-logo.png" width="200">
+<img src = "../images/quarto-logo.png" width="300">
 </p>
 
 ## Installing Quarto
@@ -53,7 +53,7 @@ sudo apt-get install -f
 
 {{% summary %}}
 
-Now that Quarto is installed, you can start using it to create a wide range of documents and presentations. Continue with this [topic](/quarto) to learn how to begin working with Quarto and take advantage of its features!
+Now that Quarto is installed, you can start using it to create a wide range of documents and presentations. Continue with this [topic](/quarto-use) to learn how to begin working with Quarto and take advantage of its features!
 
 {{% /summary %}}
 
