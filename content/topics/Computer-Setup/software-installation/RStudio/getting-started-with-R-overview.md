@@ -1,9 +1,8 @@
 ---
-tutorialtitle: "Getting started with R"
-title: "Getting started with R"
+title: "Get Started With R"
 description: "Learn to code in R"
-keywords: "learn, R, resources, R packages, installation,style, code, R, guidelines, best practices, packrat, package management system"
-weight: 4
+keywords: "learn, R, resources, R packages, installation,style, code, R, guidelines, best practices, packrat, package management system, setup, RStudio, programming, coding"
+weight: 2
 date: 2022-09-07T22:02:51+05:30
 draft: false
 author: "Roshini Sudhaharan"
@@ -14,53 +13,121 @@ aliases:
   - /topics/reproducible-research/getting-started-with-r/
   - /topics/code-like-a-pro/getting-started-with-r/
 ---
+
 ## Overview: Why R?
 
 <a href= '../images/r-perks.png' target="blank"> <img src="../images/r-perks.png" alt="overview of perks R offers" width="300" style="float:right;"></a>
 
-Whether you’re looking to start coding for a new career or just as a hobby, picking which programming language to start with can be a daunting task, especially if this is your very first experience with programming. There is no right answer for, it depends on the kind of project you’d work on, what is demanded on the job etc but here are some perks of R:
+Whether you’re looking to start coding for a new career or just as a hobby, choosing your first programming language can be a daunting task. There is no one-size-fits-all answer—it depends on the type of project you’ll work on, what is demanded on the job, etc. However, R stands out with several appealing benefits.
+
+- Chances are, sooner or later, you'll encounter R, one of the most popular (if not *the*) statistical programming languages worldwide. R's popularity isn't just because it's free; it's also due to the global community that uses, documents, and continually improves it. 
 
 
-## Objectives of this tutorial
+{{% warning %}}
 
-- Learn to code in R following proper coding style guidelines
-- Learn to automatically install R packages
-- Familiarize yourself with a better way to manage your R packages
-- Learn to conduct regression analysis using R for your next empirical project
-- Learn to communicate your insights effectively using tools like interactive dashboards
-- Discover how to publish e-books and interactive articles directly from R
+The R interface might seem intimidating at first, especially if you're used to using Excel to do your data magic. But trust us, investing time in learning R will pay off greatly, not just in your grad school career, but also in your industry career. R, alongside Python, has become a standard skill for jobs in marketing analytics and data science.
+
+{{% /warning %}}
+
+One of the best things about R is the *wide range of learning resources available*. However, with so many options, it can be hard to know where to start. This guide offers the right starting point and the resources to help you learn R efficiently, including the following topics:
+
+- Tips for learning R efficiently
+- Learn advanced R
+- Reproducible workflows in R
+- How to manage R packages
+- Analysis in R: Examples
+- Communicate your insights: Publish e-books and interactive articles directly from R
+- Building webpages with R
 
 
-## Learn to code
+{{% tip %}}
 
-As a first step, [learn how to set up R and RStudio on your local machine](/install/r). Next, we have compiled a [comprehensive guide](/learn/r) with links to useful sources to help you structure your coding learning journey for, it can be daunting to figure out the right resources among tons out there!
+*Set up R and RStudio*
 
-Furthermore, to polish your coding skills we have put together a succinct coding style [guideline](/write/good-code/r) to follow.
+Your first step is to set up R and RStudio on your local machine, following our [R/R Studio installation guide](/install/r).
+
+{{% /tip %}}
 
 
-## More on R Packages
+## Tips for learning R efficiently
 
-Packages are a set of R functions, data and compiled code bundled together and these are stored in a ‘library’. While R comes with a standard set of packages, one may install additional ones whenever required. As your project grows, the variety of packages used also broadens and it's easy to lose track of them. Here’s a brief [code snippet](/install/r-packages) to automatically install packages that may not yet be installed on your machine.
+Here are a few tips to learn R efficiently:
 
-In a similar vein, Packrat is an excellent tool to manage your R package library. It is the go-to solution to potential dependency issues between packages when working on multiple projects or when working on the same project using different machines which may have different versions of the packages installed. This helps make R packages isolated, portable and reproducible.
+- Have a project!
 
-Check out our comprehensive guide to get you started with [Packrat](/reproduce/packrat)
+  "Huh - why to have a project? I first need to learn R!"
+
+  Well, if you *really* want to learn R, you should already have a project in mind that you would like to tackle. R is a powerful tool, and without a clear goal, you might feel overwhelmed. If you don't have a specific project, and still would like to learn R, consider finding an interesting dataset to work with, like those available on [Kaggle.com](https://www.kaggle.com).
+
+- Enroll in R courses at [Datacamp](https://www.datacamp.com/). It is free with a Tilburg University account!
+  - For *beginners*:
+      - [Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r)
+      - [Intermediate R](https://www.datacamp.com/courses/intermediate-r)
+  - For *data management* and *preparing your own datasets*:
+      - Learn *data.table*, our preferred tool for handling large datasets. Just
+      search for *data.table* at datacamp.com. These are our favorite courses:
+        - [Data manipulation with data.table](https://www.datacamp.com/courses/data-manipulation-in-r-with-datatable)
+        - [Joining data with data.table](https://www.datacamp.com/courses/joining-data-in-r-with-datatable)
+      - Explore *Tidyverse*, a collection of tools that simplify data tasks. Our top pick is: [Introduction to Tidyverse](https://www.datacamp.com/courses/introduction-to-the-tidyverse)
+
+- Learning your *method*
+  - Once your data is prepped, you can begin analyzing it. The method you choose will depend on your specific research question. For many students, a refresher in [regression analysis](https://www.datacamp.com/courses/intermediate-regression-in-r)— such as Ordinary Least Squares (OLS) or Logistic Regression (Logit)—may be particularly useful.
+
+
+## Learn Advanced R
+
+Want to learn more *advanced programming* with R? Check out the [digital version](https://adv-r.hadley.nz/index.html) of the book: “Advanced R”, in Chapman & Hall’s R Series.
+
+## Mastering Reproducible Workflows with R
+
+Want to learn the essential skills for *reproducible research* and open science in R? This [book](https://psyteachr.github.io/reprores-v2/index.html) covers a wide range of topics such as:
+- [Reproducible Workflows](https://psyteachr.github.io/reprores-v2/repro.html)
+- Data visualization, e.g. [styling plots](https://psyteachr.github.io/reprores-v2/plotstyle.html)
+- [Data Wrangling](https://psyteachr.github.io/reprores-v2/dplyr.html)
+
+Also, explore the [materials](https://github.com/debruine/msc-data-skills) from the University of Glasgow's MSc course in [Data Skills for Reproducible Science](https://psyteachr.github.io/msc-data-skills/index.html).
+
+## Managing R Packages
+
+Packages in R are collections of functions, data, and code bundled together and stored in a ‘library’. While R comes with a standard set of packages, you can install additional ones as needed. As your projects grow, managing packages can become complex. Use this [code snippet](/install/r-packages) to automatically install any packages you may need.
+
+For effective package management, consider using *Packrat*. This tool helps avoid dependency issues by isolating R packages, making them portable, ensuring project reproducibility. This is especially useful when working on multiple projects or across different machines with different versions of packages installed. Learn more in [our comprehensive guide to Packrat](/reproduce/packrat)
 
 
 ## Analysis with R: Examples
 
-Got a hang of the R syntax and are looking to put your R coding skills to practice with some empirical project? Here are some starter guides and codes of commonly used techniques for descriptive and causal analysis.
+Got a hang of the R syntax and are looking to put your R coding skills to practice with some empirical project? Here are some guides and code examples for commonly used techniques for descriptive and causal analysis.
 
 - [Run a regression analysis](/analyze/regression/)
 - [Impact evaluation with DID and RD](/impact/evaluation)
 - [Synthetic control analysis](/impact/syntCont)
 
 
-## Communicate your insights with R
+## Communicate insights with R
 
-One of the most important and challenging job of a researcher is communicating one’s findings to non-technical stakeholders in an appealing way. Fret not for, R facilitates creative ways to communicate your insights via interactive dashboards ( R Shiny) and also facilitates publishing content (e.g. e-books, slides, articles etc) on the web directly from R with tools like Distill, Bookdown and/or Quarto.
+One of the most important and challenging jobs of a researcher is communicating one’s findings to non-technical stakeholders in an appealing way. R facilitates creative ways to present your insights through interactive dashboards (R Shiny), and tools like Distill, Bookdown, and Quarto for publishing content (e.g., e-books, slides, articles) directly to the web from R. 
 
-Wanna try them out for yourself? Here are some useful resources to help you get started.
+Want to try it yourself? Here are some resources to help you get started:
+
 
 - [Build Interactive dashboards with R shiny](/Shiny/App)
 - [Publish e-books and interactive articles directly from R](/make/ebooks)
+
+## Building Webpages with R
+
+Interested in creating a webpage with R? Check out this [guide](https://debruine.github.io/topics/webpages.html).
+
+For *interactive webpages* with R, you can easily create them using [webexercises](https://debruine.github.io/webexercises/).
+
+
+
+{{% summary %}}
+
+R is a powerful statistical language with extensive resources that make it a top choice for data analysis. This guide helps you get started with R by covering setup, efficient learnign tips, advanced techniques, package management, reproducible research, and methods for communicating your insights. 
+
+Continue your journey by learning to code in R following [proper coding style guidelines](/write/good-code/r).
+
+
+{{% /summary %}}
+
+
