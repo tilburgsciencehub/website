@@ -31,7 +31,7 @@ Key advantages of Quarto are:
 
 - *Versatile data science tool:* Quarto supports multiple programming languages, including R, Python, and Julia, and integrates smoothly with environments like VS Code, RStudio, and Jupyter Notebooks. 
 
-- *Various output formats*: Generate documents in formats like HTML, PDF, Word, and PowerPoint formats. 
+- *Various output formats*: Generate documents in formats like HTML, PDF, Word, and PowerPoint, all without needing to adjust the document's syntax for each format. 
 
 - *Interactive features*: Incorporate interactive elements like [Shiny apps](/Shiny/App) and widgets directly into your documents. 
 
@@ -108,7 +108,7 @@ To create a Quarto document that demonstrates how to create a Python plot, follo
 - Insert the following content into your document:
 
 {{% codeblock %}}
-````
+````markdown
 
 ## Creating a line plot in Python
 
@@ -142,7 +142,6 @@ plt.show()
 You can execute a code cell without rendering the entire document. Simply click on "Run Cell", and the plot will appear in a new tab.
 
 {{% /tip %}}
-
 
 
 *Create a plot in R:*
@@ -202,7 +201,7 @@ To preview your document with a plot created in either R or Python:
 - Click on the three dots in the upper-right corner of the file, then click "Preview" (Shortcut: `Ctrl+Shift+K` for Windows, or `cmd+Shift+K` for Mac).
 - The document will open in a new tab in VSCode, or you can `Ctrl+Click` the `http://localhost` link to preview the HTML version in a web browser.
 
-Here's the output in HTML format from the example:
+Here's the output in HTML format from the example (the code is hidden under the Code tabs):
 
 <table>
 <tr>
@@ -223,9 +222,33 @@ Here's the output in HTML format from the example:
 You can render your document in various formats by adjusting the `format:` section in the metadata. Some common options include:
 - `pdf`
 - `docx`
-- `revealj`: HTML presentations using the `Reveal.js` library
+- `revealjs`: HTML presentation
 
 {{% /tip %}}
+
+Let's change the output format from `html` to `revealjs` in the YAML block to turn the document into a slide deck:
+
+{{% codeblock %}}
+```yaml
+format: revealjs
+```
+{{% /codeblock %}}
+
+First-level headers determine the outline of the slides, so our Python document is turned into two slides:
+
+<table>
+<tr>
+<td style = "padding:10px">
+<img src = "../images/quarto-slide1.png"/>
+<figcaption> First slide </figcaption>
+
+</td>
+<td style = "padding:10px">
+<img src = "../images/quarto-slide2.png"/>
+<figcaption> Second slide </figcaption>
+</tr>
+</table>
+
 
 
 ### Combining R and Python in the same Quarto document
@@ -311,14 +334,24 @@ After the previewing the document, the HTML output will display as follows:
 <img src = "../images/quarto-combine-r-python.png" width="400">
 </p>
 
-## Use Quarto with Jupyter
+## Use Quarto with JupyterLab
+
+Quarto can be used within JupyterLab to work with `ipynb` files (Python notebooks). To get started, refer to [this guide](https://quarto.org/docs/get-started/hello/jupyter.html).
+
+The process is very similar to using Quarto with VS Code. You can render notebooks from the Jupyter terminal using commands like `quarto preview example-file.ipynb`, which will open the output in a new tab. You can also define the desired output format and other options in the YAML metadata section at the top of the notebook.
+
 
 ## Use Quarto with RStudio
+
+To get started with Quarto in RStudio, refer to [this page](https://quarto.org/docs/get-started/hello/rstudio.html). The basic workflow is simple:
+
+- Open a `.qmd` file in RStudio by selecting "File" -> "New File" -> "Quarto Document".
+- Preview the file by clicking the "Render" button, which you can find either in the toolbar above the document (button with a blue arrow) or under the "File" tab.
+- The output will open in a new tab in your web browser, or you copy the `http://localhost` link to view the preview.
 
 
 {{% summary %}}
 
-- Use R code, Python code, or even together.
-- Export to various output formats: documents, presentations, ...
+Quarto is an open-source publishing system that integrates Markdown with executable codeblocks in languages like R, Python, and Julia. This guide helps you get started, and create your first Quarto document in environments like Visual Studio Code, Jupyter, and RStudio.
 
 {{% /summary %}}
