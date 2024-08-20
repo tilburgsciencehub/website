@@ -4,7 +4,7 @@ from datetime import datetime
 from functions import build_data_dict, fetch_contributions_for_the_single_contributor, generate_table_of_contents, get_breadcrumbs, find_related_articles, calculate_reading_time, fetch_meta_data, recently_published
 import os
 from models import db, articles, Contributors, blogs, Topics
-from html_parser import htmlize
+from html_parser import htmlize, r_to_html_plaintext
 from redirectstsh import setup_redirects
 from utils import get_git_commit_hash
 import redirects_config
@@ -137,26 +137,29 @@ def topics_third_level(first_level_topic_path,second_level_topic_path, third_lev
 # Single Article (Topic)
 @app.route('/topics/<first_level_topic_path>/<second_level_topic_path>/<third_level_topic_path>/<article_path>/')
 def topic_single(first_level_topic_path, second_level_topic_path, third_level_topic_path, article_path):
-    print("Entering single topic")
     data_dict = build_data_dict(Topics, articles)
     breadcrumbs = get_breadcrumbs()
     current_url = request.url
     article = None
     article = articles.query.filter_by(path=article_path).first()
-    print("article path ", article_path)
     meta_data = fetch_meta_data(article)
     related_articles = None
     table_of_contents = None
     content = None
     reading_time = 0
     if article:
+        print("There is an article")
         related_articles = find_related_articles(article_path, articles, Topics)
         content = htmlize(article.content)
-        print("What is content? -> ", content)
         table_of_contents = generate_table_of_contents(content)
         if (len(content) > 0):
             reading_time = calculate_reading_time(article.content)
-    else: return
+    else: 
+        file_path = 'content/topics/' + first_level_topic_path + '/' + second_level_topic_path + '/' + third_level_topic_path + '/' + article_path
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        code_content = r_to_html_plaintext(content)
+        return render_template('code_topic.html', content=code_content)
 
     return render_template('topic-single.html', breadcrumbs=breadcrumbs, assets=assets, article=article, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, content=content, reading_time=reading_time, meta_data=meta_data, related_articles=related_articles)
 

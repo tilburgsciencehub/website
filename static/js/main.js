@@ -95,19 +95,34 @@ $(document).ready(function () {
 });
 
 // make code download-able
-document.querySelectorAll('.downloadCodeBtn').forEach(button => {
-  button.addEventListener('click', function (e) {
-    e.preventDefault();
-    let codeBlock = this.closest('.codeblock');
-    let codeContainer = codeBlock.querySelector('.highlight:not(.highlight-inactive)');
-    let code = codeContainer ? codeContainer.querySelector('code') : null;
-    if (code) {
-      // Need to find a way to open the file, something like that I think 
-      // window.location.href = "../" + link;
-      console.log("Code inside ", code)
-    }
-  });
+// document.querySelectorAll('.downloadCodeBtn').forEach(button => {
+//   button.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     let codeBlock = this.closest('.codeblock');
+//     console.log("What is inside codeblock?", codeBlock)
+//     let codeContainer = codeBlock.querySelector('.highlight:not(.highlight-inactive)');
+//     let code = codeContainer ? codeContainer.querySelector('code') : null;
+//     if (code) {
+//       // Need to find a way to open the file, something like that I think 
+//       // window.location.href = "../" + link;
+//       console.log("Code inside ", code)
+//     }
+//   });
+// });
+$(".downloadCodeBtn").on("click", function () {
+  console.log("download inside ");
+  
+  // Hide the codeblock download button within the same parent
+  $(this).closest('.codeblock').find('.downloadCodeBtn').hide();
+
+  // 'this' refers to the clicked element with the class 'downloadCodeBtn'
+  const dataIndexValue = $(this).attr('data-index');
+
+  // Log the value to the console (or use it however you need)
+  console.log(dataIndexValue);
+  window.location.href = "../" + dataIndexValue;
 });
+
 
 $(document).mouseup(function (e) {
   const container = $(
