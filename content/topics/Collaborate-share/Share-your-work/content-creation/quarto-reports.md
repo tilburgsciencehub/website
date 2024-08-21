@@ -32,12 +32,12 @@ In this example, we'll create a Quarto report that provides a summary of the top
 
 {{% tip %}}
 
-To follow along with this example, open the example within the [Quarto document]() yourself.
+To follow along with this example, download [the Quarto file](https://github.com/valerievossen/quarto-example/blob/main/music-automated-report.qmd) yourself.
 
 {{% /tip %}}
 
 
-1. *Extracting the data*
+### Extracting the data
 
 First, we'll extract streaming data from the API and store it in a [Pandas](/pandas) DataFrame.
 This DataFrame will be displayed in the report, showing the top 5 artists and their total plays for the specific week.
@@ -101,12 +101,11 @@ get_top_artists_dataframe()
 ```
 {{% /codeblock %}}
 
-The code creates the following dataset:
+The code creates the following DataFrame:
 
 {{% table %}}
 
 | Artist                      | Total Plays | Week Number |
-|-----------------------------|-------------|-------------|
 | The Jackson Southernaires    | 51          | 34          |
 | Stevie Ray Vaughan           | 49          | 34          |
 | SNOWPATROL                   | 45          | 34          |
@@ -115,8 +114,7 @@ The code creates the following dataset:
 
 {{% /table %}}
 
-
-2. *Visualizing the data*
+### Visualizing the data
 
 Next, we'll visualize the data using an interactive bar plot, created with the `plotly` library in Python. This visuallization will also be included in the Quarto report.
 
@@ -149,7 +147,7 @@ interactive_bar_plot(get_top_artists_dataframe())
 
 The bar plot automatically updates, reflecting the top artists of the current week and dynamically adjusting the title to display the current week number.
 
-You can view the report, including the interactive bar plot, here: [HTML output file](). 
+To view the created report, including the interactive bar plot, preview the Quarto file yourself, or download the [HTML output file](https://github.com/valerievossen/quarto-example/blob/main/music-automated-report.html) to open it in your browser.
 
 ## Automating the workflow
 
@@ -161,34 +159,34 @@ In our example, we will automate the report to update weekly, specifically on Mo
 
 For Windows users, Task Scheduler is a built-in tool that allows you to automate your Quarto script. Follow these steps:
 
-1. **Open Task Scheduler** from the Start menu.
-2. **Create a new task**
+1. *Open Task Scheduler* from the Start menu.
+2. *Create a new task*
     - Click on "Create Basic Task" in the right-hand pane.
     - Name your task (e.g., "Weekly Music Report").
-4. **Set the trigger**
+4. *Set the trigger*
     - Choose "Weekly" as the trigger 
     - Set the task to run every Monday at 9:00 AM.
-5. **Set the action**
+5. *Set the action*
     - Select "Start a Program" as the action.
     - In the Program/Script field, add the path to the Quarto executable, typically `C:\Program Files\Quarto\bin\quarto.exe`. If unsure of the path, you can find it by typing `where quarto` in the command prompt.
 6. In the "Add arguments" field, add the following:
 
 {{% codeblock %}}
-```
+```bash
 render "C:\Users\Pieter\Desktop\weekly-music-report.qmd"
 ```
 {{% /codeblock %}}
 
 Replace the file path in quotes with the correct path to your Quarto file. 
 
-7. **Complete the wizard** and your task will run according to the schedule. Adjust the task settings to ensure the task will run even if your laptop is not plugged in.
+7. *Complete the wizard* and your task will run according to the schedule. Adjust the task settings to ensure the task will run even if your laptop is not plugged in.
 
 ### Cron job (Mac/Linux)
 
 For Mac and Linux users, you can schedule your Quarto script to run weekly using a cron job. Follow these steps:
 
 1. Open the terminal and type `crontab -e` to edit  your cron jobs.
-2. **Edit the Crontab**
+2. *Edit the Crontab*
     - Press `I` to enter insert mode.
     - Add the following line to schedule your Quarto script to run every Monday at 9:00 AM:
 
@@ -202,17 +200,17 @@ For Mac and Linux users, you can schedule your Quarto script to run weekly using
 - Replace `<PATH OF YOUR QUARTO INSTALLATION>` with the path to the Quarto executable. Typically, it's installed in `/usr/local/bin/quarto`, but you can find it by running `which quarto` in the terminal.
 - Replace `<PATH TO QUARTO FILE>` with the path to your Quarto file. E.g. `/Users/pieter/Desktop/weekly-music-report.qmd`. 
 
-4. **Save and exit:** Press `Esc`, type `:wq` and hit Enter to save your changes (if a window pops up choose OK).
+4. *Save and exit:* Press `Esc`, type `:wq` and hit Enter to save your changes (if a window pops up choose OK).
 
-5. **Verify the job:** Run `crontab -l` to confirm that your newly scheduled task is listed.
+5. *Verify the job:* Run `crontab -l` to confirm that your newly scheduled task is listed.
 
 
 {{% summary %}}
 
 We demonstrated how to create and automate a Quarto report that updates with streaming data from an API. Specifically, we covered:
 
-- **Generating a Quarto report with streaming data**: An example is provided that summarizes this week's top 5 streamed artists and visualizes the data with an interactive bar plot in Python.
+- *Generating a Quarto report with streaming data*: An example is provided that summarizes this week's top 5 streamed artists and visualizes the data with an interactive bar plot in Python.
 
-- **Automating the report**: How to use Task Scheduler on Windows and cron jobs on macOS/Linux to ensure your report remains up-to-date every week. 
+- *Automating the report*: How to use Task Scheduler on Windows and cron jobs on macOS/Linux to ensure your report remains up-to-date every week. 
 
 {{% /summary %}}

@@ -12,7 +12,7 @@ aliases:
 
 ## Overview
 
-[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system that allows you to create and share interactive documents, presentations, dashboards and reports. It does not provide a standalone graphical user interace, but is built to integrate with tools like [Visual Studio Code](/install/VSCode), [Jupyter](https://jupyter.org/), [RStudio](/install/r), etc. It supports Markdown and executable code blocks in multiple programming languages, such as [R](/learn/r), [Python](/learn/python), and [Julia](/julia).
+[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system that allows you to create and share interactive documents, presentations, dashboards, and reports. It does not provide a standalone graphical user interface, but is built to integrate with tools like [Visual Studio Code](/install/VSCode), [Jupyter](https://jupyter.org/), [RStudio](/install/r), etc. It supports Markdown and executable code blocks in multiple programming languages, such as [R](/learn/r), [Python](/learn/python), and [Julia](/julia).
 
 <p align = "center">
 <img src = "../images/quarto-logo.png" width="300">

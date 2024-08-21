@@ -13,7 +13,7 @@ aliases:
 
 ## Overview
 
-[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system that enables you to create and share interactive documents, presentations, dashboards and reports. It doesn't provide a standalone graphical user interface, but is built to integrate with tools like [Visual Studio Code](/install/VSCode), [Jupyter](https://jupyter.org/), [RStudio](/install/r). It supports Markdown alongside executable code blocks in multiple programming languages, such as [R](/learn/r), [Python](/learn/python), and [Julia](/julia). This guide will help you get started with Quarto and walk you through creating your first document. 
+[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system that enables you to create and share interactive documents, presentations, dashboards, and reports. It doesn't provide a standalone graphical user interface but is built to integrate with tools like [Visual Studio Code](/install/VSCode), [Jupyter](https://jupyter.org/), [RStudio](/install/r). It supports Markdown alongside executable code blocks in multiple programming languages, such as [R](/learn/r), [Python](/learn/python), and [Julia](/julia). This guide will walk you through creating your first document. 
 
 {{% tip %}}
 
@@ -23,7 +23,7 @@ Refer to [our Quarto set-up guide](/install/quarto) for detailed instructions on
 
 ## What is Quarto
 
-Quarto is a powerful publishing system that uses Markdown for authoring content. It allows you to seamlessly blend narrative text and executable code chunks within a single file. This makes it ideal for creating interactive tutorials, sharing reproducible research results, and delivering impactful communication.
+Quarto is a powerful publishing system that uses Markdown to author content. It allows you to seamlessly blend narrative text and executable code chunks within a single file. This makes it ideal for creating interactive tutorials, sharing reproducible research results, and delivering impactful communication.
 
 Key advantages of Quarto are:
 
@@ -54,7 +54,7 @@ Key advantages of Quarto are:
 - Type "Quarto", then choose "Quarto Document" from the available options.
 
 
-3. Adding content
+3. Adding content:
 
 *Metadata*
 
@@ -73,11 +73,11 @@ format:
 ```
 {{% /codeblock %}}
 
-This section defines key information, including the title, author, date, and output format. Setting `code-fold: true` collapses code under a clikable tab. 
+This section defines key information, including the title, author, date, and output format. Setting `code-fold: true` collapses the code into a clickable tab. 
 
 *Markdown text*
 
-You can add text using Markdown syntax, which is perfect for introducing your content and explaining your code.
+You can add text using Markdown syntax, for example to introduce your content and explain your code.
 
 {{% tip %}}
 
@@ -98,27 +98,27 @@ Code blocks are enclosed in three backticks (`` ``` ``) with the language specif
 
 *Create a plot in Python* 
 
-To create a Quarto document that demonstrates how to create a Python plot, follow these steps:
+To create a Quarto document with Python code, follow these steps:
 
 - Add `jupyter: python3` to the metadata section to specify the kernel. 
-- Ensure to have `matplotlib` installed. If not, use the following command in the terminal:
+- Ensure you have `matplotlib` installed. If not, use the following command in the terminal:
   - For Windows: `py -m pip install matplotlib`
   - For Mac: `python3 -m pip install matplotlib`
 
-- Insert the following content into your document:
+- Insert the following content into your Quarto document, replacing the escaped backticks around the Python code block (`` \`\`\` ``) with normal backticks (`` ``` ``).
 
 {{% codeblock %}}
-````markdown
+```markdown
 
 ## Creating a line plot in Python
 
-The following code creates a **simple line plot in Python**, in the following steps:
+We demonstrate how to create a simple line plot in Python, in the following steps:
 
 - We import the `matplotlib` library
 - We create data, saved in `x` and `y`
 - We create the plot with the `plt.plot` function.
 
-```{python}
+\`\`\`{python}
 import matplotlib.pyplot as plt
 
 # Data for plotting
@@ -131,15 +131,15 @@ plt.title("Simple Line Plot")
 plt.xlabel("X-axis")
 plt.ylabel("Y-axis")
 plt.show()
-```
+\`\`\`
 
-````
+```
 {{% /codeblock %}}
 
 
 {{% tip %}}
 
-You can execute a code cell without rendering the entire document. Simply click on "Run Cell", and the plot will appear in a new tab.
+You can execute a code cell without rendering the entire document. Simply click "Run Cell", and the plot will appear in a new tab.
 
 {{% /tip %}}
 
@@ -153,14 +153,14 @@ As an example, the following steps create a Quarto document with R code creating
 - Install the required R packages (e.g., `ggplot2`). It's best practice to avoid installing packages directly within a Quarto document, as this would cause the installation to be repeated every time the document is rendered. Instead, install the packages in your terminal or within RStudio to keep your Quarto document clean. 
 
 
-- Add the following Markdown and R code block to your Quarto file: 
+- Add the following Markdown and R code block to your Quarto file, replacing the escaped backticks around the R code block (`` \`\`\` ``) with normal backticks (`` ``` ``).
 
 {{% codeblock %}}
-````markdown
+```markdown
 
 ## Creating a scatter plot in R
 
-```{r}
+\`\`\`{r}
 #| echo: true
 #| message: false
 #| warning: false
@@ -177,9 +177,9 @@ ggplot(data, aes(x = x, y = y)) +
   ggtitle("Simple Scatter Plot with ggplot2") +
   xlab("X-axis") +
   ylab("Y-axis")
-```
+\`\`\`
 
-````
+```
 {{% /codeblock %}}
 
 {{% tip %}}
@@ -221,45 +221,21 @@ Here's the output in HTML format from the example (the code is hidden under the 
 
 You can render your document in various formats by adjusting the `format:` section in the metadata. Some common options include:
 - `pdf`
-- `docx`
-- `revealjs`: HTML presentation
+- `docx`: Word document
+- `revealjs`: slide deck
 
 {{% /tip %}}
-
-Let's change the output format from `html` to `revealjs` in the YAML block to turn the document into a slide deck:
-
-{{% codeblock %}}
-```yaml
-format: revealjs
-```
-{{% /codeblock %}}
-
-First-level headers determine the outline of the slides, so our Python document is turned into two slides:
-
-<table>
-<tr>
-<td style = "padding:10px">
-<img src = "../images/quarto-slide1.png"/>
-<figcaption> First slide </figcaption>
-
-</td>
-<td style = "padding:10px">
-<img src = "../images/quarto-slide2.png"/>
-<figcaption> Second slide </figcaption>
-</tr>
-</table>
-
 
 
 ### Combining R and Python in the same Quarto document
 
 You can combine R and Python in the same Quarto document with just a few extra steps. 
 
-For example, if your document primarly uses R code blocks, the enging will default to `knitr`. To run Python code in this environment, you can use the `reticulate` R package, which allows you to execute Python code directly from the R console.
+For example, if your document primarily uses R code blocks, the engine will default to `knitr`. To run Python code in this environment, you can use the `reticulate` R package, which allows you to execute Python code directly from the R console.
 
 {{% warning %}}
 
-If your document primarily contains Python code, it's best to use the Jupyter engine instead. If you need to run R code from a Jupyter engine, you can use the `rpy2 module`.
+If your document contains mostly Python code, it's best to use the Jupyter engine instead. If you need to run R code from a Jupyter engine, you can do so [using the `rpy2` package in Python](https://rviews.rstudio.com/2022/05/25/calling-r-from-python-with-rpy2/).
 
 {{% /warning %}}
 
@@ -328,7 +304,7 @@ plt.show()
 
 In this example, the `r.` prefix in the Python code block allows you to access the R object `cleaned_data` for use in Python. 
 
-After the previewing the document, the HTML output will display as follows: 
+*The rendered HTML output:*
 
 <p align = "center">
 <img src = "../images/quarto-combine-r-python.png" width="400">
@@ -336,22 +312,22 @@ After the previewing the document, the HTML output will display as follows:
 
 ## Use Quarto with JupyterLab
 
-Quarto can be used within JupyterLab to work with `ipynb` files (Python notebooks). To get started, refer to [this guide](https://quarto.org/docs/get-started/hello/jupyter.html).
+Quarto can be used within JupyterLab to work with `.ipynb` files (Python notebooks). To get started, refer to [this guide](https://quarto.org/docs/get-started/hello/jupyter.html).
 
 The process is very similar to using Quarto with VS Code. You can render notebooks from the Jupyter terminal using commands like `quarto preview example-file.ipynb`, which will open the output in a new tab. You can also define the desired output format and other options in the YAML metadata section at the top of the notebook.
 
 
 ## Use Quarto with RStudio
 
-To get started with Quarto in RStudio, refer to [this page](https://quarto.org/docs/get-started/hello/rstudio.html). The basic workflow is simple:
+To set up Quarto with RStudio, refer to [this page](https://quarto.org/docs/get-started/hello/rstudio.html). The basic workflow is simple:
 
 - Open a `.qmd` file in RStudio by selecting "File" -> "New File" -> "Quarto Document".
 - Preview the file by clicking the "Render" button, which you can find either in the toolbar above the document (button with a blue arrow) or under the "File" tab.
-- The output will open in a new tab in your web browser, or you copy the `http://localhost` link to view the preview.
+- The output will open in a new tab in your web browser, or copy the `http://localhost` link to view the preview.
 
 
 {{% summary %}}
 
-Quarto is an open-source publishing system that integrates Markdown with executable codeblocks in languages like R, Python, and Julia. This guide helps you get started, and create your first Quarto document in environments like Visual Studio Code, Jupyter, and RStudio.
+Quarto is a powerful tool that blends Markdown with executable code blocks. This guide helps you get started with your first Quarto document. As you become more skilled with Quarto, learn how to [automate a report with streaming data](/quarto-reports) next!
 
 {{% /summary %}}
