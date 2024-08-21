@@ -18,8 +18,8 @@ Writing clean, and consistent code is crucial for effective collaboration and re
 
 Familiarize yourself with the basics before diving into coding style:
 
-- [Set up R/RStudio](/install/r)
-- [Getting started with R](/learn/r)
+- [Set up R/RStudio](/topics/computer-setup/software-installation/rstudio/r/)
+- [Getting started with R](/topics/computer-setup/software-installation/rstudio/getting-started-with-r-overview/)
 
 {{% /tip %}}
 
@@ -235,7 +235,7 @@ In general, this guide follows the [Google's R Style Guide](https://google.githu
   * Do not use dots
   * Underscores or CamelCase are fine.
 
-* Our conventions for line length differ. See [our principles for good coding](/write/good-code) for more details.
+* Our conventions for line length differ. See [our principles for good coding](/topics/computer-setup/develop-coding-skills/coding-practices/principles-good-coding/) for more details.
 
 * We do not require that all functions have a comment block describing their uses. We encourage you to do so when the purpose of a function is not clear or whenever the function is used outside of the file in which it is defined.
 

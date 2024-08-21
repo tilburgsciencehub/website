@@ -20,7 +20,7 @@ aliases:
 
 Whether you’re looking to start coding for a new career or just as a hobby, choosing your first programming language can be a daunting task. There is no one-size-fits-all answer—it depends on the type of project you’ll work on, what is demanded on the job, etc. However, R stands out with several appealing benefits.
 
-- Chances are, sooner or later, you'll encounter R, one of the most popular (if not *the*) statistical programming languages worldwide. R's popularity isn't just because it's free; it's also due to the global community that uses, documents, and continually improves it. 
+Chances are, sooner or later, you'll encounter R, one of the most popular (if not *the*) statistical programming languages worldwide. R's popularity isn't just because it's free; it's also due to the global community that uses, documents, and continually improves it. 
 
 
 {{% warning %}}
@@ -44,7 +44,7 @@ One of the best things about R is the *wide range of learning resources availabl
 
 *Set up R and RStudio*
 
-Your first step is to set up R and RStudio on your local machine, following our [R/R Studio installation guide](/install/r).
+Your first step is to set up R and RStudio on your local machine, following our [R/R Studio installation guide](/topics/computer-setup/software-installation/rstudio/r/).
 
 {{% /tip %}}
 
@@ -89,18 +89,18 @@ Also, explore the [materials](https://github.com/debruine/msc-data-skills) from 
 
 ## Managing R Packages
 
-Packages in R are collections of functions, data, and code bundled together and stored in a ‘library’. While R comes with a standard set of packages, you can install additional ones as needed. As your projects grow, managing packages can become complex. Use this [code snippet](/install/r-packages) to automatically install any packages you may need.
+Packages in R are collections of functions, data, and code bundled together and stored in a ‘library’. While R comes with a standard set of packages, you can install additional ones as needed. As your projects grow, managing packages can become complex. Use this [code snippet](/topics/automation/replicability/package-management/auto-install-r-packages/) to automatically install any packages you may need.
 
-For effective package management, consider using *Packrat*. This tool helps avoid dependency issues by isolating R packages, making them portable, ensuring project reproducibility. This is especially useful when working on multiple projects or across different machines with different versions of packages installed. Learn more in [our comprehensive guide to Packrat](/reproduce/packrat)
+For effective package management, consider using *Packrat*. This tool helps avoid dependency issues by isolating R packages, making them portable, ensuring project reproducibility. This is especially useful when working on multiple projects or across different machines with different versions of packages installed. Learn more in [our comprehensive guide to Packrat](/topics/automation/replicability/package-management/packrat/)
 
 
 ## Analysis with R: Examples
 
 Got a hang of the R syntax and are looking to put your R coding skills to practice with some empirical project? Here are some guides and code examples for commonly used techniques for descriptive and causal analysis.
 
-- [Run a regression analysis](/analyze/regression/)
-- [Impact evaluation with DID and RD](/impact/evaluation)
-- [Synthetic control analysis](/impact/syntCont)
+- [Run a regression analysis](/topics/analyze/regression/linear-regression/regression-analysis/)
+- [Impact evaluation with Difference-in-Differences and Regression Discontinuity](/topics/analyze/causal-inference/did/impact-evaluation/)
+- [Synthetic control analysis](/topics/analyze/causal-inference/synthetic-control/synth-control/)
 
 
 ## Communicate insights with R
@@ -110,8 +110,8 @@ One of the most important and challenging jobs of a researcher is communicating 
 Want to try it yourself? Here are some resources to help you get started:
 
 
-- [Build Interactive dashboards with R shiny](/Shiny/App)
-- [Publish e-books and interactive articles directly from R](/make/ebooks)
+- [Build Interactive dashboards with R shiny](/topics/visualization/data-visualization/dashboarding/shiny-apps/)
+- [Publish e-books and interactive articles directly from R](/topics/collaborate-share/share-your-work/content-creation/using-r/)
 
 ## Building Webpages with R
 
@@ -125,7 +125,7 @@ For *interactive webpages* with R, you can easily create them using [webexercise
 
 R is a powerful statistical language with extensive resources that make it a top choice for data analysis. This guide helps you get started with R by covering setup, efficient learnign tips, advanced techniques, package management, reproducible research, and methods for communicating your insights. 
 
-Continue your journey by learning to code in R following [proper coding style guidelines](/write/good-code/r).
+Continue your journey by learning to code in R following [proper coding style guidelines](/topics/computer-setup/software-installation/rstudio/r-code-style/).
 
 
 {{% /summary %}}

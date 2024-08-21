@@ -13,9 +13,10 @@ aliases:
 
 ## Overview
 
-R is a language for statistical computing and graphics. R has become increasingly popular in the data science, econometrics, and marketing communities in recent years and should be considered at least as a open-source alternative to [Stata](/learn/stata) and SPSS.
+R is a language for statistical computing and graphics. R has become increasingly popular in the data science, econometrics, and marketing communities in recent years and should be considered at least as a open-source alternative to [Stata](/topics/computer-setup/software-installation/stata/getting-started-with-stata/) and SPSS.
 
 This setup guide includes:
+
 - Installing R
 - Installing RStudio
 - Installing additional R packages
@@ -74,9 +75,9 @@ If asked whether you want to install packages that need compilation, type `n` fo
 
 Check out these additional resources:
 
-- Discover how to automatically install necessary R packages with this [code snippet](/install/r-packages).
+- Discover how to automatically install necessary R packages with this [code snippet](/topics/automation/replicability/package-management/auto-install-r-packages/).
 
-- Learn to efficiently manage your R packages using Packrat with [this guide](/reproduce/packrat)
+- Learn to efficiently manage your R packages using Packrat with [this guide](/topics/automation/replicability/package-management/packrat/)
 
 {{% /tip %}}
 
@@ -164,7 +165,7 @@ Why? Sometimes, when running R from the command line, it doesn't find the packag
   4. Check whether `.libPaths()` only specifies your allocated user directory by typing `.libPaths()` into a new RStudio session. 
   	- If not, you may not have Admin rights on your computer, and R might be installed elsewhere. Add another environment variable and name it `R_LIBS_SITE`. The `Variable value` is the path listed second in the `.libPaths()` output.
 
-Want to set `R_LIBS_USER` on a Mac or Linux machine? [Read more here](https://tilburgsciencehub.com/setup/environment).
+Want to set `R_LIBS_USER` on a Mac or Linux machine? [Read more here](/topics/computer-setup/develop-coding-skills/bash/environment/).
 
 {{% /tip %}}
 
@@ -192,6 +193,6 @@ If you get an error message, try reinstalling the package using `install.package
 
 {{% summary %}}
 
-Now you have R and RStudio set up, you can continue to [learn to code in R](/learn/r).
+Now you have R and RStudio set up, you can continue to [learn to code in R](/topics/computer-setup/software-installation/rstudio/getting-started-with-r-overview/).
 
 {{% /summary %}}
