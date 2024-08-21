@@ -12,7 +12,7 @@ aliases:
 
 ## Overview
 
-The [Difference-in-Difference (DiD) method](/canonical-DiD) is a powerful technique for causal inference. It evaluates the effects of a treatment by comparing the changes in outcomes between treatment and control groups. In our [Staggered DiD article](/staggered-did), we introduced a design where different units receive the treatment at other times. 
+The [Difference-in-Difference (DiD) method](/topics/analyze/causal-inference/did/canonical-did-table/) is a powerful technique for causal inference. It evaluates the effects of a treatment by comparing the changes in outcomes between treatment and control groups. In our [Staggered DiD article](/topics/analyze/causal-inference/did/staggered-did/), we introduced a design where different units receive the treatment at other times. 
 
 In this article, we explore staggered treatment designs further discussing the *Stacked DiD* method. We also introduce the *Weighted Stacked DiD* method by [Wing et al. (2024)](https://www.nber.org/papers/w32054), which addresses the imbalances in treatment and control trends found in the basic Stacked DiD approach.
 
@@ -22,7 +22,7 @@ The *Stacked DiD* method analyzes staggered treatment designs by creating separa
 
 {{% tip %}}
 
-For more insights into these problematic late-early comparisons, read [this topic on potential Staggered DiD biases](/goodman-bacon).
+For more insights into these problematic late-early comparisons, read [this topic on potential Staggered DiD biases](/topics/analyze/causal-inference/did/goodmanbacon/).
 
 {{% /tip %}}
 
@@ -31,9 +31,6 @@ A major shortcoming of the basic stacked DiD design is *the imbalance in treatme
 ### Imbalance in trends
 
 In staggered designs, each sub-experiment has different lengths of pre- and post-treatment periods because some groups receive treatment earlier than others. When these sub-experiments are aggregated and all group-specific effects are averaged, the composition of the treatment group changes over time. Consequently, the regression assigns different weights to treatment and control trends across sub-experiments.
-
-
-
 
 
 {{% example %}}
@@ -243,10 +240,10 @@ The analysis reveals a negative effect of the ACA Medicaid expansion on insuranc
 
 Useful resources:
 
-- Learn more about [the R package `fixest`](/fixest), which is ideal for analyzing panel data and fixed effects models. 
-- Get a comprehensive overview of [linear regression analysis](/analyze/regression)
-- Dive deeper into [Fixed Effects models](/within).
-- Learn how to interpret [linear regression output in R](/regressionoutput)
+- Learn more about [the R package `fixest`](/topics/analyze/causal-inference/panel-data/fixest/), which is ideal for analyzing panel data and fixed effects models. 
+- Get a comprehensive overview of [linear regression analysis](/topics/analyze/regression/linear-regression/regression-analysis/)
+- Dive deeper into [Fixed Effects models](/topics/analyze/causal-inference/panel-data/within-estimator/).
+- Learn how to interpret [linear regression output in R](/topics/analyze/regression/linear-regression/regression-summary-output-r/)
 
 {{% /tip %}}
 
