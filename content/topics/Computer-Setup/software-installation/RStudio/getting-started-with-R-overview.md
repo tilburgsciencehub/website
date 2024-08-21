@@ -81,6 +81,7 @@ Want to learn more *advanced programming* with R? Check out the [digital version
 ## Mastering Reproducible Workflows with R
 
 Want to learn the essential skills for *reproducible research* and open science in R? This [book](https://psyteachr.github.io/reprores-v2/index.html) covers a wide range of topics such as:
+
 - [Reproducible Workflows](https://psyteachr.github.io/reprores-v2/repro.html)
 - Data visualization, e.g. [styling plots](https://psyteachr.github.io/reprores-v2/plotstyle.html)
 - [Data Wrangling](https://psyteachr.github.io/reprores-v2/dplyr.html)
@@ -126,7 +127,6 @@ For *interactive webpages* with R, you can easily create them using [webexercise
 R is a powerful statistical language with extensive resources that make it a top choice for data analysis. This guide helps you get started with R by covering setup, efficient learnign tips, advanced techniques, package management, reproducible research, and methods for communicating your insights. 
 
 Continue your journey by learning to code in R following [proper coding style guidelines](/topics/computer-setup/software-installation/rstudio/r-code-style/).
-
 
 {{% /summary %}}
 
