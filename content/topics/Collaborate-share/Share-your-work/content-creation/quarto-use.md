@@ -1,5 +1,5 @@
 ---
-title: "Create Interactive Documents With Quarto"
+title: "Create Your First Interactive Document With Quarto"
 description: "Learn how create and publish interactive documents, such as presentations, websites, blogs, books, etc. with Quarto"
 keywords: "Quarto, quarto, interactive, dashboard, presentation, document, markdown, set-up, install, guide, command line, interface, tool, command line interface, CLI"
 draft: false
@@ -13,11 +13,11 @@ aliases:
 
 ## Overview
 
-[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system that enables you to create and share interactive documents, presentations, dashboards, and reports. It doesn't provide a standalone graphical user interface but is built to integrate with tools like [Visual Studio Code](/install/VSCode), [Jupyter](https://jupyter.org/), [RStudio](/install/r). It supports Markdown alongside executable code blocks in multiple programming languages, such as [R](/learn/r), [Python](/learn/python), and [Julia](/julia). This guide will walk you through creating your first document. 
+[Quarto](https://quarto.org/) is an open-source scientific and technical publishing system that enables you to create and share interactive documents, presentations, dashboards, and reports. It doesn't provide a standalone graphical user interface but is built to integrate with tools like [Visual Studio Code](/topics/computer-setup/software-installation/ide/vscode/), [Jupyter](https://jupyter.org/), [RStudio](/topics/computer-setup/software-installation/rstudio/r/). It supports Markdown alongside executable code blocks in multiple programming languages, such as [R](/topics/computer-setup/software-installation/rstudio/getting-started-with-r-overview/), [Python](/topics/computer-setup/software-installation/python/python/), and [Julia](/topics/computer-setup/software-installation/matlab/julia/). This guide will walk you through creating your first document. 
 
 {{% tip %}}
 
-Refer to [our Quarto set-up guide](/install/quarto) for detailed instructions on installing Quarto.
+Refer to [our Quarto Set-up Guide](/topics/computer-setup/software-installation/document-creation/quarto-setup/) for detailed instructions on installing Quarto.
 
 {{% /tip %}}
 
@@ -33,7 +33,7 @@ Key advantages of Quarto are:
 
 - *Various output formats*: Generate documents in formats like HTML, PDF, Word, and PowerPoint, all without needing to adjust the document's syntax for each format. 
 
-- *Interactive features*: Incorporate interactive elements like [Shiny apps](/Shiny/App) and widgets directly into your documents. 
+- *Interactive features*: Incorporate interactive elements like [Shiny apps](/topics/Visualization/data-visualization/dashboarding/introduction-to-r-shiny/) and widgets directly into your documents. 
 
 
 ## Use Quarto with VS Code
@@ -328,6 +328,6 @@ To set up Quarto with RStudio, refer to [this page](https://quarto.org/docs/get-
 
 {{% summary %}}
 
-Quarto is a powerful tool that blends Markdown with executable code blocks. This guide helps you get started with your first Quarto document. As you become more skilled with Quarto, learn how to [automate a report with streaming data](/quarto-reports) next!
+Quarto is a powerful tool that blends Markdown with executable code blocks. This guide helps you get started with your first Quarto document. As you become more skilled with Quarto, learn how to [automate a report with streaming data](/topics/Collaborate-share/Share-your-work/content-creation/quarto-reports/) next!
 
 {{% /summary %}}

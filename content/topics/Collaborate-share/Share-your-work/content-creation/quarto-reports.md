@@ -20,8 +20,8 @@ As an example, we will generate a Quarto report using data collected from the AP
 
 Before diving into this example, ensure you have Quarto set up by following these guides:
 
-- [Quarto Setup Guide](/quarto-setup) for detailed instructions on installing Quarto.
-- [Create Your First Document with Quarto](/quarto-use) to get familiar with its basic functionalities.
+- [Quarto Setup Guide](/topics/computer-setup/software-installation/document-creation/quarto-setup/) for detailed instructions on installing Quarto.
+- [Create Your First Document with Quarto](/topics/Collaborate-share/Share-your-work/content-creation/quarto-use/) to get familiar with its basic functionalities.
 
 {{% /tip %}}
 
@@ -39,7 +39,7 @@ To follow along with this example, download [the Quarto file](https://github.com
 
 ### Extracting the data
 
-First, we'll extract streaming data from the API and store it in a [Pandas](/pandas) DataFrame.
+First, we'll extract streaming data from the API and store it in a [Pandas](/topics/Manage-manipulate/manipulate-clean/numerical/pandas/) DataFrame.
 This DataFrame will be displayed in the report, showing the top 5 artists and their total plays for the specific week.
 
 
@@ -151,7 +151,7 @@ To view the created report, including the interactive bar plot, preview the Quar
 
 ## Automating the workflow
 
-To keep your Quarto report up-to-date automatically, you can schedule the execution of the Quarto report using [a task scheduler](/schedule/task). This section will show you how to apply common automation methods to a Quarto (`.qmd`) file.
+To keep your Quarto report up-to-date automatically, you can schedule the execution of the Quarto report [using a task scheduler](/topics/Automation/automation-tools/task-automation/task-scheduling/). This section will show you how to apply common automation methods to a Quarto (`.qmd`) file.
 
 In our example, we will automate the report to update weekly, specifically on Mondays at 9:00 AM. The updated report will generate a summary of the top 5 artists and their total number of plays for the current week!
 
@@ -161,12 +161,15 @@ For Windows users, Task Scheduler is a built-in tool that allows you to automate
 
 1. *Open Task Scheduler* from the Start menu.
 2. *Create a new task*
+
     - Click on "Create Basic Task" in the right-hand pane.
     - Name your task (e.g., "Weekly Music Report").
 4. *Set the trigger*
+
     - Choose "Weekly" as the trigger 
     - Set the task to run every Monday at 9:00 AM.
 5. *Set the action*
+
     - Select "Start a Program" as the action.
     - In the Program/Script field, add the path to the Quarto executable, typically `C:\Program Files\Quarto\bin\quarto.exe`. If unsure of the path, you can find it by typing `where quarto` in the command prompt.
 6. In the "Add arguments" field, add the following:
