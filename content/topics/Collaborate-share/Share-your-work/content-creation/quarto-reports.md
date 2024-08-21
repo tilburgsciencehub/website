@@ -1,6 +1,6 @@
 ---
 title: "Automating Reports With Quarto"
-description: " "
+description: "Learn how to generate a Quarto report that updates automatically with streaming data from an API"
 keywords: "Quarto, quarto, interactive, dashboard, report, automating, presentation, document, markdown, set-up, install, guide, command line, interface, tool, command line interface, CLI"
 draft: false
 author: "Valerie Vossen"
