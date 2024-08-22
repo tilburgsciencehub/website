@@ -1,9 +1,10 @@
 name: broken-link-checker
 
 on:
-  schedule:
-    - cron: '0 8 * * 1,4'
-
+  push:
+    branches:
+      - main-flask
+      
 jobs:
   build:
     runs-on: ubuntu-latest
