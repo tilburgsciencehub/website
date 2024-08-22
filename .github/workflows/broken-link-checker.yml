@@ -26,7 +26,7 @@ jobs:
           python -m pip install "pandas"
           python -m pip install "datetime"
           python -m pip install "ultimate-sitemap-parser"
-          python -m pip install "pyjwt"
+          python -m pip install "pyjwt[crypto]"
 
       - name: Generate GitHub App JWT
         id: generate_jwt
