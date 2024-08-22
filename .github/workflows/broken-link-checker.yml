@@ -9,12 +9,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout repo content
+      - name: Checkout repository content
         uses: actions/checkout@v4
-      - name: setup python
+      
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: 3.8
+      
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -23,8 +25,40 @@ jobs:
           python -m pip install "pandas"
           python -m pip install "datetime"
           python -m pip install "ultimate-sitemap-parser"
-      - name: execute broken link script
+          python -m pip install "pyjwt"
+
+      - name: Generate GitHub App JWT
+        id: generate_jwt
+        env:
+          APP_ID: ${{ secrets.SECRET_APP_ID }}
+          PRIVATE_KEY: ${{ secrets.SECRET_APP_KEY }}
+        run: |
+          echo "Generating JWT..."
+          JWT=$(python -c "
+          import jwt, time, os;
+          payload = {
+            'iat': int(time.time()),
+            'exp': int(time.time()) + (10 * 60),
+            'iss': os.getenv('APP_ID')
+          };
+          private_key = os.getenv('PRIVATE_KEY').replace('\\n', '\n');
+          encoded_jwt = jwt.encode(payload, private_key, algorithm='RS256');
+          print(encoded_jwt);
+          ")
+          echo "JWT=$JWT" >> $GITHUB_ENV
+
+      - name: Request GitHub App Installation Token
+        id: request_token
+        env:
+          JWT: ${{ env.JWT }}
+          INSTALLATION_ID: ${{ secrets.SECRET_INSTALLATION_ID }}
+        run: |
+          echo "Requesting installation token..."
+          INSTALLATION_TOKEN=$(curl -X POST -H "Authorization: Bearer $JWT" -H "Accept: application/vnd.github.v3+json" https://api.github.com/app/installations/$INSTALLATION_ID/access_tokens | jq -r '.token')
+          echo "INSTALLATION_TOKEN=$INSTALLATION_TOKEN" >> $GITHUB_ENV
+
+      - name: Execute broken link script
         env: 
-          GIT_TOKEN: ${{ secrets.SECRET_GIT_TOKEN }}
+          GIT_TOKEN: ${{ env.INSTALLATION_TOKEN }}
         run: |
           python broken_link_checker.py
