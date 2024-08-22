@@ -147,19 +147,19 @@ def topic_single(first_level_topic_path, second_level_topic_path, third_level_to
     table_of_contents = None
     content = None
     reading_time = 0
-    if article:
-        print("There is an article")
+    if article is None:
+        file_path = 'content/topics/' + first_level_topic_path + '/' + second_level_topic_path + '/' + third_level_topic_path + '/' + article_path
+        ## open file and retrieve R code content
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        code_content = r_to_html_plaintext(content)
+        return render_template('code_topic.html', content=code_content)
+    else: 
         related_articles = find_related_articles(article_path, articles, Topics)
         content = htmlize(article.content)
         table_of_contents = generate_table_of_contents(content)
         if (len(content) > 0):
             reading_time = calculate_reading_time(article.content)
-    else: 
-        file_path = 'content/topics/' + first_level_topic_path + '/' + second_level_topic_path + '/' + third_level_topic_path + '/' + article_path
-        with open(file_path, 'r', encoding='utf-8') as file:
-            content = file.read()
-        code_content = r_to_html_plaintext(content)
-        return render_template('code_topic.html', content=code_content)
 
     return render_template('topic-single.html', breadcrumbs=breadcrumbs, assets=assets, article=article, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, content=content, reading_time=reading_time, meta_data=meta_data, related_articles=related_articles)
 
