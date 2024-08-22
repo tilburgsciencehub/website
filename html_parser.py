@@ -34,7 +34,6 @@ def convert_code_blocks_to_html(md_content):
         if link_match:
             # Extract the content inside the parentheses
             code_content_to_open = link_match.group(1).strip()
-            print("Extracted content:", code_content_to_open)
         language_matches = re.finditer(r'```(\w+)(.*?)```', code_content, re.DOTALL)
         code_blocks = []
         tab_nav = []
@@ -66,7 +65,7 @@ def convert_code_blocks_to_html(md_content):
                        f'</ul>'
         
         ## Only display download button when there is code content for that
-        download_button_html = f'<a class="downloadCodeBtn" href="../{code_content_to_open}"><img src="/img/download.svg"></a>' if code_content_to_open else ''
+        download_button_html = f'<a class="downloadCodeBtn" style="margin-right: 20px" href="../{code_content_to_open}"><img src="/img/download.svg"></a>' if code_content_to_open else ''
 
         return f'<div class="codeblock">\n' \
             f'<div class="d-flex justify-content-between">\n' \
@@ -401,13 +400,10 @@ def remove_empty_pre_code_tags(html_content):
     return cleaned_content
 
 def r_to_html_plaintext(r_content):
-    print("Whta is r_code? ", r_content)
     # Escape HTML special characters to display as plain text
     escaped_content = html.escape(r_content)
-    print("what is escaped_content? -> ", escaped_content)
     # Wrap the content in <pre> and <code> tags for HTML
     html_content = f"<pre><code>{escaped_content}</code></pre>"
-    print("What is html_content?", html_content)
     return html_content
 # Main function to convert Markdown file content to HTML
 # Parameters:
