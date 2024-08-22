@@ -399,6 +399,10 @@ def remove_empty_pre_code_tags(html_content):
     cleaned_content = re.sub(empty_pre_code_pattern, '', html_content)
     return cleaned_content
 
+# Parameters:
+# - r_content: String R code content
+# Returns:
+# - String with R code enclosed in <pre><code></code></pre> tags
 def r_to_html_plaintext(r_content):
     # Escape HTML special characters to display as plain text
     escaped_content = html.escape(r_content)
