@@ -10,13 +10,13 @@ import os
 import json
 
 # Variables
-fullDomain = os.environ('FULL_DOMAIN')
-aws_access_key_id = os.environ('AWS_ACCESS_KEY_ID')
-aws_secret_access_key = os.environ('AWS_SECRET_ACCESS_KEY')
-aws_region = os.environ('AWS_REGION')
-aws_bucket = os.environ('AWS_BUCKET')
-username = os.environ('GIT_USERNAME')
-repositoryname = os.environ('GIT_REPOSITORY')
+fullDomain = os.environ['FULL_DOMAIN']
+aws_access_key_id = os.environ['AWS_ACCESS_KEY_ID']
+aws_secret_access_key = os.environ['AWS_SECRET_ACCESS_KEY']
+aws_region = os.environ['AWS_REGION']
+aws_bucket = os.environ['AWS_BUCKET']
+username = os.environ['GIT_USERNAME']
+repositoryname = os.environ['GIT_REPOSITORY']
 token = os.environ['GIT_TOKEN']
 
 # Settings for Git Issue
