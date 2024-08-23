@@ -75,4 +75,4 @@ jobs:
         env:
           GIT_TOKEN: ${{ env.INSTALLATION_TOKEN }}
         run: |
-          python broken_link_checker.py
+          python seo.py
