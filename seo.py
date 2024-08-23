@@ -150,22 +150,9 @@ def checkDuplicateTitlesAndMetaDescriptions(df):
     return pd.DataFrame(duplicates).drop_duplicates()
 
 def upload_file_to_s3(file_name, bucket, object_name=None, aws_access_key_id=None, aws_secret_access_key=None, aws_region=None):
-    """
-    Upload een bestand naar een S3-bucket.
-
-    :param file_name: Bestandspad naar het te uploaden bestand.
-    :param bucket: Naam van de S3-bucket.
-    :param object_name: S3-objectnaam. Als niet opgegeven, wordt file_name gebruikt.
-    :param aws_access_key_id: AWS access key ID. Als niet opgegeven, wordt uit omgeving gehaald.
-    :param aws_secret_access_key: AWS secret access key. Als niet opgegeven, wordt uit omgeving gehaald.
-    :param aws_region: AWS regio. Als niet opgegeven, wordt standaard regio gebruikt.
-    :return: True als upload succesvol is, anders False.
-    """
-    # Gebruik standaard object_name als deze niet is opgegeven
     if object_name is None:
         object_name = file_name
 
-    # Maak een S3-client aan
     try:
         if aws_access_key_id and aws_secret_access_key and aws_region:
             s3_client = boto3.client(
@@ -198,7 +185,7 @@ def upload_file_to_s3(file_name, bucket, object_name=None, aws_access_key_id=Non
 def push_issue_git(file_url):
     now = datetime.now()
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-    titleissue = 'Broken/Error Links on ' + dt_string
+    titleissue = 'SEO Report of ' + dt_string
     issuebody = f"A new SEO Report has been created. It can be found over here: {file_url} "
     data = {"title": titleissue, "body": issuebody}
 
@@ -263,9 +250,12 @@ def analyzeWebsite(fullDomain, aws_bucket=None, aws_access_key_id=None, aws_secr
     if upload_success:
         s3_url = f"https://{aws_bucket}.s3.{aws_region}.amazonaws.com/{filename}"
         print(f"Excel-bestand succesvol geüpload naar S3. URL: {s3_url}")
+        
+        push_issue_git(s3_url)
     else:
         print("Fout bij het uploaden van Excel-bestand naar S3.")
 
     return df, duplicate_df
+
 
 df, duplicate_df = analyzeWebsite(fullDomain, aws_bucket, aws_access_key_id, aws_secret_access_key, aws_region)
