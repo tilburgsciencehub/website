@@ -222,51 +222,49 @@ def matchBrokenLinks(brokenLinksList,externalLinksListRaw):
     dataframeFinal2 = pd.DataFrame(brokenLinksDict)
     EndDataFrame = dataframeFinal.merge(dataframeFinal2, left_on='Broken_Link_URL', right_on ='link', how='outer')
     del EndDataFrame['link']
+
+def generate_excel_report(df, file_name="broken_links_report.xlsx"):
+    df.to_excel(file_name, index=False)
+    print(f"Excel report generated: {file_name}")
+    return file_name
     
 def push_issue_git():
-    
-    #set dt_string with current date/time
     now = datetime.now()
-    dt_string = now.strftime("%d/%m/%Y %H:%M:%S") 
-
-    #github issue title
+    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     titleissue = 'Broken/Error Links on ' + dt_string
 
-    #reset EndDataFrame index to itterate through
-    df3 = EndDataFrame.reset_index()  # make sure indexes pair with number of rows
-    
-    #empty table for git issue
-    table = ''
+    df3 = EndDataFrame.reset_index()
+
     if len(df3.index) > 0:
-        #for each row in df3, add new row in git table
-        for index, row in df3.iterrows():
-            if '\n' in row['Anchor Text']:
-                anchortext = row['Anchor Text'].replace("\n", '')
-                tablebody = '|' + row['URL'] + '|' + row['Broken_Link_URL'] + '|' + anchortext + '|' + str(row['statusCode']) + '|' + '\n'
-                table = table + tablebody
+        # Genereer een Excel-bestand met de gebroken links
+        report_file = generate_excel_report(df3)
 
-            else:
-                tablebody = '|' + row['URL'] + '|' + row['Broken_Link_URL'] + '|' + row['Anchor Text'] + '|' + str(row['statusCode']) + '|' + '\n'
-                table = table + tablebody
+        # Maak een kortere samenvatting voor de issue body
+        summary_body = f"Today, a total of {len(df3.index)} link errors have been found. Please see the attached report for details."
 
-        #create content of issue
-        tablecomp = tablehead + table
-        issuebody = 'Today, a total of ' + str(len(df3.index)) + ' link errors have been found. The following links have been found containing errors:' + '\n' + tablecomp
+        data = {"title": titleissue, "body": summary_body}
 
-        #defining data to push to git issue
-        data = {"title": titleissue, "body": issuebody}
-
-        #Post issue message using requests and json
         response = requests.post(url, data=json.dumps(data), headers=headers)
         if response.status_code == 201:
             print('Issue created successfully')
+
+            # Upload het Excel-bestand als bijlage aan de issue
+            issue_number = response.json()['number']
+            upload_url = f"https://uploads.github.com/repos/{username}/{Repositoryname}/issues/{issue_number}/comments"
+            headers.update({"Content-Type": "application/vnd.github.v3+json"})
+            files = {'file': open(report_file, 'rb')}
+            file_data = {"body": "See attached broken links report.", "files": files}
+
+            response = requests.post(upload_url, headers=headers, data=json.dumps(file_data))
+            if response.status_code == 201:
+                print('File attached successfully to the issue')
+            else:
+                print(f'Failed to attach file: {response.status_code} - {response.text}')
+
         else:
             print(f'Failed to create issue: {response.status_code} - {response.text}')
-
-        
     else:
         print('No broken links found')
-        pass
 
 # # Execute Functions
 
