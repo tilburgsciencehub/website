@@ -1,4 +1,3 @@
-# # Libraries
 from usp.tree import sitemap_tree_for_homepage
 from bs4 import BeautifulSoup
 import requests
@@ -38,7 +37,7 @@ headers = {"Authorization" : "token {}".format(token)}
 
 #Generate target repositoryURL using Github API
 username = 'tilburgsciencehub'
-Repositoryname = 'broken-link-checker'
+Repositoryname = 'website'
 url = "https://api.github.com/repos/{}/{}/issues".format(username,Repositoryname)
 
 #github table setup
@@ -176,35 +175,30 @@ def identifyBrokenLinks(uniqueExternalLinks):
         print("Checking external link #",count," out of ",length_uniqueExternalLinks,".")
         
         try:
-        
-            statusCode = requests.get(link, headers=user_agent).status_code
+            # Stel een time-out van 10 seconden in
+            statusCode = requests.get(link, headers=user_agent, timeout=10).status_code
             
             if statusCode == 404:
-                
                 brokenLinksDict['link'].append(link)
                 brokenLinksDict['statusCode'].append(statusCode)
                 brokenLinksList.append(link)
                 
             elif statusCode != 404 and statusCode > 399 and statusCode < 452:
-            
                 brokenLinksDict['link'].append(link)
                 brokenLinksDict['statusCode'].append(statusCode)
                 brokenLinksList.append(link)
             
             else:
-                
                 pass
             
-        except:
-            
-            brokenLinksDict['link'].append(link)
-            brokenLinksDict['statusCode'].append(statusCode)
-            brokenLinksList.append(link)
+        except requests.exceptions.Timeout:
+            print(f"Skipping {link} due to timeout.")
+        
+        except Exception as e:
+            print(f"An error occurred: {str(e)}")
 
 # Identify Unique Broken Links and Matches them to Original List of All External Links
 def matchBrokenLinks(brokenLinksList,externalLinksListRaw):
-
-    global EndDataFrame
     
     brokenLinkLocation.clear()
     
@@ -222,56 +216,49 @@ def matchBrokenLinks(brokenLinksList,externalLinksListRaw):
     dataframeFinal2 = pd.DataFrame(brokenLinksDict)
     EndDataFrame = dataframeFinal.merge(dataframeFinal2, left_on='Broken_Link_URL', right_on ='link', how='outer')
     del EndDataFrame['link']
-    
+    EndDataFrame = EndDataFrame[EndDataFrame['statusCode'] != 200]
 
-def push_issue_git():
+    return EndDataFrame
     
-    #set dt_string with current date/time
+def push_issue_git(EndDataFrame):
     now = datetime.now()
-    dt_string = now.strftime("%d/%m/%Y %H:%M:%S") 
-
-    #github issue title
+    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     titleissue = 'Broken/Error Links on ' + dt_string
 
-    #reset EndDataFrame index to itterate through
-    df3 = EndDataFrame.reset_index()  # make sure indexes pair with number of rows
-    
-    #empty table for git issue
+    df_duplicates = EndDataFrame.reset_index()
+    df = df_duplicates.drop_duplicates()
+
     table = ''
-    if len(df3.index) > 0:
-        #for each row in df3, add new row in git table
-        for index, row in df3.iterrows():
-            if '\n' in row['Anchor Text']:
-                anchortext = row['Anchor Text'].replace("\n", '')
-                tablebody = '|' + row['URL'] + '|' + row['Broken_Link_URL'] + '|' + anchortext + '|' + str(row['statusCode']) + '|' + '\n'
-                table = table + tablebody
+    if len(df.index) > 0:
+        for index, row in df.iterrows():
+            anchortext = row['Anchor Text'].replace("\n", '') if '\n' in row['Anchor Text'] else row['Anchor Text']
+            tablebody = f"| {row['URL']} | {row['Broken_Link_URL']} | {anchortext} | {row['statusCode']} |\n"
+            table = table + tablebody
 
-            else:
-                tablebody = '|' + row['URL'] + '|' + row['Broken_Link_URL'] + '|' + row['Anchor Text'] + '|' + str(row['statusCode']) + '|' + '\n'
-                table = table + tablebody
-
-        #create content of issue
         tablecomp = tablehead + table
-        issuebody = 'Today, a total of ' + str(len(df3.index)) + ' link errors have been found. The following links have been found containing errors:' + '\n' + tablecomp
+        issuebody = f"Today, a total of {len(df.index)} link errors have been found. The following links have been found containing errors:\n{tablecomp}"
 
-        #defining data to push to git issue
-        data = {"title": titleissue, "body": issuebody, "assignee": "thierrylahaije"}
+        data = {"title": titleissue, "body": issuebody}
 
-        #Post issue message using requests and json
-        requests.post(url,data=json.dumps(data),headers=headers)
-        
-        print('Process succeeded')
-        
+        try:
+            response = requests.post(url, data=json.dumps(data), headers=headers)
+            if response.status_code == 201:
+                print('Issue created successfully')
+            else:
+                print(f'Failed to create issue: {response.status_code} - {response.text}')
+        except Exception as e:
+            print(f'An error occurred: {str(e)}')
+
     else:
-        pass
+        print('No broken links found')
+
 
 # # Execute Functions
-
-
 getPagesFromSitemap(fullDomain)
 getListUniquePages()
 ExternalLinkList(listPages, fullDomain)
 getUniqueExternalLinks(externalLinksListRaw)
 identifyBrokenLinks(uniqueExternalLinks)
-matchBrokenLinks(brokenLinksList,externalLinksListRaw)
-push_issue_git()
+EndDataFrame = matchBrokenLinks(brokenLinksList,externalLinksListRaw)
+push_issue_git(EndDataFrame)
+
