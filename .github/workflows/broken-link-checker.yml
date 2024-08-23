@@ -1,9 +1,8 @@
 name: broken-link-checker
 
 on:
-  push:
-    branches:
-      - main-flask
+  schedule:
+    - cron: "0 18 * * 5"
       
 jobs:
   build:
