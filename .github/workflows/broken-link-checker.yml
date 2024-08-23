@@ -25,6 +25,7 @@ jobs:
           python -m pip install "requests"
           python -m pip install "pandas"
           python -m pip install "datetime"
+          python -m pip install "openpyxl"
           python -m pip install "ultimate-sitemap-parser"
           python -m pip install "pyjwt[crypto]"
 
