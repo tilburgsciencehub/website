@@ -4,7 +4,7 @@ from datetime import datetime
 from functions import build_data_dict, fetch_contributions_for_the_single_contributor, generate_table_of_contents, get_breadcrumbs, find_related_articles, calculate_reading_time, fetch_meta_data, recently_published
 import os
 from models import db, articles, Contributors, blogs, Topics
-from html_parser import htmlize
+from html_parser import htmlize, r_to_html_plaintext
 from redirectstsh import setup_redirects
 from utils import get_git_commit_hash
 import redirects_config
@@ -145,7 +145,17 @@ def topic_single(first_level_topic_path, second_level_topic_path, third_level_to
     article = articles.query.filter_by(path=article_path).first()
     meta_data = fetch_meta_data(article)
     related_articles = None
-    if article:
+    table_of_contents = None
+    content = None
+    reading_time = 0
+    if article is None:
+        file_path = 'content/topics/' + first_level_topic_path + '/' + second_level_topic_path + '/' + third_level_topic_path + '/' + article_path
+        ## open file and retrieve R code content
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        code_content = r_to_html_plaintext(content)
+        return render_template('code_topic.html', content=code_content)
+    else: 
         related_articles = find_related_articles(article_path, articles, Topics)
         content = htmlize(article.content)
         table_of_contents = generate_table_of_contents(content)

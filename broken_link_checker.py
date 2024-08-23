@@ -261,4 +261,3 @@ getUniqueExternalLinks(externalLinksListRaw)
 identifyBrokenLinks(uniqueExternalLinks)
 EndDataFrame = matchBrokenLinks(brokenLinksList,externalLinksListRaw)
 push_issue_git(EndDataFrame)
-

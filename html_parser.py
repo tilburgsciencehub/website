@@ -1,3 +1,4 @@
+import html
 import re
 from bs4 import BeautifulSoup
 import markdown
@@ -24,6 +25,15 @@ def convert_code_blocks_to_html(md_content):
     # Function to replace code block shortcodes with HTML
     def replace_codeblock(match):
         code_content = match.group(1).strip()
+        # Regular expression to match '[R-link]' followed directly by content within parentheses
+        pattern = r'\[R-link\]\(([^)]+)\)'
+
+        # Search for the pattern in the text
+        link_match = re.search(pattern, code_content)
+        code_content_to_open = None
+        if link_match:
+            # Extract the content inside the parentheses
+            code_content_to_open = link_match.group(1).strip()
         language_matches = re.finditer(r'```(\w+)(.*?)```', code_content, re.DOTALL)
         code_blocks = []
         tab_nav = []
@@ -48,23 +58,28 @@ def convert_code_blocks_to_html(md_content):
                 languages_processed.append(language)
 
             idx += 1
-
+            
         code_content = ''.join(code_blocks)
         tab_nav_html = f'<ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">\n' \
                        f'    {" ".join(tab_nav)}\n' \
                        f'</ul>'
+        
+        ## Only display download button when there is code content for that
+        download_button_html = f'<a class="downloadCodeBtn" style="margin-right: 20px" href="../{code_content_to_open}"><img src="/img/download.svg"></a>' if code_content_to_open else ''
 
         return f'<div class="codeblock">\n' \
-               f'<div class="d-flex justify-content-between">\n' \
-               f'    {tab_nav_html}\n' \
-               f'    <div class="float-right d-flex align-items-center">\n' \
-               f'        <a class="copyCodeBtn" href="#0"><img src="/img/copy-code.svg"></a>\n' \
-               f'    </div>\n' \
-               f'</div>\n' \
-               f'    <div class="inner">\n' \
-               f'        {code_content}\n' \
-               f'    </div>\n' \
-               f'</div>'
+            f'<div class="d-flex justify-content-between">\n' \
+            f'    {tab_nav_html}\n' \
+            f'    <div class="float-right d-flex">\n' \
+            f'        {download_button_html}\n' \
+            f'        <a class="copyCodeBtn" href="#0"><img src="/img/copy-code.svg"></a>\n' \
+            f'    </div>\n' \
+            f'</div>\n' \
+            f'    <div class="inner">\n' \
+            f'        {code_content}\n' \
+            f'    </div>\n' \
+            f'</div>'
+
 
     md_content = codeblock_pattern.sub(replace_codeblock, md_content)
     return md_content
@@ -384,6 +399,16 @@ def remove_empty_pre_code_tags(html_content):
     cleaned_content = re.sub(empty_pre_code_pattern, '', html_content)
     return cleaned_content
 
+# Parameters:
+# - r_content: String R code content
+# Returns:
+# - String with R code enclosed in <pre><code></code></pre> tags
+def r_to_html_plaintext(r_content):
+    # Escape HTML special characters to display as plain text
+    escaped_content = html.escape(r_content)
+    # Wrap the content in <pre> and <code> tags for HTML
+    html_content = f"<pre><code>{escaped_content}</code></pre>"
+    return html_content
 # Main function to convert Markdown file content to HTML
 # Parameters:
 # - md_file_content: String containing Markdown file content
