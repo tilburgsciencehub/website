@@ -2,8 +2,9 @@ name: SEO Report and GitHub Issue
 
 # Triggers the workflow every Friday at 18:00 UTC (which is 20:00 CET)
 on:
-  schedule:
-    - cron: "0 18 * * 5"
+  push:
+    branches:
+      - main-flask
 
 jobs:
   build:
