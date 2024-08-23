@@ -113,7 +113,7 @@ const index = searchClient.initIndex("Tilburg_Science_Hub");
 
 $(".headerSearch > .resetInput").on("click", function (e) {
   const value = e.target.value;
-  const popularPages = fetch("/pages.json").then(res => res.json()).then(res => res)
+  const popularPages = fetch("/static/json/pages.json").then(res => res.json()).then(res => res)
   const resultsHolder = $(".headerSearchResultsHolder");
 
   resultsHolder.html(" ");
@@ -133,7 +133,7 @@ $(".headerSearch > .resetInput").on("click", function (e) {
           border-radius: 40px;
           background-color: #035F94;
           margin-right: 8px;
-        "><img src="/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
+        "><img src="/static/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
         <span>${result.title}</span></a>`);
     })
   })
@@ -142,7 +142,7 @@ $(".headerSearch > .resetInput").on("click", function (e) {
 // on mobile
 $(".headerSearchMobile .resetInput").on("click", function (e) {
   const value = e.target.value;
-  const popularPages = fetch("/pages.json").then(res => res.json()).then(res => res)
+  const popularPages = fetch("/static/json/pages.json").then(res => res.json()).then(res => res)
   const resultsHolder = $(".mobileResults");
 
   resultsHolder.html(" ");
@@ -162,13 +162,19 @@ $(".headerSearchMobile .resetInput").on("click", function (e) {
           border-radius: 40px;
           background-color: #035F94;
           margin-right: 8px;
-        "><img src="/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
+        "><img src="/static/img/arrow-trending-up.svg" width="14px" height="14px" /></span>
         <span>${result.title}</span></a>`);
     })
   })
 })
 
 function performSearch(val, resultsHolder) {
+  // Controleer of de zoekterm leeg is
+  if (val.trim() === "") {
+    console.log("Zoekterm is leeg, zoekopdracht wordt niet uitgevoerd.");
+    return; 
+  }
+
   index
     .search(val, {
       hitsPerPage: 10,
@@ -176,18 +182,27 @@ function performSearch(val, resultsHolder) {
     .then(({ hits }) => {
       resultsHolder.html(" ");
       resultsHolder.addClass("active");
-      hits.map((hit) => {
-        let url = hit.objectID.replace("./", "");
-        url = url.replace(".md", "");
-        const cleanTitle = hit.title.replace(/"/g, '');
-        resultsHolder.append(`<a href="/${url}">${cleanTitle}</a>`);
+
+      const seenTitles = new Set(); // Set om unieke titels bij te houden
+
+      hits.forEach((hit) => {
+        const cleanTitle = hit.title.replace(/"/g, "");
+
+        // Controleer of de titel al in de set zit
+        if (!seenTitles.has(cleanTitle)) {
+          seenTitles.add(cleanTitle); // Voeg de titel toe aan de set
+
+          let url = hit.objectID.replace("./", "");
+          url = url.replace(".md", "");
+          
+          resultsHolder.append(`<a href="/${url}">${cleanTitle}</a>`);
+        }
       });
 
       if (hits.length == 0) {
         resultsHolder.append(`<span>No result found!</span>`);
       }
 
-      // also add see more link
       if (hits.length == 10) {
         resultsHolder.append(
           `<a class="view-more-search" style="font-weight:500;border-bottom: none;" href="/search?q=${val}">View all results +</a>`
