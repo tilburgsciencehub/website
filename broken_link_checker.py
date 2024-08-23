@@ -169,7 +169,7 @@ def identifyBrokenLinks(uniqueExternalLinks):
     count = 0
     length_uniqueExternalLinks = len(uniqueExternalLinks)
 
-    for link in uniqueExternalLinks:
+    for link in uniqueExternalLinks[:200]:
         
         count = count + 1
         
@@ -223,7 +223,6 @@ def matchBrokenLinks(brokenLinksList,externalLinksListRaw):
     EndDataFrame = dataframeFinal.merge(dataframeFinal2, left_on='Broken_Link_URL', right_on ='link', how='outer')
     del EndDataFrame['link']
     
-
 def push_issue_git():
     
     #set dt_string with current date/time
@@ -255,14 +254,18 @@ def push_issue_git():
         issuebody = 'Today, a total of ' + str(len(df3.index)) + ' link errors have been found. The following links have been found containing errors:' + '\n' + tablecomp
 
         #defining data to push to git issue
-        data = {"title": titleissue, "body": issuebody, "assignee": "thierrylahaije"}
+        data = {"title": titleissue, "body": issuebody}
 
         #Post issue message using requests and json
-        requests.post(url,data=json.dumps(data),headers=headers)
-        
-        print('Process succeeded')
+        response = requests.post(url, data=json.dumps(data), headers=headers)
+        if response.status_code == 201:
+            print('Issue created successfully')
+        else:
+            print(f'Failed to create issue: {response.status_code} - {response.text}')
+
         
     else:
+        print('No broken links found')
         pass
 
 # # Execute Functions
