@@ -1,4 +1,3 @@
-# # Libraries
 from usp.tree import sitemap_tree_for_homepage
 from bs4 import BeautifulSoup
 import requests
@@ -176,30 +175,27 @@ def identifyBrokenLinks(uniqueExternalLinks):
         print("Checking external link #",count," out of ",length_uniqueExternalLinks,".")
         
         try:
-        
-            statusCode = requests.get(link, headers=user_agent).status_code
+            # Stel een time-out van 10 seconden in
+            statusCode = requests.get(link, headers=user_agent, timeout=10).status_code
             
             if statusCode == 404:
-                
                 brokenLinksDict['link'].append(link)
                 brokenLinksDict['statusCode'].append(statusCode)
                 brokenLinksList.append(link)
                 
             elif statusCode != 404 and statusCode > 399 and statusCode < 452:
-            
                 brokenLinksDict['link'].append(link)
                 brokenLinksDict['statusCode'].append(statusCode)
                 brokenLinksList.append(link)
             
             else:
-                
                 pass
             
-        except:
-            
-            brokenLinksDict['link'].append(link)
-            brokenLinksDict['statusCode'].append(statusCode)
-            brokenLinksList.append(link)
+        except requests.exceptions.Timeout:
+            print(f"Skipping {link} due to timeout.")
+        
+        except Exception as e:
+            print(f"An error occurred: {str(e)}")
 
 # Identify Unique Broken Links and Matches them to Original List of All External Links
 def matchBrokenLinks(brokenLinksList,externalLinksListRaw):
@@ -229,7 +225,8 @@ def push_issue_git(EndDataFrame):
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     titleissue = 'Broken/Error Links on ' + dt_string
 
-    df = EndDataFrame.reset_index()
+    df_duplicates = EndDataFrame.reset_index()
+    df = df_duplicates.drop_duplicates()
 
     table = ''
     if len(df.index) > 0:
@@ -257,8 +254,6 @@ def push_issue_git(EndDataFrame):
 
 
 # # Execute Functions
-
-
 getPagesFromSitemap(fullDomain)
 getListUniquePages()
 ExternalLinkList(listPages, fullDomain)
