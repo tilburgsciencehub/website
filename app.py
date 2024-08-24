@@ -8,10 +8,11 @@ from html_parser import htmlize, r_to_html_plaintext
 from redirectstsh import setup_redirects
 from utils import get_git_commit_hash
 import redirects_config
+from flask_sitemap import Sitemap
  
-
 # Initialize App
 app = Flask(__name__, static_url_path='/static')
+ext = Sitemap(app=app)
 
 @app.context_processor
 def inject_git_commit_hash():
@@ -296,6 +297,11 @@ def robots_txt():
 def page_not_found(e):
     data_dict = build_data_dict(Topics, articles)
     return render_template('404.html', assets=assets, data_dict=data_dict), 404
+
+# Sitemap
+@app.route('/sitemap.xml')
+def sitemap():
+    return ext.sitemap()
 
 if __name__ == '__main__':
     app.run(debug=True)
