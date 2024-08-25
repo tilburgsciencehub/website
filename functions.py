@@ -7,6 +7,8 @@ from nltk.corpus import stopwords
 from flask import request
 import math 
 from collections import defaultdict
+import json
+import xml.etree.ElementTree as ET
 
 nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
@@ -59,34 +61,39 @@ def build_data_dict(topics, articles):
             'title': article.title,
             'path': article.path,
             'description': article.description,
-            'reading_time': calculate_reading_time(article.content)
+            'reading_time': calculate_reading_time(article.content),
+            'date': article.date,
+            'draft': article.draft
+        }
+
+    def serialize_topic(topic, level, parent, articles):
+        return {
+            'id': topic.id,
+            'title': topic.title,
+            'path': topic.path,
+            'parent': topic.parent,
+            'level': topic.level,
+            'draft': topic.draft,
+            'childtopics': build_structure(level + 1, topic.id, articles),
+            'articles': [serialize_article(article) for article in articles.query.filter_by(parent=topic.id).all()]
         }
 
     def build_structure(level, parent, articles):
         if level not in topic_dict:
             return []
         return [
-            {
-                'id': topic.id,
-                'title': topic.title,
-                'path': topic.path,
-                'parent': topic.parent,
-                'level': topic.level,
-                'draft': topic.draft,
-                'childtopics': build_structure(level + 1, topic.id, articles),
-                'articles': [serialize_article(article) for article in articles.query.filter_by(parent=topic.id).all()]
-            }
+            serialize_topic(topic, level, parent, articles)
             for topic in topic_dict[level][parent]
         ]
     
     articles_examples = articles.query.filter_by(type='examples').all()
-    for article in articles_examples:
-        article.reading_time = calculate_reading_time(article.content)
-    
+    serialized_articles_examples = [serialize_article(article) for article in articles_examples]
+
     data_dict['topics'] = build_structure(1, 1, articles)
-    data_dict['examples'] = articles_examples
+    data_dict['examples'] = serialized_articles_examples
 
     return data_dict
+
 
 # Recursively find the full path of a topic by its parent ID
 # Parameters:
@@ -306,3 +313,57 @@ def fetch_contributions_for_the_single_contributor(Contributor, Articles, Topics
             "path": full_path
         })
     return contributions_with_full_path
+
+def add_url_element(urlset, loc, date=None, priority="0.8", changefreq="monthly"):
+    url = ET.SubElement(urlset, "url")
+    
+    loc_element = ET.SubElement(url, "loc")
+    loc_element.text = loc
+    
+    priority_element = ET.SubElement(url, "priority")
+    priority_element.text = priority
+    
+    changefreq_element = ET.SubElement(url, "changefreq")
+    changefreq_element.text = changefreq
+    
+    if date:
+        lastmod_element = ET.SubElement(url, "lastmod")
+        lastmod_element.text = str(date)
+
+def generate_sitemap(app, data, base_url="https://www.example.com"):
+    urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+    
+    def process_topics(topics, parent_path=""):
+        for topic in topics:
+            if topic['draft'] != 'true':
+                full_path = f"{parent_path}/{topic['path']}".strip("/")
+                add_url_element(urlset, f"{base_url}/topics/{full_path}")
+                process_topics(topic.get('childtopics', []), full_path)
+                for article in topic.get('articles', []):
+                    if article['draft'] != 'true':
+                        article_path = f"{full_path}/{article['path']}".strip("/")
+                        add_url_element(urlset, f"{base_url}/topics/{article_path}", date = article['date'])
+
+    # Process topics and articles
+    process_topics(data['topics'])
+
+    # Process examples
+    for example in data.get('examples', []):
+        if example['draft'] != 'true':
+            example_path = f"{base_url}/examples/{example['path']}".strip("/")
+            add_url_element(urlset, example_path, date=example.get('date'))
+    
+    # Process blogs
+
+    # Non dynamic routes
+    rules = list(app.url_map.iter_rules())
+    if not rules:
+        print("No routes were registered.")
+    else:
+        for rule in app.url_map.iter_rules():
+            if "GET" in rule.methods and "<" not in rule.rule and len(rule.arguments) == 0:
+                if "/building-blocks" not in rule.rule and "/tutorials" not in rule.rule:
+                    add_url_element(urlset, f"{base_url}{rule.rule}", priority="0.5")
+    
+    tree = ET.ElementTree(urlset)
+    tree.write("sitemap.xml", encoding="utf-8", xml_declaration=True)
