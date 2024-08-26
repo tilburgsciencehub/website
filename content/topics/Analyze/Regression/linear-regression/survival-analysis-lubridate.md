@@ -132,9 +132,7 @@ With our date data now prepared and structured, we can begin examining the facto
 ### The Survival Function  
 The Survival Function, typically denoted as 
 
-{{<katex>}}
-S(t)= P(T>t) =1−F(t)
- {{</katex>}}
+$S(t)= P(T>t) =1−F(t)$
  <br> 
 
 - S(t): This is the survival function at time t. It represents the probability that the subject or unit of study survives longer than time t. 
@@ -227,9 +225,9 @@ The `Cox Proportional Hazards model` is a key tool in survival analysis for unde
 
 The model's formula is expressed as: 
 
-{{<katex>}}
-h(t|X_{i}) = h_{0}(t)exp(β_{1}X_{i,1}+...+β_{p}X{i,p})
- {{</katex>}}
+
+$h(t|X_{i}) = h_{0}(t)exp(β_{1}X_{i,1}+...+β_{p}X{i,p})$
+
  <br> 
 
 The formula combines a starting risk level with the influence of specific factors and their strengths to calculate the chance of an event happening at any particular time. 
