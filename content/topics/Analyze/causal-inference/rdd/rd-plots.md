@@ -3,11 +3,7 @@ title: "Regression Discontinuity Plots"
 description: "Visualizing the RD design with plots: how to choose the bins - location, number"
 keywords: "regression, discontinuity, plots, bins"
 date: 2023-05-17
-<<<<<<< HEAD
-weight: 7
-=======
 weight: 2
->>>>>>> master
 author: "Ana Bianca Luca"
 authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
@@ -17,11 +13,7 @@ aliases:
 
 ## Introduction
 
-<<<<<<< HEAD
-In the [last building block](/sharp/designs), we provided an introduction to the Regression Discontuinity Design and specifically the sharp RDD. Now, we will focus on RDD plots. We can visualize a graphical representation of a RDD by illustrating the relationship between the outcome and the running variable. 
-=======
 In the [last topic](/sharp/designs), we provided an introduction to the Regression Discontuinity Design and specifically the sharp RDD. Now, we will focus on RDD plots. We can visualize a graphical representation of a RDD by illustrating the relationship between the outcome and the running variable. 
->>>>>>> master
 
 Plotting RD Designs can be done with a scatter plot of the observed outcome against the score, where each point would represent one observation. However, simply plotting the raw data makes it hard to see discontinuities in the relationship between score and outcome. To illustrate this, we use the example described in [Sharp RD Designs](/sharp/designs) of the Meyersson application. The data is available here: [data-link](regdata0.dta).
 
@@ -171,19 +163,11 @@ _Output_:
 In the evenly-spaced plot there are 3 bins in the interval [0.5, 1], whereas in the quantile-spaced plot the interval is entirely contained by one bin. 
 
 ## Number of bins
-<<<<<<< HEAD
 There are two methods for choosing the number of bins on both sides of the cutoff, which are noted with $J_{-}$ and $J_{+}$.
 
 ### Integrated Mean Squared Error (IMSE)
 
 The IMSE method selects the $J_{-}$ and $J_{+}$ values such that it minimizes an asymptotic approximation to the integrated mean-squared error of the local means estimator. The local means estimator is the sum of the expansions of the variance and squared bias. A large number of bins leads to small bias, because the bins are smaller and the local constant fit is better. However, the small bias leads to more variability within the bin, as an increased number of bins would have fewer observations per bin. 
-=======
-There are two methods for choosing the number of bins on both sides of the cutoff, which are noted with {{<katex>}}J_{-}{{</katex>}} and {{<katex>}}J_{+}{{</katex>}}.
-
-### Integrated Mean Squared Error (IMSE)
-
-The IMSE method selects the {{<katex>}}J_{-}{{</katex>}} and $J_{+}$ values such that it minimizes an asymptotic approximation to the integrated mean-squared error of the local means estimator. The local means estimator is the sum of the expansions of the variance and squared bias. A large number of bins leads to small bias, because the bins are smaller and the local constant fit is better. However, the small bias leads to more variability within the bin, as an increased number of bins would have fewer observations per bin. 
->>>>>>> master
 
 We can use the IMSE method with either evenly-spaced or quantile-spaced bins. We use the same `rdplot` command, but this time there's no need to specify the number of bins with `nbins = c(20, 20)` option. As long as we set the `binselect` argument to either `es` for evenly-spaced or `qs` for quantile-spaced, `rdplot` automatically chooses the number of bins according to it. 
 
@@ -241,11 +225,7 @@ With the quantile-spaced method the resulting number of bins is larger: 21 bins 
 
 ### Mimicking Variance Method (MV)
 
-<<<<<<< HEAD
 The second method chooses the $J_{-}$ and $J_{+}$ values such that the binned means have an asymptotic variability that is approximately equal to the variability of the raw data. This means that the number of bins is chosen in a way that the overall variability of the binned means "mimics" the overall variability in the raw scatter plot. 
-=======
-The second method chooses the {{<katex>}}J_{-}{{</katex>}} and $J_{+}$ values such that the binned means have an asymptotic variability that is approximately equal to the variability of the raw data. This means that the number of bins is chosen in a way that the overall variability of the binned means "mimics" the overall variability in the raw scatter plot. 
->>>>>>> master
 
 Again, this method can be used with either method for choosing the bins location. The mimicking variance method results in a larger number of bins than the IMSE method, meaning that we will have a plot with more dots that represent the local means and gives a better sense of the variability in the data.
 
@@ -301,11 +281,7 @@ The resulting number of bins below the cutoff is similar to the MV method with E
 
 There are more methods for choosing the bins for plotting RD designs, depending on the goal. If the goal is to illustrate the variability of the outcome it is better to use MV bins, but if the goal is to test the global features of the regression function, then IMSE method is better. Regardless of the method for number of bins, it is advised to compare both ES and QS bins to highlight the distributional features of the score.
 
-<<<<<<< HEAD
-The next [building block](/continuity/approach) in this series about Regression Discontuinity describes the local polynomial approach in the context of the [Sharp RD Design](/sharp/designs) for estimating the parameter of interest.
-=======
 The next [topic](/continuity/approach) in this series about Regression Discontuinity describes the local polynomial approach in the context of the [Sharp RD Design](/sharp/designs) for estimating the parameter of interest.
->>>>>>> master
 
 {{% /summary %}}
 ## See also

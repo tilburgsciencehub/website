@@ -1,10 +1,6 @@
 ---
 title: "The Random Effects Model"
-<<<<<<< HEAD
-description: "A building block about the Random Effects model and on the decision between an Fixed or Random Effects model"
-=======
 description: "A topic about the Random Effects model and on the choice between a Fixed or Random Effects model"
->>>>>>> master
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
 weight: 7
@@ -18,11 +14,7 @@ aliases:
 
 # Overview
 
-<<<<<<< HEAD
-The **Random Effects (RE) model** is the last method for panel data analysis discussed in this series of building blocks. Unlike the Fixed Effects (FE) model, which focuses on within-group variations, the RE model treats the unobserved entity-specific effects as random and uncorrelated with the explanatory variables. After delving into the RE model first, we address probably the most critical choice to make when working with panel data: deciding between an FE or RE model. 
-=======
 The **Random Effects (RE) model** is the last method for panel data analysis discussed in this series of topics. Unlike the Fixed Effects (FE) model, which focuses on within-group variations, the RE model treats the unobserved entity-specific effects as random and uncorrelated with the explanatory variables. After delving into the RE model first, we address probably the most critical choice to make when working with panel data: deciding between an FE or RE model. 
->>>>>>> master
 
 This is an overview of the content:
 - The RE model
@@ -36,18 +28,11 @@ This is an overview of the content:
 Let's continue with the model where we estimate the relationship of market and stock value on the gross investment of firms, using `Grunfeld` data. This is the regression equation:
 <br/>
 <br/>
-<<<<<<< HEAD
 
 $invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}$
 
 <br/>
 
-=======
-{{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \alpha_i + \epsilon_{it}
-{{</katex>}}
-<br/>
->>>>>>> master
 where,
 - $invest_{it}$ is the gross investment of firm `i` in year `t`
 - $value_{it}$ is the market value of assets of firm `i` in year `t`
@@ -143,19 +128,13 @@ Imagine you want to understand if the availability of research grants at univers
 
 - For example, grant decisions are made by an external committee and largely independent of university-specific characteristics. Moreover, you want to control for both university-level and student-level variations.
 
-<<<<<<< HEAD
 {{%table%}}
-=======
->>>>>>> master
 |           | **FE Model**                                     | **RE Model**                                          |
 |-----------------|--------------------------------------------------|--------------------------------------------------------|
 | **When <br/> to <br/> Use** | Unobserved university-<br/> specific effects are <br/> **correlated** with <br/>  research grants and <br/> student performance. | Unobserved effects are <br/> random and not directly <br/> tied to grant availability.<br/><br/> Allows multi-level fixed <br/> effects (on university <br/> and student-level) in <br/> the same model. |
 | **Example** | You believe universities <br/> with stronger reputations <br/> are more likely to <br/> secure research grants.| You believe grant decisions <br/>  are made by external <br/> committees and are  <br/>  independent  of university- <br/> specific characteristics.
-<<<<<<< HEAD
 {{%/table%}}
 
-=======
->>>>>>> master
 {{% /example %}}
 
 
@@ -164,11 +143,7 @@ To determine the appropriate model, a Hausman test can be conducted to test the 
 - The null hypothesis states no correlation between the independent variables and the entity-specific effects $\alpha_i$. If $H_{0}$ is true, the RE model is preferred.
 - The alternative hypothesis states a correlation between the independent variables and the entity-specific effects($\alpha_i$). If $H_{0}$ is rejected, the FE model is preferred.
 
-<<<<<<< HEAD
-The Hausman test can be performed in R with the `phtest()` function from the package `plm`. Specify the FE and RE model as arguments in this function. Note that the models included as arguments should be estimated with `plm`. Therefore, the Within model is also estimated with `plm()` first (instead of with `feols()`from the `fixest` package like in the [Fixed Effects model building block](/withinestimator)). 
-=======
 The Hausman test can be performed in R with the `phtest()` function from the package `plm`. Specify the FE and RE model as arguments in this function. Note that the models included as arguments should be estimated with `plm`. Therefore, the Within model is also estimated with `plm()` first (instead of with `feols()`from the `fixest` package like in the [Fixed Effects model article](/withinestimator)). 
->>>>>>> master
 
 {{% codeblock %}}
 ```R
