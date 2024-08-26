@@ -30,13 +30,12 @@ DiD estimates the treatment effect by comparing changes in outcomes between a tr
 
 Suppose we are studying the effectiveness of a new educational program (the *treatment*) on students' test scores. The treatment group consists of students who received the program ($D_i = 1$), and the control group of students who did not receive the program ($D_i = 0$). The setup table for DiD is:
 
-{{<katex>}}
-{{</katex>}}
-
+{{%table%}}
 |                 | Before (\$Y_i^0\$)     | After (\$Y_i^1\$)     |
 | --------------- | ---------------------- | ---------------------- |
 | Control (\$D_i = 0\$)    | \$E(Y_i^0\|D_i = 0)\$   | \$E(Y_i^1\|D_i = 0)\$   |
 | Treatment (\$D_i=1\$)    | \$E(Y_i^0\|D_i = 1)\$   | \$E(Y_i^1\|D_i = 1)\$   |
+{{%/table%}}
 
 
 Some outcomes are *counterfactual*, representing what would have happened if treatment statuses were reversed. Naturally, an individual cannot simultaneously be treated and not treated. Therefore, we only observe one of the two potential outcomes for each person after treatment implementation: the treated outcome for those who received treatment and the untreated outcome for those who did not.
@@ -45,11 +44,13 @@ One might think of simply taking the difference in the average outcome before an
 
 To address these issues, double differencing (*difference-in-difference*) is done, which involves taking differences between the outcomes of the control group from those of the treatment group before and after treatment to estimate the treatment effect.
 
+{{%table%}}
 |  | Before | After | After - Before |
 | --- | --- | --- | --- |
 | **Control** | $\alpha$ | $\alpha + \lambda$ |  |
 | **Treatment** | $\alpha + \gamma$ | $\alpha+\gamma+\lambda+\delta$ |  |
 | **Treatment** - **Control**  | $\gamma$ | $\gamma+\delta$ | $\delta$ |
+{{%/table%}}
 
 By taking the difference between the treatment and control groups’ outcomes before treatment ($\gamma$) and the difference between their outcomes after treatment ($\gamma + \delta$), we can obtain the final treatment effect ($\delta$), which is the additional change in outcome for the treatment group compared to the control group after the treatment is implemented.
 
