@@ -249,29 +249,15 @@ Useful resources:
 
 This section summarizes the Stacked DiD method by providng a its main advantages and disadvantages.
 
-Advantages:
-
-- *Handling staggered treatment designs*: By restructuring the data to compare treated units against their own controls from prior periods, the Stacked DiD method effectively accommodates varying treatment timings.
-
-- *Inclusion of covariates*: 
-
-Similar to the traditional TWFE models, the stacked DiD method allows for the inclusion of covariates. This supports the analysis of heterogeneity in treatment effects without requiring data to be split into multiple subsets. 
-
-- *Computational efficiency*
-
-Especially beneficial when dealing with large datasets and numerous treatment cohorts, the method is computationally efficient compared to other methods that might demand more extensive data handling.
+- Advantages:
+  - *Handling staggered treatment designs*: By restructuring the data to compare treated units against their own controls from prior periods, the Stacked DiD method effectively accommodates varying treatment timings.
+  - *Inclusion of covariates*: Similar to the traditional TWFE models, the stacked DiD method allows for the inclusion of covariates. This supports the analysis of heterogeneity in treatment effects without requiring data to be split into multiple subsets. 
+  - *Computational efficiency*: Especially beneficial when dealing with large datasets and numerous treatment cohorts, the method is computationally efficient compared to other methods that might demand more extensive data handling.
 
 Disadvantages:
 
-- *Limitations in the weighting scheme*
-
-The weighting relies on statistical factors, such as the number of treated units in each sub-experiment. Consequently, sub-experiments with more treated units have a greater influence on the overall ATT estimate. 
-
-This statistical weighting may not always accurately reflect the practical or economic significance. For instance, a sub-experiment with a large number of treated units might have less economic relevance than a smaller, but more economically significant, sub-experiment.
-
-- *Potential for misleading results* 
-
-If compositional imbalances are not properly accounted for, the results can still be biased. Ensuring careful implementation and interpretation is crucial to avoid misleading conclusions.
+  - *Limitations in the weighting scheme*: The weighting relies on statistical factors, such as the number of treated units in each sub-experiment. Consequently, sub-experiments with more treated units have a greater influence on the overall ATT estimate. This statistical weighting may not always accurately reflect the practical or economic significance. For instance, a sub-experiment with a large number of treated units might have less economic relevance than a smaller, but more economically significant, sub-experiment.
+  - *Potential for misleading results*: If compositional imbalances are not properly accounted for, the results can still be biased. Ensuring careful implementation and interpretation is crucial to avoid misleading conclusions.
 
 
 {{% summary %}}
