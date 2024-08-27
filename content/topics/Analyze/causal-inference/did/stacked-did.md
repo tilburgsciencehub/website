@@ -12,48 +12,43 @@ aliases:
 
 ## Overview
 
-The [Difference-in-Difference (DiD) method](/topics/analyze/causal-inference/did/canonical-did-table/) is a powerful technique for causal inference. It evaluates the effects of a treatment by comparing the changes in outcomes between treatment and control groups. In our [Staggered DiD article](/topics/analyze/causal-inference/did/staggered-did/), we introduced a design where different units receive the treatment at other times. 
+[Difference-in-Difference (DiD) analysis](/topics/analyze/causal-inference/did/canonical-did-table/) is a cornerstone of causal inference, allowing us to measure the impact of a treatment by comparing changes over time between treatment and control groups. 
 
-In this article, we explore staggered treatment designs further discussing the *Stacked DiD* method. We also introduce the *Weighted Stacked DiD* method by [Wing et al. (2024)](https://www.nber.org/papers/w32054), which addresses the imbalances in treatment and control trends found in the basic Stacked DiD approach.
+But what happens when treatments are rolled out at different times to different groups? This scenario, known as [staggered treatment](/topics/analyze/causal-inference/did/staggered-did/), can make the analysis complex. 
+
+This is where the *Stacked DiD* method comes in. Unlike traditional DiD models, which may struggle with the complexities of varying treatment timings, the Stacked DiD approach allows each instance of treatment application to be considered as a separate mini-experiment. By comparing units that received the treatment against their own control periods, this method helps avoid imbalances in trends between treatment and control groups, leading to more accurate estimates of the treatment effect. 
+
+In this article, we'll guide you through the Stacked DiD framework, and then dive into its practical application with a code example in R.
 
 ## The basic Stacked DiD
 
-The *Stacked DiD* method analyzes staggered treatment designs by creating separate datasets for each valid sub-experiment (i.e., treatment adoption event), avoiding problematic late-early comparisons. These datasets are combined, or "stacked", to analyze overall trends. 
+In the *Stacked DiD* approach, we "stack" the data by treating each instance of a group receiving the treatment as a separate mini-experiment (or, also called a sub-experiment). This involves restructuring the data so that each treated unit is compared to its own control group from a previous period. 
 
-{{% tip %}}
+By creating and analyzing these separate mini-experiments, we can compare treated units at different times while accounting for group-specific trends and variations. This method effectively avoids issues related to *problematic late-early comparisons, as explained in the [Goodman-Bacon topic](/topics/analyze/causal-inference/did/goodmanbacon/). The final step is to combine all these mini-experiments to analyze overall trends.
 
-For more insights into these problematic late-early comparisons, read [this topic on potential Staggered DiD biases](/topics/analyze/causal-inference/did/goodmanbacon/).
-
-{{% /tip %}}
-
-A major shortcoming of the basic stacked DiD design is *the imbalance in treatment and control trends* across different sub-experiments, which can lead to a biased causal parameter. 
+A major shortcoming of the basic stacked DiD design is *the imbalance in treatment and control trends* across different sub-experiments. This imbalance can lead to a biased estimate of the causal parameter. 
 
 ### Imbalance in trends
 
-In staggered designs, each sub-experiment has different lengths of pre- and post-treatment periods because some groups receive treatment earlier than others. When these sub-experiments are aggregated and all group-specific effects are averaged, the composition of the treatment group changes over time. Consequently, the regression assigns different weights to treatment and control trends across sub-experiments.
-
+In staggered designs, each sub-experiment has different lengths of pre-treatment and post-treatment periods because some groups receive treatment earlier than others. When these sub-experiments are aggregated and all group-specific effects are averaged, the composition of the treatment group changes over time. Consequently, the regression assigns different weights to treatment and control trends across sub-experiments.
 
 {{% example %}}
 
-Suppose you are measuring the treatment effect over four periods, from 2020 to 2024. There is an *early-treated* group (treated in 2020) and a *late-treated group* (treated in 2023). The effect is heterogeneous across groups: the early-treated group experiences a negative impact, while the late-treated group experiences a positive impact.
+Suppose you are measuring the treatment effect over four periods, from 2020 to 2024. There are two groups: an *early-treated* group (treated in 2020) and a *late-treated group* (treated in 2023). The effect is heterogeneous: the early-treated group experiences a negative impact, while the late-treated group experiences a positive impact.
 
-To find the overall treatment effect, you aggregate these effects from different groups (i.e, sub-experiments). At first glance, the treatment effect appears to fade out over time. However, this is not due to the actual treatment but rather a result of *compositional imbalance*. Three years after the treatment (at event time = 3), the aggregated coefficient only includes the *early-treated group* (treated in 2020), because the effect on the *late-treated group* (treated in 2023) has not yet been observed!
+To determine the overall treatment effect, you aggregate the effects from these two groups (i.e., sub-experiments). At first glance, the treatment effect seems to diminish over time. However, this observed fading is not necessarily due to the treatment itself but may result from *compositional imbalance*:
+
+For instance, three years after the treatment (at event time = 3), the aggregated estimate only reflects the *negative effect of the early-treated group* (treated in 2020), since the *late-treated group's positive effect* (treated in 2023) has not yet been observed! This timing—comparing groups at different treatment stages—creates a compositional imbalance, distorting the overall treatment effect.
 
 {{% /example %}}
 
-{{% tip %}}
+The bias caused by compositional balance arises from differences in sample sizes and treatment timing across sub-experiments. Specifically, larger groups or those treated earlier can dominate the overall treatment effect.
 
-*Event time*
+For instance, if an early-treated group is larger or has a more pronounced effect than a smaller, later-treated group, the overall treatment estimate will be skewed towards the early group's impact. This is because the aggregate measure includes more observations from the early-treated group.
 
-Event time refers to the specific point at which a unit is exposed to treatment within a study. This concept differs from the usual "calendar time" (e.g., the years 2020, 2021, 2022) and helps standardize comparisons across units treated at different times. 
+The next section introduces a new weighted approach designed to address this bias. 
 
-For instance, *event time = 0* marks the moment a unit receives treatment, *event time = 1* indicates one year after treatment, and *event time = -1* refers to one year before treatment. 
-
-{{% /tip %}}
-
-The potential bias caused by compositional imbalance is known, as it is a function of the sample sizes of each sub-experiment. The next section introduces a new weighted approach to address the bias.
-
-## The Weighted stacked DiD Framework
+## The Weighted Stacked DiD Framework
 
 [Wing et al. (2024)](https://www.nber.org/papers/w32054) propose a *weighted stacked DiD design* to correct imbalances using sample weights. The framework consists of three main steps:
 
@@ -75,7 +70,7 @@ Two criteria are used to trim the sample of treatment adoption events:
 
 Once the dataset is trimmed to avoid imbalances, you can calculate the group-time ATT (*Average Treatment Effect on the Treated*) parameters for each sub-experiment. To obtain a summary average of these estimates, aggregate the results from all sub-experiments. 
 
-One approach to aggregate the group-specific ATT values is the *trimmed aggregate ATT*,  denoted as $\theta_\kappa ^\epsilon$. This method weighs the group-time ATT by its share of the trimmed treated sample. Specifically:
+One approach to aggregate the group-specific ATT values is the *trimmed aggregate ATT*, denoted as $\theta_\kappa ^\epsilon$. This method weighs the group-time ATT by its share of the trimmed treated sample. Specifically:
 
 {{<katex>}}
 {{</katex>}}
@@ -83,10 +78,12 @@ One approach to aggregate the group-specific ATT values is the *trimmed aggregat
 $$\theta_\kappa ^\epsilon = \sum_{\substack{a \in \Omega_\kappa }} ATT(a,a+e) * \frac{N_a ^D}{N_\Omega ^D} $$
 
 Where:
+
 - The first part, $ATT(a,a+e)$, represents the group-specific ATT within the fixed event time window $e$, where $a$ is the sub-experiment. 
 - The second part assigns a weight to these ATT values by multiplying by their fraction of the total treatment group:
   - $N_a^D$ is the number of treated units in sub-experiment $a$ 
   - $N_\Omega^D$ = total number of treated units in the trimmed set
+
 
 {{% tip %}}
 
@@ -113,11 +110,11 @@ Implementing these weighted regressions is straightforward with tools like linea
 
 The authors provide functions to apply their framework easily in both Stata and R. For detailed guidance, you can refer to [their tutorial with code examples](https://rawcdn.githack.com/hollina/stacked-did-weights/18a5e1155506cbd754b78f9cef549ac96aef888b/stacked-example-r-and-stata.html#load-the-data). As an example, they analyze the impact of the ACA (*Affordable Care Act*) Medicaid expansion on uninsurance rates in the United States, leveraging the staggered adoption of the treatment by states over different years.
 
-In this section, we will guide you through the key steps of the analysis, replicating [the tutorial](https://rawcdn.githack.com/hollina/stacked-did-weights/18a5e1155506cbd754b78f9cef549ac96aef888b/stacked-example-r-and-stata.html#load-the-data) and providing some additional tips.
+In this section, we will guide you through the key steps of the analysis, replicating the tutorial and providing some additional tips.
 
 1. Load the data
 
-First, download the CSV dataset from [Alex Hollingworth's GitHub page](https://github.com/hollina/stacked-did-weights/tree/main/data) and save it to your computer. You can then load the data locally as shown in the [tutorial code](https://rawcdn.githack.com/hollina/stacked-did-weights/18a5e1155506cbd754b78f9cef549ac96aef888b/stacked-example-r-and-stata.html#load-the-data), adjusting the code to your local path.
+First, download the CSV dataset from [Alex Hollingworth's GitHub page](https://github.com/hollina/stacked-did-weights/tree/main/data) and save it to your computer. You can then load the data locally, adjusting the code to your local path.
 
 Here are the first 5 rows of the `dtc` dataset:
 
@@ -248,13 +245,41 @@ Useful resources:
 {{% /tip %}}
 
 
+## Advantages and disadvantages
+
+This section summarizes the Stacked DiD method by providng a its main advantages and disadvantages.
+
+Advantages:
+
+- *Handling staggered treatment designs*: By restructuring the data to compare treated units against their own controls from prior periods, the Stacked DiD method effectively accommodates varying treatment timings.
+
+- *Inclusion of covariates*: 
+
+Similar to the traditional TWFE models, the stacked DiD method allows for the inclusion of covariates. This supports the analysis of heterogeneity in treatment effects without requiring data to be split into multiple subsets. 
+
+- *Computational efficiency*
+
+Especially beneficial when dealing with large datasets and numerous treatment cohorts, the method is computationally efficient compared to other methods that might demand more extensive data handling.
+
+Disadvantages:
+
+- *Limitations in the weighting scheme*
+
+The weighting relies on statistical factors, such as the number of treated units in each sub-experiment. Consequently, sub-experiments with more treated units have a greater influence on the overall ATT estimate. 
+
+This statistical weighting may not always accurately reflect the practical or economic significance. For instance, a sub-experiment with a large number of treated units might have less economic relevance than a smaller, but more economically significant, sub-experiment.
+
+- *Potential for misleading results* 
+
+If compositional imbalances are not properly accounted for, the results can still be biased. Ensuring careful implementation and interpretation is crucial to avoid misleading conclusions.
+
+
 {{% summary %}}
 
 - The basic *Stacked DiD* approach involves aggregating data from various treatment adoption events to evaluate overall treatment effects in staggered settings. 
-- The [*Weighted Stacked DiD* framework](https://www.nber.org/papers/w32054) addresses a potential bias in the basic Stacked DiD approach caused by imbalances in treatment and control trends. It involves trimming the dataset to ensure balance and aggregating estimates using weighted methods. 
+- The *Weighted Stacked DiD* framework* addresses a potential bias in the basic Stacked DiD approach caused by imbalances in treatment and control trends. It involves trimming the dataset to ensure balance and aggregating estimates using weighted methods. 
 - [A straightforward guide]((https://rawcdn.githack.com/hollina/stacked-did-weights/18a5e1155506cbd754b78f9cef549ac96aef888b/stacked-example-r-and-stata.html)) is available for implementing weighted regressions to obtain accurate ATT estimates, with code examples in R and Stata.
 {{% /summary %}}
-
 
 
 ## References
