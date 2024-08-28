@@ -34,7 +34,16 @@
 	<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-N42NQJS"></script>-->
 
 	<!-- Katex -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='katex/katex.min.css') }}" />
+    <script>
+		// Controleer of de URL 'topics' bevat
+		if (window.location.href.includes('topics')) {
+			// Als 'topics' in de URL staat, laad de CSS direct
+			var link = document.createElement("link");
+			link.rel = "stylesheet";
+			link.href = "{{ url_for('static', filename='katex/katex.min.css') }}";
+			document.head.appendChild(link);
+		}
+	</script>	
     <script defer src="{{ url_for('static', filename='katex/katex.min.js') }}"></script>
     <script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}"></script>
 	<script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}" onload="renderMathInElement(

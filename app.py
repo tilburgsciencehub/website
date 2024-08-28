@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request, redirect, abort, render_template_string, send_from_directory, send_file
 from flask_assets import Environment, Bundle
 from datetime import datetime
-from functions import build_data_dict, fetch_contributions_for_the_single_contributor, generate_table_of_contents, get_breadcrumbs, find_related_articles, calculate_reading_time, fetch_meta_data, recently_published, generate_sitemap
+from functions import build_data_dict, fetch_contributions_for_the_single_contributor, generate_table_of_contents, get_breadcrumbs, find_related_articles, calculate_reading_time, fetch_meta_data, recently_published, generate_sitemap, load_popular_pages, cards_data_homepage
 import os
 from models import db, articles, Contributors, blogs, Topics
 from html_parser import htmlize, r_to_html_plaintext
 from redirectstsh import setup_redirects
 from utils import get_git_commit_hash
 import redirects_config
+import json
  
 # Initialize App
 app = Flask(__name__, static_url_path='/static')
@@ -51,9 +52,15 @@ scss_bundle = Bundle(
 )
 assets.register('scss_all', scss_bundle)
 
-# Create data dict
-with app.app_context():
-    data_dict = build_data_dict(Topics, articles)
+# Inject all routes with dependent variables
+@app.context_processor
+def inject_data():
+    with app.app_context():
+        # Execute function to load data
+        data_dict = build_data_dict(Topics, articles)
+        popular_pages = load_popular_pages(app)
+        
+    return dict(data_dict=data_dict, popular_pages=popular_pages)
 
 # Custom filter for dates
 @app.template_filter('formatdate')
@@ -71,10 +78,13 @@ def home():
     data_object = {'title' : 'Home'}
     meta_data = fetch_meta_data(data_object)
 
+    # Cards data
+    cards_data = cards_data_homepage(app)
+
     
     recent_articles = recently_published(articles, Topics)
 
-    return render_template('index.html', assets=assets, data_dict=data_dict, meta_data=meta_data, recent_articles=recent_articles)
+    return render_template('index.html', assets=assets, meta_data=meta_data, recent_articles=recent_articles, cards_data=cards_data)
 
 # Single Example
 @app.route('/examples/<article_path>')
@@ -90,7 +100,7 @@ def example(article_path):
         content = htmlize(example.content)
         table_of_contents = generate_table_of_contents(content)
 
-    return render_template('examples-single.html', breadcrumbs=breadcrumbs, assets=assets, example=example, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, content=content, meta_data=meta_data)
+    return render_template('examples-single.html', breadcrumbs=breadcrumbs, assets=assets, example=example, current_url=current_url, table_of_contents=table_of_contents, content=content, meta_data=meta_data)
 
 # Single Blog
 @app.route('/blog/<blog_path>')
@@ -106,14 +116,14 @@ def blogs_single(blog_path):
         content = htmlize(blog_query.content)
         table_of_contents = generate_table_of_contents(content)
 
-    return render_template('blog-single.html', assets=assets, breadcrumbs=breadcrumbs, blog=blog_data, data_dict=data_dict, table_of_contents=table_of_contents, content=content, meta_data=meta_data)
+    return render_template('blog-single.html', assets=assets, breadcrumbs=breadcrumbs, blog=blog_data, table_of_contents=table_of_contents, content=content, meta_data=meta_data)
 
 # Still needs metadata!
 # List Topics
 @app.route('/topics')
 def topics_list():
     
-    return render_template('topics-list.html', assets=assets, data_dict=data_dict)
+    return render_template('topics-list.html', assets=assets)
 
 # Still needs metadata!
 # First Level Topic
@@ -121,7 +131,7 @@ def topics_list():
 def topics_first_level(first_level_topic_path):
     
     
-    return render_template('first-level-topic.html', assets=assets, data_dict=data_dict, topic_path=first_level_topic_path)
+    return render_template('first-level-topic.html', assets=assets, topic_path=first_level_topic_path)
 
 # Still needs metadata!
 # Second Level Topic
@@ -129,7 +139,7 @@ def topics_first_level(first_level_topic_path):
 def topics_second_level(first_level_topic_path,second_level_topic_path):
     
     
-    return render_template('second-level-topic.html', assets=assets, data_dict=data_dict, topic_path=first_level_topic_path, sec_level_topic_path=second_level_topic_path)
+    return render_template('second-level-topic.html', assets=assets, topic_path=first_level_topic_path, sec_level_topic_path=second_level_topic_path)
 
 # Still needs metadata!
 # Third Level Topic
@@ -137,7 +147,7 @@ def topics_second_level(first_level_topic_path,second_level_topic_path):
 def topics_third_level(first_level_topic_path,second_level_topic_path, third_level_topic_path):
     
     
-    return render_template('third-level-topic.html', assets=assets, data_dict=data_dict, topic_path=first_level_topic_path, sec_level_topic_path=second_level_topic_path, third_level_topic_path=third_level_topic_path)
+    return render_template('third-level-topic.html', assets=assets, topic_path=first_level_topic_path, sec_level_topic_path=second_level_topic_path, third_level_topic_path=third_level_topic_path)
 
 # Single Article (Topic)
 @app.route('/topics/<first_level_topic_path>/<second_level_topic_path>/<third_level_topic_path>/<article_path>/')
@@ -166,7 +176,7 @@ def topic_single(first_level_topic_path, second_level_topic_path, third_level_to
         if (len(content) > 0):
             reading_time = calculate_reading_time(article.content)
 
-    return render_template('topic-single.html', breadcrumbs=breadcrumbs, assets=assets, article=article, current_url=current_url, data_dict=data_dict, table_of_contents=table_of_contents, content=content, reading_time=reading_time, meta_data=meta_data, related_articles=related_articles)
+    return render_template('topic-single.html', breadcrumbs=breadcrumbs, assets=assets, article=article, current_url=current_url, table_of_contents=table_of_contents, content=content, reading_time=reading_time, meta_data=meta_data, related_articles=related_articles)
 
 # List Examples
 @app.route('/examples')
@@ -178,7 +188,7 @@ def examples():
 
     
     print(data_dict)
-    return render_template('examples-list.html', assets=assets, data_dict=data_dict, meta_data=meta_data)
+    return render_template('examples-list.html', assets=assets, meta_data=meta_data)
 
 # List Blogs
 @app.route('/blog')
@@ -207,7 +217,7 @@ def blog():
         else:
             blog.formatted_date = None
 
-    return render_template('blog-list.html', assets=assets, data_dict=data_dict, blogs_data=blogs_data, meta_data=meta_data)
+    return render_template('blog-list.html', assets=assets, blogs_data=blogs_data, meta_data=meta_data)
 
 # About
 @app.route('/about')
@@ -218,7 +228,7 @@ def about():
     meta_data = fetch_meta_data(data_object)
 
     
-    return render_template('about.html', assets=assets, data_dict=data_dict, meta_data=meta_data)
+    return render_template('about.html', assets=assets, meta_data=meta_data)
 
 # Contribute
 @app.route('/contribute')
@@ -239,7 +249,7 @@ def search():
     meta_data = fetch_meta_data(data_object)
 
     
-    return render_template('search.html', assets=assets, data_dict=data_dict, meta_data=meta_data)
+    return render_template('search.html', assets=assets, meta_data=meta_data)
 
 # Contributors
 @app.route('/contributors')
@@ -251,7 +261,7 @@ def contributors():
 
     
     contributors_list = Contributors.query.all()
-    return render_template('contributors-list.html', assets=assets, data_dict=data_dict, contributors_list=contributors_list, meta_data=meta_data)
+    return render_template('contributors-list.html', assets=assets, contributors_list=contributors_list, meta_data=meta_data)
 
 # Still needs metadata!
 # Single Contributor
@@ -266,7 +276,7 @@ def contributor(contributor_path):
     
     contributions = fetch_contributions_for_the_single_contributor(contributor_single, articles, Topics)
 
-    return render_template('contributors-single.html', assets=assets, data_dict=data_dict, contributor_single=contributor_single, contributions=contributions)
+    return render_template('contributors-single.html', assets=assets, contributor_single=contributor_single, contributions=contributions)
 
 # Custom redirects
 @app.route('/<path:path>', methods=['GET'])
@@ -279,12 +289,12 @@ def handle_redirect(path):
 
         if title:
             # Render de redirect template met een titel
-            return render_template('redirect.html', new_url=new_url, title=title, assets=assets, data_dict=data_dict)
+            return render_template('redirect.html', new_url=new_url, title=title, assets=assets)
         else:
             # Direct redirecten als er geen titel is
             return redirect(new_url, code=302)
     else:
-        return render_template('404.html', assets=assets, data_dict=data_dict), 404
+        return render_template('404.html', assets=assets), 404
 
 # Robots.txt
 @app.route('/robots.txt')
@@ -296,7 +306,7 @@ def robots_txt():
 @app.errorhandler(404)
 def page_not_found(e):
     
-    return render_template('404.html', assets=assets, data_dict=data_dict), 404
+    return render_template('404.html', assets=assets), 404
 
 @app.route('/sitemap.xml')
 def sitemap():
@@ -309,6 +319,7 @@ def sitemap():
 
 # Sitemap without redirects
 with app.app_context():
+    data_dict = build_data_dict(Topics, articles)
     sitemap = generate_sitemap(app, data_dict, base_url=base_url)
 
 # Redirects

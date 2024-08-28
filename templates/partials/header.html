@@ -47,15 +47,17 @@
 
 								{% for topic in data_dict['topics'] %}
 								{% if topic.draft == 'false' %}
-									<div class="col-6 mb-4 px-3">
-										<span class="heading d-block mb-3 text-secondary" style="font-size: 16px;font-weight: bold;">{{ topic.title }}</span>
-										{% for subtopic in topic.childtopics %}
-										{% if subtopic.draft == 'false' %}
-										<a class="d-block mx-0"
-										href="{{ url_for('topics_list') }}/{{ topic.path }}/{{ subtopic.path }}">{{ subtopic.title }}</a>
-										{% endif %}
-										{% endfor %}
-									</div>
+								<div class="col-6 mb-4 px-3">
+									<span class="heading d-block mb-3 text-secondary"
+										style="font-size: 16px;font-weight: bold;">{{ topic.title }}</span>
+									{% for subtopic in topic.childtopics %}
+									{% if subtopic.draft == 'false' %}
+									<a class="d-block mx-0"
+										href="{{ url_for('topics_list') }}/{{ topic.path }}/{{ subtopic.path }}">{{
+										subtopic.title }}</a>
+									{% endif %}
+									{% endfor %}
+								</div>
 								{% endif %}
 								{% endfor %}
 
@@ -83,7 +85,8 @@
 							<div class="row">
 								<div class="col-24 h-100">
 									<a class="d-block mx-0" href="{{ url_for('about') }}">About Tilburg Science Hub</a>
-									<a class="d-block mx-0" href="{{ url_for('contributors') }}">Meet our contributors</a>
+									<a class="d-block mx-0" href="{{ url_for('contributors') }}">Meet our
+										contributors</a>
 									<a class="d-block mx-0" href="{{ url_for('blog') }}">Visit our blog</a>
 								</div>
 							</div>
@@ -103,7 +106,8 @@
 								type="search" name="q" placeholder="Search" aria-label="Search" required
 								autocomplete="off">
 							<button style="background-color: transparent; padding: 0;" type="submit"><img
-									src="{{ url_for('static', filename='img/search.svg') }}" aria-label="search button" /></button>
+									src="{{ url_for('static', filename='img/search.svg') }}"
+									aria-label="search button" /></button>
 						</div>
 						<a href="{{ url_for('contribute') }}" class="headerLink btn btn-primary my-2 py-2 my-sm-0"
 							onBoardTooltip="Tilburg Science Hub is an open-source platform and welcomes new contributors!">Contribute</a>
@@ -111,8 +115,10 @@
 							<div class="row">
 								<div class="col-24 pr-0 h-100 p-5 px-3">
 									<span class="heading d-block mb-3 text-secondary"
-										style="font-size: 16px;font-weight: bold;">Contribute to Tilburg Science Hub</span>
-									<a class="d-block mx-0" href="{{ url_for('contribute') }}">What and how to contribute?</a>
+										style="font-size: 16px;font-weight: bold;">Contribute to Tilburg Science
+										Hub</span>
+									<a class="d-block mx-0" href="{{ url_for('contribute') }}">What and how to
+										contribute?</a>
 									<a class="d-block mx-0"
 										href="https://github.com/tilburgsciencehub/website/issues/new/choose">Submit a
 										new issue on GitHub</a>
@@ -143,7 +149,29 @@
 			</div>
 
 			<!-- Mobile Search Results-->
-			<div class="mobileResults"></div>
+			<div class="mobileResults">
+				<div class="mainMobileResults">
+
+				</div>
+				<div id="popularPages">
+					<span style="font-weight: bold;">Popular Pages</span>
+					{% for page in popular_pages %}
+					<a href="{{ page.path }}" style="display: flex;">
+						<span style="
+						display: flex;
+						width: 24px;
+						height: 24px;
+						align-items: center;
+						justify-content: center;
+						border-radius: 40px;
+						background-color: #035F94;
+						margin-right: 8px;
+					"><img src="{{ url_for('static', filename='img/arrow-trending-up.svg') }}" width="14px" height="14px" /></span>
+						<span>{{ page.title }}</span>
+					</a>
+					{% endfor %}
+				</div>
+			</div>
 		</div>
 
 		<!-- Mobile Menu -->
@@ -237,6 +265,25 @@
 
 	<!-- Search results -->
 	<div class="position-absolute bg-white rounded shadow headerSearchResultsHolder">
+		<div class="mainResults mb-2"></div>
+		<div id="popularPages">
+			<span style="font-weight: bold;">Popular Pages</span>
+			{% for page in popular_pages %}
+			<a href="{{ page.path }}" style="display: flex;">
+				<span style="
+                display: flex;
+                width: 24px;
+                height: 24px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 40px;
+                background-color: #035F94;
+                margin-right: 8px;
+            "><img src="{{ url_for('static', filename='img/arrow-trending-up.svg') }}" width="14px" height="14px" /></span>
+				<span>{{ page.title }}</span>
+			</a>
+			{% endfor %}
+		</div>
 	</div>
 
 </div>

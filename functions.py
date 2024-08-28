@@ -9,6 +9,7 @@ import math
 from collections import defaultdict
 import json
 import xml.etree.ElementTree as ET
+import os
 
 nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
@@ -367,3 +368,15 @@ def generate_sitemap(app, data, base_url="https://www.example.com"):
     
     tree = ET.ElementTree(urlset)
     tree.write("sitemap.xml", encoding="utf-8", xml_declaration=True)
+
+def load_popular_pages(app):
+# Load pages.json
+    json_path = os.path.join(app.static_folder, 'json', 'pages.json')
+    with open(json_path, 'r') as f:
+        return json.load(f)
+    
+def cards_data_homepage(app):
+# Load cards.json
+    json_path = os.path.join(app.static_folder, 'json', 'cards.json')
+    with open(json_path, 'r') as f:
+        return json.load(f)
