@@ -89,7 +89,7 @@ The first approach is to ‘force’ the two-dimensional running variable into a
 {{<katex>}}
 {{</katex>}}
 
-$$Y_i = \alpha + \betaT_i + \gamma DistanceToBoundary_i + \delta T_i*DistanceToBoundary_i + \epsilon_i$$
+$$Y_i = \alpha + \beta T_i + \gamma DistanceToBoundary_i + \delta T_i*DistanceToBoundary_i + \epsilon_i$$
 
 Where Y is the outcome, T is the treatment dummy, DistanceToBoundary is the Euclidean distance between the observation $i$ and the nearest boundary point, and $\epsilon$ is the error term. $\beta$ is the coefficient of interest. 
 
@@ -130,7 +130,7 @@ The most common geographic estimation procedure, described by [Keele and Titiuni
 {{<katex>}}
 {{</katex>}}
 
-$$Y_i = \alpha_b + \tau_b T_i + \gamma_b DistanceToBoundary_ib + \delta_b T_i*DistanceToBoundary_ib + \epsilon_ib$$
+$$Y_i = \alpha_b + \tau_b T_i + \gamma_b DistanceToBoundary_{ib} + \delta_b T_i*DistanceToBoundary_{ib} + \epsilon_{ib}$$
 
 Where Y is the outcome, T is the treatment dummy, DistanceToBoundary is the Euclidean distance between the observation $i$ and boundary point $b$, and $\epsilon$ is the error term. $\tau_b$ is the coefficient of interest. 
 
