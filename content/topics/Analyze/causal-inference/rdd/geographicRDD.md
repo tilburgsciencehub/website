@@ -15,17 +15,17 @@ aliases:
 
 ## Overview 
 
-Regression discontinuity designs (RDDs) are a commonly used quasi-experimental framework in economics, political science, public health and many other fields. RDDs are suitable in settings where treatment status depends on the value of some running (or ‘assignment’) variable. In a [sharp RD design](/sharp/designs), above a certain cutoff (or ‘threshold’) of the running variable a unit is treated, while below it is not, or vice-versa. Sometimes, this cutoff can be an actual geographic boundary, such as a border between countries or regions, to one side of which treatment occurs, while to the other it does not. 
+Regression discontinuity designs (RDDs) are a commonly used quasi-experimental framework in economics, political science, public health and many other fields. RDDs are suitable in settings where treatment status depends on the value of some running (or ‘assignment’) variable. In a [sharp RD design](/sharp/designs), a unit is treated above a certain cutoff (or ‘threshold’) of the running variable, while below it is not, or vice-versa. Sometimes, this cutoff can be an actual geographic boundary, such as a border between countries or regions, to one side of which treatment occurs, while to the other it does not. 
 
 {{% example %}}
 Examples of settings where treatment status is determined by a geographic cutoff are almost countless. Think of neighbouring countries with different mandatory schooling years, adjacent states with different minimum wage levels, or a natural boundary like a mountain range that creates variation in climatic conditions between two contiguous areas. 
 {{% /example %}}
 
-RDDs where the cutoff is a geographic boundary are known as geographic regression discontinuity (GRD) designs or spatial regression discontinuity (SRD) designs. In this topic, we discuss how GRD differs from canonical RDD, what kind of identification challenges this implies, and how these can be addressed to successfully identify a causal effect in GRD settings. 
+RDDs where the cutoff is a geographic boundary are known as geographic regression discontinuity (GRD) or spatial regression discontinuity (SRD) designs. In this topic, we discuss how GRD differs from canonical RDD, what kind of identification challenges this implies, and how these can be addressed to successfully identify a causal effect in GRD settings. 
 
 ## Differences between GRD and canonical RD designs
 
-GRD designs are in essence similar to RD designs. We choose a limited bandwidth around the cutoff, fit a local polynomial on either side, and estimate the discontinuity (the difference in the intercepts of the two polynomials at the cutoff) in the outcome variable at the cutoff. Nonetheless, the geographic context does have numerous peculiarities which must be taken into account when identifying a treatment effect. 
+GRD designs are in essence similar to RDDs. We choose a limited bandwidth of the running variable around the cutoff, fit a local polynomial on either side, and estimate the discontinuity (the difference in the intercepts of the two polynomials at the cutoff) in the outcome variable at the cutoff. Nonetheless, the geographic context does have numerous peculiarities which must be taken into account when identifying a treatment effect. 
 
 ### Two running variables
 
