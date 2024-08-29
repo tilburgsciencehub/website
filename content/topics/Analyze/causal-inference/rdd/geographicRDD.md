@@ -78,7 +78,7 @@ In a sharp GRD design, treatment status is a deterministic and discontinuous fun
 
 $$Y_i = \alpha + \beta T_i + \gamma f(geographic location_i) + \delta T*f(geographic location_i) + \epsilon_i$$
 
-Where Y is the outcome, T is the treatment dummy, f(geographic location) is a function relating geographic location to the outcome, and $\epsilon$ is the error term. $\beta$ is the coefficient of interest. 
+Where Y is the outcome, T is the treatment dummy, $f(geographic location)$ is a function relating geographic location to the outcome, and $\epsilon$ is the error term. $\beta$ is the coefficient of interest. 
 
 The fundamental challenge is to accurately define the polynomial describing the relationship between the running variable and the outcome ($f(geographic location)$), as geographic location is captured by two variables – the longitude and the latitude. We discuss two ways of approaching this below. 
 
@@ -175,7 +175,7 @@ The difference-in-discontinuities approach is useful in cases where the treatmen
 {{% example %}}
 Suppose we have two treatments, A and B, that both affect one side of a boundary, with the other side serving as the control group. Treatment A is applied in both periods 1 and 2. Treatment B, which is our treatment of interest, is only introduced in period 2. If we assume time-invariant treatment effects for treatment A, we can conclude that the difference in discontinuities between periods 2 and 1 is equal to the B’s treatment effect. In the below example, we observe that the treatment effect (discontinuity size) increases by 0.3 from 0.5 in period 1 to 0.8 in period 2. We assume that this difference is attributable to the introduction of treatment B in period 2; thus, B’s treatment effect is 0.8 – 0.5 = 0.3. 
 | treatment | period 1 | period 2 |
----
+|---|---|---|
 | A | 0.5 | 0.5 |
 | B | 0 | 0.3 |
 | Total (observed) | 0.5 | 0.8 |
