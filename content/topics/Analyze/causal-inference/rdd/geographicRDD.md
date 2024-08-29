@@ -179,6 +179,7 @@ Suppose we have two treatments, A and B, that both affect one side of a boundary
 | A | 0.5 | 0.5 |
 | B | 0 | 0.3 |
 | Total (observed) | 0.5 | 0.8 |
+
 {{% /example %}}
 
 {{% tip %}}
