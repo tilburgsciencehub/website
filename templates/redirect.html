@@ -32,22 +32,6 @@
 	</script>
 	<!--snippet for google optimize (A/B tests) put back on when needed 
 	<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-N42NQJS"></script>-->
-
-	<!-- Katex -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='katex/katex.min.css') }}" />
-    <script defer src="{{ url_for('static', filename='katex/katex.min.js') }}"></script>
-    <script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}"></script>
-	<script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}" onload="renderMathInElement(
-			  document.body,
-			  {
-				  delimiters: [
-					  {left: '$$', right: '$$', display: true},
-					  {left: '\\[', right: '\\]', display: true},
-					  {left: '$', right: '$', display: false},
-					  {left: '\\(', right: '\\)', display: false}
-				  ]
-			  }
-		  );"></script>
 	
 	<!-- Common Meta Data -->
 	<meta charset="utf-8">
@@ -61,7 +45,7 @@
 	<!-- Styling and scripts-->
 	<link rel="stylesheet" href="{{ assets['scss_all'].urls()[0] }}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
+	
 	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
 
 	<!-- Place this tag in your head or just before your close body tag. -->

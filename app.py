@@ -1,18 +1,35 @@
+# Flask libraries
 from flask import Flask, render_template, request, redirect, abort, render_template_string, send_from_directory, send_file
 from flask_assets import Environment, Bundle
+from flask_compress import Compress
+
+# Base Libraries
 from datetime import datetime
-from functions import build_data_dict, fetch_contributions_for_the_single_contributor, generate_table_of_contents, get_breadcrumbs, find_related_articles, calculate_reading_time, fetch_meta_data, recently_published, generate_sitemap, load_popular_pages, cards_data_homepage
 import os
+
+# Models
 from models import db, articles, Contributors, blogs, Topics
+
+# Functions and Utilities
+from functions import build_data_dict, fetch_contributions_for_the_single_contributor, generate_table_of_contents, \
+    get_breadcrumbs, find_related_articles, calculate_reading_time, \
+    fetch_meta_data, recently_published, generate_sitemap, \
+    load_popular_pages, cards_data_homepage
 from html_parser import htmlize, r_to_html_plaintext
-from redirectstsh import setup_redirects
 from utils import get_git_commit_hash
+
+# Redirects 
+from redirectstsh import setup_redirects
 import redirects_config
-import json
  
 # Initialize App
 app = Flask(__name__, static_url_path='/static')
 
+# Text Compression
+app.config['COMPRESS_ALGORITHM'] = 'br'  
+Compress(app)
+
+# Git Hash Injector
 @app.context_processor
 def inject_git_commit_hash():
     return {'git_commit_hash': get_git_commit_hash()}

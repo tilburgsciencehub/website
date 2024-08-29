@@ -34,7 +34,7 @@
 	<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-N42NQJS"></script>-->
 
 	<!-- Katex -->
-    <script>
+	<script>
 		// Controleer of de URL 'topics' bevat
 		if (window.location.href.includes('topics')) {
 			// Als 'topics' in de URL staat, laad de CSS direct
@@ -42,21 +42,34 @@
 			link.rel = "stylesheet";
 			link.href = "{{ url_for('static', filename='katex/katex.min.css') }}";
 			document.head.appendChild(link);
+
+			// Laad de KaTeX JavaScript-bestanden
+			var script1 = document.createElement("script");
+			script1.src = "{{ url_for('static', filename='katex/katex.min.js') }}";
+			script1.defer = true;
+			document.head.appendChild(script1);
+
+			var script2 = document.createElement("script");
+			script2.src = "{{ url_for('static', filename='katex/auto-render.min.js') }}";
+			script2.defer = true;
+			document.head.appendChild(script2);
+
+			var script3 = document.createElement("script");
+			script3.src = "{{ url_for('static', filename='katex/auto-render.min.js') }}";
+			script3.defer = true;
+			script3.onload = function() {
+				renderMathInElement(document.body, {
+					delimiters: [
+						{left: '$$', right: '$$', display: true},
+						{left: '\\[', right: '\\]', display: true},
+						{left: '$', right: '$', display: false},
+						{left: '\\(', right: '\\)', display: false}
+					]
+				});
+			};
+			document.head.appendChild(script3);
 		}
-	</script>	
-    <script defer src="{{ url_for('static', filename='katex/katex.min.js') }}"></script>
-    <script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}"></script>
-	<script defer src="{{ url_for('static', filename='katex/auto-render.min.js') }}" onload="renderMathInElement(
-			  document.body,
-			  {
-				  delimiters: [
-					  {left: '$$', right: '$$', display: true},
-					  {left: '\\[', right: '\\]', display: true},
-					  {left: '$', right: '$', display: false},
-					  {left: '\\(', right: '\\)', display: false}
-				  ]
-			  }
-		  );"></script>
+	</script>
 	
 	<!-- Common Meta Data -->
 	<meta charset="utf-8">
@@ -83,7 +96,7 @@
 	<!-- Styling and scripts-->
 	<link rel="stylesheet" href="{{ assets['scss_all'].urls()[0] }}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://www.mattboldt.com/demos/typed-js/js/typed.custom.js"></script>
+	
 	<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
 
 	<!-- Place this tag in your head or just before your close body tag. -->

@@ -23,7 +23,8 @@ RUN pip install --no-cache-dir Flask-SQLAlchemy \
     Flask-Assets \
     google-api-python-client \
     gunicorn \
-    Pillow
+    Pillow \
+    Flask-Compress
 
 RUN npm install -g sass
 
