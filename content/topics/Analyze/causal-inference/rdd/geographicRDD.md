@@ -80,7 +80,7 @@ $$Y_i = \alpha + \beta T_i + \gamma f(geographic location_i) + \delta T*f(geogra
 
 Where Y is the outcome, T is the treatment dummy, $f(geographic location)$ is a function relating geographic location to the outcome, and $\epsilon$ is the error term. $\beta$ is the coefficient of interest. 
 
-The fundamental challenge is to accurately define the polynomial describing the relationship between the running variable and the outcome ($f(geographic location)$), as geographic location is captured by two variables – the longitude and the latitude. We discuss two ways of approaching this below. 
+The fundamental challenge is to accurately define the polynomial describing the relationship between the running variable and the outcome ( $f(geographic location)$ ), as geographic location is captured by two variables – the longitude and the latitude. We discuss two ways of approaching this below. 
 
 ### Naïve distance estimation
 
@@ -91,7 +91,7 @@ The first approach is to ‘force’ the two-dimensional running variable into a
 
 $$Y_i = \alpha + \beta T_i + \gamma DistanceToBoundary_i + \delta T_i*DistanceToBoundary_i + \epsilon_i$$
 
-Where Y is the outcome, T is the treatment dummy, DistanceToBoundary is the Euclidean distance between the observation $i$ and the nearest boundary point, and $\epsilon$ is the error term. $\beta$ is the coefficient of interest. 
+Where Y is the outcome, T is the treatment dummy, $DistanceToBoundary$ is the Euclidean distance between the observation $i$ and the nearest boundary point, and $\epsilon$ is the error term. $\beta$ is the coefficient of interest. 
 
 {{% tip %}}
 Euclidean distance is simply the formal term for the length of the straight line segment between any two points. 
@@ -99,7 +99,7 @@ Euclidean distance is simply the formal term for the length of the straight line
 
 Naïve distance is a very intuitive way of defining the RD polynomial, but estimation based on naïve distance may be subject to two considerable flaws:
 
-1.	**Bad comparisons**: Merging longitude and latitude into a single distance variable means that we ignore an observations exact geographic position. Instead, we only consider its position _relative to the boundary_. This is problematic because it implies that observations equally distant from the boundary but located in entirely different locations will be compared to each other. The image below illustrates this: points i and j will have the same value of the running variable, as they are equidistant from their respective nearest boundary points and will thus be compared to the treated observation k in the same manner; however, they clearly have very different geographical positions relative to k and to each individual boundary point. 
+1.	**Bad comparisons**: Merging longitude and latitude into a single distance variable means that we ignore an observation's exact geographic position. Instead, we only consider its position _relative to the boundary_. This is problematic because it implies that observations equally distant from the boundary but located in entirely different locations will be compared to each other. The image below illustrates this: points i and j will have the same value of the running variable, as they are equidistant from their respective nearest boundary points and will thus be compared to the treated observation k in the same manner; however, they clearly have very different geographical positions relative to k and to each individual boundary point. 
 
 <p align = "center">
 <img src = "../images/GRD_naive.png" width="400">
@@ -132,27 +132,27 @@ The most common geographic estimation procedure, described by [Keele and Titiuni
 
 $$Y_i = \alpha_b + \tau_b T_i + \gamma_b DistanceToBoundary_{ib} + \delta_b T_i*DistanceToBoundary_{ib} + \epsilon_{ib}$$
 
-Where Y is the outcome, T is the treatment dummy, DistanceToBoundary is the Euclidean distance between the observation $i$ and boundary point $b$, and $\epsilon$ is the error term. $\tau_b$ is the coefficient of interest. 
+Where Y is the outcome, T is the treatment dummy, $DistanceToBoundary$ is the Euclidean distance between the observation $i$ and boundary point $b$, and $\epsilon$ is the error term. $\tau_b$ is the coefficient of interest. 
 
 {{% tip %}}
 The software package used for GRD analysis in R and State, `SpatialRDD`, also automatically calculates the _average_ treatment effect for the _entire_ boundary. 
 {{% /tip %}} 
 
 {{% tip %}}
-There are also ways of estimating treatment effects where treatment exposure is determined by a geographic discontinuity without using regression discontinuity methods. One such approach is spatial nearest-neighbour matching, where we compare each observation to its geographically closest ‘neighbour’, regressing their differences in outcomes on their differences in treatment status. Another approach is to use spatial fixed effects (or spatial demeaning), which in effect is a hybrid combination of matching with standard RDD. We do not discuss these methods in detail in this topic, but further information on them can be found [here](https://blogs.worldbank.org/en/impactevaluations/spatial-jumps). 
+There are also ways of estimating treatment effects where treatment exposure is determined by a geographic discontinuity without using regression discontinuity methods. One such approach is spatial nearest-neighbour [matching](/exact-matching), where we compare each observation to its geographically closest ‘neighbour’, regressing their differences in outcomes on their differences in treatment status. Another approach is to use spatial fixed effects (or spatial demeaning), which in effect is a hybrid combination of matching with standard RDD. We do not discuss these methods in detail in this topic, but further information on them can be found [here](https://blogs.worldbank.org/en/impactevaluations/spatial-jumps). 
 {{% /tip %}} 
 
 ## Challenges to identification in GRD designs and solutions
 
 ### Sorting and manipulation
 
-Geographic location, and more precisely latitude and longitude, are running variables that are comparatively easy to manipulate for individuals and households. It tends to be fairly straightforward for people to move between adjacent areas on either side of a border cutoff. If this is the case, the subjects can determine their treatment status themselves – for instance, an individual can move to a neighbouring state that decrease the income tax precisely to benefit from this ‘treatment’. In this way, subjects can non-randomly self-select into treatment, causing selection bias. 
+Geographic location, and more precisely latitude and longitude, are running variables that are comparatively easy to manipulate for individuals and households. It tends to be fairly straightforward for people to move between adjacent areas on either side of a border cutoff. If this is the case, the subjects can determine their treatment status themselves – for instance, an individual can move to a neighbouring state that decreases the income tax precisely to benefit from this ‘treatment’. In this way, subjects can non-randomly self-select into treatment, causing selection bias. 
 
 This issue does not _always_ arise in GRD settings – for example, it may not be so straightforward for a worker to find a new job in a neighbouring country immediately after that country raises the minimum wage. There are two important points to consider here:
 
-1.	Manipulation is more likely if policy or institutional differences in the past are strongly correlated with policy differences (treatments) in the present. This allows people the time to observe consistent differences across the cutoff and decide on which side of the border to live or work. This amounts to self-selection and can make the composition of the groups on either side of the border (cutoff) substantially and discontinuously different.
+1.	Manipulation is more likely if policy or institutional differences in the past are strongly correlated with policy differences (treatments) in the present. This allows people the time to observe consistent differences across the cutoff and decide on which side of the boundary to live or work. This amounts to self-selection and can make the composition of the groups on either side of the border (cutoff) substantially and discontinuously different.
 
-2.	There may be a trade-off between manipulation probability and the plausibility of continuity assumptions. On the one hand, a tightly sealed border reduces the probability of movement across it – and thus manipulation; on the other, it can also lead to the development of stark and discontinuous differences in relevant characteristics between the populations on either side of it. 
+2.	There may be a trade-off between manipulation probability and the plausibility of continuity assumptions. On the one hand, a tightly sealed border reduces the probability of movement across it – and thus manipulation; on the other, it can also lead to the development of stark and discontinuous differences in relevant characteristics between the populations on either side of it, threatening the validity of the continuity assumption. 
 
 #### Solutions
 
@@ -188,11 +188,11 @@ See [Grembi et al. (2016)](https://www.aeaweb.org/articles?id=10.1257/app.201500
 
 ### Strong continuity assumptions
 
-The fact that the continuity assumptions are less likely to hold is of course also a major challenge. An RD design, in its continuity-based version, identifies a treatment effect by measuring a discontinuity in the outcome at the cutoff. Such a discontinuity can only be attributed to the treatment if treatment exposure or status is the only variable changing discontinuously at the threshold. If other relevant variables also change discontinuously at the cutoff, they become confounders and will create bias in our treatment effect estimates unless adequately adjusted for. 
+The fact that the continuity assumptions are less likely to hold is of course also a major challenge. An RD design, in its continuity-based version, identifies a treatment effect by measuring a discontinuity in the outcome at the cutoff. Such a discontinuity can only be attributed to the treatment if treatment exposure or status is the _only_ variable changing _discontinuously_ at the threshold. If other relevant variables also change discontinuously at the cutoff, they become confounders and will create bias in our treatment effect estimates unless adequately adjusted for. 
 
 #### Solutions
 
-Firstly, it is always useful to check for violations of the continuity assumptions by testing (preferably both graphically and formally) for discontinuities in the relevant predetermined covariates at the cutoff. Keele and Titiunik propose the following method to do this in a GRD context: 
+Firstly, it is always useful to check for violations of the continuity assumptions by testing for discontinuities in the relevant predetermined covariates at the cutoff. Keele and Titiunik propose the following method to do this in a GRD context: 
 
 1. Calculate the geographic distance between every observation in our sample. 
 2. Match each treated observation $i$ to a _single_ control observation that is closest to it.
