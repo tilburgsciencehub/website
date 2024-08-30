@@ -50,8 +50,9 @@ You can create a website with Quarto by combining multiple Quarto documents into
 6. The website will open in a new tab in VSCode, or you can `Ctrl+Click` the `http://localhost` link to preview the HTML version in a web browser. You can see the most basic version of your newly created website!
 
 
-(screenshot most basic website)
-
+<p align = "center">
+<img src = "../images/quarto-first-website.png" width="300">
+</p>
 
 {{% tip %}}
 
@@ -108,6 +109,9 @@ format:
 
 {{% /codeblock %}}
 
+<p align = "center">
+<img src = "../images/quarto-format-website.png" width="300">
+</p>
 
 ### Website navigation
 
@@ -148,7 +152,18 @@ Follow these steps:
 
 5. Find your published website in your Quarto Pub account or follow the link provided in the output code. 
 
-The example website created in this article is published through these steps and can be viewed [here](https://valerievossen.quarto.pub/automated-website---weekly-top-artists/)!
+The example website created in this article is published!
+
+<p align = "center">
+<img src = "../images/quarto-published-website.png" width="300">
+</p>
+
+Visit the website [here](https://valerievossen.quarto.pub/automated-website---weekly-top-artists/)!
+
+
+6. *To update your site:*: Make the necessary changes to the Quarto files in your project directory, then run `quarto publish` in the terminal. When prompted to confirm the publishing destination, press Enter if the displayed URL is correct. 
+
+If you need to publish to a different location, you can update the URL in the `_publish.yml` file before running the `quarto publish` command.
 
 
 {{% summary %}}
