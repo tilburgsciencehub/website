@@ -3,6 +3,7 @@ import os
 import re
 import shutil
 import logging
+from PIL import Image, UnidentifiedImageError
 
 # Create the database and table
 conn = sqlite3.connect('tsh.db')
@@ -511,21 +512,34 @@ conn.close()
 # Define the image directory
 img_directory = os.path.join(script_directory, "static/img")
 
+# Define valid image extensions
+image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.mov']
+
 # Create image directory if it does not exist
 if not os.path.exists(img_directory):
     os.makedirs(img_directory)
 
-# Define valid image extensions
-image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.mov']
-
-# Loop through the content directory and copy images to the image directory
+# Loop through the content directory and convert/copy images to the image directory
 for root, _, files in os.walk(content_directory):
     for filename in files:
         src_filepath = os.path.join(root, filename)
         
         if is_image(filename):
-            dst_filepath = os.path.join(img_directory, filename)
-            shutil.copy(src_filepath, dst_filepath)
+            try:
+                # Define the destination filepath with .webp extension
+                dst_filename = os.path.splitext(filename)[0] + '.webp'
+                dst_filepath = os.path.join(img_directory, dst_filename)
+                
+                # Open and convert the image to webp
+                with Image.open(src_filepath) as img:
+                    img.save(dst_filepath, 'webp')
+
+                print(f"Converted {src_filepath} to {dst_filepath}")
+
+            except UnidentifiedImageError:
+                print(f"UnidentifiedImageError: Cannot identify image file {src_filepath}")
+            except Exception as e:
+                print(f"Error processing {src_filepath}: {e}")
 
 # Define the directory for other files
 files_directory = os.path.join(script_directory, "static/files")

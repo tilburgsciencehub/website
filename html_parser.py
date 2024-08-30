@@ -3,6 +3,7 @@ import re
 from bs4 import BeautifulSoup
 import markdown
 from flask import request
+import os
 
 # Convert Markdown to HTML using the markdown library
 # Parameters:
@@ -65,14 +66,14 @@ def convert_code_blocks_to_html(md_content):
                        f'</ul>'
         
         ## Only display download button when there is code content for that
-        download_button_html = f'<a class="downloadCodeBtn" style="margin-right: 20px" href="../{code_content_to_open}"><img src="/img/download.svg"></a>' if code_content_to_open else ''
+        download_button_html = f'<a class="downloadCodeBtn" style="margin-right: 20px" href="../{code_content_to_open}"><img src="/static/img/download.svg"></a>' if code_content_to_open else ''
 
         return f'<div class="codeblock">\n' \
             f'<div class="d-flex justify-content-between">\n' \
             f'    {tab_nav_html}\n' \
             f'    <div class="float-right d-flex">\n' \
             f'        {download_button_html}\n' \
-            f'        <a class="copyCodeBtn" href="#0"><img src="/img/copy-code.svg"></a>\n' \
+            f'        <a class="copyCodeBtn" href="#0"><img src="/static/img/copy-code.svg"></a>\n' \
             f'    </div>\n' \
             f'</div>\n' \
             f'    <div class="inner">\n' \
@@ -96,7 +97,7 @@ def convert_tips_to_html(md_content):
         tip_content = match.group(1)
         html_content = convert_md_to_html(tip_content)
         return f'  <div class="admonition tip">' \
-               f'     <div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/tip.svg"> Tip</div>\n' \
+               f'     <div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/static/img/tip.svg"> Tip</div>\n' \
                f'     <div class="admonition-content"><p>{html_content}</p></div>' \
                f'     </div>\n'
 
@@ -115,7 +116,7 @@ def convert_summary_to_html(md_content):
         summary_content = match.group(1)
         html_content = convert_md_to_html(summary_content)
         return f'  <div class="admonition summary">' \
-               f'     <div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/img/summary.svg"> Summary</div>\n' \
+               f'     <div class="font-weight-bold mb-3"><img class="align-bottom mr-2" src="/static/img/summary.svg"> Summary</div>\n' \
                f'     <div class="admonition-content"><p>{html_content}</p></div>' \
                f'     </div>\n'
 
@@ -337,13 +338,23 @@ def replace_img_src(md_content):
     soup = BeautifulSoup(md_content, 'html.parser')
     img_tags = soup.find_all('img')
 
+    # Define valid image extensions
+    image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.mov']
+    
     for img_tag in img_tags:
         src = img_tag.get('src')
         if src:
-            filename = src.split('/')[-1]
-            new_src = '/static/img/' + filename
-            img_tag['src'] = new_src
+            # Get the filename and extension
+            filename, ext = os.path.splitext(src.split('/')[-1])
+            
+            # Check if the extension is one of the defined extensions
+            if ext.lower() in image_extensions:
+                # Replace the extension with .webp
+                new_filename = filename + '.webp'
+                new_src = '/static/img/' + new_filename
+                img_tag['src'] = new_src
 
+    # Convert the modified soup back to a string
     md_content_with_new_img_src = str(soup)
     return md_content_with_new_img_src
 
