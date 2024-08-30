@@ -90,11 +90,12 @@ DiD works well whenever:
 {{%/table%}}
     
 - Incorrect 👎 (NOT using $\texttt{table}$ notation):  
-
+{{%table%}}
 |                 | Before ($Y_i^0$)     | After ($Y_i^1$)     |
 | --------------- | ---------------------- | ---------------------- |
 | Control ($D_i = 0$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \mid D_i = 0)$   |
 | Treatment ($D_i=1$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \ mid D_i = 1)$    |
+{{%/table%}}
  
 ### Each article should have at least a title, description, keywords, weight, date and content
 
