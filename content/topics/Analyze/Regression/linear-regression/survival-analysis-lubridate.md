@@ -26,6 +26,7 @@ Survival analysis, also known as `event-time` analysis, is a valuable tool when 
 Survival analysis is a versatile tool applicable across various fields. For example, it helps compare treatment effectiveness in clinical trials, predict customer churning in marketing and estimate loan defaults in finance.
 
 In general, this method is applicable for the following applications: 
+
 - *Comparing Survival Rates*: Compare survival times across different groups. 
 - *Modeling Survival Data*: Implementing the Cox Proportional Hazards model, to examine how various factors influence survival time.
 - *Predicting Future Events*: Predicting when a future event, like a customer churn will occur. 
