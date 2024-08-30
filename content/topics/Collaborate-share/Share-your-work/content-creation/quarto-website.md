@@ -72,7 +72,7 @@ This Quarto report summarizes the top 5 streamed artists for the week, along wit
 To follow along with this example:
 
 - Download [the Quarto file of the Automated Report](https://github.com/valerievossen/quarto-example/blob/main/music-automated-report.qmd) yourself.
-- Or download [the full project directory from GitHub]() of this example, which is the end result.
+- Or download [the full project directory from GitHub](https://github.com/valerievossen/quarto-example/tree/main/my-first-website) of this example, which is the end result.
 
 {{% /example %}}
 
@@ -157,7 +157,9 @@ The example website created in this article is published!
 Visit the website [here](https://valerievossen.quarto.pub/automated-website---weekly-top-artists/)!
 
 
-*To update your site:* Make the necessary changes to the Quarto files in your project directory, then run `quarto publish` in the terminal. When prompted to confirm the publishing destination, press Enter if the displayed URL is correct. 
+*To update your website*
+
+Make the necessary changes to the Quarto files in your project directory, then run `quarto publish` in the terminal. When prompted to confirm the publishing destination, press Enter if the displayed URL is correct. 
 
 If you need to publish to a different location, you can update the URL in the `_publish.yml` file before running the `quarto publish` command.
 

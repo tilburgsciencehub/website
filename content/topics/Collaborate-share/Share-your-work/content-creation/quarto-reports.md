@@ -39,8 +39,7 @@ To follow along with this example, download [the Quarto file](https://github.com
 
 ### Extracting the data
 
-First, we'll extract streaming data from the API and store it in a [Pandas](/topics/Manage-manipulate/manipulate-clean/numerical/pandas/) DataFrame.
-This DataFrame will be displayed in the report, showing the top 5 artists and their total plays for the specific week.
+First, we'll extract streaming data from the API and store it in a [Pandas](/topics/Manage-manipulate/manipulate-clean/numerical/pandas/) DataFrame. This DataFrame will be displayed in the report, showing the top 5 artists and their total plays for the specific week.
 
 
 {{% codeblock %}}
