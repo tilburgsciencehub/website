@@ -146,9 +146,6 @@ Let’s assume that, in our setting, the parallel trends assumption is violated,
 {{% example %}}
 We define $\hat{\beta}$ as our estimate of the treatment effect, which is composed of the estimated difference between the treatment and control groups after treatment implementation, $\hat{\beta_{post}}$, and the corresponding difference before treatment implementation, $\hat{\beta_{pre}}$. 
 
-{{<katex>}}
-{{</katex>}}
-
 $\hat{\beta} = \hat{\beta_{post}} – \hat{\beta_{pre}}$
 
 Analogously, we define $\beta$ as the _true_ treatment effect. 
