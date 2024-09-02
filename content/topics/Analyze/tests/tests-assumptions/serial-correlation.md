@@ -1,17 +1,9 @@
 ---
-<<<<<<< HEAD
 title: "Testing for Serial Correlation"
 description: "Learn how to identify and address serial correlation through visual inspection, statistical tests, and adjustments to standard errors."
 keywords: "serial correlation, serial, correlation, autocorrelation, statistical, test, testing, R, OLS, assumptions, standard, error, errors, Durbin-Watson, Breusch-Godfrey, Wooldridge"
 draft: false
 weight: 2
-=======
-title: "Testing and Correcting for Serial Correlation"
-description: "Learn how to identify and address serial correlation through visual inspection, statistical tests, and adjustments to standard errors."
-keywords: "serial correlation, serial, correlation, autocorrelation, statistical, test, testing, R, OLS, assumptions, standard, error, errors, Durbin-Watson, Breusch-Godfrey, Wooldridge"
-draft: false
-weight: 3
->>>>>>> master
 author: "Valerie Vossen"
 aliases:
   - /serial-correlation
@@ -25,9 +17,6 @@ aliases:
 ## What is serial correlation? 
 
 The Gauss-Markov assumption for OLS estimators states that error terms should be uncorrelated across different time periods given the covariates X. This is expressed as follows:
-
-{{<katex>}}
-{{</katex>}}
 
 $Corr(u_t, u_s | X) = 0 $  for all $t ≠ s$
 

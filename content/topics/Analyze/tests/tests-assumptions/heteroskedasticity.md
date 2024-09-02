@@ -1,9 +1,5 @@
 ---
-<<<<<<< HEAD
-title: "Heteroskedasticity"
-=======
 title: "Testing and Correcting for Heteroskedasticity"
->>>>>>> master
 description: "Tutorial on how to identify and how to perform heteroskedasticity tests in R"
 keywords: "Heteroskedasticity, R, Breusch-Pagan, White, Arrellano, Grunfeld, Goldfeld-Quandt, Robust Standard Errors"
 weight: 2
@@ -24,13 +20,7 @@ Underneath we have a straightforward example of heteroskedasticity to help you b
 {{% example %}}
 Consider the regression equation, that models the relationship between income and expenditure on meals:
 
-<<<<<<< HEAD
 $Y_i = \beta_0 + \beta_1 X_i + \epsilon_{i}$ 
-=======
-{{<katex>}}
- Y_i = \beta_0 + \beta_1 X_i + \epsilon_i
-{{</katex>}}
->>>>>>> master
 
 Where: $Y_i$ represents the expenditure on meals for the i-th individual, $X_i$ is the income and ​$\epsilon_{i}$ is the error term associated with each observation. 	
 
@@ -156,25 +146,13 @@ The `Breusch-Pagan` (BP) test is a statistical way used to test the null hypothe
 #### Steps to Perform the Breusch-Pagan Test:
 1. Run the **Original Regression Model**: Fit the original regression and compute the residuals.
    
-<<<<<<< HEAD
 $Y_i = \beta_0 + \beta_1 X_i + ... + \beta_k X_k + \epsilon_i$
-=======
-{{<katex>}}
-Y_i = \beta_0 + \beta_1 X_i + ... + \beta_k X_k + \epsilon_i
-{{</katex>}}  
->>>>>>> master
 
 2. _Optional_: Perform the **Auxiliary Regression**
    1. Square the residuals from Step 1 and regress these squared residuals on the original independent variables.
    2. The benefit of taking this step is the identification of the variable(s) causing heteroskedasticity.
    
-<<<<<<< HEAD
 $\hat{u}{^2} = c_0 +c_1 x_1 +... + c_k x_k + \epsilon_i$
-=======
-{{<katex>}}
-\hat{u}{^2} = c_0 +c_1 x_1 +... + c_k x_k + \epsilon_i 
-{{</katex>}}  
->>>>>>> master
 
 The dependent variable here, $\hat{u}^2$, represents the squared residuals.
 
@@ -202,15 +180,11 @@ bptest(grunfeld_model)
 {{% /codeblock %}}
 
 **Variable Specific Coefficients** 
-<<<<<<< HEAD
 {{%table%}}
-=======
->>>>>>> master
 |         | Estimate | Std. Error | t-value  |     Pr(>t) |
 | :-----: | :------: | :--------: | :------: | :-----------: |
 |  value  | 2.897796 |  1.064235  | 2.722892 |  0.007080514  |
 | capital | 7.780105 |  1.732049  | 4.491850 | 0.00001230574 |
-<<<<<<< HEAD
 {{%/table%}}
 
 **Breusch-Pagan Test** 
@@ -219,13 +193,6 @@ bptest(grunfeld_model)
 | --------: | ------: | --------: | :----------------------------- |
 |  65.22801 |       0 |         2 | studentized Breusch-Pagan test |
 {{%/table%}}
-=======
-
-**Breusch-Pagan Test** 
-| statistic | p.value | parameter | method                         |
-| --------: | ------: | --------: | :----------------------------- |
-|  65.22801 |       0 |         2 | studentized Breusch-Pagan test |
->>>>>>> master
 
 
 {{% example %}}
@@ -252,24 +219,12 @@ Characteristics are:
 1. Run the **Original Regression Model**
 Fit the original regression and compute the residuals:
 
-<<<<<<< HEAD
 $Y_i = \beta_0 + \beta_1 X_i + ... + \beta_k X_k + \epsilon_i$
-=======
-{{<katex>}}
-Y_i = \beta_0 + \beta_1 X_i + ... + \beta_k X_k + \epsilon_i
-{{</katex>}}  
->>>>>>> master
 
 2. Optional: Perform the **Auxiliary Regression**
 Regress the squared residuals on _all explanatory variables_, their _squares_, and _cross products_.
 
-<<<<<<< HEAD
 $\hat{u}{^2} = c_0 +c_1 x_1 + c_2 x_2 +c_3 x_1^2 + c_4 x_2^2 + c_5 x_1 * x_2 + \epsilon_i$
-=======
-{{<katex>}}
-\hat{u}{^2} = c_0 +c_1 x_1 + c_2 x_2 +c_3 x_1^2 + c_4 x_2^2 + c_5 x_1 * x_2 + \epsilon_i 
-{{</katex>}} 
->>>>>>> master
 
 3. Calculate the **White Statistic**
 
@@ -293,13 +248,8 @@ white_test(reg)
 ```
 
 {{% /codeblock %}}
-<<<<<<< HEAD
 **Variable Specific Coefficients** 
 {{%table%}}
-=======
-
-**Variable Specific Coefficients** 
->>>>>>> master
 |      Variable      |   Estimate    |  Std. Error  |  t-value   |      Pr(>t)     |
 | :----------------: | :-----------: | :----------: | :--------: | :-------------: |
 |       $value$       | -0.5964300241 | 2.5570433783 | -0.2332499 |    0.8158253    |
@@ -307,26 +257,17 @@ white_test(reg)
 |     $I(value{^2})$ | 0.0004999913  | 0.0003524792 | 1.4184988  |    0.1577276    |
 |    $I(capital{^2})$| 0.0168003951  | 0.0031235152 | 5.3786821  | 0.0000002247362 |
 | $I(value * capital)$ | -0.0039096384 | 0.0012232103 | -3.1962112 |   0.001637626   |
-<<<<<<< HEAD
 {{%/table%}}
 
  **White Test**                              
 {{%table%}}
-=======
-
- **White Test**                              
->>>>>>> master
 |      Description       |                Value                |
 | :--------------------: | :---------------------------------: |
 |    Null hypothesis     |  Homoskedasticity of the residuals  |
 | Alternative hypothesis | Heteroskedasticity of the residuals |
 |     Test Statistic     |                55.31                |
 |        P-value         |              < 0.0001               |
-<<<<<<< HEAD
 {{%/table%}}
-=======
-
->>>>>>> master
 
 ### Goldfeld-Quandt Test
 The `Goldfeld-Quandt` test is suited for models that include categorical variables or where data segmentation based on a specific criterion is used. It uses a *split-sample* approach to test for differences in variance across these segments.
@@ -335,13 +276,7 @@ The `Goldfeld-Quandt` test is suited for models that include categorical variabl
 - **Data Segmentation**: Data are divided into two groups based on a predetermined criterion.
   - In our example, we split firms into 'small' and 'large' based on the 85th percentile of firm size or use a categorical factor such as industry type.
 - **Hypotheses Formulation**:
-<<<<<<< HEAD
 $H_0: \sigma^2_1 = \sigma^2_0, \quad H_A: \sigma^2_1 \neq \sigma^2_0$
-=======
-{{<katex>}}
-H_0: \sigma^2_1 = \sigma^2_0, \quad H_A: \sigma^2_1 \neq \sigma^2_0
-{{</katex>}} 
->>>>>>> master
 
 #### Implementation in R
 The `gqtest()` function from the `lmtest` package in R is designed to perform the Goldfeld-Quandt test. It requires several parameters:
@@ -362,18 +297,11 @@ GQ_test <- gqtest(formula = grunfeld_model,
 {{% /codeblock %}}
 
 **Goldfeld-Quandt Test**                                             
-<<<<<<< HEAD
 {{%table%}}
 |  df1  |  df2  | Statistic | p.value |        Method        |              Alternative               |
 | :---: | :---: | :-------: | :-----: | :------------------: | :------------------------------------: |
 |  30   |  184  | 6.649377  |    0    | Goldfeld-Quandt test | variance increases from segment 1 to 2 |
 {{%/table%}}
-=======
-|  df1  |  df2  | Statistic | p.value |        Method        |              Alternative               |
-| :---: | :---: | :-------: | :-----: | :------------------: | :------------------------------------: |
-|  30   |  184  | 6.649377  |    0    | Goldfeld-Quandt test | variance increases from segment 1 to 2 |
-
->>>>>>> master
 
 {{% example %}}
 The outcome of the `Goldfeld-Quandt` test conducted on _the 'Grunfeld' data indicates significant heteroskedasticity_. This suggests that the variance in errors increases significantly from the smaller firms to the larger firms, supporting the presence of heteroskedasticity across firm sizes.
@@ -417,32 +345,21 @@ corrected_reg <- coeftest(grunfeld_model, vcov = robust_variance)
 {{% /codeblock %}}
 
  **Non-Corrected Model**                
-<<<<<<< HEAD
 {{%table%}}
-=======
->>>>>>> master
 | Variable | Estimate | Std. Error | t-value |     Pr(>t)  |
 | :------: | :------: | :--------: | :-----: | :-----------: |
 |  value   | 0.116681 |  0.012933  | 9.0219  | < 2.2e-16 *** |
 | capital  | 0.351436 |  0.021049  | 16.6964 | < 2.2e-16 *** |
-<<<<<<< HEAD
 {{%/table%}}
 
 
 **Heteroskedasticity Corrected Model**   
 {{%table%}}
-=======
-
-**Heteroskedasticity Corrected Model**   
->>>>>>> master
 | Variable | Estimate | Std. Error | t value |     Pr(>t)  |
 | :------: | :------: | :--------: | :-----: | :-----------: |
 |  value   | 0.116681 |  0.010451  | 11.1643 | < 2.2e-16 *** |
 | capital  | 0.351436 |  0.043610  | 8.0586  | 8.712e-14 *** |
-<<<<<<< HEAD
 {{%/table%}}
-=======
->>>>>>> master
 
 #### Dealing with Serial Correlation and Heteroskedasticity
 
@@ -461,19 +378,12 @@ print(summary_arellano)
 ```
 {{% /codeblock %}}
 
-<<<<<<< HEAD
 {{%table%}}
-=======
->>>>>>> master
 |             | Estimate | Std. Error | t-value |     Pr(>t)  |
 | ----------- | :------: | :--------: | :-----: | :-----------: |
 | **value**   | 0.116681 |  0.012725  | 9.1698  | < 2.2e-16 *** |
 | **capital** | 0.351436 |  0.059327  | 5.9237  | 1.473e-08 *** |
-<<<<<<< HEAD
 {{%/table%}}
-=======
-
->>>>>>> master
 
 {{% summary %}}
 

@@ -132,7 +132,9 @@ where:
 
 Finally the general equation of the deep neural network could be annotated as following:
 
-<center> $y = \beta_{k} th+ \Omega_{k}a[\beta_{k-1} + \Omega_{k-1}a[...\beta_{2} + \Omega_{2}a[...\beta_{1} + \Omega_{1}]]...]]$ </center>
+<center> 
+$y = \beta_{k} th+ \Omega_{k}a[\beta_{k-1} + \Omega_{k-1}a[...\beta_{2} + \Omega_{2}a[...\beta_{1} + \Omega_{1}]]...]$ 
+</center>
 
 ### Graphical represantion of a deep neural network:
 This is how deep neural network could be presented in the graph:

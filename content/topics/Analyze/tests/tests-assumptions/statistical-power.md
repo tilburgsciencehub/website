@@ -62,9 +62,6 @@ The advantage of experimental studies is that we can to some extent control the 
 
 Power analysis can be done analytically or by simulation. The latter case is more relevant for observational studies, whereas the analytical approach is convenient for experiments. The formula for minimum sample size for a given level of power is the following: 
 
-{{<katex>}}
-{{</katex>}}
-
 $n = 2(z(\alpha) + z(1-\beta))^2\frac{s^2}{d^2}$
 
 Where $z(x)$ is the z-score of $x$, $\alpha$ is the significance level, $\beta$ is the type II error rate (so $1-\beta$ is power), $s$ is the standard deviation of the outcome variable and $d$ is the minimum detectable effect size. If we are interested in computing $d$ given $n$ instead, we can easily rearrange for $d$. 

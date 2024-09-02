@@ -29,11 +29,9 @@ This article covers practical examples, including handling categorical variables
 ## Transforming Regression Models into LaTeX Equations
 When conducting statistical data analysis, it is often necessary to incorporate regression models into a report. Common models in R, such as `lm()` and `glm()`, are not automatically formatted for direct inclusion in reports. In academic texts, such as books, journal articles, and reports, you usually encounter neatly written equations like:
 
-{{<katex>}}
 
-y = \alpha + \beta_1 \cdot x1 + \beta_2 \cdot x2 + \epsilon
+$y = \alpha + \beta_1 \cdot x1 + \beta_2 \cdot x2 + \epsilon$
 
-{{</katex>}}
 <br>
 <br>
 

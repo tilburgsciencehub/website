@@ -160,7 +160,7 @@ def setup_redirects(app):
 
     @app.route('/tutorials/more-tutorials/contribute-to-tilburg-science-hub/')
     def redirect_39():
-        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/", code=301)
+        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/", code=301)
 
     @app.route('/tutorials/code-like-a-pro/getting-started-with-r/getting-started-with-r-overview/')
     def redirect_40():
@@ -312,7 +312,7 @@ def setup_redirects(app):
 
     @app.route('/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide/')
     def redirect_77():
-        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/style-guide/", code=301)
+        return redirect(url_for('home', _external=True) + "topics/Collaborate-share/Project-management/contribute-to-tilburg-science-hub/style-guide/", code=301)
 
     @app.route('/tutorials/more-tutorials/write-an-academic-paper/')
     def redirect_78():
@@ -440,11 +440,11 @@ def setup_redirects(app):
 
     @app.route('/tutorials/more-tutorials/contribute-to-tilburg-science-hub/contribute/')
     def redirect_109():
-        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/contribute/", code=301)
+        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/contribute/", code=301)
 
     @app.route('/tutorials/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell/')
     def redirect_110():
-        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/tutorial-shell/", code=301)
+        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/tutorial-shell/", code=301)
 
     @app.route('/topics/contribute-and-share-your-work/most-important-git-commands/')
     def redirect_111():
@@ -600,7 +600,7 @@ def setup_redirects(app):
 
     @app.route('/topics/more-tutorials/contribute-to-tilburg-science-hub/contribute/')
     def redirect_149():
-        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/contribute/", code=301)
+        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/contribute/", code=301)
 
     @app.route('/topics/collaborate-and-share-your-work/use-github/git-branching-strategies/')
     def redirect_150():
@@ -1012,7 +1012,7 @@ def setup_redirects(app):
 
     @app.route('/topics/more-tutorials/contribute-to-tilburg-science-hub/pullrequests/')
     def redirect_252():
-        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/pullrequests/", code=301)
+        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/pullrequests/", code=301)
 
     @app.route('/tutorials/more-tutorials/write-an-academic-paper/')
     def redirect_253():
@@ -1040,7 +1040,7 @@ def setup_redirects(app):
 
     @app.route('/tutorials/more-tutorials/contribute-to-tilburg-science-hub/contribute')
     def redirect_259():
-        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/contribute/", code=301)
+        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/contribute/", code=301)
 
     @app.route('/building-blocks/configure-your-computer/statistics-and-computation/python-packages/')
     def redirect_260():
@@ -1048,7 +1048,7 @@ def setup_redirects(app):
 
     @app.route('/tutorials/more-tutorials/contribute-to-tilburg-science-hub/contribute/')
     def redirect_261():
-        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/contribute/", code=301)
+        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/contribute/", code=301)
 
     @app.route('/building-blocks/collaborate-and-share-your-work/use-github/pull-requests')
     def redirect_262():
@@ -1104,7 +1104,7 @@ def setup_redirects(app):
 
     @app.route('/tutorials/more-tutorials/contribute-to-tilburg-science-hub/building-block-shell/')
     def redirect_275():
-        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/building-block-shell/", code=301)
+        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/building-block-shell/", code=301)
 
     @app.route('/building-blocks/automate-and-execute-your-work/reproducible-work/mem-storage-gcp/')
     def redirect_276():
@@ -1252,7 +1252,7 @@ def setup_redirects(app):
 
     @app.route('/tutorials/more-tutorials/contribute-to-tilburg-science-hub/style-guide')
     def redirect_312():
-        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/style-guide/", code=301)
+        return redirect(url_for('home', _external=True) + "topics/Collaborate-share/Project-management/contribute-to-tilburg-science-hub/style-guide/", code=301)
 
     @app.route('/tutorials/more-tutorials/running-computations-remotely/')
     def redirect_313():

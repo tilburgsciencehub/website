@@ -1,10 +1,6 @@
 ---
 title: "The Fixed Effects Model (Within Estimator)"
-<<<<<<< HEAD
-description: "A building block about the FE model (Within estimator)"
-=======
 description: "A topic about the FE model (Within estimator)"
->>>>>>> master
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
 weight: 2
@@ -30,47 +26,29 @@ Additionally, a FE model may encounter issues of collinearity when dealing with 
 
 ## Estimation of FE model
 
-<<<<<<< HEAD
 Continuing with the same example as the previous building block, the FE model is estimated by removing the fixed effects from the original equation. The original model with fixed effects $\alpha_i$ is represented as:
 <br/>
 
 $Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}$
 
-=======
-Continuing with the same example as the previous topic, the FE model is estimated by removing the fixed effects from the original equation. The original model with fixed effects $\alpha_i$ is represented as:
-<br/>
-{{<katex>}}
-Y_{it} = \beta_1 X_{it} + \alpha_i + u_{it}
-{{</katex>}}
->>>>>>> master
 <br/>
 
 To remove the fixed effects from the model, the time-specific means are subtracted from each variable, enabling estimation of changes **within firms** over time.
 
 <br/>
-<<<<<<< HEAD
 
 <div style="text-align: center; font-size: 1.2em;">
 $Y_{i,t} - \bar{Y}_{i,t-1} = \\
 \beta_1 (X_{i,t} - \bar{X}_{i, t-1}) + (\alpha_i - \bar{\alpha_i}) + (u_{i,t} - \bar{u}_{i,t-1})$
 </div>
 
-=======
-{{<katex>}}
-Y_{i,t} - \bar{Y}_{i,t-1} = \beta_1 (X_{i,t} - \bar{X}_{i, t-1}) + (\alpha_i - \bar{\alpha_i}) + (u_{i,t} - \bar{u}_{i,t-1})
-{{</katex>}}  
->>>>>>> master
 <br/>
 
 Since we assume the unobserved fixed effects $\alpha_{i}$ to be constant, subtracting its mean results in a term of zero. As a result, the fixed effects are eliminated through this transformation, while the time-varying component of the error term $u_{it}$ remains.
 
 ## Estimation in R
 
-<<<<<<< HEAD
-While the `plm()` function can also be used to estimate a FE model, we recommend using the `fixest` package. Refer to the [`fixest` building block](https://tilburgsciencehub.com/fixest/?utm_campaign=referral-short) for a comprehensive explanation of this package and its functions. 
-=======
 While the `plm()` function can also be used to estimate a FE model, we recommend using the `fixest` package. Refer to the [`fixest` article](https://tilburgsciencehub.com/fixest/?utm_campaign=referral-short) for a comprehensive explanation of this package and its functions. 
->>>>>>> master
 
 To estimate a FE model using `fixest`, use the `feols()` function and specify the fixed effects variable (`firm`) within the model formula.
 

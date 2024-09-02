@@ -13,11 +13,7 @@ aliases:
 ---
 
 ## Overview
-<<<<<<< HEAD
-Apart from having good [Git Branching Strategies](https://tilburgsciencehub.com/topics/collaborate-and-share-your-work/use-github/git-branching-strategies/), it is important to follow some naming conventions to ensure proper maintenance of the repository and a clear, structured way of separating tasks.  To avoid confusions and have an organised overview of every feature that is being worked on, we go through seven best practices for naming branches.
-=======
 Apart from having good [Git Branching Strategies](/git/branching/strategies), it is important to follow some naming conventions to ensure proper maintenance of the repository and a clear, structured way of separating tasks.  To avoid confusions and have an organised overview of every feature that is being worked on, we go through seven best practices for naming branches.
->>>>>>> master
 
 ### 1. Use Separators
 When writing a branch name, using separators such as hyphen (-) or slash (/) helps to increase readability of the name. But remember to be consistent with the chosen separator for all branches names.
@@ -30,6 +26,8 @@ When writing a branch name, using separators such as hyphen (-) or slash (/) hel
 
 ### 2. Start Name with Category Word
 It is recommended to begin the name of a branch with a **category word**, which indicates the type of task that is being solved with that branch. Some of the most used **category words** are:
+
+{{%table%}}
 | Category Word | Meaning |
 | --- | --- |
 |`hotfix` | for quickly fixing critical issues, <br> usually with a temporary solution |
@@ -37,6 +35,7 @@ It is recommended to begin the name of a branch with a **category word**, which 
 |`feature` | for adding, removing or modifying a feature |
 |`test` | for experimenting something which is not an issue |
 |`wip` | for a work in progress |
+{{%/table%}}
 
 ### 3. Use the ID of the Issue
 Using the ID of the related issue in the branch name makes it easy to identify the task and keep track of its progress.

@@ -3,11 +3,7 @@ title: "Local Randomization Approach"
 description: "The local randomization approach to regression discontinuity analysis: an introduction, example, estimation and inference"
 keywords: "regression, discontinuity, local, randomization, approach, example, estimation, inference"
 date: 2023-07-10
-<<<<<<< HEAD
-weight: 5
-=======
 weight: 6
->>>>>>> master
 author: "Ana Bianca Luca"
 authorlink: "https://tilburgsciencehub.com/contributors/anabiancaluca/"
 aliases:
@@ -18,11 +14,7 @@ aliases:
 
 ## Introduction
 
-<<<<<<< HEAD
-This building block introduces the local randomization approach, which can be considered as an extension to the standard [Contuinity-Based Approach to RD Analysis](/continuity/approach). It is recommended to read this continuity-based approach building block before delving into this one.
-=======
 This topic introduces the local randomization approach, which can be considered as an extension to the standard [Continuity-Based Approach to RD Analysis](/continuity/approach). It is recommended to read this continuity-based approach topic before delving into this one.
->>>>>>> master
 
 In a sharp RDD, the assignment mechanism is determined by the running variable being above or below a prespecified cutoff. The local randomized approach views the running variable as random, allowing to interpret the RDD as a randomized experiment near the cutoff. 
 
@@ -40,11 +32,7 @@ If the variable is discrete, the local randomization approach does not impose st
 
 As mentioned in the introduction, certain conditions are imposed to make sure that units in a small window are treated as if they were randomly assigned to treatment. We make the following assumptions:
 
-<<<<<<< HEAD
-- The RDD is sharp, indicating an abrupt change in treatment assignment around the cutoff. Check the [Sharp RDD building block](//sharp/designs) for more context on this. 
-=======
 - The RDD is sharp, indicating an abrupt change in treatment assignment around the cutoff. Check the [Sharp RDD topic](//sharp/designs) for more context on this. 
->>>>>>> master
 
 - There is perfect compliance. Each subject assigned to the treatment actually received the treatment. 
 
@@ -58,11 +46,7 @@ As mentioned in the introduction, certain conditions are imposed to make sure th
 
 The above graphs compare a randomized experiment (left graph) with a continuity-based design (right graph). They illustrate the fundamental differences between a randomized experiment (what we assume to happen within the window in this approach) and a standard continuity-based design.
 
-<<<<<<< HEAD
 In the left graph, the randomized experiment implies that the treatment assignment is completely random, leading to constant values of $\mu_{1}(x) = \mathbb{E}[Y_{i}(1)|X_{i}=x]$ and $\mu_{0}(x) = \mathbb{E}[Y_{i}(0)|X_{i}=x]$ for all values of $x$ values within the specified range. This randomness ensures that the potential outcomes remain unaffected by the values of the running variable. 
-=======
-In the left graph, the randomized experiment implies that the treatment assignment is completely random, leading to constant values of {{<katex>}} \mu_{1}(x) = \mathbb{E}[Y_{i}(1)|X_{i}=x]  {{</katex>}} and $\mu_{0}(x) = \mathbb{E}[Y_{i}(0)|X_{i}=x]$ for all values of $x$ values within the specified range. This randomness ensures that the potential outcomes remain unaffected by the values of the running variable. 
->>>>>>> master
 
 This emphasizes that for allowing to interpret the RD design as a randomized experiment, the value of the score (the running variable) within the defined window needs to be unrelated to the potential outcomes. 
 
@@ -78,20 +62,12 @@ To clarify the conditions of the local randomization approach discussed above, t
 
 - Condition 1
 
-<<<<<<< HEAD
 The probability is defined as $\mathbb{P_W}[.]$ for those units with $X_{i}\in W$. 
 As such, the first condition requires that $\mathbb{P_W}[X_{W} \leq x]=F(x)$ for some known joint cumulative distribution function $F(x)$.
 
 - Condition 2
 
 Let $Y_{i}(0,x)$ and $Y_{i}(1,x)$ be the potential outcomes with explicit dependence on the score variable, so that $Y_{i}(0) = Y_{i}(0, X_{i})$ and $Y_{i}(1) = Y_{i}(1, X_{i})$. As such, if the potential outcomes are non-random, the second condition means that $Y_{i}(0,x') = Y_{i}(0, X_{i})$ and $Y_{i}(1,x') = Y_{i}(1, X_{i})$ for all $x$, $x' \in W$ and all units such that $X_{i} \in W$. If the potential outcomes are non-random, the condition becomes $\mathbb{P_W}[Y_{i}(0,x') = Y_{i}(0,x)]=1$ and $\mathbb{P_W}[Y_{i}(1,x') = Y_{i}(1,x)]$ = 1 for all $x$, $x' \in W$. 
-=======
-The probability is defined as {{<katex>}}\mathbb{P}_{W}[.]{{</katex>}} for those units with $X_{i}\in W$. As such, the first condition requires that {{<katex>}}\mathbb{P}_{W}[X_{W} \leq x] = F(x){{</katex>}} for some known joint cumulative distribution function $F(x)$.
-
-- Condition 2
-
-Let $Y_{i}(0,x)$ and $Y_{i}(1,x)$ be the potential outcomes with explicit dependence on the score variable, so that $Y_{i}(0) = Y_{i}(0, X_{i})$ and $Y_{i}(1) = Y_{i}(1, X_{i})$. As such, if the potential outcomes are non-random, the second condition means that $Y_{i}(0,x') = Y_{i}(0, X_{i})$ and $Y_{i}(1,x') = Y_{i}(1, X_{i})$ for all $x$, $x' \in W$ and all units such that $X_{i} \in W$. If the potential outcomes are non-random, the condition becomes {{<katex>}}\mathbb{P}_{W}[Y_{i}(0,x') = Y_{i}(0,x)] = 1 {{</katex>}} and {{<katex>}}\mathbb{P}_{W}[Y_{i}(1,x') = Y_{i}(1,x)] = 1 {{</katex>}} for all $x$, $x' \in W$. 
->>>>>>> master
 
 
 ## Estimation and Inference
@@ -101,11 +77,7 @@ Let $Y_{i}(0,x)$ and $Y_{i}(1,x)$ be the potential outcomes with explicit depend
 Since in many RD cases a local randomization assumption is only plausible in a very small window around the cutoff, it means that this window will most likely contain few observations. For this case, a Fisherian inference approach is appropriate, as it is valid in any finite sample and leads to correct inferences even with small samples. 
 
 With the Fisherian approach, the potential outcomes are fixed or non-stochastic (i.e. they are not subject to random variation). The null hypothesis, also called the *sharp null hypothesis* is:
-<<<<<<< HEAD
 $H^F_{0}: Y_{i}(0) = Y_{i}(1)$ for all $i$.
-=======
-{{<katex>}} H^F_{0}: Y_{i}(0) = Y_{i}(1) {{</katex>}} for all $i$.
->>>>>>> master
 
 The sharp null hypothesis with the non-stochastic potential outcomes lead to inferences that are (type I error) correct for any sample size, since under $H^F_{0}$ the observed outcome of each unit is equal to the unit's potential outcomes ($Y_{i} = Y_{i}(1) = Y_{i}(0)$) and there is no missing data.   
 
@@ -135,11 +107,8 @@ $$\theta_{SRD} = \mathbb{E}[Y_{i}(1) - Y_{i}(0)|X_{i} \in W]$$
 
 The table below provides an overview of the statistical methods discussed in this section.
 
-<<<<<<< HEAD
 {{%table%}}
 
-=======
->>>>>>> master
 |  | Fisher | Neyman | Super-population |
 | --- | --- | --- | --- |
 |Sampling| None | Urn model | i.i.d. |
@@ -148,13 +117,9 @@ The table below provides an overview of the statistical methods discussed in thi
 |Null hypothesis| Sharp | Non-sharp | Non-sharp |
 |Inferences| Exact | Approximate | Approximate | 
 
-<<<<<<< HEAD
 {{%/table%}}
 
 For all three methods, the parameter of interest is  $\mathbb{E_W}[.]$, denoting the expectation computed with respect to the probability $\mathbb{P_W}$. 
-=======
-For all three methods, the parameter of interest is {{<katex>}} \mathbb{E}_{W}[.] {{</katex>}}, denoting the expectation computed with respect to the probability {{<katex>}}\mathbb{P}_{W} {{</katex>}}. 
->>>>>>> master
 
 
 ## Practical Example: US Senate Elections
@@ -224,11 +189,7 @@ The function only shows the first 20 windows, but we can increase it by using th
 {{% summary %}}
 The Local randomization approach extends the standard continuity-based RD Design by treating the running variable as if it were randomized within a defined window around the cutoff. Three methods are discussed for estimation and inference, each suitable depending on the size of the sample within this window. 
 
-<<<<<<< HEAD
-The next and last [building block](/validation/analysis) in this series about Regression Discontuinity describes several tests that can be used to validate the robustness of your RDD. 
-=======
 The next [topic](/validation/analysis) in this series about Regression Discontuinity describes several tests that can be used to validate the robustness of your RDD. 
->>>>>>> master
 {{% /summary %}}
 
 

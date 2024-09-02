@@ -31,13 +31,13 @@ This topic aims to make you familiar with the GitHub workflow by covering the fo
 [**GitHub**](https://www.github.com) is an online hosting service that not only provides version control but also offers tools for code backup, synchronization, and collaboration. It acts as a centralized hub for collaborative development. 
 
 This table provides a quick comparison of Git and GitHub:
-
+{{%table%}}
 |  | Git  | GitHub |
 | --- | --- | --- |
 | Environment | Installed locally | Entirely cloud-based |
 | Functionality | Exclusively Source Code <br> Management (SCM) tasks, <br> like push, pull, commit, <br> fetch and merge | Serves as a centralised <br> location for uploading copies <br>  of a Git repository. The GitHub <br> GUI also offers one access <br>  control, collaboration <br> features, and other  <br> project-management tools. |
 | Ownership  | Linux  | Microsoft  |
-
+{{%/table%}}
 Use this [topic](/learn/github) to get started with Git and GitHub.
 
 ## The GitHub workflow

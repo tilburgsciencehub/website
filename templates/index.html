@@ -31,49 +31,71 @@
       </div>
     </div>
 
-    <div class="col-lg-10 mt-3 col-16 order-1 order-lg-2 d-none d-md-flex d-lg-flex d-xl-flex text-center align-content-center" style="background-image: url('/static/img/hero.png');background-size: contain;background-repeat: no-repeat;background-position: center;">
+    <div class="col-lg-10 mt-3 col-16 order-1 order-lg-2 d-none d-md-flex d-lg-flex d-xl-flex text-center align-content-center" style="background-image: url('/static/img/hero.webp');background-size: contain;background-repeat: no-repeat;background-position: center;">
     </div>
   </div>
 </div>
 
 <!-- Feature divs -->
 
-<!-- 1 -->
+<!-- Cards -->
 <div class="container mb-3 pb-4 px-0 mt-0 cards-home">
   <div class="row justify-content-center">
     <div class="col-auto">
       <div class="row justify-content-center mx-0 buildingBlocksRow">
 
+        <!-- Most Read Building Blocks -->
         <div class="col-lg-10 col-xl-8 col-22 mb-3">
           <div class="h-100 p-4 rounded single-card">
             <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
               Most read building blocks
             </h2>
             <ul class="my-2 list-unstyled most-popular-topics" id="most-read-topics-list">
+              {% for building_block in cards_data.building_blocks %}
+                <li class="pb-3">
+                  <span class="icon link text-primary d-inline-block mr-2"></span>
+                  <a href="{{ building_block.path }}">{{ building_block.title }}</a>
+                </li>
+              {% endfor %}
             </ul>
           </div>
         </div>
+
+        <!-- Random Popular Building Block -->
+        {% set random_building_block = cards_data.building_blocks | random %}
         <div class="col-lg-10 col-xl-8 col-22 mb-3">
           <div id="most-popular-block-single" class="h-100 p-4 rounded single-card"
             style="background-image: url('/static/img/card-background.svg');background-size: contain;background-position-y:bottom;background-position-x:right;background-repeat: no-repeat;">
-            <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">Titel</h2>
-            <p style="color: #6081a2!important;font-size:16px;width:80%">Description</p>
+            <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">{{ random_building_block.title }}</h2>
+            <p style="color: #6081a2!important;font-size:16px;width:80%">
+              {{ random_building_block.description if random_building_block.description else 'Start reading this article' }}
+            </p>
             <div class="mt-4 mb-0">
-              <a href="{{ url_for('topics_list') }}">
+              <a href="{{ random_building_block.path }}">
                 <button class="btn tertiary ">Start Reading</button>
               </a>
             </div>
           </div>
         </div>
+
+        <!-- Most Read Tutorials -->
         <div class="col-lg-10 col-xl-8 col-22 mb-3">
           <div class="h-100 p-4 rounded single-card">
             <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
               Most read tutorials
             </h2>
             <ul class="my-2 list-unstyled most-popular-topics" id="most-read-tutorials-list">
+              {% for tutorial in cards_data.topics %}
+                <li class="pb-3">
+                  <span class="icon link text-primary d-inline-block mr-2"></span>
+                  <a href="{{ tutorial.path }}">{{ tutorial.title }}</a>
+                </li>
+              {% endfor %}
             </ul>
           </div>
         </div>
+
+        <!-- Reproducible Research Carousel -->
         <div class="col-lg-10 col-xl-14 col-22 mb-3">
           <div class="h-100 p-4 rounded single-card d-flex flex-column card-category-carousel"
             style="position: relative;overflow:hidden">
@@ -82,40 +104,53 @@
             </div>
           
             <div class="background-content">
-            <div class="row mb-4">
-              <div class="col-xl-22 col-lg-20 col-md-22 col-sm-22">
-                <div style="display: inline-flex;justify-content: space-between;width: 100%;align-items: center;">
-                  <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
-                    Reproducible Research
-                  </h2>
-                  <button style="background-image: none;background-color: transparent;color:#013365;"
-                    class="carousel-control-next-mobile" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <div class="row mb-4">
+                <div class="col-xl-22 col-lg-20 col-md-22 col-sm-22">
+                  <div style="display: inline-flex;justify-content: space-between;width: 100%;align-items: center;">
+                    <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
+                      Reproducible Research
+                    </h2>
+                    <button style="background-image: none;background-color: transparent;color:#013365;"
+                      class="carousel-control-next-mobile" type="button" data-bs-target="#carouselExample" data-bs-slide="next" aria-label="Next">
+                      <span class="fa-solid fa-arrow-right" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-2 col-sm-2 carousel-nav">
+                  <button style="background-image: none;background-color: transparent;color:#013365"
+                    class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" aria-label="Previous">
+                    <span class="fa-solid fa-arrow-left" aria-hidden="true"></span>
+                  </button>
+                  <button style="background-image: none;background-color: transparent;color:#013365"
+                    class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" aria-label="Next">
                     <span class="fa-solid fa-arrow-right" aria-hidden="true"></span>
                   </button>
                 </div>
               </div>
-              <div class="col-xl-2 col-lg-3 col-md-2 col-sm-2 carousel-nav">
-                <button style="background-image: none;background-color: transparent;color:#013365"
-                  class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                  <span class="fa-solid fa-arrow-left" aria-hidden="true"></span>
-                </button>
-                <button style="background-image: none;background-color: transparent;color:#013365"
-                  class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                  <span class="fa-solid fa-arrow-right" aria-hidden="true"></span>
-                </button>
-              </div>
-            </div>
-            <div class="row" style="margin-top: auto; margin-bottom: auto;">
-              <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
-                <div id="carouselExample" class="carousel slide h-100" data-bs-touch="true" data-bs-ride="carousel">
-                  <div class="carousel-inner h-100" style="z-index:1;">
+              <div class="row" style="margin-top: auto; margin-bottom: auto;">
+                <div class="col-xl-24 col-lg-24 col-md-24 col-sm-24">
+                  <div id="carouselExample" class="carousel slide h-100" data-bs-touch="true" data-bs-ride="carousel">
+                    <div class="carousel-inner h-100" style="z-index:1;">
+                      {% for item in cards_data.categories.reproducible %}
+                        <div class="carousel-item h-100 {% if loop.first %}active{% endif %}">
+                          <div class="w-100 h-100" style="display: flex; align-items: flex-end;">
+                            <div>
+                              <h3 class="heading" style="font-size: 16px; font-weight: bold; line-height: 1;">{{ item.title }}</h3>
+                              <p style="font-size: 16px; color: #6081a2; width: 70%;">{{ item.description }}</p>
+                              <a href="{{ item.path }}" class="btn btn-primary my-2 my-sm-0" style="color: white !important;">Read more</a>
+                            </div>
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            </div>
           </div>
         </div>
+
+        <!-- Recently Published Articles -->
         <div class="col-lg-10 col-xl-6 col-22 mb-3">
           <div class="h-100 p-4 rounded single-card">
             <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">
@@ -129,10 +164,10 @@
               </li>
               {% endfor %}
             </ul>       
-              
-            
           </div>
         </div>
+
+        <!-- Explore AI Tools -->
         <div class="col-lg-10 col-xl-4 col-22 mb-3">
           <div class="h-100 p-3 rounded single-card d-flex justify-content-center align-items-center">
             <div>
@@ -147,20 +182,27 @@
             </div>
           </div>
         </div>
+
+        <!-- Random Popular Tutorial -->
+        {% set random_tutorial = cards_data.topics | random %}
         <div class="col-lg-10 col-xl-12 col-22 mb-3">
           <div id="most-popular-tutorial-single" class="h-100 p-4 rounded single-card text-right d-flex align-items-center"
             style="background-image: url('/static/img/card-background-left.svg');background-size: contain;background-repeat: no-repeat;background-position-y:bottom;background-position-x:left;">
             <div style="width:100%">
-              <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">title</h2>
-              <p style="color: #6081a2!important;font-size:16px;width:80%;float:right;">description</p>
+              <h2 class="heading mt-3" style="font-size: 20px ; line-height: 1 !important;">{{ random_tutorial.title }}</h2>
+              <p style="color: #6081a2!important;font-size:16px;width:80%;float:right;">
+                {{ random_tutorial.description if random_tutorial.description else 'Start reading this article' }}
+              </p>
               <div class="mt-4 mb-0">
-                <a href="path">
+                <a href="{{ random_tutorial.path }}">
                   <button class="btn tertiary ">Start Reading</button>
                 </a>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Learn something new items -->
         <div class="col-lg-10 col-xl-12 col-22 mb-3">
           <div class="h-100 p-4 rounded single-card d-flex flex-column">
             <div class="row mb-4">
@@ -173,10 +215,30 @@
 
             <!-- Items row -->
             <div class="row" id="itemsRow">
+              {% for i in range(0, cards_data.categories.learn | length, 2) %}
+                <div class="row mb-3">
+                  {% for item in cards_data.categories.learn[i:i+2] %}
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                      <div class="row mb-3">
+                        <div class="icon-col col-xl-4 col-lg-4 col-md-4 col-sm-4 d-flex align-items-center justify-content-center">
+                          <div class="cards-home-circle"><i class="{{ item.icon }} fa-2xl"></i></div>
+                        </div>
+                        <div class="text-col col-xl-20 col-lg-20 col-md-20 col-sm-20">
+                          <a href="{{ item.path }}" style="color: inherit !important;">
+                            <h2 class="heading" style="font-size: 16px; line-height: 1;">{{ item.title }}</h2>
+                          </a>
+                          <p style="font-size: 16px; color: #6081a2;">{{ item.description }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endfor %}
             </div>
 
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -279,7 +341,7 @@
   <div class="row py-5">
     <div class="col-lg-2 col-0"></div>
     <div class="col-lg-8 col-24 text-center">
-      <img src="{{ url_for('static', filename='img/community-members.png') }}" style="max-width: 100%;height: auto;" alt="Open science community"
+      <img src="{{ url_for('static', filename='img/community-members.webp') }}" style="max-width: 100%;height: auto;" alt="Open science community"
         loading="lazy" class="community_members">
     </div>
     <div class="col-lg-2 col-0"></div>

@@ -23,7 +23,7 @@ Please develop your content in English.
 
 ### Start Your Content With Our Templates
 
-Please use our [building block templates](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/topics/more-tutorials/contribute-to-tilburg-science-hub/building-block-shell.md) or [tutorial template](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/topics/more-tutorials/contribute-to-tilburg-science-hub/tutorial-shell.md) when developing new building blocks or tutorials.
+Please use our [building block templates](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/topics/Collaborate-share/Project-management/engage-open-science/contribute-to-tilburg-science-hub/building-block-shell.md) or [tutorial template](https://raw.githubusercontent.com/tilburgsciencehub/tsh-website/master/content/topics/Collaborate-share/Project-management/engage-open-science/contribute-to-tilburg-science-hub/tutorial-shell.md) when developing new building blocks or tutorials.
 
 <!-- ### Contribute via Git Pull Requests
 
@@ -90,7 +90,6 @@ DiD works well whenever:
 {{%/table%}}
     
 - Incorrect 👎 (NOT using $\texttt{table}$ notation):  
-
 |                 | Before ($Y_i^0$)     | After ($Y_i^1$)     |
 | --------------- | ---------------------- | ---------------------- |
 | Control ($D_i = 0$)    | $E(Y_i^0 \mid D_i = 0)$   | $E(Y_i^1 \mid D_i = 0)$   |
