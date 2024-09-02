@@ -26,6 +26,7 @@ Survival analysis, also known as `event-time` analysis, is a valuable tool when 
 Survival analysis is a versatile tool applicable across various fields. For example, it helps compare treatment effectiveness in clinical trials, predict customer churning in marketing and estimate loan defaults in finance.
 
 In general, this method is applicable for the following applications: 
+
 - *Comparing Survival Rates*: Compare survival times across different groups. 
 - *Modeling Survival Data*: Implementing the Cox Proportional Hazards model, to examine how various factors influence survival time.
 - *Predicting Future Events*: Predicting when a future event, like a customer churn will occur. 
@@ -132,9 +133,7 @@ With our date data now prepared and structured, we can begin examining the facto
 ### The Survival Function  
 The Survival Function, typically denoted as 
 
-{{<katex>}}
-S(t)= P(T>t) =1−F(t)
- {{</katex>}}
+$S(t)= P(T>t) =1−F(t)$
  <br> 
 
 - S(t): This is the survival function at time t. It represents the probability that the subject or unit of study survives longer than time t. 
@@ -227,9 +226,9 @@ The `Cox Proportional Hazards model` is a key tool in survival analysis for unde
 
 The model's formula is expressed as: 
 
-{{<katex>}}
-h(t|X_{i}) = h_{0}(t)exp(β_{1}X_{i,1}+...+β_{p}X{i,p})
- {{</katex>}}
+
+$h(t|X_{i}) = h_{0}(t)exp(β_{1}X_{i,1}+...+β_{p}X{i,p})$
+
  <br> 
 
 The formula combines a starting risk level with the influence of specific factors and their strengths to calculate the chance of an event happening at any particular time. 

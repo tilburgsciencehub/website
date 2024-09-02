@@ -57,8 +57,6 @@ This method results in *partial identification*, estimating an interval rather t
 
 Selecting the right restrictions on how much the pre and post-treatment trends can differ depends on your study's specifics, including the economic context and potential confounding factors. Here are two approaches to guide these choices and to formalize the restrictions:
 
-{{<katex>}}
-{{</katex>}}
 
 1. *Relative magnitude bounds*
 

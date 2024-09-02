@@ -38,8 +38,6 @@ If the running variable is discrete, however, this need not be the case. Local p
 
 ## Using local randomisation with few distinct mass points  
 
-{{<katex>}}
-{{</katex>}}
 
 Identification in the local randomisation approach rests on the formal assumption that, within a certain sufficiently narrow bandwidth bounded by $c-h$ and $c+h$, where $c$ is the cutoff value, units just above and just below the cutoff are fundamentally similar and comparable to each other, and that therefore treatment assignment based on the cutoff value is as if random. This implies that the running variable is random and orthogonal to the values of the outcome variable.  
 
@@ -73,8 +71,6 @@ Kolesár and Rothe (2018) show that this issue cannot be solved by clustering st
 
 Kolesár and Rothe (2018) use the BSD method to estimate the maximum bias the treatment estimator can suffer from and include this bias in the confidence interval as follows: 
 
-{{<katex>}}
-{{</katex>}}
 
 $$\hat{\tau} \pm (B + cv^(1-\alpha)*\frac{\sigma}{\sqrt{N}})$$
 

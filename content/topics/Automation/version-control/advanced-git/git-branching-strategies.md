@@ -17,11 +17,7 @@ aliases:
 ---
 
 ## Overview
-<<<<<<< HEAD
 A **Git branching strategy** allows developers to collaborate on a project while also tracking changes and maintaining multiple versions of the codebase. There are several Git branching strategies available, each with its own set of advantages and disadvantages. The best strategy is determined by the project's and team's unique requirements. In this building block, we'll go over three popular Git branching strategies: 
-=======
-A **Git branching strategy** allows developers to collaborate on a project while also tracking changes and maintaining multiple versions of the codebase. There are several Git branching strategies available, each with its own set of advantages and disadvantages. The best strategy is determined by the project's and team's unique requirements. In this topic, we'll go over three popular Git branching strategies: 
->>>>>>> master
 1. **Trunk-Based Development**
 2. **Feature Branching**
 3. **Git Flow**
@@ -49,6 +45,8 @@ If a coding task requires an extended duration, possibly spanning over several d
 4. **Merge changes frequently:** Merged changes frequently back into the `main` codebase, keeping it up-to-date and reducing the likelihood of conflicts.
 
 ### Pros and Cons
+
+{{%table$}}
 | Advantages | Disadvantages |
 | --- | --- |
 | Encourages collaboration and <br> rapid feedback | Can lead to conflicts and <br> integration issues if not <br> managed properly |
@@ -56,6 +54,7 @@ If a coding task requires an extended duration, possibly spanning over several d
 | Facilitates faster feature <br> and improvement delivery | Can be difficult to roll <br> back changes once <br> integrated into `main` |
 | Simplifies codebase management <br> by keeping all developers <br> on the same branch | May not be suitable for <br> larger teams or complex <br> projects |
 | Reduces overhead of <br> multiple <br> `feature` branches | Single point of failure <br> if `main` becomes unstable |
+{{%/table$}}
 
 ### Teams and Projects
 Trunk-based development is suitable for projects with **small teams**, **short release cycles**, and a focus on **delivering new features and improvements quickly**.
@@ -77,13 +76,15 @@ Trunk-based development is suitable for projects with **small teams**, **short r
 6. **Clean up:** After merging, you can delete the `feature` branch, as it is no longer needed.
 
 ### Pros and Cons
+
+{{%table%}}
 | Advantages | Disadvantages |
 | --- | --- |
 | Allows parallel feature <br> development | Managing and updating <br> numerous branches |
 | Facilitates controlled <br> code review/testing | Delays in merging changes <br> into `main` due to <br> extended review |
 | Ensures consistent stability <br> of the `main` branch | Can lead to conflicts due <br> to branch dependencies |
 | Enhances change tracking | Extra effort to <br> synchronize branches with <br> changes in `main` |
-
+{{%table%}}
 
 ### Teams and Projects
 Feature Branching is commonly used in **collaborative software development environments** where **multiple developers** are **working on different features or tasks concurrently**.
@@ -109,6 +110,8 @@ If a critical issue in the `main` branch is detected:
 -	**Merge the `hotfix` branch into both `develop` and `main`:** After the hotfix is completed and tested, it is merged into both the `develop` and `main` branches to ensure that the fix is applied to both the ongoing development work and the production code.
 
 ### Pros and Cons
+
+{{%table%}}
 | Advantages | Disadvantages |
 | --- | --- |
 | Provides clear structure <br> for managing code changes | Can be more complex <br> than other branching <br> strategies |
@@ -116,16 +119,19 @@ If a critical issue in the `main` branch is detected:
 | Encourages use of short-lived <br> `feature`, `release`, and <br> `hotfix` branches | Possibility of  <br>  merge conflicts |
 | Facilitates code review  <br> and testing processes | Requires a certain level  <br> of discipline and adherence <br> to process |
 | Predictable development  <br> flow | Can be seen as  <br> overly prescriptive or  <br> inflexible |
+{{%/table%}}
 
 ### Teams and Projects
 Git Flow is particularly well-suited for **larger development teams** that are working on **complex software applications** with **long development cycles** and **multiple releases**. Smaller teams or projects with shorter development cycles may find Git Flow to be overly complex.
 
 ## Summary
+{{%table%}}
 | Strategy | Project Type | Team Size | Collaboration Maturity |
 | --- | --- | --- | --- |
 | **Trunk-Based <br>Development** | For projects with <br> frequent code changes <br> and continuous releases | Smaller <br> teams | High collaboration and  <br> communication needed,<br> as all changes are <br> made directly to `main` |
 | **Feature <br>Branching** | Projects with <br> simultaneous <br> development of <br> different features | Medium or <br>large-sized <br>teams | Moderate collaboration <br> maturity, as changes <br> occur in separate <br> branches before <br> merging into `main` |
 | **Git Flow** | Projects requiring <br> a structured approach  | Larger <br>  teams | High collaboration <br> maturity, as changes <br> involve multiple <br> branches and a <br> formalized release <br> process |
+{{%/table%}}
 
 {{% summary %}}
 * **Trunk-Based Development** is a Git branching strategy that emphasizes frequent integration and testing on the `main` branch to ensure a high level of collaboration and continuous delivery.

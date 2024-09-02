@@ -177,9 +177,7 @@ In the next figure, a very large C value will perfectly separate the classes in 
 RBF kernel function is as follow:
 
 <div style="text-align: center;">
-{{<katex>}}
-K(x, x') = \exp\left(-\gamma \|x - x'\|^2\right)         
-{{</katex>}}
+$K(x, x') = \exp\left(-\gamma \|x - x'\|^2\right)$         
 </div>
 
 - *gamma($\gamma$)* = influence of a single training example. A smaller gamma implies that points that are further apart are considered similar, hence, the influence of each training example is less localised. Higher values of gamma may lead to overfitting. 
@@ -257,9 +255,7 @@ Now, let's try using the polynomial kernel.
 In this case, the similarity function used to transform the features is the polynomial function.
 
 <div style="text-align: center;">
-{{<katex>}}
-K(x, x') = (\alpha \langle x, x' \rangle + c)^d
-{{</katex>}}
+$K(x, x') = (\alpha \langle x, x' \rangle + c)^d$
 </div>
 
 As you can see from the polynomial kernel formula, we have the `degree` parameter that can be adjusted. 

@@ -34,18 +34,10 @@ By considering the context and benefits outlined above, the regression approach 
 In the [previous topic](/canonical-DiD), we introduced an example to illustrate how to obtain the difference-in-means table for a 2 x 2 DiD design. This example looks into the effect of the Q&A on subsequent ratings using a cross-platform identification strategy with Goodreads as the treatment and Amazon as the control group. We have 2 groups (Amazon vs Goodreads) and 2 time periods (pre Q&A and post Q&A).
 
 The effect can be estimated with the following regression equation. You can find all the analysis code in this [Gist](https://gist.github.com/srosh2000/f52600b76999e88f0fe316e8f23b419e).
-{{<katex>}}
-{{</katex>}}
 
-
-<div style="text-align: center;">
-{{<katex>}}
-
-rating_{ijt} = \alpha+ \lambda POST_{ijt}+\gamma Goodreads + \\
-\delta (POST_{ijt}* Goodreads_{ij})+\eta_j +\tau_t+\epsilon_{ijt}
-
-{{</katex>}}
-</div>
+$$
+rating_{ijt} = \alpha+ \lambda POST_{ijt}+\gamma Goodreads+\delta (POST_{ijt}* Goodreads_{ij})+\eta_j +\tau_t+\epsilon_{ijt}
+$$
 
 <br>
 

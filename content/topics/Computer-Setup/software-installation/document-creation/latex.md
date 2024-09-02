@@ -12,11 +12,7 @@ aliases:
 
 ## What is Latex 
 
-<<<<<<< HEAD
 $\LaTeX$ is [a great typesetting system](https://www.latex-project.org) that includes a lot of features that allow to produce scientific documents. Many researchers use Latex to produce their papers and presentations, and many journals require authors to hand in their articles in a TeX format.
-=======
-{{< katex >}}\LaTeX{{< /katex >}} is [a great typesetting system](https://www.latex-project.org) that includes a lot of features that allow to produce scientific documents. Many researchers use Latex to produce their papers and presentations, and many journals require authors to hand in their articles in a TeX format.
->>>>>>> master
 
 ## Installing Latex
 

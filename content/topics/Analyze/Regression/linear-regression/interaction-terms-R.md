@@ -36,13 +36,7 @@ The main idea is that the relationship between X and Y is not solely determined 
 An interaction term is included in the regression when you multiply two different variables and include their product in the regression. The model is now called a `fully interacted model`.
 
 
-<<<<<<< HEAD
 $Y = \beta_0 + \beta_1 X + \beta_2 Z + \beta_3 X Z + \epsilon$
-=======
-{{<katex>}}
- Y = \beta_0 + \beta_1 X + \beta_2 Z + \beta_3 X Z + \epsilon
- {{</katex>}}
->>>>>>> master
  
 <br> 
 <br>
@@ -50,13 +44,7 @@ $Y = \beta_0 + \beta_1 X + \beta_2 Z + \beta_3 X Z + \epsilon$
 Or as in our example: 
 
 
-<<<<<<< HEAD
 $Income = \beta_0 + \beta_1 Education + \beta_2 Area + \beta_3 Education * Area  + \epsilon$
-=======
-{{<katex>}}
- Income = \beta_0 + \beta_1 Education + \beta_2 Area + \beta_3 Education * Area  + \epsilon
- {{</katex>}}
->>>>>>> master
  
  <br>
  <br>
@@ -68,14 +56,7 @@ The answer can be found by taking the `derivative` of the main formula. We take 
 
 So, The `fully interacted model`:
 
-<<<<<<< HEAD
 $Y = \beta_0 + \beta_1 X + \beta_2 Z + \beta_3 X Z + \epsilon$
-=======
-{{<katex>}}
- Y = \beta_0 + \beta_1 X + \beta_2 Z + \beta_3 X Z + \epsilon
- 
-{{</katex>}} 
->>>>>>> master
 
 <br>
 <br> 
@@ -84,16 +65,9 @@ and its derivative:
 <br>
 
  
-<<<<<<< HEAD
 $\frac{\partial Y}{\partial X} = \beta_1 + \beta_3 Z$
  
 <br>
-=======
-{{<katex>}}
- \frac{\partial Y}{\partial X} = \beta_1 + \beta_3 Z 
-{{</katex>}}
- <br>
->>>>>>> master
   
 This represents the effect of X on Y, which is now conditional on Z! For those unfamiliar with calculus, look how we just took the terms with an X including $\beta_1 X$ and $\beta_3 X Z$ and took out the X, leaving us with the expression above. 
 
@@ -123,11 +97,7 @@ It contains the following variables:
 
 **Short remark**: CPS data lacks direct work experience information, so a common workaround is to estimate potential experience as age minus education minus 6. This method can result in negative experience values for some respondents.
 
-<<<<<<< HEAD
-I will use the `modelsummary` package, to present the regression output. For a guide, about the package and how it works look at the following [building block](https://tilburgsciencehub.com/topics/analyze-data/regressions/model-summary/).
-=======
 I will use the `modelsummary` package, to present the regression output. For a guide, about the package and how it works look at the following [topic](/modelsummary).
->>>>>>> master
 
 {{% codeblock %}} 
 ```R 
@@ -198,11 +168,7 @@ However, it's important to note that this relationship is influenced by a person
 {{% tip %}} 
 
 
-<<<<<<< HEAD
-It's always beneficial to plot interaction terms for a clearer understanding of their impact. This `marginal effect plot` is a useful way to visualize how one variable modifies the effect of another on the outcome. For a quick guide on marginal effects in R, you can refer to this [building block](https://tilburgsciencehub.com/topics/analyze-data/regressions/marginal-effect-r/). In this discussion, I will utilize the R package called "`ggpredict`,"  which enables us to generate marginal effect plots by combining the function with `ggplot`.
-=======
 It's always beneficial to plot interaction terms for a clearer understanding of their impact. This `marginal effect plot` is a useful way to visualize how one variable modifies the effect of another on the outcome. For a quick guide on marginal effects in R, you can refer to this [topic](/run/margR). In this discussion, I will utilize the R package called "`ggpredict`,"  which enables us to generate marginal effect plots by combining the function with `ggplot`.
->>>>>>> master
 
 {{% /tip %}} 
 
@@ -273,11 +239,7 @@ msummary(reg2,
 <img src = "../images/regression-2-intr.png" width="200">
 </p>
 
-<<<<<<< HEAD
-The interpretation of the regression output is as follows, notice that we transformed the wage into a logarithmic scale. For how to interpret a Log-Linear model, see this building block: **LINK**.  
-=======
 The interpretation of the regression output is as follows, notice that we transformed the wage into a logarithmic scale. For how to interpret a Log-Linear model, see this [topic](/regressioninterpretation).  
->>>>>>> master
 Based on this specific dataset and model, we observe that a one-year increase in education is associated with an expected wage increase of 7.98\% ($\beta_1$ * 100\%), at a 1 per cent significance level. 
 
 However, it's important to note that this relationship is influenced by a person's region, look at the significance level of the interaction term of the north-east and mid-west. We observe different conditional average treatment effects for each region:
@@ -452,11 +414,7 @@ When examining the variance explained by R-squared, the model without the intera
 ## Summary
 
 {{% summary %}}
-<<<<<<< HEAD
-This building block explains `interaction terms` in regression analysis, their mathematical interpretation, and their practical applications in various scenarios. The key points covered include:
-=======
 This topic explains `interaction terms` in regression analysis, their mathematical interpretation, and their practical applications in various scenarios. The key points covered include:
->>>>>>> master
 
 1. **Interaction Term Introduction**: Interaction terms add complexity to the relationship between an `independent variable` (X) and a `dependent variable` (Y) by considering how this relationship changes based on the value of another variable (Z).
 

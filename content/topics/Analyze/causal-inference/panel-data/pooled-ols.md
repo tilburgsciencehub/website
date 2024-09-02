@@ -1,10 +1,6 @@
 ---
 title: "The Pooled OLS Model"
-<<<<<<< HEAD
-description: "A building block about the pooled OLS model, a model used to analyze panel data"
-=======
 description: "A topic about the pooled OLS model, a model used to analyze panel data"
->>>>>>> master
 keywords: "paneldata, panel, data, R, regression, model, random, fixed, pooled, OLS, within, between"
 draft: false
 weight: 4
@@ -17,11 +13,7 @@ aliases:
 
 # Overview
 
-<<<<<<< HEAD
-The next building blocks will explain various models commonly used to analyze panel data. Each of these models have their own strengths and assumptions and the choice of an appropriate model depends on the specific research question and the underlying assumptions that hold for the panel data set at hand. This series of building blocks aims to provide guidance in choosing the most suitable model for your analysis!
-=======
 The next topics will explain various models commonly used to analyze panel data. Each of these models have their own strengths and assumptions and the choice of an appropriate model depends on the specific research question and the underlying assumptions that hold for the panel data set at hand. This series of articles aims to provide guidance in choosing the most suitable model for your analysis!
->>>>>>> master
 
 The following models will be discussed: 
 - Pooled OLS
@@ -30,11 +22,7 @@ The following models will be discussed:
 - Between estimator
 - Random effects
 
-<<<<<<< HEAD
-In this building block, we start with the Pooled OLS model.
-=======
 We start with the Pooled OLS model in this topic!
->>>>>>> master
 
 ## Pooled OLS Model
 
@@ -45,14 +33,8 @@ By assuming no dependence across individual groups, Assumption 1 of the [Fixed E
 ## The model with `Grunfeld` data
 The model can be represented as follows:
 
-<<<<<<< HEAD
 
 $invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \epsilon_{it}$
-=======
-{{<katex>}}
-invest_{it} = \beta_0 + \beta_1 value_{it} + \beta_2 capital_{it} + \epsilon_{it}
-{{</katex>}}
->>>>>>> master
 
 where,
 - $invest_{it}$ is the gross investment of firm `i` in year `t`

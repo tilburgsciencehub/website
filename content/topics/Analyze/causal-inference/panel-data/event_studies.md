@@ -104,11 +104,8 @@ The main outcome variable is the weight of residual waste collected per garbage 
 
 Before running any further code, let's write down the event time regression that we will use to estimate treatment effect:
 
-{{< katex >}}
 
 $$Y_{it} = \beta_0 + \sum_{\tau = -T}^{-1} \alpha_\tau W_{i\tau} + \sum_{\tau = 1}^{T} \alpha_\tau W_{i\tau} + \lambda_i + \mu_t + \epsilon_{it}$$
-
-{{< /katex >}}
 
 Let's break down the equation and give some interpretation: 
 

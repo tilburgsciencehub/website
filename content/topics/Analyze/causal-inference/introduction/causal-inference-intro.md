@@ -4,7 +4,7 @@ description: "This topic provides an introduction to causal inference, serving a
 keywords: "causal, inference, econometrics, regression, model, potential, outcomes, framework, treatment, effect, control, ATE, ATT"
 draft: false
 weight: 1
-author: "Roshini Sudhaharan, Valerie Vossen"
+author: "Roshini Sudhaharan,Valerie Vossen"
 aliases:
   - /causal-inference
   - /causal-inference-introduction
@@ -22,9 +22,6 @@ Having the ability to establish causality provides a strong foundation for using
 </p>
 
 ## Potential outcomes framework
-
-<!-- {{<katex>}}
-{{</katex>}} -->
 
 The **potential outcomes** framework is central to understanding causal inference and the role of randomization. In this framework, each unit has two potential outcomes: 
 - $Y_i^1$ if the unit receives treatment and
