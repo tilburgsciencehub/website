@@ -51,7 +51,7 @@ latex_table = df_models.to_latex(
     caption="Comparison of ML Model Performance Metrics",  # The caption to appear above the table in the LaTeX document
     label="tab:model_comparison",  # A label used for referencing the table within the LaTeX document
     position="htbp",  # The preferred positions where the table should be placed in the document ('here', 'top', 'bottom', 'page')
-    column_format="|l|l|l|l|",  # The format of the columns: left-aligned with vertical lines between them
+    column_format="lccc",  # The format of the columns: left-aligend first column and center-aligned remaining columns as per APA guidelines
     escape=False,  # Disable escaping LaTeX special characters in the DataFrame
     float_format="{:0.2f}".format  # Formats floats to two decimal places
 )
