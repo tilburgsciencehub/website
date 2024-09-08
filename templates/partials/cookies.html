@@ -137,12 +137,33 @@
     </div>
 </div>
 <script>
-    function addScript(src) {
+       
+       function matomoFunc(accepted) {
+    return `
+        (function() {
+            var _paq = window._paq = window._paq || [];
+            if (!${accepted}) {
+                _paq.push(['disableCookies']);
+            }
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            var u = "https://tilburgsciencehub.matomo.cloud/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '1']);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true; 
+            g.src = 'https://cdn.matomo.cloud/tilburgsciencehub.matomo.cloud/matomo.js'; 
+            s.parentNode.insertBefore(g, s);
+        })();
+    `;
+}
+
+    function addScript(scriptContent) {
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.async = true;
-        script.src = src;
-        // (document.head.appendChild(script);) ALLEEN AANZETTEN WANNEER ONLINE!
+        script.text = scriptContent;  // Insert the script content directly
+        document.head.appendChild(script);
     }
 
     // JavaScript voor cookiebeheer
@@ -161,9 +182,11 @@
             consentNotice.style.display = 'none';
             if (cookiesAccepted === 'true') {
                 // Add Scripts
-                addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
-                addScript('https://www.google-analytics.com/analytics.js');
-                addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
+                // addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
+                // addScript('https://www.google-analytics.com/analytics.js');
+                // addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
+                var scriptContent = matomoFunc(true);
+                addScript(scriptContent);
             }
         } else {
             consentNotice.style.display = 'block';
@@ -173,6 +196,8 @@
             // Local Cookie
             localStorage.setItem('tshCookies', 'false');
             consentNotice.style.display = 'none';
+            var scriptContent = matomoFunc(false);
+            addScript(scriptContent);
         });
 
         approveConsentButton.addEventListener('click', function () {
@@ -181,9 +206,12 @@
             consentNotice.style.display = 'none';
 
             // Add Scripts
-            addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
-            addScript('https://www.google-analytics.com/analytics.js');
-            addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
+            // addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
+            // addScript('https://www.google-analytics.com/analytics.js');
+            // addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
+            var scriptContent = matomoFunc(true);
+            addScript(scriptContent);
+
         });
 
         approveConsentButtonPref.addEventListener('click', function () {
@@ -194,9 +222,11 @@
             consentNotice.style.display = 'none';
 
             // Add Scripts
-            addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
-            addScript('https://www.google-analytics.com/analytics.js');
-            addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
+            // addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
+            // addScript('https://www.google-analytics.com/analytics.js');
+            // addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
+            var scriptContent = matomoFunc(true);
+            addScript(scriptContent);
         });
 
         var elements = document.querySelectorAll('.manage-consent');
@@ -217,19 +247,15 @@
             }
             else if (!analyticsCheckbox.checked && !personalizedCheckbox.checked) {
                 localStorage.setItem('tshCookies', 'false');
-                console.log('False')
             }
             else if (!analyticsCheckbox.checked && personalizedCheckbox.checked) {
                 localStorage.setItem('tshCookies', 'true');
-                console.log('True')
             }
             else if (analyticsCheckbox.checked && personalizedCheckbox.checked) {
                 localStorage.setItem('tshCookies', 'true');
-                console.log('True')
             }
             else {
                 localStorage.setItem('tshCookies', 'false');
-                console.log('False')
             }
 
             document.getElementById('consent-overlay').classList.toggle('active');
