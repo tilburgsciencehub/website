@@ -142,8 +142,21 @@
     return `
         (function() {
             var _paq = window._paq = window._paq || [];
-            if (!${accepted}) {
-                _paq.push(['disableCookies']);
+            console.log("I am called in cookies")
+            
+            // require user cookie consent before storing any cookies
+            _paq.push(['requireCookieConsent']);
+
+            if (${accepted} !== null){
+                if (!${accepted}) {
+                    console.log("cookies disabled")
+                    // OR revoke cookie consent
+                    _paq.push(['forgetCookieConsentGiven']);
+                } else {
+                    console.log("cookies enabled")
+                    // user has given consent to store and use cookies
+                    _paq.push(['setCookieConsentGiven']); 
+                }
             }
             _paq.push(['trackPageView']);
             _paq.push(['enableLinkTracking']);
@@ -168,6 +181,9 @@
 
     // JavaScript voor cookiebeheer
     document.addEventListener('DOMContentLoaded', function () {
+        var scriptContent = matomoFunc(null);                
+        addScript(scriptContent);
+
         const consentNotice = document.getElementById('consent-notice');
         const denyConsentButton = document.querySelector('.deny-consent');
         const approveConsentButton = document.querySelector('.approve-consent');
@@ -185,7 +201,7 @@
                 // addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
                 // addScript('https://www.google-analytics.com/analytics.js');
                 // addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
-                var scriptContent = matomoFunc(true);
+                var scriptContent = matomoFunc(true);                
                 addScript(scriptContent);
             }
         } else {
@@ -247,15 +263,24 @@
             }
             else if (!analyticsCheckbox.checked && !personalizedCheckbox.checked) {
                 localStorage.setItem('tshCookies', 'false');
+                var scriptContent = matomoFunc(false);                
+                addScript(scriptContent);
             }
             else if (!analyticsCheckbox.checked && personalizedCheckbox.checked) {
                 localStorage.setItem('tshCookies', 'true');
+                var scriptContent = matomoFunc(true);                
+                addScript(scriptContent);
             }
             else if (analyticsCheckbox.checked && personalizedCheckbox.checked) {
                 localStorage.setItem('tshCookies', 'true');
+                var scriptContent = matomoFunc(true);                
+                addScript(scriptContent);
+
             }
             else {
                 localStorage.setItem('tshCookies', 'false');
+                var scriptContent = matomoFunc(false);                
+                addScript(scriptContent);
             }
 
             document.getElementById('consent-overlay').classList.toggle('active');
