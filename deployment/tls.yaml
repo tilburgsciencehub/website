@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: $APP_NAME-wildcard-tilburgai
+  namespace: $NAMESPACE
+  labels:
+    run: $APP_NAME
+    app: $APP_GROUP
+    name: $APP_NAME
+    environment: $CI_COMMIT_BRANCH
+spec:
+  secretName: $APP_NAME-wildcard-tilburgai-tls
+  issuerRef:
+    name: letsencrypt-prod-issuer
+    kind: ClusterIssuer
+  commonName: "$DOMAIN"
+  dnsNames:
+  - "$DOMAIN"

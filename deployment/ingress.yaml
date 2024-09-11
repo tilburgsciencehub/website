@@ -1,0 +1,50 @@
+# Service that connects port of pod to webapp
+apiVersion: v1
+kind: Service
+metadata:
+  name: $APP_NAME-web
+  namespace: $NAMESPACE
+  labels:
+    run: $APP_NAME
+    app: $APP_GROUP
+    name: $APP_NAME
+    environment: $CI_COMMIT_BRANCH
+spec:
+  selector:
+    run: $APP_NAME  # This should match the label of your Flask app pod
+  ports:
+    - protocol: TCP
+      port: 80       # Port accessible outside the pod
+      targetPort: $LISTEN_PORT  # Port your Flask app is listening on inside the pod
+  type: NodePort
+---
+# Create ingress that maps domainname to correct service
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: $APP_NAME-ingress
+  namespace: $NAMESPACE
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod-issuer
+  labels:
+    run: $APP_NAME
+    app: $APP_GROUP
+    name: $APP_NAME
+    environment: $CI_COMMIT_BRANCH
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: $DOMAIN
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: $APP_NAME-web
+                port:
+                  number: 80
+  tls:
+  - hosts:
+    - $DOMAIN
+    secretName: $APP_NAME-wildcard-tilburgai-tls
