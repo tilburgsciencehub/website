@@ -150,14 +150,16 @@
             if (${accepted} !== null){
                 if (!${accepted}) {
                     console.log("cookies disabled")
-                    // OR revoke cookie consent
-                    _paq.push(['forgetCookieConsentGiven']);
+                    // revoke cookie consent
+                    _paq.push(['forgetCookieConsentGiven']); 
+                    _paq.push(['deleteCookies']);
                 } else {
                     console.log("cookies enabled")
-                    // user has given consent to store and use cookies
-                    _paq.push(['setCookieConsentGiven']); 
-                }
-            }
+                    // remember cookie consent was given for all subsequent page views and visits
+                    _paq.push(['rememberCookieConsentGiven']);
+                    _paq.push(['setConsentGiven']);           
+                }     
+            } 
             _paq.push(['trackPageView']);
             _paq.push(['enableLinkTracking']);
             var u = "https://tilburgsciencehub.matomo.cloud/";
@@ -181,9 +183,7 @@
 
     // JavaScript voor cookiebeheer
     document.addEventListener('DOMContentLoaded', function () {
-        var scriptContent = matomoFunc(null);                
-        addScript(scriptContent);
-
+        
         const consentNotice = document.getElementById('consent-notice');
         const denyConsentButton = document.querySelector('.deny-consent');
         const approveConsentButton = document.querySelector('.approve-consent');
@@ -198,14 +198,19 @@
             consentNotice.style.display = 'none';
             if (cookiesAccepted === 'true') {
                 // Add Scripts
-                // addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
-                // addScript('https://www.google-analytics.com/analytics.js');
-                // addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
                 var scriptContent = matomoFunc(true);                
+                addScript(scriptContent);
+            }
+            if (cookiesAccepted === 'false') {
+                // Add Scripts
+                var scriptContent = matomoFunc(false);                
                 addScript(scriptContent);
             }
         } else {
             consentNotice.style.display = 'block';
+            // Null is because the user did not specify anything yet 
+            var scriptContent = matomoFunc(null);                
+            addScript(scriptContent);
         }
 
         denyConsentButton.addEventListener('click', function () {
@@ -221,10 +226,6 @@
             localStorage.setItem('tshCookies', 'true');
             consentNotice.style.display = 'none';
 
-            // Add Scripts
-            // addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
-            // addScript('https://www.google-analytics.com/analytics.js');
-            // addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
             var scriptContent = matomoFunc(true);
             addScript(scriptContent);
 
@@ -238,9 +239,6 @@
             consentNotice.style.display = 'none';
 
             // Add Scripts
-            // addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
-            // addScript('https://www.google-analytics.com/analytics.js');
-            // addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
             var scriptContent = matomoFunc(true);
             addScript(scriptContent);
         });
@@ -275,7 +273,6 @@
                 localStorage.setItem('tshCookies', 'true');
                 var scriptContent = matomoFunc(true);                
                 addScript(scriptContent);
-
             }
             else {
                 localStorage.setItem('tshCookies', 'false');
