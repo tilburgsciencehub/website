@@ -1,10 +1,16 @@
-FROM python:3.8-slim as base
+# Use an official Python runtime as the parent image
+FROM python:3.8-slim
 
-#RUN apt-get update && \
-#    apt-get install -y libcurl4-openssl-dev && \
-#    find /var/*/apt -type f -delete
+# Set environment variables
+# Prevents Python from writing pyc files to disc
+ENV PYTHONDONTWRITEBYTECODE 1
+# Prevents Python from buffering stdout and stderr
+ENV PYTHONUNBUFFERED 1
 
-    # Install dependencies
+# Create and set the working directory
+WORKDIR /app
+
+# Install dependencies
 RUN apt-get update && \
     apt-get install -y libcurl4-openssl-dev curl && \
     apt-get install -y git && \
@@ -13,7 +19,6 @@ RUN apt-get update && \
     apt-get install -y nodejs && \ 
     node -v && \
     find /var/*/apt -type f -delete
-
 
 RUN pip install --no-cache-dir Flask-SQLAlchemy \
     SQLAlchemy \
@@ -28,18 +33,14 @@ RUN pip install --no-cache-dir Flask-SQLAlchemy \
 
 RUN npm install -g sass
 
-FROM base AS final
+# Copy the current directory contents into the container at /app
+COPY . /app/
 
-WORKDIR /app
-
-COPY . /app
-
+# Create database
 RUN python3 content_to_db.py
 
-# ENV FLASK_APP=app.py
-# ENV FLASK_RUN_HOST=0.0.0.0
+# Make port 80 available to the world outside this container
+EXPOSE 8080
 
-# EXPOSE 5000
-
-
-# CMD ["python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+# Run gunicorn when the container launches
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "4", "app:app"]
