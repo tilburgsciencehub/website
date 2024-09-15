@@ -111,15 +111,6 @@
     <div>
         <div class="d-block">
             <div class="d-flex align-items-center">
-                <input class="mr-3" type="checkbox" id="analytics" value="1" name="analytics" />
-                <h4 class="mb-0" style="font-weight: 700;font-size: 18px;">Analytics</h4>
-            </div>
-            <div>
-                <p class="text-secondary" style="font-weight: 200;">Analytics Content</p>
-            </div>
-        </div>
-        <div class="d-block">
-            <div class="d-flex align-items-center">
                 <input class="mr-3" type="checkbox" id="personalized" value="1" name="personalized" />
                 <h4 class="mb-0" style="font-weight: 700;font-size: 18px;">Personalized Cookies</h4>
             </div>
@@ -128,7 +119,7 @@
             </div>
         </div>
         <div>
-            <p>Want to know more? Check our <a href="/disclaimer">Disclaimer</a>.</p>
+            <p>Want to know more? Check our <a href="/blog/disclaimer">Disclaimer</a>.</p>
         </div>
         <div>
             <button id="save-consent" class="btn btn-primary save-consent">Save preferences</button>
@@ -137,16 +128,50 @@
     </div>
 </div>
 <script>
-    function addScript(src) {
+       
+       function matomoFunc(accepted) {
+    return `
+        (function() {
+            var _paq = window._paq = window._paq || [];
+            
+            // require user cookie consent before storing any cookies
+            _paq.push(['requireCookieConsent']);
+
+            if (${accepted} !== null){
+                if (!${accepted}) {
+                    // revoke cookie consent
+                    _paq.push(['forgetCookieConsentGiven']); 
+                    _paq.push(['deleteCookies']);
+                } else {
+                    // remember cookie consent was given for all subsequent page views and visits
+                    _paq.push(['rememberCookieConsentGiven']);
+                    _paq.push(['setConsentGiven']);           
+                }     
+            } 
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            var u = "https://tilburgsciencehub.matomo.cloud/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '1']);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true; 
+            g.src = 'https://cdn.matomo.cloud/tilburgsciencehub.matomo.cloud/matomo.js'; 
+            s.parentNode.insertBefore(g, s);
+        })();
+    `;
+}
+
+    function addScript(scriptContent) {
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.async = true;
-        script.src = src;
-        // (document.head.appendChild(script);) ALLEEN AANZETTEN WANNEER ONLINE!
+        script.text = scriptContent;  // Insert the script content directly
+        document.head.appendChild(script);
     }
 
     // JavaScript voor cookiebeheer
     document.addEventListener('DOMContentLoaded', function () {
+        
         const consentNotice = document.getElementById('consent-notice');
         const denyConsentButton = document.querySelector('.deny-consent');
         const approveConsentButton = document.querySelector('.approve-consent');
@@ -154,36 +179,49 @@
         const manageConsentButton = document.querySelector('.manage-consent');
         const consentOverlay = document.querySelector('.consent-overlay');
         const saveConsentButton = document.getElementById('save-consent');
+        const checkbox = document.getElementById('personalized'); // Get the checkbox element
 
         // Controleer of de gebruiker de banner eerder heeft gesloten of cookies heeft geaccepteerd
         const cookiesAccepted = localStorage.getItem('tshCookies');
-        if (cookiesAccepted === 'false' || cookiesAccepted === 'true' || cookiesAccepted === 'analytics') {
+        if (cookiesAccepted === 'false' || cookiesAccepted === 'true') {
             consentNotice.style.display = 'none';
             if (cookiesAccepted === 'true') {
                 // Add Scripts
-                addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
-                addScript('https://www.google-analytics.com/analytics.js');
-                addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
+                var scriptContent = matomoFunc(true);                
+                addScript(scriptContent);
+                checkbox.checked = true; // Check the checkbox
+            }
+            if (cookiesAccepted === 'false') {
+                // Add Scripts
+                var scriptContent = matomoFunc(false);                
+                addScript(scriptContent);
+                checkbox.checked = false; // Uncheck the checkbox
             }
         } else {
             consentNotice.style.display = 'block';
+            // Null is because the user did not specify anything yet 
+            var scriptContent = matomoFunc(null);                
+            addScript(scriptContent);
+            checkbox.checked = false; // Uncheck the checkbox
         }
 
         denyConsentButton.addEventListener('click', function () {
             // Local Cookie
             localStorage.setItem('tshCookies', 'false');
             consentNotice.style.display = 'none';
+            checkbox.checked = false; // Uncheck the checkbox
+            var scriptContent = matomoFunc(false);
+            addScript(scriptContent);
         });
 
         approveConsentButton.addEventListener('click', function () {
             // Local Cookie
             localStorage.setItem('tshCookies', 'true');
             consentNotice.style.display = 'none';
+            checkbox.checked = true; // Check the checkbox
 
-            // Add Scripts
-            addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
-            addScript('https://www.google-analytics.com/analytics.js');
-            addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
+            var scriptContent = matomoFunc(true);
+            addScript(scriptContent);
         });
 
         approveConsentButtonPref.addEventListener('click', function () {
@@ -194,9 +232,9 @@
             consentNotice.style.display = 'none';
 
             // Add Scripts
-            addScript('https://www.googletagmanager.com/gtag/js?id=G-6K27JFP2RV&l=dataLayer&cx=c');
-            addScript('https://www.google-analytics.com/analytics.js');
-            addScript('https://www.googletagmanager.com/gtm.js?id=GTM-TBJ77ND');
+            var scriptContent = matomoFunc(true);
+            checkbox.checked = true; // Check the checkbox
+            addScript(scriptContent);
         });
 
         var elements = document.querySelectorAll('.manage-consent');
@@ -208,28 +246,26 @@
 
         saveConsentButton.addEventListener('click', function () {
             // Verwerk de voorkeuren van de gebruiker en sla deze op
-            const analyticsCheckbox = document.getElementById('analytics');
+            // const analyticsCheckbox = document.getElementById('analytics');
             const personalizedCheckbox = document.getElementById('personalized');
 
-            if (analyticsCheckbox.checked && !personalizedCheckbox.checked) {
-                localStorage.setItem('tshCookies', 'analytics');
-                console.log('Analytics')
-            }
-            else if (!analyticsCheckbox.checked && !personalizedCheckbox.checked) {
+            if (!personalizedCheckbox.checked) {
                 localStorage.setItem('tshCookies', 'false');
-                console.log('False')
+                var scriptContent = matomoFunc(false);                
+                addScript(scriptContent);
+                checkbox.checked = false; // Uncheck the checkbox
             }
-            else if (!analyticsCheckbox.checked && personalizedCheckbox.checked) {
+            else if (personalizedCheckbox.checked) {
                 localStorage.setItem('tshCookies', 'true');
-                console.log('True')
-            }
-            else if (analyticsCheckbox.checked && personalizedCheckbox.checked) {
-                localStorage.setItem('tshCookies', 'true');
-                console.log('True')
+                var scriptContent = matomoFunc(true);                
+                addScript(scriptContent);
+                checkbox.checked = true; // Check the checkbox
             }
             else {
                 localStorage.setItem('tshCookies', 'false');
-                console.log('False')
+                var scriptContent = matomoFunc(false);                
+                addScript(scriptContent);
+                checkbox.checked = false; // Check the checkbox
             }
 
             document.getElementById('consent-overlay').classList.toggle('active');
