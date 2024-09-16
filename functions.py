@@ -44,12 +44,16 @@ def urlize(text):
 
 # Build a data dictionary from topics and articles
 # Parameters:
+# - contributors:  SQLAlchemy query object for contributors 
+# - blogs: SQLAlchemy query object for blogs
 # - topics: SQLAlchemy query object for topics
 # - articles: SQLAlchemy query object for articles
 # Returns:
 # - Dictionary containing structured data of topics and articles
-def build_data_dict(topics, articles):
+def build_data_dict(contributors, blogs, topics, articles):
     data_dict = {}
+    contributors_data = contributors.query.all()
+    blogs_data = blogs.query.all()
     topics_data = topics.query.all()
     topic_dict = defaultdict(lambda: defaultdict(list))
 
@@ -66,7 +70,21 @@ def build_data_dict(topics, articles):
             'date': article.date,
             'draft': article.draft
         }
-
+    def serialize_blog(blog):
+        return{
+            'id': blog.id,
+            'title': blog.title,
+            'description': blog.description,
+            'path': blog.path
+        }
+    def serialize_contributor(contributor):
+        return{
+            'id': contributor.id,
+            'name': contributor.name,
+            'path': contributor.path,
+            'description_short': contributor.description_short
+        }
+        
     def serialize_topic(topic, level, parent, articles):
         return {
             'id': topic.id,
@@ -89,9 +107,13 @@ def build_data_dict(topics, articles):
     
     articles_examples = articles.query.filter_by(type='examples').all()
     serialized_articles_examples = [serialize_article(article) for article in articles_examples]
+    serialized_blogs = [serialize_blog(blog) for blog in blogs_data]
+    serialized_contributors = [serialize_contributor(contributor) for contributor in contributors_data]
 
     data_dict['topics'] = build_structure(1, 1, articles)
     data_dict['examples'] = serialized_articles_examples
+    data_dict['contributors'] = serialized_contributors
+    data_dict['blogs'] = serialized_blogs
 
     return data_dict
 
@@ -332,6 +354,7 @@ def add_url_element(urlset, loc, date=None, priority="0.8", changefreq="monthly"
         lastmod_element.text = str(date)
 
 def generate_sitemap(app, data, base_url="https://www.example.com"):
+    print("I am generating sitemap")
     urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     
     def process_topics(topics, parent_path=""):
@@ -355,6 +378,15 @@ def generate_sitemap(app, data, base_url="https://www.example.com"):
             add_url_element(urlset, example_path, date=example.get('date'))
     
     # Process blogs
+    for blog in data.get('blogs', []):
+        blog_path = f"{base_url}/blog/{blog['path']}".strip("/")
+        add_url_element(urlset, blog_path)
+    
+    # Process contributors
+    for contributor in data.get('contributors', []):
+        contributor_name_path = contributor['path'].replace('-', '')
+        contributor_path = f"{base_url}/contributors/{contributor_name_path}".strip("/")
+        add_url_element(urlset, contributor_path)
 
     # Non dynamic routes
     rules = list(app.url_map.iter_rules())
