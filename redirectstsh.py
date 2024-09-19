@@ -1721,3 +1721,20 @@ def setup_redirects(app):
     @app.route('/building-blocks/analyze-data/regression-discontinuity/rd-plots/')
     def redirect_429():
         return redirect(url_for('home', _external=True) + "topics/analyze/causal-inference/rdd/rd-plots/", code=301)
+
+    @app.route('/topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/tutorial-shell/')
+    def redirect_430():
+        return redirect(url_for('home', _external=True) + "topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/tutorial-shell/", code=301)
+   
+    @app.route('/topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/pullrequests/')
+    def redirect_431():
+        return redirect(url_for('home', _external=True) + "/topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/pullrequests/", code=301)
+    
+    @app.route('/building-blocks/analyze-data/regressions/survival-analysis-lubridate/')
+    def redirect_432():
+        return redirect(url_for('home', _external=True) + "topics/analyze/regression/linear-regression/survival-analysis-lubridate/", code=301)
+    
+    @app.route('/building-blocks/')
+    def redirect_433():
+        return redirect(url_for('home', _external=True) + "topics/", code=301)
+    
