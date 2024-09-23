@@ -4,7 +4,8 @@ name: SEO Report and GitHub Issue
 on:
   schedule:
     - cron: "0 18 * * 5"
-
+  workflow_dispatch:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
