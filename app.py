@@ -327,7 +327,6 @@ def page_not_found(e):
 
 @app.route('/sitemap.xml')
 def sitemap():
-    print("Inside the route for generating sitemap")
     # Pad naar de gegenereerde sitemap.xml
     sitemap_path = 'sitemap.xml'
     
@@ -339,7 +338,6 @@ def sitemap():
 with app.app_context():
     data_dict = build_data_dict(Contributors, blogs, Topics, articles)
     sitemap = generate_sitemap(app, data_dict, base_url=base_url)
-    print("I was generating sitemap")
 
 # Redirects
 setup_redirects(app)

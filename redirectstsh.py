@@ -1764,7 +1764,7 @@ def setup_redirects(app):
     
     @app.route('/topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/homepage-cards')
     def redirect_440():
-        return redirect(url_for('home', _external=True) + "/topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/homepage-cards", code=301)~
+        return redirect(url_for('home', _external=True) + "/topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/homepage-cards", code=301)
     
     @app.route('/disclaimer')
     def redirect_441():
