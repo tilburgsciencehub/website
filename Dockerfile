@@ -40,7 +40,7 @@ COPY . /app/
 RUN python3 content_to_db.py
 
 # Download nltk package
-RUN python3 -c "nltk.download('stopwords')"
+RUN python3 -c "import nltk; nltk.download('stopwords')"
 
 # Make port 80 available to the world outside this container
 EXPOSE 8080
