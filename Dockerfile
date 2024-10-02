@@ -39,8 +39,11 @@ COPY . /app/
 # Create database
 RUN python3 content_to_db.py
 
+# Download nltk package
+RUN python3 -c "nltk.download('stopwords')"
+
 # Make port 80 available to the world outside this container
 EXPOSE 8080
 
 # Run gunicorn when the container launches
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--timeout", "120", "--workers", "3", "app:app"]
