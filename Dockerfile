@@ -46,4 +46,4 @@ RUN python3 -c "import nltk; nltk.download('stopwords')"
 EXPOSE 8080
 
 # Run gunicorn when the container launches
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--timeout", "120", "--workers", "3", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--timeout", "240", "--workers", "2", "app:app"]
