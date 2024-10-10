@@ -1773,3 +1773,7 @@ def setup_redirects(app):
     @app.route('/topics/collaborate-share/project-management/engage-open-science/contribute-to-tilburg-science-hub/code-of-conduct/')
     def redirect_442():
         return redirect(url_for('home', _external=True) + "/topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/code-of-conduct", code=301)
+   
+    @app.route('/contributors/kleintob')
+    def redirect_443():
+        return redirect(url_for('home', _external=True)+ "/contibutors/tobiasklein", code=301)
