@@ -74,7 +74,7 @@ assets.register('scss_all', scss_bundle)
 def inject_data():
     with app.app_context():
         # Execute function to load data
-        data_dict = build_data_dict(Topics, articles)
+        data_dict = build_data_dict(Contributors, blogs, Topics, articles)
         popular_pages = load_popular_pages(app)
         
     return dict(data_dict=data_dict, popular_pages=popular_pages)
@@ -336,7 +336,7 @@ def sitemap():
 
 # Sitemap without redirects
 with app.app_context():
-    data_dict = build_data_dict(Topics, articles)
+    data_dict = build_data_dict(Contributors, blogs, Topics, articles)
     sitemap = generate_sitemap(app, data_dict, base_url=base_url)
 
 # Redirects

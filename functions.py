@@ -43,12 +43,16 @@ def urlize(text):
 
 # Build a data dictionary from topics and articles
 # Parameters:
+# - contributors:  SQLAlchemy query object for contributors 
+# - blogs: SQLAlchemy query object for blogs
 # - topics: SQLAlchemy query object for topics
 # - articles: SQLAlchemy query object for articles
 # Returns:
 # - Dictionary containing structured data of topics and articles
-def build_data_dict(topics, articles):
+def build_data_dict(contributors, blogs, topics, articles):
     data_dict = {}
+    contributors_data = contributors.query.all()
+    blogs_data = blogs.query.all()
     topics_data = topics.query.all()
     topic_dict = defaultdict(lambda: defaultdict(list))
 
@@ -65,7 +69,21 @@ def build_data_dict(topics, articles):
             'date': article.date,
             'draft': article.draft
         }
-
+    def serialize_blog(blog):
+        return{
+            'id': blog.id,
+            'title': blog.title,
+            'description': blog.description,
+            'path': blog.path
+        }
+    def serialize_contributor(contributor):
+        return{
+            'id': contributor.id,
+            'name': contributor.name,
+            'path': contributor.path,
+            'description_short': contributor.description_short
+        }
+        
     def serialize_topic(topic, level, parent, articles):
         return {
             'id': topic.id,
@@ -88,9 +106,13 @@ def build_data_dict(topics, articles):
     
     articles_examples = articles.query.filter_by(type='examples').all()
     serialized_articles_examples = [serialize_article(article) for article in articles_examples]
+    serialized_blogs = [serialize_blog(blog) for blog in blogs_data]
+    serialized_contributors = [serialize_contributor(contributor) for contributor in contributors_data]
 
     data_dict['topics'] = build_structure(1, 1, articles)
     data_dict['examples'] = serialized_articles_examples
+    data_dict['contributors'] = serialized_contributors
+    data_dict['blogs'] = serialized_blogs
 
     return data_dict
 
@@ -318,7 +340,7 @@ def add_url_element(urlset, loc, date=None, priority="0.8", changefreq="monthly"
     url = ET.SubElement(urlset, "url")
     
     loc_element = ET.SubElement(url, "loc")
-    loc_element.text = loc
+    loc_element.text = loc.lower()
     
     priority_element = ET.SubElement(url, "priority")
     priority_element.text = priority
@@ -337,12 +359,13 @@ def generate_sitemap(app, data, base_url="https://www.example.com"):
         for topic in topics:
             if topic['draft'] != 'true':
                 full_path = f"{parent_path}/{topic['path']}".strip("/")
-                add_url_element(urlset, f"{base_url}/topics/{full_path}")
+                add_url_element(urlset, f"{base_url}/topics/{full_path}/")
                 process_topics(topic.get('childtopics', []), full_path)
                 for article in topic.get('articles', []):
                     if article['draft'] != 'true':
-                        article_path = f"{full_path}/{article['path']}".strip("/")
-                        add_url_element(urlset, f"{base_url}/topics/{article_path}", date = article['date'])
+                        article_path = f"{full_path}/{article['path']}"
+                        article_path = article_path.lower()
+                        add_url_element(urlset, f"{base_url}/topics/{article_path}/", date = article['date'])
 
     # Process topics and articles
     process_topics(data['topics'])
@@ -350,10 +373,22 @@ def generate_sitemap(app, data, base_url="https://www.example.com"):
     # Process examples
     for example in data.get('examples', []):
         if example['draft'] != 'true':
-            example_path = f"{base_url}/examples/{example['path']}".strip("/")
+            example_path = f"{base_url}/examples/{example['path']}/"
+            example_path = example_path.lower()
             add_url_element(urlset, example_path, date=example.get('date'))
     
     # Process blogs
+    for blog in data.get('blogs', []):
+        blog_path = f"{base_url}/blog/{blog['path']}/"
+        blog_path = blog_path.lower()
+        add_url_element(urlset, blog_path)
+    
+    # Process contributors
+    for contributor in data.get('contributors', []):
+        contributor_name_path = contributor['path'].replace('-', '')
+        contributor_path = f"{base_url}/contributors/{contributor_name_path}/"
+        contributor_path = contributor_path.lower()
+        add_url_element(urlset, contributor_path)
 
     # Non dynamic routes
     rules = list(app.url_map.iter_rules())

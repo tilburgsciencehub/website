@@ -8,10 +8,6 @@ author: "Aakriti Gupta"
 authorlink: ""
 aliases:
   - /iv
-  -
-
----
-
 ---
 
 
