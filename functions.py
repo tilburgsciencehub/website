@@ -11,7 +11,6 @@ import json
 import xml.etree.ElementTree as ET
 import os
 
-nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 
 # Calculate the estimated reading time for the content
