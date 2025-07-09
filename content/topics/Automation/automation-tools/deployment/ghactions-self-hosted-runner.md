@@ -94,7 +94,7 @@ The steps previously presented constitute the standard procedure for configuring
 
 {{% tip %}}
 
-By visiting our [Docker introductory building block](../../../Replicability/Docker/docker/)
+By visiting our [Docker introductory building block](../../../Replicability/docker)
 you will learn more about its advantages and basic functioning, which will also help you get a better grasp of what is happening behind the scenes during the self-hosted runner setup process! Analogously you may also find it interesting to check [other Docker use cases that we have previously covered at Tilburg Science Hub](../../../Replicability/docker/).
 
 {{% /tip %}}

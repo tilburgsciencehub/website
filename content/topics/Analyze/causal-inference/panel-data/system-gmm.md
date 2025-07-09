@@ -111,7 +111,7 @@ To ensure instrument validity, the Sargan test can be used. It tests whether all
 
 {{% tip %}}
 For more background on Instrumental Variable Estimation: 
-- [Intro to IV Estimation](\iv)
+- [Intro to IV Estimation](../../../causal-inference/instrumental-variables/iv)
 - [Bastardoz et al. (2023)](https://www.sciencedirect.com/science/article/abs/pii/S1048984322000765): A comprehensive review of IV Estimation discussing valid instruments. 
 {{% /tip %}}
 

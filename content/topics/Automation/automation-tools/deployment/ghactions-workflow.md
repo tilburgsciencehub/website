@@ -27,8 +27,7 @@ Hence, by the end of this block, you will:
 
 ## Building a GitHub Actions Workflow
 
-In this section, we're going to build upon the `.yml` file structure introduced in the previous [guide](../topics/automation/automation-tools/deployment/intro_ghactions/).
-
+In this section, we're going to build upon the `.yml` file structure introduced in the previous [guide](../../../../../topics/automation/automation-tools/deployment/intro_ghactions/).
 To illustrate a useful workflow example, our goal would be to integrate code formatting (using Super Linter) and code testing.
 
 In case you're interested, the example was based on the following GitHub repository:

@@ -42,7 +42,7 @@ For more information, visit [Copilot](https://docs.github.com/en/copilot/quickst
 ## Configure Copilot in RStudio and VS Code
 ### GitHub and Copilot 
 
-1. To use Copilot in both R and VS Code you need an active GiHub account. If you do not have one already you can check out this useful source [Set up Git and GitHub](https://tilburgsciencehub.com/get/git/?utm_campaign=referral-short). 
+1. To use Copilot in both R and VS Code you need an active GiHub account. If you do not have one already you can check out this useful source [Set up Git and GitHub](../../../version-control/start-git/git). 
 
 2. As a student, you need to request specific access to use the service of Copilot. Follow this [link](https://education.github.com/). You will need to provide proof of enrollment.
     - Once you land on the website, scroll down until you see this image: 
