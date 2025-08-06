@@ -31,6 +31,14 @@
 
 {% include 'partials/footer.html' %}
 
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script>
+  // Initialize Algolia client and index
+  const client = algoliasearch('02IYLG4AP9', 'ALGOLIA_SEARCH_ONLY_KEY');  // 🔁 Replace with your actual search-only key
+  const index = client.initIndex('Tilburg_Science_Hub');
+</script>
+
+
 <script>
   const params = new URLSearchParams(window.location.search)
   const queryHolder = document.querySelector("#queryHolder");
