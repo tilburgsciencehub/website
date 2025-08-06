@@ -56,12 +56,13 @@ def export_data(file_paths):
     json_data = []
 
     for path in file_paths:
-        f = open(path, 'r')
-        df = f.read().split('\n')
-        try:
-            json_data.append(structure_markdown(df, path))
-        except:
-            print("Skipped file:", path) # skipped files
+        with open(path, 'r', encoding='utf-8') as f:
+            # Read file and split into lines
+            df = f.read().split('\n')
+            try:
+                json_data.append(structure_markdown(df, path))
+            except:
+                print("Skipped file:", path) # skipped files
     return json_data
 
 
