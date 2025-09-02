@@ -108,7 +108,6 @@ With Python set up, you can start using it. Explore these resources to get start
 
 - [Install Python Packages](/install/python-packages): Discover what packages are, and how to install them.
 - [Get Started With Python](/learn/python) through simple examples of the fundamental basics, such as variables and data types, functions, etcetera.
-- [Python Coding Style Guidelines](python/style-guides): Understand the importance of coding style with these essential guidelines.
-
+-[Python Coding Style Guidelines](/topics/Computer-Setup/software-installation/Python/Python-coding-style/): Understand the importance of coding style with these essential guidelines.
 {{% /summary %}}
 

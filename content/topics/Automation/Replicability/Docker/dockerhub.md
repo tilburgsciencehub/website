@@ -32,7 +32,7 @@ Additionally, you will
 {{% tip %}}
 **New to Docker?**
 
-If you haven't installed docker on your computer yet, you can see how to do it on the building block on how to [set up Docker](https://tilburgsciencehub.com/topics/Automation/Replicability/Docker/install_docker//).
+If you haven't installed docker on your computer yet, you can see how to do it on the building block on how to [set up Docker](https://tilburgsciencehub.com/topics/Automation/Replicability/Docker/install_docker/).
 
 In case you are new to Docker we recommended you to review some of the basics of Docker before going ahead with this building block by visiting TSH's building block on [Docker for reproducible research](https://tilburgsciencehub.com/topics/automation/replicability/docker).
 

@@ -30,8 +30,7 @@ Let computers repeat and execute tasks.,
 - If you do things often, automate them
     - e.g., by using scripts, macros, aliases/variables
     - write a dictionary with definitions
-- Use build tools to [automate workflows](/topics/project-setup/principles-of-project-setup-and-workflow-management/automation/)
-
+- Use build tools to [automate workflows](/topics/Automation/Workflows/principles-of-project-setup-and-workflow-management/)
 ## Use a version control system
 
 - Add all inputs, but no outputs/generated files

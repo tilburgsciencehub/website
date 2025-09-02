@@ -79,5 +79,5 @@ summary(model_fd)
 {{% summary %}}
 The first-difference (FD) estimator is a useful approach to address the issue of omitted variable bias in the presence of unobserved entity-specific effects. By taking the first difference within each cross-section, the FD estimator eliminates the fixed effects. 
 
-It relies on the assumption of no correlation between the difference in the error term and the difference in the independent variables over time. This is a weaker assumption than the general Fixed Effects Assumption 1. This can be seen as an advantage of the FD estimator over a Fixed Effects model. The next topic will discuss this [Fixed Effects model (the Within Estimator)](\within).
+It relies on the assumption of no correlation between the difference in the error term and the difference in the independent variables over time. This is a weaker assumption than the general Fixed Effects Assumption 1. This can be seen as an advantage of the FD estimator over a Fixed Effects model. The next topic will discuss this [Fixed Effects model (the Within Estimator)](../within-estimator).
 {{% /summary %}}

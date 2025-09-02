@@ -94,7 +94,7 @@ The steps previously presented constitute the standard procedure for configuring
 
 {{% tip %}}
 
-By visiting our [Docker introductory building block](../../../Replicability/Docker/docker/)
+By visiting our [Docker introductory building block](../../../Replicability/docker)
 you will learn more about its advantages and basic functioning, which will also help you get a better grasp of what is happening behind the scenes during the self-hosted runner setup process! Analogously you may also find it interesting to check [other Docker use cases that we have previously covered at Tilburg Science Hub](../../../Replicability/docker/).
 
 {{% /tip %}}
@@ -102,7 +102,7 @@ you will learn more about its advantages and basic functioning, which will also 
 
 With this Docker-based approach, the self-hosted runner will be established inside a Docker image through its Dockerfile by adapting the standard self-hosted runner configuration steps introduced in the previous section. For that, we provide you with a Dockerfile template which you can access by clicking the following or copying directly from the codebox below. Feel free to adapt it and use it yourself!
 
-{{% cta-primary-center "Template Dockerfile: Self-hosted runner configuration" "https://raw.githubusercontent.com/tilburgsciencehub/website/master/content/topics/automate-and-execute-your-work/automate-your-workflow/sh_runner_dockerfile" %}}
+{{% cta-primary-center "Template Dockerfile: Self-hosted runner configuration" "https://raw.githubusercontent.com/tilburgsciencehub/website/main-flask/content/topics/Automation/automation-tools/deployment/ghactions-self-hosted-runner.md" %}}
 
 {{% codeblock %}}
 

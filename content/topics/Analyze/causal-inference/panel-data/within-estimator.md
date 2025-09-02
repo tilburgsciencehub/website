@@ -48,7 +48,7 @@ Since we assume the unobserved fixed effects $\alpha_{i}$ to be constant, subtra
 
 ## Estimation in R
 
-While the `plm()` function can also be used to estimate a FE model, we recommend using the `fixest` package. Refer to the [`fixest` article](https://tilburgsciencehub.com/fixest/?utm_campaign=referral-short) for a comprehensive explanation of this package and its functions. 
+While the `plm()` function can also be used to estimate a FE model, we recommend using the `fixest` package. Refer to the [`fixest` article](https://tilburgsciencehub.com/fixest) for a comprehensive explanation of this package and its functions. 
 
 To estimate a FE model using `fixest`, use the `feols()` function and specify the fixed effects variable (`firm`) within the model formula.
 
