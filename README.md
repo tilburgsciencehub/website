@@ -43,9 +43,9 @@ and we welcome contributions of all kinds: new content,
 fixes to the existing material, bug reports,
 and reviews of proposed changes are all welcome.
 
-* See the contributing guide [here](https://tilburgsciencehub.com/contribute/).
+* See the contributing guide [here](http://tilburgsciencehub.com/topics/Collaborate-share/Project-management/contribute-to-tilburg-science-hub/contribute/).
 * Check out our [styling and writing guidelines](https://tilburgsciencehub.com/topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/style-guide/).
-* By contributing you agree to abide by the [Code of Conduct](https://tilburgsciencehub.com/topics/more-tutorials/contribute-to-tilburg-science-hub/code-of-conduct/).
+* By contributing you agree to abide by the [Code of Conduct](https://tilburgsciencehub.com/topics/collaborate-share/project-management/contribute-to-tilburg-science-hub/code-of-conduct/).
 
 ### Automatically Running the Website
 
