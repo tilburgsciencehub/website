@@ -10,3 +10,4 @@ public/
 search-index.json
 redirect_aliases.json
 .Rproj.user
+*.swp
