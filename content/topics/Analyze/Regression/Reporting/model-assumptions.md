@@ -11,7 +11,7 @@ aliases:
 
 ## Overview
 
-The first step before estimating an OLS regression is to validate the model assumptions to ensure the estimates are reliable and the inference drawn is valid.
+The first step before estimating an OLS regression is to validate the model assumptions to ensure the estimates are reliable and the inference drawn is valid. 
 
 To illustrate how to check for model assumptions with an example, we use the built-in `cars` dataset which includes 50 data points of a car’s stop distance at a given speed. Since the dimensions are in miles per hour and foot, we first convert it into kilometer per hour and meter, respectively.
 
