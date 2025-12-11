@@ -29,7 +29,8 @@ RUN pip install --no-cache-dir Flask-SQLAlchemy \
     google-api-python-client \
     gunicorn \
     Pillow \
-    Flask-Compress
+    Flask-Compress \
+    algoliasearch
 
 RUN npm install -g sass
 
