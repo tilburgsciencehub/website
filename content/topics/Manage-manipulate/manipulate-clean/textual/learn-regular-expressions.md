@@ -354,7 +354,7 @@ gsub("<.+?>", "", my_string)
 
 
 ## See Also
-* As you may have figured out by now, formulating regular expressions is often a matter of trial and error. An [online regex editor](https://regexr.com) that interactively highlights the phrases your regular expression captures can therefore be extremely helpful.
+* As you may have figured out by now, formulating regular expressions is often a matter of trial and error. An [online regex editor](https://regexr.com) that interactively highlights the phrases your regular expression captures can therefore be extremely helpful. You might also find it helpful to use a [visual regex tester](https://pythonium.net/regex) that breaks down your expression.
 
 * Frequent applications of regular expressions are extracting dates and emails (and checking for validity), parsing webpage source data, and natural language processing. [This](https://www.analyticsvidhya.com/blog/2020/01/4-applications-of-regular-expressions-that-every-data-scientist-should-know-with-python-code/) blog post demonstrates how you can implement these ideas.
 
